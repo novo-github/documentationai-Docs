@@ -23,12 +23,12 @@
                 "pages": [
                   {
                     "title": "Introduction",
-                    "path": "introduction",
+                    "path": "en/introduction",
                     "icon": "home"
                   },
                   {
                     "title": "Quickstart",
-                    "path": "quickstart",
+                    "path": "en/quickstart",
                     "icon": "zap"
                   }
                 ]
@@ -39,7 +39,7 @@
                 "pages": [
                   {
                     "title": "Features",
-                    "path": "features",
+                    "path": "en/features",
                     "icon": "file-text"
                   }
                 ]
@@ -50,7 +50,7 @@
                 "pages": [
                   {
                     "title": "Integrations",
-                    "path": "integrations",
+                    "path": "en/integrations",
                     "icon": "plug"
                   }
                 ]
@@ -117,7 +117,7 @@
             "pages": [
               {
                 "title": "Release History",
-                "path": "changelog",
+                "path": "en/changelog",
                 "icon": "history"
               }
             ]
@@ -137,12 +137,12 @@
                 "pages": [
                   {
                     "title": "Introduction",
-                    "path": "introduction",
+                    "path": "de/introduction",
                     "icon": "home"
                   },
                   {
                     "title": "Quickstart",
-                    "path": "quickstart",
+                    "path": "de/quickstart",
                     "icon": "zap"
                   }
                 ]
@@ -153,7 +153,7 @@
                 "pages": [
                   {
                     "title": "Features",
-                    "path": "features",
+                    "path": "de/features",
                     "icon": "file-text"
                   }
                 ]
@@ -164,7 +164,7 @@
                 "pages": [
                   {
                     "title": "Integrations",
-                    "path": "integrations",
+                    "path": "de/integrations",
                     "icon": "plug"
                   }
                 ]
@@ -231,7 +231,7 @@
             "pages": [
               {
                 "title": "Release History",
-                "path": "changelog",
+                "path": "de/changelog",
                 "icon": "history"
               }
             ]
