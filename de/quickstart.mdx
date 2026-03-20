@@ -1,0 +1,169 @@
+---
+title: Schnellstart-Anleitung
+description: Richte dein Novo AI Konto ein und mache deine ersten Schritte mit der WatchMen AI Platform. Folge diesen Schritten zur Maschinenoptimierung.
+---
+
+## Voraussetzungen
+
+<Callout kind="info" title="Bevor du startest">
+
+Stelle sicher, dass du Folgendes hast:
+
+- Einen aktuellen Webbrowser (Chrome, Firefox oder Safari)
+- Admin-Zugriff auf deine Maschinen für die Agent-Installation
+- Netzwerkzugriff auf `https://api.example.com` und `https://dashboard.example.com`
+
+</Callout>
+
+Prüfe diese Anforderungen, um Einrichtungsprobleme zu vermeiden.
+
+## Konto erstellen
+
+Registriere dich bei Novo AI, um auf die WatchMen AI Platform zuzugreifen.
+
+<Steps>
+  <Step title="Dashboard aufrufen" icon="monitor">
+    Navigiere zu [https://dashboard.example.com](https://dashboard.example.com).
+  </Step>
+
+  <Step title="Registrieren" icon="user-plus">
+    Klicke auf **Sign Up** und gib deine E-Mail-Adresse, ein Passwort und die Informationen zu deiner Organisation ein.
+  </Step>
+
+  <Step title="E-Mail bestätigen" icon="mail">
+    Öffne dein Postfach, suche nach der Bestätigungs-E-Mail und klicke auf den Bestätigungslink, um dein Konto zu aktivieren.
+  </Step>
+
+  <Step title="Anmelden" icon="log-in">
+    Gehe zurück zum Dashboard und melde dich mit deinen Zugangsdaten an.
+  </Step>
+</Steps>
+
+Jetzt hast du Zugriff auf die Plattform.
+
+## Maschinenverbindungen konfigurieren
+
+Verbinde deine Maschinen, um AI-Optimierungsscans zu ermöglichen. Verwende das Agent-Installationsprogramm für dein Betriebssystem.
+
+<Tabs>
+  <Tab title="macOS" icon="apple">
+    Lade den Agent herunter und installiere ihn.
+
+````bash
+curl -fsSL https://api.example.com/agent/macos/install.sh | bash
+sudo ./novo-agent install --token YOUR_AGENT_TOKEN
+````
+  </Tab>
+
+  <Tab title="Linux" icon="linux">
+    Installiere den Agent über den Paketmanager.
+
+````bash
+wget https://api.example.com/agent/linux/novo-agent.deb
+sudo dpkg -i novo-agent.deb
+sudo novo-agent register --token YOUR_AGENT_TOKEN
+````
+  </Tab>
+
+  <Tab title="Windows" icon="windows">
+    Führe den MSI-Installer aus dem Download-Bereich des Dashboards aus.
+  </Tab>
+</Tabs>
+
+Hole dir `YOUR_AGENT_TOKEN` in deinem Dashboard unter **Machines > Add Machine**.
+
+## Ersten AI-Optimierungsscan ausführen
+
+Starte einen Scan, um die Leistung deiner Maschine zu analysieren.
+
+<Steps>
+  <Step title="Maschine auswählen" icon="server">
+    Gehe im Dashboard zu **Machines** und wähle deine verbundene Maschine aus.
+  </Step>
+
+  <Step title="Scan starten" icon="zap">
+    Klicke auf **Run AI Scan** und wähle **Quick Optimization**.
+  </Step>
+
+  <Step title="Ergebnisse prüfen" icon="bar-chart">
+    Warte 2–5 Minuten und sieh dir anschließend den Optimierungsbericht an.
+  </Step>
+</Steps>
+
+<CodeGroup tabs="cURL,JavaScript">
+````bash
+curl -X POST https://api.example.com/v1/scans \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "machine_id": "machine-123",
+    "scan_type": "optimization"
+  }'
+````
+
+````javascript
+const response = await fetch('https://api.example.com/v1/scans', {
+  method: 'POST',
+  headers: {
+    'Authorization': 'Bearer YOUR_API_KEY',
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    machine_id: 'machine-123',
+    scan_type: 'optimization'
+  })
+});
+const scan = await response.json();
+console.log(scan.id);
+````
+</CodeGroup>
+
+## Zugriff auf das Dashboard
+
+Erkunde die Oberfläche:
+
+<Columns cols={2}>
+  <Card title="Übersicht" icon="activity" href="#overview">
+    Überwache alle Maschinen und die Scan-Historie.
+  </Card>
+
+  <Card title="Optimierungen" icon="trending-up" href="#optimizations">
+    Wende AI-empfohlene Optimierungen an.
+  </Card>
+
+  <Card title="Berichte" icon="file-text" href="#reports">
+    Exportiere detaillierte Leistungsberichte.
+  </Card>
+
+  <Card title="Einstellungen" icon="settings" href="#settings">
+    Verwalte Integrationen und Benachrichtigungen.
+  </Card>
+</Columns>
+
+## Häufige Probleme beheben
+
+<ExpandableGroup>
+  <Expandable title="Agent-Verbindung fehlgeschlagen" default-open="true">
+
+  - Prüfe, ob die Firewall ausgehende Verbindungen zu `https://api.example.com:443` zulässt
+  - Kontrolliere im Dashboard, ob der Token abgelaufen ist
+  - Starte den Agent neu: `sudo novo-agent restart`
+
+  </Expandable>
+
+  <Expandable title="Scan-Timeout">
+
+    Erhöhe das Timeout in den Maschinen-Einstellungen oder prüfe die Netzwerk-Latenz.
+
+  </Expandable>
+
+  <Expandable title="Anmeldeprobleme">
+
+    Leere den Browser-Cache oder verwende den Inkognito-Modus.
+
+  </Expandable>
+</ExpandableGroup>
+
+<Callout kind="tip">
+Bereit für mehr? Sieh dir [Authentication](/de/authentication) für den API-Zugriff und [Configuration](/de/configuration) für erweiterte Einstellungen an.
+</Callout>

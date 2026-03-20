@@ -1,0 +1,145 @@
+---
+title: Versionsverlauf
+description: Verfolge die neuesten Updates und Verbesserungen der Novo AI WatchMen Plattform. Diese Seite listet aktuelle Versionen mit wichtigen Änderungen auf.
+---
+
+## Aktuelle Versionen
+
+Bleibe über die neuesten Verbesserungen der Novo AI WatchMen Plattform informiert. Jede Version enthält neue Funktionen, Leistungsoptimierungen und Fehlerbehebungen, damit du noch präziser überwachen und vorhersagen kannst.
+
+<Update label="2024-10-15" description="v1.2.0" tags={["feature", "improvement"]}>
+
+## Neue Funktionen
+
+- Verbesserte KI-Vorhersagegenauigkeit mit fortgeschrittenen Machine-Learning-Modellen, die die Zuverlässigkeit der Prognosen um bis zu 25 % erhöhen.
+- Echtzeit-Anomalieerkennung für IoT-Sensordatenströme hinzugefügt.
+
+## Verbesserungen
+
+- Optimierte Ladezeiten des Dashboards für große Datensätze.
+- Bessere Integration mit bestehenden Alerting-Systemen.
+
+## Fehlerbehebungen
+
+- Sporadische Fehler bei der Zustellung von Webhooks behoben.
+- UI-Anzeigefehler auf Mobilgeräten korrigiert.
+
+</Update>
+
+<Update label="2024-09-20" description="v1.1.5" tags={["feature"]}>
+
+## Neue Funktionen
+
+- Neue Integrationen mit verbreiteten IoT-Plattformen, einschließlich AWS IoT Core und Google Cloud IoT.
+- Benutzerdefinierte Webhook-Endpunkte für nahtlose Datenweiterleitung.
+
+## Verbesserungen
+
+- Überarbeiteter Einrichtungsassistent für eine schnellere Inbetriebnahme.
+
+</Update>
+
+<Update label="2024-08-10" description="v1.1.0" tags={["bugfix", "improvement"]}>
+
+## UI-Verbesserungen
+
+- Überarbeitetes Dashboard mit anpassbaren Widgets und Dark-Mode-Unterstützung.
+- Verbesserte Datenvisualisierung mit interaktiven Drill-down-Funktionen.
+
+## Fehlerbehebungen
+
+- Probleme mit API-Rate-Limits für Benutzer mit hohem Volumen behoben.
+- Sicherheitslücken in den Authentifizierungsabläufen geschlossen.
+
+</Update>
+
+## Upgrade von früheren Versionen
+
+Führe diese Schritte aus, um reibungslos von älteren Versionen zu migrieren. Diese Anleitung gilt für Upgrades von v1.0.x und älter.
+
+<Callout kind="info">
+Erstelle vor dem Upgrade ein Backup deiner Konfiguration und Daten, um potenziellen Datenverlust zu vermeiden.
+</Callout>
+
+<Steps>
+  <Step title="Changelog prüfen" icon="book-open">
+
+Prüfe die Versionshinweise oben auf Änderungen mit möglichen Auswirkungen auf deine Version.
+
+  </Step>
+  <Step title="Abhängigkeiten aktualisieren" icon="package">
+
+```bash
+npm install novo-ai-watchmen@latest
+```
+
+Für Docker-Nutzer:
+
+````dockerfile
+FROM novoai/watchmen:latest
+````
+
+  </Step>
+  <Step title="Migrationsskript ausführen" icon="play">
+
+Führe die integrierte Migration aus:
+
+<CodeGroup tabs="CLI,Docker">
+  ```bash
+  npx watchmen migrate --from v1.0.0
+  ```
+  ```bash
+  docker run --rm novoai/watchmen migrate --from v1.0.0
+  ```
+</CodeGroup>
+
+  </Step>
+  <Step title="Dienste neu starten" icon="refresh-cw">
+
+Starte deine Anwendung neu und prüfe die Endpunkte unter `https://api.example.com/health`.
+
+  </Step>
+</Steps>
+
+## Bevorstehende Funktionen
+
+Spannende Erweiterungen sind in Entwicklung. Hier ist eine Vorschau auf kommende Funktionen.
+
+<Columns cols={2}>
+  <Card title="Erweiterte Analysen" icon="bar-chart-3" href="#">
+    KI-gestützte Einblicke und automatisierte Berichte.
+  </Card>
+  <Card title="Multi-Region-Support" icon="globe" href="#">
+    Bereitstellung in globalen Rechenzentren für geringe Latenz.
+  </Card>
+  <Card title="Plugin-Ökosystem" icon="puzzle" href="#">
+    Erweitere die Funktionalität mit Community-Plugins.
+  </Card>
+  <Card title="Mobile App" icon="smartphone" href="#">
+    Native Apps für Monitoring unter iOS und Android.
+  </Card>
+</Columns>
+
+<Expandable title="Detaillierte Migrationshinweise" default-open="false">
+
+Für Versionen vor v1.0.0 sind zusätzliche Schritte erforderlich:
+
+1. Aktualisiere deine `config.json`, um das neue `{apiKey}`-Format zu verwenden.
+2. Konfiguriere Webhooks mit dem aktualisierten Schema neu.
+
+```json
+{
+  "webhooks": {
+    "url": "https://your-webhook-url.com/webhook",
+    "headers": {
+      "Authorization": "Bearer YOUR_TOKEN"
+    }
+  }
+}
+```
+
+</Expandable>
+
+<Callout kind="tip">
+Abonniere unseren Newsletter oder beobachte das [GitHub-Repository](https://github.com/novo-ai/watchmen), um sofort über neue Releases informiert zu werden.
+</Callout>

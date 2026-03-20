@@ -1,0 +1,145 @@
+---
+title: Changelog
+description: Track the latest updates and improvements to the Novo AI WatchMen Platform. This page lists recent version releases with key changes and enhancements.
+---
+
+## Recent Releases
+
+Stay informed about the latest improvements to Novo AI WatchMen Platform. Each release includes new features, performance enhancements, and bug fixes to help you monitor and predict with greater accuracy.
+
+<Update label="2024-10-15" description="v1.2.0" tags={["feature", "improvement"]}>
+
+## New Features
+
+- Enhanced AI prediction accuracy with advanced machine learning models, improving forecast reliability by up to 25%.
+- Added real-time anomaly detection for IoT sensor data streams.
+
+## Improvements
+
+- Optimized dashboard loading times for large datasets.
+- Better integration with existing alerting systems.
+
+## Bug Fixes
+
+- Resolved intermittent failures in webhook deliveries.
+- Fixed UI glitches on mobile devices.
+
+</Update>
+
+<Update label="2024-09-20" description="v1.1.5" tags={["feature"]}>
+
+## New Features
+
+- New integrations with popular IoT platforms including AWS IoT Core and Google Cloud IoT.
+- Custom webhook endpoints for seamless data forwarding.
+
+## Improvements
+
+- Streamlined setup wizard for quicker onboarding.
+
+</Update>
+
+<Update label="2024-08-10" description="v1.1.0" tags={["bugfix", "improvement"]}>
+
+## UI Improvements
+
+- Redesigned dashboard with customizable widgets and dark mode support.
+- Enhanced data visualization charts with interactive drill-downs.
+
+## Bug Fixes
+
+- Corrected API rate limiting issues affecting high-volume users.
+- Patched security vulnerabilities in authentication flows.
+
+</Update>
+
+## Upgrading from Previous Versions
+
+Follow these steps to migrate smoothly from older versions. These instructions apply to upgrades from v1.0.x and earlier.
+
+<Callout kind="info">
+Backup your configuration and data before upgrading to prevent any potential data loss.
+</Callout>
+
+<Steps>
+  <Step title="Review Changelog" icon="book-open">
+
+Check the release notes above for breaking changes specific to your version.
+
+  </Step>
+  <Step title="Update Dependencies" icon="package">
+
+```bash
+npm install novo-ai-watchmen@latest
+```
+
+For Docker users:
+
+````dockerfile
+FROM novoai/watchmen:latest
+````
+
+  </Step>
+  <Step title="Run Migration Script" icon="play">
+
+Execute the built-in migration:
+
+<CodeGroup tabs="CLI,Docker">
+  ```bash
+  npx watchmen migrate --from v1.0.0
+  ```
+  ```bash
+  docker run --rm novoai/watchmen migrate --from v1.0.0
+  ```
+</CodeGroup>
+
+  </Step>
+  <Step title="Restart Services" icon="refresh-cw">
+
+Restart your application and verify endpoints at `https://api.example.com/health`.
+
+  </Step>
+</Steps>
+
+## Upcoming Features
+
+Exciting enhancements are in development. Here's a preview of what's coming next.
+
+<Columns cols={2}>
+  <Card title="Advanced Analytics" icon="bar-chart-3" href="#">
+    AI-powered insights and automated reporting.
+  </Card>
+  <Card title="Multi-Region Support" icon="globe" href="#">
+    Deploy across global data centers for low latency.
+  </Card>
+  <Card title="Plugin Ecosystem" icon="puzzle" href="#">
+    Extend functionality with community plugins.
+  </Card>
+  <Card title="Mobile App" icon="smartphone" href="#">
+    Native apps for iOS and Android monitoring.
+  </Card>
+</Columns>
+
+<Expandable title="Detailed Migration Notes" default-open="false">
+
+For versions prior to v1.0.0, additional steps may be required:
+
+1. Update your `config.json` to include the new `{apiKey}` format.
+2. Reconfigure webhooks using the updated schema.
+
+```json
+{
+  "webhooks": {
+    "url": "https://your-webhook-url.com/webhook",
+    "headers": {
+      "Authorization": "Bearer YOUR_TOKEN"
+    }
+  }
+}
+```
+
+</Expandable>
+
+<Callout kind="tip">
+Subscribe to our newsletter or watch the [GitHub repository](https://github.com/novo-ai/watchmen) for instant release notifications.
+</Callout>

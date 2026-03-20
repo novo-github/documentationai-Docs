@@ -1,0 +1,160 @@
+---
+title: Quickstart Guide
+description: Set up your Novo AI account and make your first steps with the WatchMen AI Platform in minutes. Follow these instructions to get started with machine optimization.
+---
+
+## Prerequisites
+
+<Callout kind="info" title="Before You Begin">
+Ensure you have:
+- A modern web browser (Chrome, Firefox, or Safari)
+- Admin access to your machines for agent installation
+- Network connectivity to `https://api.example.com` and `https://dashboard.example.com`
+</Callout>
+
+Review these requirements to avoid setup issues.
+
+## Create Your Account
+
+Sign up for Novo AI to access the WatchMen AI Platform.
+
+<Steps>
+  <Step title="Visit Dashboard" icon="monitor">
+    Navigate to [https://dashboard.example.com](https://dashboard.example.com).
+  </Step>
+
+  <Step title="Sign Up" icon="user-plus">
+    Click **Sign Up** and provide your email, password, and organization details.
+  </Step>
+
+  <Step title="Verify Email" icon="mail">
+    Check your inbox for a verification link and click it to activate your account.
+  </Step>
+
+  <Step title="Log In" icon="log-in">
+    Return to the dashboard and log in with your credentials.
+  </Step>
+</Steps>
+
+You now have access to the platform.
+
+## Configure Machine Connections
+
+Connect your machines to enable AI optimization scans. Use the agent installer for your platform.
+
+<Tabs>
+  <Tab title="macOS" icon="apple">
+    Download and install the agent.
+
+````bash
+curl -fsSL https://api.example.com/agent/macos/install.sh | bash
+sudo ./novo-agent install --token YOUR_AGENT_TOKEN
+````
+  </Tab>
+
+  <Tab title="Linux" icon="linux">
+    Install via package manager.
+
+````bash
+wget https://api.example.com/agent/linux/novo-agent.deb
+sudo dpkg -i novo-agent.deb
+sudo novo-agent register --token YOUR_AGENT_TOKEN
+````
+  </Tab>
+
+  <Tab title="Windows" icon="windows">
+    Run the MSI installer from the dashboard downloads.
+  </Tab>
+</Tabs>
+
+Obtain `YOUR_AGENT_TOKEN` from your dashboard under **Machines > Add Machine**.
+
+## Run Your First AI Optimization Scan
+
+Launch a scan to analyze machine performance.
+
+<Steps>
+  <Step title="Select Machine" icon="server">
+    In the dashboard, go to **Machines** and select your connected machine.
+  </Step>
+
+  <Step title="Start Scan" icon="zap">
+    Click **Run AI Scan** and choose **Quick Optimization**.
+  </Step>
+
+  <Step title="Review Results" icon="bar-chart">
+    Wait 2-5 minutes, then view the optimization report.
+  </Step>
+</Steps>
+
+<CodeGroup tabs="cURL,JavaScript">
+````bash
+curl -X POST https://api.example.com/v1/scans \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "machine_id": "machine-123",
+    "scan_type": "optimization"
+  }'
+````
+
+````javascript
+const response = await fetch('https://api.example.com/v1/scans', {
+  method: 'POST',
+  headers: {
+    'Authorization': 'Bearer YOUR_API_KEY',
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    machine_id: 'machine-123',
+    scan_type: 'optimization'
+  })
+});
+const scan = await response.json();
+console.log(scan.id);
+````
+</CodeGroup>
+
+## Access the Dashboard
+
+Explore the interface:
+
+<Columns cols={2}>
+  <Card title="Overview" icon="activity" href="#overview">
+    Monitor all machines and scan history.
+  </Card>
+
+  <Card title="Optimizations" icon="trending-up" href="#optimizations">
+    Apply AI-recommended fixes.
+  </Card>
+
+  <Card title="Reports" icon="file-text" href="#reports">
+    Export detailed performance reports.
+  </Card>
+
+  <Card title="Settings" icon="settings" href="#settings">
+    Manage integrations and alerts.
+  </Card>
+</Columns>
+
+## Troubleshooting Common Issues
+
+<ExpandableGroup>
+  <Expandable title="Agent Connection Failed" default-open="true">
+    - Verify firewall allows outbound to `https://api.example.com:443`
+    - Check token expiration in dashboard
+    - Restart agent: `sudo novo-agent restart`
+  </Expandable>
+
+  <Expandable title="Scan Timeout">
+    Increase timeout in machine settings or check network latency.
+  </Expandable>
+
+  <Expandable title="Login Issues">
+    Clear browser cache or use incognito mode.
+  </Expandable>
+</ExpandableGroup>
+
+<Callout kind="tip">
+Ready for more? Check [Authentication](/en/authentication) for API access and [Configuration](/en/configuration) for advanced settings.
+</Callout>
