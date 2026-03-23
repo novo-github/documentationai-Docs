@@ -54,6 +54,381 @@
                     "icon": "plug"
                   }
                 ]
+              },
+              {
+                "group": "Platform Intro",
+                "icon": "map",
+                "pages": [
+                  {
+                    "title": "Overview",
+                    "path": "en/platform-intro/overview",
+                    "icon": "compass"
+                  },
+                  {
+                    "group": "Pages",
+                    "icon": "book-open",
+                    "pages": [
+                      {
+                        "title": "Start Here",
+                        "path": "en/platform-intro/pages/start-here",
+                        "icon": "home"
+                      },
+                      {
+                        "group": "Dashboard",
+                        "icon": "folder",
+                        "pages": [
+                          {
+                            "title": "Machines",
+                            "path": "en/platform-intro/pages/machines",
+                            "icon": "file-text"
+                          },
+                          {
+                            "title": "Orders & Products",
+                            "path": "en/platform-intro/pages/orders-products",
+                            "icon": "file-text"
+                          }
+                        ]
+                      },
+                      {
+                        "group": "Org Stats",
+                        "icon": "folder",
+                        "pages": [
+                          {
+                            "title": "Org Stats",
+                            "path": "en/platform-intro/pages/org-stats",
+                            "icon": "file-text"
+                          }
+                        ]
+                      },
+                      {
+                        "group": "Planner",
+                        "icon": "folder",
+                        "pages": [
+                          {
+                            "title": "Scheduler",
+                            "path": "en/platform-intro/pages/scheduler",
+                            "icon": "file-text"
+                          },
+                          {
+                            "title": "Assignment Planner",
+                            "path": "en/platform-intro/pages/assignment-planner",
+                            "icon": "file-text"
+                          }
+                        ]
+                      },
+                      {
+                        "group": "Versus",
+                        "icon": "folder",
+                        "pages": [
+                          {
+                            "title": "Versus",
+                            "path": "en/platform-intro/pages/versus",
+                            "icon": "file-text"
+                          }
+                        ]
+                      },
+                      {
+                        "group": "Reports",
+                        "icon": "folder",
+                        "pages": [
+                          {
+                            "title": "Timeline Analysis",
+                            "path": "en/platform-intro/pages/timeline-analysis",
+                            "icon": "file-text"
+                          },
+                          {
+                            "title": "Trend Analysis",
+                            "path": "en/platform-intro/pages/trend-analysis",
+                            "icon": "file-text"
+                          }
+                        ]
+                      },
+                      {
+                        "group": "Peak Optimizer",
+                        "icon": "folder",
+                        "pages": [
+                          {
+                            "title": "Peak Optimizer",
+                            "path": "en/platform-intro/pages/peak-optimizer",
+                            "icon": "file-text"
+                          }
+                        ]
+                      },
+                      {
+                        "group": "Leaderboard",
+                        "icon": "folder",
+                        "pages": [
+                          {
+                            "title": "Leaderboard",
+                            "path": "en/platform-intro/pages/leaderboard",
+                            "icon": "file-text"
+                          }
+                        ]
+                      },
+                      {
+                        "group": "Workspace",
+                        "icon": "folder",
+                        "pages": [
+                          {
+                            "title": "Kanban",
+                            "path": "en/platform-intro/pages/kanban",
+                            "icon": "file-text"
+                          },
+                          {
+                            "title": "Knowledge Base",
+                            "path": "en/platform-intro/pages/knowledge-base",
+                            "icon": "file-text"
+                          },
+                          {
+                            "title": "Chat History",
+                            "path": "en/platform-intro/pages/chat-history",
+                            "icon": "file-text"
+                          }
+                        ]
+                      },
+                      {
+                        "group": "Admin Panel",
+                        "icon": "folder",
+                        "pages": [
+                          {
+                            "title": "Admin Panel",
+                            "path": "en/platform-intro/pages/admin-panel",
+                            "icon": "file-text"
+                          },
+                          {
+                            "title": "ERP Upload Planner",
+                            "path": "en/platform-intro/pages/erp-upload-planner",
+                            "icon": "file-text"
+                          }
+                        ]
+                      },
+                      {
+                        "group": "Supporting Pages",
+                        "icon": "folder",
+                        "pages": [
+                          {
+                            "title": "Machine Details",
+                            "path": "en/platform-intro/pages/machine-details",
+                            "icon": "file-text"
+                          },
+                          {
+                            "title": "Machine History",
+                            "path": "en/platform-intro/pages/machine-history",
+                            "icon": "file-text"
+                          },
+                          {
+                            "title": "Data Acquisition (PDA)",
+                            "path": "en/platform-intro/pages/data-acquisition",
+                            "icon": "file-text"
+                          },
+                          {
+                            "title": "Machine Configuration",
+                            "path": "en/platform-intro/pages/machine-configuration",
+                            "icon": "file-text"
+                          },
+                          {
+                            "title": "Alert Rules",
+                            "path": "en/platform-intro/pages/alert-rules",
+                            "icon": "file-text"
+                          },
+                          {
+                            "title": "Order Detail",
+                            "path": "en/platform-intro/pages/order-detail",
+                            "icon": "file-text"
+                          },
+                          {
+                            "title": "User Profile",
+                            "path": "en/platform-intro/pages/user-profile",
+                            "icon": "file-text"
+                          },
+                          {
+                            "title": "Hall Plan",
+                            "path": "en/platform-intro/pages/hall-plan",
+                            "icon": "file-text"
+                          },
+                          {
+                            "group": "Access & Public Pages",
+                            "icon": "folder",
+                            "pages": [
+                              {
+                                "title": "Sign In",
+                                "path": "en/platform-intro/pages/sign-in",
+                                "icon": "file-text"
+                              },
+                              {
+                                "title": "Sign Up",
+                                "path": "en/platform-intro/pages/sign-up",
+                                "icon": "file-text"
+                              },
+                              {
+                                "title": "Forgot Password",
+                                "path": "en/platform-intro/pages/forgot-password",
+                                "icon": "file-text"
+                              },
+                              {
+                                "title": "Registration Confirmation",
+                                "path": "en/platform-intro/pages/registration-confirmation",
+                                "icon": "file-text"
+                              },
+                              {
+                                "title": "Email Confirmation",
+                                "path": "en/platform-intro/pages/email-confirmation",
+                                "icon": "file-text"
+                              },
+                              {
+                                "title": "Reset Password",
+                                "path": "en/platform-intro/pages/reset-password",
+                                "icon": "file-text"
+                              },
+                              {
+                                "title": "OTP Verification",
+                                "path": "en/platform-intro/pages/otp-verification",
+                                "icon": "file-text"
+                              },
+                              {
+                                "title": "Microsoft Auth",
+                                "path": "en/platform-intro/pages/microsoft-auth",
+                                "icon": "file-text"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "group": "Workflows",
+                    "icon": "git-branch",
+                    "pages": [
+                      {
+                        "title": "Overview",
+                        "path": "en/platform-intro/workflows/overview",
+                        "icon": "home"
+                      },
+                      {
+                        "group": "Machines",
+                        "icon": "folder",
+                        "pages": [
+                          {
+                            "title": "Add a Machine",
+                            "path": "en/platform-intro/workflows/add-machine",
+                            "icon": "play-circle"
+                          },
+                          {
+                            "title": "Configure a Machine",
+                            "path": "en/platform-intro/workflows/machine-configuration",
+                            "icon": "play-circle"
+                          },
+                          {
+                            "title": "Monitor a Machine Live",
+                            "path": "en/platform-intro/workflows/live-machine-monitoring",
+                            "icon": "play-circle"
+                          },
+                          {
+                            "title": "Run Data Acquisition (PDA)",
+                            "path": "en/platform-intro/workflows/data-acquisition",
+                            "icon": "play-circle"
+                          },
+                          {
+                            "title": "Review Machine History",
+                            "path": "en/platform-intro/workflows/machine-history-review",
+                            "icon": "play-circle"
+                          },
+                          {
+                            "title": "Manage Alert Rules",
+                            "path": "en/platform-intro/workflows/alert-rule-management",
+                            "icon": "play-circle"
+                          }
+                        ]
+                      },
+                      {
+                        "group": "Orders & Products",
+                        "icon": "folder",
+                        "pages": [
+                          {
+                            "title": "Create a Product",
+                            "path": "en/platform-intro/workflows/create-product",
+                            "icon": "play-circle"
+                          },
+                          {
+                            "title": "Create a Production Order",
+                            "path": "en/platform-intro/workflows/create-production-order",
+                            "icon": "play-circle"
+                          }
+                        ]
+                      },
+                      {
+                        "group": "Planner",
+                        "icon": "folder",
+                        "pages": [
+                          {
+                            "title": "Assign Machine Shifts",
+                            "path": "en/platform-intro/workflows/assign-machine-shifts",
+                            "icon": "play-circle"
+                          },
+                          {
+                            "title": "Plan Machine Assignments",
+                            "path": "en/platform-intro/workflows/assignment-planner",
+                            "icon": "play-circle"
+                          }
+                        ]
+                      },
+                      {
+                        "group": "Versus",
+                        "icon": "folder",
+                        "pages": [
+                          {
+                            "title": "Compare Machines",
+                            "path": "en/platform-intro/workflows/compare-machines",
+                            "icon": "play-circle"
+                          }
+                        ]
+                      },
+                      {
+                        "group": "Workspace",
+                        "icon": "folder",
+                        "pages": [
+                          {
+                            "title": "Manage Kanban Tickets",
+                            "path": "en/platform-intro/workflows/kanban-ticket-management",
+                            "icon": "play-circle"
+                          }
+                        ]
+                      },
+                      {
+                        "group": "Admin Panel",
+                        "icon": "folder",
+                        "pages": [
+                          {
+                            "title": "Manage Halls",
+                            "path": "en/platform-intro/workflows/hall-management",
+                            "icon": "play-circle"
+                          },
+                          {
+                            "title": "Manage Shift Definitions",
+                            "path": "en/platform-intro/workflows/shift-management",
+                            "icon": "play-circle"
+                          },
+                          {
+                            "title": "Manage Operators",
+                            "path": "en/platform-intro/workflows/operator-management",
+                            "icon": "play-circle"
+                          },
+                          {
+                            "title": "Create Timeline Reasons",
+                            "path": "en/platform-intro/workflows/timeline-reason-creation",
+                            "icon": "play-circle"
+                          },
+                          {
+                            "title": "Upload Orders Through the ERP Planner",
+                            "path": "en/platform-intro/workflows/order-upload-planner",
+                            "icon": "play-circle"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
               }
             ]
           },

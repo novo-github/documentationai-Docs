@@ -1,0 +1,52 @@
+---
+title: "Scheduler"
+description: "A weekly planning page for assigning shifts to machines."
+---
+
+## Overview
+Let users define weekly machine shift coverage in a structured planner view.
+
+Users open it from the Planner section in the main navigation.
+
+## Access
+<Callout kind="info" title="Access details">
+- Roles: Admin, Manager
+- Visibility: Protected
+- Primary routes: `/scheduler`
+</Callout>
+
+Admins and planners responsible for shift coverage.
+
+## What You Can See
+- A machine picker grouped by hall.
+- A week selector with previous and next controls.
+- A weekly grid for machine shift assignment.
+
+## What You Can Do
+- Select the machines to plan.
+- Move between weeks.
+- Add, clear, and save shift selections for each machine and day.
+
+## Main Entities
+- Machine
+- Shift
+- Operator
+- Week
+
+## Outcomes and Limits
+### Common Outcomes
+- Users publish a weekly shift plan for the selected machines.
+
+### Limits and Empty States
+- The page stays mostly empty until machines are selected.
+- Unsaved changes remain local until saved.
+
+## Related Pages
+- [Assignment Planner](/en/platform-intro/pages/assignment-planner)
+- [Orders & Products](/en/platform-intro/pages/orders-products)
+- [Machines](/en/platform-intro/pages/machines)
+- [Admin Panel](/en/platform-intro/pages/admin-panel)
+
+## Related Workflows
+- [Assign Machine Shifts](/en/platform-intro/workflows/assign-machine-shifts)
+- [Plan Machine Assignments](/en/platform-intro/workflows/assignment-planner)

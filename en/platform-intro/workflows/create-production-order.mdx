@@ -1,0 +1,58 @@
+---
+title: "Create a Production Order"
+description: "Create a production order and define the work orders, operations, and assignments that belong to it."
+---
+
+## Goal
+Create a production order that can be tracked, planned, analyzed, and executed.
+
+## Before You Begin
+Admins, managers, or planners responsible for incoming production work.
+
+<Callout kind="info" title="Workflow access">
+- Roles: Admin, Manager
+- Entry points: `/orders-products`
+</Callout>
+
+Begin on the [Orders & Products page](/en/platform-intro/pages/orders-products).
+
+### Preconditions
+- The user can create orders.
+- The needed product already exists, or the user can create it first.
+
+## Steps
+<Steps>
+  <Step title="Step 1" icon="arrow-right" title-type="p">
+    Open the order creation flow.
+  </Step>
+  <Step title="Step 2" icon="arrow-right" title-type="p">
+    Enter the order header details such as customer, dates, priority, and notes.
+  </Step>
+  <Step title="Step 3" icon="arrow-right" title-type="p">
+    Add one or more work orders under the main order.
+  </Step>
+  <Step title="Step 4" icon="arrow-right" title-type="p">
+    Add operations inside each work order.
+  </Step>
+  <Step title="Step 5" icon="arrow-right" title-type="p">
+    Add machine assignments if the order should already be planned.
+  </Step>
+  <Step title="Step 6" icon="arrow-right" title-type="p">
+    Save the order and open the detail view if deeper editing is needed.
+  </Step>
+</Steps>
+
+## Decision Points
+- Whether to keep the order simple at header level or define work orders and assignments immediately.
+- Whether to create a planned structure now or leave planning for later.
+
+## Expected Result
+A new order appears in the platform and can be opened in the order detail page.
+
+## Common Problems and Edge Cases
+- Orders with incomplete structure may need follow-up before they can be scheduled.
+- Dates, priority, and customer data affect later planning and filtering, so they should be reviewed carefully.
+
+## Related Pages
+- [Orders & Products](/en/platform-intro/pages/orders-products)
+- [Order Detail](/en/platform-intro/pages/order-detail)

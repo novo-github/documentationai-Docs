@@ -1,0 +1,60 @@
+---
+title: "Configure a Machine"
+description: "Complete or refine a machine setup through the machine configuration tabs."
+---
+
+## Goal
+Adjust how a machine is identified, monitored, measured, and interpreted by the platform.
+
+## Before You Begin
+Administrators responsible for machine setup quality.
+
+<Callout kind="info" title="Workflow access">
+- Roles: Admin
+- Entry points: `/machine/config`, `/machine/:id/config`
+</Callout>
+
+Begin on the [Machine Configuration page](/en/platform-intro/pages/machine-configuration).
+
+### Preconditions
+- The machine already exists, unless the user is creating one through the new-machine route.
+
+## Steps
+<Steps>
+  <Step title="Step 1" icon="arrow-right" title-type="p">
+    Open the machine configuration page for a new or existing machine.
+  </Step>
+  <Step title="Step 2" icon="arrow-right" title-type="p">
+    Review the Basic Information tab and confirm the machine identity, hall, and shift group.
+  </Step>
+  <Step title="Step 3" icon="arrow-right" title-type="p">
+    Configure energy monitoring if the machine supports it.
+  </Step>
+  <Step title="Step 4" icon="arrow-right" title-type="p">
+    Set ratings so dashboards can compare live results against target expectations.
+  </Step>
+  <Step title="Step 5" icon="arrow-right" title-type="p">
+    Define timeline ranges and timeline rules so machine states are interpreted consistently.
+  </Step>
+  <Step title="Step 6" icon="arrow-right" title-type="p">
+    Adjust feature settings where the platform exposes machine-specific analytical thresholds.
+  </Step>
+  <Step title="Step 7" icon="arrow-right" title-type="p">
+    Save changes on each tab before leaving it.
+  </Step>
+</Steps>
+
+## Decision Points
+- Which tabs matter for the specific machine.
+- Whether a change is foundational setup or an analytical fine-tuning step.
+
+## Expected Result
+The machine behaves correctly across monitoring, reporting, alerting, and planning views.
+
+## Common Problems and Edge Cases
+- Some tabs stay unavailable until the machine exists.
+- Unsaved tab changes can be lost if the user navigates away too early.
+
+## Related Pages
+- [Machine Configuration](/en/platform-intro/pages/machine-configuration)
+- [Machines](/en/platform-intro/pages/machines)

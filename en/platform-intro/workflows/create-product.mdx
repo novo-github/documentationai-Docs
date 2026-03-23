@@ -1,0 +1,52 @@
+---
+title: "Create a Product"
+description: "Add a product record so future orders and work orders can reference it consistently."
+---
+
+## Goal
+Create a reusable product entry that can be selected in future production orders.
+
+## Before You Begin
+Admins or planners who manage production master data.
+
+<Callout kind="info" title="Workflow access">
+- Roles: Admin, Manager
+- Entry points: `/orders-products`
+</Callout>
+
+Begin on the [Orders & Products page](/en/platform-intro/pages/orders-products).
+
+### Preconditions
+- The user can access product management actions.
+
+## Steps
+<Steps>
+  <Step title="Step 1" icon="arrow-right" title-type="p">
+    Open the product creation flow from the orders and products area.
+  </Step>
+  <Step title="Step 2" icon="arrow-right" title-type="p">
+    Enter the product name or external identifier.
+  </Step>
+  <Step title="Step 3" icon="arrow-right" title-type="p">
+    Add units or planning values if the team tracks them.
+  </Step>
+  <Step title="Step 4" icon="arrow-right" title-type="p">
+    Attach an image when visual identification matters.
+  </Step>
+  <Step title="Step 5" icon="arrow-right" title-type="p">
+    Save the product so it becomes searchable for order creation.
+  </Step>
+</Steps>
+
+## Decision Points
+- Whether the product needs only a basic identifier or fuller planning data.
+
+## Expected Result
+The product becomes available in product search and order-related flows.
+
+## Common Problems and Edge Cases
+- Duplicate or inconsistent product naming makes later search harder.
+- A product can exist before it is used in any order.
+
+## Related Pages
+- [Orders & Products](/en/platform-intro/pages/orders-products)

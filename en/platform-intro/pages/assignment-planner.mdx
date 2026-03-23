@@ -1,0 +1,53 @@
+---
+title: "Assignment Planner"
+description: "A planning surface for placing unassigned work onto machine queues and adjusting queue order."
+---
+
+## Overview
+Give planners a drag-and-drop workspace for deciding which machine should run which work next.
+
+Users open it from the Planner section in the main navigation.
+
+## Access
+<Callout kind="info" title="Access details">
+- Roles: Admin, Manager
+- Visibility: Protected
+- Primary routes: `/assignment-planner`
+</Callout>
+
+Admins and planners.
+
+## What You Can See
+- An unassigned work list with search.
+- Machine columns that act as queues.
+- Hall and machine filters to focus the planning surface.
+
+## What You Can Do
+- Search for unassigned work.
+- Drag work into a machine queue.
+- Reorder assignments inside a queue.
+- Update assignment details such as timing, status, or priority.
+
+## Main Entities
+- Machine
+- Production Order
+- Work Order
+- Operation
+- Assignment
+
+## Outcomes and Limits
+### Common Outcomes
+- Users create or adjust the planned machine sequence for upcoming work.
+
+### Limits and Empty States
+- Only a limited number of machines can be shown at the same time.
+- Filters can hide both machines and unassigned work.
+
+## Related Pages
+- [Scheduler](/en/platform-intro/pages/scheduler)
+- [Orders & Products](/en/platform-intro/pages/orders-products)
+- [Machines](/en/platform-intro/pages/machines)
+
+## Related Workflows
+- [Plan Machine Assignments](/en/platform-intro/workflows/assignment-planner)
+- [Assign Machine Shifts](/en/platform-intro/workflows/assign-machine-shifts)

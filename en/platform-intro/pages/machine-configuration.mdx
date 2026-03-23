@@ -1,0 +1,53 @@
+---
+title: "Machine Configuration"
+description: "A tabbed setup page for creating or refining a machine\u2019s configuration."
+---
+
+## Overview
+Let admins create a machine setup or refine how an existing machine is configured.
+
+Users reach this page through machine setup actions or by opening a machine configuration route directly.
+
+## Access
+<Callout kind="info" title="Access details">
+- Roles: Admin
+- Visibility: Protected
+- Primary routes: `/machine/config`, `/machine/:id/config`
+</Callout>
+
+Administrators.
+
+## What You Can See
+- Vertical tabs for setup areas such as basic information, energy monitoring, ratings, timeline ranges, timeline rules, and features.
+- Unsaved-change indicators on tabs.
+
+## What You Can Do
+- Complete the initial machine setup.
+- Update how the machine is grouped and measured.
+- Save changes tab by tab.
+
+## Main Entities
+- Machine
+- Hall
+- Shift Group
+- Energy Monitor
+- Timeline Rule
+- Feature
+
+## Outcomes and Limits
+### Common Outcomes
+- The machine is ready for monitoring, planning, and alerting.
+
+### Limits and Empty States
+- Some tabs are only fully usable after the machine exists.
+- Users must save tab changes before leaving them.
+
+## Related Pages
+- [Machines](/en/platform-intro/pages/machines)
+- [Machine Details](/en/platform-intro/pages/machine-details)
+- [Alert Rules](/en/platform-intro/pages/alert-rules)
+- [Admin Panel](/en/platform-intro/pages/admin-panel)
+
+## Related Workflows
+- [Add a Machine](/en/platform-intro/workflows/add-machine)
+- [Configure a Machine](/en/platform-intro/workflows/machine-configuration)

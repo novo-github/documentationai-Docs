@@ -1,0 +1,59 @@
+---
+title: "Upload Orders Through the ERP Planner"
+description: "Import spreadsheet-based orders, map columns, resolve machine values, preview the result, and commit the upload."
+---
+
+## Goal
+Bring external order data into the platform in a controlled, preview-first flow.
+
+## Before You Begin
+Admins or planners who import data from ERP or spreadsheet exports.
+
+<Callout kind="info" title="Workflow access">
+- Roles: Admin, Manager
+- Entry points: `/admin-panel/erp-uploads`
+</Callout>
+
+Begin on the [ERP Upload Planner page](/en/platform-intro/pages/erp-upload-planner).
+
+### Preconditions
+- The upload file is ready.
+- The user understands which spreadsheet columns represent orders, products, dates, and machines.
+
+## Steps
+<Steps>
+  <Step title="Step 1" icon="arrow-right" title-type="p">
+    Upload the spreadsheet file.
+  </Step>
+  <Step title="Step 2" icon="arrow-right" title-type="p">
+    Map source columns to the platform fields.
+  </Step>
+  <Step title="Step 3" icon="arrow-right" title-type="p">
+    Resolve machine values when the file uses external machine names or codes.
+  </Step>
+  <Step title="Step 4" icon="arrow-right" title-type="p">
+    Review planner options and unit assumptions.
+  </Step>
+  <Step title="Step 5" icon="arrow-right" title-type="p">
+    Run the preview or dry run to inspect how rows will be interpreted.
+  </Step>
+  <Step title="Step 6" icon="arrow-right" title-type="p">
+    Commit the upload once the preview looks correct.
+  </Step>
+</Steps>
+
+## Decision Points
+- Whether to reuse saved mappings or adjust them for the current file.
+- Whether the preview is clean enough to commit or needs correction first.
+
+## Expected Result
+The upload creates or updates platform records according to the reviewed mapping.
+
+## Common Problems and Edge Cases
+- Missing required columns will block a useful preview.
+- Machine names from the source file may need manual mapping before commit.
+- Users may need to re-upload after correcting spreadsheet structure or data format issues.
+
+## Related Pages
+- [ERP Upload Planner](/en/platform-intro/pages/erp-upload-planner)
+- [Orders & Products](/en/platform-intro/pages/orders-products)

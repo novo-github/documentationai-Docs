@@ -1,0 +1,62 @@
+---
+title: "Machines"
+description: "The main machine overview where users review current status and open machine-specific pages."
+---
+
+## Overview
+Give users a fast overview of the available machines and their current production state.
+
+This is the main dashboard route for signed-in users and the default landing page after login for most roles.
+
+## Access
+<Callout kind="info" title="Access details">
+- Roles: Admin, Manager, Operator
+- Visibility: Protected
+- Primary routes: `/machines`
+</Callout>
+
+Operators, managers, and admins.
+
+## What You Can See
+- Summary counters for machine states such as production, idle, off, and preparation.
+- Machine cards with names, hall context, status information, and alerts.
+- Sorting and display preferences for which metric is emphasized.
+
+## What You Can Do
+- Filter the board by state or contextual tags.
+- Sort machines by name or key performance metrics.
+- Open a machine to reach its detail page.
+- Start machine creation from here if the user has the right access.
+
+## Main Entities
+- Machine
+- Hall
+- Shift
+- Alert
+
+## Outcomes and Limits
+### Common Outcomes
+- Users identify which machines need attention.
+- Users jump into a machine detail page for deeper work.
+
+### Limits and Empty States
+- Users with no machine access can see an informational empty state instead of machine cards.
+- Some creation or admin actions depend on role.
+
+## Related Pages
+- [Machine Details](/en/platform-intro/pages/machine-details)
+- [Machine History](/en/platform-intro/pages/machine-history)
+- [Data Acquisition (PDA)](/en/platform-intro/pages/data-acquisition)
+- [Machine Configuration](/en/platform-intro/pages/machine-configuration)
+- [Alert Rules](/en/platform-intro/pages/alert-rules)
+- [Orders & Products](/en/platform-intro/pages/orders-products)
+- [Scheduler](/en/platform-intro/pages/scheduler)
+- [Admin Panel](/en/platform-intro/pages/admin-panel)
+
+## Related Workflows
+- [Add a Machine](/en/platform-intro/workflows/add-machine)
+- [Configure a Machine](/en/platform-intro/workflows/machine-configuration)
+- [Monitor a Machine Live](/en/platform-intro/workflows/live-machine-monitoring)
+- [Run Data Acquisition (PDA)](/en/platform-intro/workflows/data-acquisition)
+- [Review Machine History](/en/platform-intro/workflows/machine-history-review)
+- [Manage Alert Rules](/en/platform-intro/workflows/alert-rule-management)

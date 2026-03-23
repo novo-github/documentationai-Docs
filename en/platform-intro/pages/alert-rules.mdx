@@ -1,0 +1,49 @@
+---
+title: "Alert Rules"
+description: "A rule management page for global and machine-specific alerting logic."
+---
+
+## Overview
+Help admins create and manage rules that notify people when important machine conditions happen.
+
+Users can open this page globally or from a machine-specific route.
+
+## Access
+<Callout kind="info" title="Access details">
+- Roles: Admin
+- Visibility: Protected
+- Primary routes: `/alert-rules`, `/alert-rules/:machineId`, `/machines/:machineId/alert-rules`
+</Callout>
+
+Administrators.
+
+## What You Can See
+- Existing rules grouped by machine or global scope.
+- Rule details such as trigger conditions, recipients, and active settings.
+- Expandable alert history for each rule.
+
+## What You Can Do
+- Create, edit, rename, enable, disable, and delete rules.
+- Filter by machine context.
+- Review alert history and resolve or reopen alert records.
+
+## Main Entities
+- Alert Rule
+- Machine
+- Recipient
+- Alert Event
+
+## Outcomes and Limits
+### Common Outcomes
+- Admins keep alerting targeted and useful.
+
+### Limits and Empty States
+- A machine-scoped route naturally shows a narrower subset of rules.
+
+## Related Pages
+- [Machines](/en/platform-intro/pages/machines)
+- [Machine Details](/en/platform-intro/pages/machine-details)
+- [Admin Panel](/en/platform-intro/pages/admin-panel)
+
+## Related Workflows
+- [Manage Alert Rules](/en/platform-intro/workflows/alert-rule-management)

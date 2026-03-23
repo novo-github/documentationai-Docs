@@ -1,0 +1,57 @@
+---
+title: "Manage Alert Rules"
+description: "Create, edit, scope, and review alert rules so users are notified when machine conditions cross important thresholds."
+---
+
+## Goal
+Keep alert logic useful, targeted, and easy to review.
+
+## Before You Begin
+Administrators who maintain proactive notifications.
+
+<Callout kind="info" title="Workflow access">
+- Roles: Admin
+- Entry points: `/alert-rules`, `/alert-rules/:machineId`, `/machines/:machineId/alert-rules`
+</Callout>
+
+Begin on the [Alert Rules page](/en/platform-intro/pages/alert-rules).
+
+### Preconditions
+- The user has admin access.
+
+## Steps
+<Steps>
+  <Step title="Step 1" icon="arrow-right" title-type="p">
+    Open the alert rules page globally or from a specific machine.
+  </Step>
+  <Step title="Step 2" icon="arrow-right" title-type="p">
+    Review existing rules by machine group or global scope.
+  </Step>
+  <Step title="Step 3" icon="arrow-right" title-type="p">
+    Start a new rule or edit an existing one.
+  </Step>
+  <Step title="Step 4" icon="arrow-right" title-type="p">
+    Choose the trigger condition, threshold, scope, recipients, and active time windows.
+  </Step>
+  <Step title="Step 5" icon="arrow-right" title-type="p">
+    Save the rule and confirm it appears in the rule list.
+  </Step>
+  <Step title="Step 6" icon="arrow-right" title-type="p">
+    Expand a rule when you need to inspect past alerts or resolve existing alerts.
+  </Step>
+</Steps>
+
+## Decision Points
+- Whether the rule should apply to all machines or one machine.
+- Whether an alert needs to be resolved, reopened, or deleted from history.
+
+## Expected Result
+The platform can notify the right people when the selected conditions happen.
+
+## Common Problems and Edge Cases
+- Too many rules can generate noisy notifications.
+- A rule that is too broad may affect more machines than intended.
+
+## Related Pages
+- [Alert Rules](/en/platform-intro/pages/alert-rules)
+- [Machines](/en/platform-intro/pages/machines)

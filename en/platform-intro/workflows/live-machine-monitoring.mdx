@@ -1,0 +1,57 @@
+---
+title: "Monitor a Machine Live"
+description: "Review live machine performance, shift context, alerts, and recent timeline behavior."
+---
+
+## Goal
+Understand what a machine is doing right now or on a selected day.
+
+## Before You Begin
+Operators, managers, and admins who need detailed machine visibility.
+
+<Callout kind="info" title="Workflow access">
+- Roles: Admin, Manager, Operator
+- Entry points: `/machines/:machineId`
+</Callout>
+
+Begin on the [Machine Details page](/en/platform-intro/pages/machine-details).
+
+### Preconditions
+- The machine already has data available for the chosen date or shift.
+
+## Steps
+<Steps>
+  <Step title="Step 1" icon="arrow-right" title-type="p">
+    Open a machine from the Machines page.
+  </Step>
+  <Step title="Step 2" icon="arrow-right" title-type="p">
+    Move to the right date using the date controls.
+  </Step>
+  <Step title="Step 3" icon="arrow-right" title-type="p">
+    Switch between shift tabs to focus on a specific shift or all shifts.
+  </Step>
+  <Step title="Step 4" icon="arrow-right" title-type="p">
+    Review the main KPIs, cycle information, timeline blocks, and recent assignment context.
+  </Step>
+  <Step title="Step 5" icon="arrow-right" title-type="p">
+    Check alert activity if the machine is showing warning conditions.
+  </Step>
+  <Step title="Step 6" icon="arrow-right" title-type="p">
+    Open related actions such as PDA, history, or alert rules when a deeper follow-up is needed.
+  </Step>
+</Steps>
+
+## Decision Points
+- Whether to review the whole day or a single shift.
+- Whether a detected issue needs immediate PDA action, later analysis, or an alert-rule change.
+
+## Expected Result
+The user can understand machine state, recent activity, and likely next action without leaving the detail context.
+
+## Common Problems and Edge Cases
+- Sparse data on the selected date can make charts or shift blocks look empty.
+- A machine may show alerts without requiring immediate intervention if the condition is already known.
+
+## Related Pages
+- [Machines](/en/platform-intro/pages/machines)
+- [Machine Details](/en/platform-intro/pages/machine-details)

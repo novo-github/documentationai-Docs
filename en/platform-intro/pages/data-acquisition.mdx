@@ -1,0 +1,54 @@
+---
+title: "Data Acquisition (PDA)"
+description: "A machine-level execution page for recording live production work, intervals, reasons, and support context."
+---
+
+## Overview
+Support live shop-floor execution and event recording for a single machine.
+
+Users usually open it from the Machine Details page.
+
+## Access
+<Callout kind="info" title="Access details">
+- Roles: Operator, Admin
+- Visibility: Protected
+- Primary routes: `/machines/:machineId/dataAcquisition`
+</Callout>
+
+Mainly operators, with admin support when needed.
+
+## What You Can See
+- Assignment lists and live order context.
+- Start, preparation, and stop controls.
+- Interval history, notes, tickets, and knowledge context.
+
+## What You Can Do
+- Start or stop work.
+- Record produced quantity.
+- Create or use live orders.
+- Apply timeline reasons and review related support content.
+
+## Main Entities
+- Machine
+- Assignment
+- Interval
+- Production Order
+- Ticket
+
+## Outcomes and Limits
+### Common Outcomes
+- The machine’s production story is captured in a detailed, shift-level form.
+
+### Limits and Empty States
+- Users need the right live assignment or order context before the page is fully useful.
+
+## Related Pages
+- [Machines](/en/platform-intro/pages/machines)
+- [Machine Details](/en/platform-intro/pages/machine-details)
+- [Machine History](/en/platform-intro/pages/machine-history)
+- [Alert Rules](/en/platform-intro/pages/alert-rules)
+- [Admin Panel](/en/platform-intro/pages/admin-panel)
+
+## Related Workflows
+- [Run Data Acquisition (PDA)](/en/platform-intro/workflows/data-acquisition)
+- [Create Timeline Reasons](/en/platform-intro/workflows/timeline-reason-creation)

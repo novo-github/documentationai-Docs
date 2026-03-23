@@ -1,0 +1,61 @@
+---
+title: "Run Data Acquisition (PDA)"
+description: "Start, prepare, stop, and annotate live production work at the machine level."
+---
+
+## Goal
+Control live production tracking for a machine and record what happened during the shift.
+
+## Before You Begin
+Mainly operators, with occasional admin support.
+
+<Callout kind="info" title="Workflow access">
+- Roles: Operator, Admin
+- Entry points: `/machines/:machineId/dataAcquisition`
+</Callout>
+
+Begin on the [Data Acquisition (PDA) page](/en/platform-intro/pages/data-acquisition).
+
+### Preconditions
+- The machine has a queue or a live order to work on.
+
+## Steps
+<Steps>
+  <Step title="Step 1" icon="arrow-right" title-type="p">
+    Open the PDA for the target machine.
+  </Step>
+  <Step title="Step 2" icon="arrow-right" title-type="p">
+    Review the available assignments and select the job to work on.
+  </Step>
+  <Step title="Step 3" icon="arrow-right" title-type="p">
+    Start or mark preparation depending on the current shop-floor situation.
+  </Step>
+  <Step title="Step 4" icon="arrow-right" title-type="p">
+    Stop the work interval when the run finishes or pauses.
+  </Step>
+  <Step title="Step 5" icon="arrow-right" title-type="p">
+    Enter produced quantity and other completion details when prompted.
+  </Step>
+  <Step title="Step 6" icon="arrow-right" title-type="p">
+    Apply timeline reasons if downtime or special events need explanation.
+  </Step>
+  <Step title="Step 7" icon="arrow-right" title-type="p">
+    Review open tickets or knowledge entries when the issue requires support context.
+  </Step>
+</Steps>
+
+## Decision Points
+- Whether the current time belongs to preparation, active production, or a stop.
+- Whether the job should use an existing assignment or a live immediate order.
+
+## Expected Result
+The machine timeline, interval list, and production records reflect what happened on the floor.
+
+## Common Problems and Edge Cases
+- Users may need to stop an interval before switching to a different one.
+- Missing quantity or reason details can leave the production story incomplete.
+- A live issue may need both a timeline reason and a support ticket.
+
+## Related Pages
+- [Data Acquisition (PDA)](/en/platform-intro/pages/data-acquisition)
+- [Machine Details](/en/platform-intro/pages/machine-details)

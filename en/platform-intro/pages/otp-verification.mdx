@@ -1,0 +1,42 @@
+---
+title: "OTP Verification"
+description: "A one-time-passcode page used to confirm the user\u2019s identity during sign-in or recovery."
+---
+
+## Overview
+Confirm the user’s identity with a one-time code.
+
+Users are redirected here after an auth step that requires OTP.
+
+## Access
+<Callout kind="info" title="Access details">
+- Roles: Any User
+- Visibility: Public
+- Primary routes: `/verifyOTP`
+</Callout>
+
+Users who must complete an OTP step during access or recovery.
+
+## What You Can See
+- OTP entry fields and verification actions.
+
+## What You Can Do
+- Enter and submit the one-time code.
+
+## Main Entities
+- User
+- One-Time Passcode
+
+## Outcomes and Limits
+### Common Outcomes
+- The user clears the verification step and continues.
+
+### Limits and Empty States
+- Expired or incorrect codes block the flow until corrected.
+
+## Related Pages
+- [Sign In](/en/platform-intro/pages/sign-in)
+- [Reset Password](/en/platform-intro/pages/reset-password)
+
+## Related Workflows
+No related workflow guides are linked yet.

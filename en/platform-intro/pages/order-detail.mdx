@@ -1,0 +1,51 @@
+---
+title: "Order Detail"
+description: "A full editing and analysis page for one production order and its work structure."
+---
+
+## Overview
+Let users inspect and edit the full structure of one production order.
+
+Users usually open it from the Orders & Products page.
+
+## Access
+<Callout kind="info" title="Access details">
+- Roles: Admin, Manager
+- Visibility: Protected
+- Primary routes: `/order-management/:orderId`, `/orders-products/:orderId`
+</Callout>
+
+Admins, managers, and planners.
+
+## What You Can See
+- Order header details such as customer, dates, priority, and notes.
+- Work orders, operations, assignments, and analysis views.
+- Timeline and note-related context for the selected order.
+
+## What You Can Do
+- Edit the order header.
+- Add, update, or remove work orders, operations, and assignments.
+- Analyze the order and review timeline-related context.
+- Export or review order-related data in more detail.
+
+## Main Entities
+- Production Order
+- Customer
+- Work Order
+- Operation
+- Assignment
+
+## Outcomes and Limits
+### Common Outcomes
+- Users turn a simple order into a complete execution-ready structure.
+
+### Limits and Empty States
+- Orders without deeper structure require more setup before planning becomes useful.
+
+## Related Pages
+- [Orders & Products](/en/platform-intro/pages/orders-products)
+- [Scheduler](/en/platform-intro/pages/scheduler)
+- [Assignment Planner](/en/platform-intro/pages/assignment-planner)
+
+## Related Workflows
+- [Create a Production Order](/en/platform-intro/workflows/create-production-order)

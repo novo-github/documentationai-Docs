@@ -1,0 +1,45 @@
+---
+title: "Hall Plan"
+description: "A public or linkable hall-level display of machines and their current state."
+---
+
+## Overview
+Show the current state of machines within a single hall in a shared display-style format.
+
+Users open a hall-specific route, often from a shared link or display device.
+
+## Access
+<Callout kind="info" title="Access details">
+- Roles: Admin, Manager, Operator, External Viewer
+- Visibility: Public
+- Primary routes: `/hallPlan/:id`
+</Callout>
+
+Shop-floor teams, supervisors, or anyone using a hall-specific display link.
+
+## What You Can See
+- The machines inside the hall.
+- Current machine status and quick visual performance context.
+
+## What You Can Do
+- Review the hall at a glance.
+- Change the displayed performance emphasis through route parameters when available.
+
+## Main Entities
+- Hall
+- Machine
+- Shift
+
+## Outcomes and Limits
+### Common Outcomes
+- Users understand the current hall-wide production picture quickly.
+
+### Limits and Empty States
+- The page depends on a valid hall route and visible machine data.
+
+## Related Pages
+- [Admin Panel](/en/platform-intro/pages/admin-panel)
+- [Machines](/en/platform-intro/pages/machines)
+
+## Related Workflows
+- [Manage Halls](/en/platform-intro/workflows/hall-management)

@@ -1,0 +1,54 @@
+---
+title: "Review Machine History"
+description: "Analyze historical machine performance across a longer date range."
+---
+
+## Goal
+Understand how a machine performed across days or weeks instead of only one live day view.
+
+## Before You Begin
+Managers and admins investigating patterns, trends, or recurring losses.
+
+<Callout kind="info" title="Workflow access">
+- Roles: Admin, Manager
+- Entry points: `/machines/:machineId/machineHistory`
+</Callout>
+
+Begin on the [Machine History page](/en/platform-intro/pages/machine-history).
+
+### Preconditions
+- Historical data exists for the machine.
+
+## Steps
+<Steps>
+  <Step title="Step 1" icon="arrow-right" title-type="p">
+    Open machine history from a machine detail view.
+  </Step>
+  <Step title="Step 2" icon="arrow-right" title-type="p">
+    Set the start and end dates for the review window.
+  </Step>
+  <Step title="Step 3" icon="arrow-right" title-type="p">
+    Turn the zero-data filter on or off depending on whether non-production days should count.
+  </Step>
+  <Step title="Step 4" icon="arrow-right" title-type="p">
+    Review KPI averages, charts, timeline reason summaries, and trend blocks.
+  </Step>
+  <Step title="Step 5" icon="arrow-right" title-type="p">
+    Adjust the date range until the review period matches the business question.
+  </Step>
+</Steps>
+
+## Decision Points
+- Whether to include zero-output days.
+- Whether the question needs a short troubleshooting window or a longer performance review.
+
+## Expected Result
+The user can explain historical machine behavior with trend and summary evidence.
+
+## Common Problems and Edge Cases
+- Very short date ranges can feel similar to the live day page.
+- Very long date ranges may hide short operational problems.
+
+## Related Pages
+- [Machine History](/en/platform-intro/pages/machine-history)
+- [Machines](/en/platform-intro/pages/machines)
