@@ -4,9 +4,11 @@ description: "Create a new machine or hub so it can appear in dashboards, planni
 ---
 
 ## Goal
+
 Create a machine record with the basic information needed for monitoring and planning.
 
 ## Before You Begin
+
 Administrators who manage the factory setup.
 
 <Callout kind="info" title="Workflow access">
@@ -21,39 +23,55 @@ Begin on the [Machines page](/en/platform-intro/pages/machines).
 - Halls and shift groups already exist if the machine should be placed immediately.
 
 ## Steps
+
 <Steps>
-  <Step title="Step 1" icon="arrow-right" title-type="p">
+  <Step title="Open the machine creation flow" icon="arrow-right" title-type="p">
     Open the machine creation flow from the Machines page.
   </Step>
-  <Step title="Step 2" icon="arrow-right" title-type="p">
+  <Step title="Enter the machine name and identification details" icon="arrow-right" title-type="p">
     Enter the machine name and identification details.
   </Step>
-  <Step title="Step 3" icon="arrow-right" title-type="p">
+  <Step title="Add optional tags or an image" icon="arrow-right" title-type="p">
     Add optional tags or an image if the team uses them for filtering and recognition.
   </Step>
-  <Step title="Step 4" icon="arrow-right" title-type="p">
+  <Step title="Assign the machine to a hall and shift group" icon="arrow-right" title-type="p">
     Assign the machine to a hall and shift group.
   </Step>
-  <Step title="Step 5" icon="arrow-right" title-type="p">
+  <Step title="Enable energy monitoring" icon="arrow-right" title-type="p">
     Enable energy monitoring only if that machine is connected for energy tracking.
   </Step>
-  <Step title="Step 6" icon="arrow-right" title-type="p">
+  <Step title="Finish the setup" icon="arrow-right" title-type="p">
     Finish the setup and return to the machine list.
   </Step>
 </Steps>
 
 ## Decision Points
+
 - Whether the machine should be placed in a hall immediately or left for later.
 - Whether energy monitoring is needed on day one.
 
 ## Expected Result
+
 The machine appears in the platform and can be opened in machine-specific pages.
 
 ## Common Problems and Edge Cases
+
 - Required fields may block completion until they are filled in.
 - If halls or shift groups are missing, the machine can be created with partial setup and finished later.
 - A machine without planning data may appear in lists before it is fully ready for scheduling.
 
 ## Related Pages
-- [Machines](/en/platform-intro/pages/machines)
-- [Machine Configuration](/en/platform-intro/pages/machine-configuration)
+
+Use these page links to move laterally through the platform and keep context as you go.
+
+
+
+<Columns cols="2">
+  <Card title="Machines" href="/en/platform-intro/pages/machines" icon="file-text" horizontal="false">
+    Monitor machine health, status, and operational context from the main dashboard.
+  </Card>
+
+  <Card title="Machine Configuration" href="/en/platform-intro/pages/machine-configuration" icon="file-text" horizontal="false">
+    Update machine setup details, capabilities, and production settings.
+  </Card>
+</Columns>

@@ -4,9 +4,11 @@ description: "Create, edit, scope, and review alert rules so users are notified 
 ---
 
 ## Goal
+
 Keep alert logic useful, targeted, and easy to review.
 
 ## Before You Begin
+
 Administrators who maintain proactive notifications.
 
 <Callout kind="info" title="Workflow access">
@@ -20,38 +22,58 @@ Begin on the [Alert Rules page](/en/platform-intro/pages/alert-rules).
 - The user has admin access.
 
 ## Steps
+
 <Steps>
-  <Step title="Step 1" icon="arrow-right" title-type="p">
+  <Step title="Open the alert rules page globally or from a" icon="arrow-right" title-type="p">
     Open the alert rules page globally or from a specific machine.
   </Step>
-  <Step title="Step 2" icon="arrow-right" title-type="p">
+  <Step title="Review existing rules by machine group or global" icon="arrow-right" title-type="p">
     Review existing rules by machine group or global scope.
   </Step>
-  <Step title="Step 3" icon="arrow-right" title-type="p">
+  <Step title="Start a new rule or edit an existing one" icon="arrow-right" title-type="p">
     Start a new rule or edit an existing one.
   </Step>
-  <Step title="Step 4" icon="arrow-right" title-type="p">
+  <Step title="Choose the trigger condition, threshold, scope," icon="arrow-right" title-type="p">
     Choose the trigger condition, threshold, scope, recipients, and active time windows.
   </Step>
-  <Step title="Step 5" icon="arrow-right" title-type="p">
+  <Step title="Save the rule and confirm it appears in the rule" icon="arrow-right" title-type="p">
     Save the rule and confirm it appears in the rule list.
   </Step>
-  <Step title="Step 6" icon="arrow-right" title-type="p">
+  <Step title="Expand a rule when you need to inspect past alerts" icon="arrow-right" title-type="p">
     Expand a rule when you need to inspect past alerts or resolve existing alerts.
   </Step>
 </Steps>
 
 ## Decision Points
+
 - Whether the rule should apply to all machines or one machine.
 - Whether an alert needs to be resolved, reopened, or deleted from history.
 
 ## Expected Result
+
 The platform can notify the right people when the selected conditions happen.
 
 ## Common Problems and Edge Cases
+
 - Too many rules can generate noisy notifications.
 - A rule that is too broad may affect more machines than intended.
 
 ## Related Pages
-- [Alert Rules](/en/platform-intro/pages/alert-rules)
-- [Machines](/en/platform-intro/pages/machines)
+
+Use these page links to move laterally through the platform and keep context as you go.
+
+
+
+<Columns cols="2">
+  <Card title="Alert Rules" href="/en/platform-intro/pages/alert-rules" icon="file-text" horizontal="false">
+    Review machine-specific alert logic, thresholds, and escalation settings.
+  </Card>
+
+  <Card title="Machines" href="/en/platform-intro/pages/machines" icon="file-text" horizontal="false">
+    Monitor machine health, status, and operational context from the main dashboard.
+  </Card>
+
+  <Card title="Machine Details" href="/en/platform-intro/pages/machine-details" icon="file-text" horizontal="false">
+    Open the full machine detail view for deeper operational investigation.
+  </Card>
+</Columns>

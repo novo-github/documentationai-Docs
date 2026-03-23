@@ -4,9 +4,11 @@ description: "Analyze historical machine performance across a longer date range.
 ---
 
 ## Goal
+
 Understand how a machine performed across days or weeks instead of only one live day view.
 
 ## Before You Begin
+
 Managers and admins investigating patterns, trends, or recurring losses.
 
 <Callout kind="info" title="Workflow access">
@@ -20,35 +22,55 @@ Begin on the [Machine History page](/en/platform-intro/pages/machine-history).
 - Historical data exists for the machine.
 
 ## Steps
+
 <Steps>
-  <Step title="Step 1" icon="arrow-right" title-type="p">
+  <Step title="Open machine history from a machine detail view" icon="arrow-right" title-type="p">
     Open machine history from a machine detail view.
   </Step>
-  <Step title="Step 2" icon="arrow-right" title-type="p">
+  <Step title="Set the start and end dates for the review window" icon="arrow-right" title-type="p">
     Set the start and end dates for the review window.
   </Step>
-  <Step title="Step 3" icon="arrow-right" title-type="p">
+  <Step title="Turn the zero-data filter on or off depending on" icon="arrow-right" title-type="p">
     Turn the zero-data filter on or off depending on whether non-production days should count.
   </Step>
-  <Step title="Step 4" icon="arrow-right" title-type="p">
+  <Step title="Review KPI averages, charts, timeline reason" icon="arrow-right" title-type="p">
     Review KPI averages, charts, timeline reason summaries, and trend blocks.
   </Step>
-  <Step title="Step 5" icon="arrow-right" title-type="p">
+  <Step title="Adjust the date range until the review period" icon="arrow-right" title-type="p">
     Adjust the date range until the review period matches the business question.
   </Step>
 </Steps>
 
 ## Decision Points
+
 - Whether to include zero-output days.
 - Whether the question needs a short troubleshooting window or a longer performance review.
 
 ## Expected Result
+
 The user can explain historical machine behavior with trend and summary evidence.
 
 ## Common Problems and Edge Cases
+
 - Very short date ranges can feel similar to the live day page.
 - Very long date ranges may hide short operational problems.
 
 ## Related Pages
-- [Machine History](/en/platform-intro/pages/machine-history)
-- [Machines](/en/platform-intro/pages/machines)
+
+Use these page links to move laterally through the platform and keep context as you go.
+
+
+
+<Columns cols="2">
+  <Card title="Machine History" href="/en/platform-intro/pages/machine-history" icon="file-text" horizontal="false">
+    Review historical machine performance and past production behavior.
+  </Card>
+
+  <Card title="Machines" href="/en/platform-intro/pages/machines" icon="file-text" horizontal="false">
+    Monitor machine health, status, and operational context from the main dashboard.
+  </Card>
+
+  <Card title="Timeline Analysis" href="/en/platform-intro/pages/timeline-analysis" icon="file-text" horizontal="false">
+    Investigate event sequencing, downtime, and machine timeline behavior.
+  </Card>
+</Columns>

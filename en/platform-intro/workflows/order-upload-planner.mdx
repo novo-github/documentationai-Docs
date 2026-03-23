@@ -4,9 +4,11 @@ description: "Import spreadsheet-based orders, map columns, resolve machine valu
 ---
 
 ## Goal
+
 Bring external order data into the platform in a controlled, preview-first flow.
 
 ## Before You Begin
+
 Admins or planners who import data from ERP or spreadsheet exports.
 
 <Callout kind="info" title="Workflow access">
@@ -21,39 +23,59 @@ Begin on the [ERP Upload Planner page](/en/platform-intro/pages/erp-upload-plann
 - The user understands which spreadsheet columns represent orders, products, dates, and machines.
 
 ## Steps
+
 <Steps>
-  <Step title="Step 1" icon="arrow-right" title-type="p">
+  <Step title="Upload the spreadsheet file" icon="arrow-right" title-type="p">
     Upload the spreadsheet file.
   </Step>
-  <Step title="Step 2" icon="arrow-right" title-type="p">
+  <Step title="Map source columns to the platform fields" icon="arrow-right" title-type="p">
     Map source columns to the platform fields.
   </Step>
-  <Step title="Step 3" icon="arrow-right" title-type="p">
+  <Step title="Resolve machine values when the file uses external" icon="arrow-right" title-type="p">
     Resolve machine values when the file uses external machine names or codes.
   </Step>
-  <Step title="Step 4" icon="arrow-right" title-type="p">
+  <Step title="Review planner options and unit assumptions" icon="arrow-right" title-type="p">
     Review planner options and unit assumptions.
   </Step>
-  <Step title="Step 5" icon="arrow-right" title-type="p">
+  <Step title="Run the preview or dry run to inspect how rows will" icon="arrow-right" title-type="p">
     Run the preview or dry run to inspect how rows will be interpreted.
   </Step>
-  <Step title="Step 6" icon="arrow-right" title-type="p">
+  <Step title="Commit the upload once the preview looks correct" icon="arrow-right" title-type="p">
     Commit the upload once the preview looks correct.
   </Step>
 </Steps>
 
 ## Decision Points
+
 - Whether to reuse saved mappings or adjust them for the current file.
 - Whether the preview is clean enough to commit or needs correction first.
 
 ## Expected Result
+
 The upload creates or updates platform records according to the reviewed mapping.
 
 ## Common Problems and Edge Cases
+
 - Missing required columns will block a useful preview.
 - Machine names from the source file may need manual mapping before commit.
 - Users may need to re-upload after correcting spreadsheet structure or data format issues.
 
 ## Related Pages
-- [ERP Upload Planner](/en/platform-intro/pages/erp-upload-planner)
-- [Orders & Products](/en/platform-intro/pages/orders-products)
+
+Use these page links to move laterally through the platform and keep context as you go.
+
+
+
+<Columns cols="2">
+  <Card title="ERP Upload Planner" href="/en/platform-intro/pages/erp-upload-planner" icon="file-text" horizontal="false">
+    Prepare and review incoming ERP order uploads before they enter planning.
+  </Card>
+
+  <Card title="Orders & Products" href="/en/platform-intro/pages/orders-products" icon="file-text" horizontal="false">
+    Review production demand, product data, and order-level planning context.
+  </Card>
+
+  <Card title="Admin Panel" href="/en/platform-intro/pages/admin-panel" icon="file-text" horizontal="false">
+    Manage shared operational setup, reusable records, and platform-wide administration tasks.
+  </Card>
+</Columns>

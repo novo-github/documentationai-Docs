@@ -4,9 +4,11 @@ description: "Create and maintain the shift structures that later power scheduli
 ---
 
 ## Goal
+
 Define the shifts and shift groups that the platform uses for planning and machine calculations.
 
 ## Before You Begin
+
 Admins responsible for factory calendars and shift structure.
 
 <Callout kind="info" title="Workflow access">
@@ -20,34 +22,50 @@ Begin on the [Admin Panel page](/en/platform-intro/pages/admin-panel).
 - The user has admin access.
 
 ## Steps
+
 <Steps>
-  <Step title="Step 1" icon="arrow-right" title-type="p">
+  <Step title="Open the shift management area" icon="arrow-right" title-type="p">
     Open the shift management area.
   </Step>
-  <Step title="Step 2" icon="arrow-right" title-type="p">
+  <Step title="Create or edit the needed shifts" icon="arrow-right" title-type="p">
     Create or edit the needed shifts.
   </Step>
-  <Step title="Step 3" icon="arrow-right" title-type="p">
+  <Step title="Group shifts where the platform expects a reusable" icon="arrow-right" title-type="p">
     Group shifts where the platform expects a reusable shift group.
   </Step>
-  <Step title="Step 4" icon="arrow-right" title-type="p">
+  <Step title="Save the change" icon="arrow-right" title-type="p">
     Save the change.
   </Step>
-  <Step title="Step 5" icon="arrow-right" title-type="p">
+  <Step title="Revisit machines or scheduler views" icon="arrow-right" title-type="p">
     Revisit machines or scheduler views if the new shifts should be applied immediately.
   </Step>
 </Steps>
 
 ## Decision Points
+
 - Whether a new shift should stand alone or belong to an existing group.
 
 ## Expected Result
+
 The platform can use the shift setup for weekly planning and daily machine interpretation.
 
 ## Common Problems and Edge Cases
+
 - A shift definition can exist before it is assigned to any machine.
 - Editing a shared shift structure may affect multiple machines.
 
 ## Related Pages
-- [Admin Panel](/en/platform-intro/pages/admin-panel)
-- [Scheduler](/en/platform-intro/pages/scheduler)
+
+Use these page links to move laterally through the platform and keep context as you go.
+
+
+
+<Columns cols="2">
+  <Card title="Admin Panel" href="/en/platform-intro/pages/admin-panel" icon="file-text" horizontal="false">
+    Manage shared operational setup, reusable records, and platform-wide administration tasks.
+  </Card>
+
+  <Card title="Scheduler" href="/en/platform-intro/pages/scheduler" icon="file-text" horizontal="false">
+    Schedule machine capacity and place upcoming work on the production timeline.
+  </Card>
+</Columns>

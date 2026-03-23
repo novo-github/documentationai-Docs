@@ -4,11 +4,13 @@ description: "A machine-specific operational page for live status, shift context
 ---
 
 ## Overview
+
 Give users a detailed, date-aware view of one machine’s live or recent activity.
 
 Users open this page by selecting a machine from the Machines page.
 
 ## Access
+
 <Callout kind="info" title="Access details">
 - Roles: Admin, Manager, Operator
 - Visibility: Protected
@@ -18,17 +20,20 @@ Users open this page by selecting a machine from the Machines page.
 Operators, managers, and admins.
 
 ## What You Can See
+
 - Date controls and shift tabs.
 - KPIs, cycle-related views, and timeline sections.
 - Alert context and related machine actions.
 
 ## What You Can Do
+
 - Change the selected date.
 - Focus on a specific shift or all shifts.
 - Open PDA, machine history, or alert rules.
 - Review current machine state and recent events.
 
 ## Main Entities
+
 - Machine
 - Shift
 - Timeline Event
@@ -36,6 +41,7 @@ Operators, managers, and admins.
 - Assignment
 
 ## Outcomes and Limits
+
 ### Common Outcomes
 - Users understand what the machine is doing and decide the next action.
 
@@ -43,14 +49,53 @@ Operators, managers, and admins.
 - A selected date with little data can make parts of the page look sparse.
 
 ## Related Pages
-- [Machines](/en/platform-intro/pages/machines)
-- [Machine History](/en/platform-intro/pages/machine-history)
-- [Data Acquisition (PDA)](/en/platform-intro/pages/data-acquisition)
-- [Machine Configuration](/en/platform-intro/pages/machine-configuration)
-- [Alert Rules](/en/platform-intro/pages/alert-rules)
+
+Use these page links to move laterally through the platform and keep context as you go.
+
+
+
+<Columns cols="2">
+  <Card title="Machines" href="/en/platform-intro/pages/machines" icon="file-text" horizontal="false">
+    Monitor machine health, status, and operational context from the main dashboard.
+  </Card>
+
+  <Card title="Machine History" href="/en/platform-intro/pages/machine-history" icon="file-text" horizontal="false">
+    Review historical machine performance and past production behavior.
+  </Card>
+
+  <Card title="Data Acquisition (PDA)" href="/en/platform-intro/pages/data-acquisition" icon="file-text" horizontal="false">
+    Capture detailed production events and inspect machine-level activity logs.
+  </Card>
+
+  <Card title="Machine Configuration" href="/en/platform-intro/pages/machine-configuration" icon="file-text" horizontal="false">
+    Update machine setup details, capabilities, and production settings.
+  </Card>
+
+  <Card title="Alert Rules" href="/en/platform-intro/pages/alert-rules" icon="file-text" horizontal="false">
+    Review machine-specific alert logic, thresholds, and escalation settings.
+  </Card>
+</Columns>
 
 ## Related Workflows
-- [Monitor a Machine Live](/en/platform-intro/workflows/live-machine-monitoring)
-- [Review Machine History](/en/platform-intro/workflows/machine-history-review)
-- [Run Data Acquisition (PDA)](/en/platform-intro/workflows/data-acquisition)
-- [Manage Alert Rules](/en/platform-intro/workflows/alert-rule-management)
+
+Follow these task guides when you need a guided path instead of a page-level overview.
+
+
+
+<Columns cols="2">
+  <Card title="Monitor a Machine Live" href="/en/platform-intro/workflows/live-machine-monitoring" icon="git-branch" horizontal="false">
+    Monitor a live machine session and react quickly to changes in status.
+  </Card>
+
+  <Card title="Configure a Machine" href="/en/platform-intro/workflows/machine-configuration" icon="git-branch" horizontal="false">
+    Adjust the machine setup so it reflects the real operating environment.
+  </Card>
+
+  <Card title="Run Data Acquisition (PDA)" href="/en/platform-intro/workflows/data-acquisition" icon="git-branch" horizontal="false">
+    Capture detailed machine activity and production events using the PDA workflow.
+  </Card>
+
+  <Card title="Review Machine History" href="/en/platform-intro/workflows/machine-history-review" icon="git-branch" horizontal="false">
+    Review historical machine behavior to support analysis and troubleshooting.
+  </Card>
+</Columns>

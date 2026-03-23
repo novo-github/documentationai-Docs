@@ -4,9 +4,11 @@ description: "Plan or update the shift schedule for one or more machines over a 
 ---
 
 ## Goal
+
 Set the planned shift coverage for machines across a selected week.
 
 ## Before You Begin
+
 Admins or planners responsible for weekly machine coverage.
 
 <Callout kind="info" title="Workflow access">
@@ -21,36 +23,56 @@ Begin on the [Scheduler page](/en/platform-intro/pages/scheduler).
 - Shift definitions already exist.
 
 ## Steps
+
 <Steps>
-  <Step title="Step 1" icon="arrow-right" title-type="p">
+  <Step title="Select one or more machines" icon="arrow-right" title-type="p">
     Select one or more machines.
   </Step>
-  <Step title="Step 2" icon="arrow-right" title-type="p">
+  <Step title="Choose the week to plan" icon="arrow-right" title-type="p">
     Choose the week to plan.
   </Step>
-  <Step title="Step 3" icon="arrow-right" title-type="p">
+  <Step title="Review the machine rows and daily columns for that" icon="arrow-right" title-type="p">
     Review the machine rows and daily columns for that week.
   </Step>
-  <Step title="Step 4" icon="arrow-right" title-type="p">
+  <Step title="Mark the shifts that should apply on each day" icon="arrow-right" title-type="p">
     Mark the shifts that should apply on each day.
   </Step>
-  <Step title="Step 5" icon="arrow-right" title-type="p">
+  <Step title="Save the pending changes when the weekly plan looks" icon="arrow-right" title-type="p">
     Save the pending changes when the weekly plan looks correct.
   </Step>
 </Steps>
 
 ## Decision Points
+
 - Whether to plan a single machine or a filtered group.
 - Whether to keep pending edits or clear them before saving.
 
 ## Expected Result
+
 The weekly shift plan is stored and reused by machine-level views and reporting.
 
 ## Common Problems and Edge Cases
+
 - An empty state appears until machines are selected.
 - Unsaved changes remain local until the user clicks save.
 - The view is week-based, so users may need to move backward or forward to reach the right planning window.
 
 ## Related Pages
-- [Scheduler](/en/platform-intro/pages/scheduler)
-- [Machines](/en/platform-intro/pages/machines)
+
+Use these page links to move laterally through the platform and keep context as you go.
+
+
+
+<Columns cols="2">
+  <Card title="Scheduler" href="/en/platform-intro/pages/scheduler" icon="file-text" horizontal="false">
+    Schedule machine capacity and place upcoming work on the production timeline.
+  </Card>
+
+  <Card title="Machines" href="/en/platform-intro/pages/machines" icon="file-text" horizontal="false">
+    Monitor machine health, status, and operational context from the main dashboard.
+  </Card>
+
+  <Card title="Assignment Planner" href="/en/platform-intro/pages/assignment-planner" icon="file-text" horizontal="false">
+    Fine-tune assignments and balance work before production starts.
+  </Card>
+</Columns>

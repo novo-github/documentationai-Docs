@@ -4,9 +4,11 @@ description: "Place unassigned work onto machine queues and reorder existing pla
 ---
 
 ## Goal
+
 Turn unassigned work into machine-specific planned queues.
 
 ## Before You Begin
+
 Planners and admins who decide where work should run next.
 
 <Callout kind="info" title="Workflow access">
@@ -21,39 +23,59 @@ Begin on the [Assignment Planner page](/en/platform-intro/pages/assignment-plann
 - Orders or operations already exist in the system.
 
 ## Steps
+
 <Steps>
-  <Step title="Step 1" icon="arrow-right" title-type="p">
+  <Step title="Filter the visible hall or machine list" icon="arrow-right" title-type="p">
     Filter the visible hall or machine list if needed.
   </Step>
-  <Step title="Step 2" icon="arrow-right" title-type="p">
+  <Step title="Search the unassigned work list to find the right" icon="arrow-right" title-type="p">
     Search the unassigned work list to find the right job.
   </Step>
-  <Step title="Step 3" icon="arrow-right" title-type="p">
+  <Step title="Drag work onto a machine column or open the" icon="arrow-right" title-type="p">
     Drag work onto a machine column or open the assignment confirmation flow.
   </Step>
-  <Step title="Step 4" icon="arrow-right" title-type="p">
+  <Step title="Reorder work" icon="arrow-right" title-type="p">
     Reorder work inside the machine queue to adjust planned sequence.
   </Step>
-  <Step title="Step 5" icon="arrow-right" title-type="p">
+  <Step title="Update key details" icon="arrow-right" title-type="p">
     Update key details such as status, dates, or priority when needed.
   </Step>
-  <Step title="Step 6" icon="arrow-right" title-type="p">
+  <Step title="Let the planner save the queue changes back to the" icon="arrow-right" title-type="p">
     Let the planner save the queue changes back to the platform.
   </Step>
 </Steps>
 
 ## Decision Points
+
 - Which machine should take the job.
 - Whether a job should stay unassigned, move to another machine, or be removed from a queue.
 
 ## Expected Result
+
 The machine queue reflects the latest planning decision and related order details stay aligned.
 
 ## Common Problems and Edge Cases
+
 - Only a limited number of machines can be shown at once.
 - If filters hide all machines, the planner shows an empty planning surface.
 - Removing an assignment sends the work back out of the planned queue rather than completing it.
 
 ## Related Pages
-- [Assignment Planner](/en/platform-intro/pages/assignment-planner)
-- [Orders & Products](/en/platform-intro/pages/orders-products)
+
+Use these page links to move laterally through the platform and keep context as you go.
+
+
+
+<Columns cols="2">
+  <Card title="Assignment Planner" href="/en/platform-intro/pages/assignment-planner" icon="file-text" horizontal="false">
+    Fine-tune assignments and balance work before production starts.
+  </Card>
+
+  <Card title="Orders & Products" href="/en/platform-intro/pages/orders-products" icon="file-text" horizontal="false">
+    Review production demand, product data, and order-level planning context.
+  </Card>
+
+  <Card title="Scheduler" href="/en/platform-intro/pages/scheduler" icon="file-text" horizontal="false">
+    Schedule machine capacity and place upcoming work on the production timeline.
+  </Card>
+</Columns>

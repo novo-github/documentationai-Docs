@@ -4,11 +4,13 @@ description: "A rule management page for global and machine-specific alerting lo
 ---
 
 ## Overview
+
 Help admins create and manage rules that notify people when important machine conditions happen.
 
 Users can open this page globally or from a machine-specific route.
 
 ## Access
+
 <Callout kind="info" title="Access details">
 - Roles: Admin
 - Visibility: Protected
@@ -18,22 +20,26 @@ Users can open this page globally or from a machine-specific route.
 Administrators.
 
 ## What You Can See
+
 - Existing rules grouped by machine or global scope.
 - Rule details such as trigger conditions, recipients, and active settings.
 - Expandable alert history for each rule.
 
 ## What You Can Do
+
 - Create, edit, rename, enable, disable, and delete rules.
 - Filter by machine context.
 - Review alert history and resolve or reopen alert records.
 
 ## Main Entities
+
 - Alert Rule
 - Machine
 - Recipient
 - Alert Event
 
 ## Outcomes and Limits
+
 ### Common Outcomes
 - Admins keep alerting targeted and useful.
 
@@ -41,9 +47,41 @@ Administrators.
 - A machine-scoped route naturally shows a narrower subset of rules.
 
 ## Related Pages
-- [Machines](/en/platform-intro/pages/machines)
-- [Machine Details](/en/platform-intro/pages/machine-details)
-- [Admin Panel](/en/platform-intro/pages/admin-panel)
+
+Use these page links to move laterally through the platform and keep context as you go.
+
+
+
+<Columns cols="2">
+  <Card title="Machine Details" href="/en/platform-intro/pages/machine-details" icon="file-text" horizontal="false">
+    Open the full machine detail view for deeper operational investigation.
+  </Card>
+
+  <Card title="Machines" href="/en/platform-intro/pages/machines" icon="file-text" horizontal="false">
+    Monitor machine health, status, and operational context from the main dashboard.
+  </Card>
+
+  <Card title="Machine Configuration" href="/en/platform-intro/pages/machine-configuration" icon="file-text" horizontal="false">
+    Update machine setup details, capabilities, and production settings.
+  </Card>
+
+  <Card title="Data Acquisition (PDA)" href="/en/platform-intro/pages/data-acquisition" icon="file-text" horizontal="false">
+    Capture detailed production events and inspect machine-level activity logs.
+  </Card>
+</Columns>
 
 ## Related Workflows
-- [Manage Alert Rules](/en/platform-intro/workflows/alert-rule-management)
+
+Follow these task guides when you need a guided path instead of a page-level overview.
+
+
+
+<Columns cols="2">
+  <Card title="Manage Alert Rules" href="/en/platform-intro/workflows/alert-rule-management" icon="git-branch" horizontal="false">
+    Create or refine alert conditions so operators are notified at the right time.
+  </Card>
+
+  <Card title="Configure a Machine" href="/en/platform-intro/workflows/machine-configuration" icon="git-branch" horizontal="false">
+    Adjust the machine setup so it reflects the real operating environment.
+  </Card>
+</Columns>

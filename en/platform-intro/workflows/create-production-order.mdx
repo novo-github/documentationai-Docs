@@ -4,9 +4,11 @@ description: "Create a production order and define the work orders, operations, 
 ---
 
 ## Goal
+
 Create a production order that can be tracked, planned, analyzed, and executed.
 
 ## Before You Begin
+
 Admins, managers, or planners responsible for incoming production work.
 
 <Callout kind="info" title="Workflow access">
@@ -21,38 +23,58 @@ Begin on the [Orders & Products page](/en/platform-intro/pages/orders-products).
 - The needed product already exists, or the user can create it first.
 
 ## Steps
+
 <Steps>
-  <Step title="Step 1" icon="arrow-right" title-type="p">
+  <Step title="Open the order creation flow" icon="arrow-right" title-type="p">
     Open the order creation flow.
   </Step>
-  <Step title="Step 2" icon="arrow-right" title-type="p">
+  <Step title="Enter the order header details" icon="arrow-right" title-type="p">
     Enter the order header details such as customer, dates, priority, and notes.
   </Step>
-  <Step title="Step 3" icon="arrow-right" title-type="p">
+  <Step title="Add one or more work orders" icon="arrow-right" title-type="p">
     Add one or more work orders under the main order.
   </Step>
-  <Step title="Step 4" icon="arrow-right" title-type="p">
+  <Step title="Add operations inside each work order" icon="arrow-right" title-type="p">
     Add operations inside each work order.
   </Step>
-  <Step title="Step 5" icon="arrow-right" title-type="p">
+  <Step title="Add machine assignments" icon="arrow-right" title-type="p">
     Add machine assignments if the order should already be planned.
   </Step>
-  <Step title="Step 6" icon="arrow-right" title-type="p">
+  <Step title="Save the order and open the detail view" icon="arrow-right" title-type="p">
     Save the order and open the detail view if deeper editing is needed.
   </Step>
 </Steps>
 
 ## Decision Points
+
 - Whether to keep the order simple at header level or define work orders and assignments immediately.
 - Whether to create a planned structure now or leave planning for later.
 
 ## Expected Result
+
 A new order appears in the platform and can be opened in the order detail page.
 
 ## Common Problems and Edge Cases
+
 - Orders with incomplete structure may need follow-up before they can be scheduled.
 - Dates, priority, and customer data affect later planning and filtering, so they should be reviewed carefully.
 
 ## Related Pages
-- [Orders & Products](/en/platform-intro/pages/orders-products)
-- [Order Detail](/en/platform-intro/pages/order-detail)
+
+Use these page links to move laterally through the platform and keep context as you go.
+
+
+
+<Columns cols="2">
+  <Card title="Orders & Products" href="/en/platform-intro/pages/orders-products" icon="file-text" horizontal="false">
+    Review production demand, product data, and order-level planning context.
+  </Card>
+
+  <Card title="Order Detail" href="/en/platform-intro/pages/order-detail" icon="file-text" horizontal="false">
+    Inspect the structure, assignments, and deeper planning details for one order.
+  </Card>
+
+  <Card title="Scheduler" href="/en/platform-intro/pages/scheduler" icon="file-text" horizontal="false">
+    Schedule machine capacity and place upcoming work on the production timeline.
+  </Card>
+</Columns>
