@@ -69,11 +69,6 @@
                     "icon": "book-open",
                     "pages": [
                       {
-                        "title": "Start Here",
-                        "path": "en/platform-intro/pages/start-here",
-                        "icon": "home"
-                      },
-                      {
                         "group": "Dashboard",
                         "icon": "folder",
                         "pages": [
