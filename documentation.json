@@ -240,52 +240,6 @@
                             "title": "Hall Plan",
                             "path": "en/platform-intro/pages/hall-plan",
                             "icon": "file-text"
-                          },
-                          {
-                            "group": "Access & Public Pages",
-                            "icon": "folder",
-                            "pages": [
-                              {
-                                "title": "Sign In",
-                                "path": "en/platform-intro/pages/sign-in",
-                                "icon": "file-text"
-                              },
-                              {
-                                "title": "Sign Up",
-                                "path": "en/platform-intro/pages/sign-up",
-                                "icon": "file-text"
-                              },
-                              {
-                                "title": "Forgot Password",
-                                "path": "en/platform-intro/pages/forgot-password",
-                                "icon": "file-text"
-                              },
-                              {
-                                "title": "Registration Confirmation",
-                                "path": "en/platform-intro/pages/registration-confirmation",
-                                "icon": "file-text"
-                              },
-                              {
-                                "title": "Email Confirmation",
-                                "path": "en/platform-intro/pages/email-confirmation",
-                                "icon": "file-text"
-                              },
-                              {
-                                "title": "Reset Password",
-                                "path": "en/platform-intro/pages/reset-password",
-                                "icon": "file-text"
-                              },
-                              {
-                                "title": "OTP Verification",
-                                "path": "en/platform-intro/pages/otp-verification",
-                                "icon": "file-text"
-                              },
-                              {
-                                "title": "Microsoft Auth",
-                                "path": "en/platform-intro/pages/microsoft-auth",
-                                "icon": "file-text"
-                              }
-                            ]
                           }
                         ]
                       }
