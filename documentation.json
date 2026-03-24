@@ -492,6 +492,330 @@
                     "icon": "plug"
                   }
                 ]
+              },
+              {
+                "group": "Plattform-Einstieg",
+                "icon": "map",
+                "pages": [
+                  {
+                    "title": "Überblick",
+                    "path": "de/platform-intro/overview",
+                    "icon": "compass"
+                  },
+                  {
+                    "group": "Seiten",
+                    "icon": "book-open",
+                    "pages": [
+                      {
+                        "group": "Dashboard",
+                        "icon": "folder",
+                        "pages": [
+                          {
+                            "title": "Maschinen",
+                            "path": "de/platform-intro/pages/machines",
+                            "icon": "file-text"
+                          },
+                          {
+                            "title": "Aufträge & Produkte",
+                            "path": "de/platform-intro/pages/orders-products",
+                            "icon": "file-text"
+                          }
+                        ]
+                      },
+                      {
+                        "group": "Org-stats",
+                        "icon": "folder",
+                        "pages": [
+                          {
+                            "title": "Org-stats",
+                            "path": "de/platform-intro/pages/org-stats",
+                            "icon": "file-text"
+                          }
+                        ]
+                      },
+                      {
+                        "group": "Planer",
+                        "icon": "folder",
+                        "pages": [
+                          {
+                            "title": "Planer",
+                            "path": "de/platform-intro/pages/scheduler",
+                            "icon": "file-text"
+                          },
+                          {
+                            "title": "Zuweisungsplaner",
+                            "path": "de/platform-intro/pages/assignment-planner",
+                            "icon": "file-text"
+                          }
+                        ]
+                      },
+                      {
+                        "group": "Versus",
+                        "icon": "folder",
+                        "pages": [
+                          {
+                            "title": "Versus",
+                            "path": "de/platform-intro/pages/versus",
+                            "icon": "file-text"
+                          }
+                        ]
+                      },
+                      {
+                        "group": "Berichte",
+                        "icon": "folder",
+                        "pages": [
+                          {
+                            "title": "Zeitleistenanalyse",
+                            "path": "de/platform-intro/pages/timeline-analysis",
+                            "icon": "file-text"
+                          },
+                          {
+                            "title": "Trendanalyse",
+                            "path": "de/platform-intro/pages/trend-analysis",
+                            "icon": "file-text"
+                          }
+                        ]
+                      },
+                      {
+                        "group": "Peak Optimizer",
+                        "icon": "folder",
+                        "pages": [
+                          {
+                            "title": "Peak Optimizer",
+                            "path": "de/platform-intro/pages/peak-optimizer",
+                            "icon": "file-text"
+                          }
+                        ]
+                      },
+                      {
+                        "group": "Bestenliste",
+                        "icon": "folder",
+                        "pages": [
+                          {
+                            "title": "Bestenliste",
+                            "path": "de/platform-intro/pages/leaderboard",
+                            "icon": "file-text"
+                          }
+                        ]
+                      },
+                      {
+                        "group": "Arbeitsbereich",
+                        "icon": "folder",
+                        "pages": [
+                          {
+                            "title": "Kanban",
+                            "path": "de/platform-intro/pages/kanban",
+                            "icon": "file-text"
+                          },
+                          {
+                            "title": "Wissensdatenbank",
+                            "path": "de/platform-intro/pages/knowledge-base",
+                            "icon": "file-text"
+                          },
+                          {
+                            "title": "Chat-Verlauf",
+                            "path": "de/platform-intro/pages/chat-history",
+                            "icon": "file-text"
+                          }
+                        ]
+                      },
+                      {
+                        "group": "Administrationsbereich",
+                        "icon": "folder",
+                        "pages": [
+                          {
+                            "title": "Administrationsbereich",
+                            "path": "de/platform-intro/pages/admin-panel",
+                            "icon": "file-text"
+                          },
+                          {
+                            "title": "ERP-Upload-Planer",
+                            "path": "de/platform-intro/pages/erp-upload-planner",
+                            "icon": "file-text"
+                          }
+                        ]
+                      },
+                      {
+                        "group": "Unterstützende Seiten",
+                        "icon": "folder",
+                        "pages": [
+                          {
+                            "title": "Maschinendetails",
+                            "path": "de/platform-intro/pages/machine-details",
+                            "icon": "file-text"
+                          },
+                          {
+                            "title": "Maschinenhistorie",
+                            "path": "de/platform-intro/pages/machine-history",
+                            "icon": "file-text"
+                          },
+                          {
+                            "title": "Betriebsdatenerfassung (BDE)",
+                            "path": "de/platform-intro/pages/data-acquisition",
+                            "icon": "file-text"
+                          },
+                          {
+                            "title": "Maschinenkonfiguration",
+                            "path": "de/platform-intro/pages/machine-configuration",
+                            "icon": "file-text"
+                          },
+                          {
+                            "title": "Alarmregeln",
+                            "path": "de/platform-intro/pages/alert-rules",
+                            "icon": "file-text"
+                          },
+                          {
+                            "title": "Auftragsdetails",
+                            "path": "de/platform-intro/pages/order-detail",
+                            "icon": "file-text"
+                          },
+                          {
+                            "title": "Benutzerprofil",
+                            "path": "de/platform-intro/pages/user-profile",
+                            "icon": "file-text"
+                          },
+                          {
+                            "title": "Hallenplan",
+                            "path": "de/platform-intro/pages/hall-plan",
+                            "icon": "file-text"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "group": "Abläufe",
+                    "icon": "git-branch",
+                    "pages": [
+                      {
+                        "title": "Überblick",
+                        "path": "de/platform-intro/workflows/overview",
+                        "icon": "home"
+                      },
+                      {
+                        "group": "Maschinen",
+                        "icon": "folder",
+                        "pages": [
+                          {
+                            "title": "Maschine hinzufügen",
+                            "path": "de/platform-intro/workflows/add-machine",
+                            "icon": "play-circle"
+                          },
+                          {
+                            "title": "Maschine konfigurieren",
+                            "path": "de/platform-intro/workflows/machine-configuration",
+                            "icon": "play-circle"
+                          },
+                          {
+                            "title": "Maschine live überwachen",
+                            "path": "de/platform-intro/workflows/live-machine-monitoring",
+                            "icon": "play-circle"
+                          },
+                          {
+                            "title": "Betriebsdatenerfassung (BDE) durchführen",
+                            "path": "de/platform-intro/workflows/data-acquisition",
+                            "icon": "play-circle"
+                          },
+                          {
+                            "title": "Maschinenhistorie prüfen",
+                            "path": "de/platform-intro/workflows/machine-history-review",
+                            "icon": "play-circle"
+                          },
+                          {
+                            "title": "Alarmregeln verwalten",
+                            "path": "de/platform-intro/workflows/alert-rule-management",
+                            "icon": "play-circle"
+                          }
+                        ]
+                      },
+                      {
+                        "group": "Aufträge & Produkte",
+                        "icon": "folder",
+                        "pages": [
+                          {
+                            "title": "Produkt erstellen",
+                            "path": "de/platform-intro/workflows/create-product",
+                            "icon": "play-circle"
+                          },
+                          {
+                            "title": "Produktionsauftrag erstellen",
+                            "path": "de/platform-intro/workflows/create-production-order",
+                            "icon": "play-circle"
+                          }
+                        ]
+                      },
+                      {
+                        "group": "Planer",
+                        "icon": "folder",
+                        "pages": [
+                          {
+                            "title": "Maschinenschichten zuweisen",
+                            "path": "de/platform-intro/workflows/assign-machine-shifts",
+                            "icon": "play-circle"
+                          },
+                          {
+                            "title": "Maschinenzuweisungen planen",
+                            "path": "de/platform-intro/workflows/assignment-planner",
+                            "icon": "play-circle"
+                          }
+                        ]
+                      },
+                      {
+                        "group": "Versus",
+                        "icon": "folder",
+                        "pages": [
+                          {
+                            "title": "Maschinen vergleichen",
+                            "path": "de/platform-intro/workflows/compare-machines",
+                            "icon": "play-circle"
+                          }
+                        ]
+                      },
+                      {
+                        "group": "Arbeitsbereich",
+                        "icon": "folder",
+                        "pages": [
+                          {
+                            "title": "Kanban-Tickets verwalten",
+                            "path": "de/platform-intro/workflows/kanban-ticket-management",
+                            "icon": "play-circle"
+                          }
+                        ]
+                      },
+                      {
+                        "group": "Administrationsbereich",
+                        "icon": "folder",
+                        "pages": [
+                          {
+                            "title": "Hallen verwalten",
+                            "path": "de/platform-intro/workflows/hall-management",
+                            "icon": "play-circle"
+                          },
+                          {
+                            "title": "Schichtdefinitionen verwalten",
+                            "path": "de/platform-intro/workflows/shift-management",
+                            "icon": "play-circle"
+                          },
+                          {
+                            "title": "Mitarbeitende verwalten",
+                            "path": "de/platform-intro/workflows/operator-management",
+                            "icon": "play-circle"
+                          },
+                          {
+                            "title": "Zeitachsen-Gründe erstellen",
+                            "path": "de/platform-intro/workflows/timeline-reason-creation",
+                            "icon": "play-circle"
+                          },
+                          {
+                            "title": "Aufträge über den ERP-Upload-Planer hochladen",
+                            "path": "de/platform-intro/workflows/order-upload-planner",
+                            "icon": "play-circle"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
               }
             ]
           },
