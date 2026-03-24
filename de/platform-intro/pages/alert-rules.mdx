@@ -1,0 +1,84 @@
+---
+title: "Alarmregeln"
+description: "Eine Seite zur Verwaltung globaler und maschinenspezifischer Alarmierungslogik."
+---
+
+## Überblick
+
+Unterstützen Sie Administratoren dabei, Regeln zu erstellen und zu verwalten, die Personen benachrichtigen, wenn wichtige Maschinenzustände eintreten.
+
+Benutzer können diese Seite global oder über eine maschinenspezifische Route öffnen.
+
+## Zugriff
+
+<Callout kind="info" title="Zugriffsdetails">
+- Rollen: Admin
+- Sichtbarkeit: Geschützt
+- Primäre Routen: `/alert-rules`, `/alert-rules/:machineId`, `/machines/:machineId/alert-rules`
+</Callout>
+
+Administratoren.
+
+## Was Sie sehen können
+
+- Vorhandene Regeln, gruppiert nach Maschine oder globalem Geltungsbereich.
+- Regeldetails wie Auslösekriterien, Empfänger und aktive Einstellungen.
+- Aufklappbare Alarmhistorie für jede Regel.
+
+## Was Sie tun können
+
+- Regeln erstellen, bearbeiten, umbenennen, aktivieren, deaktivieren und löschen.
+- Nach Maschinenkontext filtern.
+- Alarmhistorie prüfen und Alarmdatensätze lösen oder erneut öffnen.
+
+## Hauptentitäten
+
+- Alarmregel
+- Maschine
+- Empfänger
+- Alarmereignis
+
+## Ergebnisse und Grenzen
+
+### Typische Ergebnisse
+- Administratoren halten die Alarmierung gezielt und nützlich.
+
+### Grenzen und Leerzustände
+- Eine maschinenspezifische Route zeigt naturgemäß nur einen kleineren Regelsatz.
+
+## Verwandte Seiten
+
+Nutzen Sie diese Seitenlinks, um sich seitlich durch die Plattform zu bewegen und den Kontext beizubehalten.
+
+<Columns cols="2">
+  <Card title="Maschinendetails" href="/de/platform-intro/pages/machine-details" icon="file-text" horizontal="false">
+    Öffnen Sie die vollständige Maschinen-Detailansicht für eine tiefere operative Analyse.
+  </Card>
+
+  <Card title="Maschinen" href="/de/platform-intro/pages/machines" icon="file-text" horizontal="false">
+    Überwachen Sie Maschinenzustand, Status und operativen Kontext vom Haupt-Dashboard aus.
+  </Card>
+
+  <Card title="Maschinenkonfiguration" href="/de/platform-intro/pages/machine-configuration" icon="file-text" horizontal="false">
+    Aktualisieren Sie Maschineneinstellungen, Fähigkeiten und Produktionsparameter.
+  </Card>
+
+  <Card title="Betriebsdatenerfassung (BDE)" href="/de/platform-intro/pages/data-acquisition" icon="file-text" horizontal="false">
+    Erfassen Sie detaillierte Produktionsereignisse und prüfen Sie Maschinenaktivitätsprotokolle.
+  </Card>
+</Columns>
+
+## Verwandte Abläufe
+
+Nutzen Sie diese Anleitungen, wenn Sie statt einer Seitenübersicht einen geführten Ablauf benötigen.
+
+<Columns cols="2">
+  <Card title="Alarmregeln verwalten" href="/de/platform-intro/workflows/alert-rule-management" icon="git-branch" horizontal="false">
+    Erstellen oder verfeinern Sie Alarmbedingungen, damit Bediener rechtzeitig benachrichtigt werden.
+  </Card>
+
+  <Card title="Maschine konfigurieren" href="/de/platform-intro/workflows/machine-configuration" icon="git-branch" horizontal="false">
+    Passen Sie die Maschineneinstellungen an, damit sie die reale Betriebsumgebung widerspiegeln.
+  </Card>
+</Columns>
+

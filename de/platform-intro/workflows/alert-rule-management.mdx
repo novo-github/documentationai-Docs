@@ -1,0 +1,78 @@
+---
+title: "Alarmregeln verwalten"
+description: "Erstellen, bearbeiten, eingrenzen und prüfen Sie Alarmregeln, damit Benutzer benachrichtigt werden, wenn Maschinenzustände wichtige Schwellenwerte überschreiten."
+---
+
+## Ziel
+
+Halten Sie die Alarmlogik nützlich, gezielt und leicht prüfbar.
+
+## Bevor Sie beginnen
+
+Administratoren, die proaktive Benachrichtigungen pflegen.
+
+<Callout kind="info" title="Ablaufzugriff">
+- Rollen: Admin
+- Einstiegspunkte: `/alert-rules`, `/alert-rules/:machineId`, `/machines/:machineId/alert-rules`
+</Callout>
+
+Beginnen Sie auf der [Seite Alarmregeln](/de/platform-intro/pages/alert-rules).
+
+### Voraussetzungen
+- Der Benutzer hat Administratorzugriff.
+
+## Schritte
+
+<Steps>
+  <Step title="Öffnen Sie die Alarmregeln global oder von einer Maschine aus" icon="arrow-right" title-type="p">
+    Öffnen Sie die Alarmregeln global oder von einer bestimmten Maschine aus.
+  </Step>
+  <Step title="Prüfen Sie vorhandene Regeln nach Maschinen- oder Globalbereich" icon="arrow-right" title-type="p">
+    Prüfen Sie vorhandene Regeln nach Maschinen- oder Globalbereich.
+  </Step>
+  <Step title="Starten Sie eine neue Regel oder bearbeiten Sie eine vorhandene" icon="arrow-right" title-type="p">
+    Starten Sie eine neue Regel oder bearbeiten Sie eine vorhandene.
+  </Step>
+  <Step title="Wählen Sie Auslösekriterium, Schwelle, Geltungsbereich, Empfänger und aktive Zeitfenster" icon="arrow-right" title-type="p">
+    Wählen Sie Auslösekriterium, Schwelle, Geltungsbereich, Empfänger und aktive Zeitfenster.
+  </Step>
+  <Step title="Speichern Sie die Regel und prüfen Sie, ob sie in der Liste erscheint" icon="arrow-right" title-type="p">
+    Speichern Sie die Regel und prüfen Sie, ob sie in der Regelliste erscheint.
+  </Step>
+  <Step title="Erweitern Sie eine Regel, wenn Sie vergangene Alarme prüfen oder vorhandene Alarme lösen müssen" icon="arrow-right" title-type="p">
+    Erweitern Sie eine Regel, wenn Sie vergangene Alarme prüfen oder vorhandene Alarme lösen müssen.
+  </Step>
+</Steps>
+
+## Entscheidungspunkte
+
+- Ob die Regel für alle Maschinen oder nur für eine Maschine gelten soll.
+- Ob ein Alarm aus der Historie gelöst, erneut geöffnet oder gelöscht werden soll.
+
+## Erwartetes Ergebnis
+
+Die Plattform kann die richtigen Personen benachrichtigen, wenn die ausgewählten Bedingungen eintreten.
+
+## Häufige Probleme und Sonderfälle
+
+- Zu viele Regeln können zu einer Flut an Benachrichtigungen führen.
+- Eine zu breite Regel kann mehr Maschinen betreffen als beabsichtigt.
+
+## Verwandte Seiten
+
+Nutzen Sie diese Seitenlinks, um sich seitlich durch die Plattform zu bewegen und den Kontext beizubehalten.
+
+<Columns cols="2">
+  <Card title="Alarmregeln" href="/de/platform-intro/pages/alert-rules" icon="file-text" horizontal="false">
+    Prüfen Sie maschinenspezifische Alarmlogik, Schwellenwerte und Eskalationseinstellungen.
+  </Card>
+
+  <Card title="Maschinen" href="/de/platform-intro/pages/machines" icon="file-text" horizontal="false">
+    Überwachen Sie Maschinenzustand, Status und operativen Kontext vom Haupt-Dashboard aus.
+  </Card>
+
+  <Card title="Maschinendetails" href="/de/platform-intro/pages/machine-details" icon="file-text" horizontal="false">
+    Öffnen Sie die vollständige Maschinen-Detailansicht für eine tiefere operative Analyse.
+  </Card>
+</Columns>
+

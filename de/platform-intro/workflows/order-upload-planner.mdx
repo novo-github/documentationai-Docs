@@ -1,0 +1,80 @@
+---
+title: "Aufträge über den ERP-Upload-Planer hochladen"
+description: "Importieren Sie auf Tabellenkalkulationen basierende Aufträge, ordnen Sie Spalten zu, lösen Sie Maschinenwerte auf, prüfen Sie das Ergebnis und bestätigen Sie den Upload."
+---
+
+## Ziel
+
+Bringen Sie externe Auftragsdaten in einem kontrollierten, vorschauorientierten Ablauf in die Plattform.
+
+## Bevor Sie beginnen
+
+Administratoren oder Planer, die Daten aus ERP- oder Tabellenexporten importieren.
+
+<Callout kind="info" title="Ablaufzugriff">
+- Rollen: Admin, Manager
+- Einstiegspunkte: `/admin-panel/erp-uploads`
+</Callout>
+
+Beginnen Sie auf der [Seite ERP-Upload-Planer](/de/platform-intro/pages/erp-upload-planner).
+
+### Voraussetzungen
+- Die Upload-Datei ist bereit.
+- Der Benutzer weiß, welche Tabellenspalten Aufträge, Produkte, Daten und Maschinen darstellen.
+
+## Schritte
+
+<Steps>
+  <Step title="Laden Sie die Tabellenkalkulationsdatei hoch" icon="arrow-right" title-type="p">
+    Laden Sie die Tabellenkalkulationsdatei hoch.
+  </Step>
+  <Step title="Ordnen Sie Quellspalten den Plattformfeldern zu" icon="arrow-right" title-type="p">
+    Ordnen Sie Quellspalten den Plattformfeldern zu.
+  </Step>
+  <Step title="Lösen Sie Maschinenwerte auf, wenn die Datei externe Maschinennamen oder Codes verwendet" icon="arrow-right" title-type="p">
+    Lösen Sie Maschinenwerte auf, wenn die Datei externe Maschinennamen oder Codes verwendet.
+  </Step>
+  <Step title="Prüfen Sie Planeroptionen und Mengenvorgaben" icon="arrow-right" title-type="p">
+    Prüfen Sie Planeroptionen und Mengenvorgaben.
+  </Step>
+  <Step title="Führen Sie die Vorschau oder den Trockenlauf aus, um die Interpretation der Zeilen zu prüfen" icon="arrow-right" title-type="p">
+    Führen Sie die Vorschau oder den Trockenlauf aus, um die Interpretation der Zeilen zu prüfen.
+  </Step>
+  <Step title="Bestätigen Sie den Upload, sobald die Vorschau korrekt aussieht" icon="arrow-right" title-type="p">
+    Bestätigen Sie den Upload, sobald die Vorschau korrekt aussieht.
+  </Step>
+</Steps>
+
+## Entscheidungspunkte
+
+- Ob gespeicherte Zuordnungen wiederverwendet oder für die aktuelle Datei angepasst werden sollen.
+- Ob die Vorschau sauber genug ist, um zu bestätigen, oder zuerst korrigiert werden muss.
+
+## Erwartetes Ergebnis
+
+Der Upload erstellt oder aktualisiert Plattformdatensätze gemäß der geprüften Zuordnung.
+
+## Häufige Probleme und Sonderfälle
+
+- Fehlende Pflichtspalten blockieren eine sinnvolle Vorschau.
+- Maschinennamen aus der Quelldatei müssen vor der Bestätigung möglicherweise manuell zugeordnet werden.
+- Benutzer müssen eventuell erneut hochladen, nachdem sie Struktur- oder Formatprobleme der Tabelle korrigiert haben.
+
+## Verwandte Seiten
+
+Nutzen Sie diese Seitenlinks, um sich seitlich durch die Plattform zu bewegen und den Kontext beizubehalten.
+
+<Columns cols="2">
+  <Card title="ERP-Upload-Planer" href="/de/platform-intro/pages/erp-upload-planner" icon="file-text" horizontal="false">
+    Bereiten Sie eingehende ERP-Aufträge vor und prüfen Sie sie, bevor sie in die Planung gelangen.
+  </Card>
+
+  <Card title="Aufträge & Produkte" href="/de/platform-intro/pages/orders-products" icon="file-text" horizontal="false">
+    Prüfen Sie Produktionsbedarf, Produktdaten und den Planungskontext auf Auftragsebene.
+  </Card>
+
+  <Card title="Administrationsbereich" href="/de/platform-intro/pages/admin-panel" icon="file-text" horizontal="false">
+    Verwalten Sie gemeinsame Betriebseinstellungen, wiederverwendbare Datensätze und plattformweite Administrationsaufgaben.
+  </Card>
+</Columns>
+

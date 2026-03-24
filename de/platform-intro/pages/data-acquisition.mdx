@@ -1,0 +1,86 @@
+---
+title: "Betriebsdatenerfassung (BDE)"
+description: "Eine Maschinen-Seite für die Aufzeichnung von Live-Produktionsarbeit, Intervallen, Gründen und Unterstützungskontext."
+---
+
+## Überblick
+
+Unterstützen Sie die Live-Ausführung am Shopfloor und die Ereigniserfassung für eine einzelne Maschine.
+
+Benutzer öffnen diese Seite normalerweise über die Seite **Maschinendetails**.
+
+## Zugriff
+
+<Callout kind="info" title="Zugriffsdetails">
+- Rollen: Operator, Admin
+- Sichtbarkeit: Geschützt
+- Primäre Routen: `/machines/:machineId/dataAcquisition`
+</Callout>
+
+Vor allem Operatoren, bei Bedarf mit Unterstützung durch Administratoren.
+
+## Was Sie sehen können
+
+- Zuweisungslisten und aktuellen Auftragskontext.
+- Start-, Vorbereitungs- und Stopp-Steuerungen.
+- Verlauf von Intervallen, Notizen, Tickets und Wissenskontext.
+
+## Was Sie tun können
+
+- Arbeit starten oder stoppen.
+- Produzierte Menge erfassen.
+- Live-Aufträge erstellen oder verwenden.
+- Zeitachsen-Gründe anwenden und zugehörige Unterstützungsinhalte prüfen.
+
+## Hauptentitäten
+
+- Maschine
+- Zuweisung
+- Intervall
+- Produktionsauftrag
+- Ticket
+
+## Ergebnisse und Grenzen
+
+### Typische Ergebnisse
+- Die Produktionsgeschichte der Maschine wird in einer detaillierten, schichtbezogenen Form erfasst.
+
+### Grenzen und Leerzustände
+- Benutzer benötigen die richtige Live-Zuweisung oder den passenden Auftragskontext, damit die Seite voll nutzbar ist.
+
+## Verwandte Seiten
+
+Nutzen Sie diese Seitenlinks, um sich seitlich durch die Plattform zu bewegen und den Kontext beizubehalten.
+
+<Columns cols="2">
+  <Card title="Maschinendetails" href="/de/platform-intro/pages/machine-details" icon="file-text" horizontal="false">
+    Öffnen Sie die vollständige Maschinen-Detailansicht für eine tiefere operative Analyse.
+  </Card>
+
+  <Card title="Maschinenhistorie" href="/de/platform-intro/pages/machine-history" icon="file-text" horizontal="false">
+    Prüfen Sie historische Maschinenleistung und vergangenes Produktionsverhalten.
+  </Card>
+
+  <Card title="Maschinen" href="/de/platform-intro/pages/machines" icon="file-text" horizontal="false">
+    Überwachen Sie Maschinenzustand, Status und operativen Kontext vom Haupt-Dashboard aus.
+  </Card>
+</Columns>
+
+## Verwandte Abläufe
+
+Nutzen Sie diese Anleitungen, wenn Sie statt einer Seitenübersicht einen geführten Ablauf benötigen.
+
+<Columns cols="2">
+  <Card title="Betriebsdatenerfassung (BDE) durchführen" href="/de/platform-intro/workflows/data-acquisition" icon="git-branch" horizontal="false">
+    Erfassen Sie detaillierte Maschinenaktivitäten und Produktionsereignisse mit dem BDE-Ablauf.
+  </Card>
+
+  <Card title="Maschine live überwachen" href="/de/platform-intro/workflows/live-machine-monitoring" icon="git-branch" horizontal="false">
+    Überwachen Sie eine laufende Maschinensitzung und reagieren Sie schnell auf Statusänderungen.
+  </Card>
+
+  <Card title="Maschinenhistorie prüfen" href="/de/platform-intro/workflows/machine-history-review" icon="git-branch" horizontal="false">
+    Prüfen Sie das historische Maschinenverhalten, um Analyse und Fehlersuche zu unterstützen.
+  </Card>
+</Columns>
+

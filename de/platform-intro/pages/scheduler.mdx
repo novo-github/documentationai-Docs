@@ -1,0 +1,93 @@
+---
+title: "Planer"
+description: "Eine wöchentliche Planungsseite zum Zuweisen von Schichten auf Maschinen."
+---
+
+## Überblick
+
+Ermöglichen Sie Benutzern, die wöchentliche Maschinen-Schichtabdeckung in einer strukturierten Planungsansicht festzulegen.
+
+Benutzer öffnen diese Seite über den Bereich **Planer** in der Hauptnavigation.
+
+## Zugriff
+
+<Callout kind="info" title="Zugriffsdetails">
+- Rollen: Admin, Manager
+- Sichtbarkeit: Geschützt
+- Primäre Routen: `/scheduler`
+</Callout>
+
+Administratoren und Planer, die für die Schichtabdeckung verantwortlich sind.
+
+## Was Sie sehen können
+
+- Einen nach Halle gruppierten Maschinenwähler.
+- Einen Wochenauswahlschalter mit Vor- und Zurück-Steuerung.
+- Ein wöchentliches Raster für die Zuweisung von Maschinenschichten.
+
+## Was Sie tun können
+
+- Wählen Sie die Maschinen aus, die Sie planen möchten.
+- Wechseln Sie zwischen Wochen.
+- Fügen Sie Schichtauswahlen für jede Maschine und jeden Tag hinzu, entfernen Sie sie oder speichern Sie sie.
+
+## Hauptentitäten
+
+- Maschine
+- Schicht
+- Mitarbeitender
+- Woche
+
+## Ergebnisse und Grenzen
+
+### Typische Ergebnisse
+- Benutzer veröffentlichen einen wöchentlichen Schichtplan für die ausgewählten Maschinen.
+
+### Grenzen und Leerzustände
+- Die Seite bleibt größtenteils leer, bis Maschinen ausgewählt sind.
+- Nicht gespeicherte Änderungen bleiben lokal, bis sie gespeichert werden.
+
+## Verwandte Seiten
+
+Nutzen Sie diese Seitenlinks, um sich seitlich durch die Plattform zu bewegen und den Kontext beizubehalten.
+
+<Columns cols="2">
+  <Card title="Zuweisungsplaner" href="/de/platform-intro/pages/assignment-planner" icon="file-text" horizontal="false">
+    Verfeinern Sie Zuweisungen und gleichen Sie Arbeit aus, bevor die Produktion beginnt.
+  </Card>
+
+  <Card title="Aufträge & Produkte" href="/de/platform-intro/pages/orders-products" icon="file-text" horizontal="false">
+    Prüfen Sie Produktionsbedarf, Produktdaten und den Planungskontext auf Auftragsebene.
+  </Card>
+
+  <Card title="Maschinen" href="/de/platform-intro/pages/machines" icon="file-text" horizontal="false">
+    Überwachen Sie Maschinenzustand, Status und operativen Kontext vom Haupt-Dashboard aus.
+  </Card>
+
+  <Card title="Administrationsbereich" href="/de/platform-intro/pages/admin-panel" icon="file-text" horizontal="false">
+    Verwalten Sie gemeinsame Betriebseinstellungen, wiederverwendbare Datensätze und plattformweite Administrationsaufgaben.
+  </Card>
+
+  <Card title="Peak Optimizer" href="/de/platform-intro/pages/peak-optimizer" icon="file-text" horizontal="false">
+    Analysieren Sie Hochlastphasen und Planungsdruck rund um Spitzenbedarf.
+  </Card>
+</Columns>
+
+## Verwandte Abläufe
+
+Nutzen Sie diese Anleitungen, wenn Sie statt einer Seitenübersicht einen geführten Ablauf benötigen.
+
+<Columns cols="2">
+  <Card title="Maschinenschichten zuweisen" href="/de/platform-intro/workflows/assign-machine-shifts" icon="git-branch" horizontal="false">
+    Platzieren Sie Schichtstrukturen auf Maschinen, damit Planung und Ausführung synchron bleiben.
+  </Card>
+
+  <Card title="Maschinenzuweisungen planen" href="/de/platform-intro/workflows/assignment-planner" icon="git-branch" horizontal="false">
+    Nutzen Sie den Planer, um Arbeit gezielt auf verfügbare Maschinen zu verteilen.
+  </Card>
+
+  <Card title="Produktionsauftrag erstellen" href="/de/platform-intro/workflows/create-production-order" icon="git-branch" horizontal="false">
+    Erstellen Sie einen Produktionsauftrag mit allen Details, die für Planung und Ausführung benötigt werden.
+  </Card>
+</Columns>
+

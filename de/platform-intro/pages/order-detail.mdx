@@ -1,0 +1,82 @@
+---
+title: "Auftragsdetails"
+description: "Eine vollständige Bearbeitungs- und Analseite für einen Produktionsauftrag und seine Arbeitsstruktur."
+---
+
+## Überblick
+
+Ermöglichen Sie Benutzern, die vollständige Struktur eines Produktionsauftrags zu prüfen und zu bearbeiten.
+
+Benutzer öffnen diese Seite normalerweise über die Seite **Aufträge & Produkte**.
+
+## Zugriff
+
+<Callout kind="info" title="Zugriffsdetails">
+- Rollen: Admin, Manager
+- Sichtbarkeit: Geschützt
+- Primäre Routen: `/order-management/:orderId`, `/orders-products/:orderId`
+</Callout>
+
+Administratoren, Manager und Planer.
+
+## Was Sie sehen können
+
+- Auftragskopfdaten wie Kunde, Daten, Priorität und Notizen.
+- Arbeitsaufträge, Operationen, Zuweisungen und Analyseansichten.
+- Zeitachsen- und notizbezogener Kontext für den ausgewählten Auftrag.
+
+## Was Sie tun können
+
+- Den Auftragskopf bearbeiten.
+- Arbeitsaufträge, Operationen und Zuweisungen hinzufügen, aktualisieren oder entfernen.
+- Den Auftrag analysieren und zeitleistenbezogenen Kontext prüfen.
+- Auftragsbezogene Daten detaillierter exportieren oder prüfen.
+
+## Hauptentitäten
+
+- Produktionsauftrag
+- Kunde
+- Arbeitsauftrag
+- Operation
+- Zuweisung
+
+## Ergebnisse und Grenzen
+
+### Typische Ergebnisse
+- Benutzer verwandeln einen einfachen Auftrag in eine vollständige, ausführungsreife Struktur.
+
+### Grenzen und Leerzustände
+- Aufträge ohne tiefere Struktur benötigen mehr Einrichtung, bevor die Planung sinnvoll wird.
+
+## Verwandte Seiten
+
+Nutzen Sie diese Seitenlinks, um sich seitlich durch die Plattform zu bewegen und den Kontext beizubehalten.
+
+<Columns cols="2">
+  <Card title="Aufträge & Produkte" href="/de/platform-intro/pages/orders-products" icon="file-text" horizontal="false">
+    Prüfen Sie Produktionsbedarf, Produktdaten und den Planungskontext auf Auftragsebene.
+  </Card>
+
+  <Card title="Planer" href="/de/platform-intro/pages/scheduler" icon="file-text" horizontal="false">
+    Planen Sie Maschinenkapazitäten und legen Sie anstehende Arbeit auf der Produktionstimeline ab.
+  </Card>
+
+  <Card title="Zuweisungsplaner" href="/de/platform-intro/pages/assignment-planner" icon="file-text" horizontal="false">
+    Verfeinern Sie Zuweisungen und gleichen Sie Arbeit aus, bevor die Produktion beginnt.
+  </Card>
+</Columns>
+
+## Verwandte Abläufe
+
+Nutzen Sie diese Anleitungen, wenn Sie statt einer Seitenübersicht einen geführten Ablauf benötigen.
+
+<Columns cols="2">
+  <Card title="Produktionsauftrag erstellen" href="/de/platform-intro/workflows/create-production-order" icon="git-branch" horizontal="false">
+    Erstellen Sie einen Produktionsauftrag mit allen Details, die für Planung und Ausführung benötigt werden.
+  </Card>
+
+  <Card title="Maschinenzuweisungen planen" href="/de/platform-intro/workflows/assignment-planner" icon="git-branch" horizontal="false">
+    Nutzen Sie den Planer, um Arbeit gezielt auf verfügbare Maschinen zu verteilen.
+  </Card>
+</Columns>
+

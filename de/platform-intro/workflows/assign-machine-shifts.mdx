@@ -1,0 +1,77 @@
+---
+title: "Maschinenschichten zuweisen"
+description: "Planen oder aktualisieren Sie die Schichtplanung für eine oder mehrere Maschinen über eine ausgewählte Woche."
+---
+
+## Ziel
+
+Legen Sie die geplante Schichtabdeckung für Maschinen über eine ausgewählte Woche fest.
+
+## Bevor Sie beginnen
+
+Administratoren oder Planer, die für die wöchentliche Maschinenabdeckung verantwortlich sind.
+
+<Callout kind="info" title="Ablaufzugriff">
+- Rollen: Admin, Manager
+- Einstiegspunkte: `/scheduler`
+</Callout>
+
+Beginnen Sie auf der [Seite Planer](/de/platform-intro/pages/scheduler).
+
+### Voraussetzungen
+- Die Maschinenliste ist verfügbar.
+- Schichtdefinitionen existieren bereits.
+
+## Schritte
+
+<Steps>
+  <Step title="Wählen Sie eine oder mehrere Maschinen aus" icon="arrow-right" title-type="p">
+    Wählen Sie eine oder mehrere Maschinen aus.
+  </Step>
+  <Step title="Wählen Sie die zu planende Woche aus" icon="arrow-right" title-type="p">
+    Wählen Sie die zu planende Woche aus.
+  </Step>
+  <Step title="Prüfen Sie die Maschinenzeilen und Tagesspalten für diese Woche" icon="arrow-right" title-type="p">
+    Prüfen Sie die Maschinenzeilen und Tagesspalten für diese Woche.
+  </Step>
+  <Step title="Markieren Sie die Schichten, die an jedem Tag gelten sollen" icon="arrow-right" title-type="p">
+    Markieren Sie die Schichten, die an jedem Tag gelten sollen.
+  </Step>
+  <Step title="Speichern Sie die ausstehenden Änderungen, wenn der Wochenplan korrekt aussieht" icon="arrow-right" title-type="p">
+    Speichern Sie die ausstehenden Änderungen, wenn der Wochenplan korrekt aussieht.
+  </Step>
+</Steps>
+
+## Entscheidungspunkte
+
+- Ob eine einzelne Maschine oder eine gefilterte Gruppe geplant werden soll.
+- Ob ausstehende Änderungen beibehalten oder vor dem Speichern verworfen werden sollen.
+
+## Erwartetes Ergebnis
+
+Der wöchentliche Schichtplan wird gespeichert und von maschinenbezogenen Ansichten und Berichten wiederverwendet.
+
+## Häufige Probleme und Sonderfälle
+
+- Ein leerer Zustand wird angezeigt, bis Maschinen ausgewählt sind.
+- Nicht gespeicherte Änderungen bleiben lokal, bis der Benutzer speichert.
+- Die Ansicht ist wochenbasiert, daher müssen Benutzer möglicherweise vor- oder zurückspringen, um zum richtigen Planungsfenster zu gelangen.
+
+## Verwandte Seiten
+
+Nutzen Sie diese Seitenlinks, um sich seitlich durch die Plattform zu bewegen und den Kontext beizubehalten.
+
+<Columns cols="2">
+  <Card title="Planer" href="/de/platform-intro/pages/scheduler" icon="file-text" horizontal="false">
+    Planen Sie Maschinenkapazitäten und legen Sie anstehende Arbeit auf der Produktionstimeline ab.
+  </Card>
+
+  <Card title="Maschinen" href="/de/platform-intro/pages/machines" icon="file-text" horizontal="false">
+    Überwachen Sie Maschinenzustand, Status und operativen Kontext vom Haupt-Dashboard aus.
+  </Card>
+
+  <Card title="Zuweisungsplaner" href="/de/platform-intro/pages/assignment-planner" icon="file-text" horizontal="false">
+    Verfeinern Sie Zuweisungen und gleichen Sie Arbeit aus, bevor die Produktion beginnt.
+  </Card>
+</Columns>
+

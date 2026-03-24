@@ -1,0 +1,75 @@
+---
+title: "Maschinenhistorie prüfen"
+description: "Analysieren Sie historische Maschinenleistung über einen längeren Datumsbereich."
+---
+
+## Ziel
+
+Verstehen Sie, wie eine Maschine über Tage oder Wochen hinweg gearbeitet hat, statt nur in einer einzelnen Live-Tag-Ansicht.
+
+## Bevor Sie beginnen
+
+Manager und Administratoren, die Muster, Trends oder wiederkehrende Verluste untersuchen.
+
+<Callout kind="info" title="Ablaufzugriff">
+- Rollen: Admin, Manager
+- Einstiegspunkte: `/machines/:machineId/machineHistory`
+</Callout>
+
+Beginnen Sie auf der [Seite Maschinenhistorie](/de/platform-intro/pages/machine-history).
+
+### Voraussetzungen
+- Für die Maschine liegen historische Daten vor.
+
+## Schritte
+
+<Steps>
+  <Step title="Öffnen Sie die Maschinenhistorie aus einer Maschinen-Detailansicht" icon="arrow-right" title-type="p">
+    Öffnen Sie die Maschinenhistorie aus einer Maschinen-Detailansicht.
+  </Step>
+  <Step title="Legen Sie Start- und Enddatum für das Prüfintervall fest" icon="arrow-right" title-type="p">
+    Legen Sie Start- und Enddatum für das Prüfintervall fest.
+  </Step>
+  <Step title="Schalten Sie den Null-Datenfilter ein oder aus, je nachdem, ob Nicht-Produktions-Tage zählen sollen" icon="arrow-right" title-type="p">
+    Schalten Sie den Null-Datenfilter ein oder aus, je nachdem, ob Nicht-Produktions-Tage zählen sollen.
+  </Step>
+  <Step title="Prüfen Sie KPI-Durchschnitte, Diagramme, Zusammenfassungen der Zeitachsen-Gründe und Trendblöcke" icon="arrow-right" title-type="p">
+    Prüfen Sie KPI-Durchschnitte, Diagramme, Zusammenfassungen der Zeitachsen-Gründe und Trendblöcke.
+  </Step>
+  <Step title="Passen Sie den Datumsbereich an, bis der Prüfzeitraum zur Geschäftsfrage passt" icon="arrow-right" title-type="p">
+    Passen Sie den Datumsbereich an, bis der Prüfzeitraum zur Geschäftsfrage passt.
+  </Step>
+</Steps>
+
+## Entscheidungspunkte
+
+- Ob Tage ohne Output einbezogen werden sollen.
+- Ob die Frage ein kurzes Troubleshooting-Fenster oder eine längere Leistungsbetrachtung erfordert.
+
+## Erwartetes Ergebnis
+
+Der Benutzer kann das historische Maschinenverhalten mit Trend- und Zusammenfassungsbelegen erklären.
+
+## Häufige Probleme und Sonderfälle
+
+- Sehr kurze Datumsbereiche können der Live-Tagesansicht ähneln.
+- Sehr lange Datumsbereiche können kurze operative Probleme verdecken.
+
+## Verwandte Seiten
+
+Nutzen Sie diese Seitenlinks, um sich seitlich durch die Plattform zu bewegen und den Kontext beizubehalten.
+
+<Columns cols="2">
+  <Card title="Maschinenhistorie" href="/de/platform-intro/pages/machine-history" icon="file-text" horizontal="false">
+    Prüfen Sie historische Maschinenleistung und vergangenes Produktionsverhalten.
+  </Card>
+
+  <Card title="Maschinen" href="/de/platform-intro/pages/machines" icon="file-text" horizontal="false">
+    Überwachen Sie Maschinenzustand, Status und operativen Kontext vom Haupt-Dashboard aus.
+  </Card>
+
+  <Card title="Zeitleistenanalyse" href="/de/platform-intro/pages/timeline-analysis" icon="file-text" horizontal="false">
+    Untersuchen Sie Ereignisfolgen, Stillstände und das Verhalten der Maschinen-Zeitleiste.
+  </Card>
+</Columns>
+

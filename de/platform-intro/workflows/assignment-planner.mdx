@@ -1,0 +1,80 @@
+---
+title: "Maschinenzuweisungen planen"
+description: "Platzieren Sie ungeplante Arbeit auf Maschinenwarteschlangen und ordnen Sie bereits geplante Arbeit neu an."
+---
+
+## Ziel
+
+Machen Sie aus ungeplanter Arbeit maschinenspezifische geplante Warteschlangen.
+
+## Bevor Sie beginnen
+
+Planer und Administratoren, die entscheiden, wo Arbeit als Nächstes laufen soll.
+
+<Callout kind="info" title="Ablaufzugriff">
+- Rollen: Admin, Manager
+- Einstiegspunkte: `/assignment-planner`
+</Callout>
+
+Beginnen Sie auf der [Seite Zuweisungsplaner](/de/platform-intro/pages/assignment-planner).
+
+### Voraussetzungen
+- Maschinen stehen für die Planung zur Verfügung.
+- Aufträge oder Operationen existieren bereits im System.
+
+## Schritte
+
+<Steps>
+  <Step title="Filtern Sie die sichtbare Halle oder Maschinenliste" icon="arrow-right" title-type="p">
+    Filtern Sie die sichtbare Halle oder Maschinenliste bei Bedarf.
+  </Step>
+  <Step title="Suchen Sie in der Liste ungeplanter Arbeit nach der passenden Aufgabe" icon="arrow-right" title-type="p">
+    Suchen Sie in der Liste ungeplanter Arbeit nach der passenden Aufgabe.
+  </Step>
+  <Step title="Ziehen Sie Arbeit auf eine Maschinen-Spalte oder öffnen Sie den Bestätigungsablauf" icon="arrow-right" title-type="p">
+    Ziehen Sie Arbeit auf eine Maschinen-Spalte oder öffnen Sie den Bestätigungsablauf für die Zuweisung.
+  </Step>
+  <Step title="Ordnen Sie die Arbeit neu" icon="arrow-right" title-type="p">
+    Ordnen Sie die Arbeit innerhalb der Maschinenwarteschlange neu, um die geplante Reihenfolge anzupassen.
+  </Step>
+  <Step title="Aktualisieren Sie wichtige Details" icon="arrow-right" title-type="p">
+    Aktualisieren Sie wichtige Details wie Status, Daten oder Priorität bei Bedarf.
+  </Step>
+  <Step title="Lassen Sie den Planer die Warteschlangenänderungen zurück in die Plattform speichern" icon="arrow-right" title-type="p">
+    Lassen Sie den Planer die Warteschlangenänderungen zurück in die Plattform speichern.
+  </Step>
+</Steps>
+
+## Entscheidungspunkte
+
+- Welche Maschine die Aufgabe übernehmen soll.
+- Ob eine Aufgabe ungeplant bleiben, auf eine andere Maschine wechseln oder aus einer Warteschlange entfernt werden soll.
+
+## Erwartetes Ergebnis
+
+Die Maschinenwarteschlange spiegelt die letzte Planungsentscheidung wider und die zugehörigen Auftragsdetails bleiben abgestimmt.
+
+## Häufige Probleme und Sonderfälle
+
+- Es können nur eine begrenzte Anzahl an Maschinen gleichzeitig angezeigt werden.
+- Wenn Filter alle Maschinen ausblenden, zeigt der Planer eine leere Planungsfläche.
+- Das Entfernen einer Zuweisung schickt die Arbeit aus der geplanten Warteschlange zurück, statt sie abzuschließen.
+
+## Verwandte Seiten
+
+Nutzen Sie diese Seitenlinks, um sich seitlich durch die Plattform zu bewegen und den Kontext beizubehalten.
+
+<Columns cols="2">
+  <Card title="Zuweisungsplaner" href="/de/platform-intro/pages/assignment-planner" icon="file-text" horizontal="false">
+    Verfeinern Sie Zuweisungen und gleichen Sie Arbeit aus, bevor die Produktion beginnt.
+  </Card>
+
+  <Card title="Aufträge & Produkte" href="/de/platform-intro/pages/orders-products" icon="file-text" horizontal="false">
+    Prüfen Sie Produktionsbedarf, Produktdaten und den Planungskontext auf Auftragsebene.
+  </Card>
+
+  <Card title="Planer" href="/de/platform-intro/pages/scheduler" icon="file-text" horizontal="false">
+    Planen Sie Maschinenkapazitäten und legen Sie anstehende Arbeit auf der Produktionstimeline ab.
+  </Card>
+</Columns>
+

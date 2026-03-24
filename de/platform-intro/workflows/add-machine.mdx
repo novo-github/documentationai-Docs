@@ -1,0 +1,76 @@
+---
+title: "Maschine hinzufügen"
+description: "Erstellen Sie eine neue Maschine oder einen Hub, damit sie in Dashboards, Planungsansichten und Detailseiten erscheinen kann."
+---
+
+## Ziel
+
+Erstellen Sie einen Maschinendatensatz mit den grundlegenden Informationen, die für Überwachung und Planung benötigt werden.
+
+## Bevor Sie beginnen
+
+Administratoren, die die Werkskonfiguration verwalten.
+
+<Callout kind="info" title="Ablaufzugriff">
+- Rollen: Admin
+- Einstiegspunkte: `/machines`
+</Callout>
+
+Beginnen Sie auf der [Seite Maschinen](/de/platform-intro/pages/machines).
+
+### Voraussetzungen
+- Der Benutzer hat Administratorzugriff.
+- Hallen und Schichtgruppen existieren bereits, wenn die Maschine sofort eingeordnet werden soll.
+
+## Schritte
+
+<Steps>
+  <Step title="Öffnen Sie den Ablauf zur Maschinenerstellung" icon="arrow-right" title-type="p">
+    Öffnen Sie den Ablauf zur Maschinenerstellung über die Seite **Maschinen**.
+  </Step>
+  <Step title="Geben Sie den Maschinennamen und die Identifikationsdaten ein" icon="arrow-right" title-type="p">
+    Geben Sie den Maschinennamen und die Identifikationsdaten ein.
+  </Step>
+  <Step title="Fügen Sie optionale Tags oder ein Bild hinzu" icon="arrow-right" title-type="p">
+    Fügen Sie optionale Tags oder ein Bild hinzu, wenn das Team sie für Filterung und Erkennung verwendet.
+  </Step>
+  <Step title="Ordnen Sie die Maschine einer Halle und einer Schichtgruppe zu" icon="arrow-right" title-type="p">
+    Ordnen Sie die Maschine einer Halle und einer Schichtgruppe zu.
+  </Step>
+  <Step title="Aktivieren Sie die Energieüberwachung" icon="arrow-right" title-type="p">
+    Aktivieren Sie die Energieüberwachung nur, wenn die Maschine für Energietracking verbunden ist.
+  </Step>
+  <Step title="Schließen Sie die Einrichtung ab" icon="arrow-right" title-type="p">
+    Schließen Sie die Einrichtung ab und kehren Sie zur Maschinenliste zurück.
+  </Step>
+</Steps>
+
+## Entscheidungspunkte
+
+- Ob die Maschine sofort in einer Halle platziert oder zunächst später zugeordnet werden soll.
+- Ob Energieüberwachung bereits am ersten Tag benötigt wird.
+
+## Erwartetes Ergebnis
+
+Die Maschine erscheint in der Plattform und kann in maschinenspezifischen Seiten geöffnet werden.
+
+## Häufige Probleme und Sonderfälle
+
+- Pflichtfelder können den Abschluss blockieren, bis sie ausgefüllt sind.
+- Wenn Hallen oder Schichtgruppen fehlen, kann die Maschine mit einer Teilkonfiguration angelegt und später vervollständigt werden.
+- Eine Maschine ohne Planungsdaten kann in Listen erscheinen, bevor sie vollständig für die Planung bereit ist.
+
+## Verwandte Seiten
+
+Nutzen Sie diese Seitenlinks, um sich seitlich durch die Plattform zu bewegen und den Kontext beizubehalten.
+
+<Columns cols="2">
+  <Card title="Maschinen" href="/de/platform-intro/pages/machines" icon="file-text" horizontal="false">
+    Überwachen Sie Maschinenzustand, Status und operativen Kontext vom Haupt-Dashboard aus.
+  </Card>
+
+  <Card title="Maschinenkonfiguration" href="/de/platform-intro/pages/machine-configuration" icon="file-text" horizontal="false">
+    Aktualisieren Sie Maschineneinstellungen, Fähigkeiten und Produktionsparameter.
+  </Card>
+</Columns>
+

@@ -1,0 +1,82 @@
+---
+title: "Betriebsdatenerfassung (BDE) durchführen"
+description: "Starten, vorbereiten, stoppen und kommentieren Sie Live-Produktionsarbeit auf Maschinenebene."
+---
+
+## Ziel
+
+Steuern Sie die Live-Produktionsverfolgung für eine Maschine und erfassen Sie, was während der Schicht passiert ist.
+
+## Bevor Sie beginnen
+
+Vor allem Operatoren, bei Bedarf mit administrativer Unterstützung.
+
+<Callout kind="info" title="Ablaufzugriff">
+- Rollen: Operator, Admin
+- Einstiegspunkte: `/machines/:machineId/dataAcquisition`
+</Callout>
+
+Beginnen Sie auf der [Seite Betriebsdatenerfassung (BDE)](/de/platform-intro/pages/data-acquisition).
+
+### Voraussetzungen
+- Die Maschine hat eine Warteschlange oder einen Live-Auftrag, an dem gearbeitet werden kann.
+
+## Schritte
+
+<Steps>
+  <Step title="Öffnen Sie die BDE für die Zielmaschine" icon="arrow-right" title-type="p">
+    Öffnen Sie die BDE für die Zielmaschine.
+  </Step>
+  <Step title="Prüfen Sie verfügbare Zuweisungen und wählen Sie die Aufgabe aus" icon="arrow-right" title-type="p">
+    Prüfen Sie verfügbare Zuweisungen und wählen Sie die Aufgabe aus, an der gearbeitet werden soll.
+  </Step>
+  <Step title="Starten Sie die Arbeit oder markieren Sie die Vorbereitung je nach Situation" icon="arrow-right" title-type="p">
+    Starten Sie die Arbeit oder markieren Sie die Vorbereitung je nach aktueller Shopfloor-Situation.
+  </Step>
+  <Step title="Stoppen Sie das Arbeitsintervall, wenn der Lauf endet oder pausiert" icon="arrow-right" title-type="p">
+    Stoppen Sie das Arbeitsintervall, wenn der Lauf endet oder pausiert.
+  </Step>
+  <Step title="Geben Sie die produzierte Menge und weitere Abschlussdetails ein" icon="arrow-right" title-type="p">
+    Geben Sie die produzierte Menge und weitere Abschlussdetails ein, wenn Sie dazu aufgefordert werden.
+  </Step>
+  <Step title="Wenden Sie Zeitachsen-Gründe an" icon="arrow-right" title-type="p">
+    Wenden Sie Zeitachsen-Gründe an, wenn Stillstand oder besondere Ereignisse erklärt werden müssen.
+  </Step>
+  <Step title="Prüfen Sie offene Tickets oder Wissenseinträge, wenn der Fall Unterstützungskontext benötigt" icon="arrow-right" title-type="p">
+    Prüfen Sie offene Tickets oder Wissenseinträge, wenn der Fall Unterstützungskontext benötigt.
+  </Step>
+</Steps>
+
+## Entscheidungspunkte
+
+- Ob der aktuelle Zeitpunkt zur Vorbereitung, aktiven Produktion oder einem Stopp gehört.
+- Ob für die Aufgabe eine vorhandene Zuweisung oder ein direkter Live-Auftrag verwendet werden soll.
+
+## Erwartetes Ergebnis
+
+Die Maschinen-Zeitleiste, die Intervallliste und die Produktionsdaten spiegeln das Geschehen im Shopfloor wider.
+
+## Häufige Probleme und Sonderfälle
+
+- Benutzer müssen möglicherweise ein Intervall stoppen, bevor sie zu einem anderen wechseln.
+- Fehlende Mengen- oder Grundangaben können die Produktionsgeschichte unvollständig lassen.
+- Ein Live-Problem kann sowohl einen Zeitachsen-Grund als auch ein Support-Ticket benötigen.
+
+## Verwandte Seiten
+
+Nutzen Sie diese Seitenlinks, um sich seitlich durch die Plattform zu bewegen und den Kontext beizubehalten.
+
+<Columns cols="2">
+  <Card title="Betriebsdatenerfassung (BDE)" href="/de/platform-intro/pages/data-acquisition" icon="file-text" horizontal="false">
+    Erfassen Sie detaillierte Produktionsereignisse und prüfen Sie Maschinenaktivitätsprotokolle.
+  </Card>
+
+  <Card title="Maschinendetails" href="/de/platform-intro/pages/machine-details" icon="file-text" horizontal="false">
+    Öffnen Sie die vollständige Maschinen-Detailansicht für eine tiefere operative Analyse.
+  </Card>
+
+  <Card title="Maschinen" href="/de/platform-intro/pages/machines" icon="file-text" horizontal="false">
+    Überwachen Sie Maschinenzustand, Status und operativen Kontext vom Haupt-Dashboard aus.
+  </Card>
+</Columns>
+

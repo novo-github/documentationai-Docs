@@ -1,0 +1,84 @@
+---
+title: "Maschinenhistorie"
+description: "Eine historische Analyseseite für Maschinen mit Überblick über Trends über einen Datumsbereich."
+---
+
+## Überblick
+
+Zeigen Sie das längerfristige Maschinenverhalten über viele Tage statt nur über einen einzigen Live-Tag an.
+
+Benutzer erreichen diese Seite normalerweise über die Seite **Maschinendetails**.
+
+## Zugriff
+
+<Callout kind="info" title="Zugriffsdetails">
+- Rollen: Admin, Manager
+- Sichtbarkeit: Geschützt
+- Primäre Routen: `/machines/:machineId/machineHistory`
+</Callout>
+
+Manager und Administratoren.
+
+## Was Sie sehen können
+
+- Steuerungen für Datumsbereiche.
+- KPI-Durchschnitte, Trenddiagramme und Zusammenfassungen der Zeitachsen-Gründe.
+- Historische Ansichten, die wiederkehrende Muster leichter erkennbar machen.
+
+## Was Sie tun können
+
+- Den Betrachtungszeitraum ändern.
+- Umschalten, ob Tage ohne Output in der Analyse zählen.
+- Vergleichen, wie die Maschine sich über die Zeit entwickelt hat.
+
+## Hauptentitäten
+
+- Maschine
+- Datumsbereich
+- Trend
+- Zeitachsen-Grund
+
+## Ergebnisse und Grenzen
+
+### Typische Ergebnisse
+- Benutzer bestätigen, ob ein Problem isoliert oder wiederkehrend ist.
+
+### Grenzen und Leerzustände
+- Sehr kurze Zeiträume verringern den Nutzen einer Historienseite.
+
+## Verwandte Seiten
+
+Nutzen Sie diese Seitenlinks, um sich seitlich durch die Plattform zu bewegen und den Kontext beizubehalten.
+
+<Columns cols="2">
+  <Card title="Maschinendetails" href="/de/platform-intro/pages/machine-details" icon="file-text" horizontal="false">
+    Öffnen Sie die vollständige Maschinen-Detailansicht für eine tiefere operative Analyse.
+  </Card>
+
+  <Card title="Maschinen" href="/de/platform-intro/pages/machines" icon="file-text" horizontal="false">
+    Überwachen Sie Maschinenzustand, Status und operativen Kontext vom Haupt-Dashboard aus.
+  </Card>
+
+  <Card title="Zeitleistenanalyse" href="/de/platform-intro/pages/timeline-analysis" icon="file-text" horizontal="false">
+    Untersuchen Sie Ereignisfolgen, Stillstände und das Verhalten der Maschinen-Zeitleiste.
+  </Card>
+
+  <Card title="Betriebsdatenerfassung (BDE)" href="/de/platform-intro/pages/data-acquisition" icon="file-text" horizontal="false">
+    Erfassen Sie detaillierte Produktionsereignisse und prüfen Sie Maschinenaktivitätsprotokolle.
+  </Card>
+</Columns>
+
+## Verwandte Abläufe
+
+Nutzen Sie diese Anleitungen, wenn Sie statt einer Seitenübersicht einen geführten Ablauf benötigen.
+
+<Columns cols="2">
+  <Card title="Maschinenhistorie prüfen" href="/de/platform-intro/workflows/machine-history-review" icon="git-branch" horizontal="false">
+    Prüfen Sie das historische Maschinenverhalten, um Analyse und Fehlersuche zu unterstützen.
+  </Card>
+
+  <Card title="Betriebsdatenerfassung (BDE) durchführen" href="/de/platform-intro/workflows/data-acquisition" icon="git-branch" horizontal="false">
+    Erfassen Sie detaillierte Maschinenaktivitäten und Produktionsereignisse mit dem BDE-Ablauf.
+  </Card>
+</Columns>
+

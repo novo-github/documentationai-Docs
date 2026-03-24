@@ -1,0 +1,81 @@
+---
+title: "Maschine konfigurieren"
+description: "Schließen Sie die Maschineneinrichtung ab oder verfeinern Sie sie über die Konfigurations-Tabs."
+---
+
+## Ziel
+
+Passen Sie an, wie eine Maschine von der Plattform identifiziert, überwacht, gemessen und interpretiert wird.
+
+## Bevor Sie beginnen
+
+Administratoren, die für die Qualität der Maschineneinrichtung verantwortlich sind.
+
+<Callout kind="info" title="Ablaufzugriff">
+- Rollen: Admin
+- Einstiegspunkte: `/machine/config`, `/machine/:id/config`
+</Callout>
+
+Beginnen Sie auf der [Seite Maschinenkonfiguration](/de/platform-intro/pages/machine-configuration).
+
+### Voraussetzungen
+- Die Maschine existiert bereits, es sei denn, der Benutzer erstellt sie über die neue Maschinenroute.
+
+## Schritte
+
+<Steps>
+  <Step title="Öffnen Sie die Maschinenkonfigurationsseite für eine neue oder vorhandene Maschine" icon="arrow-right" title-type="p">
+    Öffnen Sie die Maschinenkonfigurationsseite für eine neue oder vorhandene Maschine.
+  </Step>
+  <Step title="Prüfen Sie den Tab Basisinformationen und bestätigen Sie Identität, Halle und Schichtgruppe" icon="arrow-right" title-type="p">
+    Prüfen Sie den Tab Basisinformationen und bestätigen Sie Identität, Halle und Schichtgruppe.
+  </Step>
+  <Step title="Konfigurieren Sie die Energieüberwachung" icon="arrow-right" title-type="p">
+    Konfigurieren Sie die Energieüberwachung, wenn die Maschine diese unterstützt.
+  </Step>
+  <Step title="Legen Sie Bewertungen fest" icon="arrow-right" title-type="p">
+    Legen Sie Bewertungen fest, damit Dashboards Live-Ergebnisse mit Zielwerten vergleichen können.
+  </Step>
+  <Step title="Definieren Sie Zeitachsenbereiche und Zeitachsenregeln" icon="arrow-right" title-type="p">
+    Definieren Sie Zeitachsenbereiche und Zeitachsenregeln, damit Maschinenzustände konsistent interpretiert werden.
+  </Step>
+  <Step title="Passen Sie Funktionseinstellungen an, wo die Plattform maschinenspezifische Analysegrenzen anbietet" icon="arrow-right" title-type="p">
+    Passen Sie Funktionseinstellungen an, wo die Plattform maschinenspezifische Analysegrenzen anbietet.
+  </Step>
+  <Step title="Speichern Sie Änderungen in jedem Tab, bevor Sie ihn verlassen" icon="arrow-right" title-type="p">
+    Speichern Sie Änderungen in jedem Tab, bevor Sie ihn verlassen.
+  </Step>
+</Steps>
+
+## Entscheidungspunkte
+
+- Welche Tabs für die jeweilige Maschine relevant sind.
+- Ob es sich um eine grundlegende Einrichtung oder um eine analytische Feinabstimmung handelt.
+
+## Erwartetes Ergebnis
+
+Die Maschine verhält sich korrekt in Überwachungs-, Berichts-, Alarmierungs- und Planungsansichten.
+
+## Häufige Probleme und Sonderfälle
+
+- Einige Tabs sind erst verfügbar, wenn die Maschine existiert.
+- Nicht gespeicherte Tab-Änderungen können verloren gehen, wenn der Benutzer zu früh wechselt.
+
+## Verwandte Seiten
+
+Nutzen Sie diese Seitenlinks, um sich seitlich durch die Plattform zu bewegen und den Kontext beizubehalten.
+
+<Columns cols="2">
+  <Card title="Maschinenkonfiguration" href="/de/platform-intro/pages/machine-configuration" icon="file-text" horizontal="false">
+    Aktualisieren Sie Maschineneinstellungen, Fähigkeiten und Produktionsparameter.
+  </Card>
+
+  <Card title="Maschinen" href="/de/platform-intro/pages/machines" icon="file-text" horizontal="false">
+    Überwachen Sie Maschinenzustand, Status und operativen Kontext vom Haupt-Dashboard aus.
+  </Card>
+
+  <Card title="Maschinendetails" href="/de/platform-intro/pages/machine-details" icon="file-text" horizontal="false">
+    Öffnen Sie die vollständige Maschinen-Detailansicht für eine tiefere operative Analyse.
+  </Card>
+</Columns>
+

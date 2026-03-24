@@ -1,0 +1,74 @@
+---
+title: "Maschine live überwachen"
+description: "Prüfen Sie Live-Maschinenleistung, Schichtkontext, Alarme und jüngstes Zeitachsenverhalten."
+---
+
+## Ziel
+
+Verstehen Sie, was eine Maschine gerade tut oder an einem ausgewählten Tag getan hat.
+
+## Bevor Sie beginnen
+
+Operatoren, Manager und Administratoren, die detaillierte Maschinensicht benötigen.
+
+<Callout kind="info" title="Ablaufzugriff">
+- Rollen: Admin, Manager, Operator
+- Einstiegspunkte: `/machines/:machineId`
+</Callout>
+
+Beginnen Sie auf der [Seite Maschinendetails](/de/platform-intro/pages/machine-details).
+
+### Voraussetzungen
+- Für die gewählte Datum- oder Schichtansicht sind bereits Daten für die Maschine vorhanden.
+
+## Schritte
+
+<Steps>
+  <Step title="Öffnen Sie eine Maschine von der Seite Maschinen aus" icon="arrow-right" title-type="p">
+    Öffnen Sie eine Maschine von der Seite Maschinen aus.
+  </Step>
+  <Step title="Wechseln Sie mit der Datumssteuerung zum richtigen Datum" icon="arrow-right" title-type="p">
+    Wechseln Sie mit der Datumssteuerung zum richtigen Datum.
+  </Step>
+  <Step title="Wechseln Sie zwischen Schicht-Tabs, um sich auf eine bestimmte Schicht oder alle Schichten zu konzentrieren" icon="arrow-right" title-type="p">
+    Wechseln Sie zwischen Schicht-Tabs, um sich auf eine bestimmte Schicht oder alle Schichten zu konzentrieren.
+  </Step>
+  <Step title="Prüfen Sie die wichtigsten KPIs, Zyklusinformationen, Zeitachsenblöcke und den jüngsten Zuweisungskontext" icon="arrow-right" title-type="p">
+    Prüfen Sie die wichtigsten KPIs, Zyklusinformationen, Zeitachsenblöcke und den jüngsten Zuweisungskontext.
+  </Step>
+  <Step title="Prüfen Sie die Alarmaktivität" icon="arrow-right" title-type="p">
+    Prüfen Sie die Alarmaktivität, wenn die Maschine Warnzustände zeigt.
+  </Step>
+  <Step title="Öffnen Sie zugehörige Aktionen" icon="arrow-right" title-type="p">
+    Öffnen Sie zugehörige Aktionen wie BDE, Historie oder Alarmregeln, wenn eine tiefere Nachverfolgung nötig ist.
+  </Step>
+</Steps>
+
+## Entscheidungspunkte
+
+- Ob der gesamte Tag oder nur eine Schicht geprüft werden soll.
+- Ob ein erkanntes Problem sofort eine BDE, eine spätere Analyse oder eine Änderung der Alarmregeln erfordert.
+
+## Erwartetes Ergebnis
+
+Der Benutzer kann Maschinenstatus, jüngste Aktivität und den wahrscheinlich nächsten Schritt verstehen, ohne den Detailkontext zu verlassen.
+
+## Häufige Probleme und Sonderfälle
+
+- Geringe Datenmengen am ausgewählten Tag können Diagramme oder Schichtblöcke leer wirken lassen.
+- Eine Maschine kann Alarme anzeigen, ohne dass sofortiges Eingreifen nötig ist, wenn die Bedingung bereits bekannt ist.
+
+## Verwandte Seiten
+
+Nutzen Sie diese Seitenlinks, um sich seitlich durch die Plattform zu bewegen und den Kontext beizubehalten.
+
+<Columns cols="2">
+  <Card title="Maschinen" href="/de/platform-intro/pages/machines" icon="file-text" horizontal="false">
+    Überwachen Sie Maschinenzustand, Status und operativen Kontext vom Haupt-Dashboard aus.
+  </Card>
+
+  <Card title="Maschinendetails" href="/de/platform-intro/pages/machine-details" icon="file-text" horizontal="false">
+    Öffnen Sie die vollständige Maschinen-Detailansicht für eine tiefere operative Analyse.
+  </Card>
+</Columns>
+

@@ -1,0 +1,97 @@
+---
+title: "Aufträge & Produkte"
+description: "Die zentrale Planungs- und Prüfseite für Produktionsaufträge, Produkte und produktbezogene Einblicke."
+---
+
+## Überblick
+
+Unterstützen Sie Benutzer dabei, Produktionsaufträge und Produkte an einem Ort zu prüfen und bei Bedarf eine tiefere Auftragsbearbeitung zu öffnen.
+
+Benutzer öffnen diese Seite über die Dashboard-Navigation.
+
+## Zugriff
+
+<Callout kind="info" title="Zugriffsdetails">
+- Rollen: Admin, Manager
+- Sichtbarkeit: Geschützt
+- Primäre Routen: `/orders-products`
+</Callout>
+
+Administratoren und Planer, die mit eingehendem Produktionsbedarf arbeiten.
+
+## Was Sie sehen können
+
+- Auftrags- und Produktansichten mit Filtern, Datumsbereichssteuerung und Suche.
+- Kontext zu Kunde, Produkt, Menge und Fortschritt.
+- Hervorhebungen auf Produktebene und Zusammenfassungen der Auftragsanalyse.
+
+## Was Sie tun können
+
+- Nach Aufträgen oder Produkten suchen und filtern.
+- Zwischen Karten- und Tabellenansicht wechseln.
+- Eine bestimmte Auftragsdetailseite öffnen.
+- Produkt- oder Auftragserstellungsabläufe starten.
+- Übergeordnete Planungs- und Produktionseinblicke für verfolgte Aufträge prüfen.
+
+## Hauptentitäten
+
+- Produktionsauftrag
+- Produkt
+- Kunde
+- Arbeitsauftrag
+- Zuweisung
+
+## Ergebnisse und Grenzen
+
+### Typische Ergebnisse
+- Benutzer finden schnell einen Auftrag und springen in die Details.
+- Benutzer erstellen ein neues Produkt oder einen neuen Auftrag.
+
+### Grenzen und Leerzustände
+- Ergebnisse hängen vom ausgewählten Datumsbereich und von Filtern ab.
+- Aufträge ohne tiefere Struktur benötigen möglicherweise die Detailseite, bevor sie sinnvoll geplant werden können.
+
+## Verwandte Seiten
+
+Nutzen Sie diese Seitenlinks, um sich seitlich durch die Plattform zu bewegen und den Kontext beizubehalten.
+
+<Columns cols="2">
+  <Card title="Auftragsdetails" href="/de/platform-intro/pages/order-detail" icon="file-text" horizontal="false">
+    Prüfen Sie Struktur, Zuweisungen und tiefere Planungsdetails für einen Auftrag.
+  </Card>
+
+  <Card title="Planer" href="/de/platform-intro/pages/scheduler" icon="file-text" horizontal="false">
+    Planen Sie Maschinenkapazitäten und legen Sie anstehende Arbeit auf der Produktionstimeline ab.
+  </Card>
+
+  <Card title="Zuweisungsplaner" href="/de/platform-intro/pages/assignment-planner" icon="file-text" horizontal="false">
+    Verfeinern Sie Zuweisungen und gleichen Sie Arbeit aus, bevor die Produktion beginnt.
+  </Card>
+
+  <Card title="ERP-Upload-Planer" href="/de/platform-intro/pages/erp-upload-planner" icon="file-text" horizontal="false">
+    Bereiten Sie eingehende ERP-Aufträge vor und prüfen Sie sie, bevor sie in die Planung gelangen.
+  </Card>
+
+  <Card title="Maschinen" href="/de/platform-intro/pages/machines" icon="file-text" horizontal="false">
+    Überwachen Sie Maschinenzustand, Status und operativen Kontext vom Haupt-Dashboard aus.
+  </Card>
+</Columns>
+
+## Verwandte Abläufe
+
+Nutzen Sie diese Anleitungen, wenn Sie statt einer Seitenübersicht einen geführten Ablauf benötigen.
+
+<Columns cols="2">
+  <Card title="Produkt erstellen" href="/de/platform-intro/workflows/create-product" icon="git-branch" horizontal="false">
+    Erstellen Sie einen Produktdatensatz, der für Planung, Aufträge und Berichte verwendet werden kann.
+  </Card>
+
+  <Card title="Produktionsauftrag erstellen" href="/de/platform-intro/workflows/create-production-order" icon="git-branch" horizontal="false">
+    Erstellen Sie einen Produktionsauftrag mit allen Details, die für Planung und Ausführung benötigt werden.
+  </Card>
+
+  <Card title="Maschinenzuweisungen planen" href="/de/platform-intro/workflows/assignment-planner" icon="git-branch" horizontal="false">
+    Nutzen Sie den Planer, um Arbeit gezielt auf verfügbare Maschinen zu verteilen.
+  </Card>
+</Columns>
+

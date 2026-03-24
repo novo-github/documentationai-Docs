@@ -1,0 +1,91 @@
+---
+title: "Zuweisungsplaner"
+description: "Eine Planungsoberfläche zum Platzieren ungeplanter Arbeit auf Maschinenwarteschlangen und zum Anpassen der Reihenfolge geplanter Arbeit."
+---
+
+## Überblick
+
+Geben Sie Planern einen Drag-and-Drop-Arbeitsbereich, um zu entscheiden, welche Maschine welche Arbeit als Nächstes ausführen soll.
+
+Benutzer öffnen diese Seite über den Bereich **Planer** in der Hauptnavigation.
+
+## Zugriff
+
+<Callout kind="info" title="Zugriffsdetails">
+- Rollen: Admin, Manager
+- Sichtbarkeit: Geschützt
+- Primäre Routen: `/assignment-planner`
+</Callout>
+
+Administratoren und Planer.
+
+## Was Sie sehen können
+
+- Eine Liste ungeplanter Arbeit mit Suche.
+- Maschinen-Spalten, die als Warteschlangen dienen.
+- Filter für Hallen und Maschinen, um den Planungsbereich einzugrenzen.
+
+## Was Sie tun können
+
+- Nach ungeplanter Arbeit suchen.
+- Arbeit in eine Maschinenwarteschlange ziehen.
+- Zuweisungen innerhalb einer Warteschlange neu anordnen.
+- Zuweisungsdetails wie Timing, Status oder Priorität aktualisieren.
+
+## Hauptentitäten
+
+- Maschine
+- Produktionsauftrag
+- Arbeitsauftrag
+- Operation
+- Zuweisung
+
+## Ergebnisse und Grenzen
+
+### Typische Ergebnisse
+- Benutzer erstellen oder ändern die geplante Maschinenreihenfolge für anstehende Arbeit.
+
+### Grenzen und Leerzustände
+- Es können nur eine begrenzte Anzahl an Maschinen gleichzeitig angezeigt werden.
+- Filter können sowohl Maschinen als auch ungeplante Arbeit ausblenden.
+
+## Verwandte Seiten
+
+Nutzen Sie diese Seitenlinks, um sich seitlich durch die Plattform zu bewegen und den Kontext beizubehalten.
+
+<Columns cols="2">
+  <Card title="Planer" href="/de/platform-intro/pages/scheduler" icon="file-text" horizontal="false">
+    Planen Sie Maschinenkapazitäten und legen Sie anstehende Arbeit auf der Produktionstimeline ab.
+  </Card>
+
+  <Card title="Aufträge & Produkte" href="/de/platform-intro/pages/orders-products" icon="file-text" horizontal="false">
+    Prüfen Sie Produktionsbedarf, Produktdaten und den Planungskontext auf Auftragsebene.
+  </Card>
+
+  <Card title="Maschinen" href="/de/platform-intro/pages/machines" icon="file-text" horizontal="false">
+    Überwachen Sie Maschinenzustand, Status und operativen Kontext vom Haupt-Dashboard aus.
+  </Card>
+
+  <Card title="Peak Optimizer" href="/de/platform-intro/pages/peak-optimizer" icon="file-text" horizontal="false">
+    Analysieren Sie Hochlastphasen und Planungsdruck rund um Spitzenbedarf.
+  </Card>
+</Columns>
+
+## Verwandte Abläufe
+
+Nutzen Sie diese Anleitungen, wenn Sie statt einer Seitenübersicht einen geführten Ablauf benötigen.
+
+<Columns cols="2">
+  <Card title="Maschinenzuweisungen planen" href="/de/platform-intro/workflows/assignment-planner" icon="git-branch" horizontal="false">
+    Nutzen Sie den Planer, um Arbeit gezielt auf verfügbare Maschinen zu verteilen.
+  </Card>
+
+  <Card title="Maschinenschichten zuweisen" href="/de/platform-intro/workflows/assign-machine-shifts" icon="git-branch" horizontal="false">
+    Platzieren Sie Schichtstrukturen auf Maschinen, damit Planung und Ausführung synchron bleiben.
+  </Card>
+
+  <Card title="Produktionsauftrag erstellen" href="/de/platform-intro/workflows/create-production-order" icon="git-branch" horizontal="false">
+    Erstellen Sie einen Produktionsauftrag mit allen Details, die für Planung und Ausführung benötigt werden.
+  </Card>
+</Columns>
+
