@@ -887,5 +887,10 @@
         ]
       }
     ]
-  }
+  },
+  "description": "Documentation for Novo AI's WatchMen Platform",
+  "template": "classic",
+  "logo-dark": "https://blob-cdn.documentation.ai/org-29d2be8c-cb7e-41f6-b034-2d24e627c4fa/doc-fa04d5db-e293-4657-aed3-4555437c770c/1775582417622-cjka9576m9o-NovoAIWhite_logo.png?fm=auto&auto=compress%2Cformat",
+  "logo-light": "https://blob-cdn.documentation.ai/org-29d2be8c-cb7e-41f6-b034-2d24e627c4fa/doc-fa04d5db-e293-4657-aed3-4555437c770c/1775582439701-37sqv40p8xb-NewLogo_small.png?fm=auto&auto=compress%2Cformat",
+  "favicon": "https://blob-cdn.documentation.ai/org-29d2be8c-cb7e-41f6-b034-2d24e627c4fa/doc-fa04d5db-e293-4657-aed3-4555437c770c/1775582480107-dgjnfevbs98-NovoAIWhite.png?fm=auto&auto=compress%2Cformat"
 }
