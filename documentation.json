@@ -896,7 +896,7 @@
   "navbar": {
     "actions": {
       "primary": {
-        "title": "To the platform ->",
+        "title": "To the platform",
         "link": "https://watchmen.novoai.de"
       }
     }
