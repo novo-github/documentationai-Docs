@@ -1,145 +1,178 @@
 ---
-title: Versionsverlauf
-description: Verfolge die neuesten Updates und Verbesserungen der Novo AI WatchMen Plattform. Diese Seite listet aktuelle Versionen mit wichtigen Änderungen auf.
+title: Changelog
+description: Versionsübersicht für UI-Build.
 ---
+Diese Seite zeigt die Releases von UI-Build. Jede Version enthält den verwendeten Commit und die wichtigsten Highlights.
 
-## Aktuelle Versionen
+## Releases
 
-Bleibe über die neuesten Verbesserungen der Novo AI WatchMen Plattform informiert. Jede Version enthält neue Funktionen, Leistungsoptimierungen und Fehlerbehebungen, damit du noch präziser überwachen und vorhersagen kannst.
+Keine Releases gelistet.
 
-<Update label="2024-10-15" description="v1.2.0" tags={["feature", "improvement"]}>
+<Update label="2025-05-01" description="v1.5.60" tags={["feature","improvement","UI-Build ad93cfa01"]}>
+  **Release-Zeitraum: März – April 2026**
 
-## Neue Funktionen
+  <Callout kind="info" collapsed="false">
+    Einträge mit `📸` sind Platzhalter für Bilder. Ersetze sie vor dem Teilen mit Kunden durch einen Screenshot des beschriebenen Bereichs.
+  </Callout>
 
-- Verbesserte KI-Vorhersagegenauigkeit mit fortgeschrittenen Machine-Learning-Modellen, die die Zuverlässigkeit der Prognosen um bis zu 25 % erhöhen.
-- Echtzeit-Anomalieerkennung für IoT-Sensordatenströme hinzugefügt.
+  ## ✨ Neue Funktionen
 
-## Verbesserungen
+  ### 💬 KI-Chatverlauf — vollständiger Gesprächsarbeitsbereich
 
-- Optimierte Ladezeiten des Dashboards für große Datensätze.
-- Bessere Integration mit bestehenden Alerting-Systemen.
+  Der KI-Assistent hat jetzt eine eigene Seite: **Arbeitsbereich → Chat-Verlauf**. Bisher existierten Unterhaltungen nur als schwebende Seitenleiste; jetzt gibt es einen vollständigen, dauerhaft verfügbaren Gesprächsarbeitsbereich.
 
-## Fehlerbehebungen
+  **Das ist möglich:**
 
-- Sporadische Fehler bei der Zustellung von Webhooks behoben.
-- UI-Anzeigefehler auf Mobilgeräten korrigiert.
+  - Neue Unterhaltungen starten und frühere Gespräche genau dort fortsetzen, wo du aufgehört hast — alle Nachrichten werden gespeichert.
 
+  - **Wichtige Unterhaltungen mit Stern markieren**, damit sie oben in der Liste bleiben und schnell erreichbar sind.
+
+  - **Jede Unterhaltung umbenennen**, indem du auf das Bearbeiten-Symbol neben dem Titel klickst.
+
+  - **Unterhaltungen löschen**, die du nicht mehr brauchst.
+
+  - **Quellenangaben** erscheinen unter der Antwort, wenn der Assistent auf Dokumentation oder Plattformseiten verweist. Du kannst den Quellenbereich ein- oder ausklappen.
+
+  - Der Assistent berücksichtigt, **auf welcher Seite du warst**, bevor du den Chat geöffnet hast, damit die Antworten kontextbezogener sind.
+
+  📸 `![Screenshot: Chat-Verlauf-Seite — vollständiges Layout mit Unterhaltungsliste links und aktivem Chat rechts]()`
+
+  📸 `![Screenshot: oben angeheftete markierte Unterhaltungen in der Liste]()`
+
+  📸 `![Screenshot: Quellenbereich unter einer Assistentenantwort, im eingeklappten und ausgeklappten Zustand]()`
+
+  ### 🔐 Berechtigungseditor für Benutzer (Admin-Bereich)
+
+  Administrator:innen können jetzt **genau festlegen, auf welche Seiten und Maschinen ein Benutzer Zugriff hat** — direkt aus der Benutzerliste im Admin-Bereich, ohne Backend-Konfiguration.
+
+  **Was sich geändert hat:**
+
+  - Jeder Benutzer im Admin-Bereich hat jetzt die Aktion **Berechtigungen bearbeiten**.
+
+  - Es öffnet sich ein Dialog, in dem du auswählst, welche Plattformseiten der Benutzer sehen darf und auf welche Maschinen er zugreifen darf — nach Halle gruppiert für eine einfache Auswahl.
+
+  - Änderungen gelten sofort beim nächsten Login bzw. in der nächsten Sitzung.
+
+  📸 `![Screenshot: Dialog zum Bearbeiten der Berechtigungen — Seitenzugriff per Checkboxen und Maschinenauswahl nach Halle gruppiert]()`
+
+  ## 🔧 Verbesserungen im Alltag
+
+  ### 📦 Aufträge & Produkte — umfangreichere Tabelle und persönliche Spalten
+
+  Die Tabelle für Aufträge & Produkte wurde deutlich erweitert: mit neuen Daten-Spalten und der Möglichkeit, die bevorzugte Ansicht anzupassen und zu speichern.
+
+  **Neue verfügbare Spalten:**
+
+  - **Kunde** — zeigt den Kundennamen als farblich hervorgehobenen Chip.
+
+  - **Priorität** — farbcodiertes Prioritäts-Badge (kritisch, hoch, mittel, niedrig).
+
+  - **Geplante & tatsächliche Dauer** — wie lange der Auftrag geplant war vs. wie lange er tatsächlich dauerte.
+
+  - **Ø Zykluszeit** — durchschnittliche Produktionszykluszeit pro Intervall und Auftragszeile.
+
+  - **Abweichung der Zykluszeit** — Differenz zwischen geplanter und tatsächlicher Zykluszeit.
+
+  - **Abweichung der Rüstzeit** — Differenz zwischen geplanter und tatsächlicher Vorbereitungszeit.
+
+  - **Intervallanzahl** — wie viele Produktionsintervalle für den Auftrag erfasst wurden.
+
+  **Sichtbarkeit der Spalten — in deinem Konto gespeichert:**
+
+  - Über die Spaltenauswahl kannst du optionale Spalten ein- oder ausblenden.
+
+  - Deine Auswahl wird **sitzungsübergreifend gespeichert**.
+
+  **Datums- und Dauerformatierung:**
+
+  - Zeitstempel und Dauern werden jetzt in einem kompakteren Format angezeigt (z. B. `2h 15m` statt roher Minutenwerte).
+
+  📸 `![Screenshot: Auftragstabelle mit sichtbaren neuen Spalten — Kunde, Priorität, Dauer, Zykluszeit-Spalten]()`
+
+  📸 `![Screenshot: geöffnetes Popover zur Spaltenauswahl]()`
+
+  ### 🗓️ Zuweisungsplaner — durchsuchbare Operations-Warteschlange
+
+  Das Panel für nicht zugewiesene Operationen (die linke Warteschlange zum Ziehen auf Maschinen) unterstützt jetzt **Suche und Paginierung**.
+
+  **Was sich geändert hat:**
+
+  - Eine Suchleiste oben in der Warteschlange filtert nach Name, Auftrag oder Produkt.
+
+  - Die Operationen werden seitenweise geladen, damit das Panel auch bei großen Mengen schnell bleibt.
+
+  📸 `![Screenshot: Zuweisungsplaner — Warteschlange mit Suchleiste und paginierten Ergebnissen]()`
+
+  ### 📤 ERP-Upload-Planer — Upload-Fortschritt und Terminwarnungen
+
+  Der ERP-Upload-Planer (Admin-Bereich → ERP-Uploads) erhielt mehrere Verbesserungen in der Bedienung.
+
+  **Upload-Fortschrittsanzeige:**
+
+  - Beim Hochladen zeigt eine visuelle Fortschrittsleiste, wie weit der Upload fortgeschritten ist.
+
+  **Warnungen bei Termin-Konflikten:**
+
+  - Wenn hochgeladene Zeilen problematische geplante Termine enthalten (z. B. Enddatum vor Startdatum oder fehlende Zeitanteile), markiert das System sie in der Vorschau mit klaren Warnhinweisen.
+
+  **Intelligentere Zahlenerkennung für Zeitfelder:**
+
+  - Zeitfelder wie geplante Vorbereitungszeit und geplante Produktionszeit akzeptieren jetzt auch Werte aus Tabellenkalkulationen mit Einheitensuffixen (z. B. `"45 min"`, `"1.5h"`).
+
+  📸 `![Screenshot: Fortschrittsanzeige beim Hochladen einer Datei]()`
+
+  📸 `![Screenshot: Vorschau mit Warnhinweisen zu Termin-Konflikten in betroffenen Zeilen]()`
+
+  ### 🏭 Datenerfassung (PDA) — Operationssequenz auf Auftragschips
+
+  Auf der Datenerfassungsseite zeigen die Auftrags-/Job-Chips im Bereich der aktiven Sitzung jetzt zusätzlich die **Operationssequenznummer** an.
+
+  So lässt sich leichter prüfen, ob die Produktion für den richtigen Schritt eines mehrstufigen Auftrags erfasst wird — besonders wenn dasselbe Produkt auf derselben Maschine in unterschiedlichen Phasen vorkommt.
+
+  📸 `![Screenshot: Auftragschip in der Datenerfassung mit Operationssequenznummer (z. B. Op. 20 — Fräsen)]()`
+
+  ### 💬 KI-Chat-Seitenleiste — bessere Bedienbarkeit
+
+  Die schwebende KI-Chat-Seitenleiste (von jeder Seite aus erreichbar) wurde an mehreren Stellen verbessert.
+
+  **Einklappbarer Quellenbereich:**
+
+  - Wenn Antworten auf Dokumentation basieren, erscheinen die Quellen in einem einklappbaren Bereich. Du kannst ihn zum Lesen der Zitate öffnen oder für eine aufgeräumte Ansicht schließen.
+
+  **Klarere Aktionsbuttons:**
+
+  - Alle Icon-Buttons (Kopieren, neuer Chat, Navigation) zeigen beim Darüberfahren einen Tooltip.
+
+  - Die Icon-Farben wurden für bessere Sichtbarkeit angepasst, besonders im Dark Mode.
+
+  📸 `![Screenshot: Chat-Seitenleiste mit ein- und ausgeklapptem Quellenbereich]()`
+
+  ### 📋 Tabellen auf der gesamten Plattform — verbesserte Paginierung
+
+  Die Paginierungssteuerung in allen Datentabellen der Plattform (Admin-Bereich, Aufträge, Alarmregeln usw.) wurde kompakter und einheitlicher gestaltet.
+
+  - Die Seitennavigation benötigt weniger Platz.
+
+  - Aktuelle Seite und Gesamtzahl der Datensätze sind immer sichtbar.
+
+  - Die Navigation ist auf allen Tabellen konsistenter und reaktionsschneller.
+
+  📸 `![Screenshot: kompakte Paginierungsleiste am unteren Rand einer Datentabelle]()`
+
+  ## 🐛 Fehlerbehebungen
+
+  ### Maschineninfos — offene Alarme korrekt angezeigt
+
+  Auf der Seite „Maschinendetails“ zeigt der Alarmzähler jetzt nur noch **aktive, ungelöste Alarme** an. Zuvor wurden bereits behobene Alarme mitgezählt.
+
+  ### Aufträge & Produkte — Laden der Arbeitsauftragsliste behoben
+
+  In der Detailansicht eines Auftrags wurde die Arbeitsauftragsliste in manchen Fällen nicht geladen. Das ist behoben — alle Arbeitsaufträge erscheinen jetzt zuverlässig beim Öffnen eines Auftrags.
+
+  ### Maschinendetails — Diagrammabsturz bei fehlenden Daten
+
+  Das Zeitlinien-/Grund-Diagramm in den Maschinendetails konnte bei fehlenden oder unvollständigen Daten abstürzen. Das wurde behoben; fehlende Daten werden jetzt sauber abgefangen.
+
+  *Bei Fragen zu diesen Funktionen wende dich bitte an deine Plattform-Administration oder an das Watchmen-Support-Team.*
 </Update>
 
-<Update label="2024-09-20" description="v1.1.5" tags={["feature"]}>
-
-## Neue Funktionen
-
-- Neue Integrationen mit verbreiteten IoT-Plattformen, einschließlich AWS IoT Core und Google Cloud IoT.
-- Benutzerdefinierte Webhook-Endpunkte für nahtlose Datenweiterleitung.
-
-## Verbesserungen
-
-- Überarbeiteter Einrichtungsassistent für eine schnellere Inbetriebnahme.
-
-</Update>
-
-<Update label="2024-08-10" description="v1.1.0" tags={["bugfix", "improvement"]}>
-
-## UI-Verbesserungen
-
-- Überarbeitetes Dashboard mit anpassbaren Widgets und Dark-Mode-Unterstützung.
-- Verbesserte Datenvisualisierung mit interaktiven Drill-down-Funktionen.
-
-## Fehlerbehebungen
-
-- Probleme mit API-Rate-Limits für Benutzer mit hohem Volumen behoben.
-- Sicherheitslücken in den Authentifizierungsabläufen geschlossen.
-
-</Update>
-
-## Upgrade von früheren Versionen
-
-Führe diese Schritte aus, um reibungslos von älteren Versionen zu migrieren. Diese Anleitung gilt für Upgrades von v1.0.x und älter.
-
-<Callout kind="info">
-Erstelle vor dem Upgrade ein Backup deiner Konfiguration und Daten, um potenziellen Datenverlust zu vermeiden.
-</Callout>
-
-<Steps>
-  <Step title="Changelog prüfen" icon="book-open">
-
-Prüfe die Versionshinweise oben auf Änderungen mit möglichen Auswirkungen auf deine Version.
-
-  </Step>
-  <Step title="Abhängigkeiten aktualisieren" icon="package">
-
-```bash
-npm install novo-ai-watchmen@latest
-```
-
-Für Docker-Nutzer:
-
-````dockerfile
-FROM novoai/watchmen:latest
-````
-
-  </Step>
-  <Step title="Migrationsskript ausführen" icon="play">
-
-Führe die integrierte Migration aus:
-
-<CodeGroup tabs="CLI,Docker">
-  ```bash
-  npx watchmen migrate --from v1.0.0
-  ```
-  ```bash
-  docker run --rm novoai/watchmen migrate --from v1.0.0
-  ```
-</CodeGroup>
-
-  </Step>
-  <Step title="Dienste neu starten" icon="refresh-cw">
-
-Starte deine Anwendung neu und prüfe die Endpunkte unter `https://api.example.com/health`.
-
-  </Step>
-</Steps>
-
-## Bevorstehende Funktionen
-
-Spannende Erweiterungen sind in Entwicklung. Hier ist eine Vorschau auf kommende Funktionen.
-
-<Columns cols={2}>
-  <Card title="Erweiterte Analysen" icon="bar-chart-3" href="#">
-    KI-gestützte Einblicke und automatisierte Berichte.
-  </Card>
-  <Card title="Multi-Region-Support" icon="globe" href="#">
-    Bereitstellung in globalen Rechenzentren für geringe Latenz.
-  </Card>
-  <Card title="Plugin-Ökosystem" icon="puzzle" href="#">
-    Erweitere die Funktionalität mit Community-Plugins.
-  </Card>
-  <Card title="Mobile App" icon="smartphone" href="#">
-    Native Apps für Monitoring unter iOS und Android.
-  </Card>
-</Columns>
-
-<Expandable title="Detaillierte Migrationshinweise" default-open="false">
-
-Für Versionen vor v1.0.0 sind zusätzliche Schritte erforderlich:
-
-1. Aktualisiere deine `config.json`, um das neue `{apiKey}`-Format zu verwenden.
-2. Konfiguriere Webhooks mit dem aktualisierten Schema neu.
-
-```json
-{
-  "webhooks": {
-    "url": "https://your-webhook-url.com/webhook",
-    "headers": {
-      "Authorization": "Bearer YOUR_TOKEN"
-    }
-  }
-}
-```
-
-</Expandable>
-
-<Callout kind="tip">
-Abonniere unseren Newsletter oder beobachte das [GitHub-Repository](https://github.com/novo-ai/watchmen), um sofort über neue Releases informiert zu werden.
-</Callout>

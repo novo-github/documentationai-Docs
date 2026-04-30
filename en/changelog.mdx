@@ -1,145 +1,178 @@
 ---
 title: Changelog
-description: Track the latest updates and improvements to the Novo AI WatchMen Platform. This page lists recent version releases with key changes and enhancements.
+description: Release history for UI-Build.
 ---
+This page tracks UI-Build releases and highlights the changes in each version.
 
-## Recent Releases
+## Releases
 
-Stay informed about the latest improvements to Novo AI WatchMen Platform. Each release includes new features, performance enhancements, and bug fixes to help you monitor and predict with greater accuracy.
+No releases listed.
 
-<Update label="2024-10-15" description="v1.2.0" tags={["feature", "improvement"]}>
+<Update label="2026-05-01" description="v1.5.60" tags={["feature","improvement","UI-Build ad93cfa01"]}>
+  **Release Period: March – April 2026**
 
-## New Features
+  <Callout kind="info" collapsed="false">
+    Entries marked with `📸` are image placeholders. Replace each with a screenshot of the described area before sharing with customers.
+  </Callout>
 
-- Enhanced AI prediction accuracy with advanced machine learning models, improving forecast reliability by up to 25%.
-- Added real-time anomaly detection for IoT sensor data streams.
+  ## ✨ New Features
 
-## Improvements
+  ### 💬 AI Chat History — Full Conversation Workspace
 
-- Optimized dashboard loading times for large datasets.
-- Better integration with existing alerting systems.
+  The AI assistant now has its own dedicated page: **Workspace → Chat History**. Previously, conversations existed only as a floating sidebar; now you have a full, persistent conversation workspace.
 
-## Bug Fixes
+  **What you can do:**
 
-- Resolved intermittent failures in webhook deliveries.
-- Fixed UI glitches on mobile devices.
+  - Start new conversations and pick up any previous one right where you left off — all messages are saved.
 
+  - **Star important conversations** to pin them to the top of your list for quick access.
+
+  - **Rename any conversation** by clicking the edit icon next to its title — give it a meaningful name so it's easy to find later.
+
+  - **Delete conversations** you no longer need to keep your list clean.
+
+  - **Source citations** — when the assistant references documentation or platform pages, the sources appear below the response. You can expand or collapse the sources panel to keep the view tidy.
+
+  - The assistant is **aware of the page you were on** before opening chat, so your questions get more relevant, context-specific answers.
+
+  📸 `![Screenshot: Chat History page — full layout with conversation list on the left and active chat on the right]()`
+
+  📸 `![Screenshot: Starred conversations pinned at the top of the conversation list]()`
+
+  📸 `![Screenshot: Source citations panel shown beneath an assistant response, collapsed and expanded states]()`
+
+  ### 🔐 User Permissions Editor (Admin Panel)
+
+  Administrators can now **edit exactly which pages and machines each user has access to** — directly from the Admin Panel user list, without needing backend configuration.
+
+  **What changed:**
+
+  - Each user in the Admin Panel now has an **Edit Permissions** action.
+
+  - A modal opens where you can select which platform pages the user can see, and which machines they are permitted to access — grouped by hall for easy selection.
+
+  - Changes take effect immediately on the user's next session.
+
+  📸 `![Screenshot: Edit Permissions modal — page access checkboxes and machine selection grouped by hall]()`
+
+  ## 🔧 Quality of Life Improvements
+
+  ### 📦 Orders & Products — Richer Table & Personalised Columns
+
+  The Orders & Products table has been significantly expanded with new data columns and the ability to customise and save your preferred view.
+
+  **New columns now available:**
+
+  - **Customer** — shows the customer name linked to each order, displayed as a distinct colour-coded chip for quick scanning.
+
+  - **Priority** — colour-coded priority badge (critical, high, medium, low) so the most urgent orders stand out immediately.
+
+  - **Planned & Actual Durations** — how long the order was planned to take vs. how long it actually took.
+
+  - **Avg. Cycle Time** — average production cycle time per interval, per order row.
+
+  - **Cycle Time Deviation** — how much actual cycle time differed from planned, giving an at-a-glance view of production variance.
+
+  - **Setup Time Deviation** — difference between planned and actual preparation time.
+
+  - **Interval Count** — how many production intervals have been logged against the order.
+
+  **Column visibility — saved to your account:**
+
+  - Use the column toggle button to show or hide any of the optional columns.
+
+  - Your preference is **remembered** across sessions — you won't need to re-configure on every visit.
+
+  **Date & duration formatting:**
+
+  - All timestamps and durations are now displayed in a cleaner, compact format throughout the table (e.g., `2h 15m` instead of raw minute values).
+
+  📸 `![Screenshot: Orders table with new columns visible — Customer, Priority, Durations, Cycle Time columns]()`
+
+  📸 `![Screenshot: Column toggle popover open, showing toggleable columns]()`
+
+  ### 🗓️ Assignment Planner — Searchable Operations Queue
+
+  The unassigned operations panel (the left-hand queue you drag onto machines) now supports **search and pagination**.
+
+  **What changed:**
+
+  - A search bar at the top of the queue lets you filter operations by name, order, or product — no more scrolling through a long list to find a specific job.
+
+  - Operations load in pages, so the panel stays fast and responsive even with large backlogs.
+
+  📸 `![Screenshot: Assignment Planner — operations queue with search bar and paginated results]()`
+
+  ### 📤 Order Upload Planner — Upload Progress & Schedule Warnings
+
+  The ERP Order Upload Planner (Admin Panel → ERP Uploads) received several usability improvements.
+
+  **Upload progress indicator:**
+
+  - When uploading a file, a visual progress bar now shows how far along the upload is — no more wondering if the file is still processing.
+
+  **Schedule conflict warnings:**
+
+  - If uploaded rows have overlapping or problematic planned dates (e.g., end date before start date, or missing time components), the system now **flags them with clear warning messages** in the preview step before you commit — giving you a chance to correct the source file.
+
+  **Smarter number parsing for time fields:**
+
+  - Time fields like Planned Preparation Time and Planned Production Time now correctly handle values from spreadsheets that include unit labels (e.g., `"45 min"`, `"1.5h"`) — these are automatically cleaned and accepted rather than rejected.
+
+  📸 `![Screenshot: Upload progress bar shown during file processing]()`
+
+  📸 `![Screenshot: Dry-run preview with schedule warning banners on affected rows]()`
+
+  ### 🏭 Data Acquisition (PDA) — Operation Sequence on Order Chips
+
+  On the Data Acquisition page, the order/job chips shown in the active session panel now display the **operation sequence number** alongside the order and product name.
+
+  This makes it easier for operators to confirm they are logging production against the correct step in a multi-operation work order — especially when the same product appears at different stages on the same machine.
+
+  📸 `![Screenshot: Data Acquisition order chip showing operation sequence number (e.g., Op. 20 — Milling)]()`
+
+  ### 💬 AI Chat Sidebar — Improved Usability
+
+  The floating AI chat sidebar (accessible from any page) received several small but meaningful improvements.
+
+  **Collapsible sources panel:**
+
+  - When the assistant returns answers backed by documentation, the source references now appear in a collapsible section. You can expand it to read citations or collapse it to keep the chat view clean.
+
+  **Clearer action buttons:**
+
+  - All icon buttons (copy, new chat, navigate) now show a **tooltip label** on hover, so you always know what each button does without guessing.
+
+  - Icon colours have been updated for better contrast and visibility, particularly in dark mode.
+
+  📸 `![Screenshot: Chat sidebar showing collapsed and expanded source citations panel]()`
+
+  ### 📋 Tables Across the Platform — Improved Pagination
+
+  The pagination controls used across all data tables in the platform (Admin Panel, Orders, Alert Rules, etc.) have been updated to a more compact, consistent style.
+
+  - Page controls are smaller and take up less vertical space.
+
+  - The current page and total records are clearly shown at all times.
+
+  - Navigation is more responsive and consistent across all pages that use tables.
+
+  📸 `![Screenshot: Compact pagination bar at the bottom of a data table]()`
+
+  ## 🐛 Bug Fixes
+
+  ### Machine Info — Unresolved Alerts Displaying Correctly
+
+  On the Machine Details page, the alert count badge now correctly shows only **active, unresolved alerts**. Previously, resolved alerts were still being counted, which caused the badge to show a higher number than expected.
+
+  ### Orders & Products — Work Order List Loading Fix
+
+  In the Order Detail view, the work orders list was not loading in some cases due to a data reference issue. This has been corrected — all work orders now consistently appear when opening an order.
+
+  ### Machine Details — Chart Crash on Missing Data
+
+  The timeline reason chart on the Machine Details page would occasionally crash if certain data points were missing or incomplete. This has been fixed — the chart now handles missing data gracefully and continues to display without interruption.
+
+  *For questions about any of these features, contact your platform administrator or reach out to the Watchmen support team.*
 </Update>
 
-<Update label="2024-09-20" description="v1.1.5" tags={["feature"]}>
-
-## New Features
-
-- New integrations with popular IoT platforms including AWS IoT Core and Google Cloud IoT.
-- Custom webhook endpoints for seamless data forwarding.
-
-## Improvements
-
-- Streamlined setup wizard for quicker onboarding.
-
-</Update>
-
-<Update label="2024-08-10" description="v1.1.0" tags={["bugfix", "improvement"]}>
-
-## UI Improvements
-
-- Redesigned dashboard with customizable widgets and dark mode support.
-- Enhanced data visualization charts with interactive drill-downs.
-
-## Bug Fixes
-
-- Corrected API rate limiting issues affecting high-volume users.
-- Patched security vulnerabilities in authentication flows.
-
-</Update>
-
-## Upgrading from Previous Versions
-
-Follow these steps to migrate smoothly from older versions. These instructions apply to upgrades from v1.0.x and earlier.
-
-<Callout kind="info">
-Backup your configuration and data before upgrading to prevent any potential data loss.
-</Callout>
-
-<Steps>
-  <Step title="Review Changelog" icon="book-open">
-
-Check the release notes above for breaking changes specific to your version.
-
-  </Step>
-  <Step title="Update Dependencies" icon="package">
-
-```bash
-npm install novo-ai-watchmen@latest
-```
-
-For Docker users:
-
-````dockerfile
-FROM novoai/watchmen:latest
-````
-
-  </Step>
-  <Step title="Run Migration Script" icon="play">
-
-Execute the built-in migration:
-
-<CodeGroup tabs="CLI,Docker">
-  ```bash
-  npx watchmen migrate --from v1.0.0
-  ```
-  ```bash
-  docker run --rm novoai/watchmen migrate --from v1.0.0
-  ```
-</CodeGroup>
-
-  </Step>
-  <Step title="Restart Services" icon="refresh-cw">
-
-Restart your application and verify endpoints at `https://api.example.com/health`.
-
-  </Step>
-</Steps>
-
-## Upcoming Features
-
-Exciting enhancements are in development. Here's a preview of what's coming next.
-
-<Columns cols={2}>
-  <Card title="Advanced Analytics" icon="bar-chart-3" href="#">
-    AI-powered insights and automated reporting.
-  </Card>
-  <Card title="Multi-Region Support" icon="globe" href="#">
-    Deploy across global data centers for low latency.
-  </Card>
-  <Card title="Plugin Ecosystem" icon="puzzle" href="#">
-    Extend functionality with community plugins.
-  </Card>
-  <Card title="Mobile App" icon="smartphone" href="#">
-    Native apps for iOS and Android monitoring.
-  </Card>
-</Columns>
-
-<Expandable title="Detailed Migration Notes" default-open="false">
-
-For versions prior to v1.0.0, additional steps may be required:
-
-1. Update your `config.json` to include the new `{apiKey}` format.
-2. Reconfigure webhooks using the updated schema.
-
-```json
-{
-  "webhooks": {
-    "url": "https://your-webhook-url.com/webhook",
-    "headers": {
-      "Authorization": "Bearer YOUR_TOKEN"
-    }
-  }
-}
-```
-
-</Expandable>
-
-<Callout kind="tip">
-Subscribe to our newsletter or watch the [GitHub repository](https://github.com/novo-ai/watchmen) for instant release notifications.
-</Callout>
