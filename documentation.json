@@ -29,11 +29,6 @@
                     "title": "Introduction",
                     "path": "en/introduction",
                     "icon": "home"
-                  },
-                  {
-                    "title": "Quickstart",
-                    "path": "en/quickstart",
-                    "icon": "zap"
                   }
                 ]
               },
@@ -45,17 +40,6 @@
                     "title": "Features",
                     "path": "en/features",
                     "icon": "file-text"
-                  }
-                ]
-              },
-              {
-                "group": "Advanced",
-                "icon": "settings",
-                "pages": [
-                  {
-                    "title": "Integrations",
-                    "path": "en/integrations",
-                    "icon": "plug"
                   }
                 ]
               },
@@ -467,11 +451,6 @@
                     "title": "Introduction",
                     "path": "de/introduction",
                     "icon": "home"
-                  },
-                  {
-                    "title": "Quickstart",
-                    "path": "de/quickstart",
-                    "icon": "zap"
                   }
                 ]
               },
@@ -483,17 +462,6 @@
                     "title": "Features",
                     "path": "de/features",
                     "icon": "file-text"
-                  }
-                ]
-              },
-              {
-                "group": "Advanced",
-                "icon": "settings",
-                "pages": [
-                  {
-                    "title": "Integrations",
-                    "path": "de/integrations",
-                    "icon": "plug"
                   }
                 ]
               },
