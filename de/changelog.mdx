@@ -9,176 +9,95 @@ Diese Seite zeigt die Releases von UI-Build. Jede Version enthält den verwendet
 
 ## Releases
 
-Keine Releases gelistet.
+<Update label="2026-04-30" description="v1.5.60" tags={["feature", "improvement"]}>
 
-<Update label="2025-05-01" description="v1.5.60" tags={["feature","improvement","UI-Build ad93cfa01"]}>
-  **Release-Zeitraum: März – April 2026**
+**UI-Build ad93cfa01**
 
-  <Callout kind="info" collapsed="false">
-    Einträge mit `📸` sind Platzhalter für Bilder. Ersetze sie vor dem Teilen mit Kunden durch einen Screenshot des beschriebenen Bereichs.
-  </Callout>
+# Watchmen Platform — What's New
 
-  ## 1. ✨ Neue Funktionen
+**Release Period: March – April 2026**
 
+## Neue Funktionen
 
-  ### 1.1. 💬 KI-Chatverlauf — vollständiger Gesprächsarbeitsbereich
+### Berechtigungseditor für Benutzer (Admin-Panel)
 
-  Der KI-Assistent hat jetzt eine eigene Seite: **Arbeitsbereich → Chat-Verlauf**. Bisher existierten Unterhaltungen nur als schwebende Seitenleiste; jetzt gibt es einen vollständigen, dauerhaft verfügbaren Gesprächsarbeitsbereich.
+Administratoren können jetzt genau steuern, auf welche Seiten und Maschinen ein Benutzer zugreifen kann — direkt im Admin-Panel, ohne Backend-Konfiguration.
 
-  **Das ist möglich:**
+- Öffne den Datensatz eines Benutzers und wähle **Berechtigungen bearbeiten**.
+- Wähle aus, welche Plattformseiten der Benutzer sehen kann und auf welche Maschinen er zugreifen darf. Die Maschinen sind nach Halle gruppiert, damit die Auswahl schneller geht.
+- Speichere die Änderungen. Sie greifen bei der nächsten Sitzung des Benutzers.
 
-  - Neue Unterhaltungen starten und frühere Gespräche genau dort fortsetzen, wo du aufgehört hast — alle Nachrichten werden gespeichert.
+### Chat-Verlauf für die Plattform-Dokumentation
 
-  - **Wichtige Unterhaltungen mit Stern markieren**, damit sie oben in der Liste bleiben und schnell erreichbar sind.
+Der KI-Assistent hat jetzt eine eigene Vollbildseite unter **Workspace → Chat-Verlauf**.
 
-  - **Jede Unterhaltung umbenennen**, indem du auf das Bearbeiten-Symbol neben dem Titel klickst.
+- Alle Unterhaltungen werden gespeichert und sind später schnell wieder aufrufbar.
+- Du kannst Unterhaltungen **anheften**, **umbenennen** oder **löschen**.
+- Die Antworten berücksichtigen den Kontext der Seite, auf der du den Chat geöffnet hast.
 
-  - **Unterhaltungen löschen**, die du nicht mehr brauchst.
+## Verbesserungen der Benutzerfreundlichkeit
 
-  - **Quellenangaben** erscheinen unter der Antwort, wenn der Assistent auf Dokumentation oder Plattformseiten verweist. Du kannst den Quellenbereich ein- oder ausklappen.
+### Bestellungen und Produkte: mehr Informationen und konfigurierbare Ansicht
 
-  - Der Assistent berücksichtigt, **auf welcher Seite du warst**, bevor du den Chat geöffnet hast, damit die Antworten kontextbezogener sind.
+Die Tabelle **Bestellungen und Produkte** zeigt jetzt mehr Daten in derselben Ansicht, und du kannst festlegen, welche Spalten sichtbar sind.
 
-  📸 `![Screenshot: Chat-Verlauf-Seite — vollständiges Layout mit Unterhaltungsliste links und aktivem Chat rechts]()`
+**Neue verfügbare Spalten:**
+- **Kunde** — farbcodierte Kennzeichnung des zugehörigen Kunden.
+- **Priorität** — farbcodiertes Badge für schnelle Priorisierung.
+- **Geplante und tatsächliche Dauer** — geplante Zeit im Vergleich zum tatsächlichen Verlauf.
+- **Durchschnittliche Zykluszeit** — mittlere Produktionszeit pro Auftrag.
+- **Abweichung der Zykluszeit** — Differenz zwischen geplanter und tatsächlicher Zykluszeit.
+- **Abweichung der Rüstzeit** — Differenz zwischen geplanter und tatsächlicher Vorbereitungszeit.
+- **Intervallanzahl** — Anzahl der erfassten Produktionsintervalle pro Auftrag.
 
-  📸 `![Screenshot: oben angeheftete markierte Unterhaltungen in der Liste]()`
+**Deine Konfiguration wird gespeichert:** Schalte Spalten über die Sichtbarkeitssteuerung ein oder aus. Die Auswahl wird bei jedem Besuch automatisch wiederhergestellt, auch nach einem Seitenwechsel.
 
-  📸 `![Screenshot: Quellenbereich unter einer Assistentenantwort, im eingeklappten und ausgeklappten Zustand]()`
+### Aufgabenplaner: bessere Filter und mehr Aufgabendetails
 
-  ### 1.2. 🔐 Berechtigungseditor für Benutzer (Admin-Bereich)
+Das Finden und Verwalten von Operationen im Planer geht jetzt deutlich schneller.
 
-  Administrator:innen können jetzt **genau festlegen, auf welche Seiten und Maschinen ein Benutzer Zugriff hat** — direkt aus der Benutzerliste im Admin-Bereich, ohne Backend-Konfiguration.
+- Durchsuche die Liste der nicht zugewiesenen Operationen nach Auftragsname, Produkt oder Operation.
+- Filtere nach **Auftrags-Tags** und **Priorität**, um die Liste sofort einzugrenzen.
+- Sieh und bearbeite **Notizen** und **Beschreibungen** direkt im Planer, ohne die Seite zu wechseln.
 
-  **Was sich geändert hat:**
+### Order Upload Planner: überarbeiteter Eingabeablauf
 
-  - Jeder Benutzer im Admin-Bereich hat jetzt die Aktion **Berechtigungen bearbeiten**.
+Der Upload-Prozess ist jetzt flexibler und übersichtlicher.
 
-  - Es öffnet sich ein Dialog, in dem du auswählst, welche Plattformseiten der Benutzer sehen darf und auf welche Maschinen er zugreifen darf — nach Halle gruppiert für eine einfache Auswahl.
+- Lade **Auftrags-Tags** zusammen mit deinen Auftragsdaten hoch, damit Aufträge beim Import direkt vorgetaggt werden.
+- Wechsle mit der **Industry-Minutes-Umschaltung** zwischen standardmäßiger und industrieller Zeitinterpretation.
+- Importiere optional nur **maschinenzugewiesene Aufträge** und überspringe alle anderen.
+- Eine **Fortschrittsanzeige** zeigt den Upload-Status in Echtzeit.
+- **Warnungen bei Terminüberschneidungen** erscheinen bereits in der Vorschau, bevor du den Import bestätigst.
 
-  - Änderungen gelten sofort beim nächsten Login bzw. in der nächsten Sitzung.
+### Data Acquisition (PDA): mehr Unterstützung für Operatoren
 
-  📸 `![Screenshot: Dialog zum Bearbeiten der Berechtigungen — Seitenzugriff per Checkboxen und Maschinenauswahl nach Halle gruppiert]()`
+Mehrere Verbesserungen reduzieren den manuellen Aufwand und helfen, Fehler auf dem Shopfloor zu vermeiden.
 
-  ## 2. 🔧 Verbesserungen im Alltag
+- Die **Operationssequenznummer** wird jetzt auf jedem Job-Chip angezeigt, damit Operatoren immer wissen, auf welchen Schritt sie buchen.
+- **Automatische Statusupdates für Aufträge**: Wenn ein Operator die Produktion startet oder stoppt, wird der Auftragsstatus automatisch aktualisiert.
+- Ein **Überproduktionshinweis** erscheint automatisch, wenn die produzierte Menge die geplante Menge überschreitet.
+- **Notizen und Beschreibungen** für Operationen und Zuordnungen sind direkt in der PDA-Seite verfügbar.
 
+### Gespeicherte Spalteneinstellungen
 
-  ### 2.1. 📦 Aufträge & Produkte — umfangreichere Tabelle und persönliche Spalten
+Jede Spaltensichtbarkeit, die du festlegst — in Bestellungen, im Admin-Panel oder in einer anderen Datentabelle — wird automatisch in deinem Konto gespeichert und bei jedem Besuch wiederhergestellt.
 
-  Die Tabelle für Aufträge & Produkte wurde deutlich erweitert: mit neuen Daten-Spalten und der Möglichkeit, die bevorzugte Ansicht anzupassen und zu speichern.
+### Chat-Seitenleiste
 
-  **Neue verfügbare Spalten:**
+Der schwebende Chat-Assistent ist von jeder Seite aus verfügbar und hilft dir, die Plattform schneller zu verstehen.
 
-  - **Kunde** — zeigt den Kundennamen als farblich hervorgehobenen Chip.
+- Frage, wie Funktionen funktionieren, und erhalte Antworten auf Basis der offiziellen Dokumentation.
+- Nutze ihn, um zu sehen, welche Aktionen auf der aktuell geöffneten Seite verfügbar sind.
+- Finde Arbeitsabläufe, Einstellungen und Navigationshinweise, ohne den aktuellen Kontext zu verlassen.
 
-  - **Priorität** — farbcodiertes Prioritäts-Badge (kritisch, hoch, mittel, niedrig).
+Für eine vollständige Referenz sieh dir die **Dokumentation** an. Dort sind alle Seiten, Abläufe und verfügbaren Aktionen der Plattform beschrieben.
 
-  - **Geplante & tatsächliche Dauer** — wie lange der Auftrag geplant war vs. wie lange er tatsächlich dauerte.
-
-  - **Ø Zykluszeit** — durchschnittliche Produktionszykluszeit pro Intervall und Auftragszeile.
-
-  - **Abweichung der Zykluszeit** — Differenz zwischen geplanter und tatsächlicher Zykluszeit.
-
-  - **Abweichung der Rüstzeit** — Differenz zwischen geplanter und tatsächlicher Vorbereitungszeit.
-
-  - **Intervallanzahl** — wie viele Produktionsintervalle für den Auftrag erfasst wurden.
-
-  **Sichtbarkeit der Spalten — in deinem Konto gespeichert:**
-
-  - Über die Spaltenauswahl kannst du optionale Spalten ein- oder ausblenden.
-
-  - Deine Auswahl wird **sitzungsübergreifend gespeichert**.
-
-  **Datums- und Dauerformatierung:**
-
-  - Zeitstempel und Dauern werden jetzt in einem kompakteren Format angezeigt (z. B. `2h 15m` statt roher Minutenwerte).
-
-  📸 `![Screenshot: Auftragstabelle mit sichtbaren neuen Spalten — Kunde, Priorität, Dauer, Zykluszeit-Spalten]()`
-
-  📸 `![Screenshot: geöffnetes Popover zur Spaltenauswahl]()`
-
-  ### 2.2. 🗓️ Zuweisungsplaner — durchsuchbare Operations-Warteschlange
-
-  Das Panel für nicht zugewiesene Operationen (die linke Warteschlange zum Ziehen auf Maschinen) unterstützt jetzt **Suche und Paginierung**.
-
-  **Was sich geändert hat:**
-
-  - Eine Suchleiste oben in der Warteschlange filtert nach Name, Auftrag oder Produkt.
-
-  - Die Operationen werden seitenweise geladen, damit das Panel auch bei großen Mengen schnell bleibt.
-
-  📸 `![Screenshot: Zuweisungsplaner — Warteschlange mit Suchleiste und paginierten Ergebnissen]()`
-
-  ### 2.3. 📤 ERP-Upload-Planer — Upload-Fortschritt und Terminwarnungen
-
-  Der ERP-Upload-Planer (Admin-Bereich → ERP-Uploads) erhielt mehrere Verbesserungen in der Bedienung.
-
-  **Upload-Fortschrittsanzeige:**
-
-  - Beim Hochladen zeigt eine visuelle Fortschrittsleiste, wie weit der Upload fortgeschritten ist.
-
-  **Warnungen bei Termin-Konflikten:**
-
-  - Wenn hochgeladene Zeilen problematische geplante Termine enthalten (z. B. Enddatum vor Startdatum oder fehlende Zeitanteile), markiert das System sie in der Vorschau mit klaren Warnhinweisen.
-
-  **Intelligentere Zahlenerkennung für Zeitfelder:**
-
-  - Zeitfelder wie geplante Vorbereitungszeit und geplante Produktionszeit akzeptieren jetzt auch Werte aus Tabellenkalkulationen mit Einheitensuffixen (z. B. `"45 min"`, `"1.5h"`).
-
-  📸 `![Screenshot: Fortschrittsanzeige beim Hochladen einer Datei]()`
-
-  📸 `![Screenshot: Vorschau mit Warnhinweisen zu Termin-Konflikten in betroffenen Zeilen]()`
-
-  ### 2.4. 🏭 Datenerfassung (PDA) — Operationssequenz auf Auftragschips
-
-  Auf der Datenerfassungsseite zeigen die Auftrags-/Job-Chips im Bereich der aktiven Sitzung jetzt zusätzlich die **Operationssequenznummer** an.
-
-  So lässt sich leichter prüfen, ob die Produktion für den richtigen Schritt eines mehrstufigen Auftrags erfasst wird — besonders wenn dasselbe Produkt auf derselben Maschine in unterschiedlichen Phasen vorkommt.
-
-  📸 `![Screenshot: Auftragschip in der Datenerfassung mit Operationssequenznummer (z. B. Op. 20 — Fräsen)]()`
-
-  ### 2.5. 💬 KI-Chat-Seitenleiste — bessere Bedienbarkeit
-
-  Die schwebende KI-Chat-Seitenleiste (von jeder Seite aus erreichbar) wurde an mehreren Stellen verbessert.
-
-  **Einklappbarer Quellenbereich:**
-
-  - Wenn Antworten auf Dokumentation basieren, erscheinen die Quellen in einem einklappbaren Bereich. Du kannst ihn zum Lesen der Zitate öffnen oder für eine aufgeräumte Ansicht schließen.
-
-  **Klarere Aktionsbuttons:**
-
-  - Alle Icon-Buttons (Kopieren, neuer Chat, Navigation) zeigen beim Darüberfahren einen Tooltip.
-
-  - Die Icon-Farben wurden für bessere Sichtbarkeit angepasst, besonders im Dark Mode.
-
-  📸 `![Screenshot: Chat-Seitenleiste mit ein- und ausgeklapptem Quellenbereich]()`
-
-  ### 2.6. 📋 Tabellen auf der gesamten Plattform — verbesserte Paginierung
-
-  Die Paginierungssteuerung in allen Datentabellen der Plattform (Admin-Bereich, Aufträge, Alarmregeln usw.) wurde kompakter und einheitlicher gestaltet.
-
-  - Die Seitennavigation benötigt weniger Platz.
-
-  - Aktuelle Seite und Gesamtzahl der Datensätze sind immer sichtbar.
-
-  - Die Navigation ist auf allen Tabellen konsistenter und reaktionsschneller.
-
-  📸 `![Screenshot: kompakte Paginierungsleiste am unteren Rand einer Datentabelle]()`
-
-  ## 3. 🐛 Fehlerbehebungen
-
-
-  ### Maschineninfos — offene Alarme korrekt angezeigt
-
-  Auf der Seite „Maschinendetails“ zeigt der Alarmzähler jetzt nur noch **aktive, ungelöste Alarme** an. Zuvor wurden bereits behobene Alarme mitgezählt.
-
-  ### Aufträge & Produkte — Laden der Arbeitsauftragsliste behoben
-
-  In der Detailansicht eines Auftrags wurde die Arbeitsauftragsliste in manchen Fällen nicht geladen. Das ist behoben — alle Arbeitsaufträge erscheinen jetzt zuverlässig beim Öffnen eines Auftrags.
-
-  ### Maschinendetails — Diagrammabsturz bei fehlenden Daten
-
-  Das Zeitlinien-/Grund-Diagramm in den Maschinendetails konnte bei fehlenden oder unvollständigen Daten abstürzen. Das wurde behoben; fehlende Daten werden jetzt sauber abgefangen.
-
-  *Bei Fragen zu diesen Funktionen wende dich bitte an deine Plattform-Administration oder an das Watchmen-Support-Team.*
+*Bei Fragen zu diesen Funktionen wende dich an deinen Plattformadministrator oder an den Watchmen-Support.*
 </Update>
+
+## Releases
+
+No releases listed.
+
 
