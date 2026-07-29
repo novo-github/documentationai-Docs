@@ -389,6 +389,20 @@
                 "icon": "history"
               }
             ]
+          },
+          {
+            "tab": "Roadmap",
+            "pages": [
+              {
+                "title": "Roadmap",
+                "path": "roadmap",
+                "show-sidebar": false,
+                "show-toc": false,
+                "show-page-navigation": false,
+                "ask-feedback": false
+              }
+            ],
+            "icon": "lucide-map-plus"
           }
         ]
       },
