@@ -1,0 +1,26 @@
+---
+title: "Probleme beim Auftragsimport beheben"
+description: "Grenzen Sie Probleme im ERP-Auftragsimport anhand von Verarbeitungsphase, Quelldaten, Zuordnung und Vorschau ein."
+---
+
+## Ermitteln Sie die betroffene Phase
+
+Nutzen Sie die im ERP-Upload-Planer angezeigte Phase, um das Problem einzugrenzen:
+
+- **Vor der Zuordnung:** Prüfen Sie, ob die Quelldatei angenommen und gelesen werden kann.
+- **Während der Zuordnung:** Stellen Sie sicher, dass erforderliche Produktionsfelder den vorgesehenen Quellspalten zugeordnet sind.
+- **Bei der Werteauflösung:** Prüfen Sie nicht aufgelöste Maschinen- oder Produktionswerte.
+- **In der Vorschau:** Prüfen Sie Zeilenvalidierungen und Terminwarnungen, bevor Sie den Import bestätigen.
+- **Beim Absenden:** Lassen Sie die Seite geöffnet, während der Uploadstatus angezeigt wird.
+
+## Setzen Sie den maßgeblichen Ablauf fort
+
+Der [Ablauf für ERP-Auftragsimporte](/de/platform-intro/workflows/order-upload-planner) beschreibt die vollständige Reihenfolge von der Quellauswahl bis zur Vorschau und Bestätigung.
+
+<Callout kind="alert">
+  Korrigieren Sie Quell- oder Zuordnungsprobleme, bevor Sie einen Import bestätigen. Ergänzen Sie keine fehlenden Produktionswerte auf Verdacht, wenn der Planer ein nicht aufgelöstes Feld meldet.
+</Callout>
+
+## Wenn das Problem weiterhin besteht
+
+Notieren Sie die Phase, die sichtbare Validierungsmeldung und ob alle oder nur einzelne Zeilen betroffen sind. Teilen Sie diese Angaben Ihrer Plattformadministration oder dem Supportkanal Ihrer Organisation mit.

@@ -1,32 +1,54 @@
 ---
-title: Core Features
-description: >-
-  Explore the main capabilities of the Novo AI WatchMen Platform, including
-  AI-driven machine monitoring and predictive maintenance. Learn how to leverage
-  these features for industrial applications.
+title: "Core Features"
+description: "Explore the verified Watchmen Platform capabilities for monitoring, production planning, analytics, collaboration, administration, and API access."
 ---
-## Overview
 
-Novo AI WatchMen Platform empowers you to monitor industrial machines in real-time, predict failures before they occur, and optimize operations using advanced AI. You gain actionable insights through intuitive dashboards, automated alerts, and customizable workflows. These core features help reduce downtime, lower maintenance costs, and boost productivity across manufacturing, energy, and logistics sectors.
+## Capability Map
 
-<Callout kind="info" collapsed="false">
-  WatchMen integrates seamlessly with IoT sensors and existing PLC systems. Start by connecting your devices via the dashboard at `https://dashboard.example.com`.
-</Callout>
+The Watchmen Platform organizes factory work around connected operational areas. Each capability below links to its canonical page reference.
 
-## Key Features
-
-Discover the platform's standout capabilities through these feature cards.
-
-<Columns cols="3">
-  <Card title="Real-time Monitoring" href="#real-time-monitoring" icon="activity" horizontal="false">
-    Track machine health metrics like vibration, temperature, and RPM instantly.
+<Columns cols="2">
+  <Card title="Machine Monitoring" href="/en/platform-intro/pages/machines" icon="activity" horizontal="false">
+    Review current machine state and continue to machine details, history, configuration, data acquisition, or alert rules.
   </Card>
 
-  <Card title="Data Analytics" href="#data-analytics" icon="bar-chart-3" horizontal="false">
-    Generate custom reports and visualize trends for better decisions.
+  <Card title="Orders & Production Planning" href="/en/platform-intro/pages/orders-products" icon="package" horizontal="false">
+    Work with products and production orders, then continue into scheduling and assignment planning.
   </Card>
 
-  <Card title="Custom Workflows" href="#custom-workflows" icon="settings" horizontal="false">
-    Build tailored automation rules without coding expertise.
+  <Card title="Operational Analytics" href="/en/platform-intro/pages/timeline-analysis" icon="chart-line" horizontal="false">
+    Use timeline, trend, organization, comparison, leaderboard, and energy-oriented views to review performance.
+  </Card>
+
+  <Card title="Workspace Tools" href="/en/platform-intro/pages/kanban" icon="layout-dashboard" horizontal="false">
+    Coordinate tickets, knowledge entries, and documented AI conversations.
+  </Card>
+
+  <Card title="Administration" href="/en/platform-intro/pages/admin-panel" icon="settings" horizontal="false">
+    Maintain shared operational records and open the ERP Upload Planner.
+  </Card>
+
+  <Card title="Task Guidance" href="/en/platform-intro/workflows/overview" icon="git-branch" horizontal="false">
+    Follow canonical workflows instead of reconstructing a task from multiple screen descriptions.
   </Card>
 </Columns>
+
+## Machine Operations
+
+Machine-oriented pages cover the machine overview, live details, historical analysis, configuration, Data Acquisition (PDA), and alert rules. The related workflows explain setup, live monitoring, history review, and alert-rule management.
+
+## Orders and Planning
+
+Orders & Products provides the starting point for product and production-order work. Scheduler and Assignment Planner support later planning, while Order Detail contains the deeper structure of a single production order.
+
+## Analysis and Workspace
+
+Reporting pages separate timeline-based investigation, longer-term trends, organization-wide statistics, machine comparisons, ranking, and energy peaks. Workspace pages cover Kanban, the Knowledge Base, and Chat History.
+
+## Administration and API Access
+
+The Admin Panel contains shared setup used across the platform. The ERP Upload Planner handles incoming production data. Public integrations use the REST API documented in the **API Reference** tab.
+
+<Callout kind="tip">
+  Start with a page reference when you need orientation. Use the linked workflow when you need to complete a task.
+</Callout>

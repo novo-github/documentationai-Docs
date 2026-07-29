@@ -1,81 +1,54 @@
 ---
-title: Introduction to Novo AI
-description: >-
-  Discover the WatchMen AI Platform by Novo AI, designed to optimize your
-  machines using advanced AI technologies. This landing page provides an
-  overview of key features, benefits, and quick navigation to get started.
+title: "Introduction to Novo AI"
+description: "Learn how the Watchmen Platform connects machine monitoring, production planning, analytics, workspace tools, and administration."
 ---
-<Callout kind="info" collapsed="false">
-  This documentation was generated as a starter kit template based on your brand. Please review and customize the content to accurately reflect your product's features, APIs, and capabilities.
-</Callout>
 
 ## Overview
 
-Novo AI's WatchMen AI Platform empowers you to optimize your industrial machines with cutting-edge artificial intelligence. You monitor performance in real-time, predict potential failures before they occur, and automate optimizations to boost efficiency and reduce downtime. Our mission is to transform machine management by making AI accessible and actionable for teams of all sizes.
+Novo AI's Watchmen Platform brings machine monitoring, production planning, operational analysis, and shared factory configuration into one workspace.
 
-Whether you operate a small workshop or a large manufacturing facility, WatchMen integrates seamlessly with your existing hardware and provides actionable insights that drive cost savings and productivity gains.
+Use this documentation to understand an individual screen, follow a task from start to finish, or review the public REST API.
 
-## Key Features
-
-<Columns cols="3">
-  <Card title="Real-Time Monitoring" href="#real-time-monitoring" icon="activity" horizontal="false">
-    Track machine health metrics like vibration, temperature, and power usage with live dashboards.
-  </Card>
-
-  <Card title="Predictive Maintenance" href="#predictive-maintenance" icon="shield" horizontal="false">
-    Use machine learning models to forecast failures up to 7 days in advance.
-  </Card>
-
-  <Card title="Automated Optimization" href="#optimization" icon="zap" horizontal="false">
-    Automatically adjust parameters for peak performance without manual intervention.
-  </Card>
-</Columns>
-
-## Benefits for Machine Optimization
-
-You gain significant advantages by leveraging WatchMen:
-
-- **Reduced Downtime**: Proactive alerts prevent unexpected breakdowns, saving you hours of lost production.
-
-- **Cost Savings**: Optimize energy use and extend machine lifespan, lowering operational expenses by up to 30%.
-
-- **Scalability**: Deploy across hundreds of machines with centralized management.
-
-<Callout kind="success" collapsed="false">
-  WatchMen delivers measurable ROI through data-driven decisions tailored to your operations.
+<Callout kind="info">
+  The features and procedures documented here reflect the current platform documentation. Available pages and actions can differ according to your access.
 </Callout>
 
-## Quick Start
-
-Get up and running in minutes with these steps:
-
-<Steps>
-  <Step title="Create Account" icon="user-plus" title-type="p">
-    Sign up at `https://dashboard.example.com` using your email.
-  </Step>
-
-  <Step title="Connect Machines" icon="link" title-type="p">
-    Follow the guided setup to link your sensors via MQTT or REST APIs.
-  </Step>
-
-  <Step title="View Insights" icon="bar-chart-3" title-type="p">
-    Access your first dashboard and set up alerts.
-  </Step>
-</Steps>
-
-## Quick Navigation
+## Choose Where to Start
 
 <Columns cols="2">
-  <Card title="Authentication" href="/en/authentication" icon="lock" horizontal="false">
-    Secure your API access with keys and tokens.
+  <Card title="Monitor Machines" href="/en/platform-intro/pages/machines" icon="activity" horizontal="false">
+    Review machine state, operational context, alerts, and links to machine-specific views.
   </Card>
 
-  <Card title="Optimization Guides" href="/en/guides" icon="settings" horizontal="false">
-    Advanced configuration for specific machine types.
+  <Card title="Work with Orders & Products" href="/en/platform-intro/pages/orders-products" icon="package" horizontal="false">
+    Find production orders and products, then open the relevant planning or detail workflow.
   </Card>
 
-  <Card title="Support & Resources" href="/en/support" icon="help-circle" horizontal="false">
-    FAQs, troubleshooting, and community forums.
+  <Card title="Plan Production" href="/en/platform-intro/pages/scheduler" icon="calendar" horizontal="false">
+    Review scheduling and assignment tools used to place work on machines.
+  </Card>
+
+  <Card title="Manage Platform Setup" href="/en/platform-intro/pages/admin-panel" icon="settings" horizontal="false">
+    Find the shared halls, shifts, operators, timeline reasons, and import tools maintained by administrators.
   </Card>
 </Columns>
 
+## Two Ways to Use the Platform Guide
+
+<Columns cols="2">
+  <Card title="Page Reference" href="/en/platform-intro/overview" icon="book-open" horizontal="false">
+    Learn what a screen is for, what it contains, and which related areas are available.
+  </Card>
+
+  <Card title="Workflow Guides" href="/en/platform-intro/workflows/overview" icon="git-branch" horizontal="false">
+    Follow task-focused guidance for machine setup, planning, monitoring, imports, and administration.
+  </Card>
+</Columns>
+
+## API Reference
+
+The **API Reference** tab documents the public Watchmen REST API from `api-reference/openapi.yaml`, including authentication, request schemas, examples, and responses.
+
+## Get Help
+
+Use the [Help Center](/en/help-center) for orientation and symptom-based troubleshooting. For access changes or account-specific assistance, contact your platform administrator or the support channel provided by your organization.

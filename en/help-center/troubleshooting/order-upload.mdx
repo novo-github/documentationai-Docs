@@ -1,0 +1,26 @@
+---
+title: "Troubleshoot Order Uploads"
+description: "Locate ERP order-upload problems by checking the current stage, source data, mapping, and preview."
+---
+
+## Identify Where the Upload Stopped
+
+Use the stage shown by the ERP Upload Planner to narrow the problem:
+
+- **Before mapping:** review whether the source file was accepted and can be read.
+- **During mapping:** confirm that required production fields are mapped to the intended source columns.
+- **During value resolution:** review unresolved machine or production values.
+- **During preview:** inspect row-level validation and schedule warnings before confirming the import.
+- **During submission:** keep the page open while the upload status is displayed.
+
+## Continue with the Canonical Workflow
+
+The [ERP order-upload workflow](/en/platform-intro/workflows/order-upload-planner) documents the full sequence from source selection through preview and confirmation.
+
+<Callout kind="alert">
+  Correct source or mapping problems before confirming an import. Do not infer missing production values when the planner reports an unresolved field.
+</Callout>
+
+## If the Problem Continues
+
+Record the stage, the visible validation message, and whether the problem affects every row or only specific rows. Share that information with your platform administrator or your organization's support channel.

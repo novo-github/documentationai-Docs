@@ -380,6 +380,39 @@
             ]
           },
           {
+            "tab": "Help Center",
+            "icon": "help-circle",
+            "pages": [
+              {
+                "title": "Help Center",
+                "path": "en/help-center",
+                "icon": "home"
+              },
+              {
+                "group": "FAQs",
+                "icon": "help-circle",
+                "expandable": false,
+                "pages": [
+                  {
+                    "title": "How to Start",
+                    "path": "en/help-center/faq/how-to-start"
+                  }
+                ]
+              },
+              {
+                "group": "Troubleshooting",
+                "icon": "alert-circle",
+                "expandable": false,
+                "pages": [
+                  {
+                    "title": "Order Upload Problems",
+                    "path": "en/help-center/troubleshooting/order-upload"
+                  }
+                ]
+              }
+            ]
+          },
+          {
             "tab": "Changelog",
             "icon": "clock",
             "pages": [
@@ -389,22 +422,6 @@
                 "icon": "history"
               }
             ]
-          },
-          {
-            "tab": "Roadmap",
-            "pages": [
-              {
-                "title": "Roadmap",
-                "path": "roadmap",
-                "show-sidebar": false,
-                "show-toc": false,
-                "show-page-navigation": false,
-                "ask-feedback": false,
-                "show-parent-label": false,
-                "content-width": "wide"
-              }
-            ],
-            "icon": "lucide-map-plus"
           }
         ]
       },
@@ -779,7 +796,7 @@
             "pages": [
               {
                 "title": "Help Center",
-                "path": "help-center",
+                "path": "de/help-center",
                 "icon": "home"
               },
               {
@@ -788,8 +805,8 @@
                 "expandable": false,
                 "pages": [
                   {
-                    "title": "How to Start",
-                    "path": "help-center/faq/how-to-start"
+                    "title": "Erste Schritte",
+                    "path": "de/help-center/faq/how-to-start"
                   }
                 ]
               },
@@ -799,19 +816,8 @@
                 "expandable": false,
                 "pages": [
                   {
-                    "title": "Cannot Upload Dataset",
-                    "path": "help-center/troubleshooting/cannot-upload-dataset"
-                  }
-                ]
-              },
-              {
-                "group": "Guides",
-                "icon": "book-open",
-                "expandable": false,
-                "pages": [
-                  {
-                    "title": "Create Your First Project",
-                    "path": "help-center/guides/create-your-first-project"
+                    "title": "Probleme beim Auftragsimport",
+                    "path": "de/help-center/troubleshooting/order-upload"
                   }
                 ]
               }
@@ -832,7 +838,7 @@
       }
     ]
   },
-  "description": "Documentation for Novo AI's WatchMen Platform",
+  "description": "Documentation for Novo AI's Watchmen Platform",
   "template": "classic",
   "logo-dark": "https://blob-cdn.documentation.ai/org-29d2be8c-cb7e-41f6-b034-2d24e627c4fa/doc-fa04d5db-e293-4657-aed3-4555437c770c/1775582417622-cjka9576m9o-NovoAIWhite_logo.png?fm=auto&auto=compress%2Cformat",
   "logo-light": "https://blob-cdn.documentation.ai/org-29d2be8c-cb7e-41f6-b034-2d24e627c4fa/doc-fa04d5db-e293-4657-aed3-4555437c770c/1775582439701-37sqv40p8xb-NewLogo_small.png?fm=auto&auto=compress%2Cformat",
@@ -845,6 +851,43 @@
       }
     }
   },
+  "redirects": [
+    {
+      "source": "/introduction",
+      "destination": "/en/introduction",
+      "statusCode": 308
+    },
+    {
+      "source": "/features",
+      "destination": "/en/features",
+      "statusCode": 308
+    },
+    {
+      "source": "/changelog",
+      "destination": "/en/changelog",
+      "statusCode": 308
+    },
+    {
+      "source": "/help-center",
+      "destination": "/en/help-center",
+      "statusCode": 308
+    },
+    {
+      "source": "/help-center/faq/how-to-start",
+      "destination": "/en/help-center/faq/how-to-start",
+      "statusCode": 308
+    },
+    {
+      "source": "/help-center/troubleshooting/cannot-upload-dataset",
+      "destination": "/en/help-center/troubleshooting/order-upload",
+      "statusCode": 308
+    },
+    {
+      "source": "/help-center/guides/create-your-first-project",
+      "destination": "/en/platform-intro/workflows/create-production-order",
+      "statusCode": 308
+    }
+  ],
   "ai": {
     "page-actions": [
       "copy",

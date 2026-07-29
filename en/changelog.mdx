@@ -1,104 +1,73 @@
 ---
-title: Changelog
-description: Release history for UI-Build.
+title: "Changelog"
+description: "Release history for the Watchmen Platform user interface."
+toc: false
 ---
-
-{/* TOC disabled for this page */}
-
-This page tracks UI-Build releases and highlights the changes in each version.
 
 ## Releases
 
 <Update label="2026-04-30" description="v1.5.60" tags={["feature", "improvement"]}>
+  **UI-Build commit:** `ad93cfa01`
 
-**UI-Build ad93cfa01**
+  **Release period:** March–April 2026
 
-Watchmen Platform — What's New
+  ### New Features
 
-**Release Period: March – April 2026**
+  #### User Permissions Editor
 
-## New Features
+  Administrators can manage page and machine access from the Admin Panel.
 
-### User Permissions Editor
+  - Open a user record and select **Edit Permissions**.
+  - Select the platform pages and machines the user can access.
+  - Save the changes so they apply to the user's next session.
 
-Administrators can now control exactly which pages and machines each user has access to — directly from the Admin Panel, with no backend configuration required.
+  #### Chat History
 
-- Open any user's record and select **Edit Permissions**.
-- Choose which platform pages the user can see and which machines they can access.
-- Save the changes. They apply on the user's next session.
+  The AI assistant has a dedicated page under **Workspace → Chat History**.
 
-### AI Chat History
+  - Reopen saved conversations.
+  - Star, rename, or delete conversations.
+  - Review answers in the documentation context from which the conversation started.
 
-The AI assistant now has a dedicated full page under **Workspace → Chat History**.
+  ### Improvements
 
-AI Chat History is available for documentation only and does not access live production or machine data.
+  #### Orders & Products
 
-- All conversations are saved and easy to return to.
-- **Star** conversations to pin them at the top, **rename** them for reference, or **delete** ones you no longer need.
-- Answers are context-aware based on the page you were on when you opened the chat.
+  The order table includes additional planning and production fields:
 
-## Quality of Life Improvements
+  - Customer and priority
+  - Planned and actual durations
+  - Average cycle time
+  - Cycle-time and setup-time deviation
+  - Production interval count
 
-### Orders & Products
+  Column visibility preferences are saved for later sessions.
 
-The Orders & Products table now surfaces significantly more data in the same view — and you can configure exactly what you see.
+  #### Assignment Planner
 
-**New columns available:**
-- **Customer** — colour-coded chip showing which customer the order belongs to.
-- **Priority** — colour-coded badge for Critical, High, Medium, or Low orders.
-- **Planned & Actual Durations** — planned time versus what actually occurred.
-- **Avg. Cycle Time** — average production cycle time per order.
-- **Cycle Time Deviation** — difference between actual cycle time and the plan.
-- **Setup Time Deviation** — difference between planned and actual preparation time.
-- **Interval Count** — number of production intervals logged against the order.
+  - Search the unassigned operations queue by order, product, or operation.
+  - Filter by order tags and priority.
+  - Review and edit operation or assignment notes from the planner.
 
-**Your configuration is saved:** Toggle columns on or off using the column visibility button, and your selection is restored on every visit across sessions.
+  #### ERP Upload Planner
 
-### Assignment Planner
+  - Import order tags with order data.
+  - Choose standard or industry-minute interpretation for time fields.
+  - Limit an import to orders that already have a machine assignment.
+  - Review upload progress and schedule warnings before confirmation.
 
-Finding and managing operations in the planner is now significantly faster.
+  #### Data Acquisition (PDA)
 
-- **Search** the unassigned operations queue by order name, product, or operation.
-- **Filter by Order Tags** and **Priority** to narrow down the list quickly.
-- **View and edit notes and descriptions** on any operation or assignment directly from the planner.
+  - Operation sequence numbers appear on job chips.
+  - Starting or stopping production updates the related order status.
+  - An over-production prompt can help operators review order completion.
+  - Operation and assignment notes are available from the PDA page.
 
-### Order Upload Planner
+  #### AI Chat Sidebar
 
-The upload process is now more flexible and informative.
+  The assistant can provide documentation-based guidance about the current page, available actions, workflows, and settings.
 
-- **Upload Order Tags** alongside your order data to pre-tag orders on import.
-- **Industry minutes toggle** — switch time field interpretation between standard and industry minutes.
-- **Machine-assigned orders only** — import only orders that are already assigned to a machine.
-- A **progress bar** shows upload status in real time.
-- **Schedule conflict warnings** appear in the preview step before committing, so you can fix issues in the source file first.
-
-### Data Acquisition (PDA)
-
-Several improvements reduce manual effort and prevent errors on the shop floor.
-
-- **Operation sequence number** is now shown on every job chip, so operators always know which step they are logging against.
-- **Automatic order status updates** — when an operator starts or stops production, the order status updates automatically.
-- **Over-production prompt** — when produced quantity exceeds the planned amount, a prompt asks the operator whether to mark the order as completed.
-- **Operation and assignment notes** are accessible directly from the PDA page.
-
-### Saved Column Preferences
-
-Every column visibility configuration you set is automatically saved to your account and restored on every visit. No reconfiguration is needed after refreshing or switching pages.
-
-### AI Chat Sidebar
-
-The floating chat assistant (available from every page) is your quickest way to understand the platform.
-
-- Ask how any feature works and get an answer grounded in the official documentation.
-- Use it to understand what actions are available on the page you're currently on.
-- Find workflows, settings, and navigation guidance without leaving your current context.
-
-For a complete reference, visit the **Documentation** page — it covers every page, workflow, and available action across the platform.
-
-*For questions about any of these features, contact your platform administrator or reach out to the Watchmen support team.*
+  <Callout kind="info">
+    Page and machine availability depends on the permissions assigned to the user.
+  </Callout>
 </Update>
-
-## Releases
-
-No releases listed.
-

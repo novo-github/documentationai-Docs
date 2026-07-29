@@ -3,15 +3,15 @@ info:
   title: Watchmen REST API
   version: 1.0.0
   description: >
-    The Watchmen REST API allows authorized users to retrieve specific data securely.
-    API-Access Keys grant unrestricted access only to the endpoints documented below.
-    These keys **cannot** be used to access any other APIs on `watchmen.novoai.de`.
+    The Watchmen REST API allows authorized clients to use the public operations
+    documented in this reference. API-Access Keys are accepted only by this
+    documented public API surface.
 
 
     ## Authentication
 
 
-    All API requests must include either:
+    Every API request must use exactly one of these authentication methods:
 
 
     - A **JWT** in the **Authorization** header using the `Bearer` token scheme, OR
@@ -38,7 +38,7 @@ info:
 
     2. Click **Create New** API Access Key.
 
-    3. Set a validity period (maximum: 1 year).
+    3. Set the validity period offered by the Admin Panel.
 
     4. Copy the key securely. It **cannot** be retrieved later.
 
@@ -50,24 +50,19 @@ info:
 
     |--------|------|----------|-------------|
 
-    | `Content-Type` | string | Yes | Must be `application/json` |
+    | `Content-Type` | string | For requests with a JSON body | Must be `application/json` |
 
-    | `X-API-KEY` | string | Yes | API Access Key for authentication |
+    | `X-API-KEY` | string | Required when using API-key authentication | API Access Key for authentication |
 
-    | `Authorization` | string | Yes (if using JWT) | Bearer token for JWT authentication |
+    | `Authorization` | string | Required when using JWT authentication | Bearer token in the format `Bearer <token>` |
 
-    | `Cache-Control` | string | No | Defines cache policies |
-
-    | `Access-Control-Allow-Origin` | string | No | Specifies allowed cross-origin requests |
+    | `Accept` | string | Yes | Must be `application/json` |
 
 
     ## Base URL
 
 
     Use the base URL: `https://wm.novoai.de`
-
-
-    For testing the integration, access to a development server could also be provided on request.
 
 
     ## Security Considerations
@@ -78,8 +73,6 @@ info:
     - **Key Protection:** Never expose the API-Access Key in client-side applications or logs.
 
     - **Regeneration & Revocation:** Expired or compromised keys should be revoked and regenerated via the Admin Panel.
-  license:
-    name: MIT
   contact:
     name: Novo AI
     url: https://watchmen.novoai.de
@@ -150,7 +143,7 @@ paths:
       x-codeSamples:
         - lang: cURL
           source: |
-            curl -X 'GET' 'https://wm.novoai.de/v2/halls/' \
+            curl -X 'GET' 'https://wm.novoai.de/v2/halls' \
               -H 'accept: application/json' \
               -H 'X-API-KEY: your_api_access_key_here'
   /v2/halls/{id}:
@@ -293,7 +286,7 @@ paths:
       x-codeSamples:
         - lang: cURL
           source: |
-            curl -X 'GET' 'https://wm.novoai.de/v2/machine/' \
+            curl -X 'GET' 'https://wm.novoai.de/v2/machine' \
               -H 'accept: application/json' \
               -H 'X-API-KEY: your_api_access_key_here'
   /v2/timeline_reason:
@@ -348,7 +341,7 @@ paths:
       x-codeSamples:
         - lang: cURL
           source: |
-            curl -X 'GET' 'https://wm.novoai.de/v2/timeline_reason/' \
+            curl -X 'GET' 'https://wm.novoai.de/v2/timeline_reason' \
               -H 'accept: application/json' \
               -H 'X-API-KEY: your_api_access_key_here'
   /v2/timeline/reason_assign:
