@@ -27,4 +27,36 @@ Jede Anfrage muss eine der von der API unterstützten Authentifizierungsmethoden
 
 ## Verfügbare Ressourcen
 
-Die API-Referenz umfasst derzeit Hallen, Maschinen, Zeitachsen-Gründe und tägliche Maschinenanalysen. Die Endpunktseiten werden aus `api-reference/openapi.yaml` generiert.
+Die API-Referenz stellt derzeit die folgenden Endpunkte bereit. Wählen Sie einen Endpunkt aus, um Parameter, Anfragekörper, Beispiele, Antwortschemas und den interaktiven Playground anzuzeigen.
+
+<Columns cols="2">
+  <Card title="GET /v2/halls" href="/api-reference/get-v2-halls" icon="building" horizontal="false">
+    Ruft alle Hallen ab, die dem Unternehmen des authentifizierten Benutzers zugeordnet sind.
+  </Card>
+
+  <Card title="GET /v2/halls/{id}" href="/api-reference/get-v2-halls-id" icon="building-2" horizontal="false">
+    Ruft eine bestimmte Halle anhand ihrer eindeutigen ID ab.
+  </Card>
+
+  <Card title="GET /v2/machine" href="/api-reference/get-v2-machine" icon="factory" horizontal="false">
+    Ruft die Maschinen des Unternehmens ab und kann optional inaktive Maschinen einschließen.
+  </Card>
+
+  <Card title="GET /v2/timeline_reason" href="/api-reference/get-v2-timeline_reason" icon="list" horizontal="false">
+    Ruft die Zeitachsen-Gründe zur Klassifizierung von Stillständen und Betriebsereignissen ab.
+  </Card>
+
+  <Card title="POST /v2/timeline/reason_assign" href="/api-reference/post-v2-timeline-reason_assign" icon="tag" horizontal="false">
+    Weist einer Maschine einen Zeitachsen-Grund für ein aktuelles oder historisches Ereignis zu.
+  </Card>
+
+  <Card title="POST /v2/timeline/reason_preset" href="/api-reference/post-v2-timeline-reason_preset" icon="calendar-clock" horizontal="false">
+    Legt einen Zeitachsen-Grund für eine aktuelle oder geplante Maschinenaktivität im Voraus fest.
+  </Card>
+
+  <Card title="POST /v2/analytics/day" href="/api-reference/post-v2-analytics-day" icon="chart-line" horizontal="false">
+    Ruft umfassende Maschinenanalysen für einen einzelnen Kalendertag ab.
+  </Card>
+</Columns>
+
+Jeder Link öffnet die zugehörige Referenzseite für den aufrufbaren API-Endpunkt.

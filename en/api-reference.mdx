@@ -27,4 +27,36 @@ Every request must use one of the authentication methods supported by the API:
 
 ## Available Resources
 
-The API reference currently covers halls, machines, timeline reasons, and daily machine analytics. The endpoint pages are generated from `api-reference/openapi.yaml`.
+The API reference currently provides the following endpoints. Select an endpoint to view its parameters, request body, examples, response schemas, and interactive playground.
+
+<Columns cols="2">
+  <Card title="GET /v2/halls" href="/api-reference/get-v2-halls" icon="building" horizontal="false">
+    Retrieve all halls associated with the authenticated user's company.
+  </Card>
+
+  <Card title="GET /v2/halls/{id}" href="/api-reference/get-v2-halls-id" icon="building-2" horizontal="false">
+    Retrieve a specific hall by its unique ID.
+  </Card>
+
+  <Card title="GET /v2/machine" href="/api-reference/get-v2-machine" icon="factory" horizontal="false">
+    Retrieve the company's machines, optionally including inactive machines.
+  </Card>
+
+  <Card title="GET /v2/timeline_reason" href="/api-reference/get-v2-timeline_reason" icon="list" horizontal="false">
+    Retrieve the timeline reasons used to classify downtime and operational events.
+  </Card>
+
+  <Card title="POST /v2/timeline/reason_assign" href="/api-reference/post-v2-timeline-reason_assign" icon="tag" horizontal="false">
+    Assign a timeline reason to a machine for a live or historical event.
+  </Card>
+
+  <Card title="POST /v2/timeline/reason_preset" href="/api-reference/post-v2-timeline-reason_preset" icon="calendar-clock" horizontal="false">
+    Preset a timeline reason for real-time or scheduled machine activity.
+  </Card>
+
+  <Card title="POST /v2/analytics/day" href="/api-reference/post-v2-analytics-day" icon="chart-line" horizontal="false">
+    Retrieve comprehensive machine analytics for a single calendar day.
+  </Card>
+</Columns>
+
+Each link opens the dedicated reference page for that callable API operation.
