@@ -6,6 +6,143 @@ toc: false
 
 ## Releases
 
+<Update label="2026-07-26" description="v1.5.80" tags={["feature", "improvement"]}>
+  **UI-Build commit:** `8b115707b`
+
+  **Release period:** Late June–July 2026
+
+  ### New Features
+
+  #### [Redesigned Orders & Products Dashboard](/en/platform-intro/pages/orders-products)
+
+  Orders & Products now provides a table-focused workspace for monitoring and analyzing production orders.
+
+  - Filter by customer, order, product, machine, date range, assignment status, or live production.
+  - Use summary cards for Total, Planned, In Progress, Completed, Live, and Needs Attention.
+  - Identify orders that require attention because of exceeded durations, degraded cycle times, or overdue dates.
+  - Expand grouped orders to review individual assignments.
+  - Sort across the complete order dataset and move through results with server-backed pagination.
+  - Switch progress displays between PDA production entries and detected cycle counts.
+  - Select multiple orders for detailed analysis.
+  - Enable automatic refresh and save column visibility preferences.
+
+  #### [Hall Plan Kiosk and Display Management](/en/platform-intro/pages/hall-plan)
+
+  Hall Plans can now be configured for unattended production-floor displays.
+
+  - Use a simplified kiosk layout designed for wall-mounted screens.
+  - Configure language, machine sorting, visible metrics, zoom, refresh frequency, and page rotation.
+  - Choose which production statistics appear in the kiosk navigation.
+  - Review display connectivity and last-seen information.
+  - Automatically load new frontend builds on unattended displays.
+  - Administrators can monitor live and offline Hall Plan devices.
+
+  #### [Knowledge Base Workspace](/en/platform-intro/pages/knowledge-base)
+
+  The Knowledge Base now supports a document workflow and visual Knowledge Graph.
+
+  - Upload files, images, or written notes and monitor their processing status.
+  - Search and review stored documents.
+  - Review suggested relationships with machines, orders, and products.
+  - Confirm or reject suggested links.
+  - Explore confirmed and suggested relationships in the Knowledge Graph.
+
+  ### Improvements
+
+  #### [Data Acquisition (PDA)](/en/platform-intro/pages/data-acquisition)
+
+  Search for unplanned operations and assign them directly to a machine without leaving the PDA page.
+
+  #### [Account Sessions](/en/platform-intro/pages/user-profile)
+
+  The user profile shows active sessions, including the device, browser, operating system, IP address, location, and login time. Users can sign out an individual device or all other sessions.
+</Update>
+
+<Update label="2026-06-19" description="v1.5.75" tags={["feature", "improvement"]}>
+  **UI-Build commit:** `c8d4ceb82`
+
+  **Release period:** Late May–June 2026
+
+  ### New Features
+
+  #### [Organization Statistics Dashboard](/en/platform-intro/pages/org-stats)
+
+  The organization dashboard has been redesigned to provide a consolidated view of production performance.
+
+  - Review the live distribution of producing, idle, stopped, and preparation states.
+  - Compare performance by day, week, month, custom date range, or shift.
+  - Review machine and operator rankings for OEE and performance.
+  - Monitor energy consumption, energy wastage, associated costs, and rated targets.
+  - Review operational-impact indicators and daily energy trends.
+  - Use the dashboard on desktop and mobile layouts.
+
+  #### [Material and Work Scrap Tracking](/en/platform-intro/pages/orders-products)
+
+  Operators can distinguish between material scrap and work scrap when recording production quantities.
+
+  - Enter scrap quantities when stopping or continuing an interval.
+  - Review scrap values in Orders & Products and Order Analysis.
+  - See total produced quantities calculated with the recorded scrap included.
+
+  ### Improvements
+
+  #### [Assignment Planning](/en/platform-intro/pages/assignment-planner)
+
+  - Search and filter machines more easily in the Assignment Planner.
+  - Select which machines appear in the Gantt timeline.
+  - Automatically arrange future assignments while leaving active production unchanged.
+  - Review warnings before overlapping assignments are rearranged.
+
+  #### Saved Production Views
+
+  - Choose the [Hall Plan](/en/platform-intro/pages/hall-plan) display version and zoom level.
+  - Machine filters and sorting are restored when returning to the [Machines page](/en/platform-intro/pages/machines).
+  - [PDA](/en/platform-intro/pages/data-acquisition) assignment columns and sorting can be personalized.
+</Update>
+
+<Update label="2026-05-20" description="v1.5.70" tags={["feature", "improvement"]}>
+  **UI-Build commit:** `be97480f5`
+
+  **Release period:** May 2026
+
+  ### New Features
+
+  #### [Hall Plan V2](/en/platform-intro/pages/hall-plan)
+
+  The redesigned Hall Plan provides a clearer live overview of production across the hall.
+
+  - View OEE, availability, performance, produced pieces, machine times, and active orders.
+  - Compare live and previous-shift information.
+  - Select which production metrics appear on the display.
+  - Navigate large halls through a compact, paginated machine view.
+
+  #### [Assignment Gantt — Early Access](/en/platform-intro/pages/assignment-planner)
+
+  A timeline view is available from the Assignment Planner and platform navigation.
+
+  - Review assignments across machines and time.
+  - Identify scheduling overlaps and open the related order.
+  - Use the initial read-only view to inspect the production schedule.
+
+  #### [Pinned Navigation](/en/features)
+
+  Frequently used pages can be pinned in the side navigation and reordered using drag and drop. Each user's pinned navigation is saved for later sessions.
+
+  ### Improvements
+
+  #### [Orders & Products](/en/platform-intro/pages/orders-products)
+
+  - Added customer codes, operation sequence numbers, and planned cycle times.
+  - Improved duration and deviation displays.
+  - Added explanations for the most important production-performance metrics.
+
+  #### [Data Acquisition (PDA)](/en/platform-intro/pages/data-acquisition)
+
+  - Configure the information and ordering shown on assignment cards.
+  - Choose between open assignments and time-window-based views.
+  - Receive a warning before starting production when another assignment is already running.
+</Update>
+
 <Update label="2026-04-30" description="v1.5.60" tags={["feature", "improvement"]}>
   **UI-Build commit:** `ad93cfa01`
 

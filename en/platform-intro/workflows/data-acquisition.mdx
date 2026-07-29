@@ -1,11 +1,11 @@
 ---
 title: "Run Data Acquisition (PDA)"
-description: "Start, prepare, stop, and annotate live production work at the machine level."
+description: "Select or assign work, record production and scrap, and manage live machine intervals."
 ---
 
 ## Goal
 
-Control live production tracking for a machine and record what happened during the shift.
+Control live production tracking for a machine and record assignments, produced quantities, scrap, and interval context.
 
 ## Before You Begin
 
@@ -25,16 +25,19 @@ Begin on the [Data Acquisition (PDA) page](/en/platform-intro/pages/data-acquisi
     Open the PDA for the target machine.
   </Step>
   <Step title="Review the available assignments and select the job" icon="arrow-right" title-type="p">
-    Review the available assignments and select the job to work on.
+    Review open assignments or use a time-window view, then select the job to work on. Assignment columns and sorting can be personalized.
+  </Step>
+  <Step title="Find unplanned work when needed" icon="arrow-right" title-type="p">
+    If the required operation is not planned, search for it and assign it directly to the machine from the PDA page.
   </Step>
   <Step title="Start or mark preparation depending on the current" icon="arrow-right" title-type="p">
-    Start or mark preparation depending on the current shop-floor situation.
+    Start or mark preparation depending on the current shop-floor situation. If another assignment is already running, review the warning before continuing.
   </Step>
   <Step title="Stop the work interval when the run finishes or" icon="arrow-right" title-type="p">
     Stop the work interval when the run finishes or pauses.
   </Step>
   <Step title="Enter produced quantity and other completion" icon="arrow-right" title-type="p">
-    Enter produced quantity and other completion details when prompted.
+    When stopping or continuing an interval, enter produced quantity, material scrap, work scrap, and other completion details when prompted.
   </Step>
   <Step title="Apply timeline reasons" icon="arrow-right" title-type="p">
     Apply timeline reasons if downtime or special events need explanation.
@@ -48,16 +51,19 @@ Begin on the [Data Acquisition (PDA) page](/en/platform-intro/pages/data-acquisi
 
 - Whether the current time belongs to preparation, active production, or a stop.
 - Whether the job should use an existing assignment or a live immediate order.
+- Whether an unplanned operation should be assigned directly to the machine.
+- Whether to continue when another assignment is already running.
 
 ## Expected Result
 
-The machine timeline, interval list, and production records reflect what happened on the floor.
+The machine timeline, interval list, and production records reflect what happened on the floor, including recorded material and work scrap.
 
 ## Common Problems and Edge Cases
 
 - Users may need to stop an interval before switching to a different one.
-- Missing quantity or reason details can leave the production story incomplete.
+- Missing produced, scrap, or reason details can leave the production story incomplete.
 - A live issue may need both a timeline reason and a support ticket.
+- Recorded total production includes submitted scrap quantities.
 
 ## Related Pages
 

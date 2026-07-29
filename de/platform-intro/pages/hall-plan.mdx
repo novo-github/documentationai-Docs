@@ -1,44 +1,54 @@
 ---
 title: "Hallenplan"
-description: "Eine öffentliche oder verlinkbare Hallenansicht mit Maschinen und ihrem aktuellen Zustand."
+description: "Eine konfigurierbare Live-Hallenübersicht für Produktionsüberwachung, Kiosks und verwaltete Anzeigegeräte."
 ---
 
 ## Überblick
 
-Zeigen Sie den aktuellen Zustand der Maschinen innerhalb einer einzelnen Halle in einem gemeinsam nutzbaren Display-Format an.
+Zeigen Sie die Live-Produktion einer Halle in einem gemeinsam nutzbaren Display-Format an, das von einer interaktiven Ansicht bis zu einem unbeaufsichtigten Kiosk skaliert.
 
 Benutzer öffnen eine hallenspezifische Route, oft über einen geteilten Link oder ein Anzeigegerät.
 
 ## Zugriff
 
 <Callout kind="info" title="Zugriffsdetails">
-- Sichtbarkeit: Öffentlich
+- Sichtbarkeit: Hallenspezifische Anzeigen können öffentlich sein; Displaykonfiguration und Geräteüberwachung sind administrative Aktionen
 - Primäre Routen: `/hallPlan/:id`
 </Callout>
 
 ## Was Sie sehen können
 
-- Die Maschinen innerhalb der Halle.
-- Den aktuellen Maschinenstatus und schnellen visuellen Leistungskontext.
+- Maschinen, aktuelle Zustände, aktive Aufträge und produzierte Teile in der Halle.
+- OEE, Verfügbarkeit, Leistung und Maschinenzeit-Kennzahlen.
+- Live-Informationen neben Informationen aus der vorherigen Schicht.
+- Eine kompakte, paginierte Maschinenansicht für große Hallen.
+- Verbindung und Zeitpunkt der letzten Aktivität verwalteter Displays.
 
 ## Was Sie tun können
 
 - Die Halle auf einen Blick prüfen.
-- Die angezeigte Leistungsausrichtung über Routenparameter ändern, wenn verfügbar.
+- Auswählen, welche Produktionskennzahlen erscheinen.
+- Hallenplan-Version und Zoomstufe auswählen.
+- Kiosksprache, Maschinensortierung, sichtbare Kennzahlen, Aktualisierungsintervall und Seitenrotation konfigurieren.
+- Auswählen, welche Produktionskennzahlen in der Kiosk-Navigation erscheinen.
+- Aktive und offline befindliche Hallenplan-Geräte überwachen.
 
 ## Hauptentitäten
 
 - Halle
 - Maschine
 - Schicht
+- Anzeigegerät
 
 ## Ergebnisse und Grenzen
 
 ### Typische Ergebnisse
 - Benutzer verstehen schnell das aktuelle Produktionsbild der Halle.
+- Unbeaufsichtigte Displays wechseln durch die konfigurierte Produktionsansicht und laden neue Frontend-Builds automatisch.
 
 ### Grenzen und Leerzustände
 - Die Seite hängt von einer gültigen Hallenroute und sichtbaren Maschinendaten ab.
+- Der Gerätestatus hängt davon ab, dass das Display Verbindung und letzte Aktivität meldet.
 
 ## Verwandte Seiten
 

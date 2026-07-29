@@ -1,11 +1,11 @@
 ---
 title: "Benutzerprofil"
-description: "Eine persönliche Kontoseite für den angemeldeten Benutzer."
+description: "Eine persönliche Kontoseite für Profildetails und die Verwaltung aktiver Sitzungen."
 ---
 
 ## Überblick
 
-Geben Sie Benutzern einen Ort, an dem sie ihre eigenen Kontoinformationen prüfen können.
+Geben Sie Benutzern einen Ort, an dem sie ihre Kontoinformationen prüfen und angemeldete Geräte verwalten können.
 
 Benutzer öffnen diese Seite über profilbezogene Navigation.
 
@@ -19,22 +19,28 @@ Benutzer öffnen diese Seite über profilbezogene Navigation.
 ## Was Sie sehen können
 
 - Persönliche Kontoinformationen und zugehörige Profilinhalte.
+- Aktive Sitzungen mit Gerät, Browser, Betriebssystem, IP-Adresse, Standort und Anmeldezeit.
 
 ## Was Sie tun können
 
 - Die eigenen profilbezogenen Details prüfen.
+- Ein einzelnes Gerät abmelden.
+- Alle anderen aktiven Sitzungen abmelden.
 
 ## Hauptentitäten
 
 - Benutzer
+- Sitzung
+- Gerät
 
 ## Ergebnisse und Grenzen
 
 ### Typische Ergebnisse
-- Benutzer bestätigen ihre Kontoinformationen oder ihren persönlichen Kontext.
+- Benutzer bestätigen ihre Kontoinformationen und prüfen, wo ihr Konto angemeldet ist.
+- Benutzer beenden eine einzelne Sitzung oder alle Sitzungen außer der aktuellen.
 
 ### Grenzen und Leerzustände
-- Diese Seite ist im Vergleich zu den operativen Seiten eher informativ.
+- Standort- und Gerätedetails hängen von den für die jeweilige Anmeldung verfügbaren Informationen ab.
 
 ## Verwandte Seiten
 

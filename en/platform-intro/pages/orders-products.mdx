@@ -1,11 +1,11 @@
 ---
 title: "Orders & Products"
-description: "The main planning and review page for production orders, products, and product-level insights."
+description: "A table-focused workspace for monitoring, filtering, and analyzing production orders and products."
 ---
 
 ## Overview
 
-Help users review production orders and products in one place, then open deeper order editing when needed.
+Help users monitor and analyze the complete production-order dataset, then open deeper order editing when needed.
 
 Users open it from the dashboard navigation.
 
@@ -18,17 +18,23 @@ Users open it from the dashboard navigation.
 
 ## What You Can See
 
-- Order and product views with filters, date range controls, and search.
-- Customer, product, quantity, and progress context.
-- Product-level highlights and order analysis summaries.
+- A table-focused order workspace with server-backed pagination.
+- Filters for customer, order, product, machine, date range, assignment status, and live production.
+- Summary cards for Total, Planned, In Progress, Completed, Live, and Needs Attention.
+- Customer codes, operation sequence numbers, planned cycle times, duration, deviation, and production-performance explanations.
+- Grouped orders with individual assignments.
+- Progress based on either PDA production entries or detected cycle counts.
+- Material scrap, work scrap, and produced totals that include recorded scrap.
 
 ## What You Can Do
 
-- Search and filter orders or products.
-- Switch between card and table-style views.
+- Search, filter, and sort across the complete order dataset.
+- Expand grouped orders to review individual assignments.
 - Open a specific order detail page.
 - Start product or order creation flows.
-- Review high-level planning and production insight for tracked orders.
+- Identify orders that need attention because of exceeded durations, degraded cycle times, or overdue dates.
+- Select multiple orders for detailed analysis.
+- Switch the progress source, enable automatic refresh, and save column visibility preferences.
 
 ## Main Entities
 
@@ -43,9 +49,11 @@ Users open it from the dashboard navigation.
 ### Common Outcomes
 - Users find an order quickly and drill into it.
 - Users create a new product or order.
+- Users identify planning or production issues across one or more orders.
 
 ### Limits and Empty States
 - Results depend on the selected date range and filters.
+- Pagination, sorting, and filtering operate on the server-backed order dataset.
 - Orders without deeper structure may need the detail page before they can be planned well.
 
 ## Related Pages

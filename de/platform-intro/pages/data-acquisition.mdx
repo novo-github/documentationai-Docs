@@ -1,6 +1,6 @@
 ---
 title: "Betriebsdatenerfassung (BDE)"
-description: "Eine Maschinen-Seite für die Aufzeichnung von Live-Produktionsarbeit, Intervallen, Gründen und Unterstützungskontext."
+description: "Eine konfigurierbare Maschinenseite für Zuweisungen, Produktionsintervalle, Mengen, Ausschuss und Unterstützungskontext."
 ---
 
 ## Überblick
@@ -18,15 +18,18 @@ Benutzer öffnen diese Seite normalerweise über die Seite **Maschinendetails**.
 
 ## Was Sie sehen können
 
-- Zuweisungslisten und aktuellen Auftragskontext.
+- Zuweisungslisten und aktuellen Auftragskontext in Ansichten für offene Zuweisungen oder Zeitfenster.
+- Personalisierte Zuweisungsspalten, Reihenfolge und Sortierung.
 - Start-, Vorbereitungs- und Stopp-Steuerungen.
 - Verlauf von Intervallen, Notizen, Tickets und Wissenskontext.
 
 ## Was Sie tun können
 
 - Arbeit starten oder stoppen.
-- Produzierte Menge erfassen.
+- Produzierte Menge, Materialausschuss und Fertigungsausschuss beim Stoppen oder Fortsetzen eines Intervalls erfassen.
 - Live-Aufträge erstellen oder verwenden.
+- Nach ungeplanten Operationen suchen und diese direkt der Maschine zuweisen.
+- Informationen und Reihenfolge auf Zuweisungskarten konfigurieren.
 - Zeitachsen-Gründe anwenden und zugehörige Unterstützungsinhalte prüfen.
 
 ## Hauptentitäten
@@ -41,9 +44,11 @@ Benutzer öffnen diese Seite normalerweise über die Seite **Maschinendetails**.
 
 ### Typische Ergebnisse
 - Die Produktionsgeschichte der Maschine wird in einer detaillierten, schichtbezogenen Form erfasst.
+- Erfasste Gesamtmengen enthalten die eingegebenen Ausschussmengen.
 
 ### Grenzen und Leerzustände
 - Benutzer benötigen die richtige Live-Zuweisung oder den passenden Auftragskontext, damit die Seite voll nutzbar ist.
+- Die Seite warnt vor dem Produktionsstart, wenn bereits eine andere Zuweisung läuft.
 
 ## Verwandte Seiten
 

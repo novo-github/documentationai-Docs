@@ -375,7 +375,14 @@
             "groups": [
               {
                 "group": "Endpoints",
-                "openapi": "api-reference/openapi.yaml"
+                "openapi": "api-reference/openapi.yaml",
+                "pages": [
+                  {
+                    "title": "API Overview",
+                    "path": "en/api-reference",
+                    "icon": "home"
+                  }
+                ]
               }
             ]
           },
@@ -786,7 +793,14 @@
             "groups": [
               {
                 "group": "Endpoints",
-                "openapi": "api-reference/openapi.yaml"
+                "openapi": "api-reference/openapi.yaml",
+                "pages": [
+                  {
+                    "title": "API-Überblick",
+                    "path": "de/api-reference",
+                    "icon": "home"
+                  }
+                ]
               }
             ]
           },
@@ -853,38 +867,43 @@
   },
   "redirects": [
     {
+      "source": "/api-reference",
+      "destination": "/de/api-reference",
+      "statusCode": 308
+    },
+    {
       "source": "/introduction",
-      "destination": "/en/introduction",
+      "destination": "/de/introduction",
       "statusCode": 308
     },
     {
       "source": "/features",
-      "destination": "/en/features",
+      "destination": "/de/features",
       "statusCode": 308
     },
     {
       "source": "/changelog",
-      "destination": "/en/changelog",
+      "destination": "/de/changelog",
       "statusCode": 308
     },
     {
       "source": "/help-center",
-      "destination": "/en/help-center",
+      "destination": "/de/help-center",
       "statusCode": 308
     },
     {
       "source": "/help-center/faq/how-to-start",
-      "destination": "/en/help-center/faq/how-to-start",
+      "destination": "/de/help-center/faq/how-to-start",
       "statusCode": 308
     },
     {
       "source": "/help-center/troubleshooting/cannot-upload-dataset",
-      "destination": "/en/help-center/troubleshooting/order-upload",
+      "destination": "/de/help-center/troubleshooting/order-upload",
       "statusCode": 308
     },
     {
       "source": "/help-center/guides/create-your-first-project",
-      "destination": "/en/platform-intro/workflows/create-production-order",
+      "destination": "/de/platform-intro/workflows/create-production-order",
       "statusCode": 308
     }
   ],

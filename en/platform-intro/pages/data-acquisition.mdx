@@ -1,6 +1,6 @@
 ---
 title: "Data Acquisition (PDA)"
-description: "A machine-level execution page for recording live production work, intervals, reasons, and support context."
+description: "A configurable machine-level execution page for assignments, production intervals, quantities, scrap, and support context."
 ---
 
 ## Overview
@@ -18,15 +18,18 @@ Users usually open it from the Machine Details page.
 
 ## What You Can See
 
-- Assignment lists and live order context.
+- Assignment lists and live order context in open-assignment or time-window views.
+- Personalized assignment columns, ordering, and sorting.
 - Start, preparation, and stop controls.
 - Interval history, notes, tickets, and knowledge context.
 
 ## What You Can Do
 
 - Start or stop work.
-- Record produced quantity.
+- Record produced quantity, material scrap, and work scrap when stopping or continuing an interval.
 - Create or use live orders.
+- Search for unplanned operations and assign them directly to the machine.
+- Configure the information and ordering shown on assignment cards.
 - Apply timeline reasons and review related support content.
 
 ## Main Entities
@@ -41,9 +44,11 @@ Users usually open it from the Machine Details page.
 
 ### Common Outcomes
 - The machine’s production story is captured in a detailed, shift-level form.
+- Recorded totals include the submitted scrap quantities.
 
 ### Limits and Empty States
 - Users need the right live assignment or order context before the page is fully useful.
+- The page warns users before production starts when another assignment is already running.
 
 ## Related Pages
 

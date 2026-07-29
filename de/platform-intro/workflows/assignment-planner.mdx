@@ -1,11 +1,11 @@
 ---
 title: "Maschinenzuweisungen planen"
-description: "Platzieren Sie ungeplante Arbeit auf Maschinenwarteschlangen und ordnen Sie bereits geplante Arbeit neu an."
+description: "Platzieren Sie Arbeit in Maschinenwarteschlangen, ordnen Sie zukünftige Zuweisungen und prüfen Sie den Zeitplan auf Überschneidungen."
 ---
 
 ## Ziel
 
-Machen Sie aus ungeplanter Arbeit maschinenspezifische geplante Warteschlangen.
+Machen Sie aus ungeplanter Arbeit maschinenspezifische geplante Warteschlangen und prüfen Sie, wie zukünftige Zuweisungen über Maschinen und Zeiträume hinweg zusammenpassen.
 
 ## Bevor Sie beginnen
 
@@ -37,7 +37,13 @@ Beginnen Sie auf der [Seite Zuweisungsplaner](/de/platform-intro/pages/assignmen
   <Step title="Aktualisieren Sie wichtige Details" icon="arrow-right" title-type="p">
     Aktualisieren Sie wichtige Details wie Status, Daten oder Priorität bei Bedarf.
   </Step>
-  <Step title="Lassen Sie den Planer die Warteschlangenänderungen zurück in die Plattform speichern" icon="arrow-right" title-type="p">
+  <Step title="Prüfen Sie den zukünftigen Zeitplan" icon="arrow-right" title-type="p">
+    Nutzen Sie das schreibgeschützte Zuweisungs-Gantt, um Zuweisungen über ausgewählte Maschinen hinweg zu prüfen, Überschneidungen zu erkennen und bei Bedarf einen zugehörigen Auftrag zu öffnen.
+  </Step>
+  <Step title="Ordnen Sie zukünftige Zuweisungen bei Bedarf an" icon="arrow-right" title-type="p">
+    Nutzen Sie bei Bedarf die automatische Anordnung zukünftiger Zuweisungen. Prüfen Sie Warnungen zu Überschneidungen, bevor Sie den neu angeordneten Zeitplan übernehmen; die laufende Produktion bleibt unverändert.
+  </Step>
+  <Step title="Speichern Sie die Warteschlangenänderungen" icon="arrow-right" title-type="p">
     Lassen Sie den Planer die Warteschlangenänderungen zurück in die Plattform speichern.
   </Step>
 </Steps>
@@ -46,16 +52,20 @@ Beginnen Sie auf der [Seite Zuweisungsplaner](/de/platform-intro/pages/assignmen
 
 - Welche Maschine die Aufgabe übernehmen soll.
 - Ob eine Aufgabe ungeplant bleiben, auf eine andere Maschine wechseln oder aus einer Warteschlange entfernt werden soll.
+- Welche Maschinen in der Gantt-Zeitleiste erscheinen sollen.
+- Ob Warnungen zu Überschneidungen manuell oder durch automatische Anordnung zukünftiger Zuweisungen gelöst werden sollen.
 
 ## Erwartetes Ergebnis
 
-Die Maschinenwarteschlange spiegelt die letzte Planungsentscheidung wider und die zugehörigen Auftragsdetails bleiben abgestimmt.
+Die Maschinenwarteschlange spiegelt die letzte Planungsentscheidung wider, zukünftige Zuweisungen folgen der übernommenen Anordnung und die laufende Produktion bleibt unverändert.
 
 ## Häufige Probleme und Sonderfälle
 
 - Es können nur eine begrenzte Anzahl an Maschinen gleichzeitig angezeigt werden.
 - Wenn Filter alle Maschinen ausblenden, zeigt der Planer eine leere Planungsfläche.
 - Das Entfernen einer Zuweisung schickt die Arbeit aus der geplanten Warteschlange zurück, statt sie abzuschließen.
+- Das Zuweisungs-Gantt ist eine schreibgeschützte Early-Access-Ansicht.
+- Die automatische Anordnung kann zukünftige Zuweisungen ändern. Prüfen Sie deshalb Warnungen zu Überschneidungen, bevor Sie das Ergebnis übernehmen.
 
 ## Verwandte Seiten
 

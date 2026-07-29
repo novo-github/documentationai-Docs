@@ -1,11 +1,11 @@
 ---
 title: "User Profile"
-description: "A personal account page for the signed-in user."
+description: "A personal account page for profile details and active-session management."
 ---
 
 ## Overview
 
-Give users a place to review their own account information.
+Give users a place to review their account information and manage signed-in devices.
 
 Users open it from profile-related navigation.
 
@@ -19,22 +19,28 @@ Users open it from profile-related navigation.
 ## What You Can See
 
 - Personal account information and related profile content.
+- Active sessions with device, browser, operating system, IP address, location, and login time.
 
 ## What You Can Do
 
 - Review their own profile-related details.
+- Sign out an individual device.
+- Sign out all other active sessions.
 
 ## Main Entities
 
 - User
+- Session
+- Device
 
 ## Outcomes and Limits
 
 ### Common Outcomes
-- Users confirm their account information or personal context.
+- Users confirm their account information and review where their account is signed in.
+- Users end an individual session or all sessions except the current one.
 
 ### Limits and Empty States
-- This page is informational compared with the more operational pages.
+- Session location and device details depend on the information available for each login.
 
 ## Related Pages
 

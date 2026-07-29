@@ -1,11 +1,11 @@
 ---
 title: "Zuweisungsplaner"
-description: "Eine Planungsoberfläche zum Platzieren ungeplanter Arbeit auf Maschinenwarteschlangen und zum Anpassen der Reihenfolge geplanter Arbeit."
+description: "Eine Planungsoberfläche für Maschinenzuweisungen, die Anordnung zukünftiger Warteschlangen und die Prüfung des Zeitplans in einer Gantt-Zeitleiste."
 ---
 
 ## Überblick
 
-Geben Sie Planern einen Drag-and-Drop-Arbeitsbereich, um zu entscheiden, welche Maschine welche Arbeit als Nächstes ausführen soll.
+Geben Sie Planern einen Drag-and-Drop-Arbeitsbereich, um die nächste Arbeit einer Maschine festzulegen, sowie eine Zeitleiste zur Prüfung von Zuweisungen über Maschinen und Zeiträume hinweg.
 
 Benutzer öffnen diese Seite über den Bereich **Planer** in der Hauptnavigation.
 
@@ -21,6 +21,8 @@ Benutzer öffnen diese Seite über den Bereich **Planer** in der Hauptnavigation
 - Eine Liste ungeplanter Arbeit mit Suche.
 - Maschinen-Spalten, die als Warteschlangen dienen.
 - Filter für Hallen und Maschinen, um den Planungsbereich einzugrenzen.
+- Eine auswählbare Maschinenmenge in der Gantt-Zeitleiste.
+- Planungsüberschneidungen und Verknüpfungen zu den zugehörigen Aufträgen.
 
 ## Was Sie tun können
 
@@ -28,6 +30,9 @@ Benutzer öffnen diese Seite über den Bereich **Planer** in der Hauptnavigation
 - Arbeit in eine Maschinenwarteschlange ziehen.
 - Zuweisungen innerhalb einer Warteschlange neu anordnen.
 - Zuweisungsdetails wie Timing, Status oder Priorität aktualisieren.
+- Zukünftige Zuweisungen automatisch anordnen, ohne die laufende Produktion zu verändern.
+- Warnungen prüfen, bevor sich überschneidende Zuweisungen neu angeordnet werden.
+- Das schreibgeschützte Zuweisungs-Gantt öffnen, um den Produktionsplan zu prüfen.
 
 ## Hauptentitäten
 
@@ -45,6 +50,8 @@ Benutzer öffnen diese Seite über den Bereich **Planer** in der Hauptnavigation
 ### Grenzen und Leerzustände
 - Es können nur eine begrenzte Anzahl an Maschinen gleichzeitig angezeigt werden.
 - Filter können sowohl Maschinen als auch ungeplante Arbeit ausblenden.
+- Das Zuweisungs-Gantt ist eine schreibgeschützte Early-Access-Ansicht.
+- Die automatische Anordnung gilt für zukünftige Zuweisungen und lässt die laufende Produktion unverändert.
 
 ## Verwandte Seiten
 

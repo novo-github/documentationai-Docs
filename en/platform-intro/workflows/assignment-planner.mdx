@@ -1,11 +1,11 @@
 ---
 title: "Plan Machine Assignments"
-description: "Place unassigned work onto machine queues and reorder existing planned work."
+description: "Place work onto machine queues, arrange future assignments, and review the schedule for overlaps."
 ---
 
 ## Goal
 
-Turn unassigned work into machine-specific planned queues.
+Turn unassigned work into machine-specific planned queues and review how future assignments fit across machines and time.
 
 ## Before You Begin
 
@@ -37,7 +37,13 @@ Begin on the [Assignment Planner page](/en/platform-intro/pages/assignment-plann
   <Step title="Update key details" icon="arrow-right" title-type="p">
     Update key details such as status, dates, or priority when needed.
   </Step>
-  <Step title="Let the planner save the queue changes back to the" icon="arrow-right" title-type="p">
+  <Step title="Review the future schedule" icon="arrow-right" title-type="p">
+    Use the read-only Assignment Gantt to inspect assignments across selected machines, identify overlaps, and open a related order when more context is needed.
+  </Step>
+  <Step title="Arrange future assignments when needed" icon="arrow-right" title-type="p">
+    Use automatic arrangement for future assignments when appropriate. Review any overlap warnings before accepting the rearranged schedule; active production remains unchanged.
+  </Step>
+  <Step title="Save the queue changes" icon="arrow-right" title-type="p">
     Let the planner save the queue changes back to the platform.
   </Step>
 </Steps>
@@ -46,16 +52,20 @@ Begin on the [Assignment Planner page](/en/platform-intro/pages/assignment-plann
 
 - Which machine should take the job.
 - Whether a job should stay unassigned, move to another machine, or be removed from a queue.
+- Which machines should appear in the Gantt timeline.
+- Whether overlap warnings should be resolved manually or through automatic arrangement of future assignments.
 
 ## Expected Result
 
-The machine queue reflects the latest planning decision and related order details stay aligned.
+The machine queue reflects the latest planning decision, future assignments follow the accepted arrangement, and active production remains unchanged.
 
 ## Common Problems and Edge Cases
 
 - Only a limited number of machines can be shown at once.
 - If filters hide all machines, the planner shows an empty planning surface.
 - Removing an assignment sends the work back out of the planned queue rather than completing it.
+- Assignment Gantt is an Early Access, read-only view.
+- Automatic arrangement can change future assignments, so review overlap warnings before accepting the result.
 
 ## Related Pages
 

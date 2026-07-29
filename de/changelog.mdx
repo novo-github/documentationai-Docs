@@ -6,7 +6,144 @@ toc: false
 
 ## Releases
 
-<Update label="2026-04-30" description="v1.5.60" tags={["feature", "improvement"]}>
+<Update label="2026-07-26" description="v1.5.80" tags={["Funktion", "Verbesserung"]}>
+  **UI-Build-Commit:** `8b115707b`
+
+  **Release-Zeitraum:** Ende Juni bis Juli 2026
+
+  ### Neue Funktionen
+
+  #### [Neu gestaltetes Dashboard „Aufträge & Produkte“](/de/platform-intro/pages/orders-products)
+
+  Aufträge & Produkte bietet jetzt einen tabellenorientierten Arbeitsbereich zur Überwachung und Analyse von Produktionsaufträgen.
+
+  - Filtern Sie nach Kunde, Auftrag, Produkt, Maschine, Datumsbereich, Zuweisungsstatus oder laufender Produktion.
+  - Nutzen Sie Übersichtskarten für Gesamt, Geplant, In Bearbeitung, Abgeschlossen, Live und Handlungsbedarf.
+  - Erkennen Sie Aufträge mit Handlungsbedarf aufgrund überschrittener Dauern, verschlechterter Zykluszeiten oder überfälliger Termine.
+  - Erweitern Sie gruppierte Aufträge, um einzelne Zuweisungen zu prüfen.
+  - Sortieren Sie den vollständigen Auftragsbestand und navigieren Sie mit serverseitiger Seitennummerierung durch die Ergebnisse.
+  - Wechseln Sie bei der Fortschrittsanzeige zwischen BDE-Produktionseinträgen und erkannten Zykluszahlen.
+  - Wählen Sie mehrere Aufträge für eine detaillierte Analyse aus.
+  - Aktivieren Sie die automatische Aktualisierung und speichern Sie Einstellungen zur Spaltensichtbarkeit.
+
+  #### [Hallenplan-Kiosk und Displayverwaltung](/de/platform-intro/pages/hall-plan)
+
+  Hallenpläne können jetzt für unbeaufsichtigte Anzeigen in der Produktion konfiguriert werden.
+
+  - Nutzen Sie ein vereinfachtes Kiosk-Layout für wandmontierte Bildschirme.
+  - Konfigurieren Sie Sprache, Maschinensortierung, sichtbare Kennzahlen, Zoom, Aktualisierungsintervall und Seitenrotation.
+  - Wählen Sie aus, welche Produktionskennzahlen in der Kiosk-Navigation erscheinen.
+  - Prüfen Sie die Verbindung und den Zeitpunkt der letzten Aktivität eines Displays.
+  - Laden Sie neue Frontend-Builds automatisch auf unbeaufsichtigten Displays.
+  - Administratoren können aktive und offline befindliche Hallenplan-Geräte überwachen.
+
+  #### [Arbeitsbereich Wissensdatenbank](/de/platform-intro/pages/knowledge-base)
+
+  Die Wissensdatenbank unterstützt jetzt einen Dokumentenablauf und einen visuellen Wissensgraphen.
+
+  - Laden Sie Dateien, Bilder oder schriftliche Notizen hoch und überwachen Sie deren Verarbeitungsstatus.
+  - Suchen und prüfen Sie gespeicherte Dokumente.
+  - Prüfen Sie vorgeschlagene Beziehungen zu Maschinen, Aufträgen und Produkten.
+  - Bestätigen oder verwerfen Sie vorgeschlagene Verknüpfungen.
+  - Erkunden Sie bestätigte und vorgeschlagene Beziehungen im Wissensgraphen.
+
+  ### Verbesserungen
+
+  #### [Betriebsdatenerfassung (BDE)](/de/platform-intro/pages/data-acquisition)
+
+  Suchen Sie nach ungeplanten Operationen und weisen Sie diese direkt einer Maschine zu, ohne die BDE-Seite zu verlassen.
+
+  #### [Kontositzungen](/de/platform-intro/pages/user-profile)
+
+  Das Benutzerprofil zeigt aktive Sitzungen mit Gerät, Browser, Betriebssystem, IP-Adresse, Standort und Anmeldezeit. Benutzer können einzelne Geräte oder alle anderen Sitzungen abmelden.
+</Update>
+
+<Update label="2026-06-19" description="v1.5.75" tags={["Funktion", "Verbesserung"]}>
+  **UI-Build-Commit:** `c8d4ceb82`
+
+  **Release-Zeitraum:** Ende Mai bis Juni 2026
+
+  ### Neue Funktionen
+
+  #### [Dashboard für Organisationsstatistiken](/de/platform-intro/pages/org-stats)
+
+  Das Organisations-Dashboard wurde neu gestaltet und bietet eine konsolidierte Übersicht der Produktionsleistung.
+
+  - Prüfen Sie die aktuelle Verteilung der Zustände Produktion, Leerlauf, Stopp und Vorbereitung.
+  - Vergleichen Sie die Leistung nach Tag, Woche, Monat, benutzerdefiniertem Datumsbereich oder Schicht.
+  - Prüfen Sie Maschinen- und Mitarbeiterranglisten für OEE und Leistung.
+  - Überwachen Sie Energieverbrauch, Energieverschwendung, zugehörige Kosten und Nennziele.
+  - Prüfen Sie Kennzahlen für betriebliche Auswirkungen und tägliche Energietrends.
+  - Nutzen Sie das Dashboard in Desktop- und Mobilansichten.
+
+  #### [Erfassung von Material- und Fertigungsausschuss](/de/platform-intro/pages/orders-products)
+
+  Mitarbeitende können bei der Erfassung von Produktionsmengen zwischen Materialausschuss und Fertigungsausschuss unterscheiden.
+
+  - Erfassen Sie Ausschussmengen beim Stoppen oder Fortsetzen eines Intervalls.
+  - Prüfen Sie Ausschusswerte in Aufträge & Produkte und in der Auftragsanalyse.
+  - Sehen Sie die produzierte Gesamtmenge einschließlich des erfassten Ausschusses.
+
+  ### Verbesserungen
+
+  #### [Zuweisungsplanung](/de/platform-intro/pages/assignment-planner)
+
+  - Suchen und filtern Sie Maschinen im Zuweisungsplaner einfacher.
+  - Wählen Sie aus, welche Maschinen in der Gantt-Zeitleiste erscheinen.
+  - Ordnen Sie zukünftige Zuweisungen automatisch an, ohne die laufende Produktion zu verändern.
+  - Prüfen Sie Warnungen, bevor sich überschneidende Zuweisungen neu angeordnet werden.
+
+  #### Gespeicherte Produktionsansichten
+
+  - Wählen Sie die Anzeigeversion und Zoomstufe des [Hallenplans](/de/platform-intro/pages/hall-plan).
+  - Maschinenfilter und Sortierung werden bei der Rückkehr zur [Maschinenseite](/de/platform-intro/pages/machines) wiederhergestellt.
+  - Spalten und Sortierung der [BDE-Zuweisungen](/de/platform-intro/pages/data-acquisition) können personalisiert werden.
+</Update>
+
+<Update label="2026-05-20" description="v1.5.70" tags={["Funktion", "Verbesserung"]}>
+  **UI-Build-Commit:** `be97480f5`
+
+  **Release-Zeitraum:** Mai 2026
+
+  ### Neue Funktionen
+
+  #### [Hallenplan V2](/de/platform-intro/pages/hall-plan)
+
+  Der neu gestaltete Hallenplan bietet einen übersichtlicheren Live-Überblick über die Produktion in der Halle.
+
+  - Prüfen Sie OEE, Verfügbarkeit, Leistung, produzierte Teile, Maschinenzeiten und aktive Aufträge.
+  - Vergleichen Sie Live-Informationen mit Daten aus der vorherigen Schicht.
+  - Wählen Sie aus, welche Produktionskennzahlen auf dem Display erscheinen.
+  - Navigieren Sie in großen Hallen mit einer kompakten, paginierten Maschinenansicht.
+
+  #### [Zuweisungs-Gantt — Early Access](/de/platform-intro/pages/assignment-planner)
+
+  Eine Zeitleistenansicht ist über den Zuweisungsplaner und die Plattformnavigation verfügbar.
+
+  - Prüfen Sie Zuweisungen über Maschinen und Zeiträume hinweg.
+  - Erkennen Sie Planungsüberschneidungen und öffnen Sie den zugehörigen Auftrag.
+  - Nutzen Sie die anfänglich schreibgeschützte Ansicht, um den Produktionsplan zu prüfen.
+
+  #### [Angeheftete Navigation](/de/features)
+
+  Häufig verwendete Seiten können in der Seitennavigation angeheftet und per Drag-and-drop neu angeordnet werden. Die angeheftete Navigation jedes Benutzers wird für spätere Sitzungen gespeichert.
+
+  ### Verbesserungen
+
+  #### [Aufträge & Produkte](/de/platform-intro/pages/orders-products)
+
+  - Kundencodes, Operationssequenznummern und geplante Zykluszeiten wurden ergänzt.
+  - Dauer- und Abweichungsanzeigen wurden verbessert.
+  - Erläuterungen zu den wichtigsten Kennzahlen der Produktionsleistung wurden ergänzt.
+
+  #### [Betriebsdatenerfassung (BDE)](/de/platform-intro/pages/data-acquisition)
+
+  - Konfigurieren Sie die angezeigten Informationen und deren Reihenfolge auf Zuweisungskarten.
+  - Wählen Sie zwischen offenen Zuweisungen und zeitfensterbasierten Ansichten.
+  - Erhalten Sie vor dem Produktionsstart eine Warnung, wenn bereits eine andere Zuweisung läuft.
+</Update>
+
+<Update label="2026-04-30" description="v1.5.60" tags={["Funktion", "Verbesserung"]}>
   **UI-Build-Commit:** `ad93cfa01`
 
   **Release-Zeitraum:** März–April 2026

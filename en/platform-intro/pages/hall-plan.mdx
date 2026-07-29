@@ -1,44 +1,54 @@
 ---
 title: "Hall Plan"
-description: "A public or linkable hall-level display of machines and their current state."
+description: "A configurable live hall overview for production monitoring, kiosks, and managed display devices."
 ---
 
 ## Overview
 
-Show the current state of machines within a single hall in a shared display-style format.
+Show live production across a hall in a shared display-style format that can scale from an interactive view to an unattended kiosk.
 
 Users open a hall-specific route, often from a shared link or display device.
 
 ## Access
 
 <Callout kind="info" title="Access details">
-- Visibility: Public
+- Visibility: Hall-specific displays can be public; display configuration and device monitoring are administrative actions
 - Primary routes: `/hallPlan/:id`
 </Callout>
 
 ## What You Can See
 
-- The machines inside the hall.
-- Current machine status and quick visual performance context.
+- Machines, current states, active orders, and produced pieces across the hall.
+- OEE, availability, performance, and machine-time metrics.
+- Live information alongside previous-shift information.
+- A compact, paginated machine view for large halls.
+- Display connectivity and last-seen information for managed devices.
 
 ## What You Can Do
 
 - Review the hall at a glance.
-- Change the displayed performance emphasis through route parameters when available.
+- Select which production metrics appear.
+- Choose the Hall Plan display version and zoom level.
+- Configure kiosk language, machine sorting, visible metrics, refresh frequency, and page rotation.
+- Choose which production statistics appear in kiosk navigation.
+- Monitor live and offline Hall Plan devices.
 
 ## Main Entities
 
 - Hall
 - Machine
 - Shift
+- Display Device
 
 ## Outcomes and Limits
 
 ### Common Outcomes
 - Users understand the current hall-wide production picture quickly.
+- Unattended displays rotate through the configured production view and load new frontend builds automatically.
 
 ### Limits and Empty States
 - The page depends on a valid hall route and visible machine data.
+- Device status depends on the display reporting its connectivity and last-seen information.
 
 ## Related Pages
 

@@ -1,0 +1,30 @@
+---
+title: "Watchmen REST API"
+description: "Entdecken Sie die öffentliche Watchmen REST API, ihre Authentifizierungsmethoden, Basis-URL und verfügbaren Endpunktgruppen."
+type: "reference"
+---
+
+## Überblick
+
+Die Watchmen REST API ermöglicht authentifizierten Zugriff auf die in dieser Referenz dokumentierten öffentlichen Funktionen. Wählen Sie einen Endpunkt in der Navigation aus, um Parameter, Anfragebeispiele, Antwortschemas und den interaktiven Playground anzuzeigen.
+
+## Basis-URL
+
+```text
+https://wm.novoai.de
+```
+
+## Authentifizierung
+
+Jede Anfrage muss eine der von der API unterstützten Authentifizierungsmethoden verwenden:
+
+- Senden Sie ein JWT als `Authorization: Bearer <token>`.
+- Senden Sie einen API-Zugriffsschlüssel als `X-API-KEY: <key>`.
+
+<Callout kind="alert">
+  Speichern Sie API-Zugriffsschlüssel und JWTs nicht im clientseitigen Code, in der Versionsverwaltung oder in Protokollen.
+</Callout>
+
+## Verfügbare Ressourcen
+
+Die API-Referenz umfasst derzeit Hallen, Maschinen, Zeitachsen-Gründe und tägliche Maschinenanalysen. Die Endpunktseiten werden aus `api-reference/openapi.yaml` generiert.

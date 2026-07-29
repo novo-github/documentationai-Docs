@@ -1,11 +1,11 @@
 ---
 title: "Aufträge & Produkte"
-description: "Die zentrale Planungs- und Prüfseite für Produktionsaufträge, Produkte und produktbezogene Einblicke."
+description: "Ein tabellenorientierter Arbeitsbereich zur Überwachung, Filterung und Analyse von Produktionsaufträgen und Produkten."
 ---
 
 ## Überblick
 
-Unterstützen Sie Benutzer dabei, Produktionsaufträge und Produkte an einem Ort zu prüfen und bei Bedarf eine tiefere Auftragsbearbeitung zu öffnen.
+Unterstützen Sie Benutzer dabei, den vollständigen Produktionsauftragsbestand zu überwachen und zu analysieren und bei Bedarf eine tiefere Auftragsbearbeitung zu öffnen.
 
 Benutzer öffnen diese Seite über die Dashboard-Navigation.
 
@@ -18,17 +18,23 @@ Benutzer öffnen diese Seite über die Dashboard-Navigation.
 
 ## Was Sie sehen können
 
-- Auftrags- und Produktansichten mit Filtern, Datumsbereichssteuerung und Suche.
-- Kontext zu Kunde, Produkt, Menge und Fortschritt.
-- Hervorhebungen auf Produktebene und Zusammenfassungen der Auftragsanalyse.
+- Einen tabellenorientierten Auftragsarbeitsbereich mit serverseitiger Seitennummerierung.
+- Filter für Kunde, Auftrag, Produkt, Maschine, Datumsbereich, Zuweisungsstatus und laufende Produktion.
+- Übersichtskarten für Gesamt, Geplant, In Bearbeitung, Abgeschlossen, Live und Handlungsbedarf.
+- Kundencodes, Operationssequenznummern, geplante Zykluszeiten, Dauer, Abweichung und Erläuterungen zur Produktionsleistung.
+- Gruppierte Aufträge mit einzelnen Zuweisungen.
+- Fortschritt auf Basis von BDE-Produktionseinträgen oder erkannten Zykluszahlen.
+- Materialausschuss, Fertigungsausschuss und produzierte Gesamtmengen einschließlich des erfassten Ausschusses.
 
 ## Was Sie tun können
 
-- Nach Aufträgen oder Produkten suchen und filtern.
-- Zwischen Karten- und Tabellenansicht wechseln.
+- Den vollständigen Auftragsbestand durchsuchen, filtern und sortieren.
+- Gruppierte Aufträge erweitern, um einzelne Zuweisungen zu prüfen.
 - Eine bestimmte Auftragsdetailseite öffnen.
 - Produkt- oder Auftragserstellungsabläufe starten.
-- Übergeordnete Planungs- und Produktionseinblicke für verfolgte Aufträge prüfen.
+- Aufträge mit Handlungsbedarf aufgrund überschrittener Dauern, verschlechterter Zykluszeiten oder überfälliger Termine erkennen.
+- Mehrere Aufträge für eine detaillierte Analyse auswählen.
+- Die Fortschrittsquelle wechseln, automatische Aktualisierung aktivieren und Einstellungen zur Spaltensichtbarkeit speichern.
 
 ## Hauptentitäten
 
@@ -43,9 +49,11 @@ Benutzer öffnen diese Seite über die Dashboard-Navigation.
 ### Typische Ergebnisse
 - Benutzer finden schnell einen Auftrag und springen in die Details.
 - Benutzer erstellen ein neues Produkt oder einen neuen Auftrag.
+- Benutzer erkennen Planungs- oder Produktionsprobleme über einen oder mehrere Aufträge hinweg.
 
 ### Grenzen und Leerzustände
 - Ergebnisse hängen vom ausgewählten Datumsbereich und von Filtern ab.
+- Seitennummerierung, Sortierung und Filterung arbeiten mit dem serverseitigen Auftragsbestand.
 - Aufträge ohne tiefere Struktur benötigen möglicherweise die Detailseite, bevor sie sinnvoll geplant werden können.
 
 ## Verwandte Seiten
