@@ -399,7 +399,9 @@
                 "show-sidebar": false,
                 "show-toc": false,
                 "show-page-navigation": false,
-                "ask-feedback": false
+                "ask-feedback": false,
+                "show-parent-label": false,
+                "content-width": "wide"
               }
             ],
             "icon": "lucide-map-plus"
