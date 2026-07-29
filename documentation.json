@@ -380,50 +380,6 @@
             ]
           },
           {
-            "tab": "Help Center",
-            "icon": "help-circle",
-            "pages": [
-              {
-                "title": "Help Center",
-                "path": "help-center",
-                "icon": "home"
-              },
-              {
-                "group": "FAQs",
-                "icon": "help-circle",
-                "expandable": false,
-                "pages": [
-                  {
-                    "title": "How to Start",
-                    "path": "help-center/faq/how-to-start"
-                  }
-                ]
-              },
-              {
-                "group": "Troubleshooting",
-                "icon": "alert-circle",
-                "expandable": false,
-                "pages": [
-                  {
-                    "title": "Cannot Upload Dataset",
-                    "path": "help-center/troubleshooting/cannot-upload-dataset"
-                  }
-                ]
-              },
-              {
-                "group": "Guides",
-                "icon": "book-open",
-                "expandable": false,
-                "pages": [
-                  {
-                    "title": "Create Your First Project",
-                    "path": "help-center/guides/create-your-first-project"
-                  }
-                ]
-              }
-            ]
-          },
-          {
             "tab": "Changelog",
             "icon": "clock",
             "pages": [
