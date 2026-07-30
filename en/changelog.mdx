@@ -6,6 +6,38 @@ toc: false
 
 ## Releases
 
+<Update label="2026-07-30" description="v1.5.85" tags={["feature", "improvement"]}>
+  **UI-Build commit:** `d52000872`
+
+  **Release date:** July 30, 2026
+
+  ### [Improved Operator Settings](/en/platform-intro/workflows/operator-management)
+
+  Operator administration now provides clearer and safer controls for managing operator access and credentials.
+
+  ### New Features
+
+  #### Safer Operator Deactivation
+
+  Administrators can deactivate an operator immediately without deleting historical data. Previous shifts, labels, and assignments remain preserved.
+
+  #### Generate New Operator Passwords
+
+  Administrators can generate a new password for eligible operators from **Edit operator**. Active sessions are ended, and the operator must sign in again with the new password.
+
+  Generated credentials are displayed only once and can be copied or downloaded before the window is closed.
+
+  #### Explicit Email Verification
+
+  Verification emails are sent only when an administrator explicitly requests one. They are never sent automatically after creating or editing an operator or regenerating an operator's password.
+
+  Unverified operators can still sign in and use their assigned access.
+
+  ### Administration Improvements
+
+  Only active operators are displayed in Operator Settings. Status indicators, confirmation messages, credential actions, and administration buttons now provide a clearer and more consistent experience.
+</Update>
+
 <Update label="2026-07-26" description="v1.5.80" tags={["feature", "improvement"]}>
   **UI-Build commit:** `8b115707b`
 
