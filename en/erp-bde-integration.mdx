@@ -1,0 +1,249 @@
+---
+title: ERP & BDE Integration
+description: >-
+  Connect your ERP system and existing BDE data sources to Novo AI — learn the
+  required fields, matching logic, and import workflows for all three
+  integration scenarios.
+---
+## Introduction
+
+Novo AI integrates with a wide range of ERP systems — including SAP, Infor, Epicor, and custom ERP solutions — to connect production planning and machine data. Three integration scenarios are supported:
+
+1. A direct ERP integration that exchanges planning data and machine-state intervals bidirectionally.
+2. An optional BDE integration that imports existing machine/activity intervals alongside Novo AI-detected data.
+3. A temporary Excel/CSV import for ERP planning data when a direct interface is not yet available.
+
+## At-a-Glance Comparison
+
+The three scenarios differ in how data moves, how the systems connect, and what level of access is required. The table below summarizes the key differences at a glance.
+
+| Scenario                       | Data Direction                                                                           | Connection Type                                                        | Access Requirements                                    | Primary Use Case                                                          |
+| ------------------------------ | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------- | ------------------------------------------------------ | ------------------------------------------------------------------------- |
+| **Direct ERP Integration**     | ERP ↔ Novo AI connector (bidirectional — planning data in, machine-state intervals back) | API endpoint or direct database read/write                             | Read/write on both sides                               | Full bidirectional integration with live data exchange                    |
+| **ERP + Existing BDE**         | ERP ↔ Novo AI connector (bidirectional) plus BDE intervals → Novo AI                     | API endpoint or direct database read/write (BDE via interface or file) | Read/write (ERP side), Read access (BDE source)        | Bidirectional ERP integration enriched with existing BDE activity records |
+| **Temporary Excel/CSV Import** | File → Novo AI (planning data only)                                                      | Manual upload via ERP Upload Planner on the Novo AI platform           | Template-based upload — no direct system access needed | Quick start before a direct ERP interface is built                        |
+
+## Direct ERP Integration
+
+One ERP planning record represents one planned operation or production step assigned to a machine or resource. Read-only access to the planning data is sufficient on the ERP side.
+
+### Required ERP → Novo AI Planning Fields
+
+| Field                               | Description                                                                                                                         | Example                         |
+| ----------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- | ------------------------------- |
+| order\_id                           | Unique, permanently stable production order ID. Can also serve as the display name if no separate name exists.                      | SO-3001                         |
+| customer\_code                      | Unique customer identifier.                                                                                                         | CUST-ACME                       |
+| customer\_name                      | Human-readable customer name.                                                                                                       | Acme Ltd                        |
+| order\_tags                         | Labels for identification, grouping, and filtering.                                                                                 | "Urgent, Export"                |
+| product\_id                         | Unique, stable product/material identifier. May also be used as the display name.                                                   | PART-A                          |
+| planned\_quantity                   | Planned production quantity.                                                                                                        | 500                             |
+| quantity\_unit                      | Unit of measure for the planned quantity.                                                                                           | pcs, kg, m                      |
+| planned\_start                      | Timezone-aware DateTime. Date and time may alternatively be provided as separate columns.                                           | 2026-07-29T08:00:00+02:00       |
+| planned\_end                        | Timezone-aware DateTime. Date and time may alternatively be provided as separate columns.                                           | 2026-07-29T10:30:00+02:00       |
+| operation\_sequence                 | Operation number or sequence identifier.                                                                                            | 10, 20, A10                     |
+| operation\_description              | Description of the planned production step.                                                                                         | Cutting                         |
+| planned\_preparation\_time\_seconds | Planned setup time in seconds.                                                                                                      | 900                             |
+| planned\_production\_time\_seconds  | Planned production time in seconds. State explicitly whether this value applies to the complete order quantity or to a single unit. | 7200 (total) or 14.4 (per unit) |
+| resource\_code                      | Unique, permanently stable ERP resource/machine identifier used for matching to Novo AI.                                            | MACHINE-12                      |
+| resource\_name                      | Human-readable machine or resource name.                                                                                            | Milling Machine 12              |
+
+Optional planning fields:
+
+- priority
+- product\_description
+- order\_notes
+- operation\_notes
+- order line/position number
+- plant code
+- revision
+- additional attributes
+
+The combination of `order_id` + `operation_sequence` + `resource_code` should uniquely identify a planned operation.
+
+### Machine and Production Data Returned by Novo AI
+
+Novo AI sends machine and production data back to the ERP system or ERP solution provider. One record represents one continuous machine-state interval. No direct ERP order link is initially required. The receiving table or interface needs read/write access.
+
+#### Required Novo AI → ERP Interval Fields
+
+| Field                | Description                               | Example                   |
+| -------------------- | ----------------------------------------- | ------------------------- |
+| resource\_code       | Unique machine/resource identifier.       | MACHINE-12                |
+| resource\_name       | Human-readable machine/resource name.     | Milling Machine 12        |
+| start\_time          | Interval start, timezone-aware DateTime.  | 2026-07-29T08:00:00+02:00 |
+| end\_time            | Interval end, timezone-aware DateTime.    | 2026-07-29T08:15:00+02:00 |
+| state\_id            | Numeric or coded state identifier.        | 1                         |
+| state\_name          | Human-readable state name.                | IDLE                      |
+| production\_seconds  | Production duration in seconds.           | 0                         |
+| idle\_seconds        | Idle duration in seconds.                 | 900                       |
+| off\_seconds         | Off duration in seconds.                  | 0                         |
+| preparation\_seconds | Preparation/setup duration in seconds.    | 0                         |
+| unknown\_seconds     | Unknown/unclassified duration in seconds. | 0                         |
+
+Optional interval fields:
+
+- reason\_id
+- reason\_name
+- energy\_kwh
+
+Both `start_time` and `end_time` must include timezone information. For each interval, only the duration field that corresponds to the current state should contain the interval duration; all other duration fields must be 0.
+
+```text
+resource_code: MACHINE-12
+resource_name: Milling Machine 12
+start_time: 2026-07-29T08:00:00+02:00
+end_time: 2026-07-29T08:15:00+02:00
+state_id: 1
+state_name: IDLE
+production_seconds: 0
+idle_seconds: 900
+off_seconds: 0
+preparation_seconds: 0
+unknown_seconds: 0
+reason_id: 17
+reason_name: Material missing
+energy_kwh: 0.85
+```
+
+## ERP + Existing BDE Integration
+
+Existing machine, activity, or process intervals from a BDE (Betriebsdatenerfassung) system can optionally be imported into Novo AI and displayed alongside Novo AI-detected machine data.
+
+### Minimum BDE Fields
+
+| Field          | Description                                                                                                               |
+| -------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| interval\_id   | Unique, permanently stable interval identifier. An existing timeline or idx value may be used if it is unique and stable. |
+| resource\_code | Unique machine/resource identifier, matching the ERP value.                                                               |
+| resource\_name | Human-readable machine/resource name (used for display/validation).                                                       |
+| start\_time    | Interval start, timezone-aware DateTime.                                                                                  |
+| end\_time      | Interval end, timezone-aware DateTime.                                                                                    |
+| state\_id      | State identifier.                                                                                                         |
+| state\_name    | Human-readable state name.                                                                                                |
+| order\_id      | Must exactly match the `order_id` from ERP planning data.                                                                 |
+
+Novo AI primarily matches BDE intervals using `order_id` + `resource_code`. The `resource_name` field is used for display and validation purposes. When one order contains several operations on the same machine, it is recommended to supply an operation identifier as an additional attribute.
+
+Example BDE states:
+
+- PRODUCTION
+- SETUP
+- MAINTENANCE
+- CLEANING
+- QUALITY\_CHECK
+- MATERIAL\_CHANGE
+- TOOL\_CHANGE
+- INTERRUPTION
+
+Customer-specific state IDs and names can be mapped and do not have to use these exact values.
+
+## Temporary Excel/CSV ERP Import
+
+While a direct ERP interface is not yet available, planning data can be uploaded using an Excel or CSV file.
+
+The current English upload template contains these exact columns:
+
+`order`, `product`, `count`, `quantity_unit`, `description_1`, `description_2`, `description_3`, `notes_1`, `notes_2`, `notes_3`, `planned_start`, `planned_end`, `planned_start_date`, `planned_start_time`, `planned_end_date`, `planned_end_time`, `customer_name`, `customer_code`, `order_date`, `delivery_date`, `priority`, `operation_sequence`, `operation_description`, `planned_preparation_time`, `planned_production_time`, `machine_resource`, `tags`
+
+### Upload Template Column Reference
+
+| Upload Column              | Canonical Integration Concept             | Notes                                                                                          |
+| -------------------------- | ----------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| order                      | order\_id                                 | Unique, stable production order ID                                                             |
+| product                    | product\_id                               | Unique, stable product/material identifier                                                     |
+| count                      | planned\_quantity                         | Planned production quantity                                                                    |
+| quantity\_unit             | quantity\_unit                            | Unit of measure (e.g. pcs, kg, m)                                                              |
+| description\_1             | product\_description / order\_description | Descriptive text for the product or order                                                      |
+| description\_2             | product\_description / order\_description | Additional descriptive text                                                                    |
+| description\_3             | product\_description / order\_description | Additional descriptive text                                                                    |
+| notes\_1                   | order\_notes                              | Optional free-text notes                                                                       |
+| notes\_2                   | order\_notes                              | Optional free-text notes                                                                       |
+| notes\_3                   | order\_notes                              | Optional free-text notes                                                                       |
+| planned\_start             | planned\_start                            | Combined timezone-aware timestamp (alternative to split columns)                               |
+| planned\_end               | planned\_end                              | Combined timezone-aware timestamp (alternative to split columns)                               |
+| planned\_start\_date       | planned\_start (split)                    | Date portion of planned start when using separate columns                                      |
+| planned\_start\_time       | planned\_start (split)                    | Time portion of planned start when using separate columns                                      |
+| planned\_end\_date         | planned\_end (split)                      | Date portion of planned end when using separate columns                                        |
+| planned\_end\_time         | planned\_end (split)                      | Time portion of planned end when using separate columns                                        |
+| customer\_name             | customer\_name                            | Human-readable customer name                                                                   |
+| customer\_code             | customer\_code                            | Unique customer identifier                                                                     |
+| order\_date                | order\_date                               | Order creation date (additional attribute)                                                     |
+| delivery\_date             | delivery\_date                            | Planned delivery date (additional attribute)                                                   |
+| priority                   | priority                                  | Priority level                                                                                 |
+| operation\_sequence        | operation\_sequence                       | Operation number or sequence                                                                   |
+| operation\_description     | operation\_description                    | Description of the planned production step                                                     |
+| planned\_preparation\_time | planned\_preparation\_time\_seconds       | Canonical setup time after agreed unit conversion                                              |
+| planned\_production\_time  | planned\_production\_time\_seconds        | Canonical production time after agreed unit conversion; define whether total-order or per-unit |
+| machine\_resource          | resource\_code                            | Unique machine/resource identifier                                                             |
+| tags                       | order\_tags                               | Labels for identification, grouping, and filtering                                             |
+
+The current sample uses combined timestamps such as `2026-03-01 06:00:00` and also contains separate date/time columns. A customer implementation should choose one consistent approach. If timestamps do not include a timezone, the assumed plant or site timezone must be explicitly agreed during setup.
+
+```csv
+order,product,count,quantity_unit,description_1,description_2,description_3,notes_1,notes_2,notes_3,planned_start,planned_end,planned_start_date,planned_start_time,planned_end_date,planned_end_time,customer_name,customer_code,order_date,delivery_date,priority,operation_sequence,operation_description,planned_preparation_time,planned_production_time,machine_resource,tags
+SO-3001,PART-A,500,pcs,Standard,Widget,Blue,Urgent,Customer order,Partial shipment,2026-03-01 06:00:00,2026-03-01 08:00:00,2026-03-01,06:00:00,2026-03-01,08:00:00,Acme Ltd,CUST-ACME,2026-02-22,2026-03-10,50,A10,Cutting,15,120,12,"Urgent, Export"
+```
+
+## German ERP Export Mapping Note
+
+This is a short migration note about a provided German ERP solution provider export. The export contains these columns:
+
+- Referenz
+- Auftrag
+- Teil
+- Bezeichnung 1
+- Bezeichnung 2
+- Bezeichnung 3
+- Produktionsmenge
+- Startdatum
+- Startzeit
+- Enddatum
+- Endzeit
+- Start
+- Ende
+- Rüstdauer
+- Te/Menge
+- Zeitbasis
+
+### Export → Canonical Mapping (Confirmed)
+
+| Export Column          | Canonical Concept         | Notes                                   |
+| ---------------------- | ------------------------- | --------------------------------------- |
+| Auftrag                | order / order\_id         | Production order identifier             |
+| Teil                   | product / product\_id     | Product or material identifier          |
+| Bezeichnung 1–3        | description\_1–3          | Descriptive text fields                 |
+| Produktionsmenge       | planned\_quantity / count | Planned production quantity             |
+| Startdatum + Startzeit | planned\_start (split)    | Date and time portions of planned start |
+| Enddatum + Endzeit     | planned\_end (split)      | Date and time portions of planned end   |
+| Start                  | planned\_start (combined) | Combined planned start timestamp        |
+| Ende                   | planned\_end (combined)   | Combined planned end timestamp          |
+
+The exact meaning and units of **Referenz**, **Rüstdauer**, **Te/Menge**, and **Zeitbasis** must be confirmed before they can be mapped. No mappings are assumed for these fields.
+
+The German export example does not visibly include all fields present in the English upload template. Notably absent are customer identifiers (`customer_code`, `customer_name`), `operation_sequence`, `operation_description`, `machine_resource`, `priority`, `tags`, `order_date`, and `delivery_date`. These fields must be added, derived, or supplied from another source when they are needed.
+
+## Recommended Implementation Order
+
+1. Start with the temporary Excel/CSV import to validate field mappings and data quality before investing in a direct interface.
+2. Confirm timestamp formats, timezones, and time-unit conventions (e.g. whether `planned_production_time` is total-order or per-unit).
+3. Implement the direct ERP integration for planning data (ERP → Novo AI) using the validated field mappings.
+4. Set up the Novo AI → ERP interval return path once the receiving table/interface is ready with read/write access.
+5. Optionally integrate existing BDE intervals alongside Novo AI-detected machine data, ensuring `order_id` values match exactly.
+6. Validate end-to-end data flow and matching logic with real production data.
+
+## Integration Checklist
+
+- ERP planning fields confirmed and mapped to canonical concepts
+- `order_id` + `operation_sequence` + `resource_code` uniqueness verified
+- Timestamp format and timezone explicitly agreed
+- `planned_production_time` unit scope defined (total-order vs. per-unit)
+- `resource_code` matching between ERP and Novo AI validated
+- Novo AI → ERP receiving table has read/write access
+- Interval duration fields follow the single-state rule (one field holds the duration, all others are 0)
+- BDE `order_id` values exactly match ERP planning `order_id` values
+- BDE state IDs/names mapped to Novo AI states
+- Excel/CSV upload template columns reviewed and mapped
+- ERP solution provider export unconfirmed fields (Referenz, Rüstdauer, Te/Menge, Zeitbasis) clarified
+- Missing export fields sourced or derived
+- End-to-end data flow validated with real production data
+
