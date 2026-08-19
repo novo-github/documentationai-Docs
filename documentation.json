@@ -44,6 +44,17 @@
                 ]
               },
               {
+                "group": "Integration",
+                "icon": "plug",
+                "pages": [
+                  {
+                    "title": "ERP & BDE Integration",
+                    "path": "en/erp-bde-integration",
+                    "icon": "file-text"
+                  }
+                ]
+              },
+              {
                 "group": "Platform Intro",
                 "icon": "map",
                 "pages": [
