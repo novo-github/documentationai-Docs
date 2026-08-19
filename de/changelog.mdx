@@ -6,6 +6,44 @@ toc: false
 
 ## Releases
 
+<Update label="2026-08-19" description="v1.5.90" tags={["Funktion", "Verbesserung"]}>
+  **UI-Build-Commit:** `54e018d`
+
+  **Release-Datum:** 19. August 2026
+
+  ### Neue Funktionen
+
+  #### Hochgeladene Auftragsdateien prüfen und korrigieren
+
+  Nach der Auswahl einer Auftragsdatei können Sie jetzt vor dem Fortfahren den Dateinamen, die Anzahl der Zeilen und Spalten sowie einen Ausschnitt des Inhalts prüfen.
+
+  Wählen Sie **Zum Bearbeiten erweitern**, um die vollständige Dateiansicht zu öffnen. Dort können Sie einzelne Werte korrigieren, passende Wertgruppen aus Excel einfügen und vor dem Speichern sehen, wie viele Zellen Sie geändert haben.
+
+  - Spaltenüberschriften und Zeilenanzahl bleiben fest, damit die Dateistruktur nicht versehentlich geändert wird.
+  - Gespeicherte Korrekturen werden in der Vorschau hervorgehoben und lassen sich dadurch leicht prüfen.
+  - Wenn Sie den Editor ohne Speichern schließen, werden ungespeicherte Änderungen verworfen und die Originaldatei bleibt unverändert.
+
+  #### Auswirkungen von Zeiteinstellungen vor dem Upload verstehen
+
+  Die Upload-Prüfung erklärt jetzt, wenn ein Zeitwert oder die Einstellung **Industrieminuten** die Rüst- oder Produktionszeit verändert, und kennzeichnet die betroffene Zeile. So können Sie die Auswirkungen vor der Bestätigung des Uploads eindeutig prüfen.
+
+  #### Operationen mit Industrieminuten erkennen
+
+  Operationen, die Industrieminuten verwenden, zeigen jetzt neben ihren geplanten Zeiten die Kennzeichnung **Industrieminuten**. Bewegen Sie den Mauszeiger über die Kennzeichnung, um eine kurze Erklärung zur verwendeten Zeitkonvention zu sehen.
+
+  ### Verbesserungen
+
+  #### Reihenfolge von Operationen festlegen
+
+  Innerhalb eines Arbeitsauftrags können Sie Operationen jetzt nach ihrer Sequenznummer sortieren. Wählen Sie die Sortierschaltfläche neben **Operation hinzufügen** und anschließend **Aufsteigend** oder **Absteigend**, um die Arbeit in der für Planung oder Fertigung passenden Reihenfolge zu prüfen.
+
+  #### Falsche Zeiteinträge löschen
+
+  Sie können jetzt einen fehlerhaften erfassten Zeiteintrag aus der Auftragsanalyse entfernen. Öffnen Sie das Menü des Eintrags, wählen Sie **Löschen**, prüfen Sie die angezeigte Start- und Endzeit und bestätigen Sie den Löschvorgang.
+
+  Das Löschen ist endgültig. Nach der Bestätigung zeigen die Auftragsanalyse und die zugehörige Zeitleiste sofort den aktuellen Produktionsdatensatz.
+</Update>
+
 <Update label="2026-07-30" description="v1.5.85" tags={["Funktion", "Verbesserung"]}>
   **UI-Build-Commit:** `d52000872`
 

@@ -6,6 +6,44 @@ toc: false
 
 ## Releases
 
+<Update label="2026-08-19" description="v1.5.90" tags={["feature", "improvement"]}>
+  **UI-Build commit:** `54e018d`
+
+  **Release date:** August 19, 2026
+
+  ### New Features
+
+  #### Review and Correct Uploaded Order Files
+
+  After selecting an order file, you can now preview its file name, row and column count, and a sample of its contents before continuing.
+
+  Select **Expand to edit** to open the full file view. You can correct individual values, paste matching groups of values from Excel, and see how many cells you have changed before saving.
+
+  - Column headings and row counts remain fixed, so the file structure cannot be changed accidentally.
+  - Saved corrections are highlighted in the preview, making adjustments easy to review.
+  - Closing the editor without saving discards unsaved changes and leaves the original file unchanged.
+
+  #### Understand Time-Setting Effects Before Uploading
+
+  The upload review now explains when a time value or the **Industrial minutes** setting changes preparation or production time, and identifies the affected row. This provides a clearer final check before you confirm an upload.
+
+  #### Identify Operations Using Industrial Minutes
+
+  Operations that use industrial minutes now show an **Industrial minutes** label next to their planned times. Hover over the label for a short explanation of the time convention.
+
+  ### Improvements
+
+  #### Choose How Operations Are Ordered
+
+  Within a work order, you can now sort operations by sequence number. Select the sort button beside **Add operation**, then choose **Ascending** or **Descending** to review the work in the order that best fits your planning or shop-floor workflow.
+
+  #### Delete Incorrect Time Entries
+
+  You can now remove an incorrect recorded time entry from Order Analysis. Open the entry menu, select **Delete**, review the displayed start and end time, and confirm the deletion.
+
+  Deletion is permanent. Once confirmed, Order Analysis and the related timeline immediately reflect the current production record.
+</Update>
+
 <Update label="2026-07-30" description="v1.5.85" tags={["feature", "improvement"]}>
   **UI-Build commit:** `d52000872`
 
