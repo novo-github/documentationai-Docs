@@ -1,0 +1,177 @@
+---
+title: Data Export
+description: Machine-state and BDE production data intervals exported from Novo AI — export fields, interval rules, write-back design, and configuration items for receiving systems.
+---
+
+## Introduction
+
+Novo AI exports two types of data to customer receiving systems: machine-state intervals describing how the machine behaved during a detected period, and BDE production intervals describing which production activity was performed. Both datasets share the machine/resource code and can be compared through their overlapping timestamps.
+
+<Callout kind="info" collapsed="false">
+
+For shared integration concepts — stable identifiers, timestamps and timezones, units, connection methods, access and connectivity, validation rules, and the customer handover package — see [Data Ingestion](en/erp-bde-integration).
+
+</Callout>
+
+## Machine-state data export
+
+In the opposite direction, machine states and production times detected by Novo AI can be transferred to a customer receiving system. One record represents one continuous machine-state interval. A direct link to an ERP production order is not required for the initial machine-state export.
+
+<Callout kind="info" collapsed="false">
+
+**Customer-side requirement:** provide a receiving table, API, or equivalent interface where Novo AI is allowed to create/update machine interval data. The implementation needs read/write capability or equivalent API operations for processing and verification.
+
+</Callout>
+
+### Export fields
+
+| Field                 | Status   | Type      | Example                     | Requirement / notes                                                       |
+| --------------------- | -------- | --------- | --------------------------- | ------------------------------------------------------------------------- |
+| `resource_code`       | Required | String    | `MACHINE-12`                | Stable machine/resource code matching the configured Novo AI resource.    |
+| `resource_name`       | Required | String    | `5-Axis Milling Machine 12` | Human-readable resource name.                                             |
+| `start_time`          | Required | Timestamp | `2026-07-29T08:00:00+02:00` | Detected state start; timezone-aware timestamp preferred.                 |
+| `end_time`            | Required | Timestamp | `2026-07-29T08:15:00+02:00` | Detected state end; must be later than `start_time`.                      |
+| `state_id`            | Required | String    | `IDLE-01`                   | Machine-state identifier. String supports numeric or alphanumeric models. |
+| `state_name`          | Required | String    | `IDLE`                      | Human-readable or canonical state label.                                  |
+| `production_seconds`  | Required | Integer   | `0`                         | Production duration within the interval, in seconds.                      |
+| `idle_seconds`        | Required | Integer   | `900`                       | Idle duration within the interval, in seconds.                            |
+| `off_seconds`         | Required | Integer   | `0`                         | Off duration within the interval, in seconds.                             |
+| `preparation_seconds` | Required | Integer   | `0`                         | Setup/preparation duration within the interval, in seconds.               |
+| `unknown_seconds`     | Required | Integer   | `0`                         | Unknown/unassigned duration within the interval, in seconds.              |
+| `reason_id`           | Optional | String    | `REASON-17`                 | Downtime/reason identifier if available.                                  |
+| `reason_name`         | Optional | String    | `Material missing`          | Human-readable downtime/reason label.                                     |
+| `energy_kwh`          | Optional | Decimal   | `0.85`                      | Energy consumption for the interval when measured and available.          |
+
+### State-duration rule
+
+<Callout kind="alert" collapsed="false">
+
+For each interval, only the duration column corresponding to the detected state should normally contain the interval duration. All other state-duration columns should contain `0`. Durations must be non-negative integers.
+
+</Callout>
+
+```yaml
+resource_code: MACHINE-12
+resource_name: 5-Axis Milling Machine 12
+start_time: 2026-07-29T08:00:00+02:00
+end_time: 2026-07-29T08:15:00+02:00
+state_id: IDLE-01
+state_name: IDLE
+production_seconds: 0
+idle_seconds: 900
+off_seconds: 0
+preparation_seconds: 0
+unknown_seconds: 0
+reason_id: REASON-17
+reason_name: Material missing
+energy_kwh: 0.85
+```
+
+The interval above lasts `900` seconds (15 minutes). The timestamps define its exact boundaries, while `idle_seconds` describes how the interval is classified for utilization and downtime analysis.
+
+### Write-back design items to agree
+
+- **Target interface:** database table/view, API endpoint, message interface, or file exchange.
+- **Authentication and network path:** credentials, VPN, allowlisting, certificates, or other customer security controls.
+- **Insert/update behavior:** duplicate handling and, when required, a stable interval key or interface-specific uniqueness rule.
+- **Retention and correction behavior:** whether previously written intervals may later be corrected or reclassified.
+- **Receiving-system validation:** how the customer team confirms that timestamps, machine mappings, and durations are stored correctly.
+
+## BDE production data export
+
+In addition to machine states, production data recorded by operators in Novo AI can be transferred to a customer receiving system. One record represents one continuous production or preparation interval linked to a machine assignment. When available, the record also includes the related order, work order, operation, product, and operator information.
+
+<Callout kind="info" collapsed="false">
+
+**Customer-side requirement:** provide a receiving table, API, or equivalent interface where Novo AI is allowed to create/update BDE interval data. The implementation needs read/write capability or equivalent operations for processing and verification.
+
+</Callout>
+
+### Export fields
+
+| Field                    | Status   | Type      | Example                     | Requirement / notes                                                                                            |
+| ------------------------ | -------- | --------- | --------------------------- | -------------------------------------------------------------------------------------------------------------- |
+| `bde_interval_id`        | Required | String    | `BDE-84721`                 | Stable identifier of the production or preparation interval.                                                   |
+| `assignment_id`          | Required | String    | `ASSIGNMENT-931`            | Stable identifier of the related machine assignment.                                                           |
+| `resource_code`          | Required | String    | `MACHINE-12`                | Stable machine/resource code matching the configured Novo AI resource.                                         |
+| `resource_name`          | Required | String    | `5-Axis Milling Machine 12` | Human-readable resource name.                                                                                  |
+| `interval_type`          | Required | String    | `production`                | Interval classification. Supported values are `production` and `preparation`.                                  |
+| `start_time`             | Required | Timestamp | `2026-08-27T08:00:00+02:00` | Start of the recorded activity; timezone-aware timestamp preferred.                                            |
+| `end_time`               | Optional | Timestamp | `2026-08-27T09:15:00+02:00` | End of the recorded activity. May be empty while the interval is ongoing.                                      |
+| `assignment_status`      | Required | String    | `in_progress`               | Current assignment status, such as `planned`, `in_progress`, `completed`, `hold`, `unplanned`, or `cancelled`. |
+| `assignment_role`        | Optional | String    | `primary`                   | Assignment role, such as `primary`, `secondary`, or `parallel`.                                                |
+| `operator_id`            | Optional | String    | `OPERATOR-42`               | Identifier of the assigned operator when available.                                                            |
+| `operator_name`          | Optional | String    | `Maria Schmidt`             | Human-readable operator name.                                                                                  |
+| `order_id`               | Optional | String    | `ORDER-201`                 | Novo AI order identifier.                                                                                      |
+| `external_order_id`      | Optional | String    | `ERP-4500123`               | Order identifier from the customer ERP system.                                                                 |
+| `order_name`             | Optional | String    | `Customer order 4500123`    | Human-readable order name.                                                                                     |
+| `work_order_id`          | Optional | String    | `WORK-ORDER-301`            | Novo AI work-order identifier.                                                                                 |
+| `external_work_order_id` | Optional | String    | `ERP-WO-10`                 | Work-order identifier from the customer system.                                                                |
+| `operation_id`           | Optional | String    | `OPERATION-401`             | Novo AI operation identifier.                                                                                  |
+| `external_operation_id`  | Optional | String    | `ERP-OP-20`                 | Operation identifier from the customer system.                                                                 |
+| `operation_sequence`     | Optional | String    | `20`                        | Sequence of the operation within the work order.                                                               |
+| `operation_description`  | Optional | String    | `Milling`                   | Human-readable operation description.                                                                          |
+| `product_id`             | Optional | String    | `PRODUCT-501`               | Novo AI product identifier.                                                                                    |
+| `external_product_id`    | Optional | String    | `PART-4711`                 | Product or material identifier from the customer system.                                                       |
+| `product_name`           | Optional | String    | `Housing`                   | Human-readable product name.                                                                                   |
+| `planned_quantity`       | Optional | Decimal   | `100`                       | Planned quantity of the related machine assignment.                                                            |
+| `produced_quantity`      | Required | Decimal   | `25`                        | Quantity produced during the interval.                                                                         |
+| `scrap_quantity`         | Optional | Decimal   | `1`                         | Scrap quantity reported for the interval.                                                                      |
+| `rework_quantity`        | Optional | Decimal   | `0`                         | Rework quantity reported for the interval.                                                                     |
+| `quantity_unit`          | Optional | String    | `pcs`                       | Unit used for the reported quantities.                                                                         |
+| `is_cumulative`          | Optional | Boolean   | `false`                     | Indicates whether the reported quantities are cumulative or belong only to this interval.                      |
+| `updated_at`             | Optional | Timestamp | `2026-08-27T09:17:20+02:00` | Time of the latest update or correction.                                                                       |
+
+### BDE interval rule
+
+<Callout kind="alert" collapsed="false">
+
+Each record should represent one continuous `production` or `preparation` interval for one machine assignment. The `end_time` must be later than the `start_time`. An ongoing interval may temporarily have no `end_time`.
+
+</Callout>
+
+```yaml
+bde_interval_id: BDE-84721
+assignment_id: ASSIGNMENT-931
+resource_code: MACHINE-12
+resource_name: 5-Axis Milling Machine 12
+interval_type: production
+start_time: 2026-08-27T08:00:00+02:00
+end_time: 2026-08-27T09:15:00+02:00
+assignment_status: in_progress
+assignment_role: primary
+operator_id: OPERATOR-42
+operator_name: Maria Schmidt
+external_order_id: ERP-4500123
+order_name: Customer order 4500123
+external_work_order_id: ERP-WO-10
+external_operation_id: ERP-OP-20
+operation_sequence: 20
+operation_description: Milling
+external_product_id: PART-4711
+product_name: Housing
+planned_quantity: 100
+produced_quantity: 25
+scrap_quantity: 1
+rework_quantity: 0
+quantity_unit: pcs
+is_cumulative: false
+updated_at: 2026-08-27T09:17:20+02:00
+```
+
+The interval above represents 75 minutes of production on `MACHINE-12`. It is linked to the customer order, work order, operation, product, and assigned operator. During this interval, the operator reported `25` produced parts and `1` scrap part.
+
+### BDE export items to agree
+
+- **Included information:** which order, work-order, operation, product, operator, quantity, and assignment fields are required.
+- **Identifier mapping:** which Novo AI and customer ERP identifiers should be transferred.
+- **Ongoing intervals:** whether intervals without an `end_time` should be transferred.
+- **Quantity behavior:** whether quantities are interval-specific or cumulative.
+- **Corrections:** how later changes to times, quantities, assignments, or statuses should be transferred.
+- **Operator information:** whether operator identifiers and names may be included.
+- **Target interface:** database table/view, API endpoint, message interface, or file exchange.
+- **Receiving-system validation:** how the customer confirms that assignments, identifiers, timestamps, and quantities are stored correctly.
+
+## Relationship between machine-state and BDE data
+
+Machine-state intervals and BDE intervals remain separate. Machine-state data describes how the machine behaved, while BDE data describes which production activity was performed. Both datasets can be compared using the machine/resource and their overlapping timestamps.
