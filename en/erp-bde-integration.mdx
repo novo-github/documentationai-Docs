@@ -1,9 +1,9 @@
 ---
-title: ERP & BDE Integration
+title: Data Ingestion
 description: >-
-  Connect your ERP system and existing BDE data sources to Novo AI — learn the
-  required fields, matching logic, and import workflows for all three
-  integration scenarios.
+  Import production data into Novo AI from ERP, BDE/MES, or Excel/CSV —
+  connection methods, data requirements, validation rules, and the customer
+  handover package.
 ---
 ## Introduction
 
@@ -25,12 +25,12 @@ flowchart LR
   FILE[Excel / CSV] -->|Temporary planning import| NOVO
 ```
 
-| Integration path                | Direction                  | Record granularity                    | Customer provides                                  | Typical access                          |
-| -------------------------------- | --------------------------- | -------------------------------------- | --------------------------------------------------- | ---------------------------------------- |
-| **Direct ERP planning import**  | ERP -> Novo AI             | One planned operation per record      | Planning/order fields and stable resource mapping  | Read-only source access                 |
-| **Machine & production export** | Novo AI -> customer system | One continuous machine-state interval | Writable target and accepted state/duration fields | Read/write or equivalent API operations |
-| **Existing BDE/MES import**     | BDE/MES -> Novo AI         | One recorded activity/state interval  | Interval, machine, state, and order identifiers    | Read-only source typically sufficient   |
-| **Temporary Excel/CSV import**  | File -> Novo AI            | One planned operation per row         | Upload template with agreed formats and units      | No live system connection required      |
+| Integration path                                                      | Direction                  | Record granularity                    | Customer provides                                  | Typical access                          |
+| --------------------------------------------------------------------- | -------------------------- | ------------------------------------- | -------------------------------------------------- | --------------------------------------- |
+| [**Direct ERP planning import**](#direct-erp-integration)             | ERP -> Novo AI             | One planned operation per record      | Planning/order fields and stable resource mapping  | Read-only source access                 |
+| [**Existing BDE/MES import**](#erp--existing-bde-mes-integration)     | BDE/MES -> Novo AI         | One recorded activity/state interval  | Interval, machine, state, and order identifiers    | Read-only source typically sufficient   |
+| [**Temporary Excel/CSV import**](#temporary-erp-import-via-excel-csv) | File -> Novo AI            | One planned operation per row         | Upload template with agreed formats and units      | No live system connection required      |
+| [**Machine & production export**](en/erp-data-export)                 | Novo AI -> customer system | One continuous machine-state interval | Writable target and accepted state/duration fields | Read/write or equivalent API operations |
 
 ### Customer-side readiness checklist
 
@@ -76,7 +76,7 @@ Novo AI supports several standard ways to connect to your ERP or BDE/MES system.
   <Tab title="Single read-only table or view">
     The simplest option: expose one table or view containing just the fields Novo AI needs, and grant a read-only account access to that object only.
 
-    - **Best for:** minimizing exposure — no access to the rest of the ERP schema
+    - **Best for:** minimizing exposure. No access to the rest of the ERP schema
     - **Access:** read-only user with `GRANT SELECT` on one table/view
     - **Update model:** scheduled polling
   </Tab>
@@ -133,12 +133,12 @@ These principles apply regardless of whether data comes from an ERP, MES/BDE sys
 Identifiers used for matching must remain stable over time. Display names may change; matching keys should not. Treat identifiers as strings even when they contain digits only because leading zeros, prefixes, suffixes, and revisions may be meaningful.
 
 | Concept               | Recommended type | Good example          | Why it matters                                       |
-| ---------------------- | ------------------ | ------------------------ | -------------------------------------------------------- |
-| Production order ID   | String            | `PO-2026-004582`      | Stable key for the production order                  |
-| Material/product ID   | String            | `MAT-0004711`         | Preserves ERP material-number formatting             |
-| Machine/resource code | String            | `MILL-12`             | Stable machine mapping independent of display name   |
-| Operation sequence    | String            | `A10`                 | Supports `10`, `0010`, `A10`, and similar ERP values |
-| Interval ID           | String            | `BDE-20260729-000123` | Stable identity for source intervals                 |
+| --------------------- | ---------------- | --------------------- | ---------------------------------------------------- |
+| Production order ID   | String           | `PO-2026-004582`      | Stable key for the production order                  |
+| Material/product ID   | String           | `MAT-0004711`         | Preserves ERP material-number formatting             |
+| Machine/resource code | String           | `MILL-12`             | Stable machine mapping independent of display name   |
+| Operation sequence    | String           | `A10`                 | Supports `10`, `0010`, `A10`, and similar ERP values |
+| Interval ID           | String           | `BDE-20260729-000123` | Stable identity for source intervals                 |
 
 <Callout kind="alert" collapsed="false">
   **Preserve identifiers exactly.** Do not strip leading zeros, translate identifiers, change capitalization, or recreate IDs from human-readable names. For example, resource code `00012` must not silently become `12`.
@@ -147,7 +147,7 @@ Identifiers used for matching must remain stable over time. Display names may ch
 ### Accepted logical data types
 
 | Type           | Meaning                               | Example                           | Guidance                                            |
-| --------------- | --------------------------------------- | ------------------------------------ | ------------------------------------------------------ |
+| -------------- | ------------------------------------- | --------------------------------- | --------------------------------------------------- |
 | `String`       | Text or identifier                    | `0004711`, `MACHINE-12`, `A10`    | Preferred for identifiers; preserves formatting     |
 | `Integer`      | Whole number                          | `900`                             | Used for complete seconds and whole-number counters |
 | `Decimal`      | Numeric value with optional fraction  | `125.5`, `0.85`                   | Used for quantities, energy, weight, length         |
@@ -211,22 +211,22 @@ For a direct ERP integration, Novo AI reads planned production and order informa
 ### Required ERP -> Novo AI planning fields
 
 | Field                              | Type      | Example                     | Requirement / notes                                                                                                        |
-| ------------------------------------ | ----------- | ------------------------------ | -------------------------------------------------------------------------------------------------------------------------- |
+| ---------------------------------- | --------- | --------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
 | `order_id`                         | String    | `PO-2026-004582`            | Unique, permanently stable production-order identifier. May also serve as display name when no separate order name exists. |
 | `customer_code`                    | String    | `CUST-0042`                 | Stable customer identifier.                                                                                                |
 | `customer_name`                    | String    | `Meyer Automotive GmbH`     | Human-readable customer name.                                                                                              |
 | `order_tags`                       | String\[] | `urgent, export`            | Labels used to identify, group, or filter orders.                                                                          |
 | `product_id`                       | String    | `MAT-0004711`               | Stable product/material identifier; preserve leading zeros and prefixes.                                                   |
-| `planned_quantity`                 | Decimal   | `250`                        | Quantity planned for this order/operation; must not be negative.                                                           |
-| `quantity_unit`                    | String    | `pcs`                        | Unit belonging to `planned_quantity`, for example `pcs`, `kg`, `m`.                                                        |
-| `planned_start`                    | Timestamp | `2026-07-29T08:00:00+02:00`  | Planned operation start; timezone-aware value preferred.                                                                   |
-| `planned_end`                      | Timestamp | `2026-07-29T10:30:00+02:00`  | Planned operation end; should be later than `planned_start`.                                                               |
-| `operation_sequence`               | String    | `A10`                        | Operation/routing sequence. Keep as text to support `10`, `0010`, `A10`, etc.                                              |
+| `planned_quantity`                 | Decimal   | `250`                       | Quantity planned for this order/operation; must not be negative.                                                           |
+| `quantity_unit`                    | String    | `pcs`                       | Unit belonging to `planned_quantity`, for example `pcs`, `kg`, `m`.                                                        |
+| `planned_start`                    | Timestamp | `2026-07-29T08:00:00+02:00` | Planned operation start; timezone-aware value preferred.                                                                   |
+| `planned_end`                      | Timestamp | `2026-07-29T10:30:00+02:00` | Planned operation end; should be later than `planned_start`.                                                               |
+| `operation_sequence`               | String    | `A10`                       | Operation/routing sequence. Keep as text to support `10`, `0010`, `A10`, etc.                                              |
 | `operation_description`            | String    | `CNC milling housing`       | Human-readable description of the production step.                                                                         |
-| `planned_preparation_time_seconds` | Integer   | `900`                        | Planned setup/preparation duration in seconds.                                                                             |
-| `planned_production_time_seconds`  | Integer   | `7200`                       | Planned production duration in seconds; production-time basis must be agreed.                                              |
-| `resource_code`                    | String    | `MILL-12`                    | Stable ERP machine/resource identifier used to match the corresponding Novo AI resource.                                   |
-| `resource_name`                    | String    | `5-Axis Milling Machine 12`  | Human-readable machine/resource name for display and validation.                                                           |
+| `planned_preparation_time_seconds` | Integer   | `900`                       | Planned setup/preparation duration in seconds.                                                                             |
+| `planned_production_time_seconds`  | Integer   | `7200`                      | Planned production duration in seconds; production-time basis must be agreed.                                              |
+| `resource_code`                    | String    | `MILL-12`                   | Stable ERP machine/resource identifier used to match the corresponding Novo AI resource.                                   |
+| `resource_name`                    | String    | `5-Axis Milling Machine 12` | Human-readable machine/resource name for display and validation.                                                           |
 
 <Callout kind="success" collapsed="false">
   **Uniqueness rule:** `order_id + operation_sequence + resource_code` should uniquely identify one planned operation unless another agreed stable operation identifier is provided.
@@ -239,7 +239,7 @@ For a direct ERP integration, Novo AI reads planned production and order informa
 <Tabs>
   <Tab title="Total order">
     | Field                             | Example       |
-    | ------------------------------------ | --------------- |
+    | --------------------------------- | ------------- |
     | `planned_quantity`                | `100`         |
     | `planned_production_time_seconds` | `7200`        |
     | `planned_production_time_basis`   | `TOTAL_ORDER` |
@@ -249,7 +249,7 @@ For a direct ERP integration, Novo AI reads planned production and order informa
 
   <Tab title="Per unit">
     | Field                             | Example    |
-    | ------------------------------------ | ------------ |
+    | --------------------------------- | ---------- |
     | `planned_quantity`                | `100`      |
     | `planned_production_time_seconds` | `72`       |
     | `planned_production_time_basis`   | `PER_UNIT` |
@@ -263,7 +263,7 @@ Where the source ERP can provide it, `planned_production_time_basis` is strongly
 ### Optional planning fields
 
 | Field                   | Type         | Example                               | Requirement / notes                                                                        |
-| ------------------------- | -------------- | ---------------------------------------- | ----------------------------------------------------------------------------------------------- |
+| ----------------------- | ------------ | ------------------------------------- | ------------------------------------------------------------------------------------------ |
 | `priority`              | Integer      | `50`                                  | Planning/dispatching priority. Agree whether higher or lower numbers mean higher priority. |
 | `product_description`   | String       | `Aluminium pump housing 120 mm`       | Human-readable product/material description.                                               |
 | `order_notes`           | String       | `Customer requests complete shipment` | General notes belonging to the production order.                                           |
@@ -280,7 +280,7 @@ Where the source ERP can provide it, `planned_production_time_basis` is strongly
 These fields are useful extensions when they already exist in the customer source system or help resolve ambiguity. They are **not universal mandatory requirements**.
 
 | Field                           | Type          | Example                | Why useful                                                                                  |
-| ---------------------------------- | --------------- | ------------------------- | ------------------------------------------------------------------------------------------------ |
+| ------------------------------- | ------------- | ---------------------- | ------------------------------------------------------------------------------------------- |
 | `operation_id`                  | String        | `OP-000010`            | Stable identifier for a routing/operation record, especially if sequence values may change. |
 | `routing_id`                    | String        | `ROUTING-PUMP-4711-R3` | Identifier of the production routing/work plan.                                             |
 | `work_center_code`              | String        | `WC-MILLING`           | Useful when work center and physical machine/resource are different concepts.               |
@@ -321,65 +321,9 @@ operation_notes: Use fixture F-12
 
 Optional fields may be omitted when unavailable. The example demonstrates a complete and unambiguous record; it does not imply that every optional field must exist in every ERP system.
 
-## Machine and production data export from Novo AI
-
-In the opposite direction, machine states and production times detected by Novo AI can be transferred to a customer receiving system. One record represents one continuous machine-state interval. A direct link to an ERP production order is not required for the initial machine-state export.
-
 <Callout kind="info" collapsed="false">
-  **Customer-side requirement:** provide a receiving table, API, or equivalent interface where Novo AI is allowed to create/update machine interval data. The implementation needs read/write capability or equivalent API operations for processing and verification.
+  **Data Export:** Novo AI also exports machine-state and BDE production data intervals to customer receiving systems. For export fields, interval rules, and write-back design, see [Data Export](en/erp-data-export).
 </Callout>
-
-### Export fields
-
-| Field                 | Status   | Type      | Example                     | Requirement / notes                                                       |
-| ----------------------- | ---------- | ----------- | ------------------------------ | ------------------------------------------------------------------------------ |
-| `resource_code`       | Required | String    | `MACHINE-12`                | Stable machine/resource code matching the configured Novo AI resource.    |
-| `resource_name`       | Required | String    | `5-Axis Milling Machine 12` | Human-readable resource name.                                             |
-| `start_time`          | Required | Timestamp | `2026-07-29T08:00:00+02:00` | Detected state start; timezone-aware timestamp preferred.                 |
-| `end_time`            | Required | Timestamp | `2026-07-29T08:15:00+02:00` | Detected state end; must be later than `start_time`.                      |
-| `state_id`            | Required | String    | `IDLE-01`                   | Machine-state identifier. String supports numeric or alphanumeric models. |
-| `state_name`          | Required | String    | `IDLE`                       | Human-readable or canonical state label.                                  |
-| `production_seconds`  | Required | Integer   | `0`                          | Production duration within the interval, in seconds.                      |
-| `idle_seconds`        | Required | Integer   | `900`                        | Idle duration within the interval, in seconds.                            |
-| `off_seconds`         | Required | Integer   | `0`                          | Off duration within the interval, in seconds.                             |
-| `preparation_seconds` | Required | Integer   | `0`                          | Setup/preparation duration within the interval, in seconds.               |
-| `unknown_seconds`     | Required | Integer   | `0`                          | Unknown/unassigned duration within the interval, in seconds.              |
-| `reason_id`           | Optional | String    | `REASON-17`                 | Downtime/reason identifier if available.                                  |
-| `reason_name`         | Optional | String    | `Material missing`          | Human-readable downtime/reason label.                                     |
-| `energy_kwh`          | Optional | Decimal   | `0.85`                       | Energy consumption for the interval when measured and available.          |
-
-### State-duration rule
-
-<Callout kind="alert" collapsed="false">
-  For each interval, only the duration column corresponding to the detected state should normally contain the interval duration. All other state-duration columns should contain `0`. Durations must be non-negative integers.
-</Callout>
-
-```yaml
-resource_code: MACHINE-12
-resource_name: 5-Axis Milling Machine 12
-start_time: 2026-07-29T08:00:00+02:00
-end_time: 2026-07-29T08:15:00+02:00
-state_id: IDLE-01
-state_name: IDLE
-production_seconds: 0
-idle_seconds: 900
-off_seconds: 0
-preparation_seconds: 0
-unknown_seconds: 0
-reason_id: REASON-17
-reason_name: Material missing
-energy_kwh: 0.85
-```
-
-The interval above lasts `900` seconds (15 minutes). The timestamps define its exact boundaries, while `idle_seconds` describes how the interval is classified for utilization and downtime analysis.
-
-### Write-back design items to agree
-
-- **Target interface:** database table/view, API endpoint, message interface, or file exchange.
-- **Authentication and network path:** credentials, VPN, allowlisting, certificates, or other customer security controls.
-- **Insert/update behavior:** duplicate handling and, when required, a stable interval key or interface-specific uniqueness rule.
-- **Retention and correction behavior:** whether previously written intervals may later be corrected or reclassified.
-- **Receiving-system validation:** how the customer team confirms that timestamps, machine mappings, and durations are stored correctly.
 
 ## ERP + existing BDE/MES integration
 
@@ -388,7 +332,7 @@ Existing shop-floor production data may come from a BDE (Betriebsdatenerfassung)
 ### Minimum interval data
 
 | Field           | Type      | Example                     | Requirement / notes                                                                          |
-| ----------------- | ----------- | ------------------------------ | -------------------------------------------------------------------------------------------------- |
+| --------------- | --------- | --------------------------- | -------------------------------------------------------------------------------------------- |
 | `interval_id`   | String    | `BDE-20260729-000123`       | Unique, permanently stable identifier for the source interval.                               |
 | `resource_code` | String    | `MACHINE-12`                | Stable machine/resource identifier; must resolve to the same machine mapping used elsewhere. |
 | `resource_name` | String    | `5-Axis Milling Machine 12` | Human-readable machine name for display and validation.                                      |
@@ -409,7 +353,7 @@ Novo AI primarily uses `order_id + resource_code` to associate an imported inter
 ### Example activity/state values
 
 | Example state     | Typical meaning               |
-| -------------------- | -------------------------------- |
+| ----------------- | ----------------------------- |
 | `PRODUCTION`      | Production processing         |
 | `SETUP`           | Setup / preparation           |
 | `MAINTENANCE`     | Maintenance activity          |
@@ -442,34 +386,34 @@ When a direct ERP connection is not yet available, planned production data can b
 ### Upload template column reference
 
 | Upload column              | Logical type | Example                    | Canonical concept       | Guidance                                                                           |
-| ----------------------------- | -------------- | ------------------------------ | -------------------------- | ----------------------------------------------------------------------------------- |
+| -------------------------- | ------------ | -------------------------- | ----------------------- | ---------------------------------------------------------------------------------- |
 | `order`                    | String       | `SO-3001`                  | `order_id`              | Production-order identifier. Keep as text even if the source contains digits only. |
 | `product`                  | String       | `PART-A`                   | `product_id`            | Product/material identifier.                                                       |
-| `count`                    | Decimal      | `500`                       | `planned_quantity`      | Planned quantity.                                                                  |
-| `quantity_unit`            | String       | `pcs`                       | `quantity_unit`         | Unit belonging to `count`.                                                         |
-| `description_1`            | String       | `Aluminium`                 | Descriptive text        | Free descriptive field; exact source meaning is customer-specific.                 |
-| `description_2`            | String       | `Pump housing`              | Descriptive text        | Free descriptive field; exact source meaning is customer-specific.                 |
-| `description_3`            | String       | `Blue anodized`             | Descriptive text        | Free descriptive field; exact source meaning is customer-specific.                 |
-| `notes_1`                  | String       | `Urgent`                    | Notes                   | Map to order/product/operation notes according to source semantics.                |
-| `notes_2`                  | String       | `Customer priority`         | Notes                   | Free-text note; source meaning should be documented.                               |
-| `notes_3`                  | String       | `Partial shipment allowed`  | Notes                   | Free-text note; source meaning should be documented.                               |
-| `planned_start`            | Timestamp    | `2026-03-01 06:00:00`       | `planned_start`         | Combined planned start. If no timezone is present, agree the site timezone.        |
-| `planned_end`              | Timestamp    | `2026-03-01 08:00:00`       | `planned_end`           | Combined planned end.                                                              |
-| `planned_start_date`       | Date         | `2026-03-01`                | `planned_start`         | Alternative split date component.                                                  |
-| `planned_start_time`       | Time         | `06:00:00`                  | `planned_start`         | Alternative split time component.                                                  |
-| `planned_end_date`         | Date         | `2026-03-01`                | `planned_end`           | Alternative split date component.                                                  |
-| `planned_end_time`         | Time         | `08:00:00`                  | `planned_end`           | Alternative split time component.                                                  |
-| `customer_name`            | String       | `Acme Manufacturing GmbH`   | `customer_name`         | Human-readable customer name.                                                      |
-| `customer_code`            | String       | `CUST-ACME`                 | `customer_code`         | Stable customer identifier.                                                        |
-| `order_date`               | Date         | `2026-02-22`                | `order_date`            | Order creation/release date where available.                                       |
-| `delivery_date`            | Date         | `2026-03-10`                | `delivery_date`         | Requested or planned delivery date.                                                |
-| `priority`                 | Integer      | `50`                         | `priority`              | Planning priority; priority direction must be agreed.                              |
-| `operation_sequence`       | String       | `A10`                         | `operation_sequence`    | Operation/routing sequence. Treat as text.                                         |
-| `operation_description`    | String       | `CNC cutting`                 | `operation_description` | Human-readable production-step description.                                        |
-| `planned_preparation_time` | Decimal      | `15`                          | Setup duration          | Source duration; unit must be agreed before conversion to canonical seconds.       |
-| `planned_production_time`  | Decimal      | `120`                         | Production duration     | Unit and `PER_UNIT`/`TOTAL_ORDER` basis must be agreed.                            |
-| `machine_resource`         | String       | `MACHINE-12`                  | `resource_code`         | Machine/resource identifier. Treat numeric-looking values as text.                 |
-| `tags`                     | String\[]    | `Urgent, Export`              | `order_tags`            | One or more labels represented in a spreadsheet cell.                              |
+| `count`                    | Decimal      | `500`                      | `planned_quantity`      | Planned quantity.                                                                  |
+| `quantity_unit`            | String       | `pcs`                      | `quantity_unit`         | Unit belonging to `count`.                                                         |
+| `description_1`            | String       | `Aluminium`                | Descriptive text        | Free descriptive field; exact source meaning is customer-specific.                 |
+| `description_2`            | String       | `Pump housing`             | Descriptive text        | Free descriptive field; exact source meaning is customer-specific.                 |
+| `description_3`            | String       | `Blue anodized`            | Descriptive text        | Free descriptive field; exact source meaning is customer-specific.                 |
+| `notes_1`                  | String       | `Urgent`                   | Notes                   | Map to order/product/operation notes according to source semantics.                |
+| `notes_2`                  | String       | `Customer priority`        | Notes                   | Free-text note; source meaning should be documented.                               |
+| `notes_3`                  | String       | `Partial shipment allowed` | Notes                   | Free-text note; source meaning should be documented.                               |
+| `planned_start`            | Timestamp    | `2026-03-01 06:00:00`      | `planned_start`         | Combined planned start. If no timezone is present, agree the site timezone.        |
+| `planned_end`              | Timestamp    | `2026-03-01 08:00:00`      | `planned_end`           | Combined planned end.                                                              |
+| `planned_start_date`       | Date         | `2026-03-01`               | `planned_start`         | Alternative split date component.                                                  |
+| `planned_start_time`       | Time         | `06:00:00`                 | `planned_start`         | Alternative split time component.                                                  |
+| `planned_end_date`         | Date         | `2026-03-01`               | `planned_end`           | Alternative split date component.                                                  |
+| `planned_end_time`         | Time         | `08:00:00`                 | `planned_end`           | Alternative split time component.                                                  |
+| `customer_name`            | String       | `Acme Manufacturing GmbH`  | `customer_name`         | Human-readable customer name.                                                      |
+| `customer_code`            | String       | `CUST-ACME`                | `customer_code`         | Stable customer identifier.                                                        |
+| `order_date`               | Date         | `2026-02-22`               | `order_date`            | Order creation/release date where available.                                       |
+| `delivery_date`            | Date         | `2026-03-10`               | `delivery_date`         | Requested or planned delivery date.                                                |
+| `priority`                 | Integer      | `50`                       | `priority`              | Planning priority; priority direction must be agreed.                              |
+| `operation_sequence`       | String       | `A10`                      | `operation_sequence`    | Operation/routing sequence. Treat as text.                                         |
+| `operation_description`    | String       | `CNC cutting`              | `operation_description` | Human-readable production-step description.                                        |
+| `planned_preparation_time` | Decimal      | `15`                       | Setup duration          | Source duration; unit must be agreed before conversion to canonical seconds.       |
+| `planned_production_time`  | Decimal      | `120`                      | Production duration     | Unit and `PER_UNIT`/`TOTAL_ORDER` basis must be agreed.                            |
+| `machine_resource`         | String       | `MACHINE-12`               | `resource_code`         | Machine/resource identifier. Treat numeric-looking values as text.                 |
+| `tags`                     | String\[]    | `Urgent, Export`           | `order_tags`            | One or more labels represented in a spreadsheet cell.                              |
 
 <Callout kind="tip" collapsed="false">
   A column appearing in the upload template does not automatically mean it is mandatory for every customer configuration. The direct ERP section describes the target planning information. Temporary-import mandatory/optional behavior follows the importer configuration and agreed mapping.
@@ -535,7 +479,7 @@ The data dictionary defines **what** information is exchanged. The following cus
 ### Source and target system information
 
 | Area                             | Customer information to provide                                                                                         |
-| ----------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
+| -------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
 | ERP planning source              | System name/version; responsible team; table/view/API/export location; update frequency; expected data volume.          |
 | Machine/resource master          | Source of `resource_code` and `resource_name`; mapping to physical machines; handling of inactive or renamed resources. |
 | BDE/MES source (optional)        | Interval source; state model; order/resource references; historical depth to import.                                    |
@@ -601,15 +545,15 @@ The following checks should be performed during mapping and acceptance testing.
 ### Common integration errors
 
 | Issue                               | Example                                   | Risk                                  | Preferred correction                        |
-| -------------------------------------- | -------------------------------------------- | ---------------------------------------- | ----------------------------------------------- |
+| ----------------------------------- | ----------------------------------------- | ------------------------------------- | ------------------------------------------- |
 | Identifier converted to number      | `00012` becomes `12`                      | Machine/order matching may fail       | Preserve identifiers as String/text         |
 | Machine matched by name             | `Milling Machine` used as key             | Names can change or be duplicated     | Match with stable `resource_code`           |
-| Missing timezone                    | `2026-10-25 02:30:00`                      | Can be ambiguous at DST transitions   | Provide UTC offset or agreed plant timezone |
-| Quantity has no unit                | `planned_quantity=500`                     | Meaning is ambiguous                  | Also provide `quantity_unit`                |
-| Production time has no basis        | `planned_production_time_seconds=120`      | Could mean per unit or total order    | Agree `PER_UNIT` or `TOTAL_ORDER`           |
-| Unknown optional value sent as zero | `energy_kwh=0` when not measured           | Zero appears to be a real measurement | Use blank/null for unknown optional values  |
-| Mixed timestamp formats             | Several locale formats in one file         | Parsing becomes unreliable            | Use one consistent agreed format            |
-| Duplicate operation key             | Same order + sequence + resource repeated  | Can create duplicate plans            | Ensure uniqueness or provide `operation_id` |
+| Missing timezone                    | `2026-10-25 02:30:00`                     | Can be ambiguous at DST transitions   | Provide UTC offset or agreed plant timezone |
+| Quantity has no unit                | `planned_quantity=500`                    | Meaning is ambiguous                  | Also provide `quantity_unit`                |
+| Production time has no basis        | `planned_production_time_seconds=120`     | Could mean per unit or total order    | Agree `PER_UNIT` or `TOTAL_ORDER`           |
+| Unknown optional value sent as zero | `energy_kwh=0` when not measured          | Zero appears to be a real measurement | Use blank/null for unknown optional values  |
+| Mixed timestamp formats             | Several locale formats in one file        | Parsing becomes unreliable            | Use one consistent agreed format            |
+| Duplicate operation key             | Same order + sequence + resource repeated | Can create duplicate plans            | Ensure uniqueness or provide `operation_id` |
 
 ## Customer handover package
 
@@ -631,7 +575,7 @@ Use this section as the practical integration-kickoff package. Completing these 
 ### Integration worksheet
 
 | Integration decision                     | Customer response                   |
-| ------------------------------------------- | -------------------------------------- |
+| ---------------------------------------- | ----------------------------------- |
 | ERP system / source                      | _To be provided_                    |
 | ERP planning interface / export location | _To be provided_                    |
 | Plant / site code                        | _To be provided_                    |
@@ -701,3 +645,4 @@ Use this section as the practical integration-kickoff package. Completing these 
 - Write-back target and permissions have been tested if included.
 - Business users have validated representative records end-to-end.
 - Technical owners know how schema/code-list changes will be communicated after go-live.
+

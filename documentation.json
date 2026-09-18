@@ -48,8 +48,13 @@
                 "icon": "plug",
                 "pages": [
                   {
-                    "title": "ERP & BDE Integration",
+                    "title": "Data Ingestion",
                     "path": "en/erp-bde-integration",
+                    "icon": "file-text"
+                  },
+                  {
+                    "title": "Data Export",
+                    "path": "en/erp-data-export",
                     "icon": "file-text"
                   }
                 ]
