@@ -6,6 +6,164 @@ toc: false
 
 ## Releases
 
+<Update label="2026-09-16" description="v1.5.101" tags={["Funktion", "Verbesserung"]}>
+  **UI-Build-Commits:** `2dbb32c`, `3aa62c3`, `fda9521`
+
+  **Release-Zeitraum:** 15.–16. September 2026
+
+  ### Neue Funktionen
+
+  #### Auswirkungen eines Auftragsimports vorab prüfen
+
+  Beim Auftragsupload können Sie jetzt vor der Bestätigung prüfen, was der Import verändert. Nach dem Hochladen der Datei, der Spaltenzuordnung und der Vorschau zeigt die Änderungsübersicht, wie viele Aufträge, Produkte, Kunden, Operationen und Zuweisungen neu angelegt, aktualisiert oder als bestehende Datensätze weiterverwendet werden.
+
+  Klappen Sie die Details je Zeile auf, um geänderte Planungsdaten, neue Operationen und Zuweisungen sowie neu berechnete Dauern zu prüfen. Bestätigen Sie den Import, wenn Sie die vorgeschlagenen Änderungen geprüft haben.
+
+  #### Planungskonflikte beim Import lösen
+
+  Wenn eine importierte Operation bereits an anderer Stelle eingeplant ist, zeigt der Auftragsupload den Konflikt beim zugehörigen Auftrag und erklärt den Grund, beispielsweise bereits erfasste Produktion für eine Zuweisung. Prüfen Sie jeden Konflikt und wählen Sie die passende Aktion:
+
+  - Verschieben Sie die Zuweisung zum neuen Ziel, um die Planung aus der Datei zu übernehmen.
+  - Behalten Sie die Zuweisung am bisherigen Ziel, um die bestehende Planung fortzuführen.
+  - Behalten Sie beide Zuweisungen, um die Arbeit an beiden Zielen parallel einzuplanen.
+
+  Konflikte, die sich in der Importprüfung nicht eindeutig lösen lassen, werden zur manuellen Klärung im **Zuweisungsplaner** gekennzeichnet. Nach dem Import zeigt eine Zusammenfassung, welche Entscheidungen umgesetzt wurden. Konnte eine Entscheidung nicht angewendet werden, wird der Grund erläutert, etwa wenn die Produktion nach Ihrer Prüfung bereits begonnen hat.
+
+  #### Wichtige Felder auf Planungskarten hervorheben
+
+  Öffnen Sie im **Zuweisungsplaner** oder im Operationsbereich eines Auftrags die Auswahl zur Hervorhebung und wählen Sie die gewünschten Felder. Diese sind nach Auftrag, Arbeitsauftrag, Produkt, Operation, Planung und Zuweisung gruppiert.
+
+  Die ausgewählten Felder werden auf den Karten hervorgehoben. So finden Sie beispielsweise Priorität, Fälligkeit oder Kunde beim Durchsehen eines umfangreichen Plans schneller.
+
+  ### Verbesserungen
+
+  #### Übersichtlichere Notizen und Beschreibungen zu Operationen
+
+  In den Arbeitsauftragsnotizen und der Auftragszeitleiste lassen sich Notizen und Beschreibungen leichter lesen und bearbeiten. Leere Felder zeigen jetzt einen sichtbaren Eingabehinweis, damit Sie erkennen, wo Sie Informationen für die nächste Person an der Operation ergänzen können.
+</Update>
+
+<Update label="2026-09-14" description="v1.5.100" tags={["Funktion", "Verbesserung"]}>
+  **UI-Build-Commits:** `07f4c72`, `0a96996`, `551b5e1`
+
+  **Release-Zeitraum:** 13.–14. September 2026
+
+  ### Neue Funktionen
+
+  #### Zuweisungen zwischen Maschinen und Hallenpools verschieben
+
+  Ziehen Sie im **Zuweisungsplaner** eine Zuweisungskarte direkt aus einer Maschinen- oder Hallenpool-Spalte in eine andere. Wählen Sie anschließend, ob sie am Anfang oder Ende der Zielwarteschlange eingefügt werden soll. Um das Ziel zu ändern, müssen Sie die Operation nicht mehr erst aus der Planung entfernen und erneut zuweisen.
+
+  Bereits laufende oder abgeschlossene Zuweisungen können nicht in eine andere Spalte verschoben werden. Innerhalb ihrer aktuellen Warteschlange können Sie sie weiterhin neu anordnen.
+
+  #### Sensoren erkennen, die mit der Maschine ausgeschaltet werden
+
+  Wenn ein Sensor nur bei eingeschalteter Maschine mit Strom versorgt wird, öffnen Sie die **Maschinenkonfiguration → Basisinformationen** und aktivieren Sie die Einstellung für die Stromversorgung des Sensors durch die Maschine. Ein fehlendes Signal dieses Sensors wird dann als **Maschine aus** statt als **Unbekannt** angezeigt. So lässt sich ein reguläres Ausschalten von einem ungeklärten Datenausfall unterscheiden.
+
+  ### Verbesserungen
+
+  #### Suchergebnisse direkt während der Eingabe
+
+  Die Suche nach Zuweisungen und im Pool nicht zugewiesener Operationen im **Zuweisungsplaner** aktualisiert die Ergebnisse jetzt unmittelbar während der Eingabe. So finden Sie gesuchte Arbeit in langen Warteschlangen schneller.
+</Update>
+
+<Update label="2026-09-11" description="v1.5.99" tags={["Funktion", "Verbesserung"]}>
+  **UI-Build-Commits:** `9183297`, `74725eb`, `4f395b2`, `f55cfaa`, `346a4fe`
+
+  **Release-Zeitraum:** 9.–11. September 2026
+
+  ### Neue Funktionen
+
+  #### Prioritätsstufen an Ihr ERP anpassen
+
+  Administratoren können im **Administrationsbereich** unter den Prioritätsstufen jetzt eigene Namen, Nummern und Farben für das Unternehmen festlegen. Übernehmen Sie eine Vorlage für **SAP**, **Epicor Kinetic** oder **Infor M3**, um deren Prioritätsnummerierung zu verwenden. Alternativ können Sie Stufen einzeln hinzufügen, umbenennen, umsortieren, umfärben oder löschen.
+
+  Nach dem Speichern stehen dieselben Stufen im Auftragsupload, im Zuweisungsplaner und in der Auftragsverwaltung zur Verfügung. Bei Bedarf können Sie die Einstellungen auf die Standardwerte zurücksetzen.
+
+  #### Intervallzeiten schnell korrigieren
+
+  Tippen Sie in der **Betriebsdatenerfassung (BDE)** zweimal auf die Start- oder Endzeit eines Intervalls, um die Schnellbearbeitung zu öffnen. Mit **+2m**, **+5m** oder **+30m** und den entsprechenden Minus-Schaltflächen passen Sie die Zeit schrittweise an. Mehrfaches Tippen addiert die Schritte: Zweimal **+5m** verschiebt die Zeit um zehn Minuten nach vorn.
+
+  Für genaue Korrekturen steht weiterhin die vollständige Datums- und Zeitauswahl zur Verfügung.
+
+  #### Zeitleistendetails und Aktualisierungshäufigkeit wählen
+
+  Öffnen Sie die Einstellungen der **BDE V3**, um unter der Zeitleistenanzeige die Intervallbalken im Diagramm ein- oder auszublenden. Über das automatische Aktualisierungsintervall legen Sie fest, wie häufig Zuweisungen und Hallenpools aktualisiert werden. So passen Sie die Anzeige an Ihren Arbeitsablauf an.
+
+  #### Warteschlangen manuell oder nach eigenen Regeln sortieren
+
+  Aktivieren Sie in den Sortier- und Filteroptionen des **Zuweisungsplaners** oder der **BDE V3** die Sortierung nach Warteschlangenposition, um die per Drag-and-drop festgelegte Reihenfolge anzuzeigen.
+
+  Deaktivieren Sie diese Einstellung, um stattdessen nach Feldern wie Priorität oder Datum zu sortieren. Wählen Sie je Regel eine auf- oder absteigende Sortierung und ergänzen Sie weitere Regeln für gleiche Werte. Durch Ziehen legen Sie fest, welche Regel zuerst angewendet wird.
+</Update>
+
+<Update label="2026-09-06" description="v1.5.98" tags={["Funktion", "Verbesserung"]}>
+  **UI-Build-Commits:** `85448b0`, `c22ad83`, `aabbbd5`, `10a187f`, `8e1abd1`
+
+  **Release-Datum:** 6. September 2026
+
+  ### Neue Funktionen
+
+  #### Maschinen direkt über die obere Leiste wechseln
+
+  Wählen Sie auf der **BDE-Seite** einer Maschine deren Namen in der oberen Navigationsleiste. Das Auswahlmenü zeigt die anderen für Sie zugänglichen Maschinen, nach Halle gruppiert. Wählen Sie eine Maschine, um direkt zu deren BDE-Seite zu wechseln, ohne zur Maschinenübersicht zurückzukehren.
+
+  #### Maschinenzustände anhand von Mustern unterscheiden
+
+  Aktivieren Sie die Muster für Barrierefreiheit in der Maschinenstatus-Legende. **Leerlauf** wird dann zusätzlich mit Punkten und **Aus** mit diagonalen Linien dargestellt, überall dort, wo der Maschinenstatus erscheint. So können Sie die Zustände auch unabhängig von ihrer Farbe unterscheiden.
+
+  Öffnen Sie die Vergleichsvorschau, um eine Schichtzeitleiste mit und ohne Muster zu vergleichen, einschließlich einer Simulation von Farbsehschwächen.
+
+  #### Arbeit für einen Hallenpool planen
+
+  Im **Zuweisungsplaner** hat jede Halle jetzt zusätzlich zu den Maschinenspalten eine **Hallenpool-Spalte**. Ziehen Sie eine Operation in den Hallenpool oder weisen Sie dort eine neue Operation zu, wenn mehrere Maschinen der Halle die Arbeit übernehmen können und die konkrete Maschine noch offenbleiben soll.
+
+  Eine Bereitschaftsanzeige zeigt, wann die Operation von einer Maschine übernommen werden kann. So planen Sie gemeinsame Arbeit, ohne sich vorab auf eine bestimmte Maschine festzulegen.
+
+  ### Verbesserungen
+
+  #### Zuweisungen und nicht zugewiesene Operationen finden
+
+  Suchen Sie im **Zuweisungsplaner** direkt in den Zuweisungen und im Pool nicht zugewiesener Operationen, um einen bestimmten Auftrag oder eine Operation in einer langen Warteschlange zu finden.
+</Update>
+
+<Update label="2026-09-03" description="v1.5.97" tags={["Funktion", "Verbesserung"]}>
+  **UI-Build-Commits:** `2528d95`, `5a49ede`, `9fdae8b`
+
+  **Release-Datum:** 3. September 2026
+
+  ### Neue Funktionen
+
+  #### Telefonnummer verifizieren
+
+  Geben Sie auf Ihrer **Profilseite** Ihre Telefonnummer ein und fordern Sie einen Bestätigungscode an. Tragen Sie den sechsstelligen Code aus der SMS ein und bestätigen Sie ihn, um die Nummer in Ihrem Konto zu verifizieren.
+
+  Falls der Code nicht ankommt, können Sie nach einer kurzen Wartezeit einen neuen anfordern. Um die Nummer zu ändern oder zu entfernen, nutzen Sie auf derselben Seite die Funktion zum Entfernen der Telefonnummer. Anschließend können Sie eine neue Nummer hinzufügen und verifizieren.
+
+  #### AVA-Geräte in einem eigenen Tab verwalten
+
+  Öffnen Sie in der **Maschinenkonfiguration** den Tab für **AVA-Zuweisungen**, um ein AVA-Gerät auszuwählen und mit der Maschine zu verbinden. Sind mehrere Geräte verbunden, ziehen Sie sie nach oben oder unten, um ihre Priorität festzulegen. Gerätezuweisungen haben damit einen eigenen, leichter auffindbaren Bereich in der Maschineneinrichtung.
+
+  ### Verbesserungen
+
+  #### Fehlgeschlagene automatische Zuweisungen nachvollziehen
+
+  Wenn die automatische Zuweisung im **Zuweisungs-Gantt** einen Auftrag nicht einplanen kann, erklärt eine Meldung jetzt den Grund, beispielsweise eine fehlende verfügbare Maschine. Anhand dieser Erklärung können Sie den Plan prüfen und gezielt anpassen.
+</Update>
+
+<Update label="2026-08-29" description="v1.5.96" tags={["Verbesserung"]}>
+  **UI-Build-Commits:** `117c368`, `6d63467`, `49932f3`, `e4a20cc`
+
+  **Release-Zeitraum:** 24.–29. August 2026
+
+  ### Verbesserungen
+
+  #### Zuverlässigere Maschineneinrichtung und Produktionserfassung
+
+  - **AVA-Geräteeinrichtung:** Ungültige oder doppelte Einträge werden vor dem Speichern erkannt, damit Sie sie sofort korrigieren können.
+  - **BDE-Zeitleiste:** Einträge für Leerlauf- und Stoppzeiten werden zuverlässiger aktualisiert, wenn Sie schnell zwischen laufendem, pausiertem und gestopptem Betrieb wechseln.
+  - **Auftragsabschluss:** Eine Zuweisung wird als abgeschlossen markiert, wenn die produzierte Menge genau der geplanten Menge entspricht. Ein vorzeitiger Abschluss wird damit verhindert.
+</Update>
+
 <Update label="2026-08-19" description="v1.5.90" tags={["Funktion", "Verbesserung"]}>
   **UI-Build-Commit:** `54e018d`
 
@@ -44,7 +202,7 @@ toc: false
   Das Löschen ist endgültig. Nach der Bestätigung zeigen die Auftragsanalyse und die zugehörige Zeitleiste sofort den aktuellen Produktionsdatensatz.
 </Update>
 
-<Update label="2026-08-05" description="" tags={["Funktion", "Verbesserung"]}>
+<Update label="2026-08-05" description="v1.5.88" tags={["Funktion", "Verbesserung"]}>
   **Release-Zeitraum:** 2.–5. August 2026
 
   ### Zusammenarbeit, Feedback und Wissen
@@ -76,7 +234,7 @@ toc: false
   **UI-Build-Commits:** `17e937f`, `6409a61`
 </Update>
 
-<Update label="2026-07-30" description="" tags={["Funktion", "Verbesserung"]}>
+<Update label="2026-07-30" description="v1.5.87" tags={["Funktion", "Verbesserung"]}>
   **Release-Zeitraum:** 2.–30. Juli 2026
 
   ### Planung, Produktion und Zugriffssteuerung
@@ -215,7 +373,7 @@ toc: false
   Das Benutzerprofil zeigt aktive Sitzungen mit Gerät, Browser, Betriebssystem, IP-Adresse, Standort und Anmeldezeit. Benutzer können einzelne Geräte oder alle anderen Sitzungen abmelden.
 </Update>
 
-<Update label="2026-06-19" description="" tags={["Funktion", "Verbesserung"]}>
+<Update label="2026-06-19" description="v1.5.76" tags={["Funktion", "Verbesserung"]}>
   **Release-Zeitraum:** 8.–19. Juni 2026
 
   ### Produktionsanalysen und Automatisierung
@@ -291,7 +449,7 @@ toc: false
   - Spalten und Sortierung der [BDE-Zuweisungen](/de/platform-intro/pages/data-acquisition) können personalisiert werden.
 </Update>
 
-<Update label="2026-05-21" description="" tags={["Funktion", "Verbesserung"]}>
+<Update label="2026-05-21" description="v1.5.72" tags={["Funktion", "Verbesserung"]}>
   **Release-Zeitraum:** 11.–21. Mai 2026
 
   ### Planung und Auftragskontext
@@ -427,7 +585,7 @@ toc: false
   </Callout>
 </Update>
 
-<Update label="2026-04-29" description="" tags={["Funktion", "Verbesserung"]}>
+<Update label="2026-04-29" description="v1.5.65" tags={["Funktion", "Verbesserung"]}>
   **Release-Zeitraum:** 1.–29. April 2026
 
   ### Zugriff, Automatisierung und KI-Arbeitsbereich
@@ -461,7 +619,7 @@ toc: false
   **UI-Build-Commits:** `08012c6`, `e9d9db4`
 </Update>
 
-<Update label="2026-03-30" description="" tags={["Funktion", "Verbesserung"]}>
+<Update label="2026-03-30" description="v1.5.51" tags={["Funktion", "Verbesserung"]}>
   **Release-Zeitraum:** 10.–30. März 2026
 
   ### Produktions- und Maschinenanalyse
@@ -495,7 +653,7 @@ toc: false
   **UI-Build-Commits:** `863a6f3`, `fb5f32b`
 </Update>
 
-<Update label="2026-02-11" description="" tags={["Funktion", "Verbesserung"]}>
+<Update label="2026-02-11" description="v1.5.44" tags={["Funktion", "Verbesserung"]}>
   **Release-Zeitraum:** 4. Januar–11. Februar 2026
 
   ### Produktivität und Grundlagen der Produktion

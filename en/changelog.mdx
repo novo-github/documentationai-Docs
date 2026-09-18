@@ -6,6 +6,164 @@ toc: false
 
 ## Releases
 
+<Update label="2026-09-16" description="v1.5.101" tags={["feature", "improvement"]}>
+  **UI-Build commits:** `2dbb32c`, `3aa62c3`, `fda9521`
+
+  **Release period:** September 15–16, 2026
+
+  ### New Features
+
+  #### Review What an Order Import Will Change
+
+  Order Upload now helps you check the impact of an import before confirming it. After uploading your file and reviewing the column mapping and preview, open **What this import will change** to see counts of new, updated, and existing records across orders, products, customers, operations, and assignments.
+
+  Expand the row-by-row details to see which schedules will change, which operations and assignments will be created, and which durations will be recalculated. Confirm the import once you have reviewed the proposed changes.
+
+  #### Resolve Scheduling Conflicts During Import
+
+  If an imported operation is already scheduled elsewhere, Order Upload now groups the conflict under its order and explains the reason, such as an assignment that already has recorded production. Review each conflict and choose the appropriate action:
+
+  - **Move to [new target]** to apply the assignment from the file.
+  - **Keep on [current target]** to retain the existing assignment.
+  - **Keep both** to keep assignments at both targets for parallel work.
+
+  Conflicts that cannot be resolved in the import review are flagged for manual resolution in the **Assignment Planner**. After import, a summary shows which decisions were applied and explains any that could not be applied, for example because production started after your review.
+
+  #### Highlight Important Fields on Planning Cards
+
+  In the **Assignment Planner** or the order operation panel, open **Highlight** and select the fields you want to emphasize. Fields are grouped by Order, Work Order, Product, Operation, Planning, and Assignment.
+
+  Your selected fields are highlighted across the cards, making details such as priority, due date, or customer easier to find when scanning a busy plan.
+
+  ### Improvements
+
+  #### Clearer Operation Notes and Descriptions
+
+  Notes and descriptions are easier to read and edit in Work Order Notes and the order timeline. Empty fields now show a visible prompt so you can see where to add information for the next person working on the operation.
+</Update>
+
+<Update label="2026-09-14" description="v1.5.100" tags={["feature", "improvement"]}>
+  **UI-Build commits:** `07f4c72`, `0a96996`, `551b5e1`
+
+  **Release period:** September 13–14, 2026
+
+  ### New Features
+
+  #### Move Assignments Between Machines and Hall Pools
+
+  In the **Assignment Planner**, drag an assignment card directly from one machine or hall-pool column to another, then choose whether to place it at the start or end of the destination queue. You no longer need to unassign the operation and add it again to change its destination.
+
+  Assignments that are already in progress or completed cannot be moved to another column. You can still reorder them within their current queue.
+
+  #### Recognize Sensors That Switch Off with the Machine
+
+  If a sensor receives power only while its machine is on, open the machine's **Configuration → Basic Info** and enable **Sensor powered by machine**. A missing signal from that sensor is then shown as **machine off** instead of **unknown**, helping you distinguish an expected shutdown from an unexplained loss of data.
+
+  ### Improvements
+
+  #### Search Results as You Type
+
+  Searching assignments and the pool of unassigned operations in the **Assignment Planner** now updates results immediately as you type, making it quicker to locate work in long queues.
+</Update>
+
+<Update label="2026-09-11" description="v1.5.99" tags={["feature", "improvement"]}>
+  **UI-Build commits:** `9183297`, `74725eb`, `4f395b2`, `f55cfaa`, `346a4fe`
+
+  **Release period:** September 9–11, 2026
+
+  ### New Features
+
+  #### Match Priority Levels to Your ERP
+
+  Administrators can now define company priority names, numbers, and colors under **Admin Panel → Priority Levels**. Select **Apply preset** to use priority numbering for **SAP**, **Epicor Kinetic**, or **Infor M3**, or add, rename, reorder, recolor, and delete levels individually.
+
+  Save your changes to use the same levels in Order Upload, the Assignment Planner, and order management. **Reset to defaults** is available if you want to start again.
+
+  #### Adjust Interval Times Quickly
+
+  In **Data Acquisition**, double-tap an interval's start or end time to open the quick editor. Use the **+2m**, **+5m**, or **+30m** buttons, or their minus equivalents, to adjust the time in small steps. Repeated taps add up: two taps on **+5m** move the time forward by ten minutes.
+
+  The full date/time picker remains available for precise corrections.
+
+  #### Choose Timeline Detail and Refresh Frequency
+
+  Open **Data Acquisition V3** settings and use **Timeline display → Show intervals in graph** to show or hide interval bars. Under **Auto-refresh interval**, choose how often assignments and hall pools refresh automatically, so you can adjust the display to your working needs.
+
+  #### Sort Queues Manually or by Your Own Rules
+
+  In the sort/filter options of the **Assignment Planner** or **Data Acquisition V3**, enable **Sort by Queue Position** to display the order you set by dragging assignments.
+
+  Turn it off to sort by fields such as priority or date instead. Choose ascending or descending order for each rule, add further rules to break ties, and drag the rules into the order in which they should take precedence.
+</Update>
+
+<Update label="2026-09-06" description="v1.5.98" tags={["feature", "improvement"]}>
+  **UI-Build commits:** `85448b0`, `c22ad83`, `aabbbd5`, `10a187f`, `8e1abd1`
+
+  **Release date:** September 6, 2026
+
+  ### New Features
+
+  #### Switch Machines from the Top Bar
+
+  While viewing a machine's **Data Acquisition** screen, select the machine name in the top navigation bar. The dropdown lists the other machines you can access, grouped by hall. Select a machine to open its Data Acquisition screen directly without returning to the machine overview.
+
+  #### Distinguish Machine States with Patterns
+
+  Enable **Accessibility patterns** in the machine status legend to add dots for **Idle** and diagonal lines for **Off** wherever machine status is shown. These patterns help you distinguish the states without relying on color alone.
+
+  Select **See how this looks** to compare a shift timeline with and without patterns, including a simulation of color blindness.
+
+  #### Plan Work for a Hall Pool
+
+  In the **Assignment Planner**, each hall now has a **Hall Pool** column alongside its machine columns. Drag an operation into the hall pool, or assign a new operation there, when several machines in that hall could carry out the work and you want to leave the machine choice open.
+
+  A readiness badge shows when the operation is ready to be claimed by a machine, so you can plan shared work without choosing a specific machine upfront.
+
+  ### Improvements
+
+  #### Find Assignments and Unassigned Operations
+
+  Search directly across assignments and the pool of unassigned operations in the **Assignment Planner** to locate a particular order or operation in a long queue.
+</Update>
+
+<Update label="2026-09-03" description="v1.5.97" tags={["feature", "improvement"]}>
+  **UI-Build commits:** `2528d95`, `5a49ede`, `9fdae8b`
+
+  **Release date:** September 3, 2026
+
+  ### New Features
+
+  #### Verify Your Phone Number
+
+  On your **Profile** page, enter your phone number and select **Request Code**. Enter the six-digit code sent by SMS and confirm it to verify the number on your account.
+
+  If the code does not arrive, you can request another after a short waiting period. To change or remove the number, select **Remove phone** on the same page; you can then add and verify a new number.
+
+  #### Manage AVA Devices in a Dedicated Tab
+
+  Open a machine's **Configuration → AVA Assignments** to select an AVA device and connect it to the machine. If several devices are connected, drag them up or down to set their priority. Device assignments now have their own place in machine setup, making them easier to find and manage.
+
+  ### Improvements
+
+  #### Understand Why Automatic Assignment Failed
+
+  When automatic assignment in the **Assignment Gantt** cannot place an order, a message now explains why, for example when no machine is available. You can use that explanation to review the plan and decide what to change.
+</Update>
+
+<Update label="2026-08-29" description="v1.5.96" tags={["improvement"]}>
+  **UI-Build commits:** `117c368`, `6d63467`, `49932f3`, `e4a20cc`
+
+  **Release period:** August 24–29, 2026
+
+  ### Improvements
+
+  #### More Reliable Machine Setup and Production Tracking
+
+  - **AVA device setup:** invalid or duplicate entries are caught before saving, so you can correct them immediately.
+  - **Data Acquisition timeline:** entries for idle and stopped periods update more reliably when you switch quickly between running, paused, and stopped states.
+  - **Order completion:** an assignment is marked complete when the produced quantity exactly matches the planned quantity, preventing premature completion.
+</Update>
+
 <Update label="2026-08-19" description="v1.5.90" tags={["feature", "improvement"]}>
   **UI-Build commit:** `54e018d`
 
@@ -44,7 +202,7 @@ toc: false
   Deletion is permanent. Once confirmed, Order Analysis and the related timeline immediately reflect the current production record.
 </Update>
 
-<Update label="2026-08-05" description="" tags={["feature", "improvement"]}>
+<Update label="2026-08-05" description="v1.5.88" tags={["feature", "improvement"]}>
   **Release period:** August 2–5, 2026
 
   ### Collaboration, Feedback, and Knowledge
@@ -76,7 +234,7 @@ toc: false
   **UI-Build commits:** `17e937f`, `6409a61`
 </Update>
 
-<Update label="2026-07-30" description="" tags={["feature", "improvement"]}>
+<Update label="2026-07-30" description="v1.5.87" tags={["feature", "improvement"]}>
   **Release period:** July 2–30, 2026
 
   ### Planning, Production, and Access
@@ -215,7 +373,7 @@ toc: false
   The user profile shows active sessions, including the device, browser, operating system, IP address, location, and login time. Users can sign out an individual device or all other sessions.
 </Update>
 
-<Update label="2026-06-19" description="" tags={["feature", "improvement"]}>
+<Update label="2026-06-19" description="v1.5.76" tags={["feature", "improvement"]}>
   **Release period:** June 8–19, 2026
 
   ### Production Insights and Automation
@@ -291,7 +449,7 @@ toc: false
   - [PDA](/en/platform-intro/pages/data-acquisition) assignment columns and sorting can be personalized.
 </Update>
 
-<Update label="2026-05-21" description="" tags={["feature", "improvement"]}>
+<Update label="2026-05-21" description="v1.5.72" tags={["feature", "improvement"]}>
   **Release period:** May 11–21, 2026
 
   ### Planning and Order Context
@@ -427,7 +585,7 @@ toc: false
   </Callout>
 </Update>
 
-<Update label="2026-04-29" description="" tags={["feature", "improvement"]}>
+<Update label="2026-04-29" description="v1.5.65" tags={["feature", "improvement"]}>
   **Release period:** April 1–29, 2026
 
   ### Access, Automation, and AI Workspace
@@ -461,7 +619,7 @@ toc: false
   **UI-Build commits:** `08012c6`, `e9d9db4`
 </Update>
 
-<Update label="2026-03-30" description="" tags={["feature", "improvement"]}>
+<Update label="2026-03-30" description="v1.5.51" tags={["feature", "improvement"]}>
   **Release period:** March 10–30, 2026
 
   ### Production and Machine Analysis
@@ -495,7 +653,7 @@ toc: false
   **UI-Build commits:** `863a6f3`, `fb5f32b`
 </Update>
 
-<Update label="2026-02-11" description="" tags={["feature", "improvement"]}>
+<Update label="2026-02-11" description="v1.5.44" tags={["feature", "improvement"]}>
   **Release period:** January 4–February 11, 2026
 
   ### Productivity and Production Foundations
