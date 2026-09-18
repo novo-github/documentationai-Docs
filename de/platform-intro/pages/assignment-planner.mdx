@@ -19,20 +19,48 @@ Benutzer öffnen diese Seite über den Bereich **Planer** in der Hauptnavigation
 ## Was Sie sehen können
 
 - Eine Liste ungeplanter Arbeit mit Suche.
-- Maschinen-Spalten, die als Warteschlangen dienen.
+- Maschinenspalten und eine Hallenpool-Spalte je Halle, die als Warteschlangen dienen.
 - Filter für Hallen und Maschinen, um den Planungsbereich einzugrenzen.
 - Eine auswählbare Maschinenmenge in der Gantt-Zeitleiste.
 - Planungsüberschneidungen und Verknüpfungen zu den zugehörigen Aufträgen.
 
 ## Was Sie tun können
 
-- Nach ungeplanter Arbeit suchen.
-- Arbeit in eine Maschinenwarteschlange ziehen.
+- Zuweisungen und ungeplante Operationen durchsuchen, mit Ergebnissen während der Eingabe.
+- Arbeit in eine Maschinenwarteschlange oder einen Hallenpool ziehen oder zwischen Spalten verschieben.
 - Zuweisungen innerhalb einer Warteschlange neu anordnen.
 - Zuweisungsdetails wie Timing, Status oder Priorität aktualisieren.
 - Zukünftige Zuweisungen automatisch anordnen, ohne die laufende Produktion zu verändern.
 - Warnungen prüfen, bevor sich überschneidende Zuweisungen neu angeordnet werden.
-- Das schreibgeschützte Zuweisungs-Gantt öffnen, um den Produktionsplan zu prüfen.
+- Das Zuweisungs-Gantt öffnen, um den Produktionsplan zu prüfen und die automatische Zuweisung zu nutzen.
+
+## Maschinenwarteschlangen und Hallenpools
+
+Eine Maschinenwarteschlange weist Arbeit einer bestimmten Maschine zu. Ein **Hallenpool** hält Arbeit für eine Halle bereit, wenn mehrere Maschinen die Aufgabe übernehmen könnten und die Maschinenwahl noch offenbleiben soll. Jeder Hallenpool erscheint neben den zugehörigen Maschinenspalten. Sie können eine Operation hineinziehen oder eine neue Operation direkt dort zuweisen.
+
+Eine Bereitschaftsanzeige kennzeichnet, wann eine Maschine die Arbeit aus dem Pool übernehmen kann. Die Maschinenwahl bleibt offen, bis die Arbeit übernommen wird. Die Anzeige hilft Ihnen zu erkennen, wann eine Übernahme möglich ist.
+
+Sie können eine Zuweisung direkt zwischen Maschinen- und Hallenpool-Spalten verschieben und sie am Anfang oder Ende der Zielwarteschlange einordnen. Laufende oder abgeschlossene Zuweisungen können nicht in eine andere Spalte verschoben werden. Innerhalb ihrer aktuellen Warteschlange können Sie sie weiterhin neu anordnen.
+
+## Suche, Filter und Kartendetails
+
+Durchsuchen Sie die Zuweisungen oder ungeplanten Operationen, um einen Auftrag oder eine Operation zu finden. Die Ergebnisse aktualisieren sich direkt während der Eingabe. Die Planersuche unterstützt auch die Suche nach Produkt, Kunde oder Maschine; in der Liste ungeplanter Operationen können Sie nach Auftrag, Produkt oder Operation suchen.
+
+Grenzen Sie den Plan mit Hallen- und Maschinenfiltern ein. Mit Auftragstags, Priorität und Auftragsstatus grenzen Sie die angezeigte Arbeit weiter ein. Die Statusfilter umfassen geplante, laufende, pausierte, abgeschlossene und stornierte Arbeit. Tags gruppieren zusammengehörige Arbeit und bleiben in Aufträgen, Operationen und der Planung sichtbar.
+
+Sie können im Planer außerdem Operations- oder Zuweisungsnotizen lesen und bearbeiten, damit Hinweise direkt bei der Arbeit verfügbar sind. Über die Hervorhebungsfunktion lassen sich ausgewählte Felder auf Planungskarten betonen. Die Felder sind nach Auftrag, Arbeitsauftrag, Produkt, Operation, Planung und Zuweisung gruppiert. Hervorgehobene Prioritäten, Fälligkeiten oder Kunden erleichtern den Überblick über lange Warteschlangen.
+
+## Warteschlangenposition und Sortierregeln
+
+Die Sortierung nach Warteschlangenposition zeigt Zuweisungen in der Reihenfolge, die Sie durch Ziehen festgelegt haben. Ist diese Option ausgeschaltet, bestimmen Sortierregeln die angezeigte Reihenfolge. Jede Regel umfasst ein Feld und eine aufsteigende oder absteigende Richtung. Weitere Regeln lösen Gleichstände auf; die Reihenfolge der Regeln bestimmt ihren Vorrang.
+
+Dieselben Sortiermöglichkeiten stehen in der [Betriebsdatenerfassung V3](/de/platform-intro/pages/data-acquisition) zur Verfügung. Die Prioritäten entsprechen den unternehmensweiten Stufen aus dem [Admin-Panel](/de/platform-intro/pages/admin-panel).
+
+## Zuweisungs-Gantt und Planungshinweise
+
+Das Zuweisungs-Gantt zeigt Zuweisungen über ausgewählte Maschinen und Zeiträume hinweg, einschließlich Überschneidungen und Links zu den zugehörigen Aufträgen. Die automatische Anordnung unterstützt die Planung zukünftiger Zuweisungen und lässt laufende Produktion unverändert.
+
+Kann die automatische Zuweisung einen Auftrag nicht einplanen, erklärt eine Meldung den Grund, beispielsweise eine fehlende verfügbare Maschine. Prüfen Sie anhand dieser Erklärung den Plan, bevor Sie es erneut versuchen. Unter [Maschinenzuweisungen planen](/de/platform-intro/workflows/assignment-planner) finden Sie die Planungsschritte und Hinweise zu Importkonflikten, die manuell geprüft werden müssen.
 
 ## Hauptentitäten
 
@@ -50,7 +78,7 @@ Benutzer öffnen diese Seite über den Bereich **Planer** in der Hauptnavigation
 ### Grenzen und Leerzustände
 - Es können nur eine begrenzte Anzahl an Maschinen gleichzeitig angezeigt werden.
 - Filter können sowohl Maschinen als auch ungeplante Arbeit ausblenden.
-- Das Zuweisungs-Gantt ist eine schreibgeschützte Early-Access-Ansicht.
+- Laufende und abgeschlossene Zuweisungen können nicht in eine andere Spalte verschoben werden.
 - Die automatische Anordnung gilt für zukünftige Zuweisungen und lässt die laufende Produktion unverändert.
 
 ## Verwandte Seiten

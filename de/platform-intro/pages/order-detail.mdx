@@ -1,11 +1,11 @@
 ---
 title: "Auftragsdetails"
-description: "Eine vollständige Bearbeitungs- und Analseite für einen Produktionsauftrag und seine Arbeitsstruktur."
+description: "Prüfen und bearbeiten Sie einen Produktionsauftrag, seine Arbeitsstruktur, Notizen und erfassten Zeiten."
 ---
 
 ## Überblick
 
-Ermöglichen Sie Benutzern, die vollständige Struktur eines Produktionsauftrags zu prüfen und zu bearbeiten.
+Prüfen und bearbeiten Sie einen Produktionsauftrag, seine Arbeitsaufträge, Operationen und Zuweisungen. Verbinden Sie mithilfe der Notizen, Zeitleiste und Analyseansichten den Produktionsplan mit der erfassten Arbeit.
 
 Benutzer öffnen diese Seite normalerweise über die Seite **Aufträge & Produkte**.
 
@@ -29,13 +29,37 @@ Benutzer öffnen diese Seite normalerweise über die Seite **Aufträge & Produkt
 - Den Auftrag analysieren und zeitleistenbezogenen Kontext prüfen.
 - Auftragsbezogene Daten detaillierter exportieren oder prüfen.
 
+## Operationen lesen und ordnen
+
+Sortieren Sie die Operationen innerhalb eines Arbeitsauftrags über die Sortierschaltfläche neben der Funktion zum Hinzufügen einer Operation nach ihrer Sequenznummer. Bei aufsteigender Sortierung erscheinen kleinere Nummern zuerst, bei absteigender Sortierung größere Nummern.
+
+Öffnen Sie im Operationsbereich des Auftrags die Hervorhebungsfunktion, um Felder auf den Karten hervorzuheben. Die Felder sind nach Auftrag, Arbeitsauftrag, Produkt, Operation, Planung und Zuweisung gruppiert. Wählen Sie beispielsweise Priorität, Fälligkeit oder Kunde aus, damit Sie diese Angaben bei der Auftragsprüfung leichter finden. Dieselbe Funktion steht im [Zuweisungsplaner](/de/platform-intro/pages/assignment-planner) zur Verfügung.
+
+Prioritätsnamen, Nummern und Farben entsprechen den unternehmensweiten Stufen aus dem [Administrationsbereich](/de/platform-intro/pages/admin-panel). So bleiben Auftragsverwaltung, Importe und Zuweisungsplanung einheitlich.
+
+## Notizen und Beschreibungen ergänzen
+
+Prüfen und bearbeiten Sie Notizen und Beschreibungen zu Operationen in den Arbeitsauftragsnotizen und in der Auftragszeitleiste. Leere Felder zeigen einen Hinweis darauf, wo Sie Informationen ergänzen können. Halten Sie dort Anweisungen und Zusammenhänge fest, die die nächste Person zur Ausführung der Operation benötigt.
+
+## Geplante Zeiten und Abschluss verstehen
+
+Operationen mit Industrieminuten tragen neben ihren geplanten Zeiten eine entsprechende Kennzeichnung. Diese zeigt die verwendete Zeitkonvention an; bewegen Sie den Mauszeiger darüber, um die Erläuterung zu lesen. Wenn Sie eine importierte Operation mit Ihrer Quelldatei vergleichen, prüfen Sie auch die Zeitinterpretation im [ERP-Upload-Planer](/de/platform-intro/pages/erp-upload-planner).
+
+Eine Zuweisung wird als abgeschlossen markiert, wenn ihre produzierte Menge genau der geplanten Menge entspricht. Prüfen Sie diese Mengen bei der Abschlusskontrolle, damit Arbeit nicht bereits vor Erreichen der geplanten Menge als fertig gilt.
+
+## Erfasste Zeiteinträge korrigieren
+
+In der Auftragsanalyse können Sie einen erfassten Zeiteintrag über dessen Menü löschen. Prüfen Sie vor der Bestätigung die angezeigte Start- und Endzeit, damit Sie den richtigen Eintrag entfernen.
+
+Die Löschung ist dauerhaft. Nach der Bestätigung zeigen die Auftragsanalyse und die zugehörige Zeitleiste den aktualisierten Produktionsstand.
+
 ## Hauptentitäten
 
-- Produktionsauftrag
-- Kunde
-- Arbeitsauftrag
-- Operation
-- Zuweisung
+- **Produktionsauftrag:** der Auftrag, dessen Details und Produktionsstruktur Sie prüfen.
+- **Kunde:** der dem Auftrag zugeordnete Kunde.
+- **Arbeitsauftrag:** ein Teil des Produktionsauftrags, der Operationen zusammenfasst.
+- **Operation:** ein Produktionsschritt mit eigener Sequenz, geplanten Zeiten, Notizen und Beschreibungen.
+- **Zuweisung:** die Einplanung einer Operation auf einer Maschine oder in einem Hallenpool.
 
 ## Ergebnisse und Grenzen
 
@@ -50,6 +74,7 @@ Benutzer öffnen diese Seite normalerweise über die Seite **Aufträge & Produkt
 - [Aufträge & Produkte](/de/platform-intro/pages/orders-products)
 - [Planer](/de/platform-intro/pages/scheduler)
 - [Zuweisungsplaner](/de/platform-intro/pages/assignment-planner)
+- [ERP-Upload-Planer](/de/platform-intro/pages/erp-upload-planner)
 
 ## Verwandte Abläufe
 

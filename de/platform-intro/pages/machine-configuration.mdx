@@ -18,7 +18,7 @@ Benutzer erreichen diese Seite über Maschinen-Einrichtungsaktionen oder direkt 
 
 ## Was Sie sehen können
 
-- Vertikale Tabs für Bereiche wie Basisinformationen, Energieüberwachung, Bewertungen, Zeitachsenbereiche, Zeitachsenregeln und Funktionen.
+- Vertikale Tabs für Bereiche wie Basisinformationen, AVA-Zuweisungen, Energieüberwachung, Bewertungen, Zeitachsenbereiche, Zeitachsenregeln und Funktionen.
 - Anzeigen für nicht gespeicherte Änderungen an Tabs.
 
 ## Was Sie tun können
@@ -26,6 +26,18 @@ Benutzer erreichen diese Seite über Maschinen-Einrichtungsaktionen oder direkt 
 - Die erste Maschineneinrichtung abschließen.
 - Aktualisieren, wie die Maschine gruppiert und gemessen wird.
 - Änderungen tabweise speichern.
+
+## AVA-Geräte zuweisen
+
+Eine AVA-Zuweisung verbindet ein AVA-Gerät mit dieser Maschine. Öffnen Sie in der **Maschinenkonfiguration** den Tab für **AVA-Zuweisungen**, um ein Gerät auszuwählen und zu verbinden. Sind mehrere Geräte verbunden, ziehen Sie sie nach oben oder unten, um ihre Priorität festzulegen.
+
+Ungültige oder doppelte Einträge werden vor dem Speichern erkannt. Korrigieren Sie die markierten Einträge und speichern Sie den Tab, bevor Sie ihn verlassen. Die Einrichtungsschritte finden Sie unter [Maschine konfigurieren](/de/platform-intro/workflows/machine-configuration).
+
+## Sensoren mit Stromversorgung über die Maschine
+
+Aktivieren Sie in den **Basisinformationen** der Maschinenkonfiguration die Einstellung für die Stromversorgung des Sensors über die Maschine, wenn der Sensor nur bei eingeschalteter Maschine mit Strom versorgt wird. Speichern Sie den Tab nach der Änderung.
+
+Bei aktivierter Einstellung wird ein fehlendes Signal dieses Sensors als **Maschine aus** statt als **unbekannt** angezeigt. So erkennen Sie eine erwartete Abschaltung. Verwenden Sie die Einstellung nur, wenn der Sensor tatsächlich zusammen mit der Maschine seine Stromversorgung verliert, damit ein ungeklärter Datenausfall nicht als Abschaltung eingeordnet wird.
 
 ## Hauptentitäten
 

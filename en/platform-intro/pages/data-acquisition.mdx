@@ -9,6 +9,8 @@ Support live shop-floor execution and event recording for a single machine.
 
 Users usually open it from the Machine Details page.
 
+To switch machines, select the machine name in the top navigation bar. The dropdown groups the other machines you can access by hall and opens the selected machine's Data Acquisition screen directly.
+
 ## Access
 
 <Callout kind="info" title="Access details">
@@ -31,6 +33,29 @@ Users usually open it from the Machine Details page.
 - Search for unplanned operations and assign them directly to the machine.
 - Configure the information and ordering shown on assignment cards.
 - Apply timeline reasons and review related support content.
+
+## Choosing and Understanding Work
+
+Use open-assignment or time-window views to find the work for the current machine. If an operation has not been planned, you can search for it and assign it directly from this page. Operation sequence numbers on job chips help identify the order of work, and operation and assignment notes provide instructions and context.
+
+In Data Acquisition V3, **Sort by Queue Position** displays the order set by dragging assignments. Turn it off to display work by rules such as priority or date. Each rule supports ascending or descending order; further rules break ties, and dragging the rules changes their precedence. These choices are also available in the [Assignment Planner](/en/platform-intro/pages/assignment-planner).
+
+## Interval Times and Timeline Display
+
+An interval records a period of machine activity with a start and end time. The quick time editor lets you correct either timestamp in steps of two, five, or thirty minutes in either direction. Repeated adjustments add up; the full date/time picker remains available for precise changes.
+
+Data Acquisition V3 settings offer two separate choices:
+
+- **Timeline display → Show intervals in graph** controls whether interval bars appear on the graph.
+- **Auto-refresh interval** controls how often assignments and hall pools refresh automatically.
+
+Timeline entries for idle and stopped periods update as you switch between running, paused, and stopped states. Review these entries and their reasons to keep a clear record of interruptions. See [Run Data Acquisition](/en/platform-intro/workflows/data-acquisition) for the correction and display procedures.
+
+## Production Quantities, Scrap, and Completion
+
+When stopping or continuing an interval, you can enter produced quantity and record **material scrap** and **work scrap** separately. Keeping the two scrap categories separate lets you review the breakdown and their combined total in [Orders & Products](/en/platform-intro/pages/orders-products) and [Order Analysis](/en/platform-intro/pages/order-detail). Displayed production totals include the submitted scrap quantities.
+
+Starting or stopping production updates the related order status. An assignment is marked complete when the produced quantity exactly matches the planned quantity. An over-production prompt can help you review completion when production exceeds the plan.
 
 ## Main Entities
 

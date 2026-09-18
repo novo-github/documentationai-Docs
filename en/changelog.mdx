@@ -13,13 +13,13 @@ toc: false
 
   ### New Features
 
-  #### Review What an Order Import Will Change
+  #### [Review What an Order Import Will Change](/en/platform-intro/pages/erp-upload-planner)
 
   Order Upload now helps you check the impact of an import before confirming it. After uploading your file and reviewing the column mapping and preview, open **What this import will change** to see counts of new, updated, and existing records across orders, products, customers, operations, and assignments.
 
   Expand the row-by-row details to see which schedules will change, which operations and assignments will be created, and which durations will be recalculated. Confirm the import once you have reviewed the proposed changes.
 
-  #### Resolve Scheduling Conflicts During Import
+  #### [Resolve Scheduling Conflicts During Import](/en/platform-intro/pages/erp-upload-planner)
 
   If an imported operation is already scheduled elsewhere, Order Upload now groups the conflict under its order and explains the reason, such as an assignment that already has recorded production. Review each conflict and choose the appropriate action:
 
@@ -27,17 +27,17 @@ toc: false
   - **Keep on [current target]** to retain the existing assignment.
   - **Keep both** to keep assignments at both targets for parallel work.
 
-  Conflicts that cannot be resolved in the import review are flagged for manual resolution in the **Assignment Planner**. After import, a summary shows which decisions were applied and explains any that could not be applied, for example because production started after your review.
+  Conflicts that cannot be resolved in the import review are flagged for manual resolution in the **[Assignment Planner](/en/platform-intro/pages/assignment-planner)**. After import, a summary shows which decisions were applied and explains any that could not be applied, for example because production started after your review.
 
-  #### Highlight Important Fields on Planning Cards
+  #### [Highlight Important Fields on Planning Cards](/en/platform-intro/pages/assignment-planner)
 
-  In the **Assignment Planner** or the order operation panel, open **Highlight** and select the fields you want to emphasize. Fields are grouped by Order, Work Order, Product, Operation, Planning, and Assignment.
+  In the **Assignment Planner** or the [order operation panel](/en/platform-intro/pages/order-detail), open **Highlight** and select the fields you want to emphasize. Fields are grouped by Order, Work Order, Product, Operation, Planning, and Assignment.
 
   Your selected fields are highlighted across the cards, making details such as priority, due date, or customer easier to find when scanning a busy plan.
 
   ### Improvements
 
-  #### Clearer Operation Notes and Descriptions
+  #### [Clearer Operation Notes and Descriptions](/en/platform-intro/pages/order-detail)
 
   Notes and descriptions are easier to read and edit in Work Order Notes and the order timeline. Empty fields now show a visible prompt so you can see where to add information for the next person working on the operation.
 </Update>
@@ -49,19 +49,19 @@ toc: false
 
   ### New Features
 
-  #### Move Assignments Between Machines and Hall Pools
+  #### [Move Assignments Between Machines and Hall Pools](/en/platform-intro/pages/assignment-planner)
 
   In the **Assignment Planner**, drag an assignment card directly from one machine or hall-pool column to another, then choose whether to place it at the start or end of the destination queue. You no longer need to unassign the operation and add it again to change its destination.
 
   Assignments that are already in progress or completed cannot be moved to another column. You can still reorder them within their current queue.
 
-  #### Recognize Sensors That Switch Off with the Machine
+  #### [Recognize Sensors That Switch Off with the Machine](/en/platform-intro/pages/machine-configuration)
 
   If a sensor receives power only while its machine is on, open the machine's **Configuration → Basic Info** and enable **Sensor powered by machine**. A missing signal from that sensor is then shown as **machine off** instead of **unknown**, helping you distinguish an expected shutdown from an unexplained loss of data.
 
   ### Improvements
 
-  #### Search Results as You Type
+  #### [Search Results as You Type](/en/platform-intro/pages/assignment-planner)
 
   Searching assignments and the pool of unassigned operations in the **Assignment Planner** now updates results immediately as you type, making it quicker to locate work in long queues.
 </Update>
@@ -73,25 +73,25 @@ toc: false
 
   ### New Features
 
-  #### Match Priority Levels to Your ERP
+  #### [Match Priority Levels to Your ERP](/en/platform-intro/pages/admin-panel)
 
   Administrators can now define company priority names, numbers, and colors under **Admin Panel → Priority Levels**. Select **Apply preset** to use priority numbering for **SAP**, **Epicor Kinetic**, or **Infor M3**, or add, rename, reorder, recolor, and delete levels individually.
 
   Save your changes to use the same levels in Order Upload, the Assignment Planner, and order management. **Reset to defaults** is available if you want to start again.
 
-  #### Adjust Interval Times Quickly
+  #### [Adjust Interval Times Quickly](/en/platform-intro/pages/data-acquisition)
 
   In **Data Acquisition**, double-tap an interval's start or end time to open the quick editor. Use the **+2m**, **+5m**, or **+30m** buttons, or their minus equivalents, to adjust the time in small steps. Repeated taps add up: two taps on **+5m** move the time forward by ten minutes.
 
   The full date/time picker remains available for precise corrections.
 
-  #### Choose Timeline Detail and Refresh Frequency
+  #### [Choose Timeline Detail and Refresh Frequency](/en/platform-intro/pages/data-acquisition)
 
   Open **Data Acquisition V3** settings and use **Timeline display → Show intervals in graph** to show or hide interval bars. Under **Auto-refresh interval**, choose how often assignments and hall pools refresh automatically, so you can adjust the display to your working needs.
 
-  #### Sort Queues Manually or by Your Own Rules
+  #### [Sort Queues Manually or by Your Own Rules](/en/platform-intro/pages/assignment-planner)
 
-  In the sort/filter options of the **Assignment Planner** or **Data Acquisition V3**, enable **Sort by Queue Position** to display the order you set by dragging assignments.
+  In the sort/filter options of the **Assignment Planner** or **[Data Acquisition V3](/en/platform-intro/pages/data-acquisition)**, enable **Sort by Queue Position** to display the order you set by dragging assignments.
 
   Turn it off to sort by fields such as priority or date instead. Choose ascending or descending order for each rule, add further rules to break ties, and drag the rules into the order in which they should take precedence.
 </Update>
@@ -103,17 +103,17 @@ toc: false
 
   ### New Features
 
-  #### Switch Machines from the Top Bar
+  #### [Switch Machines from the Top Bar](/en/platform-intro/pages/data-acquisition)
 
   While viewing a machine's **Data Acquisition** screen, select the machine name in the top navigation bar. The dropdown lists the other machines you can access, grouped by hall. Select a machine to open its Data Acquisition screen directly without returning to the machine overview.
 
-  #### Distinguish Machine States with Patterns
+  #### [Distinguish Machine States with Patterns](/en/platform-intro/pages/machines)
 
   Enable **Accessibility patterns** in the machine status legend to add dots for **Idle** and diagonal lines for **Off** wherever machine status is shown. These patterns help you distinguish the states without relying on color alone.
 
   Select **See how this looks** to compare a shift timeline with and without patterns, including a simulation of color blindness.
 
-  #### Plan Work for a Hall Pool
+  #### [Plan Work for a Hall Pool](/en/platform-intro/pages/assignment-planner)
 
   In the **Assignment Planner**, each hall now has a **Hall Pool** column alongside its machine columns. Drag an operation into the hall pool, or assign a new operation there, when several machines in that hall could carry out the work and you want to leave the machine choice open.
 
@@ -121,7 +121,7 @@ toc: false
 
   ### Improvements
 
-  #### Find Assignments and Unassigned Operations
+  #### [Find Assignments and Unassigned Operations](/en/platform-intro/pages/assignment-planner)
 
   Search directly across assignments and the pool of unassigned operations in the **Assignment Planner** to locate a particular order or operation in a long queue.
 </Update>
@@ -133,19 +133,19 @@ toc: false
 
   ### New Features
 
-  #### Verify Your Phone Number
+  #### [Verify Your Phone Number](/en/platform-intro/pages/user-profile)
 
   On your **Profile** page, enter your phone number and select **Request Code**. Enter the six-digit code sent by SMS and confirm it to verify the number on your account.
 
   If the code does not arrive, you can request another after a short waiting period. To change or remove the number, select **Remove phone** on the same page; you can then add and verify a new number.
 
-  #### Manage AVA Devices in a Dedicated Tab
+  #### [Manage AVA Devices in a Dedicated Tab](/en/platform-intro/pages/machine-configuration)
 
   Open a machine's **Configuration → AVA Assignments** to select an AVA device and connect it to the machine. If several devices are connected, drag them up or down to set their priority. Device assignments now have their own place in machine setup, making them easier to find and manage.
 
   ### Improvements
 
-  #### Understand Why Automatic Assignment Failed
+  #### [Understand Why Automatic Assignment Failed](/en/platform-intro/pages/assignment-planner)
 
   When automatic assignment in the **Assignment Gantt** cannot place an order, a message now explains why, for example when no machine is available. You can use that explanation to review the plan and decide what to change.
 </Update>
@@ -159,9 +159,9 @@ toc: false
 
   #### More Reliable Machine Setup and Production Tracking
 
-  - **AVA device setup:** invalid or duplicate entries are caught before saving, so you can correct them immediately.
-  - **Data Acquisition timeline:** entries for idle and stopped periods update more reliably when you switch quickly between running, paused, and stopped states.
-  - **Order completion:** an assignment is marked complete when the produced quantity exactly matches the planned quantity, preventing premature completion.
+  - **[AVA device setup:](/en/platform-intro/pages/machine-configuration)** invalid or duplicate entries are caught before saving, so you can correct them immediately.
+  - **[Data Acquisition timeline:](/en/platform-intro/pages/data-acquisition)** entries for idle and stopped periods update more reliably when you switch quickly between running, paused, and stopped states.
+  - **[Order completion:](/en/platform-intro/pages/order-detail)** an assignment is marked complete when the produced quantity exactly matches the planned quantity, preventing premature completion.
 </Update>
 
 <Update label="2026-08-19" description="v1.5.90" tags={["feature", "improvement"]}>
@@ -171,7 +171,7 @@ toc: false
 
   ### New Features
 
-  #### Review and Correct Uploaded Order Files
+  #### [Review and Correct Uploaded Order Files](/en/platform-intro/pages/erp-upload-planner)
 
   After selecting an order file, you can now preview its file name, row and column count, and a sample of its contents before continuing.
 
@@ -181,21 +181,21 @@ toc: false
   - Saved corrections are highlighted in the preview, making adjustments easy to review.
   - Closing the editor without saving discards unsaved changes and leaves the original file unchanged.
 
-  #### Understand Time-Setting Effects Before Uploading
+  #### [Understand Time-Setting Effects Before Uploading](/en/platform-intro/pages/erp-upload-planner)
 
   The upload review now explains when a time value or the **Industrial minutes** setting changes preparation or production time, and identifies the affected row. This provides a clearer final check before you confirm an upload.
 
-  #### Identify Operations Using Industrial Minutes
+  #### [Identify Operations Using Industrial Minutes](/en/platform-intro/pages/order-detail)
 
   Operations that use industrial minutes now show an **Industrial minutes** label next to their planned times. Hover over the label for a short explanation of the time convention.
 
   ### Improvements
 
-  #### Choose How Operations Are Ordered
+  #### [Choose How Operations Are Ordered](/en/platform-intro/pages/order-detail)
 
   Within a work order, you can now sort operations by sequence number. Select the sort button beside **Add operation**, then choose **Ascending** or **Descending** to review the work in the order that best fits your planning or shop-floor workflow.
 
-  #### Delete Incorrect Time Entries
+  #### [Delete Incorrect Time Entries](/en/platform-intro/pages/order-detail)
 
   You can now remove an incorrect recorded time entry from Order Analysis. Open the entry menu, select **Delete**, review the displayed start and end time, and confirm the deletion.
 
@@ -226,7 +226,7 @@ toc: false
   **Version:** v1.5.88
   **UI-Build commit:** `6409a61`
 
-  #### Knowledge Intelligence — August 2
+  #### [Knowledge Intelligence — August 2](/en/platform-intro/pages/knowledge-base)
 
   The Knowledge Base shows document readiness, sources, and connections, makes ready knowledge available in AI chats, and supports voice input.
 

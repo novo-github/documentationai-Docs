@@ -5,7 +5,7 @@ description: "Eine geführte Importseite, mit der Tabellenzeilen in plattformber
 
 ## Überblick
 
-Unterstützen Sie Benutzer dabei, Auftragsdaten sicher über Mapping-, Vorschau- und Commit-Schritte zu importieren.
+Importieren Sie Aufträge aus Tabellen in die Watchmen-Plattform. Prüfen Sie die Quelldatei, ordnen Sie ihre Spalten den Auftragsfeldern zu und kontrollieren Sie vor der Bestätigung, wie sich der Import auf Ihren bestehenden Produktionsplan auswirkt.
 
 Benutzer öffnen diese Seite über die geschützte ERP-Upload-Route.
 
@@ -18,22 +18,59 @@ Benutzer öffnen diese Seite über die geschützte ERP-Upload-Route.
 
 ## Was Sie sehen können
 
-- Datei-Upload-Steuerelemente.
-- Bereiche für Spaltenzuordnung.
-- Werkzeuge zur Maschinenauflösung und Vorschau im Trockenlauf.
+- Name, Zeilen- und Spaltenanzahl sowie eine Inhaltsvorschau der ausgewählten Datei.
+- Spaltenzuordnungen und Werkzeuge, um externe Maschinennamen oder Codes Ihren Maschinen zuzuordnen.
+- Eine Vorschau, Erläuterungen zu Zeiteinstellungen, Planungshinweise und den Upload-Fortschritt.
+- Eine Übersicht der vorgesehenen Änderungen und Planungskonflikte sowie das Ergebnis nach dem Import.
 
 ## Was Sie tun können
 
-- Eine Tabellenkalkulation hochladen.
-- Spalten den Auftragsfeldern der Plattform zuordnen.
-- Maschinenreferenzen auflösen.
-- Das Ergebnis vorab ansehen und den Import bestätigen.
+- Eine Tabelle hochladen und Werte vor dem Import korrigieren.
+- Spalten den Auftragsfeldern einschließlich Auftragstags zuordnen und bei Bedarf gespeicherte Zuordnungen wiederverwenden.
+- Maschinenreferenzen zuordnen und den Import bei Bedarf auf Aufträge mit bestehender Maschinenzuweisung beschränken.
+- Die Zeitinterpretation auswählen, Änderungen prüfen und über Planungskonflikte entscheiden.
+- Den Import bestätigen und prüfen, welche Änderungen übernommen wurden.
+
+## Datei prüfen und korrigieren
+
+Öffnen Sie aus der Dateivorschau die vollständige Bearbeitungsansicht. Dort können Sie einzelne Zellen korrigieren oder passende Gruppen von Werten aus Excel einfügen. Der Editor zeigt die Anzahl geänderter Zellen; gespeicherte Korrekturen werden in der Vorschau hervorgehoben.
+
+Spaltenüberschriften und Zeilenanzahl bleiben unverändert. Wenn Sie die Dateistruktur ändern müssen, korrigieren Sie die Quelldatei und laden Sie sie erneut hoch. Wenn Sie den Editor ohne Speichern schließen, werden ungespeicherte Korrekturen verworfen und die Originaldatei bleibt unverändert.
+
+## Zeit- und Prioritätseinstellungen verstehen
+
+Zeitfelder können standardmäßig oder als Industrieminuten interpretiert werden. Wählen Sie die Konvention, die zu Ihren Quelldaten passt. Die Upload-Prüfung nennt die betroffene Zeile und erklärt, wann ein Zeitwert oder die Einstellung für Industrieminuten die Rüst- oder Produktionszeit verändert. Prüfen Sie diese Erläuterungen vor der Bestätigung.
+
+Prioritätsnamen, Nummern und Farben entsprechen den unternehmensweiten Stufen aus dem [Administrationsbereich](/de/platform-intro/pages/admin-panel). Dieselben Stufen gelten in der Auftragsverwaltung und im Zuweisungsplaner, sodass Sie importierte Prioritäten im gesamten Plan einheitlich prüfen können.
+
+## Auswirkungen des Imports prüfen
+
+Öffnen Sie nach der Spaltenzuordnung und Vorschau die Übersicht der vorgesehenen Importänderungen. Sie zeigt neue, aktualisierte und bestehende Datensätze, gegliedert nach Aufträgen, Produkten, Kunden, Operationen und Zuweisungen. Bestehende Datensätze werden wiederverwendet; sie stehen nicht zwangsläufig für neu angelegte Datensätze.
+
+Klappen Sie die Details pro Zeile auf, um Terminänderungen, neue Operationen und Zuweisungen sowie neu berechnete Dauern zu prüfen. So können Sie die Auswirkungen auf Ihren aktuellen Plan vor der Bestätigung beurteilen.
+
+## Planungskonflikte lösen
+
+Ein Planungskonflikt entsteht, wenn die Datei eine Operation zuweist, die bereits an anderer Stelle eingeplant ist. Konflikte werden unter dem zugehörigen Auftrag angezeigt und enthalten eine Begründung, etwa bereits erfasste Produktion für eine Zuweisung.
+
+| Entscheidung | Auswirkung |
+| --- | --- |
+| Zum neuen Ziel verschieben | Die Zuweisung aus der Datei übernehmen. |
+| Am aktuellen Ziel behalten | Die bestehende Zuweisung beibehalten, statt die vorgeschlagene Änderung aus der Datei anzuwenden. |
+| Beide behalten | Zuweisungen an beiden Zielen für parallele Arbeit beibehalten. |
+
+Manche Konflikte lassen sich in der Importprüfung nicht lösen. Folgen Sie dem entsprechenden Hinweis und bearbeiten Sie diese manuell im [Zuweisungsplaner](/de/platform-intro/pages/assignment-planner).
+
+Prüfen Sie nach dem Import die Ergebnisübersicht. Sie zeigt, welche Entscheidungen angewendet wurden, und erklärt nicht angewendete Entscheidungen, etwa wenn nach Ihrer Prüfung bereits Produktion gestartet wurde. Daraus erkennen Sie, welche Arbeit im Planer noch Aufmerksamkeit benötigt.
 
 ## Hauptentitäten
 
 - Tabellenzeile
 - Produktionsauftrag
 - Produkt
+- Kunde
+- Operation
+- Zuweisung
 - Maschine
 
 ## Ergebnisse und Grenzen
@@ -42,13 +79,15 @@ Benutzer öffnen diese Seite über die geschützte ERP-Upload-Route.
 - Benutzer importieren viele Aufträge auf einmal, ohne sie manuell anlegen zu müssen.
 
 ### Grenzen und Leerzustände
-- Die Seite hängt von der Dateiquälität und der korrekten Spaltenzuordnung ab.
+- Die Seite hängt von der Dateiqualität und der korrekten Spaltenzuordnung ab.
+- Die Vorschau zeigt geplante Änderungen. Falls sich Produktion oder Planung während Ihrer Prüfung ändern, bestätigt das Ergebnis nach dem Import, was tatsächlich übernommen wurde.
 
 ## Verwandte Seiten
 
 - [Administrationsbereich](/de/platform-intro/pages/admin-panel)
 - [Aufträge & Produkte](/de/platform-intro/pages/orders-products)
 - [Planer](/de/platform-intro/pages/scheduler)
+- [Zuweisungsplaner](/de/platform-intro/pages/assignment-planner)
 
 ## Verwandte Abläufe
 

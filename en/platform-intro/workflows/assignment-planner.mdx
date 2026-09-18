@@ -5,7 +5,7 @@ description: "Place work onto machine queues, arrange future assignments, and re
 
 ## Goal
 
-Turn unassigned work into machine-specific planned queues and review how future assignments fit across machines and time.
+Turn unassigned work into machine queues or shared hall pools and review how future assignments fit across machines and time.
 
 ## Before You Begin
 
@@ -23,34 +23,70 @@ Begin on the [Assignment Planner page](/en/platform-intro/pages/assignment-plann
 
 <Steps>
   <Step title="Filter the visible hall or machine list" icon="arrow-right" title-type="p">
-    Filter the visible hall or machine list if needed.
+    Select the hall or machines you want to plan. Narrow the work shown with order tags, priority, or order status, including planned, running, on-hold, completed, and cancelled work.
   </Step>
-  <Step title="Search the unassigned work list to find the right" icon="arrow-right" title-type="p">
-    Search the unassigned work list to find the right job.
+  <Step title="Find the work" icon="arrow-right" title-type="p">
+    Search assignments or the unassigned operations list for the order or operation. Results update as you type. The unassigned list also supports product searches; use the planner's search and machine filters when finding work by customer or machine.
   </Step>
-  <Step title="Drag work onto a machine column or open the" icon="arrow-right" title-type="p">
-    Drag work onto a machine column or open the assignment confirmation flow.
+  <Step title="Choose a machine or hall pool" icon="arrow-right" title-type="p">
+    Drag the operation onto a machine column when its destination is known. If several machines in a hall could perform it, drag it into that hall's Hall Pool or assign a new operation there. Use the readiness badge to see when a machine can claim the pooled work.
   </Step>
   <Step title="Reorder work" icon="arrow-right" title-type="p">
-    Reorder work inside the machine queue to adjust planned sequence.
+    Reorder work inside the queue to adjust the planned sequence. Enable **Sort by Queue Position** in the sort/filter options to display that manual order.
   </Step>
   <Step title="Update key details" icon="arrow-right" title-type="p">
-    Update key details such as status, dates, or priority when needed.
+    Update key details such as status, dates, or priority when needed. Review or edit operation and assignment notes to keep instructions with the work.
   </Step>
   <Step title="Review the future schedule" icon="arrow-right" title-type="p">
-    Use the read-only Assignment Gantt to inspect assignments across selected machines, identify overlaps, and open a related order when more context is needed.
+    Use Assignment Gantt to inspect assignments across selected machines, identify overlaps, and open a related order when more context is needed.
   </Step>
   <Step title="Arrange future assignments when needed" icon="arrow-right" title-type="p">
-    Use automatic arrangement for future assignments when appropriate. Review any overlap warnings before accepting the rearranged schedule; active production remains unchanged.
+    Use automatic arrangement for future assignments when appropriate. Review any overlap warnings before accepting the rearranged schedule; active production remains unchanged. If automatic assignment cannot place an order, read the explanation, such as no available machine, and review the plan before trying again.
   </Step>
   <Step title="Save the queue changes" icon="arrow-right" title-type="p">
     Let the planner save the queue changes back to the platform.
   </Step>
 </Steps>
 
+## Move Work to Another Queue
+
+<Steps>
+  <Step title="Choose an assignment that has not started" icon="arrow-right" title-type="p">
+    Find the card in its machine or hall-pool column. For pooled work, check the readiness badge before choosing the machine that will take it.
+  </Step>
+  <Step title="Drag the card to its destination" icon="arrow-right" title-type="p">
+    Drag it directly onto the destination machine or hall-pool column. You do not need to unassign it first.
+  </Step>
+  <Step title="Choose its queue position" icon="arrow-right" title-type="p">
+    Choose the start or end of the destination queue and review the resulting plan.
+  </Step>
+</Steps>
+
+In-progress and completed assignments cannot move to another column. You can still reorder them within their current queue.
+
+## Sort and Highlight Planning Cards
+
+<Steps>
+  <Step title="Choose manual order or sorting rules" icon="arrow-right" title-type="p">
+    In the sort/filter options, enable **Sort by Queue Position** to use the order set by dragging assignments. Turn it off to sort by fields such as priority or date.
+  </Step>
+  <Step title="Set rule precedence" icon="arrow-right" title-type="p">
+    Select a field and ascending or descending order for each rule. Add further rules to break ties, then drag the rules into the order in which they should take precedence.
+  </Step>
+  <Step title="Emphasize the details you need" icon="arrow-right" title-type="p">
+    Open **Highlight** and select fields from Order, Work Order, Product, Operation, Planning, and Assignment. Check the cards for your selected highlights, such as priority, due date, or customer.
+  </Step>
+</Steps>
+
+## Review Conflicts After an Order Import
+
+When [Order Upload](/en/platform-intro/pages/erp-upload-planner) flags a conflict for manual resolution, use the order and operation details in the import summary to find the affected work in the planner. Review its current destination, status, notes, and related order before changing the plan.
+
+Move an eligible assignment to the intended queue when appropriate. If work has already started or completed, the cross-column move restriction still applies; review the current production record before deciding how to proceed. The import summary explains when a decision could not be applied because production changed after review.
+
 ## Decision Points
 
-- Which machine should take the job.
+- Whether to choose a specific machine now or leave the work in a hall pool.
 - Whether a job should stay unassigned, move to another machine, or be removed from a queue.
 - Which machines should appear in the Gantt timeline.
 - Whether overlap warnings should be resolved manually or through automatic arrangement of future assignments.
@@ -64,7 +100,8 @@ The machine queue reflects the latest planning decision, future assignments foll
 - Only a limited number of machines can be shown at once.
 - If filters hide all machines, the planner shows an empty planning surface.
 - Removing an assignment sends the work back out of the planned queue rather than completing it.
-- Assignment Gantt is an Early Access, read-only view.
+- If a dragged order does not match the displayed order, check whether **Sort by Queue Position** is enabled or sorting rules are active.
+- In-progress and completed assignments cannot move to another column.
 - Automatic arrangement can change future assignments, so review overlap warnings before accepting the result.
 
 ## Related Pages

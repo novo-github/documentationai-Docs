@@ -17,28 +17,35 @@ Begin on the [ERP Upload Planner page](/en/platform-intro/pages/erp-upload-plann
 
 ### Preconditions
 - The upload file is ready.
-- The user understands which spreadsheet columns represent orders, products, dates, and machines.
+- You know which spreadsheet columns represent orders, products, dates, and machines, and which time convention the file uses.
+- You can review the existing production plan if the file proposes changes to scheduled operations.
 
 ## Steps
 
 <Steps>
   <Step title="Upload the spreadsheet file" icon="arrow-right" title-type="p">
-    Upload the spreadsheet file.
+    Select your order file. Check its file name, row and column count, and sample contents to confirm you selected the right data.
   </Step>
-  <Step title="Map source columns to the platform fields" icon="arrow-right" title-type="p">
-    Map source columns to the platform fields.
+  <Step title="Correct source values if needed" icon="arrow-right" title-type="p">
+    Select **Expand to edit** to correct individual values or paste matching groups of values from Excel. Review the changed-cell count and save your corrections; the preview highlights saved changes. Column headings and row counts cannot be changed here. Closing without saving discards unsaved corrections and leaves the original file unchanged.
   </Step>
-  <Step title="Resolve machine values when the file uses external" icon="arrow-right" title-type="p">
-    Resolve machine values when the file uses external machine names or codes.
+  <Step title="Map columns and machine references" icon="arrow-right" title-type="p">
+    Map the source columns to platform fields, including order tags where needed. Reuse a saved mapping if it matches this file. Match external machine names or codes to the correct machines.
   </Step>
-  <Step title="Review planner options and unit assumptions" icon="arrow-right" title-type="p">
-    Review planner options and unit assumptions.
+  <Step title="Check import scope and time interpretation" icon="arrow-right" title-type="p">
+    If needed, limit the import to orders that already have a machine assignment. Choose standard or industrial-minute interpretation to match the file's time convention. Review the explanations of changes to preparation and production times and the affected rows.
   </Step>
-  <Step title="Run the preview or dry run to inspect how rows will" icon="arrow-right" title-type="p">
-    Run the preview or dry run to inspect how rows will be interpreted.
+  <Step title="Review the preview and proposed changes" icon="arrow-right" title-type="p">
+    Run the preview and review schedule warnings. Open **What this import will change** to compare counts of new, updated, and existing orders, products, customers, operations, and assignments. Expand the row-by-row details to check schedule changes, new operations and assignments, and recalculated durations. Correct the file or mapping if the proposals do not match your intent.
   </Step>
-  <Step title="Commit the upload once the preview looks correct" icon="arrow-right" title-type="p">
-    Commit the upload once the preview looks correct.
+  <Step title="Review scheduling conflicts" icon="arrow-right" title-type="p">
+    For each conflict grouped under an order, read the reason and choose **Move to [new target]** to apply the file's assignment, **Keep on [current target]** to retain the existing assignment, or **Keep both** for parallel work at both targets. If the review flags a conflict for manual resolution, use the [Assignment Planner](/en/platform-intro/pages/assignment-planner).
+  </Step>
+  <Step title="Confirm the import" icon="arrow-right" title-type="p">
+    Confirm once you have reviewed the proposed changes and conflict decisions. Follow the upload progress.
+  </Step>
+  <Step title="Check the applied results" icon="arrow-right" title-type="p">
+    Read the outcome summary to see which decisions were applied. If a decision could not be applied, review its explanation and check the affected operation in the Assignment Planner. Production may have started after you reviewed the conflict.
   </Step>
 </Steps>
 
@@ -46,19 +53,23 @@ Begin on the [ERP Upload Planner page](/en/platform-intro/pages/erp-upload-plann
 
 - Whether to reuse saved mappings or adjust them for the current file.
 - Whether the preview is clean enough to commit or needs correction first.
+- Whether to move an existing assignment, keep its current target, or retain both targets for parallel work.
 
 ## Expected Result
 
-The upload creates or updates platform records according to the reviewed mapping.
+The upload creates, updates, or reuses platform records according to the reviewed mapping. The outcome summary confirms which conflict decisions were applied and identifies decisions that could not be applied.
 
 ## Common Problems and Edge Cases
 
 - Missing required columns will block a useful preview.
 - Machine names from the source file may need manual mapping before commit.
 - Users may need to re-upload after correcting spreadsheet structure or data format issues.
+- If preparation or production times look wrong, check the affected row and the standard or industrial-minute interpretation before confirming.
+- A conflict may require manual resolution, or its decision may no longer be applicable because production changed after review. Follow the explanation and inspect the affected operation in the Assignment Planner.
 
 ## Related Pages
 
 - [ERP Upload Planner](/en/platform-intro/pages/erp-upload-planner)
 - [Orders & Products](/en/platform-intro/pages/orders-products)
 - [Admin Panel](/en/platform-intro/pages/admin-panel)
+- [Assignment Planner](/en/platform-intro/pages/assignment-planner)

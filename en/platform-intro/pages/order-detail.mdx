@@ -5,7 +5,7 @@ description: "A full editing and analysis page for one production order and its 
 
 ## Overview
 
-Let users inspect and edit the full structure of one production order.
+Inspect and edit a production order, its work orders, operations, and assignments. Use the notes, timeline, and analysis views to connect the production plan with recorded work.
 
 Users usually open it from the Orders & Products page.
 
@@ -29,13 +29,37 @@ Users usually open it from the Orders & Products page.
 - Analyze the order and review timeline-related context.
 - Export or review order-related data in more detail.
 
+## Read and Organize Operations
+
+Within a work order, use the sort button beside **Add operation** to sort operations by sequence number. Choose **Ascending** to review lower numbers first or **Descending** to review higher numbers first.
+
+In the order operation panel, open **Highlight** to emphasize fields across the cards. Fields are grouped by Order, Work Order, Product, Operation, Planning, and Assignment. Select details such as priority, due date, or customer to make them easier to find while reviewing an order. The same control is available in the [Assignment Planner](/en/platform-intro/pages/assignment-planner).
+
+Priority names, numbers, and colors use the company levels configured in the [Admin Panel](/en/platform-intro/pages/admin-panel), keeping order management consistent with imports and assignment planning.
+
+## Add Notes and Descriptions
+
+Review and edit operation notes and descriptions in **Work Order Notes** and the order timeline. Empty fields show a prompt indicating where you can add information. Use these fields to leave the instructions and context the next person needs to carry out the operation.
+
+## Understand Planned Times and Completion
+
+Operations that use industrial minutes show an **Industrial minutes** label beside their planned times. The label identifies the time convention used for those values; hover over it to read the explanation. When comparing an imported operation with your source file, also check the time interpretation in the [ERP Upload Planner](/en/platform-intro/pages/erp-upload-planner).
+
+An assignment is marked complete when its produced quantity exactly matches its planned quantity. Check those quantities when reviewing completion so work is not treated as finished before the planned amount has been produced.
+
+## Correct Recorded Time Entries
+
+In **Order Analysis**, the menu for a recorded time entry includes **Delete**. Review the displayed start and end time before confirming that you are removing the intended entry.
+
+Deletion is permanent. After confirmation, Order Analysis and the related timeline reflect the updated production record.
+
 ## Main Entities
 
-- Production Order
-- Customer
-- Work Order
-- Operation
-- Assignment
+- **Production order:** the order whose details and production structure you are reviewing.
+- **Customer:** the customer associated with the order.
+- **Work order:** a part of the production order that groups operations.
+- **Operation:** a production step with its own sequence, planned times, notes, and descriptions.
+- **Assignment:** an operation's placement on a machine or in a hall pool for production planning.
 
 ## Outcomes and Limits
 
@@ -50,6 +74,7 @@ Users usually open it from the Orders & Products page.
 - [Orders & Products](/en/platform-intro/pages/orders-products)
 - [Scheduler](/en/platform-intro/pages/scheduler)
 - [Assignment Planner](/en/platform-intro/pages/assignment-planner)
+- [ERP Upload Planner](/en/platform-intro/pages/erp-upload-planner)
 
 ## Related Workflows
 

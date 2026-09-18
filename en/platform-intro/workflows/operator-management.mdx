@@ -1,6 +1,6 @@
 ---
 title: "Manage Operators"
-description: "Create and maintain operator records so machine planning and execution pages can reference the right people."
+description: "Create operator records, manage access, and recover credentials while preserving production history."
 ---
 
 ## Goal
@@ -30,14 +30,33 @@ Begin on the [Admin Panel page](/en/platform-intro/pages/admin-panel).
   <Step title="Save the operator details" icon="arrow-right" title-type="p">
     Save the operator details.
   </Step>
-  <Step title="Use the updated operator list in planning or" icon="arrow-right" title-type="p">
+  <Step title="Use the updated operator list" icon="arrow-right" title-type="p">
     Use the updated operator list in planning or machine-related pages.
   </Step>
 </Steps>
 
+## Deactivate an Operator
+
+When an operator no longer needs access, open their record in Operator Settings and use the deactivation action. Access is deactivated immediately, while previous shifts, labels, and assignments remain available in the production history.
+
+Operator Settings shows active operators only. A deactivated operator disappearing from that list does not mean their historical records have been deleted.
+
+## Generate a Replacement Password
+
+Open the existing operator record and choose **Edit operator**. For an eligible operator, use the action to generate a new password. Copy or download the generated credentials before closing the window: they are displayed only once.
+
+Generating a replacement password ends the operator's active sessions. The operator must sign in again with the new password. Use the existing record for recovery so the person's production history stays together.
+
+## Send an Email Verification Message
+
+From the operator's record, explicitly request or resend the confirmation email when verification is needed. Creating or editing a record, or generating a password, does not automatically send a verification email.
+
+An operator whose email is not yet verified can still sign in and use their assigned access. Email verification and operator activation are separate: verification confirms the email address, while activation determines whether the operator has access.
+
 ## Decision Points
 
 - Whether the user should create a new operator or update an existing one.
+- Deactivate an operator to end access while retaining history; use password recovery when an active operator needs new credentials.
 
 ## Expected Result
 

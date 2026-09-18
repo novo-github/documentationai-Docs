@@ -5,7 +5,7 @@ description: "Platzieren Sie Arbeit in Maschinenwarteschlangen, ordnen Sie zukü
 
 ## Ziel
 
-Machen Sie aus ungeplanter Arbeit maschinenspezifische geplante Warteschlangen und prüfen Sie, wie zukünftige Zuweisungen über Maschinen und Zeiträume hinweg zusammenpassen.
+Planen Sie ungeplante Arbeit in Maschinenwarteschlangen oder gemeinsamen Hallenpools und prüfen Sie, wie zukünftige Zuweisungen über Maschinen und Zeiträume hinweg zusammenpassen.
 
 ## Bevor Sie beginnen
 
@@ -23,34 +23,70 @@ Beginnen Sie auf der [Seite Zuweisungsplaner](/de/platform-intro/pages/assignmen
 
 <Steps>
   <Step title="Filtern Sie die sichtbare Halle oder Maschinenliste" icon="arrow-right" title-type="p">
-    Filtern Sie die sichtbare Halle oder Maschinenliste bei Bedarf.
+    Wählen Sie die Halle oder Maschinen für Ihre Planung. Grenzen Sie die Arbeit mit Auftragstags, Priorität oder Auftragsstatus ein, darunter geplante, laufende, pausierte, abgeschlossene und stornierte Arbeit.
   </Step>
-  <Step title="Suchen Sie in der Liste ungeplanter Arbeit nach der passenden Aufgabe" icon="arrow-right" title-type="p">
-    Suchen Sie in der Liste ungeplanter Arbeit nach der passenden Aufgabe.
+  <Step title="Finden Sie die passende Arbeit" icon="arrow-right" title-type="p">
+    Durchsuchen Sie die Zuweisungen oder ungeplanten Operationen nach Auftrag oder Operation. Die Ergebnisse aktualisieren sich während der Eingabe. Die Liste ungeplanter Operationen unterstützt auch die Produktsuche. Nutzen Sie die Planersuche und Maschinenfilter, um Arbeit nach Kunde oder Maschine zu finden.
   </Step>
-  <Step title="Ziehen Sie Arbeit auf eine Maschinen-Spalte oder öffnen Sie den Bestätigungsablauf" icon="arrow-right" title-type="p">
-    Ziehen Sie Arbeit auf eine Maschinen-Spalte oder öffnen Sie den Bestätigungsablauf für die Zuweisung.
+  <Step title="Wählen Sie eine Maschine oder einen Hallenpool" icon="arrow-right" title-type="p">
+    Ziehen Sie die Operation auf eine Maschinenspalte, wenn das Ziel feststeht. Können mehrere Maschinen einer Halle die Arbeit übernehmen, ziehen Sie sie in den Hallenpool oder weisen dort eine neue Operation zu. Die Bereitschaftsanzeige zeigt, wann eine Maschine die Arbeit aus dem Pool übernehmen kann.
   </Step>
   <Step title="Ordnen Sie die Arbeit neu" icon="arrow-right" title-type="p">
-    Ordnen Sie die Arbeit innerhalb der Maschinenwarteschlange neu, um die geplante Reihenfolge anzupassen.
+    Ordnen Sie die Arbeit innerhalb der Warteschlange neu, um die geplante Reihenfolge anzupassen. Aktivieren Sie in den Sortier- und Filteroptionen die Sortierung nach Warteschlangenposition, um diese manuelle Reihenfolge anzuzeigen.
   </Step>
   <Step title="Aktualisieren Sie wichtige Details" icon="arrow-right" title-type="p">
-    Aktualisieren Sie wichtige Details wie Status, Daten oder Priorität bei Bedarf.
+    Aktualisieren Sie wichtige Details wie Status, Daten oder Priorität bei Bedarf. Lesen oder bearbeiten Sie Operations- und Zuweisungsnotizen, damit Anweisungen bei der Arbeit verfügbar bleiben.
   </Step>
   <Step title="Prüfen Sie den zukünftigen Zeitplan" icon="arrow-right" title-type="p">
-    Nutzen Sie das schreibgeschützte Zuweisungs-Gantt, um Zuweisungen über ausgewählte Maschinen hinweg zu prüfen, Überschneidungen zu erkennen und bei Bedarf einen zugehörigen Auftrag zu öffnen.
+    Nutzen Sie das Zuweisungs-Gantt, um Zuweisungen über ausgewählte Maschinen hinweg zu prüfen, Überschneidungen zu erkennen und bei Bedarf einen zugehörigen Auftrag zu öffnen.
   </Step>
   <Step title="Ordnen Sie zukünftige Zuweisungen bei Bedarf an" icon="arrow-right" title-type="p">
-    Nutzen Sie bei Bedarf die automatische Anordnung zukünftiger Zuweisungen. Prüfen Sie Warnungen zu Überschneidungen, bevor Sie den neu angeordneten Zeitplan übernehmen; die laufende Produktion bleibt unverändert.
+    Nutzen Sie bei Bedarf die automatische Anordnung zukünftiger Zuweisungen. Prüfen Sie Warnungen zu Überschneidungen, bevor Sie den neu angeordneten Zeitplan übernehmen; die laufende Produktion bleibt unverändert. Kann die automatische Zuweisung einen Auftrag nicht einplanen, lesen Sie die Begründung, etwa eine fehlende verfügbare Maschine. Prüfen Sie den Plan, bevor Sie es erneut versuchen.
   </Step>
   <Step title="Speichern Sie die Warteschlangenänderungen" icon="arrow-right" title-type="p">
     Lassen Sie den Planer die Warteschlangenänderungen zurück in die Plattform speichern.
   </Step>
 </Steps>
 
+## Arbeit in eine andere Warteschlange verschieben
+
+<Steps>
+  <Step title="Wählen Sie eine noch nicht gestartete Zuweisung" icon="arrow-right" title-type="p">
+    Suchen Sie die Karte in ihrer Maschinen- oder Hallenpool-Spalte. Prüfen Sie bei Arbeit aus dem Pool die Bereitschaftsanzeige, bevor Sie die übernehmende Maschine auswählen.
+  </Step>
+  <Step title="Ziehen Sie die Karte zum Ziel" icon="arrow-right" title-type="p">
+    Ziehen Sie die Karte direkt auf die Zielmaschine oder den Ziel-Hallenpool. Sie müssen die Zuweisung vorher nicht aufheben.
+  </Step>
+  <Step title="Wählen Sie die Warteschlangenposition" icon="arrow-right" title-type="p">
+    Wählen Sie den Anfang oder das Ende der Zielwarteschlange und prüfen Sie den entstandenen Plan.
+  </Step>
+</Steps>
+
+Laufende und abgeschlossene Zuweisungen können nicht in eine andere Spalte verschoben werden. Innerhalb ihrer aktuellen Warteschlange können Sie sie weiterhin neu anordnen.
+
+## Planungskarten sortieren und hervorheben
+
+<Steps>
+  <Step title="Wählen Sie manuelle Reihenfolge oder Sortierregeln" icon="arrow-right" title-type="p">
+    Aktivieren Sie in den Sortier- und Filteroptionen die Sortierung nach Warteschlangenposition, um die durch Ziehen festgelegte Reihenfolge anzuzeigen. Schalten Sie die Option aus, um nach Feldern wie Priorität oder Datum zu sortieren.
+  </Step>
+  <Step title="Legen Sie den Vorrang der Regeln fest" icon="arrow-right" title-type="p">
+    Wählen Sie für jede Regel ein Feld und eine aufsteigende oder absteigende Richtung. Ergänzen Sie weitere Regeln für Gleichstände und ziehen Sie die Regeln in die Reihenfolge ihres Vorrangs.
+  </Step>
+  <Step title="Heben Sie wichtige Details hervor" icon="arrow-right" title-type="p">
+    Öffnen Sie die Hervorhebungsfunktion und wählen Sie Felder aus den Gruppen Auftrag, Arbeitsauftrag, Produkt, Operation, Planung und Zuweisung. Prüfen Sie die gewählten Hervorhebungen auf den Karten, etwa Priorität, Fälligkeit oder Kunde.
+  </Step>
+</Steps>
+
+## Konflikte nach einem Auftragsimport prüfen
+
+Wenn der [Auftragsimport](/de/platform-intro/pages/erp-upload-planner) einen Konflikt zur manuellen Klärung kennzeichnet, suchen Sie anhand der Auftrags- und Operationsangaben in der Importzusammenfassung die betroffene Arbeit im Planer. Prüfen Sie ihr aktuelles Ziel, ihren Status, die Notizen und den zugehörigen Auftrag, bevor Sie den Plan ändern.
+
+Verschieben Sie eine zulässige Zuweisung bei Bedarf in die vorgesehene Warteschlange. Hat die Arbeit bereits begonnen oder ist sie abgeschlossen, gilt weiterhin die Einschränkung für Spaltenwechsel. Prüfen Sie die aktuellen Produktionsdaten, bevor Sie das weitere Vorgehen festlegen. Die Importzusammenfassung erklärt, wenn eine Entscheidung wegen geänderter Produktion nach der Prüfung nicht angewendet werden konnte.
+
 ## Entscheidungspunkte
 
-- Welche Maschine die Aufgabe übernehmen soll.
+- Ob Sie sofort eine Maschine auswählen oder die Arbeit in einem Hallenpool belassen.
 - Ob eine Aufgabe ungeplant bleiben, auf eine andere Maschine wechseln oder aus einer Warteschlange entfernt werden soll.
 - Welche Maschinen in der Gantt-Zeitleiste erscheinen sollen.
 - Ob Warnungen zu Überschneidungen manuell oder durch automatische Anordnung zukünftiger Zuweisungen gelöst werden sollen.
@@ -64,7 +100,8 @@ Die Maschinenwarteschlange spiegelt die letzte Planungsentscheidung wider, zukü
 - Es können nur eine begrenzte Anzahl an Maschinen gleichzeitig angezeigt werden.
 - Wenn Filter alle Maschinen ausblenden, zeigt der Planer eine leere Planungsfläche.
 - Das Entfernen einer Zuweisung schickt die Arbeit aus der geplanten Warteschlange zurück, statt sie abzuschließen.
-- Das Zuweisungs-Gantt ist eine schreibgeschützte Early-Access-Ansicht.
+- Entspricht die angezeigte Reihenfolge nicht Ihrer Anordnung durch Ziehen, prüfen Sie, ob nach Warteschlangenposition oder nach Regeln sortiert wird.
+- Laufende und abgeschlossene Zuweisungen können nicht in eine andere Spalte verschoben werden.
 - Die automatische Anordnung kann zukünftige Zuweisungen ändern. Prüfen Sie deshalb Warnungen zu Überschneidungen, bevor Sie das Ergebnis übernehmen.
 
 ## Verwandte Seiten

@@ -17,28 +17,35 @@ Beginnen Sie auf der [Seite ERP-Upload-Planer](/de/platform-intro/pages/erp-uplo
 
 ### Voraussetzungen
 - Die Upload-Datei ist bereit.
-- Der Benutzer weiß, welche Tabellenspalten Aufträge, Produkte, Daten und Maschinen darstellen.
+- Sie wissen, welche Tabellenspalten Aufträge, Produkte, Datumsangaben und Maschinen darstellen und welche Zeitkonvention die Datei verwendet.
+- Sie können den bestehenden Produktionsplan prüfen, wenn die Datei Änderungen an eingeplanten Operationen vorsieht.
 
 ## Schritte
 
 <Steps>
   <Step title="Laden Sie die Tabellenkalkulationsdatei hoch" icon="arrow-right" title-type="p">
-    Laden Sie die Tabellenkalkulationsdatei hoch.
+    Wählen Sie Ihre Auftragsdatei aus. Prüfen Sie den Dateinamen, die Zeilen- und Spaltenanzahl sowie die Inhaltsvorschau, um die richtigen Daten sicherzustellen.
   </Step>
-  <Step title="Ordnen Sie Quellspalten den Plattformfeldern zu" icon="arrow-right" title-type="p">
-    Ordnen Sie Quellspalten den Plattformfeldern zu.
+  <Step title="Korrigieren Sie bei Bedarf Quellwerte" icon="arrow-right" title-type="p">
+    Öffnen Sie die vollständige Bearbeitungsansicht, um einzelne Werte zu korrigieren oder passende Gruppen von Werten aus Excel einzufügen. Prüfen Sie die Anzahl geänderter Zellen und speichern Sie Ihre Korrekturen; gespeicherte Änderungen werden in der Vorschau hervorgehoben. Spaltenüberschriften und Zeilenanzahl lassen sich hier nicht ändern. Wenn Sie ohne Speichern schließen, werden ungespeicherte Korrekturen verworfen und die Originaldatei bleibt unverändert.
   </Step>
-  <Step title="Lösen Sie Maschinenwerte auf, wenn die Datei externe Maschinennamen oder Codes verwendet" icon="arrow-right" title-type="p">
-    Lösen Sie Maschinenwerte auf, wenn die Datei externe Maschinennamen oder Codes verwendet.
+  <Step title="Ordnen Sie Spalten und Maschinen zu" icon="arrow-right" title-type="p">
+    Ordnen Sie die Quellspalten den Plattformfeldern zu, bei Bedarf einschließlich Auftragstags. Verwenden Sie eine gespeicherte Zuordnung, wenn sie zur Datei passt. Ordnen Sie externe Maschinennamen oder Codes den richtigen Maschinen zu.
   </Step>
-  <Step title="Prüfen Sie Planeroptionen und Mengenvorgaben" icon="arrow-right" title-type="p">
-    Prüfen Sie Planeroptionen und Mengenvorgaben.
+  <Step title="Prüfen Sie Importumfang und Zeitinterpretation" icon="arrow-right" title-type="p">
+    Beschränken Sie den Import bei Bedarf auf Aufträge mit bestehender Maschinenzuweisung. Wählen Sie passend zur Zeitkonvention der Datei die Standardinterpretation oder Industrieminuten. Prüfen Sie die Erläuterungen zu Änderungen an Rüst- und Produktionszeiten sowie die betroffenen Zeilen.
   </Step>
-  <Step title="Führen Sie die Vorschau oder den Trockenlauf aus, um die Interpretation der Zeilen zu prüfen" icon="arrow-right" title-type="p">
-    Führen Sie die Vorschau oder den Trockenlauf aus, um die Interpretation der Zeilen zu prüfen.
+  <Step title="Prüfen Sie Vorschau und vorgesehene Änderungen" icon="arrow-right" title-type="p">
+    Führen Sie die Vorschau aus und lesen Sie die Planungshinweise. Öffnen Sie die Übersicht der Importänderungen, um die Anzahl neuer, aktualisierter und bestehender Aufträge, Produkte, Kunden, Operationen und Zuweisungen zu vergleichen. Prüfen Sie in den Details pro Zeile Terminänderungen, neue Operationen und Zuweisungen sowie neu berechnete Dauern. Korrigieren Sie die Datei oder Zuordnung, wenn die Vorschläge nicht Ihrer Absicht entsprechen.
   </Step>
-  <Step title="Bestätigen Sie den Upload, sobald die Vorschau korrekt aussieht" icon="arrow-right" title-type="p">
-    Bestätigen Sie den Upload, sobald die Vorschau korrekt aussieht.
+  <Step title="Prüfen Sie Planungskonflikte" icon="arrow-right" title-type="p">
+    Lesen Sie die Begründung für jeden unter einem Auftrag aufgeführten Konflikt. Entscheiden Sie, ob Sie die Zuweisung aus der Datei am neuen Ziel übernehmen, die bestehende Zuweisung am aktuellen Ziel behalten oder beide Ziele für parallele Arbeit beibehalten möchten. Wenn die Prüfung eine manuelle Lösung verlangt, verwenden Sie den [Zuweisungsplaner](/de/platform-intro/pages/assignment-planner).
+  </Step>
+  <Step title="Bestätigen Sie den Import" icon="arrow-right" title-type="p">
+    Bestätigen Sie den Import, nachdem Sie die vorgesehenen Änderungen und Konfliktentscheidungen geprüft haben. Verfolgen Sie den Upload-Fortschritt.
+  </Step>
+  <Step title="Prüfen Sie die übernommenen Ergebnisse" icon="arrow-right" title-type="p">
+    Lesen Sie in der Ergebnisübersicht, welche Entscheidungen angewendet wurden. Falls eine Entscheidung nicht angewendet werden konnte, prüfen Sie die Erklärung und die betroffene Operation im Zuweisungsplaner. Möglicherweise wurde nach Ihrer Konfliktprüfung bereits Produktion gestartet.
   </Step>
 </Steps>
 
@@ -46,20 +53,24 @@ Beginnen Sie auf der [Seite ERP-Upload-Planer](/de/platform-intro/pages/erp-uplo
 
 - Ob gespeicherte Zuordnungen wiederverwendet oder für die aktuelle Datei angepasst werden sollen.
 - Ob die Vorschau sauber genug ist, um zu bestätigen, oder zuerst korrigiert werden muss.
+- Ob Sie eine bestehende Zuweisung verschieben, das aktuelle Ziel beibehalten oder beide Ziele für parallele Arbeit nutzen möchten.
 
 ## Erwartetes Ergebnis
 
-Der Upload erstellt oder aktualisiert Plattformdatensätze gemäß der geprüften Zuordnung.
+Der Upload erstellt, aktualisiert oder verwendet Plattformdatensätze gemäß der geprüften Zuordnung. Die Ergebnisübersicht bestätigt, welche Konfliktentscheidungen angewendet wurden, und nennt Entscheidungen, die nicht angewendet werden konnten.
 
 ## Häufige Probleme und Sonderfälle
 
 - Fehlende Pflichtspalten blockieren eine sinnvolle Vorschau.
 - Maschinennamen aus der Quelldatei müssen vor der Bestätigung möglicherweise manuell zugeordnet werden.
 - Benutzer müssen eventuell erneut hochladen, nachdem sie Struktur- oder Formatprobleme der Tabelle korrigiert haben.
+- Wenn Rüst- oder Produktionszeiten nicht stimmen, prüfen Sie vor der Bestätigung die betroffene Zeile und die Standardinterpretation oder Industrieminuten.
+- Ein Konflikt kann eine manuelle Lösung erfordern. Eine Entscheidung kann außerdem nicht mehr anwendbar sein, wenn sich die Produktion nach der Prüfung geändert hat. Folgen Sie der Erklärung und prüfen Sie die betroffene Operation im Zuweisungsplaner.
 
 ## Verwandte Seiten
 
 - [ERP-Upload-Planer](/de/platform-intro/pages/erp-upload-planner)
 - [Aufträge & Produkte](/de/platform-intro/pages/orders-products)
 - [Administrationsbereich](/de/platform-intro/pages/admin-panel)
+- [Zuweisungsplaner](/de/platform-intro/pages/assignment-planner)
 

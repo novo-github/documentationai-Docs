@@ -9,6 +9,8 @@ Unterstützen Sie die Live-Ausführung am Shopfloor und die Ereigniserfassung f�
 
 Benutzer öffnen diese Seite normalerweise über die Seite **Maschinendetails**.
 
+Wählen Sie zum Maschinenwechsel den Maschinennamen in der oberen Navigationsleiste. Die Auswahlliste zeigt die anderen für Sie zugänglichen Maschinen nach Halle gruppiert. Die Auswahl öffnet direkt die Betriebsdatenerfassung der jeweiligen Maschine.
+
 ## Zugriff
 
 <Callout kind="info" title="Zugriffsdetails">
@@ -31,6 +33,29 @@ Benutzer öffnen diese Seite normalerweise über die Seite **Maschinendetails**.
 - Nach ungeplanten Operationen suchen und diese direkt der Maschine zuweisen.
 - Informationen und Reihenfolge auf Zuweisungskarten konfigurieren.
 - Zeitachsen-Gründe anwenden und zugehörige Unterstützungsinhalte prüfen.
+
+## Arbeit auswählen und einordnen
+
+Nutzen Sie die Ansicht offener Zuweisungen oder eine Zeitfensteransicht, um Arbeit für die aktuelle Maschine zu finden. Ist eine Operation noch ungeplant, können Sie sie direkt auf dieser Seite suchen und zuweisen. Operationsfolgenummern auf den Auftragsanzeigen helfen Ihnen, die Arbeitsreihenfolge zu erkennen. Operations- und Zuweisungsnotizen liefern Anweisungen und Kontext.
+
+In der Betriebsdatenerfassung V3 zeigt die Sortierung nach Warteschlangenposition die durch Ziehen festgelegte Reihenfolge. Schalten Sie diese Option aus, um nach Regeln wie Priorität oder Datum zu sortieren. Für jede Regel können Sie eine aufsteigende oder absteigende Richtung wählen. Weitere Regeln lösen Gleichstände auf; durch Ziehen ändern Sie den Vorrang der Regeln. Diese Möglichkeiten stehen auch im [Zuweisungsplaner](/de/platform-intro/pages/assignment-planner) zur Verfügung.
+
+## Intervallzeiten und Zeitleistendarstellung
+
+Ein Intervall erfasst einen Zeitraum der Maschinenaktivität mit Start- und Endzeit. In der Schnellbearbeitung können Sie beide Zeitpunkte in Schritten von zwei, fünf oder dreißig Minuten vor- oder zurückstellen. Wiederholte Anpassungen addieren sich. Für genaue Änderungen steht weiterhin die vollständige Datums- und Zeitauswahl zur Verfügung.
+
+Die Einstellungen der Betriebsdatenerfassung V3 bieten zwei getrennte Möglichkeiten:
+
+- In den Einstellungen zur Zeitleistendarstellung legen Sie fest, ob Intervallbalken im Diagramm erscheinen.
+- Mit dem automatischen Aktualisierungsintervall bestimmen Sie, wie häufig Zuweisungen und Hallenpools automatisch aktualisiert werden.
+
+Zeitleisteneinträge für Leerlauf und Stillstand aktualisieren sich beim Wechsel zwischen laufender, pausierter und gestoppter Produktion. Prüfen Sie diese Einträge und ihre Gründe, um Unterbrechungen nachvollziehbar zu erfassen. Unter [Betriebsdatenerfassung durchführen](/de/platform-intro/workflows/data-acquisition) finden Sie die Schritte zur Zeitkorrektur und Darstellung.
+
+## Produktionsmengen, Ausschuss und Abschluss
+
+Beim Stoppen oder Fortsetzen eines Intervalls können Sie die produzierte Menge eingeben und **Materialausschuss** sowie **Fertigungsausschuss** getrennt erfassen. So können Sie die beiden Ausschusskategorien und ihre gemeinsame Summe in [Aufträge & Produkte](/de/platform-intro/pages/orders-products) und der [Auftragsanalyse](/de/platform-intro/pages/order-detail) prüfen. Angezeigte Produktionsgesamtmengen enthalten die eingegebenen Ausschussmengen.
+
+Das Starten oder Stoppen der Produktion aktualisiert den zugehörigen Auftragsstatus. Eine Zuweisung wird abgeschlossen, wenn die produzierte Menge genau der geplanten Menge entspricht. Bei einer Überschreitung kann ein Hinweis zur Überproduktion dabei helfen, den Auftragsabschluss zu prüfen.
 
 ## Hauptentitäten
 
@@ -55,6 +80,7 @@ Benutzer öffnen diese Seite normalerweise über die Seite **Maschinendetails**.
 - [Maschinendetails](/de/platform-intro/pages/machine-details)
 - [Maschinenhistorie](/de/platform-intro/pages/machine-history)
 - [Maschinen](/de/platform-intro/pages/machines)
+- [Alarmregeln](/de/platform-intro/pages/alert-rules)
 
 ## Verwandte Abläufe
 

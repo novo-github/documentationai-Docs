@@ -19,20 +19,48 @@ Users open it from the Planner section in the main navigation.
 ## What You Can See
 
 - An unassigned work list with search.
-- Machine columns that act as queues.
+- Machine columns and a Hall Pool column for each hall that act as queues.
 - Hall and machine filters to focus the planning surface.
 - A selectable set of machines in the Gantt timeline.
 - Scheduling overlaps and links to the related orders.
 
 ## What You Can Do
 
-- Search for unassigned work.
-- Drag work into a machine queue.
+- Search assignments and unassigned operations, with results updating as you type.
+- Drag work into a machine queue or hall pool, or move it between columns.
 - Reorder assignments inside a queue.
 - Update assignment details such as timing, status, or priority.
 - Automatically arrange future assignments without changing active production.
 - Review warnings before overlapping assignments are rearranged.
-- Open the read-only Assignment Gantt to inspect the production schedule.
+- Open Assignment Gantt to inspect the production schedule and use automatic assignment.
+
+## Machine Queues and Hall Pools
+
+A machine queue assigns work to a specific machine. A **Hall Pool** holds work for a hall when several machines could perform it and the machine choice can stay open. Each hall pool appears beside its machine columns. You can drag an operation into it or assign a new operation there.
+
+The readiness badge indicates when pooled work is ready to be claimed by a machine. Placing work in a hall pool leaves the machine choice open until it is claimed; the badge helps you decide when work can be picked up.
+
+You can move an assignment directly between machine and hall-pool columns and choose the start or end of the destination queue. Assignments already in progress or completed cannot move to another column, but can still be reordered within their current queue.
+
+## Search, Filters, and Card Details
+
+Search the assignment list or unassigned operations to find an order or operation. Results update immediately as you type. Planner search also helps you find work by product, customer, or machine; the unassigned list supports searches by order, product, or operation.
+
+Use hall and machine filters to focus the plan, and order tags, priority, and order status to narrow the work shown. Status filtering includes planned, running, on-hold, completed, and cancelled work. Tags group related work and remain visible across orders, operations, and planning.
+
+The planner also lets you review and edit operation or assignment notes, so instructions remain available alongside the work. With **Highlight**, you can emphasize selected fields across planning cards. Fields are grouped by Order, Work Order, Product, Operation, Planning, and Assignment; highlighting priority, due date, or customer makes busy queues easier to scan.
+
+## Queue Position and Sorting Rules
+
+**Sort by Queue Position** displays assignments in the order set by dragging them. When this option is off, sorting rules determine the displayed order instead. Each rule has a field and an ascending or descending direction. Additional rules break ties, and their order determines which takes precedence.
+
+The same sorting choices are available in [Data Acquisition V3](/en/platform-intro/pages/data-acquisition). Priority values follow the company levels configured in the [Admin Panel](/en/platform-intro/pages/admin-panel).
+
+## Assignment Gantt and Scheduling Feedback
+
+Assignment Gantt shows assignments across selected machines and time, including overlaps and links to related orders. Automatic arrangement helps plan future assignments while leaving active production unchanged.
+
+If automatic assignment cannot place an order, a message explains the reason, such as no available machine. Use that explanation to review the plan before trying again. See [Plan Machine Assignments](/en/platform-intro/workflows/assignment-planner) for planning steps and guidance on import conflicts that require manual review.
 
 ## Main Entities
 
@@ -50,7 +78,7 @@ Users open it from the Planner section in the main navigation.
 ### Limits and Empty States
 - Only a limited number of machines can be shown at the same time.
 - Filters can hide both machines and unassigned work.
-- Assignment Gantt is an Early Access, read-only view.
+- In-progress and completed assignments cannot be moved to another column.
 - Automatic arrangement applies to future assignments and leaves active production unchanged.
 
 ## Related Pages

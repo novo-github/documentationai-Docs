@@ -22,30 +22,67 @@ Begin on the [Data Acquisition (PDA) page](/en/platform-intro/pages/data-acquisi
 
 <Steps>
   <Step title="Open the PDA for the target machine" icon="arrow-right" title-type="p">
-    Open the PDA for the target machine.
+    Open the PDA from Machine Details. If you are already viewing another machine's PDA, select its name in the top navigation bar and choose the target machine from the list grouped by hall. Only machines you can access appear.
   </Step>
   <Step title="Review the available assignments and select the job" icon="arrow-right" title-type="p">
-    Review open assignments or use a time-window view, then select the job to work on. Assignment columns and sorting can be personalized.
+    Review open assignments or use a time-window view, then select the job to work on. Check the operation sequence number and available operation or assignment notes for context. Assignment columns and sorting can be personalized.
   </Step>
   <Step title="Find unplanned work when needed" icon="arrow-right" title-type="p">
     If the required operation is not planned, search for it and assign it directly to the machine from the PDA page.
   </Step>
-  <Step title="Start or mark preparation depending on the current" icon="arrow-right" title-type="p">
+  <Step title="Start production or preparation" icon="arrow-right" title-type="p">
     Start or mark preparation depending on the current shop-floor situation. If another assignment is already running, review the warning before continuing.
   </Step>
-  <Step title="Stop the work interval when the run finishes or" icon="arrow-right" title-type="p">
+  <Step title="Stop the interval when work finishes or pauses" icon="arrow-right" title-type="p">
     Stop the work interval when the run finishes or pauses.
   </Step>
-  <Step title="Enter produced quantity and other completion" icon="arrow-right" title-type="p">
+  <Step title="Enter quantities and completion details" icon="arrow-right" title-type="p">
     When stopping or continuing an interval, enter produced quantity, material scrap, work scrap, and other completion details when prompted.
   </Step>
   <Step title="Apply timeline reasons" icon="arrow-right" title-type="p">
-    Apply timeline reasons if downtime or special events need explanation.
+    Apply timeline reasons if downtime or special events need explanation. Review idle and stopped entries after switching between running, paused, and stopped states to check that the record reflects what happened.
   </Step>
-  <Step title="Review open tickets or knowledge entries when the" icon="arrow-right" title-type="p">
+  <Step title="Review related tickets and knowledge" icon="arrow-right" title-type="p">
     Review open tickets or knowledge entries when the issue requires support context.
   </Step>
 </Steps>
+
+## Correct an Interval Time
+
+<Steps>
+  <Step title="Open the quick editor" icon="arrow-right" title-type="p">
+    Double-tap the start or end time of the interval you want to correct.
+  </Step>
+  <Step title="Adjust the timestamp" icon="arrow-right" title-type="p">
+    Use **+2m**, **+5m**, or **+30m**, or the corresponding minus buttons. Repeated taps add up: two taps on **+5m** move the timestamp forward by ten minutes.
+  </Step>
+  <Step title="Check the resulting time" icon="arrow-right" title-type="p">
+    Review the corrected start or end time. Use the full date/time picker when the required correction needs a specific date or a more precise time.
+  </Step>
+</Steps>
+
+## Configure the Data Acquisition V3 Display
+
+<Steps>
+  <Step title="Choose whether to show interval bars" icon="arrow-right" title-type="p">
+    Open Data Acquisition V3 settings. Under **Timeline display**, turn **Show intervals in graph** on or off to suit the detail you want in the graph.
+  </Step>
+  <Step title="Set automatic refresh frequency" icon="arrow-right" title-type="p">
+    Under **Auto-refresh interval**, choose how often assignments and hall pools refresh automatically.
+  </Step>
+  <Step title="Choose how to sort assignments" icon="arrow-right" title-type="p">
+    Open the sort/filter options. Enable **Sort by Queue Position** to display the order set by dragging assignments, or turn it off to choose sorting rules.
+  </Step>
+  <Step title="Set the order of sorting rules" icon="arrow-right" title-type="p">
+    Select a field such as priority or date and choose ascending or descending order. Add further rules to break ties, then drag them into the order in which they should take precedence.
+  </Step>
+</Steps>
+
+## Review Quantities and Completion
+
+Keep material scrap and work scrap in their separate fields when stopping or continuing an interval. Review the breakdown and combined scrap total in [Orders & Products](/en/platform-intro/pages/orders-products) or [Order Analysis](/en/platform-intro/pages/order-detail); displayed total production includes submitted scrap.
+
+Starting and stopping production updates the related order status. An assignment is marked complete when the produced quantity exactly matches the planned quantity. If an over-production prompt appears, review the quantities and order completion before continuing.
 
 ## Decision Points
 

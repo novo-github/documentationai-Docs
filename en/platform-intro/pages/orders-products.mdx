@@ -5,7 +5,7 @@ description: "A table-focused workspace for monitoring, filtering, and analyzing
 
 ## Overview
 
-Help users monitor and analyze the complete production-order dataset, then open deeper order editing when needed.
+Monitor production orders, find work that needs attention, and open an order's details when you need to inspect or change its operations and assignments.
 
 Users open it from the dashboard navigation.
 
@@ -18,7 +18,7 @@ Users open it from the dashboard navigation.
 
 ## What You Can See
 
-- A table-focused order workspace with server-backed pagination.
+- An order table with controls for moving between result pages.
 - Filters for customer, order, product, machine, date range, assignment status, and live production.
 - Summary cards for Total, Planned, In Progress, Completed, Live, and Needs Attention.
 - Customer codes, operation sequence numbers, planned cycle times, duration, deviation, and production-performance explanations.
@@ -35,6 +35,24 @@ Users open it from the dashboard navigation.
 - Identify orders that need attention because of exceeded durations, degraded cycle times, or overdue dates.
 - Select multiple orders for detailed analysis.
 - Switch the progress source, enable automatic refresh, and save column visibility preferences.
+
+## Understand the Page
+
+### Understand Orders, Work Orders, and Assignments
+
+A production order brings the planned work together. Within it, work orders contain operations, and assignments connect that work to its planned production destination. Expand a grouped order to inspect its individual assignments, or open [Order Detail](/en/platform-intro/pages/order-detail) to review the full structure.
+
+### Read Totals and Progress
+
+Summary totals count each order once, even when it has several assignments. An expanded table can show several assignment rows for that same order, so the number of detail rows can be greater than the order total.
+
+Use **Needs Attention** to find orders with exceeded durations, slower cycle times, or overdue dates. Review the affected assignments before deciding what to change in the plan.
+
+The progress source determines which production record you are reviewing: PDA entries are quantities recorded in Data Acquisition, while detected cycle counts come from machine cycles. Check the selected source when comparing progress. Material scrap and work scrap are shown separately, and produced totals include recorded scrap.
+
+### Use Company Priority Levels
+
+Priority names, numbers, and colors follow the levels configured by your administrator. The same levels are used in imports and assignment planning. See [Priority Levels in the Admin Panel](/en/platform-intro/pages/admin-panel) for presets and customization.
 
 ## Main Entities
 
@@ -53,7 +71,7 @@ Users open it from the dashboard navigation.
 
 ### Limits and Empty States
 - Results depend on the selected date range and filters.
-- Pagination, sorting, and filtering operate on the server-backed order dataset.
+- Sorting and filtering apply across the complete order list, not only the currently visible result page.
 - Orders without deeper structure may need the detail page before they can be planned well.
 
 ## Related Pages

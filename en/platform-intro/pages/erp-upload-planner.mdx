@@ -5,7 +5,7 @@ description: "A guided import page for turning spreadsheet rows into platform-re
 
 ## Overview
 
-Help users import order data safely through mapping, preview, and commit steps.
+Import spreadsheet-based orders into the Watchmen Platform. Review the source file, match its columns to order fields, and check how the import will affect your existing production plan before confirming it.
 
 Users open it through the protected ERP upload route.
 
@@ -18,22 +18,59 @@ Users open it through the protected ERP upload route.
 
 ## What You Can See
 
-- File upload controls.
-- Column-mapping sections.
-- Machine-resolution tools and dry-run previews.
+- The selected file's name, row and column count, and a sample of its contents.
+- Column mappings and tools for matching external machine names or codes to your machines.
+- A preview, time-setting explanations, schedule warnings, and upload progress.
+- A summary of proposed changes and scheduling conflicts, followed by the results after import.
 
 ## What You Can Do
 
-- Upload a spreadsheet.
-- Map columns to the platform’s order fields.
-- Resolve machine references.
-- Preview the result and commit the import.
+- Upload a spreadsheet and correct values before importing.
+- Map columns to order fields, including order tags, and reuse saved mappings where appropriate.
+- Match machine references and, if needed, limit the import to orders that already have a machine assignment.
+- Choose the time interpretation, review changes, and decide how to handle scheduling conflicts.
+- Confirm the import and check which changes were applied.
+
+## Review and Correct the File
+
+Select **Expand to edit** in the file preview to open the full file view. You can correct individual cells or paste matching groups of values from Excel. The editor shows how many cells you have changed; saved corrections are highlighted in the preview.
+
+Column headings and row counts stay fixed. To change the file structure, correct the source spreadsheet and upload it again. Closing the editor without saving discards unsaved corrections and leaves the original file unchanged.
+
+## Understand Time and Priority Settings
+
+Time fields can use standard or industrial-minute interpretation. Choose the convention that matches your source data. The upload review identifies the affected row and explains when a time value or the **Industrial minutes** setting changes preparation or production time. Check these explanations before confirming the import.
+
+Priority names, numbers, and colors follow the company levels configured in the [Admin Panel](/en/platform-intro/pages/admin-panel). These levels are shared with order management and the Assignment Planner, so imported priorities can be reviewed consistently across the plan.
+
+## Review the Import's Impact
+
+After mapping and preview, open **What this import will change**. The summary groups new, updated, and existing records by orders, products, customers, operations, and assignments. Existing records are reused; they do not necessarily represent new records created by the import.
+
+Expand the row-by-row details to inspect schedule changes, new operations and assignments, and recalculated durations. Use this view to check the consequences for your current plan before confirming.
+
+## Resolve Scheduling Conflicts
+
+A scheduling conflict appears when the file assigns an operation that is already scheduled elsewhere. Conflicts are grouped under their order and include a reason, such as an assignment that already has recorded production.
+
+| Choice | Effect |
+| --- | --- |
+| **Move to [new target]** | Apply the assignment from the file. |
+| **Keep on [current target]** | Retain the existing assignment instead of applying the file's proposed change. |
+| **Keep both** | Keep assignments at both targets for parallel work. |
+
+Some conflicts cannot be resolved in the import review. Follow the indication to resolve those manually in the [Assignment Planner](/en/platform-intro/pages/assignment-planner).
+
+After import, review the outcome summary. It shows which decisions were applied and explains any that could not be applied, for example if production started after your review. Use this result to identify work that still needs attention in the planner.
 
 ## Main Entities
 
 - Spreadsheet Row
 - Production Order
 - Product
+- Customer
+- Operation
+- Assignment
 - Machine
 
 ## Outcomes and Limits
@@ -43,12 +80,14 @@ Users open it through the protected ERP upload route.
 
 ### Limits and Empty States
 - The page depends on file quality and correct column mapping.
+- The preview shows proposed changes. The result after import confirms what was applied if production or scheduling changed while you were reviewing.
 
 ## Related Pages
 
 - [Admin Panel](/en/platform-intro/pages/admin-panel)
 - [Orders & Products](/en/platform-intro/pages/orders-products)
 - [Scheduler](/en/platform-intro/pages/scheduler)
+- [Assignment Planner](/en/platform-intro/pages/assignment-planner)
 
 ## Related Workflows
 

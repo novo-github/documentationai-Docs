@@ -18,7 +18,7 @@ Users reach this page through machine setup actions or by opening a machine conf
 
 ## What You Can See
 
-- Vertical tabs for setup areas such as basic information, energy monitoring, ratings, timeline ranges, timeline rules, and features.
+- Vertical tabs for setup areas such as basic information, AVA assignments, energy monitoring, ratings, timeline ranges, timeline rules, and features.
 - Unsaved-change indicators on tabs.
 
 ## What You Can Do
@@ -26,6 +26,18 @@ Users reach this page through machine setup actions or by opening a machine conf
 - Complete the initial machine setup.
 - Update how the machine is grouped and measured.
 - Save changes tab by tab.
+
+## AVA Device Assignments
+
+An AVA assignment connects an AVA device to this machine. Open **Configuration → AVA Assignments** to select and connect a device. When several devices are connected, drag them up or down to set their priority.
+
+Invalid or duplicate entries are identified before saving. Correct the flagged entries, then save the tab before leaving it. See [Configure a Machine](/en/platform-intro/workflows/machine-configuration) for the setup steps.
+
+## Sensors Powered by the Machine
+
+In **Configuration → Basic Info**, enable **Sensor powered by machine** if the sensor receives power only while the machine is switched on. Save the tab after changing this setting.
+
+With this setting enabled, a missing signal from that sensor is shown as **machine off** instead of **unknown**. This helps you recognize an expected shutdown. Use the setting only when the sensor actually loses power with the machine, so an unexplained loss of data is not mistaken for a shutdown.
 
 ## Main Entities
 

@@ -22,10 +22,10 @@ Beginnen Sie auf der [Seite Betriebsdatenerfassung (BDE)](/de/platform-intro/pag
 
 <Steps>
   <Step title="Öffnen Sie die BDE für die Zielmaschine" icon="arrow-right" title-type="p">
-    Öffnen Sie die BDE für die Zielmaschine.
+    Öffnen Sie die BDE über die Maschinendetails. Wenn Sie bereits die BDE einer anderen Maschine ansehen, wählen Sie deren Namen in der oberen Navigationsleiste und anschließend die Zielmaschine aus der nach Halle gruppierten Liste. Es erscheinen nur Maschinen, auf die Sie zugreifen dürfen.
   </Step>
   <Step title="Prüfen Sie verfügbare Zuweisungen und wählen Sie die Aufgabe aus" icon="arrow-right" title-type="p">
-    Prüfen Sie offene Zuweisungen oder nutzen Sie eine Zeitfensteransicht und wählen Sie anschließend die Aufgabe aus. Zuweisungsspalten und Sortierung können personalisiert werden.
+    Prüfen Sie offene Zuweisungen oder nutzen Sie eine Zeitfensteransicht und wählen Sie anschließend die Aufgabe aus. Beachten Sie die Operationsfolgenummer und vorhandene Operations- oder Zuweisungsnotizen. Zuweisungsspalten und Sortierung können personalisiert werden.
   </Step>
   <Step title="Finden Sie bei Bedarf ungeplante Arbeit" icon="arrow-right" title-type="p">
     Wenn die benötigte Operation nicht geplant ist, suchen Sie danach und weisen Sie diese direkt auf der BDE-Seite der Maschine zu.
@@ -40,12 +40,49 @@ Beginnen Sie auf der [Seite Betriebsdatenerfassung (BDE)](/de/platform-intro/pag
     Geben Sie beim Stoppen oder Fortsetzen eines Intervalls die produzierte Menge, Materialausschuss, Fertigungsausschuss und weitere Abschlussdetails ein.
   </Step>
   <Step title="Wenden Sie Zeitachsen-Gründe an" icon="arrow-right" title-type="p">
-    Wenden Sie Zeitachsen-Gründe an, wenn Stillstand oder besondere Ereignisse erklärt werden müssen.
+    Ergänzen Sie Gründe in der Zeitleiste, wenn Stillstand oder besondere Ereignisse erklärt werden müssen. Prüfen Sie nach Wechseln zwischen laufender, pausierter und gestoppter Produktion die Leerlauf- und Stillstandseinträge, damit die Aufzeichnung dem tatsächlichen Ablauf entspricht.
   </Step>
   <Step title="Prüfen Sie offene Tickets oder Wissenseinträge, wenn der Fall Unterstützungskontext benötigt" icon="arrow-right" title-type="p">
     Prüfen Sie offene Tickets oder Wissenseinträge, wenn der Fall Unterstützungskontext benötigt.
   </Step>
 </Steps>
+
+## Eine Intervallzeit korrigieren
+
+<Steps>
+  <Step title="Öffnen Sie die Schnellbearbeitung" icon="arrow-right" title-type="p">
+    Tippen Sie doppelt auf die Start- oder Endzeit des Intervalls, das Sie korrigieren möchten.
+  </Step>
+  <Step title="Passen Sie den Zeitpunkt an" icon="arrow-right" title-type="p">
+    Nutzen Sie **+2m**, **+5m** oder **+30m** beziehungsweise die entsprechenden Minus-Schaltflächen. Wiederholtes Tippen addiert sich: Zweimal **+5m** verschiebt den Zeitpunkt um zehn Minuten nach vorne.
+  </Step>
+  <Step title="Prüfen Sie die neue Zeit" icon="arrow-right" title-type="p">
+    Prüfen Sie die korrigierte Start- oder Endzeit. Verwenden Sie die vollständige Datums- und Zeitauswahl, wenn Sie ein bestimmtes Datum oder eine genauere Uhrzeit benötigen.
+  </Step>
+</Steps>
+
+## Die Darstellung der Betriebsdatenerfassung V3 einstellen
+
+<Steps>
+  <Step title="Wählen Sie die Anzeige der Intervallbalken" icon="arrow-right" title-type="p">
+    Öffnen Sie die Einstellungen der Betriebsdatenerfassung V3. Legen Sie unter den Optionen zur Zeitleistendarstellung fest, ob Intervallbalken im Diagramm erscheinen sollen.
+  </Step>
+  <Step title="Legen Sie die Aktualisierungshäufigkeit fest" icon="arrow-right" title-type="p">
+    Wählen Sie beim automatischen Aktualisierungsintervall, wie häufig Zuweisungen und Hallenpools automatisch aktualisiert werden sollen.
+  </Step>
+  <Step title="Wählen Sie die Sortierung der Zuweisungen" icon="arrow-right" title-type="p">
+    Öffnen Sie die Sortier- und Filteroptionen. Aktivieren Sie die Sortierung nach Warteschlangenposition, um die durch Ziehen festgelegte Reihenfolge anzuzeigen. Schalten Sie sie aus, um Sortierregeln zu wählen.
+  </Step>
+  <Step title="Legen Sie die Reihenfolge der Sortierregeln fest" icon="arrow-right" title-type="p">
+    Wählen Sie ein Feld wie Priorität oder Datum und eine aufsteigende oder absteigende Richtung. Ergänzen Sie weitere Regeln für Gleichstände und ziehen Sie sie in die Reihenfolge ihres Vorrangs.
+  </Step>
+</Steps>
+
+## Mengen und Abschluss prüfen
+
+Erfassen Sie Materialausschuss und Fertigungsausschuss beim Stoppen oder Fortsetzen eines Intervalls in den jeweiligen Feldern. Prüfen Sie die Aufschlüsselung und den Gesamtausschuss in [Aufträge & Produkte](/de/platform-intro/pages/orders-products) oder der [Auftragsanalyse](/de/platform-intro/pages/order-detail). Angezeigte Produktionsgesamtmengen enthalten den eingegebenen Ausschuss.
+
+Das Starten und Stoppen der Produktion aktualisiert den zugehörigen Auftragsstatus. Eine Zuweisung wird abgeschlossen, wenn die produzierte Menge genau der geplanten Menge entspricht. Erscheint ein Hinweis zur Überproduktion, prüfen Sie die Mengen und den Auftragsabschluss, bevor Sie fortfahren.
 
 ## Entscheidungspunkte
 

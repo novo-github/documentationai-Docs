@@ -5,7 +5,7 @@ description: "Ein tabellenorientierter Arbeitsbereich zur Überwachung, Filterun
 
 ## Überblick
 
-Unterstützen Sie Benutzer dabei, den vollständigen Produktionsauftragsbestand zu überwachen und zu analysieren und bei Bedarf eine tiefere Auftragsbearbeitung zu öffnen.
+Überwachen Sie Produktionsaufträge, finden Sie Arbeit mit Handlungsbedarf und öffnen Sie die Auftragsdetails, um Operationen und Zuweisungen zu prüfen oder zu ändern.
 
 Benutzer öffnen diese Seite über die Dashboard-Navigation.
 
@@ -18,7 +18,7 @@ Benutzer öffnen diese Seite über die Dashboard-Navigation.
 
 ## Was Sie sehen können
 
-- Einen tabellenorientierten Auftragsarbeitsbereich mit serverseitiger Seitennummerierung.
+- Eine Auftragstabelle mit Steuerelementen zum Wechseln zwischen Ergebnisseiten.
 - Filter für Kunde, Auftrag, Produkt, Maschine, Datumsbereich, Zuweisungsstatus und laufende Produktion.
 - Übersichtskarten für Gesamt, Geplant, In Bearbeitung, Abgeschlossen, Live und Handlungsbedarf.
 - Kundencodes, Operationssequenznummern, geplante Zykluszeiten, Dauer, Abweichung und Erläuterungen zur Produktionsleistung.
@@ -35,6 +35,24 @@ Benutzer öffnen diese Seite über die Dashboard-Navigation.
 - Aufträge mit Handlungsbedarf aufgrund überschrittener Dauern, verschlechterter Zykluszeiten oder überfälliger Termine erkennen.
 - Mehrere Aufträge für eine detaillierte Analyse auswählen.
 - Die Fortschrittsquelle wechseln, automatische Aktualisierung aktivieren und Einstellungen zur Spaltensichtbarkeit speichern.
+
+## Die Seite verstehen
+
+### Aufträge, Arbeitsaufträge und Zuweisungen verstehen
+
+Ein Produktionsauftrag fasst die geplante Arbeit zusammen. Darin enthalten Arbeitsaufträge die einzelnen Operationen. Zuweisungen verbinden diese Arbeit mit ihrem geplanten Produktionsziel. Erweitern Sie einen gruppierten Auftrag, um seine einzelnen Zuweisungen zu prüfen, oder öffnen Sie die [Auftragsdetails](/de/platform-intro/pages/order-detail), um die vollständige Struktur zu sehen.
+
+### Summen und Fortschritt lesen
+
+Die Übersicht zählt jeden Auftrag einmal, auch wenn er mehrere Zuweisungen hat. In einer erweiterten Tabelle können für denselben Auftrag mehrere Zuweisungszeilen erscheinen. Die Anzahl der Detailzeilen kann deshalb größer als die Auftragssumme sein.
+
+Unter **Handlungsbedarf** finden Sie Aufträge mit überschrittenen Dauern, langsameren Zykluszeiten oder überfälligen Terminen. Prüfen Sie die betroffenen Zuweisungen, bevor Sie den Plan anpassen.
+
+Die Fortschrittsquelle bestimmt, welche Produktionsaufzeichnung Sie betrachten: BDE-Einträge sind in der Betriebsdatenerfassung erfasste Mengen; erkannte Zykluszahlen stammen aus den Maschinenzyklen. Prüfen Sie beim Vergleich des Fortschritts die ausgewählte Quelle. Material- und Fertigungsausschuss werden getrennt angezeigt; die produzierten Gesamtmengen enthalten den erfassten Ausschuss.
+
+### Unternehmensweite Prioritätsstufen verwenden
+
+Namen, Nummern und Farben der Prioritäten entsprechen den von Ihrem Administrator konfigurierten Stufen. Dieselben Stufen werden bei Importen und in der Zuweisungsplanung verwendet. Informationen zu Vorlagen und Anpassungen finden Sie bei den [Prioritätsstufen im Administrationsbereich](/de/platform-intro/pages/admin-panel).
 
 ## Hauptentitäten
 
@@ -53,7 +71,7 @@ Benutzer öffnen diese Seite über die Dashboard-Navigation.
 
 ### Grenzen und Leerzustände
 - Ergebnisse hängen vom ausgewählten Datumsbereich und von Filtern ab.
-- Seitennummerierung, Sortierung und Filterung arbeiten mit dem serverseitigen Auftragsbestand.
+- Sortierung und Filterung gelten für die vollständige Auftragsliste, nicht nur für die aktuell sichtbare Ergebnisseite.
 - Aufträge ohne tiefere Struktur benötigen möglicherweise die Detailseite, bevor sie sinnvoll geplant werden können.
 
 ## Verwandte Seiten
