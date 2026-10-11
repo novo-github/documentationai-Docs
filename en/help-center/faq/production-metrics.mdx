@@ -1,0 +1,125 @@
+---
+title: "Quality, Availability, Performance & OEE FAQs"
+description: "Understand Watchmen production metrics, the 95% quality default, machine states, and OEE calculations with a worked example."
+---
+
+## Understand Your Production Metrics
+
+The Watchmen Platform combines production quantities and machine time to help you understand your results. These FAQs explain the time-based calculations used here. Use the same machine and reporting period when comparing them.
+
+| Your question | Read the answer |
+| --- | --- |
+| How many produced units are good? | [Quality](#quality) |
+| How much of the selected time was spent producing? | [Availability](#availability) |
+| How much switched-on time was used for production or preparation? | [Performance](#performance) |
+| How do the three percentages combine? | [Overall Equipment Effectiveness (OEE)](#oee) |
+
+### One Example for All Four Metrics
+
+Imagine a machine observed over seven hours:
+
+| Machine state | Meaning in this example | Duration |
+| --- | --- | --- |
+| Production | Making parts | 3 hours |
+| Preparation | Setting up for production | 1 hour |
+| Idle | Switched on, but neither producing nor preparing | 1 hour |
+| Off | Switched off | 2 hours |
+| **Total** | **All four states in the selected period** | **7 hours** |
+
+The machine produces **100 units**: **95 good units** and **5 scrap units**. Preparation is also called setup; idle time and switched-off time are separate states.
+
+<a id="quality" />
+
+## How Is Quality Calculated?
+
+**Quality** is the percentage of produced units that are good. Scrap reduces this percentage.
+
+**Formula:** Quality (%) = good units / total produced units × 100.
+
+In our example, total production includes the 95 good units and the 5 scrap units:
+
+**95 / 100 × 100 = 95% quality.**
+
+This means 95 out of every 100 produced units are good. Review quantities and scrap in [Data Acquisition (PDA)](/en/platform-intro/pages/data-acquisition) and the [order details](/en/platform-intro/pages/order-detail).
+
+### Why Does Quality Show 95% Without Actual Good-Unit Data?
+
+The company-wide default quality value is **95%**. Quality can also be adjusted per machine or order when using PDA or an ERP integration. Where actual good-unit and total-production data are available, quality is calculated from those quantities.
+
+Planned quantity can be used as a fallback when actual good-unit data are missing. A default or planned quantity is an estimate; it does not prove that the produced units passed inspection. Check which data source is being used before interpreting 95% as a measured result.
+
+See [ERP/PDA data ingestion](/en/erp-bde-integration) for integration context and [Run Data Acquisition](/en/platform-intro/workflows/data-acquisition) for recording production data.
+
+<a id="availability" />
+
+## How Is Availability Calculated?
+
+**Availability** is the share of the selected period spent producing. In this calculation, the denominator includes production, preparation, idle, and off time.
+
+**Formula:** Availability (%) = production time / (production + preparation + idle + off time) × 100.
+
+For our seven-hour example:
+
+**3 / (3 + 1 + 1 + 2) × 100 = 42.86% availability.**
+
+The machine produced for about 43% of the observed period. Preparation, idle, and off time all reduce this value because they are included in total time but not production time.
+
+### Why Is Availability Lower Than Expected?
+
+Check the selected date or shift and how the timeline splits time between states. A period containing two hours of off time gives a different result from one containing only switched-on time.
+
+Use [Machine Details](/en/platform-intro/pages/machine-details) to review date and shift context, and [Timeline Analysis](/en/platform-intro/pages/timeline-analysis) to examine the time distribution.
+
+<a id="performance" />
+
+## How Is Performance Calculated?
+
+**Performance** compares production plus preparation time with all switched-on time. Switched-on time includes idle time; off time is excluded.
+
+**Formula:** Performance (%) = (production + preparation time) / (production + preparation + idle time) × 100.
+
+In our example, effective time is **4 hours** and switched-on time is **5 hours**:
+
+**(3 + 1) / (3 + 1 + 1) × 100 = 80% performance.**
+
+This means 80% of switched-on time was spent producing or preparing. The remaining 20% was idle time.
+
+### Does Performance Measure Machine Speed?
+
+This time-based calculation does not compare actual speed with an ideal cycle time. Preparation counts toward performance, even though it does not count toward availability. Use these definitions when comparing the two metrics.
+
+For example, a machine that spends more time preparing can still have high performance while availability remains low. Check the underlying states in [Timeline Analysis](/en/platform-intro/pages/timeline-analysis) before drawing conclusions about output or speed.
+
+<a id="oee" />
+
+## How Is Overall Equipment Effectiveness (OEE) Calculated?
+
+**Overall Equipment Effectiveness (OEE)** combines availability, performance, and quality into one percentage. All three inputs must refer to the same machine and period.
+
+**Formula using decimal ratios:** OEE (%) = availability ratio × performance ratio × quality ratio × 100.
+
+Using the example without rounding intermediate values:
+
+**(3 / 7) × (4 / 5) × (95 / 100) × 100 = 32.57% OEE.**
+
+If you enter percentages as numbers such as 80 and 95, use **OEE (%) = availability (%) × performance (%) × quality (%) / 10,000**. Convert percentages to ratios or use this percentage formula consistently.
+
+### Why Is OEE Lower Than Each Individual Metric?
+
+The three ratios multiply. Even 80% performance and 95% quality cannot compensate for only 42.86% availability. Inspect each factor to understand which part of the result needs attention.
+
+### Why Does My Manual Calculation Differ from the Dashboard?
+
+- Match the machine, date range, and shift before comparing values.
+- Use unrounded durations and quantities; round only the final result.
+- Check whether quality comes from actual counts, a configured default, or planned quantities.
+- Check the state definitions, especially preparation and off time.
+- If a denominator is zero, such as no produced units or no switched-on time, the corresponding formula cannot give a meaningful percentage. Review the underlying data first.
+
+## Where Can I Explore These Results?
+
+- [Organization Statistics](/en/platform-intro/pages/org-stats): review organization-level production indicators and rankings.
+- [Monitor a Machine Live](/en/platform-intro/workflows/live-machine-monitoring): inspect one machine in its shift context.
+- [Compare Machines](/en/platform-intro/workflows/compare-machines): compare machines over the same period.
+- [Energy Consumption, Wastage & Costs FAQs](/en/help-center/faq/energy-and-costs): understand the energy impact of active and idle time.
+- [Help Center](/en/help-center): return to all help topics.

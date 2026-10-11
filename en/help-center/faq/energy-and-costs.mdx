@@ -1,0 +1,129 @@
+---
+title: "Energy Consumption, Wastage & Costs FAQs"
+description: "Understand machine energy consumption, idle energy wastage, W and kWh, energy factors, and electricity costs with simple examples."
+---
+
+## Understand Your Energy Figures
+
+The Watchmen Platform helps you review energy used during production, preparation, and idle time, together with the associated costs.
+
+| Your question | Read the answer |
+| --- | --- |
+| How much energy does the machine use? | [Energy consumption](#energy-consumption) |
+| How much energy is used while idle? | [Energy wastage](#energy-wastage) |
+| What does the total energy cost? | [Energy consumption costs](#energy-consumption-costs) |
+| What does idle energy cost? | [Energy wastage costs](#energy-wastage-costs) |
+
+### What Is the Difference Between W, kW, and kWh?
+
+- **W (watts)** and **kW (kilowatts)** measure power: how quickly energy is being used. **500 W = 0.5 kW.**
+- **kWh (kilowatt-hours)** measures energy used over time. A constant **0.5 kW** for **2 hours** uses **1 kWh**.
+- **€/kWh** is the electricity price per unit of energy.
+
+**Formula for constant power:** Energy (kWh) = power (kW) × duration (hours).
+
+A rating of 500 W is a power value, not “500 watts per hour.” Convert watts to kilowatts before calculating kWh.
+
+<a id="energy-consumption" />
+
+## How Is Energy Consumption Calculated?
+
+**Energy consumption** combines energy used while idle with energy used during active production and preparation.
+
+**Formula:** Total energy (kWh) = idle energy (kWh) + production and preparation energy (kWh).
+
+The machine's configuration influences a calculated estimate:
+
+| Input | What it represents |
+| --- | --- |
+| Power rating | The machine's rated power in W or kW |
+| Machine energy factor | A factor accounting for components such as filters, pumps, and motors; used in the idle-energy calculation below |
+| Machine intensity factor | The relationship between operating intensity or speed and energy use during active operation |
+| State durations | How long the machine was producing, preparing, or idle |
+
+### Example: Active Energy Plus Idle Energy
+
+For this separate energy example, assume **2 hours idle** and **4 hours of production plus preparation**. The machine has a **500 W** power rating and an energy factor of **0.35**.
+
+- Idle energy: **2 × 0.5 × 0.35 = 0.35 kWh**.
+- For illustration, assume average active power is **0.5 kW** for all four active hours: **4 × 0.5 = 2 kWh**.
+- Total energy in this simplified example: **0.35 + 2 = 2.35 kWh**.
+
+<Callout kind="info">
+  The 0.5 kW active average is an example assumption. The intensity factor varies, so the rating and durations alone do not determine the actual active energy. Check the machine's energy-monitoring setup when comparing an estimate with a measured value.
+</Callout>
+
+Use [Machine Configuration](/en/platform-intro/pages/machine-configuration) to understand the setup areas, or follow [Configure a Machine](/en/platform-intro/workflows/machine-configuration).
+
+<a id="energy-wastage" />
+
+## How Is Energy Wastage Calculated?
+
+**Energy wastage** means energy consumed while the machine is idle. An idle machine can still power components even though it is not producing parts.
+
+**Formula:** Idle energy (kWh) = idle duration (hours) × power rating (kW) × machine energy factor.
+
+Using the same energy example:
+
+**2 hours × 0.5 kW × 0.35 = 0.35 kWh of energy wastage.**
+
+Here, the factor of 0.35 gives an estimated idle power of **0.175 kW**, or **175 W**. Idle does not mean switched off.
+
+### Is Energy Wastage Added on Top of Total Consumption?
+
+Idle energy is already part of total energy consumption. In this example, the total is **2.35 kWh**, including **0.35 kWh** of idle energy. Adding the idle energy again would count it twice.
+
+Use [Timeline Analysis](/en/platform-intro/pages/timeline-analysis) to find long or recurring idle periods. The [production metrics FAQs](/en/help-center/faq/production-metrics) explain how idle and off time affect availability and performance.
+
+<a id="energy-consumption-costs" />
+
+## How Are Energy Consumption Costs Calculated?
+
+**Energy consumption costs** estimate the electricity cost of the total energy used.
+
+**Formula:** Energy cost (€) = total energy (kWh) × electricity price (€/kWh).
+
+For a reporting period with **20 kWh** consumption and a price of **€0.15/kWh**:
+
+**20 × €0.15 = €3.00.**
+
+If the price were **€0.20/kWh**, the same 20 kWh would cost **€4.00**. The energy quantity stays the same; only the price changes.
+
+### Is This the Full Cost of Running the Machine?
+
+This calculation covers electricity consumption at the chosen unit price. It does not calculate labor, maintenance, or other operating costs. Compare it with the energy portion of your costs.
+
+<a id="energy-wastage-costs" />
+
+## How Are Energy Wastage Costs Calculated?
+
+**Energy wastage costs** are the electricity costs associated with idle energy.
+
+**Formula:** Wastage cost (€) = idle energy (kWh) × electricity price (€/kWh).
+
+If **5 kWh** of the 20 kWh reporting-period total were idle energy, at **€0.15/kWh**:
+
+**5 × €0.15 = €0.75 of wastage costs.**
+
+The **€0.75 is already included in the €3.00 total energy cost**. It shows the idle-related share, rather than an additional charge.
+
+### What Could Reducing Idle Time Save?
+
+In the smaller machine example, one idle hour uses **0.5 × 0.35 = 0.175 kWh**. Avoiding that hour at **€0.15/kWh** would save **€0.02625**, or about **2.6 cents**, assuming no replacement energy use. This is an illustration, not a guaranteed saving.
+
+## Why Do My Energy or Cost Figures Look Different?
+
+- Match the machine and reporting period, including active and idle durations.
+- Check units: convert W to kW and minutes to hours before calculating energy.
+- Check the power rating, energy factor, and intensity assumptions used for an estimate.
+- Check whether you are comparing calculated estimates with energy-monitor readings.
+- Use the same electricity price and round only the final cost.
+- Keep idle energy and its costs within the total; do not add them twice.
+
+## Where Can I Find More Information?
+
+- [Organization Statistics](/en/platform-intro/pages/org-stats): review consumption, wastage, costs, and energy trends.
+- [Configure a Machine](/en/platform-intro/workflows/machine-configuration): review energy-monitoring setup.
+- [Timeline Analysis](/en/platform-intro/pages/timeline-analysis): understand time spent in machine states.
+- [Quality, Availability, Performance & OEE FAQs](/en/help-center/faq/production-metrics): understand the related production indicators.
+- [Help Center](/en/help-center): return to all help topics.

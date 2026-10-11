@@ -419,6 +419,14 @@
                   {
                     "title": "How to Start",
                     "path": "en/help-center/faq/how-to-start"
+                  },
+                  {
+                    "title": "Quality, Availability, Performance & OEE",
+                    "path": "en/help-center/faq/production-metrics"
+                  },
+                  {
+                    "title": "Energy Consumption, Wastage & Costs",
+                    "path": "en/help-center/faq/energy-and-costs"
                   }
                 ]
               },
@@ -837,6 +845,14 @@
                   {
                     "title": "Erste Schritte",
                     "path": "de/help-center/faq/how-to-start"
+                  },
+                  {
+                    "title": "Qualität, Verfügbarkeit, Leistung und OEE",
+                    "path": "de/help-center/faq/production-metrics"
+                  },
+                  {
+                    "title": "Energieverbrauch, Energieverschwendung und Kosten",
+                    "path": "de/help-center/faq/energy-and-costs"
                   }
                 ]
               },

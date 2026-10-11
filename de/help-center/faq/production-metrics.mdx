@@ -1,0 +1,125 @@
+---
+title: "FAQs zu Qualität, Verfügbarkeit, Leistung und OEE"
+description: "Verstehen Sie Produktionskennzahlen, den Qualitätsstandardwert von 95 %, Maschinenzustände und die OEE-Berechnung anhand eines Beispiels."
+---
+
+## Produktionskennzahlen verstehen
+
+Die Watchmen-Plattform verbindet Produktionsmengen und Maschinenzeiten, damit Sie Ihre Ergebnisse einordnen können. Diese FAQs erklären die hier verwendeten zeitbasierten Berechnungen. Vergleichen Sie immer dieselbe Maschine im selben Auswertungszeitraum.
+
+| Ihre Frage | Zur Antwort |
+| --- | --- |
+| Wie viele produzierte Teile sind Gutteile? | [Qualität](#quality) |
+| Welcher Anteil des ausgewählten Zeitraums entfällt auf die Produktion? | [Verfügbarkeit](#availability) |
+| Welcher Anteil der Einschaltzeit entfällt auf Produktion oder Rüsten? | [Leistung](#performance) |
+| Wie werden die drei Prozentwerte kombiniert? | [Gesamtanlageneffektivität (OEE)](#oee) |
+
+### Ein Beispiel für alle vier Kennzahlen
+
+Stellen Sie sich eine Maschine vor, die über sieben Stunden betrachtet wird:
+
+| Maschinenzustand | Bedeutung in diesem Beispiel | Dauer |
+| --- | --- | --- |
+| Produktion | Teile herstellen | 3 Stunden |
+| Vorbereitung | Für die Produktion rüsten | 1 Stunde |
+| Leerlauf | Eingeschaltet, aber weder in Produktion noch beim Rüsten | 1 Stunde |
+| Aus | Ausgeschaltet | 2 Stunden |
+| **Gesamt** | **Alle vier Zustände im ausgewählten Zeitraum** | **7 Stunden** |
+
+Die Maschine produziert **100 Teile**: **95 Gutteile** und **5 Ausschussteile**. Vorbereitungszeit wird auch Rüstzeit genannt. Leerlauf und ausgeschaltete Zeit sind getrennte Zustände.
+
+<a id="quality" />
+
+## Wie wird die Qualität berechnet?
+
+**Qualität** ist der prozentuale Anteil der Gutteile an allen produzierten Teilen. Ausschuss verringert diesen Anteil.
+
+**Formel:** Qualität (%) = Gutteile / produzierte Gesamtmenge × 100.
+
+In unserem Beispiel enthält die Gesamtmenge die 95 Gutteile und die 5 Ausschussteile:
+
+**95 / 100 × 100 = 95 % Qualität.**
+
+Das bedeutet: Von 100 produzierten Teilen sind 95 Gutteile. Prüfen Sie Mengen und Ausschuss in der [Betriebsdatenerfassung (BDE)](/de/platform-intro/pages/data-acquisition) und den [Auftragsdetails](/de/platform-intro/pages/order-detail).
+
+### Warum wird ohne tatsächliche Gutteildaten eine Qualität von 95 % angezeigt?
+
+Der unternehmensweite Standardwert für die Qualität beträgt **95 %**. Bei Nutzung der BDE oder einer ERP-Integration kann die Qualität auch je Maschine oder Auftrag angepasst werden. Liegen tatsächliche Gutteil- und Gesamtmengen vor, wird die Qualität aus diesen Mengen berechnet.
+
+Fehlen tatsächliche Gutteildaten, kann die geplante Menge als Ersatzwert verwendet werden. Ein Standardwert oder eine geplante Menge ist eine Schätzung und belegt keine bestandene Qualitätsprüfung. Prüfen Sie die verwendete Datenquelle, bevor Sie 95 % als gemessenes Ergebnis interpretieren.
+
+Informationen zum Auftragsimport finden Sie unter [ERP-Upload-Planer](/de/platform-intro/pages/erp-upload-planner). Die Erfassung von Produktionsdaten erklärt der Ablauf [Betriebsdatenerfassung durchführen](/de/platform-intro/workflows/data-acquisition).
+
+<a id="availability" />
+
+## Wie wird die Verfügbarkeit berechnet?
+
+**Verfügbarkeit** ist der Anteil des ausgewählten Zeitraums, in dem die Maschine produziert. Der Nenner umfasst bei dieser Berechnung Produktion, Vorbereitung, Leerlauf und ausgeschaltete Zeit.
+
+**Formel:** Verfügbarkeit (%) = Produktionszeit / (Produktionszeit + Vorbereitungszeit + Leerlaufzeit + ausgeschaltete Zeit) × 100.
+
+Für unser Beispiel mit sieben Stunden gilt:
+
+**3 / (3 + 1 + 1 + 2) × 100 = 42,86 % Verfügbarkeit.**
+
+Die Maschine hat während rund 43 % des betrachteten Zeitraums produziert. Vorbereitung, Leerlauf und ausgeschaltete Zeit verringern den Wert, da sie zur Gesamtzeit, aber nicht zur Produktionszeit zählen.
+
+### Warum ist die Verfügbarkeit niedriger als erwartet?
+
+Prüfen Sie das ausgewählte Datum oder die Schicht und die Aufteilung der Zeitleiste in Maschinenzustände. Ein Zeitraum mit zwei ausgeschalteten Stunden liefert ein anderes Ergebnis als ein Zeitraum, der nur die Einschaltzeit umfasst.
+
+Prüfen Sie Datum und Schicht in den [Maschinendetails](/de/platform-intro/pages/machine-details) und die Zeitverteilung in der [Zeitleistenanalyse](/de/platform-intro/pages/timeline-analysis).
+
+<a id="performance" />
+
+## Wie wird die Leistung berechnet?
+
+**Leistung (Performance)** vergleicht Produktions- und Vorbereitungszeit mit der gesamten Einschaltzeit. Die Einschaltzeit enthält den Leerlauf; ausgeschaltete Zeit ist ausgeschlossen.
+
+**Formel:** Leistung (%) = (Produktionszeit + Vorbereitungszeit) / (Produktionszeit + Vorbereitungszeit + Leerlaufzeit) × 100.
+
+In unserem Beispiel beträgt die effektive Zeit **4 Stunden** und die Einschaltzeit **5 Stunden**:
+
+**(3 + 1) / (3 + 1 + 1) × 100 = 80 % Leistung.**
+
+Das bedeutet: 80 % der Einschaltzeit entfielen auf Produktion oder Vorbereitung. Die übrigen 20 % waren Leerlauf.
+
+### Misst die Leistung die Maschinengeschwindigkeit?
+
+Diese zeitbasierte Berechnung vergleicht keine tatsächliche Geschwindigkeit mit einer idealen Zykluszeit. Vorbereitungszeit zählt zur Leistung, aber nicht zur Verfügbarkeit. Berücksichtigen Sie diese Definitionen beim Vergleich der beiden Kennzahlen.
+
+Eine Maschine mit viel Rüstzeit kann beispielsweise eine hohe Leistung und zugleich eine niedrige Verfügbarkeit haben. Prüfen Sie die zugrunde liegenden Zustände in der [Zeitleistenanalyse](/de/platform-intro/pages/timeline-analysis), bevor Sie daraus auf Ausstoß oder Geschwindigkeit schließen.
+
+<a id="oee" />
+
+## Wie wird die Gesamtanlageneffektivität (OEE) berechnet?
+
+Die **Gesamtanlageneffektivität (Overall Equipment Effectiveness, OEE)** kombiniert Verfügbarkeit, Leistung und Qualität zu einem Prozentwert. Alle drei Eingaben müssen sich auf dieselbe Maschine und denselben Zeitraum beziehen.
+
+**Formel mit Dezimalverhältnissen:** OEE (%) = Verfügbarkeitsverhältnis × Leistungsverhältnis × Qualitätsverhältnis × 100.
+
+Für das Beispiel gilt ohne Rundung der Zwischenwerte:
+
+**(3 / 7) × (4 / 5) × (95 / 100) × 100 = 32,57 % OEE.**
+
+Wenn Sie Prozentwerte als Zahlen wie 80 und 95 einsetzen, verwenden Sie **OEE (%) = Verfügbarkeit (%) × Leistung (%) × Qualität (%) / 10.000**. Rechnen Sie durchgängig entweder mit Dezimalverhältnissen oder mit dieser Prozentformel.
+
+### Warum ist die OEE niedriger als jede einzelne Kennzahl?
+
+Die drei Verhältnisse werden multipliziert. Auch 80 % Leistung und 95 % Qualität gleichen eine Verfügbarkeit von nur 42,86 % nicht aus. Prüfen Sie jeden Faktor, um zu erkennen, welcher Teil des Ergebnisses verbessert werden sollte.
+
+### Warum weicht meine eigene Berechnung vom Dashboard ab?
+
+- Vergleichen Sie dieselbe Maschine, denselben Datumsbereich und dieselbe Schicht.
+- Verwenden Sie ungerundete Zeiten und Mengen. Runden Sie erst das Endergebnis.
+- Prüfen Sie, ob die Qualität auf tatsächlichen Mengen, einem konfigurierten Standardwert oder geplanten Mengen beruht.
+- Prüfen Sie die Zustandsdefinitionen, insbesondere Vorbereitung und ausgeschaltete Zeit.
+- Ist ein Nenner null, etwa bei fehlender Produktionsmenge oder Einschaltzeit, liefert die jeweilige Formel keinen aussagekräftigen Prozentwert. Prüfen Sie zunächst die zugrunde liegenden Daten.
+
+## Wo kann ich die Ergebnisse genauer untersuchen?
+
+- [Organisationsstatistiken](/de/platform-intro/pages/org-stats): organisationsweite Produktionskennzahlen und Ranglisten prüfen.
+- [Maschine live überwachen](/de/platform-intro/workflows/live-machine-monitoring): eine Maschine im Schichtkontext betrachten.
+- [Maschinen vergleichen](/de/platform-intro/workflows/compare-machines): Maschinen über denselben Zeitraum vergleichen.
+- [FAQs zu Energieverbrauch, Energieverschwendung und Kosten](/de/help-center/faq/energy-and-costs): den Energieeinfluss von aktiver Zeit und Leerlauf verstehen.
+- [Help Center](/de/help-center): zu allen Hilfethemen zurückkehren.

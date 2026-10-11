@@ -1,0 +1,129 @@
+---
+title: "FAQs zu Energieverbrauch, Energieverschwendung und Kosten"
+description: "Verstehen Sie Energieverbrauch, Leerlaufenergie, W und kWh, Energiefaktoren und Stromkosten anhand einfacher Rechenbeispiele."
+---
+
+## Energiekennzahlen verstehen
+
+Die Watchmen-Plattform hilft Ihnen, den Energieverbrauch während Produktion, Vorbereitung und Leerlauf sowie die zugehörigen Kosten zu prüfen.
+
+| Ihre Frage | Zur Antwort |
+| --- | --- |
+| Wie viel Energie verbraucht die Maschine? | [Energieverbrauch](#energy-consumption) |
+| Wie viel Energie wird im Leerlauf verbraucht? | [Energieverschwendung](#energy-wastage) |
+| Was kostet der gesamte Energieverbrauch? | [Energieverbrauchskosten](#energy-consumption-costs) |
+| Was kostet die Leerlaufenergie? | [Kosten der Energieverschwendung](#energy-wastage-costs) |
+
+### Was ist der Unterschied zwischen W, kW und kWh?
+
+- **W (Watt)** und **kW (Kilowatt)** messen die elektrische Leistung, also wie schnell Energie verbraucht wird. **500 W = 0,5 kW.**
+- **kWh (Kilowattstunden)** messen die verbrauchte Energie über einen Zeitraum. Konstante **0,5 kW** über **2 Stunden** verbrauchen **1 kWh**.
+- **€/kWh** ist der Strompreis je Energieeinheit.
+
+**Formel bei konstanter Leistung:** Energie (kWh) = Leistung (kW) × Dauer (Stunden).
+
+Eine Angabe von 500 W beschreibt eine Leistung, nicht „500 Watt pro Stunde“. Rechnen Sie Watt in Kilowatt um, bevor Sie kWh berechnen.
+
+<a id="energy-consumption" />
+
+## Wie wird der Energieverbrauch berechnet?
+
+Der **Energieverbrauch** setzt sich aus der Leerlaufenergie und der Energie während aktiver Produktion und Vorbereitung zusammen.
+
+**Formel:** Gesamtenergie (kWh) = Leerlaufenergie (kWh) + Energie für Produktion und Vorbereitung (kWh).
+
+Die Maschinenkonfiguration beeinflusst eine berechnete Schätzung:
+
+| Eingabe | Bedeutung |
+| --- | --- |
+| Nennleistung | Die angegebene Maschinenleistung in W oder kW |
+| Maschinenenergiefaktor | Ein Faktor, der Komponenten wie Filter, Pumpen und Motoren berücksichtigt; er wird in der folgenden Leerlaufberechnung verwendet |
+| Maschinenintensitätsfaktor | Der Zusammenhang zwischen Betriebsintensität oder Geschwindigkeit und dem Energieverbrauch im aktiven Betrieb |
+| Zustandszeiten | Dauer von Produktion, Vorbereitung und Leerlauf |
+
+### Beispiel: Aktive Energie plus Leerlaufenergie
+
+Für dieses separate Energiebeispiel nehmen wir **2 Stunden Leerlauf** und **4 Stunden Produktion einschließlich Vorbereitung** an. Die Maschine hat eine **Nennleistung von 500 W** und einen Energiefaktor von **0,35**.
+
+- Leerlaufenergie: **2 × 0,5 × 0,35 = 0,35 kWh**.
+- Zur Veranschaulichung nehmen wir während aller vier aktiven Stunden eine durchschnittliche Leistung von **0,5 kW** an: **4 × 0,5 = 2 kWh**.
+- Gesamtenergie in diesem vereinfachten Beispiel: **0,35 + 2 = 2,35 kWh**.
+
+<Callout kind="info">
+  Die aktive Durchschnittsleistung von 0,5 kW ist eine Beispielannahme. Der Intensitätsfaktor variiert. Deshalb bestimmen Nennleistung und Dauer allein nicht die tatsächliche aktive Energie. Prüfen Sie die Energieüberwachung der Maschine, wenn Sie eine Schätzung mit einem Messwert vergleichen.
+</Callout>
+
+Die Einrichtungsbereiche erklärt die [Maschinenkonfiguration](/de/platform-intro/pages/machine-configuration). Die Schritte finden Sie unter [Maschine konfigurieren](/de/platform-intro/workflows/machine-configuration).
+
+<a id="energy-wastage" />
+
+## Wie wird die Energieverschwendung berechnet?
+
+**Energieverschwendung** bezeichnet hier die im Leerlauf verbrauchte Energie. Auch ohne Teileproduktion können Komponenten einer eingeschalteten Maschine Strom benötigen.
+
+**Formel:** Leerlaufenergie (kWh) = Leerlaufdauer (Stunden) × Nennleistung (kW) × Maschinenenergiefaktor.
+
+Für dasselbe Energiebeispiel gilt:
+
+**2 Stunden × 0,5 kW × 0,35 = 0,35 kWh Energieverschwendung.**
+
+Der Faktor 0,35 ergibt hier eine geschätzte Leerlaufleistung von **0,175 kW**, also **175 W**. Leerlauf bedeutet nicht, dass die Maschine ausgeschaltet ist.
+
+### Wird die Energieverschwendung zum Gesamtverbrauch addiert?
+
+Die Leerlaufenergie ist bereits Teil des Gesamtverbrauchs. Im Beispiel enthält der Gesamtwert von **2,35 kWh** bereits **0,35 kWh** Leerlaufenergie. Eine erneute Addition würde diesen Anteil doppelt zählen.
+
+In der [Zeitleistenanalyse](/de/platform-intro/pages/timeline-analysis) können Sie lange oder wiederkehrende Leerlaufzeiten untersuchen. Die [FAQs zu Produktionskennzahlen](/de/help-center/faq/production-metrics) erklären den Einfluss von Leerlauf und ausgeschalteter Zeit auf Verfügbarkeit und Leistung.
+
+<a id="energy-consumption-costs" />
+
+## Wie werden die Energieverbrauchskosten berechnet?
+
+Die **Energieverbrauchskosten** schätzen die Stromkosten für die gesamte verbrauchte Energie.
+
+**Formel:** Energiekosten (€) = Gesamtenergie (kWh) × Strompreis (€/kWh).
+
+Für einen Auswertungszeitraum mit **20 kWh** Verbrauch und einem Preis von **0,15 €/kWh** gilt:
+
+**20 × 0,15 € = 3,00 €.**
+
+Bei **0,20 €/kWh** würden dieselben 20 kWh **4,00 €** kosten. Die Energiemenge bleibt gleich; nur der Preis ändert sich.
+
+### Sind das die gesamten Betriebskosten der Maschine?
+
+Diese Berechnung erfasst den Stromverbrauch zum verwendeten Preis je kWh. Personal, Wartung und weitere Betriebskosten werden damit nicht berechnet. Vergleichen Sie den Wert mit dem Stromanteil Ihrer Kosten.
+
+<a id="energy-wastage-costs" />
+
+## Wie werden die Kosten der Energieverschwendung berechnet?
+
+Die **Kosten der Energieverschwendung** sind die Stromkosten der Leerlaufenergie.
+
+**Formel:** Leerlaufenergiekosten (€) = Leerlaufenergie (kWh) × Strompreis (€/kWh).
+
+Wenn von den 20 kWh des Auswertungszeitraums **5 kWh** auf Leerlauf entfallen, gilt bei **0,15 €/kWh**:
+
+**5 × 0,15 € = 0,75 € Kosten der Energieverschwendung.**
+
+Die **0,75 € sind bereits in den gesamten Energiekosten von 3,00 € enthalten**. Sie zeigen den Leerlaufanteil und sind keine zusätzliche Gebühr.
+
+### Was könnte eine kürzere Leerlaufzeit sparen?
+
+Im kleineren Maschinenbeispiel verbraucht eine Leerlaufstunde **0,5 × 0,35 = 0,175 kWh**. Eine vermiedene Stunde würde bei **0,15 €/kWh** **0,02625 €**, also rund **2,6 Cent**, sparen, sofern dadurch kein anderer Energieverbrauch entsteht. Dies ist eine Veranschaulichung und keine garantierte Einsparung.
+
+## Warum weichen meine Energie- oder Kostenwerte ab?
+
+- Vergleichen Sie dieselbe Maschine und denselben Auswertungszeitraum einschließlich aktiver Zeiten und Leerlauf.
+- Prüfen Sie die Einheiten: Rechnen Sie W in kW und Minuten in Stunden um.
+- Prüfen Sie Nennleistung, Energiefaktor und Intensitätsannahmen einer Schätzung.
+- Prüfen Sie, ob Sie berechnete Schätzungen mit Messwerten der Energieüberwachung vergleichen.
+- Verwenden Sie denselben Strompreis und runden Sie erst den endgültigen Kostenwert.
+- Leerlaufenergie und ihre Kosten gehören zum Gesamtwert. Addieren Sie sie nicht doppelt.
+
+## Wo finde ich weitere Informationen?
+
+- [Organisationsstatistiken](/de/platform-intro/pages/org-stats): Verbrauch, Energieverschwendung, Kosten und Energietrends prüfen.
+- [Maschine konfigurieren](/de/platform-intro/workflows/machine-configuration): die Energieüberwachung einrichten oder prüfen.
+- [Zeitleistenanalyse](/de/platform-intro/pages/timeline-analysis): die Zeitverteilung auf Maschinenzustände verstehen.
+- [FAQs zu Qualität, Verfügbarkeit, Leistung und OEE](/de/help-center/faq/production-metrics): die zugehörigen Produktionskennzahlen verstehen.
+- [Help Center](/de/help-center): zu allen Hilfethemen zurückkehren.
