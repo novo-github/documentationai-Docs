@@ -5,6 +5,8 @@ description: "Eine konfigurierbare Maschinenseite für Zuweisungen, Produktionsi
 
 ## Überblick
 
+**Zugriff:** Jede Rolle mit Zugriff auf diese Maschine. [Rollen und Zugriff](/de/platform-intro/concepts/roles-and-access).
+
 Unterstützen Sie die Live-Ausführung am Shopfloor und die Ereigniserfassung für eine einzelne Maschine.
 
 Benutzer öffnen diese Seite normalerweise über die Seite **Maschinendetails**.
@@ -56,6 +58,52 @@ Zeitleisteneinträge für Leerlauf und Stillstand aktualisieren sich beim Wechse
 Beim Stoppen oder Fortsetzen eines Intervalls können Sie die produzierte Menge eingeben und **Materialausschuss** sowie **Fertigungsausschuss** getrennt erfassen. So können Sie die beiden Ausschusskategorien und ihre gemeinsame Summe in [Aufträge & Produkte](/de/platform-intro/pages/orders-products) und der [Auftragsanalyse](/de/platform-intro/pages/order-detail) prüfen. Angezeigte Produktionsgesamtmengen enthalten die eingegebenen Ausschussmengen.
 
 Das Starten oder Stoppen der Produktion aktualisiert den zugehörigen Auftragsstatus. Eine Zuweisung wird abgeschlossen, wenn die produzierte Menge genau der geplanten Menge entspricht. Bei einer Überschreitung kann ein Hinweis zur Überproduktion dabei helfen, den Auftragsabschluss zu prüfen.
+
+## PDA-/BDE-Schaltflächen und Mengenbezeichnungen
+
+**PDA (Production Data Acquisition)** und **BDE (Betriebsdatenerfassung)** bezeichnen dasselbe Bedienerterminal. Tabs umfassen **Assignments**, **Pool**, **Downtime reasons**, **Tickets** und **Knowledge Base**.
+
+**Prep** beginnt Vorbereitung (deutsch **Vorber.**, auch Rüsten), **Start** die Produktion, **Stop** beendet ein Intervall und **Continue** setzt es fort. Explizite Aktionen umfassen Start/End Preparation und Start/End Shift.
+
+**Good qty. / Gutmenge** ist guter Ausstoß. **Mat. / MA** bedeutet Materialausschuss, **Work / AA** Fertigungsausschuss. **Gesamt = Eingabe + MA + AA**. **Rework Qty** ist die Nacharbeitsmenge. **Cycle Count** kommt vom Sensor, **PDA Entry / BDE-Eintrag** vom Bediener. Die Auswahl der Fortschrittsquelle ändert nur die Anzeige.
+
+**Beispiel:** 95 eingegebene Gutteile, 3 Materialausschussteile und 2 Fertigungsausschussteile ergeben insgesamt 100. Im Modus **Cumulative** geben Sie den gesamten Maschinenzählerstand ein, beispielsweise 1450, nicht nur den Intervallzuwachs.
+
+## Zwischenbuchung, Hall Pools und Abhängigkeiten
+
+**Mid Booking (Zwischenbuchung)** speichert Mengen während des Laufs durch Schließen und Neustarten des Intervalls. Schlägt der Neustart fehl, bleiben Mengen gespeichert. Drücken Sie **Start** zum Fortsetzen und prüfen Sie den Laufzustand vor einer weiteren Buchung.
+
+Übernehmen Sie im **Pool** Arbeit aus dem Hall Pool Ihrer Maschine. Fehlt eine Zuweisung, suchen Sie ungeplante Operationen oder verwenden Sie **Find/Create Immediate Order**. **Job Context** verbindet Notizen aus Auftrag, Arbeitsauftrag, Operation und Zuweisung.
+
+**Waiting on a previous step / Blocked by** bedeutet, dass eine frühere Operation nicht fertig ist. **Start anyway** ist dennoch verfügbar. Prüfen Sie vorher die Abhängigkeit. Bei bereits laufender anderer Zuweisung erscheint eine Bestätigung. Überproduktion bietet **Put on hold** oder **Mark as finished**.
+
+Ungebundene oder unbeschriftete Maschinenzeit gehört zu keinem Auftrag. Die Löschung eines erfassten Intervalls ist endgültig.
+
+## Die Zuweisungsansicht wählen
+
+| Modus | Enthaltene Arbeit |
+| --- | --- |
+| **All Open** | Alle offenen Zuweisungen ohne Datumsfilter. |
+| **Time Window + Open** | Offene Zuweisungen innerhalb ±1/3/5/7 Tagen; für tägliche Arbeit. |
+| **Time Window + All Statuses** | Auch abgeschlossene und stornierte Arbeit für Rückblicke. |
+
+**Card Display Settings / Columns / Highlight** werden je Benutzer gespeichert. Queue Position folgt der manuellen Reihenfolge; laufende und pausierte Karten bleiben oben.
+
+## Warnungen des BDE-Assistenten
+
+**Nur durch Admins konfigurierbar; standardmäßig aus.** Der **PDA Assistant (BDE-Assistent)** zeigt Maschinenwarnungen. Er ist von klassischen Alarmregeln und Automator getrennt.
+
+| Warnung | Auslöser | Standardstufe / Verzögerung |
+| --- | --- | --- |
+| Produktion ohne Auftrag | Produktion, kein laufender Auftrag | Critical / 5 Min. |
+| Maschine aus, Auftrag läuft | Maschine aus, Intervall läuft weiter | Critical / 3 Min. |
+| Auftrag läuft zu lange | Dauer über Grenzwert | Warning / 8 Std. |
+| Auftrag über Schichtwechsel | Auftrag aus früherer Schicht läuft; benötigt zugewiesene Schichten | Warning / 10 Min. |
+| Live-Daten veraltet | Keine neuen Daten; andere Warnungen möglicherweise unzuverlässig | Warning / 10 Min. |
+| Mehrere Aufträge laufen | Mehr als ein offenes Intervall | Critical / 2 Min. |
+| Stillstand ohne Grund | Stillstandsblock benötigt einen Grund | Info / 2 Min. |
+
+**Info** bleibt stumm. **Warning** zeigt ein oranges Banner und zwei Töne. **Critical** zeigt ein rotes Banner, blinkenden Rand und drei wechselnde Töne. Für Ton muss im Browser einmal auf die Seite getippt werden. **Snooze** blendet eine Warnung standardmäßig 15 Minuten aus; bei anhaltender Ursache erscheint sie wieder. Lassen Sie die Prüfung veralteter Daten aktiv, damit fehlende Daten sichtbar bleiben. Admins können Einstellungen auf andere Maschinen kopieren.
 
 ## Hauptentitäten
 

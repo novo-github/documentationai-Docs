@@ -1,0 +1,26 @@
+---
+title: "Zwei-Faktor-Authentifizierung (2FA) einrichten"
+description: "Wählen Sie E-Mail- oder Authenticator-Einmalcodes, schließen Sie die Einrichtung ab und vermeiden Sie unvollständige Konfiguration."
+---
+
+## Bevor Sie beginnen
+
+**Wer darf das tun: Jede angemeldete Rolle für das eigene Konto.** Öffnen Sie das [Benutzerprofil](/de/platform-intro/pages/user-profile), Route `/user`. 2FA ergänzt nach der normalen Anmeldung einen sechsstelligen **OTP-Einmalcode (One-time password)**.
+
+## Ein Verfahren auswählen und abschließen
+
+1. Öffnen Sie im Profil die Einstellungen zur Zwei-Faktor-Authentifizierung.
+2. Wählen Sie **Email code** für Codes per E-Mail oder **Authenticator app**.
+3. Scannen Sie beim Authenticator den QR-Code mit der App.
+4. Geben Sie den App-Code ein, um die Einrichtung abzuschließen. Beenden Sie den Vorgang nicht nach dem Scannen allein.
+5. Können Sie den Vorgang nicht abschließen, wählen Sie **Cancel and revert to email**.
+
+<Callout kind="alert">
+  Eine halb abgeschlossene Authenticator-Einrichtung kann das Konto auf dieses Verfahren umstellen, ohne einen funktionierenden Code bereitzustellen. Dann ist die nächste Anmeldung gesperrt. Bestätigen Sie den Code oder wechseln Sie vor dem Verlassen zurück zu E-Mail.
+</Callout>
+
+## Erwartetes Ergebnis und Fehlerbehebung
+
+Das gewählte Verfahren liefert den Code für den zweiten Anmeldeschritt. **Trust this device for next 30 days** überspringt diesen Schritt auf dem vertrauten Gerät für 30 Tage. Angemeldete Geräte prüfen Sie unter **Active Sessions**.
+
+Sind Sie bei unvollständiger Einrichtung noch angemeldet, verwenden Sie die Rückkehr zu E-Mail. Ist die Anmeldung bereits unmöglich, nutzen Sie den Supportweg Ihrer Organisation. Darüber hinausgehende Wiederherstellungsschritte sind durch die Referenz nicht belegt. Siehe [Help Center](/de/help-center).

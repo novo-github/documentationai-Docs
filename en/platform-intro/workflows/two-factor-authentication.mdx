@@ -1,0 +1,26 @@
+---
+title: "Set Up Two-Factor Authentication (2FA)"
+description: "Choose email or authenticator OTP codes, finish setup, and avoid incomplete authenticator configuration."
+---
+
+## Before You Begin
+
+**Who can do this: Every signed-in role for their own account.** Open [User Profile](/en/platform-intro/pages/user-profile), route `/user`. 2FA adds a six-digit **OTP (One-time password)** after the normal sign-in step.
+
+## Choose and Complete a Method
+
+1. Open the profile's two-factor authentication settings.
+2. Choose **Email code** to receive the sign-in code by email, or **Authenticator app**.
+3. For an authenticator, scan the QR code with the app.
+4. Enter the code from that app to finish setup. Do not stop after scanning alone.
+5. If you cannot finish, use **Cancel and revert to email**.
+
+<Callout kind="alert">
+  Abandoning authenticator setup halfway can leave the account using the authenticator method without a working code, locking you out at the next sign-in. Complete the code confirmation or revert to email before leaving.
+</Callout>
+
+## Expected Result and Troubleshooting
+
+The selected method supplies the code for the second sign-in step. **Trust this device for next 30 days** skips that step on the trusted device for 30 days. Review signed-in devices in **Active Sessions**.
+
+If setup is incomplete while you are still signed in, use the email-revert action. If you are already unable to sign in, use your organization's support path; recovery steps beyond this are not established by the reference. See [Help Center](/en/help-center).

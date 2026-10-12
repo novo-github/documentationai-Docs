@@ -59,7 +59,7 @@ Use [Machine Configuration](/en/platform-intro/pages/machine-configuration) to u
 
 ## How Is Energy Wastage Calculated?
 
-**Energy wastage** means energy consumed while the machine is idle. An idle machine can still power components even though it is not producing parts.
+The frontend describes **Energy wastage** as energy consumed while the machine is not producing. The exact inclusion of preparation and off time is not confirmed. The following idle-energy calculation is an illustration, not a verified dashboard formula. An idle machine can still power components.
 
 **Formula:** Idle energy (kWh) = idle duration (hours) × power rating (kW) × machine energy factor.
 
@@ -119,6 +119,8 @@ In the smaller machine example, one idle hour uses **0.5 × 0.35 = 0.175 kWh**. 
 - Check whether you are comparing calculated estimates with energy-monitor readings.
 - Use the same electricity price and round only the final cost.
 - Keep idle energy and its costs within the total; do not add them twice.
+
+See the [shared calculations reference](/en/platform-intro/concepts/calculations#energy) for the confirmed energy definitions and remaining calculation limits.
 
 ## Where Can I Find More Information?
 

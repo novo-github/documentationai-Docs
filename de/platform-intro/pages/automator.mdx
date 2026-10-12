@@ -1,0 +1,60 @@
+---
+title: "Automator-Regeln und Ereigniseingang"
+description: "Konfigurieren Sie als Admin Maschinenregeln, Zeitsteuerung, Benachrichtigungen, Eskalation, SLA und Ereignislösung."
+---
+
+## Überblick
+
+**Zugriff: Nur Admin.** Automator ist das neuere Regelwerk für Maschinenbedingungen und Reaktionen. Öffnen Sie es im Arbeitsbereich. Routen: `/automator`, `/automator/rules`, `/automator/events`, `/automator/create`.
+
+Es ergänzt die [klassischen Alarmregeln](/de/platform-intro/pages/alert-rules). Ein Arbeitsplatz hat keine Sensordaten; sensorbasierte Automator-Regeln lösen dort nie aus.
+
+## Geltungsbereich, Bedingungen und Zeitsteuerung
+
+| Einstellung | Bedeutung |
+| --- | --- |
+| **Scope** | Ausgewählte Maschinen. Ohne Maschinenauswahl gilt eine **Global rule** für alle aktiven Maschinen. |
+| **Condition group** | Mit UND oder ODER kombinierte Bedingungen; Gruppen können verschachtelt werden. |
+| **Polling interval** | Häufigkeit der Bedingungsprüfung. |
+| **Minimum true duration** | Erforderliche Dauer einer erfüllten Bedingung vor der Ereigniserstellung. |
+| **Clear duration** | Erforderliche Dauer eines normalen Zustands vor dem Aufheben des Ereignisses. |
+| **Requires active shift** | Pausiert Prüfungen außerhalb der aktiven Maschinenschicht. |
+| **Cooldown** | Wartezeit nach einer Lösung vor der nächsten Auslösung. |
+
+**Beispiel:** Eine 30 Sekunden lang erfüllte Bedingung erzeugt kein Ereignis, wenn Minimum true duration 2 Minuten beträgt. Polling interval bestimmt die Prüfhäufigkeit und ist eine andere Einstellung als diese Verzögerung.
+
+## Grenzwerte und buchungsabhängige Kennzahlen
+
+Bei **Preparation Duration**, **Production Deficit**, **Cycle Duration** und **Order Completion Deficit** bedeutet **130 %** eine Abweichung von 30 % über Plan oder hinter dem Sollfortschritt. Lesen Sie die Bedeutung der ausgewählten Bedingung vor der Grenzwertwahl.
+
+Bei **Slow Consecutive Cycles** bestimmt **Lookback Cycles** die Zahl geprüfter jüngster Zyklen. **Gap Threshold** ist das als langsam geltende Vielfache der erwarteten Zykluszeit.
+
+Vorbereitungsdauer, Ausschussmenge und Ausschussquote hängen von BDE-Buchungen ab. Sie ändern sich erst bei einem Eintrag und können daher konstant bleiben und anschließend springen. Ein Maschinensensor allein aktualisiert keinen eingegebenen Ausschuss.
+
+## Reaktionen und Eskalation
+
+**Auto-resolve** schließt ein Ereignis bei entfallener Bedingung. **Notify on resolve** versendet beim Abschluss eine weitere E-Mail. **Escalation** benachrichtigt eine zweite Gruppe bei nicht rechtzeitig bearbeiteten Ereignissen. Prüfen Sie Empfänger und Zeiten vor dem Speichern.
+
+Vorlagen umfassen zu lange Vorbereitung, Produktion hinter Soll, langsame Zyklen, wiederholte Zykluslücken, übermäßigen Ausschuss, gefährdete Operationen, verspätete Aufträge und getrennte Sensoren. Jede Vorlage nennt Voraussetzungen und füllt eine Regel nur vor; erstellt wird sie erst beim Speichern.
+
+## Ereigniseingang, SLA und MTTR
+
+Ein **Event** ist eine Regelauslösung. Es durchläuft **New → Acknowledged → Resolved**. Ein gelöstes Ereignis kann **Reopened** werden. **System (Automator)** als lösendes Konto bedeutet automatische Lösung.
+
+- **SLA — Service Level Agreement:** erlaubte Reaktionszeit in Minuten vor Überfälligkeit eines offenen Ereignisses.
+- **SLA Breaches:** offene Ereignisse nach dieser Frist.
+- **MTTR — Mean Time To Resolution:** durchschnittliche Dauer vom Auslösen bis zur Lösung.
+
+Bestätigung und Lösung sind unterschiedliche Aktionen. Prüfen Sie Maschine und Bedingung vor dem Kennzeichnen als gelöst.
+
+## Eine Regel erstellen
+
+Folgen Sie [Automator-Regel erstellen](/de/platform-intro/workflows/automator-rule-creation): **Scope & Definition → Conditions & Timing → Response & Escalation → Review**. Review beschreibt das Verhalten und warnt bei fehlenden Empfängern, globalem Geltungsbereich oder deaktivierter Regel.
+
+Automatische Produktionsaktionen wie das Beenden von Intervallen sind im Frontend-Regelassistenten nicht bestätigt. Erwarten Sie diese Aktionen nicht von einer Benachrichtigungsregel.
+
+## Verwandte Referenzen
+
+- [Betriebsdatenerfassung und BDE-Assistent](/de/platform-intro/pages/data-acquisition)
+- [Berechnungen und Kennzahlendefinitionen](/de/platform-intro/concepts/calculations)
+- [Rollen und Zugriff](/de/platform-intro/concepts/roles-and-access)

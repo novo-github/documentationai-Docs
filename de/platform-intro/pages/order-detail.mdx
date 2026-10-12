@@ -5,6 +5,8 @@ description: "Prüfen und bearbeiten Sie einen Produktionsauftrag, seine Arbeits
 
 ## Überblick
 
+**Zugriff:** Wie Aufträge & Produkte: Admin oder `orders`; nie Operator. [Rollen und Zugriff](/de/platform-intro/concepts/roles-and-access).
+
 Prüfen und bearbeiten Sie einen Produktionsauftrag, seine Arbeitsaufträge, Operationen und Zuweisungen. Verbinden Sie mithilfe der Notizen, Zeitleiste und Analyseansichten den Produktionsplan mit der erfassten Arbeit.
 
 Benutzer öffnen diese Seite normalerweise über die Seite **Aufträge & Produkte**.
@@ -52,6 +54,29 @@ Eine Zuweisung wird als abgeschlossen markiert, wenn ihre produzierte Menge gena
 In der Auftragsanalyse können Sie einen erfassten Zeiteintrag über dessen Menü löschen. Prüfen Sie vor der Bestätigung die angezeigte Start- und Endzeit, damit Sie den richtigen Eintrag entfernen.
 
 Die Löschung ist dauerhaft. Nach der Bestätigung zeigen die Auftragsanalyse und die zugehörige Zeitleiste den aktualisierten Produktionsstand.
+
+## Kunde → Auftrag → Arbeitsauftrag → Operation → Zuweisung → Intervall
+
+| Ebene | Bedeutung und Identifikation |
+| --- | --- |
+| **Kunde (Customer)** | Auftragsempfänger; Name oder Kundencode. |
+| **Auftrag (Order)** | Gesamtauftrag; Auftragsname, auch External Order ID. |
+| **Arbeitsauftrag (WO / Work Order)** | Ein Produkt mit Planmenge innerhalb eines Auftrags; Auftrag + Produkt. |
+| **Operation (OP)** | Ein Produktionsschritt; Arbeitsauftrag + Sequenzcode (Seq / Nr.). |
+| **Zuweisung (Assignment)** | Operation auf Maschine oder im Hall Pool; Operation + Maschine. |
+| **Intervall (Interval)** | Erfasster Arbeitsabschnitt; Start- und Endzeit. |
+
+**External Product ID** bezeichnet den Produktnamen. Auftrags- und Operationspriorität sind unabhängig. Order Planned dates gelten für alle Operationen eines Auftrags; Operation Planned dates für einen Schritt.
+
+**Beispiel:** Ein Auftrag über 100 Gehäuse hat einen Arbeitsauftrag für dieses Produkt, Schneidoperation 10 und Fertigstellungsoperation 20, Maschinenzuweisungen für beide und Intervalle zur Erfassung jedes Laufs.
+
+## Analysequellen und Durchschnitte lesen
+
+**Gesamt = Eingabe + Mat. (MA) + Work (AA)**. **Sum / Summ.** ist eine Summenzeile; **Avg. / Ø** ein Durchschnitt. **Auto.** in Cycles (Auto. / Planned) bedeutet sensorerkannte Zyklen.
+
+**Avg. Cycle Duration** verwendet gesamte Intervalldauer / erkannte Zyklen, **Avg. Production Cycle Time** Produktionszeit / erkannte Zyklen und **Avg. Cycle Time (Operator Input)** Produktionszeit / Eingabemenge. Zyklusdurchschnitte erscheinen in Sekunden. Abweichungen sind Istzeit minus Planzeit, angezeigt in Minuten und Sekunden. Negative Zeitabweichung bedeutet schneller.
+
+Prüfen Sie **Cycles found outside the intervals** und **Products more / less produced than detected**, um Sensor-/Buchungsunterschiede zu untersuchen. Bei verteilten Aufträgen wird geplante Produktion je Maschine anhand ihrer zugewiesenen Menge berechnet. [Berechnungen](/de/platform-intro/concepts/calculations) enthält Rechenbeispiele.
 
 ## Hauptentitäten
 

@@ -10,6 +10,7 @@ Legen Sie standardisierte Gründe fest, die Benutzer auf Zeitachsenereignisse un
 ## Bevor Sie beginnen
 
 <Callout kind="info" title="Ablaufzugriff">
+- Erforderlicher Zugriff: Nur Admin.
 - Einstiegspunkte: `/admin-panel`
 </Callout>
 
@@ -34,6 +35,12 @@ Beginnen Sie auf dem [Administrationsbereich](/de/platform-intro/pages/admin-pan
     Speichern Sie den Grund, damit er in Maschinen- und BDE-Abläufen verfügbar wird.
   </Step>
 </Steps>
+
+## Typ, Stufe und automatische Regeln
+
+Gründe besitzen Name, Beschreibung, Farbe, Typ und Stufe 1–5. Die Wirkung von Typ und Stufe ist durch die Frontend-Referenz nicht belegt. Klären Sie sie mit Ihrem Produktkontakt statt Schweregrad oder Vorrang anzunehmen.
+
+Automatische Anwendung verwendet spezifische Grundregel, deren DEFAULT-Regel und danach Global-Regeln für Aus, Leerlauf oder Vorbereitung. Einrichtung erfolgt in der [Maschinenkonfiguration](/de/platform-intro/pages/machine-configuration).
 
 ## Entscheidungspunkte
 

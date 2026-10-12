@@ -5,6 +5,8 @@ description: "A full editing and analysis page for one production order and its 
 
 ## Overview
 
+**Access:** Same as Orders & Products: Admin or `orders`; never Operator. [Roles and access](/en/platform-intro/concepts/roles-and-access).
+
 Inspect and edit a production order, its work orders, operations, and assignments. Use the notes, timeline, and analysis views to connect the production plan with recorded work.
 
 Users usually open it from the Orders & Products page.
@@ -52,6 +54,29 @@ An assignment is marked complete when its produced quantity exactly matches its 
 In **Order Analysis**, the menu for a recorded time entry includes **Delete**. Review the displayed start and end time before confirming that you are removing the intended entry.
 
 Deletion is permanent. After confirmation, Order Analysis and the related timeline reflect the updated production record.
+
+## Customer → Order → Work Order → Operation → Assignment → Interval
+
+| Level | Meaning and identity |
+| --- | --- |
+| **Customer (Kunde)** | Who the order is for; name or customer code. |
+| **Order (Auftrag)** | Overall job; order name, also labelled External Order ID. |
+| **Work Order (WO / Arbeitsauftrag)** | One product and its planned quantity within an order; order + product. |
+| **Operation (OP / Operation)** | One production step; work order + sequence code (Seq / Nr.). |
+| **Assignment (Zuweisung)** | Operation on one machine or hall pool; operation + machine. |
+| **Interval (Intervall)** | Recorded work session; start and end time. |
+
+The **External Product ID** is the product name. Order and operation priorities are independent. Order Planned dates belong to all operations of an order; Operation Planned dates belong to one step.
+
+**Example:** An order for 100 housings has a work order for that product, cutting operation 10 and finishing operation 20, machine assignments for each, and intervals recording each run.
+
+## Read Analysis Sources and Averages
+
+**Total = Input + Mat. (MA) + Work (AA)**. **Sum / Summ.** is a totals row; **Avg. / Ø** is an average. **Auto.** in Cycles (Auto. / Planned) means sensor-detected.
+
+**Avg. Cycle Duration** uses full interval duration / detected cycles; **Avg. Production Cycle Time** uses production time / detected cycles; **Avg. Cycle Time (Operator Input)** uses production time / entered quantity. Cycle averages are displayed in seconds. Deviations use actual minus planned, shown in minutes and seconds; negative time deviation means faster.
+
+Check **Cycles found outside the intervals** and **Products more / less produced than detected** to investigate sensor-versus-booking differences. For split orders, planned production is calculated against each machine's assigned quantity. [Calculations](/en/platform-intro/concepts/calculations) gives worked examples.
 
 ## Main Entities
 

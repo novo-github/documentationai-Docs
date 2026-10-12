@@ -40,6 +40,21 @@
                     "title": "Features",
                     "path": "en/features",
                     "icon": "file-text"
+                  },
+                  {
+                    "title": "Glossary & Abbreviations",
+                    "path": "en/platform-intro/concepts/glossary",
+                    "icon": "book-open"
+                  },
+                  {
+                    "title": "How Numbers Are Calculated",
+                    "path": "en/platform-intro/concepts/calculations",
+                    "icon": "book-open"
+                  },
+                  {
+                    "title": "Roles & Access",
+                    "path": "en/platform-intro/concepts/roles-and-access",
+                    "icon": "book-open"
                   }
                 ]
               },
@@ -112,6 +127,42 @@
                             "title": "Assignment Planner",
                             "path": "en/platform-intro/pages/assignment-planner",
                             "icon": "file-text"
+                          },
+                          {
+                            "title": "Assignment Gantt",
+                            "path": "en/platform-intro/pages/assignment-gantt",
+                            "icon": "file-text"
+                          },
+                          {
+                            "title": "ERP Uploads",
+                            "path": "en/platform-intro/pages/erp-upload-planner",
+                            "icon": "file-text"
+                          }
+                        ]
+                      },
+                      {
+                        "group": "Workspace",
+                        "icon": "folder",
+                        "pages": [
+                          {
+                            "title": "Kanban",
+                            "path": "en/platform-intro/pages/kanban",
+                            "icon": "file-text"
+                          },
+                          {
+                            "title": "Knowledge Base",
+                            "path": "en/platform-intro/pages/knowledge-base",
+                            "icon": "file-text"
+                          },
+                          {
+                            "title": "AI Chats (Beta)",
+                            "path": "en/platform-intro/pages/chat-history",
+                            "icon": "file-text"
+                          },
+                          {
+                            "title": "Automator",
+                            "path": "en/platform-intro/pages/automator",
+                            "icon": "file-text"
                           }
                         ]
                       },
@@ -165,38 +216,12 @@
                         ]
                       },
                       {
-                        "group": "Workspace",
-                        "icon": "folder",
-                        "pages": [
-                          {
-                            "title": "Kanban",
-                            "path": "en/platform-intro/pages/kanban",
-                            "icon": "file-text"
-                          },
-                          {
-                            "title": "Knowledge Base",
-                            "path": "en/platform-intro/pages/knowledge-base",
-                            "icon": "file-text"
-                          },
-                          {
-                            "title": "Chat History",
-                            "path": "en/platform-intro/pages/chat-history",
-                            "icon": "file-text"
-                          }
-                        ]
-                      },
-                      {
                         "group": "Admin Panel",
                         "icon": "folder",
                         "pages": [
                           {
                             "title": "Admin Panel",
                             "path": "en/platform-intro/pages/admin-panel",
-                            "icon": "file-text"
-                          },
-                          {
-                            "title": "ERP Upload Planner",
-                            "path": "en/platform-intro/pages/erp-upload-planner",
                             "icon": "file-text"
                           }
                         ]
@@ -243,6 +268,16 @@
                           {
                             "title": "Hall Plan",
                             "path": "en/platform-intro/pages/hall-plan",
+                            "icon": "file-text"
+                          },
+                          {
+                            "title": "Feedback",
+                            "path": "en/platform-intro/pages/feedback",
+                            "icon": "file-text"
+                          },
+                          {
+                            "title": "Roadmap",
+                            "path": "en/platform-intro/pages/roadmap",
                             "icon": "file-text"
                           }
                         ]
@@ -323,6 +358,11 @@
                             "title": "Plan Machine Assignments",
                             "path": "en/platform-intro/workflows/assignment-planner",
                             "icon": "play-circle"
+                          },
+                          {
+                            "title": "Upload Orders Through the ERP Planner",
+                            "path": "en/platform-intro/workflows/order-upload-planner",
+                            "icon": "play-circle"
                           }
                         ]
                       },
@@ -344,6 +384,11 @@
                           {
                             "title": "Manage Kanban Tickets",
                             "path": "en/platform-intro/workflows/kanban-ticket-management",
+                            "icon": "play-circle"
+                          },
+                          {
+                            "title": "Create an Automator Rule",
+                            "path": "en/platform-intro/workflows/automator-rule-creation",
                             "icon": "play-circle"
                           }
                         ]
@@ -373,8 +418,29 @@
                             "icon": "play-circle"
                           },
                           {
-                            "title": "Upload Orders Through the ERP Planner",
-                            "path": "en/platform-intro/workflows/order-upload-planner",
+                            "title": "Invite Users & Manage Permissions",
+                            "path": "en/platform-intro/workflows/user-access-management",
+                            "icon": "play-circle"
+                          },
+                          {
+                            "title": "Set Up a Hall Plan Display",
+                            "path": "en/platform-intro/workflows/hall-display-setup",
+                            "icon": "play-circle"
+                          }
+                        ]
+                      },
+                      {
+                        "group": "Account & Security",
+                        "icon": "user",
+                        "pages": [
+                          {
+                            "title": "Set Up Two-Factor Authentication",
+                            "path": "en/platform-intro/workflows/two-factor-authentication",
+                            "icon": "play-circle"
+                          },
+                          {
+                            "title": "Change Your Email Address",
+                            "path": "en/platform-intro/workflows/change-email",
                             "icon": "play-circle"
                           }
                         ]
@@ -482,6 +548,21 @@
                     "title": "Features",
                     "path": "de/features",
                     "icon": "file-text"
+                  },
+                  {
+                    "title": "Glossar und Abkürzungen",
+                    "path": "de/platform-intro/concepts/glossary",
+                    "icon": "book-open"
+                  },
+                  {
+                    "title": "So werden Kennzahlen berechnet",
+                    "path": "de/platform-intro/concepts/calculations",
+                    "icon": "book-open"
+                  },
+                  {
+                    "title": "Rollen und Zugriff",
+                    "path": "de/platform-intro/concepts/roles-and-access",
+                    "icon": "book-open"
                   }
                 ]
               },
@@ -538,6 +619,42 @@
                             "title": "Zuweisungsplaner",
                             "path": "de/platform-intro/pages/assignment-planner",
                             "icon": "file-text"
+                          },
+                          {
+                            "title": "Assignment Gantt",
+                            "path": "de/platform-intro/pages/assignment-gantt",
+                            "icon": "file-text"
+                          },
+                          {
+                            "title": "ERP Uploads / Auftragsimport",
+                            "path": "de/platform-intro/pages/erp-upload-planner",
+                            "icon": "file-text"
+                          }
+                        ]
+                      },
+                      {
+                        "group": "Arbeitsbereich",
+                        "icon": "folder",
+                        "pages": [
+                          {
+                            "title": "Kanban",
+                            "path": "de/platform-intro/pages/kanban",
+                            "icon": "file-text"
+                          },
+                          {
+                            "title": "Wissensdatenbank",
+                            "path": "de/platform-intro/pages/knowledge-base",
+                            "icon": "file-text"
+                          },
+                          {
+                            "title": "AI Chats (Beta)",
+                            "path": "de/platform-intro/pages/chat-history",
+                            "icon": "file-text"
+                          },
+                          {
+                            "title": "Automator",
+                            "path": "de/platform-intro/pages/automator",
+                            "icon": "file-text"
                           }
                         ]
                       },
@@ -591,38 +708,12 @@
                         ]
                       },
                       {
-                        "group": "Arbeitsbereich",
-                        "icon": "folder",
-                        "pages": [
-                          {
-                            "title": "Kanban",
-                            "path": "de/platform-intro/pages/kanban",
-                            "icon": "file-text"
-                          },
-                          {
-                            "title": "Wissensdatenbank",
-                            "path": "de/platform-intro/pages/knowledge-base",
-                            "icon": "file-text"
-                          },
-                          {
-                            "title": "Chat-Verlauf",
-                            "path": "de/platform-intro/pages/chat-history",
-                            "icon": "file-text"
-                          }
-                        ]
-                      },
-                      {
                         "group": "Administrationsbereich",
                         "icon": "folder",
                         "pages": [
                           {
                             "title": "Administrationsbereich",
                             "path": "de/platform-intro/pages/admin-panel",
-                            "icon": "file-text"
-                          },
-                          {
-                            "title": "ERP-Upload-Planer",
-                            "path": "de/platform-intro/pages/erp-upload-planner",
                             "icon": "file-text"
                           }
                         ]
@@ -669,6 +760,16 @@
                           {
                             "title": "Hallenplan",
                             "path": "de/platform-intro/pages/hall-plan",
+                            "icon": "file-text"
+                          },
+                          {
+                            "title": "Feedback",
+                            "path": "de/platform-intro/pages/feedback",
+                            "icon": "file-text"
+                          },
+                          {
+                            "title": "Roadmap",
+                            "path": "de/platform-intro/pages/roadmap",
                             "icon": "file-text"
                           }
                         ]
@@ -749,6 +850,11 @@
                             "title": "Maschinenzuweisungen planen",
                             "path": "de/platform-intro/workflows/assignment-planner",
                             "icon": "play-circle"
+                          },
+                          {
+                            "title": "Aufträge über den ERP-Upload-Planer hochladen",
+                            "path": "de/platform-intro/workflows/order-upload-planner",
+                            "icon": "play-circle"
                           }
                         ]
                       },
@@ -770,6 +876,11 @@
                           {
                             "title": "Kanban-Tickets verwalten",
                             "path": "de/platform-intro/workflows/kanban-ticket-management",
+                            "icon": "play-circle"
+                          },
+                          {
+                            "title": "Automator-Regel erstellen",
+                            "path": "de/platform-intro/workflows/automator-rule-creation",
                             "icon": "play-circle"
                           }
                         ]
@@ -799,8 +910,29 @@
                             "icon": "play-circle"
                           },
                           {
-                            "title": "Aufträge über den ERP-Upload-Planer hochladen",
-                            "path": "de/platform-intro/workflows/order-upload-planner",
+                            "title": "Benutzer einladen und Rechte verwalten",
+                            "path": "de/platform-intro/workflows/user-access-management",
+                            "icon": "play-circle"
+                          },
+                          {
+                            "title": "Hallenplandisplay einrichten",
+                            "path": "de/platform-intro/workflows/hall-display-setup",
+                            "icon": "play-circle"
+                          }
+                        ]
+                      },
+                      {
+                        "group": "Konto und Sicherheit",
+                        "icon": "user",
+                        "pages": [
+                          {
+                            "title": "Zwei-Faktor-Authentifizierung einrichten",
+                            "path": "de/platform-intro/workflows/two-factor-authentication",
+                            "icon": "play-circle"
+                          },
+                          {
+                            "title": "E-Mail-Adresse ändern",
+                            "path": "de/platform-intro/workflows/change-email",
                             "icon": "play-circle"
                           }
                         ]

@@ -5,6 +5,8 @@ description: "Ein responsives Organisations-Dashboard für Produktionszustände,
 
 ## Überblick
 
+**Zugriff:** Nur Admin. [Rollen und Zugriff](/de/platform-intro/concepts/roles-and-access).
+
 Geben Sie eine konsolidierte organisationsweite Sicht auf die Produktionsleistung statt auf eine einzelne Maschine.
 
 Benutzer öffnen diese Seite über die Hauptnavigation, wenn ihre Rolle es zulässt.
@@ -30,6 +32,26 @@ Benutzer öffnen diese Seite über die Hauptnavigation, wenn ihre Rolle es zulä
 - Prüfen Sie Maschinen- und Mitarbeiterranglisten.
 - Überwachen Sie Energiekennzahlen und betriebliche Auswirkungen.
 - Nutzen Sie die Seite als Ausgangspunkt, bevor Sie zu spezifischeren Maschinen- oder Berichtseiten wechseln.
+
+## Momentaufnahme, Rückgewinnung und Potenzial verstehen
+
+**Live Utilization** ist der Anteil jetzt produzierender Maschinen, kein Zeitraumdurchschnitt. Arbeitsplätze sind aus Sensoranalysen ausgeschlossen. **OEE**, **AVL** und **PRO** verwenden Watchmen-Definitionen; PRO bedeutet Leistung.
+
+| Bezeichnung | Bedeutung |
+| --- | --- |
+| **Downtime Reduced** | Verringerter Leerlauf über der maschineneigenen Referenz der besten Tage, basierend auf den niedrigsten 25 % Leerlaufrate; nicht der gesamte Leerlauf. |
+| **Revenue Recovered** | Verringerte Leerlaufstunden × Hourly Revenue. Bereits erzielter Wert, keine Prognose. |
+| **Still reachable** | Aktuelle Kosten verschwendeter Energie plus Wert der Rückgewinnung der Hälfte der übrigen Leerlaufstunden. Ein Teil des Leerlaufs ist unvermeidbar. |
+| **Production shifts recovered** | Zurückgewonnene Zeit in Schichten zu 8 Stunden. |
+| **Workflow Time Saved** | Wirkungskennzahl mit hier nicht belegter genauer Formel. |
+
+**Beispiel:** 4 zurückgewonnene Stunden × 100 €/h ergeben 400 € zurückgewonnenen Wert und eine halbe 8-Stunden-Schicht. Nicht jede Leerlaufstunde ist vermeidbarer Verlust. [Berechnungen](/de/platform-intro/concepts/calculations#organization-impact) erklärt die Kennzahlen gemeinsam.
+
+## Energie, Nachhaltigkeit und Zielwerte
+
+**kWh** misst Energie. **CO₂** ist eine Emissionsschätzung mit optionalen **Sustainability Check**-Eingaben: Fläche, Abfallanteil, erneuerbarer Anteil, Kühlmittelmenge (Lts.), Transport und Materialeffizienz. Die vollständige CO₂-Formel ist hier nicht belegt.
+
+**Energy wastage** beschreibt Energieverbrauch ohne Produktion. Kosten verwenden den konfigurierten **Energy Price**. Die genaue Zustandsabdeckung ist unbestätigt; das FAQ-Leerlaufbeispiel dient zur Veranschaulichung. **Compared to machine rating** vergleicht Istwerte mit konfigurierten Zielen.
 
 ## Hauptentitäten
 

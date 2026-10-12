@@ -5,6 +5,8 @@ description: "A responsive organization dashboard for production states, perform
 
 ## Overview
 
+**Access:** Admin only. [Roles and access](/en/platform-intro/concepts/roles-and-access).
+
 Provide a consolidated organization-level view of production performance instead of a single-machine view.
 
 Users open it from the main navigation when the role allows it.
@@ -30,6 +32,26 @@ Users open it from the main navigation when the role allows it.
 - Review machine and operator rankings.
 - Monitor energy and operational-impact indicators.
 - Use the page as a starting point before drilling into more focused machine or report pages.
+
+## Understand Snapshot, Recovery, and Remaining Potential
+
+**Live Utilization** is the share of machines producing right now, not an average for the period. Work centers are excluded from sensor analytics. **OEE**, **AVL**, and **PRO** use Watchmen's definitions; PRO means Performance.
+
+| Label | Meaning |
+| --- | --- |
+| **Downtime Reduced** | Idle time reduced above each machine's best-days baseline, based on the lowest 25% idle rate; not all idle time. |
+| **Revenue Recovered** | Reduced idle hours × Hourly Revenue. Already recovered value, not a forecast. |
+| **Still reachable** | Current wasted-energy cost plus value of recovering half the remaining idle hours. Some idle time is unavoidable. |
+| **Production shifts recovered** | Recovered time in shifts of 8 hours. |
+| **Workflow Time Saved** | Impact indicator whose exact formula is not established here. |
+
+**Example:** 4 recovered hours × €100/h gives €400 recovered value and half an 8-hour shift. Do not interpret every idle hour as avoidable loss. [Calculations](/en/platform-intro/concepts/calculations#organization-impact) explains the figures together.
+
+## Energy, Sustainability, and Targets
+
+**kWh** measures energy. **CO₂** is an emission estimate based on optional **Sustainability Check** inputs: plant area, waste percentage, renewable share, coolant output (Lts.), transport, and material efficiency. The complete CO₂ formula is not established here.
+
+**Energy wastage** is described as energy consumed while not producing. Costs use configured **Energy Price**. The exact state coverage is unconfirmed; the FAQ idle example is illustrative. **Compared to machine rating** compares actual figures with configured targets.
 
 ## Main Entities
 

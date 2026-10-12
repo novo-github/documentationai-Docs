@@ -5,6 +5,8 @@ description: "A tabbed setup page for creating or refining a machine\u2019s conf
 
 ## Overview
 
+**Access:** Admin only. [Roles and access](/en/platform-intro/concepts/roles-and-access).
+
 Let admins create a machine setup or refine how an existing machine is configured.
 
 Users reach this page through machine setup actions or by opening a machine configuration route directly.
@@ -38,6 +40,34 @@ Invalid or duplicate entries are identified before saving. Correct the flagged e
 In **Configuration → Basic Info**, enable **Sensor powered by machine** if the sensor receives power only while the machine is switched on. Save the tab after changing this setting.
 
 With this setting enabled, a missing signal from that sensor is shown as **machine off** instead of **unknown**. This helps you recognize an expected shutdown. Use the setting only when the sensor actually loses power with the machine, so an unexplained loss of data is not mistaken for a shutdown.
+
+## Kind, Energy Monitoring, Ratings, and Features
+
+**Kind** chooses Machine or Work center. A machine needs an AVA to collect live sensor data. A work center has no AVA or sensor KPIs; changing to that kind unassigns AVAs and stops KPI calculation. Change AVA priority only when you understand the setup.
+
+An optional **Energy monitor** measures consumption, voltage, power factor, and frequency. **Machine rating** stores targets for OEE, PRO, AVL, production/idle/off time per hour, and energy consumption/wastage. Actual-versus-rating comparisons do not make the target an actual measurement.
+
+**Machine features** define custom sensor readings, such as temperature or vibration, with name, unit, minimum/maximum threshold, precision, and multiplication factor. Machine tags support grouping and filtering.
+
+## Timeline Rules and Ranges
+
+For Off, Idle, and Preparation, automatic reason rules are checked in this order: the reason's specific rule, its **DEFAULT** rule, then **Global** rules. Configure only the rules needed.
+
+**Timeline ranges / Time range** are duration buckets, for example 1–5 and 5–30 minutes, used in **Idletime Distribution**. Timeline reasons have type and level 1–5 fields, but their exact effects are not established in the reference.
+
+## Active Shift Settings
+
+An **Active shift** starts when the machine begins idle, production, or preparation. Its end is controlled by:
+
+- **Minimum shift length:** before this length, only a stop at least as long as the configured stop length ends the shift; afterward the first stop ends it.
+- **Stop that ends a shift:** a stop of this length ends the shift. Shorter stops, such as lunch, remain within the shift as off time.
+- **Maximum shift length:** starts a new shift after this duration even if the machine keeps running, at most 24 hours.
+
+Switching to active shifts removes scheduled shifts from today onward. Some alert rules do not fire for active-shift machines; check the rule's notice before relying on it. See [Shift Planner](/en/platform-intro/pages/scheduler).
+
+## Warnings: PDA Assistant
+
+The **Warnings** tab configures the **PDA Assistant**, off by default. Admins choose machine warnings and can copy settings to other machines. Read the [warning defaults and sound behavior](/en/platform-intro/pages/data-acquisition) before enabling them.
 
 ## Main Entities
 

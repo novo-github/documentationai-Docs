@@ -1,63 +1,22 @@
 ---
-title: "Add a Machine"
-description: "Create a new machine or hub so it can appear in dashboards, planning views, and detail pages."
+title: "Add a Machine or Work Center"
+description: "Use the admin setup wizard, choose Machine or Work center, and connect sensors before relying on live data."
 ---
-
-## Goal
-
-Create a machine record with the basic information needed for monitoring and planning.
 
 ## Before You Begin
 
-<Callout kind="info" title="Workflow access">
-- Entry points: `/machines`
-</Callout>
+**Who can do this: Admin only.** Start at **Admin Panel → Machines → Add Machine**, route `/admin-panel`. Have the name, type, hall, and any shift-group information ready. Machine creation is also documented from the Machines page.
 
-Begin on the [Machines page](/en/platform-intro/pages/machines).
+## Basics → Settings & Media → Review
 
-### Preconditions
-- The user has admin access.
-- Halls and shift groups already exist if the machine should be placed immediately.
+1. In **Basics**, enter identification details and choose **Kind**: Machine or Work center, plus the machine type.
+2. In **Settings & Media**, set the applicable hall, shift group, tags, and image.
+3. In **Review**, check the record and save it.
+4. Open [Machine Configuration](/en/platform-intro/pages/machine-configuration) to attach an AVA and configure ratings, timeline rules/ranges, features, optional energy monitoring, and PDA Assistant warnings.
+5. For a Machine, verify that the AVA is mapped before expecting live readings.
 
-## Steps
+## Expected Result and Common Problems
 
-<Steps>
-  <Step title="Open the machine creation flow" icon="arrow-right" title-type="p">
-    Open the machine creation flow from the Machines page.
-  </Step>
-  <Step title="Enter the machine name and identification details" icon="arrow-right" title-type="p">
-    Enter the machine name and identification details.
-  </Step>
-  <Step title="Add optional tags or an image" icon="arrow-right" title-type="p">
-    Add optional tags or an image if the team uses them for filtering and recognition.
-  </Step>
-  <Step title="Assign the machine to a hall and shift group" icon="arrow-right" title-type="p">
-    Assign the machine to a hall and shift group.
-  </Step>
-  <Step title="Enable energy monitoring" icon="arrow-right" title-type="p">
-    Enable energy monitoring only if that machine is connected for energy tracking.
-  </Step>
-  <Step title="Finish the setup" icon="arrow-right" title-type="p">
-    Finish the setup and return to the machine list.
-  </Step>
-</Steps>
+The entry appears in [Machines](/en/platform-intro/pages/machines) and can receive planned work. A Machine saved without an AVA collects no sensor data until an AVA is mapped. A Work center intentionally has no AVA, sensor KPIs, state-counter inclusion, or sensor-based alert/Automator triggers.
 
-## Decision Points
-
-- Whether the machine should be placed in a hall immediately or left for later.
-- Whether energy monitoring is needed on day one.
-
-## Expected Result
-
-The machine appears in the platform and can be opened in machine-specific pages.
-
-## Common Problems and Edge Cases
-
-- Required fields may block completion until they are filled in.
-- If halls or shift groups are missing, the machine can be created with partial setup and finished later.
-- A machine without planning data may appear in lists before it is fully ready for scheduling.
-
-## Related Pages
-
-- [Machines](/en/platform-intro/pages/machines)
-- [Machine Configuration](/en/platform-intro/pages/machine-configuration)
+If required fields block saving, complete them. Finish missing hall or shift setup before relying on those planning views. See [Configure a Machine](/en/platform-intro/workflows/machine-configuration).

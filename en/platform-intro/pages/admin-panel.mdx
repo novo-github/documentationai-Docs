@@ -5,6 +5,8 @@ description: "The main administration workspace for managing shared platform con
 
 ## Overview
 
+**Access:** Admin only. [Roles and access](/en/platform-intro/concepts/roles-and-access).
+
 Provide one place for shared operational setup that supports the rest of the platform.
 
 Users open it from the main navigation when their role allows it.
@@ -51,6 +53,31 @@ Priority levels give your team a shared way to recognize the urgency of work. Ea
 Permissions determine which platform pages and machines a user can access. Use them to give each person access to the areas and machines needed for their work.
 
 Open the user record in the Admin Panel and select **Edit Permissions**. Select the pages and machines the user may access, then save. The updated permissions apply to the user's next session.
+
+## Find the Correct Administration Area
+
+| Section | Configuration |
+| --- | --- |
+| **Invite Team Members / Users** | Invites, roles, Page Access, Machine Access. |
+| **Configure Factory** | Halls and Displays, Machine Tags, Machines. |
+| **Configure Shifts and Scheduling** | Shifts, Shift groups, Machine Operators. |
+| **Configure Products & Orders** | Products, Orders, Order Tags, ERP template download. |
+| **Configure Analyzers** | Timeline Reasons and Energy Price. |
+| **Configure Security and API** | API-Access Keys and Ticket Tags. |
+
+**Priority Levels** and **AI Assistant Data Access** are also in the Admin Panel. ERP Uploads itself is in Planner at `/erp-uploads`.
+
+## Default Priorities and Range Limits
+
+Higher priority is more urgent. Defaults: **Low 10, Normal 30, High 70, Critical 100, Highest 150, Extreme 200**. Default colors are green 0–29, blue 30–69, orange 70–99, and red 100+. Companies can set names, values, and colors or apply **SAP Delivery Priority**, **Epicor Kinetic Material Queue Priority**, or **Infor M3 Customer Order Priority** presets.
+
+Custom priority settings allow **0–999**, while the Add Order form states **1–200**. This mismatch needs product confirmation; follow validation in the current form instead of assuming one range applies everywhere. Existing priorities are protected during ERP re-imports.
+
+## Security, AI Data Access, and Account Administration
+
+**API-Access Keys** are shown once at creation; copy the key while it is visible. **License Key** is the company licence identifier, not an API key. The Beta AI Assistant can access only data areas enabled here; platform data is not shared with external AI models without admin enablement.
+
+Use [Invite Users and Manage Permissions](/en/platform-intro/workflows/user-access-management), [Set Up a Hall Plan Display](/en/platform-intro/workflows/hall-display-setup), and [Manage Operators](/en/platform-intro/workflows/operator-management) for the tasks.
 
 ## Main Entities
 

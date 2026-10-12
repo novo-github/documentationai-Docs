@@ -5,6 +5,8 @@ description: "Eine wöchentliche Planungsseite zum Zuweisen von Schichten auf Ma
 
 ## Überblick
 
+**Zugriff:** Admin oder Seitenfreigabe `scheduler` mit entsprechendem Maschinenzugriff. [Rollen und Zugriff](/de/platform-intro/concepts/roles-and-access).
+
 Ermöglichen Sie Benutzern, die wöchentliche Maschinen-Schichtabdeckung in einer strukturierten Planungsansicht festzulegen.
 
 Benutzer öffnen diese Seite über den Bereich **Planer** in der Hauptnavigation.
@@ -27,6 +29,14 @@ Benutzer öffnen diese Seite über den Bereich **Planer** in der Hauptnavigation
 - Wählen Sie die Maschinen aus, die Sie planen möchten.
 - Wechseln Sie zwischen Wochen.
 - Fügen Sie Schichtauswahlen für jede Maschine und jeden Tag hinzu, entfernen Sie sie oder speichern Sie sie.
+
+## Schichten, Schichtgruppen und aktive Schichten
+
+Eine **Schicht (Shift)** hat Beginn, Ende und optionale Pausen. Eine **Schichtgruppe (Shift group)** ist ein Maschinen zugeordnetes wöchentliches Schichtmuster nach Wochentag. **Whole day** umfasst den ganzen Tag.
+
+Eine **aktive Schicht (Active shift)** beginnt automatisch bei Leerlauf, Produktion oder Vorbereitung. Sie ist eine Alternative zu geplanten Schichten. Ein Wechsel entfernt geplante Maschinenschichten ab heute. Prüfen Sie das in der [Maschinenkonfiguration](/de/platform-intro/pages/machine-configuration).
+
+**All Day** analysiert 24 Stunden, **Planned** die geplante Schichtzeit. Ein veränderter Zeitplan kann daher das verglichene Zeitfenster verändern.
 
 ## Hauptentitäten
 

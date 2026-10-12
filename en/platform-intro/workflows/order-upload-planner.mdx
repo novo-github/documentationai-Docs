@@ -10,7 +10,8 @@ Bring external order data into the platform in a controlled, preview-first flow.
 ## Before You Begin
 
 <Callout kind="info" title="Workflow access">
-- Entry points: `/admin-panel/erp-uploads`
+- Required access: Admin or Page Access `erp_uploads`.
+- Entry points: `/erp-uploads`
 </Callout>
 
 Begin on the [ERP Upload Planner page](/en/platform-intro/pages/erp-upload-planner).
@@ -48,6 +49,16 @@ Begin on the [ERP Upload Planner page](/en/platform-intro/pages/erp-upload-plann
     Read the outcome summary to see which decisions were applied. If a decision could not be applied, review its explanation and check the affected operation in the Assignment Planner. Production may have started after you reviewed the conflict.
   </Step>
 </Steps>
+
+## Confirm the Four Import Stages
+
+**Upload File → Map Columns → Assign Machines → Review & Save** uses CSV, XLS, or XLSX. Map **Order Number, Product, Planned Start, Planned End**. Choose **ALL Units / 1 Unit**, ordinary/industrial minutes, commit scope, and the initial priorities for new records with empty priority cells. Initial operation priority defaults to 100. Save Mapping is per user; manual machine/hall-pool assignment overrides mapping, and Reset restores it.
+
+Run **Check** as a dry run. **NEW / NEU**, **CHG / GEÄ**, and **IMPACT** show creation, update, and affected planning calculations. Check saves nothing. If data changes, run Check again before Save.
+
+Rows without scheduling or with start after end are not processed. Re-import matches product, order, work-order product, operation sequence, and machine assignment. Empty update cells preserve values; existing priorities, protected fields, and production history are unchanged. Missing file rows do not delete records. Operations with recorded work cannot move; ambiguous multiple-target conflicts need manual planner review.
+
+**Example:** If an imported planned time of 100 minutes covers 50 units, choose ALL Units. If it is 2 minutes per unit, choose 1 Unit. Choosing the wrong option changes the planned duration.
 
 ## Decision Points
 

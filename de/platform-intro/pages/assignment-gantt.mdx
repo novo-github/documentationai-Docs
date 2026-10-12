@@ -1,0 +1,22 @@
+---
+title: "Assignment Gantt"
+description: "Prüfen Sie Zuweisungszeiträume, Überschneidungen und zukünftige Anordnung einschließlich der experimentellen, schreibgeschützten Ziehfunktion."
+---
+
+## Überblick
+
+**Zugriff:** Admin oder Konto mit **Zuweisungsplaner**-Freigabe (`assignment_planner`) und entsprechendem Maschinenzugriff. Route: `/assignment-gantt`.
+
+Assignment Gantt zeigt Zuweisungen über Maschinen und Zeit. Prüfen Sie geplante Zeitfenster, erkennen Sie Überschneidungen und öffnen Sie zugehörige Aufträge.
+
+## Was kann ich ändern?
+
+**Die Zeitverschiebung durch Ziehen ist als Experimental und schreibgeschützt gekennzeichnet.** Verlassen Sie sich nicht darauf, durch Ziehen im Diagramm einen neuen Zeitplan zu speichern. Ändern Sie Arbeit über die unterstützten Steuerelemente im [Zuweisungsplaner](/de/platform-intro/pages/assignment-planner).
+
+**Auto-Arrange** ordnet überlappende zukünftige Zuweisungen neu. Laufende Zuweisungen bleiben unverändert. Prüfen Sie Warnungen vor der Übernahme. Kann eine automatische Zuweisung einen Auftrag nicht einplanen, lesen Sie die Begründung, etwa eine fehlende verfügbare Maschine, und prüfen Sie den Plan.
+
+## Geplante Zeiten lesen
+
+Eine Zuweisung ist eine Operation auf einer Maschine oder in einem Hall Pool. Ihre geplante Produktionszeit nutzt die dieser Maschine zugewiesene Menge. Die Warteschlangenlast basiert auf Planzeiten statt tatsächlicher Produktion.
+
+Zum Beispiel ergeben 2 Minuten je Teil × 50 zugewiesene Teile 100 geplante Produktionsminuten, zuzüglich der festen Vorbereitungszeit der Operation. Siehe [Berechnungen](/de/platform-intro/concepts/calculations#deviations) und [Maschinenzuweisungen planen](/de/platform-intro/workflows/assignment-planner).

@@ -5,6 +5,8 @@ description: "A report page for reviewing machine behavior over time through tim
 
 ## Overview
 
+**Access:** Admin or Page Access `reports_timeline`, with relevant Machine Access. [Roles and access](/en/platform-intro/concepts/roles-and-access).
+
 Show how machine time is distributed across states and timeline categories.
 
 Users open it from the Reports section in the main navigation.
@@ -27,6 +29,14 @@ Users open it from the Reports section in the main navigation.
 - Narrow the analysis to specific machines and dates.
 - Compare how time was spent across machine states or reasons.
 - Use the page to spot recurring downtime patterns.
+
+## States, Reasons, and Duration Buckets
+
+**Timeline Analysis** examines the state timeline of a period; **Trend Analysis** compares KPI trends across days. Switch between the Reports views and match their machine, date, and shift scope.
+
+Downtime is Idle (orange) or Off (red). **Downtime Analysis (labeled)** groups it by assigned reason. An unlabeled warning means a reason is still missing. **Timeline ranges / Time range** are duration buckets, such as 1–5 or 5–30 minutes, used in **Idletime Distribution**. **Focus Mode** enlarges the analysis by hiding surrounding controls.
+
+Automatic timeline reasons follow the specific reason rule, its DEFAULT rule, then Global rules. Admin-defined reason type and level 1–5 effects are unconfirmed. The [calculations reference](/en/platform-intro/concepts/calculations) explains AVL, PRO, and the role of the selected period.
 
 ## Main Entities
 

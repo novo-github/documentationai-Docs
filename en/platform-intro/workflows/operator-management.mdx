@@ -10,6 +10,7 @@ Keep the operator list accurate so scheduling and production tracking reflect th
 ## Before You Begin
 
 <Callout kind="info" title="Workflow access">
+- Required access: Admin only.
 - Entry points: `/admin-panel`
 </Callout>
 
@@ -52,6 +53,10 @@ Generating a replacement password ends the operator's active sessions. The opera
 From the operator's record, explicitly request or resend the confirmation email when verification is needed. Creating or editing a record, or generating a password, does not automatically send a verification email.
 
 An operator whose email is not yet verified can still sign in and use their assigned access. Email verification and operator activation are separate: verification confirms the email address, while activation determines whether the operator has access.
+
+## Review the Role Before Promoting
+
+**Promote to user** gives the operator access to all machines regardless of their existing machine list. Review [roles and access](/en/platform-intro/concepts/roles-and-access) before using it. Use [Invite Users and Manage Permissions](/en/platform-intro/workflows/user-access-management) for ordinary team invitations and page permissions.
 
 ## Decision Points
 

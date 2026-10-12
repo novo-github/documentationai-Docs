@@ -5,6 +5,8 @@ description: "The main machine overview where users review current status and op
 
 ## Overview
 
+**Access:** All roles; only permitted machines are visible. [Roles and access](/en/platform-intro/concepts/roles-and-access).
+
 Give users a fast overview of the available machines and their current production state.
 
 This is the main dashboard route for signed-in users and the default landing page after login for most roles.
@@ -45,6 +47,24 @@ The setting applies wherever machine status is shown, making these states easier
 Select **See how this looks** to compare the same shift timeline with and without patterns, including a simulation of color blindness. Use the preview to check whether the display is easier for you to read.
 
 If a sensor switches off together with its machine, the [Sensor powered by machine setting](/en/platform-intro/pages/machine-configuration#sensors-powered-by-the-machine) lets a missing signal be displayed as **machine off** instead of **unknown**.
+
+## Machine or Work Center?
+
+**Kind** distinguishes a **Machine (Maschine)** connected to an AVA sensor from a **Work center (Arbeitsplatz)** without AVA. A work center can receive orders and assignments and show running and planned work. It has no sensor KPIs and is excluded from state counters and analytics. Sensor-based Alert Rules and Automator rules never trigger for it.
+
+Converting a machine to a work center unassigns its AVAs and stops KPI calculation. Only an admin can change its configuration.
+
+## State Colors and Short Captions
+
+| State | German label | Color | Meaning |
+| --- | --- | --- | --- |
+| Production | Produktion | Green | Producing. |
+| Idle | Leerlauf | Orange | On but not producing. |
+| Off / Stopped | Aus / Gestoppt | Red | Off. |
+| Preparation | In Vorbereitung | Blue | Setting up. |
+| Unknown | Unbekannt | Grey | No usable signal. |
+
+Ring gauges use **OEE**, **AVL** (Availability), and **PRO** (Performance). The caption under the center figure identifies the displayed metric. **PRO does not mean production.** For definitions, use [calculations](/en/platform-intro/concepts/calculations#oee).
 
 ## Main Entities
 

@@ -5,6 +5,8 @@ description: "Eine geführte Importseite, mit der Tabellenzeilen in plattformber
 
 ## Überblick
 
+**Zugriff:** Admin oder Seitenfreigabe `erp_uploads`. [Rollen und Zugriff](/de/platform-intro/concepts/roles-and-access).
+
 Importieren Sie Aufträge aus Tabellen in die Watchmen-Plattform. Prüfen Sie die Quelldatei, ordnen Sie ihre Spalten den Auftragsfeldern zu und kontrollieren Sie vor der Bestätigung, wie sich der Import auf Ihren bestehenden Produktionsplan auswirkt.
 
 Benutzer öffnen diese Seite über die geschützte ERP-Upload-Route.
@@ -13,7 +15,7 @@ Benutzer öffnen diese Seite über die geschützte ERP-Upload-Route.
 
 <Callout kind="info" title="Zugriffsdetails">
 - Sichtbarkeit: Geschützt
-- Primäre Routen: `/admin-panel/erp-uploads`
+- Primäre Routen: `/erp-uploads`
 </Callout>
 
 ## Was Sie sehen können
@@ -62,6 +64,28 @@ Ein Planungskonflikt entsteht, wenn die Datei eine Operation zuweist, die bereit
 Manche Konflikte lassen sich in der Importprüfung nicht lösen. Folgen Sie dem entsprechenden Hinweis und bearbeiten Sie diese manuell im [Zuweisungsplaner](/de/platform-intro/pages/assignment-planner).
 
 Prüfen Sie nach dem Import die Ergebnisübersicht. Sie zeigt, welche Entscheidungen angewendet wurden, und erklärt nicht angewendete Entscheidungen, etwa wenn nach Ihrer Prüfung bereits Produktion gestartet wurde. Daraus erkennen Sie, welche Arbeit im Planer noch Aufmerksamkeit benötigt.
+
+## Vier Phasen, Pflichtfelder und Kennzeichen
+
+Die aktuelle Seite heißt **ERP Uploads**, in dieser Dokumentation auch ERP-Upload-Planer. Öffnen Sie sie im Planungsbereich unter `/erp-uploads`. Ablauf: **Upload File → Map Columns → Assign Machines → Review & Save**. Erlaubte Dateien: **CSV, XLS, XLSX**.
+
+Pflichtzuordnungen sind **Order Number, Product, Planned Start, Planned End**. Datum und Uhrzeit können aus einer gemeinsamen oder getrennten Spalten kommen. Ohne Uhrzeit gilt Mitternacht oder die gewählte Tagesanfangs-/Tagesende-Einstellung. Zeilen ohne Zeitplanung oder mit Beginn nach Ende werden nicht verarbeitet.
+
+- **ALL Units / 1 Unit:** geplante Produktionszeit für die Gesamtmenge oder ein Teil.
+- **Industrial minutes:** gewöhnliche Minuten = Industrieminuten × 0,6.
+- **Initial order priority / Initial operation priority:** nur neue Datensätze mit leerer Prioritätszelle; die anfängliche Operationspriorität ist standardmäßig 100.
+- **Commit scope:** All rows oder Machine assigned; Letzteres importiert nur Zeilen mit Maschine.
+- **Save Mapping / Load Mapping:** je Benutzer gespeicherte Zuordnung. Manuelle Maschinen-/Hall-Pool-Zuweisung überschreibt die Zuordnung; **Reset** stellt sie wieder her.
+
+**Check** ist ein Probelauf ohne Speicherung. **NEW / NEU** bedeutet Erstellung, **CHG / GEÄ** Aktualisierung und **IMPACT** einen beeinflussten berechneten Planungswert. Nach Datenänderungen müssen Sie Check erneut ausführen, bevor **Save** speichert.
+
+## Neuimport, Zuordnung und geschützter Verlauf
+
+Datensätze passen über Produktname, Auftragsname, Arbeitsauftrag = Auftrag + Produkt, Operation = Arbeitsauftrag + Sequenz und Zuweisung = Operation + Maschine. Leere Aktualisierungszellen erhalten Werte. Vorhandene Prioritäten und geschützte Felder werden nicht überschrieben. Produktionsverlauf bleibt unangetastet; fehlende Zeilen löschen nichts.
+
+Operationen mit erfasster Arbeit können nicht verschoben werden. **Move**, **Keep** oder **Keep both** behandelt zulässige Maschinenkonflikte. Mehrere geänderte Ziele können mehrdeutig sein und müssen im Zuweisungsplaner geprüft werden.
+
+**ERP Upload (single machine) Legacy** ist die ältere, abgelöste Version. Verwenden Sie diesen aktuellen Ablauf für mehrere Datensätze.
 
 ## Hauptentitäten
 

@@ -10,13 +10,14 @@ Keep alert logic useful, targeted, and easy to review.
 ## Before You Begin
 
 <Callout kind="info" title="Workflow access">
+- Required access: Admin or Page Access `alert_rules`; never Operator.
 - Entry points: `/alert-rules`, `/alert-rules/:machineId`, `/machines/:machineId/alert-rules`
 </Callout>
 
 Begin on the [Alert Rules page](/en/platform-intro/pages/alert-rules).
 
 ### Preconditions
-- The user has admin access.
+- Admin or Page Access `alert_rules`; never Operator.
 
 ## Steps
 
@@ -40,6 +41,12 @@ Begin on the [Alert Rules page](/en/platform-intro/pages/alert-rules).
     Expand a rule when you need to inspect past alerts or resolve existing alerts.
   </Step>
 </Steps>
+
+## Review Channel Costs and Data Prerequisites
+
+Before choosing SMS, review the **€0.10 per message per user** cost and explicit-consent requirement. One message to three users costs €0.30. With no recipients, alerts are still recorded at no cost. Webhooks can use Basic, Bearer, or custom-header authentication.
+
+Sensor-based rules do not trigger for work centers. Read active-shift limitations shown by the rule. Use [Automator](/en/platform-intro/pages/automator) for its separate admin-only conditions, timing, escalation, and event workflow.
 
 ## Decision Points
 

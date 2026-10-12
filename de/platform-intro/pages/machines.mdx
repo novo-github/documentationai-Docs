@@ -5,6 +5,8 @@ description: "Die zentrale Maschinenübersicht, in der Benutzer den aktuellen St
 
 ## Überblick
 
+**Zugriff:** Alle Rollen; sichtbar sind nur freigegebene Maschinen. [Rollen und Zugriff](/de/platform-intro/concepts/roles-and-access).
+
 Geben Sie Benutzern einen schnellen Überblick über die verfügbaren Maschinen und ihren aktuellen Produktionsstatus.
 
 Dies ist die zentrale Dashboard-Route für angemeldete Benutzer und für die meisten Rollen die Standard-Landingpage nach dem Login.
@@ -45,6 +47,24 @@ Die Einstellung gilt überall dort, wo Maschinenzustände angezeigt werden. So k
 Öffnen Sie die Vorschau in der Legende, um dieselbe Schichtzeitleiste mit und ohne Muster zu vergleichen, einschließlich einer Simulation von Farbfehlsichtigkeit. Prüfen Sie damit, ob die Darstellung für Sie besser lesbar ist.
 
 Wenn ein Sensor zusammen mit seiner Maschine ausgeschaltet wird, kann die passende Einstellung in der [Maschinenkonfiguration](/de/platform-intro/pages/machine-configuration) dafür sorgen, dass ein fehlendes Signal als **Maschine aus** statt als **unbekannt** angezeigt wird.
+
+## Maschine oder Arbeitsplatz?
+
+**Kind** unterscheidet eine **Maschine (Machine)** mit AVA-Sensor von einem **Arbeitsplatz (Work center)** ohne AVA. Ein Arbeitsplatz kann Aufträge und Zuweisungen erhalten und laufende sowie geplante Arbeit zeigen. Er hat keine Sensorkennzahlen und wird aus Zustandszählern und Analysen ausgeschlossen. Sensorbasierte Alarm- und Automator-Regeln lösen dort nie aus.
+
+Ein Wechsel von Maschine zu Arbeitsplatz entfernt die AVA-Zuweisungen und beendet die Kennzahlenberechnung. Nur ein Administrator kann die Konfiguration ändern.
+
+## Zustandsfarben und Kürzel
+
+| Zustand | Englische Bezeichnung | Farbe | Bedeutung |
+| --- | --- | --- | --- |
+| Produktion | Production | Grün | Produziert. |
+| Leerlauf | Idle | Orange | Eingeschaltet, produziert nicht. |
+| Aus / Gestoppt | Off / Stopped | Rot | Ausgeschaltet. |
+| In Vorbereitung | Preparation | Blau | Wird gerüstet. |
+| Unbekannt | Unknown | Grau | Kein nutzbares Signal. |
+
+Ringanzeigen verwenden **OEE**, **AVL** (Verfügbarkeit) und **PRO** (Leistung). Die Beschriftung unter dem mittigen Wert identifiziert die Kennzahl. **PRO bedeutet nicht Produktion.** Definitionen finden Sie unter [Berechnungen](/de/platform-intro/concepts/calculations#oee).
 
 ## Hauptentitäten
 

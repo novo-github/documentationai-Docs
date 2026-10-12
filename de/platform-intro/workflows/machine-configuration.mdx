@@ -10,6 +10,7 @@ Passen Sie an, wie eine Maschine von der Plattform identifiziert, überwacht, ge
 ## Bevor Sie beginnen
 
 <Callout kind="info" title="Ablaufzugriff">
+- Erforderlicher Zugriff: Nur Admin.
 - Einstiegspunkte: `/machine/config`, `/machine/:id/config`
 </Callout>
 
@@ -50,6 +51,14 @@ Beginnen Sie auf der [Seite Maschinenkonfiguration](/de/platform-intro/pages/mac
     Speichern Sie Änderungen in jedem Tab, bevor Sie ihn verlassen.
   </Step>
 </Steps>
+
+## Art, Schichtmodell und Warnungen prüfen
+
+Nur Admins ändern die Einrichtung. Klären Sie, ob der Eintrag eine **Maschine** mit Sensor oder ein **Arbeitsplatz** ohne Sensor ist. Ein Wechsel zum Arbeitsplatz entfernt AVA-Zuweisungen und beendet Sensorkennzahlen.
+
+Prüfen Sie vor **aktiven Schichten** Mindestdauer, Stopplänge und Höchstdauer. Der Wechsel entfernt geplante Schichten ab heute. Prüfen Sie Hinweise auf Alarmregeln, die mit aktiven Schichten nicht funktionieren.
+
+Konfigurieren Sie den **BDE-Assistenten** bei Bedarf unter Warnings. Er ist standardmäßig aus; Einstellungen können kopiert werden. [Maschinenkonfiguration](/de/platform-intro/pages/machine-configuration) erklärt Regeln, Zeitklassen, Zielwerte und Sensorfelder.
 
 ## Entscheidungspunkte
 

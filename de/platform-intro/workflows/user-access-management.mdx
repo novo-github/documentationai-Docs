@@ -1,0 +1,34 @@
+---
+title: "Benutzer einladen und Berechtigungen verwalten"
+description: "Laden Sie Teammitglieder ein, prüfen Sie Rollen, setzen Sie Seiten- und Maschinenrechte und verstehen Sie Operator-Beförderungen."
+---
+
+## Bevor Sie beginnen
+
+**Wer darf das tun: Nur Admin.** Starten Sie im [Administrationsbereich](/de/platform-intro/pages/admin-panel), Route `/admin-panel`. Halten Sie E-Mail, benötigte Rolle, Seiten und Maschinen bereit.
+
+## Ein Teammitglied einladen
+
+1. Öffnen Sie **Invite Team Members**.
+2. Geben Sie die E-Mail ein und wählen Sie die Rolle.
+3. Versenden Sie die Einladung und prüfen Sie sie im Benutzerbereich.
+4. Versenden Sie sie bei Bedarf erneut oder widerrufen Sie sie, wenn sie nicht mehr nutzbar sein soll. Ein widerrufener Einladungslink funktioniert sofort nicht mehr.
+
+## Seiten- und Maschinenzugriff setzen
+
+1. Öffnen Sie den Benutzer unter **Users** und wählen Sie **Edit Permissions**.
+2. Wählen Sie **Full Access** oder eine bestimmte **Page Access**-Liste. Vollzugriff bleibt an Rollengrenzen gebunden; eine leere Liste gibt keine freigebbare Seite frei.
+3. Setzen Sie **Machine Access** getrennt auf alle Maschinen oder eine bestimmte Liste.
+4. Speichern Sie. Bitten Sie die Person, den Zugriff in der nächsten Sitzung zu prüfen.
+
+**Beispiel:** Geben Sie einem Planer Zuweisungsplanerzugriff und die von ihm geplanten Maschinen. Eine Seitenfreigabe allein gibt nicht alle Maschinen frei.
+
+## Operatoren und Beförderung
+
+Verwenden Sie [Operatoren verwalten](/de/platform-intro/workflows/operator-management) zum Erstellen oder Wiederherstellen eines Operatorkontos. Kopieren oder laden Sie das einmalig angezeigte Passwort herunter. Ein Ersatzpasswort beendet aktive Sitzungen; Deaktivierung beendet den Zugriff sofort und erhält den Verlauf.
+
+**Promote to user** gibt Zugriff auf alle Maschinen, unabhängig von der bisherigen Maschinenliste. Prüfen Sie diese Wirkung vor der Beförderung. Operatoren erhalten nie Hallenplan, Aufträge & Produkte oder Alarmregeln.
+
+## Erwartetes Ergebnis und häufige Probleme
+
+Die Person hat die vorgesehenen Rollen-, Seiten- und Maschinenrechte. **Unauthorized** zeigt eine Seitenbeschränkung; **No machine access — contact admin** betrifft die Maschinenliste. Adminseiten können Nicht-Admins nicht freigegeben werden. Siehe [Rollen und Zugriff](/de/platform-intro/concepts/roles-and-access).

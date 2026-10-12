@@ -1,0 +1,26 @@
+---
+title: "Set Up a Hall Plan Display"
+description: "Register a hall display, choose kiosk information and timing, and diagnose stale display data."
+---
+
+## Before You Begin
+
+**Who can do this: Admin.** Start at **Admin Panel → Halls**, route `/admin-panel`. A registered display opens [Hall Plan](/en/platform-intro/pages/hall-plan), route `/hallPlan/:id`, with its API key instead of a user login.
+
+## Configure and Open the Display
+
+1. Create or open the hall and assign its machines.
+2. Register the monitor under **Displays**. Review its identifying network details.
+3. Choose Hall Plan columns, displayed metric, language, machine sorting, and display version.
+4. Set **Data refresh** and **Page switch**. Page switch cannot be slower than data refresh.
+5. Set **Key figures / orders switch** to at most half the page-switch time. For example, a 20-second page-switch period allows at most 10 seconds here.
+6. Set **Page zoom** for the deployed monitor; it applies to that monitor.
+7. Open the hall plan on the display using its API key and check the visible machines and captions: **OEE**, **AVL**, **PRO**, **PCS**.
+
+## Expected Result and Troubleshooting
+
+The monitor shows and rotates through the configured hall information without a user login. **PRO** is Performance, not Production; **PCS** is the piece count.
+
+If data seems old, review the display's last-seen time and network information. A display not reporting for **24 hours** is shown as not seen. Display connectivity is separate from machine production state.
+
+See [Manage Halls](/en/platform-intro/workflows/hall-management), [Hall Plan](/en/platform-intro/pages/hall-plan), and [glossary](/en/platform-intro/concepts/glossary).

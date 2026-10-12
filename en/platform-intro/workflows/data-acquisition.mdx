@@ -10,6 +10,7 @@ Control live production tracking for a machine and record assignments, produced 
 ## Before You Begin
 
 <Callout kind="info" title="Workflow access">
+- Required access: Any role with access to this machine.
 - Entry points: `/machines/:machineId/dataAcquisition`
 </Callout>
 
@@ -83,6 +84,16 @@ Begin on the [Data Acquisition (PDA) page](/en/platform-intro/pages/data-acquisi
 Keep material scrap and work scrap in their separate fields when stopping or continuing an interval. Review the breakdown and combined scrap total in [Orders & Products](/en/platform-intro/pages/orders-products) or [Order Analysis](/en/platform-intro/pages/order-detail); displayed total production includes submitted scrap.
 
 Starting and stopping production updates the related order status. An assignment is marked complete when the produced quantity exactly matches the planned quantity. If an over-production prompt appears, review the quantities and order completion before continuing.
+
+## Claim Work, Book During a Run, and Finish Safely
+
+1. If work is in the **Pool**, claim an assignment from your machine's hall. If needed, search an unplanned operation or use **Find/Create Immediate Order**.
+2. Use **Prep** for preparation, then **Start** for production. Review concurrent-order or unfinished-previous-step prompts before continuing.
+3. Use **Mid Booking** to enter good quantity, **Mat. / MA**, and **Work / AA** while the order runs. It closes and restarts the interval. If restart fails, the quantities remain saved; press Start rather than booking them again.
+4. In **Cumulative** mode, enter the full counter, for example 1450, rather than the increment.
+5. At Stop, review the quantities. If over plan, choose **Put on hold** or **Mark as finished**. Label downtime in **Downtime reasons**.
+
+Deleting an interval cannot be undone. Operators cannot open Orders & Products or Alert Rules; use the permitted PDA views or ask your admin for help. [PDA Assistant warnings](/en/platform-intro/pages/data-acquisition) can flag stale data and mismatched machine/order states.
 
 ## Decision Points
 

@@ -28,9 +28,9 @@ flowchart LR
 | Integration path                                                      | Direction                  | Record granularity                    | Customer provides                                  | Typical access                          |
 | --------------------------------------------------------------------- | -------------------------- | ------------------------------------- | -------------------------------------------------- | --------------------------------------- |
 | [**Direct ERP planning import**](#direct-erp-integration)             | ERP -> Novo AI             | One planned operation per record      | Planning/order fields and stable resource mapping  | Read-only source access                 |
-| [**Existing BDE/MES import**](#erp--existing-bde-mes-integration)     | BDE/MES -> Novo AI         | One recorded activity/state interval  | Interval, machine, state, and order identifiers    | Read-only source typically sufficient   |
-| [**Temporary Excel/CSV import**](#temporary-erp-import-via-excel-csv) | File -> Novo AI            | One planned operation per row         | Upload template with agreed formats and units      | No live system connection required      |
-| [**Machine & production export**](en/erp-data-export)                 | Novo AI -> customer system | One continuous machine-state interval | Writable target and accepted state/duration fields | Read/write or equivalent API operations |
+| [**Existing BDE/MES import**](#erp--existing-bdemes-integration)     | BDE/MES -> Novo AI         | One recorded activity/state interval  | Interval, machine, state, and order identifiers    | Read-only source typically sufficient   |
+| [**Temporary Excel/CSV import**](#temporary-erp-import-via-excelcsv) | File -> Novo AI            | One planned operation per row         | Upload template with agreed formats and units      | No live system connection required      |
+| [**Machine & production export**](/en/erp-data-export)                 | Novo AI -> customer system | One continuous machine-state interval | Writable target and accepted state/duration fields | Read/write or equivalent API operations |
 
 ### Customer-side readiness checklist
 

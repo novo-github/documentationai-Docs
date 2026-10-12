@@ -5,6 +5,8 @@ description: "A rule management page for global and machine-specific alerting lo
 
 ## Overview
 
+**Access:** Admin or Page Access `alert_rules`; never Operator. [Roles and access](/en/platform-intro/concepts/roles-and-access).
+
 Help admins create and manage rules that notify people when important machine conditions happen.
 
 Users can open this page globally or from a machine-specific route.
@@ -27,6 +29,16 @@ Users can open this page globally or from a machine-specific route.
 - Create, edit, rename, enable, disable, and delete rules.
 - Filter by machine context.
 - Review alert history and resolve or reopen alert records.
+
+## Conditions, Channels, and Costs
+
+Classic Alert Rules support OEE, Performance, and Availability thresholds as percentages, with only less-than or greater-than comparisons. Time and shift checks include Off Duration, Idle Duration, State is Off, Sensor Disconnected, Shift Not Started, and Shift Not Ended; minute thresholds use greater-than comparisons. Read the selected condition and any active-shift limitation in the editor.
+
+Channels are **email**, **SMS**, and **webhook**. **SMS costs €0.10 per alert message per user**, billed at month end, and requires explicit consent. For example, one message sent to three users costs €0.30. With no recipients, the alert is still recorded on the platform at no cost.
+
+**Silence / Unsilence** temporarily mutes or restores one alert type or all alerts for a machine. A **webhook** delivers to another system by URL, optionally with Basic, Bearer, or custom-header authentication and a payload template.
+
+Sensor-based rules never trigger for work centers. Some rules do not fire for active-shift machines; check the rule's notice. For newer scoped conditions, timing, escalation, SLA, and event handling, see [Automator](/en/platform-intro/pages/automator).
 
 ## Main Entities
 

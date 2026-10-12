@@ -5,6 +5,8 @@ description: "Eine Seite zur Verwaltung globaler und maschinenspezifischer Alarm
 
 ## Überblick
 
+**Zugriff:** Admin oder Seitenfreigabe `alert_rules`; nie Operator. [Rollen und Zugriff](/de/platform-intro/concepts/roles-and-access).
+
 Unterstützen Sie Administratoren dabei, Regeln zu erstellen und zu verwalten, die Personen benachrichtigen, wenn wichtige Maschinenzustände eintreten.
 
 Benutzer können diese Seite global oder über eine maschinenspezifische Route öffnen.
@@ -27,6 +29,16 @@ Benutzer können diese Seite global oder über eine maschinenspezifische Route �
 - Regeln erstellen, bearbeiten, umbenennen, aktivieren, deaktivieren und löschen.
 - Nach Maschinenkontext filtern.
 - Alarmhistorie prüfen und Alarmdatensätze lösen oder erneut öffnen.
+
+## Bedingungen, Kanäle und Kosten
+
+Klassische Alarmregeln verwenden OEE, Leistung und Verfügbarkeit als Prozentgrenzen mit ausschließlich Kleiner-als- oder Größer-als-Vergleichen. Zeit- und Schichtprüfungen umfassen Off Duration, Idle Duration, State is Off, Sensor Disconnected, Shift Not Started und Shift Not Ended. Minutengrenzen verwenden Größer-als-Vergleiche. Lesen Sie die jeweilige Bedingung und aktive-Schicht-Einschränkungen im Editor.
+
+Kanäle sind **E-Mail**, **SMS** und **Webhook**. **SMS kostet 0,10 € je Alarmnachricht und Benutzer**, wird am Monatsende abgerechnet und benötigt ausdrückliche Zustimmung. Eine Nachricht an drei Benutzer kostet beispielsweise 0,30 €. Ohne Empfänger wird der Alarm weiterhin kostenlos in der Plattform erfasst.
+
+**Silence / Unsilence** schaltet eine Alarmart oder alle Alarme einer Maschine vorübergehend stumm beziehungsweise wieder ein. Ein **Webhook** übermittelt per URL an andere Systeme, optional mit Basic-, Bearer- oder eigener Header-Authentifizierung und Nutzlastvorlage.
+
+Sensorregeln lösen für Arbeitsplätze nie aus. Manche Regeln lösen bei aktiven Schichten nicht aus; prüfen Sie den Regelhinweis. Neuere Bedingungen, Zeiten, Eskalation, SLA und Ereignisverwaltung erklärt [Automator](/de/platform-intro/pages/automator).
 
 ## Hauptentitäten
 

@@ -1,0 +1,57 @@
+---
+title: "Roles, Page Access & Machine Access"
+description: "Understand Admin, User, and Operator roles, restricted pages, machine permissions, and missing-access messages."
+---
+
+## Which Role Do I Have?
+
+Your role sets the outer limit of your access. **Page Access** and **Machine Access** are separate permissions inside that limit.
+
+| Role | What it allows |
+| --- | --- |
+| **Admin** | Manage settings, invite users, edit machines, change access, and use admin-only pages within their own company. |
+| **User** | Everyday work within the pages and machines granted by an admin. Cannot invite users or edit machines. |
+| **Operator** | Limited shop-floor access granted by an admin. Never has Hall Plan, Orders & Products, or Alert Rules. |
+
+**System (Automator)** is an automated actor in event history, not a human role.
+
+<a id="page-access" />
+
+## Which Pages Can My Admin Grant?
+
+| Access class | Pages |
+| --- | --- |
+| **Admin only** | Admin Panel, Organization Statistics / Org Stats, Leaderboard, Automator, Peak Optimizer, Machine Configuration. These cannot be granted to a User or Operator. |
+| **Grantable page access** | Orders & Products (`orders`), Alert Rules (`alert_rules`), Shift Planner (`scheduler`), Assignment Planner and Assignment Gantt (`assignment_planner`), ERP Uploads (`erp_uploads`), Kanban (`tickets`), Knowledge Base (`knowledge_base`), AI Chats / Chat History (`ai_chats`), Versus (`versus`), Timeline Analysis (`reports_timeline`), Trend Analysis (`reports_trend`). |
+| **Available to non-operators** | Machines and Hall Plan. Machine visibility still depends on Machine Access. |
+| **Personal and feedback pages** | User Profile, Feedback, and Roadmap are available to all roles. |
+
+An Operator cannot receive Orders & Products, Alert Rules, or Hall Plan even if a grantable-page list would otherwise include them. **Full Access** includes all grantable pages within the role; an empty selected-page list includes none. It does not turn a User into an Admin.
+
+The frontend has a Leaderboard route and an admin-only rule, but its current sidebar availability needs confirmation. Ask your admin if it is not reachable.
+
+<a id="machine-access" />
+
+## Why Can I Open a Page but Not See a Machine?
+
+Machine Access is independent of Page Access. An admin may grant all machines or a selected list. Machine Details, Machine History, and PDA require access to the specific machine.
+
+**Example:** A planner with Assignment Planner access and only Machine A access can use the planning page for their permitted machine. Page access alone does not grant Machine B.
+
+**No machine access — contact admin** means your account has no accessible machines. Opening a page you are not permitted to use leads to **Unauthorized**.
+
+## How Do I Get the Access I Need?
+
+1. Tell your admin which page and machine you need, with the task you are trying to complete.
+2. The admin opens **Admin Panel → Users → Edit Permissions** and reviews Page Access and Machine Access separately.
+3. The admin saves the changes. Recheck in your next session, as described in the existing permissions guide.
+
+Admins can use [Invite Users and Manage Permissions](/en/platform-intro/workflows/user-access-management) for the full workflow.
+
+## Operator Credentials and Promotion
+
+An admin creates operator accounts. Generated passwords are shown once; copy or download them before closing. Generating a new password ends that operator's active sessions. Deactivation ends access immediately while preserving past shifts, labels, and assignments.
+
+**Promote to user** grants access to all machines regardless of the previous machine list. Review the resulting permissions deliberately. Email verification is separate from activation; unverified operators can still sign in, and verification email is not sent automatically.
+
+See [Manage Operators](/en/platform-intro/workflows/operator-management), [User Profile](/en/platform-intro/pages/user-profile), and the [Help Center](/en/help-center).

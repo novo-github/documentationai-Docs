@@ -1,0 +1,26 @@
+---
+title: "Create an Automator Rule"
+description: "Choose scope, conditions, timing, response, and escalation, then review and save an Automator rule."
+---
+
+## Before You Begin
+
+**Who can do this: Admin only.** Open [Automator](/en/platform-intro/pages/automator), then create a rule at `/automator/create`. Know the machine scope, condition, and recipients. Check template prerequisites and the data source: sensor-based rules do not trigger for work centers.
+
+## Create and Review
+
+1. Optionally choose a **Template**. It pre-fills settings; it does not create a rule yet.
+2. In **Scope & Definition**, name the rule and select machines. No selected machines means a global rule for all active machines.
+3. In **Conditions & Timing**, configure conditions and AND/OR groups, polling interval, minimum true duration, clear duration, active-shift requirement, and cooldown as needed.
+4. Read ratio thresholds in context. For the documented deficit/duration ratios, 130% means 30% over plan or behind pace. Booking-dependent preparation and scrap metrics update only with PDA entries.
+5. In **Response & Escalation**, choose recipients and the available response, auto-resolution, closure notification, and escalation settings.
+6. In **Review**, read the plain-language description. Address warnings about missing recipients, global scope, or a disabled rule.
+7. Save and check the rule in the rule list. Use the **Event Inbox** to follow triggered events.
+
+## Expected Result and Common Problems
+
+The saved rule checks its selected scope and creates events when its condition and timing are satisfied. Events move from **New** through **Acknowledged** to **Resolved**, with reopening available.
+
+If a rule has not triggered, check its enabled state, scope, active shift, required data, and minimum duration. A template alone is not a saved rule. Acknowledgment is not resolution. Automatic interval-ending actions are not confirmed by the rule editor.
+
+See [Automator](/en/platform-intro/pages/automator) for **SLA**, **MTTR**, and event details, and [Data Acquisition](/en/platform-intro/pages/data-acquisition) for bookings.

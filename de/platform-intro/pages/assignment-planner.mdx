@@ -5,6 +5,8 @@ description: "Eine Planungsoberfläche für Maschinenzuweisungen, die Anordnung 
 
 ## Überblick
 
+**Zugriff:** Admin oder Seitenfreigabe `assignment_planner` mit entsprechendem Maschinenzugriff. [Rollen und Zugriff](/de/platform-intro/concepts/roles-and-access).
+
 Geben Sie Planern einen Drag-and-Drop-Arbeitsbereich, um die nächste Arbeit einer Maschine festzulegen, sowie eine Zeitleiste zur Prüfung von Zuweisungen über Maschinen und Zeiträume hinweg.
 
 Benutzer öffnen diese Seite über den Bereich **Planer** in der Hauptnavigation.
@@ -61,6 +63,23 @@ Dieselben Sortiermöglichkeiten stehen in der [Betriebsdatenerfassung V3](/de/pl
 Das Zuweisungs-Gantt zeigt Zuweisungen über ausgewählte Maschinen und Zeiträume hinweg, einschließlich Überschneidungen und Links zu den zugehörigen Aufträgen. Die automatische Anordnung unterstützt die Planung zukünftiger Zuweisungen und lässt laufende Produktion unverändert.
 
 Kann die automatische Zuweisung einen Auftrag nicht einplanen, erklärt eine Meldung den Grund, beispielsweise eine fehlende verfügbare Maschine. Prüfen Sie anhand dieser Erklärung den Plan, bevor Sie es erneut versuchen. Unter [Maschinenzuweisungen planen](/de/platform-intro/workflows/assignment-planner) finden Sie die Planungsschritte und Hinweise zu Importkonflikten, die manuell geprüft werden müssen.
+
+## Warum kann ich eine Karte nicht verschieben?
+
+Nur **Unplanned / Ungeplant**, **Planned / Geplant** und **Released / Freigegeben** können auf eine andere Maschine oder Halle verschoben werden. Laufende, pausierte und abgeschlossene Arbeit kann nur innerhalb ihrer aktuellen Warteschlange neu geordnet werden. Released erscheint in Verschieberegeln; wann dieser Status gesetzt wird, ist hier nicht bestätigt.
+
+Es können höchstens **15 Maschinen** gleichzeitig als Spalten angezeigt werden. Filter gelten für ungeplante Operationen und Warteschlangenspalten. Ändert sich die Warteschlange während Ihrer Sortierung, wird sie aktualisiert und Sie müssen erneut sortieren.
+
+Mit **Queue Position** bestimmt die Ablage die genaue Position; laufende und pausierte Karten bleiben oben. Ohne diese Option bestimmen Sortierregeln die Ansicht; **Moves** wählt Anfang oder Ende der Zielwarteschlange.
+
+## OP, AG, P, Seq, Qty und Auslastung lesen
+
+- **OP** (deutsch **AG**) zeigt die Operationspriorität; **P** die unabhängige Auftragspriorität. Höhere Werte bedeuten höhere Dringlichkeit.
+- **Seq / Nr.** ist die Operationssequenz, **Qty / Menge** die Menge und **Dur / Dauer** die Dauer.
+- **Prep / Rüst** bedeutet Vorbereitung; **Prod.** bedeutet Produktion. **util. / Ausl.** ist die geplante Warteschlangenlast anhand von Planzeiten, keine tatsächliche Auslastung.
+- Order Planned dates gelten für den Gesamtauftrag; Operation Planned dates für einen Schritt.
+
+Beispielsweise ergeben 50 Teile mit 2 Minuten je Teil 100 geplante Produktionsminuten, zuzüglich fester Rüstzeit. [Assignment Gantt](/de/platform-intro/pages/assignment-gantt) zeigt Zeitfenster; seine Verschiebung durch Ziehen ist Experimental und schreibgeschützt. Siehe [Berechnungen](/de/platform-intro/concepts/calculations#deviations).
 
 ## Hauptentitäten
 

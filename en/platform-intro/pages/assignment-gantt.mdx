@@ -1,0 +1,22 @@
+---
+title: "Assignment Gantt"
+description: "Inspect assignment windows, overlaps, and future arrangement, with the experimental read-only drag limitation."
+---
+
+## Overview
+
+**Access:** Admin or an account granted **Assignment Planner** access (`assignment_planner`), with the relevant Machine Access. Route: `/assignment-gantt`.
+
+Assignment Gantt shows assignments across selected machines and time. Use it to inspect planned windows, spot overlaps, and open related orders.
+
+## What Can I Change?
+
+**Drag-to-reschedule is labelled Experimental and read-only.** Do not rely on dragging the timeline to save a new schedule. Use the supported controls in [Assignment Planner](/en/platform-intro/pages/assignment-planner) to change work.
+
+**Auto-Arrange** rearranges overlapping future assignments; assignments in progress are not touched. Review warnings before accepting the arrangement. If automatic assignment cannot place an order, read the explanation, such as no available machine, and inspect the plan.
+
+## Read the Planned Times
+
+An assignment is one operation placed on a machine or hall pool. Its planned production time uses the quantity assigned to that machine. Queue load is based on planned durations, not actual production.
+
+For example, 2 minutes per part × 50 assigned parts gives 100 planned production minutes, plus the operation's fixed preparation time. See [calculations](/en/platform-intro/concepts/calculations#deviations) and [Plan Machine Assignments](/en/platform-intro/workflows/assignment-planner).

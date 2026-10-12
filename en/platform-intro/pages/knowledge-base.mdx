@@ -5,6 +5,8 @@ description: "A document workspace for uploading knowledge, reviewing processing
 
 ## Overview
 
+**Access:** Admin or Page Access `knowledge_base`. [Roles and access](/en/platform-intro/concepts/roles-and-access).
+
 Store and find operational knowledge, then review how documents relate to machines, orders, and products.
 
 Users open it from the Workspace section in the main navigation.
@@ -43,6 +45,20 @@ Review the document and its sources to understand what information is available.
 A relationship connects a document to a machine, order, or product. A suggested relationship is a connection for you to review; a confirmed relationship is one you have accepted. Confirm relevant suggestions and reject those that do not describe the document correctly.
 
 The Knowledge Graph is a visual view of these connections. Use it to explore the documents related to a production item, while distinguishing suggestions from confirmed links.
+
+## KB / WDB: Formats, Limits, and Processing States
+
+**KB** is Knowledge Base; the German short label is **WDB (Wissensdatenbank)**. Supported uploads are **PDF, DOCX, XLSX, CSV, TXT, JPG, PNG, WEBP**, up to **25 MB**.
+
+Processing labels are **Queued → Reading → Splitting → Indexing → Linking → Review → Ready**, with **Failed** indicating a processing problem. Check the displayed status before expecting retrieval. Scanned or image-only PDFs cannot be read; uploading the same unreadable PDF again does not fix it. Provide a readable document instead.
+
+The **Knowledge Graph** links documents to machines, orders, and products. **Suggested links** are detected automatically and require confirmation or rejection. **Dictate** provides voice input for notes; **1 doc / 1 Dok.** is a document count.
+
+## Using Knowledge in Watchmen AI
+
+The **AI Assistant / Watchmen AI** is **Beta**. **Documentation only** answers from platform documentation; **Context-aware** may query data areas enabled by your company admin. Knowledge Base access and AI data access are separate settings. No platform data is shared with external AI models unless an admin enables it.
+
+For useful queries, name the machine, product, or order and the exact question, such as “Which ready document explains Machine A's setup?” Check the referenced source and its status. See [AI Chats](/en/platform-intro/pages/chat-history) for modes and saved conversations.
 
 ## Main Entities
 

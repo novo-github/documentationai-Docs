@@ -10,6 +10,7 @@ Planen Sie ungeplante Arbeit in Maschinenwarteschlangen oder gemeinsamen Hallenp
 ## Bevor Sie beginnen
 
 <Callout kind="info" title="Ablaufzugriff">
+- Erforderlicher Zugriff: Admin oder Seitenfreigabe `assignment_planner` mit entsprechendem Maschinenzugriff.
 - Einstiegspunkte: `/assignment-planner`
 </Callout>
 
@@ -83,6 +84,14 @@ Laufende und abgeschlossene Zuweisungen können nicht in eine andere Spalte vers
 Wenn der [Auftragsimport](/de/platform-intro/pages/erp-upload-planner) einen Konflikt zur manuellen Klärung kennzeichnet, suchen Sie anhand der Auftrags- und Operationsangaben in der Importzusammenfassung die betroffene Arbeit im Planer. Prüfen Sie ihr aktuelles Ziel, ihren Status, die Notizen und den zugehörigen Auftrag, bevor Sie den Plan ändern.
 
 Verschieben Sie eine zulässige Zuweisung bei Bedarf in die vorgesehene Warteschlange. Hat die Arbeit bereits begonnen oder ist sie abgeschlossen, gilt weiterhin die Einschränkung für Spaltenwechsel. Prüfen Sie die aktuellen Produktionsdaten, bevor Sie das weitere Vorgehen festlegen. Die Importzusammenfassung erklärt, wenn eine Entscheidung wegen geänderter Produktion nach der Prüfung nicht angewendet werden konnte.
+
+## Verschiebbarkeit und Warteschlangenänderungen prüfen
+
+Nur **Unplanned / Ungeplant**, **Planned / Geplant** und **Released / Freigegeben** können zu einer anderen Maschine oder Halle verschoben werden. Laufende, pausierte oder abgeschlossene Zuweisungen bleiben in ihrer Warteschlange und können dort neu sortiert werden. Höchstens **15 Maschinen** sind gleichzeitig sichtbar.
+
+Bei aktiver Queue Position bleiben laufende und pausierte Zuweisungen oben; die Ablage bestimmt die genaue Position. Ohne diese Option bestimmen Sortierregeln die Ansicht und **Moves** Anfang/Ende des Ziels. Aktualisiert eine andere Änderung die Warteschlange während der Sortierung, wiederholen Sie diese auf dem aktualisierten Stand.
+
+[Assignment Gantt](/de/platform-intro/pages/assignment-gantt) zeigt die Zeitleiste. Verschiebung durch Ziehen ist **Experimental und schreibgeschützt**. Verwenden Sie unterstützte Planersteuerungen für Änderungen.
 
 ## Entscheidungspunkte
 

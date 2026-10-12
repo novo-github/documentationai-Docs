@@ -10,6 +10,7 @@ Set up standardized reasons that users can apply to timeline events and downtime
 ## Before You Begin
 
 <Callout kind="info" title="Workflow access">
+- Required access: Admin only.
 - Entry points: `/admin-panel`
 </Callout>
 
@@ -34,6 +35,12 @@ Begin on the [Admin Panel page](/en/platform-intro/pages/admin-panel).
     Save the reason so it becomes available in machine and PDA flows.
   </Step>
 </Steps>
+
+## Type, Level, and Automatic Rules
+
+Reasons have name, description, color, type, and level 1–5. The frontend reference does not establish the effects of type and level; confirm them with your product contact instead of assuming severity or precedence.
+
+Automatic application uses the reason's specific rule, its DEFAULT rule, then Global rules for Off, Idle, or Preparation. Configure these in [Machine Configuration](/en/platform-intro/pages/machine-configuration).
 
 ## Decision Points
 

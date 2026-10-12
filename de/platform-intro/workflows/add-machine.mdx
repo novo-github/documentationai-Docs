@@ -1,64 +1,22 @@
 ---
-title: "Maschine hinzufügen"
-description: "Erstellen Sie eine neue Maschine oder einen Hub, damit sie in Dashboards, Planungsansichten und Detailseiten erscheinen kann."
+title: "Maschine oder Arbeitsplatz hinzufügen"
+description: "Verwenden Sie den Adminassistenten, wählen Sie Maschine oder Arbeitsplatz und verbinden Sie Sensoren vor der Live-Datennutzung."
 ---
-
-## Ziel
-
-Erstellen Sie einen Maschinendatensatz mit den grundlegenden Informationen, die für Überwachung und Planung benötigt werden.
 
 ## Bevor Sie beginnen
 
-<Callout kind="info" title="Ablaufzugriff">
-- Einstiegspunkte: `/machines`
-</Callout>
+**Wer darf das tun: Nur Admin.** Starten Sie unter **Administrationsbereich → Machines → Add Machine**, Route `/admin-panel`. Halten Sie Name, Typ, Halle und gegebenenfalls Schichtgruppe bereit. Maschinenerstellung ist auch von der Maschinenseite dokumentiert.
 
-Beginnen Sie auf der [Seite Maschinen](/de/platform-intro/pages/machines).
+## Basics → Settings & Media → Review
 
-### Voraussetzungen
-- Der Benutzer hat Administratorzugriff.
-- Hallen und Schichtgruppen existieren bereits, wenn die Maschine sofort eingeordnet werden soll.
+1. Geben Sie unter **Basics** Identifikationsdaten ein und wählen Sie **Kind**: Maschine oder Arbeitsplatz sowie den Maschinentyp.
+2. Setzen Sie unter **Settings & Media** die passende Halle, Schichtgruppe, Tags und das Bild.
+3. Prüfen und speichern Sie unter **Review** den Eintrag.
+4. Öffnen Sie [Maschinenkonfiguration](/de/platform-intro/pages/machine-configuration) für AVA-Zuweisung, Zielwerte, Zeitachsenregeln/-bereiche, Sensorfunktionen, optionale Energieüberwachung und BDE-Assistentenwarnungen.
+5. Prüfen Sie bei einer Maschine die AVA-Zuordnung vor erwarteten Live-Werten.
 
-## Schritte
+## Erwartetes Ergebnis und häufige Probleme
 
-<Steps>
-  <Step title="Öffnen Sie den Ablauf zur Maschinenerstellung" icon="arrow-right" title-type="p">
-    Öffnen Sie den Ablauf zur Maschinenerstellung über die Seite **Maschinen**.
-  </Step>
-  <Step title="Geben Sie den Maschinennamen und die Identifikationsdaten ein" icon="arrow-right" title-type="p">
-    Geben Sie den Maschinennamen und die Identifikationsdaten ein.
-  </Step>
-  <Step title="Fügen Sie optionale Tags oder ein Bild hinzu" icon="arrow-right" title-type="p">
-    Fügen Sie optionale Tags oder ein Bild hinzu, wenn das Team sie für Filterung und Erkennung verwendet.
-  </Step>
-  <Step title="Ordnen Sie die Maschine einer Halle und einer Schichtgruppe zu" icon="arrow-right" title-type="p">
-    Ordnen Sie die Maschine einer Halle und einer Schichtgruppe zu.
-  </Step>
-  <Step title="Aktivieren Sie die Energieüberwachung" icon="arrow-right" title-type="p">
-    Aktivieren Sie die Energieüberwachung nur, wenn die Maschine für Energietracking verbunden ist.
-  </Step>
-  <Step title="Schließen Sie die Einrichtung ab" icon="arrow-right" title-type="p">
-    Schließen Sie die Einrichtung ab und kehren Sie zur Maschinenliste zurück.
-  </Step>
-</Steps>
+Der Eintrag erscheint unter [Maschinen](/de/platform-intro/pages/machines) und kann geplante Arbeit erhalten. Eine Maschine ohne AVA sammelt bis zur Zuordnung keine Sensordaten. Ein Arbeitsplatz hat bewusst keine AVA, Sensorkennzahlen, Zustandszähler oder sensorbasierten Alarm-/Automator-Auslösungen.
 
-## Entscheidungspunkte
-
-- Ob die Maschine sofort in einer Halle platziert oder zunächst später zugeordnet werden soll.
-- Ob Energieüberwachung bereits am ersten Tag benötigt wird.
-
-## Erwartetes Ergebnis
-
-Die Maschine erscheint in der Plattform und kann in maschinenspezifischen Seiten geöffnet werden.
-
-## Häufige Probleme und Sonderfälle
-
-- Pflichtfelder können den Abschluss blockieren, bis sie ausgefüllt sind.
-- Wenn Hallen oder Schichtgruppen fehlen, kann die Maschine mit einer Teilkonfiguration angelegt und später vervollständigt werden.
-- Eine Maschine ohne Planungsdaten kann in Listen erscheinen, bevor sie vollständig für die Planung bereit ist.
-
-## Verwandte Seiten
-
-- [Maschinen](/de/platform-intro/pages/machines)
-- [Maschinenkonfiguration](/de/platform-intro/pages/machine-configuration)
-
+Ergänzen Sie Pflichtfelder bei blockiertem Speichern. Vervollständigen Sie fehlende Hallen- oder Schichteinrichtung vor entsprechender Planungsnutzung. Siehe [Maschine konfigurieren](/de/platform-intro/workflows/machine-configuration).

@@ -5,6 +5,8 @@ description: "Eine konfigurierbare Live-Hallenübersicht für Produktionsüberwa
 
 ## Überblick
 
+**Zugriff:** Admin oder User; nie Operator. Kioskdisplays verwenden API-Schlüssel ohne Anmeldung. Displayverwaltung ist nur für Admins. [Rollen und Zugriff](/de/platform-intro/concepts/roles-and-access).
+
 Prüfen Sie die Produktion einer Halle auf Ihrem eigenen Bildschirm oder auf einer gemeinsamen Anzeige in der Fertigung. Ein Kiosk ist eine vereinfachte Ansicht für einen Bildschirm, der ohne ständige Bedienung läuft.
 
 Benutzer öffnen eine hallenspezifische Route, oft über einen geteilten Link oder ein Anzeigegerät.
@@ -44,6 +46,16 @@ Betrachten Sie aktuelle Maschinenzustände, aktive Aufträge und produzierte Tei
 ### Verbindung eines Displays prüfen
 
 Administratoren können prüfen, ob ein verwaltetes Display aktiv oder offline ist und wann es zuletzt Aktivität gemeldet hat. Diese Angaben beschreiben die Verbindung des Displays, nicht den Produktionszustand einer Maschine. Wenn eine Anzeige veraltet erscheint, prüfen Sie zuerst ihre Verbindung und letzte Aktivität, bevor Sie die angezeigten Produktionswerte bewerten.
+
+## OEE, AVL, PRO und PCS auf Hallendisplays
+
+Diese Kürzel bleiben deutsch und englisch gleich: **OEE** bedeutet Gesamtanlageneffektivität, **AVL** Verfügbarkeit, **PRO** Leistung statt Produktion und **PCS** Stückzahl. Die Beschriftung in der Ringmitte identifiziert die Kennzahl. [Berechnungen](/de/platform-intro/concepts/calculations#oee) erklärt die plattformspezifischen Definitionen.
+
+## Kioskzeiten und Netzwerkangaben
+
+Ein Kiosk verwendet einen API-Schlüssel statt einer Benutzeranmeldung. **Data refresh** bestimmt die Aktualisierung. **Page switch** darf nicht langsamer sein. **Key figures / orders switch** ist höchstens halb so lang wie die Seitenwechselzeit. **Page zoom** gilt für den eingesetzten Monitor.
+
+**Displays** unter Administrationsbereich → Halls zeigt registrierte Monitore, letzten Kontakt, **Wi-Fi / WLAN**, **Local IP / Lokale IP** und **MAC**. Ein Display ohne Meldung seit 24 Stunden wird als nicht gesehen angezeigt. Siehe [Hallenplandisplay einrichten](/de/platform-intro/workflows/hall-display-setup).
 
 ## Hauptentitäten
 

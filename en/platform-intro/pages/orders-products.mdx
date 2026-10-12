@@ -5,6 +5,8 @@ description: "A table-focused workspace for monitoring, filtering, and analyzing
 
 ## Overview
 
+**Access:** Admin or Page Access `orders`; never Operator. [Roles and access](/en/platform-intro/concepts/roles-and-access).
+
 Monitor production orders, find work that needs attention, and open an order's details when you need to inspect or change its operations and assignments.
 
 Users open it from the dashboard navigation.
@@ -54,6 +56,32 @@ The progress source determines which production record you are reviewing: PDA en
 
 Priority names, numbers, and colors follow the levels configured by your administrator. The same levels are used in imports and assignment planning. See [Priority Levels in the Admin Panel](/en/platform-intro/pages/admin-panel) for presets and customization.
 
+## Filters, Refresh, and Summary Counts
+
+All filters combine with **AND**. When a **Customer, Order, Product, or Machine** filter is active, the **date range is ignored**. For example, selecting a customer can show matching orders outside the date window. Sorting covers every order, not just the loaded page. Auto-refresh reloads every **60 seconds**.
+
+Summary cards show the company-wide total on top and the number in the current view underneath. Each order counts once. Grouped planned dates span the whole order; each assignment row has its own planned and actual window.
+
+## Status and Needs Attention
+
+| English status | German label | Meaning |
+| --- | --- | --- |
+| Unplanned | Ungeplant | No schedule yet. |
+| Planned | Geplant | Scheduled, not started. |
+| Released | Freigegeben | Approved to start; the exact transition into this status is unconfirmed. |
+| In Progress | In Bearbeitung | Work underway. |
+| Hold | In Wartestellung | Paused. |
+| Completed | Abgeschlossen | Finished. |
+| Cancelled | Storniert | Called off. |
+
+Order status follows its assignments. **Live** means an interval is running now. **Needs Attention** includes **Duration Exceeded**, **Cycle Time Degraded**, **Planned End Passed**, and **Delivery Date Passed**. Completed and cancelled orders are excluded.
+
+## Quantity and Time Short Forms
+
+**PDA Entry / BDE-Eintrag** uses operator quantity; **Cycle Count** uses sensor counts. This choice changes the progress display, not bookings. **Mat. / MA** and **Work / AA** are separate scrap categories; Total is input + MA + AA.
+
+**Seq / Nr.** is operation sequence; **Prep. / Rüst** is preparation; **Prod.** is production; **Dev. / Abweichung** is actual minus planned time. A negative time deviation means faster than planned. **Cycles Per Product / Press per Product** defines cycles required for a finished part. For formulas, see [calculations](/en/platform-intro/concepts/calculations).
+
 ## Main Entities
 
 - Production Order
@@ -70,7 +98,7 @@ Priority names, numbers, and colors follow the levels configured by your adminis
 - Users identify planning or production issues across one or more orders.
 
 ### Limits and Empty States
-- Results depend on the selected date range and filters.
+- Filters combine with AND; Customer, Order, Product, or Machine filters override the date range.
 - Sorting and filtering apply across the complete order list, not only the currently visible result page.
 - Orders without deeper structure may need the detail page before they can be planned well.
 

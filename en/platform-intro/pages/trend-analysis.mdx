@@ -5,6 +5,8 @@ description: "A report page for tracking how machine-related metrics change acro
 
 ## Overview
 
+**Access:** Admin or Page Access `reports_trend`, with relevant Machine Access. [Roles and access](/en/platform-intro/concepts/roles-and-access).
+
 Reveal whether performance is improving, worsening, or staying stable over time.
 
 Users open it from the Reports section in the main navigation.
@@ -26,6 +28,12 @@ Users open it from the Reports section in the main navigation.
 - Review long-range patterns instead of single-day results.
 - Compare one period against another by changing filters.
 - Use the page to support continuous-improvement or investigation work.
+
+## Trends and Report Archive
+
+Trend Analysis examines KPIs across days; Timeline Analysis examines states within a period. Compare the same machines, date range, and **All Day / Planned** scope. **AVL** is Availability and **PRO** Performance, using Watchmen's definitions in [calculations](/en/platform-intro/concepts/calculations).
+
+**Report archive** contains generated weekly, monthly, and export reports. Triggers are **Scheduled** or **By user**; states are **Queued**, **Building**, **Ready**, **Failed**. **Rebuild with current data** regenerates the report, so it may reflect changed source data. The archive's dedicated route and access rule are not established here.
 
 ## Main Entities
 

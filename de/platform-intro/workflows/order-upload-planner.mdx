@@ -10,7 +10,8 @@ Bringen Sie externe Auftragsdaten in einem kontrollierten, vorschauorientierten 
 ## Bevor Sie beginnen
 
 <Callout kind="info" title="Ablaufzugriff">
-- Einstiegspunkte: `/admin-panel/erp-uploads`
+- Erforderlicher Zugriff: Admin oder Seitenfreigabe `erp_uploads`.
+- Einstiegspunkte: `/erp-uploads`
 </Callout>
 
 Beginnen Sie auf der [Seite ERP-Upload-Planer](/de/platform-intro/pages/erp-upload-planner).
@@ -48,6 +49,16 @@ Beginnen Sie auf der [Seite ERP-Upload-Planer](/de/platform-intro/pages/erp-uplo
     Lesen Sie in der Ergebnisübersicht, welche Entscheidungen angewendet wurden. Falls eine Entscheidung nicht angewendet werden konnte, prüfen Sie die Erklärung und die betroffene Operation im Zuweisungsplaner. Möglicherweise wurde nach Ihrer Konfliktprüfung bereits Produktion gestartet.
   </Step>
 </Steps>
+
+## Die vier Importphasen prüfen
+
+**Upload File → Map Columns → Assign Machines → Review & Save** verwendet CSV, XLS oder XLSX. Ordnen Sie **Order Number, Product, Planned Start, Planned End** zu. Wählen Sie **ALL Units / 1 Unit**, gewöhnliche/Industrieminuten, Importumfang und Anfangsprioritäten für neue Datensätze mit leeren Prioritätszellen. Die Operationsanfangspriorität ist standardmäßig 100. Save Mapping gilt je Benutzer. Manuelle Maschinen-/Hall-Pool-Zuweisung überschreibt Zuordnungen; Reset stellt diese wieder her.
+
+Führen Sie **Check** als Probelauf aus. **NEW / NEU**, **CHG / GEÄ** und **IMPACT** zeigen Erstellung, Aktualisierung und betroffene Planungswerte. Check speichert nichts. Nach Änderungen müssen Sie vor Save erneut Check ausführen.
+
+Zeilen ohne Planung oder mit Beginn nach Ende werden nicht verarbeitet. Neuimport gleicht Produkt, Auftrag, Arbeitsauftragsprodukt, Operationssequenz und Maschinenzuweisung ab. Leere Aktualisierungszellen erhalten Werte; Prioritäten, geschützte Felder und Produktionsverlauf bleiben unverändert. Fehlende Zeilen löschen keine Datensätze. Operationen mit erfasster Arbeit können nicht verschoben werden; mehrdeutige Mehrfachzielkonflikte benötigen manuelle Prüfung.
+
+**Beispiel:** Beschreiben importierte 100 Minuten insgesamt 50 Teile, wählen Sie ALL Units. Bei 2 Minuten je Teil wählen Sie 1 Unit. Die falsche Auswahl verändert die Planzeit.
 
 ## Entscheidungspunkte
 

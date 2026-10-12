@@ -10,13 +10,14 @@ Halten Sie die Alarmlogik nützlich, gezielt und leicht prüfbar.
 ## Bevor Sie beginnen
 
 <Callout kind="info" title="Ablaufzugriff">
+- Erforderlicher Zugriff: Admin oder Seitenfreigabe `alert_rules`; nie Operator.
 - Einstiegspunkte: `/alert-rules`, `/alert-rules/:machineId`, `/machines/:machineId/alert-rules`
 </Callout>
 
 Beginnen Sie auf der [Seite Alarmregeln](/de/platform-intro/pages/alert-rules).
 
 ### Voraussetzungen
-- Der Benutzer hat Administratorzugriff.
+- Admin oder Seitenfreigabe `alert_rules`; nie Operator.
 
 ## Schritte
 
@@ -40,6 +41,12 @@ Beginnen Sie auf der [Seite Alarmregeln](/de/platform-intro/pages/alert-rules).
     Erweitern Sie eine Regel, wenn Sie vergangene Alarme prüfen oder vorhandene Alarme lösen müssen.
   </Step>
 </Steps>
+
+## Kanalkosten und Datenvoraussetzungen prüfen
+
+Prüfen Sie vor SMS-Auswahl **0,10 € je Nachricht und Benutzer** sowie die erforderliche ausdrückliche Zustimmung. Eine Nachricht an drei Benutzer kostet 0,30 €. Ohne Empfänger werden Alarme kostenlos erfasst. Webhooks können Basic-, Bearer- oder eigene Header-Authentifizierung verwenden.
+
+Sensorregeln lösen für Arbeitsplätze nicht aus. Beachten Sie aktive-Schicht-Einschränkungen der Regel. [Automator](/de/platform-intro/pages/automator) erklärt separate Adminbedingungen, Zeiten, Eskalation und Ereignisabläufe.
 
 ## Entscheidungspunkte
 

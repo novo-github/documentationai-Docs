@@ -1,0 +1,26 @@
+---
+title: "Hallenplandisplay einrichten"
+description: "Registrieren Sie ein Hallendisplay, wählen Sie Kioskinhalte und Zeiten und prüfen Sie veraltete Anzeigedaten."
+---
+
+## Bevor Sie beginnen
+
+**Wer darf das tun: Admin.** Beginnen Sie unter **Administrationsbereich → Halls**, Route `/admin-panel`. Ein registriertes Display öffnet den [Hallenplan](/de/platform-intro/pages/hall-plan), Route `/hallPlan/:id`, mit API-Schlüssel statt Benutzeranmeldung.
+
+## Das Display konfigurieren und öffnen
+
+1. Erstellen oder öffnen Sie die Halle und ordnen Sie ihre Maschinen zu.
+2. Registrieren Sie den Monitor unter **Displays**. Prüfen Sie seine Netzwerkkennungen.
+3. Wählen Sie Hallenplanspalten, Kennzahl, Sprache, Maschinensortierung und Anzeigeversion.
+4. Setzen Sie **Data refresh** und **Page switch**. Der Seitenwechsel darf nicht langsamer als die Datenaktualisierung sein.
+5. Setzen Sie **Key figures / orders switch** auf höchstens die Hälfte der Seitenwechselzeit. Bei 20 Sekunden Seitenwechsel sind hier beispielsweise höchstens 10 Sekunden möglich.
+6. Setzen Sie **Page zoom** für den eingesetzten Monitor; diese Einstellung gilt für diesen Monitor.
+7. Öffnen Sie den Hallenplan auf dem Display mit dessen API-Schlüssel und prüfen Sie Maschinen und Kürzel: **OEE**, **AVL**, **PRO**, **PCS**.
+
+## Erwartetes Ergebnis und Fehlerbehebung
+
+Der Monitor zeigt und wechselt die konfigurierten Halleninformationen ohne Benutzeranmeldung. **PRO** bedeutet Leistung statt Produktion; **PCS** ist die Stückzahl.
+
+Bei veralteten Daten prüfen Sie letzten Kontakt und Netzwerkinformationen. Ein Display ohne Meldung seit **24 Stunden** wird als nicht gesehen angezeigt. Displayverbindung und Maschinenproduktionszustand sind getrennte Informationen.
+
+Siehe [Hallen verwalten](/de/platform-intro/workflows/hall-management), [Hallenplan](/de/platform-intro/pages/hall-plan) und [Glossar](/de/platform-intro/concepts/glossary).

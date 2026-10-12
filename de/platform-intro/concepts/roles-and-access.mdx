@@ -1,0 +1,57 @@
+---
+title: "Rollen, Seitenzugriff und Maschinenzugriff"
+description: "Verstehen Sie die Rollen Admin, User und Operator, Seitenberechtigungen, Maschinenzugriff und Hinweise zu fehlendem Zugriff."
+---
+
+## Welche Rolle habe ich?
+
+Ihre Rolle setzt die grundsätzliche Zugriffsgrenze. **Page Access / Seitenzugriff** und **Machine Access / Maschinenzugriff** sind getrennte Berechtigungen innerhalb dieser Grenze.
+
+| Rolle | Möglichkeiten |
+| --- | --- |
+| **Admin** | Einstellungen verwalten, Benutzer einladen, Maschinen bearbeiten, Berechtigungen ändern und Adminseiten innerhalb des eigenen Unternehmens nutzen. |
+| **User** | Tägliche Arbeit mit den vom Administrator freigegebenen Seiten und Maschinen. Darf keine Benutzer einladen oder Maschinen bearbeiten. |
+| **Operator** | Vom Administrator freigegebener, eingeschränkter Zugriff für die Fertigung. Hat nie Zugriff auf Hallenplan, Aufträge & Produkte oder Alarmregeln. |
+
+**System (Automator)** ist ein automatisierter Akteur im Ereignisverlauf, keine menschliche Rolle.
+
+<a id="page-access" />
+
+## Welche Seiten kann mein Administrator freigeben?
+
+| Zugriffsklasse | Seiten |
+| --- | --- |
+| **Nur Admin** | Administrationsbereich, Organisationsstatistiken / Org Stats, Bestenliste, Automator, Peak Optimizer, Maschinenkonfiguration. Diese Seiten können User oder Operator nicht freigegeben werden. |
+| **Freigebbarer Seitenzugriff** | Aufträge & Produkte (`orders`), Alarmregeln (`alert_rules`), Schichtplaner (`scheduler`), Zuweisungsplaner einschließlich Assignment Gantt (`assignment_planner`), ERP Uploads (`erp_uploads`), Kanban (`tickets`), Wissensdatenbank (`knowledge_base`), AI Chats / Chatverlauf (`ai_chats`), Versus (`versus`), Zeitleistenanalyse (`reports_timeline`), Trendanalyse (`reports_trend`). |
+| **Für Nicht-Operator verfügbar** | Maschinen und Hallenplan. Die sichtbaren Maschinen hängen weiterhin vom Maschinenzugriff ab. |
+| **Persönliche und Feedbackseiten** | Benutzerprofil, Feedback und Roadmap sind für alle Rollen verfügbar. |
+
+Ein Operator erhält nie Aufträge & Produkte, Alarmregeln oder Hallenplan, auch wenn eine Liste freigebbarer Seiten sie sonst enthalten würde. **Full Access** umfasst alle innerhalb der Rolle freigebbaren Seiten; eine leere Auswahlliste umfasst keine. Ein User wird dadurch nicht zum Admin.
+
+Das Frontend enthält eine Route und eine Adminregel für die Bestenliste. Ihre Erreichbarkeit in der aktuellen Navigation muss jedoch bestätigt werden. Fragen Sie bei fehlendem Zugang Ihre Administration.
+
+<a id="machine-access" />
+
+## Warum kann ich eine Seite öffnen, sehe aber eine Maschine nicht?
+
+Maschinenzugriff ist unabhängig vom Seitenzugriff. Ein Administrator kann alle Maschinen oder eine bestimmte Liste freigeben. Maschinendetails, Maschinenhistorie und BDE erfordern Zugriff auf die jeweilige Maschine.
+
+**Beispiel:** Ein Planer mit Zugriff auf den Zuweisungsplaner und nur auf Maschine A kann die Planungsseite für seine freigegebene Maschine nutzen. Seitenzugriff allein gibt Maschine B nicht frei.
+
+**No machine access — contact admin** bedeutet, dass Ihrem Konto keine erreichbaren Maschinen zugewiesen sind. Beim Öffnen einer nicht freigegebenen Seite erscheint **Unauthorized**.
+
+## Wie erhalte ich den benötigten Zugriff?
+
+1. Nennen Sie Ihrer Administration die benötigte Seite, Maschine und Aufgabe.
+2. Die Administration öffnet **Administrationsbereich → Users → Edit Permissions** und prüft Seiten- und Maschinenzugriff getrennt.
+3. Die Administration speichert die Änderung. Prüfen Sie den Zugriff in Ihrer nächsten Sitzung erneut, wie im bestehenden Berechtigungsleitfaden beschrieben.
+
+Den vollständigen Ablauf erklärt [Benutzer einladen und Berechtigungen verwalten](/de/platform-intro/workflows/user-access-management).
+
+## Operator-Zugangsdaten und Beförderung
+
+Ein Administrator erstellt Operatorkonten. Generierte Passwörter werden einmal angezeigt; kopieren oder laden Sie sie vor dem Schließen herunter. Ein neues Passwort beendet die aktiven Sitzungen dieses Operators. Eine Deaktivierung beendet den Zugriff sofort und erhält bisherige Schichten, Beschriftungen und Zuweisungen.
+
+**Promote to user** gibt Zugriff auf alle Maschinen, unabhängig von der bisherigen Maschinenliste. Prüfen Sie die daraus entstehenden Berechtigungen bewusst. E-Mail-Bestätigung und Aktivierung sind getrennt. Unbestätigte Operatoren können sich weiterhin anmelden; eine Bestätigungsmail wird nicht automatisch versendet.
+
+Siehe [Operatoren verwalten](/de/platform-intro/workflows/operator-management), [Benutzerprofil](/de/platform-intro/pages/user-profile) und [Help Center](/de/help-center).

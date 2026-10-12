@@ -5,6 +5,8 @@ description: "Eine maschinenspezifische Betriebsseite für Live-Status, Schichtk
 
 ## Überblick
 
+**Zugriff:** Jede Rolle mit Zugriff auf diese Maschine. [Rollen und Zugriff](/de/platform-intro/concepts/roles-and-access).
+
 Geben Sie Benutzern eine detaillierte, datumsbezogene Sicht auf die Live- oder jüngste Aktivität einer Maschine.
 
 Benutzer öffnen diese Seite, indem sie auf der Seite **Maschinen** eine Maschine auswählen.
@@ -28,6 +30,18 @@ Benutzer öffnen diese Seite, indem sie auf der Seite **Maschinen** eine Maschin
 - Auf eine bestimmte Schicht oder alle Schichten fokussieren.
 - BDE, Maschinenhistorie oder Alarmregeln öffnen.
 - Den aktuellen Maschinenzustand und jüngste Ereignisse prüfen.
+
+## Live Data, Pulse und Last Heartbeat
+
+**Live Data** zeigt laufend aktuelle Messwerte. **Last Heartbeat** ist der letzte Gerätekontakt, nicht die letzte Produktionszeit. **Pulse** ist das Rohsignaldiagramm unter der Zeitleiste. Seine Auflösung kann 1 Minute, 30 Sekunden, 5 Sekunden oder 1 Sekunde betragen.
+
+Die Zeitleiste zeigt Produktion grün, Leerlauf orange, Aus rot, Vorbereitung blau und Unbekannt grau. Stillstand bedeutet Leerlauf oder Aus. Ein fehlender Grund kann eine Markierung auslösen; erfassen Sie den Kontext in der BDE.
+
+## OEE, AVL, PRO und Zykluswerte lesen
+
+**AVL** ist Produktionszeit geteilt durch gesamte erfasste Zeit. **PRO** ist Produktion plus Vorbereitung geteilt durch Einschaltzeit; es bedeutet Leistung, nicht Produktion. Der Qualitäts-Tooltip zeigt **95 %** und verweist für Änderungen auf einen Administrator. Diese Zeitdefinitionen weichen von üblichen OEE-Definitionen ab. Die genaue OEE-Serverformel bleibt unbestätigt.
+
+Zyklusdurchschnitte unterscheiden sich nach Quelle: gesamte Intervallzeit je erkanntem Zyklus, aktive Produktionszeit je erkanntem Zyklus oder Produktionszeit je eingegebenem Teil. Vergleichen Sie denselben Zeitraum und dieselbe Quelle. Siehe [Berechnungen und Beispiele](/de/platform-intro/concepts/calculations).
 
 ## Hauptentitäten
 

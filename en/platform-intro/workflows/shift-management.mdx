@@ -10,6 +10,7 @@ Define the shifts and shift groups that the platform uses for planning and machi
 ## Before You Begin
 
 <Callout kind="info" title="Workflow access">
+- Required access: Admin only.
 - Entry points: `/admin-panel`
 </Callout>
 
@@ -37,6 +38,10 @@ Begin on the [Admin Panel page](/en/platform-intro/pages/admin-panel).
     Revisit machines or scheduler views if the new shifts should be applied immediately.
   </Step>
 </Steps>
+
+## Scheduled Shifts or Active Shifts?
+
+A Shift has start, end, and optional breaks; a Shift group defines weekday patterns. Active shifts are configured per machine and start automatically with machine activity. Switching removes scheduled shifts from today onward. Review [Machine Configuration](/en/platform-intro/pages/machine-configuration) before changing the model; some alert rules do not work with active shifts.
 
 ## Decision Points
 

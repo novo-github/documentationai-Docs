@@ -5,6 +5,8 @@ description: "A guided import page for turning spreadsheet rows into platform-re
 
 ## Overview
 
+**Access:** Admin or Page Access `erp_uploads`. [Roles and access](/en/platform-intro/concepts/roles-and-access).
+
 Import spreadsheet-based orders into the Watchmen Platform. Review the source file, match its columns to order fields, and check how the import will affect your existing production plan before confirming it.
 
 Users open it through the protected ERP upload route.
@@ -13,7 +15,7 @@ Users open it through the protected ERP upload route.
 
 <Callout kind="info" title="Access details">
 - Visibility: Protected
-- Primary routes: `/admin-panel/erp-uploads`
+- Primary routes: `/erp-uploads`
 </Callout>
 
 ## What You Can See
@@ -62,6 +64,28 @@ A scheduling conflict appears when the file assigns an operation that is already
 Some conflicts cannot be resolved in the import review. Follow the indication to resolve those manually in the [Assignment Planner](/en/platform-intro/pages/assignment-planner).
 
 After import, review the outcome summary. It shows which decisions were applied and explains any that could not be applied, for example if production started after your review. Use this result to identify work that still needs attention in the planner.
+
+## Four Stages, Required Fields, and Badges
+
+The current page is **ERP Uploads**, also called ERP Upload Planner in this documentation. Open it in Planner at `/erp-uploads`. Flow: **Upload File → Map Columns → Assign Machines → Review & Save**. Accepted files: **CSV, XLS, XLSX**.
+
+Required mappings are **Order Number, Product, Planned Start, Planned End**. Date/time can be one column or separate columns; a date without time uses midnight or the selected start/end-of-day setting. Rows without schedule information or with start after end are not processed.
+
+- **ALL Units / 1 Unit:** whether planned production time describes the full quantity or a single unit.
+- **Industrial minutes:** ordinary minutes = industrial minutes × 0.6.
+- **Initial order priority / Initial operation priority:** only for new records with empty priority cells; initial operation priority defaults to 100.
+- **Commit scope:** All rows or Machine assigned; the latter imports only rows with a machine assignment.
+- **Save Mapping / Load Mapping:** saved per user. Manual machine or hall-pool assignment overrides mapping; **Reset** restores it.
+
+**Check** is a dry run and saves nothing. **NEW / NEU** means creation, **CHG / GEÄ** means update, **IMPACT** means a calculated planning value is affected. If data changes after Check, run Check again before **Save** commits.
+
+## Re-import Matching and Protected History
+
+Records match by product name; order name; work order = order + product; operation = work order + sequence; assignment = operation + machine. Empty update cells keep current values. Existing priorities and other protected fields are not overwritten. Production history is never touched, and a missing row does not delete anything.
+
+Operations with recorded work cannot be moved. **Move**, **Keep**, or **Keep both** handles eligible machine conflicts. Multiple changed targets can be ambiguous and require manual review in Assignment Planner.
+
+**ERP Upload (single machine) Legacy** is an older superseded version; use this current multi-record workflow.
 
 ## Main Entities
 

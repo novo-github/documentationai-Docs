@@ -10,6 +10,7 @@ Steuern Sie die Live-Produktionsverfolgung für eine Maschine und erfassen Sie Z
 ## Bevor Sie beginnen
 
 <Callout kind="info" title="Ablaufzugriff">
+- Erforderlicher Zugriff: Jede Rolle mit Zugriff auf diese Maschine.
 - Einstiegspunkte: `/machines/:machineId/dataAcquisition`
 </Callout>
 
@@ -83,6 +84,16 @@ Beginnen Sie auf der [Seite Betriebsdatenerfassung (BDE)](/de/platform-intro/pag
 Erfassen Sie Materialausschuss und Fertigungsausschuss beim Stoppen oder Fortsetzen eines Intervalls in den jeweiligen Feldern. Prüfen Sie die Aufschlüsselung und den Gesamtausschuss in [Aufträge & Produkte](/de/platform-intro/pages/orders-products) oder der [Auftragsanalyse](/de/platform-intro/pages/order-detail). Angezeigte Produktionsgesamtmengen enthalten den eingegebenen Ausschuss.
 
 Das Starten und Stoppen der Produktion aktualisiert den zugehörigen Auftragsstatus. Eine Zuweisung wird abgeschlossen, wenn die produzierte Menge genau der geplanten Menge entspricht. Erscheint ein Hinweis zur Überproduktion, prüfen Sie die Mengen und den Auftragsabschluss, bevor Sie fortfahren.
+
+## Arbeit übernehmen, während des Laufs buchen und abschließen
+
+1. Übernehmen Sie Arbeit aus dem **Pool** Ihrer Maschinenhalle. Suchen Sie bei Bedarf eine ungeplante Operation oder verwenden Sie **Find/Create Immediate Order**.
+2. Verwenden Sie **Prep / Vorber.** zur Vorbereitung, danach **Start** für Produktion. Prüfen Sie Hinweise zu anderen laufenden Aufträgen oder unfertigen Vorgängerschritten.
+3. Buchen Sie über **Mid Booking / Zwischenbuchung** Gutmenge, **Mat. / MA** und **Work / AA** während des Laufs. Das Intervall wird geschlossen und neu gestartet. Scheitert der Neustart, bleiben Mengen gespeichert. Drücken Sie Start statt erneut zu buchen.
+4. Geben Sie in **Cumulative** den ganzen Zählerstand ein, etwa 1450, statt des Zuwachses.
+5. Prüfen Sie beim Stoppen die Mengen. Bei Überproduktion wählen Sie **Put on hold** oder **Mark as finished**. Beschriften Sie Stillstand unter **Downtime reasons**.
+
+Intervalllöschung ist endgültig. Operatoren können Aufträge & Produkte oder Alarmregeln nicht öffnen. Nutzen Sie freigegebene BDE-Ansichten oder fragen Sie Ihre Administration. [BDE-Assistentenwarnungen](/de/platform-intro/pages/data-acquisition) können veraltete Daten und unpassende Maschinen-/Auftragszustände melden.
 
 ## Entscheidungspunkte
 

@@ -1,0 +1,115 @@
+---
+title: "How Platform Numbers Are Calculated"
+description: "Definitions, formulas, units, filters, and limits for Watchmen OEE, cycle times, quantities, planning load, savings, and energy."
+---
+
+## Compare the Same Data Before Comparing Numbers
+
+Match the machine, period, shift, and quantity source. **All Day** uses the full 24 hours; **Planned** uses scheduled shift time. A work center has no AVA sensor KPIs and is excluded from machine-state counters and analytics.
+
+This reference separates definitions visible in the platform from calculations that still need confirmation. For abbreviations such as **AVL**, **PRO**, **MA**, and **AA**, use the [glossary](/en/platform-intro/concepts/glossary).
+
+<a id="oee" />
+
+## OEE, AVL (Availability), PRO (Performance), and Quality
+
+<Callout kind="info">
+  Watchmen uses its own time-based definitions of Availability and Performance. They differ from textbook OEE definitions. **PRO means Performance, not Production.**
+</Callout>
+
+| Figure | Platform definition |
+| --- | --- |
+| **AVL — Availability** | Production-state time / total recorded machine time × 100. |
+| **PRO — Performance** | (Production + preparation time) / (production + preparation + idle time) × 100. Off time is excluded. |
+| **Quality** | The dashboard tooltip states **95%** and directs you to an admin to change it. The setting location and any automatic quantity-based replacement are not confirmed by the frontend reference. |
+| **OEE — Overall Equipment Effectiveness** | Combines Availability, Performance, and Quality. The exact server formula is not confirmed by the frontend reference. |
+
+**Example:** With 3 hours production, 1 hour preparation, 1 hour idle, and 2 hours off, Availability is **3 / 7 × 100 = 42.86%**, and Performance is **4 / 5 × 100 = 80%**. This example has no Unknown time; treatment of Unknown time in the denominator is not established here.
+
+Multiplying these ratios with 95% quality would give **32.57%**. This is an illustration of a multiplication formula, not verification of the server's OEE result. The [production metrics FAQs](/en/help-center/faq/production-metrics) explain the distinction and the quantity-based quality example.
+
+<a id="cycle-times" />
+
+## Cycle Times and Interval Performance
+
+An **interval** is one recorded work session on an assignment. A **cycle** is detected from the machine sensor; an operator-entered quantity is a separate source.
+
+| Figure | Calculation | Interpretation |
+| --- | --- | --- |
+| **Interval Performance** | Production time / total interval duration × 100 | How much of the session was actual production. |
+| **Avg. Cycle Duration** | Total interval duration / detected cycles | Includes pauses and loading. |
+| **Avg. Production Cycle Time** | Active production time / detected cycles | Active machining time per detected cycle. |
+| **Avg. Cycle Time (Operator Input)** | Production time / operator-entered quantity | Uses booked quantity rather than sensor cycles. |
+
+**Example:** A 60-minute interval contains 40 minutes of production, 20 detected cycles, and 16 entered units. Interval Performance is **66.67%**. Avg. Cycle Duration is **180 seconds**, Avg. Production Cycle Time is **120 seconds**, and Avg. Cycle Time (Operator Input) is **150 seconds**. These values answer different questions.
+
+Cycle times are displayed in seconds. A zero cycle or quantity denominator cannot yield a meaningful average. Cycles outside recorded intervals and differences between entered quantities and detected cycles help explain discrepancies; review them in [order analysis](/en/platform-intro/pages/order-detail).
+
+<a id="deviations" />
+
+## Planned Times and Deviations
+
+| Figure | Calculation |
+| --- | --- |
+| **Planned Production Time** | Planned time per part × quantity assigned to this machine. |
+| **Planned Preparation Time** | Fixed preparation duration entered per operation. |
+| **Cycle Time Deviation** | Avg. Cycle Duration − planned time per part. |
+| **Production Time Deviation** | Actual production time − planned production time for the assigned quantity. |
+| **Preparation Time Deviation** | Logged preparation time − planned preparation time. |
+| **Queue load / util.** | Derived from planned durations of queued assignments; it is not measured utilization. |
+
+**Example:** 2 minutes per part × 50 assigned parts gives **100 planned production minutes**. If the actual time is 90 minutes, the production deviation is **−10 minutes**: faster than planned. Deviations are displayed in minutes and seconds. For time deviations, a negative value means less time than planned.
+
+When an order is split across machines, each machine is compared with its own assigned share. **Order Planned dates** describe the whole order; **Operation Planned dates** belong to a step. See [Assignment Planner](/en/platform-intro/pages/assignment-planner).
+
+<a id="quantities" />
+
+## Quantities, Scrap, and Industrial Minutes
+
+**Total on assignment cards = Input quantity + Material Scrap (Mat. / MA) + Work Scrap (Work / AA).** For example, 95 entered good units + 3 material scrap + 2 work scrap gives a total of **100**. **Rework Qty** is tracked separately; no rule for adding it to this total is established here.
+
+**PDA Entry / BDE-Eintrag** uses operator bookings; **Cycle Count** uses sensor counts. Changing the progress source changes the display, not the bookings. In **Cumulative** mode, enter the total counter reading, such as 1450, rather than the increment for the current interval.
+
+**Ordinary minutes = industrial minutes × 0.6.** One industrial minute is one hundredth of an hour. **500 industrial minutes = 300 ordinary minutes = 5 hours.** Do not use this conversion for files already containing ordinary minutes. See [ERP Uploads](/en/platform-intro/pages/erp-upload-planner).
+
+<a id="organization-impact" />
+
+## Organization Statistics: Snapshots, Savings, and Potential
+
+| Label | Meaning or rule |
+| --- | --- |
+| **Live Utilization** | Share of machines producing right now; a snapshot, not a period average. |
+| **Downtime Reduced** | Reduction of idle time above each machine's best-days baseline, based on its lowest 25% idle rate; not all idle time. |
+| **Revenue Recovered** | Downtime Reduced in hours × Hourly Revenue in €/h. Describes value already gained, not a forecast. |
+| **Still reachable** | Current wasted-energy cost + value of recovering half the remaining idle time at the same hourly rate. |
+| **Production shifts recovered** | Recovered time expressed as 8-hour shifts. |
+| **Workflow Time Saved** | An impact indicator; its exact formula is not established by this reference. |
+| **CO₂ / Sustainability Check** | Estimate using optional company inputs such as plant area, waste, renewable share, coolant, transport, and material efficiency; the full formula is not established here. |
+
+**Example:** 4 hours of Downtime Reduced at €100/h gives **€400 Revenue Recovered** and **0.5 recovered shifts**. If remaining idle time is 6 hours and wasted-energy cost is €5, Still reachable is **€5 + (6 × 0.5 × €100) = €305**. These are illustrative inputs, not promised savings.
+
+See [Organization Statistics](/en/platform-intro/pages/org-stats) for where these values appear. **Machine rating** is a configured target for comparison, not an actual measurement.
+
+<a id="energy" />
+
+## Energy and Costs
+
+**W / kW measure power; kWh measures energy.** At constant power, energy in kWh = power in kW × hours. Energy cost = energy in kWh × the configured **Energy Price** in €/kWh.
+
+The frontend describes **Energy wastage** as energy consumed while the machine is not producing. The energy FAQ uses idle energy as an example. The exact inclusion of preparation, off time, and device-specific calculation factors is not confirmed here; do not treat the idle example as a complete dashboard formula.
+
+An optional energy monitor supplies readings such as consumption, voltage, power factor, and frequency. Distinguish measured values from estimates based on ratings or factors. Idle energy, where included, is part of total consumption and its cost is part of total cost.
+
+See the [energy and costs FAQs](/en/help-center/faq/energy-and-costs) for arithmetic examples and [Machine Configuration](/en/platform-intro/pages/machine-configuration) for the monitoring setup.
+
+<a id="filters" />
+
+## Orders & Products: Which Records Are Counted?
+
+- Summary cards show the company-wide total on top and the count currently in view underneath. An order is counted once even when it has several assignment rows.
+- Filters combine with **AND**. When a **Customer, Order, Product, or Machine** filter is active, the **date range is ignored**.
+- Sorting applies to every order, not just the loaded result page.
+- Auto-refresh reloads every **60 seconds**.
+- **Needs Attention** includes Duration Exceeded, Cycle Time Degraded, Planned End Passed, and Delivery Date Passed. Completed and cancelled orders are excluded.
+
+See [Orders & Products](/en/platform-intro/pages/orders-products) for the table and [roles and access](/en/platform-intro/concepts/roles-and-access) if a page is unavailable.

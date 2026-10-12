@@ -5,6 +5,8 @@ description: "A weekly planning page for assigning shifts to machines."
 
 ## Overview
 
+**Access:** Admin or Page Access `scheduler`, with relevant Machine Access. [Roles and access](/en/platform-intro/concepts/roles-and-access).
+
 Let users define weekly machine shift coverage in a structured planner view.
 
 Users open it from the Planner section in the main navigation.
@@ -27,6 +29,14 @@ Users open it from the Planner section in the main navigation.
 - Select the machines to plan.
 - Move between weeks.
 - Add, clear, and save shift selections for each machine and day.
+
+## Shifts, Shift Groups, and Active Shifts
+
+A **Shift (Schicht)** has a start, end, and optional breaks. A **Shift group (Schichtgruppe)** is a weekly pattern of shifts by weekday assigned to machines. **Whole day** covers the full day.
+
+An **Active shift** starts automatically when a machine begins idle, production, or preparation. It is an alternative to scheduled shifts. Switching a machine to active shifts removes its scheduled shifts from today onward; review this in [Machine Configuration](/en/platform-intro/pages/machine-configuration).
+
+Analytics **All Day** uses 24 hours while **Planned** uses scheduled shift time. A changed schedule can therefore change the time window being compared.
 
 ## Main Entities
 

@@ -5,6 +5,8 @@ description: "A planning surface for assigning work to machines, arranging futur
 
 ## Overview
 
+**Access:** Admin or Page Access `assignment_planner`, with relevant Machine Access. [Roles and access](/en/platform-intro/concepts/roles-and-access).
+
 Give planners a drag-and-drop workspace for deciding which machine should run which work next, plus a timeline for reviewing assignments across machines and time.
 
 Users open it from the Planner section in the main navigation.
@@ -61,6 +63,23 @@ The same sorting choices are available in [Data Acquisition V3](/en/platform-int
 Assignment Gantt shows assignments across selected machines and time, including overlaps and links to related orders. Automatic arrangement helps plan future assignments while leaving active production unchanged.
 
 If automatic assignment cannot place an order, a message explains the reason, such as no available machine. Use that explanation to review the plan before trying again. See [Plan Machine Assignments](/en/platform-intro/workflows/assignment-planner) for planning steps and guidance on import conflicts that require manual review.
+
+## Why Can I Not Move a Card?
+
+Only **Unplanned**, **Planned**, and **Released** assignments can move to another machine or hall. In-progress, on-hold, and completed work can only be reordered within its current queue. The UI mentions Released in move rules, but when work becomes Released is not confirmed here.
+
+At most **15 machines** can be shown as columns at once. Filters apply to both unassigned operations and queue columns. If the queue changes while you reorder, it refreshes and you must redo the reorder.
+
+With **Queue Position** on, dropping a card sets its exact position; running and on-hold cards stay at the top. With it off, sort-rule precedence controls the view, and the **Moves** dropdown selects the destination's start or end.
+
+## Read OP, AG, P, Seq, Qty, and Utilization
+
+- **OP** (German **AG**) is the operation-priority chip; **P** is the independent order priority. Higher values mean more urgent.
+- **Seq / Nr.** is the operation sequence. **Qty / Menge** is quantity; **Dur / Dauer** is duration.
+- **Prep / Rüst** is preparation; **Prod.** is production. **util. / Ausl.** is planned queue load from planned durations, not actual utilization.
+- Order Planned dates are shared across an order; Operation Planned dates belong to one step.
+
+For example, 50 parts at 2 minutes per part add 100 planned production minutes, plus fixed preparation time. [Assignment Gantt](/en/platform-intro/pages/assignment-gantt) shows time windows; its drag-to-reschedule mode is Experimental and read-only. See [calculations](/en/platform-intro/concepts/calculations#deviations).
 
 ## Main Entities
 

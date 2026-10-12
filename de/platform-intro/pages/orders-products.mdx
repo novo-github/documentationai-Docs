@@ -5,6 +5,8 @@ description: "Ein tabellenorientierter Arbeitsbereich zur Überwachung, Filterun
 
 ## Überblick
 
+**Zugriff:** Admin oder Seitenfreigabe `orders`; nie Operator. [Rollen und Zugriff](/de/platform-intro/concepts/roles-and-access).
+
 Überwachen Sie Produktionsaufträge, finden Sie Arbeit mit Handlungsbedarf und öffnen Sie die Auftragsdetails, um Operationen und Zuweisungen zu prüfen oder zu ändern.
 
 Benutzer öffnen diese Seite über die Dashboard-Navigation.
@@ -54,6 +56,32 @@ Die Fortschrittsquelle bestimmt, welche Produktionsaufzeichnung Sie betrachten: 
 
 Namen, Nummern und Farben der Prioritäten entsprechen den von Ihrem Administrator konfigurierten Stufen. Dieselben Stufen werden bei Importen und in der Zuweisungsplanung verwendet. Informationen zu Vorlagen und Anpassungen finden Sie bei den [Prioritätsstufen im Administrationsbereich](/de/platform-intro/pages/admin-panel).
 
+## Filter, Aktualisierung und Übersichtszahlen
+
+Alle Filter werden mit **UND** kombiniert. Bei aktivem **Kunden-, Auftrags-, Produkt- oder Maschinenfilter** wird der **Datumsbereich ignoriert**. Ein Kundenfilter kann beispielsweise passende Aufträge außerhalb des Datumsfensters zeigen. Sortierung gilt für alle Aufträge, nicht nur die geladene Seite. Automatische Aktualisierung lädt alle **60 Sekunden** neu.
+
+Übersichtskarten zeigen oben die unternehmensweite Zahl und darunter die Anzahl der aktuellen Ansicht. Jeder Auftrag zählt einmal. Gruppierte Plandaten umfassen den Gesamtauftrag; jede Zuweisungszeile hat eigene Plan- und Istzeiten.
+
+## Status und Handlungsbedarf
+
+| Englischer Status | Deutsche Bezeichnung | Bedeutung |
+| --- | --- | --- |
+| Unplanned | Ungeplant | Noch ohne Zeitplan. |
+| Planned | Geplant | Geplant, nicht gestartet. |
+| Released | Freigegeben | Zum Start freigegeben; der genaue Übergang ist unbestätigt. |
+| In Progress | In Bearbeitung | Arbeit läuft. |
+| Hold | In Wartestellung | Pausiert. |
+| Completed | Abgeschlossen | Fertig. |
+| Cancelled | Storniert | Abgesagt. |
+
+Der Auftragsstatus folgt seinen Zuweisungen. **Live** bedeutet ein jetzt laufendes Intervall. **Needs Attention / Handlungsbedarf** umfasst **Duration Exceeded**, **Cycle Time Degraded**, **Planned End Passed** und **Delivery Date Passed**: überschrittene Dauer, verschlechterte Zykluszeit, überschrittenes Planende oder Lieferdatum. Abgeschlossene und stornierte Aufträge sind ausgeschlossen.
+
+## Mengen- und Zeitkürzel
+
+**PDA Entry / BDE-Eintrag** verwendet Bedienermengen, **Cycle Count** Sensorzahlen. Die Auswahl ändert die Fortschrittsanzeige, nicht Buchungen. **Mat. / MA** und **Work / AA** sind getrennte Ausschusskategorien. Gesamt ist Eingabe + MA + AA.
+
+**Seq / Nr.** bedeutet Operationssequenz, **Prep. / Rüst** Vorbereitung, **Prod.** Produktion und **Dev. / Abweichung** Istzeit minus Planzeit. Eine negative Zeitabweichung bedeutet schneller als geplant. **Cycles Per Product / Press per Product** bestimmt die Zyklen je Fertigteil. Formeln finden Sie unter [Berechnungen](/de/platform-intro/concepts/calculations).
+
 ## Hauptentitäten
 
 - Produktionsauftrag
@@ -70,7 +98,7 @@ Namen, Nummern und Farben der Prioritäten entsprechen den von Ihrem Administrat
 - Benutzer erkennen Planungs- oder Produktionsprobleme über einen oder mehrere Aufträge hinweg.
 
 ### Grenzen und Leerzustände
-- Ergebnisse hängen vom ausgewählten Datumsbereich und von Filtern ab.
+- Filter werden mit UND kombiniert. Kunden-, Auftrags-, Produkt- oder Maschinenfilter setzen den Datumsbereich außer Kraft.
 - Sortierung und Filterung gelten für die vollständige Auftragsliste, nicht nur für die aktuell sichtbare Ergebnisseite.
 - Aufträge ohne tiefere Struktur benötigen möglicherweise die Detailseite, bevor sie sinnvoll geplant werden können.
 

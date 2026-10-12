@@ -10,6 +10,7 @@ Turn unassigned work into machine queues or shared hall pools and review how fut
 ## Before You Begin
 
 <Callout kind="info" title="Workflow access">
+- Required access: Admin or Page Access `assignment_planner`, with relevant Machine Access.
 - Entry points: `/assignment-planner`
 </Callout>
 
@@ -83,6 +84,14 @@ In-progress and completed assignments cannot move to another column. You can sti
 When [Order Upload](/en/platform-intro/pages/erp-upload-planner) flags a conflict for manual resolution, use the order and operation details in the import summary to find the affected work in the planner. Review its current destination, status, notes, and related order before changing the plan.
 
 Move an eligible assignment to the intended queue when appropriate. If work has already started or completed, the cross-column move restriction still applies; review the current production record before deciding how to proceed. The import summary explains when a decision could not be applied because production changed after review.
+
+## Check Move Eligibility and Queue Changes
+
+Only **Unplanned**, **Planned**, and **Released** work can move to another machine or hall. In-progress, on-hold, or completed assignments stay in their queue, where reordering remains possible. At most **15 machines** can be shown at once.
+
+With Queue Position enabled, running and on-hold assignments stay at the top and a drop sets the exact position. With it disabled, sorting rules control the view and **Moves** chooses the start/end destination. If another change refreshes the queue while you reorder, redo the reorder against the refreshed queue.
+
+Use [Assignment Gantt](/en/platform-intro/pages/assignment-gantt) to inspect the timeline. Its drag-to-reschedule mode is **Experimental and read-only**; use supported planner controls for changes.
 
 ## Decision Points
 

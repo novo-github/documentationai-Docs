@@ -5,7 +5,7 @@ description: "Verstehen Sie Produktionskennzahlen, den Qualitätsstandardwert vo
 
 ## Produktionskennzahlen verstehen
 
-Die Watchmen-Plattform verbindet Produktionsmengen und Maschinenzeiten, damit Sie Ihre Ergebnisse einordnen können. Diese FAQs erklären die hier verwendeten zeitbasierten Berechnungen. Vergleichen Sie immer dieselbe Maschine im selben Auswertungszeitraum.
+Die Watchmen-Plattform verbindet Produktionsmengen und Maschinenzeiten. Vergleichen Sie immer dieselbe Maschine im selben Zeitraum. Die zeitbasierten Definitionen von Verfügbarkeit und Leistung weichen von üblichen OEE-Definitionen ab. Die [Berechnungsreferenz](/de/platform-intro/concepts/calculations) unterscheidet bestätigte Definitionen von beispielhaften Formeln.
 
 | Ihre Frage | Zur Antwort |
 | --- | --- |
@@ -32,7 +32,7 @@ Die Maschine produziert **100 Teile**: **95 Gutteile** und **5 Ausschussteile**.
 
 ## Wie wird die Qualität berechnet?
 
-**Qualität** ist der prozentuale Anteil der Gutteile an allen produzierten Teilen. Ausschuss verringert diesen Anteil.
+Eine **mengenbasierte Qualitätsquote** ist der Anteil der Gutteile an allen produzierten Teilen. Ausschuss verringert diesen Anteil. Die folgende Rechnung erklärt diese Quote. Der Dashboard-Tooltip zeigt getrennt davon eine konfigurierte Qualität von 95 % und bestätigt keine automatische Berechnung aus diesen Mengen.
 
 **Formel:** Qualität (%) = Gutteile / produzierte Gesamtmenge × 100.
 
@@ -44,9 +44,9 @@ Das bedeutet: Von 100 produzierten Teilen sind 95 Gutteile. Prüfen Sie Mengen u
 
 ### Warum wird ohne tatsächliche Gutteildaten eine Qualität von 95 % angezeigt?
 
-Der unternehmensweite Standardwert für die Qualität beträgt **95 %**. Bei Nutzung der BDE oder einer ERP-Integration kann die Qualität auch je Maschine oder Auftrag angepasst werden. Liegen tatsächliche Gutteil- und Gesamtmengen vor, wird die Qualität aus diesen Mengen berechnet.
+Der Dashboard-Tooltip nennt eine **auf 95 % gesetzte Qualität** und verweist für Änderungen auf einen Administrator. Der Einstellungsort ist durch die Frontend-Referenz nicht belegt.
 
-Fehlen tatsächliche Gutteildaten, kann die geplante Menge als Ersatzwert verwendet werden. Ein Standardwert oder eine geplante Menge ist eine Schätzung und belegt keine bestandene Qualitätsprüfung. Prüfen Sie die verwendete Datenquelle, bevor Sie 95 % als gemessenes Ergebnis interpretieren.
+Automatische Ersetzung durch Gutteildaten, auftragsspezifische Werte und Ersatz durch Planmengen sind durch die Frontend-Referenz nicht bestätigt. Der konfigurierte Wert belegt keine bestandene Prüfung von 95 % der Teile. Erfassen Sie weiterhin Gut- und Ausschussmengen für die Produktionsanalyse.
 
 Informationen zum Auftragsimport finden Sie unter [ERP-Upload-Planer](/de/platform-intro/pages/erp-upload-planner). Die Erfassung von Produktionsdaten erklärt der Ablauf [Betriebsdatenerfassung durchführen](/de/platform-intro/workflows/data-acquisition).
 
@@ -56,7 +56,7 @@ Informationen zum Auftragsimport finden Sie unter [ERP-Upload-Planer](/de/platfo
 
 **Verfügbarkeit** ist der Anteil des ausgewählten Zeitraums, in dem die Maschine produziert. Der Nenner umfasst bei dieser Berechnung Produktion, Vorbereitung, Leerlauf und ausgeschaltete Zeit.
 
-**Formel:** Verfügbarkeit (%) = Produktionszeit / (Produktionszeit + Vorbereitungszeit + Leerlaufzeit + ausgeschaltete Zeit) × 100.
+**Formel:** Verfügbarkeit (%) = Produktionszeit / gesamte erfasste Zeit × 100. Im Beispiel besteht die Gesamtzeit aus Produktion, Vorbereitung, Leerlauf und ausgeschalteter Zeit. Die Behandlung unbekannter Zeit ist hier nicht belegt.
 
 Für unser Beispiel mit sieben Stunden gilt:
 
@@ -94,7 +94,7 @@ Eine Maschine mit viel Rüstzeit kann beispielsweise eine hohe Leistung und zugl
 
 ## Wie wird die Gesamtanlageneffektivität (OEE) berechnet?
 
-Die **Gesamtanlageneffektivität (Overall Equipment Effectiveness, OEE)** kombiniert Verfügbarkeit, Leistung und Qualität zu einem Prozentwert. Alle drei Eingaben müssen sich auf dieselbe Maschine und denselben Zeitraum beziehen.
+Die **Gesamtanlageneffektivität (Overall Equipment Effectiveness, OEE)** kombiniert Verfügbarkeit, Leistung und Qualität. Alle Eingaben müssen dieselbe Maschine und denselben Zeitraum betreffen. Das Frontend belegt die genaue Serverformel nicht. Die folgende Multiplikation ist ein Rechenbeispiel. Verwenden Sie für die gemeldete OEE das Dashboard.
 
 **Formel mit Dezimalverhältnissen:** OEE (%) = Verfügbarkeitsverhältnis × Leistungsverhältnis × Qualitätsverhältnis × 100.
 
@@ -106,13 +106,13 @@ Wenn Sie Prozentwerte als Zahlen wie 80 und 95 einsetzen, verwenden Sie **OEE (%
 
 ### Warum ist die OEE niedriger als jede einzelne Kennzahl?
 
-Die drei Verhältnisse werden multipliziert. Auch 80 % Leistung und 95 % Qualität gleichen eine Verfügbarkeit von nur 42,86 % nicht aus. Prüfen Sie jeden Faktor, um zu erkennen, welcher Teil des Ergebnisses verbessert werden sollte.
+Im Multiplikationsbeispiel werden die drei Verhältnisse multipliziert. Auch 80 % Leistung und 95 % Qualität gleichen eine Verfügbarkeit von nur 42,86 % nicht aus. Prüfen Sie jeden Faktor, um zu erkennen, welcher Teil des Ergebnisses verbessert werden sollte.
 
 ### Warum weicht meine eigene Berechnung vom Dashboard ab?
 
 - Vergleichen Sie dieselbe Maschine, denselben Datumsbereich und dieselbe Schicht.
 - Verwenden Sie ungerundete Zeiten und Mengen. Runden Sie erst das Endergebnis.
-- Prüfen Sie, ob die Qualität auf tatsächlichen Mengen, einem konfigurierten Standardwert oder geplanten Mengen beruht.
+- Behandeln Sie Dashboardqualität ohne bestätigte Datenquelle als konfigurierten Wert; der Tooltip nennt 95 %.
 - Prüfen Sie die Zustandsdefinitionen, insbesondere Vorbereitung und ausgeschaltete Zeit.
 - Ist ein Nenner null, etwa bei fehlender Produktionsmenge oder Einschaltzeit, liefert die jeweilige Formel keinen aussagekräftigen Prozentwert. Prüfen Sie zunächst die zugrunde liegenden Daten.
 

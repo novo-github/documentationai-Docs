@@ -1,0 +1,60 @@
+---
+title: "Automator Rules & Event Inbox"
+description: "Configure admin-only machine rules, timing, notifications, escalation, SLA, and event resolution."
+---
+
+## Overview
+
+**Access: Admin only.** Automator is the newer rule engine for machine conditions and their response. Open it from Workspace. Routes: `/automator`, `/automator/rules`, `/automator/events`, `/automator/create`.
+
+It complements [classic Alert Rules](/en/platform-intro/pages/alert-rules). A work center has no sensor data, so sensor-based Automator rules never trigger for it.
+
+## Scope, Conditions, and Timing
+
+| Setting | Meaning |
+| --- | --- |
+| **Scope** | Selected machines. With no machines selected, a **Global rule** applies to all active machines. |
+| **Condition group** | Conditions combined with AND or OR; groups can be nested. |
+| **Polling interval** | How often conditions are checked. |
+| **Minimum true duration** | How long a condition must hold before an event is created. |
+| **Clear duration** | How long a normal condition must persist before the event can clear. |
+| **Requires active shift** | Pauses checks while the machine is off-shift. |
+| **Cooldown** | Wait after resolution before the rule can trigger again. |
+
+**Example:** A condition that stays true for 30 seconds will not create an event if Minimum true duration is 2 minutes. Polling interval sets checking frequency; it is a different setting from that delay.
+
+## Thresholds and Booking-Dependent Metrics
+
+For **Preparation Duration**, **Production Deficit**, **Cycle Duration**, and **Order Completion Deficit**, a ratio of **130%** means 30% over plan or behind pace. Read the selected condition's meaning before using the threshold.
+
+For **Slow Consecutive Cycles**, **Lookback Cycles** selects how many recent cycles are checked, and **Gap Threshold** is the multiple of expected cycle time considered slow.
+
+Preparation duration, scrap count, and scrap rate depend on PDA bookings. They update when an entry is made, so a value can remain steady and then jump. A machine sensor alone does not update operator-entered scrap.
+
+## Responses and Escalation
+
+**Auto-resolve** closes an event when the condition clears. **Notify on resolve** sends another email on closure. **Escalation** notifies a second group if the event is not handled in time. Review recipients and timing before saving.
+
+Templates cover preparation taking too long, production behind pace, slow cycles, repeated cycle gaps, excessive scrap, an operation at risk, an order behind schedule, and a disconnected sensor. Each template lists prerequisites; it only pre-fills a rule until you save it.
+
+## Event Inbox, SLA, and MTTR
+
+An **Event** is one rule trigger. Its workflow is **New → Acknowledged → Resolved**. A resolved event can be **Reopened**. **System (Automator)** as resolver means automatic resolution.
+
+- **SLA — Service Level Agreement:** allowed response time in minutes before an open event becomes overdue.
+- **SLA Breaches:** open events past that due time.
+- **MTTR — Mean Time To Resolution:** average duration from triggering to resolution.
+
+Acknowledging an event and resolving it are different actions. Inspect the machine and condition before marking the issue resolved.
+
+## Create a Rule
+
+Use [Create an Automator Rule](/en/platform-intro/workflows/automator-rule-creation): **Scope & Definition → Conditions & Timing → Response & Escalation → Review**. Review states the intended behavior and warns about missing recipients, a global scope, or a disabled rule.
+
+Automatic production actions, such as ending an interval, are not confirmed in the frontend rule editor. Do not expect a notification rule to perform them.
+
+## Related References
+
+- [Data Acquisition and PDA Assistant](/en/platform-intro/pages/data-acquisition)
+- [Calculations and metric definitions](/en/platform-intro/concepts/calculations)
+- [Roles and access](/en/platform-intro/concepts/roles-and-access)

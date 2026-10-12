@@ -5,7 +5,7 @@ description: "Understand Watchmen production metrics, the 95% quality default, m
 
 ## Understand Your Production Metrics
 
-The Watchmen Platform combines production quantities and machine time to help you understand your results. These FAQs explain the time-based calculations used here. Use the same machine and reporting period when comparing them.
+The Watchmen Platform combines production quantities and machine time to help you understand your results. Use the same machine and reporting period when comparing them. Watchmen uses time-based Availability and Performance definitions that differ from textbook OEE. The [calculations reference](/en/platform-intro/concepts/calculations) distinguishes confirmed definitions from illustrative formulas.
 
 | Your question | Read the answer |
 | --- | --- |
@@ -32,7 +32,7 @@ The machine produces **100 units**: **95 good units** and **5 scrap units**. Pre
 
 ## How Is Quality Calculated?
 
-**Quality** is the percentage of produced units that are good. Scrap reduces this percentage.
+A **quantity-based quality rate** is the percentage of produced units that are good. Scrap reduces it. The following arithmetic explains this rate; the dashboard tooltip separately shows a configured quality of 95%. It does not confirm automatic calculation from these quantities.
 
 **Formula:** Quality (%) = good units / total produced units × 100.
 
@@ -44,9 +44,9 @@ This means 95 out of every 100 produced units are good. Review quantities and sc
 
 ### Why Does Quality Show 95% Without Actual Good-Unit Data?
 
-The company-wide default quality value is **95%**. Quality can also be adjusted per machine or order when using PDA or an ERP integration. Where actual good-unit and total-production data are available, quality is calculated from those quantities.
+The dashboard tooltip states that quality is **set at 95%** and tells you to contact an admin to change it. The setting location is not established by the frontend reference.
 
-Planned quantity can be used as a fallback when actual good-unit data are missing. A default or planned quantity is an estimate; it does not prove that the produced units passed inspection. Check which data source is being used before interpreting 95% as a measured result.
+Automatic replacement with actual good-unit data, per-order overrides, and planned-quantity fallback are not confirmed by the frontend reference. Treat the configured 95% as a configured value, not proof that 95% of units passed inspection. Continue recording good and scrap quantities for production analysis.
 
 See [ERP/PDA data ingestion](/en/erp-bde-integration) for integration context and [Run Data Acquisition](/en/platform-intro/workflows/data-acquisition) for recording production data.
 
@@ -56,7 +56,7 @@ See [ERP/PDA data ingestion](/en/erp-bde-integration) for integration context an
 
 **Availability** is the share of the selected period spent producing. In this calculation, the denominator includes production, preparation, idle, and off time.
 
-**Formula:** Availability (%) = production time / (production + preparation + idle + off time) × 100.
+**Formula:** Availability (%) = production time / total recorded time × 100. The example total consists of production + preparation + idle + off time; Unknown-time treatment is not established here.
 
 For our seven-hour example:
 
@@ -94,7 +94,7 @@ For example, a machine that spends more time preparing can still have high perfo
 
 ## How Is Overall Equipment Effectiveness (OEE) Calculated?
 
-**Overall Equipment Effectiveness (OEE)** combines availability, performance, and quality into one percentage. All three inputs must refer to the same machine and period.
+**Overall Equipment Effectiveness (OEE)** combines availability, performance, and quality into one percentage. All three inputs must refer to the same machine and period. The frontend does not establish the exact server formula. The multiplication below is an illustrative calculation; use the dashboard for the reported OEE.
 
 **Formula using decimal ratios:** OEE (%) = availability ratio × performance ratio × quality ratio × 100.
 
@@ -106,13 +106,13 @@ If you enter percentages as numbers such as 80 and 95, use **OEE (%) = availabil
 
 ### Why Is OEE Lower Than Each Individual Metric?
 
-The three ratios multiply. Even 80% performance and 95% quality cannot compensate for only 42.86% availability. Inspect each factor to understand which part of the result needs attention.
+In the multiplication example, the three ratios multiply. Even 80% performance and 95% quality cannot compensate for only 42.86% availability. Inspect each factor to understand which part of the result needs attention.
 
 ### Why Does My Manual Calculation Differ from the Dashboard?
 
 - Match the machine, date range, and shift before comparing values.
 - Use unrounded durations and quantities; round only the final result.
-- Check whether quality comes from actual counts, a configured default, or planned quantities.
+- Treat dashboard quality as the configured value unless its data source is confirmed; the tooltip states 95%.
 - Check the state definitions, especially preparation and off time.
 - If a denominator is zero, such as no produced units or no switched-on time, the corresponding formula cannot give a meaningful percentage. Review the underlying data first.
 

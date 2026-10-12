@@ -59,7 +59,7 @@ Die Einrichtungsbereiche erklärt die [Maschinenkonfiguration](/de/platform-intr
 
 ## Wie wird die Energieverschwendung berechnet?
 
-**Energieverschwendung** bezeichnet hier die im Leerlauf verbrauchte Energie. Auch ohne Teileproduktion können Komponenten einer eingeschalteten Maschine Strom benötigen.
+Das Frontend beschreibt **Energieverschwendung** als Energieverbrauch ohne Produktion. Ob Vorbereitung und ausgeschaltete Zeit einbezogen werden, ist nicht bestätigt. Die folgende Leerlaufrechnung ist ein Rechenbeispiel, keine bestätigte Dashboardformel. Auch im Leerlauf können Komponenten Strom benötigen.
 
 **Formel:** Leerlaufenergie (kWh) = Leerlaufdauer (Stunden) × Nennleistung (kW) × Maschinenenergiefaktor.
 
@@ -119,6 +119,8 @@ Im kleineren Maschinenbeispiel verbraucht eine Leerlaufstunde **0,5 × 0,35 = 0,
 - Prüfen Sie, ob Sie berechnete Schätzungen mit Messwerten der Energieüberwachung vergleichen.
 - Verwenden Sie denselben Strompreis und runden Sie erst den endgültigen Kostenwert.
 - Leerlaufenergie und ihre Kosten gehören zum Gesamtwert. Addieren Sie sie nicht doppelt.
+
+Die [gemeinsame Berechnungsreferenz](/de/platform-intro/concepts/calculations#energy) erklärt bestätigte Energiedefinitionen und verbleibende Berechnungsgrenzen.
 
 ## Wo finde ich weitere Informationen?
 

@@ -5,6 +5,8 @@ description: "Der zentrale Arbeitsbereich für die Verwaltung gemeinsamer Plattf
 
 ## Überblick
 
+**Zugriff:** Nur Admin. [Rollen und Zugriff](/de/platform-intro/concepts/roles-and-access).
+
 Schaffen Sie einen zentralen Ort für gemeinsame Betriebseinstellungen, die den Rest der Plattform unterstützen.
 
 Benutzer öffnen diese Seite über die Hauptnavigation, wenn ihre Rolle es zulässt.
@@ -51,6 +53,31 @@ Prioritätsstufen helfen Ihrem Team, die Dringlichkeit von Arbeit einheitlich zu
 Berechtigungen legen fest, auf welche Plattformseiten und Maschinen ein Benutzer zugreifen kann. Geben Sie jeder Person damit Zugriff auf die Bereiche und Maschinen, die sie für ihre Arbeit benötigt.
 
 Öffnen Sie den Benutzerdatensatz im Administrationsbereich und wählen Sie **Berechtigungen bearbeiten**. Wählen Sie die zugänglichen Seiten und Maschinen aus und speichern Sie die Änderungen. Die aktualisierten Berechtigungen gelten ab der nächsten Sitzung des Benutzers.
+
+## Den passenden Administrationsbereich finden
+
+| Bereich | Konfiguration |
+| --- | --- |
+| **Invite Team Members / Users** | Einladungen, Rollen, Seiten- und Maschinenzugriff. |
+| **Configure Factory** | Halls und Displays, Machine Tags, Machines. |
+| **Configure Shifts and Scheduling** | Schichten, Schichtgruppen, Machine Operators. |
+| **Configure Products & Orders** | Produkte, Aufträge, Auftragstags, ERP-Vorlagendownload. |
+| **Configure Analyzers** | Timeline Reasons und Energy Price. |
+| **Configure Security and API** | API-Access Keys und Ticket Tags. |
+
+**Priority Levels** und **AI Assistant Data Access** liegen ebenfalls hier. ERP Uploads selbst befindet sich im Planungsbereich unter `/erp-uploads`.
+
+## Standardprioritäten und Wertebereichsgrenzen
+
+Höhere Priorität bedeutet höhere Dringlichkeit. Standards sind **Low 10, Normal 30, High 70, Critical 100, Highest 150, Extreme 200**. Standardfarben sind Grün 0–29, Blau 30–69, Orange 70–99 und Rot ab 100. Unternehmen können Namen, Werte und Farben setzen oder Vorlagen für **SAP Delivery Priority**, **Epicor Kinetic Material Queue Priority** und **Infor M3 Customer Order Priority** verwenden.
+
+Benutzerdefinierte Prioritätsstufen erlauben **0–999**, das Auftragsformular nennt **1–200**. Dieser Unterschied benötigt Produktbestätigung. Beachten Sie die Validierung des aktuellen Formulars statt eines universellen Bereichs. Vorhandene Prioritäten bleiben bei ERP-Neuimporten geschützt.
+
+## Sicherheit, KI-Datenfreigabe und Kontenverwaltung
+
+**API-Access Keys** werden bei Erstellung einmal angezeigt. Kopieren Sie den sichtbaren Schlüssel. **License Key** ist die Unternehmenslizenzkennung, kein API-Schlüssel. Der KI-Assistent in Beta darf nur hier freigegebene Datenbereiche nutzen. Ohne Adminfreigabe werden Plattformdaten nicht mit externen KI-Modellen geteilt.
+
+Aufgaben erklären [Benutzer einladen und Berechtigungen verwalten](/de/platform-intro/workflows/user-access-management), [Hallenplandisplay einrichten](/de/platform-intro/workflows/hall-display-setup) und [Operatoren verwalten](/de/platform-intro/workflows/operator-management).
 
 ## Hauptentitäten
 

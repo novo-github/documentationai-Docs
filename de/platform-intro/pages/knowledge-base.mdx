@@ -5,6 +5,8 @@ description: "Ein Dokumentenarbeitsbereich zum Hochladen von Wissen, Prüfen der
 
 ## Überblick
 
+**Zugriff:** Admin oder Seitenfreigabe `knowledge_base`. [Rollen und Zugriff](/de/platform-intro/concepts/roles-and-access).
+
 Speichern und finden Sie betriebliches Wissen und prüfen Sie, wie Dokumente mit Maschinen, Aufträgen und Produkten verbunden sind.
 
 Benutzer öffnen diese Seite über den Bereich **Arbeitsbereich** in der Hauptnavigation.
@@ -43,6 +45,20 @@ Prüfen Sie das Dokument und seine Quellen, um die verfügbaren Informationen zu
 Eine Beziehung verbindet ein Dokument mit einer Maschine, einem Auftrag oder einem Produkt. Eine vorgeschlagene Beziehung ist eine Verbindung, die Sie prüfen können; eine bestätigte Beziehung wurde bereits angenommen. Bestätigen Sie passende Vorschläge und verwerfen Sie Verbindungen, die den Dokumentinhalt nicht richtig zuordnen.
 
 Der Wissensgraph stellt diese Verbindungen visuell dar. Erkunden Sie damit die Dokumente zu einem Produktionsobjekt und unterscheiden Sie dabei vorgeschlagene von bestätigten Verknüpfungen.
+
+## KB / WDB: Formate, Grenzen und Verarbeitungszustände
+
+**KB** bedeutet Knowledge Base; das deutsche Kürzel ist **WDB (Wissensdatenbank)**. Unterstützt werden **PDF, DOCX, XLSX, CSV, TXT, JPG, PNG, WEBP** bis **25 MB**.
+
+Verarbeitungsbezeichnungen sind **Queued → Reading → Splitting → Indexing → Linking → Review → Ready**; **Failed** zeigt ein Problem. Prüfen Sie den Status vor einer erwarteten Abfrage. Gescannte oder reine Bild-PDFs können nicht gelesen werden. Ein erneuter Upload derselben unlesbaren PDF behebt das nicht. Stellen Sie stattdessen ein lesbares Dokument bereit.
+
+Der **Knowledge Graph** verbindet Dokumente mit Maschinen, Aufträgen und Produkten. **Suggested links** entstehen automatisch und müssen bestätigt oder abgelehnt werden. **Dictate** ermöglicht Spracheingabe für Notizen; **1 doc / 1 Dok.** ist die Dokumentanzahl.
+
+## Wissen in Watchmen AI nutzen
+
+Der **AI Assistant / Watchmen AI** ist **Beta**. **Documentation only** antwortet aus Plattformdokumentation; **Context-aware** kann von Ihrer Administration freigegebene Datenbereiche abfragen. Wissensdatenbankzugriff und KI-Datenfreigabe sind getrennte Einstellungen. Plattformdaten werden nur bei Freigabe durch einen Admin an externe KI-Modelle geteilt.
+
+Nennen Sie für nützliche Abfragen Maschine, Produkt oder Auftrag und eine genaue Frage, etwa „Welches fertige Dokument erklärt die Einrichtung von Maschine A?“ Prüfen Sie referenzierte Quelle und Status. [AI Chats](/de/platform-intro/pages/chat-history) erklärt Modi und gespeicherte Gespräche.
 
 ## Hauptentitäten
 
