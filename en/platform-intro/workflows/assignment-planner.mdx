@@ -24,10 +24,10 @@ Begin on the [Assignment Planner page](/en/platform-intro/pages/assignment-plann
 
 <Steps>
   <Step title="Filter the visible hall or machine list" icon="arrow-right" title-type="p">
-    Select the hall or machines you want to plan. Narrow the work shown with order tags, priority, or order status, including planned, running, on-hold, completed, and cancelled work.
+    Select the hall or machines you want to plan. Narrow work with order tags, order and operation priorities, or the status of individual assignments.
   </Step>
   <Step title="Find the work" icon="arrow-right" title-type="p">
-    Search assignments or the unassigned operations list for the order or operation. Results update as you type. The unassigned list also supports product searches; use the planner's search and machine filters when finding work by customer or machine.
+    Search the unassigned operations by order, product, or customer. Results update when you pause typing. Use the machine filter to focus the queues you need.
   </Step>
   <Step title="Choose a machine or hall pool" icon="arrow-right" title-type="p">
     Drag the operation onto a machine column when its destination is known. If several machines in a hall could perform it, drag it into that hall's Hall Pool or assign a new operation there. Use the readiness badge to see when a machine can claim the pooled work.
@@ -65,6 +65,20 @@ Begin on the [Assignment Planner page](/en/platform-intro/pages/assignment-plann
 
 In-progress and completed assignments cannot move to another column. You can still reorder them within their current queue.
 
+## Set an Operation Priority and Filter the Plan
+
+<Steps>
+  <Step title="Choose the priority to change" icon="arrow-right" title-type="p">
+    On an operation or queue card, select the dashed **OP** chip to set **Operation priority**. Use **P** to change **Order priority** instead. The two values are independent.
+  </Step>
+  <Step title="Choose matching priorities" icon="arrow-right" title-type="p">
+    Use **Order priority** and **Operation priority** to select one or more values. Type a number if it is absent from the legend. With both filters set, work must match both in the unassigned panel and machine columns.
+  </Step>
+  <Step title="Check the remaining filters" icon="arrow-right" title-type="p">
+    If work disappears, review the status, tags, machines, and import filter. Remove any unwanted order, product, or customer filter chip above the board. Open the information icon for **Assignment Planner Guide** for help.
+  </Step>
+</Steps>
+
 ## Sort and Highlight Planning Cards
 
 <Steps>
@@ -72,7 +86,7 @@ In-progress and completed assignments cannot move to another column. You can sti
     In the sort/filter options, enable **Sort by Queue Position** to use the order set by dragging assignments. Turn it off to sort by fields such as priority or date.
   </Step>
   <Step title="Set rule precedence" icon="arrow-right" title-type="p">
-    Select a field and ascending or descending order for each rule. Add further rules to break ties, then drag the rules into the order in which they should take precedence.
+    Choose **Operation Planned Start** or **Operation Planned End** to sequence individual steps. Choose **Order Planned Start** or **Order Planned End** to keep an order’s steps together. Set ascending or descending order. Add rules to break ties and drag them into the order of precedence.
   </Step>
   <Step title="Emphasize the details you need" icon="arrow-right" title-type="p">
     Open **Highlight** and select fields from Order, Work Order, Product, Operation, Planning, and Assignment. Check the cards for your selected highlights, such as priority, due date, or customer.

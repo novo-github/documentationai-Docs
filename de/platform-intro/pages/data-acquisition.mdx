@@ -91,19 +91,29 @@ Ungebundene oder unbeschriftete Maschinenzeit gehört zu keinem Auftrag. Die Lö
 
 ## Warnungen des BDE-Assistenten
 
-**Nur durch Admins konfigurierbar; standardmäßig aus.** Der **PDA Assistant (BDE-Assistent)** zeigt Maschinenwarnungen. Er ist von klassischen Alarmregeln und Automator getrennt.
+Der **BDE-Assistent** zeigt Warnungen für diese Maschine, sobald ein Administrator sie aktiviert. Nur Administratoren können Warnungseinstellungen ändern. Der Assistent ist von klassischen Alarmregeln und Automator getrennt.
 
-| Warnung | Auslöser | Standardstufe / Verzögerung |
-| --- | --- | --- |
-| Produktion ohne Auftrag | Produktion, kein laufender Auftrag | Critical / 5 Min. |
-| Maschine aus, Auftrag läuft | Maschine aus, Intervall läuft weiter | Critical / 3 Min. |
-| Auftrag läuft zu lange | Dauer über Grenzwert | Warning / 8 Std. |
-| Auftrag über Schichtwechsel | Auftrag aus früherer Schicht läuft; benötigt zugewiesene Schichten | Warning / 10 Min. |
-| Live-Daten veraltet | Keine neuen Daten; andere Warnungen möglicherweise unzuverlässig | Warning / 10 Min. |
-| Mehrere Aufträge laufen | Mehr als ein offenes Intervall | Critical / 2 Min. |
-| Stillstand ohne Grund | Stillstandsblock benötigt einen Grund | Info / 2 Min. |
+| Warnung | Bedeutung |
+| --- | --- |
+| **Produktion ohne Auftrag** | Die Maschine produziert, aber kein Produktionsauftrag läuft. Die Warnung verschwindet, sobald ein Auftrag startet. |
+| **Maschine aus, Auftrag läuft noch** | Die Maschine ist für die eingestellte Verzögerung aus, während der Auftrag weiter Zeit zählt. Die Warnung verschwindet, wenn der Auftrag endet oder die Maschine wieder läuft. |
+| **Auftrag läuft zu lange** | Ein Auftrag läuft länger als der eingestellte Schwellwert. |
+| **Auftrag über Schichtwechsel hinaus offen** | Ein Auftrag aus einer früheren Schicht ist nach der Verzögerung der aktuellen Schicht noch offen. Dafür müssen der Maschine Schichten zugewiesen sein. |
+| **Live-Daten veraltet** | Für die eingestellte Verzögerung sind keine frischen Maschinendaten eingetroffen. Andere Warnungen können unzuverlässig sein. |
+| **Mehrere Aufträge laufen** | Mehr als ein Auftrag hat ein offenes Intervall auf dieser Maschine. |
+| **Stillstand ohne Grund** | Ein Stillstand wartet auf einen Grund. |
 
-**Info** bleibt stumm. **Warning** zeigt ein oranges Banner und zwei Töne. **Critical** zeigt ein rotes Banner, blinkenden Rand und drei wechselnde Töne. Für Ton muss im Browser einmal auf die Seite getippt werden. **Snooze** blendet eine Warnung standardmäßig 15 Minuten aus; bei anhaltender Ursache erscheint sie wieder. Lassen Sie die Prüfung veralteter Daten aktiv, damit fehlende Daten sichtbar bleiben. Admins können Einstellungen auf andere Maschinen kopieren.
+**Info** ist eine stille Meldung. **Warnung** zeigt ein orangefarbenes Banner, **Kritisch** ein rotes Banner mit blinkendem Bildschirmrand. Die Warnung erscheint nach der vom Administrator gewählten Verzögerung. Bei einem zu lange laufenden Auftrag gilt der Schwellwert in Stunden ohne zusätzliche Verzögerung.
+
+Wählen Sie **Alle Warnungen anzeigen**, um **Aktive Warnungen** zu öffnen. Lesen Sie Auftrag und Dauer und nutzen Sie die verfügbare Aktion: **Auftrag auswählen**, **Auftrag beenden**, **Stillstandsgrund setzen** oder **Jetzt aktualisieren**. Prüfen Sie Maschine und Auftrag vor der Aktion. Folgen Sie [Betriebsdatenerfassung durchführen](/de/platform-intro/workflows/data-acquisition).
+
+### Zurückstellen und Ton
+
+Sie können eine Warnung zurückstellen oder **Alle zurückstellen** wählen. Dadurch verschwindet sie für die eingestellte Dauer aus dem Banner und wird stummgeschaltet. Unter **Zurückgestellt** bleibt sie sichtbar. Besteht das Problem weiter, erscheint sie erneut. **Jetzt anzeigen** holt sie früher zurück.
+
+Wenn Ton erlaubt und für die Warnung aktiviert ist, spielt **Warnung** zwei Töne und **Kritisch** drei wechselnde hohe und tiefe Töne. Solange die Warnung aktiv und nicht zurückgestellt ist, wiederholt sich der Alarm. **Info** bleibt immer lautlos. Wählen Sie **Ton aktivieren** oder **Stummschalten** für Ihr Gerät. Der Browser benötigt einen Tipp auf die Seite, bevor Ton starten kann.
+
+Ihr Administrator kann den Ton auf aktive Schichten begrenzen. Das begrenzt den Ton, nicht die Warnungsanzeige. Die [Maschinenkonfiguration](/de/platform-intro/pages/machine-configuration) erklärt Verzögerungen, Schweregrad, Ton und das Kopieren von Einstellungen.
 
 ## Hauptentitäten
 

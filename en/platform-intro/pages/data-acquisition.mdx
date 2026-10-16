@@ -91,19 +91,29 @@ Unbound or unlabeled machine time belongs to no order. Deleting a recorded inter
 
 ## PDA Assistant Warnings
 
-**Admin configuration only; off by default.** The **PDA Assistant (BDE-Assistent)** gives per-machine warnings. It is separate from classic Alert Rules and Automator.
+The **PDA Assistant** shows warnings for this machine when an administrator enables them. Only administrators can change warning settings. It is separate from classic Alert Rules and Automator.
 
-| Warning | Trigger | Default severity / delay |
-| --- | --- | --- |
-| Producing without an order | Production, no running order | Critical / 5 min |
-| Machine off, order still running | Machine off, interval still running | Critical / 3 min |
-| Order running too long | Duration exceeds threshold | Warning / 8 h |
-| Order carried across shift change | Earlier-shift order still running; requires assigned shifts | Warning / 10 min |
-| Live data is stale | No fresh data; other warnings may be unreliable | Warning / 10 min |
-| Multiple orders running | More than one open interval | Critical / 2 min |
-| Downtime without a reason | A downtime block needs a reason | Info / 2 min |
+| Warning | What it means |
+| --- | --- |
+| **Producing without an order** | The machine is producing but no production order is running. It clears when an order starts. |
+| **Machine off, order still running** | The machine has been off for the configured delay while an order keeps counting time. It clears when the order ends or the machine restarts. |
+| **Order running too long** | One order has run longer than the configured threshold. |
+| **Order carried across shift change** | An order from an earlier shift is still open after the current shift's delay. This needs shifts assigned to the machine. |
+| **Live data is stale** | No fresh machine data has arrived for the configured delay. Other warnings may be unreliable. |
+| **Multiple orders running** | More than one order has an open interval on this machine. |
+| **Downtime without a reason** | A downtime block is waiting for a reason. |
 
-**Info** is silent. **Warning** uses an orange banner and two beeps. **Critical** uses a red banner, flashing border, and three alternating beeps. The browser needs one tap on the page before sound can play. **Snooze** hides a warning, default 15 minutes; it returns if the issue persists. Keep stale-data checking enabled so missing data is visible. Admins can copy settings to other machines.
+**Info** is a silent notice. **Warning** shows an orange banner; **Critical** shows a red banner and flashing screen border. The warning appears after the delay selected by your administrator. A running-too-long warning uses its hour threshold instead of a separate delay.
+
+Select **View all warnings** to open **Active warnings**. Read the affected order and duration, then use the available action: **Select an order**, **End order**, **Set downtime reason**, or **Refresh now**. Check the actual machine and order before acting. Follow [Run Data Acquisition](/en/platform-intro/workflows/data-acquisition).
+
+### Snooze and Sound
+
+You can snooze one warning or choose **Snooze all**. Snoozing hides the warning from the banner and silences it for the configured duration. It remains listed under **Snoozed** and returns if the problem persists. **Resume now** brings it back sooner.
+
+If sound is allowed and enabled for that warning, **Warning** plays two beeps and **Critical** three alternating high and low beeps. The alarm repeats while the warning is active and not snoozed. **Info** is always silent. Select **Enable sound** to turn sound on or **Mute** to silence it on your device. The browser needs a tap on the page before sound can start.
+
+Your administrator can limit sound to active shifts. This limits sound, not the warning display. See [Machine Configuration](/en/platform-intro/pages/machine-configuration) for delays, severity, sound, and copying settings.
 
 ## Main Entities
 

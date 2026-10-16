@@ -1,0 +1,70 @@
+---
+title: "Fragen zu Planung und Auftragsimport"
+description: "Antworten zu Arbeitsgangprioritäten, Planungsterminen, Gruppierung und erneutem Auftragsimport."
+---
+
+| Ihre Frage | Antwort lesen |
+| --- | --- |
+| Kann ein Arbeitsgang eine andere Priorität als sein Auftrag haben? | [Antwort](/de/help-center/faq/planning-and-imports#operation-priority) |
+| Warum verschwindet Arbeit nach dem Setzen eines Prioritätsfilters? | [Antwort](/de/help-center/faq/planning-and-imports#missing-work) |
+| Nach welchen Terminen sortiere ich die Schritte eines Auftrags? | [Antwort](/de/help-center/faq/planning-and-imports#planning-dates) |
+| Wie sehe ich die Arbeit eines Auftrags nach Maschine? | [Antwort](/de/help-center/faq/planning-and-imports#grouping) |
+| Warum ändern sich die geplanten Termine beim Aufklappen eines Auftrags? | [Antwort](/de/help-center/faq/planning-and-imports#actual-dates) |
+| Warum hat ein erneuter Import die Priorität nicht geändert? | [Antwort](/de/help-center/faq/planning-and-imports#import-priority) |
+| Warum ist meine Arbeitsgangpriorität trotz Anfangswert markiert? | [Antwort](/de/help-center/faq/planning-and-imports#invalid-priority) |
+| Warum bleibt ein importierter Arbeitsgang auf seiner alten Maschine? | [Antwort](/de/help-center/faq/planning-and-imports#recorded-work) |
+| Warum soll ich nach dem Import Maschinenmengen prüfen? | [Antwort](/de/help-center/faq/planning-and-imports#split-quantity) |
+
+<a id="operation-priority" />
+
+## Kann ein Arbeitsgang eine andere Priorität als sein Auftrag haben?
+
+Ja. Wählen Sie im Zuweisungsplaner die gestrichelte **AG**-Anzeige, um **Arbeitsgangpriorität** zu ändern. Die **P**-Anzeige ändert unabhängig davon **Auftragspriorität**. Folgen Sie [Maschinenzuweisungen planen](/de/platform-intro/workflows/assignment-planner).
+
+<a id="missing-work" />
+
+## Warum verschwindet Arbeit nach dem Setzen eines Prioritätsfilters?
+
+Sind **Auftragspriorität** und **Arbeitsgangpriorität** ausgewählt, muss die Arbeit beide erfüllen. Filter gelten für ungeplante Operationen und Maschinenspalten. Prüfen Sie auch Auftrags-, Produkt- oder Kundenfilter oberhalb des Plans. Das Informationssymbol öffnet den **Leitfaden zum Zuweisungsplaner**. Siehe [Zuweisungsplaner](/de/platform-intro/pages/assignment-planner).
+
+<a id="planning-dates" />
+
+## Nach welchen Terminen sortiere ich die Schritte eines Auftrags?
+
+Nutzen Sie **Geplanter Operationsstart** oder **Geplantes Operationsende** für einzelne Schritte. **Geplanter Auftragsstart** und **Geplantes Auftragsende** gelten für den Gesamtauftrag und halten seine Schritte beim Sortieren zusammen. Folgen Sie den [Sortierschritten](/de/platform-intro/workflows/assignment-planner).
+
+<a id="grouping" />
+
+## Wie sehe ich die Arbeit eines Auftrags nach Maschine?
+
+Wählen Sie auf der Auftragsseite **Gruppieren nach → Maschine**. Mit **Operation** kehren Sie zur Ansicht nach Produktionsschritt zurück. Siehe [Auftragsdetails](/de/platform-intro/pages/order-detail).
+
+<a id="actual-dates" />
+
+## Warum ändern sich die geplanten Termine beim Aufklappen eines Auftrags?
+
+Die gruppierte Zeile zeigt das geplante Fenster des Gesamtauftrags. Aufgeklappte Zeilen zeigen das eigene Fenster jeder Zuweisung. Die Auswahl geplanter oder tatsächlicher Termine neben der Datumsauswahl bestimmt, ob der Datumsfilter geplante oder erfasste Arbeit durchsucht. Siehe [Aufträge & Produkte](/de/platform-intro/pages/orders-products).
+
+<a id="import-priority" />
+
+## Warum hat ein erneuter Import die Priorität nicht geändert?
+
+Bestehende Aufträge und Arbeitsgänge behalten ihre Priorität immer. **Anfangs-Auftragspriorität (neue Aufträge)** und **Anfangs-Arbeitsgangpriorität (neue Arbeitsgänge)** gelten nur für neue Arbeit mit leeren Prioritätszellen oder ohne ausgewählte Prioritätsspalte. Eine leere Anfangs-Arbeitsgangpriorität verwendet 100. Siehe [Importeinstellungen](/de/platform-intro/pages/erp-upload-planner).
+
+<a id="invalid-priority" />
+
+## Warum ist meine Arbeitsgangpriorität trotz Anfangswert markiert?
+
+Der Anfangswert ergänzt nur leere Prioritäten. Text, Dezimalzahlen und negative Arbeitsgangprioritäten werden zur Korrektur markiert. Geben Sie eine ganze Zahl ab 0 ein und prüfen Sie den Import erneut. Folgen Sie dem [Importablauf](/de/platform-intro/workflows/order-upload-planner).
+
+<a id="recorded-work" />
+
+## Warum bleibt ein importierter Arbeitsgang auf seiner alten Maschine?
+
+Bereits erfasste Arbeit verhindert das Verschieben. Der Arbeitsgang wird trotzdem importiert. Wählen Sie **Beide behalten**, wenn er zusätzlich auf der neuen Maschine laufen soll. Der Produktionsverlauf bleibt unverändert. Siehe [Schutz beim erneuten Import](/de/platform-intro/pages/erp-upload-planner).
+
+<a id="split-quantity" />
+
+## Warum soll ich nach dem Import Maschinenmengen prüfen?
+
+Bereits auf mehrere Maschinen aufgeteilte Mengen bleiben unverändert und werden zur Prüfung markiert. Vergleichen Sie **Geplante Menge (Maschine)** und **Geplante Menge (Arbeitsauftrag)**. Prüfen Sie dann die betroffene Arbeit im Zuweisungsplaner. Folgen Sie dem [Importablauf](/de/platform-intro/workflows/order-upload-planner).

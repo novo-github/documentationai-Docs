@@ -46,17 +46,31 @@ Sie können eine Zuweisung direkt zwischen Maschinen- und Hallenpool-Spalten ver
 
 ## Suche, Filter und Kartendetails
 
-Durchsuchen Sie die Zuweisungen oder ungeplanten Operationen, um einen Auftrag oder eine Operation zu finden. Die Ergebnisse aktualisieren sich direkt während der Eingabe. Die Planersuche unterstützt auch die Suche nach Produkt, Kunde oder Maschine; in der Liste ungeplanter Operationen können Sie nach Auftrag, Produkt oder Operation suchen.
+Öffnen Sie über das Informationssymbol den **Leitfaden zum Zuweisungsplaner**, wenn Sie Hilfe zu Filtern, Sortierung oder zum Verschieben von Karten benötigen.
 
-Grenzen Sie den Plan mit Hallen- und Maschinenfiltern ein. Mit Auftragstags, Priorität und Auftragsstatus grenzen Sie die angezeigte Arbeit weiter ein. Die Statusfilter umfassen geplante, laufende, pausierte, abgeschlossene und stornierte Arbeit. Tags gruppieren zusammengehörige Arbeit und bleiben in Aufträgen, Operationen und der Planung sichtbar.
+Durchsuchen Sie ungeplante Operationen nach Auftrag, Produkt oder Kunde. Ergebnisse erscheinen, sobald Sie die Eingabe kurz unterbrechen. Filter grenzen sowohl ungeplante Operationen als auch Maschinenspalten ein. Wählen Sie Maschinen nach Halle aus. Ein Klick auf die Hallenüberschrift wählt die gesamte Halle aus oder ab. Sie können höchstens 15 Maschinen gleichzeitig anzeigen. Statusfilter gelten für einzelne Zuweisungen. Auftragstags erscheinen, wenn Ihr Unternehmen welche festgelegt hat. Der Importfilter begrenzt die Arbeit auf einen ERP-Upload.
 
-Sie können im Planer außerdem Operations- oder Zuweisungsnotizen lesen und bearbeiten, damit Hinweise direkt bei der Arbeit verfügbar sind. Über die Hervorhebungsfunktion lassen sich ausgewählte Felder auf Planungskarten betonen. Die Felder sind nach Auftrag, Arbeitsauftrag, Produkt, Operation, Planung und Zuweisung gruppiert. Hervorgehobene Prioritäten, Fälligkeiten oder Kunden erleichtern den Überblick über lange Warteschlangen.
+Öffnen Sie den Planer über einen Auftrag, ein Produkt oder einen Kunden, erscheint darüber eine Filteranzeige. Dieser Filter bleibt aktiv, bis Sie ihn entfernen. Passende ungeplante Karten werden umrandet.
+
+**Spalten** bestimmt die sichtbaren Werte auf Karten. Manche Werte lassen sich nicht ausblenden. **Hervorhebung** betont sichtbare Werte. Beide Einstellungen werden in Ihrem Profil gespeichert. Ein ausgeblendeter Wert wird erst hervorgehoben, wenn Sie ihn einblenden. Sie können hier auch Operations- und Zuweisungsnotizen lesen und bearbeiten.
+
+## Prioritäten festlegen und filtern
+
+**Auftragspriorität** (bisher **Prioritätsfilter**) und **Arbeitsgangpriorität** sind unabhängig. Wählen Sie die **P**-Anzeige für den Auftrag oder die gestrichelte **AG**-Anzeige für einen Arbeitsgang, um die jeweilige Priorität zu ändern. Eine Änderung der Arbeitsgangpriorität lässt die Auftragspriorität unverändert.
+
+Jeder Prioritätsfilter erlaubt mehrere Werte. Geben Sie eine Zahl ein, um nach einem Wert ohne Eintrag in der Unternehmenslegende zu suchen. Nutzen Sie beide Filter, muss eine Karte beide erfüllen. So finden Sie beispielsweise eine bestimmte Arbeitsgangpriorität innerhalb von Aufträgen einer ausgewählten Priorität. Siehe [Maschinenzuweisungen planen](/de/platform-intro/workflows/assignment-planner).
 
 ## Warteschlangenposition und Sortierregeln
 
 Die Sortierung nach Warteschlangenposition zeigt Zuweisungen in der Reihenfolge, die Sie durch Ziehen festgelegt haben. Ist diese Option ausgeschaltet, bestimmen Sortierregeln die angezeigte Reihenfolge. Jede Regel umfasst ein Feld und eine aufsteigende oder absteigende Richtung. Weitere Regeln lösen Gleichstände auf; die Reihenfolge der Regeln bestimmt ihren Vorrang.
 
 Dieselben Sortiermöglichkeiten stehen in der [Betriebsdatenerfassung V3](/de/platform-intro/pages/data-acquisition) zur Verfügung. Die Prioritäten entsprechen den unternehmensweiten Stufen aus dem [Admin-Panel](/de/platform-intro/pages/admin-panel).
+
+### Termine für die Sortierung wählen
+
+Karten können **Geplanter Operationsstart** und **Geplantes Operationsende** anzeigen. Diese Werte beschreiben das geplante Zeitfenster einer Operation. Damit sortieren Sie einzelne Schritte innerhalb eines Auftrags.
+
+**Geplanter Auftragsstart** und **Geplantes Auftragsende** beschreiben den gesamten Auftrag. Alle Operationen dieses Auftrags teilen diese Termine und bleiben beim Sortieren danach zusammen. **Geplanter Arbeitsauftragsstart** und **Geplantes Arbeitsauftragsende** beschreiben das geplante Zeitfenster des Arbeitsauftrags.
 
 ## Termine mit dem Forecaster prüfen
 
@@ -82,7 +96,7 @@ Mit **Queue Position** bestimmt die Ablage die genaue Position; laufende und pau
 
 ## OP, AG, P, Seq, Qty und Auslastung lesen
 
-- **OP** (deutsch **AG**) zeigt die Operationspriorität; **P** die unabhängige Auftragspriorität. Höhere Werte bedeuten höhere Dringlichkeit.
+- Die gestrichelte **AG**-Anzeige steht für **Arbeitsgangpriorität**, **P** für die unabhängige **Auftragspriorität**.
 - **Seq / Nr.** ist die Operationssequenz, **Qty / Menge** die Menge und **Dur / Dauer** die Dauer.
 - **Prep / Rüst** bedeutet Vorbereitung; **Prod.** bedeutet Produktion. **util. / Ausl.** ist die geplante Warteschlangenlast anhand von Planzeiten, keine tatsächliche Auslastung.
 - Order Planned dates gelten für den Gesamtauftrag; Operation Planned dates für einen Schritt.

@@ -213,9 +213,9 @@ Mit UND oder ODER kombinierte Automator-Bedingungen; Gruppen können verschachte
 
 [Mehr erfahren](/de/platform-intro/pages/automator).
 
-### Cooldown
+### Wartezeit
 
-Wartezeit nach Lösung eines Automator-Ereignisses, bevor die Regel erneut auslösen kann.
+Zeit nach einem Automator-Alarm bis zur erneuten Alarmierung. Ohne Wartezeit kann erneut alarmiert werden, sobald die Bedingung wieder eintritt.
 
 [Mehr erfahren](/de/platform-intro/pages/automator).
 
@@ -497,6 +497,18 @@ Produktionszeit geteilt durch gesamte Intervalldauer; unterscheidet sich von der
 
 [Mehr erfahren](/de/platform-intro/concepts/calculations#cycle-times).
 
+### Info / Warnung / Kritisch
+
+Schweregrade des BDE-Assistenten: **Info** ist lautlos, **Warnung** zeigt ein orangefarbenes Banner und **Kritisch** ein rotes Banner mit blinkendem Rand. Warnung und Kritisch können bei aktivierter Einstellung auch Ton abspielen.
+
+[Mehr erfahren](/de/platform-intro/pages/machine-configuration).
+
+### Anfangs-Auftragspriorität (neue Aufträge) / Anfangs-Arbeitsgangpriorität (neue Arbeitsgänge)
+
+Importwerte für neue Aufträge oder Arbeitsgänge mit leeren Prioritätszellen oder ohne ausgewählte Prioritätsspalte. Eine leere Anfangs-Arbeitsgangpriorität verwendet 100. Sie ersetzen keine ungültigen Angaben und ändern keine bestehenden Prioritäten.
+
+[Mehr erfahren](/de/platform-intro/pages/erp-upload-planner).
+
 ## J
 
 ### Job Context
@@ -601,9 +613,9 @@ Netzwerkangaben zur Identifikation eines registrierten Hallendisplays; unabhäng
 
 [Mehr erfahren](/de/platform-intro/pages/hall-plan).
 
-### Lookback Cycles / Gap Threshold
+### Rückblick-Zyklen und Abstands-Schwellwert
 
-Für Slow Consecutive Cycles die Zahl geprüfter jüngster Zyklen und das als langsam geltende Vielfache der erwarteten Zykluszeit.
+Bei Prüfungen langsamer Zyklen: Anzahl jüngster zu prüfender Zyklen (1 bis 1000) und ein positives Vielfaches der erwarteten Zykluszeit. Der Wert 2 bedeutet doppelt so lang.
 
 [Mehr erfahren](/de/platform-intro/pages/automator).
 
@@ -745,9 +757,9 @@ Auftragsdaten gelten für den ganzen Auftrag; Operationsdaten gehören zu einem 
 
 [Mehr erfahren](/de/platform-intro/pages/assignment-planner).
 
-### Order priority / Operation priority
+### Auftragspriorität / Arbeitsgangpriorität
 
-Unabhängige Dringlichkeitswerte für den Gesamtauftrag und einen Produktionsschritt.
+Unabhängige Dringlichkeitswerte für den Gesamtauftrag und einen Produktionsschritt. Der Planer zeigt **P** für den Auftrag und eine gestrichelte **AG**-Anzeige für den Arbeitsgang. Sind beide Prioritätsfilter gesetzt, muss Arbeit beide erfüllen.
 
 [Mehr erfahren](/de/platform-intro/pages/assignment-planner).
 
@@ -763,6 +775,12 @@ Gebuchte Menge übersteigt die Planung. Prüfen Sie die Mengen und wählen Sie W
 
 [Mehr erfahren](/de/platform-intro/pages/data-acquisition).
 
+### Operation gefährdet
+
+Automator-Vorlage, die 15 % Produktionsrückstand mit 25 % langsameren Zyklen gegenüber der Basis-Zykluszeit verbindet. Ihre Bedingungen sind von der Lieferbewertung des Forecasters getrennt.
+
+[Mehr erfahren](/de/platform-intro/pages/automator).
+
 ## P
 
 ### P / Order priority
@@ -777,9 +795,9 @@ Stückzahlen. PCS in Hallen- und Kioskkennzahlen bleibt sprachübergreifend glei
 
 [Mehr erfahren](/de/platform-intro/pages/hall-plan).
 
-### PDA Assistant / BDE-Assistent
+### BDE-Assistent
 
-Maschinenspezifische Terminalwarnungen, standardmäßig aus und nur durch Admins konfigurierbar. Info, Warning und Critical signalisieren unterschiedlich.
+Warnungen auf der BDE-Seite einer Maschine zu fehlenden Meldungen, offenen Aufträgen und veralteten Daten. Administratoren aktivieren und konfigurieren sie. Bediener können sie prüfen, zurückstellen oder stummschalten.
 
 [Mehr erfahren](/de/platform-intro/pages/data-acquisition).
 
@@ -889,9 +907,9 @@ Manuelle Kartenreihenfolge gegenüber geplanter Warteschlangenauslastung. Laufen
 
 ## R
 
-### Ratio thresholds
+### Verhältnisgrenzwerte
 
-Bei Automator-Rüstzeit, Produktionsdefizit, Zyklusdauer und Auftragsabschlussdefizit bedeutet 130 % eine Abweichung von 30 % über Plan oder hinter dem Sollfortschritt.
+Lesen Sie die gewählte Bedingung: Rüst- und Zyklusprüfungen vergleichen Zeiten mit Plan oder Basiswert. Produktionsprüfungen messen den Rückstand gegenüber dem Tempo. Auftragsfortschritt vergleicht Fertigstellung und verstrichenen Zeitplan. Derselbe Prozentwert bedeutet nicht bei jeder Kennzahl dasselbe.
 
 [Mehr erfahren](/de/platform-intro/pages/automator).
 
@@ -981,9 +999,9 @@ In Automator die Minuten bis ein offenes Ereignis als überfällig gilt.
 
 [Mehr erfahren](/de/platform-intro/pages/automator).
 
-### Snooze
+### Zurückgestellt
 
-BDE-Warnung vorübergehend ausblenden, standardmäßig 15 Minuten. Bei anhaltender Ursache erscheint sie wieder.
+Eine Warnung für die eingestellte Dauer aus dem Banner ausblenden und stummschalten. Sie bleibt unter **Zurückgestellt** aufgelistet und erscheint bei anhaltender Ursache erneut. **Jetzt anzeigen** holt sie früher zurück.
 
 [Mehr erfahren](/de/platform-intro/pages/data-acquisition).
 

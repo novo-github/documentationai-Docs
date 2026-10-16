@@ -46,17 +46,31 @@ You can move an assignment directly between machine and hall-pool columns and ch
 
 ## Search, Filters, and Card Details
 
-Search the assignment list or unassigned operations to find an order or operation. Results update immediately as you type. Planner search also helps you find work by product, customer, or machine; the unassigned list supports searches by order, product, or operation.
+Open the information icon for **Assignment Planner Guide** when you need help with filters, sorting, or moving cards.
 
-Use hall and machine filters to focus the plan, and order tags, priority, and order status to narrow the work shown. Status filtering includes planned, running, on-hold, completed, and cancelled work. Tags group related work and remain visible across orders, operations, and planning.
+Search the unassigned operations by order, product, or customer. Results update after you pause typing. Filters narrow both the unassigned panel and machine columns. Select machines by hall; selecting a hall heading selects or clears the whole hall. You can show at most 15 machines at once. Status filters apply to individual assignments. Order tags appear when your company has defined them. The import filter narrows work to one ERP upload.
 
-The planner also lets you review and edit operation or assignment notes, so instructions remain available alongside the work. With **Highlight**, you can emphasize selected fields across planning cards. Fields are grouped by Order, Work Order, Product, Operation, Planning, and Assignment; highlighting priority, due date, or customer makes busy queues easier to scan.
+Opening the planner from an order, product, or customer adds a filter chip above the board. It stays active until you remove it; matching unassigned cards are outlined.
+
+**Columns** controls the values shown on cards. Some values cannot be hidden. **Highlight** emphasizes visible values. Both choices are saved to your profile. Highlighting a hidden value has no visible effect until you show it. You can also read and edit operation or assignment notes here.
+
+## Set and Filter Priorities
+
+**Order priority** (previously **Priority filter**) and **Operation priority** are independent. Select the **P** chip for the order or the dashed **OP** chip for one operation to change its priority. Changing an operation's priority leaves the order priority unchanged.
+
+Each priority filter accepts several values. Type a number to find a value that has no entry in the company legend. When you use both filters, a card must match both. For example, you can find a particular operation priority within orders of a selected priority. See [Plan Machine Assignments](/en/platform-intro/workflows/assignment-planner).
 
 ## Queue Position and Sorting Rules
 
 **Sort by Queue Position** displays assignments in the order set by dragging them. When this option is off, sorting rules determine the displayed order instead. Each rule has a field and an ascending or descending direction. Additional rules break ties, and their order determines which takes precedence.
 
 The same sorting choices are available in [Data Acquisition V3](/en/platform-intro/pages/data-acquisition). Priority values follow the company levels configured in the [Admin Panel](/en/platform-intro/pages/admin-panel).
+
+### Choose the Date for Sorting
+
+Cards can show **Operation Planned Start** and **Operation Planned End**. These describe one operation's planned window. Use them to sequence individual steps within an order.
+
+**Order Planned Start** and **Order Planned End** describe the whole order. Every operation in that order shares these dates, so sorting by them keeps its steps together. **Work Order Planned Start** and **Work Order Planned End** describe the work order's planned window.
 
 ## Check Dates with the Forecaster
 
@@ -82,7 +96,7 @@ With **Queue Position** on, dropping a card sets its exact position; running and
 
 ## Read OP, AG, P, Seq, Qty, and Utilization
 
-- **OP** (German **AG**) is the operation-priority chip; **P** is the independent order priority. Higher values mean more urgent.
+- The dashed **OP** chip shows **Operation priority**; **P** shows the independent **Order priority**.
 - **Seq / Nr.** is the operation sequence. **Qty / Menge** is quantity; **Dur / Dauer** is duration.
 - **Prep / Rüst** is preparation; **Prod.** is production. **util. / Ausl.** is planned queue load from planned durations, not actual utilization.
 - Order Planned dates are shared across an order; Operation Planned dates belong to one step.

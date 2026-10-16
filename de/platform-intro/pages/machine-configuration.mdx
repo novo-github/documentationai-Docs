@@ -69,9 +69,27 @@ Eine **Active shift / Aktive Schicht** beginnt bei Leerlauf, Produktion oder Vor
 
 Der Wechsel zu aktiven Schichten entfernt geplante Schichten ab heute. Manche Alarmregeln lösen bei aktiven Schichten nicht aus. Prüfen Sie vor der Nutzung den Regelhinweis. Siehe [Schichtplaner](/de/platform-intro/pages/scheduler).
 
-## Warnings: BDE-Assistent
+## Warnungen: BDE-Assistent
 
-Der Tab **Warnings** konfiguriert den standardmäßig ausgeschalteten **PDA Assistant / BDE-Assistenten**. Admins wählen Warnungen und können Einstellungen auf andere Maschinen kopieren. Lesen Sie vor der Aktivierung [Standardwarnungen und Tonverhalten](/de/platform-intro/pages/data-acquisition).
+**Nur Administratoren können Warnungseinstellungen ändern.** Öffnen Sie **BDE-Assistent** in der Maschinenkonfiguration. Schalten Sie zuerst **Warnungen für diese Maschine aktivieren** ein. Solange dies aus ist, wirken die weiteren Einstellungen nicht und die BDE-Seite zeigt keine Warnungen.
+
+### Warnungen einstellen
+
+Wählen Sie unter **Warnungen** die benötigten Warnungen. Stellen Sie jeweils **Schweregrad**, **Verzögerung vor Warnung (Min.)** und **Ton abspielen** ein. **Auftrag läuft zu lange** verwendet **Schwellwert (Stunden)** als Verzögerung. **Auftrag über Schichtwechsel hinaus offen** benötigt zugewiesene Schichten. Lassen Sie **Live-Daten veraltet** aktiv: Ohne frische Daten können die anderen Warnungen unzuverlässig sein.
+
+**Info** bleibt lautlos. **Warnung** zeigt ein orangefarbenes Banner. **Kritisch** zeigt ein rotes Banner mit blinkendem Bildschirmrand. **Erneut anzeigen nach (Min.)** bestimmt, wie lange ein Bediener eine Warnung ausblenden und stummschalten kann. Sie bleibt im Warnungsbereich aufgelistet und kehrt zurück, wenn das Problem weiter besteht.
+
+### Alarmton
+
+Aktivieren Sie unter **Ton** die Einstellung **Alarmton erlauben**, wenn Warnungen hörbar sein sollen. Stellen Sie **Lautstärke** und **Wiederholen alle (Sekunden)** ein. Mit **Nur während einer aktiven Schicht** bleibt der Ton außerhalb von Schichten aus. Bei jeder Warnung muss außerdem **Ton abspielen** aktiv sein. **Info** bleibt immer lautlos.
+
+Mit **Ton testen** hören Sie die gewählte Lautstärke: zwei Töne für **Warnung**, drei wechselnde hohe und tiefe Töne für **Kritisch**. Der Ton wiederholt sich, solange eine hörbare Warnung aktiv und nicht zurückgestellt ist. Bediener können ihn auf ihrem eigenen Gerät stummschalten. Ein Browser benötigt einen Tipp auf die Seite, bevor er Ton abspielen kann. Manche Browser können keine Alarmtöne abspielen.
+
+### Einstellungen auf andere Maschinen kopieren
+
+Wählen Sie **Einstellungen auf andere Maschinen kopieren**, wählen Sie die Zielmaschinen und prüfen Sie die Bestätigung vor **Einstellungen kopieren**. Kopiert werden alle angezeigten Einstellungen, einschließlich ungespeicherter Änderungen. Die BDE-Assistent-Einstellungen der ausgewählten Maschinen werden ersetzt. Deren andere Einstellungen bleiben unverändert. Prüfen Sie anschließend die Anzahl erfolgreicher und fehlgeschlagener Übernahmen.
+
+Speichern Sie die Warnungseinstellungen dieser Maschine, bevor Sie die Seite verlassen. Folgen Sie [Maschine konfigurieren](/de/platform-intro/workflows/machine-configuration). Die [Betriebsdatenerfassung](/de/platform-intro/pages/data-acquisition) erklärt Warnungen und Bedienaktionen.
 
 ## Hauptentitäten
 

@@ -215,7 +215,7 @@ Automator conditions combined with AND or OR; groups may be nested.
 
 ### Cooldown
 
-Wait after an Automator event is resolved before its rule can trigger again.
+Waiting time after an Automator alert before alerting again. Without a cooldown, it can alert again as soon as the condition returns.
 
 [Learn more](/en/platform-intro/pages/automator).
 
@@ -497,6 +497,18 @@ Production time divided by total interval duration; differs from the overall PRO
 
 [Learn more](/en/platform-intro/concepts/calculations#cycle-times).
 
+### Info / Warning / Critical
+
+PDA Assistant severity levels: **Info** is silent, **Warning** shows an orange banner, and **Critical** shows a red banner with a flashing border. Warning and Critical can also play sound when enabled.
+
+[Learn more](/en/platform-intro/pages/machine-configuration).
+
+### Initial order priority (new orders) / Initial operation priority (new operations)
+
+Import values for new orders or operations with empty priority cells, or when no priority column is selected. An empty initial operation priority uses 100. They do not replace invalid entries or change existing priorities.
+
+[Learn more](/en/platform-intro/pages/erp-upload-planner).
+
 ## J
 
 ### Job Context
@@ -603,7 +615,7 @@ Network details used to identify a registered hall display; distinct from its pr
 
 ### Lookback Cycles / Gap Threshold
 
-For Slow Consecutive Cycles, number of recent cycles checked and multiple of expected cycle time considered slow.
+For slow-cycle checks, the number of recent cycles to inspect (1 to 1000) and a positive multiple of expected cycle time. A multiple of 2 means twice as long.
 
 [Learn more](/en/platform-intro/pages/automator).
 
@@ -747,7 +759,7 @@ Order dates are shared across the order; operation dates belong to one step and 
 
 ### Order priority / Operation priority
 
-Independent urgency values for the whole order and one production step.
+Independent urgency values for the whole order and one production step. The planner shows **P** for the order and a dashed **OP** for the operation. When both priority filters are set, work must match both.
 
 [Learn more](/en/platform-intro/pages/assignment-planner).
 
@@ -763,6 +775,12 @@ Booked quantity exceeds plan. Choose Put on hold or Mark as finished after revie
 
 [Learn more](/en/platform-intro/pages/data-acquisition).
 
+### Operation at risk
+
+Automator template that combines production 15% behind pace with cycles 25% slower than the baseline. Its conditions are separate from the Forecaster's delivery assessment.
+
+[Learn more](/en/platform-intro/pages/automator).
+
 ## P
 
 ### P / Order priority
@@ -777,9 +795,9 @@ Produced-piece counts. PCS on Hall Plan and kiosk figures stays unchanged across
 
 [Learn more](/en/platform-intro/pages/hall-plan).
 
-### PDA Assistant / BDE-Assistent
+### PDA Assistant
 
-Per-machine terminal warnings, off by default and configured only by admins; Info, Warning, and Critical have different signals.
+Warnings on a machine’s PDA page for missing entries, open orders, and stale data. Administrators enable and configure them; operators can review, snooze, or mute them.
 
 [Learn more](/en/platform-intro/pages/data-acquisition).
 
@@ -891,7 +909,7 @@ Manual card sequence versus planned queue utilization. Running and on-hold cards
 
 ### Ratio thresholds
 
-For Automator preparation duration, production deficit, cycle duration, and order completion deficit, 130% means 30% over plan or behind pace.
+Read the selected condition: setup and cycle checks compare time with a plan or baseline; production checks measure a shortfall against pace. Order progress compares completion with the elapsed schedule. The same percentage does not mean the same thing for every measure.
 
 [Learn more](/en/platform-intro/pages/automator).
 
@@ -983,7 +1001,7 @@ In Automator, the number of minutes responders have before an open event is over
 
 ### Snooze
 
-Temporarily hide a PDA warning, default 15 minutes. It returns if the condition persists.
+Temporarily hide a warning from the banner and silence it for the configured duration. It stays listed under **Snoozed** and returns if the problem remains. **Resume now** restores it sooner.
 
 [Learn more](/en/platform-intro/pages/data-acquisition).
 

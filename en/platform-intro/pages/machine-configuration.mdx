@@ -71,7 +71,25 @@ Switching to active shifts removes scheduled shifts from today onward. Some aler
 
 ## Warnings: PDA Assistant
 
-The **Warnings** tab configures the **PDA Assistant**, off by default. Admins choose machine warnings and can copy settings to other machines. Read the [warning defaults and sound behavior](/en/platform-intro/pages/data-acquisition) before enabling them.
+**Only administrators can change warning settings.** Open **PDA Assistant** in the machine configuration. Enable **Enable warnings on this machine** first. Until it is on, the other settings have no effect and the PDA page shows no warnings.
+
+### Warning Settings
+
+Under **Warnings**, choose the warnings you need. For each one, set **Severity**, **Delay before warning (min)**, and **Play sound**. **Order running too long** uses **Threshold (hours)** as its delay. **Order carried across shift change** needs shifts assigned to the machine. Keep **Live data is stale** enabled: without fresh data, the other warnings may be unreliable.
+
+**Info** stays silent. **Warning** shows an orange banner. **Critical** shows a red banner with a flashing screen border. **Snooze duration (min)** sets how long an operator can hide and silence a warning. It stays listed in the warning panel and returns if the problem remains.
+
+### Alarm Sound
+
+Under **Sound**, turn on **Allow alarm sound** if warnings should be audible. Set **Volume** and **Repeat every (seconds)**. Enable **Only during an active shift** to keep the sound quiet outside shifts. Each warning also needs **Play sound** enabled; **Info** is always silent.
+
+Use **Test sound** to hear the selected volume: two beeps for **Warning**, three alternating high and low beeps for **Critical**. Sound repeats while an audible warning is active and not snoozed. Operators can mute sound on their own device. A browser needs a tap on the page before it can play sound; some browsers cannot play alarm sounds.
+
+### Copy Settings to Other Machines
+
+Select **Copy these settings to other machines**, choose the destination machines, and review the confirmation before **Copy settings**. This copies everything shown on this page, including unsaved changes. It replaces the selected machines' PDA Assistant settings and leaves their other settings unchanged. Check the success and failure counts afterwards.
+
+Save the warning settings for this machine before leaving the page. Follow [Configure a Machine](/en/platform-intro/workflows/machine-configuration) for setup, and [Data Acquisition](/en/platform-intro/pages/data-acquisition) for the warning meanings and operator actions.
 
 ## Main Entities
 

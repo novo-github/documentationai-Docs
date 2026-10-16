@@ -31,22 +31,26 @@ Begin on the [ERP Upload Planner page](/en/platform-intro/pages/erp-upload-plann
     Select **Expand to edit** to correct individual values or paste matching groups of values from Excel. Review the changed-cell count and save your corrections; the preview highlights saved changes. Column headings and row counts cannot be changed here. Closing without saving discards unsaved corrections and leaves the original file unchanged.
   </Step>
   <Step title="Map columns and machine references" icon="arrow-right" title-type="p">
-    Map the source columns to platform fields, including order tags where needed. Reuse a saved mapping if it matches this file. Match external machine names or codes to the correct machines.
+    Map the source columns, including order tags where needed. Reuse a saved mapping if it matches this file. Match external machine names or codes to the correct machines.
+
+    Map **Order priority** and **Operation priority** separately. Set **Initial order priority (new orders)** and **Initial operation priority (new operations)** for empty cells or when no priority column is selected. Leave the initial operation priority empty to use 100. Correct marked values: operation priorities must be whole numbers of zero or more. Initial values do not replace invalid entries, and existing priorities never change on re-import.
   </Step>
   <Step title="Check import scope and time interpretation" icon="arrow-right" title-type="p">
     If needed, limit the import to orders that already have a machine assignment. Choose standard or industrial-minute interpretation to match the file's time convention. Review the explanations of changes to preparation and production times and the affected rows.
   </Step>
   <Step title="Review the preview and proposed changes" icon="arrow-right" title-type="p">
     Run the preview and review schedule warnings. Open **What this import will change** to compare counts of new, updated, and existing orders, products, customers, operations, and assignments. Expand the row-by-row details to check schedule changes, new operations and assignments, and recalculated durations. Correct the file or mapping if the proposals do not match your intent.
+
+    Read **What a re-import changes for existing orders** and the marked cells that keep existing values. Compare **Planned quantity (machine)** with **Planned quantity (work order)**. Quantities split across machines are kept and marked for planner review. Empty update cells keep current values; protected values and production history stay unchanged. Missing rows delete nothing.
   </Step>
   <Step title="Review scheduling conflicts" icon="arrow-right" title-type="p">
-    For each conflict grouped under an order, read the reason and choose **Move to [new target]** to apply the file's assignment, **Keep on [current target]** to retain the existing assignment, or **Keep both** for parallel work at both targets. If the review flags a conflict for manual resolution, use the [Assignment Planner](/en/platform-intro/pages/assignment-planner).
+    For each conflict grouped under an order, read the reason and choose **Move to [new target]** to apply the file's assignment, **Keep on [current target]** to retain the existing assignment, or **Keep both** for parallel work at both targets. Operations with recorded work stay on their current machine and are still imported. Choose **Keep both** if the operation should also run on the new machine. If the review marks a conflict for manual resolution, use the [Assignment Planner](/en/platform-intro/pages/assignment-planner).
   </Step>
   <Step title="Confirm the import" icon="arrow-right" title-type="p">
     Confirm once you have reviewed the proposed changes and conflict decisions. Follow the upload progress.
   </Step>
   <Step title="Check the applied results" icon="arrow-right" title-type="p">
-    Read the outcome summary to see which decisions were applied. If a decision could not be applied, review its explanation and check the affected operation in the Assignment Planner. Production may have started after you reviewed the conflict.
+    Read the outcome summary to see which decisions were applied. If a decision could not be applied, review its explanation and check the affected operation in the Assignment Planner. Production may have started after you reviewed the conflict. Check the updated machine-quantity count and any import warnings. Review quantities split across machines in the planner before adjusting them.
   </Step>
 </Steps>
 

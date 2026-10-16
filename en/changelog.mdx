@@ -22,6 +22,51 @@ toc: false
   Reading the forecast never changes your plan or delivery dates. Use the [planning workflow](/en/platform-intro/workflows/assignment-planner) to review the warnings before deciding what to change.
 </Update>
 
+<Update label="2026-09-28" description="v1.5.102–v1.5.104" tags={["feature", "improvement"]}>
+  {/* commits: c50945d, 5d8a65f, 543cec7, 2f61c1b, f81afbf, 6a563e7, 0f708b7, c8e69b8, 3947f95 */}
+
+  **Release period:** September 19–28, 2026
+
+  ### New Features
+
+  #### [Catch Missing Production Entries with the PDA Assistant](/en/platform-intro/pages/data-acquisition)
+  {/* feature: pda-assistant-warnings */}
+
+  The **PDA Assistant** warns about production without an order, forgotten running orders, missing downtime reasons, and stale live data. Administrators enable it in the machine configuration under **PDA Assistant → Enable warnings on this machine** and choose each warning's delay, severity, and sound.
+
+  On the PDA page, select **View all warnings** to review the issues and available actions. Snoozing hides and silences a warning temporarily; it returns if the problem remains. Follow [Run Data Acquisition](/en/platform-intro/workflows/data-acquisition) or [Configure a Machine](/en/platform-intro/workflows/machine-configuration).
+
+  #### [Build and Review Alert Rules from Templates](/en/platform-intro/pages/automator)
+  {/* feature: automator-templates-review */}
+
+  Administrators can open **Automator**, choose **Start from a template**, and adapt an alert for slow cycles, scrap, delays, or a missing sensor signal. Nothing is created until you review and save. **Review → What this alert will do** explains the conditions, recipients, timing, and escalation.
+
+  Missing recipients are called out: the alert still appears in Events, but nobody receives an email. Escalation can notify selected recipients when an alert is not handled in time. Open an event to inspect its details. Follow [Create an Automator Rule](/en/platform-intro/workflows/automator-rule-creation).
+
+  #### [Set a Priority for an Individual Operation](/en/platform-intro/pages/assignment-planner)
+  {/* feature: operation-priority */}
+
+  In **Assignment Planner**, select a dashed **OP** chip to change **Operation priority** independently of **Order priority**. Filter by either priority or both; when both filters are set, work must match both.
+
+  In Order Upload, **Initial operation priority (new operations)** supplies a value when the operation priority cell is empty or no column is selected. Leave the initial value empty to use 100. Existing priorities stay unchanged on re-import. See the [planning workflow](/en/platform-intro/workflows/assignment-planner) and [import workflow](/en/platform-intro/workflows/order-upload-planner).
+
+  ### Improvements
+
+  #### [Choose the Right Dates and View for Planning](/en/platform-intro/pages/assignment-planner)
+  {/* feature: planner-dates-guide */}
+
+  In **Assignment Planner**, open the information icon for **Assignment Planner Guide** to understand filters, sorting, and moving cards. Cards can show **Operation Planned Start** and **Operation Planned End**. Use operation dates to sequence individual steps, or order dates to keep an order's steps together.
+
+  On the order page, **Group by → Operation** or **Machine** changes how you review the work. In [Orders & Products](/en/platform-intro/pages/orders-products), the planned/actual date choice determines whether the date filter searches scheduled or recorded work. Follow [Plan Machine Assignments](/en/platform-intro/workflows/assignment-planner).
+
+  #### [See What a Re-import Keeps and What Needs Review](/en/platform-intro/pages/erp-upload-planner)
+  {/* feature: reimport-protection */}
+
+  In Order Upload, open **What a re-import changes for existing orders** to review which values stay and which may update. Empty cells keep existing values. Production history is never changed, and missing rows delete nothing.
+
+  Operations with recorded work stay on their current machine and are still imported. Choose **Keep both** if they should also run on the new machine. Quantities already split across machines stay in place and are marked for planner review. Check the warnings before and after import using the [import workflow](/en/platform-intro/workflows/order-upload-planner).
+</Update>
+
 <Update label="2026-09-16" description="v1.5.101" tags={["feature", "improvement"]}>
   **UI-Build commits:** `2dbb32c`, `3aa62c3`, `fda9521`
 

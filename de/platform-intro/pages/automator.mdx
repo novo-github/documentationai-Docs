@@ -5,7 +5,7 @@ description: "Konfigurieren Sie als Admin Maschinenregeln, Zeitsteuerung, Benach
 
 ## Überblick
 
-**Zugriff: Nur Admin.** Automator ist das neuere Regelwerk für Maschinenbedingungen und Reaktionen. Öffnen Sie es im Arbeitsbereich. Routen: `/automator`, `/automator/rules`, `/automator/events`, `/automator/create`.
+**Zugriff: Nur Admin.** Öffnen Sie **Automator** im Arbeitsbereich, um Maschinenalarme, Regeln und Ereignisse zu verwalten.
 
 Es ergänzt die [klassischen Alarmregeln](/de/platform-intro/pages/alert-rules). Ein Arbeitsplatz hat keine Sensordaten; sensorbasierte Automator-Regeln lösen dort nie aus.
 
@@ -13,29 +13,57 @@ Es ergänzt die [klassischen Alarmregeln](/de/platform-intro/pages/alert-rules).
 
 | Einstellung | Bedeutung |
 | --- | --- |
-| **Scope** | Ausgewählte Maschinen. Ohne Maschinenauswahl gilt eine **Global rule** für alle aktiven Maschinen. |
+| Maschinenauswahl | Ausgewählte Maschinen. Ohne Auswahl gilt die Regel für alle Maschinen. |
 | **Condition group** | Mit UND oder ODER kombinierte Bedingungen; Gruppen können verschachtelt werden. |
 | **Polling interval** | Häufigkeit der Bedingungsprüfung. |
 | **Minimum true duration** | Erforderliche Dauer einer erfüllten Bedingung vor der Ereigniserstellung. |
 | **Clear duration** | Erforderliche Dauer eines normalen Zustands vor dem Aufheben des Ereignisses. |
 | **Requires active shift** | Pausiert Prüfungen außerhalb der aktiven Maschinenschicht. |
-| **Cooldown** | Wartezeit nach einer Lösung vor der nächsten Auslösung. |
+| **Wartezeit** | Zeit nach einem Alarm bis zur erneuten Alarmierung. Ohne Wartezeit kann erneut alarmiert werden, sobald die Bedingung wieder eintritt. |
 
 **Beispiel:** Eine 30 Sekunden lang erfüllte Bedingung erzeugt kein Ereignis, wenn Minimum true duration 2 Minuten beträgt. Polling interval bestimmt die Prüfhäufigkeit und ist eine andere Einstellung als diese Verzögerung.
 
 ## Grenzwerte und buchungsabhängige Kennzahlen
 
-Bei **Preparation Duration**, **Production Deficit**, **Cycle Duration** und **Order Completion Deficit** bedeutet **130 %** eine Abweichung von 30 % über Plan oder hinter dem Sollfortschritt. Lesen Sie die Bedeutung der ausgewählten Bedingung vor der Grenzwertwahl.
+Lesen Sie vor der Grenzwertwahl die Beschreibung der Bedingung. Die Kennzahlen vergleichen unterschiedliche Größen:
 
-Bei **Slow Consecutive Cycles** bestimmt **Lookback Cycles** die Zahl geprüfter jüngster Zyklen. **Gap Threshold** ist das als langsam geltende Vielfache der erwarteten Zykluszeit.
+| Kennzahl | Was sie prüft |
+| --- | --- |
+| Rüstzeit | Gesamte bisherige Rüstzeit des aktuellen Auftrags im Vergleich zur geplanten Rüstzeit. |
+| Produktionsrückstand | Rückstand der bisherigen Produktion des aktuellen Auftrags gegenüber dem erwarteten Tempo. |
+| Zykluszeit | Letzter abgeschlossener Zyklus im Vergleich zur Basis-Zykluszeit der Operation. |
+| Auftragsfortschritt | Produzierte Menge im Vergleich zum erwarteten Fortschritt anhand der bis zum Liefertermin verstrichenen Zeit. |
+| Ausschussmenge und -quote | Ausschussteile oder deren Anteil an allen Teilen aus den BDE-Produktionsmeldungen des aktuellen Auftrags. Wählen Sie Materialausschuss, Arbeits-/Bearbeitungsausschuss oder beide. |
+| Langsame Zyklen | Anzahl der jüngsten Zyklen, die nach Ihren Einstellungen als langsam gelten. |
 
-Vorbereitungsdauer, Ausschussmenge und Ausschussquote hängen von BDE-Buchungen ab. Sie ändern sich erst bei einem Eintrag und können daher konstant bleiben und anschließend springen. Ein Maschinensensor allein aktualisiert keinen eingegebenen Ausschuss.
+Wählen Sie für langsame Zyklen eine ganze Zahl von 1 bis 1000 für die Anzahl zu prüfender Zyklen. Legen Sie ein positives Vielfaches der erwarteten Zykluszeit fest: 2 bedeutet doppelt so lang. Anzahlen müssen ganze Zahlen sein. Füllen Sie alle Einstellungen einer Bedingung aus und wählen Sie einen zur Kennzahl passenden Vergleich.
+
+Rüst- und Ausschusswerte ändern sich erst mit einer BDE-Meldung. Sie können konstant bleiben und dann springen. Ein Sensor allein aktualisiert keine eingegebenen Ausschussmengen.
 
 ## Reaktionen und Eskalation
 
-**Auto-resolve** schließt ein Ereignis bei entfallener Bedingung. **Notify on resolve** versendet beim Abschluss eine weitere E-Mail. **Escalation** benachrichtigt eine zweite Gruppe bei nicht rechtzeitig bearbeiteten Ereignissen. Prüfen Sie Empfänger und Zeiten vor dem Speichern.
+Sie können einen Alarm automatisch lösen lassen, nachdem seine Bedingung für die gewählte Dauer entfallen ist. Oder Sie lassen ihn offen, bis jemand ihn löst. Bei der Lösung kann eine weitere E-Mail versendet werden. Die Eskalation benachrichtigt ausgewählte Eskalationsempfänger, wenn der Alarm nicht rechtzeitig bearbeitet wird.
 
-Vorlagen umfassen zu lange Vorbereitung, Produktion hinter Soll, langsame Zyklen, wiederholte Zykluslücken, übermäßigen Ausschuss, gefährdete Operationen, verspätete Aufträge und getrennte Sensoren. Jede Vorlage nennt Voraussetzungen und füllt eine Regel nur vor; erstellt wird sie erst beim Speichern.
+Kontrollieren Sie unter **Prüfen** die Bereiche **Was diese Regel bewirkt** und **Ihre Einstellungen**. Lesen Sie Bedingungen, Maschinen, aktive Tage, Prüfintervall, Empfänger, Reaktionszeit, Wartezeit und Einstellungen zur Lösung. Ohne Maschinenauswahl gilt die Regel für alle Maschinen. Eine ausgeschaltete Regel wird gespeichert, läuft aber nicht.
+
+Ohne E-Mail-Empfänger erscheint der Alarm in den Ereignissen, aber niemand erhält eine E-Mail. Eine Eskalation ohne Eskalationsempfänger kann niemanden benachrichtigen. Wählen Sie vor dem Speichern die nötigen Empfänger, wenn Sie E-Mail-Benachrichtigungen benötigen.
+
+## Mit einer Vorlage starten
+
+Wählen Sie **Mit einer Vorlage starten**, um eine Regel vorauszufüllen, oder **Von Grund auf neu** für eigene Einstellungen. Erst Prüfung und Speicherung erstellen die Regel. Jede Vorlage nennt ihre Voraussetzungen. Prüfen Sie Maschinen, Empfänger, Schwellwerte und die Beschränkung auf aktive Schichten. Kontrollieren Sie Werte mit **Aus der Vorlage – bitte prüfen** und wählen Sie danach **Als geprüft markieren**.
+
+| Vorlage | Anfangsbedingung |
+| --- | --- |
+| **Rüsten dauert zu lange** | Rüstzeit erreicht 120 % der geplanten Rüstzeit. |
+| **Produktion hinter dem erwarteten Tempo** | Produktion liegt mindestens 15 % hinter dem Tempo. |
+| **Zykluszeit zu langsam** | Letzter Zyklus ist mindestens 25 % langsamer als die Basis-Zykluszeit. |
+| **Wiederholte Zyklus-Lücken** | 3 der letzten 10 Zyklen dauern mindestens doppelt so lang wie erwartet. |
+| **Zu hohe Ausschussquote** | Gesamtausschuss erreicht 3 %. |
+| **Operation gefährdet** | Produktion liegt 15 % hinter dem Tempo und Zyklen sind 25 % langsamer. |
+| **Auftrag gerät in Verzug** | Auftragsfortschritt liegt mindestens 15 Prozentpunkte hinter dem verstrichenen Zeitplan. |
+| **Sensor getrennt** | Seit 5 Minuten kein Sensorsignal; standardmäßig nur während aktiver Schichten. |
+
+Passen Sie diese Anfangswerte an Ihren Prozess an. Zyklusprüfungen benötigen Zykluserkennung und Basis-Zykluszeit, Tempoprüfungen eine geplante Produktionszeit. Rüstprüfungen benötigen geplante Rüstzeit und erfasste Rüstintervalle. Ausschussprüfungen benötigen produzierte Mengen und Ausschuss aus BDE-Meldungen. Auftragsfortschritt benötigt geplante Termine und Mengen. Prüfen Sie die Voraussetzungen jeder Vorlage und ob eine Operation aktiv laufen muss.
 
 ## Ereigniseingang, SLA und MTTR
 
@@ -47,11 +75,13 @@ Ein **Event** ist eine Regelauslösung. Es durchläuft **New → Acknowledged �
 
 Bestätigung und Lösung sind unterschiedliche Aktionen. Prüfen Sie Maschine und Bedingung vor dem Kennzeichnen als gelöst.
 
+Öffnen Sie ein Ereignis in der Liste, um seine Details vor der Bestätigung oder Lösung zu lesen. So prüfen Sie den Alarm im Zusammenhang. Eine nicht zuordenbare Person erscheint als **Unbekannter Benutzer**.
+
 ## Eine Regel erstellen
 
-Folgen Sie [Automator-Regel erstellen](/de/platform-intro/workflows/automator-rule-creation): **Scope & Definition → Conditions & Timing → Response & Escalation → Review**. Review beschreibt das Verhalten und warnt bei fehlenden Empfängern, globalem Geltungsbereich oder deaktivierter Regel.
+Folgen Sie [Automator-Regel erstellen](/de/platform-intro/workflows/automator-rule-creation), um eine Vorlage auszuwählen, Bedingungen und Empfänger zu kontrollieren und die Regel zu prüfen und zu speichern.
 
-Automatische Produktionsaktionen wie das Beenden von Intervallen sind im Frontend-Regelassistenten nicht bestätigt. Erwarten Sie diese Aktionen nicht von einer Benachrichtigungsregel.
+Werden die Regeloptionen nicht geladen, wählen Sie **Erneut versuchen**. Existiert eine Regel nicht mehr, kehren Sie zur Liste zurück und wählen Sie eine verfügbare Regel.
 
 ## Verwandte Referenzen
 

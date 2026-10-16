@@ -1,0 +1,63 @@
+---
+title: "Fragen zu Warnungen und Automatisierung"
+description: "BDE-Assistent, Alarmton sowie Automator-Vorlagen und Benachrichtigungen verstehen."
+---
+
+| Ihre Frage | Antwort lesen |
+| --- | --- |
+| Wer kann Warnungen für meine Maschine einschalten? | [Antwort](/de/help-center/faq/warnings-and-automation#enable-warnings) |
+| Was soll ich bei einer Warnung am Terminal tun? | [Antwort](/de/help-center/faq/warnings-and-automation#warning-action) |
+| Wie stoppe ich den Alarmton und warum bleibt er manchmal aus? | [Antwort](/de/help-center/faq/warnings-and-automation#sound) |
+| Warum erscheint eine zurückgestellte Warnung wieder? | [Antwort](/de/help-center/faq/warnings-and-automation#snooze) |
+| Werden beim Kopieren auch ungespeicherte Warnungseinstellungen übernommen? | [Antwort](/de/help-center/faq/warnings-and-automation#copy-settings) |
+| Sendet eine ausgewählte Automator-Vorlage sofort Alarme? | [Antwort](/de/help-center/faq/warnings-and-automation#template) |
+| Warum sehe ich einen Automator-Alarm, erhalte aber keine E-Mail? | [Antwort](/de/help-center/faq/warnings-and-automation#email) |
+| Warum bleiben Rüst- und Ausschusswerte erst gleich und springen dann? | [Antwort](/de/help-center/faq/warnings-and-automation#metrics) |
+
+<a id="enable-warnings" />
+
+## Wer kann Warnungen für meine Maschine einschalten?
+
+Nur Administratoren können Warnungseinstellungen ändern. Öffnen Sie in der Maschinenkonfiguration **BDE-Assistent** und schalten Sie zuerst **Warnungen für diese Maschine aktivieren** ein. Danach wählen Sie Verzögerungen, Schweregrad und Ton. Folgen Sie [Maschine konfigurieren](/de/platform-intro/workflows/machine-configuration).
+
+<a id="warning-action" />
+
+## Was soll ich bei einer Warnung am Terminal tun?
+
+Wählen Sie **Alle Warnungen anzeigen** und lesen Sie Auftrag und Problem. Prüfen Sie die Maschine. Nutzen Sie dann die verfügbare Aktion zur Auftragsauswahl, zum Beenden, zur Grundauswahl oder zum Aktualisieren. **Live-Daten veraltet** bedeutet, dass andere Warnungen unzuverlässig sein können. Folgen Sie dem [Bedienablauf für Warnungen](/de/platform-intro/workflows/data-acquisition).
+
+<a id="sound" />
+
+## Wie stoppe ich den Alarmton und warum bleibt er manchmal aus?
+
+Mit **Stummschalten** schalten Sie Ihr Gerät stumm, mit **Ton aktivieren** wieder ein. Der Browser benötigt vorher einen Tipp auf die Seite. **Info** ist immer lautlos. Andere Töne hängen von den Administratoreinstellungen ab und können auf aktive Schichten begrenzt sein. Siehe [Ton des BDE-Assistenten](/de/platform-intro/pages/data-acquisition).
+
+<a id="snooze" />
+
+## Warum erscheint eine zurückgestellte Warnung wieder?
+
+Zurückstellen blendet die Warnung nur für die eingestellte Dauer aus und schaltet sie stumm. Sie bleibt unter **Zurückgestellt** sichtbar und kehrt zurück, wenn die Ursache weiter besteht. **Jetzt anzeigen** holt sie früher zurück. Folgen Sie dem [Bedienablauf](/de/platform-intro/workflows/data-acquisition).
+
+<a id="copy-settings" />
+
+## Werden beim Kopieren auch ungespeicherte Warnungseinstellungen übernommen?
+
+Ja. **Einstellungen kopieren** übernimmt die angezeigten Einstellungen einschließlich ungespeicherter Änderungen. Die BDE-Assistent-Einstellungen der gewählten Maschinen werden ersetzt. Andere Einstellungen bleiben unverändert. Prüfen Sie Bestätigung und Ergebniszahlen. Siehe [Maschinenkonfiguration](/de/platform-intro/pages/machine-configuration).
+
+<a id="template" />
+
+## Sendet eine ausgewählte Automator-Vorlage sofort Alarme?
+
+Nein. Eine Vorlage füllt die Regel nur vor. Administratoren müssen Voraussetzungen, Maschinen, Empfänger, Schwellwerte und Zeitplan prüfen und die Regel speichern. Eine ausgeschaltete Regel bleibt gespeichert, läuft aber nicht. Folgen Sie [Automator-Regel erstellen](/de/platform-intro/workflows/automator-rule-creation).
+
+<a id="email" />
+
+## Warum sehe ich einen Automator-Alarm, erhalte aber keine E-Mail?
+
+Ohne E-Mail-Empfänger erscheint der Alarm in den Ereignissen, aber niemand erhält eine E-Mail. Auch die Eskalation benötigt ausgewählte Eskalationsempfänger, um bei nicht rechtzeitiger Bearbeitung jemanden zu benachrichtigen. Kontrollieren Sie die Empfänger unter **Prüfen → Ihre Einstellungen**. Siehe [Automator](/de/platform-intro/pages/automator).
+
+<a id="metrics" />
+
+## Warum bleiben Rüst- und Ausschusswerte erst gleich und springen dann?
+
+Diese Werte ändern sich mit einer BDE-Meldung. Die Rüstprüfung vergleicht die gesamte bisherige Rüstzeit mit der Planzeit. Ausschuss stammt aus BDE-Produktionsmeldungen des aktuellen Auftrags. Ein Sensor allein aktualisiert keinen eingegebenen Ausschuss. Siehe [Automator-Kennzahlen](/de/platform-intro/pages/automator).

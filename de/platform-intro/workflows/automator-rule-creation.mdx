@@ -5,22 +5,22 @@ description: "Wählen Sie Geltungsbereich, Bedingungen, Zeiten, Reaktion und Esk
 
 ## Bevor Sie beginnen
 
-**Wer darf das tun: Nur Admin.** Öffnen Sie [Automator](/de/platform-intro/pages/automator) und erstellen Sie eine Regel unter `/automator/create`. Klären Sie Maschinenumfang, Bedingung und Empfänger. Prüfen Sie Vorlagenvoraussetzungen und Datenquelle: Sensorregeln lösen für Arbeitsplätze nicht aus.
+**Wer darf das tun: Nur Admin.** Öffnen Sie [Automator](/de/platform-intro/pages/automator) und beginnen Sie mit der Regelerstellung. Klären Sie die zu überwachenden Maschinen und die Alarmempfänger. Prüfen Sie die Voraussetzungen der gewählten Vorlage. Sensorbasierte Regeln lösen für Arbeitsplätze nicht aus.
 
 ## Erstellen und prüfen
 
-1. Wählen Sie optional eine **Template**-Vorlage. Sie füllt Einstellungen vor, erstellt aber noch keine Regel.
-2. Benennen Sie unter **Scope & Definition** die Regel und wählen Sie Maschinen. Ohne Maschinenauswahl gilt eine globale Regel für alle aktiven Maschinen.
-3. Konfigurieren Sie unter **Conditions & Timing** Bedingungen und UND/ODER-Gruppen, Prüfhäufigkeit, Mindestdauer, Normaldauer, Schichtanforderung und Cooldown nach Bedarf.
-4. Lesen Sie Verhältnisgrenzwerte im Kontext. Bei den beschriebenen Defizit-/Dauerverhältnissen bedeutet 130 % eine Abweichung von 30 % über Plan oder hinter dem Sollfortschritt. Buchungsabhängige Rüst- und Ausschusswerte aktualisieren sich nur durch BDE-Einträge.
-5. Wählen Sie unter **Response & Escalation** Empfänger und verfügbare Reaktion, automatische Lösung, Abschlussbenachrichtigung und Eskalation.
-6. Lesen Sie unter **Review** die Beschreibung in Klartext. Bearbeiten Sie Hinweise zu fehlenden Empfängern, globalem Umfang oder deaktivierter Regel.
-7. Speichern Sie und prüfen Sie die Regel in der Liste. Verfolgen Sie Auslösungen im **Event Inbox**.
+1. Wählen Sie **Mit einer Vorlage starten** oder **Von Grund auf neu**. Eine Vorlage füllt Einstellungen vor, erstellt aber noch nichts. Prüfen Sie die genannten Voraussetzungen.
+2. Benennen Sie die Regel und wählen Sie Maschinen. Ohne Auswahl gilt sie für alle Maschinen.
+3. Prüfen Sie Bedingungen und Schwellwerte. **Rüsten dauert zu lange** beginnt beispielsweise bei 120 % der geplanten Rüstzeit, **Produktion hinter dem erwarteten Tempo** bei 15 % Rückstand. Passen Sie diese Werte an Ihren Prozess an. Rüst- und Ausschusswerte ändern sich mit BDE-Meldungen.
+4. Legen Sie Prüfintervall, erforderliche Dauer, aktive Tage, Beschränkung auf aktive Schichten und Wartezeit fest. Prüfen Sie alle Werte mit **Aus der Vorlage – bitte prüfen** und wählen Sie **Als geprüft markieren**.
+5. Wählen Sie E-Mail-Empfänger, Reaktionszeit und Eskalationsempfänger. Entscheiden Sie, ob der Alarm nach Entfallen der Bedingung automatisch gelöst und bei der Lösung eine weitere E-Mail gesendet werden soll.
+6. Lesen Sie unter **Prüfen** die Bereiche **Was diese Regel bewirkt** und **Ihre Einstellungen**. Prüfen Sie Hinweise auf fehlende Empfänger, alle Maschinen oder eine ausgeschaltete Regel. Ohne Empfänger erscheinen Alarme in den Ereignissen, aber niemand erhält eine E-Mail. Auch die Eskalation benötigt eigene Empfänger.
+7. Speichern Sie und kontrollieren Sie die Regel in der Liste. Öffnen Sie ein ausgelöstes Ereignis und lesen Sie seine Details, bevor Sie es bestätigen oder lösen.
 
 ## Erwartetes Ergebnis und häufige Probleme
 
-Die gespeicherte Regel prüft ihren Geltungsbereich und erzeugt Ereignisse, wenn Bedingung und Zeiten erfüllt sind. Ereignisse durchlaufen **New**, **Acknowledged** und **Resolved**; Wiederöffnung ist möglich.
+Eine aktivierte, gespeicherte Regel prüft die gewählten Maschinen und erzeugt Alarme, wenn Bedingungen und Zeiten erfüllt sind. Eine ausgeschaltete Regel bleibt bis zur Aktivierung gespeichert.
 
-Bei ausbleibender Auslösung prüfen Sie Aktivierung, Geltungsbereich, aktive Schicht, benötigte Daten und Mindestdauer. Eine Vorlage allein ist keine gespeicherte Regel. Bestätigung ist keine Lösung. Automatisches Intervallbeenden ist durch den Regelassistenten nicht bestätigt.
+Erscheint kein Alarm, prüfen Sie Regelstatus, Maschinen, aktive Tage, Schichten, benötigte Daten und Mindestdauer. Eine Vorlage allein ist keine gespeicherte Regel. Werden Optionen nicht geladen, wählen Sie **Erneut versuchen**. Erscheint ein Alarm ohne E-Mail, prüfen Sie die Empfänger. Bleibt die Eskalationsmail aus, prüfen Sie auch die Eskalationsempfänger.
 
-[Automator](/de/platform-intro/pages/automator) erklärt **SLA**, **MTTR** und Ereignisse. [Betriebsdatenerfassung](/de/platform-intro/pages/data-acquisition) erklärt Buchungen.
+Ein Ereignis zu bestätigen und es zu lösen sind unterschiedliche Aktionen. [Automator](/de/platform-intro/pages/automator) erklärt Reaktionszeiten und Ereignisdetails. Die [Betriebsdatenerfassung](/de/platform-intro/pages/data-acquisition) erklärt Produktionsmeldungen.

@@ -493,6 +493,14 @@
                   {
                     "title": "Energy Consumption, Wastage & Costs",
                     "path": "en/help-center/faq/energy-and-costs"
+                  },
+                  {
+                    "title": "Planning and Order Import FAQs",
+                    "path": "en/help-center/faq/planning-and-imports"
+                  },
+                  {
+                    "title": "Warnings and Automation FAQs",
+                    "path": "en/help-center/faq/warnings-and-automation"
                   }
                 ]
               },
@@ -985,6 +993,14 @@
                   {
                     "title": "Energieverbrauch, Energieverschwendung und Kosten",
                     "path": "de/help-center/faq/energy-and-costs"
+                  },
+                  {
+                    "title": "Fragen zu Planung und Auftragsimport",
+                    "path": "de/help-center/faq/planning-and-imports"
+                  },
+                  {
+                    "title": "Fragen zu Warnungen und Automatisierung",
+                    "path": "de/help-center/faq/warnings-and-automation"
                   }
                 ]
               },

@@ -45,6 +45,12 @@ Time fields can use standard or industrial-minute interpretation. Choose the con
 
 Priority names, numbers, and colors follow the company levels configured in the [Admin Panel](/en/platform-intro/pages/admin-panel). These levels are shared with order management and the Assignment Planner, so imported priorities can be reviewed consistently across the plan.
 
+### Initial Priorities for New Work
+
+Map **Order priority** and **Operation priority** separately. In the column-mapping step, **Initial order priority (new orders)** and **Initial operation priority (new operations)** supply values for new work when a priority cell is empty or no priority column is selected. Leave the initial operation priority empty to use 100.
+
+Operation priorities must be whole numbers of zero or more. Text, fractions, and negative values are marked for correction; the initial value does not replace them. Non-numeric order priorities are also marked. Re-importing never changes the priority of existing orders or operations.
+
 ## Review the Import's Impact
 
 After mapping and preview, open **What this import will change**. The summary groups new, updated, and existing records by orders, products, customers, operations, and assignments. Existing records are reused; they do not necessarily represent new records created by the import.
@@ -73,7 +79,7 @@ Required mappings are **Order Number, Product, Planned Start, Planned End**. Dat
 
 - **ALL Units / 1 Unit:** whether planned production time describes the full quantity or a single unit.
 - **Industrial minutes:** ordinary minutes = industrial minutes × 0.6.
-- **Initial order priority / Initial operation priority:** only for new records with empty priority cells; initial operation priority defaults to 100.
+- Initial priorities apply only to new orders and operations. See the priority settings above for empty cells and invalid values.
 - **Commit scope:** All rows or Machine assigned; the latter imports only rows with a machine assignment.
 - **Save Mapping / Load Mapping:** saved per user. Manual machine or hall-pool assignment overrides mapping; **Reset** restores it.
 
@@ -81,9 +87,19 @@ Required mappings are **Order Number, Product, Planned Start, Planned End**. Dat
 
 ## Re-import Matching and Protected History
 
-Records match by product name; order name; work order = order + product; operation = work order + sequence; assignment = operation + machine. Empty update cells keep current values. Existing priorities and other protected fields are not overwritten. Production history is never touched, and a missing row does not delete anything.
+Open **What a re-import changes for existing orders** before confirming a repeat upload.
 
-Operations with recorded work cannot be moved. **Move**, **Keep**, or **Keep both** handles eligible machine conflicts. Multiple changed targets can be ambiguous and require manual review in Assignment Planner.
+| Section | What it means for your import |
+| --- | --- |
+| **How records are matched** | Product name identifies the product; order name identifies the order. A work order combines order and product, an operation combines work order and sequence, and an assignment combines operation and machine. |
+| **Updated from the file** | Empty cells keep the current value. Quantities already split across machines stay unchanged and are marked for review. |
+| **Never changed** | Existing protected values stay even if the file differs. Production history is never changed. |
+| **Only for new records** | Protected values from the file are used only when the order, operation, or product is new. Missing rows delete nothing. |
+| **Machine assignments — your decision** | New operations use the machine chosen in the assignment step. For existing assignments on another machine, review whether to move, keep, or keep both. |
+
+Marked cells explain when an existing value will be kept instead of imported. Operations with recorded work stay on their current machine and are still imported. **Keep both** also lets the operation run on the new machine. It does not move the recorded work.
+
+The preview distinguishes **Planned quantity (machine)** from **Planned quantity (work order)**. After import, check the count of updated machine quantities and any warnings. Review marked split quantities in the [Assignment Planner](/en/platform-intro/pages/assignment-planner) before changing the plan.
 
 **ERP Upload (single machine) Legacy** is an older superseded version; use this current multi-record workflow.
 

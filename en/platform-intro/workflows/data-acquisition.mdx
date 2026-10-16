@@ -95,6 +95,25 @@ Starting and stopping production updates the related order status. An assignment
 
 Deleting an interval cannot be undone. Operators cannot open Orders & Products or Alert Rules; use the permitted PDA views or ask your admin for help. [PDA Assistant warnings](/en/platform-intro/pages/data-acquisition) can flag stale data and mismatched machine/order states.
 
+## Respond to an Assistant Warning
+
+An administrator must enable warnings for this machine first. Anyone with access to its PDA page can review them.
+
+<Steps>
+  <Step title="Read all active warnings" icon="arrow-right" title-type="p">
+    Select **View all warnings**. In **Active warnings**, read the order, duration, and issue. If **Live data is stale** appears, other warnings may be unreliable; use **Refresh now** and check whether fresh data arrives.
+  </Step>
+  <Step title="Address the cause" icon="arrow-right" title-type="p">
+    Use the available action after checking the machine and order. **Select an order** helps find the work that should be running. **End order** lets you end a forgotten running order. **Set downtime reason** takes you to the reason selection. Confirm that the recorded work matches what happened.
+  </Step>
+  <Step title="Snooze a reminder when needed" icon="arrow-right" title-type="p">
+    Snooze one warning or choose **Snooze all** to hide and silence reminders for the configured duration. They remain listed under **Snoozed**. Use **Resume now** to bring one back sooner. If the cause persists, it returns when the snooze ends.
+  </Step>
+  <Step title="Control sound on your device" icon="arrow-right" title-type="p">
+    Choose **Enable sound** or **Mute**. Tap the page once to allow browser sound. If it remains silent, ask an administrator to check sound settings, severity, and active-shift restrictions in [Machine Configuration](/en/platform-intro/pages/machine-configuration). **Info** warnings are always silent.
+  </Step>
+</Steps>
+
 ## Decision Points
 
 - Whether the current time belongs to preparation, active production, or a stop.

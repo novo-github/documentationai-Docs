@@ -5,22 +5,22 @@ description: "Choose scope, conditions, timing, response, and escalation, then r
 
 ## Before You Begin
 
-**Who can do this: Admin only.** Open [Automator](/en/platform-intro/pages/automator), then create a rule at `/automator/create`. Know the machine scope, condition, and recipients. Check template prerequisites and the data source: sensor-based rules do not trigger for work centers.
+**Who can do this: Admin only.** Open [Automator](/en/platform-intro/pages/automator) and start creating a rule. Know which machines to monitor and who should receive alerts. Check the chosen template's prerequisites; sensor-based rules do not trigger for work centers.
 
 ## Create and Review
 
-1. Optionally choose a **Template**. It pre-fills settings; it does not create a rule yet.
-2. In **Scope & Definition**, name the rule and select machines. No selected machines means a global rule for all active machines.
-3. In **Conditions & Timing**, configure conditions and AND/OR groups, polling interval, minimum true duration, clear duration, active-shift requirement, and cooldown as needed.
-4. Read ratio thresholds in context. For the documented deficit/duration ratios, 130% means 30% over plan or behind pace. Booking-dependent preparation and scrap metrics update only with PDA entries.
-5. In **Response & Escalation**, choose recipients and the available response, auto-resolution, closure notification, and escalation settings.
-6. In **Review**, read the plain-language description. Address warnings about missing recipients, global scope, or a disabled rule.
-7. Save and check the rule in the rule list. Use the **Event Inbox** to follow triggered events.
+1. Choose **Start from a template** or **Start from scratch**. A template prefills settings but creates nothing yet. Check its listed prerequisites.
+2. Name the rule and select machines. No selection means all machines.
+3. Check the conditions and thresholds. For example, **Preparation taking too long** starts at 120% of planned setup time; **Production behind expected pace** starts at a 15% shortfall. Adjust these for your process. Preparation and scrap values update with PDA entries.
+4. Set the check frequency, required duration, active days, active-shift restriction, and cooldown. Review every value marked **From the template – please review**, then select **Mark as reviewed**.
+5. Choose email recipients, response time, and escalation recipients. Decide whether the alert should resolve automatically after its condition clears and whether to send another email on resolution.
+6. In **Review**, read **What this alert will do** and **Your settings**. Check warnings about missing recipients, all-machine scope, or a switched-off rule. Without recipients, alerts appear in Events but nobody receives an email. Escalation also needs its own recipients.
+7. Save and check the rule in the list. Open a triggered event to inspect its details before acknowledging or resolving it.
 
 ## Expected Result and Common Problems
 
-The saved rule checks its selected scope and creates events when its condition and timing are satisfied. Events move from **New** through **Acknowledged** to **Resolved**, with reopening available.
+An enabled, saved rule checks its selected machines and raises alerts when its conditions and timing are met. A switched-off rule stays saved until enabled.
 
-If a rule has not triggered, check its enabled state, scope, active shift, required data, and minimum duration. A template alone is not a saved rule. Acknowledgment is not resolution. Automatic interval-ending actions are not confirmed by the rule editor.
+If no alert appears, check the rule's status, machines, active days, shifts, required data, and minimum duration. A template alone is not a saved rule. If options fail to load, select **Retry**. If an alert appears without an email, check recipients; if escalation sends no email, check escalation recipients too.
 
-See [Automator](/en/platform-intro/pages/automator) for **SLA**, **MTTR**, and event details, and [Data Acquisition](/en/platform-intro/pages/data-acquisition) for bookings.
+Acknowledging an event and resolving it are different actions. See [Automator](/en/platform-intro/pages/automator) for response times and event details, and [Data Acquisition](/en/platform-intro/pages/data-acquisition) for production entries.

@@ -58,7 +58,26 @@ Only admins edit this setup. Confirm whether the entry is a sensor-connected **M
 
 Before enabling **Active shifts**, review minimum length, stop length, and maximum length: switching removes scheduled shifts from today onward. Check alert-rule notices for rules that do not work with active shifts.
 
-Configure **PDA Assistant** in Warnings only when appropriate; it is off by default and settings can be copied. See [Machine Configuration](/en/platform-intro/pages/machine-configuration) for rules, duration buckets, ratings, and feature fields.
+Configure **PDA Assistant** using the warning setup steps below. See [Machine Configuration](/en/platform-intro/pages/machine-configuration) for rules, duration buckets, ratings, and feature fields.
+
+## Enable and Copy PDA Assistant Warnings
+
+<Steps>
+  <Step title="Enable warnings for the machine" icon="arrow-right" title-type="p">
+    As an administrator, open **PDA Assistant** and turn on **Enable warnings on this machine**. Until this is on, the other options have no effect.
+  </Step>
+  <Step title="Choose warnings and timing" icon="arrow-right" title-type="p">
+    Set **Severity** and **Delay before warning (min)** for each warning. For **Order running too long**, set **Threshold (hours)**. Keep **Live data is stale** enabled and check assigned shifts for the shift-change warning. Set **Snooze duration (min)** for operator reminders.
+  </Step>
+  <Step title="Test sound and save" icon="arrow-right" title-type="p">
+    If needed, enable **Allow alarm sound** and each warning's **Play sound**. Set **Volume**, **Repeat every (seconds)**, and **Only during an active shift** as needed. Use **Test sound**, then save the machine's warning settings.
+  </Step>
+  <Step title="Copy to other machines if needed" icon="arrow-right" title-type="p">
+    Select **Copy these settings to other machines** and choose the destinations. Review the settings on the page: even unsaved changes will be copied. Confirm **Copy settings** to replace those machines' Assistant settings. Their other settings stay unchanged. Check the success and failure counts.
+  </Step>
+</Steps>
+
+Open the machine's PDA page to use the warnings. The [operator workflow](/en/platform-intro/workflows/data-acquisition) explains warning actions, snoozing, and muting.
 
 ## Decision Points
 

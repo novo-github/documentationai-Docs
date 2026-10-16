@@ -1,0 +1,70 @@
+---
+title: "Planning and Order Import FAQs"
+description: "Find answers about operation priorities, planning dates, grouping, and repeat order imports."
+---
+
+| Your question | Read the answer |
+| --- | --- |
+| Can I give one operation a different priority from its order? | [Answer](/en/help-center/faq/planning-and-imports#operation-priority) |
+| Why did my work disappear after I set a priority filter? | [Answer](/en/help-center/faq/planning-and-imports#missing-work) |
+| Which dates should I use to sort the steps of an order? | [Answer](/en/help-center/faq/planning-and-imports#planning-dates) |
+| How can I see an order’s work by machine? | [Answer](/en/help-center/faq/planning-and-imports#grouping) |
+| Why do planned dates change when I expand an order? | [Answer](/en/help-center/faq/planning-and-imports#actual-dates) |
+| Why didn’t a repeat import change the priority? | [Answer](/en/help-center/faq/planning-and-imports#import-priority) |
+| Why is my operation priority marked even though I set an initial value? | [Answer](/en/help-center/faq/planning-and-imports#invalid-priority) |
+| Why does an imported operation stay on its old machine? | [Answer](/en/help-center/faq/planning-and-imports#recorded-work) |
+| Why does the import ask me to review machine quantities? | [Answer](/en/help-center/faq/planning-and-imports#split-quantity) |
+
+<a id="operation-priority" />
+
+## Can I give one operation a different priority from its order?
+
+Yes. In Assignment Planner, select the dashed **OP** chip to change **Operation priority**. The **P** chip changes **Order priority** independently. Follow [Plan Machine Assignments](/en/platform-intro/workflows/assignment-planner).
+
+<a id="missing-work" />
+
+## Why did my work disappear after I set a priority filter?
+
+With **Order priority** and **Operation priority** both selected, work must match both. Filters affect unassigned operations and machine columns. Also check any order, product, or customer filter chip above the board. The information icon opens **Assignment Planner Guide**; see the [planner page](/en/platform-intro/pages/assignment-planner).
+
+<a id="planning-dates" />
+
+## Which dates should I use to sort the steps of an order?
+
+Use **Operation Planned Start** or **Operation Planned End** for individual steps. **Order Planned Start** and **Order Planned End** apply to the whole order and keep its steps together when sorting. Follow the [sorting steps](/en/platform-intro/workflows/assignment-planner).
+
+<a id="grouping" />
+
+## How can I see an order’s work by machine?
+
+On the order page, choose **Group by → Machine**. Choose **Operation** to return to a view by production step. See [Order Detail](/en/platform-intro/pages/order-detail).
+
+<a id="actual-dates" />
+
+## Why do planned dates change when I expand an order?
+
+The grouped row shows the whole order’s planned window. Expanded rows show each assignment’s own window. The planned/actual choice beside the date pickers decides whether the date filter searches scheduled or recorded work. See [Orders & Products](/en/platform-intro/pages/orders-products).
+
+<a id="import-priority" />
+
+## Why didn’t a repeat import change the priority?
+
+Existing orders and operations always keep their priority. **Initial order priority (new orders)** and **Initial operation priority (new operations)** apply only to new work with empty priority cells or no selected priority column. An empty initial operation priority uses 100. See the [import settings](/en/platform-intro/pages/erp-upload-planner).
+
+<a id="invalid-priority" />
+
+## Why is my operation priority marked even though I set an initial value?
+
+The initial value fills empty priorities only. Text, fractions, and negative operation priorities are marked for correction. Enter a whole number of zero or more, then review the import again. Follow the [import workflow](/en/platform-intro/workflows/order-upload-planner).
+
+<a id="recorded-work" />
+
+## Why does an imported operation stay on its old machine?
+
+Recorded work prevents it from moving, but the operation is still imported. Choose **Keep both** if it should also run on the new machine. Production history stays unchanged. See [re-import protection](/en/platform-intro/pages/erp-upload-planner).
+
+<a id="split-quantity" />
+
+## Why does the import ask me to review machine quantities?
+
+Quantities already split across machines stay unchanged and are marked for review. Compare **Planned quantity (machine)** with **Planned quantity (work order)**, then inspect the affected work in Assignment Planner. Follow the [import workflow](/en/platform-intro/workflows/order-upload-planner).

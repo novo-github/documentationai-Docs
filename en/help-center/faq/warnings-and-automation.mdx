@@ -1,0 +1,63 @@
+---
+title: "Warnings and Automation FAQs"
+description: "Understand PDA Assistant warnings, alarm sound, and Automator templates and notifications."
+---
+
+| Your question | Read the answer |
+| --- | --- |
+| Who can turn on warnings for my machine? | [Answer](/en/help-center/faq/warnings-and-automation#enable-warnings) |
+| What should I do when a warning appears on the terminal? | [Answer](/en/help-center/faq/warnings-and-automation#warning-action) |
+| How do I stop the alarm sound, and why is it sometimes silent? | [Answer](/en/help-center/faq/warnings-and-automation#sound) |
+| Why does a warning come back after I snooze it? | [Answer](/en/help-center/faq/warnings-and-automation#snooze) |
+| Will copying warning settings include my unsaved changes? | [Answer](/en/help-center/faq/warnings-and-automation#copy-settings) |
+| Does choosing an Automator template start sending alerts? | [Answer](/en/help-center/faq/warnings-and-automation#template) |
+| Why is there an Automator alert but no email? | [Answer](/en/help-center/faq/warnings-and-automation#email) |
+| Why do setup and scrap values stay the same and then jump? | [Answer](/en/help-center/faq/warnings-and-automation#metrics) |
+
+<a id="enable-warnings" />
+
+## Who can turn on warnings for my machine?
+
+Only administrators can change warning settings. In the machine configuration, open **PDA Assistant** and turn on **Enable warnings on this machine** before setting delays, severity, and sound. Follow [Configure a Machine](/en/platform-intro/workflows/machine-configuration).
+
+<a id="warning-action" />
+
+## What should I do when a warning appears on the terminal?
+
+Select **View all warnings** and read the affected order and issue. Check the machine, then use the available action to select or end an order, set a downtime reason, or refresh the view. **Live data is stale** means other warnings may be unreliable. Follow [Respond to an Assistant Warning](/en/platform-intro/workflows/data-acquisition).
+
+<a id="sound" />
+
+## How do I stop the alarm sound, and why is it sometimes silent?
+
+Select **Mute** to silence sound on your device or **Enable sound** to turn it on. The browser needs a tap on the page first. **Info** is always silent; other sounds depend on administrator settings and may be limited to active shifts. See [PDA Assistant sound](/en/platform-intro/pages/data-acquisition).
+
+<a id="snooze" />
+
+## Why does a warning come back after I snooze it?
+
+Snoozing hides and silences a warning only for the configured duration. It stays listed under **Snoozed** and returns if the cause remains. **Resume now** restores it sooner. Follow the [operator workflow](/en/platform-intro/workflows/data-acquisition).
+
+<a id="copy-settings" />
+
+## Will copying warning settings include my unsaved changes?
+
+Yes. **Copy settings** copies the settings shown on the page, including unsaved changes. It replaces the selected machines’ PDA Assistant settings and leaves their other settings unchanged. Review the confirmation and result counts. See [Machine Configuration](/en/platform-intro/pages/machine-configuration).
+
+<a id="template" />
+
+## Does choosing an Automator template start sending alerts?
+
+No. A template only prefills the rule. Administrators must review its prerequisites, machines, recipients, thresholds, and schedule, then save it. A switched-off rule stays saved but does not run. Follow [Create an Automator Rule](/en/platform-intro/workflows/automator-rule-creation).
+
+<a id="email" />
+
+## Why is there an Automator alert but no email?
+
+Without email recipients, the alert appears in Events but nobody receives an email. Escalation also needs selected escalation recipients to notify anyone when an alert is not handled in time. Review the recipients in **Review → Your settings**. See [Automator](/en/platform-intro/pages/automator).
+
+<a id="metrics" />
+
+## Why do setup and scrap values stay the same and then jump?
+
+These values update when an operator records a PDA entry. Setup compares cumulative preparation with planned time; scrap uses the current job’s PDA production entries. A sensor alone does not update entered scrap. See [Automator measures](/en/platform-intro/pages/automator).

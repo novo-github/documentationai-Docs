@@ -45,6 +45,12 @@ Zeitfelder können standardmäßig oder als Industrieminuten interpretiert werde
 
 Prioritätsnamen, Nummern und Farben entsprechen den unternehmensweiten Stufen aus dem [Administrationsbereich](/de/platform-intro/pages/admin-panel). Dieselben Stufen gelten in der Auftragsverwaltung und im Zuweisungsplaner, sodass Sie importierte Prioritäten im gesamten Plan einheitlich prüfen können.
 
+### Anfangsprioritäten für neue Arbeit
+
+Ordnen Sie **Auftragspriorität** und **Arbeitsgangpriorität** getrennt zu. Bei der Spaltenzuordnung liefern **Anfangs-Auftragspriorität (neue Aufträge)** und **Anfangs-Arbeitsgangpriorität (neue Arbeitsgänge)** Werte für neue Arbeit, wenn eine Prioritätszelle leer oder keine Prioritätsspalte ausgewählt ist. Lassen Sie die Anfangs-Arbeitsgangpriorität leer, um 100 zu verwenden.
+
+Arbeitsgangprioritäten müssen ganze Zahlen ab 0 sein. Text, Dezimalzahlen und negative Werte werden zur Korrektur markiert. Der Anfangswert ersetzt sie nicht. Nicht-numerische Auftragsprioritäten werden ebenfalls markiert. Ein erneuter Import ändert nie die Priorität bestehender Aufträge oder Arbeitsgänge.
+
 ## Auswirkungen des Imports prüfen
 
 Öffnen Sie nach der Spaltenzuordnung und Vorschau die Übersicht der vorgesehenen Importänderungen. Sie zeigt neue, aktualisierte und bestehende Datensätze, gegliedert nach Aufträgen, Produkten, Kunden, Operationen und Zuweisungen. Bestehende Datensätze werden wiederverwendet; sie stehen nicht zwangsläufig für neu angelegte Datensätze.
@@ -73,7 +79,7 @@ Pflichtzuordnungen sind **Order Number, Product, Planned Start, Planned End**. D
 
 - **ALL Units / 1 Unit:** geplante Produktionszeit für die Gesamtmenge oder ein Teil.
 - **Industrial minutes:** gewöhnliche Minuten = Industrieminuten × 0,6.
-- **Initial order priority / Initial operation priority:** nur neue Datensätze mit leerer Prioritätszelle; die anfängliche Operationspriorität ist standardmäßig 100.
+- Anfangsprioritäten gelten nur für neue Aufträge und Arbeitsgänge. Die Prioritätseinstellungen oben erklären leere Zellen und ungültige Werte.
 - **Commit scope:** All rows oder Machine assigned; Letzteres importiert nur Zeilen mit Maschine.
 - **Save Mapping / Load Mapping:** je Benutzer gespeicherte Zuordnung. Manuelle Maschinen-/Hall-Pool-Zuweisung überschreibt die Zuordnung; **Reset** stellt sie wieder her.
 
@@ -81,11 +87,21 @@ Pflichtzuordnungen sind **Order Number, Product, Planned Start, Planned End**. D
 
 ## Neuimport, Zuordnung und geschützter Verlauf
 
-Datensätze passen über Produktname, Auftragsname, Arbeitsauftrag = Auftrag + Produkt, Operation = Arbeitsauftrag + Sequenz und Zuweisung = Operation + Maschine. Leere Aktualisierungszellen erhalten Werte. Vorhandene Prioritäten und geschützte Felder werden nicht überschrieben. Produktionsverlauf bleibt unangetastet; fehlende Zeilen löschen nichts.
+Öffnen Sie vor der Bestätigung **Was ein erneuter Import bei bestehenden Aufträgen ändert**.
 
-Operationen mit erfasster Arbeit können nicht verschoben werden. **Move**, **Keep** oder **Keep both** behandelt zulässige Maschinenkonflikte. Mehrere geänderte Ziele können mehrdeutig sein und müssen im Zuweisungsplaner geprüft werden.
+| Abschnitt | Bedeutung für Ihren Import |
+| --- | --- |
+| **Wie Datensätze zugeordnet werden** | Der Produktname bestimmt das Produkt, der Auftragsname den Auftrag. Ein Arbeitsauftrag verbindet Auftrag und Produkt, eine Operation Arbeitsauftrag und Folgenummer, eine Zuweisung Operation und Maschine. |
+| **Aus der Datei aktualisiert** | Leere Zellen erhalten den aktuellen Wert. Bereits auf mehrere Maschinen aufgeteilte Mengen bleiben unverändert und werden zur Prüfung markiert. |
+| **Nie geändert** | Bestehende geschützte Werte bleiben auch bei abweichenden Angaben erhalten. Der Produktionsverlauf wird nie geändert. |
+| **Nur für neue Datensätze** | Geschützte Werte aus der Datei werden nur bei neuen Aufträgen, Arbeitsgängen oder Produkten verwendet. Fehlende Zeilen löschen nichts. |
+| **Maschinenzuweisungen — Ihre Entscheidung** | Neue Arbeitsgänge nutzen die im Zuweisungsschritt gewählte Maschine. Prüfen Sie bei bestehenden Zuweisungen auf einer anderen Maschine, ob Sie wechseln, belassen oder beide behalten möchten. |
 
-**ERP Upload (single machine) Legacy** ist die ältere, abgelöste Version. Verwenden Sie diesen aktuellen Ablauf für mehrere Datensätze.
+Markierte Zellen erklären, wann der bestehende Wert erhalten bleibt. Arbeitsgänge mit erfasster Arbeit bleiben auf ihrer bisherigen Maschine und werden trotzdem importiert. Mit **Beide behalten** kann der Arbeitsgang zusätzlich auf der neuen Maschine laufen. Die erfasste Arbeit wird dabei nicht verschoben.
+
+Die Vorschau unterscheidet **Geplante Menge (Maschine)** und **Geplante Menge (Arbeitsauftrag)**. Prüfen Sie nach dem Import die Anzahl aktualisierter Maschinenmengen und mögliche Warnungen. Kontrollieren Sie markierte aufgeteilte Mengen im [Zuweisungsplaner](/de/platform-intro/pages/assignment-planner), bevor Sie den Plan ändern.
+
+Die ältere Importversion für eine einzelne Maschine ist als **Legacy** gekennzeichnet. Verwenden Sie den aktuellen Ablauf für mehrere Datensätze.
 
 ## Hauptentitäten
 

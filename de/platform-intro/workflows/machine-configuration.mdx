@@ -58,7 +58,26 @@ Nur Admins ändern die Einrichtung. Klären Sie, ob der Eintrag eine **Maschine*
 
 Prüfen Sie vor **aktiven Schichten** Mindestdauer, Stopplänge und Höchstdauer. Der Wechsel entfernt geplante Schichten ab heute. Prüfen Sie Hinweise auf Alarmregeln, die mit aktiven Schichten nicht funktionieren.
 
-Konfigurieren Sie den **BDE-Assistenten** bei Bedarf unter Warnings. Er ist standardmäßig aus; Einstellungen können kopiert werden. [Maschinenkonfiguration](/de/platform-intro/pages/machine-configuration) erklärt Regeln, Zeitklassen, Zielwerte und Sensorfelder.
+Richten Sie **BDE-Assistent** mit den folgenden Schritten für Warnungen ein. [Maschinenkonfiguration](/de/platform-intro/pages/machine-configuration) erklärt Regeln, Zeitklassen, Zielwerte und Sensorfelder.
+
+## Warnungen des BDE-Assistenten aktivieren und kopieren
+
+<Steps>
+  <Step title="Aktivieren Sie Warnungen für die Maschine" icon="arrow-right" title-type="p">
+    Öffnen Sie als Administrator **BDE-Assistent** und schalten Sie **Warnungen für diese Maschine aktivieren** ein. Erst dann wirken die weiteren Optionen.
+  </Step>
+  <Step title="Wählen Sie Warnungen und Zeiten" icon="arrow-right" title-type="p">
+    Legen Sie je Warnung **Schweregrad** und **Verzögerung vor Warnung (Min.)** fest. Für **Auftrag läuft zu lange** wählen Sie **Schwellwert (Stunden)**. Lassen Sie **Live-Daten veraltet** aktiv und prüfen Sie zugewiesene Schichten für die Schichtwechselwarnung. Stellen Sie **Erneut anzeigen nach (Min.)** für zurückgestellte Warnungen ein.
+  </Step>
+  <Step title="Testen Sie den Ton und speichern Sie" icon="arrow-right" title-type="p">
+    Aktivieren Sie bei Bedarf **Alarmton erlauben** und je Warnung **Ton abspielen**. Stellen Sie **Lautstärke**, **Wiederholen alle (Sekunden)** und bei Bedarf **Nur während einer aktiven Schicht** ein. Nutzen Sie **Ton testen** und speichern Sie die Warnungseinstellungen der Maschine.
+  </Step>
+  <Step title="Kopieren Sie bei Bedarf auf andere Maschinen" icon="arrow-right" title-type="p">
+    Wählen Sie **Einstellungen auf andere Maschinen kopieren** und die Ziele. Prüfen Sie die angezeigten Einstellungen: Auch ungespeicherte Änderungen werden kopiert. Bestätigen Sie **Einstellungen kopieren**, um die Assistent-Einstellungen dieser Maschinen zu ersetzen. Andere Einstellungen bleiben unverändert. Prüfen Sie die Anzahl erfolgreicher und fehlgeschlagener Übernahmen.
+  </Step>
+</Steps>
+
+Öffnen Sie die BDE-Seite der Maschine, um die Warnungen zu nutzen. Der [Bedienablauf](/de/platform-intro/workflows/data-acquisition) erklärt Warnungsaktionen, Zurückstellen und Stummschalten.
 
 ## Entscheidungspunkte
 

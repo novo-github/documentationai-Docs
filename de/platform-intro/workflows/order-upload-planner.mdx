@@ -31,22 +31,26 @@ Beginnen Sie auf der [Seite ERP-Upload-Planer](/de/platform-intro/pages/erp-uplo
     Öffnen Sie die vollständige Bearbeitungsansicht, um einzelne Werte zu korrigieren oder passende Gruppen von Werten aus Excel einzufügen. Prüfen Sie die Anzahl geänderter Zellen und speichern Sie Ihre Korrekturen; gespeicherte Änderungen werden in der Vorschau hervorgehoben. Spaltenüberschriften und Zeilenanzahl lassen sich hier nicht ändern. Wenn Sie ohne Speichern schließen, werden ungespeicherte Korrekturen verworfen und die Originaldatei bleibt unverändert.
   </Step>
   <Step title="Ordnen Sie Spalten und Maschinen zu" icon="arrow-right" title-type="p">
-    Ordnen Sie die Quellspalten den Plattformfeldern zu, bei Bedarf einschließlich Auftragstags. Verwenden Sie eine gespeicherte Zuordnung, wenn sie zur Datei passt. Ordnen Sie externe Maschinennamen oder Codes den richtigen Maschinen zu.
+    Ordnen Sie die Quellspalten zu, bei Bedarf einschließlich Auftragstags. Verwenden Sie eine gespeicherte Zuordnung, wenn sie zur Datei passt. Ordnen Sie externe Maschinennamen oder Codes den richtigen Maschinen zu.
+
+    Ordnen Sie **Auftragspriorität** und **Arbeitsgangpriorität** getrennt zu. Legen Sie **Anfangs-Auftragspriorität (neue Aufträge)** und **Anfangs-Arbeitsgangpriorität (neue Arbeitsgänge)** für leere Zellen oder eine fehlende Prioritätsspalte fest. Lassen Sie die Anfangs-Arbeitsgangpriorität leer, um 100 zu verwenden. Korrigieren Sie markierte Werte: Arbeitsgangprioritäten müssen ganze Zahlen ab 0 sein. Anfangswerte ersetzen keine ungültigen Angaben. Bestehende Prioritäten ändern sich beim erneuten Import nie.
   </Step>
   <Step title="Prüfen Sie Importumfang und Zeitinterpretation" icon="arrow-right" title-type="p">
     Beschränken Sie den Import bei Bedarf auf Aufträge mit bestehender Maschinenzuweisung. Wählen Sie passend zur Zeitkonvention der Datei die Standardinterpretation oder Industrieminuten. Prüfen Sie die Erläuterungen zu Änderungen an Rüst- und Produktionszeiten sowie die betroffenen Zeilen.
   </Step>
   <Step title="Prüfen Sie Vorschau und vorgesehene Änderungen" icon="arrow-right" title-type="p">
     Führen Sie die Vorschau aus und lesen Sie die Planungshinweise. Öffnen Sie die Übersicht der Importänderungen, um die Anzahl neuer, aktualisierter und bestehender Aufträge, Produkte, Kunden, Operationen und Zuweisungen zu vergleichen. Prüfen Sie in den Details pro Zeile Terminänderungen, neue Operationen und Zuweisungen sowie neu berechnete Dauern. Korrigieren Sie die Datei oder Zuordnung, wenn die Vorschläge nicht Ihrer Absicht entsprechen.
+
+    Lesen Sie **Was ein erneuter Import bei bestehenden Aufträgen ändert** und die markierten Zellen, deren Werte erhalten bleiben. Vergleichen Sie **Geplante Menge (Maschine)** mit **Geplante Menge (Arbeitsauftrag)**. Aufgeteilte Maschinenmengen bleiben erhalten und werden zur Prüfung markiert. Leere Aktualisierungszellen erhalten Werte. Geschützte Werte und Produktionsverlauf bleiben unverändert. Fehlende Zeilen löschen nichts.
   </Step>
   <Step title="Prüfen Sie Planungskonflikte" icon="arrow-right" title-type="p">
-    Lesen Sie die Begründung für jeden unter einem Auftrag aufgeführten Konflikt. Entscheiden Sie, ob Sie die Zuweisung aus der Datei am neuen Ziel übernehmen, die bestehende Zuweisung am aktuellen Ziel behalten oder beide Ziele für parallele Arbeit beibehalten möchten. Wenn die Prüfung eine manuelle Lösung verlangt, verwenden Sie den [Zuweisungsplaner](/de/platform-intro/pages/assignment-planner).
+    Lesen Sie die Begründung für jeden unter einem Auftrag aufgeführten Konflikt. Entscheiden Sie, ob Sie die Zuweisung aus der Datei am neuen Ziel übernehmen, die bestehende Zuweisung am aktuellen Ziel behalten oder beide Ziele für parallele Arbeit beibehalten möchten. Arbeitsgänge mit erfasster Arbeit bleiben auf ihrer bisherigen Maschine und werden trotzdem importiert. Wählen Sie **Beide behalten**, wenn der Arbeitsgang zusätzlich auf der neuen Maschine laufen soll. Verlangt die Prüfung eine manuelle Lösung, verwenden Sie den [Zuweisungsplaner](/de/platform-intro/pages/assignment-planner).
   </Step>
   <Step title="Bestätigen Sie den Import" icon="arrow-right" title-type="p">
     Bestätigen Sie den Import, nachdem Sie die vorgesehenen Änderungen und Konfliktentscheidungen geprüft haben. Verfolgen Sie den Upload-Fortschritt.
   </Step>
   <Step title="Prüfen Sie die übernommenen Ergebnisse" icon="arrow-right" title-type="p">
-    Lesen Sie in der Ergebnisübersicht, welche Entscheidungen angewendet wurden. Falls eine Entscheidung nicht angewendet werden konnte, prüfen Sie die Erklärung und die betroffene Operation im Zuweisungsplaner. Möglicherweise wurde nach Ihrer Konfliktprüfung bereits Produktion gestartet.
+    Lesen Sie in der Ergebnisübersicht, welche Entscheidungen angewendet wurden. Falls eine Entscheidung nicht angewendet werden konnte, prüfen Sie die Erklärung und die betroffene Operation im Zuweisungsplaner. Möglicherweise wurde nach Ihrer Konfliktprüfung bereits Produktion gestartet. Prüfen Sie die Anzahl aktualisierter Maschinenmengen und Importwarnungen. Kontrollieren Sie aufgeteilte Mengen im Planer, bevor Sie diese anpassen.
   </Step>
 </Steps>
 

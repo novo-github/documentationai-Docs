@@ -22,6 +22,51 @@ toc: false
   Das Lesen der Prognose ändert weder Ihren Plan noch Ihre Liefertermine. Prüfen Sie die Warnungen mit dem Ablauf [Maschinenzuweisungen planen](/de/platform-intro/workflows/assignment-planner), bevor Sie über Änderungen entscheiden.
 </Update>
 
+<Update label="2026-09-28" description="v1.5.102–v1.5.104" tags={["Funktion", "Verbesserung"]}>
+  {/* commits: c50945d, 5d8a65f, 543cec7, 2f61c1b, f81afbf, 6a563e7, 0f708b7, c8e69b8, 3947f95 */}
+
+  **Release-Zeitraum:** 19.–28. September 2026
+
+  ### Neue Funktionen
+
+  #### [Fehlende Produktionsmeldungen mit dem BDE-Assistenten erkennen](/de/platform-intro/pages/data-acquisition)
+  {/* feature: pda-assistant-warnings */}
+
+  Der **BDE-Assistent** warnt bei Produktion ohne Auftrag, vergessenen laufenden Aufträgen, fehlenden Stillstandsgründen und veralteten Live-Daten. Administratoren aktivieren ihn in der Maschinenkonfiguration unter **BDE-Assistent → Warnungen für diese Maschine aktivieren**. Für jede Warnung wählen sie Verzögerung, Schweregrad und Ton.
+
+  Wählen Sie auf der BDE-Seite **Alle Warnungen anzeigen**, um Probleme und verfügbare Aktionen zu prüfen. Zurückstellen blendet eine Warnung vorübergehend aus und schaltet sie stumm. Besteht das Problem weiter, erscheint sie erneut. Folgen Sie [Betriebsdatenerfassung durchführen](/de/platform-intro/workflows/data-acquisition) oder [Maschine konfigurieren](/de/platform-intro/workflows/machine-configuration).
+
+  #### [Alarmregeln aus Vorlagen erstellen und prüfen](/de/platform-intro/pages/automator)
+  {/* feature: automator-templates-review */}
+
+  Administratoren können **Automator** öffnen und unter **Mit einer Vorlage starten** einen Alarm für langsame Zyklen, Ausschuss, Verzögerungen oder fehlende Sensorsignale vorbereiten. Erst nach Prüfung und Speicherung wird die Regel erstellt. **Prüfen → Was diese Regel bewirkt** erklärt Bedingungen, Empfänger, Zeiten und Eskalation.
+
+  Hinweise machen fehlende Empfänger sichtbar: Der Alarm erscheint weiterhin in den Ereignissen, aber niemand erhält eine E-Mail. Wird ein Alarm nicht rechtzeitig bearbeitet, kann die Eskalation ausgewählte Empfänger benachrichtigen. Öffnen Sie ein Ereignis, um seine Details zu prüfen. Folgen Sie [Automator-Regel erstellen](/de/platform-intro/workflows/automator-rule-creation).
+
+  #### [Die Priorität eines einzelnen Arbeitsgangs festlegen](/de/platform-intro/pages/assignment-planner)
+  {/* feature: operation-priority */}
+
+  Wählen Sie im **Zuweisungsplaner** eine gestrichelte **AG**-Anzeige, um die **Arbeitsgangpriorität** unabhängig von der **Auftragspriorität** zu ändern. Filtern Sie nach einer oder beiden Prioritäten. Sind beide Filter gesetzt, muss die Arbeit beide erfüllen.
+
+  Beim Auftragsimport liefert **Anfangs-Arbeitsgangpriorität (neue Arbeitsgänge)** einen Wert, wenn die Prioritätszelle leer oder keine Spalte ausgewählt ist. Lassen Sie den Anfangswert leer, um 100 zu verwenden. Bestehende Prioritäten bleiben beim erneuten Import erhalten. Siehe [Maschinenzuweisungen planen](/de/platform-intro/workflows/assignment-planner) und [Aufträge importieren](/de/platform-intro/workflows/order-upload-planner).
+
+  ### Verbesserungen
+
+  #### [Passende Termine und Ansichten für die Planung wählen](/de/platform-intro/pages/assignment-planner)
+  {/* feature: planner-dates-guide */}
+
+  Öffnen Sie im **Zuweisungsplaner** über das Informationssymbol den **Leitfaden zum Zuweisungsplaner**. Er erklärt Filter, Sortierung und das Verschieben von Karten. Karten können **Geplanter Operationsstart** und **Geplantes Operationsende** anzeigen. Sortieren Sie nach Operationsterminen für einzelne Schritte oder nach Auftragsterminen, um Schritte eines Auftrags zusammenzuhalten.
+
+  Auf der Auftragsseite wechseln Sie mit **Gruppieren nach → Operation** oder **Maschine** die Übersicht. Unter [Aufträge & Produkte](/de/platform-intro/pages/orders-products) legt die Auswahl geplanter oder tatsächlicher Termine fest, ob der Datumsfilter geplante oder erfasste Arbeit durchsucht. Folgen Sie [Maschinenzuweisungen planen](/de/platform-intro/workflows/assignment-planner).
+
+  #### [Beim erneuten Import beibehaltene Werte und Prüfbedarf erkennen](/de/platform-intro/pages/erp-upload-planner)
+  {/* feature: reimport-protection */}
+
+  Öffnen Sie beim Auftragsimport **Was ein erneuter Import bei bestehenden Aufträgen ändert**, um beibehaltene und aktualisierbare Werte zu prüfen. Leere Zellen erhalten bestehende Werte. Der Produktionsverlauf wird nie geändert, und fehlende Zeilen löschen nichts.
+
+  Arbeitsgänge mit erfasster Arbeit bleiben auf ihrer bisherigen Maschine und werden trotzdem importiert. Wählen Sie **Beide behalten**, wenn sie zusätzlich auf der neuen Maschine laufen sollen. Bereits auf mehrere Maschinen aufgeteilte Mengen bleiben erhalten und werden zur Prüfung markiert. Prüfen Sie Warnungen vor und nach dem Import mit dem [Importablauf](/de/platform-intro/workflows/order-upload-planner).
+</Update>
+
 <Update label="2026-09-16" description="v1.5.101" tags={["Funktion", "Verbesserung"]}>
   **UI-Build-Commits:** `2dbb32c`, `3aa62c3`, `fda9521`
 

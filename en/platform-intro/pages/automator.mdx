@@ -5,7 +5,7 @@ description: "Configure admin-only machine rules, timing, notifications, escalat
 
 ## Overview
 
-**Access: Admin only.** Automator is the newer rule engine for machine conditions and their response. Open it from Workspace. Routes: `/automator`, `/automator/rules`, `/automator/events`, `/automator/create`.
+**Access: Admin only.** Open **Automator** from Workspace to manage machine alerts, rules, and events.
 
 It complements [classic Alert Rules](/en/platform-intro/pages/alert-rules). A work center has no sensor data, so sensor-based Automator rules never trigger for it.
 
@@ -13,29 +13,57 @@ It complements [classic Alert Rules](/en/platform-intro/pages/alert-rules). A wo
 
 | Setting | Meaning |
 | --- | --- |
-| **Scope** | Selected machines. With no machines selected, a **Global rule** applies to all active machines. |
+| **Scope** | Selected machines. With no machines selected, the rule applies to all machines. |
 | **Condition group** | Conditions combined with AND or OR; groups can be nested. |
 | **Polling interval** | How often conditions are checked. |
 | **Minimum true duration** | How long a condition must hold before an event is created. |
 | **Clear duration** | How long a normal condition must persist before the event can clear. |
 | **Requires active shift** | Pauses checks while the machine is off-shift. |
-| **Cooldown** | Wait after resolution before the rule can trigger again. |
+| **Cooldown** | Waiting time after an alert before alerting again. With no cooldown, it can alert again as soon as the condition returns. |
 
 **Example:** A condition that stays true for 30 seconds will not create an event if Minimum true duration is 2 minutes. Polling interval sets checking frequency; it is a different setting from that delay.
 
 ## Thresholds and Booking-Dependent Metrics
 
-For **Preparation Duration**, **Production Deficit**, **Cycle Duration**, and **Order Completion Deficit**, a ratio of **130%** means 30% over plan or behind pace. Read the selected condition's meaning before using the threshold.
+Read each condition's description before setting its threshold. The measures compare different things:
 
-For **Slow Consecutive Cycles**, **Lookback Cycles** selects how many recent cycles are checked, and **Gap Threshold** is the multiple of expected cycle time considered slow.
+| Measure | What it checks |
+| --- | --- |
+| Preparation time | Cumulative setup time for the current job compared with its planned preparation time. |
+| Production deficit | How far the current job's output falls behind the expected production pace. |
+| Cycle time | The latest completed cycle compared with the operation's baseline cycle time. |
+| Order progress | Produced quantity compared with the progress expected as time passes toward the delivery deadline. |
+| Scrap count and rate | Scrap parts, or their share of all parts, in the current job's PDA production entries. Choose material scrap, labor/processing scrap, or both. |
+| Slow cycles | How many of the recent cycles count as slow under your chosen settings. |
 
-Preparation duration, scrap count, and scrap rate depend on PDA bookings. They update when an entry is made, so a value can remain steady and then jump. A machine sensor alone does not update operator-entered scrap.
+For slow cycles, choose a whole number from 1 to 1000 for the number of recent cycles to inspect. Set a positive multiple of expected cycle time: 2 means twice as long. Counts must be whole numbers. Fill in every condition setting and choose a comparison supported by that measure.
+
+Preparation and scrap values update only when an operator records a PDA entry. They may stay steady and then jump. A sensor alone does not update entered scrap quantities.
 
 ## Responses and Escalation
 
-**Auto-resolve** closes an event when the condition clears. **Notify on resolve** sends another email on closure. **Escalation** notifies a second group if the event is not handled in time. Review recipients and timing before saving.
+You can let an alert resolve after its condition has been absent for the chosen time, or leave it open until someone resolves it. You can also send another email on resolution. Escalation emails selected escalation recipients if the alert is not handled in time.
 
-Templates cover preparation taking too long, production behind pace, slow cycles, repeated cycle gaps, excessive scrap, an operation at risk, an order behind schedule, and a disconnected sensor. Each template lists prerequisites; it only pre-fills a rule until you save it.
+In **Review**, check **What this alert will do** and **Your settings**. Read the conditions, machines, active days, check frequency, recipients, response time, cooldown, and resolution settings. No machines selected means all machines. A switched-off rule is saved but does not run.
+
+Without email recipients, an alert appears in Events but nobody receives an email. Escalation without escalation recipients cannot notify anyone. Select the required recipients before saving if you need email notifications.
+
+## Start from a Template
+
+Choose **Start from a template** to prefill a rule, or **Start from scratch** to enter your own settings. Nothing is created until you review and save. Each template shows what it needs. Check the machines, recipients, thresholds, and active-shift setting. Review values marked **From the template – please review**, then choose **Mark as reviewed**.
+
+| Template | Starting condition |
+| --- | --- |
+| **Preparation taking too long** | Setup reaches 120% of planned preparation time. |
+| **Production behind expected pace** | Production is at least 15% behind pace. |
+| **Cycle time too slow** | The latest cycle is at least 25% slower than the baseline. |
+| **Repeated cycle gaps** | 3 of the last 10 cycles take at least twice the expected cycle time. |
+| **Excessive scrap rate** | Total scrap reaches 3%. |
+| **Operation at risk** | Production is 15% behind pace and cycles are 25% slower. |
+| **Order falling behind schedule** | Order progress is at least 15 percentage points behind the elapsed schedule. |
+| **Sensor disconnected** | No sensor signal for 5 minutes; active shifts only by default. |
+
+These are starting values, so adjust them for your process. Cycle checks need cycle detection and a baseline; pace checks need planned production time. Preparation checks need planned preparation time and recorded preparation intervals. Scrap checks need produced and scrap quantities from PDA entries. Order progress needs planned dates and quantities. Check each template's prerequisites and whether an operation must be running.
 
 ## Event Inbox, SLA, and MTTR
 
@@ -47,11 +75,13 @@ An **Event** is one rule trigger. Its workflow is **New → Acknowledged → Res
 
 Acknowledging an event and resolving it are different actions. Inspect the machine and condition before marking the issue resolved.
 
+Open an event in the list to read its details before acknowledging or resolving it. This lets you inspect the alert in context. An unrecognized person is shown as **Unknown user**.
+
 ## Create a Rule
 
-Use [Create an Automator Rule](/en/platform-intro/workflows/automator-rule-creation): **Scope & Definition → Conditions & Timing → Response & Escalation → Review**. Review states the intended behavior and warns about missing recipients, a global scope, or a disabled rule.
+Follow [Create an Automator Rule](/en/platform-intro/workflows/automator-rule-creation) to choose a template, check its conditions and recipients, then review and save.
 
-Automatic production actions, such as ending an interval, are not confirmed in the frontend rule editor. Do not expect a notification rule to perform them.
+If rule options fail to load, select **Retry**. If a rule no longer exists, return to the list and select an available rule.
 
 ## Related References
 
