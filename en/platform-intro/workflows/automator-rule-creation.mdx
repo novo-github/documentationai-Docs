@@ -17,6 +17,15 @@ description: "Choose scope, conditions, timing, response, and escalation, then r
 6. In **Review**, read **What this alert will do** and **Your settings**. Check warnings about missing recipients, all-machine scope, or a switched-off rule. Without recipients, alerts appear in Events but nobody receives an email. Escalation also needs its own recipients.
 7. Save and check the rule in the list. Open a triggered event to inspect its details before acknowledging or resolving it.
 
+## Create a Delivery or Delay Alert
+
+1. As an administrator, start a rule and choose conditions from **Forecaster**. Select **Delivery Date at Risk** and a comparison greater than 0 to catch any expected finish after delivery.
+2. Choose the machines and review the condition’s units. Late finishes, overdue starts, and long holds use minutes. **Assignments Pushed** and **Delivery Dates Pushed** count affected work.
+3. Keep schedule conditions in their own rule. They cannot be combined with machine or order conditions. The active-shift restriction is not used for this rule.
+4. Choose recipients, review timing and the rule summary, then save. Open a resulting event and use **Show in Gantt** to inspect the cause before changing the plan.
+
+See [Forecaster alerts](/en/platform-intro/pages/automator) for all six conditions.
+
 ## Expected Result and Common Problems
 
 An enabled, saved rule checks its selected machines and raises alerts when its conditions and timing are met. A switched-off rule stays saved until enabled.

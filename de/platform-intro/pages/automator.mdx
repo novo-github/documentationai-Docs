@@ -42,6 +42,21 @@ Wählen Sie für langsame Zyklen eine ganze Zahl von 1 bis 1000 für die Anzahl 
 
 Rüst- und Ausschusswerte ändern sich erst mit einer BDE-Meldung. Sie können konstant bleiben und dann springen. Ein Sensor allein aktualisiert keine eingegebenen Ausschussmengen.
 
+## Forecaster-Alarme
+
+Administratoren wählen Bedingungen aus **Forecaster**, um Verzögerungen und ihre Wirkung auf andere Arbeit zu überwachen. Die Prognose verwendet die [Planungseinstellungen](/de/platform-intro/pages/assignment-gantt) des Werks.
+
+| Bedingung | Was sie prüft |
+| --- | --- |
+| **Liefertermin gefährdet** | Minuten, um die das erwartete Ende nach dem Liefertermin des Auftrags liegt. Größer als 0 meldet jede prognostizierte Lieferverzögerung. |
+| **Zuweisung läuft verspätet** | Minuten, um die eine laufende Zuweisung voraussichtlich nach ihrem geplanten Ende fertig wird. |
+| **Start überfällig** | Minuten seit dem geplanten Start einer nicht gestarteten Zuweisung, obwohl die Maschine frei war. |
+| **Zu lange in Wartestellung** | Minuten in Wartestellung, sobald das Limit überschritten und die Maschine in der Prognose freigegeben ist. Verwenden Sie größer als 0. |
+| **Verschobene Zuweisungen** | Andere Zuweisungen, die durch eine Verzögerung um mindestens 15 Minuten verschoben werden. |
+| **Verschobene Liefertermine** | Aufträge, deren Liefertermin durch die Verzögerung einer Zuweisung gefährdet ist. |
+
+Terminplan-Bedingungen lassen sich nicht mit Maschinen- oder Auftragsbedingungen in einer Regel kombinieren. Die Beschränkung auf aktive Schichten wird für Terminplan-Regeln nicht verwendet. Prüfen Sie Empfänger und Zeiten und folgen Sie [Automator-Regel erstellen](/de/platform-intro/workflows/automator-rule-creation). Öffnen Sie ein Terminplan-Ereignis und wählen Sie **Im Gantt anzeigen**, um die betroffene Arbeit zu prüfen.
+
 ## Reaktionen und Eskalation
 
 Sie können einen Alarm automatisch lösen lassen, nachdem seine Bedingung für die gewählte Dauer entfallen ist. Oder Sie lassen ihn offen, bis jemand ihn löst. Bei der Lösung kann eine weitere E-Mail versendet werden. Die Eskalation benachrichtigt ausgewählte Eskalationsempfänger, wenn der Alarm nicht rechtzeitig bearbeitet wird.

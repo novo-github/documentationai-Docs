@@ -22,7 +22,7 @@ Users open it from the dashboard navigation.
 
 - An order table with controls for moving between result pages.
 - Filters for customer, order, product, machine, date range, assignment status, and live production.
-- Summary cards for Total, Planned, In Progress, Completed, Live, and Needs Attention.
+- Summary cards for **Total**, **Planned**, **In Progress**, **Completed**, **Live**, and **Forecaster**.
 - Customer codes, operation sequence numbers, planned cycle times, duration, deviation, and production-performance explanations.
 - Grouped orders with individual assignments.
 - Progress based on either PDA production entries or detected cycle counts.
@@ -50,7 +50,7 @@ A production order brings the planned work together. Within it, work orders cont
 
 Summary totals count each order once, even when it has several assignments. An expanded table can show several assignment rows for that same order, so the number of detail rows can be greater than the order total.
 
-Use **Needs Attention** to find orders with exceeded durations, slower cycle times, or overdue dates. Review the affected assignments before deciding what to change in the plan.
+Use **Forecaster** to find open orders expected to miss delivery or already past their delivery date. It replaces the broader **Needs Attention** summary. Review an order’s warnings before deciding what to change.
 
 The progress source determines which production record you are reviewing: PDA entries are quantities recorded in Data Acquisition, while detected cycle counts come from machine cycles. Check the selected source when comparing progress. Material scrap and work scrap are shown separately, and produced totals include recorded scrap.
 
@@ -61,6 +61,10 @@ The **Forecaster** summary card counts open orders expected to finish after thei
 In the **Forecaster** column, the top result checks the delivery date and the bottom result checks the planned end. Red means late for delivery. Amber means **at risk** or past the planned end. Green means on time. The step count tells you how many steps are on a machine; it does not mean those steps are finished.
 
 While the Forecaster's late-order filter is active, you see every late order regardless of date range and status. Order, product, customer, and machine filters still apply. The company-wide count can differ from [Assignment Gantt](/en/platform-intro/pages/assignment-gantt), which shows warnings for the displayed machines from last week to three weeks ahead.
+
+In the card details, choose **Late for delivery → Show in table** for late orders or **Of these, steps not planned → Show in table** for late orders with missing steps. The active filter reads **Forecaster: late for delivery** or **Forecaster: late, steps not planned**. Date range and status filters are paused for either choice; remove the Forecaster filter to use them again. **Partly planned** identifies work with steps still not assigned.
+
+**Not planned at all → Show list** opens **Orders that are not planned**. These orders have a delivery date but no operation assigned to a machine or hall pool, so they appear on no planning board. Open an order and choose **Assign steps** to select machines, or **Open in planner**. Follow the [planning workflow](/en/platform-intro/workflows/assignment-planner).
 
 ### Open the Forecaster Help
 
@@ -80,7 +84,7 @@ Summary cards show the company-wide total on top and the number in the current v
 
 Choose planned or actual dates beside the date pickers to decide which dates the range filter searches. Planned dates describe the scheduled window; actual dates show when production really ran. On a grouped order row, the planned window covers the whole order. Expand it to see each assignment's own window in the same columns.
 
-## Status and Needs Attention
+## Status and Delivery Warnings
 
 | English status | German label | Meaning |
 | --- | --- | --- |
@@ -92,7 +96,7 @@ Choose planned or actual dates beside the date pickers to decide which dates the
 | Completed | Abgeschlossen | Finished. |
 | Cancelled | Storniert | Called off. |
 
-Order status follows its assignments. **Live** means an interval is running now. **Needs Attention** includes **Duration Exceeded**, **Cycle Time Degraded**, **Planned End Passed**, and **Delivery Date Passed**. Completed and cancelled orders are excluded.
+Order status follows its assignments. **Live** means an interval is running now. The **Forecaster** delivery count concerns open orders. A warning about a planned end or slow production is not by itself a late-delivery count; read the order’s expected finish against its delivery date.
 
 ## Quantity and Time Short Forms
 

@@ -22,6 +22,51 @@ toc: false
   Reading the forecast never changes your plan or delivery dates. Use the [planning workflow](/en/platform-intro/workflows/assignment-planner) to review the warnings before deciding what to change.
 </Update>
 
+<Update label="2026-10-14" description="v1.5.117–v1.5.120" tags={["feature", "improvement", "fix"]}>
+  {/* commits: 59cb850, eb9335e, ebce70a, b9b5f95, e951d9f, 85c9afe, 82982df */}
+
+  **Release period:** October 11–14, 2026
+
+  ### New Features
+
+  #### [Find Delivery Delays and Compare Better Plans](/en/platform-intro/pages/assignment-gantt)
+  {/* feature: schedule-forecaster */}
+
+  The **Forecaster** shows expected starts and finishes across machines, shifts, and earlier steps. Open **Orders & Products → Forecaster** to find late deliveries and missing planning steps. In **Assignment Planner → Forecaster check**, choose the date to check. In **Assignment Gantt → Attention**, trace what is holding an order back.
+
+  Use **Improve plan** to compare waiting work, then review **Save as plan** before changing queues and planned dates. A preview saves nothing. Running and on-hold assignments stay in place. Follow [Plan Machine Assignments](/en/platform-intro/workflows/assignment-planner).
+
+  Administrators can set the plant's ordering and hold limit under **Planning settings**. They can also set **Planning → Jobs in parallel** in machine configuration so expected times reflect how many assignments the machine can run together.
+
+  #### [Receive Alerts When Work Threatens Delivery](/en/platform-intro/pages/automator)
+  {/* feature: forecaster-alerts */}
+
+  Administrators can now choose **Forecaster** conditions when creating an **Automator** rule. Check delivery risk, late finishes, overdue starts, long holds, or delays passed on to other assignments and orders. For example, **Delivery Date at Risk** greater than 0 warns whenever an expected finish passes the delivery date.
+
+  These conditions cannot share a rule with machine or order conditions. The active-shift restriction does not apply. Choose recipients and review the rule before saving; use **Show in Gantt** from the event to investigate. Follow [Create an Automator Rule](/en/platform-intro/workflows/automator-rule-creation).
+
+  ### Improvements
+
+  #### [See Key Figures and Shift Orders on the Same Display](/en/platform-intro/pages/hall-plan)
+  {/* feature: hall-plan-order-rotation */}
+
+  Administrators can show the **Active order** column and set **Key figures / orders switch** in Hall Plan display settings. Each machine alternates between key figures and the orders worked during the shift. The switch time is limited to half the page-switch time so both views appear before the page changes.
+
+  **No orders worked in this shift** explains an empty order view. Follow [Set Up a Hall Plan Display](/en/platform-intro/workflows/hall-display-setup).
+
+  #### [Receive Scheduled Reports That Were Missed](/en/platform-intro/pages/report-archive)
+  {/* feature: scheduled-report-redelivery */}
+
+  Scheduled reports can now be sent again to recipients who missed them. You can also open **Report archive** to check delivery counts and download a ready report. Follow [Download and Update Reports](/en/platform-intro/workflows/reports).
+
+  ### Fixes
+
+  #### [Read Company Priorities on Hall Displays](/en/platform-intro/pages/hall-plan)
+  {/* feature: hall-plan-kiosk-priorities */}
+
+  Hall Plan kiosks could not read the company's priority levels. Shared displays now use those levels for order and operation priorities, as the signed-in views do.
+</Update>
+
 <Update label="2026-10-10" description="v1.5.109–v1.5.116" tags={["feature", "improvement", "fix"]}>
   {/* commits: ea8a47d, 8303a62, 8bb1e8e, 5d5316b, 41214e8, 1bd6219, 1d39057, 71eaffd, 0ac86ac, 5fa51d2, 97cf98b, df03372, 32922b0, ef9e6ec, 7202217, 76b5a70, e856457, f61d6c8, d5d0121, 4052254, 66a98cf, cbea5d0 */}
 

@@ -18,6 +18,16 @@ description: "Find answers about operation priorities, planning dates, grouping,
 | What happens to the sensor when I change a machine to a work center? | [Answer](/en/help-center/faq/planning-and-imports#work-center-switch) |
 | Why does my work center have no OEE or machine status? | [Answer](/en/help-center/faq/planning-and-imports#work-center-kpis) |
 | How do I switch from planning cards to the timeline? | [Answer](/en/help-center/faq/planning-and-imports#planner-view) |
+| What does the Forecaster tell me? | [Answer](/en/help-center/faq/planning-and-imports#forecast-meaning) |
+| Why are late orders outside my date range still shown? | [Answer](/en/help-center/faq/planning-and-imports#forecast-filters) |
+| Why do Orders and the Gantt show different warning counts? | [Answer](/en/help-center/faq/planning-and-imports#forecast-counts) |
+| How do I find orders that are missing from every planning board? | [Answer](/en/help-center/faq/planning-and-imports#unplanned-orders) |
+| What does “at risk” mean, and can the expected finish be too early? | [Answer](/en/help-center/faq/planning-and-imports#forecast-risk) |
+| Why does work move ahead of an assignment that is on hold? | [Answer](/en/help-center/faq/planning-and-imports#held-work) |
+| Does trying a different ordering change my plan? | [Answer](/en/help-center/faq/planning-and-imports#save-plan) |
+| Why can I not move an assignment or undo its move? | [Answer](/en/help-center/faq/planning-and-imports#move-undo) |
+| How do I tell the forecast that a machine runs several jobs at once? | [Answer](/en/help-center/faq/planning-and-imports#parallel-jobs) |
+| Who can change what the Forecaster runs next? | [Answer](/en/help-center/faq/planning-and-imports#forecast-rule) |
 
 <a id="operation-priority" />
 
@@ -96,3 +106,63 @@ A **Work center** has no AVA. It shows running and planned orders instead of sen
 ## How do I switch from planning cards to the timeline?
 
 Use the view switch in Assignment Planner or Assignment Gantt. Review dates in the timeline, then return to the planner to change assignments. Follow [Plan Machine Assignments](/en/platform-intro/workflows/assignment-planner).
+
+<a id="forecast-meaning" />
+
+## What does the Forecaster tell me?
+
+It shows when work is expected to start and finish using current progress, queues, shifts, and earlier steps. Your planned dates stay unchanged until you save a planning change. Open **Forecaster** on Orders & Products, the order page, or Assignment Gantt. See the [Forecaster guide](/en/platform-intro/pages/assignment-gantt).
+
+<a id="forecast-filters" />
+
+## Why are late orders outside my date range still shown?
+
+The Forecaster’s late-order filters pause date range and status filters. Order, product, customer, and machine filters still apply. Remove the Forecaster filter to use dates and status again. See [Orders & Products](/en/platform-intro/pages/orders-products).
+
+<a id="forecast-counts" />
+
+## Why do Orders and the Gantt show different warning counts?
+
+Orders & Products counts open orders late for delivery across the company. Assignment Gantt includes other warnings on selected machines, from last week to three weeks ahead and any week you have scrolled to. See [Assignment Gantt](/en/platform-intro/pages/assignment-gantt).
+
+<a id="unplanned-orders" />
+
+## How do I find orders that are missing from every planning board?
+
+Open **Orders & Products → Forecaster → Not planned at all → Show list**. These orders have a delivery date but no operation on a machine or in a hall pool. Open an order to **Assign steps**. A step also needs a planned start before it counts as planned. Follow the [planning workflow](/en/platform-intro/workflows/assignment-planner).
+
+<a id="forecast-risk" />
+
+## What does “at risk” mean, and can the expected finish be too early?
+
+**at risk** (previously **tight**) means the work barely fits or an earlier step is not planned. Missing steps, planned durations, or shift plans can make the expected finish too early. Review these before relying on the date. See the [Forecaster explanation](/en/platform-intro/pages/assignment-gantt).
+
+<a id="held-work" />
+
+## Why does work move ahead of an assignment that is on hold?
+
+After **Hold limit (working hours)**, the forecast treats that assignment as parked and lets work behind it move up. The paused work is not finished. Only working time counts; without shifts, 24 hours count as the full limit. Administrators change the limit in **Planning settings**. See [Assignment Gantt](/en/platform-intro/pages/assignment-gantt).
+
+<a id="save-plan" />
+
+## Does trying a different ordering change my plan?
+
+No. **Show on board** is a preview. **Save as plan** changes eligible queue positions and Watchmen planned dates after review. Running, on-hold, and blocked work keep their place, so the saved result can differ from the preview. Delivery dates stay unchanged. Follow [Compare and Save a Plan](/en/platform-intro/workflows/assignment-planner).
+
+<a id="move-undo" />
+
+## Why can I not move an assignment or undo its move?
+
+Running, on-hold, and finished assignments cannot use the Gantt move controls. Recorded work prevents changing the machine. Automatic ordering by delivery date prevents manual queue reordering. If the queue changed after a move, automatic undo is unavailable; review it and move the assignment back by hand. See [move limits](/en/platform-intro/pages/assignment-gantt).
+
+<a id="parallel-jobs" />
+
+## How do I tell the forecast that a machine runs several jobs at once?
+
+An administrator sets **Planning → Jobs in parallel** in the machine’s basic information. Enter a whole number from 1 to 100 that matches actual capacity, then save. Follow [Configure a Machine](/en/platform-intro/workflows/machine-configuration).
+
+<a id="forecast-rule" />
+
+## Who can change what the Forecaster runs next?
+
+Administrators choose the plant’s ordering under **Planning settings** in Assignment Gantt. Other users with planning access can compare alternatives in **Improve plan** without changing that setting. See the [ordering choices](/en/platform-intro/pages/assignment-gantt).

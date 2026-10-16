@@ -13,9 +13,11 @@ description: "Register a hall display, choose kiosk information and timing, and 
 2. Register the monitor under **Displays**. Review its identifying network details.
 3. Choose Hall Plan columns, displayed metric, language, machine sorting, and display version.
 4. Set **Data refresh** and **Page switch**. Page switch cannot be slower than data refresh.
-5. Set **Key figures / orders switch** to at most half the page-switch time. For example, a 20-second page-switch period allows at most 10 seconds here.
+5. Show the **Active order** column, then set **Key figures / orders switch**. This controls how long each machine shows key figures and then its shift orders. It is available only with that column visible and is limited to half the page-switch time. For example, a 20-second page switch allows at most 10 seconds here.
 6. Set **Page zoom** for the deployed monitor; it applies to that monitor.
 7. Open the hall plan on the display using its API key and check the visible machines and captions: **OEE**, **AVL**, **PRO**, **PCS**.
+
+Check both parts of the rotation on the display. **No orders worked in this shift** explains an empty order view. If you shorten the page-switch time, check the order switch again: its maximum becomes shorter too. Confirm that order and operation priorities use your company’s levels.
 
 ## Choose Product Information
 

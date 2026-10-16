@@ -22,7 +22,7 @@ Benutzer öffnen diese Seite über die Dashboard-Navigation.
 
 - Eine Auftragstabelle mit Steuerelementen zum Wechseln zwischen Ergebnisseiten.
 - Filter für Kunde, Auftrag, Produkt, Maschine, Datumsbereich, Zuweisungsstatus und laufende Produktion.
-- Übersichtskarten für Gesamt, Geplant, In Bearbeitung, Abgeschlossen, Live und Handlungsbedarf.
+- Übersichtskarten für **Gesamt**, **Geplant**, **In Bearbeitung**, **Abgeschlossen**, **Live** und **Forecaster**.
 - Kundencodes, Operationssequenznummern, geplante Zykluszeiten, Dauer, Abweichung und Erläuterungen zur Produktionsleistung.
 - Gruppierte Aufträge mit einzelnen Zuweisungen.
 - Fortschritt auf Basis von BDE-Produktionseinträgen oder erkannten Zykluszahlen.
@@ -50,7 +50,7 @@ Ein Produktionsauftrag fasst die geplante Arbeit zusammen. Darin enthalten Arbei
 
 Die Übersicht zählt jeden Auftrag einmal, auch wenn er mehrere Zuweisungen hat. In einer erweiterten Tabelle können für denselben Auftrag mehrere Zuweisungszeilen erscheinen. Die Anzahl der Detailzeilen kann deshalb größer als die Auftragssumme sein.
 
-Unter **Handlungsbedarf** finden Sie Aufträge mit überschrittenen Dauern, langsameren Zykluszeiten oder überfälligen Terminen. Prüfen Sie die betroffenen Zuweisungen, bevor Sie den Plan anpassen.
+Unter **Forecaster** finden Sie offene Aufträge mit erwarteter Lieferverzögerung oder bereits überschrittenem Liefertermin. Die Karte ersetzt die breitere Übersicht **Benötigt Aufmerksamkeit**. Prüfen Sie die Warnungen eines Auftrags, bevor Sie Änderungen festlegen.
 
 Die Fortschrittsquelle bestimmt, welche Produktionsaufzeichnung Sie betrachten: BDE-Einträge sind in der Betriebsdatenerfassung erfasste Mengen; erkannte Zykluszahlen stammen aus den Maschinenzyklen. Prüfen Sie beim Vergleich des Fortschritts die ausgewählte Quelle. Material- und Fertigungsausschuss werden getrennt angezeigt; die produzierten Gesamtmengen enthalten den erfassten Ausschuss.
 
@@ -61,6 +61,10 @@ Die Übersichtskarte **Forecaster** zählt offene Aufträge, die voraussichtlich
 In der Spalte **Forecaster** bezieht sich das obere Ergebnis auf den Liefertermin und das untere auf das geplante Ende. Rot bedeutet verspätete Lieferung. Gelb bedeutet **gefährdet** oder nach dem geplanten Ende. Grün bedeutet im Termin. Die Anzahl der Arbeitsgänge zeigt, wie viele auf einer Maschine sind. Sie bedeutet nicht, dass diese Arbeitsgänge fertig sind.
 
 Solange der Filter für verspätete Aufträge des Forecasters aktiv ist, sehen Sie alle verspäteten Aufträge unabhängig von Zeitraum und Status. Die Filter für Auftrag, Produkt, Kunde und Maschine gelten weiter. Die unternehmensweite Anzahl kann vom [Assignment Gantt](/de/platform-intro/pages/assignment-gantt) abweichen. Dort sehen Sie Warnungen für die angezeigten Maschinen von letzter Woche bis drei Wochen voraus.
+
+Wählen Sie in den Kartendetails **Liefertermin gefährdet → In der Tabelle zeigen** für verspätete Aufträge oder **Davon mit nicht geplanten Schritten → In der Tabelle zeigen** für verspätete Aufträge mit fehlenden Schritten. Der aktive Filter heißt **Forecaster: Liefertermin gefährdet** oder **Forecaster: verspätet, Schritte nicht geplant**. Zeitraum und Statusfilter sind bei beiden Auswahlen pausiert. Entfernen Sie den Forecaster-Filter, um sie wieder zu verwenden. **Teilweise geplant** kennzeichnet Arbeit mit noch nicht zugewiesenen Schritten.
+
+**Gar nicht geplant → Liste zeigen** öffnet **Nicht geplante Aufträge**. Diese Aufträge haben einen Liefertermin, aber keinen Arbeitsgang auf einer Maschine oder in einem Hallenpool. Deshalb erscheinen sie auf keiner Plantafel. Öffnen Sie einen Auftrag und wählen Sie mit **Schritte zuweisen** die Maschinen oder nutzen Sie **Im Planer öffnen**. Folgen Sie dem [Planungsablauf](/de/platform-intro/workflows/assignment-planner).
 
 ### Forecaster-Hilfe öffnen
 
@@ -80,7 +84,7 @@ Alle Filter werden mit **UND** kombiniert. Bei aktivem **Kunden-, Auftrags-, Pro
 
 Wählen Sie neben der Datumsauswahl geplante oder tatsächliche Termine. Damit legen Sie fest, welche Termine der Datumsbereichsfilter durchsucht. Geplante Termine beschreiben das vorgesehene Zeitfenster, tatsächliche Termine die erfasste Produktion. In einer gruppierten Auftragszeile umfasst das geplante Fenster den gesamten Auftrag. Klappen Sie die Gruppe auf, um in denselben Spalten das eigene Fenster jeder Zuweisung zu sehen.
 
-## Status und Handlungsbedarf
+## Status und Lieferwarnungen
 
 | Englischer Status | Deutsche Bezeichnung | Bedeutung |
 | --- | --- | --- |
@@ -92,7 +96,7 @@ Wählen Sie neben der Datumsauswahl geplante oder tatsächliche Termine. Damit l
 | Completed | Abgeschlossen | Fertig. |
 | Cancelled | Storniert | Abgesagt. |
 
-Der Auftragsstatus folgt seinen Zuweisungen. **Live** bedeutet ein jetzt laufendes Intervall. **Needs Attention / Handlungsbedarf** umfasst **Duration Exceeded**, **Cycle Time Degraded**, **Planned End Passed** und **Delivery Date Passed**: überschrittene Dauer, verschlechterte Zykluszeit, überschrittenes Planende oder Lieferdatum. Abgeschlossene und stornierte Aufträge sind ausgeschlossen.
+Der Auftragsstatus folgt seinen Zuweisungen. **Live** bedeutet ein jetzt laufendes Intervall. Die Lieferwarnungen des **Forecaster** zählen offene Aufträge. Eine Warnung zum geplanten Ende oder langsamer Produktion allein zählt nicht als Lieferverzögerung. Vergleichen Sie das erwartete Ende mit dem Liefertermin.
 
 ## Mengen- und Zeitkürzel
 

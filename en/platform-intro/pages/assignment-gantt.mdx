@@ -1,6 +1,6 @@
 ---
 title: "Assignment Gantt"
-description: "Inspect assignment windows, overlaps, and future arrangement, with the experimental read-only drag limitation."
+description: "Review expected times, trace delivery delays, and compare or save changes to waiting work."
 ---
 
 ## Overview
@@ -9,17 +9,17 @@ description: "Inspect assignment windows, overlaps, and future arrangement, with
 
 Assignment Gantt shows assignments across selected machines and time. Use it to inspect planned windows, spot overlaps, and open related orders.
 
-Use the view switch to move between Assignment Planner and Assignment Gantt. Review dates in the timeline and return to the planner to change assignments.
+Use the view switch to move between Assignment Planner and Assignment Gantt. Review dates in the timeline, use **Move** for eligible assignments, or return to the planner to work with queues.
 
 ## What Can I Change?
 
-**Drag-to-reschedule is labelled Experimental and read-only.** Do not rely on dragging the timeline to save a new schedule. Use the supported controls in [Assignment Planner](/en/platform-intro/pages/assignment-planner) to change work.
+Use **Move** on an assignment to change eligible waiting work. Use **Improve plan → Save as plan** to review and save a different arrangement for the machines on the board. Reading the forecast or showing a preview changes nothing.
 
-**Auto-Arrange** rearranges overlapping future assignments; assignments in progress are not touched. Review warnings before accepting the arrangement. If automatic assignment cannot place an order, read the explanation, such as no available machine, and inspect the plan.
+**Drag-to-reschedule is labelled Experimental and read-only.** Use the supported move and save controls described below to change the plan.
 
 ## Read the Planned Times
 
-An assignment is one operation placed on a machine or hall pool. Its planned production time uses the quantity assigned to that machine. Queue load is based on planned durations, not actual production.
+An assignment is one operation placed on a machine or hall pool. Its planned production time uses the quantity assigned to that machine. The forecast also uses remaining work and the machine’s capacity for simultaneous assignments. **Load** compares booked working time with shift time in the visible range. Without shift time, this share is unknown.
 
 For example, 2 minutes per part × 50 assigned parts gives 100 planned production minutes, plus the operation's fixed preparation time. See [calculations](/en/platform-intro/concepts/calculations#deviations) and [Plan Machine Assignments](/en/platform-intro/workflows/assignment-planner).
 
@@ -81,12 +81,63 @@ If expected times are unavailable, jobs appear at their planned times without de
 
 ## Review Attention and Waiting Work
 
-**Attention** lists what is expected to go wrong on the displayed machines, worst first. Its count covers last week through three weeks ahead. [Orders & Products](/en/platform-intro/pages/orders-products) counts only orders late for delivery across the whole company, so the numbers can differ.
+**Attention** lists what is expected to go wrong on the displayed machines, worst first. Its count covers last week through three weeks ahead, plus any week you have scrolled to. [Orders & Products](/en/platform-intro/pages/orders-products) counts only orders late for delivery across the whole company, so the numbers can differ.
 
 **Times may be too early** means you should review missing machines or dates before relying on the displayed finish. When no problems are expected, the panel shows **All good: nothing is expected to go wrong on these machines.**
 
-The machine summary's waiting working time tells you how much work remains on that machine.
+Choose **By order** to review affected orders or **By cause** to find assignments holding up other work. Open a warning and use **Show the assignment it is waiting for** to trace a delay. Notes distinguish **Measured against the delivery date**, **Measured against the original plan**, and **Measured against the plan in Watchmen**.
+
+**Never started** means an assignment is more than three days past its planned start and no longer holds up the forecast queue. **No planned start** means it cannot be placed on the timeline. **On hold too long** means the hold limit has been passed, so the forecast lets the assignments behind it move up. These warnings do not mean the work is finished.
+
+### Read Machine Availability
+
+The machine summary shows the remaining work booked by the forecast. If an assignment has no expected end, the displayed free time is only the earliest possible time. This can happen with work never started, work without a date, or a hold beyond the limit.
+
+## Follow a Whole Order
+
+Select **Order view** and type at least two characters of the order name or number. **Show the whole order on the board** highlights its assignments and outlines work it is waiting for. Other work is dimmed. **Show steps** lists its route; **Back to machines** returns to the machine view.
+
+A step in a hall pool is not yet on a machine. A missing expected end means the order will finish later than shown. If only part of the route can be shown, the page says so. Open **Earlier step not planned** and choose **Assign to a machine** when available. The step keeps its own planned dates and the later steps are forecast again. Without a planned start, assigning a machine alone still leaves the step unplanned.
+
+## Move Waiting Work
+
+Open an assignment and choose **Move → Earlier**, **Later**, **Run next**, or **To machine…**. Check its expected start and end, the other assignments delayed, and the number of late orders before saving. The review also shows how many assignments on that machine will be replanned.
+
+Running, on-hold, and finished assignments cannot move this way. Work already recorded prevents changing the machine. A move cannot put a step before an earlier step of the same order on that machine. When the plant orders work by delivery date, you can change the machine but cannot reorder the queue by hand. Claim hall-pool work in the Assignment Planner.
+
+Use **Undo** to reverse a move. If the queue has changed since, automatic undo is refused; move the work back by hand after reviewing the current queue.
 
 ## Compare Queue Orders Before Saving
 
-Open **Improve plan** to compare different orders for waiting jobs and see which saves the most deliveries. Nothing changes until you select **Save as plan**. For review steps, see [Plan Machine Assignments](/en/platform-intro/workflows/assignment-planner).
+Open **Improve plan** for the machines on the board. Compare **Today** with the alternative orderings. Review **Deliveries at risk**, **Total lateness**, and **Would move**. Orders without a delivery date are not counted in the delivery comparison.
+
+**Show on board** previews how the whole plant would look with that ordering. The list and the line beneath each alternative show what saving would actually change: running, on-hold, and blocked work keep their place. An attractive preview can therefore give a worse result when saved. Read the saving result before deciding.
+
+**Save as plan** gives eligible assignments a new queue position and planned start and end in Watchmen. It keeps the original dates beside the Watchmen plan and does not change delivery dates, machine assignments, running work, or the plant’s ordering rule. **Save as plan** replaces the earlier action label **Start Auto-Assign**.
+
+Work behind an unplanned earlier step cannot be saved from this comparison because its expected times are too optimistic. Review the work left unchanged and any explanation that there is nothing to save. Use **Undo** if you need to return to the previous plan. If someone changed the plan during your review, nothing is saved and the board reloads; check it again.
+
+Follow [Plan Machine Assignments](/en/platform-intro/workflows/assignment-planner) for the review and saving steps.
+
+## Planning Settings
+
+Administrators open **Planning settings → Planning** to choose **How does your plant decide what runs next?** This rule is used by the forecast and delay notifications. Comparing or previewing alternatives does not change it.
+
+| Ordering | Effect on waiting assignments |
+| --- | --- |
+| **Follow planned dates** | Runs by planned start; no assignment starts before that date. |
+| **Follow the queue** | Uses the Assignment Planner’s queue; planned dates are ignored, so work may start earlier. |
+| **Follow the queue, not before the planned date** | Keeps queue order but waits for each planned start. A later-dated assignment can hold up everything behind it. |
+| **Delivery date first** | Orders work that can still arrive on time by delivery date. Already-late work goes first only if it does not make other work late. |
+
+**Hold limit (working hours)** determines when paused work stops holding its machine in the forecast. Enter a duration between 1 minute and 720 hours. Only the machine’s working time counts; a weekend without shifts uses none. Where no shifts are planned, 24 hours count as the full limit. After the limit, the assignment is warned about and the work behind it moves up.
+
+For machine capacity, administrators set **Jobs in parallel** in [Machine Configuration](/en/platform-intro/pages/machine-configuration).
+
+## View Controls and Limits
+
+Use **View options → Bars show** to choose **Expected times** or **Planned dates**. Compare **Planned (original)**, **Planned (Watchmen)**, **Expected**, and **Actual** in the assignment details. **Row height** offers **Normal**, **Compact**, and **Large**. Drag to pan, use Ctrl with the mouse wheel to zoom, or press N to return to now.
+
+**Forecaster unavailable** means you see planned times without calculated delays. **Forecaster: approximate** means expected times may still shift slightly. **Incomplete** means some assignments could not be loaded; select fewer machines.
+
+Without a shift plan for the displayed period, the machine is assumed to be available around the clock. This also applies when shifts follow machine activity or have not yet been planned that far ahead. Check this assumption before relying on the finish.

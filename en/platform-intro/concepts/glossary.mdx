@@ -410,6 +410,34 @@ Missing the delivery date is red. Missing only the planned end is amber.
 #### Steps on a Machine
 
 The step count tells you how many of the order's steps have a machine. It does not count finished steps. Work without a machine can make the expected finish too early.
+#### Partly Planned and Not Planned at All
+
+**Partly planned** means some steps still lack an assignment. **Not planned at all** identifies orders with a delivery date but no operation assigned to a machine or hall pool. They appear on no planning board.
+
+#### Earlier Step Not Planned
+
+**Earlier step not planned** warns that the times shown assume that step is already finished. Check for a missing machine or date, a hall-pool step, work never started, or a hold beyond its limit before relying on later finishes.
+
+#### Never Started and No Planned Start
+
+**Never started** identifies work planned more than three days ago that no longer holds up the forecast queue. **No planned start** means no forecast can be made for that assignment. Neither means the work is complete.
+
+#### On Hold Too Long
+
+**On hold too long** means paused work has passed **Hold limit (working hours)**. It stops holding the machine in the forecast, and assignments behind it move up. Administrators set the limit using machine working time.
+
+#### Load and Earliest Availability
+
+**Load** in Assignment Gantt compares booked working time with visible shift time. The machine summary shows work still booked by the forecast. When work has no expected end, the machine’s displayed free time is only its earliest possible availability.
+
+#### Save as Plan
+
+**Save as plan** changes eligible queue positions and planned dates in Watchmen after review. Original dates remain available beside them. A preview does not save a plan, and delivery dates stay unchanged.
+
+#### Jobs in Parallel
+
+**Jobs in parallel** is how many assignments a machine can run at the same time. Administrators set a whole number from 1 to 100 in machine configuration; the forecast uses this capacity.
+
 
 [Learn more](/en/platform-intro/pages/assignment-gantt).
 
@@ -727,7 +755,7 @@ A value is unavailable; it is not the same as zero.
 
 ### Needs Attention / Handlungsbedarf
 
-Duration Exceeded, Cycle Time Degraded, Planned End Passed, or Delivery Date Passed. Completed and cancelled orders are excluded.
+The former summary for several production and date warnings. On Orders & Products, **Forecaster** now counts open orders expected to miss delivery or already past their delivery date. Other warnings remain useful when reviewing individual assignments.
 
 [Learn more](/en/platform-intro/pages/orders-products).
 

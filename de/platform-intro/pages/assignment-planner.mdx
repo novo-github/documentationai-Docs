@@ -76,19 +76,23 @@ Karten können **Geplanter Operationsstart** und **Geplantes Operationsende** an
 
 ## Termine mit dem Forecaster prüfen
 
-Öffnen Sie die Auswahl für die Terminprüfung mit dem **Forecaster**, um den Vergleichstermin für die Karten zu wählen. Die farbige Marke links an jeder Karte zeigt, ob der Auftrag diesen Termin hält: Rot bedeutet verspätet, Gelb **gefährdet** und Grün im Termin. Die Warnung **gefährdet** bedeutet, dass die restliche Arbeit kaum noch passt oder ein früherer Arbeitsgang nicht geplant ist. Die Maschinenübersicht zählt ebenfalls Aufträge mit dieser Warnung.
+Öffnen Sie **Forecaster-Prüfung**, um den Vergleichstermin für die Karten zu wählen. Die farbige Marke links an jeder Karte zeigt, ob der Auftrag diesen Termin hält: Rot bedeutet verspätet, Gelb **gefährdet** und Grün im Termin. Die Warnung **gefährdet** bedeutet, dass die restliche Arbeit kaum noch passt oder ein früherer Arbeitsgang nicht geplant ist. Die Maschinenübersicht zählt ebenfalls Aufträge mit dieser Warnung.
 
 Hat der Forecaster noch kein erwartetes Ende für einen Auftrag, wird nur dessen Termin mit heute verglichen. Das bestätigt nicht, dass die Arbeit rechtzeitig fertig wird. Das erwartete Ende der Warteschlange zeigt, wann die Maschine voraussichtlich ihre gesamte wartende Arbeit erledigt hat. Die wartende Arbeitszeit zeigt, wie viel Arbeit noch aussteht.
 
 Öffnen Sie die Auswahl für die Terminprüfung und wählen Sie unten **Wie funktioniert der Forecaster?**. Das Menü schließt sich und die Hilfe öffnet sich. Ihr gewählter Vergleichstermin bleibt unverändert. Die Hilfe erklärt die Farben, den Einfluss von Schichten und vorherigen Arbeitsgängen sowie zu frühe Zeiten bei fehlenden Planungsangaben. Lesen Sie auch die [Forecaster-Erklärung](/de/platform-intro/pages/assignment-gantt) oder folgen Sie dem Ablauf [Maschinenzuweisungen planen](/de/platform-intro/workflows/assignment-planner).
 
+Wählen Sie unter **Forecaster-Prüfung** zwischen **Liefertermin**, **Geplantes Ende**, **Liefertermin & geplantes Ende** und **Aus**. Lesen Sie das voraussichtliche Ende und den verbleibenden Puffer auf der Karte, um die Warnung zu verstehen. Ein ungeplanter früherer Schritt macht das erwartete Ende zu optimistisch.
+
+Die freie Zeit in der Maschinenübersicht folgt dem letzten erwarteten Ende in ihrer Warteschlange. Fehlt bei Arbeit ein voraussichtliches Ende, ist diese Zeit nur die frühestmögliche Verfügbarkeit. Die angezeigte Last ist die von der Prognose noch eingeplante Arbeit.
+
+Wählen Sie die Anordnung mit Maschinen nebeneinander und Warteschlangen nach unten oder Maschinen untereinander und Warteschlangen nach rechts. Passen Sie die Ansicht mit **Nicht zugewiesene Operationen einblenden** oder **Nicht zugewiesene Operationen ausblenden** an. Die Auswahl zeigt, wie viele Maschinen und Hallenpools gemeinsam angezeigt werden können.
+
 ## Zuweisungs-Gantt und Planungshinweise
 
-Das Zuweisungs-Gantt zeigt Zuweisungen über ausgewählte Maschinen und Zeiträume hinweg, einschließlich Überschneidungen und Links zu den zugehörigen Aufträgen. Die automatische Anordnung unterstützt die Planung zukünftiger Zuweisungen und lässt laufende Produktion unverändert.
+Öffnen Sie über die Ansichtsauswahl das [Zuweisungs-Gantt](/de/platform-intro/pages/assignment-gantt). Prüfen Sie erwartete Start- und Endzeiten, verfolgen Sie Verzögerungen unter **Handlungsbedarf** und vergleichen Sie wartende Arbeit mit **Plan verbessern**. Mit **Verschieben** prüfen Sie die Auswirkungen einer zulässigen Verschiebung vor dem Speichern.
 
-Kann die automatische Zuweisung einen Auftrag nicht einplanen, erklärt eine Meldung den Grund, beispielsweise eine fehlende verfügbare Maschine. Prüfen Sie anhand dieser Erklärung den Plan, bevor Sie es erneut versuchen. Unter [Maschinenzuweisungen planen](/de/platform-intro/workflows/assignment-planner) finden Sie die Planungsschritte und Hinweise zu Importkonflikten, die manuell geprüft werden müssen.
-
-Wechseln Sie mit der Ansichtsauswahl zwischen Zuweisungsplaner und Assignment Gantt. Prüfen Sie Termine im Zeitplan und kehren Sie zum Ändern von Zuweisungen in den Planer zurück.
+**Als Plan speichern** aktualisiert geeignete Warteschlangenplätze und geplante Termine. Laufende und angehaltene Arbeit bleibt an ihrem Platz. Prüfen Sie unveränderte Arbeit, besonders Zuweisungen hinter einem ungeplanten früheren Schritt. Die Prüf- und Speicherschritte finden Sie unter [Maschinenzuweisungen planen](/de/platform-intro/workflows/assignment-planner).
 
 ## Warum kann ich eine Karte nicht verschieben?
 

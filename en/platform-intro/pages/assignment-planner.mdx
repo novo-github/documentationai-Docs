@@ -82,13 +82,17 @@ If the Forecaster has no expected end for a job, only its date is compared with 
 
 For the explanation, open **Forecaster check → How does the Forecaster work?**. The menu closes and the help opens without changing your selected date check. It explains the colours, how shifts and earlier steps affect expected times, and why missing planning details can make times too early. You can also read the [Forecaster explanation](/en/platform-intro/pages/assignment-gantt) or follow [Plan Machine Assignments](/en/platform-intro/workflows/assignment-planner).
 
+Under **Forecaster check**, choose **Delivery date**, **Planned end**, **Delivery date & planned end**, or **Off**. Read the card’s expected end and remaining buffer to understand the warning. An unplanned earlier step makes the expected end too optimistic.
+
+The machine summary’s free time comes from the last expected finish in its queue. If some work has no expected end, that time is only the earliest possible availability. The displayed load is work still booked by the forecast.
+
+Switch the layout to put machines side by side with queues downward, or machines top to bottom with queues to the right. Use **Show unassigned operations** or **Hide unassigned operations** to adjust the workspace. The selection shows how many machines and hall pools can be displayed together.
+
 ## Assignment Gantt and Scheduling Feedback
 
-Assignment Gantt shows assignments across selected machines and time, including overlaps and links to related orders. Automatic arrangement helps plan future assignments while leaving active production unchanged.
+Use the view switch to open [Assignment Gantt](/en/platform-intro/pages/assignment-gantt). Review expected starts and finishes, trace delays under **Attention**, and compare waiting work with **Improve plan**. Its **Move** controls let you review the effects of an eligible assignment’s move before saving.
 
-If automatic assignment cannot place an order, a message explains the reason, such as no available machine. Use that explanation to review the plan before trying again. See [Plan Machine Assignments](/en/platform-intro/workflows/assignment-planner) for planning steps and guidance on import conflicts that require manual review.
-
-Use the view switch to move between Assignment Planner and Assignment Gantt. Review dates in the timeline and return to the planner to change assignments.
+**Save as plan** updates eligible queue positions and planned dates. Running and on-hold work keep their place. Review the work left unchanged, especially assignments behind an unplanned earlier step. Follow [Plan Machine Assignments](/en/platform-intro/workflows/assignment-planner) for review and saving steps.
 
 ## Why Can I Not Move a Card?
 

@@ -410,6 +410,34 @@ Wird der Liefertermin verfehlt, erscheint die Warnung rot. Wird nur das geplante
 #### Arbeitsgänge auf einer Maschine
 
 Die Anzahl zeigt, wie viele Arbeitsgänge des Auftrags eine Maschine haben. Sie zählt keine fertigen Arbeitsgänge. Arbeit ohne Maschine kann dazu führen, dass das erwartete Ende zu früh erscheint.
+#### Teilweise geplant und gar nicht geplant
+
+**Teilweise geplant** bedeutet, dass einigen Schritten noch eine Zuweisung fehlt. **Gar nicht geplant** kennzeichnet Aufträge mit Liefertermin, aber ohne Arbeitsgang auf einer Maschine oder in einem Hallenpool. Sie erscheinen auf keiner Plantafel.
+
+#### Früherer Schritt nicht geplant
+
+**Früherer Schritt nicht geplant** warnt, dass die angezeigten Zeiten diesen Schritt bereits als fertig voraussetzen. Prüfen Sie fehlende Maschinen oder Termine, Schritte im Hallenpool, nie gestartete Arbeit oder eine Unterbrechung über das Limit hinaus, bevor Sie sich auf spätere Endzeiten verlassen.
+
+#### Nie gestartet und kein geplanter Start
+
+**Nie gestartet** kennzeichnet vor mehr als drei Tagen geplante Arbeit, die die Warteschlange der Prognose nicht mehr aufhält. **Kein geplanter Start** bedeutet, dass für diese Zuweisung keine Prognose möglich ist. Beides bedeutet nicht, dass die Arbeit fertig ist.
+
+#### Zu lange angehalten
+
+**Zu lange angehalten** bedeutet, dass pausierte Arbeit das **Limit für Wartestellung (Arbeitsstunden)** überschritten hat. Sie belegt ihre Maschine in der Prognose nicht mehr. Zuweisungen dahinter rücken auf. Administratoren stellen das Limit anhand der Maschinenarbeitszeit ein.
+
+#### Last und früheste Verfügbarkeit
+
+**Auslastung** im Zuweisungs-Gantt vergleicht verplante Arbeitszeit mit sichtbarer Schichtzeit. Die Maschinenübersicht zeigt die von der Prognose noch eingeplante Arbeit. Fehlt bei Arbeit ein voraussichtliches Ende, ist die angezeigte freie Zeit nur die frühestmögliche Verfügbarkeit.
+
+#### Als Plan speichern
+
+**Als Plan speichern** ändert nach der Prüfung geeignete Warteschlangenplätze und geplante Termine in Watchmen. Die ursprünglichen Termine bleiben daneben verfügbar. Eine Vorschau speichert keinen Plan. Liefertermine bleiben unverändert.
+
+#### Parallele Aufträge
+
+**Parallele Aufträge** gibt an, wie viele Zuweisungen eine Maschine gleichzeitig bearbeiten kann. Administratoren stellen in der Maschinenkonfiguration eine ganze Zahl von 1 bis 100 ein. Die Prognose verwendet diese Kapazität.
+
 
 [Mehr erfahren](/de/platform-intro/pages/assignment-gantt).
 
@@ -727,7 +755,7 @@ Ein Wert ist nicht verfügbar; dies bedeutet nicht null.
 
 ### Needs Attention / Handlungsbedarf
 
-Überschrittene Dauer, verschlechterte Zykluszeit, überschrittenes Planende oder überschrittener Liefertermin. Abgeschlossene und stornierte Aufträge sind ausgeschlossen.
+Die frühere Übersicht für verschiedene Produktions- und Terminwarnungen. Unter Aufträge & Produkte zählt **Forecaster** jetzt offene Aufträge mit erwarteter Lieferverzögerung oder bereits überschrittenem Liefertermin. Andere Warnungen helfen weiterhin bei der Prüfung einzelner Zuweisungen.
 
 [Mehr erfahren](/de/platform-intro/pages/orders-products).
 

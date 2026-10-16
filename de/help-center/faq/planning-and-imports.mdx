@@ -18,6 +18,16 @@ description: "Antworten zu Arbeitsgangprioritäten, Planungsterminen, Gruppierun
 | Was passiert mit dem Sensor beim Wechsel von Maschine zu Arbeitsplatz? | [Antwort](/de/help-center/faq/planning-and-imports#work-center-switch) |
 | Warum hat mein Arbeitsplatz keine OEE und keinen Maschinenzustand? | [Antwort](/de/help-center/faq/planning-and-imports#work-center-kpis) |
 | Wie wechsle ich von Planungskarten zum Zeitplan? | [Antwort](/de/help-center/faq/planning-and-imports#planner-view) |
+| Was sagt mir der Forecaster? | [Antwort](/de/help-center/faq/planning-and-imports#forecast-meaning) |
+| Warum sehe ich verspätete Aufträge außerhalb meines Zeitraums? | [Antwort](/de/help-center/faq/planning-and-imports#forecast-filters) |
+| Warum zeigen Aufträge und Gantt unterschiedliche Warnungszahlen? | [Antwort](/de/help-center/faq/planning-and-imports#forecast-counts) |
+| Wie finde ich Aufträge, die auf keiner Plantafel erscheinen? | [Antwort](/de/help-center/faq/planning-and-imports#unplanned-orders) |
+| Was bedeutet „gefährdet“ und kann das erwartete Ende zu früh sein? | [Antwort](/de/help-center/faq/planning-and-imports#forecast-risk) |
+| Warum rückt Arbeit vor eine angehaltene Zuweisung? | [Antwort](/de/help-center/faq/planning-and-imports#held-work) |
+| Ändert das Ausprobieren einer anderen Reihenfolge meinen Plan? | [Antwort](/de/help-center/faq/planning-and-imports#save-plan) |
+| Warum kann ich eine Zuweisung nicht verschieben oder zurücksetzen? | [Antwort](/de/help-center/faq/planning-and-imports#move-undo) |
+| Wie berücksichtigt die Prognose mehrere gleichzeitige Aufträge auf einer Maschine? | [Antwort](/de/help-center/faq/planning-and-imports#parallel-jobs) |
+| Wer kann ändern, was der Forecaster als Nächstes einplant? | [Antwort](/de/help-center/faq/planning-and-imports#forecast-rule) |
 
 <a id="operation-priority" />
 
@@ -96,3 +106,63 @@ Ein **Arbeitsplatz** hat keine AVA. Er zeigt laufende und geplante Aufträge sta
 ## Wie wechsle ich von Planungskarten zum Zeitplan?
 
 Nutzen Sie die Ansichtsauswahl im Zuweisungsplaner oder Assignment Gantt. Prüfen Sie Termine im Zeitplan und kehren Sie zum Ändern von Zuweisungen in den Planer zurück. Folgen Sie [Maschinenzuweisungen planen](/de/platform-intro/workflows/assignment-planner).
+
+<a id="forecast-meaning" />
+
+## Was sagt mir der Forecaster?
+
+Er zeigt erwartete Start- und Endzeiten anhand des aktuellen Fortschritts, der Warteschlangen, Schichten und früheren Schritte. Ihre geplanten Termine bleiben erhalten, bis Sie eine Planänderung speichern. Öffnen Sie **Forecaster** unter Aufträge & Produkte, auf der Auftragsseite oder im Zuweisungs-Gantt. Siehe [Forecaster-Anleitung](/de/platform-intro/pages/assignment-gantt).
+
+<a id="forecast-filters" />
+
+## Warum sehe ich verspätete Aufträge außerhalb meines Zeitraums?
+
+Die Filter für verspätete Aufträge des Forecasters pausieren Zeitraum und Statusfilter. Auftrag, Produkt, Kunde und Maschine gelten weiter. Entfernen Sie den Forecaster-Filter, um Zeitraum und Status wieder zu verwenden. Siehe [Aufträge & Produkte](/de/platform-intro/pages/orders-products).
+
+<a id="forecast-counts" />
+
+## Warum zeigen Aufträge und Gantt unterschiedliche Warnungszahlen?
+
+Aufträge & Produkte zählt offene Aufträge mit Lieferverzögerung im ganzen Unternehmen. Das Zuweisungs-Gantt umfasst auch andere Warnungen auf ausgewählten Maschinen, von letzter Woche bis drei Wochen voraus sowie jede Woche, zu der Sie gescrollt haben. Siehe [Zuweisungs-Gantt](/de/platform-intro/pages/assignment-gantt).
+
+<a id="unplanned-orders" />
+
+## Wie finde ich Aufträge, die auf keiner Plantafel erscheinen?
+
+Öffnen Sie **Aufträge & Produkte → Forecaster → Gar nicht geplant → Liste zeigen**. Diese Aufträge haben einen Liefertermin, aber keinen Arbeitsgang auf einer Maschine oder in einem Hallenpool. Öffnen Sie einen Auftrag und wählen Sie **Schritte zuweisen**. Ein Schritt benötigt außerdem einen geplanten Start, bevor er als geplant gilt. Folgen Sie dem [Planungsablauf](/de/platform-intro/workflows/assignment-planner).
+
+<a id="forecast-risk" />
+
+## Was bedeutet „gefährdet“ und kann das erwartete Ende zu früh sein?
+
+**gefährdet** (bisher **knapp**) bedeutet, dass die Arbeit kaum noch passt oder ein früherer Schritt nicht geplant ist. Fehlende Schritte, geplante Dauern oder Schichtpläne können das erwartete Ende zu früh erscheinen lassen. Prüfen Sie diese Angaben, bevor Sie sich auf den Termin verlassen. Siehe [Forecaster-Erklärung](/de/platform-intro/pages/assignment-gantt).
+
+<a id="held-work" />
+
+## Warum rückt Arbeit vor eine angehaltene Zuweisung?
+
+Nach dem **Limit für Wartestellung (Arbeitsstunden)** behandelt die Prognose die Zuweisung als abgestellt und lässt Arbeit dahinter aufrücken. Die pausierte Arbeit ist damit nicht fertig. Nur Arbeitszeit zählt. Ohne Schichten zählen 24 Stunden als volles Limit. Administratoren ändern das Limit unter **Planungseinstellungen**. Siehe [Zuweisungs-Gantt](/de/platform-intro/pages/assignment-gantt).
+
+<a id="save-plan" />
+
+## Ändert das Ausprobieren einer anderen Reihenfolge meinen Plan?
+
+Nein. **Auf Plantafel zeigen** ist eine Vorschau. **Als Plan speichern** ändert nach der Prüfung geeignete Warteschlangenplätze und geplante Watchmen-Termine. Laufende, angehaltene und blockierte Arbeit bleibt an ihrem Platz. Daher kann das gespeicherte Ergebnis von der Vorschau abweichen. Liefertermine bleiben erhalten. Folgen Sie dem [Planungsvergleich](/de/platform-intro/workflows/assignment-planner).
+
+<a id="move-undo" />
+
+## Warum kann ich eine Zuweisung nicht verschieben oder zurücksetzen?
+
+Laufende, angehaltene und abgeschlossene Zuweisungen lassen sich mit den Gantt-Funktionen nicht verschieben. Bereits erfasste Arbeit verhindert den Maschinenwechsel. Automatische Reihenfolge nach Liefertermin verhindert manuelles Umsortieren. Hat sich die Warteschlange nach einer Verschiebung geändert, ist automatisches Zurücksetzen nicht möglich. Prüfen Sie sie und verschieben Sie die Zuweisung von Hand zurück. Siehe [Verschiebegrenzen](/de/platform-intro/pages/assignment-gantt).
+
+<a id="parallel-jobs" />
+
+## Wie berücksichtigt die Prognose mehrere gleichzeitige Aufträge auf einer Maschine?
+
+Ein Administrator stellt in den Basisinformationen der Maschine **Planung → Parallele Aufträge** ein. Geben Sie eine ganze Zahl von 1 bis 100 ein, die der tatsächlichen Kapazität entspricht, und speichern Sie. Folgen Sie [Maschine konfigurieren](/de/platform-intro/workflows/machine-configuration).
+
+<a id="forecast-rule" />
+
+## Wer kann ändern, was der Forecaster als Nächstes einplant?
+
+Administratoren wählen unter **Planungseinstellungen** im Zuweisungs-Gantt die Reihenfolge des Werks. Andere Benutzer mit Planungszugriff können unter **Plan verbessern** Alternativen vergleichen, ohne diese Einstellung zu ändern. Siehe [Reihenfolgen](/de/platform-intro/pages/assignment-gantt).

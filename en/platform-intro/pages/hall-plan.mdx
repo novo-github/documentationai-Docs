@@ -55,6 +55,14 @@ Choose **Off** to hide this product display. When it is off, or the product has 
 
 Click the state-pattern icon to see examples of how machine states look with patterns.
 
+### Alternate Key Figures and Shift Orders
+
+Administrators can show **Active order** in the display’s column selection. **Key figures / orders switch** then sets how long each machine shows key figures and then orders worked during the shift. It is available only while **Active order** is visible.
+
+The switch time cannot exceed half the page-switch time. If you shorten the page-switch time, the order switch is limited to fit. Both views can then appear before the next page. **No orders worked in this shift** means no work on orders is shown for that shift.
+
+Order and operation priorities use the company’s priority levels on shared kiosk displays too. Follow [Set Up a Hall Plan Display](/en/platform-intro/workflows/hall-display-setup).
+
 ### Check Display Connectivity
 
 Administrators can review whether a managed display is live or offline and when it last reported activity. These indicators describe the display's connection, not the production state of a machine. If a screen appears out of date, check its connectivity and last-seen information before interpreting the displayed production values.
@@ -71,7 +79,7 @@ These captions stay the same in English and German: **OEE** is Overall Equipment
 
 ## Kiosk Timing and Network Details
 
-A kiosk uses an API key instead of a user login. **Data refresh** sets update timing. **Page switch** cannot be slower than data refresh. **Key figures / orders switch** is at most half the page-switch time. **Page zoom** applies to the deployed monitor.
+A kiosk opens without a user login. **Data refresh** sets update timing. **Page switch** cannot be slower than data refresh. **Key figures / orders switch** is at most half the page-switch time. **Page zoom** applies to the display monitor.
 
 **Displays** in Admin Panel → Halls lists registered monitors, last-seen time, **Wi-Fi / WLAN**, **Local IP / Lokale IP**, and **MAC**. A display not reporting for 24 hours is shown as not seen. Use [Set Up a Hall Plan Display](/en/platform-intro/workflows/hall-display-setup).
 

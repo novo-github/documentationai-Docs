@@ -44,7 +44,7 @@ Begin on the [Assignment Planner page](/en/platform-intro/pages/assignment-plann
     Use Assignment Gantt to inspect assignments across selected machines, identify overlaps, and open a related order when more context is needed.
   </Step>
   <Step title="Arrange future assignments when needed" icon="arrow-right" title-type="p">
-    Use automatic arrangement for future assignments when appropriate. Review any overlap warnings before accepting the rearranged schedule; active production remains unchanged. If automatic assignment cannot place an order, read the explanation, such as no available machine, and review the plan before trying again.
+    Open **Improve plan**, compare the alternatives, and review the assignments that would change before choosing **Save as plan**. Running and on-hold work keep their place. Follow the detailed comparison steps below.
   </Step>
   <Step title="Save the queue changes" icon="arrow-right" title-type="p">
     Let the planner save the queue changes back to the platform.
@@ -114,6 +114,60 @@ In-progress and completed assignments cannot move to another column. You can sti
 
 If the Forecaster has no expected end, the Planner only compares the job's date with today. If expected times are unavailable in Assignment Gantt, you see planned times without delays while the Forecaster tries again. Neither view confirms that delivery will be on time.
 
+## Find Late Orders and Plan Missing Steps
+
+<Steps>
+  <Step title="Find the orders needing work" icon="arrow-right" title-type="p">
+    With access to Orders & Products, open **Forecaster**. Choose **Late for delivery → Show in table** or **Of these, steps not planned → Show in table**. Date range and status filters pause; order, product, customer, and machine filters still apply.
+  </Step>
+  <Step title="Find orders absent from the board" icon="arrow-right" title-type="p">
+    Choose **Not planned at all → Show list**. Open an order and select **Assign steps** or **Open in planner**. These orders have a delivery date but no operation on a machine or in a hall pool.
+  </Step>
+  <Step title="Assign the missing earlier step" icon="arrow-right" title-type="p">
+    In Assignment Gantt, inspect **Attention → Earlier step not planned**. Follow **Show that step**, then **Assign to a machine** when available. Select a machine you may plan on. A step waiting in a hall pool needs a machine too.
+  </Step>
+  <Step title="Check dates and the new forecast" icon="arrow-right" title-type="p">
+    The assignment uses the step’s own planned dates. If no planned start exists, set dates before treating it as planned. Review the recalculated times for later steps and check whether the order still risks missing delivery.
+  </Step>
+</Steps>
+
+## Compare and Save a Plan
+
+<Steps>
+  <Step title="Choose the machines and compare" icon="arrow-right" title-type="p">
+    Open **Improve plan** in Assignment Gantt. Compare **Today** with the other orderings for the machines on the board. Check **Deliveries at risk**, **Total lateness**, and the list of assignments that would move.
+  </Step>
+  <Step title="Separate the preview from the saving result" icon="arrow-right" title-type="p">
+    Use **Show on board** to preview an alternative without saving. Read what saving would actually do: running, on-hold, and blocked assignments keep their place. If saving would worsen delivery, return with **Back to today** and review missing planning steps instead.
+  </Step>
+  <Step title="Review and save" icon="arrow-right" title-type="p">
+    Choose **Save as plan** and review the changed queue places and dates, the effect on orders, and **Left as they are**. Confirm only the intended changes. Delivery dates and the plant’s ordering rule stay unchanged. If someone changed the plan during review, nothing is saved; check the reloaded board again.
+  </Step>
+  <Step title="Check the result" icon="arrow-right" title-type="p">
+    Check the board and Assignment Planner for the new queue and Watchmen dates. Use **Undo** to return to the previous plan if needed.
+  </Step>
+</Steps>
+
+## Move One Assignment After Checking Its Effect
+
+<Steps>
+  <Step title="Choose the move" icon="arrow-right" title-type="p">
+    Open an assignment in Assignment Gantt. Select **Move → Earlier**, **Later**, **Run next**, or **To machine…**. Read the explanation if the action is unavailable. Running, on-hold, and finished work stays in place. Recorded work prevents a machine change.
+  </Step>
+  <Step title="Review other work before saving" icon="arrow-right" title-type="p">
+    Check the expected start and end, other assignments pushed later, and changes to late orders. Save after reviewing the assignments that will be replanned on the machine.
+  </Step>
+  <Step title="Check or undo the move" icon="arrow-right" title-type="p">
+    Review the updated queue. Use **Undo** if needed. If someone has changed the queue since, automatic undo is unavailable; review it and move the assignment back by hand.
+  </Step>
+</Steps>
+
+## Set the Plant’s Forecast Rule
+
+Administrators open **Planning settings → Planning** in Assignment Gantt. Choose **How does your plant decide what runs next?** and review the [ordering choices](/en/platform-intro/pages/assignment-gantt). Set **Hold limit (working hours)** between 1 minute and 720 hours, then save. Confirm the displayed forecast rule. Other users can compare alternatives without changing this company setting.
+
+Only working time counts toward the hold limit. Without planned shifts, 24 hours count as the full limit. Once exceeded, paused work stops holding the machine in the forecast and work behind it moves up.
+
 ## Review Conflicts After an Order Import
 
 When [Order Upload](/en/platform-intro/pages/erp-upload-planner) flags a conflict for manual resolution, use the order and operation details in the import summary to find the affected work in the planner. Review its current destination, status, notes, and related order before changing the plan.
@@ -128,7 +182,7 @@ With Queue Position enabled, running and on-hold assignments stay at the top and
 
 Use [Assignment Gantt](/en/platform-intro/pages/assignment-gantt) to inspect the timeline. Its drag-to-reschedule mode is **Experimental and read-only**; use supported planner controls for changes.
 
-Use the view switch to open Assignment Gantt for a timeline review, then return to Assignment Planner to change assignments.
+Use the view switch to open Assignment Gantt for a timeline review. Use its **Move** controls for eligible work or return to Assignment Planner to work with queues.
 
 ## Decision Points
 
@@ -150,7 +204,7 @@ The machine queue reflects the latest planning decision, future assignments foll
 - Removing an assignment sends the work back out of the planned queue rather than completing it.
 - If a dragged order does not match the displayed order, check whether **Sort by Queue Position** is enabled or sorting rules are active.
 - In-progress and completed assignments cannot move to another column.
-- Automatic arrangement can change future assignments, so review overlap warnings before accepting the result.
+- Review the actual saving result in **Improve plan**. A preview can look better than the result that can be saved because some work must keep its place.
 - **Times may be too early**: review missing machines or dates, planned durations, shift plans, and current production entries before relying on the finish.
 - Warning counts differ between pages: Assignment Gantt covers the displayed machines from last week to three weeks ahead; Orders & Products counts late deliveries across the company.
 

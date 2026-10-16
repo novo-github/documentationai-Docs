@@ -15,6 +15,8 @@ description: "BDE-Assistent, Alarmton sowie Automator-Vorlagen und Benachrichtig
 | Warum bleiben Rüst- und Ausschusswerte erst gleich und springen dann? | [Antwort](/de/help-center/faq/warnings-and-automation#metrics) |
 | Warum löst mein Alarm nach dem Wechsel zu aktiven Schichten nicht mehr aus? | [Antwort](/de/help-center/faq/warnings-and-automation#active-shift-alerts) |
 | Warum löst meine Regel für einen Arbeitsplatz nie aus? | [Antwort](/de/help-center/faq/warnings-and-automation#work-center-alert) |
+| Kann ich vor einer verspäteten Lieferung einen Alarm erhalten? | [Antwort](/de/help-center/faq/warnings-and-automation#delivery-alert) |
+| Warum kann ich eine Verzögerungswarnung nicht mit Maschinenbedingungen kombinieren? | [Antwort](/de/help-center/faq/warnings-and-automation#schedule-rule) |
 
 <a id="enable-warnings" />
 
@@ -75,3 +77,15 @@ Manche Alarmbedingungen lösen bei Maschinen mit aktiven Schichten nicht aus. Pr
 ## Warum löst meine Regel für einen Arbeitsplatz nie aus?
 
 Arbeitsplätze haben keine AVA. Regeln mit Maschinen- oder Sensormesswerten lösen für sie nie aus. **Arbeitsplatz: löst nie aus** kennzeichnet diese Grenze in Alarmregeln. Automator-Hinweise nennen die betroffenen Kennzahlen und Arbeitsplätze. Prüfen Sie Bedingungen und Ziele, bevor Sie sich auf die Regel verlassen. Siehe [Alarmregeln](/de/platform-intro/pages/alert-rules) und [Automator](/de/platform-intro/pages/automator).
+
+<a id="delivery-alert" />
+
+## Kann ich vor einer verspäteten Lieferung einen Alarm erhalten?
+
+Ja. Ein Administrator kann eine Automator-Regel mit **Forecaster → Liefertermin gefährdet** größer als 0 erstellen. Wählen Sie vor dem Speichern E-Mail-Empfänger. Öffnen Sie das entstandene Ereignis und prüfen Sie die Verzögerung mit **Im Gantt anzeigen**. Folgen Sie [Automator-Regel erstellen](/de/platform-intro/workflows/automator-rule-creation).
+
+<a id="schedule-rule" />
+
+## Warum kann ich eine Verzögerungswarnung nicht mit Maschinenbedingungen kombinieren?
+
+Terminplan-Bedingungen benötigen eine eigene Regel ohne Maschinen- oder Auftragsbedingungen. Auch die Beschränkung auf aktive Schichten wird dafür nicht verwendet. Erstellen Sie eine separate Forecaster-Regel und prüfen Sie Empfänger und Zeiten. Siehe [Automator](/de/platform-intro/pages/automator).

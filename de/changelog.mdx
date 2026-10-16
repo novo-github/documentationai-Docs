@@ -22,6 +22,51 @@ toc: false
   Das Lesen der Prognose ändert weder Ihren Plan noch Ihre Liefertermine. Prüfen Sie die Warnungen mit dem Ablauf [Maschinenzuweisungen planen](/de/platform-intro/workflows/assignment-planner), bevor Sie über Änderungen entscheiden.
 </Update>
 
+<Update label="2026-10-14" description="v1.5.117–v1.5.120" tags={["Funktion", "Verbesserung", "Fehlerbehebung"]}>
+  {/* commits: 59cb850, eb9335e, ebce70a, b9b5f95, e951d9f, 85c9afe, 82982df */}
+
+  **Release-Zeitraum:** 11.–14. Oktober 2026
+
+  ### Neue Funktionen
+
+  #### [Lieferverzögerungen erkennen und bessere Pläne vergleichen](/de/platform-intro/pages/assignment-gantt)
+  {/* feature: schedule-forecaster */}
+
+  Der **Forecaster** zeigt erwartete Start- und Endzeiten über Maschinen, Schichten und frühere Schritte hinweg. Finden Sie unter **Aufträge & Produkte → Forecaster** verspätete Lieferungen und fehlende Planungsschritte. Wählen Sie im **Zuweisungsplaner → Forecaster-Prüfung** den Vergleichstermin. Verfolgen Sie im **Zuweisungs-Gantt → Handlungsbedarf**, was einen Auftrag aufhält.
+
+  Vergleichen Sie wartende Arbeit mit **Plan verbessern**. Prüfen Sie **Als Plan speichern**, bevor Sie Warteschlangen und geplante Termine ändern. Eine Vorschau speichert nichts. Laufende und angehaltene Zuweisungen bleiben an ihrem Platz. Folgen Sie [Maschinenzuweisungen planen](/de/platform-intro/workflows/assignment-planner).
+
+  Administratoren legen unter **Planungseinstellungen** die Reihenfolge des Werks und das Limit für Wartestellung fest. In der Maschinenkonfiguration können sie außerdem **Planung → Parallele Aufträge** einstellen. So berücksichtigen erwartete Zeiten, wie viele Zuweisungen die Maschine gleichzeitig bearbeiten kann.
+
+  #### [Bei drohenden Lieferverzögerungen benachrichtigt werden](/de/platform-intro/pages/automator)
+  {/* feature: forecaster-alerts */}
+
+  Administratoren können beim Erstellen einer **Automator**-Regel jetzt Bedingungen aus **Forecaster** wählen. Prüfen Sie gefährdete Liefertermine, verspätete Endzeiten, überfällige Starts, lange Unterbrechungen oder Verzögerungen anderer Zuweisungen und Aufträge. Beispielsweise meldet **Liefertermin gefährdet** größer als 0 jedes erwartete Ende nach dem Liefertermin.
+
+  Diese Bedingungen lassen sich nicht mit Maschinen- oder Auftragsbedingungen in derselben Regel kombinieren. Die Beschränkung auf aktive Schichten gilt hier nicht. Wählen Sie Empfänger und prüfen Sie die Regel vor dem Speichern. Mit **Im Gantt anzeigen** öffnen Sie das betroffene Ereignis zur Prüfung im Zeitplan. Folgen Sie [Automator-Regel erstellen](/de/platform-intro/workflows/automator-rule-creation).
+
+  ### Verbesserungen
+
+  #### [Kennzahlen und Schichtaufträge auf derselben Anzeige sehen](/de/platform-intro/pages/hall-plan)
+  {/* feature: hall-plan-order-rotation */}
+
+  Administratoren können in den Hallenplan-Anzeigeeinstellungen die Spalte **Aktiver Auftrag** einblenden und **Wechsel Kennzahlen / Aufträge** einstellen. Jede Maschine zeigt abwechselnd Kennzahlen und die während der Schicht bearbeiteten Aufträge. Die Wechselzeit ist auf die halbe Seitenwechselzeit begrenzt, damit beide Ansichten vor dem Seitenwechsel erscheinen.
+
+  **Keine Aufträge in dieser Schicht bearbeitet** erklärt eine leere Auftragsansicht. Folgen Sie [Hallenplandisplay einrichten](/de/platform-intro/workflows/hall-display-setup).
+
+  #### [Verpasste geplante Berichte nachträglich erhalten](/de/platform-intro/pages/report-archive)
+  {/* feature: scheduled-report-redelivery */}
+
+  Geplante Berichte können jetzt erneut an Empfänger versendet werden, die sie verpasst haben. Im **Berichtsarchiv** können Sie außerdem die Versandanzahl prüfen und einen fertigen Bericht herunterladen. Folgen Sie [Berichte herunterladen und aktualisieren](/de/platform-intro/workflows/reports).
+
+  ### Fehlerbehebungen
+
+  #### [Unternehmensprioritäten auf Hallendisplays lesen](/de/platform-intro/pages/hall-plan)
+  {/* feature: hall-plan-kiosk-priorities */}
+
+  Hallenplan-Kiosks konnten die Prioritätsstufen des Unternehmens nicht lesen. Gemeinsame Anzeigen nutzen diese Stufen jetzt für Auftrags- und Arbeitsgangprioritäten wie die Ansichten mit Anmeldung.
+</Update>
+
 <Update label="2026-10-10" description="v1.5.109–v1.5.116" tags={["Funktion", "Verbesserung", "Fehlerbehebung"]}>
   {/* commits: ea8a47d, 8303a62, 8bb1e8e, 5d5316b, 41214e8, 1bd6219, 1d39057, 71eaffd, 0ac86ac, 5fa51d2, 97cf98b, df03372, 32922b0, ef9e6ec, 7202217, 76b5a70, e856457, f61d6c8, d5d0121, 4052254, 66a98cf, cbea5d0 */}
 

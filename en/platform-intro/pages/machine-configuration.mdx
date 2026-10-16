@@ -53,7 +53,9 @@ An optional **Energy monitor** measures consumption, voltage, power factor, and 
 
 ## Simultaneous Work and the Forecaster
 
-The setting for simultaneous jobs tells you how many jobs this machine can run at the same time. The **Forecaster** uses this value when working out expected times. As an administrator, check that it matches how the machine is used. See the [Forecaster explanation](/en/platform-intro/pages/assignment-gantt).
+Administrators set **Planning → Jobs in parallel** in the machine’s basic information. Enter a whole number from 1 to 100 and save the tab. This is how many assignments the machine can run at the same time; the **Forecaster** uses it for expected times.
+
+Set the value to match actual capacity. For example, 2 means the forecast can allow two assignments to run together. Follow [Configure a Machine](/en/platform-intro/workflows/machine-configuration).
 
 ## Timeline Rules and Ranges
 

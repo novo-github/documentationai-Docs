@@ -42,6 +42,21 @@ For slow cycles, choose a whole number from 1 to 1000 for the number of recent c
 
 Preparation and scrap values update only when an operator records a PDA entry. They may stay steady and then jump. A sensor alone does not update entered scrap quantities.
 
+## Forecaster Alerts
+
+Administrators can choose **Forecaster** conditions to monitor delays and their effect on other work. The forecast uses the plant’s [planning settings](/en/platform-intro/pages/assignment-gantt).
+
+| Condition | What it checks |
+| --- | --- |
+| **Delivery Date at Risk** | Minutes the expected finish falls after the order’s delivery date. Use greater than 0 for any forecast delivery delay. |
+| **Assignment Running Late** | Minutes a running assignment is expected to finish after its planned end. |
+| **Start Overdue** | Minutes since the planned start of work that has not started although the machine was free. |
+| **On Hold Too Long** | Minutes on hold once the hold limit has been exceeded and the machine released in the forecast. Use greater than 0. |
+| **Assignments Pushed** | Other assignments pushed back by at least 15 minutes by one assignment’s delay. |
+| **Delivery Dates Pushed** | Orders whose delivery date is put at risk by one assignment’s delay. |
+
+Schedule conditions cannot be combined with machine or order conditions in one rule. The active-shift restriction is not used for schedule rules. Review recipients and timing, then follow [Create an Automator Rule](/en/platform-intro/workflows/automator-rule-creation). Open a schedule event and choose **Show in Gantt** to inspect the affected work.
+
 ## Responses and Escalation
 
 You can let an alert resolve after its condition has been absent for the chosen time, or leave it open until someone resolves it. You can also send another email on resolution. Escalation emails selected escalation recipients if the alert is not handled in time.

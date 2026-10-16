@@ -13,9 +13,11 @@ description: "Registrieren Sie ein Hallendisplay, wählen Sie Kioskinhalte und Z
 2. Registrieren Sie den Monitor unter **Displays**. Prüfen Sie seine Netzwerkkennungen.
 3. Wählen Sie Hallenplanspalten, Kennzahl, Sprache, Maschinensortierung und Anzeigeversion.
 4. Setzen Sie **Data refresh** und **Page switch**. Der Seitenwechsel darf nicht langsamer als die Datenaktualisierung sein.
-5. Setzen Sie **Key figures / orders switch** auf höchstens die Hälfte der Seitenwechselzeit. Bei 20 Sekunden Seitenwechsel sind hier beispielsweise höchstens 10 Sekunden möglich.
+5. Blenden Sie die Spalte **Aktiver Auftrag** ein und stellen Sie **Wechsel Kennzahlen / Aufträge** ein. Dies bestimmt, wie lange jede Maschine Kennzahlen und anschließend ihre Schichtaufträge zeigt. Die Einstellung ist nur bei sichtbarer Spalte verfügbar und auf die halbe Seitenwechselzeit begrenzt. Bei 20 Sekunden Seitenwechsel sind hier höchstens 10 Sekunden möglich.
 6. Setzen Sie **Page zoom** für den eingesetzten Monitor; diese Einstellung gilt für diesen Monitor.
 7. Öffnen Sie den Hallenplan auf dem Display mit dessen API-Schlüssel und prüfen Sie Maschinen und Kürzel: **OEE**, **AVL**, **PRO**, **PCS**.
+
+Prüfen Sie beide Ansichten des Wechsels auf dem Display. **Keine Aufträge in dieser Schicht bearbeitet** erklärt eine leere Auftragsansicht. Prüfen Sie nach verkürzter Seitenwechselzeit auch die Auftragswechselzeit: Ihr Höchstwert wird ebenfalls kürzer. Kontrollieren Sie, ob Auftrags- und Arbeitsgangprioritäten die Stufen Ihres Unternehmens verwenden.
 
 ## Produktinformationen auswählen
 

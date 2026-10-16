@@ -17,6 +17,15 @@ description: "Wählen Sie Geltungsbereich, Bedingungen, Zeiten, Reaktion und Esk
 6. Lesen Sie unter **Prüfen** die Bereiche **Was diese Regel bewirkt** und **Ihre Einstellungen**. Prüfen Sie Hinweise auf fehlende Empfänger, alle Maschinen oder eine ausgeschaltete Regel. Ohne Empfänger erscheinen Alarme in den Ereignissen, aber niemand erhält eine E-Mail. Auch die Eskalation benötigt eigene Empfänger.
 7. Speichern Sie und kontrollieren Sie die Regel in der Liste. Öffnen Sie ein ausgelöstes Ereignis und lesen Sie seine Details, bevor Sie es bestätigen oder lösen.
 
+## Einen Liefer- oder Verzögerungsalarm erstellen
+
+1. Beginnen Sie als Administrator eine Regel und wählen Sie Bedingungen aus **Forecaster**. Wählen Sie **Liefertermin gefährdet** und einen Vergleich größer als 0, um jedes erwartete Ende nach dem Liefertermin zu melden.
+2. Wählen Sie die Maschinen und prüfen Sie die Einheit der Bedingung. Verspätete Endzeiten, überfällige Starts und lange Unterbrechungen verwenden Minuten. **Verschobene Zuweisungen** und **Verschobene Liefertermine** zählen betroffene Arbeit.
+3. Verwenden Sie eine eigene Regel für Terminplan-Bedingungen. Sie lassen sich nicht mit Maschinen- oder Auftragsbedingungen kombinieren. Die Beschränkung auf aktive Schichten gilt für diese Regel nicht.
+4. Wählen Sie Empfänger, prüfen Sie Zeiten und Zusammenfassung und speichern Sie. Öffnen Sie ein entstandenes Ereignis und nutzen Sie **Im Gantt anzeigen**, um die Ursache vor einer Planänderung zu prüfen.
+
+Alle sechs Bedingungen finden Sie unter [Forecaster-Alarme](/de/platform-intro/pages/automator).
+
 ## Erwartetes Ergebnis und häufige Probleme
 
 Eine aktivierte, gespeicherte Regel prüft die gewählten Maschinen und erzeugt Alarme, wenn Bedingungen und Zeiten erfüllt sind. Eine ausgeschaltete Regel bleibt bis zur Aktivierung gespeichert.

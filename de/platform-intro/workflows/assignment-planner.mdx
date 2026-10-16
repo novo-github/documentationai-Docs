@@ -44,7 +44,7 @@ Beginnen Sie auf der [Seite Zuweisungsplaner](/de/platform-intro/pages/assignmen
     Nutzen Sie das Zuweisungs-Gantt, um Zuweisungen über ausgewählte Maschinen hinweg zu prüfen, Überschneidungen zu erkennen und bei Bedarf einen zugehörigen Auftrag zu öffnen.
   </Step>
   <Step title="Ordnen Sie zukünftige Zuweisungen bei Bedarf an" icon="arrow-right" title-type="p">
-    Nutzen Sie bei Bedarf die automatische Anordnung zukünftiger Zuweisungen. Prüfen Sie Warnungen zu Überschneidungen, bevor Sie den neu angeordneten Zeitplan übernehmen; die laufende Produktion bleibt unverändert. Kann die automatische Zuweisung einen Auftrag nicht einplanen, lesen Sie die Begründung, etwa eine fehlende verfügbare Maschine. Prüfen Sie den Plan, bevor Sie es erneut versuchen.
+    Öffnen Sie **Plan verbessern**, vergleichen Sie Alternativen und prüfen Sie die betroffenen Zuweisungen vor **Als Plan speichern**. Laufende und angehaltene Arbeit bleibt an ihrem Platz. Folgen Sie den ausführlichen Vergleichsschritten unten.
   </Step>
   <Step title="Speichern Sie die Warteschlangenänderungen" icon="arrow-right" title-type="p">
     Lassen Sie den Planer die Warteschlangenänderungen zurück in die Plattform speichern.
@@ -114,6 +114,60 @@ Laufende und abgeschlossene Zuweisungen können nicht in eine andere Spalte vers
 
 Hat der Forecaster kein erwartetes Ende, vergleicht der Zuweisungsplaner nur den Auftragstermin mit heute. Sind erwartete Zeiten im Assignment Gantt nicht verfügbar, sehen Sie geplante Zeiten ohne Verzögerungen, während der Forecaster es erneut versucht. Keine dieser Ansichten bestätigt eine rechtzeitige Lieferung.
 
+## Verspätete Aufträge finden und fehlende Schritte planen
+
+<Steps>
+  <Step title="Finden Sie die betroffenen Aufträge" icon="arrow-right" title-type="p">
+    Öffnen Sie mit Zugriff auf Aufträge & Produkte den **Forecaster**. Wählen Sie **Liefertermin gefährdet → In der Tabelle zeigen** oder **Davon mit nicht geplanten Schritten → In der Tabelle zeigen**. Zeitraum und Statusfilter pausieren. Auftrag, Produkt, Kunde und Maschine gelten weiter.
+  </Step>
+  <Step title="Finden Sie Aufträge außerhalb der Plantafel" icon="arrow-right" title-type="p">
+    Wählen Sie **Gar nicht geplant → Liste zeigen**. Öffnen Sie einen Auftrag und wählen Sie **Schritte zuweisen** oder **Im Planer öffnen**. Diese Aufträge haben einen Liefertermin, aber keinen Arbeitsgang auf einer Maschine oder in einem Hallenpool.
+  </Step>
+  <Step title="Weisen Sie den fehlenden früheren Schritt zu" icon="arrow-right" title-type="p">
+    Prüfen Sie im Zuweisungs-Gantt **Handlungsbedarf → Früherer Schritt nicht geplant**. Folgen Sie **Diesen Schritt anzeigen** und dann, wenn verfügbar, **Einer Maschine zuweisen**. Wählen Sie eine Maschine, auf der Sie planen dürfen. Auch ein Schritt im Hallenpool benötigt eine Maschine.
+  </Step>
+  <Step title="Prüfen Sie Termine und die neue Prognose" icon="arrow-right" title-type="p">
+    Die Zuweisung verwendet die eigenen geplanten Termine des Schritts. Fehlt ein geplanter Start, setzen Sie Termine, bevor Sie ihn als geplant betrachten. Prüfen Sie die neu berechneten Zeiten der späteren Schritte und ob der Liefertermin weiterhin gefährdet ist.
+  </Step>
+</Steps>
+
+## Einen Plan vergleichen und speichern
+
+<Steps>
+  <Step title="Wählen Sie Maschinen und vergleichen Sie" icon="arrow-right" title-type="p">
+    Öffnen Sie im Zuweisungs-Gantt **Plan verbessern**. Vergleichen Sie **Heute** mit den anderen Reihenfolgen für die Maschinen auf der Plantafel. Prüfen Sie **Gefährdete Liefertermine**, **Verspätung gesamt** und die Liste der Zuweisungen, die sich verschieben würden.
+  </Step>
+  <Step title="Unterscheiden Sie Vorschau und Speicherergebnis" icon="arrow-right" title-type="p">
+    Mit **Auf Plantafel zeigen** sehen Sie eine Alternative ohne Speicherung. Lesen Sie, was das Speichern tatsächlich bewirkt. Laufende, angehaltene und blockierte Zuweisungen bleiben an ihrem Platz. Verschlechtert das Speichern die Lieferung, wählen Sie **Zurück zu heute** und prüfen Sie stattdessen fehlende Planungsschritte.
+  </Step>
+  <Step title="Prüfen und speichern Sie" icon="arrow-right" title-type="p">
+    Wählen Sie **Als Plan speichern**. Prüfen Sie geänderte Warteschlangenplätze und Termine, die Wirkung auf Aufträge sowie **Unverändert bleiben**. Bestätigen Sie nur die gewünschten Änderungen. Liefertermine und die Reihenfolgeregel des Werks bleiben erhalten. Hat jemand während der Prüfung den Plan geändert, wird nichts gespeichert. Prüfen Sie die neu geladene Plantafel erneut.
+  </Step>
+  <Step title="Prüfen Sie das Ergebnis" icon="arrow-right" title-type="p">
+    Kontrollieren Sie die neue Warteschlange und Watchmen-Termine auf der Plantafel und im Zuweisungsplaner. Mit **Rückgängig** kehren Sie bei Bedarf zum vorherigen Plan zurück.
+  </Step>
+</Steps>
+
+## Eine Zuweisung nach Prüfung ihrer Wirkung verschieben
+
+<Steps>
+  <Step title="Wählen Sie die Verschiebung" icon="arrow-right" title-type="p">
+    Öffnen Sie im Zuweisungs-Gantt eine Zuweisung. Wählen Sie **Verschieben → Früher**, **Später**, **Als Nächstes** oder **Auf Maschine…**. Lesen Sie die Erklärung, wenn die Aktion nicht verfügbar ist. Laufende, angehaltene und abgeschlossene Arbeit bleibt an ihrem Platz. Bereits erfasste Arbeit verhindert den Maschinenwechsel.
+  </Step>
+  <Step title="Prüfen Sie vor dem Speichern die übrige Arbeit" icon="arrow-right" title-type="p">
+    Prüfen Sie erwarteten Start und Ende, später beginnende andere Zuweisungen und Änderungen verspäteter Aufträge. Speichern Sie, nachdem Sie die neu zu planenden Zuweisungen der Maschine geprüft haben.
+  </Step>
+  <Step title="Prüfen Sie die Verschiebung oder setzen Sie sie zurück" icon="arrow-right" title-type="p">
+    Kontrollieren Sie die aktualisierte Warteschlange. Nutzen Sie bei Bedarf **Rückgängig**. Hat jemand die Warteschlange inzwischen geändert, ist automatisches Zurücksetzen nicht möglich. Prüfen Sie sie und verschieben Sie die Zuweisung von Hand zurück.
+  </Step>
+</Steps>
+
+## Die Prognoseregel des Werks einstellen
+
+Administratoren öffnen im Zuweisungs-Gantt **Planungseinstellungen → Planung**. Wählen Sie **Wie entscheidet Ihr Werk, was als Nächstes läuft?** und prüfen Sie die [Reihenfolgen](/de/platform-intro/pages/assignment-gantt). Stellen Sie **Limit für Wartestellung (Arbeitsstunden)** zwischen 1 Minute und 720 Stunden ein und speichern Sie. Prüfen Sie die angezeigte Prognoseregel. Andere Benutzer können Alternativen vergleichen, ohne diese Unternehmenseinstellung zu ändern.
+
+Nur Arbeitszeit zählt zum Limit. Ohne geplante Schichten zählen 24 Stunden als volles Limit. Nach Überschreitung belegt pausierte Arbeit die Maschine in der Prognose nicht mehr. Arbeit dahinter rückt auf.
+
 ## Konflikte nach einem Auftragsimport prüfen
 
 Wenn der [Auftragsimport](/de/platform-intro/pages/erp-upload-planner) einen Konflikt zur manuellen Klärung kennzeichnet, suchen Sie anhand der Auftrags- und Operationsangaben in der Importzusammenfassung die betroffene Arbeit im Planer. Prüfen Sie ihr aktuelles Ziel, ihren Status, die Notizen und den zugehörigen Auftrag, bevor Sie den Plan ändern.
@@ -128,7 +182,7 @@ Bei aktiver Queue Position bleiben laufende und pausierte Zuweisungen oben; die 
 
 [Assignment Gantt](/de/platform-intro/pages/assignment-gantt) zeigt die Zeitleiste. Verschiebung durch Ziehen ist **Experimental und schreibgeschützt**. Verwenden Sie unterstützte Planersteuerungen für Änderungen.
 
-Öffnen Sie über die Ansichtsauswahl Assignment Gantt zur Zeitplanprüfung. Kehren Sie zum Ändern von Zuweisungen in den Zuweisungsplaner zurück.
+Öffnen Sie über die Ansichtsauswahl das Zuweisungs-Gantt zur Zeitplanprüfung. Nutzen Sie dort **Verschieben** für geeignete Arbeit oder kehren Sie für die Arbeit mit Warteschlangen in den Zuweisungsplaner zurück.
 
 ## Entscheidungspunkte
 
@@ -150,7 +204,7 @@ Die Maschinenwarteschlange spiegelt die letzte Planungsentscheidung wider, zukü
 - Das Entfernen einer Zuweisung schickt die Arbeit aus der geplanten Warteschlange zurück, statt sie abzuschließen.
 - Entspricht die angezeigte Reihenfolge nicht Ihrer Anordnung durch Ziehen, prüfen Sie, ob nach Warteschlangenposition oder nach Regeln sortiert wird.
 - Laufende und abgeschlossene Zuweisungen können nicht in eine andere Spalte verschoben werden.
-- Die automatische Anordnung kann zukünftige Zuweisungen ändern. Prüfen Sie deshalb Warnungen zu Überschneidungen, bevor Sie das Ergebnis übernehmen.
+- Prüfen Sie unter **Plan verbessern** das tatsächliche Ergebnis des Speicherns. Eine Vorschau kann günstiger aussehen, weil manche Arbeit beim Speichern an ihrem Platz bleiben muss.
 - **Zeiten können zu früh sein**: Prüfen Sie fehlende Maschinen oder Termine, geplante Dauern, Schichtpläne und aktuelle Produktionseinträge, bevor Sie sich auf das Ende verlassen.
 - Warnungszahlen unterscheiden sich: Assignment Gantt umfasst die angezeigten Maschinen von letzter Woche bis drei Wochen voraus. Aufträge & Produkte zählt verspätete Lieferungen im gesamten Unternehmen.
 

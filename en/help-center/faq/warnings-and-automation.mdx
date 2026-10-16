@@ -15,6 +15,8 @@ description: "Understand PDA Assistant warnings, alarm sound, and Automator temp
 | Why do setup and scrap values stay the same and then jump? | [Answer](/en/help-center/faq/warnings-and-automation#metrics) |
 | Why did my alert stop working after I switched to active shifts? | [Answer](/en/help-center/faq/warnings-and-automation#active-shift-alerts) |
 | Why does my rule never trigger for a work center? | [Answer](/en/help-center/faq/warnings-and-automation#work-center-alert) |
+| Can I get an alert before an order misses delivery? | [Answer](/en/help-center/faq/warnings-and-automation#delivery-alert) |
+| Why can I not combine a delay warning with my machine conditions? | [Answer](/en/help-center/faq/warnings-and-automation#schedule-rule) |
 
 <a id="enable-warnings" />
 
@@ -75,3 +77,15 @@ Some alert conditions do not fire for machines with active shifts. When creating
 ## Why does my rule never trigger for a work center?
 
 Work centers have no AVA. Rules using machine or sensor measurements never trigger for them. **Work center: never triggers** identifies this limit in Alert Rules; Automator warnings name the affected measurements and work centers. Review the conditions and destinations before relying on the rule. See [Alert Rules](/en/platform-intro/pages/alert-rules) and [Automator](/en/platform-intro/pages/automator).
+
+<a id="delivery-alert" />
+
+## Can I get an alert before an order misses delivery?
+
+Yes. An administrator can create an Automator rule with **Forecaster → Delivery Date at Risk** greater than 0. Choose email recipients before saving. Open the resulting event and use **Show in Gantt** to inspect the delay. Follow [Create an Automator Rule](/en/platform-intro/workflows/automator-rule-creation).
+
+<a id="schedule-rule" />
+
+## Why can I not combine a delay warning with my machine conditions?
+
+Schedule conditions must stay in a separate rule from machine or order conditions. Their active-shift restriction is also unused. Create a separate Forecaster rule and review its recipients and timing. See [Automator](/en/platform-intro/pages/automator).
