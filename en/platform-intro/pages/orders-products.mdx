@@ -52,6 +52,20 @@ Use **Needs Attention** to find orders with exceeded durations, slower cycle tim
 
 The progress source determines which production record you are reviewing: PDA entries are quantities recorded in Data Acquisition, while detected cycle counts come from machine cycles. Check the selected source when comparing progress. Material scrap and work scrap are shown separately, and produced totals include recorded scrap.
 
+### Find Orders That May Miss Delivery
+
+The **Forecaster** summary card counts open orders expected to finish after their delivery date, or whose delivery date has already passed. Click the card for details about orders that will miss delivery if nothing changes. Orders with steps that have no machine yet may finish even later than shown.
+
+In the **Forecaster** column, the top result checks the delivery date and the bottom result checks the planned end. Red means late for delivery. Amber means **at risk** or past the planned end. Green means on time. The step count tells you how many steps are on a machine; it does not mean those steps are finished.
+
+While the Forecaster's late-order filter is active, you see every late order regardless of date range and status. Order, product, customer, and machine filters still apply. The company-wide count can differ from [Assignment Gantt](/en/platform-intro/pages/assignment-gantt), which shows warnings for the displayed machines from last week to three weeks ahead.
+
+### Open the Forecaster Help
+
+Click the information icon beside **Forecaster** on the summary card, in its details, or in the table column heading. You can also select **How does the Forecaster work?** at the bottom of the card's details. Clicking the card's information icon opens the help directly, without opening the card's details.
+
+The help explains expected times, colours, and missing planning details. The Forecaster never changes your plan by itself. See the [full explanation](/en/platform-intro/pages/assignment-gantt) or the [planning workflow](/en/platform-intro/workflows/assignment-planner) before deciding how to respond.
+
 ### Use Company Priority Levels
 
 Priority names, numbers, and colors follow the levels configured by your administrator. The same levels are used in imports and assignment planning. See [Priority Levels in the Admin Panel](/en/platform-intro/pages/admin-panel) for presets and customization.

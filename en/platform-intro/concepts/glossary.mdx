@@ -375,6 +375,36 @@ Hides surrounding interface to enlarge the analysis.
 
 [Learn more](/en/platform-intro/pages/timeline-analysis).
 
+### Forecaster
+
+Shows expected start and finish times from current work, waiting jobs, and planned shifts. It updates by itself about every minute and never changes your plan or delivery dates by itself. Open **How does the Forecaster work?** for its explanation.
+
+#### Expected and Planned Times
+
+Expected times show when work is likely to happen, including delays. Planned times show the schedule you set. The **delivery date** is the customer promise; the **planned end** is the finish in your plan.
+
+#### At Risk
+
+**at risk** (previously **tight**) is an amber warning. The order is not late yet, but the remaining work barely fits or an earlier step is not planned. The help calls this **At risk**. Only the name changed; the warning means the same thing.
+
+#### On Time, Late, and Finish Not Known
+
+- **On time**: green; expected to finish before the date.
+- **Late +3 h**: red; expected to finish three hours after the date. **Late, date passed** means the date has passed and the order is unfinished.
+- **Finish not known**: blue; the date is ahead, but a step has no machine or no date, so no finish can be worked out.
+
+Missing the delivery date is red. Missing only the planned end is amber.
+
+#### Times May Be Too Early
+
+**Times may be too early** (previously **Forecast not reliable**) warns that an order may finish later than shown. Check for steps without a machine or date. Missing planned durations, missing shift plans, or delayed production entries can also make expected times too early.
+
+#### Steps on a Machine
+
+The step count tells you how many of the order's steps have a machine. It does not count finished steps. Work without a machine can make the expected finish too early.
+
+[Learn more](/en/platform-intro/pages/assignment-gantt).
+
 ## G
 
 ### GDPR / DSGVO

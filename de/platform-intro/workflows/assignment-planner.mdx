@@ -79,6 +79,25 @@ Laufende und abgeschlossene Zuweisungen können nicht in eine andere Spalte vers
   </Step>
 </Steps>
 
+## Forecaster-Warnungen vor Planänderungen prüfen
+
+<Steps>
+  <Step title="Prüfen Sie den Vergleichstermin" icon="arrow-right" title-type="p">
+    Öffnen Sie im Zuweisungsplaner die Auswahl für die Terminprüfung mit dem **Forecaster** und prüfen Sie den gewählten Termin. Die farbige Marke an der Karte vergleicht den Auftrag mit diesem Termin: Rot bedeutet verspätet, Gelb **gefährdet** und Grün im Termin.
+  </Step>
+  <Step title="Lesen Sie die Erklärung" icon="arrow-right" title-type="p">
+    Wählen Sie unten im Menü **Wie funktioniert der Forecaster?**. Die Hilfe öffnet sich, ohne Ihren gewählten Vergleichstermin zu ändern. Lesen Sie, was die Farben bedeuten und wann Zeiten zu früh sein können. Schließen Sie anschließend die Hilfe, um zur Planung zurückzukehren.
+  </Step>
+  <Step title="Prüfen Sie die erwarteten Zeiten" icon="arrow-right" title-type="p">
+    Öffnen Sie [Assignment Gantt](/de/platform-intro/pages/assignment-gantt). Wählen Sie in den Ansichtsoptionen die erwarteten Zeiten einschließlich Verzögerungen oder die geplanten Termine zur Prüfung Ihres Plans. Öffnen Sie die Warnungsübersicht und prüfen Sie die wichtigsten Warnungen zuerst. Öffnen Sie den zugehörigen Auftrag, um Arbeitsgänge ohne Maschine oder Termin zu prüfen. Kontrollieren Sie außerdem geplante Dauern, Maschinenschichten und die zeitnahe Erfassung laufender Arbeit am PDA/BDE.
+  </Step>
+  <Step title="Entscheiden Sie über eine Planänderung" icon="arrow-right" title-type="p">
+    Das Lesen der Prognose ändert nichts. Öffnen Sie **Plan verbessern**, wenn Sie Reihenfolgen wartender Aufträge vergleichen möchten. Prüfen Sie den Vergleich, bevor Sie **Als Plan speichern** wählen. Das Speichern ändert geplante Termine und Warteschlangen. Es lässt sich rückgängig machen und ändert nie Liefertermine.
+  </Step>
+</Steps>
+
+Hat der Forecaster kein erwartetes Ende, vergleicht der Zuweisungsplaner nur den Auftragstermin mit heute. Sind erwartete Zeiten im Assignment Gantt nicht verfügbar, sehen Sie geplante Zeiten ohne Verzögerungen, während der Forecaster es erneut versucht. Keine dieser Ansichten bestätigt eine rechtzeitige Lieferung.
+
 ## Konflikte nach einem Auftragsimport prüfen
 
 Wenn der [Auftragsimport](/de/platform-intro/pages/erp-upload-planner) einen Konflikt zur manuellen Klärung kennzeichnet, suchen Sie anhand der Auftrags- und Operationsangaben in der Importzusammenfassung die betroffene Arbeit im Planer. Prüfen Sie ihr aktuelles Ziel, ihren Status, die Notizen und den zugehörigen Auftrag, bevor Sie den Plan ändern.
@@ -99,6 +118,8 @@ Bei aktiver Queue Position bleiben laufende und pausierte Zuweisungen oben; die 
 - Ob eine Aufgabe ungeplant bleiben, auf eine andere Maschine wechseln oder aus einer Warteschlange entfernt werden soll.
 - Welche Maschinen in der Gantt-Zeitleiste erscheinen sollen.
 - Ob Warnungen zu Überschneidungen manuell oder durch automatische Anordnung zukünftiger Zuweisungen gelöst werden sollen.
+- Ob erwartete Zeiten alle Arbeitsgänge, Dauern und Schichten berücksichtigen, bevor Sie sich darauf verlassen.
+- Ob Sie einen verglichenen Plan speichern oder den bestehenden Plan beibehalten.
 
 ## Erwartetes Ergebnis
 
@@ -112,6 +133,8 @@ Die Maschinenwarteschlange spiegelt die letzte Planungsentscheidung wider, zukü
 - Entspricht die angezeigte Reihenfolge nicht Ihrer Anordnung durch Ziehen, prüfen Sie, ob nach Warteschlangenposition oder nach Regeln sortiert wird.
 - Laufende und abgeschlossene Zuweisungen können nicht in eine andere Spalte verschoben werden.
 - Die automatische Anordnung kann zukünftige Zuweisungen ändern. Prüfen Sie deshalb Warnungen zu Überschneidungen, bevor Sie das Ergebnis übernehmen.
+- **Zeiten können zu früh sein**: Prüfen Sie fehlende Maschinen oder Termine, geplante Dauern, Schichtpläne und aktuelle Produktionseinträge, bevor Sie sich auf das Ende verlassen.
+- Warnungszahlen unterscheiden sich: Assignment Gantt umfasst die angezeigten Maschinen von letzter Woche bis drei Wochen voraus. Aufträge & Produkte zählt verspätete Lieferungen im gesamten Unternehmen.
 
 ## Verwandte Seiten
 

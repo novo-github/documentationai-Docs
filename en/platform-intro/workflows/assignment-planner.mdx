@@ -79,6 +79,25 @@ In-progress and completed assignments cannot move to another column. You can sti
   </Step>
 </Steps>
 
+## Review Forecaster Warnings Before Changing the Plan
+
+<Steps>
+  <Step title="Check which date the warning refers to" icon="arrow-right" title-type="p">
+    Open **Forecaster check** in Assignment Planner and review the selected date. The card's coloured tab compares the job with this date: red means late, amber means **at risk**, and green means on time.
+  </Step>
+  <Step title="Read the explanation" icon="arrow-right" title-type="p">
+    Choose **How does the Forecaster work?** at the bottom of the menu. This opens the help without changing your selected date check. Read what the colours mean and when times may be too early, then close the help to return to planning.
+  </Step>
+  <Step title="Review the expected times" icon="arrow-right" title-type="p">
+    Open [Assignment Gantt](/en/platform-intro/pages/assignment-gantt). In the view options, choose **Expected times** to include delays or **Planned dates** to inspect the plan. Open **Attention** to review the most important warnings first. Follow the related order to check steps without a machine or date. Also check planned durations, machine shifts, and whether current work has been recorded on the PDA/BDE.
+  </Step>
+  <Step title="Decide whether to change the plan" icon="arrow-right" title-type="p">
+    Reading the forecast changes nothing. If you want to compare waiting-job sequences, open **Improve plan**. Review the comparison before choosing **Save as plan**. Saving changes planned dates and queues, can be undone, and never changes delivery dates.
+  </Step>
+</Steps>
+
+If the Forecaster has no expected end, the Planner only compares the job's date with today. If expected times are unavailable in Assignment Gantt, you see planned times without delays while the Forecaster tries again. Neither view confirms that delivery will be on time.
+
 ## Review Conflicts After an Order Import
 
 When [Order Upload](/en/platform-intro/pages/erp-upload-planner) flags a conflict for manual resolution, use the order and operation details in the import summary to find the affected work in the planner. Review its current destination, status, notes, and related order before changing the plan.
@@ -99,6 +118,8 @@ Use [Assignment Gantt](/en/platform-intro/pages/assignment-gantt) to inspect the
 - Whether a job should stay unassigned, move to another machine, or be removed from a queue.
 - Which machines should appear in the Gantt timeline.
 - Whether overlap warnings should be resolved manually or through automatic arrangement of future assignments.
+- Whether expected times include all steps, durations, and shifts before you rely on them.
+- Whether to save a compared plan or leave the existing plan unchanged.
 
 ## Expected Result
 
@@ -112,6 +133,8 @@ The machine queue reflects the latest planning decision, future assignments foll
 - If a dragged order does not match the displayed order, check whether **Sort by Queue Position** is enabled or sorting rules are active.
 - In-progress and completed assignments cannot move to another column.
 - Automatic arrangement can change future assignments, so review overlap warnings before accepting the result.
+- **Times may be too early**: review missing machines or dates, planned durations, shift plans, and current production entries before relying on the finish.
+- Warning counts differ between pages: Assignment Gantt covers the displayed machines from last week to three weeks ahead; Orders & Products counts late deliveries across the company.
 
 ## Related Pages
 

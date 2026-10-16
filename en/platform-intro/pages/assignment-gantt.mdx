@@ -20,3 +20,71 @@ Assignment Gantt shows assignments across selected machines and time. Use it to 
 An assignment is one operation placed on a machine or hall pool. Its planned production time uses the quantity assigned to that machine. Queue load is based on planned durations, not actual production.
 
 For example, 2 minutes per part × 50 assigned parts gives 100 planned production minutes, plus the operation's fixed preparation time. See [calculations](/en/platform-intro/concepts/calculations#deviations) and [Plan Machine Assignments](/en/platform-intro/workflows/assignment-planner).
+
+## Understand the Forecaster
+
+Your plan says when work should happen. The **Forecaster** shows when it is expected to happen, based on open orders, machines, shifts, and current production. It checks expected finishes against delivery dates so you can see which orders may be late, by how much, and why.
+
+### Open the Help
+
+Click the information icon beside **Forecaster** in the toolbar to open **How does the Forecaster work?**. You can also open it from the heading of **Attention** or **Improve plan**. Anyone who can access this page can read the help.
+
+The same help is available on [Orders & Products](/en/platform-intro/pages/orders-products), the [order page](/en/platform-intro/pages/order-detail), and in [Assignment Planner](/en/platform-intro/pages/assignment-planner).
+
+### How Expected Times Are Worked Out
+
+- Running work continues from its current progress, using the quantity produced and time worked so far.
+- Waiting jobs follow your plant's rule from the planning settings: planned dates, queue order, or delivery date first. A job that takes longer pushes back the work behind it.
+- Machines work within their planned shifts. Nights, weekends, and breaks without a shift are skipped.
+- Each step waits for the previous step of its order to finish, even when it uses another machine.
+
+The Forecaster updates by itself about every minute.
+
+### Example
+
+Order 4711 is due Thursday. Cutting on Laser 2 is planned for Tuesday, followed by bending on Press 1 on Wednesday. The job ahead on Laser 2 takes eight hours longer. Cutting moves to Wednesday and bending to Thursday. Press 1 has no late shift on Thursday, so bending now ends Friday at 10:00. The order shows **late +10 h**. The expected times have moved even though nobody changed the plan.
+
+### What the Colours Mean
+
+| Help label | Colour | Meaning |
+| --- | --- | --- |
+| **On time** | Green | Expected to finish before the date. |
+| **At risk** | Amber | Not late yet, but the remaining work barely fits or an earlier step is not planned. |
+| **Late +3 h** | Red | Expected to finish three hours after the date. |
+| **Late, date passed** | Red | The date has passed and the order is unfinished. |
+| **Finish not known** | Blue | The date is still ahead, but a step has no machine or no date, so no finish can be worked out. |
+
+The **delivery date** is your promise to the customer; missing it is red. The **planned end** is the finish in your own plan; missing it is amber. See the [Forecaster glossary](/en/platform-intro/concepts/glossary#forecaster) for the renamed labels.
+
+### When Times May Be Too Early
+
+The Forecaster only knows what is recorded in the Watchmen Platform. Expected times can be too early when:
+
+- A step has no machine yet. Its work is treated as done when working out the expected times.
+- A job has no planned duration. One hour is assumed.
+- A machine has no shift plan. It is treated as available around the clock.
+- Work is not started, paused, and finished on the PDA/BDE as it happens.
+
+It cannot know about missing material, a broken tool, or someone off sick. Check these conditions before relying on an expected finish.
+
+### Your Plan Stays Under Your Control
+
+The Forecaster never changes your plan by itself. Dates and queues change only when someone moves a job or selects **Improve plan → Save as plan**. These changes can be undone. Delivery dates are never changed by the Forecaster.
+
+## Compare Expected Times and Planned Dates
+
+Open the view options and choose **Expected times** to see when each job is expected to run, including delays. Choose **Planned dates** to see each job at its planned time, without delays. The explanation below the choice changes with your selection.
+
+If expected times are unavailable, jobs appear at their planned times without delays. The Forecaster tries again by itself. If some times are still being worked out, they are close but may move by a few minutes.
+
+## Review Attention and Waiting Work
+
+**Attention** lists what is expected to go wrong on the displayed machines, worst first. Its count covers last week through three weeks ahead. [Orders & Products](/en/platform-intro/pages/orders-products) counts only orders late for delivery across the whole company, so the numbers can differ.
+
+**Times may be too early** means you should review missing machines or dates before relying on the displayed finish. When no problems are expected, the panel shows **All good: nothing is expected to go wrong on these machines.**
+
+The machine summary's waiting working time tells you how much work remains on that machine.
+
+## Compare Queue Orders Before Saving
+
+Open **Improve plan** to compare different orders for waiting jobs and see which saves the most deliveries. Nothing changes until you select **Save as plan**. For review steps, see [Plan Machine Assignments](/en/platform-intro/workflows/assignment-planner).

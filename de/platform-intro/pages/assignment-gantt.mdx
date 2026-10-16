@@ -20,3 +20,71 @@ Assignment Gantt zeigt Zuweisungen über Maschinen und Zeit. Prüfen Sie geplant
 Eine Zuweisung ist eine Operation auf einer Maschine oder in einem Hall Pool. Ihre geplante Produktionszeit nutzt die dieser Maschine zugewiesene Menge. Die Warteschlangenlast basiert auf Planzeiten statt tatsächlicher Produktion.
 
 Zum Beispiel ergeben 2 Minuten je Teil × 50 zugewiesene Teile 100 geplante Produktionsminuten, zuzüglich der festen Vorbereitungszeit der Operation. Siehe [Berechnungen](/de/platform-intro/concepts/calculations#deviations) und [Maschinenzuweisungen planen](/de/platform-intro/workflows/assignment-planner).
+
+## Den Forecaster verstehen
+
+Ihr Plan sagt, wann gearbeitet werden soll. Der **Forecaster** zeigt, wann die Arbeit voraussichtlich stattfindet. Er berücksichtigt offene Aufträge, Maschinen, Schichten und den aktuellen Produktionsstand. Er vergleicht erwartete Endzeiten mit Lieferterminen. So sehen Sie, welche Aufträge voraussichtlich verspätet sind, um wie viel und warum.
+
+### Hilfe öffnen
+
+Klicken Sie in der Werkzeugleiste auf das Informationssymbol neben **Forecaster**, um **Wie funktioniert der Forecaster?** zu öffnen. Die Hilfe lässt sich auch über die Überschrift der Warnungsübersicht oder von **Plan verbessern** öffnen. Alle Personen mit Zugriff auf diese Seite können die Hilfe lesen.
+
+Dieselbe Hilfe finden Sie unter [Aufträge & Produkte](/de/platform-intro/pages/orders-products), auf der [Auftragsseite](/de/platform-intro/pages/order-detail) und im [Zuweisungsplaner](/de/platform-intro/pages/assignment-planner).
+
+### Wie erwartete Zeiten entstehen
+
+- Laufende Arbeit wird ab dem aktuellen Stand fortgesetzt. Dabei zählen die bereits produzierte Menge und die bisher gearbeitete Zeit.
+- Wartende Aufträge folgen der Regel aus den Planungseinstellungen Ihres Werks: geplante Termine, Warteschlangenreihenfolge oder Liefertermin zuerst. Dauert ein Auftrag länger, verschiebt sich die Arbeit dahinter.
+- Maschinen arbeiten innerhalb ihrer geplanten Schichten. Nächte, Wochenenden und Pausen ohne Schicht werden übersprungen.
+- Jeder Arbeitsgang wartet auf das Ende des vorherigen Arbeitsgangs seines Auftrags, auch auf einer anderen Maschine.
+
+Der Forecaster aktualisiert sich selbst etwa jede Minute.
+
+### Beispiel
+
+Auftrag 4711 ist am Donnerstag fällig. Das Schneiden auf Laser 2 ist für Dienstag geplant, das Biegen auf Presse 1 für Mittwoch. Der Auftrag davor auf Laser 2 dauert acht Stunden länger. Das Schneiden rutscht auf Mittwoch, das Biegen auf Donnerstag. Presse 1 hat am Donnerstag keine Spätschicht. Das Biegen endet deshalb erst am Freitag um 10:00. Der Auftrag zeigt **verspätet +10 h**. Die erwarteten Zeiten haben sich verschoben, obwohl niemand den Plan geändert hat.
+
+### Was die Farben bedeuten
+
+| Bezeichnung in der Hilfe | Farbe | Bedeutung |
+| --- | --- | --- |
+| **Im Termin** | Grün | Endet voraussichtlich vor dem Termin. |
+| **Gefährdet** | Gelb | Noch nicht verspätet, aber die restliche Arbeit passt kaum noch oder ein früherer Arbeitsgang ist nicht geplant. |
+| **Verspätet +3 h** | Rot | Endet voraussichtlich drei Stunden nach dem Termin. |
+| **verspätet, Termin vorbei** | Rot | Der Termin ist vorbei und der Auftrag ist nicht fertig. |
+| **Ende nicht bekannt** | Blau | Der Termin liegt noch in der Zukunft, aber einem Arbeitsgang fehlt eine Maschine oder ein Termin. Deshalb lässt sich kein Ende ermitteln. |
+
+Der **Liefertermin** ist Ihre Zusage an den Kunden. Wird er verfehlt, erscheint die Warnung rot. Das **geplante Ende** stammt aus Ihrem eigenen Plan. Wird es verfehlt, erscheint die Warnung gelb. Die umbenannten Bezeichnungen finden Sie im [Forecaster-Glossar](/de/platform-intro/concepts/glossary#forecaster).
+
+### Wann Zeiten zu früh sein können
+
+Der Forecaster kennt nur, was in der Watchmen-Plattform erfasst ist. Erwartete Zeiten können zu früh sein, wenn:
+
+- Ein Arbeitsgang noch keine Maschine hat. Seine Arbeit wird bei den erwarteten Zeiten als erledigt behandelt.
+- Ein Auftrag keine geplante Dauer hat. Dann wird eine Stunde angenommen.
+- Eine Maschine keinen Schichtplan hat. Sie gilt dann als rund um die Uhr verfügbar.
+- Arbeit nicht direkt bei Beginn, Unterbrechung und Abschluss am PDA/BDE erfasst wird.
+
+Fehlendes Material, ein defektes Werkzeug oder eine Krankmeldung kann er nicht kennen. Prüfen Sie diese Umstände, bevor Sie sich auf ein erwartetes Ende verlassen.
+
+### Sie behalten die Kontrolle über Ihren Plan
+
+Der Forecaster ändert Ihren Plan nie von selbst. Termine und Warteschlangen ändern sich erst, wenn jemand einen Auftrag verschiebt oder **Plan verbessern → Als Plan speichern** wählt. Diese Änderungen lassen sich rückgängig machen. Der Forecaster ändert nie Liefertermine.
+
+## Erwartete Zeiten und geplante Termine vergleichen
+
+Öffnen Sie die Ansichtsoptionen und wählen Sie die erwarteten Zeiten, um Aufträge einschließlich ihrer Verzögerungen zu sehen. Wählen Sie die geplanten Termine, um jeden Auftrag zu seiner geplanten Zeit ohne Verzögerungen zu sehen. Die Erklärung unter der Auswahl passt sich Ihrer Wahl an.
+
+Sind erwartete Zeiten nicht verfügbar, erscheinen Aufträge zu ihren geplanten Zeiten ohne Verzögerungen. Der Forecaster versucht es von selbst erneut. Werden einige Zeiten noch ermittelt, liegen sie bereits nahe am Ergebnis, können sich aber um ein paar Minuten verschieben.
+
+## Warnungen und wartende Arbeit prüfen
+
+Die Warnungsübersicht zeigt, was auf den angezeigten Maschinen voraussichtlich schiefgeht, das Wichtigste zuerst. Ihre Anzahl umfasst letzte Woche bis drei Wochen voraus. [Aufträge & Produkte](/de/platform-intro/pages/orders-products) zählt dagegen nur Aufträge, die ihren Liefertermin verfehlen, für das gesamte Unternehmen. Daher können die Zahlen abweichen.
+
+Bei **Zeiten können zu früh sein** sollten Sie fehlende Maschinen oder Termine prüfen, bevor Sie sich auf das angezeigte Ende verlassen. Werden keine Probleme erwartet, erscheint **Alles in Ordnung: Auf diesen Maschinen geht voraussichtlich nichts schief.**
+
+Die wartende Arbeitszeit in der Maschinenübersicht zeigt, wie viel Arbeit auf dieser Maschine noch aussteht.
+
+## Warteschlangen vor dem Speichern vergleichen
+
+Öffnen Sie **Plan verbessern**, um verschiedene Reihenfolgen wartender Aufträge zu vergleichen. So sehen Sie, welche die meisten Lieferungen rettet. Erst mit **Als Plan speichern** ändern Sie den Plan. Die Prüfschritte finden Sie unter [Maschinenzuweisungen planen](/de/platform-intro/workflows/assignment-planner).
