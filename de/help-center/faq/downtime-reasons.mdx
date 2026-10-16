@@ -1,0 +1,63 @@
+---
+title: "Fragen zu Stillstandsgründen"
+description: "Gründe auswählen, Codes verstehen und Verfügbarkeit je Maschine verwalten."
+---
+
+| Ihre Frage | Antwort lesen |
+| --- | --- |
+| Wer kann Stillstandsgründe ändern? | [Antwort](/de/help-center/faq/downtime-reasons#manage) |
+| Warum fehlt ein Stillstandsgrund an meiner Maschine? | [Antwort](/de/help-center/faq/downtime-reasons#missing) |
+| Warum erscheinen neue Gründe auf einer Maschine, aber nicht auf einer anderen? | [Antwort](/de/help-center/faq/downtime-reasons#future) |
+| Kann ich dieselbe Grundauswahl für mehrere Maschinen verwenden? | [Antwort](/de/help-center/faq/downtime-reasons#copy) |
+| Was bedeutet der Code neben einem Stillstandsgrund? | [Antwort](/de/help-center/faq/downtime-reasons#code) |
+| Warum kann ich diese Maschine bei einem Grund nicht abwählen? | [Antwort](/de/help-center/faq/downtime-reasons#last-reason) |
+| Was passiert beim Löschen eines Stillstandsgrundes? | [Antwort](/de/help-center/faq/downtime-reasons#delete) |
+| Der Grund wurde angelegt, seine Maschinen aber nicht gespeichert. Soll ich ihn erneut anlegen? | [Antwort](/de/help-center/faq/downtime-reasons#create-retry) |
+
+<a id="manage" />
+
+## Wer kann Stillstandsgründe ändern?
+
+Nur Administratoren können Gründe anlegen, bearbeiten, löschen oder einschränken. Nutzen Sie **Maschineneinstellungen → Stillstandsgründe** oder die Verwaltung der Zeitachsengründe im Administrationsbereich. Änderungen an einem gemeinsamen Grund gelten für alle Maschinen. Folgen Sie [Stillstandsgründe erstellen und verwalten](/de/platform-intro/workflows/timeline-reason-creation).
+
+<a id="missing" />
+
+## Warum fehlt ein Stillstandsgrund an meiner Maschine?
+
+Die Maschine nutzt möglicherweise **Nur ausgewählte Gründe**, oder ein Administrator hat die Verfügbarkeit geändert. Wählen Sie einen verfügbaren Grund oder lassen Sie die Liste prüfen. Ein geöffnetes Terminal übernimmt Änderungen beim nächsten Aktualisieren. Auch eine abgelehnte Auswahl aktualisiert die Liste. Siehe [Betriebsdatenerfassung](/de/platform-intro/pages/data-acquisition).
+
+<a id="future" />
+
+## Warum erscheinen neue Gründe auf einer Maschine, aber nicht auf einer anderen?
+
+**Alle Gründe (Standard)** enthält spätere Ergänzungen. Eine feste Liste enthält sie nicht. Auch das Abwählen einer mit **Alle Gründe** markierten Maschine unter **Verfügbar auf Maschinen** gibt ihr eine feste Liste der übrigen aktuellen Gründe. Siehe [Maschinenkonfiguration](/de/platform-intro/pages/machine-configuration).
+
+<a id="copy" />
+
+## Kann ich dieselbe Grundauswahl für mehrere Maschinen verwenden?
+
+Ja. Administratoren können unter **Stillstandsgründe** die Auswahl **Auf andere Maschinen übertragen**. Prüfen Sie vor der Bestätigung die aktuelle Auswahl und die Zielmaschinen. Deren bisherige Listen werden ersetzt. Folgen Sie [Stillstandsgründe erstellen und verwalten](/de/platform-intro/workflows/timeline-reason-creation).
+
+<a id="code" />
+
+## Was bedeutet der Code neben einem Stillstandsgrund?
+
+Es ist ein optionaler Unternehmenscode, etwa F12, zum Erkennen eines Grundes. Codes sind im Unternehmen eindeutig und verwenden Großbuchstaben. Kategorien gruppieren die Auswahl. Diagrammerklärungen zeigen vollständigen Code, Namen und Kategorie. Siehe [Administrationsbereich](/de/platform-intro/pages/admin-panel).
+
+<a id="last-reason" />
+
+## Warum kann ich diese Maschine bei einem Grund nicht abwählen?
+
+Die Änderung würde die Maschine ohne Grund lassen. Geben Sie ihr zuerst einen anderen Grund oder lassen Sie den aktuellen ausgewählt. Siehe [Verfügbarkeit einstellen](/de/platform-intro/pages/admin-panel).
+
+<a id="delete" />
+
+## Was passiert beim Löschen eines Stillstandsgrundes?
+
+Frühere Stillstandseinträge bleiben erhalten, verlieren aber diesen Grund. Eine Maschine ohne verbleibenden ausgewählten Grund bietet wieder alle Gründe an. Um nur eine Zuordnung in der Zeitleiste zu entfernen, nutzen Sie stattdessen **Grund entfernen**. Siehe [Stillstandsgründe erstellen und verwalten](/de/platform-intro/workflows/timeline-reason-creation).
+
+<a id="create-retry" />
+
+## Der Grund wurde angelegt, seine Maschinen aber nicht gespeichert. Soll ich ihn erneut anlegen?
+
+Nein. Der Grund existiert bereits. Prüfen Sie im selben Formular die Maschinenliste und speichern Sie erneut. Wurde die Auswahl anderswo geändert, prüfen Sie vor einem weiteren Versuch die neu geladenen Angaben. Siehe [Stillstandsgründe erstellen und verwalten](/de/platform-intro/workflows/timeline-reason-creation).

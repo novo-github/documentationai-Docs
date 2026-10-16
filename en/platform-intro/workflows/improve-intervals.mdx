@@ -1,0 +1,60 @@
+---
+title: "Review and Improve Intervals"
+description: "Compare recorded work with machine activity before applying time corrections."
+---
+
+## Goal
+
+Find late starts, late or early ends, gaps, extended preparation, overlaps, and production without an order. Review their effect before changing recorded time.
+
+## Before You Begin
+
+<Callout kind="info" title="Workflow access">
+Anyone with access to the machine can review it and apply selected suggestions. Only administrators can review several machines and use **Apply best everywhere**.
+</Callout>
+
+### Preconditions
+
+The machine has machine data, and the selected day has at least one interval. The allowed times in **PDA Assist** guide the review even when live assistance is off. Check those settings with an administrator if suggestions do not fit your work.
+
+## Steps
+
+<Steps>
+  <Step title="Open a day with recorded work" icon="arrow-right" title-type="p">
+    On the machine detail page, choose a day containing intervals and select **Improve intervals** in the timeline header. The dialog opens with that machine and day selected.
+  </Step>
+  <Step title="Choose the review scope" icon="arrow-right" title-type="p">
+    Choose **Period** and the suggestion groups under **Show**. You can review up to 60 days, ending no later than today. Longer selections are shortened with a notice. Administrators can use **Machines** to add accessible machines, then **Select all** or **Clear** as needed. Select **Find suggestions** after changing the scope.
+  </Step>
+  <Step title="Compare each proposal" icon="arrow-right" title-type="p">
+    Expand a day. Compare **Now** and **After**, the order name, and the time added or removed. Choose an option and tick only the changes that match what happened. The day preview follows your selection. Preparation suggestions can end setup at the first production after setup began.
+  </Step>
+  <Step title="Review exceptions separately" icon="arrow-right" title-type="p">
+    Suggestions beyond the automatic limit start unticked. So does **Overlaps (warning)**: simultaneous work may be intentional. Check the machine’s parallel capacity before changing an overlap. **Production without an order** is information only and cannot create an interval.
+  </Step>
+  <Step title="Apply and check the result" icon="arrow-right" title-type="p">
+    Use **Apply selected** with the displayed count. Administrators may instead choose **Apply best everywhere** and review the confirmation. That action excludes overlaps and suggestions beyond the automatic limit. Read the applied and skipped counts and any remaining overlap warnings. Order times change immediately; OEE and reports follow at their next calculation.
+  </Step>
+</Steps>
+
+## Decision Points
+
+Finding suggestions changes nothing. Decide which time belongs to each order before applying changes. A parallel run can be correct even when it appears as an overlap warning. Only suggestions whose best option is within the automatic limit start selected.
+
+## Expected Result
+
+The chosen intervals and machine timeline show the corrected order times. Changes applied through review are marked **Improved** in the PDA interval list. Historic order times and OEE attribution can change.
+
+## Common Problems and Edge Cases
+
+- If the button is missing, select a day containing intervals.
+- Without machine data, the review cannot check intervals. This includes work centers without sensor readings.
+- No suggestions means the intervals in the period match the machine data under the selected rules.
+- If a change can no longer be used, review the refreshed suggestions and try again. The administrator bulk action skips unusable changes and reports the result.
+- Unbooked production requires a separate check of what was worked; this tool does not create orders or intervals.
+
+## Related Pages
+
+- [Machine Details](/en/platform-intro/pages/machine-details)
+- [Machine Configuration](/en/platform-intro/pages/machine-configuration)
+- [Data Acquisition](/en/platform-intro/pages/data-acquisition)

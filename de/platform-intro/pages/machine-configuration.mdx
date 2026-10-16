@@ -9,7 +9,7 @@ description: "Eine tabbasierte Einrichtungsseite zum Erstellen oder Verfeinern e
 
 Ermöglichen Sie Administratoren, eine Maschinenkonfiguration anzulegen oder die bestehende Konfiguration zu verfeinern.
 
-Benutzer erreichen diese Seite über Maschinen-Einrichtungsaktionen oder direkt über eine Konfigurationsroute.
+Administratoren öffnen **Maschineneinstellungen** über das Zahnrad im Kopf der Maschinendetails oder über das Maschinenmenü im Administrationsbereich.
 
 ## Zugriff
 
@@ -83,27 +83,80 @@ Die Kennzeichnung **Aktive Schicht** zeigt, welche Maschinen diese Einstellung n
 
 **Wartet auf die nächste aktive Schicht** oder **wartet auf Maschinenstart** bedeutet, dass die nächste Schicht noch nicht begonnen hat. Sie startet automatisch bei Leerlauf, Produktion oder Rüsten. Bis dahin werden geplante Schichten der zugewiesenen Schichtgruppe angezeigt. Diese Anzeige schaltet aktive Schichten nicht aus.
 
-## Warnungen: BDE-Assistent
+## BDE Assist: Intervallhilfe und Warnungen
 
-**Nur Administratoren können Warnungseinstellungen ändern.** Öffnen Sie **BDE-Assistent** in der Maschinenkonfiguration. Schalten Sie zuerst **Warnungen für diese Maschine aktivieren** ein. Solange dies aus ist, wirken die weiteren Einstellungen nicht und die BDE-Seite zeigt keine Warnungen.
+**Nur Administratoren können diese Einstellungen ändern.** Öffnen Sie **Maschineneinstellungen → BDE Assist** (bisher **BDE-Assistent**). **Intervall-Assistent** und **Warnungen** haben jeweils einen Schalter in der Überschrift. Beim Ausschalten klappt der Bereich zu. Die Zusammenfassung darunter zeigt, was aktiv ist.
+
+### Start- und Endzeiten
+
+Die Intervallhilfe im laufenden Betrieb ist standardmäßig aus. Aktivieren Sie **Intervall-Assistent auf der BDE-Seite** und dann die benötigten Optionen für Start, Ende oder automatisches Beenden. Unter **Startzeit** wählen Sie erlaubte Zeiten:
+
+- **Ende des vorherigen Intervalls** ordnet die Umrüstzeit dem neuen Auftrag zu. Legen Sie die maximale Lücke und die erlaubte Aus-Zeit zwischen den Intervallen fest.
+- **Beginn des Leerlaufs** berücksichtigt Maschinenaktivität vor der Produktion, etwa das Aufwärmen.
+- **Produktionsbeginn** verwendet den Beginn der Produktion.
+
+Beim Rüsten kann das Ende des vorherigen Intervalls auch gelten, wenn die Maschine dazwischen aus war. Die maximale Lücke gilt weiterhin. **Beim Rüsten:** bietet außerdem den Zeitpunkt, als die Maschine aufhörte zu produzieren. Die Option für das Einschalten der Maschine folgt **Beginn des Leerlaufs**. Sie kann Rüsten mit Testteilen erfassen. Meldet die Maschine Rüsten, kann auch dessen Beginn angeboten werden.
+
+Unter **Endzeit** endet **Ende der letzten Produktion** beim letzten Produktionszeitpunkt. **Ende der Aktivität** schließt den folgenden Leerlauf bis zum Ausschalten ein. **Rüsten endet, wenn die Produktion beginnt** beendet Rüsten beim ersten Produktionsbeginn nach Rüstbeginn. Beispiel: Rüsten ab 08:00, Produktion ab 08:40 und Stopp um 08:46 können ein Rüstende um 08:40 ergeben.
+
+Diese Optionen steuern auch **Intervalle verbessern**. Ist die Intervallhilfe aus, öffnen Sie **Erlaubte Zeiten für „Intervalle verbessern“**, um sie zu ändern. Die Prüfung vergangener Tage schlägt nur Änderungen vor. Jemand muss sie übernehmen.
+
+### Wie Änderungen übernommen werden
+
+Wählen Sie unter **Wie Änderungen übernommen werden** zwischen **Bediener fragen** und **Automatisch das Beste wählen**, wenn mehrere Zeiten passen. Die automatische Auswahl nutzt den frühesten erlaubten Start oder das späteste erlaubte Ende. Bediener können eine automatische Anpassung mit **Rückgängig** aufheben oder über **Ändern…** eine andere Zeit wählen.
+
+Stellen Sie **Automatisch übernehmen bis (Stunden)** und **Bediener fragen bis (Stunden)** ein. Beide erlauben 0,5–12 Stunden in halbstündigen Schritten und stehen standardmäßig auf 6 Stunden. Die Fragegrenze darf nicht kleiner als die automatische Grenze sein. Zeiten zwischen beiden Grenzen benötigen eine Auswahl. Ältere Zeiten werden nicht angeboten. Für das Ende des vorherigen Intervalls gelten zusätzlich die eigenen Lückenbedingungen.
+
+### Vergessene Intervalle automatisch beenden
+
+Aktivieren Sie **Vergessene Intervalle automatisch beenden**. Wählen Sie **aus** oder **aus oder im Leerlauf** und die Wartezeit. Bei aktivierter Einstellung läuft die Prüfung weiter, auch wenn niemand die BDE-Seite geöffnet hat. Nur Produktionsintervalle enden so, niemals Rüstintervalle.
+
+Das Ende wird auf den letzten Produktionszeitpunkt gesetzt. Wurde nichts produziert, gilt der Zeitpunkt, als die Maschine stoppte. Dabei werden keine Mengen gebucht und der Auftrag wird nicht abgeschlossen. Bediener müssen Mengen anschließend prüfen und buchen. Um automatisches Beenden zu verhindern, schalten Sie diese Option aus und wählen **Speichern**.
+
+Kommt das automatische Ende vor der Warnung **Maschine aus, Auftrag läuft noch**, sehen Bediener diese Warnung nicht. Die Einstellungen weisen darauf hin. Das Pausieren einer Warnung oder Stummschalten des Tons schaltet automatisches Beenden nicht aus.
 
 ### Warnungen einstellen
 
-Wählen Sie unter **Warnungen** die benötigten Warnungen. Stellen Sie jeweils **Schweregrad**, **Verzögerung vor Warnung (Min.)** und **Ton abspielen** ein. **Auftrag läuft zu lange** verwendet **Schwellwert (Stunden)** als Verzögerung. **Auftrag über Schichtwechsel hinaus offen** benötigt zugewiesene Schichten. Lassen Sie **Live-Daten veraltet** aktiv: Ohne frische Daten können die anderen Warnungen unzuverlässig sein.
+Aktivieren Sie **Warnungen auf der BDE-Seite**. Wählen Sie je Warnung Verzögerung, Schweregrad und Lautsprechereinstellung. Die Verzögerung bestimmt, wie lange die Situation vor der Warnung bestehen muss. **Auftrag über Schichtwechsel hinaus offen** benötigt zugewiesene Schichten. Lassen Sie **Live-Daten veraltet** aktiv, da andere Warnungen ohne frische Daten unzuverlässig sein können.
 
-**Info** bleibt lautlos. **Warnung** zeigt ein orangefarbenes Banner. **Kritisch** zeigt ein rotes Banner mit blinkendem Bildschirmrand. **Erneut anzeigen nach (Min.)** bestimmt, wie lange ein Bediener eine Warnung ausblenden und stummschalten kann. Sie bleibt im Warnungsbereich aufgelistet und kehrt zurück, wenn das Problem weiter besteht.
+| Warnung | Standardverzögerung | Standardschweregrad |
+| --- | --- | --- |
+| **Produktion ohne Auftrag** | 5 Min. | **Kritisch** |
+| **Maschine aus, Auftrag läuft noch** | 15 Min. | **Warnung** |
+| **Auftrag läuft zu lange** | 8 Std. | **Warnung** |
+| **Auftrag über Schichtwechsel hinaus offen** | 15 Min. | **Warnung** |
+| **Live-Daten veraltet** | 30 Min. | **Warnung** |
+| **Mehrere Aufträge laufen** | 5 Min. | **Info** |
+| **Stillstand ohne Grund** | 5 Min. | **Info** |
+
+**Mehrere Aufträge laufen** erscheint erst oberhalb der unter **Parallele Aufträge** eingestellten Anzahl. **Live-Daten veraltet** benötigt mindestens 5 Minuten Verzögerung. Andere Verzögerungen in Minuten benötigen mindestens 1 Minute.
+
+**Info** ist ein stiller Hinweis in der Warnungsliste. **Warnung** zeigt einen orangefarbenen Hinweis. **Kritisch** zeigt einen roten Hinweis mit blinkendem Bildschirmrand. **Pausieren** bestimmt, wie lange Bediener eine Warnung ausblenden und stummschalten können. Besteht das Problem weiter, kehrt sie danach zurück.
 
 ### Alarmton
 
-Aktivieren Sie unter **Ton** die Einstellung **Alarmton erlauben**, wenn Warnungen hörbar sein sollen. Stellen Sie **Lautstärke** und **Wiederholen alle (Sekunden)** ein. Mit **Nur während einer aktiven Schicht** bleibt der Ton außerhalb von Schichten aus. Bei jeder Warnung muss außerdem **Ton abspielen** aktiv sein. **Info** bleibt immer lautlos.
+Aktivieren Sie **Alarmton** und den Lautsprecher jeder Warnung, die hörbar sein soll. **Info** bleibt stumm. Wählen Sie Lautstärke, Wiederholungsabstand und die Beschränkung auf aktive Schichten. Testen Sie die Lautstärke: **Warnung** spielt zwei Töne, **Kritisch** drei wechselnde hohe und tiefe Töne.
 
-Mit **Ton testen** hören Sie die gewählte Lautstärke: zwei Töne für **Warnung**, drei wechselnde hohe und tiefe Töne für **Kritisch**. Der Ton wiederholt sich, solange eine hörbare Warnung aktiv und nicht zurückgestellt ist. Bediener können ihn auf ihrem eigenen Gerät stummschalten. Ein Browser benötigt einen Tipp auf die Seite, bevor er Ton abspielen kann. Manche Browser können keine Alarmtöne abspielen.
+Der Ton wiederholt sich, bis die Warnung erledigt oder pausiert ist. Bediener können ihr Gerät stummschalten. Der Browser benötigt einen Tipp auf die Seite, bevor er Ton abspielen kann. Manche Browser können keine Alarmtöne abspielen.
 
-### Einstellungen auf andere Maschinen kopieren
+### Einstellungen zurücksetzen, speichern und kopieren
 
-Wählen Sie **Einstellungen auf andere Maschinen kopieren**, wählen Sie die Zielmaschinen und prüfen Sie die Bestätigung vor **Einstellungen kopieren**. Kopiert werden alle angezeigten Einstellungen, einschließlich ungespeicherter Änderungen. Die BDE-Assistent-Einstellungen der ausgewählten Maschinen werden ersetzt. Deren andere Einstellungen bleiben unverändert. Prüfen Sie anschließend die Anzahl erfolgreicher und fehlgeschlagener Übernahmen.
+**Auf Standard zurücksetzen** am Ende eines geöffneten Bereichs setzt dessen Optionen nach Bestätigung zurück. Der Ein/Aus-Schalter bleibt unverändert. Wählen Sie **Speichern**, um das Zurücksetzen oder andere Änderungen zu behalten. **Ungespeicherte Änderungen** kennzeichnet noch nicht gespeicherte Bearbeitungen.
 
-Speichern Sie die Warnungseinstellungen dieser Maschine, bevor Sie die Seite verlassen. Folgen Sie [Maschine konfigurieren](/de/platform-intro/workflows/machine-configuration). Die [Betriebsdatenerfassung](/de/platform-intro/pages/data-acquisition) erklärt Warnungen und Bedienaktionen.
+**Auf andere Maschinen kopieren…** kopiert Intervallhilfe und Warnungen wie angezeigt, einschließlich ungespeicherter Änderungen. Wählen Sie Ziele und prüfen Sie vor der Bestätigung den Ersetzungshinweis. Deren übrige Einstellungen bleiben unverändert. Prüfen Sie Erfolgs- und Fehlerzahlen und speichern Sie die aktuelle Maschine separat. Folgen Sie [Maschine konfigurieren](/de/platform-intro/workflows/machine-configuration).
+
+## Stillstandsgründe dieser Maschine
+
+Administratoren nutzen **Maschineneinstellungen → Stillstandsgründe** für Maschinen und Arbeitsplätze. Speichern Sie eine neue Maschine, bevor Sie ihre Gründe festlegen.
+
+- **Alle Gründe (Standard)** bietet jeden Unternehmensgrund an, auch später angelegte Gründe.
+- **Nur ausgewählte Gründe** bietet eine feste Liste an. Wählen Sie vor dem Speichern mindestens einen Grund. Suchen Sie nach Code oder Grund und filtern Sie nach Kategorie. **Alle sichtbaren auswählen** ergänzt die sichtbaren Gründe. Das Leeren der Auswahl entfernt alle Häkchen, auch ausgeblendete.
+
+Speichern Sie den Tab für diese Maschine. **Auf andere Maschinen übertragen** ersetzt die Listen der Zielmaschinen durch die aktuelle Auswahl oder den Modus für alle Gründe. Prüfen Sie vor der Bestätigung die Ziele.
+
+**Neuer Grund** öffnet das gemeinsame Formular. Die aktuelle Maschine ist unter **Verfügbar auf Maschinen** vorausgewählt. Lassen Sie sie ausgewählt, wenn der Grund hier verfügbar sein soll. Änderungen an Name, Code, Kategorie oder Farbe gelten für alle Maschinen, die den Grund verwenden. [Stillstandsgründe erstellen und verwalten](/de/platform-intro/workflows/timeline-reason-creation) erklärt Verfügbarkeit und Löschfolgen.
+
+Die Auswahl begrenzt, welche Gründe Personen zuweisen können. Automatische Zeitachsenregeln nutzen weiterhin alle Unternehmensgründe. Deshalb kann die Historie einen heute nicht mehr auswählbaren Grund enthalten.
 
 ## Hauptentitäten
 

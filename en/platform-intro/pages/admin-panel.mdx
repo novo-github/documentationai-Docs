@@ -91,6 +91,18 @@ Administrators can select **Change email** in user management in the Admin Panel
 
 The pending notice shows the address awaiting confirmation. Use **Resend** after the displayed wait or **Cancel change** if the request is no longer needed. Follow [Change Your Email Address](/en/platform-intro/workflows/change-email).
 
+## Manage Downtime Reasons
+
+Only administrators can create, edit, or delete reasons. Open the timeline reason area in the Admin Panel. The table shows **Code**, **Category**, and **Available on** alongside the reason, description, colour, and level. Search by code or text and filter by category. The availability column shows whether a reason is available everywhere or on a number of machines; its explanation lists their names.
+
+In the reason form, **Code** and **Category** are optional. Codes become uppercase and must be unique within your company. Use up to 20 letters, digits, dots, underscores, slashes, or hyphens, starting with a letter or digit. Choose an existing category or enter one. **Pick colour** opens the colour selector; you can enter a colour value directly or use **Random colour**. New reasons start with a random colour.
+
+Under **Available on machines**, tick where operators should be able to choose this reason. Unticking a machine marked **All reasons** gives it a fixed list of the other current reasons. Later reasons will no longer appear there automatically. You cannot leave a machine without a reason this way: give it another reason first or keep this one ticked.
+
+Editing a shared reason affects all machines. Deleting it keeps past downtime entries but removes their reason. If deletion removes a machine's last selected reason, that machine offers all reasons again. Review the deletion notice before proceeding.
+
+Use [Create and Manage Downtime Reasons](/en/platform-intro/workflows/timeline-reason-creation) for the steps. To set an entire machine's list, use [Machine Configuration](/en/platform-intro/pages/machine-configuration).
+
 ## Main Entities
 
 - Hall

@@ -1,0 +1,60 @@
+---
+title: "Intervalle prüfen und verbessern"
+description: "Vergleichen Sie erfasste Arbeit mit Maschinenaktivität, bevor Sie Zeiten korrigieren."
+---
+
+## Ziel
+
+Finden Sie verspätete Starts, zu späte oder frühe Enden, Lücken, verlängertes Rüsten, Überlappungen und Produktion ohne Auftrag. Prüfen Sie die Wirkung vor einer Zeitänderung.
+
+## Bevor Sie beginnen
+
+<Callout kind="info" title="Ablaufzugriff">
+Jede Person mit Zugriff auf die Maschine kann sie prüfen und ausgewählte Vorschläge übernehmen. Nur Administratoren können mehrere Maschinen prüfen und **Überall das Beste übernehmen** nutzen.
+</Callout>
+
+### Voraussetzungen
+
+Die Maschine hat Maschinendaten und der gewählte Tag mindestens ein Intervall. Die erlaubten Zeiten in **BDE Assist** steuern die Prüfung auch bei ausgeschalteter Hilfe im laufenden Betrieb. Prüfen Sie diese Einstellungen mit einem Administrator, wenn Vorschläge nicht zur Arbeit passen.
+
+## Schritte
+
+<Steps>
+  <Step title="Öffnen Sie einen Tag mit erfasster Arbeit" icon="arrow-right" title-type="p">
+    Wählen Sie in den Maschinendetails einen Tag mit Intervallen und im Kopf der Zeitleiste **Intervalle verbessern**. Der Dialog öffnet mit dieser Maschine und diesem Tag.
+  </Step>
+  <Step title="Wählen Sie den Prüfumfang" icon="arrow-right" title-type="p">
+    Wählen Sie **Zeitraum** und unter **Anzeigen** die Vorschlagsgruppen. Sie können bis zu 60 Tage bis spätestens heute prüfen. Längere Auswahlen werden mit Hinweis gekürzt. Administratoren können unter **Maschinen** weitere zugängliche Maschinen ergänzen und bei Bedarf **Alle auswählen** oder **Leeren** nutzen. Wählen Sie nach einer Änderung **Vorschläge suchen**.
+  </Step>
+  <Step title="Vergleichen Sie jeden Vorschlag" icon="arrow-right" title-type="p">
+    Öffnen Sie einen Tag. Vergleichen Sie **Jetzt** mit **Danach**, Auftragsname und hinzugefügte oder entfernte Zeit. Wählen Sie eine Option und haken Sie nur passende Änderungen an. Die Tagesvorschau folgt Ihrer Auswahl. Rüstvorschläge können das Rüsten beim ersten Produktionsbeginn nach Rüstbeginn beenden.
+  </Step>
+  <Step title="Prüfen Sie Ausnahmen einzeln" icon="arrow-right" title-type="p">
+    Vorschläge jenseits der automatischen Grenze sind nicht angehakt. Auch **Überlappungen (Warnung)** bleibt ohne Häkchen: Gleichzeitige Arbeit kann beabsichtigt sein. Prüfen Sie vor einer Änderung die parallele Kapazität der Maschine. **Produktion ohne Auftrag** ist nur ein Hinweis und erstellt kein Intervall.
+  </Step>
+  <Step title="Übernehmen und prüfen Sie das Ergebnis" icon="arrow-right" title-type="p">
+    Nutzen Sie **Auswahl übernehmen** mit der angezeigten Anzahl. Administratoren können stattdessen **Überall das Beste übernehmen** wählen und die Bestätigung prüfen. Überlappungen und Vorschläge jenseits der automatischen Grenze bleiben ausgeschlossen. Lesen Sie übernommene und übersprungene Änderungen sowie verbleibende Überlappungswarnungen. Auftragszeiten ändern sich sofort. OEE und Berichte folgen bei ihrer nächsten Berechnung.
+  </Step>
+</Steps>
+
+## Entscheidungspunkte
+
+Die Suche nach Vorschlägen ändert nichts. Entscheiden Sie vor der Übernahme, welche Zeit zu welchem Auftrag gehört. Ein paralleler Lauf kann trotz Überlappungswarnung richtig sein. Nur Vorschläge mit bester Option innerhalb der automatischen Grenze sind vorausgewählt.
+
+## Erwartetes Ergebnis
+
+Die ausgewählten Intervalle und die Maschinenzeitleiste zeigen korrigierte Auftragszeiten. Übernommene Prüfänderungen sind in der BDE-Intervallliste mit **Verbessert** markiert. Historische Auftragszeiten und die OEE-Zuordnung können sich ändern.
+
+## Häufige Probleme und Sonderfälle
+
+- Fehlt die Schaltfläche, wählen Sie einen Tag mit Intervallen.
+- Ohne Maschinendaten lassen sich Intervalle nicht prüfen. Dies gilt auch für Arbeitsplätze ohne Sensorwerte.
+- Keine Vorschläge bedeutet, dass die Intervalle im Zeitraum nach den gewählten Regeln zu den Maschinendaten passen.
+- Ist eine Änderung nicht mehr nutzbar, prüfen Sie die neu geladenen Vorschläge und versuchen Sie es erneut. Die Sammelaktion für Administratoren überspringt unbrauchbare Änderungen und meldet das Ergebnis.
+- Prüfen Sie bei ungebuchter Produktion gesondert, welche Arbeit stattgefunden hat. Dieses Werkzeug legt keine Aufträge oder Intervalle an.
+
+## Verwandte Seiten
+
+- [Maschinendetails](/de/platform-intro/pages/machine-details)
+- [Maschinenkonfiguration](/de/platform-intro/pages/machine-configuration)
+- [Betriebsdatenerfassung](/de/platform-intro/pages/data-acquisition)

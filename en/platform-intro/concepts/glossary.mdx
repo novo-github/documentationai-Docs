@@ -179,7 +179,7 @@ Share of total recorded machine time in Production. AVL remains AVL in German an
 
 ### BDE / PDA / Betriebsdatenerfassung / Production Data Acquisition
 
-English PDA and German BDE refer to the same operator terminal for starting work and booking quantities. PDA Entry is BDE-Eintrag; PDA Assistant is BDE-Assistent.
+English PDA and German BDE refer to the same operator terminal for starting work and booking quantities. PDA Entry is BDE-Eintrag; **PDA Assist** is **BDE Assist**.
 
 [Learn more](/en/platform-intro/pages/data-acquisition).
 
@@ -535,7 +535,7 @@ Production time divided by total interval duration; differs from the overall PRO
 
 ### Info / Warning / Critical
 
-PDA Assistant severity levels: **Info** is silent, **Warning** shows an orange banner, and **Critical** shows a red banner with a flashing border. Warning and Critical can also play sound when enabled.
+PDA Assist severity levels: **Info** is silent, **Warning** shows an orange banner, and **Critical** shows a red banner with a flashing border. Warning and Critical can also play sound when enabled.
 
 [Learn more](/en/platform-intro/pages/machine-configuration).
 
@@ -831,11 +831,29 @@ Produced-piece counts. PCS on Hall Plan and kiosk figures stays unchanged across
 
 [Learn more](/en/platform-intro/pages/hall-plan).
 
-### PDA Assistant
+### PDA Assist
 
-Warnings on a machine’s PDA page for missing entries, open orders, and stale data. Administrators enable and configure them; operators can review, snooze, or mute them.
+**PDA Assist** (previously **PDA Assistant**) combines interval assistance and warnings for a machine. Administrators configure them separately. Operators can choose suggested times and review, snooze, or mute warnings.
+
+[Learn more](/en/platform-intro/pages/machine-configuration).
+
+### Adjusted / Auto-ended / Improved
+
+**Adjusted** marks a start or end changed by interval assistance. **Auto-ended** marks a production interval ended after the configured off or idle period; quantities may still need booking. **Improved** marks a change applied when reviewing past intervals. Open the explanation for the time and reason.
 
 [Learn more](/en/platform-intro/pages/data-acquisition).
+
+### Improve intervals
+
+A check of recorded intervals against machine activity for up to 60 days. It proposes changes and shows their impact before you apply them. Anyone with machine access can review one machine; only administrators can review several and apply the best options everywhere.
+
+[Learn more](/en/platform-intro/workflows/improve-intervals).
+
+### Overlaps (warning)
+
+More intervals ran at once than the machine's parallel capacity. Parallel work may be correct. These suggestions start unticked and are excluded from **Apply best everywhere**.
+
+[Learn more](/en/platform-intro/pages/machine-details).
 
 ### Peak Optimizer
 
@@ -1121,9 +1139,27 @@ Duration buckets, such as 1–5 or 5–30 minutes, used to count downtime freque
 
 ### Timeline reason / Downtime reason / Stillstandsgrund
 
-Admin-defined label explaining a timeline period, with name, description, color, type, and level 1–5. The type/level effects are unconfirmed.
+A label explaining a downtime period. Administrators maintain shared reasons and choose where operators may select them. Removing a reason from a machine's selection does not remove past labels. Deleting the reason keeps past entries but removes their reason.
 
-[Learn more](/en/platform-intro/pages/timeline-analysis).
+[Learn more](/en/platform-intro/workflows/timeline-reason-creation).
+
+### Code / Category
+
+A reason's optional **Code**, such as F12, is unique within the company and uses uppercase letters. **Category** groups reasons for selection, for example Mechanical or Material. Chart explanations show both when available.
+
+[Learn more](/en/platform-intro/pages/admin-panel).
+
+### All reasons (default) / Only selected reasons
+
+**All reasons (default)** includes every company reason and future additions. **Only selected reasons** limits operators to a fixed list with at least one reason. Deleting its last selected reason returns a machine to all reasons.
+
+[Learn more](/en/platform-intro/pages/machine-configuration).
+
+### Available on machines
+
+The machines where operators can select a reason. Unticking a machine marked **All reasons** gives it a fixed list of the other current reasons; later additions no longer appear automatically.
+
+[Learn more](/en/platform-intro/pages/admin-panel).
 
 ### Timeline rules
 

@@ -89,9 +89,31 @@ Ungebundene oder unbeschriftete Maschinenzeit gehört zu keinem Auftrag. Die Lö
 
 **Card Display Settings / Columns / Highlight** werden je Benutzer gespeichert. Queue Position folgt der manuellen Reihenfolge; laufende und pausierte Karten bleiben oben.
 
-## Warnungen des BDE-Assistenten
+## Unterstützte Intervallzeiten prüfen
 
-Der **BDE-Assistent** zeigt Warnungen für diese Maschine, sobald ein Administrator sie aktiviert. Nur Administratoren können Warnungseinstellungen ändern. Der Assistent ist von klassischen Alarmregeln und Automator getrennt.
+Aktiviert ein Administrator **BDE Assist**, können verspätete Start- und Stoppzeiten auf Zeiten aus den Maschinendaten verschoben werden. Dies gilt für Produktion und Rüsten in der Betriebsdatenerfassung V3. Manuelle Zeitänderungen und Zwischenbuchungen erhalten diese automatischen Anpassungen nicht.
+
+Der Auswahldialog vergleicht **Jetzt** mit **Danach** und zeigt, welcher Auftrag Zeit gewinnt oder verliert. Wählen Sie eine Hauptoption oder öffnen Sie **Andere Zeiten** für frühere Möglichkeiten, neueste zuerst. Sie können auch eine Markierung in der Zeitleiste antippen. Behalten Sie die gedrückte Zeit, wenn keine passt. Das Schließen des ersten Auswahldialogs behält diese Zeit bei.
+
+Nach einer automatischen Anpassung stellt **Rückgängig** die gedrückte Zeit wieder her. **Ändern…** öffnet Alternativen. Dort stellt **Zurück zur gedrückten Zeit** die ursprüngliche Zeit wieder her. Eine passende Zeit innerhalb der automatischen Grenze kann sofort gelten. Bei mehreren Zeiten bestimmen die Maschineneinstellungen, ob Sie gefragt werden oder die Auswahl automatisch erfolgt. Zeiten jenseits der automatischen Grenze benötigen immer Ihre Auswahl.
+
+Die Intervallliste kennzeichnet Änderungen mit **Angepasst**, **Auto-beendet** oder **Verbessert**. Öffnen Sie die Erklärung für Zeitänderung und Grund. **Auto-beendet** bedeutet, dass ein vergessenes Produktionsintervall nach der eingestellten Aus- oder Leerlaufdauer beendet wurde. Dies funktioniert auch bei geschlossenem Terminal. Prüfen Sie danach die Mengen: Automatisches Beenden bucht sie nicht. Rüsten endet niemals auf diese Weise.
+
+Ist automatisches Beenden aktiv, kann **Maschine aus, Auftrag läuft noch** die verbleibenden Minuten anzeigen. Pausieren oder Stummschalten der Warnung hält das automatische Beenden nicht an. Bitten Sie einen Administrator um eine Änderung in der [Maschinenkonfiguration](/de/platform-intro/pages/machine-configuration).
+
+Intervalländerungen erscheinen sofort in der Zeitleiste. Die Aktualisierung nach einer Änderung behält Ihre gewählte Schicht bei, solange sie noch existiert. Regelmäßiges und manuelles Aktualisieren wechselt zur laufenden Schicht. Für vergangene Tage nutzen Sie **Intervalle verbessern** in den [Maschinendetails](/de/platform-intro/pages/machine-details). Folgen Sie [Intervalle prüfen und verbessern](/de/platform-intro/workflows/improve-intervals).
+
+## Einen Stillstandsgrund wählen
+
+**Stillstandsgründe** bietet nur die auf dieser Maschine verfügbaren Gründe an. Eine Kachel kann in der Ecke einen Code zeigen. Nutzen Sie die Kategorien oberhalb der Kacheln, um die Liste einzugrenzen. Diese erscheinen nur, wenn Gründe Kategorien besitzen.
+
+Gespeicherte Kachelreihenfolgen behalten neu verfügbare Gründe und entfernen gelöschte. Andere Grundauswahlen der Zeitleiste zeigen Gründe alphabetisch mit dem Code vor dem Namen. **Grund entfernen** entfernt die Zuordnung, ohne den Stillstandszeitraum zu löschen.
+
+Ist ein Grund nicht mehr erlaubt, wird die Liste aktualisiert. Wählen Sie einen verfügbaren Grund oder bitten Sie einen Administrator, die Maschinenauswahl zu prüfen. Ein früher verwendeter Grund kann weiterhin sichtbar sein, obwohl er nicht mehr auswählbar ist. Siehe [Fragen zu Stillstandsgründen](/de/help-center/faq/downtime-reasons).
+
+## Warnungen von BDE Assist
+
+**BDE Assist** zeigt Warnungen für diese Maschine, sobald ein Administrator sie aktiviert. Nur Administratoren können Warnungseinstellungen ändern. Der Assistent ist von klassischen Alarmregeln und Automator getrennt.
 
 | Warnung | Bedeutung |
 | --- | --- |
@@ -100,7 +122,7 @@ Der **BDE-Assistent** zeigt Warnungen für diese Maschine, sobald ein Administra
 | **Auftrag läuft zu lange** | Ein Auftrag läuft länger als der eingestellte Schwellwert. |
 | **Auftrag über Schichtwechsel hinaus offen** | Ein Auftrag aus einer früheren Schicht ist nach der Verzögerung der aktuellen Schicht noch offen. Dafür müssen der Maschine Schichten zugewiesen sein. |
 | **Live-Daten veraltet** | Für die eingestellte Verzögerung sind keine frischen Maschinendaten eingetroffen. Andere Warnungen können unzuverlässig sein. |
-| **Mehrere Aufträge laufen** | Mehr als ein Auftrag hat ein offenes Intervall auf dieser Maschine. |
+| **Mehrere Aufträge laufen** | Es laufen mehr Aufträge, als **Parallele Aufträge** für diese Maschine erlaubt. |
 | **Stillstand ohne Grund** | Ein Stillstand wartet auf einen Grund. |
 
 **Info** ist eine stille Meldung. **Warnung** zeigt ein orangefarbenes Banner, **Kritisch** ein rotes Banner mit blinkendem Bildschirmrand. Die Warnung erscheint nach der vom Administrator gewählten Verzögerung. Bei einem zu lange laufenden Auftrag gilt der Schwellwert in Stunden ohne zusätzliche Verzögerung.

@@ -25,7 +25,7 @@ For a **Work center**, use the kind-switching steps below and skip AVA and senso
 
 <Steps>
   <Step title="Open the machine configuration" icon="arrow-right" title-type="p">
-    Open the machine configuration page for a new or existing machine.
+    For an existing machine, select the **Machine Settings** gear in its detail header. Only administrators see it. Settings open in the same tab; the browser’s back button returns to the machine.
   </Step>
   <Step title="Review the basic information" icon="arrow-right" title-type="p">
     Review the Basic Information tab and confirm the machine identity, hall, and shift group.
@@ -66,7 +66,7 @@ Only admins edit this setup. Confirm whether the entry is a sensor-connected **M
 
 Use the steps below to change **Active shift** and review the effect on today's shifts. Check alert-rule notices for rules that do not work with active shifts.
 
-Configure **PDA Assistant** using the warning setup steps below. See [Machine Configuration](/en/platform-intro/pages/machine-configuration) for rules, duration buckets, ratings, and feature fields.
+Configure **PDA Assist** using the warning setup steps below. See [Machine Configuration](/en/platform-intro/pages/machine-configuration) for rules, duration buckets, ratings, and feature fields.
 
 ## Switch Between Machine and Work Center
 
@@ -102,24 +102,30 @@ Configure **PDA Assistant** using the warning setup steps below. See [Machine Co
   </Step>
 </Steps>
 
-## Enable and Copy PDA Assistant Warnings
+## Set Up and Copy PDA Assist
 
 <Steps>
-  <Step title="Enable warnings for the machine" icon="arrow-right" title-type="p">
-    As an administrator, open **PDA Assistant** and turn on **Enable warnings on this machine**. Until this is on, the other options have no effect.
+  <Step title="Choose the assistance you need" icon="arrow-right" title-type="p">
+    As an administrator, open **PDA Assist**. Enable **Interval assist on the PDA page**, then choose the start, end, and automatic ending options needed. Review the allowed times and gap conditions in [Machine Configuration](/en/platform-intro/pages/machine-configuration).
   </Step>
-  <Step title="Choose warnings and timing" icon="arrow-right" title-type="p">
-    Set **Severity** and **Delay before warning (min)** for each warning. For **Order running too long**, set **Threshold (hours)**. Keep **Live data is stale** enabled and check assigned shifts for the shift-change warning. Set **Snooze duration (min)** for operator reminders.
+  <Step title="Choose when to ask" icon="arrow-right" title-type="p">
+    Under **How changes are applied**, choose **Ask the operator** or **Pick the best automatically**. Set the automatic and asking limits in hours. Older times between those limits always require a choice.
   </Step>
-  <Step title="Test sound and save" icon="arrow-right" title-type="p">
-    If needed, enable **Allow alarm sound** and each warning's **Play sound**. Set **Volume**, **Repeat every (seconds)**, and **Only during an active shift** as needed. Use **Test sound**, then save the machine's warning settings.
+  <Step title="Check automatic ending" icon="arrow-right" title-type="p">
+    If using **Auto-end forgotten intervals**, set the off or idle condition and waiting time. It affects production only and does not book quantities. To stop automatic ending, turn this option off. Check whether it comes before the off-machine warning.
   </Step>
-  <Step title="Copy to other machines if needed" icon="arrow-right" title-type="p">
-    Select **Copy these settings to other machines** and choose the destinations. Review the settings on the page: even unsaved changes will be copied. Confirm **Copy settings** to replace those machines' Assistant settings. Their other settings stay unchanged. Check the success and failure counts.
+  <Step title="Set warnings and sound" icon="arrow-right" title-type="p">
+    Enable **Warnings on the PDA page** and choose each warning’s delay and severity. Enable **Alarm sound** and the speaker for each warning that should sound. **Info** stays silent. Set **Snooze** and test the volume.
+  </Step>
+  <Step title="Save or reset" icon="arrow-right" title-type="p">
+    Select **Save** for this machine. To restore one section, open it, select **Reset to defaults**, and confirm. Its switch stays unchanged. Select **Save** to keep the reset.
+  </Step>
+  <Step title="Copy both sections if needed" icon="arrow-right" title-type="p">
+    Select **Copy to other machines…** and choose destinations. Review both sections, including unsaved changes: both replace the destination settings. Confirm and check success and failure counts. Save the current machine separately.
   </Step>
 </Steps>
 
-Open the machine's PDA page to use the warnings. The [operator workflow](/en/platform-intro/workflows/data-acquisition) explains warning actions, snoozing, and muting.
+Open the machine’s PDA page to check the result. Follow [Run Data Acquisition](/en/platform-intro/workflows/data-acquisition) for choices and warning actions. For reason selection, follow [Create and Manage Downtime Reasons](/en/platform-intro/workflows/timeline-reason-creation).
 
 ## Decision Points
 

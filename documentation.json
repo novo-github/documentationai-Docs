@@ -333,6 +333,11 @@
                             "icon": "play-circle"
                           },
                           {
+                            "title": "Review and Improve Intervals",
+                            "path": "en/platform-intro/workflows/improve-intervals",
+                            "icon": "play-circle"
+                          },
+                          {
                             "title": "Manage Alert Rules",
                             "path": "en/platform-intro/workflows/alert-rule-management",
                             "icon": "play-circle"
@@ -434,7 +439,7 @@
                             "icon": "play-circle"
                           },
                           {
-                            "title": "Create Timeline Reasons",
+                            "title": "Create and Manage Downtime Reasons",
                             "path": "en/platform-intro/workflows/timeline-reason-creation",
                             "icon": "play-circle"
                           },
@@ -522,6 +527,10 @@
                   {
                     "title": "Warnings and Automation FAQs",
                     "path": "en/help-center/faq/warnings-and-automation"
+                  },
+                  {
+                    "title": "Downtime Reasons FAQs",
+                    "path": "en/help-center/faq/downtime-reasons"
                   },
                   {
                     "title": "Account and Email FAQs",
@@ -866,6 +875,11 @@
                             "icon": "play-circle"
                           },
                           {
+                            "title": "Intervalle prüfen und verbessern",
+                            "path": "de/platform-intro/workflows/improve-intervals",
+                            "icon": "play-circle"
+                          },
+                          {
                             "title": "Alarmregeln verwalten",
                             "path": "de/platform-intro/workflows/alert-rule-management",
                             "icon": "play-circle"
@@ -967,7 +981,7 @@
                             "icon": "play-circle"
                           },
                           {
-                            "title": "Zeitachsen-Gründe erstellen",
+                            "title": "Stillstandsgründe erstellen und verwalten",
                             "path": "de/platform-intro/workflows/timeline-reason-creation",
                             "icon": "play-circle"
                           },
@@ -1055,6 +1069,10 @@
                   {
                     "title": "Fragen zu Warnungen und Automatisierung",
                     "path": "de/help-center/faq/warnings-and-automation"
+                  },
+                  {
+                    "title": "Fragen zu Stillstandsgründen",
+                    "path": "de/help-center/faq/downtime-reasons"
                   },
                   {
                     "title": "Fragen zu Konto und E-Mail",

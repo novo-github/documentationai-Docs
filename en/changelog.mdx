@@ -22,6 +22,61 @@ toc: false
   Reading the forecast never changes your plan or delivery dates. Use the [planning workflow](/en/platform-intro/workflows/assignment-planner) to review the warnings before deciding what to change.
 </Update>
 
+<Update label="2026-10-15" description="v1.5.121–v1.5.123" tags={["feature", "improvement", "fix"]}>
+  {/* commits: dee4760, 9df9181, 1ec4eca, ff5d5ca, b50ac41, c91b92d, 7b9e9dc, 6efb1b2, 22ae8f6, 7694234, 9a934b8, 09035a2, 49400a7, 96098d7, d7742e3, 14656ac, 7440c83, 2981e65, bdeeaa0, dfee685, d5ba37a, f5875cb, cf34dd6, 8857388, 8c9c2d0 */}
+
+  **Release date:** October 15, 2026
+
+  ### New Features
+
+  #### [Record the Times Work Actually Started and Ended](/en/platform-intro/pages/data-acquisition)
+  {/* feature: pda-bde-assist */}
+
+  **PDA Assist** can adjust late starts and stops to times shown by the machine, including preparation. Administrators enable it under **Machine Settings → PDA Assist**. Operators can choose a suggested time, keep the time they pressed, or use **Undo** and **Change…** after an automatic adjustment. For example, a late stop can end at the last production time.
+
+  Administrators can also enable **Auto-end forgotten intervals**. It keeps checking even when nobody has the PDA page open. It ends production intervals only; quantities still need booking. Follow [Run Data Acquisition](/en/platform-intro/workflows/data-acquisition).
+
+  #### [Review Past Intervals Before Changing Them](/en/platform-intro/pages/machine-details)
+  {/* feature: pda-bde-assist */}
+
+  With access to a machine, open **Improve intervals** on its detail page to check up to 60 days. Compare **Now** and **After**, review time added or removed, and apply selected suggestions. Administrators can review several machines and use **Apply best everywhere** after confirmation.
+
+  Finding suggestions changes nothing. Applying them changes historic order times and OEE; reports follow at their next calculation. Overlaps and suggestions beyond the automatic limit need individual review and stay out of the bulk action. Follow [Review and Improve Intervals](/en/platform-intro/workflows/improve-intervals).
+
+  #### [Offer the Right Downtime Reasons on Each Machine](/en/platform-intro/pages/machine-configuration)
+  {/* feature: machine-downtime-reasons */}
+
+  Administrators can open **Machine Settings → Downtime reasons** to offer all reasons or a selected list, create or edit reasons, and **Apply to other machines**. Copying replaces the destinations' selections. Optional **Code** and **Category** help operators recognize reasons; category filters narrow the terminal's tiles.
+
+  Use **Available on machines** when editing a reason to choose where it can be selected. Editing the reason itself affects every machine. Deleting it keeps past downtime entries but removes their reason; a machine losing its last selected reason returns to all reasons. Follow [Create and Manage Downtime Reasons](/en/platform-intro/workflows/timeline-reason-creation).
+
+  ### Improvements
+
+  #### [Open Machine Settings Directly from the Machine](/en/platform-intro/pages/machine-details)
+  {/* feature: machine-settings-shortcut */}
+
+  Administrators can select **Machine Settings**, the gear beside the refresh button in the machine header. Settings open in the same tab; use the browser's back button to return. Follow [Configure a Machine](/en/platform-intro/workflows/machine-configuration).
+
+  #### [Set Warnings and Interval Assistance Together](/en/platform-intro/pages/machine-configuration)
+  {/* feature: pda-bde-assist */}
+
+  Administrators now find separate **Interval assist** and **Warnings** switches under **PDA Assist** (previously **PDA Assistant**). Each warning shows its delay, severity, and sound choice. The simultaneous-order warning now follows **Jobs in parallel**. **Reset to defaults** resets one section while keeping its switch; select **Save** to keep the reset.
+
+  **Copy to other machines…** replaces both interval assistance and warnings with the settings shown, including unsaved changes. Review both sections before copying.
+
+  ### Fixes
+
+  #### [Keep Your Shift and Reason Tiles Up to Date](/en/platform-intro/pages/data-acquisition)
+  {/* feature: pda-timeline-and-reason-tiles */}
+
+  Interval changes now appear immediately in the timeline; the update after an edit keeps your selected shift instead of switching away. Saved reason tile orders now include newly available reasons and remove deleted reasons instead of hiding new tiles or leaving empty ones.
+
+  #### [Choose a Reason Colour Without the Picker Closing](/en/platform-intro/pages/admin-panel)
+  {/* feature: machine-downtime-reasons */}
+
+  The colour picker could close as soon as you opened it. **Pick colour** now stays open until you click outside it; you can also enter a colour value or choose **Random colour**.
+</Update>
+
 <Update label="2026-10-14" description="v1.5.117–v1.5.120" tags={["feature", "improvement", "fix"]}>
   {/* commits: 59cb850, eb9335e, ebce70a, b9b5f95, e951d9f, 85c9afe, 82982df */}
 

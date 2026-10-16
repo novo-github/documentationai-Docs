@@ -22,6 +22,61 @@ toc: false
   Das Lesen der Prognose ändert weder Ihren Plan noch Ihre Liefertermine. Prüfen Sie die Warnungen mit dem Ablauf [Maschinenzuweisungen planen](/de/platform-intro/workflows/assignment-planner), bevor Sie über Änderungen entscheiden.
 </Update>
 
+<Update label="2026-10-15" description="v1.5.121–v1.5.123" tags={["Funktion", "Verbesserung", "Fehlerbehebung"]}>
+  {/* commits: dee4760, 9df9181, 1ec4eca, ff5d5ca, b50ac41, c91b92d, 7b9e9dc, 6efb1b2, 22ae8f6, 7694234, 9a934b8, 09035a2, 49400a7, 96098d7, d7742e3, 14656ac, 7440c83, 2981e65, bdeeaa0, dfee685, d5ba37a, f5875cb, cf34dd6, 8857388, 8c9c2d0 */}
+
+  **Release-Datum:** 15. Oktober 2026
+
+  ### Neue Funktionen
+
+  #### [Den tatsächlichen Arbeitsbeginn und das Arbeitsende erfassen](/de/platform-intro/pages/data-acquisition)
+  {/* feature: pda-bde-assist */}
+
+  **BDE Assist** kann verspätete Start- und Stoppzeiten an die von der Maschine erfassten Zeiten anpassen, auch beim Rüsten. Administratoren aktivieren dies unter **Maschineneinstellungen → BDE Assist**. Bediener wählen eine vorgeschlagene Zeit, behalten die gedrückte Zeit oder nutzen nach einer automatischen Anpassung **Rückgängig** und **Ändern…**. Ein verspäteter Stopp kann beispielsweise auf das letzte Produktionsende gesetzt werden.
+
+  Administratoren können auch **Vergessene Intervalle automatisch beenden** aktivieren. Die Prüfung läuft weiter, wenn niemand die BDE-Seite geöffnet hat. Sie beendet nur Produktionsintervalle; Mengen müssen noch gebucht werden. Folgen Sie [Betriebsdatenerfassung durchführen](/de/platform-intro/workflows/data-acquisition).
+
+  #### [Vergangene Intervalle vor einer Änderung prüfen](/de/platform-intro/pages/machine-details)
+  {/* feature: pda-bde-assist */}
+
+  Mit Zugriff auf eine Maschine öffnen Sie auf deren Detailseite **Intervalle verbessern**, um bis zu 60 Tage zu prüfen. Vergleichen Sie **Jetzt** und **Danach**, prüfen Sie hinzugefügte oder entfernte Zeit und übernehmen Sie ausgewählte Vorschläge. Administratoren können mehrere Maschinen prüfen und nach Bestätigung **Überall das Beste übernehmen** nutzen.
+
+  Die Suche nach Vorschlägen ändert nichts. Die Übernahme ändert historische Auftragszeiten und OEE; Berichte folgen bei ihrer nächsten Berechnung. Überlappungen und Vorschläge jenseits der automatischen Grenze benötigen eine Einzelprüfung und bleiben von der Sammelübernahme ausgeschlossen. Folgen Sie [Intervalle prüfen und verbessern](/de/platform-intro/workflows/improve-intervals).
+
+  #### [Passende Stillstandsgründe je Maschine anbieten](/de/platform-intro/pages/machine-configuration)
+  {/* feature: machine-downtime-reasons */}
+
+  Administratoren können unter **Maschineneinstellungen → Stillstandsgründe** alle Gründe oder eine Auswahl anbieten, Gründe anlegen oder bearbeiten und die Auswahl **Auf andere Maschinen übertragen**. Dabei wird die bisherige Auswahl der Zielmaschinen ersetzt. **Code** und **Kategorie** helfen Bedienern beim Erkennen der Gründe. Kategoriefilter grenzen die Kacheln am Terminal ein.
+
+  Wählen Sie beim Bearbeiten unter **Verfügbar auf Maschinen**, wo ein Grund auswählbar ist. Änderungen am Grund selbst gelten für alle Maschinen. Beim Löschen bleiben frühere Stillstandseinträge erhalten, verlieren aber ihren Grund. Verliert eine Maschine ihren letzten ausgewählten Grund, zeigt sie wieder alle Gründe. Folgen Sie [Stillstandsgründe erstellen und verwalten](/de/platform-intro/workflows/timeline-reason-creation).
+
+  ### Verbesserungen
+
+  #### [Maschineneinstellungen direkt an der Maschine öffnen](/de/platform-intro/pages/machine-details)
+  {/* feature: machine-settings-shortcut */}
+
+  Administratoren können im Kopf der Maschinenseite **Maschineneinstellungen** wählen: das Zahnrad neben der Schaltfläche zum Aktualisieren. Die Einstellungen öffnen sich im selben Tab. Mit der Zurück-Schaltfläche des Browsers kehren Sie zurück. Folgen Sie [Maschine konfigurieren](/de/platform-intro/workflows/machine-configuration).
+
+  #### [Warnungen und Intervallhilfe gemeinsam einstellen](/de/platform-intro/pages/machine-configuration)
+  {/* feature: pda-bde-assist */}
+
+  Administratoren finden unter **BDE Assist** (bisher **BDE-Assistent**) getrennte Schalter für **Intervall-Assistent** und **Warnungen**. Jede Warnung zeigt Verzögerung, Schweregrad und Tonauswahl. Die Warnung vor gleichzeitigen Aufträgen berücksichtigt jetzt **Parallele Aufträge**. **Auf Standard zurücksetzen** setzt einen Bereich zurück und behält dessen Schalter bei. Mit **Speichern** behalten Sie die Änderung.
+
+  **Auf andere Maschinen kopieren…** ersetzt Intervallhilfe und Warnungen durch die angezeigten Einstellungen, einschließlich ungespeicherter Änderungen. Prüfen Sie vor dem Kopieren beide Bereiche.
+
+  ### Fehlerbehebungen
+
+  #### [Schichtauswahl und Grundkacheln aktuell halten](/de/platform-intro/pages/data-acquisition)
+  {/* feature: pda-timeline-and-reason-tiles */}
+
+  Intervalländerungen erscheinen sofort in der Zeitleiste. Die Aktualisierung nach einer Bearbeitung behält Ihre gewählte Schicht bei. Gespeicherte Kachelreihenfolgen enthalten jetzt neu verfügbare Gründe und entfernen gelöschte Gründe, statt neue Kacheln auszublenden oder leere zu hinterlassen.
+
+  #### [Eine Grundfarbe wählen, ohne dass sich die Auswahl schließt](/de/platform-intro/pages/admin-panel)
+  {/* feature: machine-downtime-reasons */}
+
+  Die Farbauswahl konnte sich direkt nach dem Öffnen schließen. **Farbe wählen** bleibt jetzt geöffnet, bis Sie außerhalb klicken. Sie können auch einen Farbwert eingeben oder **Zufällige Farbe** wählen.
+</Update>
+
 <Update label="2026-10-14" description="v1.5.117–v1.5.120" tags={["Funktion", "Verbesserung", "Fehlerbehebung"]}>
   {/* commits: 59cb850, eb9335e, ebce70a, b9b5f95, e951d9f, 85c9afe, 82982df */}
 

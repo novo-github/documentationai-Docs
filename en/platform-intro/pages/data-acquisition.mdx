@@ -89,9 +89,31 @@ Unbound or unlabeled machine time belongs to no order. Deleting a recorded inter
 
 **Card Display Settings / Columns / Highlight** are saved per user. Queue Position follows manual order; running and on-hold cards remain at the top.
 
-## PDA Assistant Warnings
+## Check Assisted Interval Times
 
-The **PDA Assistant** shows warnings for this machine when an administrator enables them. Only administrators can change warning settings. It is separate from classic Alert Rules and Automator.
+When an administrator enables **PDA Assist**, late starts and stops can move to times shown by the machine data. It applies to production and preparation on Data Acquisition V3. Manual time edits and mid-bookings do not receive these automatic adjustments.
+
+The choice dialog compares **Now** with **After** and shows which order gains or loses time. Choose a main option or expand **Other times** for earlier choices, newest first. You can also tap a marker on the timeline. Keep the time you pressed if none fits. Closing the initial choice dialog keeps that time.
+
+After an automatic adjustment, **Undo** restores the time you pressed. **Change…** opens the alternatives; **Back to the time you pressed** restores the original time there. One suitable time within the automatic limit can apply immediately. With several times, your machine's settings decide whether to ask or choose automatically. Times beyond the automatic limit always need your choice.
+
+The interval list marks changes as **Adjusted**, **Auto-ended**, or **Improved**. Open the explanation to see the changed time and reason. **Auto-ended** means a forgotten production interval ended after the configured off or idle period. It works even when the terminal is closed. Check quantities afterwards: automatic ending does not book them. Preparation never ends this way.
+
+When automatic ending is enabled, **Machine off, order still running** can show the remaining minutes. Snoozing or muting this warning does not stop automatic ending. Ask an administrator to change it in [Machine Configuration](/en/platform-intro/pages/machine-configuration).
+
+Interval changes appear immediately on the timeline. The update after a change keeps your selected shift if it still exists. Regular and manual refreshes return to the live shift. To review past days, use **Improve intervals** on [Machine Details](/en/platform-intro/pages/machine-details), following [Review and Improve Intervals](/en/platform-intro/workflows/improve-intervals).
+
+## Choose a Downtime Reason
+
+**Downtime reasons** offers only the reasons available on this machine. A tile can show a code in its corner. Use the category chips above the tiles to narrow the list; these appear only when reasons have categories.
+
+Saved tile arrangements keep newly available reasons and drop deleted ones. Other timeline reason pickers show reasons alphabetically with the code before the name. **Remove label** clears the selected reason without deleting the downtime period.
+
+If a reason is no longer allowed, the list updates. Choose an available reason or ask an administrator to check the machine's selection. A historical reason may still appear even when it is no longer selectable. See [Downtime Reasons FAQs](/en/help-center/faq/downtime-reasons).
+
+## PDA Assist Warnings
+
+**PDA Assist** shows warnings for this machine when an administrator enables them. Only administrators can change warning settings. It is separate from classic Alert Rules and Automator.
 
 | Warning | What it means |
 | --- | --- |
@@ -100,7 +122,7 @@ The **PDA Assistant** shows warnings for this machine when an administrator enab
 | **Order running too long** | One order has run longer than the configured threshold. |
 | **Order carried across shift change** | An order from an earlier shift is still open after the current shift's delay. This needs shifts assigned to the machine. |
 | **Live data is stale** | No fresh machine data has arrived for the configured delay. Other warnings may be unreliable. |
-| **Multiple orders running** | More than one order has an open interval on this machine. |
+| **Multiple orders running** | More orders are running than **Jobs in parallel** allows for this machine. |
 | **Downtime without a reason** | A downtime block is waiting for a reason. |
 
 **Info** is a silent notice. **Warning** shows an orange banner; **Critical** shows a red banner and flashing screen border. The warning appears after the delay selected by your administrator. A running-too-long warning uses its hour threshold instead of a separate delay.

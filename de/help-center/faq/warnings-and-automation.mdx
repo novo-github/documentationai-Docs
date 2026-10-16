@@ -1,6 +1,6 @@
 ---
 title: "Fragen zu Warnungen und Automatisierung"
-description: "BDE-Assistent, Alarmton sowie Automator-Vorlagen und Benachrichtigungen verstehen."
+description: "BDE Assist, Alarmton sowie Automator-Vorlagen und Benachrichtigungen verstehen."
 ---
 
 | Ihre Frage | Antwort lesen |
@@ -17,12 +17,22 @@ description: "BDE-Assistent, Alarmton sowie Automator-Vorlagen und Benachrichtig
 | Warum löst meine Regel für einen Arbeitsplatz nie aus? | [Antwort](/de/help-center/faq/warnings-and-automation#work-center-alert) |
 | Kann ich vor einer verspäteten Lieferung einen Alarm erhalten? | [Antwort](/de/help-center/faq/warnings-and-automation#delivery-alert) |
 | Warum kann ich eine Verzögerungswarnung nicht mit Maschinenbedingungen kombinieren? | [Antwort](/de/help-center/faq/warnings-and-automation#schedule-rule) |
+| Warum endet mein Intervall von selbst? | [Antwort](/de/help-center/faq/warnings-and-automation#auto-end) |
+| Wie verhindere ich, dass der Assistent mein Intervall beendet? | [Antwort](/de/help-center/faq/warnings-and-automation#stop-auto-end) |
+| Der Assistent hat die falsche Zeit gewählt. Wie ändere ich sie? | [Antwort](/de/help-center/faq/warnings-and-automation#change-time) |
+| Warum fragt der Assistent bei manchen Zeiten und übernimmt andere selbst? | [Antwort](/de/help-center/faq/warnings-and-automation#older-time) |
+| Kann der Assistent auch Rüstzeiten korrigieren? | [Antwort](/de/help-center/faq/warnings-and-automation#preparation) |
+| Wie korrigiere ich Intervalle vergangener Tage? | [Antwort](/de/help-center/faq/warnings-and-automation#review) |
+| Warum sind manche Intervallvorschläge nicht ausgewählt? | [Antwort](/de/help-center/faq/warnings-and-automation#unticked) |
+| Warum ändern sich Auftragszeiten vor dem Bericht? | [Antwort](/de/help-center/faq/warnings-and-automation#report-time) |
+| Schaltet Auf Standard zurücksetzen den Assistenten aus? | [Antwort](/de/help-center/faq/warnings-and-automation#reset) |
+| Wo öffne ich die Einstellungen dieser Maschine? | [Antwort](/de/help-center/faq/warnings-and-automation#settings-gear) |
 
 <a id="enable-warnings" />
 
 ## Wer kann Warnungen für meine Maschine einschalten?
 
-Nur Administratoren können Warnungseinstellungen ändern. Öffnen Sie in der Maschinenkonfiguration **BDE-Assistent** und schalten Sie zuerst **Warnungen für diese Maschine aktivieren** ein. Danach wählen Sie Verzögerungen, Schweregrad und Ton. Folgen Sie [Maschine konfigurieren](/de/platform-intro/workflows/machine-configuration).
+Nur Administratoren können Warnungseinstellungen ändern. Öffnen Sie in der Maschinenkonfiguration **BDE Assist** und schalten Sie zuerst **Warnungen auf der BDE-Seite** ein. Danach wählen Sie Verzögerungen, Schweregrad und Ton. Folgen Sie [Maschine konfigurieren](/de/platform-intro/workflows/machine-configuration).
 
 <a id="warning-action" />
 
@@ -34,7 +44,7 @@ Wählen Sie **Alle Warnungen anzeigen** und lesen Sie Auftrag und Problem. Prüf
 
 ## Wie stoppe ich den Alarmton und warum bleibt er manchmal aus?
 
-Mit **Stummschalten** schalten Sie Ihr Gerät stumm, mit **Ton aktivieren** wieder ein. Der Browser benötigt vorher einen Tipp auf die Seite. **Info** ist immer lautlos. Andere Töne hängen von den Administratoreinstellungen ab und können auf aktive Schichten begrenzt sein. Siehe [Ton des BDE-Assistenten](/de/platform-intro/pages/data-acquisition).
+Mit **Stummschalten** schalten Sie Ihr Gerät stumm, mit **Ton aktivieren** wieder ein. Der Browser benötigt vorher einen Tipp auf die Seite. **Info** ist immer lautlos. Andere Töne hängen von den Administratoreinstellungen ab und können auf aktive Schichten begrenzt sein. Siehe [Ton des BDE Assisten](/de/platform-intro/pages/data-acquisition).
 
 <a id="snooze" />
 
@@ -46,7 +56,7 @@ Zurückstellen blendet die Warnung nur für die eingestellte Dauer aus und schal
 
 ## Werden beim Kopieren auch ungespeicherte Warnungseinstellungen übernommen?
 
-Ja. **Einstellungen kopieren** übernimmt die angezeigten Einstellungen einschließlich ungespeicherter Änderungen. Die BDE-Assistent-Einstellungen der gewählten Maschinen werden ersetzt. Andere Einstellungen bleiben unverändert. Prüfen Sie Bestätigung und Ergebniszahlen. Siehe [Maschinenkonfiguration](/de/platform-intro/pages/machine-configuration).
+Ja. **Auf andere Maschinen kopieren…** übernimmt die angezeigten Einstellungen für Intervallhilfe und Warnungen einschließlich ungespeicherter Änderungen. Die Einstellungen von **BDE Assist** der gewählten Maschinen werden ersetzt. Andere Einstellungen bleiben unverändert. Prüfen Sie Bestätigung und Ergebniszahlen. Siehe [Maschinenkonfiguration](/de/platform-intro/pages/machine-configuration).
 
 <a id="template" />
 
@@ -89,3 +99,64 @@ Ja. Ein Administrator kann eine Automator-Regel mit **Forecaster → Liefertermi
 ## Warum kann ich eine Verzögerungswarnung nicht mit Maschinenbedingungen kombinieren?
 
 Terminplan-Bedingungen benötigen eine eigene Regel ohne Maschinen- oder Auftragsbedingungen. Auch die Beschränkung auf aktive Schichten wird dafür nicht verwendet. Erstellen Sie eine separate Forecaster-Regel und prüfen Sie Empfänger und Zeiten. Siehe [Automator](/de/platform-intro/pages/automator).
+
+
+<a id="auto-end" />
+
+## Warum endet mein Intervall von selbst?
+
+Ein Administrator hat **Vergessene Intervalle automatisch beenden** aktiviert. Produktionsintervalle enden nach der eingestellten Aus- oder Leerlaufdauer, auch ohne geöffnete BDE-Seite. Als Ende gilt die letzte Produktion oder, wenn nichts produziert wurde, der Stoppzeitpunkt. Mengen müssen noch gebucht werden. Siehe [Einstellungen zum automatischen Beenden](/de/platform-intro/pages/machine-configuration).
+
+<a id="stop-auto-end" />
+
+## Wie verhindere ich, dass der Assistent mein Intervall beendet?
+
+Bitten Sie einen Administrator, unter **Maschineneinstellungen → BDE Assist** die Option **Vergessene Intervalle automatisch beenden** auszuschalten und **Speichern** zu wählen. Stummschalten oder Pausieren einer Warnung hält dies nicht an. Siehe [Maschine konfigurieren](/de/platform-intro/workflows/machine-configuration).
+
+<a id="change-time" />
+
+## Der Assistent hat die falsche Zeit gewählt. Wie ändere ich sie?
+
+Wählen Sie nach einer automatischen Anpassung **Rückgängig** für die gedrückte Zeit oder **Ändern…** für eine andere angebotene Zeit. **Andere Zeiten** zeigt frühere Möglichkeiten. Im ersten Auswahldialog können Sie die gedrückte Zeit behalten. Folgen Sie [Betriebsdatenerfassung durchführen](/de/platform-intro/workflows/data-acquisition).
+
+<a id="older-time" />
+
+## Warum fragt der Assistent bei manchen Zeiten und übernimmt andere selbst?
+
+Eine einzelne passende Zeit innerhalb der automatischen Grenze kann sofort gelten. Bei mehreren Zeiten bestimmen die Maschineneinstellungen, ob gefragt oder automatisch gewählt wird. Zeiten jenseits dieser Grenze benötigen immer Ihre Auswahl, bis zur Fragegrenze. Siehe [Übernahme von Änderungen](/de/platform-intro/pages/machine-configuration).
+
+<a id="preparation" />
+
+## Kann der Assistent auch Rüstzeiten korrigieren?
+
+Ja. Je nach erlaubten Optionen kann Rüsten beim Ende des vorherigen Intervalls, beim Produktionsstopp oder beim Einschalten der Maschine beginnen. Sein Ende kann auf den ersten Produktionsbeginn nach Rüstbeginn verschoben werden. Automatisches Beenden nach Aus- oder Leerlaufzeit beendet niemals Rüsten. Siehe [BDE-Assist-Einstellungen](/de/platform-intro/pages/machine-configuration).
+
+<a id="review" />
+
+## Wie korrigiere ich Intervalle vergangener Tage?
+
+Öffnen Sie in den Maschinendetails einen Tag mit Intervallen und wählen Sie **Intervalle verbessern**. Prüfen Sie bis zu 60 Tage, vergleichen Sie **Jetzt** und **Danach** und übernehmen Sie ausgewählte Änderungen. Mit Maschinenzugriff ist dies für eine Maschine möglich. Nur Administratoren können mehrere prüfen oder **Überall das Beste übernehmen** nutzen. Folgen Sie [Intervalle prüfen und verbessern](/de/platform-intro/workflows/improve-intervals).
+
+<a id="unticked" />
+
+## Warum sind manche Intervallvorschläge nicht ausgewählt?
+
+Überlappungen können gültige parallele Arbeit sein. Zeiten jenseits der automatischen Grenze benötigen Ihre Entscheidung. Beide sind zunächst nicht angehakt und bleiben von **Überall das Beste übernehmen** ausgeschlossen. Produktion ohne Auftrag ist nur ein Hinweis. Siehe [Intervalle verbessern](/de/platform-intro/pages/machine-details).
+
+<a id="report-time" />
+
+## Warum ändern sich Auftragszeiten vor dem Bericht?
+
+Die Übernahme von Intervallkorrekturen aktualisiert Auftragszeiten sofort. OEE und Berichte folgen bei ihrer nächsten Berechnung. Die Suche nach Vorschlägen allein ändert nichts. Siehe [Intervalle prüfen und verbessern](/de/platform-intro/workflows/improve-intervals).
+
+<a id="reset" />
+
+## Schaltet Auf Standard zurücksetzen den Assistenten aus?
+
+Nein. Es setzt die Optionen des gewählten Bereichs zurück und behält dessen Ein/Aus-Schalter bei. Erst **Speichern** behält das Zurücksetzen. Prüfen Sie Intervallhilfe und Warnungen getrennt. Siehe [Maschinenkonfiguration](/de/platform-intro/pages/machine-configuration).
+
+<a id="settings-gear" />
+
+## Wo öffne ich die Einstellungen dieser Maschine?
+
+Administratoren nutzen das Zahnrad **Maschineneinstellungen** neben dem Aktualisieren im Kopf der Maschinendetails. Es öffnet im selben Tab. Die Zurück-Schaltfläche des Browsers führt zur Maschine zurück. Andere Rollen sehen diese Schaltfläche nicht. Folgen Sie [Maschine konfigurieren](/de/platform-intro/workflows/machine-configuration).

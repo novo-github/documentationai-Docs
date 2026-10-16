@@ -179,7 +179,7 @@ Anteil der Produktion an der gesamten erfassten Maschinenzeit. AVL bleibt auch a
 
 ### BDE / PDA / Betriebsdatenerfassung / Production Data Acquisition
 
-PDA und BDE bezeichnen dasselbe Bedienerterminal zum Starten von Arbeit und Buchen von Mengen. PDA Entry heißt BDE-Eintrag; PDA Assistant heißt BDE-Assistent.
+PDA und BDE bezeichnen dasselbe Bedienerterminal zum Starten von Arbeit und Buchen von Mengen. PDA Entry heißt BDE-Eintrag; **PDA Assist** heißt **BDE Assist**.
 
 [Mehr erfahren](/de/platform-intro/pages/data-acquisition).
 
@@ -535,7 +535,7 @@ Produktionszeit geteilt durch gesamte Intervalldauer; unterscheidet sich von der
 
 ### Info / Warnung / Kritisch
 
-Schweregrade des BDE-Assistenten: **Info** ist lautlos, **Warnung** zeigt ein orangefarbenes Banner und **Kritisch** ein rotes Banner mit blinkendem Rand. Warnung und Kritisch können bei aktivierter Einstellung auch Ton abspielen.
+Schweregrade von BDE Assist: **Info** ist lautlos, **Warnung** zeigt ein orangefarbenes Banner und **Kritisch** ein rotes Banner mit blinkendem Rand. Warnung und Kritisch können bei aktivierter Einstellung auch Ton abspielen.
 
 [Mehr erfahren](/de/platform-intro/pages/machine-configuration).
 
@@ -831,11 +831,29 @@ Stückzahlen. PCS in Hallen- und Kioskkennzahlen bleibt sprachübergreifend glei
 
 [Mehr erfahren](/de/platform-intro/pages/hall-plan).
 
-### BDE-Assistent
+### BDE Assist
 
-Warnungen auf der BDE-Seite einer Maschine zu fehlenden Meldungen, offenen Aufträgen und veralteten Daten. Administratoren aktivieren und konfigurieren sie. Bediener können sie prüfen, zurückstellen oder stummschalten.
+**BDE Assist** (bisher **BDE-Assistent**) verbindet Intervallhilfe und Warnungen einer Maschine. Administratoren stellen sie getrennt ein. Bediener können vorgeschlagene Zeiten wählen und Warnungen prüfen, pausieren oder stummschalten.
+
+[Mehr erfahren](/de/platform-intro/pages/machine-configuration).
+
+### Angepasst / Auto-beendet / Verbessert
+
+**Angepasst** kennzeichnet einen durch die Intervallhilfe geänderten Start oder ein geändertes Ende. **Auto-beendet** kennzeichnet ein nach der eingestellten Aus- oder Leerlaufdauer beendetes Produktionsintervall. Mengen müssen eventuell noch gebucht werden. **Verbessert** kennzeichnet eine bei der Prüfung vergangener Intervalle übernommene Änderung. Öffnen Sie die Erklärung für Zeit und Grund.
 
 [Mehr erfahren](/de/platform-intro/pages/data-acquisition).
+
+### Intervalle verbessern
+
+Prüfung erfasster Intervalle gegen die Maschinenaktivität für bis zu 60 Tage. Sie schlägt Änderungen vor und zeigt ihre Wirkung vor der Übernahme. Mit Maschinenzugriff können Sie eine Maschine prüfen. Nur Administratoren können mehrere prüfen und überall die besten Optionen übernehmen.
+
+[Mehr erfahren](/de/platform-intro/workflows/improve-intervals).
+
+### Überlappungen (Warnung)
+
+Es liefen mehr Intervalle gleichzeitig, als die parallele Kapazität der Maschine vorsieht. Parallele Arbeit kann richtig sein. Diese Vorschläge sind nicht vorausgewählt und bleiben von **Überall das Beste übernehmen** ausgeschlossen.
+
+[Mehr erfahren](/de/platform-intro/pages/machine-details).
 
 ### Peak Optimizer
 
@@ -1121,9 +1139,27 @@ Zeitklassen, etwa 1–5 oder 5–30 Minuten, zum Zählen von Stillstandshäufigk
 
 ### Timeline reason / Downtime reason / Stillstandsgrund
 
-Administrativ definierter Grund für einen Zeitabschnitt mit Name, Beschreibung, Farbe, Typ und Stufe 1–5. Die Wirkung von Typ und Stufe ist unbestätigt.
+Eine Beschriftung, die einen Stillstandszeitraum erklärt. Administratoren pflegen gemeinsame Gründe und bestimmen, wo Bediener sie wählen können. Das Entfernen aus der Maschinenauswahl entfernt keine früheren Zuordnungen. Beim Löschen des Grundes bleiben frühere Einträge erhalten, verlieren aber ihren Grund.
 
-[Mehr erfahren](/de/platform-intro/pages/timeline-analysis).
+[Mehr erfahren](/de/platform-intro/workflows/timeline-reason-creation).
+
+### Code / Kategorie
+
+Der optionale **Code** eines Grundes, etwa F12, ist im Unternehmen eindeutig und verwendet Großbuchstaben. **Kategorie** gruppiert Gründe zur Auswahl, beispielsweise Mechanik oder Material. Diagrammerklärungen zeigen beides, sofern vorhanden.
+
+[Mehr erfahren](/de/platform-intro/pages/admin-panel).
+
+### Alle Gründe (Standard) / Nur ausgewählte Gründe
+
+**Alle Gründe (Standard)** enthält jeden Unternehmensgrund und spätere Ergänzungen. **Nur ausgewählte Gründe** begrenzt die Bedienerauswahl auf eine feste Liste mit mindestens einem Grund. Das Löschen ihres letzten ausgewählten Grundes stellt eine Maschine auf alle Gründe zurück.
+
+[Mehr erfahren](/de/platform-intro/pages/machine-configuration).
+
+### Verfügbar auf Maschinen
+
+Die Maschinen, auf denen Bediener einen Grund wählen können. Wählen Sie eine mit **Alle Gründe** markierte Maschine ab, erhält sie eine feste Liste der übrigen aktuellen Gründe. Spätere Ergänzungen erscheinen nicht mehr automatisch.
+
+[Mehr erfahren](/de/platform-intro/pages/admin-panel).
 
 ### Timeline rules
 

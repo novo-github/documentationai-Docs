@@ -9,7 +9,7 @@ description: "A tabbed setup page for creating or refining a machine\u2019s conf
 
 Let admins create a machine setup or refine how an existing machine is configured.
 
-Users reach this page through machine setup actions or by opening a machine configuration route directly.
+Administrators can open **Machine Settings** from the gear in the machine detail header, or from the machine row menu in the Admin Panel.
 
 ## Access
 
@@ -83,27 +83,80 @@ The **Active shift** badge identifies machines using this mode. Its explanation 
 
 **Waiting for the next active shift** or **waiting for machine start** means the next shift has not started yet. It starts automatically when the machine begins idle, production, or preparation. Until then, planned shifts from the assigned shift group are shown. This display does not switch off active shifts.
 
-## Warnings: PDA Assistant
+## PDA Assist: Interval Assistance and Warnings
 
-**Only administrators can change warning settings.** Open **PDA Assistant** in the machine configuration. Enable **Enable warnings on this machine** first. Until it is on, the other settings have no effect and the PDA page shows no warnings.
+**Only administrators can change these settings.** Open **Machine Settings → PDA Assist** (previously **PDA Assistant**). **Interval assist** and **Warnings** each have a switch in their heading. Turning one off collapses its settings. The summary beneath the heading shows what is active.
+
+### Start and End Times
+
+Live interval assistance is off by default. Enable **Interval assist on the PDA page**, then the start, end, or automatic ending options you need. Under **Start time**, choose the allowed times:
+
+- **End of the previous interval** includes changeover time in the new order. Set the maximum gap and how much off time is allowed between intervals.
+- **Start of idle time** includes the machine's activity before production, such as warming up.
+- **Start of production** uses when production began.
+
+For preparation, the previous interval's end can be used even if the machine was off in between; the maximum gap still applies. **For preparation:** also offers when the machine stopped producing. The machine-switch-on option follows **Start of idle time**. It can cover setup with test pieces. Machines that report preparation can also provide a preparation start.
+
+Under **End time**, **End of the last production** stops at the last moment of production. **End of activity** also includes the idle time until the machine went off. **Preparation ends when production starts** ends preparation at the first production after preparation began. For example, preparation starting at 08:00 with production from 08:40 can end at 08:40 even if you press stop at 08:46.
+
+These choices also guide **Improve intervals**. When live assistance is off, expand **Allowed times for Improve intervals** to edit them. Reviewing past days only proposes changes; someone must apply them.
+
+### How Changes Are Applied
+
+Under **How changes are applied**, choose **Ask the operator** or **Pick the best automatically** when several times fit. The automatic choice uses the earliest allowed start or latest allowed end. Operators can reverse an automatic adjustment with **Undo** or choose another time with **Change…**.
+
+Set **Apply automatically up to (hours)** and **Ask the operator up to (hours)**. Each accepts 0.5–12 hours in half-hour steps; both default to 6 hours. The asking limit cannot be smaller than the automatic limit. Times between the limits require a choice. Older times are not offered. The previous interval's end also has its own gap conditions.
+
+### Auto-end Forgotten Intervals
+
+Enable **Auto-end forgotten intervals** and choose **off** or **off or idle**, then the waiting time. When enabled, it keeps checking even when nobody has the PDA page open. Only production intervals end this way, never preparation.
+
+The end is set to the last production time, or when the machine stopped if nothing was produced. Quantities are not booked and the order is not marked complete by this action. Operators must check and book quantities afterwards. To prevent automatic ending, turn this option off and select **Save**.
+
+If automatic ending comes before the **Machine off, order still running** warning, operators will not see that warning. The settings explain this. Snoozing a warning or muting sound does not turn off automatic ending.
 
 ### Warning Settings
 
-Under **Warnings**, choose the warnings you need. For each one, set **Severity**, **Delay before warning (min)**, and **Play sound**. **Order running too long** uses **Threshold (hours)** as its delay. **Order carried across shift change** needs shifts assigned to the machine. Keep **Live data is stale** enabled: without fresh data, the other warnings may be unreliable.
+Enable **Warnings on the PDA page**, then choose each warning's delay, severity, and speaker setting. The delay is how long the situation must last before a warning appears. **Order carried across shift change** needs assigned shifts. Keep **Live data is stale** enabled because other warnings may be unreliable without fresh data.
 
-**Info** stays silent. **Warning** shows an orange banner. **Critical** shows a red banner with a flashing screen border. **Snooze duration (min)** sets how long an operator can hide and silence a warning. It stays listed in the warning panel and returns if the problem remains.
+| Warning | Default delay | Default severity |
+| --- | --- | --- |
+| **Producing without an order** | 5 min | **Critical** |
+| **Machine off, order still running** | 15 min | **Warning** |
+| **Order running too long** | 8 h | **Warning** |
+| **Order carried across shift change** | 15 min | **Warning** |
+| **Live data is stale** | 30 min | **Warning** |
+| **Multiple orders running** | 5 min | **Info** |
+| **Downtime without a reason** | 5 min | **Info** |
+
+**Multiple orders running** appears only when the number exceeds **Jobs in parallel**. **Live data is stale** needs at least 5 minutes of delay; other minute-based delays need at least 1 minute.
+
+**Info** is a silent note in the warning list. **Warning** shows an orange banner. **Critical** shows a red banner and flashing screen border. **Snooze** sets how long operators can hide and silence a warning before it returns if the problem remains.
 
 ### Alarm Sound
 
-Under **Sound**, turn on **Allow alarm sound** if warnings should be audible. Set **Volume** and **Repeat every (seconds)**. Enable **Only during an active shift** to keep the sound quiet outside shifts. Each warning also needs **Play sound** enabled; **Info** is always silent.
+Turn on **Alarm sound**, then enable the speaker for each warning that should sound. **Info** is always silent. Set the volume, repeat interval, and whether sound is restricted to active shifts. Test the volume: **Warning** plays two beeps; **Critical** plays three alternating high and low beeps.
 
-Use **Test sound** to hear the selected volume: two beeps for **Warning**, three alternating high and low beeps for **Critical**. Sound repeats while an audible warning is active and not snoozed. Operators can mute sound on their own device. A browser needs a tap on the page before it can play sound; some browsers cannot play alarm sounds.
+Sound repeats until the warning is handled or snoozed. Operators can mute their device. The browser needs a tap on the page before sound can play; some browsers cannot play alarm sounds.
 
-### Copy Settings to Other Machines
+### Reset, Save, and Copy Settings
 
-Select **Copy these settings to other machines**, choose the destination machines, and review the confirmation before **Copy settings**. This copies everything shown on this page, including unsaved changes. It replaces the selected machines' PDA Assistant settings and leaves their other settings unchanged. Check the success and failure counts afterwards.
+**Reset to defaults** at the bottom of either open section resets that section's options after confirmation. Its on/off switch stays as it is. Select **Save** to keep the reset or other changes; **Unsaved changes** identifies edits still waiting to be saved.
 
-Save the warning settings for this machine before leaving the page. Follow [Configure a Machine](/en/platform-intro/workflows/machine-configuration) for setup, and [Data Acquisition](/en/platform-intro/pages/data-acquisition) for the warning meanings and operator actions.
+**Copy to other machines…** copies both interval assistance and warnings as shown, including unsaved edits. Choose destinations and review the replacement notice before confirming. Their other settings stay unchanged. Check success and failure counts, and save the current machine separately. Follow [Configure a Machine](/en/platform-intro/workflows/machine-configuration).
+
+## Downtime Reasons for This Machine
+
+Administrators use **Machine Settings → Downtime reasons** for machines and work centers. Save a new machine before setting its reasons.
+
+- **All reasons (default)** offers every company reason, including reasons created later.
+- **Only selected reasons** offers a fixed list. Select at least one reason before saving. Search by code or reason and filter by category. **Select all visible** adds the visible reasons; clearing the selection removes all ticks, including hidden ones.
+
+Save the tab to keep this machine's selection. **Apply to other machines** replaces the destinations' lists with the current selection or all-reasons mode. Review the destinations before confirming.
+
+**New reason** opens the shared reason form. The current machine starts ticked under **Available on machines**. Keep it ticked if the reason should be offered here. Editing a reason's name, code, category, or colour affects every machine using it. See [Create and Manage Downtime Reasons](/en/platform-intro/workflows/timeline-reason-creation) for availability and deletion limits.
+
+The selection limits what people can assign. Automatic timeline rules still use the company-wide reasons, so history can contain a reason that is no longer selectable.
 
 ## Main Entities
 

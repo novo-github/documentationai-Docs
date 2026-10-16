@@ -1,6 +1,6 @@
 ---
 title: "Warnings and Automation FAQs"
-description: "Understand PDA Assistant warnings, alarm sound, and Automator templates and notifications."
+description: "Understand PDA Assist warnings, alarm sound, and Automator templates and notifications."
 ---
 
 | Your question | Read the answer |
@@ -17,12 +17,22 @@ description: "Understand PDA Assistant warnings, alarm sound, and Automator temp
 | Why does my rule never trigger for a work center? | [Answer](/en/help-center/faq/warnings-and-automation#work-center-alert) |
 | Can I get an alert before an order misses delivery? | [Answer](/en/help-center/faq/warnings-and-automation#delivery-alert) |
 | Why can I not combine a delay warning with my machine conditions? | [Answer](/en/help-center/faq/warnings-and-automation#schedule-rule) |
+| Why does my interval end on its own? | [Answer](/en/help-center/faq/warnings-and-automation#auto-end) |
+| How do I stop the assistant from ending my interval? | [Answer](/en/help-center/faq/warnings-and-automation#stop-auto-end) |
+| The assistant chose the wrong time. How do I change it? | [Answer](/en/help-center/faq/warnings-and-automation#change-time) |
+| Why does the assistant ask about some times but apply others itself? | [Answer](/en/help-center/faq/warnings-and-automation#older-time) |
+| Can the assistant correct preparation times too? | [Answer](/en/help-center/faq/warnings-and-automation#preparation) |
+| How can I correct intervals from previous days? | [Answer](/en/help-center/faq/warnings-and-automation#review) |
+| Why are some interval suggestions not selected? | [Answer](/en/help-center/faq/warnings-and-automation#unticked) |
+| Why did order times change before the report did? | [Answer](/en/help-center/faq/warnings-and-automation#report-time) |
+| Does Reset to defaults switch the assistant off? | [Answer](/en/help-center/faq/warnings-and-automation#reset) |
+| Where can I open settings for this machine? | [Answer](/en/help-center/faq/warnings-and-automation#settings-gear) |
 
 <a id="enable-warnings" />
 
 ## Who can turn on warnings for my machine?
 
-Only administrators can change warning settings. In the machine configuration, open **PDA Assistant** and turn on **Enable warnings on this machine** before setting delays, severity, and sound. Follow [Configure a Machine](/en/platform-intro/workflows/machine-configuration).
+Only administrators can change warning settings. In the machine configuration, open **PDA Assist** and turn on **Warnings on the PDA page** before setting delays, severity, and sound. Follow [Configure a Machine](/en/platform-intro/workflows/machine-configuration).
 
 <a id="warning-action" />
 
@@ -34,7 +44,7 @@ Select **View all warnings** and read the affected order and issue. Check the ma
 
 ## How do I stop the alarm sound, and why is it sometimes silent?
 
-Select **Mute** to silence sound on your device or **Enable sound** to turn it on. The browser needs a tap on the page first. **Info** is always silent; other sounds depend on administrator settings and may be limited to active shifts. See [PDA Assistant sound](/en/platform-intro/pages/data-acquisition).
+Select **Mute** to silence sound on your device or **Enable sound** to turn it on. The browser needs a tap on the page first. **Info** is always silent; other sounds depend on administrator settings and may be limited to active shifts. See [PDA Assist sound](/en/platform-intro/pages/data-acquisition).
 
 <a id="snooze" />
 
@@ -46,7 +56,7 @@ Snoozing hides and silences a warning only for the configured duration. It stays
 
 ## Will copying warning settings include my unsaved changes?
 
-Yes. **Copy settings** copies the settings shown on the page, including unsaved changes. It replaces the selected machines’ PDA Assistant settings and leaves their other settings unchanged. Review the confirmation and result counts. See [Machine Configuration](/en/platform-intro/pages/machine-configuration).
+Yes. **Copy to other machines…** copies both interval assistance and warnings from the settings shown on the page, including unsaved changes. It replaces the selected machines’ PDA Assist settings and leaves their other settings unchanged. Review the confirmation and result counts. See [Machine Configuration](/en/platform-intro/pages/machine-configuration).
 
 <a id="template" />
 
@@ -89,3 +99,64 @@ Yes. An administrator can create an Automator rule with **Forecaster → Deliver
 ## Why can I not combine a delay warning with my machine conditions?
 
 Schedule conditions must stay in a separate rule from machine or order conditions. Their active-shift restriction is also unused. Create a separate Forecaster rule and review its recipients and timing. See [Automator](/en/platform-intro/pages/automator).
+
+
+<a id="auto-end" />
+
+## Why does my interval end on its own?
+
+An administrator has enabled **Auto-end forgotten intervals**. It ends production after the configured off or idle period, even when nobody has the PDA page open. The recorded end moves to the last production time, or the stop time if nothing was produced. Quantities still need booking. See [automatic ending settings](/en/platform-intro/pages/machine-configuration).
+
+<a id="stop-auto-end" />
+
+## How do I stop the assistant from ending my interval?
+
+Ask an administrator to turn off **Auto-end forgotten intervals** under **Machine Settings → PDA Assist**, then select **Save**. Muting or snoozing a warning does not stop it. See [Configure a Machine](/en/platform-intro/workflows/machine-configuration).
+
+<a id="change-time" />
+
+## The assistant chose the wrong time. How do I change it?
+
+After an automatic adjustment, select **Undo** to restore the time you pressed, or **Change…** to choose another offered time. Expand **Other times** for earlier choices. In the initial choice dialog you can keep the pressed time. Follow [Run Data Acquisition](/en/platform-intro/workflows/data-acquisition).
+
+<a id="older-time" />
+
+## Why does the assistant ask about some times but apply others itself?
+
+A single suitable time within the automatic limit can apply immediately. With several times, the machine settings decide whether to ask or choose automatically. Times beyond that limit always require your choice, up to the asking limit. See [how changes are applied](/en/platform-intro/pages/machine-configuration).
+
+<a id="preparation" />
+
+## Can the assistant correct preparation times too?
+
+Yes. Preparation can start from the previous interval’s end, when production stopped, or when the machine was switched on, depending on the allowed options. Its end can move to the first production after preparation began. Automatic ending after off or idle time never ends preparation. See [PDA Assist settings](/en/platform-intro/pages/machine-configuration).
+
+<a id="review" />
+
+## How can I correct intervals from previous days?
+
+Open a day with intervals on the machine detail page and select **Improve intervals**. Review up to 60 days, compare **Now** and **After**, then apply the changes you choose. Anyone with machine access can do this for one machine; only administrators can review several or use **Apply best everywhere**. Follow [Review and Improve Intervals](/en/platform-intro/workflows/improve-intervals).
+
+<a id="unticked" />
+
+## Why are some interval suggestions not selected?
+
+Overlaps may be valid parallel work, and times beyond the automatic limit need your decision. Both start unticked and stay out of **Apply best everywhere**. Production without an order is information only. See [Improve intervals](/en/platform-intro/pages/machine-details).
+
+<a id="report-time" />
+
+## Why did order times change before the report did?
+
+Applying interval corrections updates order times immediately. OEE and reports pick up the change at their next calculation. Merely finding suggestions changes nothing. See [Review and Improve Intervals](/en/platform-intro/workflows/improve-intervals).
+
+<a id="reset" />
+
+## Does Reset to defaults switch the assistant off?
+
+No. It resets the chosen section’s options and keeps that section’s on/off switch. The reset is not saved until you select **Save**. Check interval assistance and warnings separately. See [Machine Configuration](/en/platform-intro/pages/machine-configuration).
+
+<a id="settings-gear" />
+
+## Where can I open settings for this machine?
+
+Administrators can use the **Machine Settings** gear beside refresh in the machine detail header. It opens in the same tab; browser Back returns to the machine. Other roles do not see this button. Follow [Configure a Machine](/en/platform-intro/workflows/machine-configuration).

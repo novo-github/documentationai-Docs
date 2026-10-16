@@ -25,7 +25,7 @@ Nutzen Sie für einen **Arbeitsplatz** die folgenden Schritte zum Wechsel der Ar
 
 <Steps>
   <Step title="Öffnen Sie die Maschinenkonfigurationsseite für eine neue oder vorhandene Maschine" icon="arrow-right" title-type="p">
-    Öffnen Sie die Maschinenkonfigurationsseite für eine neue oder vorhandene Maschine.
+    Wählen Sie für eine vorhandene Maschine das Zahnrad **Maschineneinstellungen** im Kopf ihrer Detailseite. Nur Administratoren sehen es. Die Einstellungen öffnen sich im selben Tab. Die Zurück-Schaltfläche des Browsers führt zur Maschine zurück.
   </Step>
   <Step title="Prüfen Sie den Tab Basisinformationen und bestätigen Sie Identität, Halle und Schichtgruppe" icon="arrow-right" title-type="p">
     Prüfen Sie den Tab Basisinformationen und bestätigen Sie Identität, Halle und Schichtgruppe.
@@ -66,7 +66,7 @@ Nur Admins ändern die Einrichtung. Klären Sie, ob der Eintrag eine **Maschine*
 
 Ändern Sie **Aktive Schicht** mit den folgenden Schritten und prüfen Sie die Wirkung auf die heutigen Schichten. Beachten Sie Hinweise auf Alarmregeln, die mit aktiven Schichten nicht funktionieren.
 
-Richten Sie **BDE-Assistent** mit den folgenden Schritten für Warnungen ein. [Maschinenkonfiguration](/de/platform-intro/pages/machine-configuration) erklärt Regeln, Zeitklassen, Zielwerte und Sensorfelder.
+Richten Sie **BDE Assist** mit den folgenden Schritten für Warnungen ein. [Maschinenkonfiguration](/de/platform-intro/pages/machine-configuration) erklärt Regeln, Zeitklassen, Zielwerte und Sensorfelder.
 
 ## Zwischen Maschine und Arbeitsplatz wechseln
 
@@ -102,24 +102,30 @@ Richten Sie **BDE-Assistent** mit den folgenden Schritten für Warnungen ein. [M
   </Step>
 </Steps>
 
-## Warnungen des BDE-Assistenten aktivieren und kopieren
+## BDE Assist einrichten und kopieren
 
 <Steps>
-  <Step title="Aktivieren Sie Warnungen für die Maschine" icon="arrow-right" title-type="p">
-    Öffnen Sie als Administrator **BDE-Assistent** und schalten Sie **Warnungen für diese Maschine aktivieren** ein. Erst dann wirken die weiteren Optionen.
+  <Step title="Wählen Sie die benötigte Hilfe" icon="arrow-right" title-type="p">
+    Öffnen Sie als Administrator **BDE Assist**. Aktivieren Sie **Intervall-Assistent auf der BDE-Seite** und die benötigten Optionen für Start, Ende und automatisches Beenden. Prüfen Sie erlaubte Zeiten und Lückenbedingungen in der [Maschinenkonfiguration](/de/platform-intro/pages/machine-configuration).
   </Step>
-  <Step title="Wählen Sie Warnungen und Zeiten" icon="arrow-right" title-type="p">
-    Legen Sie je Warnung **Schweregrad** und **Verzögerung vor Warnung (Min.)** fest. Für **Auftrag läuft zu lange** wählen Sie **Schwellwert (Stunden)**. Lassen Sie **Live-Daten veraltet** aktiv und prüfen Sie zugewiesene Schichten für die Schichtwechselwarnung. Stellen Sie **Erneut anzeigen nach (Min.)** für zurückgestellte Warnungen ein.
+  <Step title="Legen Sie fest, wann gefragt wird" icon="arrow-right" title-type="p">
+    Wählen Sie unter **Wie Änderungen übernommen werden** zwischen **Bediener fragen** und **Automatisch das Beste wählen**. Stellen Sie automatische Grenze und Fragegrenze in Stunden ein. Ältere Zeiten zwischen beiden Grenzen benötigen immer eine Auswahl.
   </Step>
-  <Step title="Testen Sie den Ton und speichern Sie" icon="arrow-right" title-type="p">
-    Aktivieren Sie bei Bedarf **Alarmton erlauben** und je Warnung **Ton abspielen**. Stellen Sie **Lautstärke**, **Wiederholen alle (Sekunden)** und bei Bedarf **Nur während einer aktiven Schicht** ein. Nutzen Sie **Ton testen** und speichern Sie die Warnungseinstellungen der Maschine.
+  <Step title="Prüfen Sie automatisches Beenden" icon="arrow-right" title-type="p">
+    Wählen Sie für **Vergessene Intervalle automatisch beenden** die Aus- oder Leerlaufbedingung und Wartezeit. Es betrifft nur Produktion und bucht keine Mengen. Zum Verhindern des automatischen Endes schalten Sie diese Option aus. Prüfen Sie, ob sie vor der Warnung zur ausgeschalteten Maschine greift.
   </Step>
-  <Step title="Kopieren Sie bei Bedarf auf andere Maschinen" icon="arrow-right" title-type="p">
-    Wählen Sie **Einstellungen auf andere Maschinen kopieren** und die Ziele. Prüfen Sie die angezeigten Einstellungen: Auch ungespeicherte Änderungen werden kopiert. Bestätigen Sie **Einstellungen kopieren**, um die Assistent-Einstellungen dieser Maschinen zu ersetzen. Andere Einstellungen bleiben unverändert. Prüfen Sie die Anzahl erfolgreicher und fehlgeschlagener Übernahmen.
+  <Step title="Stellen Sie Warnungen und Ton ein" icon="arrow-right" title-type="p">
+    Aktivieren Sie **Warnungen auf der BDE-Seite**. Wählen Sie je Warnung Verzögerung und Schweregrad. Aktivieren Sie **Alarmton** und den Lautsprecher für hörbare Warnungen. **Info** bleibt stumm. Stellen Sie **Pausieren** ein und testen Sie die Lautstärke.
+  </Step>
+  <Step title="Speichern Sie oder setzen Sie zurück" icon="arrow-right" title-type="p">
+    Wählen Sie **Speichern** für diese Maschine. Zum Zurücksetzen öffnen Sie einen Bereich, wählen **Auf Standard zurücksetzen** und bestätigen. Sein Schalter bleibt unverändert. Mit **Speichern** behalten Sie das Zurücksetzen.
+  </Step>
+  <Step title="Kopieren Sie bei Bedarf beide Bereiche" icon="arrow-right" title-type="p">
+    Wählen Sie **Auf andere Maschinen kopieren…** und die Ziele. Prüfen Sie beide Bereiche einschließlich ungespeicherter Änderungen. Beide ersetzen die Zieleinstellungen. Bestätigen Sie und prüfen Sie Erfolgs- und Fehlerzahlen. Speichern Sie die aktuelle Maschine separat.
   </Step>
 </Steps>
 
-Öffnen Sie die BDE-Seite der Maschine, um die Warnungen zu nutzen. Der [Bedienablauf](/de/platform-intro/workflows/data-acquisition) erklärt Warnungsaktionen, Zurückstellen und Stummschalten.
+Öffnen Sie die BDE-Seite der Maschine, um das Ergebnis zu prüfen. [Betriebsdatenerfassung durchführen](/de/platform-intro/workflows/data-acquisition) erklärt Zeitauswahl und Warnungsaktionen. Für Grundlisten folgen Sie [Stillstandsgründe erstellen und verwalten](/de/platform-intro/workflows/timeline-reason-creation).
 
 ## Entscheidungspunkte
 
