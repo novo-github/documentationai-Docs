@@ -3,19 +3,56 @@ title: "E-Mail-Adresse ändern"
 description: "Beantragen Sie eine neue E-Mail-Adresse, bestätigen Sie diese und erkennen Sie, welche Adresse aktiv bleibt."
 ---
 
+## Ziel
+
+Ändern Sie Ihre Anmelde-E-Mail, nachdem Sie den Empfang an der neuen Adresse bestätigt haben.
+
 ## Bevor Sie beginnen
 
-**Wer darf das tun: Jede angemeldete Rolle für das eigene Konto.** Beginnen Sie im [Benutzerprofil](/de/platform-intro/pages/user-profile), Route `/user`. Stellen Sie sicher, dass Sie an der neuen Adresse E-Mails empfangen können.
+<Callout kind="info" title="Ablaufzugriff">
+Sie können die Änderung für Ihr eigenes Konto im [Benutzerprofil](/de/platform-intro/pages/user-profile) anfordern. Administratoren können sie in der Benutzerverwaltung des Administrationsbereichs oder der Unternehmensansicht für Benutzer anfordern, die keine Operatoren sind.
+</Callout>
 
-## Ändern und bestätigen
+### Voraussetzungen
 
-1. Wählen Sie **Change email**.
-2. Geben Sie die neue Adresse ein und beantragen Sie die Änderung.
-3. Öffnen Sie den Bestätigungslink an der neuen Adresse.
-4. Melden Sie sich nach der Bestätigung mit der neuen E-Mail an.
+- Sie können an der neuen Adresse E-Mails empfangen.
+- Halten Sie Ihr aktuelles Passwort bereit, falls das Formular es anfordert.
 
-## Erwartetes Ergebnis und häufige Probleme
+## Schritte
 
-Die bisherige Adresse bleibt bis zur Bestätigung der neuen Adresse aktiv. Die Eingabe allein ersetzt die Anmeldeadresse nicht. Haben Sie den Link noch nicht bestätigt, verwenden Sie zum Anmelden die bisherige Adresse und prüfen Sie das neue Postfach.
+<Steps>
+  <Step title="Fordern Sie die Änderung an" icon="arrow-right" title-type="p">
+    Öffnen Sie **Profil → E-Mail ändern**. Als Administrator wählen Sie für eine andere Person **E-Mail ändern** in der Benutzerverwaltung, statt die Adresse im Benutzerformular zu bearbeiten.
+  </Step>
+  <Step title="Senden Sie die Bestätigung an die neue Adresse" icon="arrow-right" title-type="p">
+    Prüfen Sie **Aktuelle E-Mail**, geben Sie **Neue E-Mail** ein und tragen Sie Ihr aktuelles Passwort ein, falls es angefordert wird. Wählen Sie **Bestätigung senden**. Der Hinweis zur ausstehenden Änderung zeigt die noch zu bestätigende Adresse.
+  </Step>
+  <Step title="Bestätigen Sie die neue Adresse" icon="arrow-right" title-type="p">
+    Öffnen Sie den Link an der neuen Adresse und wählen Sie **E-Mail-Änderung bestätigen**. Hat ein Administrator die Änderung angefordert, führt die Person, der das Konto gehört, diesen Schritt aus.
+  </Step>
+  <Step title="Melden Sie sich mit der bestätigten Adresse an" icon="arrow-right" title-type="p">
+    Melden Sie sich nach erfolgreicher Bestätigung mit der neuen E-Mail bei der Watchmen-Plattform an. Bis dahin verwenden Sie Ihre bisherige E-Mail.
+  </Step>
+</Steps>
 
-Der separate zweite Anmeldeschritt wird unter [Zwei-Faktor-Authentifizierung](/de/platform-intro/workflows/two-factor-authentication) erklärt. Kontospezifischen Support finden Sie im [Help Center](/de/help-center).
+## Entscheidungspunkte
+
+- Warten Sie noch auf die Nachricht? Wählen Sie nach der angezeigten Wartezeit **Erneut senden**.
+- Möchten Sie die Änderung nicht mehr? Wählen Sie **Änderung abbrechen**, solange sie aussteht. Ihre bisherige Adresse bleibt aktiv.
+
+## Erwartetes Ergebnis
+
+Die neue Adresse wird erst nach der Bestätigung zur Anmelde-E-Mail. Auch eine Anfrage durch einen Administrator benötigt diesen Schritt.
+
+## Häufige Probleme und Sonderfälle
+
+- Wird die Adresse abgelehnt, geben Sie eine gültige Adresse ein, die sich von der bisherigen unterscheidet. Beachten Sie eine angezeigte Längenbegrenzung.
+- Wenn ein Passwort angefordert wird, geben Sie vor dem Senden Ihr aktuelles Passwort ein.
+- Ist der Link ungültig, abgelaufen oder durch einen neueren ersetzt, fordern Sie über Ihr Profil oder Ihren Administrator einen neuen Bestätigungslink an. Verwenden Sie den neuesten Link.
+- Wird eine Wartezeit angezeigt, warten Sie vor dem nächsten Versuch deren Ende ab.
+
+## Verwandte Seiten
+
+- [Benutzerprofil](/de/platform-intro/pages/user-profile)
+- [Administrationsbereich](/de/platform-intro/pages/admin-panel)
+- [Zwei-Faktor-Authentifizierung einrichten](/de/platform-intro/workflows/two-factor-authentication)

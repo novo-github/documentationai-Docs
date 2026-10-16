@@ -41,7 +41,9 @@ Begin on the [Admin Panel page](/en/platform-intro/pages/admin-panel).
 
 ## Scheduled Shifts or Active Shifts?
 
-A Shift has start, end, and optional breaks; a Shift group defines weekday patterns. Active shifts are configured per machine and start automatically with machine activity. Switching removes scheduled shifts from today onward. Review [Machine Configuration](/en/platform-intro/pages/machine-configuration) before changing the model; some alert rules do not work with active shifts.
+A shift has a start, end, and optional breaks; a shift group defines weekday patterns. **Active shift** is configured per machine and starts shifts automatically with machine activity. The group stays assigned but is not used while this is enabled.
+
+Switching on removes scheduled shifts from today onward but keeps shifts already recorded today. Switching off ends the running active shift immediately and creates scheduled shifts from the group from today. Check the assigned group first. Follow [Configure a Machine](/en/platform-intro/workflows/machine-configuration) to change the setting and review alert-rule limitations.
 
 ## Decision Points
 

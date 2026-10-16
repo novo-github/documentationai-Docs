@@ -3,19 +3,56 @@ title: "Change Your Email Address"
 description: "Request an email change, confirm the new address, and know which address remains active."
 ---
 
+## Goal
+
+Change your sign-in email after confirming that you can receive mail at the new address.
+
 ## Before You Begin
 
-**Who can do this: Every signed-in role for their own account.** Start in [User Profile](/en/platform-intro/pages/user-profile), route `/user`, and make sure you can receive email at the new address.
+<Callout kind="info" title="Workflow access">
+You can request a change for your own account from [User Profile](/en/platform-intro/pages/user-profile). Administrators can request changes for users who are not operators from user management in the Admin Panel or company view.
+</Callout>
 
-## Change and Confirm
+### Preconditions
 
-1. Select **Change email**.
-2. Enter the new address and request the change.
-3. Open the verification link sent to the new address.
-4. After confirmation, sign in using the new email.
+- You can receive email at the new address.
+- Have your current password ready if the form requests it.
 
-## Expected Result and Common Problems
+## Steps
 
-The current email stays active until the new address is confirmed. Entering a new address alone does not replace the sign-in address. If you have not confirmed the link, use the current email for sign-in and check the new inbox.
+<Steps>
+  <Step title="Request the change" icon="arrow-right" title-type="p">
+    Open **Profile → Change email**. If you are an administrator changing another user's address, select **Change email** for that person in user management instead of editing the address in the user form.
+  </Step>
+  <Step title="Send verification to the new address" icon="arrow-right" title-type="p">
+    Check **Current email**, enter **New email**, and enter your current password if requested. Select **Send verification**. The pending notice shows the address awaiting confirmation.
+  </Step>
+  <Step title="Confirm the new address" icon="arrow-right" title-type="p">
+    Open the link sent to the new address and select **Confirm email change**. If an administrator requested the change, the account holder completes this step.
+  </Step>
+  <Step title="Sign in with the confirmed address" icon="arrow-right" title-type="p">
+    After successful confirmation, sign in to the Watchmen Platform using the new email. Until then, keep using the current email.
+  </Step>
+</Steps>
 
-See [two-factor authentication](/en/platform-intro/workflows/two-factor-authentication) for the separate second sign-in step and [Help Center](/en/help-center) for account-specific support.
+## Decision Points
+
+- Still waiting for the message? Select **Resend** after the displayed wait ends.
+- No longer want the change? Select **Cancel change** while it is pending. Your current address stays active.
+
+## Expected Result
+
+The new address becomes your sign-in email only after confirmation. An administrator's request does not bypass this step.
+
+## Common Problems and Edge Cases
+
+- If the address is rejected, enter a valid address different from the current one and follow any length limit shown.
+- If a password is requested, enter your current password before sending verification.
+- If the link is invalid, expired, or replaced by a newer one, request a new verification link from your profile or your administrator. Use the latest link.
+- If a waiting time is shown, wait for it to end before trying again.
+
+## Related Pages
+
+- [User Profile](/en/platform-intro/pages/user-profile)
+- [Admin Panel](/en/platform-intro/pages/admin-panel)
+- [Set Up Two-Factor Authentication](/en/platform-intro/workflows/two-factor-authentication)

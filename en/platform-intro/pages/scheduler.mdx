@@ -34,9 +34,9 @@ Users open it from the Planner section in the main navigation.
 
 A **Shift (Schicht)** has a start, end, and optional breaks. A **Shift group (Schichtgruppe)** is a weekly pattern of shifts by weekday assigned to machines. **Whole day** covers the full day.
 
-An **Active shift** starts automatically when a machine begins idle, production, or preparation. It is an alternative to scheduled shifts. Switching a machine to active shifts removes its scheduled shifts from today onward; review this in [Machine Configuration](/en/platform-intro/pages/machine-configuration).
+**This machine uses active shifts** means that the machine follows activity instead of the weekly shift schedule. An **Active shift** starts at idle, production, or preparation. The shift group stays assigned but is not used. Switching on removes scheduled shifts from today onward and keeps shifts already recorded today. Switching off ends the running active shift immediately and creates scheduled shifts from the group from today. Administrators change this in [Machine Configuration](/en/platform-intro/workflows/machine-configuration).
 
-Analytics **All Day** uses 24 hours while **Planned** uses scheduled shift time. A changed schedule can therefore change the time window being compared.
+For machines using scheduled shifts, **All Day** uses 24 hours while **Planned** uses scheduled shift time. A changed schedule can therefore change the time window being compared.
 
 ## Main Entities
 

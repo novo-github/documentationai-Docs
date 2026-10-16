@@ -22,6 +22,37 @@ toc: false
   Reading the forecast never changes your plan or delivery dates. Use the [planning workflow](/en/platform-intro/workflows/assignment-planner) to review the warnings before deciding what to change.
 </Update>
 
+<Update label="2026-10-08" description="v1.5.105–v1.5.108" tags={["feature", "improvement"]}>
+  {/* commits: 3a5c8dd, 4f44e8f, 87405e8, 0318a78, ff47139, 43a80ee, a87a9e5, 58ee9d6 */}
+
+  **Release period:** October 7–8, 2026
+
+  ### New Features
+
+  #### [Let Shifts Follow Machine Activity](/en/platform-intro/pages/machine-configuration)
+  {/* feature: active-shifts */}
+
+  Administrators can now open the machine configuration and select **Shifts → Active shift**. A shift starts automatically when the machine begins idle, production, or preparation. Set **Minimum shift length**, **Stop that ends a shift**, and **Maximum shift length** to control its end. Before the minimum is reached, a shorter stop such as lunch stays within the shift as off time. After the minimum, the first stop ends it. At the maximum, a new shift starts even if work continues; the limit is 24 hours.
+
+  Switching on removes scheduled shifts from today onward, but keeps shifts already recorded today. The assigned shift group stays in place and is unused. Switching off ends the running active shift immediately and creates scheduled shifts from the group from today. Some alert rules do not fire for these machines; review their notices. Follow [Configure a Machine](/en/platform-intro/workflows/machine-configuration).
+
+  #### [Confirm a New Email Before Your Sign-in Address Changes](/en/platform-intro/pages/user-profile)
+  {/* feature: verified-email-change */}
+
+  Open **Profile → Change email**, enter **New email**, and select **Send verification**. Open the link sent to the new address and select **Confirm email change**. Keep using your current email until confirmation, then sign in with the new one.
+
+  While confirmation is pending, use **Resend** after the displayed wait or **Cancel change**. Administrators can also request changes for users who are not operators from user management; the user must still confirm the new address. Follow [Change Your Email Address](/en/platform-intro/workflows/change-email).
+
+  ### Improvements
+
+  #### [Recognize the Product Running on Each Machine](/en/platform-intro/pages/hall-plan)
+  {/* feature: hall-plan-product-information */}
+
+  In the Hall Plan display settings, choose **Product information → On** to show the active order's product image, product name, and operation sequence (#) next to the machine image. The product must have an image. Order names and positions help you identify the work.
+
+  With **Off**, or without a product image, the operation sequence appears in the order card instead. Order and operation priority always appear in the order card. You can also click the state-pattern icon to see examples. Follow [Set Up a Hall Plan Display](/en/platform-intro/workflows/hall-display-setup).
+</Update>
+
 <Update label="2026-09-28" description="v1.5.102–v1.5.104" tags={["feature", "improvement"]}>
   {/* commits: c50945d, 5d8a65f, 543cec7, 2f61c1b, f81afbf, 6a563e7, 0f708b7, c8e69b8, 3947f95 */}
 

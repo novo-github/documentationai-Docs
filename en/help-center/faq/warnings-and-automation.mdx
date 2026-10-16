@@ -13,6 +13,7 @@ description: "Understand PDA Assistant warnings, alarm sound, and Automator temp
 | Does choosing an Automator template start sending alerts? | [Answer](/en/help-center/faq/warnings-and-automation#template) |
 | Why is there an Automator alert but no email? | [Answer](/en/help-center/faq/warnings-and-automation#email) |
 | Why do setup and scrap values stay the same and then jump? | [Answer](/en/help-center/faq/warnings-and-automation#metrics) |
+| Why did my alert stop working after I switched to active shifts? | [Answer](/en/help-center/faq/warnings-and-automation#active-shift-alerts) |
 
 <a id="enable-warnings" />
 
@@ -61,3 +62,9 @@ Without email recipients, the alert appears in Events but nobody receives an ema
 ## Why do setup and scrap values stay the same and then jump?
 
 These values update when an operator records a PDA entry. Setup compares cumulative preparation with planned time; scrap uses the current job’s PDA production entries. A sensor alone does not update entered scrap. See [Automator measures](/en/platform-intro/pages/automator).
+
+<a id="active-shift-alerts" />
+
+## Why did my alert stop working after I switched to active shifts?
+
+Some alert conditions do not fire for machines with active shifts. When creating or editing the rule, check the notice: it can say that the alert never fires for these machines or show how many selected machines will be skipped. Review the rule before relying on it. See [Alert Rules](/en/platform-intro/pages/alert-rules).

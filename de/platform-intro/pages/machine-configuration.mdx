@@ -61,13 +61,21 @@ Für Aus, Leerlauf und Vorbereitung werden automatische Grundregeln in dieser Re
 
 ## Einstellungen aktiver Schichten
 
-Eine **Active shift / Aktive Schicht** beginnt bei Leerlauf, Produktion oder Vorbereitung. Ihr Ende wird gesteuert durch:
+Administratoren wählen in der Maschinenkonfiguration **Schichten → Aktive Schicht**. Wenn die Einstellung eingeschaltet ist, beginnt eine Schicht automatisch bei Leerlauf, Produktion oder Rüsten. Ist sie ausgeschaltet, folgen die Schichten dem Plan der zugewiesenen Schichtgruppe.
 
-- **Minimum shift length:** Vor dieser Mindestdauer beendet nur ein Stopp mindestens in der konfigurierten Stopplänge die Schicht. Danach beendet der erste Stopp die Schicht.
-- **Stop that ends a shift:** Ein entsprechend langer Stopp beendet die Schicht. Kürzere Stopps, etwa Mittagspausen, bleiben als ausgeschaltete Zeit innerhalb der Schicht.
-- **Maximum shift length:** Beginnt nach dieser Dauer eine neue Schicht, auch bei laufender Maschine; höchstens 24 Stunden.
+| Einstellung | Wirkung |
+| --- | --- |
+| **Minimale Schichtlänge** | Bis die Maschine so lange gearbeitet hat, beendet nur ein Stillstand von mindestens der unter **Stillstand, der eine Schicht beendet** eingestellten Länge die Schicht. Danach beendet der erste Stillstand die Schicht. |
+| **Stillstand, der eine Schicht beendet** | Vor Erreichen der Mindestdauer bleiben kürzere Stillstände, etwa Mittagspausen, als Aus-Zeit in der Schicht. Ein Stillstand dieser Länge beendet die Schicht. |
+| **Maximale Schichtlänge** | Danach beginnt eine neue Schicht, auch wenn die Maschine weiterarbeitet. Die Höchstgrenze liegt bei 24 Stunden. |
 
-Der Wechsel zu aktiven Schichten entfernt geplante Schichten ab heute. Manche Alarmregeln lösen bei aktiven Schichten nicht aus. Prüfen Sie vor der Nutzung den Regelhinweis. Siehe [Schichtplaner](/de/platform-intro/pages/scheduler).
+Geben Sie alle drei Zeiten in Stunden größer als 0 ein. Mindestdauer und Stillstandsdauer dürfen die Höchstdauer nicht überschreiten.
+
+Beim Einschalten von **Aktive Schicht** erklärt **Auf aktive Schichten umstellen?**, dass geplante Schichten ab heute entfernt werden. Bereits heute erfasste Schichten bleiben erhalten. Die Schichtgruppe bleibt zugewiesen, wird aber nicht verwendet. Prüfen Sie diese Wirkung, bevor Sie **Fortfahren** wählen.
+
+Beim Ausschalten erklärt **Zurück zu geplanten Schichten?**, dass die laufende aktive Schicht sofort endet. Ab heute werden geplante Schichten aus der zugewiesenen Gruppe angelegt. Prüfen Sie die zugewiesene Gruppe, bevor Sie **Fortfahren** wählen.
+
+Die Kennzeichnung **Aktive Schicht** zeigt, welche Maschinen diese Einstellung nutzen. Ihre Erklärung nennt Mindest-, Stillstands- und Höchstdauer. Manche Alarmregeln lösen für diese Maschinen nicht aus. Prüfen Sie den Regelhinweis, bevor Sie sich darauf verlassen. Die Schritte finden Sie unter [Maschine konfigurieren](/de/platform-intro/workflows/machine-configuration).
 
 ## Warnungen: BDE-Assistent
 

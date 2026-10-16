@@ -40,6 +40,10 @@ Channels are **email**, **SMS**, and **webhook**. **SMS costs €0.10 per alert 
 
 Sensor-based rules never trigger for work centers. Some rules do not fire for active-shift machines; check the rule's notice. For newer scoped conditions, timing, escalation, SLA, and event handling, see [Automator](/en/platform-intro/pages/automator).
 
+## Check Active Shift Limitations
+
+When creating or editing a rule, **This alert never fires for machines with active shifts.** means the condition cannot alert for these machines. A notice can also show how many selected machines with active shifts will be skipped. Review the notice before relying on the rule, especially after changing a machine's shift settings. Follow [Manage Alert Rules](/en/platform-intro/workflows/alert-rule-management).
+
 ## Main Entities
 
 - Alert Rule

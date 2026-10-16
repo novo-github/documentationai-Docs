@@ -1,0 +1,49 @@
+---
+title: "Shifts and Hall Plan FAQs"
+description: "Understand automatic shifts and find products, operation numbers, and priorities in Hall Plan."
+---
+
+| Your question | Read the answer |
+| --- | --- |
+| Why does my shift start and end on its own? | [Answer](/en/help-center/faq/shifts-and-hall-plan#automatic-shifts) |
+| Does a lunch break end an active shift? | [Answer](/en/help-center/faq/shifts-and-hall-plan#short-stops) |
+| What happens to my shift plan when I turn active shifts on or off? | [Answer](/en/help-center/faq/shifts-and-hall-plan#switch-shifts) |
+| Why can I not save the active shift times? | [Answer](/en/help-center/faq/shifts-and-hall-plan#shift-limits) |
+| Why is there no product picture next to the machine in Hall Plan? | [Answer](/en/help-center/faq/shifts-and-hall-plan#product-picture) |
+| Where did the operation number and priorities go in Hall Plan? | [Answer](/en/help-center/faq/shifts-and-hall-plan#product-priority) |
+
+<a id="automatic-shifts" />
+
+## Why does my shift start and end on its own?
+
+**Active shift** starts a shift when the machine begins idle, production, or preparation. Before **Minimum shift length** is reached, only a stop reaching **Stop that ends a shift** ends it. Afterward, the first stop ends it. **Maximum shift length** starts a new shift even if work continues. Administrators control these settings. See [Machine Configuration](/en/platform-intro/pages/machine-configuration).
+
+<a id="short-stops" />
+
+## Does a lunch break end an active shift?
+
+Before the minimum shift length is reached, a stop shorter than the configured stop length stays inside the shift and counts as off time. A stop reaching that length ends the shift. Once the minimum is reached, the first stop ends it. See [active shift settings](/en/platform-intro/pages/machine-configuration).
+
+<a id="switch-shifts" />
+
+## What happens to my shift plan when I turn active shifts on or off?
+
+Switching on removes scheduled shifts from today onward but keeps shifts already recorded today. The shift group stays assigned and unused. Switching off ends the running active shift immediately and creates scheduled shifts from the group from today. An administrator should check the group before switching back. Follow [Configure a Machine](/en/platform-intro/workflows/machine-configuration).
+
+<a id="shift-limits" />
+
+## Why can I not save the active shift times?
+
+All three durations must be in hours greater than 0. Neither **Minimum shift length** nor **Stop that ends a shift** may exceed **Maximum shift length**. The maximum is 24 hours. See [Machine Configuration](/en/platform-intro/pages/machine-configuration).
+
+<a id="product-picture" />
+
+## Why is there no product picture next to the machine in Hall Plan?
+
+The display needs **Product information → On** and an active order whose product has an image. Without an image, that product display stays hidden. The operation sequence appears in the order card instead. Follow [Set Up a Hall Plan Display](/en/platform-intro/workflows/hall-display-setup).
+
+<a id="product-priority" />
+
+## Where did the operation number and priorities go in Hall Plan?
+
+With **Product information → On** and a product image, the operation sequence (#) appears beside the machine image with the product. With **Off**, or without an image, it appears in the order card. Order and operation priority always stay in the order card. See [Hall Plan](/en/platform-intro/pages/hall-plan).

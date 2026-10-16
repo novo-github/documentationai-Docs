@@ -13,6 +13,7 @@ description: "BDE-Assistent, Alarmton sowie Automator-Vorlagen und Benachrichtig
 | Sendet eine ausgewählte Automator-Vorlage sofort Alarme? | [Antwort](/de/help-center/faq/warnings-and-automation#template) |
 | Warum sehe ich einen Automator-Alarm, erhalte aber keine E-Mail? | [Antwort](/de/help-center/faq/warnings-and-automation#email) |
 | Warum bleiben Rüst- und Ausschusswerte erst gleich und springen dann? | [Antwort](/de/help-center/faq/warnings-and-automation#metrics) |
+| Warum löst mein Alarm nach dem Wechsel zu aktiven Schichten nicht mehr aus? | [Antwort](/de/help-center/faq/warnings-and-automation#active-shift-alerts) |
 
 <a id="enable-warnings" />
 
@@ -61,3 +62,9 @@ Ohne E-Mail-Empfänger erscheint der Alarm in den Ereignissen, aber niemand erh�
 ## Warum bleiben Rüst- und Ausschusswerte erst gleich und springen dann?
 
 Diese Werte ändern sich mit einer BDE-Meldung. Die Rüstprüfung vergleicht die gesamte bisherige Rüstzeit mit der Planzeit. Ausschuss stammt aus BDE-Produktionsmeldungen des aktuellen Auftrags. Ein Sensor allein aktualisiert keinen eingegebenen Ausschuss. Siehe [Automator-Kennzahlen](/de/platform-intro/pages/automator).
+
+<a id="active-shift-alerts" />
+
+## Warum löst mein Alarm nach dem Wechsel zu aktiven Schichten nicht mehr aus?
+
+Manche Alarmbedingungen lösen bei Maschinen mit aktiven Schichten nicht aus. Prüfen Sie beim Erstellen oder Bearbeiten den Hinweis der Regel. Er kann erklären, dass der Alarm für diese Maschinen nie auslöst, oder die Anzahl ausgelassener Maschinen zeigen. Prüfen Sie die Regel, bevor Sie sich darauf verlassen. Siehe [Alarmregeln](/de/platform-intro/pages/alert-rules).

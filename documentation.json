@@ -501,6 +501,14 @@
                   {
                     "title": "Warnings and Automation FAQs",
                     "path": "en/help-center/faq/warnings-and-automation"
+                  },
+                  {
+                    "title": "Account and Email FAQs",
+                    "path": "en/help-center/faq/account-and-email"
+                  },
+                  {
+                    "title": "Shifts and Hall Plan FAQs",
+                    "path": "en/help-center/faq/shifts-and-hall-plan"
                   }
                 ]
               },
@@ -1001,6 +1009,14 @@
                   {
                     "title": "Fragen zu Warnungen und Automatisierung",
                     "path": "de/help-center/faq/warnings-and-automation"
+                  },
+                  {
+                    "title": "Fragen zu Konto und E-Mail",
+                    "path": "de/help-center/faq/account-and-email"
+                  },
+                  {
+                    "title": "Fragen zu Schichten und Hallenplan",
+                    "path": "de/help-center/faq/shifts-and-hall-plan"
                   }
                 ]
               },

@@ -15,6 +15,10 @@ description: "Use the admin setup wizard, choose Machine or Work center, and con
 4. Open [Machine Configuration](/en/platform-intro/pages/machine-configuration) to attach an AVA and configure ratings, timeline rules/ranges, features, optional energy monitoring, and PDA Assistant warnings.
 5. For a Machine, verify that the AVA is mapped before expecting live readings.
 
+## Choose the Shift Model
+
+In the machine setup, use **Shifts → Active shift** if shifts should start with idle, production, or preparation. Set **Minimum shift length**, **Stop that ends a shift**, and **Maximum shift length**. All values must be greater than 0, neither the minimum nor the stop length may exceed the maximum, and the maximum is 24 hours. The shift group is not used while this is enabled. Leave it off for scheduled shifts. See [active shift settings](/en/platform-intro/pages/machine-configuration) before saving.
+
 ## Expected Result and Common Problems
 
 The entry appears in [Machines](/en/platform-intro/pages/machines) and can receive planned work. A Machine saved without an AVA collects no sensor data until an AVA is mapped. A Work center intentionally has no AVA, sensor KPIs, state-counter inclusion, or sensor-based alert/Automator triggers.

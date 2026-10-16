@@ -51,9 +51,9 @@ An Ihrem Konto angemeldete Geräte. Einzelne Sitzungen können aus der Ferne abg
 
 [Mehr erfahren](/de/platform-intro/pages/user-profile).
 
-### Active shift / Aktive Schicht
+### Aktive Schicht
 
-Beginnt automatisch bei Maschinenaktivität und endet anhand von Mindest-, Stopp- und Höchstdauer. Ein Wechsel entfernt geplante Schichten ab heute.
+Eine **Aktive Schicht** beginnt bei Leerlauf, Produktion oder Rüsten und endet nach den Zeiteinstellungen der Maschine. Die zugewiesene Schichtgruppe wird nicht verwendet. Das Einschalten entfernt geplante Schichten ab heute und erhält bereits heute erfasste Schichten. Das Ausschalten beendet die laufende aktive Schicht sofort und legt ab heute geplante Schichten aus der Gruppe an.
 
 [Mehr erfahren](/de/platform-intro/pages/machine-configuration).
 
@@ -324,6 +324,12 @@ Dauer eines geplanten oder erfassten Zeitraums. Prüfen Sie, ob das Feld Plan- o
 [Mehr erfahren](/de/platform-intro/pages/assignment-planner).
 
 ## E
+
+### E-Mail-Änderung wartet auf Bestätigung
+
+Die neue E-Mail wurde angefordert, ist aber noch nicht bestätigt. Verwenden Sie Ihre bisherige E-Mail, bis Sie den Link an der neuen Adresse bestätigen. **Erneut senden** fordert nach der angezeigten Wartezeit eine weitere Nachricht an. **Änderung abbrechen** beendet die ausstehende Anfrage.
+
+[Mehr erfahren](/de/platform-intro/workflows/change-email).
 
 ### Energy monitor
 
@@ -691,9 +697,9 @@ Minuten je Stück, verwendet für geplante Operationszeiten.
 
 [Mehr erfahren](/de/platform-intro/concepts/calculations#deviations).
 
-### Minimum shift length / Stop that ends a shift / Maximum shift length
+### Minimale Schichtlänge / Stillstand, der eine Schicht beendet / Maximale Schichtlänge
 
-Einstellungen für Ende oder Neubeginn einer aktiven Schicht, höchstens 24 Stunden.
+**Minimale Schichtlänge** legt fest, wie lange die Maschine arbeiten muss, bevor der erste Stillstand die Schicht beendet. Vorher beendet nur ein Stillstand die Schicht, der die unter **Stillstand, der eine Schicht beendet** eingestellte Dauer erreicht. Kürzere Stillstände zählen als Aus-Zeit innerhalb der Schicht. **Maximale Schichtlänge** beginnt auch bei laufender Maschine eine neue Schicht, spätestens nach 24 Stunden. Alle Werte müssen größer als 0 sein. Mindest- und Stillstandsdauer dürfen die Höchstdauer nicht überschreiten.
 
 [Mehr erfahren](/de/platform-intro/pages/machine-configuration).
 
@@ -863,6 +869,12 @@ Das hergestellte Produkt; External Product ID ist der Produktname.
 
 [Mehr erfahren](/de/platform-intro/pages/orders-products).
 
+### Produktinformationen
+
+Hallenplaneinstellung für Produktbild, Produktname und Arbeitsgangfolge (#) des aktiven Auftrags neben dem Maschinenbild. **An** benötigt ein Produktbild. Bei **Aus** oder ohne Bild erscheint die Folge in der Auftragskarte. Auftrags- und Arbeitsgangpriorität bleiben immer in der Auftragskarte.
+
+[Mehr erfahren](/de/platform-intro/pages/hall-plan).
+
 ### Products more / less produced than detected
 
 Unterschied zwischen eingegebenen Produktionsmengen und sensorerkannter Zykluszahl.
@@ -943,6 +955,12 @@ Nacharbeitsmenge. Ohne bestätigte Regel nicht als Zusatz zur Kartengesamtmenge 
 
 [Mehr erfahren](/de/platform-intro/pages/roadmap).
 
+### läuft
+
+Die aktive Schicht läuft noch. Ihr Ende richtet sich nach den Einstellungen für aktive Schichten an der Maschine.
+
+[Mehr erfahren](/de/platform-intro/pages/hall-plan).
+
 ## S
 
 ### Scrap / Ausschuss
@@ -965,7 +983,7 @@ Für Sensoren mit Stromversorgung über die Maschine. Ein fehlendes Signal ersch
 
 ### Seq / Nr. / Sequence / Sequenz
 
-Schrittnummer einer Operation innerhalb eines Arbeitsauftrags, etwa 10, 20, 30.
+Schrittnummer einer Operation innerhalb eines Arbeitsauftrags, etwa 10, 20, 30.Im Hallenplan steht die Arbeitsgangfolge mit # beim Produkt oder in der Auftragskarte. Die Position hängt von **Produktinformationen** und einem vorhandenen Produktbild ab.
 
 [Mehr erfahren](/de/platform-intro/pages/order-detail).
 

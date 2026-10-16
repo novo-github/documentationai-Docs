@@ -51,9 +51,9 @@ Devices signed in to your account. Individual sessions can be signed out remotel
 
 [Learn more](/en/platform-intro/pages/user-profile).
 
-### Active shift / Aktive Schicht
+### Active shift
 
-Starts automatically when a machine becomes active and ends according to minimum, stop, and maximum duration settings. Switching removes scheduled shifts from today onward.
+An **Active shift** starts at idle, production, or preparation and ends according to the machine’s duration settings. The assigned shift group is not used. Switching on removes scheduled shifts from today onward but keeps shifts already recorded today. Switching off ends the running active shift immediately and creates scheduled shifts from the group from today.
 
 [Learn more](/en/platform-intro/pages/machine-configuration).
 
@@ -324,6 +324,12 @@ The duration of a planned or recorded period; check whether the field is planned
 [Learn more](/en/platform-intro/pages/assignment-planner).
 
 ## E
+
+### Email change waiting for confirmation
+
+The new email has been requested but is not confirmed yet. Keep using your current email until you confirm the link sent to the new address. **Resend** requests another message after the displayed wait. **Cancel change** stops the pending request.
+
+[Learn more](/en/platform-intro/workflows/change-email).
 
 ### Energy monitor
 
@@ -693,7 +699,7 @@ Minutes per piece, used for planned operation timing.
 
 ### Minimum shift length / Stop that ends a shift / Maximum shift length
 
-Settings controlling when an active shift ends or rolls into a new shift, at most 24 hours.
+**Minimum shift length** is how long the machine must work before the first stop ends the shift. Before then, only a stop reaching **Stop that ends a shift** ends it; shorter stops count as off time within the shift. **Maximum shift length** starts a new shift even if work continues, at most 24 hours. All values must exceed 0. The minimum and stop length cannot exceed the maximum.
 
 [Learn more](/en/platform-intro/pages/machine-configuration).
 
@@ -863,6 +869,12 @@ What is manufactured; External Product ID is the product name.
 
 [Learn more](/en/platform-intro/pages/orders-products).
 
+### Product information
+
+Hall Plan setting for showing the active order's product image, product name, and operation sequence (#) next to the machine image. **On** requires a product image. With **Off**, or without an image, the sequence appears in the order card. Order and operation priority always stay in the order card.
+
+[Learn more](/en/platform-intro/pages/hall-plan).
+
 ### Products more / less produced than detected
 
 Difference between operator-entered production quantities and sensor-detected cycles.
@@ -943,6 +955,12 @@ Public Novo AI plan: Ideas, Planned, In progress, Released. Users can upvote ite
 
 [Learn more](/en/platform-intro/pages/roadmap).
 
+### running
+
+The active shift is still in progress. Its end follows the machine's active shift settings.
+
+[Learn more](/en/platform-intro/pages/hall-plan).
+
 ## S
 
 ### Scrap / Ausschuss
@@ -965,7 +983,7 @@ Use when the sensor loses power with the machine; a missing signal then appears 
 
 ### Seq / Nr. / Sequence / Sequenz
 
-An operation's step number within a work order, for example 10, 20, 30.
+An operation's step number within a work order, for example 10, 20, 30. In Hall Plan, the operation sequence is shown with # beside the product or in the order card, depending on **Product information** and whether the product has an image.
 
 [Learn more](/en/platform-intro/pages/order-detail).
 

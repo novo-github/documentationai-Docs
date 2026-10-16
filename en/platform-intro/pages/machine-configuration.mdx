@@ -61,13 +61,21 @@ For Off, Idle, and Preparation, automatic reason rules are checked in this order
 
 ## Active Shift Settings
 
-An **Active shift** starts when the machine begins idle, production, or preparation. Its end is controlled by:
+Administrators choose **Shifts → Active shift** in the machine configuration. When enabled, a shift starts automatically when the machine begins idle, production, or preparation. When disabled, shifts follow the assigned shift group's schedule.
 
-- **Minimum shift length:** before this length, only a stop at least as long as the configured stop length ends the shift; afterward the first stop ends it.
-- **Stop that ends a shift:** a stop of this length ends the shift. Shorter stops, such as lunch, remain within the shift as off time.
-- **Maximum shift length:** starts a new shift after this duration even if the machine keeps running, at most 24 hours.
+| Setting | Effect |
+| --- | --- |
+| **Minimum shift length** | Until the machine has worked this long, only a stop at least as long as **Stop that ends a shift** ends the shift. Afterward, the first stop ends it. |
+| **Stop that ends a shift** | Before the minimum is reached, shorter stops, such as lunch, stay inside the shift and count as off time. A stop reaching this length ends the shift. |
+| **Maximum shift length** | After this long a new shift starts, even if the machine keeps working. The maximum is 24 hours. |
 
-Switching to active shifts removes scheduled shifts from today onward. Some alert rules do not fire for active-shift machines; check the rule's notice before relying on it. See [Shift Planner](/en/platform-intro/pages/scheduler).
+Enter all three durations in hours, greater than 0. Neither the minimum nor the stop length may exceed the maximum.
+
+When you enable **Active shift**, **Switch to active shifts?** explains that scheduled shifts are removed from today onward. Shifts already recorded today are kept. The shift group stays assigned but is not used. Review this effect before selecting **Continue**.
+
+When you disable it, **Switch back to scheduled shifts?** explains that the running active shift ends immediately and scheduled shifts from the assigned group are created from today. Review the assigned group before selecting **Continue**.
+
+The **Active shift** badge identifies machines using this mode. Its explanation shows the minimum, stop, and maximum durations. Some alert rules do not fire for these machines; check the rule's notice before relying on it. Follow [Configure a Machine](/en/platform-intro/workflows/machine-configuration) for the steps.
 
 ## Warnings: PDA Assistant
 

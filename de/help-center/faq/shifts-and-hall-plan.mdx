@@ -1,0 +1,49 @@
+---
+title: "Fragen zu Schichten und Hallenplan"
+description: "Verstehen Sie automatische Schichten und finden Sie Produkte, Arbeitsgangnummern und Prioritäten im Hallenplan."
+---
+
+| Ihre Frage | Antwort lesen |
+| --- | --- |
+| Warum beginnt und endet meine Schicht automatisch? | [Antwort](/de/help-center/faq/shifts-and-hall-plan#automatic-shifts) |
+| Beendet eine Mittagspause eine aktive Schicht? | [Antwort](/de/help-center/faq/shifts-and-hall-plan#short-stops) |
+| Was passiert mit meinem Schichtplan, wenn ich aktive Schichten ein- oder ausschalte? | [Antwort](/de/help-center/faq/shifts-and-hall-plan#switch-shifts) |
+| Warum kann ich die Zeiten für aktive Schichten nicht speichern? | [Antwort](/de/help-center/faq/shifts-and-hall-plan#shift-limits) |
+| Warum sehe ich im Hallenplan kein Produktbild neben der Maschine? | [Antwort](/de/help-center/faq/shifts-and-hall-plan#product-picture) |
+| Wo finde ich im Hallenplan die Arbeitsgangnummer und Prioritäten? | [Antwort](/de/help-center/faq/shifts-and-hall-plan#product-priority) |
+
+<a id="automatic-shifts" />
+
+## Warum beginnt und endet meine Schicht automatisch?
+
+**Aktive Schicht** startet eine Schicht bei Leerlauf, Produktion oder Rüsten. Vor Erreichen von **Minimale Schichtlänge** beendet nur ein Stillstand die Schicht, der mindestens die unter **Stillstand, der eine Schicht beendet** eingestellte Dauer erreicht. Danach beendet der erste Stillstand die Schicht. **Maximale Schichtlänge** startet auch bei laufender Maschine eine neue Schicht. Administratoren legen diese Werte fest. Siehe [Maschinenkonfiguration](/de/platform-intro/pages/machine-configuration).
+
+<a id="short-stops" />
+
+## Beendet eine Mittagspause eine aktive Schicht?
+
+Vor Erreichen der Mindestdauer bleibt ein Stillstand unterhalb der eingestellten Stillstandsdauer als Aus-Zeit in der Schicht. Erreicht er diese Dauer, endet die Schicht. Nach Erreichen der Mindestdauer beendet der erste Stillstand die Schicht. Siehe [Einstellungen aktiver Schichten](/de/platform-intro/pages/machine-configuration).
+
+<a id="switch-shifts" />
+
+## Was passiert mit meinem Schichtplan, wenn ich aktive Schichten ein- oder ausschalte?
+
+Das Einschalten entfernt geplante Schichten ab heute und erhält bereits heute erfasste Schichten. Die Schichtgruppe bleibt zugewiesen und ungenutzt. Das Ausschalten beendet die laufende aktive Schicht sofort und legt ab heute geplante Schichten aus der Gruppe an. Ein Administrator sollte die Gruppe vor dem Wechsel zurück prüfen. Folgen Sie [Maschine konfigurieren](/de/platform-intro/workflows/machine-configuration).
+
+<a id="shift-limits" />
+
+## Warum kann ich die Zeiten für aktive Schichten nicht speichern?
+
+Alle drei Zeiten müssen in Stunden größer als 0 angegeben werden. **Minimale Schichtlänge** und **Stillstand, der eine Schicht beendet** dürfen **Maximale Schichtlänge** nicht überschreiten. Die Höchstgrenze liegt bei 24 Stunden. Siehe [Maschinenkonfiguration](/de/platform-intro/pages/machine-configuration).
+
+<a id="product-picture" />
+
+## Warum sehe ich im Hallenplan kein Produktbild neben der Maschine?
+
+Dafür muss **Produktinformationen → An** gewählt sein. Außerdem muss das Produkt des aktiven Auftrags ein Bild haben. Ohne Bild bleibt diese Produktanzeige verborgen. Die Arbeitsgangfolge erscheint stattdessen in der Auftragskarte. Folgen Sie [Hallenplandisplay einrichten](/de/platform-intro/workflows/hall-display-setup).
+
+<a id="product-priority" />
+
+## Wo finde ich im Hallenplan die Arbeitsgangnummer und Prioritäten?
+
+Bei **Produktinformationen → An** und vorhandenem Produktbild erscheint die Arbeitsgangfolge (#) beim Produkt neben dem Maschinenbild. Bei **Aus** oder ohne Bild erscheint sie in der Auftragskarte. Auftrags- und Arbeitsgangpriorität bleiben immer in der Auftragskarte. Siehe [Hallenplan](/de/platform-intro/pages/hall-plan).

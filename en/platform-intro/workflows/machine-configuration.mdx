@@ -56,9 +56,26 @@ Begin on the [Machine Configuration page](/en/platform-intro/pages/machine-confi
 
 Only admins edit this setup. Confirm whether the entry is a sensor-connected **Machine** or a sensorless **Work center**. Converting to Work center unassigns AVAs and stops sensor KPIs.
 
-Before enabling **Active shifts**, review minimum length, stop length, and maximum length: switching removes scheduled shifts from today onward. Check alert-rule notices for rules that do not work with active shifts.
+Use the steps below to change **Active shift** and review the effect on today's shifts. Check alert-rule notices for rules that do not work with active shifts.
 
 Configure **PDA Assistant** using the warning setup steps below. See [Machine Configuration](/en/platform-intro/pages/machine-configuration) for rules, duration buckets, ratings, and feature fields.
+
+## Switch Between Active and Scheduled Shifts
+
+<Steps>
+  <Step title="Choose how shifts start" icon="arrow-right" title-type="p">
+    As an administrator, open **Shifts** in the machine configuration. Enable **Active shift** to start shifts with idle, production, or preparation. Leave it off to use the assigned shift group's schedule.
+  </Step>
+  <Step title="Set when active shifts end" icon="arrow-right" title-type="p">
+    Set **Minimum shift length**, **Stop that ends a shift**, and **Maximum shift length** in hours greater than 0. Neither the minimum nor the stop length may exceed the maximum, which is at most 24 hours. Before the minimum is reached, shorter stops stay inside the shift as off time. Afterward, the first stop ends it. At the maximum, a new shift starts even if work continues.
+  </Step>
+  <Step title="Review the switch and save" icon="arrow-right" title-type="p">
+    Enabling removes scheduled shifts from today onward but keeps shifts already recorded today. The shift group stays assigned and unused. Disabling ends the running active shift immediately and creates scheduled shifts from the assigned group from today. Check that group before switching back. Review the confirmation, select **Continue**, and save the tab.
+  </Step>
+  <Step title="Check the machine and its alerts" icon="arrow-right" title-type="p">
+    Check the **Active shift** badge and the note in the shift planner. Review the machine's alert rules for notices that they will skip machines with active shifts.
+  </Step>
+</Steps>
 
 ## Enable and Copy PDA Assistant Warnings
 
