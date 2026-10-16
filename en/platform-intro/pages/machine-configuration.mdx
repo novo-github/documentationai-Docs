@@ -29,6 +29,8 @@ Administrators can open **Machine Settings** from the gear in the machine detail
 - Update how the machine is grouped and measured.
 - Save changes tab by tab.
 
+For **Sensor powered by machine**, **Active shift**, **Energy monitor**, and the options under **PDA Assist**, click the checkbox or its title. Clicking descriptions or empty space leaves the setting unchanged.
+
 ## AVA Device Assignments
 
 An AVA assignment connects an AVA device to this machine. Open **Configuration → AVA Assignments** to select and connect a device. When several devices are connected, drag them up or down to set their priority.
@@ -85,19 +87,29 @@ The **Active shift** badge identifies machines using this mode. Its explanation 
 
 ## PDA Assist: Interval Assistance and Warnings
 
-**Only administrators can change these settings.** Open **Machine Settings → PDA Assist** (previously **PDA Assistant**). **Interval assist** and **Warnings** each have a switch in their heading. Turning one off collapses its settings. The summary beneath the heading shows what is active.
+**Only administrators can change these settings.** Open **Machine Settings → PDA Assist** (previously **PDA Assistant**). **Interval assist** and **Warnings** each have a checkbox in their heading. Clearing it collapses the settings. The summary beneath the heading shows what is active.
+
+When you first enable a section with no saved options, start and end correction or three recommended warnings are preselected. The note **Recommended options were switched on. Review them and press Save.** stays until you save. Review the selection before **Save**. If the section is on but none of its options are enabled, the summary turns amber and tells you to choose options.
 
 ### Start and End Times
 
-Live interval assistance is off by default. Enable **Interval assist on the PDA page**, then the start, end, or automatic ending options you need. Under **Start time**, choose the allowed times:
+Live interval assistance is off by default. Enable **Interval assist**, then choose **Start time**, **End time**, or automatic ending as needed.
+
+Under **Start time → Production order: move the start back to…**, choose the allowed times:
 
 - **End of the previous interval** includes changeover time in the new order. Set the maximum gap and how much off time is allowed between intervals.
-- **Start of idle time** includes the machine's activity before production, such as warming up.
-- **Start of production** uses when production began.
+- **Start of idle time** includes the idle stretch before the most recent production, such as warming up.
+- **Start of production** uses the start of the most recent production stretch.
 
-For preparation, the previous interval's end can be used even if the machine was off in between; the maximum gap still applies. **For preparation:** also offers when the machine stopped producing. The machine-switch-on option follows **Start of idle time**. It can cover setup with test pieces. Machines that report preparation can also provide a preparation start.
+Under **Setup (preparation): move the start back to…**, choose setup options independently:
 
-Under **End time**, **End of the last production** stops at the last moment of production. **End of activity** also includes the idle time until the machine went off. **Preparation ends when production starts** ends preparation at the first production after preparation began. For example, preparation starting at 08:00 with production from 08:40 can end at 08:40 even if you press stop at 08:46.
+- **End of the previous order** includes the time since the last order, even if the machine was off in between. The maximum gap still applies.
+- **When the machine stopped producing** uses the end of the last production.
+- **When the machine was switched on** includes setup since switch-on, even if test pieces have been produced since.
+
+Under **End time → Production order: move the end back to…**, **End of the last production** uses the last moment of production. **End of activity** also includes the following idle time until switch-off. Under **Setup (preparation)**, **When production started** ends setup at the first production after setup began. For example, setup from 08:00, production from 08:40, and **Stop** at 08:46 give a setup end of 08:40.
+
+Saved machines keep their existing behaviour until you change these options. Production options no longer control setup options. Each start and end section shows how far back times can be offered. Use the information icons beside the options for a small example.
 
 These choices also guide **Improve intervals**. When live assistance is off, expand **Allowed times for Improve intervals** to edit them. Reviewing past days only proposes changes; someone must apply them.
 
@@ -106,6 +118,12 @@ These choices also guide **Improve intervals**. When live assistance is off, exp
 Under **How changes are applied**, choose **Ask the operator** or **Pick the best automatically** when several times fit. The automatic choice uses the earliest allowed start or latest allowed end. Operators can reverse an automatic adjustment with **Undo** or choose another time with **Change…**.
 
 Set **Apply automatically up to (hours)** and **Ask the operator up to (hours)**. Each accepts 0.5–12 hours in half-hour steps; both default to 6 hours. The asking limit cannot be smaller than the automatic limit. Times between the limits require a choice. Older times are not offered. The previous interval's end also has its own gap conditions.
+
+Open **How changes are applied → How are the times chosen?** to read this machine's limits and try the six examples: **Late start**, **Several times**, **Short gap ignored**, **Off between orders**, **Late stop**, and **Forgotten stop**. Use **Back** and **Next** to move through machine activity, the operator's action, and the result.
+
+Only real machine events or the previous interval's end are offered. Times are never moved to a limit where nothing happened. The most recent times appear first; earlier choices are under **Other times**, newest first, with up to 20 offered times in total. Nothing before the previous order's end is offered.
+
+Missing data shorter than 10 minutes does not split a stretch of activity. Idle, off, or preparation periods shorter than 2 minutes are also ignored. Longer interruptions count separately. For example, production from 19:33 with a five-minute data gap at 20:10 can still give a start of 19:33.
 
 ### Auto-end Forgotten Intervals
 
@@ -117,7 +135,7 @@ If automatic ending comes before the **Machine off, order still running** warnin
 
 ### Warning Settings
 
-Enable **Warnings on the PDA page**, then choose each warning's delay, severity, and speaker setting. The delay is how long the situation must last before a warning appears. **Order carried across shift change** needs assigned shifts. Keep **Live data is stale** enabled because other warnings may be unreliable without fresh data.
+Enable **Warnings**, then choose each warning's delay, severity, and speaker setting. The delay is how long the situation must last before a warning appears. **Order carried across shift change** needs assigned shifts. Keep **Live data is stale** enabled because other warnings may be unreliable without fresh data.
 
 | Warning | Default delay | Default severity |
 | --- | --- | --- |
@@ -131,7 +149,11 @@ Enable **Warnings on the PDA page**, then choose each warning's delay, severity,
 
 **Multiple orders running** appears only when the number exceeds **Jobs in parallel**. **Live data is stale** needs at least 5 minutes of delay; other minute-based delays need at least 1 minute.
 
-**Info** is a silent note in the warning list. **Warning** shows an orange banner. **Critical** shows a red banner and flashing screen border. **Snooze** sets how long operators can hide and silence a warning before it returns if the problem remains.
+**Info** is a silent note in the warning list. **Warning** shows an orange banner and orange light around the whole page. **Critical** shows a red banner and flashing screen border. **Snooze** sets how long operators can hide and silence a warning before it returns if the problem remains.
+
+Open the information icon beside a warning by pointing to it, focusing it, or tapping it. **When it appears** shows the delay from the event that starts the wait. For the machine-off warning, a second marker shows automatic ending when enabled. **What the operator sees** previews the chosen severity and shows a speaker when sound is on. It follows the settings currently shown, including unsaved changes. The preview is static and does not flash or play an alarm.
+
+**How operators see warnings** compares the three severities. The floating warning button at the bottom left lists all active warnings and lets operators snooze them.
 
 ### Alarm Sound
 
@@ -141,7 +163,7 @@ Sound repeats until the warning is handled or snoozed. Operators can mute their 
 
 ### Reset, Save, and Copy Settings
 
-**Reset to defaults** at the bottom of either open section resets that section's options after confirmation. Its on/off switch stays as it is. Select **Save** to keep the reset or other changes; **Unsaved changes** identifies edits still waiting to be saved.
+**Reset to defaults** at the bottom of either open section resets that section's options after confirmation. Its on/off selection stays as it is. Select **Save** to keep the reset or other changes; **Unsaved changes** identifies edits still waiting to be saved.
 
 **Copy to other machines…** copies both interval assistance and warnings as shown, including unsaved edits. Choose destinations and review the replacement notice before confirming. Their other settings stay unchanged. Check success and failure counts, and save the current machine separately. Follow [Configure a Machine](/en/platform-intro/workflows/machine-configuration).
 

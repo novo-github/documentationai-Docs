@@ -103,6 +103,18 @@ When automatic ending is enabled, **Machine off, order still running** can show 
 
 Interval changes appear immediately on the timeline. The update after a change keeps your selected shift if it still exists. Regular and manual refreshes return to the live shift. To review past days, use **Improve intervals** on [Machine Details](/en/platform-intro/pages/machine-details), following [Review and Improve Intervals](/en/platform-intro/workflows/improve-intervals).
 
+### See What Assistance Is Active
+
+Tap **PDA Assist** at the right edge of Data Acquisition V3. It appears when at least one interval-assistance option or warning is enabled. On a phone it sits beside the action bar, above any warning banner.
+
+The dialog lists what assistance does on this machine. **Right now** shows current information, such as the remaining time before automatic ending or the last corrected start or end. The dot is amber only during the automatic-ending countdown; otherwise it is green. It briefly glows after assistance changes a time. The countdown says the order will end unless the machine restarts. To prevent automatic ending, ask an administrator to change the [machine settings](/en/platform-intro/pages/machine-configuration).
+
+### Understand the Offered Times
+
+Only times shown by machine activity or the previous interval's end are offered. The main choices use the most recent activity. Earlier choices appear under **Other times**, newest first, with up to 20 offered times in total. Times before the previous order's end or beyond the machine's asking limit are left out, never moved to a limit.
+
+Open the information icon beside the choice dialog's title for a short explanation. Missing data shorter than 10 minutes and idle, off, or preparation interruptions shorter than 2 minutes do not split an activity stretch. For example, a five-minute data gap during production does not turn the return of data into a new production start.
+
 ## Choose a Downtime Reason
 
 **Downtime reasons** offers only the reasons available on this machine. A tile can show a code in its corner. Use the category chips above the tiles to narrow the list; these appear only when reasons have categories.
@@ -125,9 +137,9 @@ If a reason is no longer allowed, the list updates. Choose an available reason o
 | **Multiple orders running** | More orders are running than **Jobs in parallel** allows for this machine. |
 | **Downtime without a reason** | A downtime block is waiting for a reason. |
 
-**Info** is a silent notice. **Warning** shows an orange banner; **Critical** shows a red banner and flashing screen border. The warning appears after the delay selected by your administrator. A running-too-long warning uses its hour threshold instead of a separate delay.
+**Info** is a silent notice. **Warning** shows an orange banner and orange light around the whole page; **Critical** shows a red banner and flashing screen border. The warning appears after the delay selected by your administrator. A running-too-long warning uses its hour threshold instead of a separate delay.
 
-Select **View all warnings** to open **Active warnings**. Read the affected order and duration, then use the available action: **Select an order**, **End order**, **Set downtime reason**, or **Refresh now**. Check the actual machine and order before acting. Follow [Run Data Acquisition](/en/platform-intro/workflows/data-acquisition).
+Use the floating warning button at the bottom left: select **View all warnings** to open **Active warnings**. Read the affected order and duration, then use the available action: **Select an order**, **End order**, **Set downtime reason**, or **Refresh now**. Check the actual machine and order before acting. Follow [Run Data Acquisition](/en/platform-intro/workflows/data-acquisition).
 
 ### Snooze and Sound
 

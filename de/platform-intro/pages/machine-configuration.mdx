@@ -29,6 +29,8 @@ Administratoren öffnen **Maschineneinstellungen** über das Zahnrad im Kopf der
 - Aktualisieren, wie die Maschine gruppiert und gemessen wird.
 - Änderungen tabweise speichern.
 
+Klicken Sie bei der Sensorstromversorgung, der Energieüberwachung, **Aktive Schicht** und den Optionen unter **BDE Assist** auf das Kontrollkästchen oder seinen Titel. Beschreibungen und freie Flächen ändern die Einstellung nicht.
+
 ## AVA-Geräte zuweisen
 
 Eine AVA-Zuweisung verbindet ein AVA-Gerät mit dieser Maschine. Öffnen Sie in der **Maschinenkonfiguration** den Tab für **AVA-Zuweisungen**, um ein Gerät auszuwählen und zu verbinden. Sind mehrere Geräte verbunden, ziehen Sie sie nach oben oder unten, um ihre Priorität festzulegen.
@@ -85,19 +87,29 @@ Die Kennzeichnung **Aktive Schicht** zeigt, welche Maschinen diese Einstellung n
 
 ## BDE Assist: Intervallhilfe und Warnungen
 
-**Nur Administratoren können diese Einstellungen ändern.** Öffnen Sie **Maschineneinstellungen → BDE Assist** (bisher **BDE-Assistent**). **Intervall-Assistent** und **Warnungen** haben jeweils einen Schalter in der Überschrift. Beim Ausschalten klappt der Bereich zu. Die Zusammenfassung darunter zeigt, was aktiv ist.
+**Nur Administratoren können diese Einstellungen ändern.** Öffnen Sie **Maschineneinstellungen → BDE Assist** (bisher **BDE-Assistent**). **Intervall-Assistent** und **Warnungen** haben jeweils ein Kontrollkästchen in der Überschrift. Beim Ausschalten klappt der Bereich zu. Die Zusammenfassung darunter zeigt, was aktiv ist.
+
+Aktivieren Sie einen Bereich erstmals ohne gespeicherte Optionen, sind Start- und Endkorrektur beziehungsweise drei empfohlene Warnungen vorausgewählt. Der Hinweis **Empfohlene Optionen wurden eingeschaltet. Bitte prüfen und auf „Speichern“ drücken.** bleibt bis zum Speichern sichtbar. Prüfen Sie die Auswahl vor **Speichern**. Ist der Bereich an, aber keine seiner Optionen eingeschaltet, wird die Zusammenfassung gelb und fordert zur Auswahl auf.
 
 ### Start- und Endzeiten
 
-Die Intervallhilfe im laufenden Betrieb ist standardmäßig aus. Aktivieren Sie **Intervall-Assistent auf der BDE-Seite** und dann die benötigten Optionen für Start, Ende oder automatisches Beenden. Unter **Startzeit** wählen Sie erlaubte Zeiten:
+Die Intervallhilfe im laufenden Betrieb ist standardmäßig aus. Aktivieren Sie **Intervall-Assistent** und wählen Sie nach Bedarf **Startzeit**, **Endzeit** oder automatisches Beenden.
+
+Unter **Startzeit → Fertigungsauftrag: Start zurücksetzen auf …** wählen Sie erlaubte Zeiten:
 
 - **Ende des vorherigen Intervalls** ordnet die Umrüstzeit dem neuen Auftrag zu. Legen Sie die maximale Lücke und die erlaubte Aus-Zeit zwischen den Intervallen fest.
-- **Beginn des Leerlaufs** berücksichtigt Maschinenaktivität vor der Produktion, etwa das Aufwärmen.
-- **Produktionsbeginn** verwendet den Beginn der Produktion.
+- **Beginn des Leerlaufs** berücksichtigt den Leerlauf vor der jüngsten Produktion, etwa das Aufwärmen.
+- **Produktionsbeginn** verwendet den Beginn des jüngsten Produktionsabschnitts.
 
-Beim Rüsten kann das Ende des vorherigen Intervalls auch gelten, wenn die Maschine dazwischen aus war. Die maximale Lücke gilt weiterhin. **Beim Rüsten:** bietet außerdem den Zeitpunkt, als die Maschine aufhörte zu produzieren. Die Option für das Einschalten der Maschine folgt **Beginn des Leerlaufs**. Sie kann Rüsten mit Testteilen erfassen. Meldet die Maschine Rüsten, kann auch dessen Beginn angeboten werden.
+Unter **Rüsten (Vorbereitung): Start zurücksetzen auf …** wählen Sie Rüstoptionen unabhängig davon:
 
-Unter **Endzeit** endet **Ende der letzten Produktion** beim letzten Produktionszeitpunkt. **Ende der Aktivität** schließt den folgenden Leerlauf bis zum Ausschalten ein. **Rüsten endet, wenn die Produktion beginnt** beendet Rüsten beim ersten Produktionsbeginn nach Rüstbeginn. Beispiel: Rüsten ab 08:00, Produktion ab 08:40 und Stopp um 08:46 können ein Rüstende um 08:40 ergeben.
+- **Ende des vorherigen Auftrags** berücksichtigt die Zeit seit dem letzten Auftrag, auch wenn die Maschine dazwischen aus war. Die maximale Lücke gilt weiterhin.
+- **Als die Maschine aufhörte zu produzieren** verwendet das Ende der letzten Produktion.
+- **Als die Maschine eingeschaltet wurde** berücksichtigt Rüsten seit dem Einschalten, auch wenn seitdem Probeteile produziert wurden.
+
+Unter **Endzeit → Fertigungsauftrag: Ende zurücksetzen auf …** nutzt **Ende der letzten Produktion** den letzten Produktionszeitpunkt. **Ende der Aktivität** schließt den folgenden Leerlauf bis zum Ausschalten ein. Unter **Rüsten (Vorbereitung)** beendet **Als die Produktion begann** das Rüsten beim ersten Produktionsbeginn nach Rüstbeginn. Beispiel: Rüsten ab 08:00, Produktion ab 08:40 und **Stopp** um 08:46 ergeben ein Rüstende um 08:40.
+
+Gespeicherte Maschinen behalten ihr bisheriges Verhalten, bis Sie diese Optionen ändern. Produktionsoptionen steuern die Rüstoptionen nicht mehr. Jeder Bereich für Start und Ende zeigt, wie weit zurück Zeiten angeboten werden können. Die Informationssymbole neben den Optionen öffnen kleine Beispiele.
 
 Diese Optionen steuern auch **Intervalle verbessern**. Ist die Intervallhilfe aus, öffnen Sie **Erlaubte Zeiten für „Intervalle verbessern“**, um sie zu ändern. Die Prüfung vergangener Tage schlägt nur Änderungen vor. Jemand muss sie übernehmen.
 
@@ -106,6 +118,12 @@ Diese Optionen steuern auch **Intervalle verbessern**. Ist die Intervallhilfe au
 Wählen Sie unter **Wie Änderungen übernommen werden** zwischen **Bediener fragen** und **Automatisch das Beste wählen**, wenn mehrere Zeiten passen. Die automatische Auswahl nutzt den frühesten erlaubten Start oder das späteste erlaubte Ende. Bediener können eine automatische Anpassung mit **Rückgängig** aufheben oder über **Ändern…** eine andere Zeit wählen.
 
 Stellen Sie **Automatisch übernehmen bis (Stunden)** und **Bediener fragen bis (Stunden)** ein. Beide erlauben 0,5–12 Stunden in halbstündigen Schritten und stehen standardmäßig auf 6 Stunden. Die Fragegrenze darf nicht kleiner als die automatische Grenze sein. Zeiten zwischen beiden Grenzen benötigen eine Auswahl. Ältere Zeiten werden nicht angeboten. Für das Ende des vorherigen Intervalls gelten zusätzlich die eigenen Lückenbedingungen.
+
+Öffnen Sie **Wie Änderungen übernommen werden → Wie werden die Zeiten gewählt?**, um die Grenzen dieser Maschine zu lesen und die sechs Beispiele anzusehen: **Später Start**, **Mehrere Zeiten**, **Kurze Lücke ignoriert**, **Aus zwischen Aufträgen**, **Später Stopp** und **Vergessener Stopp**. Mit **Zurück** und **Weiter** gehen Sie durch Maschinenaktivität, Bedienhandlung und Ergebnis.
+
+Angeboten werden nur tatsächliche Maschinenereignisse oder das Ende des vorherigen Intervalls. Zeiten werden nie auf eine Grenze verschoben, an der nichts passiert ist. Die jüngsten Zeiten erscheinen zuerst. Frühere finden Sie unter **Andere Zeiten**, neueste zuerst, mit insgesamt bis zu 20 angebotenen Zeiten. Zeiten vor dem Ende des vorherigen Auftrags werden nicht angeboten.
+
+Fehlende Daten unter 10 Minuten teilen einen Aktivitätsabschnitt nicht. Leerlauf-, Aus- oder Rüstphasen unter 2 Minuten werden ebenfalls ignoriert. Längere Unterbrechungen zählen einzeln. Beispielsweise kann Produktion ab 19:33 mit einer fünfminütigen Datenlücke um 20:10 weiterhin einen Start um 19:33 ergeben.
 
 ### Vergessene Intervalle automatisch beenden
 
@@ -117,7 +135,7 @@ Kommt das automatische Ende vor der Warnung **Maschine aus, Auftrag läuft noch*
 
 ### Warnungen einstellen
 
-Aktivieren Sie **Warnungen auf der BDE-Seite**. Wählen Sie je Warnung Verzögerung, Schweregrad und Lautsprechereinstellung. Die Verzögerung bestimmt, wie lange die Situation vor der Warnung bestehen muss. **Auftrag über Schichtwechsel hinaus offen** benötigt zugewiesene Schichten. Lassen Sie **Live-Daten veraltet** aktiv, da andere Warnungen ohne frische Daten unzuverlässig sein können.
+Aktivieren Sie **Warnungen**. Wählen Sie je Warnung Verzögerung, Schweregrad und Lautsprechereinstellung. Die Verzögerung bestimmt, wie lange die Situation vor der Warnung bestehen muss. **Auftrag über Schichtwechsel hinaus offen** benötigt zugewiesene Schichten. Lassen Sie **Live-Daten veraltet** aktiv, da andere Warnungen ohne frische Daten unzuverlässig sein können.
 
 | Warnung | Standardverzögerung | Standardschweregrad |
 | --- | --- | --- |
@@ -131,7 +149,11 @@ Aktivieren Sie **Warnungen auf der BDE-Seite**. Wählen Sie je Warnung Verzöger
 
 **Mehrere Aufträge laufen** erscheint erst oberhalb der unter **Parallele Aufträge** eingestellten Anzahl. **Live-Daten veraltet** benötigt mindestens 5 Minuten Verzögerung. Andere Verzögerungen in Minuten benötigen mindestens 1 Minute.
 
-**Info** ist ein stiller Hinweis in der Warnungsliste. **Warnung** zeigt einen orangefarbenen Hinweis. **Kritisch** zeigt einen roten Hinweis mit blinkendem Bildschirmrand. **Pausieren** bestimmt, wie lange Bediener eine Warnung ausblenden und stummschalten können. Besteht das Problem weiter, kehrt sie danach zurück.
+**Info** ist ein stiller Hinweis in der Warnungsliste. **Warnung** zeigt einen orangefarbenen Hinweis und orange leuchtende Seitenränder. **Kritisch** zeigt einen roten Hinweis mit blinkendem Bildschirmrand. **Pausieren** bestimmt, wie lange Bediener eine Warnung ausblenden und stummschalten können. Besteht das Problem weiter, kehrt sie danach zurück.
+
+Öffnen Sie das Informationssymbol neben einer Warnung mit dem Zeiger, dem Tastaturfokus oder durch Antippen. **Wann sie erscheint** zeigt die Verzögerung ab dem auslösenden Ereignis. Bei der Warnung für eine ausgeschaltete Maschine zeigt eine zweite Markierung das automatische Ende, sofern aktiviert. **Was der Bediener sieht** zeigt den gewählten Schweregrad und bei eingeschaltetem Ton einen Lautsprecher. Die Vorschau folgt den angezeigten Einstellungen einschließlich ungespeicherter Änderungen. Sie blinkt nicht und spielt keinen Alarm ab.
+
+**So sehen Bediener Warnungen** vergleicht die drei Schweregrade. Die schwebende Warnungs-Schaltfläche unten links listet alle aktiven Warnungen und erlaubt deren Zurückstellen.
 
 ### Alarmton
 
@@ -141,7 +163,7 @@ Der Ton wiederholt sich, bis die Warnung erledigt oder pausiert ist. Bediener k�
 
 ### Einstellungen zurücksetzen, speichern und kopieren
 
-**Auf Standard zurücksetzen** am Ende eines geöffneten Bereichs setzt dessen Optionen nach Bestätigung zurück. Der Ein/Aus-Schalter bleibt unverändert. Wählen Sie **Speichern**, um das Zurücksetzen oder andere Änderungen zu behalten. **Ungespeicherte Änderungen** kennzeichnet noch nicht gespeicherte Bearbeitungen.
+**Auf Standard zurücksetzen** am Ende eines geöffneten Bereichs setzt dessen Optionen nach Bestätigung zurück. Die Auswahl für Ein/Aus bleibt unverändert. Wählen Sie **Speichern**, um das Zurücksetzen oder andere Änderungen zu behalten. **Ungespeicherte Änderungen** kennzeichnet noch nicht gespeicherte Bearbeitungen.
 
 **Auf andere Maschinen kopieren…** kopiert Intervallhilfe und Warnungen wie angezeigt, einschließlich ungespeicherter Änderungen. Wählen Sie Ziele und prüfen Sie vor der Bestätigung den Ersetzungshinweis. Deren übrige Einstellungen bleiben unverändert. Prüfen Sie Erfolgs- und Fehlerzahlen und speichern Sie die aktuelle Maschine separat. Folgen Sie [Maschine konfigurieren](/de/platform-intro/workflows/machine-configuration).
 

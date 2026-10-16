@@ -27,12 +27,18 @@ description: "BDE Assist, Alarmton sowie Automator-Vorlagen und Benachrichtigung
 | Warum ändern sich Auftragszeiten vor dem Bericht? | [Antwort](/de/help-center/faq/warnings-and-automation#report-time) |
 | Schaltet Auf Standard zurücksetzen den Assistenten aus? | [Antwort](/de/help-center/faq/warnings-and-automation#reset) |
 | Wo öffne ich die Einstellungen dieser Maschine? | [Antwort](/de/help-center/faq/warnings-and-automation#settings-gear) |
+| Was bedeutet der grüne oder gelbe Punkt neben BDE Assist? | [Antwort](/de/help-center/faq/warnings-and-automation#assist-status) |
+| Wie wählt der Assistent Zeiten und wo sehe ich ein Beispiel? | [Antwort](/de/help-center/faq/warnings-and-automation#times-help) |
+| Warum ändert eine kurze Datenlücke den vorgeschlagenen Start nicht? | [Antwort](/de/help-center/faq/warnings-and-automation#short-gaps) |
+| Kann ich Rüstkorrekturen unabhängig von Produktionskorrekturen ändern? | [Antwort](/de/help-center/faq/warnings-and-automation#separate-setup) |
+| Warum sind nach dem Einschalten der Hilfe schon Optionen ausgewählt? | [Antwort](/de/help-center/faq/warnings-and-automation#recommended-options) |
+| Kann ich vor dem Speichern sehen, wie eine Warnung aussieht? | [Antwort](/de/help-center/faq/warnings-and-automation#warning-preview) |
 
 <a id="enable-warnings" />
 
 ## Wer kann Warnungen für meine Maschine einschalten?
 
-Nur Administratoren können Warnungseinstellungen ändern. Öffnen Sie in der Maschinenkonfiguration **BDE Assist** und schalten Sie zuerst **Warnungen auf der BDE-Seite** ein. Danach wählen Sie Verzögerungen, Schweregrad und Ton. Folgen Sie [Maschine konfigurieren](/de/platform-intro/workflows/machine-configuration).
+Nur Administratoren können Warnungseinstellungen ändern. Öffnen Sie in der Maschinenkonfiguration **BDE Assist** und schalten Sie zuerst **Warnungen** ein. Danach wählen Sie Verzögerungen, Schweregrad und Ton. Folgen Sie [Maschine konfigurieren](/de/platform-intro/workflows/machine-configuration).
 
 <a id="warning-action" />
 
@@ -160,3 +166,39 @@ Nein. Es setzt die Optionen des gewählten Bereichs zurück und behält dessen E
 ## Wo öffne ich die Einstellungen dieser Maschine?
 
 Administratoren nutzen das Zahnrad **Maschineneinstellungen** neben dem Aktualisieren im Kopf der Maschinendetails. Es öffnet im selben Tab. Die Zurück-Schaltfläche des Browsers führt zur Maschine zurück. Andere Rollen sehen diese Schaltfläche nicht. Folgen Sie [Maschine konfigurieren](/de/platform-intro/workflows/machine-configuration).
+
+<a id="assist-status" />
+
+## Was bedeutet der grüne oder gelbe Punkt neben BDE Assist?
+
+Der Punkt ist nur während des Countdowns zum automatischen Beenden gelb, sonst grün. Tippen Sie am rechten Rand auf **BDE Assist**, um aktivierte Hilfe, verbleibende Zeit und die letzte Korrektur zu sehen, sofern vorhanden. Eine Zeitkorrektur lässt die Anzeige kurz aufleuchten. Sie erscheint nur bei eingeschalteter Hilfsoption oder Warnung. Siehe [Betriebsdatenerfassung](/de/platform-intro/pages/data-acquisition).
+
+<a id="times-help" />
+
+## Wie wählt der Assistent Zeiten und wo sehe ich ein Beispiel?
+
+Er nutzt tatsächliche Maschinenereignisse oder das Ende des vorherigen Intervalls, mit den jüngsten Möglichkeiten zuerst. Er erfindet keine Zeit an einer Grenze. Frühere Möglichkeiten stehen unter **Andere Zeiten**. Administratoren finden unter **Maschineneinstellungen → BDE Assist → Wie Änderungen übernommen werden → Wie werden die Zeiten gewählt?** sechs Beispiele und die Grenzen dieser Maschine. Siehe [Maschinenkonfiguration](/de/platform-intro/pages/machine-configuration).
+
+<a id="short-gaps" />
+
+## Warum ändert eine kurze Datenlücke den vorgeschlagenen Start nicht?
+
+Fehlende Daten unter 10 Minuten teilen Produktion nicht in einen neuen Abschnitt. Leerlauf-, Aus- oder Rüstunterbrechungen unter 2 Minuten werden ebenfalls ignoriert. Beispielsweise bleibt bei einer fünfminütigen Datenlücke während der Produktion der frühere Produktionsbeginn verfügbar. Siehe [angebotene Intervallzeiten](/de/platform-intro/pages/data-acquisition).
+
+<a id="separate-setup" />
+
+## Kann ich Rüstkorrekturen unabhängig von Produktionskorrekturen ändern?
+
+Ja. Administratoren können Rüstoptionen unter **Maschineneinstellungen → BDE Assist → Startzeit** und **Endzeit** getrennt wählen und dann **Speichern**. Bestehende Maschinen behalten ihr bisheriges Verhalten, bis diese Auswahl geändert wird. Die Rüstoptionen steuern auch **Intervalle verbessern**. Folgen Sie [Maschine konfigurieren](/de/platform-intro/workflows/machine-configuration).
+
+<a id="recommended-options" />
+
+## Warum sind nach dem Einschalten der Hilfe schon Optionen ausgewählt?
+
+Ohne gespeicherte Optionen wählt das Einschalten von **Intervall-Assistent** Start- und Endkorrektur vor. Bei **Warnungen** werden drei empfohlene Warnungen vorausgewählt. Prüfen Sie die Auswahl und wählen Sie **Speichern**, um sie zu behalten. Eine gelbe Zusammenfassung bedeutet, dass der Bereich an ist, aber keine Optionen eingeschaltet sind. Siehe [Maschinenkonfiguration](/de/platform-intro/pages/machine-configuration).
+
+<a id="warning-preview" />
+
+## Kann ich vor dem Speichern sehen, wie eine Warnung aussieht?
+
+Ja. Öffnen Sie als Administrator unter **BDE Assist → Warnungen** das Informationssymbol neben der Warnung. **Wann sie erscheint** zeigt die Verzögerung. **Was der Bediener sieht** zeigt Schweregrad und Tonauswahl. Die Vorschau folgt ungespeicherten Einstellungen. Sie blinkt nicht und spielt keinen Alarm ab. Folgen Sie [Maschine konfigurieren](/de/platform-intro/workflows/machine-configuration).

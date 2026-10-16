@@ -63,6 +63,8 @@ Choose a **Period** ending no later than today. A longer selection is shortened 
 
 Expand a day to compare **Now** and **After**. Each suggestion shows the order, changed time, options, and minutes added or removed. The day preview follows your selection. The summary also shows unbooked production and remaining overlaps.
 
+Start and end suggestions use actual machine events from the most recent activity, within the machine’s asking limit. A time is never moved to a limit where nothing happened. Short data gaps under 10 minutes and idle, off, or preparation interruptions under 2 minutes do not split activity. Setup follows its own allowed options, separate from production. Only options within the automatic limit contribute to the best choices and summary totals.
+
 Only suggestions whose best option falls within the automatic limit start selected. **Overlaps (warning)** stays unticked and appears when simultaneous intervals exceed **Jobs in parallel**. Parallel work can be correct; overlaps are allowed. Review each before choosing a correction.
 
 Use the selected-suggestions action to apply the changes you checked. Administrators can choose **Apply best everywhere** after reviewing its confirmation. This excludes overlaps and suggestions beyond the automatic limit. Unbooked production is information only; the tool does not create missing intervals.

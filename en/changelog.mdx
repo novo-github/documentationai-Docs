@@ -6,20 +6,49 @@ toc: false
 
 ## Releases
 
-<Update label="2026-10-16" description="v1.5.102" tags={["feature", "improvement"]}>
-  {/* commits: 747965a */}
+<Update label="2026-10-16" description="v1.5.124–v1.5.125" tags={["feature", "improvement", "fix"]}>
+  {/* commits: 0860e7d, df5528d, 172febd, fe4ff78, f9e447b, 2fcf66a, e36a96b, bad1f68, cf686f2, da3c275, fca994b, 6bee894, 80aa7ca, d70a10e, 747965a, 5be01bf, 90508ad, 6731530 */}
 
-  **Release date:** October 16, 2026
+  **Release period:** October 15–16, 2026
 
   ### New Features
 
   #### [Understand Delivery Warnings Before Changing Your Plan](/en/platform-intro/pages/assignment-gantt)
+  {/* feature: forecaster-explainer */}
 
   You can now open **How does the Forecaster work?** to learn what expected times mean, how to read the colours, and when an order may finish later than shown. On **Orders & Products**, the order page, or **Assignment Gantt**, click the information icon beside **Forecaster**. In **Assignment Planner**, open **Forecaster check → How does the Forecaster work?**.
 
-  Clearer descriptions explain delivery warnings and missing planning details. The amber status now reads **at risk**: the order is not late yet, but the remaining work barely fits or an earlier step is not planned. **Times may be too early** warns that the displayed finish may be too optimistic. For example, a step without a machine can make an order finish later than shown.
+  Clearer descriptions explain delivery warnings and missing planning details. The amber status now reads **at risk** (previously **tight**): the order is not late yet, but the remaining work barely fits or an earlier step is not planned. **Times may be too early** warns that the displayed finish may be too optimistic. For example, a step without a machine can make an order finish later than shown.
 
   Reading the forecast never changes your plan or delivery dates. Use the [planning workflow](/en/platform-intro/workflows/assignment-planner) to review the warnings before deciding what to change.
+
+  #### [See What PDA Assist Is Doing on Your Machine](/en/platform-intro/pages/data-acquisition)
+  {/* feature: pda-bde-assist */}
+
+  On Data Acquisition V3, tap **PDA Assist** at the right edge to see the assistance enabled for your machine. It appears while at least one assistance option or warning is on. The dot is amber only while automatic ending counts down; otherwise it is green. A brief glow marks a time correction. Follow [Run Data Acquisition](/en/platform-intro/workflows/data-acquisition).
+
+  ### Improvements
+
+  #### [Set Up Assistance with Examples and Warning Previews](/en/platform-intro/pages/machine-configuration)
+  {/* feature: pda-bde-assist */}
+
+  Administrators can now set production and setup options separately under **Machine Settings → PDA Assist → Start time** and **End time**. Existing machines keep their saved behaviour. For example, setup can end at 08:40 when production began, even if you press **Stop** at 08:46.
+
+  Open **How changes are applied → How are the times chosen?** for six step-by-step examples and this machine's time limits. Use the information icon beside a warning to preview its delay, severity, and sound choice before saving. The preview follows your unsaved settings.
+
+  When you first enable a section with no saved options, start and end correction or three recommended warnings are preselected. Review them and select **Save**. Follow [Configure a Machine](/en/platform-intro/workflows/machine-configuration).
+
+  ### Fixes
+
+  #### [Choose Times That Match What the Machine Did](/en/platform-intro/pages/data-acquisition)
+  {/* feature: pda-assist-real-events */}
+
+  Assistance could use an older production stretch or a time at a limit where nothing happened. It now uses real machine events, most recent first, ignores data gaps under 10 minutes and other interruptions under 2 minutes, and leaves times beyond the automatic limit for your choice; the same rules guide [interval reviews](/en/platform-intro/workflows/improve-intervals).
+
+  #### [Change Settings Only When You Select Them](/en/platform-intro/pages/machine-configuration)
+  {/* feature: machine-settings-checkboxes */}
+
+  Clicking descriptions or empty space could change settings or selections. In machine settings, hall selections, and the reason form's machine list, use the checkbox or its title or name; descriptions and empty space no longer change the selection.
 </Update>
 
 <Update label="2026-10-15" description="v1.5.121–v1.5.123" tags={["feature", "improvement", "fix"]}>

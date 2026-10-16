@@ -103,6 +103,18 @@ Ist automatisches Beenden aktiv, kann **Maschine aus, Auftrag läuft noch** die 
 
 Intervalländerungen erscheinen sofort in der Zeitleiste. Die Aktualisierung nach einer Änderung behält Ihre gewählte Schicht bei, solange sie noch existiert. Regelmäßiges und manuelles Aktualisieren wechselt zur laufenden Schicht. Für vergangene Tage nutzen Sie **Intervalle verbessern** in den [Maschinendetails](/de/platform-intro/pages/machine-details). Folgen Sie [Intervalle prüfen und verbessern](/de/platform-intro/workflows/improve-intervals).
 
+### Aktive Hilfe prüfen
+
+Tippen Sie am rechten Rand der Betriebsdatenerfassung V3 auf **BDE Assist**. Die Anzeige erscheint, wenn mindestens eine Hilfsoption für Intervalle oder eine Warnung eingeschaltet ist. Auf dem Telefon steht sie neben der Aktionsleiste und über einem möglichen Warnhinweis.
+
+Der Dialog zeigt, welche Hilfe auf dieser Maschine aktiv ist. **Gerade jetzt** zeigt aktuelle Angaben, etwa die verbleibende Zeit bis zum automatischen Ende oder die letzte Start- oder Endkorrektur. Der Punkt ist nur während des Countdowns zum automatischen Beenden gelb, sonst grün. Nach einer Zeitkorrektur leuchtet die Anzeige kurz auf. Der Countdown erklärt, dass der Auftrag endet, sofern die Maschine nicht wieder anläuft. Um automatisches Beenden zu verhindern, bitten Sie einen Administrator, die [Maschineneinstellungen](/de/platform-intro/pages/machine-configuration) zu ändern.
+
+### Angebotene Zeiten verstehen
+
+Angeboten werden nur Zeiten aus der Maschinenaktivität oder das Ende des vorherigen Intervalls. Die Hauptauswahl nutzt die jüngste Aktivität. Frühere Zeiten stehen unter **Andere Zeiten**, neueste zuerst, mit insgesamt bis zu 20 angebotenen Zeiten. Zeiten vor dem Ende des vorherigen Auftrags oder jenseits der Fragegrenze entfallen. Sie werden nie auf eine Grenze verschoben.
+
+Öffnen Sie das Informationssymbol neben dem Titel des Auswahldialogs für eine kurze Erklärung. Fehlende Daten unter 10 Minuten sowie Leerlauf-, Aus- oder Rüstunterbrechungen unter 2 Minuten teilen einen Aktivitätsabschnitt nicht. Beispielsweise macht eine fünfminütige Datenlücke während der Produktion die Rückkehr der Daten nicht zu einem neuen Produktionsbeginn.
+
 ## Einen Stillstandsgrund wählen
 
 **Stillstandsgründe** bietet nur die auf dieser Maschine verfügbaren Gründe an. Eine Kachel kann in der Ecke einen Code zeigen. Nutzen Sie die Kategorien oberhalb der Kacheln, um die Liste einzugrenzen. Diese erscheinen nur, wenn Gründe Kategorien besitzen.
@@ -125,9 +137,9 @@ Ist ein Grund nicht mehr erlaubt, wird die Liste aktualisiert. Wählen Sie einen
 | **Mehrere Aufträge laufen** | Es laufen mehr Aufträge, als **Parallele Aufträge** für diese Maschine erlaubt. |
 | **Stillstand ohne Grund** | Ein Stillstand wartet auf einen Grund. |
 
-**Info** ist eine stille Meldung. **Warnung** zeigt ein orangefarbenes Banner, **Kritisch** ein rotes Banner mit blinkendem Bildschirmrand. Die Warnung erscheint nach der vom Administrator gewählten Verzögerung. Bei einem zu lange laufenden Auftrag gilt der Schwellwert in Stunden ohne zusätzliche Verzögerung.
+**Info** ist eine stille Meldung. **Warnung** zeigt ein orangefarbenes Banner mit orange leuchtenden Seitenrändern, **Kritisch** ein rotes Banner mit blinkendem Bildschirmrand. Die Warnung erscheint nach der vom Administrator gewählten Verzögerung. Bei einem zu lange laufenden Auftrag gilt der Schwellwert in Stunden ohne zusätzliche Verzögerung.
 
-Wählen Sie **Alle Warnungen anzeigen**, um **Aktive Warnungen** zu öffnen. Lesen Sie Auftrag und Dauer und nutzen Sie die verfügbare Aktion: **Auftrag auswählen**, **Auftrag beenden**, **Stillstandsgrund setzen** oder **Jetzt aktualisieren**. Prüfen Sie Maschine und Auftrag vor der Aktion. Folgen Sie [Betriebsdatenerfassung durchführen](/de/platform-intro/workflows/data-acquisition).
+Nutzen Sie die schwebende Warnungs-Schaltfläche unten links: Wählen Sie **Alle Warnungen anzeigen**, um **Aktive Warnungen** zu öffnen. Lesen Sie Auftrag und Dauer und nutzen Sie die verfügbare Aktion: **Auftrag auswählen**, **Auftrag beenden**, **Stillstandsgrund setzen** oder **Jetzt aktualisieren**. Prüfen Sie Maschine und Auftrag vor der Aktion. Folgen Sie [Betriebsdatenerfassung durchführen](/de/platform-intro/workflows/data-acquisition).
 
 ### Zurückstellen und Ton
 

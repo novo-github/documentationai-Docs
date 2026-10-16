@@ -6,20 +6,49 @@ toc: false
 
 ## Releases
 
-<Update label="2026-10-16" description="v1.5.102" tags={["Funktion", "Verbesserung"]}>
-  {/* commits: 747965a */}
+<Update label="2026-10-16" description="v1.5.124–v1.5.125" tags={["Funktion", "Verbesserung", "Fehlerbehebung"]}>
+  {/* commits: 0860e7d, df5528d, 172febd, fe4ff78, f9e447b, 2fcf66a, e36a96b, bad1f68, cf686f2, da3c275, fca994b, 6bee894, 80aa7ca, d70a10e, 747965a, 5be01bf, 90508ad, 6731530 */}
 
-  **Release-Datum:** 16. Oktober 2026
+  **Release-Zeitraum:** 15.–16. Oktober 2026
 
   ### Neue Funktionen
 
   #### [Lieferwarnungen verstehen, bevor Sie den Plan ändern](/de/platform-intro/pages/assignment-gantt)
+  {/* feature: forecaster-explainer */}
 
   Unter **Wie funktioniert der Forecaster?** erfahren Sie jetzt, was erwartete Zeiten bedeuten, wofür die Farben stehen und wann ein Auftrag später fertig werden kann als angezeigt. Klicken Sie unter **Aufträge & Produkte**, auf der Auftragsseite oder im **Assignment Gantt** auf das Informationssymbol neben **Forecaster**. Öffnen Sie im **Zuweisungsplaner** die Auswahl für die Terminprüfung und wählen Sie **Wie funktioniert der Forecaster?**.
 
-  Verständlichere Beschreibungen erklären Lieferwarnungen und fehlende Planungsangaben. Der gelbe Status heißt jetzt **gefährdet**: Der Auftrag ist noch nicht verspätet, aber die restliche Arbeit passt kaum noch oder ein früherer Arbeitsgang ist noch nicht geplant. **Zeiten können zu früh sein** weist auf ein möglicherweise zu frühes angezeigtes Ende hin. Beispielsweise kann ein Arbeitsgang ohne Maschine dazu führen, dass der Auftrag später fertig wird als angezeigt.
+  Verständlichere Beschreibungen erklären Lieferwarnungen und fehlende Planungsangaben. Der gelbe Status heißt jetzt **gefährdet** (bisher **knapp**): Der Auftrag ist noch nicht verspätet, aber die restliche Arbeit passt kaum noch oder ein früherer Arbeitsgang ist noch nicht geplant. **Zeiten können zu früh sein** weist auf ein möglicherweise zu frühes angezeigtes Ende hin. Beispielsweise kann ein Arbeitsgang ohne Maschine dazu führen, dass der Auftrag später fertig wird als angezeigt.
 
   Das Lesen der Prognose ändert weder Ihren Plan noch Ihre Liefertermine. Prüfen Sie die Warnungen mit dem Ablauf [Maschinenzuweisungen planen](/de/platform-intro/workflows/assignment-planner), bevor Sie über Änderungen entscheiden.
+
+  #### [Sehen, was BDE Assist an Ihrer Maschine tut](/de/platform-intro/pages/data-acquisition)
+  {/* feature: pda-bde-assist */}
+
+  Tippen Sie in der Betriebsdatenerfassung V3 am rechten Rand auf **BDE Assist**, um die aktivierte Hilfe Ihrer Maschine zu sehen. Die Anzeige erscheint, wenn mindestens eine Hilfsoption oder Warnung eingeschaltet ist. Der Punkt ist nur während des Countdowns zum automatischen Beenden gelb, sonst grün. Ein kurzes Aufleuchten zeigt eine Zeitkorrektur. Folgen Sie [Betriebsdatenerfassung durchführen](/de/platform-intro/workflows/data-acquisition).
+
+  ### Verbesserungen
+
+  #### [Hilfe mit Beispielen und Warnungsvorschau einstellen](/de/platform-intro/pages/machine-configuration)
+  {/* feature: pda-bde-assist */}
+
+  Administratoren können unter **Maschineneinstellungen → BDE Assist → Startzeit** und **Endzeit** Produktion und Rüsten jetzt getrennt einstellen. Bestehende Maschinen behalten ihr gespeichertes Verhalten. Beispielsweise kann Rüsten um 08:40 mit Produktionsbeginn enden, obwohl Sie erst um 08:46 auf **Stopp** drücken.
+
+  Öffnen Sie **Wie Änderungen übernommen werden → Wie werden die Zeiten gewählt?** für sechs schrittweise Beispiele und die Zeitgrenzen dieser Maschine. Das Informationssymbol neben einer Warnung zeigt Verzögerung, Schweregrad und Tonauswahl vor dem Speichern. Die Vorschau folgt Ihren ungespeicherten Einstellungen.
+
+  Aktivieren Sie einen Bereich erstmals ohne gespeicherte Optionen, sind Start- und Endkorrektur beziehungsweise drei empfohlene Warnungen vorausgewählt. Prüfen Sie diese und wählen Sie **Speichern**. Folgen Sie [Maschine konfigurieren](/de/platform-intro/workflows/machine-configuration).
+
+  ### Fehlerbehebungen
+
+  #### [Zeiten passend zur tatsächlichen Maschinenaktivität wählen](/de/platform-intro/pages/data-acquisition)
+  {/* feature: pda-assist-real-events */}
+
+  Die Hilfe konnte einen älteren Produktionsabschnitt oder eine Zeit an einer Grenze verwenden, an der nichts passiert war. Jetzt nutzt sie tatsächliche Maschinenereignisse, die jüngsten zuerst, ignoriert Datenlücken unter 10 Minuten und andere Unterbrechungen unter 2 Minuten und überlässt Zeiten jenseits der automatischen Grenze Ihrer Auswahl; dieselben Regeln gelten bei der [Intervallprüfung](/de/platform-intro/workflows/improve-intervals).
+
+  #### [Einstellungen nur durch gezielte Auswahl ändern](/de/platform-intro/pages/machine-configuration)
+  {/* feature: machine-settings-checkboxes */}
+
+  Ein Klick auf Beschreibungen oder freie Flächen konnte Einstellungen oder Auswahlen ändern. Nutzen Sie in den Maschineneinstellungen, bei der Hallenauswahl und in der Maschinenliste des Grundformulars das Kontrollkästchen oder seinen Titel beziehungsweise Namen; Beschreibungen und freie Flächen ändern die Auswahl nicht mehr.
 </Update>
 
 <Update label="2026-10-15" description="v1.5.121–v1.5.123" tags={["Funktion", "Verbesserung", "Fehlerbehebung"]}>

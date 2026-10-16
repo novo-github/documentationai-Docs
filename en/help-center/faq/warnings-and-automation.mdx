@@ -27,12 +27,18 @@ description: "Understand PDA Assist warnings, alarm sound, and Automator templat
 | Why did order times change before the report did? | [Answer](/en/help-center/faq/warnings-and-automation#report-time) |
 | Does Reset to defaults switch the assistant off? | [Answer](/en/help-center/faq/warnings-and-automation#reset) |
 | Where can I open settings for this machine? | [Answer](/en/help-center/faq/warnings-and-automation#settings-gear) |
+| What does the green or amber dot beside PDA Assist mean? | [Answer](/en/help-center/faq/warnings-and-automation#assist-status) |
+| How does the assistant choose times, and where can I see an example? | [Answer](/en/help-center/faq/warnings-and-automation#times-help) |
+| Why does a short gap in machine data not change the suggested start? | [Answer](/en/help-center/faq/warnings-and-automation#short-gaps) |
+| Can I change setup corrections without changing production corrections? | [Answer](/en/help-center/faq/warnings-and-automation#separate-setup) |
+| Why did options become selected when I turned assistance on? | [Answer](/en/help-center/faq/warnings-and-automation#recommended-options) |
+| Can I see how a warning will look before saving it? | [Answer](/en/help-center/faq/warnings-and-automation#warning-preview) |
 
 <a id="enable-warnings" />
 
 ## Who can turn on warnings for my machine?
 
-Only administrators can change warning settings. In the machine configuration, open **PDA Assist** and turn on **Warnings on the PDA page** before setting delays, severity, and sound. Follow [Configure a Machine](/en/platform-intro/workflows/machine-configuration).
+Only administrators can change warning settings. In the machine configuration, open **PDA Assist** and turn on **Warnings** before setting delays, severity, and sound. Follow [Configure a Machine](/en/platform-intro/workflows/machine-configuration).
 
 <a id="warning-action" />
 
@@ -160,3 +166,39 @@ No. It resets the chosen section’s options and keeps that section’s on/off s
 ## Where can I open settings for this machine?
 
 Administrators can use the **Machine Settings** gear beside refresh in the machine detail header. It opens in the same tab; browser Back returns to the machine. Other roles do not see this button. Follow [Configure a Machine](/en/platform-intro/workflows/machine-configuration).
+
+<a id="assist-status" />
+
+## What does the green or amber dot beside PDA Assist mean?
+
+The dot is amber only while automatic ending counts down; otherwise it is green. Tap **PDA Assist** at the right edge to see what is enabled, the remaining time, and the last correction when available. A brief glow marks a corrected time. The indicator appears only while an assistance option or warning is on. See [Data Acquisition](/en/platform-intro/pages/data-acquisition).
+
+<a id="times-help" />
+
+## How does the assistant choose times, and where can I see an example?
+
+It uses real machine events or the previous interval’s end, with the most recent choices first. It never invents a time at a limit. Earlier choices appear under **Other times**. Administrators can open **Machine Settings → PDA Assist → How changes are applied → How are the times chosen?** for six examples and this machine’s limits. See [Machine Configuration](/en/platform-intro/pages/machine-configuration).
+
+<a id="short-gaps" />
+
+## Why does a short gap in machine data not change the suggested start?
+
+Missing data shorter than 10 minutes does not split production into a new stretch. Idle, off, or preparation interruptions shorter than 2 minutes are also ignored. For example, a five-minute data gap during production leaves the earlier production start available. See [offered interval times](/en/platform-intro/pages/data-acquisition).
+
+<a id="separate-setup" />
+
+## Can I change setup corrections without changing production corrections?
+
+Yes. Administrators can choose setup options separately under **Machine Settings → PDA Assist → Start time** and **End time**, then select **Save**. Existing machines keep their previous behaviour until those choices change. The setup choices also guide **Improve intervals**. Follow [Configure a Machine](/en/platform-intro/workflows/machine-configuration).
+
+<a id="recommended-options" />
+
+## Why did options become selected when I turned assistance on?
+
+With no saved options, enabling **Interval assist** preselects start and end correction. Enabling **Warnings** preselects three recommended warnings. Review these choices and select **Save** to keep them. An amber summary means the section is on but no options are enabled. See [Machine Configuration](/en/platform-intro/pages/machine-configuration).
+
+<a id="warning-preview" />
+
+## Can I see how a warning will look before saving it?
+
+Yes. As an administrator, open the information icon beside the warning under **PDA Assist → Warnings**. **When it appears** shows its delay; **What the operator sees** previews its severity and sound choice. It follows unsaved settings. The preview does not flash or play an alarm. Follow [Configure a Machine](/en/platform-intro/workflows/machine-configuration).
