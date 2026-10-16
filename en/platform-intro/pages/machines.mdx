@@ -50,9 +50,9 @@ If a sensor switches off together with its machine, the [Sensor powered by machi
 
 ## Machine or Work Center?
 
-**Kind** distinguishes a **Machine (Maschine)** connected to an AVA sensor from a **Work center (Arbeitsplatz)** without AVA. A work center can receive orders and assignments and show running and planned work. It has no sensor KPIs and is excluded from state counters and analytics. Sensor-based Alert Rules and Automator rules never trigger for it.
+Choose **Work centers** in the view switch to see workplaces without an AVA. Their cards show running and planned orders. Switch back to **Machines** for machine states and KPIs.
 
-Converting a machine to a work center unassigns its AVAs and stops KPI calculation. Only an admin can change its configuration.
+**Kind** distinguishes **Machine** from **Work center**. Work centers are excluded from state counters and sensor analytics. Administrators can change the kind; converting a machine removes its AVA assignments and stops KPI calculation. See [Work Centers](/en/platform-intro/pages/work-centers) for setup and limits.
 
 ## State Colors and Short Captions
 
@@ -69,6 +69,8 @@ Ring gauges use **OEE**, **AVL** (Availability), and **PRO** (Performance). The 
 ## Understand Active Shifts
 
 **Active shift** identifies a machine whose shifts follow machine activity. A shift starts at idle, production, or preparation and ends according to the machine's shift settings. Its assigned shift group is not used. See [Machine Configuration](/en/platform-intro/pages/machine-configuration).
+
+**Waiting for the next active shift** or **waiting for machine start** means the next shift has not started yet. It starts automatically when the machine begins idle, production, or preparation. Until then, planned shifts from the assigned shift group are shown. This display does not switch off active shifts.
 
 ## Main Entities
 

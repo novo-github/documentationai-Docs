@@ -10,7 +10,7 @@ description: "Choose scope, conditions, timing, response, and escalation, then r
 ## Create and Review
 
 1. Choose **Start from a template** or **Start from scratch**. A template prefills settings but creates nothing yet. Check its listed prerequisites.
-2. Name the rule and select machines. No selection means all machines.
+2. Name the rule and select machines. No selection means all machines. If a warning names selected work centers and machine or sensor measurements, the rule never triggers for those work centers. Review the destinations and conditions before continuing.
 3. Check the conditions and thresholds. For example, **Preparation taking too long** starts at 120% of planned setup time; **Production behind expected pace** starts at a 15% shortfall. Adjust these for your process. Preparation and scrap values update with PDA entries.
 4. Set the check frequency, required duration, active days, active-shift restriction, and cooldown. Review every value marked **From the template – please review**, then select **Mark as reviewed**.
 5. Choose email recipients, response time, and escalation recipients. Decide whether the alert should resolve automatically after its condition clears and whether to send another email on resolution.

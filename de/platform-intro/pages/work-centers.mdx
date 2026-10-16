@@ -1,0 +1,45 @@
+---
+title: "Arbeitsplätze"
+description: "Planen Sie Aufträge an Arbeitsplätzen ohne AVA und erfahren Sie, was ein Wechsel der Art bewirkt."
+---
+
+## Überblick
+
+**Zugriff:** Sie sehen die Maschinen und Arbeitsplätze, für die Sie Zugriff haben. Nur Administratoren können sie anlegen oder ihre Konfiguration ändern. Für Aufträge und Planung benötigen Sie Zugriff auf die jeweiligen Seiten. Siehe [Rollen und Zugriff](/de/platform-intro/concepts/roles-and-access).
+
+Ein **Arbeitsplatz** hat keine AVA. Nutzen Sie ihn als Ziel für Aufträge und Zuweisungen, etwa für Arbeit an einem manuellen Montageplatz.
+
+## Was Sie sehen können
+
+Öffnen Sie **Maschinen → Arbeitsplätze**, um laufende und geplante Aufträge zu sehen. **Keine laufenden oder geplanten Aufträge** bedeutet, dass auf dieser Karte keine Arbeit angezeigt werden kann.
+
+Die Kennzeichnung **Arbeitsplatz** unterscheidet diese Ziele in Auftragszuweisungen und Auswahllisten. Der Hallenplan zeigt ihre laufenden Aufträge statt Maschinenkennzahlen.
+
+## Was Sie tun können
+
+- Wählen Sie einen Arbeitsplatz als Ziel für einen Arbeitsgang in der Auftragsverwaltung oder Planung.
+- Prüfen Sie seine laufende und geplante Arbeit auf der Karte.
+- Wechseln Sie zur Maschinenansicht zurück, um aktuelle Maschinenzustände zu prüfen.
+
+Folgen Sie zur Einrichtung [Maschine oder Arbeitsplatz hinzufügen](/de/platform-intro/workflows/add-machine) und zur Arbeitsverteilung [Maschinenzuweisungen planen](/de/platform-intro/workflows/assignment-planner).
+
+## Einstellungen und ihre Wirkung
+
+Administratoren wählen beim Anlegen oder in der Maschinenkonfiguration **Art → Arbeitsplatz**. Solange diese Art ausgewählt ist, lässt sich keine AVA zuweisen. Nur die passenden Konfigurationsbereiche stehen zur Verfügung.
+
+Beim Wechsel einer Maschine mit AVAs listet **Zu Arbeitsplatz ändern?** die Geräte auf, deren Zuweisung entfernt wird. **Entfernen und ändern** entfernt diese Zuweisungen und beendet alle Kennzahlenberechnungen für die Maschine. Prüfen Sie diese Wirkung vor der Bestätigung.
+
+Um wieder Sensorwerte zu erfassen, ändern Sie **Art** auf **Maschine**, speichern Sie und weisen Sie im AVA-Tab eine AVA zu. Der Wechsel der Art allein startet keine Datenerfassung. Folgen Sie [Maschine konfigurieren](/de/platform-intro/workflows/machine-configuration).
+
+## Grenzen
+
+Arbeitsplätze zeigen keinen aktuellen Sensorzustand und keine OEE-, Leistungs- oder Verfügbarkeitswerte. Sie zählen nicht zu Maschinenzuständen und werden nicht in Sensorauswertungen wie der Trendanalyse berücksichtigt. Eine leere Kennzahlenanzeige bedeutet nicht, dass keine Arbeit geleistet wird.
+
+Regeln mit Maschinen- oder Sensormesswerten lösen für Arbeitsplätze nie aus. Prüfen Sie die Hinweise in [Alarmregeln](/de/platform-intro/pages/alert-rules) und [Automator](/de/platform-intro/pages/automator), bevor Sie sich auf eine Regel verlassen.
+
+## Verwandte Seiten
+
+- [Maschinen](/de/platform-intro/pages/machines)
+- [Maschinenkonfiguration](/de/platform-intro/pages/machine-configuration)
+- [Aufträge & Produkte](/de/platform-intro/pages/orders-products)
+- [Zuweisungsplaner](/de/platform-intro/pages/assignment-planner)

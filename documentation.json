@@ -97,6 +97,11 @@
                             "icon": "file-text"
                           },
                           {
+                            "title": "Work Centers",
+                            "path": "en/platform-intro/pages/work-centers",
+                            "icon": "file-text"
+                          },
+                          {
                             "title": "Orders & Products",
                             "path": "en/platform-intro/pages/orders-products",
                             "icon": "file-text"
@@ -189,6 +194,11 @@
                           {
                             "title": "Trend Analysis",
                             "path": "en/platform-intro/pages/trend-analysis",
+                            "icon": "file-text"
+                          },
+                          {
+                            "title": "Report Archive",
+                            "path": "en/platform-intro/pages/report-archive",
                             "icon": "file-text"
                           }
                         ]
@@ -298,7 +308,7 @@
                         "icon": "folder",
                         "pages": [
                           {
-                            "title": "Add a Machine",
+                            "title": "Add a Machine or Work Center",
                             "path": "en/platform-intro/workflows/add-machine",
                             "icon": "play-circle"
                           },
@@ -373,6 +383,17 @@
                           {
                             "title": "Compare Machines",
                             "path": "en/platform-intro/workflows/compare-machines",
+                            "icon": "play-circle"
+                          }
+                        ]
+                      },
+                      {
+                        "group": "Reports",
+                        "icon": "folder",
+                        "pages": [
+                          {
+                            "title": "Download and Update Reports",
+                            "path": "en/platform-intro/workflows/reports",
                             "icon": "play-circle"
                           }
                         ]
@@ -509,6 +530,10 @@
                   {
                     "title": "Shifts and Hall Plan FAQs",
                     "path": "en/help-center/faq/shifts-and-hall-plan"
+                  },
+                  {
+                    "title": "Reports",
+                    "path": "en/help-center/faq/reports"
                   }
                 ]
               },
@@ -605,6 +630,11 @@
                             "icon": "file-text"
                           },
                           {
+                            "title": "Arbeitsplätze",
+                            "path": "de/platform-intro/pages/work-centers",
+                            "icon": "file-text"
+                          },
+                          {
                             "title": "Aufträge & Produkte",
                             "path": "de/platform-intro/pages/orders-products",
                             "icon": "file-text"
@@ -697,6 +727,11 @@
                           {
                             "title": "Trendanalyse",
                             "path": "de/platform-intro/pages/trend-analysis",
+                            "icon": "file-text"
+                          },
+                          {
+                            "title": "Berichtsarchiv",
+                            "path": "de/platform-intro/pages/report-archive",
                             "icon": "file-text"
                           }
                         ]
@@ -806,7 +841,7 @@
                         "icon": "folder",
                         "pages": [
                           {
-                            "title": "Maschine hinzufügen",
+                            "title": "Maschine oder Arbeitsplatz hinzufügen",
                             "path": "de/platform-intro/workflows/add-machine",
                             "icon": "play-circle"
                           },
@@ -881,6 +916,17 @@
                           {
                             "title": "Maschinen vergleichen",
                             "path": "de/platform-intro/workflows/compare-machines",
+                            "icon": "play-circle"
+                          }
+                        ]
+                      },
+                      {
+                        "group": "Berichte",
+                        "icon": "folder",
+                        "pages": [
+                          {
+                            "title": "Berichte herunterladen und aktualisieren",
+                            "path": "de/platform-intro/workflows/reports",
                             "icon": "play-circle"
                           }
                         ]
@@ -1017,6 +1063,10 @@
                   {
                     "title": "Fragen zu Schichten und Hallenplan",
                     "path": "de/help-center/faq/shifts-and-hall-plan"
+                  },
+                  {
+                    "title": "Berichte",
+                    "path": "de/help-center/faq/reports"
                   }
                 ]
               },

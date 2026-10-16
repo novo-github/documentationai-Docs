@@ -55,6 +55,8 @@ An Ihrem Konto angemeldete Geräte. Einzelne Sitzungen können aus der Ferne abg
 
 Eine **Aktive Schicht** beginnt bei Leerlauf, Produktion oder Rüsten und endet nach den Zeiteinstellungen der Maschine. Die zugewiesene Schichtgruppe wird nicht verwendet. Das Einschalten entfernt geplante Schichten ab heute und erhält bereits heute erfasste Schichten. Das Ausschalten beendet die laufende aktive Schicht sofort und legt ab heute geplante Schichten aus der Gruppe an.
 
+**Wartet auf die nächste aktive Schicht** und **wartet auf Maschinenstart** bedeuten, dass noch keine neue aktive Schicht begonnen hat. Bis die Maschine in Leerlauf, Produktion oder Rüsten geht, erscheinen geplante Schichten der zugewiesenen Gruppe. Die Maschine nutzt weiterhin aktive Schichten.
+
 [Mehr erfahren](/de/platform-intro/pages/machine-configuration).
 
 <a id="op-ag" />
@@ -539,11 +541,11 @@ Dokumente, Bilder und Notizen des Unternehmens mit Verbindungen zu Maschinen, Au
 
 [Mehr erfahren](/de/platform-intro/pages/knowledge-base).
 
-### Kind / Machine / Maschine
+### Art / Maschine
 
-Kind unterscheidet eine Maschine mit Sensorverbindung von einem Arbeitsplatz ohne Sensor.
+**Art** unterscheidet eine **Maschine**, die AVA-Messwerte erfassen kann, von einem **Arbeitsplatz** ohne AVA.
 
-[Mehr erfahren](/de/platform-intro/pages/machines).
+[Mehr erfahren](/de/platform-intro/pages/work-centers).
 
 ### Knowledge Base upload states
 
@@ -925,11 +927,21 @@ Lesen Sie die gewählte Bedingung: Rüst- und Zyklusprüfungen vergleichen Zeite
 
 [Mehr erfahren](/de/platform-intro/pages/automator).
 
-### Report archive
+### Berichtsarchiv
 
-Erstellte Wochen-, Monats- und Exportberichte; Queued, Building, Ready und Failed sind Erstellungszustände.
+**Berichtsarchiv** enthält Berichte der Arten **Wöchentlich**, **Monatlich** und **Export**. **Geplant** bezeichnet einen geplanten Bericht. **Von Benutzer** bedeutet, dass jemand den Bericht angefordert hat.
 
-[Mehr erfahren](/de/platform-intro/pages/trend-analysis).
+| Status | Bedeutung |
+| --- | --- |
+| **In Warteschlange** | Wartet auf den Beginn der Erstellung. |
+| **Wird erstellt** | Die Erstellung läuft. |
+| **Bereit** | Zum Herunterladen bereit. |
+| **Fehlgeschlagen** | Die Erstellung wurde nicht erfolgreich abgeschlossen. |
+| **Wird aktualisiert** | Wird anhand aktueller Daten geprüft. |
+
+**Mit aktuellen Daten neu erstellen** prüft einen vorhandenen Bericht und aktualisiert ihn bei geändertem Inhalt. **Nicht per E-Mail versendet** beschreibt den Versand, nicht den Erstellungsstatus. Bei fehlgeschlagener Aktualisierung bleibt die bisherige Version verfügbar.
+
+[Mehr erfahren](/de/platform-intro/pages/report-archive).
 
 ### Requires active shift
 
@@ -987,9 +999,9 @@ Schrittnummer einer Operation innerhalb eines Arbeitsauftrags, etwa 10, 20, 30.I
 
 [Mehr erfahren](/de/platform-intro/pages/order-detail).
 
-### Shift / Schicht / Whole day
+### Schicht / Ganzer Tag
 
-Benannter Arbeitszeitraum mit Beginn, Ende und optionalen Pausen; Whole day umfasst den ganzen Tag.
+Eine Schicht ist ein benannter Arbeitszeitraum mit Beginn, Ende und optionalen Pausen. **Ganzer Tag** umfasst den vollständigen Tag.
 
 [Mehr erfahren](/de/platform-intro/pages/scheduler).
 
@@ -1155,8 +1167,8 @@ Teil eines Auftrags für ein Produkt mit geplanter Menge und Operationen.
 
 [Mehr erfahren](/de/platform-intro/pages/order-detail).
 
-### Work center / Arbeitsplatz
+### Arbeitsplatz
 
-Arbeitsplatz ohne AVA. Kann Zuweisungen erhalten, hat aber keine Sensorkennzahlen, Zustandszähler oder sensorbasierten Alarm-/Automator-Auslösungen.
+Ein **Arbeitsplatz** hat keine AVA. Er zeigt laufende und geplante Aufträge und kann Zuweisungen erhalten. Er hat keine Sensorkennzahlen und zählt nicht zu Zustandszählern oder Auswertungen. Sensorbasierte Regeln lösen für ihn nie aus.
 
-[Mehr erfahren](/de/platform-intro/pages/machines).
+[Mehr erfahren](/de/platform-intro/pages/work-centers).

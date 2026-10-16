@@ -22,6 +22,49 @@ toc: false
   Das Lesen der Prognose ändert weder Ihren Plan noch Ihre Liefertermine. Prüfen Sie die Warnungen mit dem Ablauf [Maschinenzuweisungen planen](/de/platform-intro/workflows/assignment-planner), bevor Sie über Änderungen entscheiden.
 </Update>
 
+<Update label="2026-10-10" description="v1.5.109–v1.5.116" tags={["Funktion", "Verbesserung", "Fehlerbehebung"]}>
+  {/* commits: ea8a47d, 8303a62, 8bb1e8e, 5d5316b, 41214e8, 1bd6219, 1d39057, 71eaffd, 0ac86ac, 5fa51d2, 97cf98b, df03372, 32922b0, ef9e6ec, 7202217, 76b5a70, e856457, f61d6c8, d5d0121, 4052254, 66a98cf, cbea5d0 */}
+
+  **Release-Zeitraum:** 9.–10. Oktober 2026
+
+  ### Neue Funktionen
+
+  #### [Arbeit ohne angeschlossenen Sensor planen](/de/platform-intro/pages/work-centers)
+  {/* feature: work-centers */}
+
+  Prüfen Sie unter **Maschinen → Arbeitsplätze** laufende und geplante Aufträge an Arbeitsplätzen ohne AVA. Sie können diese Arbeitsplätze für Aufträge und Zuweisungen auswählen. Die Karten zeigen Arbeit statt Sensorkennzahlen. Arbeitsplätze zählen nicht zu Maschinenzuständen oder Auswertungen.
+
+  Administratoren wählen bei der Einrichtung oder in der Maschinenkonfiguration **Art → Arbeitsplatz**. Beim Wechsel einer bestehenden Maschine werden ihre AVA-Zuweisungen entfernt und die Kennzahlenberechnung beendet. Prüfen Sie die Bestätigung vor **Entfernen und ändern**. Folgen Sie [Maschine oder Arbeitsplatz hinzufügen](/de/platform-intro/workflows/add-machine) oder [Maschine konfigurieren](/de/platform-intro/workflows/machine-configuration).
+
+  #### [Berichte an einem Ort finden und aktualisieren](/de/platform-intro/pages/report-archive)
+  {/* feature: report-archive */}
+
+  Öffnen Sie **Berichtsarchiv**, um Berichte der Arten **Wöchentlich**, **Monatlich** und **Export** zu finden. Filtern Sie nach Zeitraum, Maschine oder Quelle. Prüfen Sie, ob ein Bericht **Bereit** ist, und laden Sie die verfügbare Datei herunter. Geplante Berichte können per E-Mail versendet werden. Das Archiv zeigt die Anzahl der versendeten E-Mails.
+
+  Mit **Mit aktuellen Daten neu erstellen** prüfen Sie einen vorhandenen Bericht anhand der aktuellen Produktionsaufzeichnungen. Bei unveränderten Daten erhalten Sie einen Hinweis. Schlägt die Aktualisierung fehl, bleibt die bisherige Version verfügbar. Dauert die Erstellung länger, erscheint der Bericht im Archiv, sobald er fertig ist. Folgen Sie [Berichte herunterladen und aktualisieren](/de/platform-intro/workflows/reports).
+
+  ### Verbesserungen
+
+  #### [Erkennen, wann eine aktive Schicht auf den Start wartet](/de/platform-intro/pages/machine-history)
+  {/* feature: active-shift-display */}
+
+  **Wartet auf die nächste aktive Schicht** erklärt, warum noch keine aktive Schicht läuft. Die nächste Schicht beginnt automatisch bei Leerlauf, Produktion oder Rüsten. Bis dahin werden geplante Schichten der zugewiesenen Gruppe angezeigt. Dadurch wechselt die Maschine nicht zurück zu geplanten Schichten.
+
+  Wählen Sie in der **Maschinenhistorie** die Schichten für Ihre Prüfung aus. Die Diagramme folgen Ihrer Auswahl. Die Schichtdetails zeigen die Zeiten. Wählen Sie **Ganzer Tag** für den vollständigen Tag. Folgen Sie [Maschinenhistorie prüfen](/de/platform-intro/workflows/machine-history-review).
+
+  #### [Zwischen Planungswarteschlangen und Zeitplan wechseln](/de/platform-intro/pages/assignment-planner)
+  {/* feature: planner-view-switch */}
+
+  Wechseln Sie im **Zuweisungsplaner** oder **Assignment Gantt** mit der Ansichtsauswahl zwischen Warteschlangen und Zeitplan. Prüfen Sie Termine im Zeitplan und kehren Sie zum Ändern von Zuweisungen in den Planer zurück. Folgen Sie [Maschinenzuweisungen planen](/de/platform-intro/workflows/assignment-planner).
+
+  ### Fehlerbehebungen
+
+  #### [Schichten mit korrekten Zyklus- und Energiewerten vergleichen](/de/platform-intro/pages/hall-plan)
+  {/* feature: shift-cycle-energy-corrections */}
+
+  Die Zyklusanzahl der laufenden Schicht konnte leer erscheinen, während ihre Zyklen zur vorherigen Schicht gezählt wurden. Der Vergleich ordnet die Zyklen jetzt der richtigen Schicht zu. Die Energiewerte je Schicht berücksichtigen jetzt die örtlichen Schichtzeiten des Unternehmens. Zuvor konnten sie einen verschobenen Zeitraum abdecken. Das korrigiert auch Energiewerte in der [Maschinenhistorie](/de/platform-intro/pages/machine-history).
+</Update>
+
 <Update label="2026-10-08" description="v1.5.105–v1.5.108" tags={["Funktion", "Verbesserung"]}>
   {/* commits: 3a5c8dd, 4f44e8f, 87405e8, 0318a78, ff47139, 43a80ee, a87a9e5, 58ee9d6 */}
 

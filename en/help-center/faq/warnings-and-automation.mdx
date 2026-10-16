@@ -14,6 +14,7 @@ description: "Understand PDA Assistant warnings, alarm sound, and Automator temp
 | Why is there an Automator alert but no email? | [Answer](/en/help-center/faq/warnings-and-automation#email) |
 | Why do setup and scrap values stay the same and then jump? | [Answer](/en/help-center/faq/warnings-and-automation#metrics) |
 | Why did my alert stop working after I switched to active shifts? | [Answer](/en/help-center/faq/warnings-and-automation#active-shift-alerts) |
+| Why does my rule never trigger for a work center? | [Answer](/en/help-center/faq/warnings-and-automation#work-center-alert) |
 
 <a id="enable-warnings" />
 
@@ -68,3 +69,9 @@ These values update when an operator records a PDA entry. Setup compares cumulat
 ## Why did my alert stop working after I switched to active shifts?
 
 Some alert conditions do not fire for machines with active shifts. When creating or editing the rule, check the notice: it can say that the alert never fires for these machines or show how many selected machines will be skipped. Review the rule before relying on it. See [Alert Rules](/en/platform-intro/pages/alert-rules).
+
+<a id="work-center-alert" />
+
+## Why does my rule never trigger for a work center?
+
+Work centers have no AVA. Rules using machine or sensor measurements never trigger for them. **Work center: never triggers** identifies this limit in Alert Rules; Automator warnings name the affected measurements and work centers. Review the conditions and destinations before relying on the rule. See [Alert Rules](/en/platform-intro/pages/alert-rules) and [Automator](/en/platform-intro/pages/automator).

@@ -14,6 +14,10 @@ description: "Find answers about operation priorities, planning dates, grouping,
 | Why is my operation priority marked even though I set an initial value? | [Answer](/en/help-center/faq/planning-and-imports#invalid-priority) |
 | Why does an imported operation stay on its old machine? | [Answer](/en/help-center/faq/planning-and-imports#recorded-work) |
 | Why does the import ask me to review machine quantities? | [Answer](/en/help-center/faq/planning-and-imports#split-quantity) |
+| Can I plan work at a station without a sensor? | [Answer](/en/help-center/faq/planning-and-imports#work-center-planning) |
+| What happens to the sensor when I change a machine to a work center? | [Answer](/en/help-center/faq/planning-and-imports#work-center-switch) |
+| Why does my work center have no OEE or machine status? | [Answer](/en/help-center/faq/planning-and-imports#work-center-kpis) |
+| How do I switch from planning cards to the timeline? | [Answer](/en/help-center/faq/planning-and-imports#planner-view) |
 
 <a id="operation-priority" />
 
@@ -68,3 +72,27 @@ Recorded work prevents it from moving, but the operation is still imported. Choo
 ## Why does the import ask me to review machine quantities?
 
 Quantities already split across machines stay unchanged and are marked for review. Compare **Planned quantity (machine)** with **Planned quantity (work order)**, then inspect the affected work in Assignment Planner. Follow the [import workflow](/en/platform-intro/workflows/order-upload-planner).
+
+<a id="work-center-planning" />
+
+## Can I plan work at a station without a sensor?
+
+Yes. An administrator can create a **Work center**. Select it as the destination for an order or assignment, then review running and planned work under **Machines → Work centers**. Follow [Add a Machine or Work Center](/en/platform-intro/workflows/add-machine) and [Plan Machine Assignments](/en/platform-intro/workflows/assignment-planner).
+
+<a id="work-center-switch" />
+
+## What happens to the sensor when I change a machine to a work center?
+
+The change removes its AVA assignments and stops all KPI calculation. Only administrators can change the kind. To collect readings again, save it as **Machine** and assign an AVA in the AVA tab. Follow [Configure a Machine](/en/platform-intro/workflows/machine-configuration).
+
+<a id="work-center-kpis" />
+
+## Why does my work center have no OEE or machine status?
+
+A **Work center** has no AVA. It shows running and planned orders instead of sensor KPIs and is excluded from state counters and analytics. Missing KPIs do not mean zero performance. See [Work Centers](/en/platform-intro/pages/work-centers).
+
+<a id="planner-view" />
+
+## How do I switch from planning cards to the timeline?
+
+Use the view switch in Assignment Planner or Assignment Gantt. Review dates in the timeline, then return to the planner to change assignments. Follow [Plan Machine Assignments](/en/platform-intro/workflows/assignment-planner).

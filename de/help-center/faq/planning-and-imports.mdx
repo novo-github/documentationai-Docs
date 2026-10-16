@@ -14,6 +14,10 @@ description: "Antworten zu Arbeitsgangprioritäten, Planungsterminen, Gruppierun
 | Warum ist meine Arbeitsgangpriorität trotz Anfangswert markiert? | [Antwort](/de/help-center/faq/planning-and-imports#invalid-priority) |
 | Warum bleibt ein importierter Arbeitsgang auf seiner alten Maschine? | [Antwort](/de/help-center/faq/planning-and-imports#recorded-work) |
 | Warum soll ich nach dem Import Maschinenmengen prüfen? | [Antwort](/de/help-center/faq/planning-and-imports#split-quantity) |
+| Kann ich Arbeit an einem Platz ohne Sensor planen? | [Antwort](/de/help-center/faq/planning-and-imports#work-center-planning) |
+| Was passiert mit dem Sensor beim Wechsel von Maschine zu Arbeitsplatz? | [Antwort](/de/help-center/faq/planning-and-imports#work-center-switch) |
+| Warum hat mein Arbeitsplatz keine OEE und keinen Maschinenzustand? | [Antwort](/de/help-center/faq/planning-and-imports#work-center-kpis) |
+| Wie wechsle ich von Planungskarten zum Zeitplan? | [Antwort](/de/help-center/faq/planning-and-imports#planner-view) |
 
 <a id="operation-priority" />
 
@@ -68,3 +72,27 @@ Bereits erfasste Arbeit verhindert das Verschieben. Der Arbeitsgang wird trotzde
 ## Warum soll ich nach dem Import Maschinenmengen prüfen?
 
 Bereits auf mehrere Maschinen aufgeteilte Mengen bleiben unverändert und werden zur Prüfung markiert. Vergleichen Sie **Geplante Menge (Maschine)** und **Geplante Menge (Arbeitsauftrag)**. Prüfen Sie dann die betroffene Arbeit im Zuweisungsplaner. Folgen Sie dem [Importablauf](/de/platform-intro/workflows/order-upload-planner).
+
+<a id="work-center-planning" />
+
+## Kann ich Arbeit an einem Platz ohne Sensor planen?
+
+Ja. Ein Administrator kann einen **Arbeitsplatz** anlegen. Wählen Sie ihn als Ziel für einen Auftrag oder eine Zuweisung. Prüfen Sie laufende und geplante Arbeit unter **Maschinen → Arbeitsplätze**. Folgen Sie [Maschine oder Arbeitsplatz hinzufügen](/de/platform-intro/workflows/add-machine) und [Maschinenzuweisungen planen](/de/platform-intro/workflows/assignment-planner).
+
+<a id="work-center-switch" />
+
+## Was passiert mit dem Sensor beim Wechsel von Maschine zu Arbeitsplatz?
+
+Der Wechsel entfernt die AVA-Zuweisungen und beendet alle Kennzahlenberechnungen. Nur Administratoren können die Art ändern. Um wieder Messwerte zu erfassen, speichern Sie den Eintrag als **Maschine** und weisen Sie im AVA-Tab eine AVA zu. Folgen Sie [Maschine konfigurieren](/de/platform-intro/workflows/machine-configuration).
+
+<a id="work-center-kpis" />
+
+## Warum hat mein Arbeitsplatz keine OEE und keinen Maschinenzustand?
+
+Ein **Arbeitsplatz** hat keine AVA. Er zeigt laufende und geplante Aufträge statt Sensorkennzahlen und zählt nicht zu Zustandszählern oder Auswertungen. Fehlende Kennzahlen bedeuten nicht, dass keine Arbeit geleistet wird. Siehe [Arbeitsplätze](/de/platform-intro/pages/work-centers).
+
+<a id="planner-view" />
+
+## Wie wechsle ich von Planungskarten zum Zeitplan?
+
+Nutzen Sie die Ansichtsauswahl im Zuweisungsplaner oder Assignment Gantt. Prüfen Sie Termine im Zeitplan und kehren Sie zum Ändern von Zuweisungen in den Planer zurück. Folgen Sie [Maschinenzuweisungen planen](/de/platform-intro/workflows/assignment-planner).

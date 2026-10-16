@@ -50,9 +50,9 @@ Wenn ein Sensor zusammen mit seiner Maschine ausgeschaltet wird, kann die passen
 
 ## Maschine oder Arbeitsplatz?
 
-**Kind** unterscheidet eine **Maschine (Machine)** mit AVA-Sensor von einem **Arbeitsplatz (Work center)** ohne AVA. Ein Arbeitsplatz kann Aufträge und Zuweisungen erhalten und laufende sowie geplante Arbeit zeigen. Er hat keine Sensorkennzahlen und wird aus Zustandszählern und Analysen ausgeschlossen. Sensorbasierte Alarm- und Automator-Regeln lösen dort nie aus.
+Wählen Sie in der Ansichtsauswahl **Arbeitsplätze**, um Arbeitsplätze ohne AVA zu sehen. Die Karten zeigen laufende und geplante Aufträge. Wechseln Sie für Maschinenzustände und Kennzahlen zurück zu **Maschinen**.
 
-Ein Wechsel von Maschine zu Arbeitsplatz entfernt die AVA-Zuweisungen und beendet die Kennzahlenberechnung. Nur ein Administrator kann die Konfiguration ändern.
+**Art** unterscheidet **Maschine** und **Arbeitsplatz**. Arbeitsplätze zählen nicht zu Zustandszählern und Sensorauswertungen. Administratoren können die Art ändern. Beim Wechsel einer Maschine werden ihre AVA-Zuweisungen entfernt und die Kennzahlenberechnung beendet. Einrichtung und Grenzen finden Sie unter [Arbeitsplätze](/de/platform-intro/pages/work-centers).
 
 ## Zustandsfarben und Kürzel
 
@@ -69,6 +69,8 @@ Ringanzeigen verwenden **OEE**, **AVL** (Verfügbarkeit) und **PRO** (Leistung).
 ## Aktive Schichten verstehen
 
 **Aktive Schicht** kennzeichnet eine Maschine, deren Schichten der Maschinenaktivität folgen. Eine Schicht beginnt bei Leerlauf, Produktion oder Rüsten und endet nach den Schichteinstellungen der Maschine. Die zugewiesene Schichtgruppe wird nicht verwendet. Siehe [Maschinenkonfiguration](/de/platform-intro/pages/machine-configuration).
+
+**Wartet auf die nächste aktive Schicht** oder **wartet auf Maschinenstart** bedeutet, dass die nächste Schicht noch nicht begonnen hat. Sie startet automatisch bei Leerlauf, Produktion oder Rüsten. Bis dahin werden geplante Schichten der zugewiesenen Schichtgruppe angezeigt. Diese Anzeige schaltet aktive Schichten nicht aus.
 
 ## Hauptentitäten
 

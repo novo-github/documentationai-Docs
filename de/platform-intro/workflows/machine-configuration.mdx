@@ -19,6 +19,8 @@ Beginnen Sie auf der [Seite Maschinenkonfiguration](/de/platform-intro/pages/mac
 ### Voraussetzungen
 - Die Maschine existiert bereits, es sei denn, der Benutzer erstellt sie über die neue Maschinenroute.
 
+Nutzen Sie für einen **Arbeitsplatz** die folgenden Schritte zum Wechsel der Art. Überspringen Sie die Einrichtung von AVAs und Sensormessungen.
+
 ## Schritte
 
 <Steps>
@@ -59,6 +61,23 @@ Nur Admins ändern die Einrichtung. Klären Sie, ob der Eintrag eine **Maschine*
 Ändern Sie **Aktive Schicht** mit den folgenden Schritten und prüfen Sie die Wirkung auf die heutigen Schichten. Beachten Sie Hinweise auf Alarmregeln, die mit aktiven Schichten nicht funktionieren.
 
 Richten Sie **BDE-Assistent** mit den folgenden Schritten für Warnungen ein. [Maschinenkonfiguration](/de/platform-intro/pages/machine-configuration) erklärt Regeln, Zeitklassen, Zielwerte und Sensorfelder.
+
+## Zwischen Maschine und Arbeitsplatz wechseln
+
+<Steps>
+  <Step title="Wählen Sie die Art" icon="arrow-right" title-type="p">
+    Öffnen Sie als Administrator die **Basisinformationen** in der Konfiguration. Wählen Sie **Art → Arbeitsplatz** für einen Arbeitsplatz ohne AVA.
+  </Step>
+  <Step title="Prüfen Sie die zu entfernenden Geräte" icon="arrow-right" title-type="p">
+    Sind AVAs zugewiesen, listet **Zu Arbeitsplatz ändern?** diese auf. Bestätigen Sie **Entfernen und ändern** nur, wenn die Zuweisungen entfernt und alle Kennzahlenberechnungen beendet werden sollen. Speichern Sie die Änderung. Arbeitsplätzen lassen sich keine AVAs zuweisen.
+  </Step>
+  <Step title="Prüfen Sie Arbeit und Regeln" icon="arrow-right" title-type="p">
+    Öffnen Sie **Maschinen → Arbeitsplätze**, um laufende und geplante Aufträge zu prüfen. Kontrollieren Sie Alarm- und Automator-Regeln: Bedingungen mit Maschinen- oder Sensormesswerten lösen für diesen Arbeitsplatz nie aus.
+  </Step>
+  <Step title="Verbinden Sie beim Wechsel zurück wieder einen Sensor" icon="arrow-right" title-type="p">
+    Wählen Sie **Art → Maschine** und speichern Sie, um wieder Messwerte zu erfassen. Weisen Sie anschließend im AVA-Tab eine AVA zu. Der Wechsel der Art allein startet keine Datenerfassung.
+  </Step>
+</Steps>
 
 ## Zwischen aktiven und geplanten Schichten wechseln
 

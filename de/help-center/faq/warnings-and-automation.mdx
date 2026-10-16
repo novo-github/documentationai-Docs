@@ -14,6 +14,7 @@ description: "BDE-Assistent, Alarmton sowie Automator-Vorlagen und Benachrichtig
 | Warum sehe ich einen Automator-Alarm, erhalte aber keine E-Mail? | [Antwort](/de/help-center/faq/warnings-and-automation#email) |
 | Warum bleiben Rüst- und Ausschusswerte erst gleich und springen dann? | [Antwort](/de/help-center/faq/warnings-and-automation#metrics) |
 | Warum löst mein Alarm nach dem Wechsel zu aktiven Schichten nicht mehr aus? | [Antwort](/de/help-center/faq/warnings-and-automation#active-shift-alerts) |
+| Warum löst meine Regel für einen Arbeitsplatz nie aus? | [Antwort](/de/help-center/faq/warnings-and-automation#work-center-alert) |
 
 <a id="enable-warnings" />
 
@@ -68,3 +69,9 @@ Diese Werte ändern sich mit einer BDE-Meldung. Die Rüstprüfung vergleicht die
 ## Warum löst mein Alarm nach dem Wechsel zu aktiven Schichten nicht mehr aus?
 
 Manche Alarmbedingungen lösen bei Maschinen mit aktiven Schichten nicht aus. Prüfen Sie beim Erstellen oder Bearbeiten den Hinweis der Regel. Er kann erklären, dass der Alarm für diese Maschinen nie auslöst, oder die Anzahl ausgelassener Maschinen zeigen. Prüfen Sie die Regel, bevor Sie sich darauf verlassen. Siehe [Alarmregeln](/de/platform-intro/pages/alert-rules).
+
+<a id="work-center-alert" />
+
+## Warum löst meine Regel für einen Arbeitsplatz nie aus?
+
+Arbeitsplätze haben keine AVA. Regeln mit Maschinen- oder Sensormesswerten lösen für sie nie aus. **Arbeitsplatz: löst nie aus** kennzeichnet diese Grenze in Alarmregeln. Automator-Hinweise nennen die betroffenen Kennzahlen und Arbeitsplätze. Prüfen Sie Bedingungen und Ziele, bevor Sie sich auf die Regel verlassen. Siehe [Alarmregeln](/de/platform-intro/pages/alert-rules) und [Automator](/de/platform-intro/pages/automator).

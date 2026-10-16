@@ -55,6 +55,8 @@ Devices signed in to your account. Individual sessions can be signed out remotel
 
 An **Active shift** starts at idle, production, or preparation and ends according to the machine’s duration settings. The assigned shift group is not used. Switching on removes scheduled shifts from today onward but keeps shifts already recorded today. Switching off ends the running active shift immediately and creates scheduled shifts from the group from today.
 
+**Waiting for the next active shift** and **waiting for machine start** mean no new active shift has started yet. Planned shifts from the assigned group appear until the machine begins idle, production, or preparation. The machine still uses active shifts.
+
 [Learn more](/en/platform-intro/pages/machine-configuration).
 
 <a id="op-ag" />
@@ -539,11 +541,11 @@ The company's documents, images, and notes connected to machines, orders, and pr
 
 [Learn more](/en/platform-intro/pages/knowledge-base).
 
-### Kind / Machine / Maschine
+### Kind / Machine
 
-Kind distinguishes a sensor-connected Machine from a sensorless Work center.
+**Kind** distinguishes a **Machine** that can collect AVA readings from a **Work center** without an AVA.
 
-[Learn more](/en/platform-intro/pages/machines).
+[Learn more](/en/platform-intro/pages/work-centers).
 
 ### Knowledge Base upload states
 
@@ -927,9 +929,19 @@ Read the selected condition: setup and cycle checks compare time with a plan or 
 
 ### Report archive
 
-Generated weekly, monthly, and export reports; Queued, Building, Ready, Failed are build states.
+**Report archive** contains **Weekly**, **Monthly**, and **Export** reports. **Scheduled** means a scheduled report; **By user** means someone requested it.
 
-[Learn more](/en/platform-intro/pages/trend-analysis).
+| Status | Meaning |
+| --- | --- |
+| **Queued** | Waiting for creation to start. |
+| **Building** | Being created. |
+| **Ready** | Ready to download. |
+| **Failed** | Creation did not finish successfully. |
+| **Refreshing** | Being checked against current data. |
+
+**Rebuild with current data** checks an existing report and updates it if the contents changed. **Not emailed** describes email delivery, not creation status. A failed refresh keeps the previous version available.
+
+[Learn more](/en/platform-intro/pages/report-archive).
 
 ### Requires active shift
 
@@ -987,9 +999,9 @@ An operation's step number within a work order, for example 10, 20, 30. In Hall 
 
 [Learn more](/en/platform-intro/pages/order-detail).
 
-### Shift / Schicht / Whole day
+### Shift / Whole day
 
-Named work period with start, end, and optional breaks; Whole day covers the entire day.
+A shift is a named work period with start, end, and optional breaks. **Whole day** covers the entire day.
 
 [Learn more](/en/platform-intro/pages/scheduler).
 
@@ -1155,8 +1167,8 @@ The part of an order for one product, with a planned quantity and operations.
 
 [Learn more](/en/platform-intro/pages/order-detail).
 
-### Work center / Arbeitsplatz
+### Work center
 
-Workplace without AVA. Can receive assignments but has no sensor KPIs, status-counter inclusion, or sensor-based alert/Automator triggers.
+A **Work center** is a workplace without an AVA. It shows running and planned orders and can receive assignments. It has no sensor KPIs and is excluded from state counters and analytics. Sensor-based rules never trigger for it.
 
-[Learn more](/en/platform-intro/pages/machines).
+[Learn more](/en/platform-intro/pages/work-centers).

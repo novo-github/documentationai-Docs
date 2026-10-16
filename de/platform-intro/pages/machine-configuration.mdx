@@ -43,7 +43,9 @@ Bei aktivierter Einstellung wird ein fehlendes Signal dieses Sensors als **Masch
 
 ## Art, Energieüberwachung, Zielwerte und Funktionen
 
-**Kind** wählt Maschine oder Arbeitsplatz. Eine Maschine benötigt AVA für Live-Sensordaten. Ein Arbeitsplatz hat weder AVA noch Sensorkennzahlen. Ein Wechsel entfernt AVA-Zuweisungen und beendet die Kennzahlenberechnung. Ändern Sie AVA-Prioritäten nur mit Kenntnis der Einrichtung.
+Wählen Sie in den **Basisinformationen** unter **Art** entweder **Maschine** für eine Maschine mit AVA oder **Arbeitsplatz** für einen Arbeitsplatz ohne AVA. Arbeitsplätzen lassen sich keine AVAs zuweisen. Nur die passenden Konfigurationsbereiche werden angezeigt.
+
+Beim Wechsel einer Maschine mit AVAs listet **Zu Arbeitsplatz ändern?** die betroffenen Geräte auf. **Entfernen und ändern** entfernt ihre Zuweisungen und beendet alle Kennzahlenberechnungen. Um wieder Messwerte zu erfassen, speichern Sie die Art als **Maschine** und weisen Sie im AVA-Tab eine AVA zu. Folgen Sie dem [Konfigurationsablauf](/de/platform-intro/workflows/machine-configuration).
 
 Ein optionaler **Energy monitor** misst Verbrauch, Spannung, Leistungsfaktor und Frequenz. **Machine rating** enthält Zielwerte für OEE, PRO, AVL, Produktion/Leerlauf/Aus je Stunde sowie Energieverbrauch und -verschwendung. Ein Ist-Ziel-Vergleich macht den Zielwert nicht zum Messwert.
 
@@ -76,6 +78,8 @@ Beim Einschalten von **Aktive Schicht** erklärt **Auf aktive Schichten umstelle
 Beim Ausschalten erklärt **Zurück zu geplanten Schichten?**, dass die laufende aktive Schicht sofort endet. Ab heute werden geplante Schichten aus der zugewiesenen Gruppe angelegt. Prüfen Sie die zugewiesene Gruppe, bevor Sie **Fortfahren** wählen.
 
 Die Kennzeichnung **Aktive Schicht** zeigt, welche Maschinen diese Einstellung nutzen. Ihre Erklärung nennt Mindest-, Stillstands- und Höchstdauer. Manche Alarmregeln lösen für diese Maschinen nicht aus. Prüfen Sie den Regelhinweis, bevor Sie sich darauf verlassen. Die Schritte finden Sie unter [Maschine konfigurieren](/de/platform-intro/workflows/machine-configuration).
+
+**Wartet auf die nächste aktive Schicht** oder **wartet auf Maschinenstart** bedeutet, dass die nächste Schicht noch nicht begonnen hat. Sie startet automatisch bei Leerlauf, Produktion oder Rüsten. Bis dahin werden geplante Schichten der zugewiesenen Schichtgruppe angezeigt. Diese Anzeige schaltet aktive Schichten nicht aus.
 
 ## Warnungen: BDE-Assistent
 

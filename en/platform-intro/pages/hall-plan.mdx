@@ -59,6 +59,12 @@ Click the state-pattern icon to see examples of how machine states look with pat
 
 Administrators can review whether a managed display is live or offline and when it last reported activity. These indicators describe the display's connection, not the production state of a machine. If a screen appears out of date, check its connectivity and last-seen information before interpreting the displayed production values.
 
+### Read Work Centers and Waiting Shifts
+
+Work centers show running orders instead of machine KPIs. They have no AVA and do not contribute to machine-state counters. See [Work Centers](/en/platform-intro/pages/work-centers).
+
+**Waiting for the next active shift** or **waiting for machine start** means the next shift has not started yet. It starts automatically when the machine begins idle, production, or preparation. Until then, planned shifts from the assigned shift group are shown. This display does not switch off active shifts.
+
 ## OEE, AVL, PRO, and PCS on Wall Displays
 
 These captions stay the same in English and German: **OEE** is Overall Equipment Effectiveness; **AVL** is Availability; **PRO** is Performance, not Production; **PCS** is Pieces. A ring's center caption identifies the displayed metric. [Calculations](/en/platform-intro/concepts/calculations#oee) explains the platform-specific definitions.

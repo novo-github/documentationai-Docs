@@ -43,7 +43,9 @@ With this setting enabled, a missing signal from that sensor is shown as **machi
 
 ## Kind, Energy Monitoring, Ratings, and Features
 
-**Kind** chooses Machine or Work center. A machine needs an AVA to collect live sensor data. A work center has no AVA or sensor KPIs; changing to that kind unassigns AVAs and stops KPI calculation. Change AVA priority only when you understand the setup.
+In **Basic Info**, choose **Kind → Machine** for a machine with an AVA or **Kind → Work center** for a workplace without one. Work centers cannot receive AVA assignments and show only the applicable configuration tabs.
+
+When switching a machine with AVAs, **Switch to work center?** lists the affected devices. **Unassign and switch** removes their assignments and stops all KPI calculation. To collect readings again, save the kind as **Machine**, then assign an AVA in the AVA tab. Follow the [configuration workflow](/en/platform-intro/workflows/machine-configuration).
 
 An optional **Energy monitor** measures consumption, voltage, power factor, and frequency. **Machine rating** stores targets for OEE, PRO, AVL, production/idle/off time per hour, and energy consumption/wastage. Actual-versus-rating comparisons do not make the target an actual measurement.
 
@@ -76,6 +78,8 @@ When you enable **Active shift**, **Switch to active shifts?** explains that sch
 When you disable it, **Switch back to scheduled shifts?** explains that the running active shift ends immediately and scheduled shifts from the assigned group are created from today. Review the assigned group before selecting **Continue**.
 
 The **Active shift** badge identifies machines using this mode. Its explanation shows the minimum, stop, and maximum durations. Some alert rules do not fire for these machines; check the rule's notice before relying on it. Follow [Configure a Machine](/en/platform-intro/workflows/machine-configuration) for the steps.
+
+**Waiting for the next active shift** or **waiting for machine start** means the next shift has not started yet. It starts automatically when the machine begins idle, production, or preparation. Until then, planned shifts from the assigned shift group are shown. This display does not switch off active shifts.
 
 ## Warnings: PDA Assistant
 

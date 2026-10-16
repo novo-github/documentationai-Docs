@@ -1,0 +1,45 @@
+---
+title: "Work Centers"
+description: "Plan orders at workplaces without an AVA and understand what changes when you switch their kind."
+---
+
+## Overview
+
+**Access:** You see the machines and work centers you are allowed to access. Only administrators can create them or change their configuration. Order and planning actions require access to those pages. See [Roles and access](/en/platform-intro/concepts/roles-and-access).
+
+A **Work center** is a workplace without an AVA. Use it as a destination for orders and assignments, for example work at a manual assembly station.
+
+## What You Can See
+
+Open **Machines → Work centers** to see running and planned orders. **No running or planned orders** means there is no work to show on that card.
+
+The **Work center** label distinguishes these destinations in order assignments and selection lists. Hall Plan shows their running orders instead of machine KPIs.
+
+## What You Can Do
+
+- Choose a work center when assigning an operation in order management or planning.
+- Review its running and planned work from its card.
+- Switch back to the machine view to review live machine states.
+
+Follow [Add a Machine or Work Center](/en/platform-intro/workflows/add-machine) for setup and [Plan Machine Assignments](/en/platform-intro/workflows/assignment-planner) to place work.
+
+## Settings and Their Effect
+
+Administrators choose **Kind → Work center** during creation or in the machine configuration. No AVA can be assigned while this kind is selected. Only the applicable configuration tabs are available.
+
+When converting a machine with AVAs, **Switch to work center?** lists the devices that will be unassigned. **Unassign and switch** removes those assignments and stops all KPI calculation for that machine. Review this effect before confirming.
+
+To collect sensor readings again, change **Kind** to **Machine**, save, then assign an AVA in the AVA tab. Changing the kind alone does not start data collection. Follow [Configure a Machine](/en/platform-intro/workflows/machine-configuration).
+
+## Limits
+
+Work centers have no live sensor state, OEE, performance, or availability. They are excluded from machine-state counters and sensor analytics, including Trend Analysis. An empty KPI display does not mean zero performance.
+
+Rules that depend on machine or sensor measurements never trigger for work centers. Check the notices in [Alert Rules](/en/platform-intro/pages/alert-rules) and [Automator](/en/platform-intro/pages/automator) before relying on a rule.
+
+## Related Pages
+
+- [Machines](/en/platform-intro/pages/machines)
+- [Machine Configuration](/en/platform-intro/pages/machine-configuration)
+- [Orders & Products](/en/platform-intro/pages/orders-products)
+- [Assignment Planner](/en/platform-intro/pages/assignment-planner)

@@ -9,10 +9,10 @@ description: "Use the admin setup wizard, choose Machine or Work center, and con
 
 ## Basics → Settings & Media → Review
 
-1. In **Basics**, enter identification details and choose **Kind**: Machine or Work center, plus the machine type.
+1. In **Basics**, enter identification details and choose **Kind**: **Machine** or **Work center**, plus the machine type.
 2. In **Settings & Media**, set the applicable hall, shift group, tags, and image.
 3. In **Review**, check the record and save it.
-4. Open [Machine Configuration](/en/platform-intro/pages/machine-configuration) to attach an AVA and configure ratings, timeline rules/ranges, features, optional energy monitoring, and PDA Assistant warnings.
+4. For a **Machine**, open [Machine Configuration](/en/platform-intro/pages/machine-configuration) to assign an AVA and complete monitoring settings. For a **Work center**, skip AVA setup; it cannot have an AVA.
 5. For a Machine, verify that the AVA is mapped before expecting live readings.
 
 ## Choose the Shift Model
@@ -24,3 +24,5 @@ In the machine setup, use **Shifts → Active shift** if shifts should start wit
 The entry appears in [Machines](/en/platform-intro/pages/machines) and can receive planned work. A Machine saved without an AVA collects no sensor data until an AVA is mapped. A Work center intentionally has no AVA, sensor KPIs, state-counter inclusion, or sensor-based alert/Automator triggers.
 
 If required fields block saving, complete them. Finish missing hall or shift setup before relying on those planning views. See [Configure a Machine](/en/platform-intro/workflows/machine-configuration).
+
+To find the new workplace, open **Machines → Work centers**. Assign orders through [Assignment Planner](/en/platform-intro/pages/assignment-planner) or order management. Its card shows running and planned orders.

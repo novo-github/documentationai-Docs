@@ -1,0 +1,60 @@
+---
+title: "Download and Update Reports"
+description: "Find a completed report, download it, and check it against current production records."
+---
+
+## Goal
+
+Download the report for the machines and period you need, and update it after production records change.
+
+## Before You Begin
+
+<Callout kind="info" title="Workflow access">
+You need access to **Report archive** and the action you want to use. Ask your administrator if either is unavailable.
+</Callout>
+
+### Preconditions
+
+- A report has been requested or scheduled. You can also request an export from [Timeline Analysis](/en/platform-intro/pages/timeline-analysis).
+- You know which machines and period you want to review.
+
+## Steps
+
+<Steps>
+  <Step title="Find the report" icon="arrow-right" title-type="p">
+    Open **Report archive**. Choose the machine, source, and period. Use **Any time**, **All machines**, or **All sources** if the result list is empty.
+  </Step>
+  <Step title="Check whether it is ready" icon="arrow-right" title-type="p">
+    **Queued** and **Building** mean the report is not ready yet. Return later if creation takes longer than usual. Look for **Ready** before downloading.
+  </Step>
+  <Step title="Update it if production records changed" icon="arrow-right" title-type="p">
+    Select **Rebuild with current data** if you need a report based on the current records. Wait while it is **Refreshing**. Read whether the report was updated or nothing changed. If the refresh fails, the previous version remains available.
+  </Step>
+  <Step title="Download and check the result" icon="arrow-right" title-type="p">
+    Download the available file. Check the machines, period, and displayed version before sharing it. Check the email count separately if you need to know whether the report was emailed.
+  </Step>
+</Steps>
+
+## Decision Points
+
+- Download the existing report, or rebuild it to include corrected production records.
+- Narrow the search to **Scheduled** or **By user**, or include both with **All sources**.
+
+## Expected Result
+
+You have the available report for the selected machines and period. After a successful rebuild, you know whether its contents changed.
+
+## Common Problems and Edge Cases
+
+- **No reports found.**: broaden the machine, source, or period filters.
+- **No files available**: there is no file to download; check the report status.
+- **Failed**: creation did not complete successfully. If an action fails, try again.
+- A failed refresh keeps the previous version available. Check its version before using it.
+- **Not emailed** describes email delivery, not whether the report is ready.
+
+## Related Pages
+
+- [Report Archive](/en/platform-intro/pages/report-archive)
+- [Timeline Analysis](/en/platform-intro/pages/timeline-analysis)
+- [Trend Analysis](/en/platform-intro/pages/trend-analysis)
+- [Report FAQs](/en/help-center/faq/reports)
