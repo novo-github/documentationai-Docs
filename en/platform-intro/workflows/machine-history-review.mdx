@@ -35,7 +35,7 @@ Begin on the [Machine History page](/en/platform-intro/pages/machine-history).
     Turn the zero-data filter on or off depending on whether non-production days should count.
   </Step>
   <Step title="Review KPI averages, charts, timeline reason" icon="arrow-right" title-type="p">
-    Review KPI averages, charts, timeline reason summaries, and trend blocks.
+    Review KPI averages, charts, timeline reason summaries, and trend blocks. **Machine History** for **1W**, **1M**, **3M** or any chosen range now counts time since the last state change, as does the [**Timeline** report](/en/platform-intro/pages/timeline-analysis) over several days.
   </Step>
   <Step title="Find the worked order" icon="arrow-right" title-type="p">
     Find **Orders** below the summary. Use **Zoom in** or Ctrl and scroll to inspect a short stretch. Drag empty chart space to move through time. Choose **Whole period** to fit the chart again. Click a bar or list row to select a step; nothing is selected initially.
@@ -65,6 +65,7 @@ The user can explain historical machine behavior with trend and summary evidence
 
 - Very short date ranges can feel similar to the live day page.
 - Very long date ranges may hide short operational problems.
+- When the sensor sends no signal for more than 20 minutes, the last state counts only until the last signal. For a [sensor powered by the machine](/en/platform-intro/pages/machine-configuration), that silent time counts as **Off**.
 
 **Waiting for the next active shift** means the machine has not started its next shift yet. Planned shifts from its group are shown until idle, production, or preparation starts an active shift. This does not change the shift mode.
 

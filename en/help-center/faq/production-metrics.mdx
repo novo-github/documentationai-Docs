@@ -20,6 +20,9 @@ The Watchmen Platform combines production quantities and machine time to help yo
 | Does an empty Orders section mean the machine was off? | [Answer](/en/help-center/faq/production-metrics#empty-orders) |
 | How do I stop the order cards moving while I read them? | [Answer](/en/help-center/faq/production-metrics#order-scrolling) |
 | Can I distinguish idle and off in history without relying on colour? | [Answer](/en/help-center/faq/production-metrics#history-patterns) |
+| Does the time since the last machine-state change count in my totals? | [Answer](/en/help-center/faq/production-metrics#ongoing-state) |
+| Why does the last machine state stop counting or turn into off time? | [Answer](/en/help-center/faq/production-metrics#missing-signal) |
+| Why does Machine History show more idle or off time for past weeks or months now? | [Answer](/en/help-center/faq/production-metrics#more-idle-off-time) |
 
 ### One Example for All Four Metrics
 
@@ -164,6 +167,24 @@ Hover over the list or focus it with the keyboard. Scrolling or touching it paus
 ## Can I distinguish idle and off in history without relying on colour?
 
 Yes. Enable **Accessibility patterns** in your profile or in the machine legend. History uses dots for idle and diagonal lines for off in its state row and legend. See [User Profile](/en/platform-intro/pages/user-profile).
+
+<a id="ongoing-state" />
+
+## Does the time since the last machine-state change count in my totals?
+
+Yes, **Machine History** for any range and the [**Timeline** report](/en/platform-intro/pages/timeline-analysis) over several days count that time. Today counts up to now, subject to the [sensor signal rules](/en/help-center/faq/production-metrics#missing-signal).
+
+<a id="missing-signal" />
+
+## Why does the last machine state stop counting or turn into off time?
+
+When the sensor sends no signal for more than 20 minutes, the last state counts only until the last signal. For a [sensor powered by the machine](/en/platform-intro/pages/machine-configuration), that silent time counts as **Off**.
+
+<a id="more-idle-off-time" />
+
+## Why does Machine History show more idle or off time for past weeks or months now?
+
+Since October 18, 2026, **Machine History** and the [**Timeline** report](/en/platform-intro/pages/timeline-analysis) over several days count time since the last state change, so days spent idle or off show that time instead of almost nothing. Availability and OEE for those days can change; the [20-minute rule and the rule for sensors powered by the machine](/en/help-center/faq/production-metrics#missing-signal) still apply.
 
 ## Where Can I Explore These Results?
 

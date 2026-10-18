@@ -20,6 +20,9 @@ Die Watchmen-Plattform verbindet Produktionsmengen und Maschinenzeiten. Vergleic
 | Bedeutet ein leerer Auftragsbereich, dass die Maschine aus war? | [Antwort](/de/help-center/faq/production-metrics#empty-orders) |
 | Wie halte ich die Auftragskarten zum Lesen an? | [Antwort](/de/help-center/faq/production-metrics#order-scrolling) |
 | Kann ich Leerlauf und ausgeschaltete Zeit in der Historie ohne Farben unterscheiden? | [Antwort](/de/help-center/faq/production-metrics#history-patterns) |
+| Zählt die Zeit seit dem letzten Zustandswechsel zu meinen Summen? | [Antwort](/de/help-center/faq/production-metrics#ongoing-state) |
+| Warum zählt der letzte Maschinenzustand nicht weiter oder wird als ausgeschaltete Zeit angezeigt? | [Antwort](/de/help-center/faq/production-metrics#missing-signal) |
+| Warum zeigt die Maschinenhistorie jetzt mehr Leerlauf oder Aus für vergangene Wochen oder Monate? | [Antwort](/de/help-center/faq/production-metrics#more-idle-off-time) |
 
 ### Ein Beispiel für alle vier Kennzahlen
 
@@ -164,6 +167,24 @@ Zeigen Sie auf die Liste oder fokussieren Sie sie mit der Tastatur. Scrollen ode
 ## Kann ich Leerlauf und ausgeschaltete Zeit in der Historie ohne Farben unterscheiden?
 
 Ja. Aktivieren Sie **Barrierefreie Muster** in Ihrem Profil oder in der Maschinenlegende. Die Historie zeigt in Zustandszeile und Legende Punkte für Leerlauf und diagonale Linien für ausgeschaltete Zeit. Siehe [Benutzerprofil](/de/platform-intro/pages/user-profile).
+
+<a id="ongoing-state" />
+
+## Zählt die Zeit seit dem letzten Zustandswechsel zu meinen Summen?
+
+Ja, die **Maschinenhistorie** für jeden Zeitraum und der [Bericht zur Zeitleistenanalyse](/de/platform-intro/pages/timeline-analysis) über mehrere Tage zählen diese Zeit mit. Der heutige Tag zählt bis jetzt, wobei die [Regeln für Sensorsignale](/de/help-center/faq/production-metrics#missing-signal) gelten.
+
+<a id="missing-signal" />
+
+## Warum zählt der letzte Maschinenzustand nicht weiter oder wird als ausgeschaltete Zeit angezeigt?
+
+Sendet der Sensor länger als 20 Minuten kein Signal, zählt der letzte Zustand nur bis zum letzten Signal. Bei einem [Sensor mit Stromversorgung über die Maschine](/de/platform-intro/pages/machine-configuration) zählt diese Zeit ohne Signal als **Aus**.
+
+<a id="more-idle-off-time" />
+
+## Warum zeigt die Maschinenhistorie jetzt mehr Leerlauf oder Aus für vergangene Wochen oder Monate?
+
+Seit dem 18. Oktober 2026 zählen die **Maschinenhistorie** und der [Bericht zur Zeitleistenanalyse](/de/platform-intro/pages/timeline-analysis) über mehrere Tage die Zeit seit dem letzten Zustandswechsel mit, sodass Tage im Leerlauf oder ausgeschalteten Zustand diese Zeit statt fast nichts zeigen. Verfügbarkeit und OEE für diese Tage können sich dadurch ändern; die [20-Minuten-Regel und die Regel für Sensoren mit Stromversorgung über die Maschine](/de/help-center/faq/production-metrics#missing-signal) gelten weiterhin.
 
 ## Wo kann ich die Ergebnisse genauer untersuchen?
 

@@ -6,8 +6,8 @@ toc: false
 
 ## Releases
 
-<Update label="2026-10-18" description="v1.5.125" tags={["feature", "improvement", "fix"]}>
-  {/* commits: a7ad70b, 4a9fce3, 50ba88b, 6972eb9, 5e4db0d, a6a5e99, 13ab0c1, ea064ef, 2c116f9, 8cab3cd, 0823cf6, 6c281d1, 231e50c, 583df43, bcaae98, d98db68, 9a977af, af17223, 4a698f7, d96f03c, 605d65e, 91a7aaf, 00ea2c0, 08ce8dc, 99d753d, 9d693ee, 7d0f287, 565f41b, 1b4c11a, e88fae2, e3be0f4, c1e8ff5, d1456f0, 5dd6778, c702f90 */}
+<Update label="2026-10-18" description="v1.5.125–v1.5.126" tags={["feature", "improvement", "fix"]}>
+  {/* commits: a7ad70b, 4a9fce3, 50ba88b, 6972eb9, 5e4db0d, a6a5e99, 13ab0c1, ea064ef, 2c116f9, 8cab3cd, 0823cf6, 6c281d1, 231e50c, 583df43, bcaae98, d98db68, 9a977af, af17223, 4a698f7, d96f03c, 605d65e, 91a7aaf, 00ea2c0, 08ce8dc, 99d753d, 9d693ee, 7d0f287, 565f41b, 1b4c11a, e88fae2, e3be0f4, c1e8ff5, d1456f0, 5dd6778, c702f90, 90a9bda, 518ba48 */}
 
   **Release date:** October 18, 2026
 
@@ -37,6 +37,11 @@ toc: false
   {/* feature: history-empty-placeholder */}
 
   In machine history, an empty **Orders** section previously shrank to a plain line of text. It now keeps its space and shows a centred **No orders were worked on this machine in this period.** message.
+
+  #### [Include Ongoing Machine States in History Totals](/en/platform-intro/pages/machine-history)
+  {/* feature: ongoing-machine-state-totals */}
+
+  **Machine History** for any range and the [**Timeline** report](/en/platform-intro/pages/timeline-analysis) over several days now count the time since the last state change. Days spent in one state are no longer almost empty, and today counts up to now. [Review Machine History](/en/platform-intro/workflows/machine-history-review) explains the 20-minute rule for missing sensor signals.
 </Update>
 
 <Update label="2026-10-16" description="v1.5.124" tags={["feature", "improvement", "fix"]}>

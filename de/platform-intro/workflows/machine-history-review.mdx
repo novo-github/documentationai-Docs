@@ -35,7 +35,7 @@ Beginnen Sie auf der [Seite Maschinenhistorie](/de/platform-intro/pages/machine-
     Schalten Sie den Null-Datenfilter ein oder aus, je nachdem, ob Nicht-Produktions-Tage zählen sollen.
   </Step>
   <Step title="Prüfen Sie KPI-Durchschnitte, Diagramme, Zusammenfassungen der Zeitachsen-Gründe und Trendblöcke" icon="arrow-right" title-type="p">
-    Prüfen Sie KPI-Durchschnitte, Diagramme, Zusammenfassungen der Zeitachsen-Gründe und Trendblöcke.
+    Prüfen Sie KPI-Durchschnitte, Diagramme, Zusammenfassungen der Zeitachsen-Gründe und Trendblöcke. Die **Maschinenhistorie** zählt für **1W**, **1M**, **3M** oder jeden gewählten Zeitraum jetzt die Zeit seit dem letzten Zustandswechsel mit, ebenso der [Bericht zur Zeitleistenanalyse](/de/platform-intro/pages/timeline-analysis) über mehrere Tage.
   </Step>
   <Step title="Den bearbeiteten Auftrag finden" icon="arrow-right" title-type="p">
     Suchen Sie **Aufträge** unterhalb der Zusammenfassung. Nutzen Sie **Vergrößern** oder Strg beim Scrollen für einen kurzen Abschnitt. Ziehen Sie eine freie Diagrammfläche, um sich durch die Zeit zu bewegen. **Ganzer Zeitraum** passt das Diagramm wieder ein. Wählen Sie einen Balken oder eine Listenzeile. Anfangs ist kein Arbeitsgang ausgewählt.
@@ -65,6 +65,7 @@ Der Benutzer kann das historische Maschinenverhalten mit Trend- und Zusammenfass
 
 - Sehr kurze Datumsbereiche können der Live-Tagesansicht ähneln.
 - Sehr lange Datumsbereiche können kurze operative Probleme verdecken.
+- Sendet der Sensor länger als 20 Minuten kein Signal, zählt der letzte Zustand nur bis zum letzten Signal. Bei einem [Sensor mit Stromversorgung über die Maschine](/de/platform-intro/pages/machine-configuration) zählt diese Zeit ohne Signal als **Aus**.
 
 **Wartet auf die nächste aktive Schicht** bedeutet, dass die nächste Schicht noch nicht begonnen hat. Bis Leerlauf, Produktion oder Rüsten eine aktive Schicht startet, sehen Sie geplante Schichten der Gruppe. Der Schichtmodus ändert sich dadurch nicht.
 
