@@ -29,12 +29,17 @@ description: "Find answers about operation priorities, planning dates, grouping,
 | How do I tell the forecast that a machine runs several jobs at once? | [Answer](/en/help-center/faq/planning-and-imports#parallel-jobs) |
 | Who can change what the Forecaster runs next? | [Answer](/en/help-center/faq/planning-and-imports#forecast-rule) |
 | Where can I open the Forecaster explanation? | [Answer](/en/help-center/faq/planning-and-imports#forecast-help) |
+| Why does Up next show work for another day? | [Answer](/en/help-center/faq/planning-and-imports#queue-date) |
+| Why does the card show fewer waiting steps than the total? | [Answer](/en/help-center/faq/planning-and-imports#queue-limit) |
+| Why does a new operation have priority 100? | [Answer](/en/help-center/faq/planning-and-imports#priority-default) |
 
 <a id="operation-priority" />
 
 ## Can I give one operation a different priority from its order?
 
 Yes. In Assignment Planner, select the dashed **OP** chip to change **Operation priority**. The **P** chip changes **Order priority** independently. Follow [Plan Machine Assignments](/en/platform-intro/workflows/assignment-planner).
+
+You can also choose the operation priority while creating an order or editing an operation. The dashed **OP** indicator beside its name shows the result. Follow [Create a Production Order](/en/platform-intro/workflows/create-production-order).
 
 <a id="missing-work" />
 
@@ -88,7 +93,7 @@ Quantities already split across machines stay unchanged and are marked for revie
 
 ## Can I plan work at a station without a sensor?
 
-Yes. An administrator can create a **Work center**. Select it as the destination for an order or assignment, then review running and planned work under **Machines → Work centers**. Follow [Add a Machine or Work Center](/en/platform-intro/workflows/add-machine) and [Plan Machine Assignments](/en/platform-intro/workflows/assignment-planner).
+Yes. An administrator can create a **Work center**. Select it as the destination for an order or assignment, then review **Orders today** and **Up next** under **Machines → Work centers**. Follow [Add a Machine or Work Center](/en/platform-intro/workflows/add-machine) and [Plan Machine Assignments](/en/platform-intro/workflows/assignment-planner).
 
 <a id="work-center-switch" />
 
@@ -100,7 +105,7 @@ The change removes its AVA assignments and stops all KPI calculation. Only admin
 
 ## Why does my work center have no OEE or machine status?
 
-A **Work center** has no AVA. It shows running and planned orders instead of sensor KPIs and is excluded from state counters and analytics. Missing KPIs do not mean zero performance. See [Work Centers](/en/platform-intro/pages/work-centers).
+A **Work center** has no AVA. It shows today’s worked orders and the waiting queue instead of sensor KPIs and is excluded from state counters and analytics. Missing KPIs do not mean zero performance. See [Work Centers](/en/platform-intro/pages/work-centers).
 
 <a id="planner-view" />
 
@@ -173,3 +178,21 @@ Administrators choose the plant’s ordering under **Planning settings** in Assi
 ## Where can I open the Forecaster explanation?
 
 Click the information icon beside **Forecaster** on Orders & Products, the order page, or Assignment Gantt. In Assignment Planner, open **Forecaster check → How does the Forecaster work?**. The help explains the colours, expected times, and why a finish may be too early. Opening it changes nothing in your plan. See the [Forecaster guide](/en/platform-intro/pages/assignment-gantt).
+
+<a id="queue-date" />
+
+## Why does Up next show work for another day?
+
+**Up next** is the whole machine queue, independent of the selected date. **Worked** follows the selected day. Waiting steps show planned times and keep their queue numbers when filtered. Follow [Monitor a Machine Live](/en/platform-intro/workflows/live-machine-monitoring).
+
+<a id="queue-limit" />
+
+## Why does the card show fewer waiting steps than the total?
+
+Machine and work center cards show the first 10 waiting steps. The total counts the entire waiting queue. Running steps appear in **Orders today**. Open the [machine page](/en/platform-intro/pages/machine-details) for the whole queue, with running steps first.
+
+<a id="priority-default" />
+
+## Why does a new operation have priority 100?
+
+New operations and operations without a saved priority start at 100. Its name and colour depend on your company’s priority levels; with the default levels, 100 is **Critical**. Choose another company level in the order or operation form. A saved value outside those levels remains selectable. See [Order Detail](/en/platform-intro/pages/order-detail).

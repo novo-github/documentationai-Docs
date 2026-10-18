@@ -183,6 +183,12 @@ English PDA and German BDE refer to the same operator terminal for starting work
 
 [Learn more](/en/platform-intro/pages/data-acquisition).
 
+### Booked time
+
+**Booked time** splits a step’s recorded work into **Preparation** and **Production**. Compare it with **Machine states** to see what the machine did during that work.
+
+[Learn more](/en/platform-intro/pages/machine-history).
+
 ## C
 
 ### Card Display Settings / Columns / Highlight
@@ -683,6 +689,12 @@ Configured machine targets compared with actual dashboard values, not measuremen
 
 [Learn more](/en/platform-intro/pages/machine-configuration).
 
+### Machine states
+
+**Machine states** shows what the machine actually did during booked work, including idle or off time.
+
+[Learn more](/en/platform-intro/pages/machine-history).
+
 ### Machine tags / Order tags
 
 Company labels for grouping and filtering machines or orders.
@@ -795,9 +807,15 @@ Order dates are shared across the order; operation dates belong to one step and 
 
 ### Order priority / Operation priority
 
-Independent urgency values for the whole order and one production step. The planner shows **P** for the order and a dashed **OP** for the operation. When both priority filters are set, work must match both.
+Independent urgency values for the whole order and one production step. The planner shows **P** for the order and a dashed **OP** for the operation. Order forms also let you choose the operation priority. Its dashed **OP** indicator appears beside the operation name; new operations start at 100. When both priority filters are set, work must match both.
 
 [Learn more](/en/platform-intro/pages/assignment-planner).
+
+### Orders today
+
+**Orders today** shows running and finished work booked today on a machine or work center, across the whole day.
+
+[Learn more](/en/platform-intro/pages/machines).
 
 ### Org Stats / Organization Statistics / Organisationsstatistiken
 
@@ -909,6 +927,12 @@ Setup before production. Vorber. is used on German PDA buttons; Rüst appears on
 Preparation, production start, interval end, and resume controls. Explicit actions also include Start/End Preparation and Start/End Shift.
 
 [Learn more](/en/platform-intro/pages/data-acquisition).
+
+### Position in the queue
+
+**Position in the queue** shows where a waiting step stands in **Up next**. Running steps have no number.
+
+[Learn more](/en/platform-intro/pages/machine-details).
 
 ### Priority
 
@@ -1218,6 +1242,12 @@ Marker for downtime without an assigned reason.
 
 [Learn more](/en/platform-intro/pages/data-acquisition).
 
+### Up next
+
+**Up next** shows the machine’s queue in execution order so you can see what comes next, regardless of the selected day.
+
+[Learn more](/en/platform-intro/pages/machine-details).
+
 ### util. / Util. / Ausl. / Utilization / Auslastung
 
 Planned load of a machine queue, based on planned durations, not recorded production.
@@ -1252,6 +1282,12 @@ The part of an order for one product, with a planned quantity and operations.
 
 ### Work center
 
-A **Work center** is a workplace without an AVA. It shows running and planned orders and can receive assignments. It has no sensor KPIs and is excluded from state counters and analytics. Sensor-based rules never trigger for it.
+A **Work center** is a workplace without an AVA. It shows today’s worked orders and the waiting queue and can receive assignments. It has no sensor KPIs and is excluded from state counters and analytics. Sensor-based rules never trigger for it.
 
 [Learn more](/en/platform-intro/pages/work-centers).
+
+### Worked
+
+**Worked** shows steps with recorded work on the selected day, even if they started earlier.
+
+[Learn more](/en/platform-intro/pages/machine-details).

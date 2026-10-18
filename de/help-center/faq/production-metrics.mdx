@@ -13,6 +13,13 @@ Die Watchmen-Plattform verbindet Produktionsmengen und Maschinenzeiten. Vergleic
 | Welcher Anteil des ausgewählten Zeitraums entfällt auf die Produktion? | [Verfügbarkeit](#availability) |
 | Welcher Anteil der Einschaltzeit entfällt auf Produktion oder Rüsten? | [Leistung](#performance) |
 | Wie werden die drei Prozentwerte kombiniert? | [Gesamtanlageneffektivität (OEE)](#oee) |
+| Wie finde ich die Aufträge, die letzte Woche auf einer Maschine liefen? | [Antwort](/de/help-center/faq/production-metrics#worked-orders) |
+| Warum unterscheidet sich gebuchte Produktionszeit von der Produktionszeit der Maschine? | [Antwort](/de/help-center/faq/production-metrics#booked-states) |
+| Warum sind die Summen des Arbeitsgangs größer als die Balken im gewählten Zeitraum? | [Antwort](/de/help-center/faq/production-metrics#step-totals) |
+| Warum sehe ich Aufträge nur für die letzten drei Monate? | [Antwort](/de/help-center/faq/production-metrics#history-limit) |
+| Bedeutet ein leerer Auftragsbereich, dass die Maschine aus war? | [Antwort](/de/help-center/faq/production-metrics#empty-orders) |
+| Wie halte ich die Auftragskarten zum Lesen an? | [Antwort](/de/help-center/faq/production-metrics#order-scrolling) |
+| Kann ich Leerlauf und ausgeschaltete Zeit in der Historie ohne Farben unterscheiden? | [Antwort](/de/help-center/faq/production-metrics#history-patterns) |
 
 ### Ein Beispiel für alle vier Kennzahlen
 
@@ -115,6 +122,48 @@ Im Multiplikationsbeispiel werden die drei Verhältnisse multipliziert. Auch 80 
 - Behandeln Sie Dashboardqualität ohne bestätigte Datenquelle als konfigurierten Wert; der Tooltip nennt 95 %.
 - Prüfen Sie die Zustandsdefinitionen, insbesondere Vorbereitung und ausgeschaltete Zeit.
 - Ist ein Nenner null, etwa bei fehlender Produktionsmenge oder Einschaltzeit, liefert die jeweilige Formel keinen aussagekräftigen Prozentwert. Prüfen Sie zunächst die zugrunde liegenden Daten.
+
+<a id="worked-orders" />
+
+## Wie finde ich die Aufträge, die letzte Woche auf einer Maschine liefen?
+
+Öffnen Sie die Maschinenhistorie, wählen Sie den Zeitraum und suchen Sie **Aufträge**. Ein Klick auf einen Balken oder Listeneintrag zeigt Arbeitsgang und Auftragsablauf. Mit **Auftrag öffnen** sehen Sie den vollständigen Auftrag, sofern Sie Zugriff haben. Folgen Sie [Maschinenhistorie prüfen](/de/platform-intro/workflows/machine-history-review).
+
+<a id="booked-states" />
+
+## Warum unterscheidet sich gebuchte Produktionszeit von der Produktionszeit der Maschine?
+
+**Gebuchte Zeit** beschreibt die als Vorbereitung oder Produktion erfasste Arbeit. **Maschinenzustände** beschreibt die tatsächliche Maschinenaktivität während dieser Buchungen, einschließlich Leerlauf oder ausgeschalteter Zeit. Siehe [Maschinenhistorie](/de/platform-intro/pages/machine-history).
+
+<a id="step-totals" />
+
+## Warum sind die Summen des Arbeitsgangs größer als die Balken im gewählten Zeitraum?
+
+Die Arbeitsgangdetails umfassen seine gesamte erfasste Arbeit und produzierte Menge auf dieser Maschine. Das Diagramm umfasst nur den dargestellten Zeitraum. Zeigen Sie auf einen Balken für Zeit und Maschinenzustände dieses Abschnitts. Siehe [Maschinenhistorie](/de/platform-intro/pages/machine-history).
+
+<a id="history-limit" />
+
+## Warum sehe ich Aufträge nur für die letzten drei Monate?
+
+Auftragsdiagramm und Zustandszeile zeigen höchstens die letzten 3 Monate des gewählten Zeitraums. Wählen Sie einen früheren Zeitraum für ältere Arbeit. Folgen Sie [Maschinenhistorie prüfen](/de/platform-intro/workflows/machine-history-review).
+
+<a id="empty-orders" />
+
+## Bedeutet ein leerer Auftragsbereich, dass die Maschine aus war?
+
+Nein. **In diesem Zeitraum wurde an dieser Maschine kein Auftrag bearbeitet.** bedeutet, dass für den Zeitraum keine Auftragsarbeit gebucht wurde. Der Hinweis steht mittig im leeren Bereich. Fehlende Zustandsangaben haben einen eigenen Hinweis. Siehe [Maschinenhistorie](/de/platform-intro/pages/machine-history).
+
+<a id="order-scrolling" />
+
+## Wie halte ich die Auftragskarten zum Lesen an?
+
+Zeigen Sie auf die Liste oder fokussieren Sie sie mit der Tastatur. Scrollen oder Berühren pausiert die Bewegung vorübergehend. Ihre Einstellung für reduzierte Bewegung schaltet den automatischen Wechsel aus. Sie können weiterhin selbst scrollen. Siehe [Maschinen](/de/platform-intro/pages/machines).
+
+<a id="history-patterns" />
+
+## Kann ich Leerlauf und ausgeschaltete Zeit in der Historie ohne Farben unterscheiden?
+
+Ja. Aktivieren Sie **Barrierefreie Muster** in Ihrem Profil oder in der Maschinenlegende. Die Historie zeigt in Zustandszeile und Legende Punkte für Leerlauf und diagonale Linien für ausgeschaltete Zeit. Siehe [Benutzerprofil](/de/platform-intro/pages/user-profile).
 
 ## Wo kann ich die Ergebnisse genauer untersuchen?
 

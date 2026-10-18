@@ -30,6 +30,36 @@ Benutzer erreichen diese Seite normalerweise über die Seite **Maschinendetails*
 - Umschalten, ob Tage ohne Output in der Analyse zählen.
 - Vergleichen, wie die Maschine sich über die Zeit entwickelt hat.
 
+## Bearbeitete Aufträge prüfen
+
+Der Bereich **Aufträge** zeigt die im gewählten Zeitraum auf dieser Maschine gebuchte Arbeit. Das Diagramm öffnet sich mit dem gesamten Zeitraum. Die oberen Balken zeigen Arbeitsabschnitte: **Produktion** erscheint als weißer Balken, **Vorbereitung** als weißer Balken mit blauem Rand. Ein Arbeitsgang kann mehrere Balken haben. Darunter sehen Sie die Maschinenzustände auf derselben Zeitachse. Die Legende steht oberhalb des Diagramms.
+
+Nutzen Sie **Vergrößern**, **Verkleinern** oder halten Sie beim Scrollen Strg gedrückt. Scrollen Sie seitlich oder ziehen Sie eine freie Diagrammfläche, um sich durch die Zeit zu bewegen. **Ganzer Zeitraum** stellt die vollständige Ansicht wieder her. Verkleinern und Einpassen sind nicht verfügbar, wenn bereits der gesamte Zeitraum sichtbar ist.
+
+Die Summe der gearbeiteten Zeit bezieht sich auf den dargestellten Zeitraum. Die Auftragszahl zählt jeden Auftrag einmal, auch wenn er mehrere Arbeitsgänge hat. Bei längeren Auswahlen zeigen Auftragsdiagramm und Zustandszeile nur die letzten 3 Monate. Der Hinweis lautet **Aufträge werden für die letzten 3 Monate des gewählten Zeitraums angezeigt.**
+
+### Einen Arbeitsgang auswählen und seinen Auftrag verfolgen
+
+Beim Öffnen des Bereichs oder Ändern des Zeitraums ist nichts ausgewählt. Klicken Sie auf einen Balken, um die Abschnitte dieses Arbeitsgangs hervorzuheben und ihn in der Liste darunter zu finden. Sie können auch eine Listenzeile wählen. Die Liste zeigt laufende Arbeit zuerst, danach die jüngste Arbeit, nach Tagen gruppiert.
+
+Die Detailansicht steht auf breiten Bildschirmen neben der Liste, auf kleineren darunter. Sie zeigt Status, tatsächliche Zeiten, geplantes Fenster und Mengen des gewählten Arbeitsgangs. **Arbeitsgänge dieses Auftrags** zeigt den Ablauf mit vorherigen und nächsten Schritten. Mit **Auf einer anderen Maschine** gekennzeichnete Schritte sind sichtbar, hier aber nicht auswählbar. Unter **Auftrag** prüfen Sie **Liefertermin**, Status und die Anzahl erledigter Schritte.
+
+Mit **Auftrag öffnen** öffnen Sie den vollständigen Auftrag in einem neuen Tab, sofern Sie Zugriff haben. Die Auswahl einer Zeile wählt nur den Arbeitsgang und öffnet keinen Auftrag. Schließen Sie die Detailansicht oder klicken Sie auf eine freie Diagrammfläche, um die Auswahl aufzuheben. Das Prüfen der Historie ändert weder Buchungen noch Planung.
+
+### Gebuchte Zeit und Maschinenzustände vergleichen
+
+**Gebuchte Zeit** teilt die erfasste Zeit des Arbeitsgangs in **Vorbereitung** und **Produktion**. **Maschinenzustände** zeigt, was die Maschine während dieser Buchungen tatsächlich getan hat, einschließlich Leerlauf, ausgeschalteter oder unbekannter Zeit. Das Informationssymbol jedes Bereichs erklärt die Bedeutung. Beispielsweise kann ein als Produktion gebuchter Arbeitsgang Leerlauf enthalten.
+
+Die Details umfassen die gesamte erfasste Arbeit dieses Arbeitsgangs auf dieser Maschine, auch außerhalb des gewählten Zeitraums. Zeiten, produzierte Menge und Auswertungssummen können deshalb größer sein als im Diagramm. Zeigen Sie auf einen Balken, um zuerst **Typ**, **Start**, **Ende**, **Dauer** und Maschinenzustände dieses Abschnitts zu lesen. Danach folgen die Arbeitsgangdetails. Das Informationssymbol am Ende einer Listenzeile zeigt den Arbeitsgang, ohne ihn auszuwählen.
+
+Zeigen Sie auf die Zustandszeile, um Zustand, Zeiten, Dauer und einen vorhandenen Grund zu lesen. **Barrierefreie Muster** in Ihrem Profil gilt auch für diese Zeile und ihre Legende: Punkte für Leerlauf und diagonale Linien für ausgeschaltete Zeit.
+
+### Keine Aufträge oder fehlende Zustände
+
+Ohne gebuchte Arbeit behält der Bereich seinen Platz und zeigt statt eines Diagramms mittig **In diesem Zeitraum wurde an dieser Maschine kein Auftrag bearbeitet.** Das belegt nicht, dass die Maschine ausgeschaltet war. Es bedeutet, dass in diesem Zeitraum keine Auftragsarbeit gebucht wurde.
+
+Fehlende Zustandsangaben sind davon getrennt: Die Zustandszeile kann **Keine Maschinenzustände in diesem Zeitraum.** zeigen, der gewählte Arbeitsgang **Keine Maschinenzustände für diesen Arbeitsgang.** Folgen Sie [Maschinenhistorie prüfen](/de/platform-intro/workflows/machine-history-review).
+
 ## All Day oder geplante Schichtzeit?
 
 Bei Maschinen mit geplanten Schichten verwendet **All Day** 24 Stunden und **Planned** die geplante Schichtzeit. Gleichen Sie Modus, Datumsbereich und Einbeziehung von Tagen ohne Produktion beim Durchschnittsvergleich ab. Arbeitsplätze haben keine sensorbasierte Analyse.

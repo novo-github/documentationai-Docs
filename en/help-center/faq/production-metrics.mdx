@@ -13,6 +13,13 @@ The Watchmen Platform combines production quantities and machine time to help yo
 | How much of the selected time was spent producing? | [Availability](#availability) |
 | How much switched-on time was used for production or preparation? | [Performance](#performance) |
 | How do the three percentages combine? | [Overall Equipment Effectiveness (OEE)](#oee) |
+| How do I find which orders ran on a machine last week? | [Answer](/en/help-center/faq/production-metrics#worked-orders) |
+| Why is booked production time different from the machine’s production time? | [Answer](/en/help-center/faq/production-metrics#booked-states) |
+| Why are the step’s totals larger than the bars in my selected period? | [Answer](/en/help-center/faq/production-metrics#step-totals) |
+| Why can I see only the last three months of orders? | [Answer](/en/help-center/faq/production-metrics#history-limit) |
+| Does an empty Orders section mean the machine was off? | [Answer](/en/help-center/faq/production-metrics#empty-orders) |
+| How do I stop the order cards moving while I read them? | [Answer](/en/help-center/faq/production-metrics#order-scrolling) |
+| Can I distinguish idle and off in history without relying on colour? | [Answer](/en/help-center/faq/production-metrics#history-patterns) |
 
 ### One Example for All Four Metrics
 
@@ -115,6 +122,48 @@ In the multiplication example, the three ratios multiply. Even 80% performance a
 - Treat dashboard quality as the configured value unless its data source is confirmed; the tooltip states 95%.
 - Check the state definitions, especially preparation and off time.
 - If a denominator is zero, such as no produced units or no switched-on time, the corresponding formula cannot give a meaningful percentage. Review the underlying data first.
+
+<a id="worked-orders" />
+
+## How do I find which orders ran on a machine last week?
+
+Open machine history, choose the period, and find **Orders**. Click a bar or list row to see the step and its order route. Use **Open order** for the full order if you have access. Follow [Review Machine History](/en/platform-intro/workflows/machine-history-review).
+
+<a id="booked-states" />
+
+## Why is booked production time different from the machine’s production time?
+
+**Booked time** describes how work was recorded as preparation or production. **Machine states** describes what the machine actually did during those bookings, including idle or off time. See [Machine History](/en/platform-intro/pages/machine-history).
+
+<a id="step-totals" />
+
+## Why are the step’s totals larger than the bars in my selected period?
+
+The step’s details include all its recorded work and produced quantities on this machine. The chart includes only the displayed period. Hover over a bar for the time and machine states of that stretch. See [Machine History](/en/platform-intro/pages/machine-history).
+
+<a id="history-limit" />
+
+## Why can I see only the last three months of orders?
+
+The orders chart and its machine-state row show at most the last 3 months of the selected period. Choose an earlier period to review older work. Follow [Review Machine History](/en/platform-intro/workflows/machine-history-review).
+
+<a id="empty-orders" />
+
+## Does an empty Orders section mean the machine was off?
+
+No. **No orders were worked on this machine in this period.** means no order work was booked for that period. It appears centred in the empty section. Missing state information has its own message. See [Machine History](/en/platform-intro/pages/machine-history).
+
+<a id="order-scrolling" />
+
+## How do I stop the order cards moving while I read them?
+
+Hover over the list or focus it with the keyboard. Scrolling or touching it pauses movement temporarily. Your reduced-motion preference turns automatic movement off; you can still scroll by hand. See [Machines](/en/platform-intro/pages/machines).
+
+<a id="history-patterns" />
+
+## Can I distinguish idle and off in history without relying on colour?
+
+Yes. Enable **Accessibility patterns** in your profile or in the machine legend. History uses dots for idle and diagonal lines for off in its state row and legend. See [User Profile](/en/platform-intro/pages/user-profile).
 
 ## Where Can I Explore These Results?
 

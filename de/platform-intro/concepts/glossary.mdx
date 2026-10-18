@@ -183,6 +183,12 @@ PDA und BDE bezeichnen dasselbe Bedienerterminal zum Starten von Arbeit und Buch
 
 [Mehr erfahren](/de/platform-intro/pages/data-acquisition).
 
+### Gebuchte Zeit
+
+**Gebuchte Zeit** teilt die erfasste Arbeit eines Arbeitsgangs in **Vorbereitung** und **Produktion**. Vergleichen Sie sie mit der Anzeige **Maschinenzustände**, um die tatsächliche Maschinenaktivität während dieser Arbeit zu prüfen.
+
+[Mehr erfahren](/de/platform-intro/pages/machine-history).
+
 ## C
 
 ### Card Display Settings / Columns / Highlight
@@ -683,6 +689,12 @@ Konfigurierte Maschinenzielwerte zum Vergleich mit Dashboard-Istwerten; keine Me
 
 [Mehr erfahren](/de/platform-intro/pages/machine-configuration).
 
+### Maschinenzustände
+
+**Maschinenzustände** zeigt, was die Maschine während gebuchter Arbeit tatsächlich getan hat, einschließlich Leerlauf oder ausgeschalteter Zeit.
+
+[Mehr erfahren](/de/platform-intro/pages/machine-history).
+
 ### Machine tags / Order tags
 
 Unternehmenslabels zum Gruppieren und Filtern von Maschinen oder Aufträgen.
@@ -795,9 +807,15 @@ Auftragsdaten gelten für den ganzen Auftrag; Operationsdaten gehören zu einem 
 
 ### Auftragspriorität / Arbeitsgangpriorität
 
-Unabhängige Dringlichkeitswerte für den Gesamtauftrag und einen Produktionsschritt. Der Planer zeigt **P** für den Auftrag und eine gestrichelte **AG**-Anzeige für den Arbeitsgang. Sind beide Prioritätsfilter gesetzt, muss Arbeit beide erfüllen.
+Unabhängige Dringlichkeitswerte für den Gesamtauftrag und einen Produktionsschritt. Der Planer zeigt **P** für den Auftrag und eine gestrichelte **AG**-Anzeige für den Arbeitsgang. Auch Auftragsformulare bieten die Arbeitsgangpriorität zur Auswahl. Die gestrichelte **AG**-Anzeige steht neben dem Arbeitsgangnamen. Neue Arbeitsgänge beginnen mit 100. Sind beide Prioritätsfilter gesetzt, muss Arbeit beide erfüllen.
 
 [Mehr erfahren](/de/platform-intro/pages/assignment-planner).
+
+### Aufträge heute
+
+**Aufträge heute** zeigt laufende und beendete Arbeit, die heute auf einer Maschine oder einem Arbeitsplatz gebucht wurde, über den ganzen Tag.
+
+[Mehr erfahren](/de/platform-intro/pages/machines).
 
 ### Org Stats / Organization Statistics / Organisationsstatistiken
 
@@ -909,6 +927,12 @@ Vorbereitung vor der Produktion. Vorber. steht auf deutschen BDE-Schaltflächen,
 Steuerungen für Vorbereitung, Produktionsstart, Intervallende und Fortsetzung. Explizite Aktionen umfassen auch Start/End Preparation und Start/End Shift.
 
 [Mehr erfahren](/de/platform-intro/pages/data-acquisition).
+
+### Position in der Warteschlange
+
+**Position in der Warteschlange** zeigt den Platz eines wartenden Arbeitsgangs unter **Als Nächstes**. Laufende Schritte haben keine Nummer.
+
+[Mehr erfahren](/de/platform-intro/pages/machine-details).
 
 ### Priority
 
@@ -1218,6 +1242,12 @@ Markierung für Stillstand ohne zugewiesenen Grund.
 
 [Mehr erfahren](/de/platform-intro/pages/data-acquisition).
 
+### Als Nächstes
+
+**Als Nächstes** zeigt die Warteschlange in Ausführungsreihenfolge, damit Sie unabhängig vom gewählten Tag die nächste Arbeit sehen.
+
+[Mehr erfahren](/de/platform-intro/pages/machine-details).
+
 ### util. / Util. / Ausl. / Utilization / Auslastung
 
 Geplante Belastung einer Maschinenwarteschlange anhand geplanter Zeiten, nicht erfasster Produktion.
@@ -1252,6 +1282,12 @@ Teil eines Auftrags für ein Produkt mit geplanter Menge und Operationen.
 
 ### Arbeitsplatz
 
-Ein **Arbeitsplatz** hat keine AVA. Er zeigt laufende und geplante Aufträge und kann Zuweisungen erhalten. Er hat keine Sensorkennzahlen und zählt nicht zu Zustandszählern oder Auswertungen. Sensorbasierte Regeln lösen für ihn nie aus.
+Ein **Arbeitsplatz** hat keine AVA. Er zeigt heute bearbeitete Aufträge sowie die Warteschlange und kann Zuweisungen erhalten. Er hat keine Sensorkennzahlen und zählt nicht zu Zustandszählern oder Auswertungen. Sensorbasierte Regeln lösen für ihn nie aus.
 
 [Mehr erfahren](/de/platform-intro/pages/work-centers).
+
+### Gearbeitet
+
+**Gearbeitet** zeigt Arbeitsgänge mit erfasster Arbeit am gewählten Tag, auch wenn sie früher begonnen haben.
+
+[Mehr erfahren](/de/platform-intro/pages/machine-details).

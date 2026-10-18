@@ -31,11 +31,35 @@ Benutzer öffnen diese Seite, indem sie auf der Seite **Maschinen** eine Maschin
 - BDE, Maschinenhistorie oder Alarmregeln öffnen.
 - Den aktuellen Maschinenzustand und jüngste Ereignisse prüfen.
 
+## Bearbeitete Aufträge und nächste Arbeit
+
+**Gearbeitet** öffnet sich zuerst. Die Ansicht zeigt Arbeitsgänge, die am oben gewählten Datum bearbeitet wurden, laufende Arbeit zuerst und danach die jüngste Arbeit. Ändern Sie den Tag mit der Datumsauswahl der Seite. Die heutige Liste wird während der Ansicht jede Minute aktualisiert. **Frühere Tage in der Maschinenhistorie ansehen** öffnet die längere Betrachtung.
+
+**Als Nächstes** (bisher **Geplant**) zeigt die gesamte Warteschlange der Maschine, unabhängig vom gewählten Datum. Laufende Arbeitsgänge stehen oben ohne Positionsnummer. Wartende Arbeitsgänge folgen in Ausführungsreihenfolge, nummeriert ab 1. Abgeschlossene und stornierte Schritte fehlen. Die Karten zeigen den geplanten Start und das geplante Ende mit Datum.
+
+Grenzen Sie **Als Nächstes** mit den Statusfiltern ein. Die Nummern behalten dabei ihre ursprüngliche Position. Ändern Sie den Status über das Statusmenü der Karte. Wenn Sie einen Arbeitsgang abschließen, verschwindet er aus der Warteschlange und **Gearbeitet** wird aktualisiert. Nutzen Sie zum Ändern der Reihenfolge den [Planungsablauf](/de/platform-intro/workflows/assignment-planner).
+
+Beide Listen zeigen Auftrags- und Arbeitsgangpriorität. Nur laufende Karten haben einen farbigen Rand. Breite Bildschirme zeigen zwei Spalten, kleinere eine. Ein Klick auf eine Karte öffnet den Auftrag in einem neuen Tab, sofern Sie Zugriff auf die Auftragsseite haben.
+
+### Details eines Arbeitsgangs lesen
+
+Öffnen Sie das Informationssymbol am Ende einer Karte auf einem der beiden Reiter. Es zeigt vorhandene Angaben zu Status, **Start**, **Ende**, **Geplant**, Mengenfortschritt und **Position in der Warteschlange**. Laufende Arbeit zeigt **Läuft noch**. Datum und Uhrzeit beschreiben die tatsächliche Arbeit des Arbeitsgangs, auch wenn sie vor dem gewählten Tag begann. Fehlende Werte werden ausgelassen.
+
+**Gebuchte Zeit** teilt die erfasste Zeit des Arbeitsgangs in **Vorbereitung** und **Produktion**. Unter **Gearbeitet** zeigt **Maschinenzustände**, was die Maschine während dieser Buchungen tatsächlich getan hat. Eine Produktionsbuchung kann beispielsweise Leerlauf enthalten. Diese Summen und die produzierten Mengen umfassen die Arbeit des Arbeitsgangs auf dieser Maschine über alle Tage. Sie sind nicht auf den gewählten Tag begrenzt. Unter **Als Nächstes** sind keine Maschinenzustandsdetails verfügbar.
+
+Ohne Buchungen am gewählten Tag bleibt **Gearbeitet** leer. Eine leere Warteschlange zeigt **Für diese Maschine ist nichts eingeplant.** Folgen Sie [Maschine live überwachen](/de/platform-intro/workflows/live-machine-monitoring).
+
 ## Live Data, Pulse und Last Heartbeat
 
 **Live Data** zeigt laufend aktuelle Messwerte. **Last Heartbeat** ist der letzte Gerätekontakt, nicht die letzte Produktionszeit. **Pulse** ist das Rohsignaldiagramm unter der Zeitleiste. Seine Auflösung kann 1 Minute, 30 Sekunden, 5 Sekunden oder 1 Sekunde betragen.
 
 Die Zeitleiste zeigt Produktion grün, Leerlauf orange, Aus rot, Vorbereitung blau und Unbekannt grau. Stillstand bedeutet Leerlauf oder Aus. Ein fehlender Grund kann eine Markierung auslösen; erfassen Sie den Kontext in der BDE.
+
+## Details in der Zeitleiste lesen
+
+Zeigen Sie auf ein Intervall oder einen Maschinenzustand, um **Start**, **Ende** und **Dauer** zu lesen. Ein Intervall zeigt außerdem vorhandene Auftrags-, Mengen- und Bedienerangaben. **Maschinenzustände** erklärt die Maschinenaktivität während des gebuchten Intervalls. Ein Zustand zeigt seinen **Grund**, wenn einer erfasst wurde. Fehlende Werte werden ausgelassen.
+
+Datum und Uhrzeit verwenden Tag/Monat/Jahr und Stunden/Minuten. Dauern unter einer Minute erscheinen nur in Sekunden. Zeigen Sie auf die Signallinie, um Messwerte zu dieser Zeit zu lesen. Ein Zykluspunkt zeigt **Zyklus**, **Zeit** und **Dauer** oder **Zyklen** für die stündliche Anzahl.
 
 ## OEE, AVL, PRO und Zykluswerte lesen
 

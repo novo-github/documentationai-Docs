@@ -6,7 +6,40 @@ toc: false
 
 ## Releases
 
-<Update label="2026-10-16" description="v1.5.124–v1.5.125" tags={["feature", "improvement", "fix"]}>
+<Update label="2026-10-18" description="v1.5.125" tags={["feature", "improvement", "fix"]}>
+  {/* commits: a7ad70b, 4a9fce3, 50ba88b, 6972eb9, 5e4db0d, a6a5e99, 13ab0c1, ea064ef, 2c116f9, 8cab3cd, 0823cf6, 6c281d1, 231e50c, 583df43, bcaae98, d98db68, 9a977af, af17223, 4a698f7, d96f03c, 605d65e, 91a7aaf, 00ea2c0, 08ce8dc, 99d753d, 9d693ee, 7d0f287, 565f41b, 1b4c11a, e88fae2, e3be0f4, c1e8ff5, d1456f0, 5dd6778, c702f90 */}
+
+  **Release date:** October 18, 2026
+
+  ### New Features
+
+  #### [See What Was Worked and What Comes Next](/en/platform-intro/pages/machine-details)
+  {/* feature: unified-order-card */}
+
+  The Hall Plan’s order cards now also appear on **Machines**, the machine page and Machine History; the Hall Plan looks as before. For machines you can access, **Orders today** (previously **Live orders**) shows today’s work, including finished steps. **Up next** (previously **Planned orders**) shows the queue in execution order. Work center cards offer both lists. On the machine page, **Worked** follows the selected day; **Up next** shows the whole queue with running work first. Follow [Monitor a Machine Live](/en/platform-intro/workflows/live-machine-monitoring).
+
+  In machine history, open **Orders** to compare worked stretches and machine states on the same time axis. Click a bar or row to see the step, its order’s other steps, and **Open order**. **Whole period** fits the chart. Longer selections show orders for the last 3 months. Follow [Review Machine History](/en/platform-intro/workflows/machine-history-review).
+
+  In these lists, only a running step is coloured, and every card shows the order and operation priority. Worked cards keep actual start and end times, including earlier start dates. The information icon at the end of a card or row separates **Booked time** from **Machine states**: production bookings can include idle time. Machine and order timelines use matching labels and clearer text. **Accessibility patterns** also applies to the history state row and legend.
+
+  ### Improvements
+
+  #### [Set a Priority for Each Operation While Creating an Order](/en/platform-intro/pages/order-detail)
+  {/* feature: operation-priority */}
+
+  If you can create or edit orders, open **Orders & Products**, start an order or edit an operation, and choose its priority from your company's levels. The dashed **OP** indicator beside the operation name shows its priority separately from the order priority.
+
+  New operations and operations without a saved priority start at 100. A saved value outside the company levels stays selectable. Follow [Create a Production Order](/en/platform-intro/workflows/create-production-order).
+
+  ### Fixes
+
+  #### [Recognize an Empty Order History More Easily](/en/platform-intro/pages/machine-history)
+  {/* feature: history-empty-placeholder */}
+
+  In machine history, an empty **Orders** section previously shrank to a plain line of text. It now keeps its space and shows a centred **No orders were worked on this machine in this period.** message.
+</Update>
+
+<Update label="2026-10-16" description="v1.5.124" tags={["feature", "improvement", "fix"]}>
   {/* commits: 0860e7d, df5528d, 172febd, fe4ff78, f9e447b, 2fcf66a, e36a96b, bad1f68, cf686f2, da3c275, fca994b, 6bee894, 80aa7ca, d70a10e, 747965a, 5be01bf, 90508ad, 6731530 */}
 
   **Release period:** October 15–16, 2026

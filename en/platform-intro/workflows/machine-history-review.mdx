@@ -37,6 +37,15 @@ Begin on the [Machine History page](/en/platform-intro/pages/machine-history).
   <Step title="Review KPI averages, charts, timeline reason" icon="arrow-right" title-type="p">
     Review KPI averages, charts, timeline reason summaries, and trend blocks.
   </Step>
+  <Step title="Find the worked order" icon="arrow-right" title-type="p">
+    Find **Orders** below the summary. Use **Zoom in** or Ctrl and scroll to inspect a short stretch. Drag empty chart space to move through time. Choose **Whole period** to fit the chart again. Click a bar or list row to select a step; nothing is selected initially.
+  </Step>
+  <Step title="Compare the booking with machine activity" icon="arrow-right" title-type="p">
+    Read **Booked time** and **Machine states** in the panel. The step totals include its work on this machine outside the selected period. Hover over a bar to inspect only that stretch, and compare it with the state row underneath.
+  </Step>
+  <Step title="Follow the order through its steps" icon="arrow-right" title-type="p">
+    Review **Steps of this order**, the delivery date, and completed steps. Steps on other machines are visible but cannot be selected here. With order-page access, choose **Open order** to open the full order in a new tab. Close the panel to clear the selection.
+  </Step>
   <Step title="Adjust the date range until the review period" icon="arrow-right" title-type="p">
     Adjust the date range until the review period matches the business question.
   </Step>
@@ -46,6 +55,7 @@ Begin on the [Machine History page](/en/platform-intro/pages/machine-history).
 
 - Whether to include zero-output days.
 - Whether the question needs a short troubleshooting window or a longer performance review.
+- Use a bar’s details for one worked stretch, or the panel for the step’s full recorded work on this machine.
 
 ## Expected Result
 
@@ -57,6 +67,8 @@ The user can explain historical machine behavior with trend and summary evidence
 - Very long date ranges may hide short operational problems.
 
 **Waiting for the next active shift** means the machine has not started its next shift yet. Planned shifts from its group are shown until idle, production, or preparation starts an active shift. This does not change the shift mode.
+
+The **Orders** chart and state row show at most the last 3 months of your selection. Move the period to review older work. Changing it clears the selected step. An empty orders message means no work was booked in that period; missing machine-state data is reported separately. Reviewing the chart and panel changes no records.
 
 ## Related Pages
 

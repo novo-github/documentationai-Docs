@@ -33,6 +33,16 @@ Dies ist die zentrale Dashboard-Route für angemeldete Benutzer und für die mei
 
 Filter und Sortierung werden bei der Rückkehr zur Maschinenseite wiederhergestellt.
 
+## Heutige Aufträge und Warteschlange
+
+**Aufträge heute** (bisher **Live-Aufträge**) zeigt heute bearbeitete Arbeitsgänge, laufende Arbeit zuerst und danach die jüngste Arbeit. Die Karten enthalten Auftrag, Produkt, Folgenummer, Status, Zeiten sowie Auftrags- und Arbeitsgangpriorität. Nur laufende Arbeitsgänge haben einen farbigen Rand. Ein gestern begonnener Arbeitsgang behält sein tatsächliches Startdatum und seine Startzeit.
+
+**Als Nächstes** (bisher **Geplante Aufträge**) zeigt die ersten 10 wartenden Arbeitsgänge in der Reihenfolge der Maschine, auch Arbeit für andere Tage. Nummern zeigen den Platz jedes Arbeitsgangs. Die Karten zeigen geplante Zeiten. Laufende Arbeit bleibt unter **Aufträge heute**. Wartet keine Arbeit, ist die Warteschlangenansicht ausgeblendet. Öffnen Sie für die vollständige Warteschlange die [Maschinenseite](/de/platform-intro/pages/machine-details).
+
+Jede Liste zeigt zwei Karten gleichzeitig. Längere Listen rücken alle 8 Sekunden weiter. Sie können auch selbst scrollen. Eine einzelne laufende Karte bleibt sichtbar. Laufen mehrere Arbeitsgänge gleichzeitig, stehen diese am Listenanfang. Die Bewegung pausiert, solange Sie auf die Liste zeigen, sie mit der Tastatur fokussieren oder bedienen. Die Einstellung für reduzierte Bewegung schaltet den automatischen Wechsel aus. Die Positionsanzeige zeigt Ihre Stelle in der Liste. Bei **Als Nächstes** zählt die Gesamtzahl auch wartende Schritte jenseits der ersten 10.
+
+Klicken Sie auf eine Karte, um den Auftrag in einem neuen Tab zu öffnen, sofern Sie Zugriff auf die Auftragsseite haben. Die heutigen Listen werden jede Minute aktualisiert. Folgen Sie [Maschine live überwachen](/de/platform-intro/workflows/live-machine-monitoring).
+
 ## Maschinenzustände anhand von Mustern unterscheiden
 
 Die Maschinenstatus-Legende erklärt die Farben der einzelnen Zustände. Aktivieren Sie dort die Muster für Barrierefreiheit, um die vorhandenen Farben um ein sichtbares Muster zu ergänzen:
@@ -50,7 +60,7 @@ Wenn ein Sensor zusammen mit seiner Maschine ausgeschaltet wird, kann die passen
 
 ## Maschine oder Arbeitsplatz?
 
-Wählen Sie in der Ansichtsauswahl **Arbeitsplätze**, um Arbeitsplätze ohne AVA zu sehen. Die Karten zeigen laufende und geplante Aufträge. Wechseln Sie für Maschinenzustände und Kennzahlen zurück zu **Maschinen**.
+Wählen Sie in der Ansichtsauswahl **Arbeitsplätze**, um Arbeitsplätze ohne AVA zu sehen. Die Karten zeigen **Aufträge heute** und **Als Nächstes**. Wechseln Sie für Maschinenzustände und Kennzahlen zurück zu **Maschinen**.
 
 **Art** unterscheidet **Maschine** und **Arbeitsplatz**. Arbeitsplätze zählen nicht zu Zustandszählern und Sensorauswertungen. Administratoren können die Art ändern. Beim Wechsel einer Maschine werden ihre AVA-Zuweisungen entfernt und die Kennzahlenberechnung beendet. Einrichtung und Grenzen finden Sie unter [Arbeitsplätze](/de/platform-intro/pages/work-centers).
 

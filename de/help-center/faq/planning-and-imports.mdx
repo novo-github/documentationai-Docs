@@ -29,12 +29,17 @@ description: "Antworten zu Arbeitsgangprioritäten, Planungsterminen, Gruppierun
 | Wie berücksichtigt die Prognose mehrere gleichzeitige Aufträge auf einer Maschine? | [Antwort](/de/help-center/faq/planning-and-imports#parallel-jobs) |
 | Wer kann ändern, was der Forecaster als Nächstes einplant? | [Antwort](/de/help-center/faq/planning-and-imports#forecast-rule) |
 | Wo öffne ich die Erklärung zum Forecaster? | [Antwort](/de/help-center/faq/planning-and-imports#forecast-help) |
+| Warum zeigt Als Nächstes Arbeit für einen anderen Tag? | [Antwort](/de/help-center/faq/planning-and-imports#queue-date) |
+| Warum zeigt die Karte weniger wartende Schritte als die Gesamtzahl? | [Antwort](/de/help-center/faq/planning-and-imports#queue-limit) |
+| Warum hat ein neuer Arbeitsgang Priorität 100? | [Antwort](/de/help-center/faq/planning-and-imports#priority-default) |
 
 <a id="operation-priority" />
 
 ## Kann ein Arbeitsgang eine andere Priorität als sein Auftrag haben?
 
 Ja. Wählen Sie im Zuweisungsplaner die gestrichelte **AG**-Anzeige, um **Arbeitsgangpriorität** zu ändern. Die **P**-Anzeige ändert unabhängig davon **Auftragspriorität**. Folgen Sie [Maschinenzuweisungen planen](/de/platform-intro/workflows/assignment-planner).
+
+Sie können die Arbeitsgangpriorität auch beim Anlegen eines Auftrags oder Bearbeiten eines Arbeitsgangs wählen. Die gestrichelte **AG**-Anzeige neben dem Namen zeigt das Ergebnis. Folgen Sie [Produktionsauftrag erstellen](/de/platform-intro/workflows/create-production-order).
 
 <a id="missing-work" />
 
@@ -88,7 +93,7 @@ Bereits auf mehrere Maschinen aufgeteilte Mengen bleiben unverändert und werden
 
 ## Kann ich Arbeit an einem Platz ohne Sensor planen?
 
-Ja. Ein Administrator kann einen **Arbeitsplatz** anlegen. Wählen Sie ihn als Ziel für einen Auftrag oder eine Zuweisung. Prüfen Sie laufende und geplante Arbeit unter **Maschinen → Arbeitsplätze**. Folgen Sie [Maschine oder Arbeitsplatz hinzufügen](/de/platform-intro/workflows/add-machine) und [Maschinenzuweisungen planen](/de/platform-intro/workflows/assignment-planner).
+Ja. Ein Administrator kann einen **Arbeitsplatz** anlegen. Wählen Sie ihn als Ziel für einen Auftrag oder eine Zuweisung. Prüfen Sie **Aufträge heute** und **Als Nächstes** unter **Maschinen → Arbeitsplätze**. Folgen Sie [Maschine oder Arbeitsplatz hinzufügen](/de/platform-intro/workflows/add-machine) und [Maschinenzuweisungen planen](/de/platform-intro/workflows/assignment-planner).
 
 <a id="work-center-switch" />
 
@@ -100,7 +105,7 @@ Der Wechsel entfernt die AVA-Zuweisungen und beendet alle Kennzahlenberechnungen
 
 ## Warum hat mein Arbeitsplatz keine OEE und keinen Maschinenzustand?
 
-Ein **Arbeitsplatz** hat keine AVA. Er zeigt laufende und geplante Aufträge statt Sensorkennzahlen und zählt nicht zu Zustandszählern oder Auswertungen. Fehlende Kennzahlen bedeuten nicht, dass keine Arbeit geleistet wird. Siehe [Arbeitsplätze](/de/platform-intro/pages/work-centers).
+Ein **Arbeitsplatz** hat keine AVA. Er zeigt heute bearbeitete Aufträge und die Warteschlange statt Sensorkennzahlen und zählt nicht zu Zustandszählern oder Auswertungen. Fehlende Kennzahlen bedeuten nicht, dass keine Arbeit geleistet wird. Siehe [Arbeitsplätze](/de/platform-intro/pages/work-centers).
 
 <a id="planner-view" />
 
@@ -173,3 +178,21 @@ Administratoren wählen unter **Planungseinstellungen** im Zuweisungs-Gantt die 
 ## Wo öffne ich die Erklärung zum Forecaster?
 
 Klicken Sie unter Aufträge & Produkte, auf der Auftragsseite oder im Assignment Gantt auf das Informationssymbol neben **Forecaster**. Öffnen Sie im Zuweisungsplaner die Terminprüfung und wählen Sie **Wie funktioniert der Forecaster?**. Die Hilfe erklärt Farben, erwartete Zeiten und warum ein Ende zu früh sein kann. Das Öffnen ändert Ihren Plan nicht. Siehe [Forecaster-Erklärung](/de/platform-intro/pages/assignment-gantt).
+
+<a id="queue-date" />
+
+## Warum zeigt Als Nächstes Arbeit für einen anderen Tag?
+
+**Als Nächstes** zeigt die gesamte Warteschlange unabhängig vom gewählten Datum. **Gearbeitet** folgt dem gewählten Tag. Wartende Schritte zeigen geplante Zeiten und behalten beim Filtern ihre Positionsnummern. Folgen Sie [Maschine live überwachen](/de/platform-intro/workflows/live-machine-monitoring).
+
+<a id="queue-limit" />
+
+## Warum zeigt die Karte weniger wartende Schritte als die Gesamtzahl?
+
+Maschinen- und Arbeitsplatzkarten zeigen die ersten 10 wartenden Schritte. Die Gesamtzahl zählt die gesamte Warteschlange. Laufende Schritte erscheinen unter **Aufträge heute**. Öffnen Sie die [Maschinenseite](/de/platform-intro/pages/machine-details) für die vollständige Warteschlange mit laufenden Schritten zuerst.
+
+<a id="priority-default" />
+
+## Warum hat ein neuer Arbeitsgang Priorität 100?
+
+Neue Arbeitsgänge und Arbeitsgänge ohne gespeicherte Priorität beginnen mit 100. Name und Farbe hängen von den Prioritätsstufen Ihres Unternehmens ab. Mit den Standardstufen heißt 100 Critical. Wählen Sie im Auftrags- oder Arbeitsgangformular eine andere Unternehmensstufe. Ein gespeicherter Wert außerhalb dieser Stufen bleibt auswählbar. Siehe [Auftragsdetails](/de/platform-intro/pages/order-detail).

@@ -43,6 +43,8 @@ Priority names, numbers, and colors use the company levels configured in the [Ad
 
 Use **Group by → Operation** to review work by production step, or **Group by → Machine** to review it by machine. Operation sequence labels help you identify each step in either view.
 
+When creating an order or editing an operation, choose the operation's priority from the company levels. It is independent of the order priority. New operations and operations without a saved value start at 100. A saved value outside the company levels remains selectable. The dashed **OP** indicator beside an operation's name shows its priority and company colour. Follow [Create a Production Order](/en/platform-intro/workflows/create-production-order).
+
 ## Add Notes and Descriptions
 
 Review and edit operation notes and descriptions in **Work Order Notes** and the order timeline. Empty fields show a prompt indicating where you can add information. Use these fields to leave the instructions and context the next person needs to carry out the operation.
@@ -62,6 +64,12 @@ The step count shows how many steps are on a machine. For example, **3 of 5 step
 Click the information icon beside **Forecaster** to open **How does the Forecaster work?**. The help explains the colours and when expected times can be too early. Reading it does not change dates or queues. See the [Forecaster explanation](/en/platform-intro/pages/assignment-gantt) and [planning workflow](/en/platform-intro/workflows/assignment-planner) to review the missing details.
 
 Review the step marked **This step sets the order's finish.** to see which work determines the expected completion. The timing and attention notes help you distinguish this assignment’s delay from the risk to its order. Choose **Show in the Assignment Gantt** to follow the order and the work holding it up on the timeline.
+
+## Read Timeline Details
+
+Hover over an interval or a machine state to read **Start**, **End**, and **Duration**. An interval also shows available order, quantity, and operator information. **Machine states** explains the machine's activity during the booked interval. A state shows its **Reason** when one is recorded. Missing values are left out.
+
+Dates and times use day/month/year and hours/minutes. Durations under a minute show seconds only. Hover over the pulse line for readings at that time. A cycle point shows **Cycle**, **Time**, and **Duration**, or **Cycles** for the hourly count.
 
 ## Correct Recorded Time Entries
 

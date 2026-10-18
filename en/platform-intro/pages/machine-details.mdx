@@ -31,11 +31,35 @@ Users open this page by selecting a machine from the Machines page.
 - Open PDA, machine history, or alert rules.
 - Review current machine state and recent events.
 
+## Worked Orders and Up Next
+
+**Worked** opens by default. It shows steps worked on the date selected at the top of the page, with running work first and recent work after it. Use the page's date controls to change the day. Today's list refreshes every minute while you view it. **See earlier days in the machine history** opens the longer review period.
+
+**Up next** (previously **Planned**) shows the whole machine queue, regardless of the selected date. Running steps appear at the top without a position number. Waiting steps follow in execution order, numbered from 1. Completed and cancelled steps are excluded. The cards show the planned start and end, with dates.
+
+Use the status filters to narrow **Up next**. Numbers keep their original queue positions when filtered. Use a card's status menu to change its status; setting a step to completed removes it from the queue and refreshes **Worked**. To change execution order, use the [planning workflow](/en/platform-intro/workflows/assignment-planner).
+
+Both lists show order and operation priorities. Only running cards have a coloured edge. You see two columns on wide screens and one on smaller screens. Clicking a card opens the order in a new tab, subject to order-page access.
+
+### Read a Step's Details
+
+Open the information icon at the end of a card on either tab. It shows available status, **Start**, **End**, **Planned**, quantity progress, and **Position in the queue**. Running work shows **Still running**. Dates and times describe the step's actual work, even when it began before the selected day. Missing values are left out.
+
+**Booked time** splits the step's recorded time into **Preparation** and **Production**. On **Worked**, **Machine states** shows what the machine actually did during those bookings. For example, a production booking can include idle time. These totals and produced quantities cover the step's work on this machine across all days, not just the selected day. Machine-state details are not available on **Up next**.
+
+If no work was booked on the selected day, **Worked** is empty. An empty queue shows **Nothing is queued for this machine.** Follow [Monitor a Machine Live](/en/platform-intro/workflows/live-machine-monitoring).
+
 ## Live Data, Pulse, and Last Heartbeat
 
 **Live Data** streams current readings. **Last Heartbeat** is the device's last reported contact; it is not the machine's last production time. **Pulse** is the raw sensor-signal graph beneath the timeline. Its resolution can be 1 minute, 30 seconds, 5 seconds, or 1 second.
 
 The timeline uses Production green, Idle orange, Off red, Preparation blue, and Unknown grey. Downtime is Idle or Off. A missing reason can show an unlabeled-timeline marker; use PDA to record the context.
+
+## Read Timeline Details
+
+Hover over an interval or a machine state to read **Start**, **End**, and **Duration**. An interval also shows available order, quantity, and operator information. **Machine states** explains the machine's activity during the booked interval. A state shows its **Reason** when one is recorded. Missing values are left out.
+
+Dates and times use day/month/year and hours/minutes. Durations under a minute show seconds only. Hover over the pulse line for readings at that time. A cycle point shows **Cycle**, **Time**, and **Duration**, or **Cycles** for the hourly count.
 
 ## Read OEE, AVL, PRO, and Cycle Figures
 

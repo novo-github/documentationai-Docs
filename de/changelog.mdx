@@ -6,7 +6,40 @@ toc: false
 
 ## Releases
 
-<Update label="2026-10-16" description="v1.5.124–v1.5.125" tags={["Funktion", "Verbesserung", "Fehlerbehebung"]}>
+<Update label="2026-10-18" description="v1.5.125" tags={["Funktion", "Verbesserung", "Fehlerbehebung"]}>
+  {/* commits: a7ad70b, 4a9fce3, 50ba88b, 6972eb9, 5e4db0d, a6a5e99, 13ab0c1, ea064ef, 2c116f9, 8cab3cd, 0823cf6, 6c281d1, 231e50c, 583df43, bcaae98, d98db68, 9a977af, af17223, 4a698f7, d96f03c, 605d65e, 91a7aaf, 00ea2c0, 08ce8dc, 99d753d, 9d693ee, 7d0f287, 565f41b, 1b4c11a, e88fae2, e3be0f4, c1e8ff5, d1456f0, 5dd6778, c702f90 */}
+
+  **Release-Datum:** 18. Oktober 2026
+
+  ### Neue Funktionen
+
+  #### [Bearbeitete Aufträge und die nächsten Schritte sehen](/de/platform-intro/pages/machine-details)
+  {/* feature: unified-order-card */}
+
+  Die Auftragskarten des Hallenplans erscheinen jetzt auch unter **Maschinen**, auf der Maschinenseite und in der Maschinenhistorie; der Hallenplan sieht aus wie bisher. Für zugängliche Maschinen zeigt **Aufträge heute** (bisher **Live-Aufträge**) die heutige Arbeit, auch beendete Schritte. **Als Nächstes** (bisher **Geplante Aufträge**) zeigt die Warteschlange in Ausführungsreihenfolge. Arbeitsplatzkarten bieten beide Listen. Auf der Maschinenseite folgt **Gearbeitet** dem gewählten Tag; **Als Nächstes** zeigt die gesamte Warteschlange mit laufender Arbeit zuerst. Folgen Sie [Maschine live überwachen](/de/platform-intro/workflows/live-machine-monitoring).
+
+  Öffnen Sie in der Maschinenhistorie **Aufträge**, um Arbeitsabschnitte und Maschinenzustände auf derselben Zeitachse zu vergleichen. Wählen Sie einen Balken oder eine Zeile für den Arbeitsgang, weitere Schritte seines Auftrags und **Auftrag öffnen**. **Ganzer Zeitraum** passt das Diagramm ein. Längere Auswahlen zeigen Aufträge für die letzten 3 Monate. Folgen Sie [Maschinenhistorie prüfen](/de/platform-intro/workflows/machine-history-review).
+
+  In diesen Listen ist nur ein laufender Arbeitsgang farbig. Jede Karte zeigt Auftrags- und Arbeitsgangpriorität. Karten bearbeiteter Schritte behalten tatsächliche Start- und Endzeiten, auch frühere Startdaten. Das Informationssymbol am Ende einer Karte oder Zeile trennt **Gebuchte Zeit** von **Maschinenzustände**: Produktionsbuchungen können Leerlauf enthalten. Maschinen- und Auftragszeitleisten verwenden einheitliche Beschriftungen und besser lesbaren Text. **Barrierefreie Muster** gilt auch für die Zustandszeile und Legende der Historie.
+
+  ### Verbesserungen
+
+  #### [Beim Anlegen eines Auftrags jeden Arbeitsgang priorisieren](/de/platform-intro/pages/order-detail)
+  {/* feature: operation-priority */}
+
+  Wenn Sie Aufträge anlegen oder bearbeiten können, öffnen Sie **Aufträge & Produkte**, beginnen einen Auftrag oder bearbeiten einen Arbeitsgang. Wählen Sie dessen Priorität aus den Unternehmensstufen. Die gestrichelte **AG**-Anzeige neben dem Arbeitsgangnamen zeigt seine Priorität getrennt von der Auftragspriorität.
+
+  Neue Arbeitsgänge und Arbeitsgänge ohne gespeicherte Priorität beginnen mit 100. Ein gespeicherter Wert außerhalb der Unternehmensstufen bleibt auswählbar. Folgen Sie [Produktionsauftrag erstellen](/de/platform-intro/workflows/create-production-order).
+
+  ### Fehlerbehebungen
+
+  #### [Eine leere Auftragshistorie leichter erkennen](/de/platform-intro/pages/machine-history)
+  {/* feature: history-empty-placeholder */}
+
+  In der Maschinenhistorie schrumpfte ein leerer Bereich **Aufträge** bisher auf eine einfache Textzeile. Jetzt behält er seinen Platz und zeigt mittig **In diesem Zeitraum wurde an dieser Maschine kein Auftrag bearbeitet.**
+</Update>
+
+<Update label="2026-10-16" description="v1.5.124" tags={["Funktion", "Verbesserung", "Fehlerbehebung"]}>
   {/* commits: 0860e7d, df5528d, 172febd, fe4ff78, f9e447b, 2fcf66a, e36a96b, bad1f68, cf686f2, da3c275, fca994b, 6bee894, 80aa7ca, d70a10e, 747965a, 5be01bf, 90508ad, 6731530 */}
 
   **Release-Zeitraum:** 15.–16. Oktober 2026
