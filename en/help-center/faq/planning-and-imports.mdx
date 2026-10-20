@@ -32,6 +32,14 @@ description: "Find answers about operation priorities, planning dates, grouping,
 | Why does Up next show work for another day? | [Answer](/en/help-center/faq/planning-and-imports#queue-date) |
 | Why does the card show fewer waiting steps than the total? | [Answer](/en/help-center/faq/planning-and-imports#queue-limit) |
 | Why does a new operation have priority 100? | [Answer](/en/help-center/faq/planning-and-imports#priority-default) |
+| How many machines can I plan at once? | [Answer](/en/help-center/faq/planning-and-imports#planner-machines) |
+| How do I keep hall pools visible while I scroll through machines? | [Answer](/en/help-center/faq/planning-and-imports#pool-placement) |
+| Can I drop work into a collapsed pool? | [Answer](/en/help-center/faq/planning-and-imports#collapsed-pool) |
+| Where has the Planner search box gone? | [Answer](/en/help-center/faq/planning-and-imports#planner-search) |
+| Why does my search leave cards on machines or in pools? | [Answer](/en/help-center/faq/planning-and-imports#search-area) |
+| Why does my Planner queue show only 40 cards? | [Answer](/en/help-center/faq/planning-and-imports#planner-cards) |
+| Why does the Gantt stay the same while I select machines? | [Answer](/en/help-center/faq/planning-and-imports#gantt-selection) |
+| Why was my operation added but not put in the position I chose? | [Answer](/en/help-center/faq/planning-and-imports#large-pool) |
 
 <a id="operation-priority" />
 
@@ -196,3 +204,51 @@ Machine and work center cards show the first 10 waiting steps. The total counts 
 ## Why does a new operation have priority 100?
 
 New operations and operations without a saved priority start at 100. Its name and colour depend on your company’s priority levels; with the default levels, 100 is **Critical**. Choose another company level in the order or operation form. A saved value outside those levels remains selectable. See [Order Detail](/en/platform-intro/pages/order-detail).
+
+<a id="planner-machines" />
+
+## How many machines can I plan at once?
+
+You can select up to 25 machines in Assignment Planner or Assignment Gantt. Planner hall pools do not count toward that limit. Gantt has no pool columns. See [Assignment Planner](/en/platform-intro/pages/assignment-planner).
+
+<a id="pool-placement" />
+
+## How do I keep hall pools visible while I scroll through machines?
+
+On a wide screen, open **Hall pools → Where to show them → Beside the list**, then tick halls under **Which pools to show**. Your choice is saved for your account. **In the board** returns pools to the machine layout. Follow [Plan Machine Assignments](/en/platform-intro/workflows/assignment-planner).
+
+<a id="collapsed-pool" />
+
+## Can I drop work into a collapsed pool?
+
+Yes. Dropping onto the narrow strip places work at the end of the pool, including cards not yet shown. If your search covers the pool, close it first so the work lands at the very end. Otherwise, the drop can land among the cards. **Unassigned** does not filter pools. Click the strip or use **Expand pool** to see its cards again. See [hall-pool controls](/en/platform-intro/pages/assignment-planner).
+
+<a id="planner-search" />
+
+## Where has the Planner search box gone?
+
+Press Ctrl+F (⌘F on a Mac) or use the search icon in **Filter & Sort**. Search for an order, product, or customer and choose an area under **Search in**. Esc or × closes and clears search. The icon remains available when the unassigned list is hidden. Follow the [search steps](/en/platform-intro/workflows/assignment-planner).
+
+<a id="search-area" />
+
+## Why does my search leave cards on machines or in pools?
+
+Search starts with **Unassigned**, which only filters the unassigned list. Choose **Search in → Everything** to filter the list, pools, and machines together. **Machines** searches work on machines, not machine names. Your choice is remembered; a link with a search uses **Everything** for that visit without replacing it. See [search choices](/en/platform-intro/pages/assignment-planner).
+
+<a id="planner-cards" />
+
+## Why does my Planner queue show only 40 cards?
+
+Queues initially show 40 matching cards. Use **Show 40 more**, or the smaller remaining number, for the next cards. The count and summary include every card in the queue, also the ones not shown yet. Pools load up to 500 assignments and machine queues up to 100. See [queue display limits](/en/platform-intro/pages/assignment-planner).
+
+<a id="gantt-selection" />
+
+## Why does the Gantt stay the same while I select machines?
+
+The timeline applies your choices when you close the machine selection menu. You can select several machines or a hall group before closing it, up to 25 machines. See [Assignment Gantt](/en/platform-intro/pages/assignment-gantt).
+
+<a id="large-pool" />
+
+## Why was my operation added but not put in the position I chose?
+
+A hall pool loads up to 500 assignments; a machine queue loads up to 100. With **Queue Position** on, dropping an unassigned operation into a large queue adds the work but does not save its chosen position. This affects hall pools with more than 500 active assignments and machine queues with more than 100. The Planner shows **Could not persist queue reorder. Local changes were rolled back.** and reloads the queue. Check the queue before trying again. Reordering work already in a large pool is still saved. See [Planner limits](/en/platform-intro/pages/assignment-planner).

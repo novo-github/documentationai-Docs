@@ -20,7 +20,7 @@ Benutzer öffnen diese Seite über den Bereich **Planer** in der Hauptnavigation
 
 ## Was Sie sehen können
 
-- Eine Liste ungeplanter Arbeit mit Suche.
+- Eine Liste ungeplanter Arbeit und die Suche in **Filtern & Sortieren**.
 - Maschinenspalten und eine Hallenpool-Spalte je Halle, die als Warteschlangen dienen.
 - Filter für Hallen und Maschinen, um den Planungsbereich einzugrenzen.
 - Eine auswählbare Maschinenmenge in der Gantt-Zeitleiste.
@@ -38,7 +38,7 @@ Benutzer öffnen diese Seite über den Bereich **Planer** in der Hauptnavigation
 
 ## Maschinenwarteschlangen und Hallenpools
 
-Eine Maschinenwarteschlange weist Arbeit einer bestimmten Maschine zu. Ein **Hallenpool** hält Arbeit für eine Halle bereit, wenn mehrere Maschinen die Aufgabe übernehmen könnten und die Maschinenwahl noch offenbleiben soll. Jeder Hallenpool erscheint neben den zugehörigen Maschinenspalten. Sie können eine Operation hineinziehen oder eine neue Operation direkt dort zuweisen.
+Eine Maschinenwarteschlange weist Arbeit einer bestimmten Maschine zu. Ein **Hallenpool** hält Arbeit für eine Halle bereit, wenn mehrere Maschinen die Aufgabe übernehmen könnten und die Maschinenwahl noch offenbleiben soll. Standardmäßig erscheint jeder Hallenpool neben den zugehörigen Maschinenspalten. Sie können eine Operation hineinziehen oder eine neue Operation direkt dort zuweisen.
 
 Eine Bereitschaftsanzeige kennzeichnet, wann eine Maschine die Arbeit aus dem Pool übernehmen kann. Die Maschinenwahl bleibt offen, bis die Arbeit übernommen wird. Die Anzeige hilft Ihnen zu erkennen, wann eine Übernahme möglich ist.
 
@@ -46,15 +46,47 @@ Sie können eine Zuweisung direkt zwischen Maschinen- und Hallenpool-Spalten ver
 
 Sie können Arbeit auch einem mit **Arbeitsplatz** gekennzeichneten Ziel zuweisen. Seine Warteschlange enthält Aufträge und Zuweisungen ohne Sensorkennzahlen. Prüfen Sie das Ziel vor der Bestätigung einer Verschiebung. Siehe [Arbeitsplätze](/de/platform-intro/pages/work-centers).
 
+### Platzierung der Hallenpools wählen
+
+Öffnen Sie auf einem breiten Bildschirm **Hallenpools** über dem Board. Wählen Sie unter **Wo anzeigen**:
+
+- **Im Board**: die Voreinstellung. Pools stehen neben den Maschinen ihrer Halle und folgen der Spalten- oder Zeilenanordnung des Boards.
+- **Neben der Liste**: Jeder Pool bleibt neben **Nicht zugewiesene Operationen** stehen, während Sie durch die Maschinen scrollen. Pools bleiben in beiden Anordnungen senkrechte Spalten. Jede ist so hoch wie die Liste nicht zugewiesener Operationen. Jede Pool-Spalte scrollt ihre eigenen Karten.
+
+Ihre Platzierungswahl wird für Ihr Konto gespeichert. Haken Sie unter **Welche Pools anzeigen** die gewünschten Hallen an. Die Auswahl entspricht dem Hallenfilter. Hallenpools zählen nicht zur Grenze von 25 Maschinen. Während ein Pool lädt, sehen Sie eine Ladeanzeige.
+
+Wählen Sie bei **Neben der Liste** im Kopf des Pools **Pool einklappen**. Es bleibt ein schmaler Streifen mit Name und Anzahl, auf den Sie weiterhin Karten ziehen können. Die Arbeit landet am Ende des Pools, auch hinter noch nicht angezeigten Karten. Umfasst Ihre Suche den Pool, schließen Sie sie vorher, damit die Arbeit ganz am Ende landet. Andernfalls kann sie zwischen den Karten eingeordnet werden. Klicken Sie auf den Streifen oder nutzen Sie **Pool ausklappen**, um ihn wieder zu öffnen. Eingeklappte Pools werden in diesem Browser für das aktuelle Unternehmen gespeichert.
+
+Blenden Sie die Liste nicht zugewiesener Operationen aus, bleiben die Pools am linken Rand. Das Platzierungsmenü und diese Spalten sind auf breiten Bildschirmen verfügbar. Folgen Sie [Maschinenzuweisungen planen](/de/platform-intro/workflows/assignment-planner).
+
 ## Suche, Filter und Kartendetails
 
 Öffnen Sie über das Informationssymbol den **Leitfaden zum Zuweisungsplaner**, wenn Sie Hilfe zu Filtern, Sortierung oder zum Verschieben von Karten benötigen.
 
-Durchsuchen Sie ungeplante Operationen nach Auftrag, Produkt oder Kunde. Ergebnisse erscheinen, sobald Sie die Eingabe kurz unterbrechen. Filter grenzen sowohl ungeplante Operationen als auch Maschinenspalten ein. Wählen Sie Maschinen nach Halle aus. Klicken Sie auf das Kontrollkästchen oder den Hallennamen, um die ganze Halle aus- oder abzuwählen. Freie Flächen in der Überschrift ändern die Auswahl nicht. Sie können höchstens 15 Maschinen gleichzeitig anzeigen. Statusfilter gelten für einzelne Zuweisungen. Auftragstags erscheinen, wenn Ihr Unternehmen welche festgelegt hat. Der Importfilter begrenzt die Arbeit auf einen ERP-Upload.
+Drücken Sie Strg+F (⌘F auf dem Mac) oder klicken Sie auf das Lupensymbol in der stets sichtbaren Leiste **Filtern & Sortieren**. Geben Sie Auftrag, Produkt oder Kunde ein. Wählen Sie unter **Suchen in** den Suchbereich:
 
-Öffnen Sie den Planer über einen Auftrag, ein Produkt oder einen Kunden, erscheint darüber eine Filteranzeige. Dieser Filter bleibt aktiv, bis Sie ihn entfernen. Passende ungeplante Karten werden umrandet.
+| Auswahl | Was die Suche filtert |
+| --- | --- |
+| **Nicht zugewiesen** | Nur die Liste nicht zugewiesener Operationen. Dies ist die Voreinstellung. |
+| **Hallenpools** | Nur Arbeit in Hallenpools. |
+| **Maschinen** | Nur Arbeit auf Maschinen, nicht deren Namen. |
+| **Überall** | Liste, Hallenpools und Maschinen gemeinsam. |
+
+Die Suche filtert nur den unter **Suchen in** gewählten Bereich. Status-, Prioritäts- und Tagfilter gelten für die Liste nicht zugewiesener Operationen und alle Warteschlangen. Der Importfilter begrenzt nur die Liste nicht zugewiesener Operationen auf einen ERP-Upload. Bereiche außerhalb Ihrer Suche zeigen ihre Karten weiterhin an. Ihr Suchbereich wird für Ihr Konto gespeichert. Umfasst die Suche die Liste nicht zugewiesener Operationen, sehen Sie auch die Anzahl der gefundenen Operationen. Esc oder × schließt und leert die Suche. Andere Filter gelten weiterhin.
+
+Ein Link, der den Planer mit einer Suche öffnet, verwendet für diesen Besuch **Überall**, ohne Ihre gespeicherte Auswahl zu ändern. Beim Öffnen über einen Auftrag, ein Produkt oder einen Kunden kann außerdem eine Filteranzeige über dem Board erscheinen. Entfernen Sie diese, um ihren Filter aufzuheben. Passende nicht zugewiesene Karten werden umrandet.
+
+Wählen Sie Maschinen nach Halle aus. Klicken Sie auf das Kontrollkästchen oder den Hallennamen, um die ganze Halle aus- oder abzuwählen. Freie Flächen in der Überschrift ändern die Auswahl nicht. Sie können bis zu 25 Maschinen und zusätzlich Hallenpools anzeigen. Statusfilter gelten für einzelne Zuweisungen. Auftragstags erscheinen, wenn Ihr Unternehmen welche festgelegt hat. Der Importfilter begrenzt nur die Liste nicht zugewiesener Operationen auf einen ERP-Upload.
 
 **Spalten** bestimmt die sichtbaren Werte auf Karten. Manche Werte lassen sich nicht ausblenden. **Hervorhebung** betont sichtbare Werte. Beide Einstellungen werden in Ihrem Profil gespeichert. Ein ausgeblendeter Wert wird erst hervorgehoben, wenn Sie ihn einblenden. Sie können hier auch Operations- und Zuweisungsnotizen lesen und bearbeiten.
+
+### Weitere Karten einer Warteschlange anzeigen
+
+Jede Maschinen- oder Pool-Warteschlange zeigt zunächst 40 passende Karten. Wählen Sie **40 weitere anzeigen**, um die nächsten 40 zu sehen. Sind weniger übrig, zeigt die Schaltfläche die kleinere Anzahl. Anzahl und Zusammenfassung berücksichtigen jede Karte in der Warteschlange, auch die noch nicht angezeigten. Das gilt für beide Anordnungen. Die Suche filtert die Arbeit, bevor die ersten 40 Karten erscheinen.
+
+Bereits eingeblendete Karten bleiben nach einer Aktualisierung sichtbar. Beim Ablegen am Ende landet Arbeit hinter jeder Karte der Warteschlange, auch wenn Sie noch nicht alle eingeblendet haben. Umfasst Ihre Suche diese Warteschlange, schließen Sie sie vorher, damit die Arbeit ganz am Ende landet. Andernfalls kann sie zwischen den Karten eingeordnet werden. **Nicht zugewiesen** filtert weder Maschinenwarteschlangen noch Pools. **Hallenpools**, **Maschinen** und **Überall** filtern die Warteschlangen im jeweiligen Suchbereich.
+
+Kann eine Änderung nicht gespeichert werden, zeigt der Zuweisungsplaner einen Fehler und lädt die beteiligten Warteschlangen neu. Prüfen Sie diese vor einem erneuten Versuch.
 
 ## Prioritäten festlegen und filtern
 
@@ -86,7 +118,7 @@ Wählen Sie unter **Forecaster-Prüfung** zwischen **Liefertermin**, **Geplantes
 
 Die freie Zeit in der Maschinenübersicht folgt dem letzten erwarteten Ende in ihrer Warteschlange. Fehlt bei Arbeit ein voraussichtliches Ende, ist diese Zeit nur die frühestmögliche Verfügbarkeit. Die angezeigte Last ist die von der Prognose noch eingeplante Arbeit.
 
-Wählen Sie die Anordnung mit Maschinen nebeneinander und Warteschlangen nach unten oder Maschinen untereinander und Warteschlangen nach rechts. Passen Sie die Ansicht mit **Nicht zugewiesene Operationen einblenden** oder **Nicht zugewiesene Operationen ausblenden** an. Die Auswahl zeigt, wie viele Maschinen und Hallenpools gemeinsam angezeigt werden können.
+Wählen Sie die Anordnung mit Maschinen nebeneinander und Warteschlangen nach unten oder Maschinen untereinander und Warteschlangen nach rechts. Passen Sie die Ansicht mit **Nicht zugewiesene Operationen einblenden** oder **Nicht zugewiesene Operationen ausblenden** an. Sie können bis zu 25 Maschinen anzeigen. Hallenpools zählen nicht zu dieser Grenze.
 
 ## Zuweisungs-Gantt und Planungshinweise
 
@@ -98,7 +130,7 @@ Wählen Sie die Anordnung mit Maschinen nebeneinander und Warteschlangen nach un
 
 Nur **Unplanned / Ungeplant**, **Planned / Geplant** und **Released / Freigegeben** können auf eine andere Maschine oder Halle verschoben werden. Laufende, pausierte und abgeschlossene Arbeit kann nur innerhalb ihrer aktuellen Warteschlange neu geordnet werden. Released erscheint in Verschieberegeln; wann dieser Status gesetzt wird, ist hier nicht bestätigt.
 
-Es können höchstens **15 Maschinen** gleichzeitig als Spalten angezeigt werden. Filter gelten für ungeplante Operationen und Warteschlangenspalten. Ändert sich die Warteschlange während Ihrer Sortierung, wird sie aktualisiert und Sie müssen erneut sortieren.
+Sie können höchstens 25 Maschinen gleichzeitig anzeigen, zusätzlich zu Hallenpools. Die Suche filtert nur den unter **Suchen in** gewählten Bereich. Status-, Prioritäts- und Tagfilter gelten für die Liste nicht zugewiesener Operationen und alle Warteschlangen. Der Importfilter begrenzt nur die Liste nicht zugewiesener Operationen auf einen ERP-Upload. Ändert sich die Warteschlange während Ihrer Sortierung, wird sie aktualisiert und Sie müssen erneut sortieren.
 
 Mit **Queue Position** bestimmt die Ablage die genaue Position; laufende und pausierte Karten bleiben oben. Ohne diese Option bestimmen Sortierregeln die Ansicht; **Moves** wählt Anfang oder Ende der Zielwarteschlange.
 
@@ -125,7 +157,10 @@ Beispielsweise ergeben 50 Teile mit 2 Minuten je Teil 100 geplante Produktionsmi
 - Benutzer erstellen oder ändern die geplante Maschinenreihenfolge für anstehende Arbeit.
 
 ### Grenzen und Leerzustände
-- Es können nur eine begrenzte Anzahl an Maschinen gleichzeitig angezeigt werden.
+
+- Ein Hallenpool lädt bis zu 500 Zuweisungen, eine Maschinenwarteschlange bis zu 100.
+- Bei aktiver Sortierung nach Warteschlangenposition wird eine neu abgelegte, nicht zugewiesene Operation in einer großen Warteschlange hinzugefügt. Ihre gewählte Position wird jedoch nicht gespeichert. Das betrifft Hallenpools mit mehr als 500 aktiven Zuweisungen und Maschinenwarteschlangen mit mehr als 100. Der Zuweisungsplaner zeigt **Reihenfolge konnte nicht gespeichert werden. Lokale Änderungen wurden zurückgesetzt.** und lädt die Warteschlange neu. Prüfen Sie diese vor einem erneuten Versuch. Das Umsortieren bereits vorhandener Arbeit in einem großen Pool wird weiterhin gespeichert.
+- Bis zu 25 Maschinen sind gleichzeitig sichtbar. Hallenpools zählen nicht zu dieser Grenze.
 - Filter können sowohl Maschinen als auch ungeplante Arbeit ausblenden.
 - Laufende und abgeschlossene Zuweisungen können nicht in eine andere Spalte verschoben werden.
 - Die automatische Anordnung gilt für zukünftige Zuweisungen und lässt die laufende Produktion unverändert.

@@ -24,10 +24,10 @@ Begin on the [Assignment Planner page](/en/platform-intro/pages/assignment-plann
 
 <Steps>
   <Step title="Filter the visible hall or machine list" icon="arrow-right" title-type="p">
-    Select the hall or machines you want to plan. Narrow work with order tags, order and operation priorities, or the status of individual assignments.
+    Select up to 25 machines and the halls whose pools you need. Pools do not count toward the machine limit. Narrow work with order tags, order and operation priorities, or the status of individual assignments.
   </Step>
   <Step title="Find the work" icon="arrow-right" title-type="p">
-    Search the unassigned operations by order, product, or customer. Results update when you pause typing. Use the machine filter to focus the queues you need.
+    Open search with Ctrl+F (⌘F on a Mac) or the search icon in **Filter & Sort**. Search for an order, product, or customer. Choose **Search in → Unassigned**, **Hall pools**, **Machines**, or **Everything**. Esc or × clears and closes the search.
   </Step>
   <Step title="Choose a machine or hall pool" icon="arrow-right" title-type="p">
     Drag the operation onto a machine column when its destination is known. If several machines in a hall could perform it, drag it into that hall's Hall Pool or assign a new operation there. Use the readiness badge to see when a machine can claim the pooled work.
@@ -41,7 +41,7 @@ Begin on the [Assignment Planner page](/en/platform-intro/pages/assignment-plann
     Update key details such as status, dates, or priority when needed. Review or edit operation and assignment notes to keep instructions with the work.
   </Step>
   <Step title="Review the future schedule" icon="arrow-right" title-type="p">
-    Use Assignment Gantt to inspect assignments across selected machines, identify overlaps, and open a related order when more context is needed.
+    Open Assignment Gantt and select up to 25 machines. Close the machine selection menu to apply your choices. Inspect the timeline for overlaps and open a related order when needed. Gantt has no hall-pool columns.
   </Step>
   <Step title="Arrange future assignments when needed" icon="arrow-right" title-type="p">
     Open **Improve plan**, compare the alternatives, and review the assignments that would change before choosing **Save as plan**. Running and on-hold work keep their place. Follow the detailed comparison steps below.
@@ -50,6 +50,36 @@ Begin on the [Assignment Planner page](/en/platform-intro/pages/assignment-plann
     Let the planner save the queue changes back to the platform.
   </Step>
 </Steps>
+
+## Keep Hall Pools Beside the List
+
+<Steps>
+  <Step title="Choose the placement" icon="arrow-right" title-type="p">
+    On a wide screen, open **Hall pools → Where to show them → Beside the list**. Your choice is saved for your account. Choose **In the board** to return pools to the machines’ layout.
+  </Step>
+  <Step title="Choose the halls" icon="arrow-right" title-type="p">
+    Under **Which pools to show**, tick the halls you need. This also changes the hall filter. Each pool appears beside **Unassigned operations** and stays in view while you scroll through the machines. If the list is hidden, pools start at the left edge.
+  </Step>
+  <Step title="Make room and place work" icon="arrow-right" title-type="p">
+    Use **Collapse pool** to leave a narrow strip. If your search covers the pool, close it first so the work lands at the very end. Otherwise, a drop on the strip can land among the cards. **Unassigned** does not filter pools. You can drop onto the strip even while it is collapsed. Click the strip or use **Expand pool** to see its cards again. This browser remembers collapsed pools for the current company.
+  </Step>
+</Steps>
+
+## Search the List, Pools, or Machines
+
+<Steps>
+  <Step title="Open search" icon="arrow-right" title-type="p">
+    Press Ctrl+F (⌘F on a Mac) or select the search icon in **Filter & Sort**, even when the unassigned list is hidden. Enter an order, product, or customer.
+  </Step>
+  <Step title="Choose where to search" icon="arrow-right" title-type="p">
+    Under **Search in**, choose **Unassigned** for the list, **Hall pools** for pooled work, **Machines** for work on machines, or **Everything** for all three. Other areas keep showing their cards. The default is **Unassigned**, and your choice is remembered. **Machines** does not search machine names.
+  </Step>
+  <Step title="Review the matches and clear search" icon="arrow-right" title-type="p">
+    If a queue has more than 40 matches, use **Show 40 more**, or the smaller remaining number, to reveal more. When the search includes the unassigned list, check its found count. Press Esc or × to close and clear search; other filters remain in effect.
+  </Step>
+</Steps>
+
+A link with a search uses **Everything** for that visit without replacing your saved choice.
 
 ## Move Work to Another Queue
 
@@ -77,7 +107,7 @@ In-progress and completed assignments cannot move to another column. You can sti
     Use **Order priority** and **Operation priority** to select one or more values. Type a number if it is absent from the legend. With both filters set, work must match both in the unassigned panel and machine columns.
   </Step>
   <Step title="Check the remaining filters" icon="arrow-right" title-type="p">
-    If work disappears, review the status, tags, machines, and import filter. Remove any unwanted order, product, or customer filter chip above the board. Open the information icon for **Assignment Planner Guide** for help.
+    If work disappears, review the status, tags, and machines. For missing work in the unassigned list, also check the import filter. It narrows only that list to one ERP upload. Remove any unwanted order, product, or customer filter chip above the board. Open the information icon for **Assignment Planner Guide** for help.
   </Step>
 </Steps>
 
@@ -176,7 +206,7 @@ Move an eligible assignment to the intended queue when appropriate. If work has 
 
 ## Check Move Eligibility and Queue Changes
 
-Only **Unplanned**, **Planned**, and **Released** work can move to another machine or hall. In-progress, on-hold, or completed assignments stay in their queue, where reordering remains possible. At most **15 machines** can be shown at once.
+Only **Unplanned**, **Planned**, and **Released** work can move to another machine or hall. In-progress, on-hold, or completed assignments stay in their queue, where reordering remains possible. At most 25 machines can be shown at once; hall pools do not count toward the limit.
 
 With Queue Position enabled, running and on-hold assignments stay at the top and a drop sets the exact position. With it disabled, sorting rules control the view and **Moves** chooses the start/end destination. If another change refreshes the queue while you reorder, redo the reorder against the refreshed queue.
 
@@ -186,6 +216,8 @@ Use the view switch to open Assignment Gantt for a timeline review. Use its **Mo
 
 ## Decision Points
 
+- Whether to keep pools beside the list or within the board.
+- Whether to search only the list, pools, machines, or all three.
 - Whether to choose a specific machine now or leave the work in a hall pool.
 - Whether a job should stay unassigned, move to another machine, or be removed from a queue.
 - Which machines should appear in the Gantt timeline.
@@ -199,9 +231,14 @@ The machine queue reflects the latest planning decision, future assignments foll
 
 ## Common Problems and Edge Cases
 
-- Only a limited number of machines can be shown at once.
+- You can show up to 25 machines plus hall pools. Gantt shows up to 25 machines without pool columns.
+- If no pool appears, tick a hall under **Hall pools → Which pools to show**. Use a wider screen if the placement menu is unavailable.
+- If a queue shows only 40 cards, use **Show 40 more**, or the smaller remaining number. The count and summary include every card in the queue, also the ones not shown yet.
+- A hall pool loads up to 500 assignments; a machine queue loads up to 100. With **Queue Position** on, dropping an unassigned operation into a large queue adds the work but does not save its chosen position. This affects hall pools with more than 500 active assignments and machine queues with more than 100. The Planner shows **Could not persist queue reorder. Local changes were rolled back.** and reloads the queue. Check the queue before trying again. Reordering work already in a large pool is still saved.
+- If a change cannot be saved, the Planner shows an error and reloads the queues involved. Check them before trying again.
 - If filters hide all machines, the planner shows an empty planning surface.
 - Removing an assignment sends the work back out of the planned queue rather than completing it.
+- If your search covers a queue, close it before dropping at the end so work lands at the very end. Otherwise, the drop can land among its cards. **Unassigned** leaves machine queues and pools unfiltered.
 - If a dragged order does not match the displayed order, check whether **Sort by Queue Position** is enabled or sorting rules are active.
 - In-progress and completed assignments cannot move to another column.
 - Review the actual saving result in **Improve plan**. A preview can look better than the result that can be saved because some work must keep its place.

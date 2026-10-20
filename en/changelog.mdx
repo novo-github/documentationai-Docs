@@ -6,6 +6,41 @@ toc: false
 
 ## Releases
 
+<Update label="2026-10-20" description="v1.5.128" tags={["feature", "improvement"]}>
+  {/* commits: c85b45a, bea7fed, cf7a66d, 57613cf, 5c36c5a, e818f65 */}
+
+  **Release date:** October 20, 2026
+
+  ### New Features
+
+  #### [Keep Hall Pools in View Beside the List](/en/platform-intro/pages/assignment-planner)
+  {/* feature: planner-pool-columns */}
+
+  In Assignment Planner on a wide screen, open **Hall pools → Where to show them → Beside the list**. Choose halls under **Which pools to show**. Each pool stays beside **Unassigned operations** while you scroll through machines. **In the board** remains the default, and your placement choice is remembered.
+
+  Use **Collapse pool** to make space. The narrow strip still accepts cards dropped at the end of the pool. Click the strip to expand it. Follow [Plan Machine Assignments](/en/platform-intro/workflows/assignment-planner).
+
+  #### [Choose Where to Search for Work](/en/platform-intro/pages/assignment-planner)
+  {/* feature: planner-pool-columns */}
+
+  The search box above the unassigned list is gone. Previously it filtered the list, hall pools, and machines together. Search now starts with **Unassigned**, which filters only the unassigned list. Choose **Search in → Everything** to search all three as before, or choose **Hall pools** or **Machines**. **Machines** searches work on machines, not machine names.
+
+  Open search with Ctrl+F (⌘F on a Mac) or the search icon in **Filter & Sort**. On the Planner, this shortcut opens Planner search instead of the browser’s find-in-page. The bar shows **Tip: press Ctrl+F to search orders, products and customers**; on a Mac, the tip shows ⌘F.
+
+  Your choice is remembered. A link with a search uses **Everything** for that visit without changing your saved choice. Esc or × closes and clears the search. Follow the [planning workflow](/en/platform-intro/workflows/assignment-planner).
+
+  ### Improvements
+
+  #### [Plan Across 25 Machines at Once](/en/platform-intro/pages/assignment-planner)
+  {/* feature: planner-25-machines */}
+
+  Select up to 25 machines in Assignment Planner or [Assignment Gantt](/en/platform-intro/pages/assignment-gantt). Previously, the Planner allowed 10 machines and hall pools combined, and Gantt allowed 10 machines. Hall pools now do not count toward the Planner limit. Gantt has no hall-pool columns.
+
+  With many machines, the Planner opens and refreshes faster. After you move a card, only the queues involved update. Gantt no longer reloads after every tick in the machine menu. It reloads once when you close the menu to apply your selection.
+
+  Planner queues initially show 40 cards. Use **Show 40 more**, or the smaller remaining number, to reveal the next cards. The count and summary include every card in the queue, also the ones not shown yet. Follow [Plan Machine Assignments](/en/platform-intro/workflows/assignment-planner).
+</Update>
+
 <Update label="2026-10-18" description="v1.5.125–v1.5.126" tags={["feature", "improvement", "fix"]}>
   {/* commits: a7ad70b, 4a9fce3, 50ba88b, 6972eb9, 5e4db0d, a6a5e99, 13ab0c1, ea064ef, 2c116f9, 8cab3cd, 0823cf6, 6c281d1, 231e50c, 583df43, bcaae98, d98db68, 9a977af, af17223, 4a698f7, d96f03c, 605d65e, 91a7aaf, 00ea2c0, 08ce8dc, 99d753d, 9d693ee, 7d0f287, 565f41b, 1b4c11a, e88fae2, e3be0f4, c1e8ff5, d1456f0, 5dd6778, c702f90, 90a9bda, 518ba48 */}
 

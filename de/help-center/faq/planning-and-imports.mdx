@@ -32,6 +32,14 @@ description: "Antworten zu Arbeitsgangprioritäten, Planungsterminen, Gruppierun
 | Warum zeigt Als Nächstes Arbeit für einen anderen Tag? | [Antwort](/de/help-center/faq/planning-and-imports#queue-date) |
 | Warum zeigt die Karte weniger wartende Schritte als die Gesamtzahl? | [Antwort](/de/help-center/faq/planning-and-imports#queue-limit) |
 | Warum hat ein neuer Arbeitsgang Priorität 100? | [Antwort](/de/help-center/faq/planning-and-imports#priority-default) |
+| Wie viele Maschinen kann ich gleichzeitig planen? | [Antwort](/de/help-center/faq/planning-and-imports#planner-machines) |
+| Wie bleiben Hallenpools beim Scrollen durch Maschinen sichtbar? | [Antwort](/de/help-center/faq/planning-and-imports#pool-placement) |
+| Kann ich Arbeit in einen eingeklappten Pool ziehen? | [Antwort](/de/help-center/faq/planning-and-imports#collapsed-pool) |
+| Wo ist das Suchfeld im Zuweisungsplaner geblieben? | [Antwort](/de/help-center/faq/planning-and-imports#planner-search) |
+| Warum bleiben bei meiner Suche Karten auf Maschinen oder in Pools sichtbar? | [Antwort](/de/help-center/faq/planning-and-imports#search-area) |
+| Warum zeigt meine Warteschlange im Zuweisungsplaner nur 40 Karten? | [Antwort](/de/help-center/faq/planning-and-imports#planner-cards) |
+| Warum bleibt das Zuweisungs-Gantt während der Maschinenauswahl unverändert? | [Antwort](/de/help-center/faq/planning-and-imports#gantt-selection) |
+| Warum wurde meine Operation hinzugefügt, aber nicht an der gewählten Position eingeordnet? | [Antwort](/de/help-center/faq/planning-and-imports#large-pool) |
 
 <a id="operation-priority" />
 
@@ -196,3 +204,51 @@ Maschinen- und Arbeitsplatzkarten zeigen die ersten 10 wartenden Schritte. Die G
 ## Warum hat ein neuer Arbeitsgang Priorität 100?
 
 Neue Arbeitsgänge und Arbeitsgänge ohne gespeicherte Priorität beginnen mit 100. Name und Farbe hängen von den Prioritätsstufen Ihres Unternehmens ab. Mit den Standardstufen heißt 100 Critical. Wählen Sie im Auftrags- oder Arbeitsgangformular eine andere Unternehmensstufe. Ein gespeicherter Wert außerhalb dieser Stufen bleibt auswählbar. Siehe [Auftragsdetails](/de/platform-intro/pages/order-detail).
+
+<a id="planner-machines" />
+
+## Wie viele Maschinen kann ich gleichzeitig planen?
+
+Sie können im Zuweisungsplaner oder Zuweisungs-Gantt bis zu 25 Maschinen wählen. Hallenpools im Zuweisungsplaner zählen nicht zu dieser Grenze. Das Zuweisungs-Gantt hat keine Pool-Spalten. Siehe [Zuweisungsplaner](/de/platform-intro/pages/assignment-planner).
+
+<a id="pool-placement" />
+
+## Wie bleiben Hallenpools beim Scrollen durch Maschinen sichtbar?
+
+Öffnen Sie auf einem breiten Bildschirm **Hallenpools → Wo anzeigen → Neben der Liste**. Haken Sie unter **Welche Pools anzeigen** die Hallen an. Ihre Wahl wird für Ihr Konto gespeichert. **Im Board** bringt Pools zurück in die Maschinenanordnung. Folgen Sie [Maschinenzuweisungen planen](/de/platform-intro/workflows/assignment-planner).
+
+<a id="collapsed-pool" />
+
+## Kann ich Arbeit in einen eingeklappten Pool ziehen?
+
+Ja. Auf dem schmalen Streifen landet Arbeit am Ende des Pools, auch hinter noch nicht angezeigten Karten. Umfasst Ihre Suche den Pool, schließen Sie sie vorher, damit die Arbeit ganz am Ende landet. Andernfalls kann sie zwischen den Karten eingeordnet werden. **Nicht zugewiesen** filtert keine Pools. Klicken Sie auf den Streifen oder nutzen Sie **Pool ausklappen**, um seine Karten wieder zu sehen. Siehe [Hallenpool-Bedienung](/de/platform-intro/pages/assignment-planner).
+
+<a id="planner-search" />
+
+## Wo ist das Suchfeld im Zuweisungsplaner geblieben?
+
+Drücken Sie Strg+F (⌘F auf dem Mac) oder nutzen Sie das Lupensymbol in **Filtern & Sortieren**. Suchen Sie nach Auftrag, Produkt oder Kunde und wählen Sie unter **Suchen in** einen Bereich. Esc oder × schließt und leert die Suche. Das Symbol bleibt bei ausgeblendeter Liste nicht zugewiesener Operationen verfügbar. Folgen Sie den [Suchschritten](/de/platform-intro/workflows/assignment-planner).
+
+<a id="search-area" />
+
+## Warum bleiben bei meiner Suche Karten auf Maschinen oder in Pools sichtbar?
+
+Die Suche beginnt mit **Nicht zugewiesen** und filtert damit nur die Liste nicht zugewiesener Operationen. Wählen Sie **Suchen in → Überall**, um Liste, Pools und Maschinen gemeinsam zu filtern. **Maschinen** durchsucht Arbeit auf Maschinen, nicht deren Namen. Ihre Wahl wird gespeichert. Ein Link mit einer Suche nutzt für diesen Besuch **Überall**, ohne die gespeicherte Wahl zu ersetzen. Siehe [Suchbereiche](/de/platform-intro/pages/assignment-planner).
+
+<a id="planner-cards" />
+
+## Warum zeigt meine Warteschlange im Zuweisungsplaner nur 40 Karten?
+
+Warteschlangen zeigen zunächst 40 passende Karten. Mit **40 weitere anzeigen** oder der kleineren Restzahl sehen Sie die nächsten. Anzahl und Zusammenfassung berücksichtigen jede Karte in der Warteschlange, auch die noch nicht angezeigten. Pools laden bis zu 500 Zuweisungen, Maschinenwarteschlangen bis zu 100. Siehe [Anzeigegrenzen](/de/platform-intro/pages/assignment-planner).
+
+<a id="gantt-selection" />
+
+## Warum bleibt das Zuweisungs-Gantt während der Maschinenauswahl unverändert?
+
+Die Zeitleiste übernimmt Ihre Wahl, sobald Sie die Maschinenauswahl schließen. Sie können zuvor mehrere Maschinen oder eine Hallengruppe auswählen, insgesamt bis zu 25 Maschinen. Siehe [Zuweisungs-Gantt](/de/platform-intro/pages/assignment-gantt).
+
+<a id="large-pool" />
+
+## Warum wurde meine Operation hinzugefügt, aber nicht an der gewählten Position eingeordnet?
+
+Ein Hallenpool lädt bis zu 500 Zuweisungen, eine Maschinenwarteschlange bis zu 100. Bei aktiver Sortierung nach Warteschlangenposition wird eine neu abgelegte, nicht zugewiesene Operation in einer großen Warteschlange hinzugefügt. Ihre gewählte Position wird jedoch nicht gespeichert. Das betrifft Hallenpools mit mehr als 500 aktiven Zuweisungen und Maschinenwarteschlangen mit mehr als 100. Der Zuweisungsplaner zeigt **Reihenfolge konnte nicht gespeichert werden. Lokale Änderungen wurden zurückgesetzt.** und lädt die Warteschlange neu. Prüfen Sie diese vor einem erneuten Versuch. Das Umsortieren bereits vorhandener Arbeit in einem großen Pool wird weiterhin gespeichert. Siehe [Grenzen des Zuweisungsplaners](/de/platform-intro/pages/assignment-planner).

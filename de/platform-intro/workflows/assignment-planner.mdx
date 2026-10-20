@@ -24,10 +24,10 @@ Beginnen Sie auf der [Seite Zuweisungsplaner](/de/platform-intro/pages/assignmen
 
 <Steps>
   <Step title="Filtern Sie die sichtbare Halle oder Maschinenliste" icon="arrow-right" title-type="p">
-    Wählen Sie die Halle oder Maschinen für Ihre Planung. Grenzen Sie Arbeit mit Auftragstags, Auftrags- und Arbeitsgangprioritäten oder dem Status einzelner Zuweisungen ein.
+    Wählen Sie bis zu 25 Maschinen und die Hallen, deren Pools Sie benötigen. Pools zählen nicht zur Maschinengrenze. Grenzen Sie Arbeit mit Auftragstags, Auftrags- und Arbeitsgangprioritäten oder dem Status einzelner Zuweisungen ein.
   </Step>
   <Step title="Finden Sie die passende Arbeit" icon="arrow-right" title-type="p">
-    Durchsuchen Sie ungeplante Operationen nach Auftrag, Produkt oder Kunde. Ergebnisse erscheinen nach einer kurzen Eingabepause. Grenzen Sie die benötigten Warteschlangen mit dem Maschinenfilter ein.
+    Öffnen Sie die Suche mit Strg+F (⌘F auf dem Mac) oder dem Lupensymbol in **Filtern & Sortieren**. Suchen Sie nach Auftrag, Produkt oder Kunde. Wählen Sie **Suchen in → Nicht zugewiesen**, **Hallenpools**, **Maschinen** oder **Überall**. Esc oder × leert und schließt die Suche.
   </Step>
   <Step title="Wählen Sie eine Maschine oder einen Hallenpool" icon="arrow-right" title-type="p">
     Ziehen Sie die Operation auf eine Maschinenspalte, wenn das Ziel feststeht. Können mehrere Maschinen einer Halle die Arbeit übernehmen, ziehen Sie sie in den Hallenpool oder weisen dort eine neue Operation zu. Die Bereitschaftsanzeige zeigt, wann eine Maschine die Arbeit aus dem Pool übernehmen kann.
@@ -41,7 +41,7 @@ Beginnen Sie auf der [Seite Zuweisungsplaner](/de/platform-intro/pages/assignmen
     Aktualisieren Sie wichtige Details wie Status, Daten oder Priorität bei Bedarf. Lesen oder bearbeiten Sie Operations- und Zuweisungsnotizen, damit Anweisungen bei der Arbeit verfügbar bleiben.
   </Step>
   <Step title="Prüfen Sie den zukünftigen Zeitplan" icon="arrow-right" title-type="p">
-    Nutzen Sie das Zuweisungs-Gantt, um Zuweisungen über ausgewählte Maschinen hinweg zu prüfen, Überschneidungen zu erkennen und bei Bedarf einen zugehörigen Auftrag zu öffnen.
+    Öffnen Sie das Zuweisungs-Gantt und wählen Sie bis zu 25 Maschinen. Schließen Sie die Maschinenauswahl, um Ihre Auswahl zu übernehmen. Prüfen Sie die Zeitleiste auf Überschneidungen und öffnen Sie bei Bedarf einen zugehörigen Auftrag. Das Zuweisungs-Gantt hat keine Hallenpool-Spalten.
   </Step>
   <Step title="Ordnen Sie zukünftige Zuweisungen bei Bedarf an" icon="arrow-right" title-type="p">
     Öffnen Sie **Plan verbessern**, vergleichen Sie Alternativen und prüfen Sie die betroffenen Zuweisungen vor **Als Plan speichern**. Laufende und angehaltene Arbeit bleibt an ihrem Platz. Folgen Sie den ausführlichen Vergleichsschritten unten.
@@ -50,6 +50,36 @@ Beginnen Sie auf der [Seite Zuweisungsplaner](/de/platform-intro/pages/assignmen
     Lassen Sie den Planer die Warteschlangenänderungen zurück in die Plattform speichern.
   </Step>
 </Steps>
+
+## Hallenpools neben der Liste anzeigen
+
+<Steps>
+  <Step title="Wählen Sie die Platzierung" icon="arrow-right" title-type="p">
+    Öffnen Sie auf einem breiten Bildschirm **Hallenpools → Wo anzeigen → Neben der Liste**. Ihre Auswahl wird für Ihr Konto gespeichert. Mit **Im Board** folgen die Pools wieder der Anordnung der Maschinen.
+  </Step>
+  <Step title="Wählen Sie die Hallen" icon="arrow-right" title-type="p">
+    Haken Sie unter **Welche Pools anzeigen** die benötigten Hallen an. Damit ändern Sie auch den Hallenfilter. Jeder Pool erscheint neben **Nicht zugewiesene Operationen** und bleibt beim Scrollen durch die Maschinen sichtbar. Ist die Liste ausgeblendet, beginnen die Pools am linken Rand.
+  </Step>
+  <Step title="Schaffen Sie Platz und ordnen Sie Arbeit zu" icon="arrow-right" title-type="p">
+    Mit **Pool einklappen** bleibt ein schmaler Streifen. Umfasst Ihre Suche den Pool, schließen Sie sie vorher, damit die Arbeit ganz am Ende landet. Andernfalls kann eine Ablage auf dem Streifen Arbeit zwischen den Karten einordnen. **Nicht zugewiesen** filtert keine Pools. Sie können Karten auch auf den eingeklappten Streifen ziehen. Klicken Sie auf den Streifen oder nutzen Sie **Pool ausklappen**, um die Karten wieder zu sehen. Dieser Browser merkt sich eingeklappte Pools für das aktuelle Unternehmen.
+  </Step>
+</Steps>
+
+## Liste, Pools oder Maschinen durchsuchen
+
+<Steps>
+  <Step title="Öffnen Sie die Suche" icon="arrow-right" title-type="p">
+    Drücken Sie Strg+F (⌘F auf dem Mac) oder wählen Sie das Lupensymbol in **Filtern & Sortieren**. Das geht auch bei ausgeblendeter Liste nicht zugewiesener Operationen. Geben Sie Auftrag, Produkt oder Kunde ein.
+  </Step>
+  <Step title="Wählen Sie den Suchbereich" icon="arrow-right" title-type="p">
+    Wählen Sie unter **Suchen in** die Option **Nicht zugewiesen** für die Liste, **Hallenpools** für Pool-Arbeit, **Maschinen** für Arbeit auf Maschinen oder **Überall** für alle drei Bereiche. Andere Bereiche zeigen ihre Karten weiterhin an. Voreingestellt ist **Nicht zugewiesen**. Ihre Auswahl wird gespeichert. **Maschinen** durchsucht keine Maschinennamen.
+  </Step>
+  <Step title="Prüfen Sie Treffer und beenden Sie die Suche" icon="arrow-right" title-type="p">
+    Bei mehr als 40 Treffern in einer Warteschlange wählen Sie **40 weitere anzeigen** oder die kleinere Restzahl. Umfasst die Suche die Liste nicht zugewiesener Operationen, prüfen Sie deren Trefferanzahl. Esc oder × schließt und leert die Suche. Andere Filter gelten weiter.
+  </Step>
+</Steps>
+
+Ein Link mit einer Suche verwendet für diesen Besuch **Überall**, ohne Ihre gespeicherte Auswahl zu ersetzen.
 
 ## Arbeit in eine andere Warteschlange verschieben
 
@@ -77,7 +107,7 @@ Laufende und abgeschlossene Zuweisungen können nicht in eine andere Spalte vers
     Wählen Sie unter **Auftragspriorität** und **Arbeitsgangpriorität** einen oder mehrere Werte. Geben Sie eine Zahl ein, wenn sie in der Legende fehlt. Sind beide Filter gesetzt, muss die Arbeit beide erfüllen. Das gilt für ungeplante Operationen und Maschinenspalten.
   </Step>
   <Step title="Prüfen Sie die übrigen Filter" icon="arrow-right" title-type="p">
-    Verschwindet Arbeit aus der Ansicht, prüfen Sie Status, Tags, Maschinen und Importfilter. Entfernen Sie unerwünschte Auftrags-, Produkt- oder Kundenfilter oberhalb des Plans. Das Informationssymbol öffnet den **Leitfaden zum Zuweisungsplaner**.
+    Verschwindet Arbeit aus der Ansicht, prüfen Sie Status, Tags und Maschinen. Fehlt Arbeit in der Liste nicht zugewiesener Operationen, prüfen Sie auch den Importfilter. Er begrenzt nur diese Liste auf einen ERP-Upload. Entfernen Sie unerwünschte Auftrags-, Produkt- oder Kundenfilter oberhalb des Plans. Das Informationssymbol öffnet den **Leitfaden zum Zuweisungsplaner**.
   </Step>
 </Steps>
 
@@ -176,7 +206,7 @@ Verschieben Sie eine zulässige Zuweisung bei Bedarf in die vorgesehene Wartesch
 
 ## Verschiebbarkeit und Warteschlangenänderungen prüfen
 
-Nur **Unplanned / Ungeplant**, **Planned / Geplant** und **Released / Freigegeben** können zu einer anderen Maschine oder Halle verschoben werden. Laufende, pausierte oder abgeschlossene Zuweisungen bleiben in ihrer Warteschlange und können dort neu sortiert werden. Höchstens **15 Maschinen** sind gleichzeitig sichtbar.
+Nur **Unplanned / Ungeplant**, **Planned / Geplant** und **Released / Freigegeben** können zu einer anderen Maschine oder Halle verschoben werden. Laufende, pausierte oder abgeschlossene Zuweisungen bleiben in ihrer Warteschlange und können dort neu sortiert werden. Höchstens 25 Maschinen sind gleichzeitig sichtbar. Hallenpools zählen nicht zu dieser Grenze.
 
 Bei aktiver Queue Position bleiben laufende und pausierte Zuweisungen oben; die Ablage bestimmt die genaue Position. Ohne diese Option bestimmen Sortierregeln die Ansicht und **Moves** Anfang/Ende des Ziels. Aktualisiert eine andere Änderung die Warteschlange während der Sortierung, wiederholen Sie diese auf dem aktualisierten Stand.
 
@@ -186,6 +216,8 @@ Bei aktiver Queue Position bleiben laufende und pausierte Zuweisungen oben; die 
 
 ## Entscheidungspunkte
 
+- Ob Pools neben der Liste oder im Board stehen sollen.
+- Ob Sie nur die Liste, Pools, Maschinen oder alle drei Bereiche durchsuchen.
 - Ob Sie sofort eine Maschine auswählen oder die Arbeit in einem Hallenpool belassen.
 - Ob eine Aufgabe ungeplant bleiben, auf eine andere Maschine wechseln oder aus einer Warteschlange entfernt werden soll.
 - Welche Maschinen in der Gantt-Zeitleiste erscheinen sollen.
@@ -199,9 +231,14 @@ Die Maschinenwarteschlange spiegelt die letzte Planungsentscheidung wider, zukü
 
 ## Häufige Probleme und Sonderfälle
 
-- Es können nur eine begrenzte Anzahl an Maschinen gleichzeitig angezeigt werden.
+- Sie können bis zu 25 Maschinen und zusätzlich Hallenpools anzeigen. Das Zuweisungs-Gantt zeigt bis zu 25 Maschinen ohne Pool-Spalten.
+- Erscheint kein Pool, haken Sie eine Halle unter **Hallenpools → Welche Pools anzeigen** an. Fehlt das Platzierungsmenü, nutzen Sie einen breiteren Bildschirm.
+- Zeigt eine Warteschlange nur 40 Karten, wählen Sie **40 weitere anzeigen** oder die kleinere Restzahl. Anzahl und Zusammenfassung berücksichtigen jede Karte in der Warteschlange, auch die noch nicht angezeigten.
+- Ein Hallenpool lädt bis zu 500 Zuweisungen, eine Maschinenwarteschlange bis zu 100. Bei aktiver Sortierung nach Warteschlangenposition wird eine neu abgelegte, nicht zugewiesene Operation in einer großen Warteschlange hinzugefügt. Ihre gewählte Position wird jedoch nicht gespeichert. Das betrifft Hallenpools mit mehr als 500 aktiven Zuweisungen und Maschinenwarteschlangen mit mehr als 100. Der Zuweisungsplaner zeigt **Reihenfolge konnte nicht gespeichert werden. Lokale Änderungen wurden zurückgesetzt.** und lädt die Warteschlange neu. Prüfen Sie diese vor einem erneuten Versuch. Das Umsortieren bereits vorhandener Arbeit in einem großen Pool wird weiterhin gespeichert.
+- Kann eine Änderung nicht gespeichert werden, zeigt der Zuweisungsplaner einen Fehler und lädt die beteiligten Warteschlangen neu. Prüfen Sie diese vor einem erneuten Versuch.
 - Wenn Filter alle Maschinen ausblenden, zeigt der Planer eine leere Planungsfläche.
 - Das Entfernen einer Zuweisung schickt die Arbeit aus der geplanten Warteschlange zurück, statt sie abzuschließen.
+- Umfasst Ihre Suche eine Warteschlange, schließen Sie sie vor dem Ablegen am Ende, damit die Arbeit ganz am Ende landet. Andernfalls kann sie zwischen den Karten eingeordnet werden. **Nicht zugewiesen** lässt Maschinenwarteschlangen und Pools ungefiltert.
 - Entspricht die angezeigte Reihenfolge nicht Ihrer Anordnung durch Ziehen, prüfen Sie, ob nach Warteschlangenposition oder nach Regeln sortiert wird.
 - Laufende und abgeschlossene Zuweisungen können nicht in eine andere Spalte verschoben werden.
 - Prüfen Sie unter **Plan verbessern** das tatsächliche Ergebnis des Speicherns. Eine Vorschau kann günstiger aussehen, weil manche Arbeit beim Speichern an ihrem Platz bleiben muss.

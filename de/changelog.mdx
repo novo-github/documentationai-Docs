@@ -6,6 +6,41 @@ toc: false
 
 ## Releases
 
+<Update label="2026-10-20" description="v1.5.128" tags={["Funktion", "Verbesserung"]}>
+  {/* commits: c85b45a, bea7fed, cf7a66d, 57613cf, 5c36c5a, e818f65 */}
+
+  **Release-Datum:** 20. Oktober 2026
+
+  ### Neue Funktionen
+
+  #### [Hallenpools neben der Liste im Blick behalten](/de/platform-intro/pages/assignment-planner)
+  {/* feature: planner-pool-columns */}
+
+  Öffnen Sie im Zuweisungsplaner auf einem breiten Bildschirm **Hallenpools → Wo anzeigen → Neben der Liste**. Wählen Sie Hallen unter **Welche Pools anzeigen**. Jeder Pool bleibt neben **Nicht zugewiesene Operationen** stehen, während Sie durch die Maschinen scrollen. **Im Board** bleibt die Voreinstellung. Ihre Platzierungswahl wird gespeichert.
+
+  Schaffen Sie mit **Pool einklappen** Platz. Auf dem schmalen Streifen können Sie weiterhin Karten am Ende des Pools ablegen. Klicken Sie zum Ausklappen auf den Streifen. Folgen Sie [Maschinenzuweisungen planen](/de/platform-intro/workflows/assignment-planner).
+
+  #### [Den Suchbereich für Arbeit selbst wählen](/de/platform-intro/pages/assignment-planner)
+  {/* feature: planner-pool-columns */}
+
+  Das Suchfeld über der Liste nicht zugewiesener Operationen entfällt. Bisher filterte es Liste, Hallenpools und Maschinen gemeinsam. Die Suche beginnt jetzt mit **Nicht zugewiesen** und filtert nur diese Liste. Wählen Sie **Suchen in → Überall**, um wie bisher alle drei Bereiche zu durchsuchen, oder wählen Sie **Hallenpools** oder **Maschinen**. **Maschinen** durchsucht Arbeit auf Maschinen, nicht deren Namen.
+
+  Öffnen Sie die Suche mit Strg+F (⌘F auf dem Mac) oder dem Lupensymbol in **Filtern & Sortieren**. Im Zuweisungsplaner öffnet dieses Kürzel die Planersuche statt der Seitensuche des Browsers. Die Leiste zeigt **Tipp: Mit Strg+F nach Auftrag, Produkt oder Kunde suchen**. Auf dem Mac steht im Tipp ⌘F.
+
+  Ihre Auswahl wird gespeichert. Ein Link mit einer Suche verwendet für diesen Besuch **Überall**, ohne Ihre gespeicherte Auswahl zu ändern. Esc oder × schließt und leert die Suche. Folgen Sie dem [Planungsablauf](/de/platform-intro/workflows/assignment-planner).
+
+  ### Verbesserungen
+
+  #### [Bis zu 25 Maschinen gleichzeitig planen](/de/platform-intro/pages/assignment-planner)
+  {/* feature: planner-25-machines */}
+
+  Wählen Sie im Zuweisungsplaner oder [Zuweisungs-Gantt](/de/platform-intro/pages/assignment-gantt) bis zu 25 Maschinen. Zuvor erlaubte der Zuweisungsplaner insgesamt 10 Maschinen und Hallenpools, das Zuweisungs-Gantt 10 Maschinen. Hallenpools zählen jetzt nicht mehr zur Maschinengrenze des Zuweisungsplaners. Das Zuweisungs-Gantt hat keine Hallenpool-Spalten.
+
+  Bei vielen Maschinen öffnet und aktualisiert sich der Zuweisungsplaner schneller. Nach dem Verschieben einer Karte aktualisieren sich nur die beteiligten Warteschlangen. Das Zuweisungs-Gantt lädt nicht mehr nach jedem Anhaken einer Maschine neu. Es lädt einmal, wenn Sie die Auswahlliste schließen und damit Ihre Auswahl übernehmen.
+
+  Warteschlangen im Zuweisungsplaner zeigen zunächst 40 Karten. Mit **40 weitere anzeigen** oder der kleineren Restzahl sehen Sie die nächsten Karten. Anzahl und Zusammenfassung berücksichtigen jede Karte in der Warteschlange, auch die noch nicht angezeigten. Folgen Sie [Maschinenzuweisungen planen](/de/platform-intro/workflows/assignment-planner).
+</Update>
+
 <Update label="2026-10-18" description="v1.5.125–v1.5.126" tags={["Funktion", "Verbesserung", "Fehlerbehebung"]}>
   {/* commits: a7ad70b, 4a9fce3, 50ba88b, 6972eb9, 5e4db0d, a6a5e99, 13ab0c1, ea064ef, 2c116f9, 8cab3cd, 0823cf6, 6c281d1, 231e50c, 583df43, bcaae98, d98db68, 9a977af, af17223, 4a698f7, d96f03c, 605d65e, 91a7aaf, 00ea2c0, 08ce8dc, 99d753d, 9d693ee, 7d0f287, 565f41b, 1b4c11a, e88fae2, e3be0f4, c1e8ff5, d1456f0, 5dd6778, c702f90, 90a9bda, 518ba48 */}
 
