@@ -6,6 +6,35 @@ toc: false
 
 ## Releases
 
+<Update label="2026-10-21" description="v1.5.129" tags={["feature", "fix"]}>
+  {/* commits: 98c2500, 8886058, b7b11af, beca903, 357b35f, 000961a, 49242d4, d4d61f6, 0fe8f27, a714482, 1c3847a, 8691c53, 5863d7e, 327c241, 9a71606, 40b2288, 848ed7a, 65a01bb, e5ef62b, 0e3bba2, 6a362dc */}
+
+  **Release date:** October 21, 2026
+
+  ### New Features
+
+  #### [Correct Times, Quantities, and Interval Type Together](/en/platform-intro/pages/data-acquisition)
+  {/* feature: daq-interval-edit */}
+
+  In Data Acquisition V3, open an order's interval list and tap a start or end time once. **Edit interval** opens on **Start** or **End**. The pencil opens **Quantities**. Users with access to [Order Management](/en/platform-intro/pages/order-detail) can also choose **Edit interval** from an interval's three-dot menu; this opens the editor on **Quantities**.
+
+  Change times with touch wheels or type hours and minutes on a computer. Use **−5 min** or **+5 min** for quick corrections. You can also correct quantities and switch between **Production** and **Preparation** before selecting **Save**. Follow [Run Data Acquisition](/en/platform-intro/workflows/data-acquisition#correct-an-interval).
+
+  A running interval now reads **Still running** (previously **Ongoing**) on every screen. Its end is set when you stop it through the normal controls. You cannot end a running interval here or clear a saved end. A running interval also cannot switch to a type already running on the same order.
+
+  ### Fixes
+
+  #### [Keep the Correct Quantities When Editing an Interval](/en/platform-intro/pages/order-detail)
+  {/* feature: daq-interval-edit */}
+
+  In Order Management, editing a cumulative quantity could use the amount made in one interval as the full counter reading. The editor now starts with the saved counter reading and loads saved quantities for running intervals instead of showing zeros.
+
+  #### [See Saved Interval Changes Immediately](/en/platform-intro/pages/data-acquisition)
+  {/* feature: daq-interval-edit */}
+
+  The open interval table could keep showing old values after saving. It now updates immediately, including when a save finishes after you select **Cancel**.
+</Update>
+
 <Update label="2026-10-20" description="v1.5.128" tags={["feature", "improvement"]}>
   {/* commits: c85b45a, bea7fed, cf7a66d, 57613cf, 5c36c5a, e818f65 */}
 

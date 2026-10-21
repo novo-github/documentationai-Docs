@@ -44,7 +44,35 @@ In der Betriebsdatenerfassung V3 zeigt die Sortierung nach Warteschlangenpositio
 
 ## Intervallzeiten und Zeitleistendarstellung
 
-Ein Intervall erfasst einen Zeitraum der Maschinenaktivität mit Start- und Endzeit. In der Schnellbearbeitung können Sie beide Zeitpunkte in Schritten von zwei, fünf oder dreißig Minuten vor- oder zurückstellen. Wiederholte Anpassungen addieren sich. Für genaue Änderungen steht weiterhin die vollständige Datums- und Zeitauswahl zur Verfügung.
+Ein Intervall erfasst einen Abschnitt von Rüsten oder Produktion. Öffnen Sie in der Betriebsdatenerfassung V3 die Intervallliste des Auftrags. Tippen Sie einmal auf eine Start- oder Endzeit, um **Intervall bearbeiten** unter **Start** oder **Ende** zu öffnen. Das Uhrsymbol und der Hinweis **Tippen zum Ändern** kennzeichnen bearbeitbare Zeiten. Der Stift öffnet **Mengen**.
+
+Zeiten zeigen Stunden und Minuten. Bei einem anderen Tag steht davor das Datum als Tag/Monat, zum Beispiel 20/10 14:30. Ein laufendes Ende zeigt **Läuft noch**.
+
+### Ein Intervall prüfen und ändern
+
+Die Übersicht über den Bedienelementen zeigt Auftrag, Intervallnummer sowie gespeicherten Typ, Zeiten und Mengen. **Start** steht links und **Ende** rechts. Die andere Zeit bleibt sichtbar. Tippen Sie auf deren Karte, um dorthin zu wechseln. Ihre Änderungen bleiben beim Wechsel erhalten. Punkte kennzeichnen ungespeicherte Änderungen. Sind beide Zeiten vorhanden, erscheint nach einer Zeitänderung die neue Dauer neben **Neue Dauer:**.
+
+- Drehen Sie am Touchscreen die Räder für Tag, Stunde und Minute.
+- Nutzen Sie am Computer **−** und **+**, halten Sie eine Schaltfläche für wiederholte Schritte gedrückt oder tippen Sie Stunden und Minuten ein. Sie können auch das Mausrad verwenden. Minuten- und Stundenschritte gehen in die nächste Stunde oder den nächsten Tag über.
+- **−5 Min.** und **+5 Min.** verschieben die gewählte Zeit um fünf Minuten. Wiederholtes Tippen addiert sich.
+- Korrigieren Sie unter **Mengen** die Werte für **Gutmenge**, **Material-Ausschuss** und **Arbeits-Ausschuss**. Geben Sie Mengen am Computer mit der Tastatur oder am Touchscreen mit dem Ziffernblock ein. Im kumulativen Modus geben Sie den gesamten Maschinenzählerstand ein.
+- Wählen Sie **Produktion** oder **Rüsten**, um den Intervalltyp zu korrigieren. Die Übersicht zeigt den vorgesehenen Typ neben dem gespeicherten.
+
+Auf Bildschirmen mit geringer Höhe steht die Übersicht oben in zwei Zeilen und der Ziffernblock ist kleiner. Auf besonders niedrigen Bildschirmen, etwa Terminals mit 1024×600, zeigen die Räder weniger Zeilen mit **−5 Min.** und **+5 Min.** daneben; der Hinweis unter den Bedienelementen entfällt.
+
+Wählen Sie **Speichern**, um Ihre Änderungen gemeinsam zu übernehmen. **Intervall gespeichert.** bestätigt den Erfolg. Intervalltabelle und Zeitleiste aktualisieren sich. **Abbrechen** verwirft Änderungen vor dem Speichern. Haben Sie bereits **Speichern** gewählt, nimmt Abbrechen einen danach abgeschlossenen Speichervorgang nicht zurück. Prüfen Sie die Tabelle.
+
+### Grenzen beim Bearbeiten
+
+Sie können das Datum bis zu sieben Tage vor die gespeicherte Zeit zurückstellen. Eine Zeit nach dem jetzigen Zeitpunkt können Sie nicht wählen.
+
+Wenn Sie eine Zeit ändern, muss das Ende nach dem Start liegen. Keine der beiden Zeiten darf in der Zukunft liegen. **Speichern** bleibt gesperrt, wenn nichts geändert wurde, ein Zeitfehler besteht oder gerade gespeichert wird. Schlägt das Speichern fehl, bleibt die Bearbeitung mit einer Meldung geöffnet. Sie können es erneut versuchen.
+
+Bei einem laufenden Intervall erklärt **Ende**: **Dieses Intervall läuft noch. Das Ende wird beim Stoppen gesetzt.** Beenden Sie es mit der normalen Stoppaktion. Ein gespeichertes Ende können Sie nicht entfernen. Ein laufendes Intervall kann nicht zu einem Typ wechseln, von dem beim selben Auftrag bereits ein anderes Intervall läuft. Die gesperrte Auswahl zeigt eine Erklärung.
+
+Tippen außerhalb schließt die Bearbeitung bei ungespeicherten Änderungen nicht. Folgen Sie [Ein Intervall korrigieren](/de/platform-intro/workflows/data-acquisition#ein-intervall-korrigieren).
+
+### Zeitleistendarstellung
 
 Die Einstellungen der Betriebsdatenerfassung V3 bieten zwei getrennte Möglichkeiten:
 

@@ -23,6 +23,15 @@ Die Watchmen-Plattform verbindet Produktionsmengen und Maschinenzeiten. Vergleic
 | Zählt die Zeit seit dem letzten Zustandswechsel zu meinen Summen? | [Antwort](/de/help-center/faq/production-metrics#ongoing-state) |
 | Warum zählt der letzte Maschinenzustand nicht weiter oder wird als ausgeschaltete Zeit angezeigt? | [Antwort](/de/help-center/faq/production-metrics#missing-signal) |
 | Warum zeigt die Maschinenhistorie jetzt mehr Leerlauf oder Aus für vergangene Wochen oder Monate? | [Antwort](/de/help-center/faq/production-metrics#more-idle-off-time) |
+| Wie korrigiere ich Start oder Ende eines Intervalls? | [Antwort](/de/help-center/faq/production-metrics#edit-interval) |
+| Kann ich Zeit und Mengen eintippen, statt Räder zu drehen? | [Antwort](/de/help-center/faq/production-metrics#interval-keyboard) |
+| Warum sehe ich − und + statt der Räder? | [Antwort](/de/help-center/faq/production-metrics#interval-device-controls) |
+| Warum kann ich ein laufendes Intervall nicht in der Auftragsverwaltung beenden? | [Antwort](/de/help-center/faq/production-metrics#interval-running-end) |
+| Kann ich ein Intervall von Produktion auf Rüsten umstellen? | [Antwort](/de/help-center/faq/production-metrics#interval-type) |
+| Warum ist Speichern beim Bearbeiten eines Intervalls gesperrt? | [Antwort](/de/help-center/faq/production-metrics#interval-save) |
+| Gebe ich beim Korrigieren einer kumulativen Menge den gesamten Zählerstand ein? | [Antwort](/de/help-center/faq/production-metrics#interval-cumulative) |
+| Warum wurden meine Änderungen trotz Abbrechen gespeichert? | [Antwort](/de/help-center/faq/production-metrics#interval-cancel) |
+| Warum öffnet sich mein laufendes Intervall nicht zur Bearbeitung? | [Antwort](/de/help-center/faq/production-metrics#interval-load) |
 
 ### Ein Beispiel für alle vier Kennzahlen
 
@@ -185,6 +194,60 @@ Sendet der Sensor länger als 20 Minuten kein Signal, zählt der letzte Zustand 
 ## Warum zeigt die Maschinenhistorie jetzt mehr Leerlauf oder Aus für vergangene Wochen oder Monate?
 
 Seit dem 18. Oktober 2026 zählen die **Maschinenhistorie** und der [Bericht zur Zeitleistenanalyse](/de/platform-intro/pages/timeline-analysis) über mehrere Tage die Zeit seit dem letzten Zustandswechsel mit, sodass Tage im Leerlauf oder ausgeschalteten Zustand diese Zeit statt fast nichts zeigen. Verfügbarkeit und OEE für diese Tage können sich dadurch ändern; die [20-Minuten-Regel und die Regel für Sensoren mit Stromversorgung über die Maschine](/de/help-center/faq/production-metrics#missing-signal) gelten weiterhin.
+
+<a id="edit-interval" />
+
+## Wie korrigiere ich Start oder Ende eines Intervalls?
+
+Öffnen Sie in der Betriebsdatenerfassung V3 die Intervallliste des Auftrags und tippen Sie einmal auf die Start- oder Endzeit. Die Bearbeitung öffnet sich passend zur angetippten Zeit unter **Start** oder **Ende**. Nutzen Sie die Räder, **−** und **+** oder **−5 Min.** und **+5 Min.** und wählen Sie anschließend **Speichern**. Der Stift öffnet die Bearbeitung unter **Mengen**, um Mengen zu korrigieren. Wählen Sie in der Auftragsverwaltung **Intervall bearbeiten** im Dreipunktmenü des Intervalls und anschließend **Start** oder **Ende**. Folgen Sie [Ein Intervall korrigieren](/de/platform-intro/workflows/data-acquisition#ein-intervall-korrigieren).
+
+<a id="interval-keyboard" />
+
+## Kann ich Zeit und Mengen eintippen, statt Räder zu drehen?
+
+Ja. Am Computer geben Sie Stunden, Minuten und Mengen mit der Tastatur ein. Für Zeitänderungen können Sie auch **−** und **+** verwenden. Touchscreens bieten Drehräder für Zeiten und einen Ziffernblock. **−5 Min.** und **+5 Min.** stehen auf beiden Geräten zur Verfügung. Siehe [Bedienelemente der Intervallbearbeitung](/de/platform-intro/pages/data-acquisition#ein-intervall-prüfen-und-ändern).
+
+<a id="interval-device-controls" />
+
+## Warum sehe ich − und + statt der Räder?
+
+Die Bearbeitung wählt die Bedienelemente passend zu Ihrem Gerät. Touchscreens zeigen Räder. Mit Maus oder Touchpad erscheinen **−** und **+**, und Sie können Stunden und Minuten eintippen. Wird ein Touchgerät nicht erkannt, erscheinen **−** und **+**, die auch durch Antippen funktionieren. **−5 Min.** und **+5 Min.** stehen auf beiden Geräten zur Verfügung. Siehe [Bedienelemente der Intervallbearbeitung](/de/platform-intro/pages/data-acquisition#ein-intervall-prüfen-und-ändern).
+
+<a id="interval-running-end" />
+
+## Warum kann ich ein laufendes Intervall nicht in der Auftragsverwaltung beenden?
+
+**Läuft noch** bedeutet, dass kein Ende erfasst wurde. Bisher beendete die Eingabe eines Endes in der Auftragsverwaltung das Intervall. Jetzt erscheint unter **Ende** der Hinweis, dass es noch läuft. Die Bearbeitung kann das Intervall nicht beenden und kein gespeichertes Ende entfernen. Nutzen Sie die normale Stoppaktion der Betriebsdatenerfassung und korrigieren Sie das Ende danach bei Bedarf. Folgen Sie [Betriebsdatenerfassung durchführen](/de/platform-intro/workflows/data-acquisition).
+
+<a id="interval-type" />
+
+## Kann ich ein Intervall von Produktion auf Rüsten umstellen?
+
+Ja. Wählen Sie in der Bearbeitung **Rüsten** oder **Produktion** und anschließend **Speichern**. Ein laufendes Intervall kann nicht zu **Produktion** oder **Rüsten** wechseln, wenn beim selben Auftrag bereits ein anderes Intervall dieses Typs läuft. Prüfen Sie das andere Intervall und stoppen Sie es über die normalen Bedienelemente, falls diese Arbeit beendet ist. Für beendete Intervalle gilt diese Einschränkung nicht. Siehe [Grenzen beim Bearbeiten](/de/platform-intro/pages/data-acquisition#grenzen-beim-bearbeiten).
+
+<a id="interval-save" />
+
+## Warum ist Speichern beim Bearbeiten eines Intervalls gesperrt?
+
+**Speichern** ist gesperrt, wenn nichts geändert wurde, ein Zeitfehler besteht oder gerade gespeichert wird. Bei Zeitänderungen muss das Ende nach dem Start liegen. Beide Zeiten dürfen nicht in der Zukunft liegen. Warten Sie bei **Speichert…** auf das Ergebnis. Siehe [Ein Intervall korrigieren](/de/platform-intro/workflows/data-acquisition#ein-intervall-korrigieren).
+
+<a id="interval-cumulative" />
+
+## Gebe ich beim Korrigieren einer kumulativen Menge den gesamten Zählerstand ein?
+
+Ja. Verwenden Sie im kumulativen Modus den gesamten Maschinenzählerstand statt der Menge dieses einzelnen Intervalls. Die Bearbeitung beginnt mit dem gespeicherten Zählerstand, damit Sie ihn korrigieren können. Siehe [Erfasste Intervalle bearbeiten](/de/platform-intro/pages/order-detail#erfasste-intervalle-bearbeiten).
+
+<a id="interval-cancel" />
+
+## Warum wurden meine Änderungen trotz Abbrechen gespeichert?
+
+Haben Sie bereits **Speichern** gewählt, kann das Speichern auch nach **Abbrechen** abgeschlossen werden. Die Intervalltabelle zeigt dann das gespeicherte Ergebnis. Prüfen Sie es vor einer weiteren Korrektur. Vor Beginn des Speicherns verwirft **Abbrechen** Ihre Änderungen. Siehe [Intervallbearbeitung](/de/platform-intro/pages/data-acquisition#ein-intervall-prüfen-und-ändern).
+
+<a id="interval-load" />
+
+## Warum öffnet sich mein laufendes Intervall nicht zur Bearbeitung?
+
+In der Auftragsverwaltung lädt die Bearbeitung zuerst die gespeicherten Intervallmengen. Schlägt dies fehl, bleibt sie geschlossen und zeigt **Das Intervall konnte nicht geladen werden. Bitte erneut versuchen.** Versuchen Sie erneut, das Intervall zu öffnen. Siehe [Erfasste Intervalle bearbeiten](/de/platform-intro/pages/order-detail#erfasste-intervalle-bearbeiten).
 
 ## Wo kann ich die Ergebnisse genauer untersuchen?
 

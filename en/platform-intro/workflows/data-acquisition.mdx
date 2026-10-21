@@ -85,17 +85,25 @@ Begin on the [Data Acquisition (PDA) page](/en/platform-intro/pages/data-acquisi
 2. To correct an existing timeline label, open the period’s reason picker and choose an available reason, or **Remove label** to clear it.
 3. If the reason is rejected because availability changed, review the updated list and choose again. Ask an administrator if the required reason is missing. See [Downtime Reasons FAQs](/en/help-center/faq/downtime-reasons).
 
-## Correct an Interval Time
+## Correct an Interval
+
+You need access to the machine's Data Acquisition V3 page, or access to the order page when editing from Order Management. The interval must already exist. Operators use Data Acquisition.
 
 <Steps>
-  <Step title="Open the quick editor" icon="arrow-right" title-type="p">
-    Double-tap the start or end time of the interval you want to correct.
+  <Step title="Open the interval editor" icon="arrow-right" title-type="p">
+    In Data Acquisition V3, open the order's interval list. Tap a start or end time once to open **Edit interval** on **Start** or **End**. Select the pencil to start on **Quantities**. From [Order Management](/en/platform-intro/pages/order-detail), open the interval's menu and choose **Edit interval**; this also opens **Quantities**.
   </Step>
-  <Step title="Adjust the timestamp" icon="arrow-right" title-type="p">
-    Use **+2m**, **+5m**, or **+30m**, or the corresponding minus buttons. Repeated taps add up: two taps on **+5m** move the timestamp forward by ten minutes.
+  <Step title="Check the saved values" icon="arrow-right" title-type="p">
+    Read the order, interval number, type, times, and quantities in the summary. Dates use day/month when shown, for example 20/10. **Still running** means the interval has no end yet.
   </Step>
-  <Step title="Check the resulting time" icon="arrow-right" title-type="p">
-    Review the corrected start or end time. Use the full date/time picker when the required correction needs a specific date or a more precise time.
+  <Step title="Correct the start or an existing end" icon="arrow-right" title-type="p">
+    Choose **Start** or **End**. On a touch screen, turn the day, hour, and minute wheels. On a computer, use **−** and **+** or type hours and minutes. **−5 min** and **+5 min** work on either device: two taps on **+5 min** move the time forward ten minutes. The other time stays visible on its card; tap it to switch sides. For a running interval, use the normal stop action before correcting its end.
+  </Step>
+  <Step title="Correct quantities and type if needed" icon="arrow-right" title-type="p">
+    Under **Quantities**, enter **Good qty.**, **Material Scrap**, and **Work Scrap** with the keyboard or touch number pad. If cumulative mode is selected, enter the full machine counter reading. Choose **Production** or **Preparation** if the saved type is wrong. A running interval cannot switch to a type already running on the same order.
+  </Step>
+  <Step title="Review and save together" icon="arrow-right" title-type="p">
+    Switching tabs keeps your edits. Check the changed times, the new duration beside **New length:** when both times exist, and any proposed type change in the summary. Select **Save**. **Interval saved.** confirms success; the table and timeline update. Use **Cancel** to discard edits before saving. If you already selected **Save**, check the table: cancelling cannot undo a save that finishes afterwards.
   </Step>
 </Steps>
 
@@ -164,6 +172,10 @@ The machine timeline, interval list, and production records reflect what happene
 
 ## Common Problems and Edge Cases
 
+- If **Save** is unavailable, change a value or resolve the time message. A changed end must be after the start; changed times must not be in the future. Wait if **Saving…** is shown.
+- If **Saving did not work. Please try again.** appears, the editor stays open. Review your entries and try saving again.
+- If a running interval cannot be loaded in Order Management, try opening it again. It stays closed until its saved values can be read.
+- You cannot clear an interval's saved end. To end a running interval, use the normal stop action.
 - Users may need to stop an interval before switching to a different one.
 - Missing produced, scrap, or reason details can leave the production story incomplete.
 - A live issue may need both a timeline reason and a support ticket.

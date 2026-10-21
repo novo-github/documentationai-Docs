@@ -85,17 +85,25 @@ Beginnen Sie auf der [Seite Betriebsdatenerfassung (BDE)](/de/platform-intro/pag
 2. Zum Korrigieren einer bestehenden Zuordnung öffnen Sie die Grundauswahl des Zeitraums. Wählen Sie einen verfügbaren Grund oder **Grund entfernen** zum Aufheben der Zuordnung.
 3. Wird der Grund wegen geänderter Verfügbarkeit abgelehnt, prüfen Sie die aktualisierte Liste und wählen Sie erneut. Fehlt der benötigte Grund, fragen Sie einen Administrator. Siehe [Fragen zu Stillstandsgründen](/de/help-center/faq/downtime-reasons).
 
-## Eine Intervallzeit korrigieren
+## Ein Intervall korrigieren
+
+Sie benötigen Zugriff auf die Betriebsdatenerfassung V3 der Maschine oder auf die Auftragsseite, wenn Sie in der Auftragsverwaltung bearbeiten. Das Intervall muss bereits vorhanden sein. Operatoren verwenden die Betriebsdatenerfassung.
 
 <Steps>
-  <Step title="Öffnen Sie die Schnellbearbeitung" icon="arrow-right" title-type="p">
-    Tippen Sie doppelt auf die Start- oder Endzeit des Intervalls, das Sie korrigieren möchten.
+  <Step title="Öffnen Sie die Intervallbearbeitung" icon="arrow-right" title-type="p">
+    Öffnen Sie in der Betriebsdatenerfassung V3 die Intervallliste des Auftrags. Tippen Sie einmal auf eine Start- oder Endzeit, um **Intervall bearbeiten** unter **Start** oder **Ende** zu öffnen. Der Stift öffnet **Mengen**. Öffnen Sie in der [Auftragsverwaltung](/de/platform-intro/pages/order-detail) das Menü des Intervalls und wählen Sie **Intervall bearbeiten**. Auch dort öffnet sich **Mengen**.
   </Step>
-  <Step title="Passen Sie den Zeitpunkt an" icon="arrow-right" title-type="p">
-    Nutzen Sie **+2m**, **+5m** oder **+30m** beziehungsweise die entsprechenden Minus-Schaltflächen. Wiederholtes Tippen addiert sich: Zweimal **+5m** verschiebt den Zeitpunkt um zehn Minuten nach vorne.
+  <Step title="Prüfen Sie die gespeicherten Werte" icon="arrow-right" title-type="p">
+    Lesen Sie Auftrag, Intervallnummer, Typ, Zeiten und Mengen in der Übersicht. Angezeigte Datumsangaben verwenden Tag/Monat, zum Beispiel 20/10. **Läuft noch** bedeutet, dass das Intervall noch kein Ende hat.
   </Step>
-  <Step title="Prüfen Sie die neue Zeit" icon="arrow-right" title-type="p">
-    Prüfen Sie die korrigierte Start- oder Endzeit. Verwenden Sie die vollständige Datums- und Zeitauswahl, wenn Sie ein bestimmtes Datum oder eine genauere Uhrzeit benötigen.
+  <Step title="Korrigieren Sie den Start oder das Ende eines beendeten Intervalls" icon="arrow-right" title-type="p">
+    Wählen Sie **Start** oder **Ende**. Drehen Sie am Touchscreen die Räder für Tag, Stunde und Minute. Nutzen Sie am Computer **−** und **+** oder tippen Sie Stunden und Minuten ein. **−5 Min.** und **+5 Min.** funktionieren auf beiden Geräten: Zweimal **+5 Min.** verschiebt die Zeit um zehn Minuten nach vorne. Die andere Zeit bleibt auf ihrer Karte sichtbar. Tippen Sie darauf, um die Seite zu wechseln. Stoppen Sie ein laufendes Intervall mit der normalen Stoppaktion, bevor Sie sein Ende korrigieren.
+  </Step>
+  <Step title="Korrigieren Sie bei Bedarf Mengen und Typ" icon="arrow-right" title-type="p">
+    Geben Sie unter **Mengen** die Werte für **Gutmenge**, **Material-Ausschuss** und **Arbeits-Ausschuss** mit der Tastatur oder dem Ziffernblock am Touchscreen ein. Ist der kumulative Modus gewählt, geben Sie den gesamten Maschinenzählerstand ein. Wählen Sie **Produktion** oder **Rüsten**, falls der gespeicherte Typ falsch ist. Ein laufendes Intervall kann nicht zu einem Typ wechseln, der beim selben Auftrag bereits läuft.
+  </Step>
+  <Step title="Prüfen und speichern Sie die Änderungen gemeinsam" icon="arrow-right" title-type="p">
+    Beim Wechsel zwischen den Bereichen bleiben Ihre Änderungen erhalten. Prüfen Sie die geänderten Zeiten, bei vorhandenem Start und Ende die Dauer neben **Neue Dauer:** und einen vorgesehenen Typwechsel in der Übersicht. Wählen Sie **Speichern**. **Intervall gespeichert.** bestätigt den Erfolg. Tabelle und Zeitleiste aktualisieren sich. Mit **Abbrechen** verwerfen Sie Änderungen vor dem Speichern. Haben Sie bereits **Speichern** gewählt, prüfen Sie die Tabelle: Abbrechen nimmt einen danach abgeschlossenen Speichervorgang nicht zurück.
   </Step>
 </Steps>
 
@@ -164,6 +172,10 @@ Die Maschinen-Zeitleiste, die Intervallliste und die Produktionsdaten spiegeln d
 
 ## Häufige Probleme und Sonderfälle
 
+- Ist **Speichern** gesperrt, ändern Sie einen Wert oder beheben Sie den angezeigten Zeitfehler. Ein geändertes Ende muss nach dem Start liegen. Geänderte Zeiten dürfen nicht in der Zukunft liegen. Warten Sie, wenn **Speichert…** erscheint.
+- Bei **Speichern hat nicht geklappt. Bitte erneut versuchen.** bleibt die Bearbeitung geöffnet. Prüfen Sie Ihre Eingaben und versuchen Sie erneut zu speichern.
+- Kann ein laufendes Intervall in der Auftragsverwaltung nicht geladen werden, versuchen Sie erneut, es zu öffnen. Es bleibt geschlossen, bis die gespeicherten Werte gelesen werden können.
+- Sie können ein gespeichertes Intervallende nicht entfernen. Beenden Sie ein laufendes Intervall mit der normalen Stoppaktion.
 - Benutzer müssen möglicherweise ein Intervall stoppen, bevor sie zu einem anderen wechseln.
 - Fehlende Produktions-, Ausschuss- oder Grundangaben können die Produktionsgeschichte unvollständig lassen.
 - Ein Live-Problem kann sowohl einen Zeitachsen-Grund als auch ein Support-Ticket benötigen.

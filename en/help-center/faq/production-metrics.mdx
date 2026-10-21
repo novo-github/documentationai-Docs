@@ -23,6 +23,15 @@ The Watchmen Platform combines production quantities and machine time to help yo
 | Does the time since the last machine-state change count in my totals? | [Answer](/en/help-center/faq/production-metrics#ongoing-state) |
 | Why does the last machine state stop counting or turn into off time? | [Answer](/en/help-center/faq/production-metrics#missing-signal) |
 | Why does Machine History show more idle or off time for past weeks or months now? | [Answer](/en/help-center/faq/production-metrics#more-idle-off-time) |
+| How do I correct the start or end of an interval? | [Answer](/en/help-center/faq/production-metrics#edit-interval) |
+| Can I type the time and quantities instead of turning wheels? | [Answer](/en/help-center/faq/production-metrics#interval-keyboard) |
+| Why do I see − and + buttons instead of the wheel? | [Answer](/en/help-center/faq/production-metrics#interval-device-controls) |
+| Why can’t I end a running interval from Order Management? | [Answer](/en/help-center/faq/production-metrics#interval-running-end) |
+| Can I change an interval from production to preparation? | [Answer](/en/help-center/faq/production-metrics#interval-type) |
+| Why is Save unavailable when I edit an interval? | [Answer](/en/help-center/faq/production-metrics#interval-save) |
+| Do I enter the full counter reading when correcting a cumulative quantity? | [Answer](/en/help-center/faq/production-metrics#interval-cumulative) |
+| Why did my changes save after I pressed Cancel? | [Answer](/en/help-center/faq/production-metrics#interval-cancel) |
+| Why won’t my running interval open for editing? | [Answer](/en/help-center/faq/production-metrics#interval-load) |
 
 ### One Example for All Four Metrics
 
@@ -185,6 +194,60 @@ When the sensor sends no signal for more than 20 minutes, the last state counts 
 ## Why does Machine History show more idle or off time for past weeks or months now?
 
 Since October 18, 2026, **Machine History** and the [**Timeline** report](/en/platform-intro/pages/timeline-analysis) over several days count time since the last state change, so days spent idle or off show that time instead of almost nothing. Availability and OEE for those days can change; the [20-minute rule and the rule for sensors powered by the machine](/en/help-center/faq/production-metrics#missing-signal) still apply.
+
+<a id="edit-interval" />
+
+## How do I correct the start or end of an interval?
+
+In Data Acquisition V3, open the order’s interval list and tap the start or end time once. The editor opens on **Start** or **End**, matching the time you tapped. Use the wheels, **−** and **+**, or **−5 min** and **+5 min**, then select **Save**. The pencil opens the editor on **Quantities** to correct quantities. In Order Management, choose **Edit interval** from the interval’s three-dot menu, then select **Start** or **End**. Follow [Correct an Interval](/en/platform-intro/workflows/data-acquisition#correct-an-interval).
+
+<a id="interval-keyboard" />
+
+## Can I type the time and quantities instead of turning wheels?
+
+Yes. On a computer, type hours, minutes, and quantities with the keyboard. You can also use **−** and **+** for time changes. Touch screens offer time wheels and a number pad. **−5 min** and **+5 min** are available on both. See [interval controls](/en/platform-intro/pages/data-acquisition#review-and-change-an-interval).
+
+<a id="interval-device-controls" />
+
+## Why do I see − and + buttons instead of the wheel?
+
+The editor chooses the controls for your device. Touch screens show wheels. With a mouse or touchpad, it shows **−** and **+**, and you can type hours and minutes. If a touch device is not recognised, it shows **−** and **+**, which also work by touch. **−5 min** and **+5 min** are available on both. See [interval controls](/en/platform-intro/pages/data-acquisition#review-and-change-an-interval).
+
+<a id="interval-running-end" />
+
+## Why can’t I end a running interval from Order Management?
+
+**Still running** means no end has been recorded. Previously, entering an end in Order Management stopped the interval. Now **End** shows the still-running note. The editor cannot end the interval or clear a saved end. Use the normal stop action in Data Acquisition, then correct the end if needed. Follow [Run Data Acquisition](/en/platform-intro/workflows/data-acquisition).
+
+<a id="interval-type" />
+
+## Can I change an interval from production to preparation?
+
+Yes. Choose **Preparation** or **Production** in the editor and select **Save**. A running interval cannot switch to **Production** or **Preparation** if another interval of that type is already running on the same order. Check the other interval and stop it through the normal controls if that work has ended. Finished intervals do not have this restriction. See [editing limits](/en/platform-intro/pages/data-acquisition#limits-when-editing).
+
+<a id="interval-save" />
+
+## Why is Save unavailable when I edit an interval?
+
+**Save** is unavailable when nothing changed, a time error remains, or saving is in progress. When changing times, keep the end after the start and both times out of the future. If **Saving…** appears, wait for the result. See [Correct an Interval](/en/platform-intro/workflows/data-acquisition#correct-an-interval).
+
+<a id="interval-cumulative" />
+
+## Do I enter the full counter reading when correcting a cumulative quantity?
+
+Yes. Keep the full machine counter reading in cumulative mode, rather than the amount made during this interval. The editor starts with the saved reading so you can correct it. See [recorded interval editing](/en/platform-intro/pages/order-detail#edit-recorded-intervals).
+
+<a id="interval-cancel" />
+
+## Why did my changes save after I pressed Cancel?
+
+If you already selected **Save**, the save can still finish after **Cancel**. The interval table updates with the saved result. Check it before making another correction. Before saving starts, **Cancel** discards your edits. See [interval editing](/en/platform-intro/pages/data-acquisition#review-and-change-an-interval).
+
+<a id="interval-load" />
+
+## Why won’t my running interval open for editing?
+
+In Order Management, the editor first loads the saved interval quantities. If this fails, it stays closed and shows **The interval could not be loaded. Please try again.** Try opening the interval again. See [recorded interval editing](/en/platform-intro/pages/order-detail#edit-recorded-intervals).
 
 ## Where Can I Explore These Results?
 

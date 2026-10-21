@@ -6,6 +6,35 @@ toc: false
 
 ## Releases
 
+<Update label="2026-10-21" description="v1.5.129" tags={["Funktion", "Fehlerbehebung"]}>
+  {/* commits: 98c2500, 8886058, b7b11af, beca903, 357b35f, 000961a, 49242d4, d4d61f6, 0fe8f27, a714482, 1c3847a, 8691c53, 5863d7e, 327c241, 9a71606, 40b2288, 848ed7a, 65a01bb, e5ef62b, 0e3bba2, 6a362dc */}
+
+  **Release-Datum:** 21. Oktober 2026
+
+  ### Neue Funktionen
+
+  #### [Zeiten, Mengen und Intervalltyp gemeinsam korrigieren](/de/platform-intro/pages/data-acquisition)
+  {/* feature: daq-interval-edit */}
+
+  Öffnen Sie in der Betriebsdatenerfassung V3 die Intervallliste eines Auftrags und tippen Sie einmal auf eine Start- oder Endzeit. **Intervall bearbeiten** öffnet sich unter **Start** oder **Ende**. Der Stift öffnet **Mengen**. Mit Zugriff auf die [Auftragsverwaltung](/de/platform-intro/pages/order-detail) können Sie auch im Dreipunktmenü eines Intervalls **Intervall bearbeiten** wählen. Die Bearbeitung öffnet sich unter **Mengen**.
+
+  Ändern Sie Zeiten mit den Drehrädern am Touchscreen oder tippen Sie am Computer Stunden und Minuten ein. Nutzen Sie **−5 Min.** oder **+5 Min.** für schnelle Korrekturen. Sie können auch Mengen korrigieren und zwischen **Produktion** und **Rüsten** wechseln, bevor Sie **Speichern** wählen. Folgen Sie [Betriebsdatenerfassung durchführen](/de/platform-intro/workflows/data-acquisition#ein-intervall-korrigieren).
+
+  Ein laufendes Intervall zeigt jetzt auf allen Seiten **Läuft noch** (bisher **laufend**). Sein Ende wird beim normalen Stoppen gesetzt. Hier können Sie kein laufendes Intervall beenden und kein gespeichertes Ende entfernen. Ein laufendes Intervall kann außerdem nicht zu einem Typ wechseln, der beim selben Auftrag bereits läuft.
+
+  ### Fehlerbehebungen
+
+  #### [Beim Bearbeiten die richtigen Intervallmengen behalten](/de/platform-intro/pages/order-detail)
+  {/* feature: daq-interval-edit */}
+
+  Beim Bearbeiten kumulativer Mengen in der Auftragsverwaltung konnte die Menge eines einzelnen Intervalls als gesamter Zählerstand verwendet werden. Die Bearbeitung beginnt jetzt mit dem gespeicherten Zählerstand und lädt für laufende Intervalle die gespeicherten Mengen, statt Nullen anzuzeigen.
+
+  #### [Gespeicherte Intervalländerungen sofort sehen](/de/platform-intro/pages/data-acquisition)
+  {/* feature: daq-interval-edit */}
+
+  Die offene Intervalltabelle konnte nach dem Speichern alte Werte zeigen. Sie aktualisiert sich jetzt sofort, auch wenn das Speichern erst nach **Abbrechen** abgeschlossen wird.
+</Update>
+
 <Update label="2026-10-20" description="v1.5.128" tags={["Funktion", "Verbesserung"]}>
   {/* commits: c85b45a, bea7fed, cf7a66d, 57613cf, 5c36c5a, e818f65 */}
 

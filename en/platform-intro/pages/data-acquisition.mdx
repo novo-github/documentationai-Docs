@@ -44,7 +44,35 @@ In Data Acquisition V3, **Sort by Queue Position** displays the order set by dra
 
 ## Interval Times and Timeline Display
 
-An interval records a period of machine activity with a start and end time. The quick time editor lets you correct either timestamp in steps of two, five, or thirty minutes in either direction. Repeated adjustments add up; the full date/time picker remains available for precise changes.
+An interval records a stretch of preparation or production. In Data Acquisition V3, open the order's interval list. Tap a start or end time once to open **Edit interval** on **Start** or **End**. The clock icon and **Tap to change** hint identify editable times. The pencil opens **Quantities**.
+
+Times show hours and minutes. A time from another day also shows the date as day/month, for example 20/10 14:30. A running end reads **Still running**.
+
+### Review and Change an Interval
+
+The summary above the controls shows the order, interval number, saved type, times, and quantities. **Start** sits on the left and **End** on the right. The other time stays visible; tap its card to switch to it. Your edits stay when you switch tabs. Dots mark unsaved changes. When both times exist, changing either time shows the new duration beside **New length:**.
+
+- On a touch screen, turn the day, hour, and minute wheels.
+- On a computer, use **−** and **+**, hold a button to repeat, or type hours and minutes. You can also use the mouse wheel. Minute and hour steps carry into the next hour or day.
+- **−5 min** and **+5 min** move the selected time by five minutes. Repeated taps add up.
+- Under **Quantities**, correct **Good qty.**, **Material Scrap**, and **Work Scrap**. Type quantities with a keyboard on a computer or use the number pad on a touch screen. In cumulative mode, enter the full machine counter reading.
+- Choose **Production** or **Preparation** to correct the interval type. The summary shows the proposed type beside the saved one.
+
+On screens with little height, the summary at the top takes two lines and the number pad is smaller. On very short screens, such as 1024×600 terminals, the wheels show fewer rows with **−5 min** and **+5 min** beside them, and the hint below the controls is hidden.
+
+Select **Save** to apply your edits together. **Interval saved.** confirms success; the interval table and timeline update. **Cancel** discards edits before saving. If you already selected **Save**, cancelling does not undo a save that finishes afterwards; check the table.
+
+### Limits When Editing
+
+You can move the date back as far as seven days before the saved time. You cannot choose a time later than now.
+
+When you change a time, the end must be later than the start, and neither time may be in the future. **Save** stays unavailable if nothing changed, a time error remains, or saving is still in progress. If saving fails, the dialog stays open with a message so you can try again.
+
+For a running interval, **End** explains: **This interval is still running. Its end is set when it is stopped.** Use the normal stop action to end it. You cannot clear a saved end. A running interval cannot change to a type that already has another running interval on the same order; the unavailable option has an explanation.
+
+Tapping outside does not close the dialog while you have unsaved changes. Follow [Correct an Interval](/en/platform-intro/workflows/data-acquisition#correct-an-interval).
+
+### Timeline Display
 
 Data Acquisition V3 settings offer two separate choices:
 

@@ -92,6 +92,16 @@ The **External Product ID** is the product name. Order and operation priorities 
 
 **Example:** An order for 100 housings has a work order for that product, cutting operation 10 and finishing operation 20, machine assignments for each, and intervals recording each run.
 
+## Edit Recorded Intervals
+
+With access to this order page, open an interval's menu in the analysis view and choose **Edit interval**. It opens on **Quantities**. You can correct good output and both scrap quantities, then use **Start** and **End** to change times. Choose **Production** or **Preparation** to correct the type. The same [interval editor](/en/platform-intro/pages/data-acquisition#review-and-change-an-interval) is available in Data Acquisition V3.
+
+The editor opens with saved quantities, including the full counter reading for cumulative entries. On a computer, type quantities, hours, and minutes with the keyboard. Touch screens offer a number pad and time wheels. Review the saved values in the summary and select **Save** to apply your changes together.
+
+**Still running** means no end has been recorded. You can no longer end a running interval by entering an end here, or clear an existing end. Stop the interval through the normal Data Acquisition controls. A running interval cannot switch to a type already running on this order. If a running interval cannot be loaded, the editor stays closed and shows **The interval could not be loaded. Please try again.** Try opening it again.
+
+Follow [Correct an Interval](/en/platform-intro/workflows/data-acquisition#correct-an-interval) for the steps and time checks.
+
 ## Read Analysis Sources and Averages
 
 **Total = Input + Mat. (MA) + Work (AA)**. **Sum / Summ.** is a totals row; **Avg. / Ø** is an average. **Auto.** in Cycles (Auto. / Planned) means sensor-detected.
