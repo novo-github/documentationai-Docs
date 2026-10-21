@@ -1288,7 +1288,9 @@ Planned load of a machine queue, based on planned durations, not recorded produc
 
 ### Waiting on a previous step / Blocked by
 
-An earlier operation is unfinished. Start anyway is available; review the dependency before using it.
+⚠️ **Waiting on a previous step** means a step with a lower number in the same work order is neither completed nor cancelled. An earlier step without an assignment also counts as unfinished. **Start anyway** remains available; review the dependency before using it.
+
+In Data Acquisition V3, the **Waiting on a previous step** sorting rule always comes first and offers **At the bottom** or **At the top**. With **Sort by Queue Position** on, **Orders waiting on a previous step** offers **Keep in place** or **At the bottom**, preserving queue order within each group. Both options are off until you choose them and are saved for your account.
 
 [Learn more](/en/platform-intro/pages/data-acquisition).
 

@@ -1288,7 +1288,9 @@ Geplante Belastung einer Maschinenwarteschlange anhand geplanter Zeiten, nicht e
 
 ### Waiting on a previous step / Blocked by
 
-Eine frühere Operation ist nicht abgeschlossen. Start anyway ist möglich; prüfen Sie vorher die Abhängigkeit.
+⚠️ **Wartet auf einen vorherigen Schritt** bedeutet: Ein Schritt mit niedrigerer Nummer im selben Arbeitsauftrag ist weder abgeschlossen noch storniert. Ein früherer Schritt ohne Zuweisung zählt ebenfalls als unfertig. **Trotzdem starten** bleibt verfügbar. Prüfen Sie vorher die Abhängigkeit.
+
+In der Betriebsdatenerfassung V3 steht die Sortierregel **Wartet auf einen vorherigen Schritt** immer an erster Stelle und bietet **Ganz unten** oder **Ganz oben**. Ist **Nach Warteschlangenposition sortieren** eingeschaltet, bietet **Aufträge, die auf einen vorherigen Schritt warten** die Auswahl **Position beibehalten** oder **Ganz unten**. Innerhalb jeder Gruppe bleibt die Reihenfolge der Warteschlange erhalten. Beide Optionen sind zunächst ausgeschaltet. Ihre Auswahl wird für Ihr Konto gespeichert.
 
 [Mehr erfahren](/de/platform-intro/pages/data-acquisition).
 

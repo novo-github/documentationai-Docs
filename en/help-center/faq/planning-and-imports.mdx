@@ -40,6 +40,9 @@ description: "Find answers about operation priorities, planning dates, grouping,
 | Why does my Planner queue show only 40 cards? | [Answer](/en/help-center/faq/planning-and-imports#planner-cards) |
 | Why does the Gantt stay the same while I select machines? | [Answer](/en/help-center/faq/planning-and-imports#gantt-selection) |
 | Why was my operation added but not put in the position I chose? | [Answer](/en/help-center/faq/planning-and-imports#large-pool) |
+| How do I move orders that cannot start to the bottom? | [Answer](/en/help-center/faq/planning-and-imports#waiting-sort) |
+| Can I put waiting orders last and keep the planned queue order? | [Answer](/en/help-center/faq/planning-and-imports#waiting-queue) |
+| Why is my order still marked as waiting after the previous step finished? | [Answer](/en/help-center/faq/planning-and-imports#waiting-refresh) |
 
 <a id="operation-priority" />
 
@@ -252,3 +255,21 @@ The timeline applies your choices when you close the machine selection menu. You
 ## Why was my operation added but not put in the position I chose?
 
 A hall pool loads up to 500 assignments; a machine queue loads up to 100. With **Queue Position** on, dropping an unassigned operation into a large queue adds the work but does not save its chosen position. This affects hall pools with more than 500 active assignments and machine queues with more than 100. The Planner shows **Could not persist queue reorder. Local changes were rolled back.** and reloads the queue. Check the queue before trying again. Reordering work already in a large pool is still saved. See [Planner limits](/en/platform-intro/pages/assignment-planner).
+
+<a id="waiting-sort" />
+
+## How do I move orders that cannot start to the bottom?
+
+In Data Acquisition V3, open **Card Display Settings → Sort Order**. With **Sort by Queue Position** off, click **Add sort rule**, select **Waiting on a previous step** and choose **At the bottom**. This rule always comes before priority or date. **At the top** lets you review waiting orders first. Nothing changes until you choose an option. Follow [Configure the Data Acquisition V3 Display](/en/platform-intro/workflows/data-acquisition#configure-the-data-acquisition-v3-display).
+
+<a id="waiting-queue" />
+
+## Can I put waiting orders last and keep the planned queue order?
+
+Yes. With **Sort by Queue Position** on in Data Acquisition V3, choose **Orders waiting on a previous step → At the bottom**. Running and on-hold orders stay on top, then work that can start, then waiting orders. The queue order stays the same within each group. **Keep in place** restores the usual queue display. Your choice is saved for your account and applies to the machine list and **Pool**. These options are not offered in Assignment Planner. See [Data Acquisition](/en/platform-intro/pages/data-acquisition).
+
+<a id="waiting-refresh" />
+
+## Why is my order still marked as waiting after the previous step finished?
+
+Check whether another step with a lower number in the same work order is still unfinished. A step without an assignment also counts as unfinished. Earlier steps must be completed or cancelled. Once none remains unfinished, the next refresh moves the order into the group that can start. See [waiting orders in Data Acquisition](/en/platform-intro/pages/data-acquisition).

@@ -40,7 +40,20 @@ Wählen Sie zum Maschinenwechsel den Maschinennamen in der oberen Navigationslei
 
 Nutzen Sie die Ansicht offener Zuweisungen oder eine Zeitfensteransicht, um Arbeit für die aktuelle Maschine zu finden. Ist eine Operation noch ungeplant, können Sie sie direkt auf dieser Seite suchen und zuweisen. Operationsfolgenummern auf den Auftragsanzeigen helfen Ihnen, die Arbeitsreihenfolge zu erkennen. Operations- und Zuweisungsnotizen liefern Anweisungen und Kontext.
 
-In der Betriebsdatenerfassung V3 zeigt die Sortierung nach Warteschlangenposition die durch Ziehen festgelegte Reihenfolge. Schalten Sie diese Option aus, um nach Regeln wie Priorität oder Datum zu sortieren. Für jede Regel können Sie eine aufsteigende oder absteigende Richtung wählen. Weitere Regeln lösen Gleichstände auf; durch Ziehen ändern Sie den Vorrang der Regeln. Diese Möglichkeiten stehen auch im [Zuweisungsplaner](/de/platform-intro/pages/assignment-planner) zur Verfügung.
+In der Betriebsdatenerfassung V3 zeigt **Nach Warteschlangenposition sortieren** die durch Ziehen festgelegte Reihenfolge. Schalten Sie diese Option aus, um nach Regeln wie Priorität oder Datum zu sortieren. Für diese Regeln können Sie eine aufsteigende oder absteigende Richtung wählen. Die Regeln stehen in einer nummerierten Liste: Regel 1 entscheidet zuerst, spätere Regeln lösen Gleichstände auf. Um den Vorrang zu ändern, ändern Sie die Auswahl in der Liste einer Zeile, entfernen Sie eine Regel mit der roten Schaltfläche zum Entfernen oder ergänzen Sie mit **Sortierregel hinzufügen** eine Zeile. **Auf Standard zurücksetzen** stellt die Standardregeln wieder her. Diese allgemeinen Sortiermöglichkeiten stehen auch im [Zuweisungsplaner](/de/platform-intro/pages/assignment-planner) zur Verfügung.
+
+### Wartende Aufträge hinter startbereiter Arbeit anzeigen
+
+Aufträge mit ⚠️ **Wartet auf einen vorherigen Schritt** haben einen früheren Schritt im selben Arbeitsauftrag, der weder abgeschlossen noch storniert ist. Die Schrittnummern bestimmen die Reihenfolge. Ein früherer Schritt ohne Zuweisung zählt ebenfalls als unfertig. Zum Beispiel wartet Schritt #70, bis #60 fertig ist.
+
+Öffnen Sie über das Zahnradsymbol in der oberen Leiste **Kartenanzeige-Einstellungen → Sortierreihenfolge**. Wählen Sie die Option für Ihre Sortierart:
+
+- Ist **Nach Warteschlangenposition sortieren** ausgeschaltet, klicken Sie auf **Sortierregel hinzufügen**. Eine neue nummerierte Regelzeile erscheint. Wählen Sie in der Liste dieser Zeile **Wartet auf einen vorherigen Schritt**. Statt des Auf-/Abwärtspfeils hat diese Regel eine Schaltfläche, die zunächst **Ganz unten** zeigt. Damit erscheinen wartende Aufträge hinter anderer Arbeit. Klicken Sie darauf, um zu **Ganz oben** zu wechseln und wartende Aufträge zuerst zu prüfen. Diese Regel steht immer an erster Stelle. Ihre übrigen Regeln sortieren die Arbeit innerhalb jeder Gruppe.
+- Ist **Nach Warteschlangenposition sortieren** eingeschaltet, nutzen Sie **Aufträge, die auf einen vorherigen Schritt warten**. **Position beibehalten** behält die gewohnte Warteschlangenansicht bei. Mit **Ganz unten** bleiben laufende Aufträge und Aufträge in Wartestellung oben. Danach folgt startbereite Arbeit, zuletzt wartende Aufträge. Die im Zuweisungsplaner festgelegte Reihenfolge bleibt innerhalb jeder Gruppe erhalten.
+
+Erst wenn Sie eine dieser Optionen wählen, wird wartende Arbeit entsprechend einsortiert. Ihre Auswahl wird für Ihr Konto gespeichert und gilt für die Auftragsliste der Maschine und den Tab **Pool**. Diese Optionen für wartende Aufträge gibt es nur in der Betriebsdatenerfassung V3, nicht im Zuweisungsplaner.
+
+Sobald kein früherer Schritt mehr unfertig ist, erscheint der Auftrag bei der nächsten Aktualisierung in der startbereiten Gruppe. Folgen Sie [Die Darstellung der Betriebsdatenerfassung V3 einstellen](/de/platform-intro/workflows/data-acquisition#die-darstellung-der-betriebsdatenerfassung-v3-einstellen).
 
 ## Intervallzeiten und Zeitleistendarstellung
 

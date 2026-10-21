@@ -117,10 +117,16 @@ You need access to the machine's Data Acquisition V3 page, or access to the orde
     Under **Auto-refresh interval**, choose how often assignments and hall pools refresh automatically.
   </Step>
   <Step title="Choose how to sort assignments" icon="arrow-right" title-type="p">
-    Open the sort/filter options. Enable **Sort by Queue Position** to display the order set by dragging assignments, or turn it off to choose sorting rules.
+    Use the gear icon in the top bar to open **Card Display Settings → Sort Order**. Enable **Sort by Queue Position** to display the order set by dragging assignments, or turn it off to choose sorting rules.
   </Step>
   <Step title="Set the order of sorting rules" icon="arrow-right" title-type="p">
-    Select a field such as priority or date and choose ascending or descending order. Add further rules to break ties, then drag them into the order in which they should take precedence.
+    Choose a rule such as priority or date and choose ascending or descending order. The rules form a numbered list: rule 1 decides first, and later rules break ties. To change their precedence, change the selection in a line’s list, remove a rule with the red remove button, or add a line with **Add sort rule**. **Reset to default** restores the default rules.
+  </Step>
+  <Step title="Choose where waiting orders appear" icon="arrow-right" title-type="p">
+    With **Sort by Queue Position** off, click **Add sort rule**. A new numbered rule line appears. Select **Waiting on a previous step** in that line’s list. Instead of the up/down arrow, this rule has a button that starts at **At the bottom**, placing waiting orders after other work. Click it to switch to **At the top** and review waiting orders first. This rule always takes first place. Your remaining rules sort work within each group. With **Sort by Queue Position** on, choose **Orders waiting on a previous step → At the bottom**. Running and on-hold orders stay on top, followed by work that can start and then waiting work. Queue order stays the same within each group. Choose **Keep in place** to keep the usual queue display.
+  </Step>
+  <Step title="Check the machine list and pool" icon="arrow-right" title-type="p">
+    Your waiting-order choice applies to the machine's order list and **Pool** and is saved for your account. Both options are off until you choose them. Once no earlier step remains unfinished, the order joins work that can start at the next refresh. These options are not offered in Assignment Planner.
   </Step>
 </Steps>
 

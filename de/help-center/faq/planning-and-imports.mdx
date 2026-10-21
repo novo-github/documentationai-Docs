@@ -40,6 +40,9 @@ description: "Antworten zu Arbeitsgangprioritäten, Planungsterminen, Gruppierun
 | Warum zeigt meine Warteschlange im Zuweisungsplaner nur 40 Karten? | [Antwort](/de/help-center/faq/planning-and-imports#planner-cards) |
 | Warum bleibt das Zuweisungs-Gantt während der Maschinenauswahl unverändert? | [Antwort](/de/help-center/faq/planning-and-imports#gantt-selection) |
 | Warum wurde meine Operation hinzugefügt, aber nicht an der gewählten Position eingeordnet? | [Antwort](/de/help-center/faq/planning-and-imports#large-pool) |
+| Wie verschiebe ich Aufträge, die noch nicht starten können, nach unten? | [Antwort](/de/help-center/faq/planning-and-imports#waiting-sort) |
+| Kann ich wartende Aufträge unten anzeigen und die geplante Reihenfolge behalten? | [Antwort](/de/help-center/faq/planning-and-imports#waiting-queue) |
+| Warum wartet mein Auftrag noch, obwohl der vorherige Schritt fertig ist? | [Antwort](/de/help-center/faq/planning-and-imports#waiting-refresh) |
 
 <a id="operation-priority" />
 
@@ -252,3 +255,21 @@ Die Zeitleiste übernimmt Ihre Wahl, sobald Sie die Maschinenauswahl schließen.
 ## Warum wurde meine Operation hinzugefügt, aber nicht an der gewählten Position eingeordnet?
 
 Ein Hallenpool lädt bis zu 500 Zuweisungen, eine Maschinenwarteschlange bis zu 100. Bei aktiver Sortierung nach Warteschlangenposition wird eine neu abgelegte, nicht zugewiesene Operation in einer großen Warteschlange hinzugefügt. Ihre gewählte Position wird jedoch nicht gespeichert. Das betrifft Hallenpools mit mehr als 500 aktiven Zuweisungen und Maschinenwarteschlangen mit mehr als 100. Der Zuweisungsplaner zeigt **Reihenfolge konnte nicht gespeichert werden. Lokale Änderungen wurden zurückgesetzt.** und lädt die Warteschlange neu. Prüfen Sie diese vor einem erneuten Versuch. Das Umsortieren bereits vorhandener Arbeit in einem großen Pool wird weiterhin gespeichert. Siehe [Grenzen des Zuweisungsplaners](/de/platform-intro/pages/assignment-planner).
+
+<a id="waiting-sort" />
+
+## Wie verschiebe ich Aufträge, die noch nicht starten können, nach unten?
+
+Öffnen Sie in der Betriebsdatenerfassung V3 **Kartenanzeige-Einstellungen → Sortierreihenfolge**. Schalten Sie **Nach Warteschlangenposition sortieren** aus. Klicken Sie auf **Sortierregel hinzufügen**, wählen Sie **Wartet auf einen vorherigen Schritt** und dann **Ganz unten**. Diese Regel steht immer vor Priorität oder Datum. Mit **Ganz oben** prüfen Sie wartende Aufträge zuerst. Erst Ihre Auswahl ändert die Anzeige. Folgen Sie [Die Darstellung der Betriebsdatenerfassung V3 einstellen](/de/platform-intro/workflows/data-acquisition#die-darstellung-der-betriebsdatenerfassung-v3-einstellen).
+
+<a id="waiting-queue" />
+
+## Kann ich wartende Aufträge unten anzeigen und die geplante Reihenfolge behalten?
+
+Ja. Ist **Nach Warteschlangenposition sortieren** in der Betriebsdatenerfassung V3 eingeschaltet, wählen Sie **Aufträge, die auf einen vorherigen Schritt warten → Ganz unten**. Laufende Aufträge und Aufträge in Wartestellung bleiben oben. Danach folgen startbereite, zuletzt wartende Aufträge. Innerhalb jeder Gruppe bleibt die Reihenfolge der Warteschlange gleich. **Position beibehalten** stellt die gewohnte Warteschlangenansicht wieder her. Ihre Auswahl wird für Ihr Konto gespeichert und gilt für die Maschinenliste und den **Pool**. Im Zuweisungsplaner stehen diese Optionen nicht zur Verfügung. Siehe [Betriebsdatenerfassung](/de/platform-intro/pages/data-acquisition).
+
+<a id="waiting-refresh" />
+
+## Warum wartet mein Auftrag noch, obwohl der vorherige Schritt fertig ist?
+
+Prüfen Sie, ob ein weiterer Schritt mit niedrigerer Nummer im selben Arbeitsauftrag noch unfertig ist. Auch ein Schritt ohne Zuweisung zählt als unfertig. Frühere Schritte müssen abgeschlossen oder storniert sein. Sobald keiner mehr unfertig ist, wechselt der Auftrag bei der nächsten Aktualisierung zur startbereiten Gruppe. Siehe [wartende Aufträge in der Betriebsdatenerfassung](/de/platform-intro/pages/data-acquisition).

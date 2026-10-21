@@ -7,7 +7,7 @@ toc: false
 ## Releases
 
 <Update label="2026-10-21" description="v1.5.129" tags={["feature", "fix"]}>
-  {/* commits: 98c2500, 8886058, b7b11af, beca903, 357b35f, 000961a, 49242d4, d4d61f6, 0fe8f27, a714482, 1c3847a, 8691c53, 5863d7e, 327c241, 9a71606, 40b2288, 848ed7a, 65a01bb, e5ef62b, 0e3bba2, 6a362dc */}
+  {/* commits: 98c2500, 8886058, b7b11af, beca903, 357b35f, 000961a, 49242d4, d4d61f6, 0fe8f27, a714482, 1c3847a, 8691c53, 5863d7e, 327c241, 9a71606, 40b2288, 848ed7a, 65a01bb, e5ef62b, 0e3bba2, 6a362dc, 0078efc */}
 
   **Release date:** October 21, 2026
 
@@ -21,6 +21,15 @@ toc: false
   Change times with touch wheels or type hours and minutes on a computer. Use **−5 min** or **+5 min** for quick corrections. You can also correct quantities and switch between **Production** and **Preparation** before selecting **Save**. Follow [Run Data Acquisition](/en/platform-intro/workflows/data-acquisition#correct-an-interval).
 
   A running interval now reads **Still running** (previously **Ongoing**) on every screen. Its end is set when you stop it through the normal controls. You cannot end a running interval here or clear a saved end. A running interval also cannot switch to a type already running on the same order.
+
+  #### [Show Orders That Can Start Before Waiting Work](/en/platform-intro/pages/data-acquisition)
+  {/* feature: daq-waiting-sort */}
+
+  In Data Acquisition V3, you can now move orders marked ⚠️ below work that can start. Open **Card Display Settings → Sort Order**. With **Sort by Queue Position** off, click **Add sort rule**, select **Waiting on a previous step** and choose **At the bottom** or **At the top**. This rule always comes first, ahead of priority or date.
+
+  With **Sort by Queue Position** on, choose **Orders waiting on a previous step → At the bottom**. Running and on-hold orders stay on top. Other orders appear before waiting work, and the queue order stays the same within each group. **Keep in place** keeps the usual queue display.
+
+  Both options are off until you choose them and are saved for your account. They apply to the machine's order list and **Pool**, but are not offered in Assignment Planner. Once the earlier steps are finished, the order moves into the group that can start at the next refresh. Follow [Configure the Data Acquisition V3 Display](/en/platform-intro/workflows/data-acquisition#configure-the-data-acquisition-v3-display).
 
   ### Fixes
 
