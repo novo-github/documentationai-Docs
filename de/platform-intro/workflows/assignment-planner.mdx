@@ -125,6 +125,45 @@ Laufende und abgeschlossene Zuweisungen können nicht in eine andere Spalte vers
   </Step>
 </Steps>
 
+## Eine Warteschlange nach Priorität und Datum sortieren
+
+Sie benötigen Zugriff auf Planer und Maschine sowie ein Administratorkonto oder ein Benutzerkonto mit Zugriff auf die Auftragsseite. Operatoren können diese Aktion nicht nutzen. Die Maschine oder der Hallenpool muss bereits Arbeit enthalten.
+
+<Steps>
+  <Step title="Öffnen Sie die Warteschlangenvorschau" icon="arrow-right" title-type="p">
+    Aktivieren Sie unter **Filtern & Sortieren** die Option **Nach Warteschlangenposition sortieren**. Wählen Sie im Kopf der Maschine oder des Hallenpools **Nach Priorität und Datum sortieren**. Die Vorschau umfasst die aktive Warteschlange, auch durch Filter ausgeblendete Karten.
+  </Step>
+  <Step title="Wählen Sie die Priorität und prüfen Sie den Vorschlag" icon="arrow-right" title-type="p">
+    Beim Öffnen ist immer **Auftragspriorität** ausgewählt. Wählen Sie **Arbeitsgangpriorität**, um stattdessen die Prioritäten einzelner Schritte zu verwenden. Höhere Prioritäten kommen zuerst, danach frühere geplante Operationsstarts. Prüfen Sie die vorgeschlagenen und die vorherigen Positionen verschobener Arbeit. Laufende Aufträge stehen zuerst, danach Aufträge in Wartestellung. **Bleibt oben** kennzeichnet diese Gruppen.
+  </Step>
+  <Step title="Übernehmen oder behalten Sie die Reihenfolge" icon="arrow-right" title-type="p">
+    Wählen Sie **Reihenfolge übernehmen**, um die gemeinsame Reihenfolge zu speichern. Wählen Sie **Abbrechen**, um die vorhandene Reihenfolge zu behalten. Hat sich die Warteschlange während der Prüfung geändert, prüfen Sie den aktualisierten Vorschlag vor dem Übernehmen. Schlägt das Laden fehl, versuchen Sie es erneut. Das Übernehmen bleibt bis zum erfolgreichen Laden gesperrt. Ohne Positionsänderung gibt es nichts zu übernehmen.
+  </Step>
+  <Step title="Prüfen Sie das Ergebnis oder machen Sie es rückgängig" icon="arrow-right" title-type="p">
+    Prüfen Sie nach **Neue Reihenfolge übernommen** die Warteschlange. Wählen Sie in dieser Bestätigung **Rückgängig**, um die vorherige Reihenfolge wiederherzustellen. Schlägt das fehl, prüfen Sie die neu geladene Warteschlange vor weiteren Anpassungen. Sie können Karten weiterhin ziehen. Neue Importe kommen ans Ende. Diese Aktion sortiert nicht fortlaufend automatisch.
+  </Step>
+</Steps>
+
+Bei eingeschalteter Warteschlangensortierung ohne Filter oder betreffende Suche zeigen Kartennummern die Positionen je Warteschlange. Fehlen die Nummern, entfernen Sie Prioritäts-, Arbeitsgangprioritäts- und Tag-Filter, stellen Sie die übliche Statusauswahl wieder her und leeren Sie die Suche in diesem Bereich.
+
+## Firmensortierung speichern oder übernehmen
+
+Zum Speichern des Firmenstandards benötigen Sie ein Administratorkonto. Andere Personen mit Zugriff auf die jeweilige Seite können ihre eigene Sortierung darauf zurücksetzen.
+
+<Steps>
+  <Step title="Legen Sie die Firmenvorgaben fest und speichern Sie diese" icon="arrow-right" title-type="p">
+    Öffnen Sie als Administrator im Zuweisungsplaner **Filtern & Sortieren**. Stellen Sie Modus, Sortierregeln und die Auswahl unter **Verschiebungen** ein. Wählen Sie **Als Firmenstandard speichern**. Warten Sie auf **Als Firmenstandard gespeichert**.
+  </Step>
+  <Step title="Nutzen Sie den Standard im Planer" icon="arrow-right" title-type="p">
+    Ohne persönliche Sortierung beginnen Sie mit dem Firmenstandard. Um eine persönliche Sortierung zu ersetzen, nutzen Sie im Sortierbereich **Auf Firmenstandard zurücksetzen**. Dadurch speichern Sie den aktuellen Firmenmodus, die Regeln und die Auswahl unter **Verschiebungen** als eigene Einstellungen. Ohne Firmenstandard stellt **Auf Standard zurücksetzen (noch kein Firmenstandard festgelegt)** die Standardauswahl wieder her.
+  </Step>
+  <Step title="Nutzen Sie den Standard am Terminal" icon="arrow-right" title-type="p">
+    Öffnen Sie in der Betriebsdatenerfassung V3 **Kartenanzeige-Einstellungen → Sortierreihenfolge → Auf Firmensortierung zurücksetzen** und wählen Sie **Speichern**. Entspricht die Sortierung bereits den Vorgaben, zeigt die Schaltfläche einen Haken und ist gesperrt. Ohne Firmenstandard wählen Sie **Auf Standard zurücksetzen (noch kein Firmenstandard festgelegt)** und dann **Speichern**. Die Auswahl für laufende und wartende Aufträge im Warteschlangenmodus bleibt unverändert. Sortierregeln werden ersetzt. Ergänzen Sie besondere Regeln für laufende oder wartende Aufträge bei Bedarf erneut. Folgen Sie den [Schritten zur Darstellung](/de/platform-intro/workflows/data-acquisition#die-darstellung-der-betriebsdatenerfassung-v3-einstellen).
+  </Step>
+</Steps>
+
+Eine gespeicherte persönliche Auswahl oder ein Zurücksetzen folgt späteren Änderungen des Firmenstandards nicht. Setzen Sie erneut zurück, wenn Sie neuere Firmenvorgaben übernehmen möchten.
+
 ## Forecaster-Warnungen vor Planänderungen prüfen
 
 <Steps>

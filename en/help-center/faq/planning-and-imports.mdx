@@ -43,6 +43,14 @@ description: "Find answers about operation priorities, planning dates, grouping,
 | How do I move orders that cannot start to the bottom? | [Answer](/en/help-center/faq/planning-and-imports#waiting-sort) |
 | Can I put waiting orders last and keep the planned queue order? | [Answer](/en/help-center/faq/planning-and-imports#waiting-queue) |
 | Why is my order still marked as waiting after the previous step finished? | [Answer](/en/help-center/faq/planning-and-imports#waiting-refresh) |
+| How do I put one order before another without raising its operation priority? | [Answer](/en/help-center/faq/planning-and-imports#priority-queue) |
+| Why can’t I see the button to sort by priority and date? | [Answer](/en/help-center/faq/planning-and-imports#queue-sort-access) |
+| Can I undo a queue sort, and why did the proposal change? | [Answer](/en/help-center/faq/planning-and-imports#queue-sort-undo) |
+| Why have the numbers on my Planner cards disappeared? | [Answer](/en/help-center/faq/planning-and-imports#queue-numbers) |
+| Who can set the sorting everyone starts with? | [Answer](/en/help-center/faq/planning-and-imports#company-sorting) |
+| Why hasn’t my sorting changed with the company default? | [Answer](/en/help-center/faq/planning-and-imports#sorting-default-updates) |
+| Why are running orders no longer at the top in Data Acquisition? | [Answer](/en/help-center/faq/planning-and-imports#running-sort) |
+| How do I restore company sorting at the terminal? | [Answer](/en/help-center/faq/planning-and-imports#terminal-sorting-reset) |
 
 <a id="operation-priority" />
 
@@ -260,16 +268,64 @@ A hall pool loads up to 500 assignments; a machine queue loads up to 100. With *
 
 ## How do I move orders that cannot start to the bottom?
 
-In Data Acquisition V3, open **Card Display Settings → Sort Order**. With **Sort by Queue Position** off, click **Add sort rule**, select **Waiting on a previous step** and choose **At the bottom**. This rule always comes before priority or date. **At the top** lets you review waiting orders first. Nothing changes until you choose an option. Follow [Configure the Data Acquisition V3 Display](/en/platform-intro/workflows/data-acquisition#configure-the-data-acquisition-v3-display).
+In Data Acquisition V3, open **Card Display Settings → Sort Order**. With **Sort by Queue Position** off, click **Add sort rule**, select **Waiting on a previous step** and choose **At the bottom**. This rule comes before priority or date, but after **Running and on-hold orders** if you add that rule. **At the top** lets you review waiting orders first. Select **Save** to apply your choice. Follow [Configure the Data Acquisition V3 Display](/en/platform-intro/workflows/data-acquisition#configure-the-data-acquisition-v3-display).
 
 <a id="waiting-queue" />
 
 ## Can I put waiting orders last and keep the planned queue order?
 
-Yes. With **Sort by Queue Position** on in Data Acquisition V3, choose **Orders waiting on a previous step → At the bottom**. Running and on-hold orders stay on top, then work that can start, then waiting orders. The queue order stays the same within each group. **Keep in place** restores the usual queue display. Your choice is saved for your account and applies to the machine list and **Pool**. These options are not offered in Assignment Planner. See [Data Acquisition](/en/platform-intro/pages/data-acquisition).
+Yes. With **Sort by Queue Position** on in Data Acquisition V3, choose **Orders waiting on a previous step → At the bottom**. Waiting work appears after other orders. To bring running and on-hold work first as well, choose **Running and on-hold orders → At the top**. Select **Save**. The queue order stays the same within each group. **Keep in place** restores the usual queue display. Your choice is saved for your account and applies to the machine list and **Pool**. These options are not offered in Assignment Planner. See [Data Acquisition](/en/platform-intro/pages/data-acquisition).
 
 <a id="waiting-refresh" />
 
 ## Why is my order still marked as waiting after the previous step finished?
 
 Check whether another step with a lower number in the same work order is still unfinished. A step without an assignment also counts as unfinished. Earlier steps must be completed or cancelled. Once none remains unfinished, the next refresh moves the order into the group that can start. See [waiting orders in Data Acquisition](/en/platform-intro/pages/data-acquisition).
+
+<a id="priority-queue" />
+
+## How do I put one order before another without raising its operation priority?
+
+Enable **Sort by Queue Position** in Assignment Planner and drag the card to the place you want. It lands where you drop it, and everyone sees the saved queue order. Running and on-hold cards stay on top. To sort the whole queue at once, choose **Sort by priority and date** in the machine or hall-pool header, review the proposal, and choose **Apply order**. This button is available to administrators and users with access to the Orders page and the machine. Operators do not see it. Follow the [queue sorting steps](/en/platform-intro/workflows/assignment-planner#sort-a-queue-by-priority-and-date).
+
+<a id="queue-sort-access" />
+
+## Why can’t I see the button to sort by priority and date?
+
+The button appears only with **Sort by Queue Position** on. You need an administrator account or a user account with access to the Orders page, plus access to the machine. Operators do not see it. See [Assignment Planner](/en/platform-intro/pages/assignment-planner).
+
+<a id="queue-sort-undo" />
+
+## Can I undo a queue sort, and why did the proposal change?
+
+After applying, use **Undo** in the **New order applied** confirmation. If someone changes the queue while you review a proposal, it reloads for you to check again. If loading fails, retry before applying. If undo fails, the queue reloads; check its current order before adjusting it. Follow the [queue sorting steps](/en/platform-intro/workflows/assignment-planner#sort-a-queue-by-priority-and-date).
+
+<a id="queue-numbers" />
+
+## Why have the numbers on my Planner cards disappeared?
+
+Numbers show **Place in this queue** only in queue-position mode. Clear priority, operation priority and tag filters, restore the usual status selection, and clear search in the affected area. Numbers count active work and continue when you reveal more cards. Completed and cancelled cards have no number. Data Acquisition cards do not show them. See [queue position numbers](/en/platform-intro/pages/assignment-planner#read-queue-position-numbers).
+
+<a id="company-sorting" />
+
+## Who can set the sorting everyone starts with?
+
+Administrators can set the mode, rules, and **Moves** in Assignment Planner under **Filter & Sort**, then choose **Save as company default**. People without personal sorting start with it; existing personal choices take precedence. Data Acquisition uses the mode and shared rules, with separate choices for running and waiting work. Follow [Save or Use Company Sorting](/en/platform-intro/workflows/assignment-planner#save-or-use-company-sorting).
+
+<a id="sorting-default-updates" />
+
+## Why hasn’t my sorting changed with the company default?
+
+Your own saved sorting takes precedence. A reset also saves a personal copy of the current company choices; it does not follow later changes. Reset again to use the newer choices. In Data Acquisition, saving unrelated display changes keeps you following the default if you have no personal sorting. See [company sorting](/en/platform-intro/pages/assignment-planner#save-or-use-company-sorting).
+
+<a id="running-sort" />
+
+## Why are running orders no longer at the top in Data Acquisition?
+
+Previously, running and on-hold orders stayed on top automatically with **Sort by Queue Position** on. In Data Acquisition V3, they now keep their queue position by default with **Keep in place**. Open **Card Display Settings → Sort Order** and choose **Running and on-hold orders → At the top** to show them first. In Assignment Planner, running and on-hold cards still stay on top. With queue sorting off, add **Running and on-hold orders** as a rule and choose **At the top** or **At the bottom**. It comes before the waiting-order rule. Select **Save**. Follow the [display setup steps](/en/platform-intro/workflows/data-acquisition#configure-the-data-acquisition-v3-display).
+
+<a id="terminal-sorting-reset" />
+
+## How do I restore company sorting at the terminal?
+
+In Data Acquisition V3, open **Card Display Settings → Sort Order → Reset to company sorting**, then **Save**. A tick means the mode and rules already match, so the button is unavailable. Reset keeps the queue-mode choices for running and waiting orders but replaces sort rules; add any special running- or waiting-order rules again. Without a company default, the icon labelled **Reset to default (no company default set yet)** restores standard choices. See [Data Acquisition](/en/platform-intro/pages/data-acquisition#use-the-company-sorting-default).

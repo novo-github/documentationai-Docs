@@ -6,6 +6,44 @@ toc: false
 
 ## Releases
 
+<Update label="2026-10-22" description="v1.5.130" tags={["feature", "improvement", "fix"]}>
+  {/* commits: 89f08e1, ec6ed1e, fdfa386, 15a9ed5 */}
+
+  **Release date:** October 22, 2026
+
+  ### New Features
+
+  #### [Put Urgent Work First After Reviewing the Queue](/en/platform-intro/pages/assignment-planner)
+  {/* feature: planner-queue-sort */}
+
+  Administrators and users with access to the Orders page and the machine can now sort a machine queue or hall pool by priority and then the earliest planned operation start. Operators do not see this button. In Assignment Planner, enable **Sort by Queue Position** under **Filter & Sort**. In the queue header, choose **Sort by priority and date**. Choose **Order priority** or **Operation priority**, review the proposed positions, then select **Apply order**. Running and on-hold orders stay on top. Use **Undo** in the confirmation to restore the previous order.
+
+  Sorting happens when you apply it. You can still drag cards afterwards. Numbers at the bottom left show each card's place in the queue; they disappear when sorting rules, filters, or a search hide the full queue order. Follow [Plan Machine Assignments](/en/platform-intro/workflows/assignment-planner).
+
+  #### [Start with the Company’s Sorting Choices](/en/platform-intro/pages/assignment-planner)
+  {/* feature: planner-queue-sort */}
+
+  Administrators can now open **Filter & Sort** in Assignment Planner, set the sorting, and choose **Save as company default**. This saves the sort mode, rules, and **Moves** choice. People without their own sorting start with the company choices in Assignment Planner and Data Acquisition V3. Your existing personal sorting stays in place.
+
+  Use **Reset to company default** in the Planner to copy the current company choices. In Data Acquisition, open **Card Display Settings → Sort Order → Reset to company sorting**, then **Save**. A reset copies today's choices; later company changes do not replace that saved personal sorting. Data Acquisition's queue-mode choices for running and waiting orders stay unchanged. Follow the [company sorting steps](/en/platform-intro/workflows/assignment-planner#save-or-use-company-sorting).
+
+  ### Improvements
+
+  #### [Choose Where Running Orders Appear at the Terminal](/en/platform-intro/pages/data-acquisition)
+  {/* feature: planner-queue-sort */}
+
+  In Data Acquisition V3, open **Card Display Settings → Sort Order**. Previously, running and on-hold orders stayed on top automatically with **Sort by Queue Position** on. They now keep their queue position by default with **Keep in place**. To show them first, choose **Running and on-hold orders → At the top**. For example, you can bring an order that was started and is on hold for a tool change to the top. In Assignment Planner, running and on-hold cards still stay on top.
+
+  With queue sorting off, add **Running and on-hold orders** as a rule and choose **At the top** or **At the bottom**. This rule comes before the waiting-order rule and priority or date. Select **Save** to apply your choices. These options belong to your Data Acquisition display and are outside the company default. Follow [Configure the Data Acquisition V3 Display](/en/platform-intro/workflows/data-acquisition#configure-the-data-acquisition-v3-display).
+
+  ### Fixes
+
+  #### [Place Newly Assigned Work at the Start of the Queue](/en/platform-intro/pages/assignment-planner)
+  {/* feature: planner-queue-sort */}
+
+  With **Sort by Queue Position** off and **Moves: Start of Queue** selected, an unassigned operation you drop onto a machine or hall pool now lands at the start of that queue. Previously, it always landed at the end.
+</Update>
+
 <Update label="2026-10-21" description="v1.5.129" tags={["feature", "fix"]}>
   {/* commits: 98c2500, 8886058, b7b11af, beca903, 357b35f, 000961a, 49242d4, d4d61f6, 0fe8f27, a714482, 1c3847a, 8691c53, 5863d7e, 327c241, 9a71606, 40b2288, 848ed7a, 65a01bb, e5ef62b, 0e3bba2, 6a362dc, 0078efc */}
 

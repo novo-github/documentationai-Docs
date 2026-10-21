@@ -100,6 +100,32 @@ Die Sortierung nach Warteschlangenposition zeigt Zuweisungen in der Reihenfolge,
 
 Dieselben Sortiermöglichkeiten stehen in der [Betriebsdatenerfassung V3](/de/platform-intro/pages/data-acquisition) zur Verfügung. Die Prioritäten entsprechen den unternehmensweiten Stufen aus dem [Admin-Panel](/de/platform-intro/pages/admin-panel).
 
+### Eine Warteschlange nach Priorität und Datum sortieren
+
+Sie benötigen ein Administratorkonto oder ein Benutzerkonto mit Zugriff auf die Auftragsseite sowie Zugriff auf die Maschine. Operatoren sehen diese Schaltfläche nicht. Aktivieren Sie unter **Filtern & Sortieren** die Option **Nach Warteschlangenposition sortieren**. Im Kopf jeder Maschine und jedes Hallenpools erscheint dann **Nach Priorität und Datum sortieren**, sowohl in der Spalten- als auch in der Zeilenanordnung.
+
+**Warteschlange nach Priorität und Datum sortieren** öffnet eine Vorschau für diese Warteschlange. Beim Öffnen ist immer **Auftragspriorität** ausgewählt. Wählen Sie **Arbeitsgangpriorität**, um die Prioritäten einzelner Schritte zu verwenden. Höhere Werte kommen zuerst. Bei gleicher Priorität kommt der früheste geplante Operationsstart zuerst. Fehlende Prioritäten oder Termine stehen beim jeweiligen Vergleich zuletzt. Bei gleicher Priorität und gleichem Termin bleibt die bisherige Reihenfolge erhalten.
+
+Laufende Aufträge stehen zuerst, danach Aufträge in Wartestellung. Innerhalb beider Gruppen bleibt die bisherige Reihenfolge erhalten. Sie zeigen **Bleibt oben**. Die Vorschau zeigt vorgeschlagene Positionen, vorherige Positionen verschobener Aufträge, Prioritäten, geplante Starts und die Anzahl der Aufträge, die ihre Position ändern würden. Sie umfasst die aktive Warteschlange, auch Arbeit, die Ihre Filter ausblenden.
+
+Wählen Sie **Reihenfolge übernehmen**, um die gemeinsame Warteschlangenreihenfolge zu speichern. Wählen Sie **Abbrechen**, um sie unverändert zu lassen. **Neue Reihenfolge übernommen** bestätigt die Änderung und bietet **Rückgängig** an. Die Sortierung erfolgt einmalig. Danach können Sie die Reihenfolge durch Ziehen der Karten anpassen. Importierte Aufträge kommen weiterhin ans Ende der Warteschlange.
+
+Ändert sich die Warteschlange während der Prüfung, erscheint ein Hinweis und die Vorschau wird aktualisiert. Prüfen Sie diese vor dem Übernehmen erneut. Schlägt das Laden fehl, versuchen Sie es erneut. Das Übernehmen bleibt gesperrt, bis ein Vorschlag geladen ist. Auch ohne Positionsänderung ist es gesperrt. Schlägt das Rückgängigmachen fehl, wird die Warteschlange neu geladen. Prüfen Sie die aktuelle Reihenfolge vor einer weiteren Änderung. Folgen Sie den [Sortierschritten](/de/platform-intro/workflows/assignment-planner#eine-warteschlange-nach-priorität-und-datum-sortieren).
+
+### Positionsnummern lesen
+
+Die Zahl unten links auf einer Karte bedeutet **Position in dieser Warteschlange**. Die Nummern zählen aktive Zuweisungen je Maschine oder Hallenpool ab 1. Sie erscheinen in beiden Anordnungen und laufen beim Einblenden weiterer Karten weiter. Abgeschlossene und stornierte Arbeit erhält keine Nummer.
+
+Nummern erscheinen nur bei eingeschalteter Option **Nach Warteschlangenposition sortieren**, ohne Prioritäts-, Arbeitsgangprioritäts- oder Tag-Filter und mit der üblichen Statusauswahl. Eine Suche in Maschinen oder Pools blendet die Nummern im jeweiligen Bereich aus. Entfernen Sie die betreffende Suche und die Filter, um die Nummern wieder zu sehen. Karten in der Betriebsdatenerfassung zeigen diese Nummern nicht.
+
+### Firmensortierung speichern oder übernehmen
+
+Administratoren können unter **Filtern & Sortieren** den Sortiermodus, die Regeln und die Auswahl unter **Verschiebungen** einstellen. Wählen Sie dann **Als Firmenstandard speichern**. **Als Firmenstandard gespeichert** bestätigt die Änderung. Die Auswahl unter **Verschiebungen** bestimmt im Regelmodus, wo verschobene Aufträge landen. Im Warteschlangenmodus entscheidet weiterhin die Ablageposition.
+
+Personen ohne eigene gespeicherte Sortierung beginnen mit dem Firmenstandard. Eine persönliche Sortierung hat Vorrang. Die Betriebsdatenerfassung V3 übernimmt den Sortiermodus und die gemeinsamen Regeln. Ihre Optionen für laufende und wartende Aufträge bleiben getrennt davon.
+
+Mit **Auf Firmenstandard zurücksetzen** übernehmen Sie den aktuellen Firmenmodus, die Regeln und die Auswahl unter **Verschiebungen** in Ihre Planereinstellungen. Dadurch speichern Sie eine eigene Sortierung. Spätere Änderungen des Firmenstandards ersetzen sie nicht. Ohne Firmenstandard zeigt das Zurücksetzen **Auf Standard zurücksetzen (noch kein Firmenstandard festgelegt)** und stellt die Standardauswahl wieder her. Das Zurücksetzen am Terminal und den nötigen Speicherschritt finden Sie unter [Betriebsdatenerfassung](/de/platform-intro/pages/data-acquisition).
+
 ### Termine für die Sortierung wählen
 
 Karten können **Geplanter Operationsstart** und **Geplantes Operationsende** anzeigen. Diese Werte beschreiben das geplante Zeitfenster einer Operation. Damit sortieren Sie einzelne Schritte innerhalb eines Auftrags.
@@ -132,7 +158,7 @@ Nur **Unplanned / Ungeplant**, **Planned / Geplant** und **Released / Freigegebe
 
 Sie können höchstens 25 Maschinen gleichzeitig anzeigen, zusätzlich zu Hallenpools. Die Suche filtert nur den unter **Suchen in** gewählten Bereich. Status-, Prioritäts- und Tagfilter gelten für die Liste nicht zugewiesener Operationen und alle Warteschlangen. Der Importfilter begrenzt nur die Liste nicht zugewiesener Operationen auf einen ERP-Upload. Ändert sich die Warteschlange während Ihrer Sortierung, wird sie aktualisiert und Sie müssen erneut sortieren.
 
-Mit **Queue Position** bestimmt die Ablage die genaue Position; laufende und pausierte Karten bleiben oben. Ohne diese Option bestimmen Sortierregeln die Ansicht; **Moves** wählt Anfang oder Ende der Zielwarteschlange.
+Mit **Nach Warteschlangenposition sortieren** bestimmt die Ablage die genaue Position; laufende Karten und Karten in Wartestellung bleiben oben. Ohne diese Option bestimmen Sortierregeln die Ansicht. Die Auswahlliste **Verschiebungen** bietet **Anfang der Warteschlange** oder **Ende der Warteschlange**. Dies gilt auch für neu zugewiesene Operationen, die Sie aus der Liste nicht zugewiesener Arbeit auf eine Maschine oder einen Hallenpool ziehen.
 
 ## OP, AG, P, Seq, Qty und Auslastung lesen
 

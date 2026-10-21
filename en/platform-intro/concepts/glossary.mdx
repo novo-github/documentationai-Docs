@@ -209,6 +209,12 @@ How long an Automator condition must stay normal before an event can clear.
 
 [Learn more](/en/platform-intro/pages/automator).
 
+### Company Sorting Default
+
+The sorting chosen by an administrator through **Save as company default** in Assignment Planner. It includes the mode, shared rules, and the **Moves** choice for where moved orders land. People without their own sorting start with it. Data Acquisition uses the mode and shared rules only. A reset copies the current company choices into your own settings; later company changes do not replace them.
+
+[Learn more](/en/platform-intro/pages/assignment-planner).
+
 ### Concurrent order prompt
 
 Confirmation shown when starting an assignment while another is already running.
@@ -992,6 +998,12 @@ Raw machine-sensor signal over time, displayed below the timeline with resolutio
 
 [Learn more](/en/platform-intro/pages/machine-details).
 
+### Place in this queue
+
+**Place in this queue** explains the number at the bottom left of a Planner card. It counts active work in that machine or hall pool. Numbers appear in queue-position mode without priority, operation priority or tag filters, with the usual status selection and no search in that area. Data Acquisition cards do not show them.
+
+[Learn more](/en/platform-intro/pages/assignment-planner).
+
 ## Q
 
 ### Qty / Quantity / Menge
@@ -1010,7 +1022,7 @@ The dashboard tooltip states 95% and directs changes to an admin. Automatic repl
 
 ### Queue Position / Queue load
 
-Manual card sequence versus planned queue utilization. Running and on-hold cards stay at the top with Queue Position enabled.
+**Sort by Queue Position** shows the saved card sequence. Queue load describes the planned work in that queue. In Assignment Planner, running and on-hold cards stay on top. Data Acquisition V3 has separate choices for where these orders appear.
 
 [Learn more](/en/platform-intro/pages/assignment-planner).
 
@@ -1067,6 +1079,12 @@ Public Novo AI plan: Ideas, Planned, In progress, Released. Users can upvote ite
 The active shift is still in progress. Its end follows the machine's active shift settings.
 
 [Learn more](/en/platform-intro/pages/hall-plan).
+
+### Running and on-hold orders
+
+**Running and on-hold orders**: Orders in progress or on hold. Example: an order that was started and is on hold for a tool change. In Data Acquisition V3 queue sorting, choose **Keep in place** or **At the top**. As a sort rule, this group offers **At the top** or **At the bottom** and comes before the waiting-order rule.
+
+[Learn more](/en/platform-intro/pages/data-acquisition).
 
 ## S
 
@@ -1177,6 +1195,12 @@ Totals row in order analysis; Avg. or Ø is the averages row.
 Optional company inputs for the CO₂ estimate, including waste, renewable share, coolant, transport, and material efficiency.
 
 [Learn more](/en/platform-intro/pages/org-stats).
+
+### Stays on top
+
+**Stays on top** marks running and on-hold work in the priority-and-date preview. Running work comes first, then on-hold work. Each group keeps its current order while the other work is sorted.
+
+[Learn more](/en/platform-intro/pages/assignment-planner).
 
 ## T
 
@@ -1290,7 +1314,7 @@ Planned load of a machine queue, based on planned durations, not recorded produc
 
 ⚠️ **Waiting on a previous step** means a step with a lower number in the same work order is neither completed nor cancelled. An earlier step without an assignment also counts as unfinished. **Start anyway** remains available; review the dependency before using it.
 
-In Data Acquisition V3, the **Waiting on a previous step** sorting rule always comes first and offers **At the bottom** or **At the top**. With **Sort by Queue Position** on, **Orders waiting on a previous step** offers **Keep in place** or **At the bottom**, preserving queue order within each group. Both options are off until you choose them and are saved for your account.
+In Data Acquisition V3, the **Waiting on a previous step** sorting rule offers **At the bottom** or **At the top**. It comes before priority and date. If you also add **Running and on-hold orders**, that rule comes first. With **Sort by Queue Position** on, **Orders waiting on a previous step** offers **Keep in place** or **At the bottom**, preserving queue order within each group. Both options are off until you choose them and are saved for your account.
 
 [Learn more](/en/platform-intro/pages/data-acquisition).
 

@@ -125,6 +125,45 @@ In-progress and completed assignments cannot move to another column. You can sti
   </Step>
 </Steps>
 
+## Sort a Queue by Priority and Date
+
+You need access to the Planner and the machine, plus an administrator account or a user account with access to the Orders page. Operators cannot use this action. The machine or hall pool must already contain work.
+
+<Steps>
+  <Step title="Open the queue preview" icon="arrow-right" title-type="p">
+    Under **Filter & Sort**, enable **Sort by Queue Position**. In the machine or hall-pool header, choose **Sort by priority and date**. The preview covers the active queue, including cards hidden by filters.
+  </Step>
+  <Step title="Choose the priority and review" icon="arrow-right" title-type="p">
+    Each opening starts with **Order priority**. Choose **Operation priority** to use step priorities instead. Higher priorities come first, then earlier planned operation starts. Check proposed positions and the previous positions of moved work. Running orders stay first, followed by on-hold orders; **Stays on top** marks these groups.
+  </Step>
+  <Step title="Apply or leave the order unchanged" icon="arrow-right" title-type="p">
+    Choose **Apply order** to save the shared sequence. Choose **Cancel** to keep the existing order. If the queue changed during review, check the updated proposal before applying. If loading fails, retry; applying remains unavailable until loading succeeds. If no positions change, there is nothing to apply.
+  </Step>
+  <Step title="Check or undo the result" icon="arrow-right" title-type="p">
+    Check the queue after **New order applied**. Select **Undo** in that confirmation to restore the previous order. If undo fails, review the reloaded queue before adjusting it. You can still drag cards to change the sequence. New imports join the end; this action does not keep sorting automatically.
+  </Step>
+</Steps>
+
+With queue sorting on and no filters or relevant search, card numbers show the positions in each queue. Clear priority, operation priority and tag filters, restore the usual status selection, and clear search in that area if numbers are missing.
+
+## Save or Use Company Sorting
+
+You need an administrator account to save the company default. Other users with access to the relevant screen can reset their own sorting to it.
+
+<Steps>
+  <Step title="Set and save the company choices" icon="arrow-right" title-type="p">
+    As an administrator, open **Filter & Sort** in Assignment Planner. Set the mode, sort rules, and **Moves** choice, then select **Save as company default**. Wait for **Saved as company default**.
+  </Step>
+  <Step title="Use the default in the Planner" icon="arrow-right" title-type="p">
+    If you have no personal sorting, you start with the company default. To replace personal sorting, use **Reset to company default** in the sort section. It saves the current company mode, rules, and **Moves** choice as your own settings. Without a company default, **Reset to default (no company default set yet)** restores the standard choices.
+  </Step>
+  <Step title="Use the default at the terminal" icon="arrow-right" title-type="p">
+    In Data Acquisition V3, open **Card Display Settings → Sort Order → Reset to company sorting**, then **Save**. The button shows a tick and is unavailable when the sorting already matches. Without a company default, use **Reset to default (no company default set yet)**, then **Save**. Queue-mode choices for running and waiting orders remain unchanged; sort rules are replaced. Add any special running- or waiting-order rules again if needed. Follow the [display setup steps](/en/platform-intro/workflows/data-acquisition#configure-the-data-acquisition-v3-display).
+  </Step>
+</Steps>
+
+A saved personal choice or reset does not follow later company-default changes. Reset again when you want to copy newer company choices.
+
 ## Review Forecaster Warnings Before Changing the Plan
 
 <Steps>

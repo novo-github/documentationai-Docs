@@ -40,7 +40,18 @@ Wählen Sie zum Maschinenwechsel den Maschinennamen in der oberen Navigationslei
 
 Nutzen Sie die Ansicht offener Zuweisungen oder eine Zeitfensteransicht, um Arbeit für die aktuelle Maschine zu finden. Ist eine Operation noch ungeplant, können Sie sie direkt auf dieser Seite suchen und zuweisen. Operationsfolgenummern auf den Auftragsanzeigen helfen Ihnen, die Arbeitsreihenfolge zu erkennen. Operations- und Zuweisungsnotizen liefern Anweisungen und Kontext.
 
-In der Betriebsdatenerfassung V3 zeigt **Nach Warteschlangenposition sortieren** die durch Ziehen festgelegte Reihenfolge. Schalten Sie diese Option aus, um nach Regeln wie Priorität oder Datum zu sortieren. Für diese Regeln können Sie eine aufsteigende oder absteigende Richtung wählen. Die Regeln stehen in einer nummerierten Liste: Regel 1 entscheidet zuerst, spätere Regeln lösen Gleichstände auf. Um den Vorrang zu ändern, ändern Sie die Auswahl in der Liste einer Zeile, entfernen Sie eine Regel mit der roten Schaltfläche zum Entfernen oder ergänzen Sie mit **Sortierregel hinzufügen** eine Zeile. **Auf Standard zurücksetzen** stellt die Standardregeln wieder her. Diese allgemeinen Sortiermöglichkeiten stehen auch im [Zuweisungsplaner](/de/platform-intro/pages/assignment-planner) zur Verfügung.
+In der Betriebsdatenerfassung V3 zeigt **Nach Warteschlangenposition sortieren** die durch Ziehen festgelegte Reihenfolge. Schalten Sie diese Option aus, um nach Regeln wie Priorität oder Datum zu sortieren. Für diese Regeln können Sie eine aufsteigende oder absteigende Richtung wählen. Die Regeln stehen in einer nummerierten Liste: Regel 1 entscheidet zuerst, spätere Regeln lösen Gleichstände auf. Um den Vorrang zu ändern, ändern Sie die Auswahl in der Liste einer Zeile, entfernen Sie eine Regel mit der roten Schaltfläche zum Entfernen oder ergänzen Sie mit **Sortierregel hinzufügen** eine Zeile. Diese allgemeinen Sortiermöglichkeiten stehen auch im [Zuweisungsplaner](/de/platform-intro/pages/assignment-planner) zur Verfügung.
+
+### Position laufender Aufträge und Aufträge in Wartestellung wählen
+
+**Laufende Aufträge und Aufträge in Wartestellung**: Aufträge in Bearbeitung oder in Wartestellung. Beispiel: ein gestarteter Auftrag, der wegen eines Werkzeugwechsels in Wartestellung ist. Das unterscheidet sich von ⚠️ **Wartet auf einen vorherigen Schritt**: Dort ist ein früherer Schritt noch unfertig.
+
+Öffnen Sie über das Zahnradsymbol **Kartenanzeige-Einstellungen → Sortierreihenfolge**. Ihr Sortiermodus bestimmt die Auswahl:
+
+- Ist **Nach Warteschlangenposition sortieren** eingeschaltet, steht **Laufende Aufträge und Aufträge in Wartestellung** über der Auswahl für wartende Aufträge. Bisher blieben diese Aufträge automatisch oben. Jetzt behalten sie mit der Voreinstellung **Position beibehalten** ihren Platz in der Warteschlange. Wählen Sie **Laufende Aufträge und Aufträge in Wartestellung → Ganz oben**, um sie vor anderen Aufträgen anzuzeigen. Im Zuweisungsplaner bleiben laufende Aufträge und Aufträge in Wartestellung weiterhin oben.
+- Ist **Nach Warteschlangenposition sortieren** ausgeschaltet, nutzen Sie **Sortierregel hinzufügen** und wählen **Laufende Aufträge und Aufträge in Wartestellung**. Wählen Sie **Ganz oben** oder **Ganz unten**. Diese Regel bleibt an erster Stelle. Danach folgt die Regel für wartende Aufträge, falls Sie sie hinzufügen, und anschließend folgen Prioritäts- und Datumsregeln.
+
+Wählen Sie **Speichern**, um die Anzeige für die Auftragsliste der Maschine und den **Pool** zu übernehmen. Diese Auswahl ist vom Firmenstandard für die Sortierung getrennt. Folgen Sie den [Schritten zur Darstellung](/de/platform-intro/workflows/data-acquisition#die-darstellung-der-betriebsdatenerfassung-v3-einstellen).
 
 ### Wartende Aufträge hinter startbereiter Arbeit anzeigen
 
@@ -48,12 +59,20 @@ Aufträge mit ⚠️ **Wartet auf einen vorherigen Schritt** haben einen früher
 
 Öffnen Sie über das Zahnradsymbol in der oberen Leiste **Kartenanzeige-Einstellungen → Sortierreihenfolge**. Wählen Sie die Option für Ihre Sortierart:
 
-- Ist **Nach Warteschlangenposition sortieren** ausgeschaltet, klicken Sie auf **Sortierregel hinzufügen**. Eine neue nummerierte Regelzeile erscheint. Wählen Sie in der Liste dieser Zeile **Wartet auf einen vorherigen Schritt**. Statt des Auf-/Abwärtspfeils hat diese Regel eine Schaltfläche, die zunächst **Ganz unten** zeigt. Damit erscheinen wartende Aufträge hinter anderer Arbeit. Klicken Sie darauf, um zu **Ganz oben** zu wechseln und wartende Aufträge zuerst zu prüfen. Diese Regel steht immer an erster Stelle. Ihre übrigen Regeln sortieren die Arbeit innerhalb jeder Gruppe.
-- Ist **Nach Warteschlangenposition sortieren** eingeschaltet, nutzen Sie **Aufträge, die auf einen vorherigen Schritt warten**. **Position beibehalten** behält die gewohnte Warteschlangenansicht bei. Mit **Ganz unten** bleiben laufende Aufträge und Aufträge in Wartestellung oben. Danach folgt startbereite Arbeit, zuletzt wartende Aufträge. Die im Zuweisungsplaner festgelegte Reihenfolge bleibt innerhalb jeder Gruppe erhalten.
+- Ist **Nach Warteschlangenposition sortieren** ausgeschaltet, klicken Sie auf **Sortierregel hinzufügen**. Eine neue nummerierte Regelzeile erscheint. Wählen Sie in der Liste dieser Zeile **Wartet auf einen vorherigen Schritt**. Statt des Auf-/Abwärtspfeils hat diese Regel eine Schaltfläche, die zunächst **Ganz unten** zeigt. Damit erscheinen wartende Aufträge hinter anderer Arbeit. Klicken Sie darauf, um zu **Ganz oben** zu wechseln und wartende Aufträge zuerst zu prüfen. Diese Regel steht vor Priorität und Datum, aber nach **Laufende Aufträge und Aufträge in Wartestellung**, wenn diese Regel vorhanden ist. Ihre übrigen Regeln sortieren die Arbeit innerhalb jeder Gruppe.
+- Ist **Nach Warteschlangenposition sortieren** eingeschaltet, nutzen Sie **Aufträge, die auf einen vorherigen Schritt warten**. **Position beibehalten** behält die gewohnte Warteschlangenansicht bei. **Ganz unten** zeigt wartende Arbeit hinter anderen Aufträgen. Mit der getrennten Auswahl **Laufende Aufträge und Aufträge in Wartestellung** können Sie aktive Arbeit nach oben holen. Die im Zuweisungsplaner festgelegte Reihenfolge bleibt innerhalb jeder Gruppe erhalten.
 
-Erst wenn Sie eine dieser Optionen wählen, wird wartende Arbeit entsprechend einsortiert. Ihre Auswahl wird für Ihr Konto gespeichert und gilt für die Auftragsliste der Maschine und den Tab **Pool**. Diese Optionen für wartende Aufträge gibt es nur in der Betriebsdatenerfassung V3, nicht im Zuweisungsplaner.
+Wählen Sie **Speichern**, um Ihre Auswahl zu übernehmen. Erst wenn Sie eine dieser Optionen wählen, wird wartende Arbeit entsprechend einsortiert. Ihre Auswahl wird für Ihr Konto gespeichert und gilt für die Auftragsliste der Maschine und den Tab **Pool**. Diese Optionen für wartende Aufträge gibt es nur in der Betriebsdatenerfassung V3, nicht im Zuweisungsplaner.
 
 Sobald kein früherer Schritt mehr unfertig ist, erscheint der Auftrag bei der nächsten Aktualisierung in der startbereiten Gruppe. Folgen Sie [Die Darstellung der Betriebsdatenerfassung V3 einstellen](/de/platform-intro/workflows/data-acquisition#die-darstellung-der-betriebsdatenerfassung-v3-einstellen).
+
+### Den Firmenstandard für die Sortierung nutzen
+
+Wenn Sie keine persönliche Sortierung für die Betriebsdatenerfassung V3 gespeichert haben, beginnt sie mit dem Sortiermodus und den gemeinsamen Regeln des Unternehmens. Administratoren legen diese im [Zuweisungsplaner](/de/platform-intro/pages/assignment-planner) fest. Speichern Sie andere Anzeigeänderungen, folgen Sie weiterhin diesem Standard.
+
+Bei vorhandenem Firmenstandard heißt die Schaltfläche **Auf Firmensortierung zurücksetzen**. Öffnen Sie **Kartenanzeige-Einstellungen → Sortierreihenfolge → Auf Firmensortierung zurücksetzen**, um die aktuellen Firmenvorgaben zu übernehmen. Entspricht Ihre Auswahl bereits diesen Vorgaben, zeigt die Schaltfläche einen Haken und ist gesperrt. Andernfalls setzt sie die Auswahl in den geöffneten Einstellungen zurück. Wählen Sie **Speichern**, um sie anzuwenden. Ohne Firmenstandard stellt das Symbol **Auf Standard zurücksetzen (noch kein Firmenstandard festgelegt)** die Standardauswahl wieder her.
+
+Das Zurücksetzen behält die Auswahl für laufende und wartende Aufträge im Warteschlangenmodus bei. Es ersetzt die Sortierregeln. Fügen Sie benötigte Regeln für laufende oder wartende Aufträge deshalb erneut hinzu. Diese besonderen Regeln gehören nicht zum Firmenstandard. Sobald Sie eine eigene Sortierung oder ein Zurücksetzen speichern, ersetzen spätere Firmenänderungen diese Auswahl nicht.
 
 ## Intervallzeiten und Zeitleistendarstellung
 
@@ -128,7 +147,7 @@ Ungebundene oder unbeschriftete Maschinenzeit gehört zu keinem Auftrag. Die Lö
 | **Time Window + Open** | Offene Zuweisungen innerhalb ±1/3/5/7 Tagen; für tägliche Arbeit. |
 | **Time Window + All Statuses** | Auch abgeschlossene und stornierte Arbeit für Rückblicke. |
 
-**Card Display Settings / Columns / Highlight** werden je Benutzer gespeichert. Queue Position folgt der manuellen Reihenfolge; laufende und pausierte Karten bleiben oben.
+**Card Display Settings / Columns / Highlight** werden je Benutzer gespeichert. **Nach Warteschlangenposition sortieren** folgt der geplanten Warteschlange. Wählen Sie unter **Sortierreihenfolge**, wo laufende und wartende Aufträge erscheinen.
 
 ## Unterstützte Intervallzeiten prüfen
 

@@ -120,13 +120,19 @@ You need access to the machine's Data Acquisition V3 page, or access to the orde
     Use the gear icon in the top bar to open **Card Display Settings → Sort Order**. Enable **Sort by Queue Position** to display the order set by dragging assignments, or turn it off to choose sorting rules.
   </Step>
   <Step title="Set the order of sorting rules" icon="arrow-right" title-type="p">
-    Choose a rule such as priority or date and choose ascending or descending order. The rules form a numbered list: rule 1 decides first, and later rules break ties. To change their precedence, change the selection in a line’s list, remove a rule with the red remove button, or add a line with **Add sort rule**. **Reset to default** restores the default rules.
+    Choose a rule such as priority or date and choose ascending or descending order. The rules form a numbered list: rule 1 decides first, and later rules break ties. To change their precedence, change the selection in a line’s list, remove a rule with the red remove button, or add a line with **Add sort rule**.
   </Step>
-  <Step title="Choose where waiting orders appear" icon="arrow-right" title-type="p">
-    With **Sort by Queue Position** off, click **Add sort rule**. A new numbered rule line appears. Select **Waiting on a previous step** in that line’s list. Instead of the up/down arrow, this rule has a button that starts at **At the bottom**, placing waiting orders after other work. Click it to switch to **At the top** and review waiting orders first. This rule always takes first place. Your remaining rules sort work within each group. With **Sort by Queue Position** on, choose **Orders waiting on a previous step → At the bottom**. Running and on-hold orders stay on top, followed by work that can start and then waiting work. Queue order stays the same within each group. Choose **Keep in place** to keep the usual queue display.
+  <Step title="Choose where running work appears" icon="arrow-right" title-type="p">
+    With **Sort by Queue Position** on, choose **Running and on-hold orders → Keep in place** to follow the saved queue, or **At the top** to bring active work first. With queue sorting off, use **Add sort rule**, select **Running and on-hold orders**, and choose **At the top** or **At the bottom**. This rule stays first.
   </Step>
-  <Step title="Check the machine list and pool" icon="arrow-right" title-type="p">
-    Your waiting-order choice applies to the machine's order list and **Pool** and is saved for your account. Both options are off until you choose them. Once no earlier step remains unfinished, the order joins work that can start at the next refresh. These options are not offered in Assignment Planner.
+  <Step title="Choose where waiting work appears" icon="arrow-right" title-type="p">
+    Orders marked ⚠️ wait for an earlier step. With queue sorting on, choose **Orders waiting on a previous step → At the bottom** to put them after other work, or **Keep in place** to keep their queue placement. With queue sorting off, add **Waiting on a previous step** and choose **At the bottom** or **At the top**. It comes after the running-order rule, if present, and before priority or date.
+  </Step>
+  <Step title="Copy company sorting when needed" icon="arrow-right" title-type="p">
+    To use the company choices, select **Reset to company sorting**. A tick means the mode and rules already match and the button is unavailable. With no company default, use **Reset to default (no company default set yet)** for standard choices. Reset replaces rules, so add any running- or waiting-order rules again afterwards. It keeps your queue-mode choices for these groups.
+  </Step>
+  <Step title="Save and check the machine list and pool" icon="arrow-right" title-type="p">
+    Select **Save**. Check the machine list and **Pool**. The running-order choice starts at **Keep in place**; waiting work is only moved when you choose it. Once earlier steps finish, waiting work joins work that can start at the next refresh. These display choices are saved for your account. Saving other display changes keeps you following the company sorting; saving your own sorting or a reset keeps those values even if the company default changes later.
   </Step>
 </Steps>
 

@@ -40,7 +40,18 @@ To switch machines, select the machine name in the top navigation bar. The dropd
 
 Use open-assignment or time-window views to find the work for the current machine. If an operation has not been planned, you can search for it and assign it directly from this page. Operation sequence numbers on job chips help identify the order of work, and operation and assignment notes provide instructions and context.
 
-In Data Acquisition V3, **Sort by Queue Position** displays the order set by dragging assignments. Turn it off to display work by rules such as priority or date. For these rules, choose ascending or descending order. The rules form a numbered list: rule 1 decides first, and later rules break ties. To change their precedence, change the selection in a line’s list, remove a rule with the red remove button, or add a line with **Add sort rule**. **Reset to default** restores the default rules. These general sorting choices are also available in the [Assignment Planner](/en/platform-intro/pages/assignment-planner).
+In Data Acquisition V3, **Sort by Queue Position** displays the order set by dragging assignments. Turn it off to display work by rules such as priority or date. For these rules, choose ascending or descending order. The rules form a numbered list: rule 1 decides first, and later rules break ties. To change their precedence, change the selection in a line’s list, remove a rule with the red remove button, or add a line with **Add sort rule**. These general sorting choices are also available in the [Assignment Planner](/en/platform-intro/pages/assignment-planner).
+
+### Choose Where Running and On-Hold Orders Appear
+
+**Running and on-hold orders**: Orders in progress or on hold. Example: an order that was started and is on hold for a tool change. This differs from ⚠️ **Waiting on a previous step**, where an earlier step is unfinished.
+
+Open **Card Display Settings → Sort Order** using the gear icon. Your sorting mode determines the choices:
+
+- With **Sort by Queue Position** on, **Running and on-hold orders** appears above the waiting-order choice. Previously, these orders stayed on top automatically. They now keep their place in the queue by default with **Keep in place**. Choose **Running and on-hold orders → At the top** to bring them above other orders. In Assignment Planner, running and on-hold cards still stay on top.
+- With **Sort by Queue Position** off, use **Add sort rule** and select **Running and on-hold orders**. Choose **At the top** or **At the bottom**. This rule stays first. The waiting-order rule comes next if you add it, followed by priority and date rules.
+
+Select **Save** to apply the display choices to the machine's order list and **Pool**. These choices are separate from the company sorting default. Follow the [display setup steps](/en/platform-intro/workflows/data-acquisition#configure-the-data-acquisition-v3-display).
 
 ### Put Waiting Orders After Work That Can Start
 
@@ -48,12 +59,20 @@ Orders marked ⚠️ **Waiting on a previous step** have an earlier step in the 
 
 Use the gear icon in the top bar to open **Card Display Settings → Sort Order**. Choose the option for your sorting mode:
 
-- With **Sort by Queue Position** off, click **Add sort rule**. A new numbered rule line appears. Select **Waiting on a previous step** in that line’s list. Instead of the up/down arrow, this rule has a button that starts at **At the bottom**, placing waiting orders after other work. Click it to switch to **At the top** and review waiting orders first. This rule always takes first place. Your remaining rules sort work within each group.
-- With **Sort by Queue Position** on, use **Orders waiting on a previous step**. **Keep in place** keeps the usual queue display. **At the bottom** keeps running and on-hold orders on top, then shows work that can start, followed by waiting orders. The queue order set in Assignment Planner stays the same within each group.
+- With **Sort by Queue Position** off, click **Add sort rule**. A new numbered rule line appears. Select **Waiting on a previous step** in that line’s list. Instead of the up/down arrow, this rule has a button that starts at **At the bottom**, placing waiting orders after other work. Click it to switch to **At the top** and review waiting orders first. This rule comes before priority and date, but after **Running and on-hold orders** when that rule is present. Your remaining rules sort work within each group.
+- With **Sort by Queue Position** on, use **Orders waiting on a previous step**. **Keep in place** keeps the usual queue display. **At the bottom** places waiting work after other orders. Use the separate **Running and on-hold orders** choice to bring active work to the top. The queue order set in Assignment Planner stays the same within each group.
 
-Neither option moves waiting work until you choose it. Your choice is saved for your account and applies to the machine's order list and the **Pool** tab. These waiting-order options are only available in Data Acquisition V3, not in Assignment Planner.
+Select **Save** to apply your choice. Neither option moves waiting work until you choose it. Your choice is saved for your account and applies to the machine's order list and the **Pool** tab. These waiting-order options are only available in Data Acquisition V3, not in Assignment Planner.
 
 Once no earlier step remains unfinished, the next refresh places the order in the group that can start. Follow [Configure the Data Acquisition V3 Display](/en/platform-intro/workflows/data-acquisition#configure-the-data-acquisition-v3-display).
+
+### Use the Company Sorting Default
+
+If you have no personal sorting saved for Data Acquisition V3, it starts with the company's sort mode and shared rules. Administrators set these in [Assignment Planner](/en/platform-intro/pages/assignment-planner). Saving unrelated display changes keeps you following that default.
+
+When a company default exists, the reset control is labelled **Reset to company sorting**. Open **Card Display Settings → Sort Order → Reset to company sorting** to copy the current company choices. When your choices already match, the button shows a tick and is unavailable. Otherwise, it resets the choices in the open settings; select **Save** to apply them. With no company default, the icon labelled **Reset to default (no company default set yet)** restores the standard choices.
+
+Resetting keeps the queue-mode choices for running and waiting orders. It replaces the sort rules, so add any running- or waiting-order rules you need again. These special rules are not part of the company default. Once you save your own sorting or a reset, later company changes do not replace it.
 
 ## Interval Times and Timeline Display
 
@@ -128,7 +147,7 @@ Unbound or unlabeled machine time belongs to no order. Deleting a recorded inter
 | **Time Window + Open** | Open assignments in a ±1/3/5/7-day window; useful for daily work. |
 | **Time Window + All Statuses** | Includes completed and cancelled work for looking back. |
 
-**Card Display Settings / Columns / Highlight** are saved per user. Queue Position follows manual order; running and on-hold cards remain at the top.
+**Card Display Settings / Columns / Highlight** are saved per user. **Sort by Queue Position** follows the planned queue. Choose where running and waiting orders appear under **Sort Order**.
 
 ## Check Assisted Interval Times
 

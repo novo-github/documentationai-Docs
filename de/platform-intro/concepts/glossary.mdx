@@ -209,6 +209,12 @@ Dauer, während der eine Automator-Bedingung normal bleiben muss, bevor ein Erei
 
 [Mehr erfahren](/de/platform-intro/pages/automator).
 
+### Firmenstandard für die Sortierung
+
+Die von einem Administrator über **Als Firmenstandard speichern** im Zuweisungsplaner gewählte Sortierung. Sie umfasst Modus, gemeinsame Regeln und die Auswahl unter **Verschiebungen**. Personen ohne eigene Sortierung beginnen damit. Die Betriebsdatenerfassung nutzt nur Modus und gemeinsame Regeln. Ein Zurücksetzen übernimmt die aktuellen Firmenvorgaben in Ihre eigenen Einstellungen. Spätere Firmenänderungen ersetzen diese nicht.
+
+[Mehr erfahren](/de/platform-intro/pages/assignment-planner).
+
 ### Concurrent order prompt
 
 Bestätigung beim Starten einer Zuweisung, während eine andere bereits läuft.
@@ -992,6 +998,12 @@ Rohsignal des Maschinensensors über die Zeit unter der Zeitleiste, mit Auflösu
 
 [Mehr erfahren](/de/platform-intro/pages/machine-details).
 
+### Position in dieser Warteschlange
+
+**Position in dieser Warteschlange** erklärt die Zahl unten links auf einer Planungskarte. Sie zählt aktive Arbeit auf dieser Maschine oder in diesem Hallenpool. Die Nummern erscheinen im Warteschlangenmodus ohne Prioritäts-, Arbeitsgangprioritäts- oder Tag-Filter, mit der üblichen Statusauswahl und ohne Suche in diesem Bereich. Karten der Betriebsdatenerfassung zeigen sie nicht.
+
+[Mehr erfahren](/de/platform-intro/pages/assignment-planner).
+
 ## Q
 
 ### Qty / Quantity / Menge
@@ -1010,7 +1022,7 @@ Der Dashboard-Tooltip nennt 95 % und verweist für Änderungen auf einen Admin. 
 
 ### Queue Position / Queue load
 
-Manuelle Kartenreihenfolge gegenüber geplanter Warteschlangenauslastung. Laufende und pausierte Karten bleiben bei aktiver Queue Position oben.
+**Nach Warteschlangenposition sortieren** zeigt die gespeicherte Kartenreihenfolge. Die Warteschlangenauslastung beschreibt die darin geplante Arbeit. Im Zuweisungsplaner bleiben laufende Aufträge und Aufträge in Wartestellung oben. In der Betriebsdatenerfassung V3 gibt es eine getrennte Auswahl für deren Position.
 
 [Mehr erfahren](/de/platform-intro/pages/assignment-planner).
 
@@ -1067,6 +1079,12 @@ Nacharbeitsmenge. Ohne bestätigte Regel nicht als Zusatz zur Kartengesamtmenge 
 Die aktive Schicht läuft noch. Ihr Ende richtet sich nach den Einstellungen für aktive Schichten an der Maschine.
 
 [Mehr erfahren](/de/platform-intro/pages/hall-plan).
+
+### Laufende Aufträge und Aufträge in Wartestellung
+
+**Laufende Aufträge und Aufträge in Wartestellung**: Aufträge in Bearbeitung oder in Wartestellung. Beispiel: ein gestarteter Auftrag, der wegen eines Werkzeugwechsels in Wartestellung ist. In der Warteschlangensortierung der Betriebsdatenerfassung V3 wählen Sie **Position beibehalten** oder **Ganz oben**. Als Sortierregel bietet diese Gruppe **Ganz oben** oder **Ganz unten** und steht vor der Regel für wartende Aufträge.
+
+[Mehr erfahren](/de/platform-intro/pages/data-acquisition).
 
 ## S
 
@@ -1177,6 +1195,12 @@ Summenzeile in der Auftragsanalyse; Avg. oder Ø bezeichnet die Durchschnittszei
 Optionale Unternehmensdaten für die CO₂-Schätzung, etwa Abfall, erneuerbarer Anteil, Kühlmittel, Transport und Materialeffizienz.
 
 [Mehr erfahren](/de/platform-intro/pages/org-stats).
+
+### Bleibt oben
+
+**Bleibt oben** kennzeichnet laufende Arbeit und Arbeit in Wartestellung in der Vorschau zur Sortierung nach Priorität und Datum. Laufende Arbeit kommt zuerst, danach Arbeit in Wartestellung. Innerhalb beider Gruppen bleibt die bisherige Reihenfolge erhalten, während die übrige Arbeit sortiert wird.
+
+[Mehr erfahren](/de/platform-intro/pages/assignment-planner).
 
 ## T
 
@@ -1290,7 +1314,7 @@ Geplante Belastung einer Maschinenwarteschlange anhand geplanter Zeiten, nicht e
 
 ⚠️ **Wartet auf einen vorherigen Schritt** bedeutet: Ein Schritt mit niedrigerer Nummer im selben Arbeitsauftrag ist weder abgeschlossen noch storniert. Ein früherer Schritt ohne Zuweisung zählt ebenfalls als unfertig. **Trotzdem starten** bleibt verfügbar. Prüfen Sie vorher die Abhängigkeit.
 
-In der Betriebsdatenerfassung V3 steht die Sortierregel **Wartet auf einen vorherigen Schritt** immer an erster Stelle und bietet **Ganz unten** oder **Ganz oben**. Ist **Nach Warteschlangenposition sortieren** eingeschaltet, bietet **Aufträge, die auf einen vorherigen Schritt warten** die Auswahl **Position beibehalten** oder **Ganz unten**. Innerhalb jeder Gruppe bleibt die Reihenfolge der Warteschlange erhalten. Beide Optionen sind zunächst ausgeschaltet. Ihre Auswahl wird für Ihr Konto gespeichert.
+In der Betriebsdatenerfassung V3 bietet die Sortierregel **Wartet auf einen vorherigen Schritt** die Auswahl **Ganz unten** oder **Ganz oben**. Sie steht vor Priorität und Datum. Ergänzen Sie auch **Laufende Aufträge und Aufträge in Wartestellung**, steht diese Regel zuerst. Ist **Nach Warteschlangenposition sortieren** eingeschaltet, bietet **Aufträge, die auf einen vorherigen Schritt warten** die Auswahl **Position beibehalten** oder **Ganz unten**. Innerhalb jeder Gruppe bleibt die Reihenfolge der Warteschlange erhalten. Beide Optionen sind zunächst ausgeschaltet. Ihre Auswahl wird für Ihr Konto gespeichert.
 
 [Mehr erfahren](/de/platform-intro/pages/data-acquisition).
 

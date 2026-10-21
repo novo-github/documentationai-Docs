@@ -100,6 +100,32 @@ Each priority filter accepts several values. Type a number to find a value that 
 
 The same sorting choices are available in [Data Acquisition V3](/en/platform-intro/pages/data-acquisition). Priority values follow the company levels configured in the [Admin Panel](/en/platform-intro/pages/admin-panel).
 
+### Sort a Queue by Priority and Date
+
+You need an administrator account, or a user account with access to the Orders page, plus access to the machine. Operators do not see this button. Under **Filter & Sort**, enable **Sort by Queue Position**. Each machine and hall-pool header then offers **Sort by priority and date**, in both column and row layouts.
+
+**Sort queue by priority and date** opens a preview for that queue. Each opening starts with **Order priority**; choose **Operation priority** if you want to use the priorities of individual steps. Higher values come first. For equal priorities, the earliest planned operation start comes first. Missing priorities or dates come last in their comparison. Equal priority and date keep the current order.
+
+Running orders stay first, followed by on-hold orders. Each group keeps its current order and shows **Stays on top**. The preview shows proposed positions, previous positions for moved orders, priorities, planned starts, and how many orders would change place. It covers the active queue, including work hidden by your filters.
+
+Choose **Apply order** to save the shared queue order, or choose **Cancel** to leave it unchanged. **New order applied** confirms the change and offers **Undo**. This is a one-time sorting action; you can adjust the order by dragging cards afterwards. Imported orders still join the end of the queue.
+
+If the queue changed during review, a notice appears and the preview updates. Review it again before applying. If loading fails, retry; applying stays unavailable until a proposal loads. Applying is also unavailable when nothing would change. If undo fails, the queue reloads; check its current order before making another change. Follow the [queue sorting steps](/en/platform-intro/workflows/assignment-planner#sort-a-queue-by-priority-and-date).
+
+### Read Queue Position Numbers
+
+The number at the bottom left of a card means **Place in this queue**. Numbers count active assignments in each machine or hall pool, starting at 1. They work in both layouts and continue when you reveal more cards. Completed and cancelled work has no number.
+
+Numbers appear only with **Sort by Queue Position** on, no priority, operation priority or tag filters, and the usual status selection. A search covering machines or pools hides numbers in that area. Clear the relevant search and filters to see them again. Data Acquisition cards do not show these numbers.
+
+### Save or Use Company Sorting
+
+Administrators can set the sort mode, rules, and **Moves** choice under **Filter & Sort**, then select **Save as company default**. **Saved as company default** confirms the change. The **Moves** choice controls where moved orders land in rule mode; in queue mode, the drop position still decides.
+
+People without their own saved sorting start with the company default. Personal sorting takes precedence. Data Acquisition V3 uses the company's sort mode and shared rules; its running- and waiting-order options are separate.
+
+Choose **Reset to company default** to copy the current company mode, rules, and **Moves** choice into your Planner settings. This saves your own sorting, so later changes to the company default do not replace it. Without a company default, the reset shows **Reset to default (no company default set yet)** and restores the standard choices. For the terminal's reset and required save step, see [Data Acquisition](/en/platform-intro/pages/data-acquisition).
+
 ### Choose the Date for Sorting
 
 Cards can show **Operation Planned Start** and **Operation Planned End**. These describe one operation's planned window. Use them to sequence individual steps within an order.
@@ -132,7 +158,7 @@ Only **Unplanned**, **Planned**, and **Released** assignments can move to anothe
 
 At most 25 machines can be shown at once, plus hall pools. Search only filters the area chosen under **Search in**. Status, priority, and tag filters apply to the unassigned list and all queues. The import filter narrows only the unassigned list to one ERP upload. If the queue changes while you reorder, it refreshes and you must redo the reorder.
 
-With **Queue Position** on, dropping a card sets its exact position; running and on-hold cards stay at the top. With it off, sort-rule precedence controls the view, and the **Moves** dropdown selects the destination's start or end.
+With **Queue Position** on, dropping a card sets its exact position; running and on-hold cards stay at the top. With it off, sort-rule precedence controls the view, and the **Moves** dropdown offers **Start of Queue** or **End of Queue**. This also applies to newly assigned operations dropped from the unassigned list onto a machine or hall pool.
 
 ## Read OP, AG, P, Seq, Qty, and Utilization
 

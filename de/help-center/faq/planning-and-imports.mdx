@@ -43,6 +43,14 @@ description: "Antworten zu Arbeitsgangprioritäten, Planungsterminen, Gruppierun
 | Wie verschiebe ich Aufträge, die noch nicht starten können, nach unten? | [Antwort](/de/help-center/faq/planning-and-imports#waiting-sort) |
 | Kann ich wartende Aufträge unten anzeigen und die geplante Reihenfolge behalten? | [Antwort](/de/help-center/faq/planning-and-imports#waiting-queue) |
 | Warum wartet mein Auftrag noch, obwohl der vorherige Schritt fertig ist? | [Antwort](/de/help-center/faq/planning-and-imports#waiting-refresh) |
+| Wie setze ich einen Auftrag vor einen anderen, ohne seine Arbeitsgangpriorität zu erhöhen? | [Antwort](/de/help-center/faq/planning-and-imports#priority-queue) |
+| Warum sehe ich die Schaltfläche zum Sortieren nach Priorität und Datum nicht? | [Antwort](/de/help-center/faq/planning-and-imports#queue-sort-access) |
+| Kann ich eine Sortierung rückgängig machen und warum ändert sich der Vorschlag? | [Antwort](/de/help-center/faq/planning-and-imports#queue-sort-undo) |
+| Warum sind die Nummern auf meinen Planungskarten verschwunden? | [Antwort](/de/help-center/faq/planning-and-imports#queue-numbers) |
+| Wer kann die Sortierung festlegen, mit der alle beginnen? | [Antwort](/de/help-center/faq/planning-and-imports#company-sorting) |
+| Warum hat sich meine Sortierung trotz geändertem Firmenstandard nicht geändert? | [Antwort](/de/help-center/faq/planning-and-imports#sorting-default-updates) |
+| Warum stehen laufende Aufträge in der Betriebsdatenerfassung nicht mehr ganz oben? | [Antwort](/de/help-center/faq/planning-and-imports#running-sort) |
+| Wie stelle ich am Terminal die Firmensortierung wieder her? | [Antwort](/de/help-center/faq/planning-and-imports#terminal-sorting-reset) |
 
 <a id="operation-priority" />
 
@@ -260,16 +268,64 @@ Ein Hallenpool lädt bis zu 500 Zuweisungen, eine Maschinenwarteschlange bis zu 
 
 ## Wie verschiebe ich Aufträge, die noch nicht starten können, nach unten?
 
-Öffnen Sie in der Betriebsdatenerfassung V3 **Kartenanzeige-Einstellungen → Sortierreihenfolge**. Schalten Sie **Nach Warteschlangenposition sortieren** aus. Klicken Sie auf **Sortierregel hinzufügen**, wählen Sie **Wartet auf einen vorherigen Schritt** und dann **Ganz unten**. Diese Regel steht immer vor Priorität oder Datum. Mit **Ganz oben** prüfen Sie wartende Aufträge zuerst. Erst Ihre Auswahl ändert die Anzeige. Folgen Sie [Die Darstellung der Betriebsdatenerfassung V3 einstellen](/de/platform-intro/workflows/data-acquisition#die-darstellung-der-betriebsdatenerfassung-v3-einstellen).
+Öffnen Sie in der Betriebsdatenerfassung V3 **Kartenanzeige-Einstellungen → Sortierreihenfolge**. Schalten Sie **Nach Warteschlangenposition sortieren** aus. Klicken Sie auf **Sortierregel hinzufügen**, wählen Sie **Wartet auf einen vorherigen Schritt** und dann **Ganz unten**. Diese Regel steht vor Priorität oder Datum, aber nach **Laufende Aufträge und Aufträge in Wartestellung**, wenn Sie diese Regel ergänzen. Mit **Ganz oben** prüfen Sie wartende Aufträge zuerst. Wählen Sie **Speichern**, um Ihre Auswahl zu übernehmen. Folgen Sie [Die Darstellung der Betriebsdatenerfassung V3 einstellen](/de/platform-intro/workflows/data-acquisition#die-darstellung-der-betriebsdatenerfassung-v3-einstellen).
 
 <a id="waiting-queue" />
 
 ## Kann ich wartende Aufträge unten anzeigen und die geplante Reihenfolge behalten?
 
-Ja. Ist **Nach Warteschlangenposition sortieren** in der Betriebsdatenerfassung V3 eingeschaltet, wählen Sie **Aufträge, die auf einen vorherigen Schritt warten → Ganz unten**. Laufende Aufträge und Aufträge in Wartestellung bleiben oben. Danach folgen startbereite, zuletzt wartende Aufträge. Innerhalb jeder Gruppe bleibt die Reihenfolge der Warteschlange gleich. **Position beibehalten** stellt die gewohnte Warteschlangenansicht wieder her. Ihre Auswahl wird für Ihr Konto gespeichert und gilt für die Maschinenliste und den **Pool**. Im Zuweisungsplaner stehen diese Optionen nicht zur Verfügung. Siehe [Betriebsdatenerfassung](/de/platform-intro/pages/data-acquisition).
+Ja. Ist **Nach Warteschlangenposition sortieren** in der Betriebsdatenerfassung V3 eingeschaltet, wählen Sie **Aufträge, die auf einen vorherigen Schritt warten → Ganz unten**. Wartende Arbeit erscheint hinter anderen Aufträgen. Um zusätzlich laufende Arbeit und Arbeit in Wartestellung zuerst zu sehen, wählen Sie **Laufende Aufträge und Aufträge in Wartestellung → Ganz oben**. Wählen Sie **Speichern**. Innerhalb jeder Gruppe bleibt die Reihenfolge der Warteschlange gleich. **Position beibehalten** stellt die gewohnte Warteschlangenansicht wieder her. Ihre Auswahl wird für Ihr Konto gespeichert und gilt für die Maschinenliste und den **Pool**. Im Zuweisungsplaner stehen diese Optionen nicht zur Verfügung. Siehe [Betriebsdatenerfassung](/de/platform-intro/pages/data-acquisition).
 
 <a id="waiting-refresh" />
 
 ## Warum wartet mein Auftrag noch, obwohl der vorherige Schritt fertig ist?
 
 Prüfen Sie, ob ein weiterer Schritt mit niedrigerer Nummer im selben Arbeitsauftrag noch unfertig ist. Auch ein Schritt ohne Zuweisung zählt als unfertig. Frühere Schritte müssen abgeschlossen oder storniert sein. Sobald keiner mehr unfertig ist, wechselt der Auftrag bei der nächsten Aktualisierung zur startbereiten Gruppe. Siehe [wartende Aufträge in der Betriebsdatenerfassung](/de/platform-intro/pages/data-acquisition).
+
+<a id="priority-queue" />
+
+## Wie setze ich einen Auftrag vor einen anderen, ohne seine Arbeitsgangpriorität zu erhöhen?
+
+Aktivieren Sie im Zuweisungsplaner **Nach Warteschlangenposition sortieren** und ziehen Sie die Karte an die gewünschte Stelle. Sie landet dort, wo Sie sie ablegen. Alle sehen die gespeicherte Warteschlangenreihenfolge. Laufende Aufträge und Aufträge in Wartestellung bleiben oben. Um die ganze Warteschlange auf einmal zu sortieren, wählen Sie im Kopf der Maschine oder des Hallenpools **Nach Priorität und Datum sortieren**. Prüfen Sie den Vorschlag und wählen Sie **Reihenfolge übernehmen**. Diese Schaltfläche steht Administratoren und Benutzern mit Zugriff auf die Auftragsseite und die Maschine zur Verfügung. Operatoren sehen sie nicht. Folgen Sie den [Sortierschritten](/de/platform-intro/workflows/assignment-planner#eine-warteschlange-nach-priorität-und-datum-sortieren).
+
+<a id="queue-sort-access" />
+
+## Warum sehe ich die Schaltfläche zum Sortieren nach Priorität und Datum nicht?
+
+Die Schaltfläche erscheint nur bei eingeschalteter Option **Nach Warteschlangenposition sortieren**. Sie benötigen ein Administratorkonto oder ein Benutzerkonto mit Zugriff auf die Auftragsseite sowie Zugriff auf die Maschine. Operatoren sehen sie nicht. Siehe [Zuweisungsplaner](/de/platform-intro/pages/assignment-planner).
+
+<a id="queue-sort-undo" />
+
+## Kann ich eine Sortierung rückgängig machen und warum ändert sich der Vorschlag?
+
+Wählen Sie nach dem Übernehmen **Rückgängig** in der Bestätigung **Neue Reihenfolge übernommen**. Ändert jemand die Warteschlange während Ihrer Prüfung, wird der Vorschlag neu geladen. Prüfen Sie ihn erneut. Schlägt das Laden fehl, versuchen Sie es vor dem Übernehmen erneut. Schlägt das Rückgängigmachen fehl, wird die Warteschlange neu geladen. Prüfen Sie die aktuelle Reihenfolge vor weiteren Anpassungen. Folgen Sie den [Sortierschritten](/de/platform-intro/workflows/assignment-planner#eine-warteschlange-nach-priorität-und-datum-sortieren).
+
+<a id="queue-numbers" />
+
+## Warum sind die Nummern auf meinen Planungskarten verschwunden?
+
+Die Nummern zeigen **Position in dieser Warteschlange** nur im Warteschlangenmodus. Entfernen Sie Prioritäts-, Arbeitsgangprioritäts- und Tag-Filter, stellen Sie die übliche Statusauswahl wieder her und leeren Sie die Suche im betroffenen Bereich. Die Nummern zählen aktive Arbeit und laufen beim Einblenden weiterer Karten weiter. Abgeschlossene und stornierte Karten haben keine Nummer. Karten der Betriebsdatenerfassung zeigen keine Nummern. Siehe [Positionsnummern](/de/platform-intro/pages/assignment-planner#positionsnummern-lesen).
+
+<a id="company-sorting" />
+
+## Wer kann die Sortierung festlegen, mit der alle beginnen?
+
+Administratoren können im Zuweisungsplaner unter **Filtern & Sortieren** Modus, Regeln und die Auswahl unter **Verschiebungen** einstellen. Wählen Sie dann **Als Firmenstandard speichern**. Personen ohne persönliche Sortierung beginnen damit. Vorhandene persönliche Einstellungen haben Vorrang. Die Betriebsdatenerfassung nutzt Modus und gemeinsame Regeln mit getrennter Auswahl für laufende und wartende Arbeit. Folgen Sie [Firmensortierung speichern oder übernehmen](/de/platform-intro/workflows/assignment-planner#firmensortierung-speichern-oder-übernehmen).
+
+<a id="sorting-default-updates" />
+
+## Warum hat sich meine Sortierung trotz geändertem Firmenstandard nicht geändert?
+
+Ihre eigene gespeicherte Sortierung hat Vorrang. Auch das Zurücksetzen speichert eine persönliche Kopie der aktuellen Firmenvorgaben. Diese folgt späteren Änderungen nicht. Setzen Sie erneut zurück, um die neueren Vorgaben zu nutzen. Speichern Sie in der Betriebsdatenerfassung andere Anzeigeänderungen, folgen Sie weiterhin dem Standard, sofern Sie keine persönliche Sortierung haben. Siehe [Firmensortierung](/de/platform-intro/pages/assignment-planner#firmensortierung-speichern-oder-übernehmen).
+
+<a id="running-sort" />
+
+## Warum stehen laufende Aufträge in der Betriebsdatenerfassung nicht mehr ganz oben?
+
+Bisher blieben laufende Aufträge und Aufträge in Wartestellung bei eingeschalteter Option **Nach Warteschlangenposition sortieren** automatisch oben. In der Betriebsdatenerfassung V3 behalten sie jetzt mit der Voreinstellung **Position beibehalten** ihren Platz in der Warteschlange. Öffnen Sie **Kartenanzeige-Einstellungen → Sortierreihenfolge** und wählen Sie **Laufende Aufträge und Aufträge in Wartestellung → Ganz oben**, um sie zuerst anzuzeigen. Im Zuweisungsplaner bleiben laufende Aufträge und Aufträge in Wartestellung weiterhin oben. Ist die Warteschlangensortierung ausgeschaltet, ergänzen Sie **Laufende Aufträge und Aufträge in Wartestellung** als Regel und wählen **Ganz oben** oder **Ganz unten**. Die Regel steht vor der Regel für wartende Aufträge. Wählen Sie **Speichern**. Folgen Sie den [Schritten zur Darstellung](/de/platform-intro/workflows/data-acquisition#die-darstellung-der-betriebsdatenerfassung-v3-einstellen).
+
+<a id="terminal-sorting-reset" />
+
+## Wie stelle ich am Terminal die Firmensortierung wieder her?
+
+Öffnen Sie in der Betriebsdatenerfassung V3 **Kartenanzeige-Einstellungen → Sortierreihenfolge → Auf Firmensortierung zurücksetzen** und wählen Sie **Speichern**. Ein Haken bedeutet, dass Modus und Regeln bereits übereinstimmen. Die Schaltfläche ist dann gesperrt. Das Zurücksetzen behält die Auswahl für laufende und wartende Aufträge im Warteschlangenmodus bei, ersetzt aber die Sortierregeln. Ergänzen Sie besondere Regeln für laufende oder wartende Aufträge erneut. Ohne Firmenstandard stellt das Symbol **Auf Standard zurücksetzen (noch kein Firmenstandard festgelegt)** die Standardauswahl her. Siehe [Betriebsdatenerfassung](/de/platform-intro/pages/data-acquisition#den-firmenstandard-für-die-sortierung-nutzen).

@@ -6,6 +6,44 @@ toc: false
 
 ## Releases
 
+<Update label="2026-10-22" description="v1.5.130" tags={["Funktion", "Verbesserung", "Fehlerbehebung"]}>
+  {/* commits: 89f08e1, ec6ed1e, fdfa386, 15a9ed5 */}
+
+  **Release-Datum:** 22. Oktober 2026
+
+  ### Neue Funktionen
+
+  #### [Dringende Arbeit nach Prüfung der Warteschlange vorziehen](/de/platform-intro/pages/assignment-planner)
+  {/* feature: planner-queue-sort */}
+
+  Administratoren und Benutzer mit Zugriff auf die Auftragsseite und die Maschine können eine Maschinenwarteschlange oder einen Hallenpool jetzt nach Priorität und danach nach dem frühesten geplanten Operationsstart ordnen. Operatoren sehen diese Schaltfläche nicht. Aktivieren Sie im Zuweisungsplaner unter **Filtern & Sortieren** die Option **Nach Warteschlangenposition sortieren**. Wählen Sie im Kopf der Warteschlange **Nach Priorität und Datum sortieren**. Wählen Sie **Auftragspriorität** oder **Arbeitsgangpriorität**, prüfen Sie die vorgeschlagenen Positionen und wählen Sie **Reihenfolge übernehmen**. Laufende Aufträge und Aufträge in Wartestellung bleiben oben. Mit **Rückgängig** in der Bestätigung stellen Sie die vorherige Reihenfolge wieder her.
+
+  Die Sortierung erfolgt erst beim Übernehmen. Danach können Sie Karten weiterhin ziehen. Zahlen unten links zeigen die Position jeder Karte in der Warteschlange. Sie verschwinden, wenn Sortierregeln, Filter oder eine Suche die vollständige Warteschlangenreihenfolge ausblenden. Folgen Sie [Maschinenzuweisungen planen](/de/platform-intro/workflows/assignment-planner).
+
+  #### [Mit der Sortierung des Unternehmens beginnen](/de/platform-intro/pages/assignment-planner)
+  {/* feature: planner-queue-sort */}
+
+  Administratoren können im Zuweisungsplaner **Filtern & Sortieren** öffnen, die Sortierung einstellen und **Als Firmenstandard speichern** wählen. Gespeichert werden Sortiermodus, Regeln und die Auswahl unter **Verschiebungen**. Personen ohne eigene Sortierung beginnen im Zuweisungsplaner und in der Betriebsdatenerfassung V3 mit den Firmenvorgaben. Ihre vorhandene persönliche Sortierung bleibt bestehen.
+
+  Mit **Auf Firmenstandard zurücksetzen** übernehmen Sie im Planer die aktuellen Firmenvorgaben. Öffnen Sie in der Betriebsdatenerfassung **Kartenanzeige-Einstellungen → Sortierreihenfolge → Auf Firmensortierung zurücksetzen** und wählen Sie **Speichern**. Das Zurücksetzen übernimmt die heutigen Vorgaben. Spätere Änderungen des Firmenstandards ersetzen diese gespeicherte persönliche Sortierung nicht. Die Auswahl für laufende und wartende Aufträge im Warteschlangenmodus der Betriebsdatenerfassung bleibt unverändert. Folgen Sie den [Schritten zur Firmensortierung](/de/platform-intro/workflows/assignment-planner#firmensortierung-speichern-oder-übernehmen).
+
+  ### Verbesserungen
+
+  #### [Position laufender Aufträge am Terminal wählen](/de/platform-intro/pages/data-acquisition)
+  {/* feature: planner-queue-sort */}
+
+  Öffnen Sie in der Betriebsdatenerfassung V3 **Kartenanzeige-Einstellungen → Sortierreihenfolge**. Bisher blieben laufende Aufträge und Aufträge in Wartestellung bei eingeschalteter Option **Nach Warteschlangenposition sortieren** automatisch oben. Jetzt behalten sie mit der Voreinstellung **Position beibehalten** ihren Platz in der Warteschlange. Wählen Sie **Laufende Aufträge und Aufträge in Wartestellung → Ganz oben**, um sie zuerst anzuzeigen. So können Sie einen gestarteten Auftrag, der wegen eines Werkzeugwechsels in Wartestellung ist, nach oben holen. Im Zuweisungsplaner bleiben laufende Aufträge und Aufträge in Wartestellung weiterhin oben.
+
+  Ist die Warteschlangensortierung ausgeschaltet, fügen Sie **Laufende Aufträge und Aufträge in Wartestellung** als Regel hinzu und wählen **Ganz oben** oder **Ganz unten**. Diese Regel steht vor der Regel für wartende Aufträge sowie vor Priorität oder Datum. Wählen Sie **Speichern**, um Ihre Auswahl zu übernehmen. Diese Optionen gehören zu Ihrer Anzeige in der Betriebsdatenerfassung und sind nicht Teil des Firmenstandards. Folgen Sie [Die Darstellung der Betriebsdatenerfassung V3 einstellen](/de/platform-intro/workflows/data-acquisition#die-darstellung-der-betriebsdatenerfassung-v3-einstellen).
+
+  ### Fehlerbehebungen
+
+  #### [Neu zugewiesene Arbeit am Anfang der Warteschlange einordnen](/de/platform-intro/pages/assignment-planner)
+  {/* feature: planner-queue-sort */}
+
+  Ist **Nach Warteschlangenposition sortieren** ausgeschaltet und **Verschiebungen: Anfang der Warteschlange** ausgewählt, landet eine nicht zugewiesene Operation beim Ziehen auf eine Maschine oder einen Hallenpool jetzt am Anfang dieser Warteschlange. Bisher landete sie immer am Ende.
+</Update>
+
 <Update label="2026-10-21" description="v1.5.129" tags={["Funktion", "Fehlerbehebung"]}>
   {/* commits: 98c2500, 8886058, b7b11af, beca903, 357b35f, 000961a, 49242d4, d4d61f6, 0fe8f27, a714482, 1c3847a, 8691c53, 5863d7e, 327c241, 9a71606, 40b2288, 848ed7a, 65a01bb, e5ef62b, 0e3bba2, 6a362dc, 0078efc */}
 
