@@ -51,6 +51,14 @@ description: "Antworten zu Arbeitsgangprioritäten, Planungsterminen, Gruppierun
 | Warum hat sich meine Sortierung trotz geändertem Firmenstandard nicht geändert? | [Antwort](/de/help-center/faq/planning-and-imports#sorting-default-updates) |
 | Warum stehen laufende Aufträge in der Betriebsdatenerfassung nicht mehr ganz oben? | [Antwort](/de/help-center/faq/planning-and-imports#running-sort) |
 | Wie stelle ich am Terminal die Firmensortierung wieder her? | [Antwort](/de/help-center/faq/planning-and-imports#terminal-sorting-reset) |
+| Wie gebe ich Arbeit zurück, wenn meine Maschine sie nicht fertigstellen kann? | [Antwort](/de/help-center/faq/planning-and-imports#back-to-pool) |
+| Wo ist die Schaltfläche **Erstellen** geblieben? | [Antwort](/de/help-center/faq/planning-and-imports#create-after-selection) |
+| Warum ist Zurück in den Pool nicht verfügbar? | [Antwort](/de/help-center/faq/planning-and-imports#return-disabled) |
+| Kann ich die restliche Arbeit direkt an eine andere Maschine geben? | [Antwort](/de/help-center/faq/planning-and-imports#handover-machine) |
+| Warum ist die Restmenge höher als erwartet? | [Antwort](/de/help-center/faq/planning-and-imports#handover-quantity) |
+| Bedeutet Übergeben, dass der ganze Schritt fertig ist? | [Antwort](/de/help-center/faq/planning-and-imports#handover-status) |
+| Kann ich eine Übergabe rückgängig machen? | [Antwort](/de/help-center/faq/planning-and-imports#handover-undo) |
+| Warum sehe ich „Dieser Schritt wurde inzwischen geändert“? | [Antwort](/de/help-center/faq/planning-and-imports#handover-changed) |
 
 <a id="operation-priority" />
 
@@ -232,7 +240,9 @@ Sie können im Zuweisungsplaner oder Zuweisungs-Gantt bis zu 25 Maschinen wähle
 
 ## Kann ich Arbeit in einen eingeklappten Pool ziehen?
 
-Ja. Auf dem schmalen Streifen landet Arbeit am Ende des Pools, auch hinter noch nicht angezeigten Karten. Umfasst Ihre Suche den Pool, schließen Sie sie vorher, damit die Arbeit ganz am Ende landet. Andernfalls kann sie zwischen den Karten eingeordnet werden. **Nicht zugewiesen** filtert keine Pools. Klicken Sie auf den Streifen oder nutzen Sie **Pool ausklappen**, um seine Karten wieder zu sehen. Siehe [Hallenpool-Bedienung](/de/platform-intro/pages/assignment-planner).
+Ja. Bei Verschiebungen ohne Dialog landet Arbeit auf dem schmalen Streifen am Ende des Pools, auch hinter noch nicht angezeigten Karten. Umfasst Ihre Suche den Pool, schließen Sie sie vorher, damit die Arbeit ganz am Ende landet. Andernfalls kann sie zwischen den Karten eingeordnet werden. **Nicht zugewiesen** filtert keine Pools. Klicken Sie auf den Streifen oder nutzen Sie **Pool ausklappen**, um seine Karten wieder zu sehen. Siehe [Hallenpool-Bedienung](/de/platform-intro/pages/assignment-planner).
+
+Begonnene, gestoppte Arbeit öffnet einen Übergabedialog. Nach der Bestätigung kommt der Rest an den Anfang des Pools, auch wenn dieser eingeklappt ist. Folgen Sie [Arbeit übergeben](/de/platform-intro/workflows/assignment-planner#hand-over-work).
 
 <a id="planner-search" />
 
@@ -288,6 +298,8 @@ Prüfen Sie, ob ein weiterer Schritt mit niedrigerer Nummer im selben Arbeitsauf
 
 Aktivieren Sie im Zuweisungsplaner **Nach Warteschlangenposition sortieren** und ziehen Sie die Karte an die gewünschte Stelle. Sie landet dort, wo Sie sie ablegen. Alle sehen die gespeicherte Warteschlangenreihenfolge. Laufende Aufträge und Aufträge in Wartestellung bleiben oben. Um die ganze Warteschlange auf einmal zu sortieren, wählen Sie im Kopf der Maschine oder des Hallenpools **Nach Priorität und Datum sortieren**. Prüfen Sie den Vorschlag und wählen Sie **Reihenfolge übernehmen**. Diese Schaltfläche steht Administratoren und Benutzern mit Zugriff auf die Auftragsseite und die Maschine zur Verfügung. Operatoren sehen sie nicht. Folgen Sie den [Sortierschritten](/de/platform-intro/workflows/assignment-planner#eine-warteschlange-nach-priorität-und-datum-sortieren).
 
+Eine Übergabe setzt die restliche Arbeit an den Anfang der Zielwarteschlange. Die Ablageposition gilt für Verschiebungen ohne Dialog. Folgen Sie [Arbeit übergeben](/de/platform-intro/workflows/assignment-planner#hand-over-work).
+
 <a id="queue-sort-access" />
 
 ## Warum sehe ich die Schaltfläche zum Sortieren nach Priorität und Datum nicht?
@@ -329,3 +341,58 @@ Bisher blieben laufende Aufträge und Aufträge in Wartestellung bei eingeschalt
 ## Wie stelle ich am Terminal die Firmensortierung wieder her?
 
 Öffnen Sie in der Betriebsdatenerfassung V3 **Kartenanzeige-Einstellungen → Sortierreihenfolge → Auf Firmensortierung zurücksetzen** und wählen Sie **Speichern**. Ein Haken bedeutet, dass Modus und Regeln bereits übereinstimmen. Die Schaltfläche ist dann gesperrt. Das Zurücksetzen behält die Auswahl für laufende und wartende Aufträge im Warteschlangenmodus bei, ersetzt aber die Sortierregeln. Ergänzen Sie besondere Regeln für laufende oder wartende Aufträge erneut. Ohne Firmenstandard stellt das Symbol **Auf Standard zurücksetzen (noch kein Firmenstandard festgelegt)** die Standardauswahl her. Siehe [Betriebsdatenerfassung](/de/platform-intro/pages/data-acquisition#den-firmenstandard-für-die-sortierung-nutzen).
+
+<a id="back-to-pool" />
+
+## Wie gebe ich Arbeit zurück, wenn meine Maschine sie nicht fertigstellen kann?
+
+Wählen Sie in der Betriebsdatenerfassung V3 den Schritt und **Zurück in den Pool**. Laufende Arbeit öffnet zuerst den normalen Stoppdialog für Mengen und danach gegebenenfalls die Zeitauswahl von **BDE Assist**. Bestätigen Sie Restmenge und optionalen Grund im Rückgabedialog. Die Arbeit geht in den eigenen Hallenpool Ihrer Maschine. Erfasste Zeiten und Gutteile bleiben auf der ursprünglichen Maschine. Folgen Sie [Arbeit in den Pool zurückgeben](/de/platform-intro/workflows/data-acquisition#back-to-pool).
+
+<a id="create-after-selection" />
+
+## Wo ist die Schaltfläche **Erstellen** geblieben?
+
+In der Betriebsdatenerfassung V3 erscheint bei ausgewähltem Schritt **Zurück in den Pool** anstelle von **Erstellen**. Tippen Sie erneut auf die ausgewählte Karte, um die Auswahl aufzuheben. Danach können Sie wieder Arbeit erstellen. Siehe [Betriebsdatenerfassung](/de/platform-intro/pages/data-acquisition).
+
+<a id="return-disabled" />
+
+## Warum ist Zurück in den Pool nicht verfügbar?
+
+Abgeschlossene und stornierte Schritte bleiben auf der Maschine. Eine Maschine ohne Halle hat keinen Pool. Bitten Sie die Planung, die Hallenzuordnung zu prüfen. Zeigen Sie auf die nicht verfügbare Schaltfläche, um den Grund zu lesen. Bei laufender Arbeit können Sie **Zurück in den Pool** wählen, müssen aber zuerst im Dialog stoppen. Siehe [Voraussetzungen für die Rückgabe](/de/platform-intro/workflows/data-acquisition#back-to-pool).
+
+<a id="handover-machine" />
+
+## Kann ich die restliche Arbeit direkt an eine andere Maschine geben?
+
+Administratoren und Benutzer mit Zugriff auf die Seite Aufträge können im Zuweisungsplaner eine begonnene, gestoppte Karte auf eine andere zugängliche Maschine ziehen. Alle Benutzer benötigen auch Zugriff auf die aktuelle Maschine des Schritts. Andere Benutzer können Arbeit im Zuweisungsplaner und in der Betriebsdatenerfassung nur in den Pool der Halle ihrer aktuellen Maschine zurückgeben. Prüfen Sie **Restmenge**, ergänzen Sie **Grund (optional)** und bestätigen Sie **Verschieben**. Der Rest kommt an den Anfang dieser Maschinenwarteschlange. Administratoren und Benutzer mit Zugriff auf die Seite Aufträge können auch einen beliebigen Hallenpool wählen. Die Betriebsdatenerfassung gibt Arbeit nur in den eigenen Hallenpool der aktuellen Maschine zurück. Folgen Sie [Arbeit übergeben](/de/platform-intro/workflows/assignment-planner#hand-over-work).
+
+<a id="handover-quantity" />
+
+## Warum ist die Restmenge höher als erwartet?
+
+**Restmenge** zieht nur Gutteile von der Planmenge ab. Ausschuss muss nachgefertigt werden. Bei 40 Gutteilen von 100 bleiben beispielsweise 60 offen, auch wenn Sie zusätzlich Ausschuss erfasst haben. Ändern Sie die Menge, wenn weitere Teile nötig sind. Lassen Sie sie leer, wenn sie unbekannt ist. Ist nichts mehr offen, schließen Sie den Schritt ab, sofern Sie keine weiteren Teile benötigen. Siehe [Mengenregeln](/de/platform-intro/pages/data-acquisition).
+
+<a id="handover-status" />
+
+## Bedeutet Übergeben, dass der ganze Schritt fertig ist?
+
+Nein. **Übergeben** kennzeichnet den beendeten Anteil auf der ursprünglichen Maschine. Der Rest bleibt offen. Nachfolgende Schritte können weiter warten. **Teilweise gefertigt:** zeigt Mengen und das Ziel der restlichen Arbeit. Wählen Sie in der Betriebsdatenerfassung den dritten Ansichtsreiter mit dem Historiensymbol, **Zeitfenster + Alle Status**. Er zeigt alle Schritte im gewählten Datumsfenster, einschließlich abgeschlossener und stornierter Schritte. **Alle Offen** und **Zeitfenster + Offen** blenden den übergebenen Anteil aus. Zeigen Sie im Auftrag auf **Übergeben**, um die betroffenen Schritte zu prüfen. Siehe [Übergabedetails](/de/platform-intro/pages/order-detail#handed-over-work).
+
+<a id="handover-undo" />
+
+## Kann ich eine Übergabe rückgängig machen?
+
+Administratoren und Benutzer mit Zugriff auf die Seite Aufträge können eine Übergabe begonnener Arbeit manuell rückgängig machen. Das geht nur, solange der Rest noch nicht begonnen hat und in einem Pool oder einer Warteschlange wartet. Ist er bereits auf der anderen Maschine gelaufen, können Sie die Übergabe nicht rückgängig machen. Löschen Sie diesen Anteil nicht: Dabei werden auch seine erfassten Zeiten gelöscht.
+
+Notieren Sie zuerst die ursprüngliche Menge: die zweite Zahl unter **Teilweise gefertigt:**, etwa 100 bei „40 von 100“. Sie finden sie auch, wenn Sie auf die Kennzeichnung **Übergeben** des Auftrags zeigen. Nach dem Löschen des neuen Anteils wechselt die Zeile zu **Gefertigt an** und zeigt die ursprüngliche Menge nicht mehr. Fehlt „von …“, weil die Planmenge unbekannt war, gibt es keine ursprüngliche Menge zum Wiederherstellen.
+
+1. Löschen Sie den neuen Anteil mit der Kennzeichnung **Von … bereits gefertigt**. Wählen Sie auf der Auftragsdetailseite in seiner Zuweisungszeile die rote Schaltfläche **Löschen** (Papierkorbsymbol) und bestätigen Sie mit **Löschen**. Alternativ ziehen Sie seine Karte im Zuweisungsplaner auf **Nicht zugewiesene Operationen**. Dadurch wird er sofort und ohne Bestätigung entfernt.
+2. Suchen Sie auf der [Auftragsdetailseite](/de/platform-intro/pages/order-detail#handed-over-work) den mit **Übergeben** markierten Anteil der ersten Maschine. Wählen Sie **Bearbeiten** (Stiftsymbol). Wählen Sie unter **Zuweisung bearbeiten** den Status **In Wartestellung**, setzen Sie **Geplante Menge** auf die ursprüngliche Menge zurück, sofern bekannt, und wählen Sie **Speichern**.
+
+Der erste Anteil steht wieder in der Warteschlange seiner Maschine, in Wartestellung und mit seinen erfassten Zeiten und Gutteilen. Seine Kennzeichnung **Übergeben**, die Kennzeichnung **Übergeben** des Auftrags und die Zeile **Teilweise gefertigt:** verschwinden. Beispiel: 40 von 100 Teilen wurden an DMU 50 gefertigt, 60 warten noch im Pool Halle 2. Löschen Sie die Zuweisung über 60 Teile und setzen Sie den Anteil an DMU 50 auf **In Wartestellung** mit **Geplante Menge** 100.
+
+<a id="handover-changed" />
+
+## Warum sehe ich „Dieser Schritt wurde inzwischen geändert“?
+
+Der Schritt wurde während Ihrer Prüfung geändert. Der Dialog schließt sich. Die Betriebsdatenerfassung aktualisiert die Liste, der Zuweisungsplaner beide Warteschlangen. Danach erscheint der Hinweis **Dieser Schritt wurde inzwischen geändert. Die Liste wurde aktualisiert.** Prüfen Sie den aktuellen Schritt vor einem erneuten Versuch. Kontrollieren Sie Maschine, laufende Arbeit und Mengen, bevor Sie erneut entscheiden. Siehe [Arbeit in den Pool zurückgeben](/de/platform-intro/workflows/data-acquisition#back-to-pool).

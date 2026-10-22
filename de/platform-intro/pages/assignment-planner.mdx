@@ -42,9 +42,19 @@ Eine Maschinenwarteschlange weist Arbeit einer bestimmten Maschine zu. Ein **Hal
 
 Eine Bereitschaftsanzeige kennzeichnet, wann eine Maschine die Arbeit aus dem Pool übernehmen kann. Die Maschinenwahl bleibt offen, bis die Arbeit übernommen wird. Die Anzeige hilft Ihnen zu erkennen, wann eine Übernahme möglich ist.
 
-Sie können eine Zuweisung direkt zwischen Maschinen- und Hallenpool-Spalten verschieben und sie am Anfang oder Ende der Zielwarteschlange einordnen. Laufende oder abgeschlossene Zuweisungen können nicht in eine andere Spalte verschoben werden. Innerhalb ihrer aktuellen Warteschlange können Sie sie weiterhin neu anordnen.
+Sie können ungestartete Arbeit direkt zwischen Maschinen- und Hallenpool-Spalten verschieben und sie am Anfang oder Ende der Zielwarteschlange einordnen. Stoppen Sie begonnene Arbeit zuerst und übergeben Sie den Rest über den unten beschriebenen Dialog. Erfasste Arbeit bleibt auf der ursprünglichen Maschine.
 
 Sie können Arbeit auch einem mit **Arbeitsplatz** gekennzeichneten Ziel zuweisen. Seine Warteschlange enthält Aufträge und Zuweisungen ohne Sensorkennzahlen. Prüfen Sie das Ziel vor der Bestätigung einer Verschiebung. Siehe [Arbeitsplätze](/de/platform-intro/pages/work-centers).
+
+### Begonnene Arbeit übergeben
+
+Administratoren und Benutzer mit Zugriff auf die Seite Aufträge können einen begonnenen, gestoppten Schritt auf einen beliebigen Hallenpool oder eine andere zugängliche Maschine ziehen. Alle Benutzer benötigen Zugriff auf die aktuelle Maschine des Schritts. Andere Benutzer können den Schritt im Zuweisungsplaner und in der Betriebsdatenerfassung nur in den Pool der Halle seiner aktuellen Maschine zurückgeben. Der Dialog zeigt **Geplant**, **Hier gefertigt** und **Offen**. Prüfen Sie **Restmenge** und ergänzen Sie **Grund (optional)** für die nächste Person. Nur Gutteile verringern die vorgeschlagene Restmenge. Ausschuss muss nachgefertigt werden. Lassen Sie die Menge leer, wenn sie unbekannt ist. Bestätigen Sie für einen Pool mit **Zurück in den Pool**, für eine Maschine mit **Verschieben**.
+
+Die ursprüngliche Maschine behält ihre Zeiten und Gutteile. Ihr Anteil verlässt die aktive Warteschlange und zeigt **Übergeben**. Der Rest kommt an den Anfang der Zielwarteschlange, auch beim Ablegen auf einem eingeklappten Pool. Ihre Anzeigesortierung kann beeinflussen, wo die Karte erscheint. Beide Warteschlangen aktualisieren sich. Bei 40 Gutteilen von 100 bleiben beispielsweise 60 für die nächste Maschine. Eine Übergabe lässt sich nicht automatisch rückgängig machen.
+
+Eine laufende Karte bleibt gesperrt und zeigt **Läuft. Erst an der Maschine stoppen, dann verschieben.** Abgeschlossene und stornierte Arbeit kann nicht übergeben werden. Eine ungestartete geplante oder freigegebene Karte wird weiterhin ohne Dialog verschoben. Eine ungestartete Karte mit dem Status in Bearbeitung oder in Wartestellung öffnet eine Verschiebebestätigung. Der ganze Schritt wird verschoben, ohne erfasste Arbeit zurückzulassen. Das Umsortieren innerhalb derselben Warteschlange bleibt unverändert.
+
+Graue Kennzeichnungen zeigen Herkunft oder Ziel der Arbeit. Zeigen Sie darauf, um Mengen, Person, Zeit und Grund zu lesen. Schmale Karten können nur ein Symbol und Zahlen zeigen. Schrittinformationen und Wartedetails zeigen **Teilweise gefertigt:** und das Ziel der restlichen Arbeit. Wurde der Schritt während Ihrer Prüfung geändert, aktualisieren sich die Warteschlangen. Prüfen Sie sie vor einem erneuten Versuch. Folgen Sie [Arbeit übergeben](/de/platform-intro/workflows/assignment-planner#hand-over-work).
 
 ### Platzierung der Hallenpools wählen
 
@@ -55,7 +65,7 @@ Sie können Arbeit auch einem mit **Arbeitsplatz** gekennzeichneten Ziel zuweise
 
 Ihre Platzierungswahl wird für Ihr Konto gespeichert. Haken Sie unter **Welche Pools anzeigen** die gewünschten Hallen an. Die Auswahl entspricht dem Hallenfilter. Hallenpools zählen nicht zur Grenze von 25 Maschinen. Während ein Pool lädt, sehen Sie eine Ladeanzeige.
 
-Wählen Sie bei **Neben der Liste** im Kopf des Pools **Pool einklappen**. Es bleibt ein schmaler Streifen mit Name und Anzahl, auf den Sie weiterhin Karten ziehen können. Die Arbeit landet am Ende des Pools, auch hinter noch nicht angezeigten Karten. Umfasst Ihre Suche den Pool, schließen Sie sie vorher, damit die Arbeit ganz am Ende landet. Andernfalls kann sie zwischen den Karten eingeordnet werden. Klicken Sie auf den Streifen oder nutzen Sie **Pool ausklappen**, um ihn wieder zu öffnen. Eingeklappte Pools werden in diesem Browser für das aktuelle Unternehmen gespeichert.
+Wählen Sie bei **Neben der Liste** im Kopf des Pools **Pool einklappen**. Es bleibt ein schmaler Streifen mit Name und Anzahl, auf den Sie weiterhin Karten ziehen können. Bei einer Verschiebung ohne Dialog landet die Arbeit am Ende des Pools, auch hinter noch nicht angezeigten Karten. Eine bestätigte Übergabe setzt die restliche Arbeit an den Anfang. Umfasst Ihre Suche den Pool, schließen Sie sie vorher, damit die Arbeit ganz am Ende landet. Andernfalls kann sie zwischen den Karten eingeordnet werden. Klicken Sie auf den Streifen oder nutzen Sie **Pool ausklappen**, um ihn wieder zu öffnen. Eingeklappte Pools werden in diesem Browser für das aktuelle Unternehmen gespeichert.
 
 Blenden Sie die Liste nicht zugewiesener Operationen aus, bleiben die Pools am linken Rand. Das Platzierungsmenü und diese Spalten sind auf breiten Bildschirmen verfügbar. Folgen Sie [Maschinenzuweisungen planen](/de/platform-intro/workflows/assignment-planner).
 
@@ -84,7 +94,7 @@ Wählen Sie Maschinen nach Halle aus. Klicken Sie auf das Kontrollkästchen oder
 
 Jede Maschinen- oder Pool-Warteschlange zeigt zunächst 40 passende Karten. Wählen Sie **40 weitere anzeigen**, um die nächsten 40 zu sehen. Sind weniger übrig, zeigt die Schaltfläche die kleinere Anzahl. Anzahl und Zusammenfassung berücksichtigen jede Karte in der Warteschlange, auch die noch nicht angezeigten. Das gilt für beide Anordnungen. Die Suche filtert die Arbeit, bevor die ersten 40 Karten erscheinen.
 
-Bereits eingeblendete Karten bleiben nach einer Aktualisierung sichtbar. Beim Ablegen am Ende landet Arbeit hinter jeder Karte der Warteschlange, auch wenn Sie noch nicht alle eingeblendet haben. Umfasst Ihre Suche diese Warteschlange, schließen Sie sie vorher, damit die Arbeit ganz am Ende landet. Andernfalls kann sie zwischen den Karten eingeordnet werden. **Nicht zugewiesen** filtert weder Maschinenwarteschlangen noch Pools. **Hallenpools**, **Maschinen** und **Überall** filtern die Warteschlangen im jeweiligen Suchbereich.
+Bereits eingeblendete Karten bleiben nach einer Aktualisierung sichtbar. Bei Verschiebungen ohne Dialog landet Arbeit beim Ablegen am Ende hinter jeder Karte der Warteschlange, auch wenn Sie noch nicht alle eingeblendet haben. Umfasst Ihre Suche diese Warteschlange, schließen Sie sie vorher, damit die Arbeit ganz am Ende landet. Andernfalls kann sie zwischen den Karten eingeordnet werden. **Nicht zugewiesen** filtert weder Maschinenwarteschlangen noch Pools. **Hallenpools**, **Maschinen** und **Überall** filtern die Warteschlangen im jeweiligen Suchbereich.
 
 Kann eine Änderung nicht gespeichert werden, zeigt der Zuweisungsplaner einen Fehler und lädt die beteiligten Warteschlangen neu. Prüfen Sie diese vor einem erneuten Versuch.
 
@@ -120,7 +130,7 @@ Nummern erscheinen nur bei eingeschalteter Option **Nach Warteschlangenposition 
 
 ### Firmensortierung speichern oder übernehmen
 
-Administratoren können unter **Filtern & Sortieren** den Sortiermodus, die Regeln und die Auswahl unter **Verschiebungen** einstellen. Wählen Sie dann **Als Firmenstandard speichern**. **Als Firmenstandard gespeichert** bestätigt die Änderung. Die Auswahl unter **Verschiebungen** bestimmt im Regelmodus, wo verschobene Aufträge landen. Im Warteschlangenmodus entscheidet weiterhin die Ablageposition.
+Administratoren können unter **Filtern & Sortieren** den Sortiermodus, die Regeln und die Auswahl unter **Verschiebungen** einstellen. Wählen Sie dann **Als Firmenstandard speichern**. **Als Firmenstandard gespeichert** bestätigt die Änderung. Bei Verschiebungen ohne Dialog bestimmt die Auswahl unter **Verschiebungen** im Regelmodus, wo Aufträge landen. Im Warteschlangenmodus entscheidet weiterhin die Ablageposition. Übergebene Arbeit kommt an den Anfang ihrer Zielwarteschlange.
 
 Personen ohne eigene gespeicherte Sortierung beginnen mit dem Firmenstandard. Eine persönliche Sortierung hat Vorrang. Die Betriebsdatenerfassung V3 übernimmt den Sortiermodus und die gemeinsamen Regeln. Ihre Optionen für laufende und wartende Aufträge bleiben getrennt davon.
 
@@ -154,11 +164,11 @@ Wählen Sie die Anordnung mit Maschinen nebeneinander und Warteschlangen nach un
 
 ## Warum kann ich eine Karte nicht verschieben?
 
-Nur **Unplanned / Ungeplant**, **Planned / Geplant** und **Released / Freigegeben** können auf eine andere Maschine oder Halle verschoben werden. Laufende, pausierte und abgeschlossene Arbeit kann nur innerhalb ihrer aktuellen Warteschlange neu geordnet werden. Released erscheint in Verschieberegeln; wann dieser Status gesetzt wird, ist hier nicht bestätigt.
+Laufende Arbeit muss vor der Übergabe auf ihrer Maschine gestoppt werden. Abgeschlossene und stornierte Arbeit kann das Ziel nicht wechseln. Begonnene, gestoppte Arbeit öffnet den Übergabedialog auch mit dem Status **Geplant** oder **Freigegeben**. Erfasste Arbeit bleibt immer auf der ursprünglichen Maschine.
 
 Sie können höchstens 25 Maschinen gleichzeitig anzeigen, zusätzlich zu Hallenpools. Die Suche filtert nur den unter **Suchen in** gewählten Bereich. Status-, Prioritäts- und Tagfilter gelten für die Liste nicht zugewiesener Operationen und alle Warteschlangen. Der Importfilter begrenzt nur die Liste nicht zugewiesener Operationen auf einen ERP-Upload. Ändert sich die Warteschlange während Ihrer Sortierung, wird sie aktualisiert und Sie müssen erneut sortieren.
 
-Mit **Nach Warteschlangenposition sortieren** bestimmt die Ablage die genaue Position; laufende Karten und Karten in Wartestellung bleiben oben. Ohne diese Option bestimmen Sortierregeln die Ansicht. Die Auswahlliste **Verschiebungen** bietet **Anfang der Warteschlange** oder **Ende der Warteschlange**. Dies gilt auch für neu zugewiesene Operationen, die Sie aus der Liste nicht zugewiesener Arbeit auf eine Maschine oder einen Hallenpool ziehen.
+Bei Verschiebungen ohne Dialog bestimmt mit **Nach Warteschlangenposition sortieren** die Ablage die genaue Position; laufende Karten und Karten in Wartestellung bleiben oben. Ohne diese Option bestimmen Sortierregeln die Ansicht. Die Auswahlliste **Verschiebungen** bietet **Anfang der Warteschlange** oder **Ende der Warteschlange**. Dies gilt auch für neu zugewiesene Operationen, die Sie aus der Liste nicht zugewiesener Arbeit auf eine Maschine oder einen Hallenpool ziehen.
 
 ## OP, AG, P, Seq, Qty und Auslastung lesen
 
@@ -188,7 +198,7 @@ Beispielsweise ergeben 50 Teile mit 2 Minuten je Teil 100 geplante Produktionsmi
 - Bei aktiver Sortierung nach Warteschlangenposition wird eine neu abgelegte, nicht zugewiesene Operation in einer großen Warteschlange hinzugefügt. Ihre gewählte Position wird jedoch nicht gespeichert. Das betrifft Hallenpools mit mehr als 500 aktiven Zuweisungen und Maschinenwarteschlangen mit mehr als 100. Der Zuweisungsplaner zeigt **Reihenfolge konnte nicht gespeichert werden. Lokale Änderungen wurden zurückgesetzt.** und lädt die Warteschlange neu. Prüfen Sie diese vor einem erneuten Versuch. Das Umsortieren bereits vorhandener Arbeit in einem großen Pool wird weiterhin gespeichert.
 - Bis zu 25 Maschinen sind gleichzeitig sichtbar. Hallenpools zählen nicht zu dieser Grenze.
 - Filter können sowohl Maschinen als auch ungeplante Arbeit ausblenden.
-- Laufende und abgeschlossene Zuweisungen können nicht in eine andere Spalte verschoben werden.
+- Laufende Arbeit muss vor der Übergabe gestoppt werden. Abgeschlossene und stornierte Arbeit bleibt auf ihrer Maschine.
 - Die automatische Anordnung gilt für zukünftige Zuweisungen und lässt die laufende Produktion unverändert.
 
 ## Verwandte Seiten

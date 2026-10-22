@@ -61,7 +61,7 @@ Beginnen Sie auf der [Seite Zuweisungsplaner](/de/platform-intro/pages/assignmen
     Haken Sie unter **Welche Pools anzeigen** die benötigten Hallen an. Damit ändern Sie auch den Hallenfilter. Jeder Pool erscheint neben **Nicht zugewiesene Operationen** und bleibt beim Scrollen durch die Maschinen sichtbar. Ist die Liste ausgeblendet, beginnen die Pools am linken Rand.
   </Step>
   <Step title="Schaffen Sie Platz und ordnen Sie Arbeit zu" icon="arrow-right" title-type="p">
-    Mit **Pool einklappen** bleibt ein schmaler Streifen. Umfasst Ihre Suche den Pool, schließen Sie sie vorher, damit die Arbeit ganz am Ende landet. Andernfalls kann eine Ablage auf dem Streifen Arbeit zwischen den Karten einordnen. **Nicht zugewiesen** filtert keine Pools. Sie können Karten auch auf den eingeklappten Streifen ziehen. Klicken Sie auf den Streifen oder nutzen Sie **Pool ausklappen**, um die Karten wieder zu sehen. Dieser Browser merkt sich eingeklappte Pools für das aktuelle Unternehmen.
+    Mit **Pool einklappen** bleibt ein schmaler Streifen. Umfasst Ihre Suche den Pool, schließen Sie sie vorher, damit die Arbeit ganz am Ende landet. Andernfalls kann eine Ablage auf dem Streifen Arbeit zwischen den Karten einordnen. **Nicht zugewiesen** filtert keine Pools. Sie können Karten auch auf den eingeklappten Streifen ziehen. Begonnene Arbeit öffnet den Übergabedialog. Nach der Bestätigung kommt ihr Rest an den Anfang. Klicken Sie auf den Streifen oder nutzen Sie **Pool ausklappen**, um die Karten wieder zu sehen. Dieser Browser merkt sich eingeklappte Pools für das aktuelle Unternehmen.
   </Step>
 </Steps>
 
@@ -95,7 +95,30 @@ Ein Link mit einer Suche verwendet für diesen Besuch **Überall**, ohne Ihre ge
   </Step>
 </Steps>
 
-Laufende und abgeschlossene Zuweisungen können nicht in eine andere Spalte verschoben werden. Innerhalb ihrer aktuellen Warteschlange können Sie sie weiterhin neu anordnen.
+Begonnene, gestoppte Arbeit nutzt die unten beschriebenen Übergabeschritte. Laufende Arbeit muss zuerst gestoppt werden. Abgeschlossene und stornierte Arbeit kann das Ziel nicht wechseln.
+
+<a id="hand-over-work" />
+
+## Begonnene Arbeit an eine andere Warteschlange übergeben
+
+Administratoren und Benutzer mit Zugriff auf die Seite Aufträge können einen beliebigen Hallenpool oder eine andere zugängliche Maschine wählen. Alle Benutzer benötigen Zugriff auf die aktuelle Maschine des Schritts. Andere Benutzer können den Schritt im Zuweisungsplaner und in der Betriebsdatenerfassung nur in den Pool der Halle seiner aktuellen Maschine zurückgeben. Der Schritt muss begonnen haben und danach gestoppt worden sein. Abgeschlossene oder stornierte Schritte können nicht übergeben werden.
+
+<Steps>
+  <Step title="Prüfen Sie, ob die Arbeit gestoppt ist" icon="arrow-right" title-type="p">
+    Eine laufende Karte bleibt gesperrt und zeigt **Läuft. Erst an der Maschine stoppen, dann verschieben.** Nutzen Sie zuerst die normale Stoppaktion in der [Betriebsdatenerfassung](/de/platform-intro/workflows/data-acquisition) und erfassen Sie die Mengen.
+  </Step>
+  <Step title="Ziehen Sie den gestoppten Schritt auf sein Ziel" icon="arrow-right" title-type="p">
+    Legen Sie die Karte auf einem Hallenpool oder einer anderen Maschinenspalte ab. Der Übergabedialog öffnet sich auch dann, wenn begonnene Arbeit als **Geplant** oder **Freigegeben** markiert ist. Das Verschieben innerhalb derselben Spalte ändert nur die Reihenfolge.
+  </Step>
+  <Step title="Prüfen Sie die Mengen und geben Sie den Grund weiter" icon="arrow-right" title-type="p">
+    Prüfen Sie **Geplant**, **Hier gefertigt** und **Offen**. Kontrollieren Sie **Restmenge**: Nur Gutteile verringern den Vorschlag. Ändern Sie die Menge bei nötiger Nachfertigung oder lassen Sie sie leer, wenn sie unbekannt ist. Ist nichts mehr offen, schließen Sie den Schritt ab, sofern keine weiteren Teile benötigt werden. Ergänzen Sie **Grund (optional)** für die nächste Person.
+  </Step>
+  <Step title="Bestätigen und prüfen Sie die Warteschlangen" icon="arrow-right" title-type="p">
+    Prüfen Sie das Ziel und wählen Sie **Zurück in den Pool** oder für eine Maschine **Verschieben**. Eine Übergabe lässt sich nicht automatisch rückgängig machen. Die ursprüngliche Maschine behält ihre Zeiten und Gutteile mit der Kennzeichnung **Übergeben**. Der Rest kommt an den Anfang der Zielwarteschlange, auch bei Ablage auf einem eingeklappten Pool. Beide Warteschlangen aktualisieren sich. Der Schritt bleibt offen, bis die restliche Arbeit fertig ist.
+  </Step>
+</Steps>
+
+Sind beispielsweise 40 von 100 geplanten Teilen gut, behält die ursprüngliche Maschine 40 und die nächste erhält 60. Zeigen Sie auf eine graue Kennzeichnung, um Ziel oder Herkunft und einen vorhandenen Grund zu prüfen. Wurde der Schritt während der Prüfung geändert, kontrollieren Sie die aktualisierten Warteschlangen vor einem erneuten Versuch.
 
 ## Arbeitsgangpriorität festlegen und den Plan filtern
 
@@ -241,13 +264,13 @@ Nur Arbeitszeit zählt zum Limit. Ohne geplante Schichten zählen 24 Stunden als
 
 Wenn der [Auftragsimport](/de/platform-intro/pages/erp-upload-planner) einen Konflikt zur manuellen Klärung kennzeichnet, suchen Sie anhand der Auftrags- und Operationsangaben in der Importzusammenfassung die betroffene Arbeit im Planer. Prüfen Sie ihr aktuelles Ziel, ihren Status, die Notizen und den zugehörigen Auftrag, bevor Sie den Plan ändern.
 
-Verschieben Sie eine zulässige Zuweisung bei Bedarf in die vorgesehene Warteschlange. Hat die Arbeit bereits begonnen oder ist sie abgeschlossen, gilt weiterhin die Einschränkung für Spaltenwechsel. Prüfen Sie die aktuellen Produktionsdaten, bevor Sie das weitere Vorgehen festlegen. Die Importzusammenfassung erklärt, wenn eine Entscheidung wegen geänderter Produktion nach der Prüfung nicht angewendet werden konnte.
+Verschieben Sie eine zulässige Zuweisung bei Bedarf in die vorgesehene Warteschlange. Hat die Arbeit begonnen, prüfen Sie ihre erfassten Mengen und stoppen Sie sie vor der Übergabe des Rests. Abgeschlossene Arbeit bleibt auf ihrer Maschine. Die Importzusammenfassung erklärt, wenn eine Entscheidung wegen geänderter Produktion nach der Prüfung nicht angewendet werden konnte.
 
 ## Verschiebbarkeit und Warteschlangenänderungen prüfen
 
-Nur **Unplanned / Ungeplant**, **Planned / Geplant** und **Released / Freigegeben** können zu einer anderen Maschine oder Halle verschoben werden. Laufende, pausierte oder abgeschlossene Zuweisungen bleiben in ihrer Warteschlange und können dort neu sortiert werden. Höchstens 25 Maschinen sind gleichzeitig sichtbar. Hallenpools zählen nicht zu dieser Grenze.
+Ungestartete geplante oder freigegebene Arbeit wird direkt verschoben. Begonnene, gestoppte Arbeit öffnet den Übergabedialog. Laufende Arbeit muss zuerst gestoppt werden. Abgeschlossene oder stornierte Arbeit bleibt auf ihrer Maschine. Bis zu 25 Maschinen sind sichtbar. Hallenpools zählen nicht zu dieser Grenze.
 
-Bei aktiver Queue Position bleiben laufende und pausierte Zuweisungen oben; die Ablage bestimmt die genaue Position. Ohne diese Option bestimmen Sortierregeln die Ansicht und **Moves** Anfang/Ende des Ziels. Aktualisiert eine andere Änderung die Warteschlange während der Sortierung, wiederholen Sie diese auf dem aktualisierten Stand.
+Bei Verschiebungen ohne Dialog bleiben mit **Nach Warteschlangenposition sortieren** laufende Zuweisungen und solche in Wartestellung oben. Die Ablage bestimmt die genaue Position. Ohne diese Option bestimmen Sortierregeln die Ansicht und **Verschiebungen** den Anfang oder das Ende des Ziels. Aktualisiert eine andere Änderung die Warteschlange während der Sortierung, wiederholen Sie diese auf dem aktualisierten Stand.
 
 [Assignment Gantt](/de/platform-intro/pages/assignment-gantt) zeigt die Zeitleiste. Verschiebung durch Ziehen ist **Experimental und schreibgeschützt**. Verwenden Sie unterstützte Planersteuerungen für Änderungen.
 
@@ -255,6 +278,7 @@ Bei aktiver Queue Position bleiben laufende und pausierte Zuweisungen oben; die 
 
 ## Entscheidungspunkte
 
+- Ob Sie gestoppte Arbeit an einen Hallenpool oder direkt an eine andere Maschine übergeben.
 - Ob Pools neben der Liste oder im Board stehen sollen.
 - Ob Sie nur die Liste, Pools, Maschinen oder alle drei Bereiche durchsuchen.
 - Ob Sie sofort eine Maschine auswählen oder die Arbeit in einem Hallenpool belassen.
@@ -279,7 +303,7 @@ Die Maschinenwarteschlange spiegelt die letzte Planungsentscheidung wider, zukü
 - Das Entfernen einer Zuweisung schickt die Arbeit aus der geplanten Warteschlange zurück, statt sie abzuschließen.
 - Umfasst Ihre Suche eine Warteschlange, schließen Sie sie vor dem Ablegen am Ende, damit die Arbeit ganz am Ende landet. Andernfalls kann sie zwischen den Karten eingeordnet werden. **Nicht zugewiesen** lässt Maschinenwarteschlangen und Pools ungefiltert.
 - Entspricht die angezeigte Reihenfolge nicht Ihrer Anordnung durch Ziehen, prüfen Sie, ob nach Warteschlangenposition oder nach Regeln sortiert wird.
-- Laufende und abgeschlossene Zuweisungen können nicht in eine andere Spalte verschoben werden.
+- Laufende Arbeit muss vor der Übergabe gestoppt werden. Abgeschlossene und stornierte Arbeit bleibt auf ihrer Maschine.
 - Prüfen Sie unter **Plan verbessern** das tatsächliche Ergebnis des Speicherns. Eine Vorschau kann günstiger aussehen, weil manche Arbeit beim Speichern an ihrem Platz bleiben muss.
 - **Zeiten können zu früh sein**: Prüfen Sie fehlende Maschinen oder Termine, geplante Dauern, Schichtpläne und aktuelle Produktionseinträge, bevor Sie sich auf das Ende verlassen.
 - Warnungszahlen unterscheiden sich: Assignment Gantt umfasst die angezeigten Maschinen von letzter Woche bis drei Wochen voraus. Aufträge & Produkte zählt verspätete Lieferungen im gesamten Unternehmen.

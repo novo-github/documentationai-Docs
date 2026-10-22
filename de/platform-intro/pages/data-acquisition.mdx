@@ -74,6 +74,24 @@ Bei vorhandenem Firmenstandard heißt die Schaltfläche **Auf Firmensortierung z
 
 Das Zurücksetzen behält die Auswahl für laufende und wartende Aufträge im Warteschlangenmodus bei. Es ersetzt die Sortierregeln. Fügen Sie benötigte Regeln für laufende oder wartende Aufträge deshalb erneut hinzu. Diese besonderen Regeln gehören nicht zum Firmenstandard. Sobald Sie eine eigene Sortierung oder ein Zurücksetzen speichern, ersetzen spätere Firmenänderungen diese Auswahl nicht.
 
+## Arbeit in den Hallenpool zurückgeben
+
+Mit Zugriff auf diese Maschine können Sie in der Betriebsdatenerfassung V3 offene Arbeit in ihren eigenen Hallenpool zurückgeben. Wählen Sie den Schritt aus: **Erstellen** wechselt zu **Zurück in den Pool**. Tippen Sie erneut auf die ausgewählte Karte, um die Auswahl aufzuheben und wieder Arbeit erstellen zu können.
+
+Bei laufender Arbeit öffnet **Zurück in den Pool** zuerst den normalen Stoppdialog. Unten erscheint **Erst stoppen – dann zurück in den Pool**. Erfassen Sie die Mengen und stoppen Sie das Intervall. Fragt **BDE Assist** nach einer Zeit, treffen oder schließen Sie diese Auswahl, bevor sich der Rückgabedialog öffnet. Schließen Sie den Stoppdialog oder buchen Sie ohne zu stoppen, endet diese Abfolge.
+
+Unter **Zurück in den Pool geben** gilt:
+
+- Hat die Arbeit noch nicht begonnen, wird der ganze Schritt in den Pool verschoben.
+- Hat die Arbeit begonnen, bleiben erfasste Zeiten und Gutteile auf dieser Maschine. **Geplant**, **Hier gefertigt** und **Offen** fassen die Mengen zusammen. **Restmenge** beginnt mit Planmenge minus Gutteile, mindestens 0. Ausschuss verringert die Restmenge nicht. Ändern Sie die Menge, wenn Teile nachgefertigt werden müssen. Lassen Sie sie leer, wenn sie unbekannt ist. Bei unbekannter Planmenge beginnt sie leer.
+- **Grund (optional)** gibt eine Notiz mit bis zu 500 Zeichen an die nächste Maschine weiter, etwa „Spindel defekt“.
+
+Bestätigen Sie mit **Zurück in den Pool**. Die Arbeit kommt an den Anfang des Hallenpools. Eine andere Maschine dieser Halle kann sie wie gewohnt übernehmen. Die Liste aktualisiert sich, die Auswahl wird aufgehoben und unten erscheint eine Bestätigung. Nach begonnener Arbeit zeigt die ursprüngliche Karte **Übergeben** statt **Abgeschlossen**. Wählen Sie den dritten Ansichtsreiter mit dem Historiensymbol, **Zeitfenster + Alle Status**, um den übergebenen Anteil zu finden. Er zeigt alle Schritte im gewählten Datumsfenster, einschließlich abgeschlossener und stornierter Schritte. **Alle Offen** und **Zeitfenster + Offen** blenden den übergebenen Anteil aus.
+
+Die Pool-Karte zeigt Herkunft und bereits gefertigte Teile oder Person und Zeitpunkt der Rückgabe eines ungestarteten Schritts. Zeigen Sie auf die graue Kennzeichnung, um Details und Grund zu lesen. Schrittinformationen und Details zu wartenden Schritten zeigen **Teilweise gefertigt:** mit Mengen und dem Ziel der restlichen Arbeit. Die Übergabe schließt den gesamten Schritt nicht ab. Nachfolgende Schritte warten weiter auf seinen Abschluss.
+
+Abgeschlossene oder stornierte Schritte können nicht zurückgegeben werden. Ohne Halle ist die Schaltfläche nicht verfügbar. Wenden Sie sich an die Planung. Sind alle geplanten Teile gefertigt, schließen Sie den Schritt ab, sofern keine weiteren benötigt werden. Eine Übergabe lässt sich nicht automatisch rückgängig machen. Bei **Dieser Schritt wurde inzwischen geändert. Die Liste wurde aktualisiert.** prüfen Sie die aktualisierte Liste vor einem erneuten Versuch. Folgen Sie [Arbeit in den Pool zurückgeben](/de/platform-intro/workflows/data-acquisition#back-to-pool).
+
 ## Intervallzeiten und Zeitleistendarstellung
 
 Ein Intervall erfasst einen Abschnitt von Rüsten oder Produktion. Öffnen Sie in der Betriebsdatenerfassung V3 die Intervallliste des Auftrags. Tippen Sie einmal auf eine Start- oder Endzeit, um **Intervall bearbeiten** unter **Start** oder **Ende** zu öffnen. Das Uhrsymbol und der Hinweis **Tippen zum Ändern** kennzeichnen bearbeitbare Zeiten. Der Stift öffnet **Mengen**.
@@ -143,9 +161,9 @@ Ungebundene oder unbeschriftete Maschinenzeit gehört zu keinem Auftrag. Die Lö
 
 | Modus | Enthaltene Arbeit |
 | --- | --- |
-| **All Open** | Alle offenen Zuweisungen ohne Datumsfilter. |
-| **Time Window + Open** | Offene Zuweisungen innerhalb ±1/3/5/7 Tagen; für tägliche Arbeit. |
-| **Time Window + All Statuses** | Auch abgeschlossene und stornierte Arbeit für Rückblicke. |
+| **Alle Offen** | Alle offenen Zuweisungen ohne Datumsfilter. |
+| **Zeitfenster + Offen** | Offene Zuweisungen innerhalb ±1/3/5/7 Tagen; für tägliche Arbeit. |
+| **Zeitfenster + Alle Status** | Alle Schritte im gewählten Datumsfenster, einschließlich abgeschlossener und stornierter Schritte. |
 
 **Card Display Settings / Columns / Highlight** werden je Benutzer gespeichert. **Nach Warteschlangenposition sortieren** folgt der geplanten Warteschlange. Wählen Sie unter **Sortierreihenfolge**, wo laufende und wartende Aufträge erscheinen.
 

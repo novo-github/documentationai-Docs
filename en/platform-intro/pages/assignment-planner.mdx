@@ -42,9 +42,19 @@ A machine queue assigns work to a specific machine. A **Hall Pool** holds work f
 
 The readiness badge indicates when pooled work is ready to be claimed by a machine. Placing work in a hall pool leaves the machine choice open until it is claimed; the badge helps you decide when work can be picked up.
 
-You can move an assignment directly between machine and hall-pool columns and choose the start or end of the destination queue. Assignments already in progress or completed cannot move to another column, but can still be reordered within their current queue.
+You can move unstarted work directly between machine and hall-pool columns and choose the start or end of the destination queue. For started work, stop it first and hand over the remainder using the dialog described below. Recorded work stays on the original machine.
 
 You can also assign work to a destination marked **Work center**. Its queue contains orders and assignments without sensor KPIs. Review the destination before confirming a move. See [Work Centers](/en/platform-intro/pages/work-centers).
+
+### Hand Over Started Work
+
+Administrators and users with access to the Orders page can drag a started, stopped step to any hall pool or another machine they can access. Every user needs access to the step’s current machine. Other users can only return the step to the pool of its current machine’s hall, in Assignment Planner or Data Acquisition. The dialog shows **Planned**, **Done here**, and **Left**. Review **Quantity left** and add **Reason (optional)** for the next operator. Only good parts reduce the suggested remainder; scrap must be made again. Leave the quantity empty if unknown. Confirm with **Back to pool** for a pool or **Move** for a machine.
+
+The original machine keeps its times and good parts. Its part leaves the active queue and shows **Handed over**. The rest goes to the top of the destination queue, including when you drop onto a collapsed pool. Your display sorting can affect where its card appears. Both queues update. For example, 40 good parts out of 100 leave 60 for the next machine. There is no automatic undo for a handover.
+
+A running card stays locked with **Running. Stop it on the machine before moving it.** Finished and cancelled work cannot be handed over. An unstarted planned or released card still moves without a dialog. An unstarted card marked in progress or on hold opens a move confirmation; it moves the whole step without leaving recorded work behind. Reordering within the same queue is unchanged.
+
+Grey badges show where work came from or went. Hover for the quantities, person, time, and reason. Narrow cards can show only an icon and numbers. Step context and waiting details show **Partly done:** and where the rest is waiting. If the step changed while you were reviewing it, the queues refresh; check them before trying again. Follow [hand over work](/en/platform-intro/workflows/assignment-planner#hand-over-work).
 
 ### Choose Where Hall Pools Appear
 
@@ -55,7 +65,7 @@ On a wide screen, open **Hall pools** above the board. Under **Where to show the
 
 Your placement choice is saved for your account. Under **Which pools to show**, tick the halls you need. This is the same selection as the hall filter. Hall pools do not count toward the 25-machine limit. While a pool loads, it shows a loading indicator.
 
-With **Beside the list**, use **Collapse pool** in the pool header to leave a narrow strip with its name and count. It still accepts cards. A drop places work at the end of the pool, including cards not yet shown. If your search covers the pool, close it first so the work lands at the very end. Otherwise, the drop can land among the cards. Click the strip or use **Expand pool** to open it again. Collapsed pools are remembered in this browser for the current company.
+With **Beside the list**, use **Collapse pool** in the pool header to leave a narrow strip with its name and count. It still accepts cards. For a move without a dialog, a drop places work at the end of the pool, including cards not yet shown. A confirmed handover places the remainder at the top. If your search covers the pool, close it first so the work lands at the very end. Otherwise, the drop can land among the cards. Click the strip or use **Expand pool** to open it again. Collapsed pools are remembered in this browser for the current company.
 
 Hiding the unassigned list leaves the pools at the left edge. The placement menu and these columns are available on wide screens. Follow [Plan Machine Assignments](/en/platform-intro/workflows/assignment-planner).
 
@@ -84,7 +94,7 @@ Select machines by hall; click the hall checkbox or hall name to select or clear
 
 Each machine or pool queue initially shows 40 matching cards. Select **Show 40 more** to reveal the next 40; the button shows a smaller number when fewer remain. The count and summary include every card in the queue, also the ones not shown yet. This works in both layouts. Search filters the work before the first 40 cards are shown.
 
-Revealed cards stay visible after a refresh. Dropping at the end places work after every card in the queue, even if you have not revealed them all. If your search covers that queue, close it first so the work lands at the very end. Otherwise, the drop can land among the cards. **Unassigned** does not filter machine queues or pools; **Hall pools**, **Machines**, and **Everything** filter the queues in their chosen area.
+Revealed cards stay visible after a refresh. For moves without a dialog, dropping at the end places work after every card in the queue, even if you have not revealed them all. If your search covers that queue, close it first so the work lands at the very end. Otherwise, the drop can land among the cards. **Unassigned** does not filter machine queues or pools; **Hall pools**, **Machines**, and **Everything** filter the queues in their chosen area.
 
 If a change cannot be saved, the Planner shows an error and reloads the queues involved. Check them before trying again.
 
@@ -120,7 +130,7 @@ Numbers appear only with **Sort by Queue Position** on, no priority, operation p
 
 ### Save or Use Company Sorting
 
-Administrators can set the sort mode, rules, and **Moves** choice under **Filter & Sort**, then select **Save as company default**. **Saved as company default** confirms the change. The **Moves** choice controls where moved orders land in rule mode; in queue mode, the drop position still decides.
+Administrators can set the sort mode, rules, and **Moves** choice under **Filter & Sort**, then select **Save as company default**. **Saved as company default** confirms the change. For moves without a dialog, the **Moves** choice controls where orders land in rule mode; in queue mode, the drop position still decides. Handed-over work goes to the top of its destination queue.
 
 People without their own saved sorting start with the company default. Personal sorting takes precedence. Data Acquisition V3 uses the company's sort mode and shared rules; its running- and waiting-order options are separate.
 
@@ -154,11 +164,11 @@ Use the view switch to open [Assignment Gantt](/en/platform-intro/pages/assignme
 
 ## Why Can I Not Move a Card?
 
-Only **Unplanned**, **Planned**, and **Released** assignments can move to another machine or hall. In-progress, on-hold, and completed work can only be reordered within its current queue. The UI mentions Released in move rules, but when work becomes Released is not confirmed here.
+Running work must be stopped on its machine before a handover. Finished and cancelled work cannot change destination. Started, stopped work opens the handover dialog even if its status is **Planned** or **Released**. Its recorded work always stays on the original machine.
 
 At most 25 machines can be shown at once, plus hall pools. Search only filters the area chosen under **Search in**. Status, priority, and tag filters apply to the unassigned list and all queues. The import filter narrows only the unassigned list to one ERP upload. If the queue changes while you reorder, it refreshes and you must redo the reorder.
 
-With **Queue Position** on, dropping a card sets its exact position; running and on-hold cards stay at the top. With it off, sort-rule precedence controls the view, and the **Moves** dropdown offers **Start of Queue** or **End of Queue**. This also applies to newly assigned operations dropped from the unassigned list onto a machine or hall pool.
+For moves without a dialog, with **Queue Position** on, dropping a card sets its exact position; running and on-hold cards stay at the top. With it off, sort-rule precedence controls the view, and the **Moves** dropdown offers **Start of Queue** or **End of Queue**. This also applies to newly assigned operations dropped from the unassigned list onto a machine or hall pool.
 
 ## Read OP, AG, P, Seq, Qty, and Utilization
 
@@ -188,7 +198,7 @@ For example, 50 parts at 2 minutes per part add 100 planned production minutes, 
 - With **Queue Position** on, dropping an unassigned operation into a large queue adds the work but does not save its chosen position. This affects hall pools with more than 500 active assignments and machine queues with more than 100. The Planner shows **Could not persist queue reorder. Local changes were rolled back.** and reloads the queue. Check the queue before trying again. Reordering work already in a large pool is still saved.
 - Up to 25 machines can be shown at once. Hall pools do not count toward this limit.
 - Filters can hide both machines and unassigned work.
-- In-progress and completed assignments cannot be moved to another column.
+- Running work must stop before handover. Finished and cancelled work stays on its machine.
 - Automatic arrangement applies to future assignments and leaves active production unchanged.
 
 ## Related Pages

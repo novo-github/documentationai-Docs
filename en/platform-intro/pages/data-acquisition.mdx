@@ -74,6 +74,24 @@ When a company default exists, the reset control is labelled **Reset to company 
 
 Resetting keeps the queue-mode choices for running and waiting orders. It replaces the sort rules, so add any running- or waiting-order rules you need again. These special rules are not part of the company default. Once you save your own sorting or a reset, later company changes do not replace it.
 
+## Send Work Back to the Hall Pool
+
+In Data Acquisition V3, anyone with access to this machine can return unfinished work to its own hall pool. Select the step: **Create** changes to **Back to pool**. Tap the selected card again to clear the selection and restore **Create**.
+
+For a running step, **Back to pool** opens the normal stop dialog first. **Stop first – then back to pool** appears at the bottom. Record quantities and stop the interval. If **PDA Assist** asks you to choose a time, finish or close that choice before the return dialog opens. Closing the stop dialog or booking without stopping cancels this sequence.
+
+In **Send back to the pool**:
+
+- If work has not started, the whole step moves to the pool.
+- If work has started, recorded times and good parts stay on this machine. **Planned**, **Done here**, and **Left** summarize the quantities. **Quantity left** starts with planned quantity minus good parts, never below zero. Scrap does not reduce the remainder. Change it if parts need to be made again, or leave it empty if the quantity is unknown. It starts empty when the planned quantity is unknown.
+- **Reason (optional)** passes a note of up to 500 characters to the next machine, such as “Spindle broken”.
+
+Confirm with **Back to pool**. The work goes to the top of the hall pool, where another machine in the hall can claim it as usual. The list refreshes, the selection clears, and a confirmation appears at the bottom. After partial work, the original card shows **Handed over** instead of **Completed**. Choose the third view tab with the history icon, **Time Window + All Statuses**, to find the handed-over part. It shows all steps in the chosen date window, including completed and cancelled ones. **All Open** and **Time Window + Open** hide the handed-over part.
+
+The pool card shows where the work came from and how many parts were already made, or who sent back an unstarted step and when. Hover over its grey badge for details and the reason. Step context and waiting-step details show **Partly done:** with quantities and the remaining destination. Handing work over does not finish the whole step or release later steps that are waiting for it.
+
+Finished or cancelled steps cannot be sent back. Without a hall, the button is unavailable; ask your planner. If all planned parts are made, finish the step unless more are needed. There is no automatic undo for a handover. If **This step was changed in the meantime. The list has been refreshed.** appears, review the refreshed list before trying again. Follow [return work to the pool](/en/platform-intro/workflows/data-acquisition#back-to-pool).
+
 ## Interval Times and Timeline Display
 
 An interval records a stretch of preparation or production. In Data Acquisition V3, open the order's interval list. Tap a start or end time once to open **Edit interval** on **Start** or **End**. The clock icon and **Tap to change** hint identify editable times. The pencil opens **Quantities**.
@@ -145,7 +163,7 @@ Unbound or unlabeled machine time belongs to no order. Deleting a recorded inter
 | --- | --- |
 | **All Open** | All open assignments, with no date filter. |
 | **Time Window + Open** | Open assignments in a ±1/3/5/7-day window; useful for daily work. |
-| **Time Window + All Statuses** | Includes completed and cancelled work for looking back. |
+| **Time Window + All Statuses** | All steps in the chosen date window, including completed and cancelled ones. |
 
 **Card Display Settings / Columns / Highlight** are saved per user. **Sort by Queue Position** follows the planned queue. Choose where running and waiting orders appear under **Sort Order**.
 

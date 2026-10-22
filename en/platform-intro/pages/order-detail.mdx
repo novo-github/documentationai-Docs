@@ -55,6 +55,18 @@ Operations that use industrial minutes show an **Industrial minutes** label besi
 
 An assignment is marked complete when its produced quantity exactly matches its planned quantity. Check those quantities when reviewing completion so work is not treated as finished before the planned amount has been produced.
 
+<a id="handed-over-work" />
+
+### Read Handed-Over Work
+
+The neutral **Handed over** badge beside the order status means that some work has continued elsewhere. Hover over it for one line per affected step: good parts already made, the original quantity, and the machine or pool holding the remainder.
+
+A step can show **Partly done: 40 of 100 on DMU 50 · 60 left in Hall 2 pool**. Once another machine claims it, the line names that machine. After all parts are finished, it shows **Done on DMU 50 (40) and DMU 80 (60)**. These are examples; your quantities and names appear instead.
+
+The first machine's part shows **Handed over** in assignment rows, the forecast, and analysis. Its recorded times and good parts stay there. The receiving assignment shows its source and the quantity already made. Hover over a handover badge for details and any reason. The step and order remain open while the rest is unfinished, so later steps can still be waiting. To pass work on, follow [hand over work in the Planner](/en/platform-intro/workflows/assignment-planner#hand-over-work).
+
+To undo a handover manually, administrators and users with access to the Orders page first [delete the waiting remainder](/en/help-center/faq/planning-and-imports#handover-undo). Only do this if it has never started on the other machine. Deleting a part also deletes its recorded times. Before deleting, note the original quantity from **Partly done:** or the order’s **Handed over** badge; afterwards, **Done on** no longer shows it. Then select **Edit** (pencil icon) in the first machine’s **Handed over** assignment row. In **Edit Assignment**, choose **Hold**, restore **Planned Qty** to the noted original quantity if known, and select **Save**. If the planned quantity was unknown, there is no original to restore. The part returns to the first machine’s queue on hold with its times and good parts. Its handover label, the order’s handover badge and the partial-completion line disappear.
+
 ## Check the Expected Finish
 
 The **Forecaster** card shows when this order is expected to finish, based on what is happening on the machines now. **Updated** followed by a date tells you when the forecast was refreshed.

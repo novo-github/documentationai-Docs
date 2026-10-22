@@ -48,6 +48,29 @@ Begin on the [Data Acquisition (PDA) page](/en/platform-intro/pages/data-acquisi
   </Step>
 </Steps>
 
+<a id="back-to-pool" />
+
+## Return Unfinished Work to the Pool
+
+You need access to the machine's Data Acquisition V3 page. The machine must belong to a hall, and the step must be on this machine and neither finished nor cancelled. You can return work only to this machine's own hall pool. Ask a planner to choose another hall or a specific machine.
+
+<Steps>
+  <Step title="Select the step and return it" icon="arrow-right" title-type="p">
+    Select the step's card. **Create** changes to **Back to pool**. Choose **Back to pool**. To create work instead, tap the selected card again to clear the selection.
+  </Step>
+  <Step title="Stop running work and record quantities" icon="arrow-right" title-type="p">
+    If the step is running, the normal stop dialog opens with **Stop first – then back to pool** at the bottom. Enter good parts and scrap, then stop. Complete or close any **PDA Assist** time choice. The return dialog opens afterwards. Closing the stop dialog or booking without stopping cancels the return sequence.
+  </Step>
+  <Step title="Review the remaining quantity and reason" icon="arrow-right" title-type="p">
+    In **Send back to the pool**, an unstarted step moves as a whole. For started work, check **Planned**, **Done here**, and **Left**. **Quantity left** suggests planned quantity minus good parts; scrap does not reduce it. Change it for parts that must be made again, or leave it empty if unknown. If all planned parts are made, finish the step instead unless more are needed. Add **Reason (optional)** so the next operator knows why the work was returned.
+  </Step>
+  <Step title="Confirm and check both parts" icon="arrow-right" title-type="p">
+    Check the destination and quantity, then confirm **Back to pool**. There is no automatic undo for a handover. The selection clears and a confirmation appears at the bottom. The whole unstarted step, or the remainder of started work, goes to the top of the hall pool. Another machine in the hall can claim it as usual. For started work, choose the third view tab with the history icon, **Time Window + All Statuses**, to find the handed-over part. It shows all steps in the chosen date window, including completed and cancelled ones. **All Open** and **Time Window + Open** hide the handed-over part. The original part is marked **Handed over**. Its times and good parts stay on this machine.
+  </Step>
+</Steps>
+
+If **This step was changed in the meantime. The list has been refreshed.** appears, review the refreshed step before trying again. A disabled button explains whether the step is finished or the machine has no hall. See [Data Acquisition](/en/platform-intro/pages/data-acquisition) for the handover badges and quantity rules.
+
 ## Check Active Assistance and Automatic Ending
 
 <Steps>
@@ -173,6 +196,7 @@ An administrator must enable warnings for this machine first. Anyone with access
 
 ## Decision Points
 
+- Whether to finish work here or return the remainder to the hall pool.
 - Whether the current time belongs to preparation, active production, or a stop.
 - Whether the job should use an existing assignment or a live immediate order.
 - Whether an unplanned operation should be assigned directly to the machine.

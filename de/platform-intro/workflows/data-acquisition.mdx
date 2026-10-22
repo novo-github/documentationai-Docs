@@ -48,6 +48,29 @@ Beginnen Sie auf der [Seite Betriebsdatenerfassung (BDE)](/de/platform-intro/pag
   </Step>
 </Steps>
 
+<a id="back-to-pool" />
+
+## Offene Arbeit in den Pool zurückgeben
+
+Sie benötigen Zugriff auf die Betriebsdatenerfassung V3 dieser Maschine. Die Maschine muss einer Halle angehören. Der Schritt muss auf dieser Maschine liegen und darf weder abgeschlossen noch storniert sein. Sie können Arbeit nur in den eigenen Hallenpool der Maschine zurückgeben. Bitten Sie die Planung, eine andere Halle oder eine bestimmte Maschine auszuwählen.
+
+<Steps>
+  <Step title="Wählen Sie den Schritt zur Rückgabe aus" icon="arrow-right" title-type="p">
+    Wählen Sie die Karte des Schritts. **Erstellen** wechselt zu **Zurück in den Pool**. Wählen Sie **Zurück in den Pool**. Möchten Sie stattdessen Arbeit erstellen, tippen Sie erneut auf die ausgewählte Karte, um die Auswahl aufzuheben.
+  </Step>
+  <Step title="Stoppen Sie laufende Arbeit und erfassen Sie die Mengen" icon="arrow-right" title-type="p">
+    Läuft der Schritt, öffnet sich der normale Stoppdialog. Unten erscheint **Erst stoppen – dann zurück in den Pool**. Erfassen Sie Gutteile und Ausschuss und stoppen Sie. Treffen oder schließen Sie eine mögliche Zeitauswahl von **BDE Assist**. Danach öffnet sich der Rückgabedialog. Schließen Sie den Stoppdialog oder buchen Sie ohne zu stoppen, endet die Rückgabeabfolge.
+  </Step>
+  <Step title="Prüfen Sie Restmenge und Grund" icon="arrow-right" title-type="p">
+    Unter **Zurück in den Pool geben** wird ein ungestarteter Schritt als Ganzes verschoben. Prüfen Sie bei begonnener Arbeit **Geplant**, **Hier gefertigt** und **Offen**. **Restmenge** schlägt Planmenge minus Gutteile vor. Ausschuss verringert sie nicht. Ändern Sie die Menge für nachzufertigende Teile oder lassen Sie sie leer, wenn sie unbekannt ist. Sind alle geplanten Teile gefertigt, schließen Sie den Schritt ab, sofern keine weiteren benötigt werden. Ergänzen Sie **Grund (optional)**, damit die nächste Person die Rückgabe versteht.
+  </Step>
+  <Step title="Bestätigen und prüfen Sie beide Anteile" icon="arrow-right" title-type="p">
+    Prüfen Sie Ziel und Menge und bestätigen Sie **Zurück in den Pool**. Eine Übergabe lässt sich nicht automatisch rückgängig machen. Die Auswahl wird aufgehoben und unten erscheint eine Bestätigung. Der ganze ungestartete Schritt oder die restliche begonnene Arbeit kommt an den Anfang des Hallenpools. Eine andere Maschine der Halle kann sie wie gewohnt übernehmen. Bei begonnener Arbeit wählen Sie den dritten Ansichtsreiter mit dem Historiensymbol, **Zeitfenster + Alle Status**, um den übergebenen Anteil zu finden. Er zeigt alle Schritte im gewählten Datumsfenster, einschließlich abgeschlossener und stornierter Schritte. **Alle Offen** und **Zeitfenster + Offen** blenden den übergebenen Anteil aus. Der ursprüngliche Anteil zeigt **Übergeben**. Seine Zeiten und Gutteile bleiben auf dieser Maschine.
+  </Step>
+</Steps>
+
+Bei **Dieser Schritt wurde inzwischen geändert. Die Liste wurde aktualisiert.** prüfen Sie den aktualisierten Schritt vor einem erneuten Versuch. Eine nicht verfügbare Schaltfläche erklärt, ob der Schritt abgeschlossen ist oder die Maschine keine Halle hat. Kennzeichnungen und Mengenregeln finden Sie unter [Betriebsdatenerfassung](/de/platform-intro/pages/data-acquisition).
+
 ## Aktive Hilfe und automatisches Ende prüfen
 
 <Steps>
@@ -173,6 +196,7 @@ Ein Administrator muss Warnungen für diese Maschine zuerst aktivieren. Alle Per
 
 ## Entscheidungspunkte
 
+- Ob Sie die Arbeit hier abschließen oder den Rest in den Hallenpool zurückgeben.
 - Ob der aktuelle Zeitpunkt zur Vorbereitung, aktiven Produktion oder einem Stopp gehört.
 - Ob für die Aufgabe eine vorhandene Zuweisung oder ein direkter Live-Auftrag verwendet werden soll.
 - Ob eine ungeplante Operation direkt der Maschine zugewiesen werden soll.

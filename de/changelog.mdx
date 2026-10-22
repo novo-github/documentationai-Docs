@@ -6,8 +6,8 @@ toc: false
 
 ## Releases
 
-<Update label="2026-10-22" description="v1.5.130" tags={["Funktion", "Verbesserung", "Fehlerbehebung"]}>
-  {/* commits: 89f08e1, ec6ed1e, fdfa386, 15a9ed5 */}
+<Update label="2026-10-22" description="v1.5.130–v1.5.131" tags={["Funktion", "Verbesserung", "Fehlerbehebung"]}>
+  {/* commits: 89f08e1, ec6ed1e, fdfa386, 15a9ed5, 23a788f, d885cd9, 4580312, f6b59f4, ad6bed3, a305e72, 8cc0f7e */}
 
   **Release-Datum:** 22. Oktober 2026
 
@@ -27,6 +27,15 @@ toc: false
 
   Mit **Auf Firmenstandard zurücksetzen** übernehmen Sie im Planer die aktuellen Firmenvorgaben. Öffnen Sie in der Betriebsdatenerfassung **Kartenanzeige-Einstellungen → Sortierreihenfolge → Auf Firmensortierung zurücksetzen** und wählen Sie **Speichern**. Das Zurücksetzen übernimmt die heutigen Vorgaben. Spätere Änderungen des Firmenstandards ersetzen diese gespeicherte persönliche Sortierung nicht. Die Auswahl für laufende und wartende Aufträge im Warteschlangenmodus der Betriebsdatenerfassung bleibt unverändert. Folgen Sie den [Schritten zur Firmensortierung](/de/platform-intro/workflows/assignment-planner#firmensortierung-speichern-oder-übernehmen).
 
+  #### [Offene Arbeit auf einer anderen Maschine fortsetzen](/de/platform-intro/pages/data-acquisition)
+  {/* feature: assignment-handover */}
+
+  Mit Zugriff auf die Maschine können Sie in der Betriebsdatenerfassung V3 einen Schritt auswählen und **Zurück in den Pool** wählen. Bei ausgewähltem Schritt ersetzt dies **Erstellen**. Laufende Arbeit stoppen Sie zuerst wie gewohnt und erfassen die Mengen. Danach folgt gegebenenfalls die Zeitauswahl von **BDE Assist**. Die Arbeit geht in den Hallenpool der Maschine zurück. Administratoren und Benutzer mit Zugriff auf die Seite Aufträge können im Zuweisungsplaner einen Schritt, der begonnen und danach gestoppt wurde, auf einen beliebigen Hallenpool oder eine andere zugängliche Maschine ziehen. Sie benötigen auch Zugriff auf die aktuelle Maschine des Schritts. Andere Benutzer mit Zugriff auf diese Maschine können den Schritt in der Betriebsdatenerfassung und im Zuweisungsplaner nur in deren eigenen Hallenpool zurückgeben. Ungestartete Schritte werden im Zuweisungsplaner weiterhin direkt ohne Dialog verschoben.
+
+  Hat die Arbeit begonnen, bleiben erfasste Zeiten und Gutteile auf der ursprünglichen Maschine. Prüfen Sie **Restmenge**, ergänzen Sie **Grund (optional)** für die nächste Person und bestätigen Sie. Beispielsweise bleiben bei 40 Gutteilen von 100 noch 60 für die nächste Maschine. Bei der Rückgabe eines ungestarteten Schritts wird der ganze Schritt verschoben. In beiden Fällen kommt die zurückgegebene oder übergebene Arbeit an den Anfang der Zielwarteschlange. Folgen Sie [Arbeit am Terminal zurückgeben](/de/platform-intro/workflows/data-acquisition#back-to-pool) oder [Arbeit im Planer übergeben](/de/platform-intro/workflows/assignment-planner#hand-over-work).
+
+  Abgeschlossene oder stornierte Arbeit kann nicht zurückgegeben werden. In der Betriebsdatenerfassung muss die Maschine einer Halle zugeordnet sein. Eine Übergabe lässt sich nicht automatisch rückgängig machen. Prüfen Sie Ziel und Menge vor dem Bestätigen.
+
   ### Verbesserungen
 
   #### [Position laufender Aufträge am Terminal wählen](/de/platform-intro/pages/data-acquisition)
@@ -36,12 +45,24 @@ toc: false
 
   Ist die Warteschlangensortierung ausgeschaltet, fügen Sie **Laufende Aufträge und Aufträge in Wartestellung** als Regel hinzu und wählen **Ganz oben** oder **Ganz unten**. Diese Regel steht vor der Regel für wartende Aufträge sowie vor Priorität oder Datum. Wählen Sie **Speichern**, um Ihre Auswahl zu übernehmen. Diese Optionen gehören zu Ihrer Anzeige in der Betriebsdatenerfassung und sind nicht Teil des Firmenstandards. Folgen Sie [Die Darstellung der Betriebsdatenerfassung V3 einstellen](/de/platform-intro/workflows/data-acquisition#die-darstellung-der-betriebsdatenerfassung-v3-einstellen).
 
+  #### [Sehen, wo die restliche Arbeit weitergeht](/de/platform-intro/pages/order-detail)
+  {/* feature: assignment-handover */}
+
+  **Übergeben** kennzeichnet den beendeten Anteil auf der ursprünglichen Maschine. Der Auftrag kann weiterhin geplant oder in Bearbeitung sein. Aufträge & Produkte und der Auftragskopf zeigen zusätzlich eine neutrale Kennzeichnung **Übergeben**. Zeigen Sie darauf, um je betroffenem Schritt die bereits gefertigten Gutteile und das Ziel der restlichen Arbeit zu sehen.
+
+  Schrittdetails zeigen **Teilweise gefertigt:** mit Mengen und Ziel. Sind alle Teile fertig, erscheint **Gefertigt an** mit den Maschinen. Karten im Planer, in der Betriebsdatenerfassung, in Maschinenansichten, im Hallenplan und im Gantt zeigen Herkunft oder Ziel der Arbeit. Folgen Sie [Arbeit übergeben](/de/platform-intro/workflows/assignment-planner#hand-over-work).
+
   ### Fehlerbehebungen
 
   #### [Neu zugewiesene Arbeit am Anfang der Warteschlange einordnen](/de/platform-intro/pages/assignment-planner)
   {/* feature: planner-queue-sort */}
 
   Ist **Nach Warteschlangenposition sortieren** ausgeschaltet und **Verschiebungen: Anfang der Warteschlange** ausgewählt, landet eine nicht zugewiesene Operation beim Ziehen auf eine Maschine oder einen Hallenpool jetzt am Anfang dieser Warteschlange. Bisher landete sie immer am Ende.
+
+  #### [Bestätigung beim Übernehmen von Pool-Arbeit sehen](/de/platform-intro/pages/data-acquisition)
+  {/* feature: assignment-handover */}
+
+  In der Betriebsdatenerfassung V3 fehlten Bestätigungen für Aktionen wie das Übernehmen von Arbeit. Sie erscheinen jetzt unten auf der Seite, auch beim Zurückgeben in den Pool.
 </Update>
 
 <Update label="2026-10-21" description="v1.5.129" tags={["Funktion", "Fehlerbehebung"]}>

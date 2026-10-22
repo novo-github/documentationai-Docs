@@ -61,7 +61,7 @@ Begin on the [Assignment Planner page](/en/platform-intro/pages/assignment-plann
     Under **Which pools to show**, tick the halls you need. This also changes the hall filter. Each pool appears beside **Unassigned operations** and stays in view while you scroll through the machines. If the list is hidden, pools start at the left edge.
   </Step>
   <Step title="Make room and place work" icon="arrow-right" title-type="p">
-    Use **Collapse pool** to leave a narrow strip. If your search covers the pool, close it first so the work lands at the very end. Otherwise, a drop on the strip can land among the cards. **Unassigned** does not filter pools. You can drop onto the strip even while it is collapsed. Click the strip or use **Expand pool** to see its cards again. This browser remembers collapsed pools for the current company.
+    Use **Collapse pool** to leave a narrow strip. If your search covers the pool, close it first so the work lands at the very end. Otherwise, a drop on the strip can land among the cards. **Unassigned** does not filter pools. You can drop onto the strip even while it is collapsed. Started work opens the handover dialog; after confirmation, its remainder goes to the top. Click the strip or use **Expand pool** to see its cards again. This browser remembers collapsed pools for the current company.
   </Step>
 </Steps>
 
@@ -95,7 +95,30 @@ A link with a search uses **Everything** for that visit without replacing your s
   </Step>
 </Steps>
 
-In-progress and completed assignments cannot move to another column. You can still reorder them within their current queue.
+Started, stopped work uses the handover steps below. Running work must stop first. Finished and cancelled work cannot change destination.
+
+<a id="hand-over-work" />
+
+## Hand Over Started Work to Another Queue
+
+Administrators and users with access to the Orders page can choose any hall pool or another machine they can access. Every user needs access to the step’s current machine. Other users can only return the step to the pool of its current machine’s hall, in Assignment Planner or Data Acquisition. The step must have started and then stopped. Finished or cancelled steps cannot be handed over.
+
+<Steps>
+  <Step title="Check that the work is stopped" icon="arrow-right" title-type="p">
+    A running card stays locked with **Running. Stop it on the machine before moving it.** Use the normal stop action in [Data Acquisition](/en/platform-intro/workflows/data-acquisition) and record the quantities first.
+  </Step>
+  <Step title="Drag the stopped step to its destination" icon="arrow-right" title-type="p">
+    Drop the card on a hall-pool or another machine column. The handover dialog opens even if started work is marked **Planned** or **Released**. Moving within the same column only reorders the queue.
+  </Step>
+  <Step title="Review quantities and pass on the reason" icon="arrow-right" title-type="p">
+    Check **Planned**, **Done here**, and **Left**. Review **Quantity left**: only good parts reduce the suggested remainder. Change it if parts need to be made again, or leave it empty if unknown. If nothing is left, finish the step unless more parts are needed. Add **Reason (optional)** for the next operator.
+  </Step>
+  <Step title="Confirm and review the queues" icon="arrow-right" title-type="p">
+    Check the destination, then choose **Back to pool** or **Move** for a machine. There is no automatic undo for a handover. The original machine keeps its times and good parts, marked **Handed over**. The rest goes to the top of the destination queue, even when dropped onto a collapsed pool. Both queues update. The step remains open until the remainder is finished.
+  </Step>
+</Steps>
+
+For example, if 40 of 100 planned parts are good, the original machine keeps 40 and the next machine receives 60. Hover over a grey badge to check the destination or source and any reason. If the step changed during review, inspect the refreshed queues before trying again.
 
 ## Set an Operation Priority and Filter the Plan
 
@@ -241,13 +264,13 @@ Only working time counts toward the hold limit. Without planned shifts, 24 hours
 
 When [Order Upload](/en/platform-intro/pages/erp-upload-planner) flags a conflict for manual resolution, use the order and operation details in the import summary to find the affected work in the planner. Review its current destination, status, notes, and related order before changing the plan.
 
-Move an eligible assignment to the intended queue when appropriate. If work has already started or completed, the cross-column move restriction still applies; review the current production record before deciding how to proceed. The import summary explains when a decision could not be applied because production changed after review.
+Move an eligible assignment to the intended queue when appropriate. If work has started, review its recorded quantities and stop it before handing over the remainder. Finished work stays on its machine. The import summary explains when a decision could not be applied because production changed after review.
 
 ## Check Move Eligibility and Queue Changes
 
-Only **Unplanned**, **Planned**, and **Released** work can move to another machine or hall. In-progress, on-hold, or completed assignments stay in their queue, where reordering remains possible. At most 25 machines can be shown at once; hall pools do not count toward the limit.
+Unstarted planned or released work moves directly. Started, stopped work opens the handover dialog. Running work must stop first, and finished or cancelled work stays on its machine. Up to 25 machines can be shown; hall pools do not count toward that limit.
 
-With Queue Position enabled, running and on-hold assignments stay at the top and a drop sets the exact position. With it disabled, sorting rules control the view and **Moves** chooses the start/end destination. If another change refreshes the queue while you reorder, redo the reorder against the refreshed queue.
+For moves without a dialog, with Queue Position enabled, running and on-hold assignments stay at the top and a drop sets the exact position. With it disabled, sorting rules control the view and **Moves** chooses the start/end destination. If another change refreshes the queue while you reorder, redo the reorder against the refreshed queue.
 
 Use [Assignment Gantt](/en/platform-intro/pages/assignment-gantt) to inspect the timeline. Its drag-to-reschedule mode is **Experimental and read-only**; use supported planner controls for changes.
 
@@ -255,6 +278,7 @@ Use the view switch to open Assignment Gantt for a timeline review. Use its **Mo
 
 ## Decision Points
 
+- Whether to hand over stopped work to a hall pool or directly to another machine.
 - Whether to keep pools beside the list or within the board.
 - Whether to search only the list, pools, machines, or all three.
 - Whether to choose a specific machine now or leave the work in a hall pool.
@@ -279,7 +303,7 @@ The machine queue reflects the latest planning decision, future assignments foll
 - Removing an assignment sends the work back out of the planned queue rather than completing it.
 - If your search covers a queue, close it before dropping at the end so work lands at the very end. Otherwise, the drop can land among its cards. **Unassigned** leaves machine queues and pools unfiltered.
 - If a dragged order does not match the displayed order, check whether **Sort by Queue Position** is enabled or sorting rules are active.
-- In-progress and completed assignments cannot move to another column.
+- Running work must stop before handover. Finished and cancelled work stays on its machine.
 - Review the actual saving result in **Improve plan**. A preview can look better than the result that can be saved because some work must keep its place.
 - **Times may be too early**: review missing machines or dates, planned durations, shift plans, and current production entries before relying on the finish.
 - Warning counts differ between pages: Assignment Gantt covers the displayed machines from last week to three weeks ahead; Orders & Products counts late deliveries across the company.

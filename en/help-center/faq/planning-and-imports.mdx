@@ -51,6 +51,14 @@ description: "Find answers about operation priorities, planning dates, grouping,
 | Why hasn’t my sorting changed with the company default? | [Answer](/en/help-center/faq/planning-and-imports#sorting-default-updates) |
 | Why are running orders no longer at the top in Data Acquisition? | [Answer](/en/help-center/faq/planning-and-imports#running-sort) |
 | How do I restore company sorting at the terminal? | [Answer](/en/help-center/faq/planning-and-imports#terminal-sorting-reset) |
+| How do I return work when my machine cannot finish it? | [Answer](/en/help-center/faq/planning-and-imports#back-to-pool) |
+| Where has the Create button gone? | [Answer](/en/help-center/faq/planning-and-imports#create-after-selection) |
+| Why is Back to pool unavailable? | [Answer](/en/help-center/faq/planning-and-imports#return-disabled) |
+| Can I send the remaining work straight to another machine? | [Answer](/en/help-center/faq/planning-and-imports#handover-machine) |
+| Why is the quantity left higher than I expected? | [Answer](/en/help-center/faq/planning-and-imports#handover-quantity) |
+| Does Handed over mean the whole step is finished? | [Answer](/en/help-center/faq/planning-and-imports#handover-status) |
+| Can I undo a handover? | [Answer](/en/help-center/faq/planning-and-imports#handover-undo) |
+| Why do I see “This step was changed in the meantime”? | [Answer](/en/help-center/faq/planning-and-imports#handover-changed) |
 
 <a id="operation-priority" />
 
@@ -232,7 +240,9 @@ On a wide screen, open **Hall pools → Where to show them → Beside the list**
 
 ## Can I drop work into a collapsed pool?
 
-Yes. Dropping onto the narrow strip places work at the end of the pool, including cards not yet shown. If your search covers the pool, close it first so the work lands at the very end. Otherwise, the drop can land among the cards. **Unassigned** does not filter pools. Click the strip or use **Expand pool** to see its cards again. See [hall-pool controls](/en/platform-intro/pages/assignment-planner).
+Yes. For moves without a dialog, dropping onto the narrow strip places work at the end of the pool, including cards not yet shown. If your search covers the pool, close it first so the work lands at the very end. Otherwise, the drop can land among the cards. **Unassigned** does not filter pools. Click the strip or use **Expand pool** to see its cards again. See [hall-pool controls](/en/platform-intro/pages/assignment-planner).
+
+Started, stopped work opens a handover dialog. After confirmation, its remainder goes to the top of the pool, including when the pool is collapsed. Follow [hand over work](/en/platform-intro/workflows/assignment-planner#hand-over-work).
 
 <a id="planner-search" />
 
@@ -286,7 +296,7 @@ Check whether another step with a lower number in the same work order is still u
 
 ## How do I put one order before another without raising its operation priority?
 
-Enable **Sort by Queue Position** in Assignment Planner and drag the card to the place you want. It lands where you drop it, and everyone sees the saved queue order. Running and on-hold cards stay on top. To sort the whole queue at once, choose **Sort by priority and date** in the machine or hall-pool header, review the proposal, and choose **Apply order**. This button is available to administrators and users with access to the Orders page and the machine. Operators do not see it. Follow the [queue sorting steps](/en/platform-intro/workflows/assignment-planner#sort-a-queue-by-priority-and-date).
+Enable **Sort by Queue Position** in Assignment Planner and drag the card to the place you want. For moves without a dialog, it lands where you drop it, and everyone sees the saved queue order. A handover places the remaining work at the top of its destination queue. Running and on-hold cards stay on top. To sort the whole queue at once, choose **Sort by priority and date** in the machine or hall-pool header, review the proposal, and choose **Apply order**. This button is available to administrators and users with access to the Orders page and the machine. Operators do not see it. Follow the [queue sorting steps](/en/platform-intro/workflows/assignment-planner#sort-a-queue-by-priority-and-date).
 
 <a id="queue-sort-access" />
 
@@ -329,3 +339,58 @@ Previously, running and on-hold orders stayed on top automatically with **Sort b
 ## How do I restore company sorting at the terminal?
 
 In Data Acquisition V3, open **Card Display Settings → Sort Order → Reset to company sorting**, then **Save**. A tick means the mode and rules already match, so the button is unavailable. Reset keeps the queue-mode choices for running and waiting orders but replaces sort rules; add any special running- or waiting-order rules again. Without a company default, the icon labelled **Reset to default (no company default set yet)** restores standard choices. See [Data Acquisition](/en/platform-intro/pages/data-acquisition#use-the-company-sorting-default).
+
+<a id="back-to-pool" />
+
+## How do I return work when my machine cannot finish it?
+
+In Data Acquisition V3, select the step and choose **Back to pool**. Running work first opens the normal stop dialog for quantities, then any **PDA Assist** time choice. Confirm the remaining quantity and optional reason in the return dialog. Work goes to your machine’s own hall pool; recorded times and good parts stay on the original machine. Follow [return work to the pool](/en/platform-intro/workflows/data-acquisition#back-to-pool).
+
+<a id="create-after-selection" />
+
+## Where has the Create button gone?
+
+In Data Acquisition V3, **Create** becomes **Back to pool** while a step is selected. Tap the selected card again to clear the selection and bring **Create** back. See [Data Acquisition](/en/platform-intro/pages/data-acquisition).
+
+<a id="return-disabled" />
+
+## Why is Back to pool unavailable?
+
+Finished and cancelled steps stay on the machine. A machine without a hall has no pool; ask your planner to check its hall. Hover over the unavailable button to read the reason. A running step can use **Back to pool**, but you must stop it in the dialog first. See [return requirements](/en/platform-intro/workflows/data-acquisition#back-to-pool).
+
+<a id="handover-machine" />
+
+## Can I send the remaining work straight to another machine?
+
+Administrators and users with access to the Orders page can drag a started, stopped card in Assignment Planner onto another machine they can access. Every user also needs access to the step’s current machine. Other users can only return work to the pool of its current machine’s hall, in Assignment Planner or Data Acquisition. Review **Quantity left**, add **Reason (optional)**, and confirm **Move**. The remainder goes to the top of that machine’s queue. Administrators and users with access to the Orders page can also choose any hall pool. Data Acquisition only returns work to the current machine’s own hall pool. Follow [hand over work](/en/platform-intro/workflows/assignment-planner#hand-over-work).
+
+<a id="handover-quantity" />
+
+## Why is the quantity left higher than I expected?
+
+**Quantity left** subtracts only good parts from the planned quantity. Scrap must be made again. For example, 40 good parts out of 100 leave 60, even if you also recorded scrap. Change the quantity if more parts are needed, or leave it empty if unknown. If nothing is left, finish the step unless you need more parts. See [quantity rules](/en/platform-intro/pages/data-acquisition).
+
+<a id="handover-status" />
+
+## Does Handed over mean the whole step is finished?
+
+No. **Handed over** marks the finished part on the original machine. The rest remains open, and later steps can still be waiting. **Partly done:** shows quantities and where the remainder is. In Data Acquisition, choose the third view tab with the history icon, **Time Window + All Statuses**. It shows all steps in the chosen date window, including completed and cancelled ones. **All Open** and **Time Window + Open** hide the handed-over part. On the order, hover over **Handed over** for each affected step. See [handover details](/en/platform-intro/pages/order-detail#handed-over-work).
+
+<a id="handover-undo" />
+
+## Can I undo a handover?
+
+Administrators and users with access to the Orders page can undo a handover of started work manually, but only while the remainder has not started and is still waiting in a pool or queue. If it has already run on the other machine, you cannot undo it. Do not delete that part: deleting it also deletes its recorded times.
+
+First, note the original quantity: the second number in **Partly done:**, such as 100 in “40 of 100”. You can also find it by hovering over the order’s **Handed over** badge. After deleting the new part, the line changes to **Done on** and no longer shows the original quantity. If no “of …” number appears because the planned quantity was unknown, there is no original quantity to restore.
+
+1. Delete the new part, identified by **From … already done**. On the order detail page, select the red **Delete** button (trash icon) in its assignment row, then confirm **Delete**. Alternatively, drag its card in Assignment Planner onto **Unassigned Operations**. This removes it immediately, without confirmation.
+2. On the [order detail page](/en/platform-intro/pages/order-detail#handed-over-work), find the first machine’s part marked **Handed over**. Select **Edit** (pencil icon). In **Edit Assignment**, choose **Hold**, restore **Planned Qty** to the original quantity if known, and select **Save**.
+
+The first part is back in its machine’s queue on hold, with its recorded times and good parts. Its **Handed over** label, the order’s **Handed over** badge and the step’s **Partly done:** line disappear. For example: 40 of 100 made on DMU 50, with 60 still waiting in the Hall 2 pool—delete the 60-part assignment, then set the DMU 50 part to **Hold** with **Planned Qty** of 100.
+
+<a id="handover-changed" />
+
+## Why do I see “This step was changed in the meantime”?
+
+The step changed while you were reviewing it. The dialog closes. Data Acquisition refreshes the list; Assignment Planner refreshes both queues. You then see the notice **This step was changed in the meantime. The list has been refreshed.** Check the current step before trying again. Review the machine, running state, and quantities instead of repeating the old choice. See [return work to the pool](/en/platform-intro/workflows/data-acquisition#back-to-pool).

@@ -6,8 +6,8 @@ toc: false
 
 ## Releases
 
-<Update label="2026-10-22" description="v1.5.130" tags={["feature", "improvement", "fix"]}>
-  {/* commits: 89f08e1, ec6ed1e, fdfa386, 15a9ed5 */}
+<Update label="2026-10-22" description="v1.5.130–v1.5.131" tags={["feature", "improvement", "fix"]}>
+  {/* commits: 89f08e1, ec6ed1e, fdfa386, 15a9ed5, 23a788f, d885cd9, 4580312, f6b59f4, ad6bed3, a305e72, 8cc0f7e */}
 
   **Release date:** October 22, 2026
 
@@ -27,6 +27,15 @@ toc: false
 
   Use **Reset to company default** in the Planner to copy the current company choices. In Data Acquisition, open **Card Display Settings → Sort Order → Reset to company sorting**, then **Save**. A reset copies today's choices; later company changes do not replace that saved personal sorting. Data Acquisition's queue-mode choices for running and waiting orders stay unchanged. Follow the [company sorting steps](/en/platform-intro/workflows/assignment-planner#save-or-use-company-sorting).
 
+  #### [Continue Unfinished Work on Another Machine](/en/platform-intro/pages/data-acquisition)
+  {/* feature: assignment-handover */}
+
+  Anyone with access to the machine can now select a step in Data Acquisition V3 and choose **Back to pool**. This replaces **Create** while a step is selected. Running work goes through the normal stop and quantity entry first, followed by any **PDA Assist** choice. Work returns to the machine's own hall pool. Administrators and users with access to the Orders page can drag a step that was started and then stopped in Assignment Planner to any hall pool or another machine they can access. They also need access to the step’s current machine. Other users with access to that machine can only return the step to its own hall pool, in Data Acquisition or Assignment Planner. Steps that have not started still move directly in Assignment Planner without a dialog, as before.
+
+  If work has started, its recorded times and good parts stay on the original machine. Review **Quantity left**, add **Reason (optional)** for the next operator, and confirm. For example, 40 good parts out of 100 leave 60 for the next machine. When returning a step that has not started, the whole step moves. In both cases, the returned or handed-over work goes to the top of the destination queue. Follow [return work from the terminal](/en/platform-intro/workflows/data-acquisition#back-to-pool) or [hand over work in the Planner](/en/platform-intro/workflows/assignment-planner#hand-over-work).
+
+  Finished or cancelled work cannot be sent back. Data Acquisition needs a machine assigned to a hall. There is no automatic undo for a handover; check the destination and quantity before confirming.
+
   ### Improvements
 
   #### [Choose Where Running Orders Appear at the Terminal](/en/platform-intro/pages/data-acquisition)
@@ -36,12 +45,24 @@ toc: false
 
   With queue sorting off, add **Running and on-hold orders** as a rule and choose **At the top** or **At the bottom**. This rule comes before the waiting-order rule and priority or date. Select **Save** to apply your choices. These options belong to your Data Acquisition display and are outside the company default. Follow [Configure the Data Acquisition V3 Display](/en/platform-intro/workflows/data-acquisition#configure-the-data-acquisition-v3-display).
 
+  #### [See Where the Remaining Work Will Continue](/en/platform-intro/pages/order-detail)
+  {/* feature: assignment-handover */}
+
+  **Handed over** identifies the finished part on the original machine, while the order can still be planned or in progress. Orders & Products and the order header also show a neutral **Handed over** badge. Hover over it to see each affected step, the good parts already made, and where the rest is waiting.
+
+  Step details show **Partly done:** with the quantities and destination, then **Done on** with the machines once all parts are finished. Cards in the Planner, Data Acquisition, machine views, Hall Plan, and Gantt show where work came from or went. Follow [hand over work](/en/platform-intro/workflows/assignment-planner#hand-over-work).
+
   ### Fixes
 
   #### [Place Newly Assigned Work at the Start of the Queue](/en/platform-intro/pages/assignment-planner)
   {/* feature: planner-queue-sort */}
 
   With **Sort by Queue Position** off and **Moves: Start of Queue** selected, an unassigned operation you drop onto a machine or hall pool now lands at the start of that queue. Previously, it always landed at the end.
+
+  #### [See Confirmation When Taking Work from the Pool](/en/platform-intro/pages/data-acquisition)
+  {/* feature: assignment-handover */}
+
+  In Data Acquisition V3, confirmation messages for actions such as claiming work were missing. They now appear at the bottom of the page, including confirmations when you send work back to the pool.
 </Update>
 
 <Update label="2026-10-21" description="v1.5.129" tags={["feature", "fix"]}>

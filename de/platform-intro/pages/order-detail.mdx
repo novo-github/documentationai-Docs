@@ -55,6 +55,18 @@ Operationen mit Industrieminuten tragen neben ihren geplanten Zeiten eine entspr
 
 Eine Zuweisung wird als abgeschlossen markiert, wenn ihre produzierte Menge genau der geplanten Menge entspricht. Prüfen Sie diese Mengen bei der Abschlusskontrolle, damit Arbeit nicht bereits vor Erreichen der geplanten Menge als fertig gilt.
 
+<a id="handed-over-work" />
+
+### Übergebene Arbeit lesen
+
+Die neutrale Kennzeichnung **Übergeben** neben dem Auftragsstatus bedeutet, dass Arbeit an anderer Stelle fortgesetzt wird. Zeigen Sie darauf, um je betroffenem Schritt die bereits gefertigten Gutteile, die ursprüngliche Menge und die Maschine oder den Pool mit der Restmenge zu sehen.
+
+Ein Schritt kann **Teilweise gefertigt: 40 von 100 an DMU 50 · 60 offen in Pool Halle 2** zeigen. Übernimmt eine andere Maschine die Arbeit, nennt die Zeile diese Maschine. Sind alle Teile fertig, erscheint **Gefertigt an DMU 50 (40) und DMU 80 (60)**. Dies sind Beispiele. Ihre Mengen und Namen erscheinen an deren Stelle.
+
+Der Anteil der ersten Maschine zeigt in Zuweisungszeilen, Prognose und Analyse **Übergeben**. Erfasste Zeiten und Gutteile bleiben dort. Die neue Zuweisung zeigt ihre Herkunft und die bereits gefertigte Menge. Zeigen Sie auf eine Übergabekennzeichnung, um Details und einen vorhandenen Grund zu lesen. Schritt und Auftrag bleiben offen, solange der Rest nicht fertig ist. Nachfolgende Schritte können deshalb weiter warten. Folgen Sie zum Weitergeben [Arbeit im Planer übergeben](/de/platform-intro/workflows/assignment-planner#hand-over-work).
+
+Um eine Übergabe manuell rückgängig zu machen, [löschen Administratoren und Benutzer mit Zugriff auf die Seite Aufträge zuerst den wartenden Rest](/de/help-center/faq/planning-and-imports#handover-undo). Das ist nur möglich, solange er auf der anderen Maschine noch nie begonnen hat. Beim Löschen eines Anteils werden auch seine erfassten Zeiten gelöscht. Notieren Sie vorher die ursprüngliche Menge aus **Teilweise gefertigt:** oder der Kennzeichnung **Übergeben** des Auftrags. Danach zeigt **Gefertigt an** sie nicht mehr. Wählen Sie anschließend **Bearbeiten** (Stiftsymbol) in der mit **Übergeben** markierten Zuweisungszeile der ersten Maschine. Wählen Sie unter **Zuweisung bearbeiten** den Status **In Wartestellung**, stellen Sie unter **Geplante Menge** die notierte ursprüngliche Menge wieder her, sofern bekannt, und wählen Sie **Speichern**. War die Planmenge unbekannt, gibt es keine ursprüngliche Menge zum Wiederherstellen. Der Anteil steht wieder in der Warteschlange der ersten Maschine, in Wartestellung und mit seinen Zeiten und Gutteilen. Seine Übergabekennzeichnung, die des Auftrags und die Zeile zum Teilfortschritt verschwinden.
+
 ## Das erwartete Ende prüfen
 
 Die Karte **Forecaster** zeigt, wann dieser Auftrag voraussichtlich fertig wird. Grundlage ist der aktuelle Stand auf den Maschinen. **Aktualisiert** mit anschließendem Datum zeigt, wann die Prognose zuletzt erneuert wurde.
