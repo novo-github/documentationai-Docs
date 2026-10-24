@@ -23,7 +23,7 @@ description: "Antworten zu Arbeitsgangprioritäten, Planungsterminen, Gruppierun
 | Warum zeigen Aufträge und Gantt unterschiedliche Warnungszahlen? | [Antwort](/de/help-center/faq/planning-and-imports#forecast-counts) |
 | Wie finde ich Aufträge, die auf keiner Plantafel erscheinen? | [Antwort](/de/help-center/faq/planning-and-imports#unplanned-orders) |
 | Was bedeutet „gefährdet“ und kann das erwartete Ende zu früh sein? | [Antwort](/de/help-center/faq/planning-and-imports#forecast-risk) |
-| Warum rückt Arbeit vor eine angehaltene Zuweisung? | [Antwort](/de/help-center/faq/planning-and-imports#held-work) |
+| Warum verzögert ein lange angehaltener Arbeitsgang weiterhin die Arbeit dahinter? | [Antwort](/de/help-center/faq/planning-and-imports#held-work) |
 | Ändert das Ausprobieren einer anderen Reihenfolge meinen Plan? | [Antwort](/de/help-center/faq/planning-and-imports#save-plan) |
 | Warum kann ich eine Zuweisung nicht verschieben oder zurücksetzen? | [Antwort](/de/help-center/faq/planning-and-imports#move-undo) |
 | Wie berücksichtigt die Prognose mehrere gleichzeitige Aufträge auf einer Maschine? | [Antwort](/de/help-center/faq/planning-and-imports#parallel-jobs) |
@@ -59,6 +59,15 @@ description: "Antworten zu Arbeitsgangprioritäten, Planungsterminen, Gruppierun
 | Bedeutet Übergeben, dass der ganze Schritt fertig ist? | [Antwort](/de/help-center/faq/planning-and-imports#handover-status) |
 | Kann ich eine Übergabe rückgängig machen? | [Antwort](/de/help-center/faq/planning-and-imports#handover-undo) |
 | Warum sehe ich „Dieser Schritt wurde inzwischen geändert“? | [Antwort](/de/help-center/faq/planning-and-imports#handover-changed) |
+| Warum hat Ziehen die Priorität meines Arbeitsgangs geändert? | [Antwort](/de/help-center/faq/planning-and-imports#drag-priority) |
+| Warum ist meine Karte nach einer Prioritätsänderung gerückt? | [Antwort](/de/help-center/faq/planning-and-imports#priority-moves-card) |
+| Legt Rückgängig meine gezogene Karte wieder zurück? | [Antwort](/de/help-center/faq/planning-and-imports#drag-priority-undo) |
+| Wer legt fest, ob eine kleinere Prioritätszahl dringender ist? | [Antwort](/de/help-center/faq/planning-and-imports#priority-direction) |
+| Kann ich einen laufenden Arbeitsgang im Planer nach unten schieben? | [Antwort](/de/help-center/faq/planning-and-imports#running-queue-position) |
+| Warum endet mein Arbeitsgang voraussichtlich zu diesem Zeitpunkt? | [Antwort](/de/help-center/faq/planning-and-imports#forecast-explanation) |
+| Warum zeigt meine Karte Keine Prognose? | [Antwort](/de/help-center/faq/planning-and-imports#no-forecast) |
+| Warum bewegen sich Karten oder leuchten kurz auf, ohne dass ich aktualisiere? | [Antwort](/de/help-center/faq/planning-and-imports#planner-updates) |
+| Wie öffne ich eine Maschine aus dem Planer? | [Antwort](/de/help-center/faq/planning-and-imports#planner-machine-link) |
 
 <a id="operation-priority" />
 
@@ -172,9 +181,9 @@ Aufträge & Produkte zählt offene Aufträge mit Lieferverzögerung im ganzen Un
 
 <a id="held-work" />
 
-## Warum rückt Arbeit vor eine angehaltene Zuweisung?
+## Warum verzögert ein lange angehaltener Arbeitsgang weiterhin die Arbeit dahinter?
 
-Nach dem **Limit für Wartestellung (Arbeitsstunden)** behandelt die Prognose die Zuweisung als abgestellt und lässt Arbeit dahinter aufrücken. Die pausierte Arbeit ist damit nicht fertig. Nur Arbeitszeit zählt. Ohne Schichten zählen 24 Stunden als volles Limit. Administratoren ändern das Limit unter **Planungseinstellungen**. Siehe [Zuweisungs-Gantt](/de/platform-intro/pages/assignment-gantt).
+Die Prognose nimmt an, dass der pausierte Arbeitsgang an seinem Platz weitergeht. Spätere Arbeit wartet deshalb weiterhin. Das Überschreiten von **Limit für Wartestellung (Arbeitsstunden)** ergänzt nur **Lange angehalten** und gibt die Maschine nicht frei. Administratoren stellen das Limit im Zuweisungs-Gantt unter **Planungseinstellungen → Planung** ein. Nur Maschinenarbeitszeit zählt. Ohne geplante Schichten zählen 24 Stunden als volles Limit. Siehe [Planungseinstellungen](/de/platform-intro/pages/assignment-gantt#planungseinstellungen).
 
 <a id="save-plan" />
 
@@ -296,7 +305,7 @@ Prüfen Sie, ob ein weiterer Schritt mit niedrigerer Nummer im selben Arbeitsauf
 
 ## Wie setze ich einen Auftrag vor einen anderen, ohne seine Arbeitsgangpriorität zu erhöhen?
 
-Aktivieren Sie im Zuweisungsplaner **Nach Warteschlangenposition sortieren** und ziehen Sie die Karte an die gewünschte Stelle. Sie landet dort, wo Sie sie ablegen. Alle sehen die gespeicherte Warteschlangenreihenfolge. Laufende Aufträge und Aufträge in Wartestellung bleiben oben. Um die ganze Warteschlange auf einmal zu sortieren, wählen Sie im Kopf der Maschine oder des Hallenpools **Nach Priorität und Datum sortieren**. Prüfen Sie den Vorschlag und wählen Sie **Reihenfolge übernehmen**. Diese Schaltfläche steht Administratoren und Benutzern mit Zugriff auf die Auftragsseite und die Maschine zur Verfügung. Operatoren sehen sie nicht. Folgen Sie den [Sortierschritten](/de/platform-intro/workflows/assignment-planner#eine-warteschlange-nach-priorität-und-datum-sortieren).
+Bitten Sie einen Administrator, **Admin-Panel → Prioritätsstufen → Reihenfolge und Arbeitsgang-Priorität bleiben im Einklang** auszuschalten. Aktivieren Sie dann **Nach Warteschlangenposition sortieren** und ziehen Sie die Karte. Nur ihr Platz ändert sich. Ist die Einstellung eingeschaltet, stellt **Rückgängig** im Prioritätshinweis nach dem Ziehen die Priorität wieder her und behält den neuen Platz bei. Auch das Übernehmen von **Nach Priorität und Datum sortieren** ändert keine Prioritäten. Siehe [Reihenfolge und Priorität](/de/platform-intro/pages/assignment-planner#reihenfolge-und-arbeitsgangpriorität).
 
 Eine Übergabe setzt die restliche Arbeit an den Anfang der Zielwarteschlange. Die Ablageposition gilt für Verschiebungen ohne Dialog. Folgen Sie [Arbeit übergeben](/de/platform-intro/workflows/assignment-planner#hand-over-work).
 
@@ -334,7 +343,7 @@ Ihre eigene gespeicherte Sortierung hat Vorrang. Auch das Zurücksetzen speicher
 
 ## Warum stehen laufende Aufträge in der Betriebsdatenerfassung nicht mehr ganz oben?
 
-Bisher blieben laufende Aufträge und Aufträge in Wartestellung bei eingeschalteter Option **Nach Warteschlangenposition sortieren** automatisch oben. In der Betriebsdatenerfassung V3 behalten sie jetzt mit der Voreinstellung **Position beibehalten** ihren Platz in der Warteschlange. Öffnen Sie **Kartenanzeige-Einstellungen → Sortierreihenfolge** und wählen Sie **Laufende Aufträge und Aufträge in Wartestellung → Ganz oben**, um sie zuerst anzuzeigen. Im Zuweisungsplaner bleiben laufende Aufträge und Aufträge in Wartestellung weiterhin oben. Ist die Warteschlangensortierung ausgeschaltet, ergänzen Sie **Laufende Aufträge und Aufträge in Wartestellung** als Regel und wählen **Ganz oben** oder **Ganz unten**. Die Regel steht vor der Regel für wartende Aufträge. Wählen Sie **Speichern**. Folgen Sie den [Schritten zur Darstellung](/de/platform-intro/workflows/data-acquisition#die-darstellung-der-betriebsdatenerfassung-v3-einstellen).
+Bisher blieben laufende Aufträge und Aufträge in Wartestellung bei eingeschalteter Option **Nach Warteschlangenposition sortieren** automatisch oben. In der Betriebsdatenerfassung V3 behalten sie jetzt mit der Voreinstellung **Position beibehalten** ihren Platz in der Warteschlange. Öffnen Sie **Kartenanzeige-Einstellungen → Sortierreihenfolge** und wählen Sie **Laufende Aufträge und Aufträge in Wartestellung → Ganz oben**, um sie zuerst anzuzeigen. Im Zuweisungsplaner behalten laufende und angehaltene Karten im Warteschlangenmodus die durch Ziehen gesetzten Positionen. Ist die Warteschlangensortierung ausgeschaltet, ergänzen Sie **Laufende Aufträge und Aufträge in Wartestellung** als Regel und wählen **Ganz oben** oder **Ganz unten**. Die Regel steht vor der Regel für wartende Aufträge. Wählen Sie **Speichern**. Folgen Sie den [Schritten zur Darstellung](/de/platform-intro/workflows/data-acquisition#die-darstellung-der-betriebsdatenerfassung-v3-einstellen).
 
 <a id="terminal-sorting-reset" />
 
@@ -396,3 +405,57 @@ Der erste Anteil steht wieder in der Warteschlange seiner Maschine, in Wartestel
 ## Warum sehe ich „Dieser Schritt wurde inzwischen geändert“?
 
 Der Schritt wurde während Ihrer Prüfung geändert. Der Dialog schließt sich. Die Betriebsdatenerfassung aktualisiert die Liste, der Zuweisungsplaner beide Warteschlangen. Danach erscheint der Hinweis **Dieser Schritt wurde inzwischen geändert. Die Liste wurde aktualisiert.** Prüfen Sie den aktuellen Schritt vor einem erneuten Versuch. Kontrollieren Sie Maschine, laufende Arbeit und Mengen, bevor Sie erneut entscheiden. Siehe [Arbeit in den Pool zurückgeben](/de/platform-intro/workflows/data-acquisition#back-to-pool).
+
+<a id="drag-priority" />
+
+## Warum hat Ziehen die Priorität meines Arbeitsgangs geändert?
+
+Mit **Nach Warteschlangenposition sortieren** kann Vorziehen vor dringendere Arbeit die Arbeitsgangpriorität erhöhen. Zurückschieben kann sie senken. Innerhalb derselben Warteschlange kann auch das Vorbeiziehen an gleich dringender Arbeit die Priorität um eine passende Unternehmensstufe ändern. Nur der verschobene Arbeitsgang ändert sich. Bei aufgeteilter Arbeit zeigen alle Anteile die neue Priorität. Andere Warteschlangen behalten ihre Reihenfolge. Siehe [Reihenfolge und Priorität](/de/platform-intro/pages/assignment-planner#reihenfolge-und-arbeitsgangpriorität).
+
+<a id="priority-moves-card" />
+
+## Warum ist meine Karte nach einer Prioritätsänderung gerückt?
+
+Im Warteschlangenmodus kann eine Änderung der **AG**-Anzeige die Karte beim Erhöhen an weniger dringender Arbeit vorbeiziehen. Beim Senken rückt sie hinter dringendere Arbeit. Gleich dringende Karten behalten ihre relative Reihenfolge. Bei aufgeteilter Arbeit können Anteile in anderen zugänglichen Warteschlangen ebenfalls rücken. Administratoren können dies unter **Admin-Panel → Prioritätsstufen → Reihenfolge und Arbeitsgang-Priorität bleiben im Einklang** ausschalten. Folgen Sie [Arbeitsgangpriorität festlegen](/de/platform-intro/workflows/assignment-planner#arbeitsgangpriorität-festlegen-und-den-plan-filtern).
+
+<a id="drag-priority-undo" />
+
+## Legt Rückgängig meine gezogene Karte wieder zurück?
+
+**Rückgängig** im Prioritätshinweis nach dem Ziehen stellt die vorherige Arbeitsgangpriorität wieder her. Die Karte bleibt an der Ablageposition. Ziehen Sie erneut, wenn Sie auch den Platz ändern möchten. Dabei kann sich die Priorität erneut ändern. Das unterscheidet sich vom Zurücksetzen einer vollständigen Warteschlangensortierung. Siehe [Arbeit umordnen und Priorität prüfen](/de/platform-intro/workflows/assignment-planner#arbeit-umordnen-und-ihre-priorität-prüfen).
+
+<a id="priority-direction" />
+
+## Wer legt fest, ob eine kleinere Prioritätszahl dringender ist?
+
+Administratoren wählen unter **Admin-Panel → Prioritätsstufen → So werden Prioritäten verwendet → Welche Zahl ist dringender?** entweder **Höhere Zahl = dringender** oder **Niedrigere Zahl = dringender**. Jede Änderung wird sofort gespeichert. SAP-Vorlagen wählen höhere Zahlen zuerst, Epicor und Infor niedrigere. Das Zurücksetzen der Stufen stellt höhere Zahlen zuerst wieder her. Die Richtung Ihrer eigenen Sortierregeln bleibt unverändert. Folgen Sie [Unternehmensprioritäten einstellen](/de/platform-intro/workflows/assignment-planner#verwendung-der-unternehmensprioritäten-einstellen).
+
+<a id="running-queue-position" />
+
+## Kann ich einen laufenden Arbeitsgang im Planer nach unten schieben?
+
+Ja. Mit **Nach Warteschlangenposition sortieren** behalten laufende und angehaltene Arbeitsgänge den von Ihnen gesetzten Platz samt Warteschlangennummer. Laufende Arbeit können Sie innerhalb ihrer Spalte umordnen. Vor einem Zielwechsel müssen Sie sie an der Maschine stoppen. Auch der Vorschlag nach Priorität und Datum sortiert laufende und angehaltene Arbeit. Siehe [Warteschlangensortierung](/de/platform-intro/pages/assignment-planner#warteschlangenposition-und-sortierregeln).
+
+<a id="forecast-explanation" />
+
+## Warum endet mein Arbeitsgang voraussichtlich zu diesem Zeitpunkt?
+
+Zeigen Sie auf die Terminmarke oder kleine Uhr der Planerkarte. **Warum dieser Zeitpunkt** nennt die Maschine, frühere Arbeit oder Schicht, auf die gewartet wird. **Frühere Arbeitsgänge dieses Auftrags** zeigt vorherige Arbeit auch auf anderen Maschinen. Lesen Sie unter **Grundlage** die Annahmen zu langen Unterbrechungen, verpassten Starts oder fehlenden Planungsangaben. Lassen sich Details nicht laden, zeigen Sie erneut darauf. Folgen Sie [Forecaster-Warnungen prüfen](/de/platform-intro/workflows/assignment-planner#forecaster-warnungen-vor-planänderungen-prüfen).
+
+<a id="no-forecast" />
+
+## Warum zeigt meine Karte Keine Prognose?
+
+Der Arbeitsgang liegt noch im Hallenpool oder die Prognose ist gerade nicht verfügbar. Zeigen Sie auf **Keine Prognose**, um den Grund zu lesen. Pool-Arbeit erhält eine Prognose, sobald sie einer Maschine zugewiesen ist. Lange angehaltene, nie gestartete Arbeitsgänge und solche ohne Termin auf einer Maschine erhalten jetzt erwartete Zeiten mit Annahmehinweisen. Fehlt einem früheren Arbeitsgang eine Maschine, kann ein späterer trotzdem eine zu optimistische Prognose haben. Siehe [Prognoseerklärungen](/de/platform-intro/pages/assignment-planner#ein-voraussichtliches-ende-erklären).
+
+<a id="planner-updates" />
+
+## Warum bewegen sich Karten oder leuchten kurz auf, ohne dass ich aktualisiere?
+
+Der Planer aktualisiert Prognosen nach dem Speichern und prüft etwa jede Minute auf Terminplanänderungen. Karten gleiten bei einer neuen Reihenfolge. Eine abgelegte Karte und eine geänderte Prognosemarke werden kurz hervorgehoben. Diese Hinweise ändern keinen Status. Aktualisierungen pausieren beim Ziehen, beim Speichern von Verschiebungen sowie in Sortierdialogen, Zuweisungsdialogen und im Dialog **Zurück in den Pool**. Bei eingeschalteter Bewegungsreduktion auf Ihrem Gerät erscheinen Umrandungen statt Bewegung. Siehe [Aktualisierungen der Plantafel](/de/platform-intro/pages/assignment-planner#aktualisierungen-auf-der-plantafel-verfolgen).
+
+<a id="planner-machine-link" />
+
+## Wie öffne ich eine Maschine aus dem Planer?
+
+Klicken Sie auf den Maschinennamen im Spaltenkopf. Strg-Klick oder Mittelklick öffnet sie in einem neuen Tab. Hallenpoolnamen sind keine Links. Siehe [Maschinendetails](/de/platform-intro/pages/machine-details).

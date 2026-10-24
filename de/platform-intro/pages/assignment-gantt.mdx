@@ -54,7 +54,7 @@ Auftrag 4711 ist am Donnerstag fällig. Das Schneiden auf Laser 2 ist für Diens
 | **Gefährdet** | Gelb | Noch nicht verspätet, aber die restliche Arbeit passt kaum noch oder ein früherer Arbeitsgang ist nicht geplant. |
 | **Verspätet +3 h** | Rot | Endet voraussichtlich drei Stunden nach dem Termin. |
 | **verspätet, Termin vorbei** | Rot | Der Termin ist vorbei und der Auftrag ist nicht fertig. |
-| **Ende nicht bekannt** | Blau | Der Termin liegt noch in der Zukunft, aber einem Arbeitsgang fehlt eine Maschine oder ein Termin. Deshalb lässt sich kein Ende ermitteln. |
+| **Ende nicht bekannt** | Blau | Der Termin liegt noch in der Zukunft, aber es liegt kein erwartetes Ende vor, etwa weil ein Arbeitsgang noch im Hallenpool liegt. |
 
 Der **Liefertermin** ist Ihre Zusage an den Kunden. Wird er verfehlt, erscheint die Warnung rot. Das **geplante Ende** stammt aus Ihrem eigenen Plan. Wird es verfehlt, erscheint die Warnung gelb. Die umbenannten Bezeichnungen finden Sie im [Forecaster-Glossar](/de/platform-intro/concepts/glossary#forecaster).
 
@@ -87,11 +87,16 @@ Bei **Zeiten können zu früh sein** sollten Sie fehlende Maschinen oder Termine
 
 Wählen Sie **Nach Auftrag** für betroffene Aufträge oder **Nach Ursache** für Zuweisungen, die andere Arbeit aufhalten. Öffnen Sie eine Warnung und folgen Sie **Zuweisung anzeigen, auf die gewartet wird**, um eine Verzögerung nachzuvollziehen. Hinweise unterscheiden **Gemessen am Liefertermin**, **Gemessen am ursprünglichen Plan** und **Gemessen am Plan in Watchmen**.
 
-**Nie gestartet** bedeutet, dass eine Zuweisung mehr als drei Tage hinter ihrem geplanten Start liegt und die Warteschlange der Prognose nicht mehr aufhält. **Kein geplanter Start** bedeutet, dass sie nicht auf der Zeitleiste platziert werden kann. Bei **Zu lange angehalten** ist das Limit für Wartestellung überschritten. Die Prognose lässt dann die Zuweisungen dahinter aufrücken. Diese Warnungen bedeuten nicht, dass die Arbeit fertig ist.
+- **Lange angehalten** (bisher **Zu lange angehalten**): Das Limit für Wartestellung ist überschritten. Die Prognose nimmt an, dass der Arbeitsgang an seinem Platz weitergeht. Spätere Arbeit wartet weiterhin darauf.
+- **Nie gestartet**: Dieser Hinweis erscheint nur mit **Nach geplanten Terminen** oder **Liefertermin zuerst** unter **Planungseinstellungen**. Vor mehr als drei Tagen geplante Arbeit wird eingeplant, sobald die Maschine frei ist. Mit **Nach der Warteschlange** oder **Nach der Warteschlange, nicht vor dem geplanten Termin** erscheint weder dieser Hinweis noch **Kein geplanter Start**. Der Arbeitsgang behält seinen Platz in der Warteschlange.
+- **Kein geplanter Start**: Dieser Hinweis erscheint nur mit **Nach geplanten Terminen** oder **Liefertermin zuerst**. Die Prognose plant den Arbeitsgang nach der Arbeit mit Termin auf seiner Maschine ein.
+- **Wartet auf früheren Arbeitsgang**: Der frühere Arbeitsgang ist noch auf keiner Maschine oder liegt im Hallenpool. Erwartete Zeiten können zu optimistisch sein.
+
+Diese Hinweise erklären die erwarteten Zeiten. Sie entfernen Arbeit nicht aus der Prognose und bedeuten nicht, dass sie fertig ist.
 
 ### Maschinenverfügbarkeit lesen
 
-Die Maschinenübersicht zeigt die verbleibende Arbeit, die die Prognose einplant. Fehlt einer Zuweisung ein voraussichtliches Ende, ist die angezeigte freie Zeit nur der frühestmögliche Zeitpunkt. Das kann bei nie gestarteter Arbeit, fehlendem Termin oder einer Unterbrechung über das Limit hinaus vorkommen.
+Die Maschinenübersicht zeigt die verbleibende Arbeit, die die Prognose einplant. Fehlt einer Zuweisung ein voraussichtliches Ende, ist die angezeigte freie Zeit nur der frühestmögliche Zeitpunkt. Die Maschine kann länger belegt sein. Lange Unterbrechungen, verpasste Starts und fehlende geplante Starts erhalten jetzt weiterhin eine Prognose mit Hinweisen zu den Annahmen.
 
 ## Einen ganzen Auftrag verfolgen
 
@@ -132,7 +137,9 @@ Administratoren öffnen **Planungseinstellungen → Planung** und wählen **Wie 
 | **Nach der Warteschlange, nicht vor dem geplanten Termin** | Behält die Warteschlange bei, wartet aber auf jeden geplanten Start. Eine später terminierte Zuweisung kann alles dahinter aufhalten. |
 | **Liefertermin zuerst** | Ordnet noch rechtzeitig lieferbare Arbeit nach Liefertermin. Bereits verspätete Arbeit wird nur vorgezogen, wenn dadurch keine andere Arbeit zu spät kommt. |
 
-**Limit für Wartestellung (Arbeitsstunden)** bestimmt, wann pausierte Arbeit ihre Maschine in der Prognose nicht mehr belegt. Geben Sie eine Dauer zwischen 1 Minute und 720 Stunden ein. Nur die Arbeitszeit der Maschine zählt. Ein Wochenende ohne Schichten verbraucht nichts. Ohne Schichtplan zählen 24 Stunden als volles Limit. Nach dem Limit erscheint eine Warnung und die Arbeit dahinter rückt auf.
+**Limit für Wartestellung (Arbeitsstunden)** bestimmt, wann **Lange angehalten** erscheint. Es entfernt Arbeit nicht aus der Prognose und gibt ihre Maschine nicht frei. Der Arbeitsgang behält seinen Platz in der Warteschlange und wird dort als fortgesetzt eingeplant. Geben Sie eine Dauer zwischen 1 Minute und 720 Stunden ein. Nur die Arbeitszeit der Maschine zählt. Ein Wochenende ohne Schichten verbraucht nichts. Ohne Schichtplan zählen 24 Stunden als volles Limit.
+
+Bei einem Limit von 8 Stunden auf einer Maschine mit 8 Arbeitsstunden pro Tag erhält ein am Montag um 10:00 pausierter Arbeitsgang den Hinweis beispielsweise am Dienstag um 10:00.
 
 Für die Maschinenkapazität stellen Administratoren **Parallele Aufträge** in der [Maschinenkonfiguration](/de/platform-intro/pages/machine-configuration) ein.
 

@@ -42,9 +42,11 @@ Eine Maschinenwarteschlange weist Arbeit einer bestimmten Maschine zu. Ein **Hal
 
 Eine Bereitschaftsanzeige kennzeichnet, wann eine Maschine die Arbeit aus dem Pool übernehmen kann. Die Maschinenwahl bleibt offen, bis die Arbeit übernommen wird. Die Anzeige hilft Ihnen zu erkennen, wann eine Übernahme möglich ist.
 
-Sie können ungestartete Arbeit direkt zwischen Maschinen- und Hallenpool-Spalten verschieben und sie am Anfang oder Ende der Zielwarteschlange einordnen. Stoppen Sie begonnene Arbeit zuerst und übergeben Sie den Rest über den unten beschriebenen Dialog. Erfasste Arbeit bleibt auf der ursprünglichen Maschine.
+Sie können ungestartete Arbeit direkt zwischen Maschinen- und Hallenpool-Spalten verschieben. Mit **Nach Warteschlangenposition sortieren** legen Sie die Arbeit an der gewünschten Stelle ab. Bei Sortierregeln bestimmt Ihre Auswahl unter **Verschiebungen** den Anfang oder das Ende der Zielwarteschlange. Stoppen Sie begonnene Arbeit zuerst und übergeben Sie den Rest über den unten beschriebenen Dialog. Erfasste Arbeit bleibt auf der ursprünglichen Maschine.
 
 Sie können Arbeit auch einem mit **Arbeitsplatz** gekennzeichneten Ziel zuweisen. Seine Warteschlange enthält Aufträge und Zuweisungen ohne Sensorkennzahlen. Prüfen Sie das Ziel vor der Bestätigung einer Verschiebung. Siehe [Arbeitsplätze](/de/platform-intro/pages/work-centers).
+
+Klicken Sie auf den Maschinennamen im Spaltenkopf, um die [Maschinendetails](/de/platform-intro/pages/machine-details) zu öffnen. Strg-Klick oder Mittelklick öffnet einen neuen Tab. Der Klick auf den Namen startet keine Ziehbewegung. Hallenpoolnamen sind keine Links.
 
 ### Begonnene Arbeit übergeben
 
@@ -52,7 +54,7 @@ Administratoren und Benutzer mit Zugriff auf die Seite Aufträge können einen b
 
 Die ursprüngliche Maschine behält ihre Zeiten und Gutteile. Ihr Anteil verlässt die aktive Warteschlange und zeigt **Übergeben**. Der Rest kommt an den Anfang der Zielwarteschlange, auch beim Ablegen auf einem eingeklappten Pool. Ihre Anzeigesortierung kann beeinflussen, wo die Karte erscheint. Beide Warteschlangen aktualisieren sich. Bei 40 Gutteilen von 100 bleiben beispielsweise 60 für die nächste Maschine. Eine Übergabe lässt sich nicht automatisch rückgängig machen.
 
-Eine laufende Karte bleibt gesperrt und zeigt **Läuft. Erst an der Maschine stoppen, dann verschieben.** Abgeschlossene und stornierte Arbeit kann nicht übergeben werden. Eine ungestartete geplante oder freigegebene Karte wird weiterhin ohne Dialog verschoben. Eine ungestartete Karte mit dem Status in Bearbeitung oder in Wartestellung öffnet eine Verschiebebestätigung. Der ganze Schritt wird verschoben, ohne erfasste Arbeit zurückzulassen. Das Umsortieren innerhalb derselben Warteschlange bleibt unverändert.
+Eine laufende Karte können Sie innerhalb ihrer Spalte umordnen. Ein Zielwechsel ist gesperrt mit **Läuft. Erst an der Maschine stoppen, dann verschieben.** Abgeschlossene und stornierte Arbeit kann nicht übergeben werden. Eine ungestartete geplante oder freigegebene Karte wird weiterhin ohne Dialog verschoben. Eine ungestartete Karte mit dem Status in Bearbeitung oder in Wartestellung öffnet eine Verschiebebestätigung. Der ganze Schritt wird verschoben, ohne erfasste Arbeit zurückzulassen.
 
 Graue Kennzeichnungen zeigen Herkunft oder Ziel der Arbeit. Zeigen Sie darauf, um Mengen, Person, Zeit und Grund zu lesen. Schmale Karten können nur ein Symbol und Zahlen zeigen. Schrittinformationen und Wartedetails zeigen **Teilweise gefertigt:** und das Ziel der restlichen Arbeit. Wurde der Schritt während Ihrer Prüfung geändert, aktualisieren sich die Warteschlangen. Prüfen Sie sie vor einem erneuten Versuch. Folgen Sie [Arbeit übergeben](/de/platform-intro/workflows/assignment-planner#hand-over-work).
 
@@ -104,9 +106,25 @@ Kann eine Änderung nicht gespeichert werden, zeigt der Zuweisungsplaner einen F
 
 Jeder Prioritätsfilter erlaubt mehrere Werte. Geben Sie eine Zahl ein, um nach einem Wert ohne Eintrag in der Unternehmenslegende zu suchen. Nutzen Sie beide Filter, muss eine Karte beide erfüllen. So finden Sie beispielsweise eine bestimmte Arbeitsgangpriorität innerhalb von Aufträgen einer ausgewählten Priorität. Siehe [Maschinenzuweisungen planen](/de/platform-intro/workflows/assignment-planner).
 
+### Reihenfolge und Arbeitsgangpriorität
+
+Mit **Nach Warteschlangenposition sortieren** beeinflussen sich Reihenfolge und Arbeitsgangpriorität standardmäßig gegenseitig:
+
+- Ziehen Sie einen Arbeitsgang vor dringendere Arbeit, um seine Priorität zu erhöhen, oder hinter weniger dringende Arbeit, um sie zu senken. Das gilt auch beim Wechsel zwischen Spalten und beim Zuweisen aus der Liste nicht zugewiesener Arbeit.
+- Innerhalb derselben Warteschlange kann das Vorbeiziehen an gleich dringender Arbeit die Priorität um eine Unternehmensstufe erhöhen oder senken. Bei den Standardstufen wird beispielsweise aus dem zweiten von zwei AG70-Arbeitsgängen beim Vorziehen an die Spitze AG100.
+- Ändern Sie die gestrichelte **AG**-Anzeige, um die Karte zur passenden Position ihrer neuen Priorität zu bewegen. Beim Erhöhen zieht sie an weniger dringender Arbeit vorbei, beim Senken an dringenderer. Gleich dringende Karten behalten ihre relative Reihenfolge.
+
+Der Planer verwendet Ihre Unternehmensstufen und die eingestellte Dringlichkeitsrichtung. Passt eine Priorität bereits, kann sie unverändert bleiben. Passt keine geeignete Stufe zwischen die Nachbarn, kann der Arbeitsgang dieselbe Priorität wie ein Nachbar erhalten. Eine Verschiebung ändert weder die Prioritäten anderer Arbeitsgänge noch die Auftragspriorität.
+
+Ändert Ziehen die Priorität, zeigt ein Hinweis den alten und neuen Wert. **Rückgängig** stellt die alte Priorität wieder her und behält die neue Warteschlangenposition bei.
+
+Ein auf Maschinen oder Pools aufgeteilter Arbeitsgang hat eine gemeinsame Priorität. Ziehen eines Anteils aktualisiert sie überall, lässt aber die anderen Warteschlangen unverändert. Eine Änderung der Priorität auf seiner Karte kann seine Anteile in jeder zugänglichen Warteschlange umordnen.
+
+Administratoren können dies unter **Admin-Panel → Prioritätsstufen → So werden Prioritäten verwendet → Reihenfolge und Arbeitsgang-Priorität bleiben im Einklang** ausschalten. Dann ändert Ziehen nur die Reihenfolge, und eine geänderte Priorität verschiebt keine Karten. Diese verknüpften Änderungen gelten weder im Sortierregelmodus noch beim Übernehmen von **Nach Priorität und Datum sortieren**. Folgen Sie den [Planungsschritten](/de/platform-intro/workflows/assignment-planner).
+
 ## Warteschlangenposition und Sortierregeln
 
-Die Sortierung nach Warteschlangenposition zeigt Zuweisungen in der Reihenfolge, die Sie durch Ziehen festgelegt haben. Ist diese Option ausgeschaltet, bestimmen Sortierregeln die angezeigte Reihenfolge. Jede Regel umfasst ein Feld und eine aufsteigende oder absteigende Richtung. Weitere Regeln lösen Gleichstände auf; die Reihenfolge der Regeln bestimmt ihren Vorrang.
+**Nach Warteschlangenposition sortieren** zeigt Zuweisungen genau in der Reihenfolge, die Sie durch Ziehen festlegen. Laufende und angehaltene Arbeitsgänge behalten ihren Platz und erhalten dort ihre Nummer. Nichts wird nach oben gezogen. Sie können laufende Arbeit innerhalb ihrer Spalte umordnen. Vor einem Zielwechsel müssen Sie sie stoppen. Ist diese Option ausgeschaltet, bestimmen Sortierregeln die angezeigte Reihenfolge. Jede Regel umfasst ein Feld und eine aufsteigende oder absteigende Richtung. Weitere Regeln lösen Gleichstände auf; die Reihenfolge der Regeln bestimmt ihren Vorrang.
 
 Dieselben Sortiermöglichkeiten stehen in der [Betriebsdatenerfassung V3](/de/platform-intro/pages/data-acquisition) zur Verfügung. Die Prioritäten entsprechen den unternehmensweiten Stufen aus dem [Admin-Panel](/de/platform-intro/pages/admin-panel).
 
@@ -114,9 +132,9 @@ Dieselben Sortiermöglichkeiten stehen in der [Betriebsdatenerfassung V3](/de/pl
 
 Sie benötigen ein Administratorkonto oder ein Benutzerkonto mit Zugriff auf die Auftragsseite sowie Zugriff auf die Maschine. Operatoren sehen diese Schaltfläche nicht. Aktivieren Sie unter **Filtern & Sortieren** die Option **Nach Warteschlangenposition sortieren**. Im Kopf jeder Maschine und jedes Hallenpools erscheint dann **Nach Priorität und Datum sortieren**, sowohl in der Spalten- als auch in der Zeilenanordnung.
 
-**Warteschlange nach Priorität und Datum sortieren** öffnet eine Vorschau für diese Warteschlange. Beim Öffnen ist immer **Auftragspriorität** ausgewählt. Wählen Sie **Arbeitsgangpriorität**, um die Prioritäten einzelner Schritte zu verwenden. Höhere Werte kommen zuerst. Bei gleicher Priorität kommt der früheste geplante Operationsstart zuerst. Fehlende Prioritäten oder Termine stehen beim jeweiligen Vergleich zuletzt. Bei gleicher Priorität und gleichem Termin bleibt die bisherige Reihenfolge erhalten.
+**Warteschlange nach Priorität und Datum sortieren** öffnet eine Vorschau für diese Warteschlange. Beim Öffnen ist immer **Auftragspriorität** ausgewählt. Wählen Sie **Arbeitsgangpriorität**, um die Prioritäten einzelner Schritte zu verwenden. Die dringendsten Werte kommen zuerst. Dabei gilt die Unternehmensauswahl für höhere oder niedrigere Zahlen unter **Welche Zahl ist dringender?**. Bei gleicher Priorität kommt der früheste geplante Operationsstart zuerst. Fehlende Prioritäten oder Termine stehen beim jeweiligen Vergleich zuletzt. Bei gleicher Priorität und gleichem Termin bleibt die bisherige Reihenfolge erhalten.
 
-Laufende Aufträge stehen zuerst, danach Aufträge in Wartestellung. Innerhalb beider Gruppen bleibt die bisherige Reihenfolge erhalten. Sie zeigen **Bleibt oben**. Die Vorschau zeigt vorgeschlagene Positionen, vorherige Positionen verschobener Aufträge, Prioritäten, geplante Starts und die Anzahl der Aufträge, die ihre Position ändern würden. Sie umfasst die aktive Warteschlange, auch Arbeit, die Ihre Filter ausblenden.
+Laufende und angehaltene Arbeit wird mit der übrigen aktiven Warteschlange sortiert. Keine Arbeit bleibt wegen ihres Status oben. Die Vorschau zeigt vorgeschlagene Positionen, vorherige Positionen verschobener Aufträge, Prioritäten, geplante Starts und die Anzahl der Aufträge, die ihre Position ändern würden. Sie umfasst die aktive Warteschlange, auch Arbeit, die Ihre Filter ausblenden.
 
 Wählen Sie **Reihenfolge übernehmen**, um die gemeinsame Warteschlangenreihenfolge zu speichern. Wählen Sie **Abbrechen**, um sie unverändert zu lassen. **Neue Reihenfolge übernommen** bestätigt die Änderung und bietet **Rückgängig** an. Die Sortierung erfolgt einmalig. Danach können Sie die Reihenfolge durch Ziehen der Karten anpassen. Importierte Aufträge kommen weiterhin ans Ende der Warteschlange.
 
@@ -144,7 +162,7 @@ Karten können **Geplanter Operationsstart** und **Geplantes Operationsende** an
 
 ## Termine mit dem Forecaster prüfen
 
-Öffnen Sie **Forecaster-Prüfung**, um den Vergleichstermin für die Karten zu wählen. Die farbige Marke links an jeder Karte zeigt, ob der Auftrag diesen Termin hält: Rot bedeutet verspätet, Gelb **gefährdet** und Grün im Termin. Die Warnung **gefährdet** bedeutet, dass die restliche Arbeit kaum noch passt oder ein früherer Arbeitsgang nicht geplant ist. Die Maschinenübersicht zählt ebenfalls Aufträge mit dieser Warnung.
+Öffnen Sie **Forecaster-Prüfung**, um den Vergleichstermin für die Karten zu wählen. Die farbige Marke links an jeder Karte zeigt, ob der Auftrag diesen Termin hält: Rot bedeutet verspätet und Gelb **gefährdet**. Pünktliche Karten mit einem voraussichtlichen Ende zeigen an derselben Stelle eine kleine Uhr. Die Warnung **gefährdet** bedeutet, dass die restliche Arbeit kaum noch passt oder ein früherer Arbeitsgang nicht geplant ist. Die Maschinenübersicht zählt ebenfalls Aufträge mit dieser Warnung.
 
 Hat der Forecaster noch kein erwartetes Ende für einen Auftrag, wird nur dessen Termin mit heute verglichen. Das bestätigt nicht, dass die Arbeit rechtzeitig fertig wird. Das erwartete Ende der Warteschlange zeigt, wann die Maschine voraussichtlich ihre gesamte wartende Arbeit erledigt hat. Die wartende Arbeitszeit zeigt, wie viel Arbeit noch aussteht.
 
@@ -155,6 +173,30 @@ Wählen Sie unter **Forecaster-Prüfung** zwischen **Liefertermin**, **Geplantes
 Die freie Zeit in der Maschinenübersicht folgt dem letzten erwarteten Ende in ihrer Warteschlange. Fehlt bei Arbeit ein voraussichtliches Ende, ist diese Zeit nur die frühestmögliche Verfügbarkeit. Die angezeigte Last ist die von der Prognose noch eingeplante Arbeit.
 
 Wählen Sie die Anordnung mit Maschinen nebeneinander und Warteschlangen nach unten oder Maschinen untereinander und Warteschlangen nach rechts. Passen Sie die Ansicht mit **Nicht zugewiesene Operationen einblenden** oder **Nicht zugewiesene Operationen ausblenden** an. Sie können bis zu 25 Maschinen anzeigen. Hallenpools zählen nicht zu dieser Grenze.
+
+### Ein voraussichtliches Ende erklären
+
+Zeigen Sie auf die Terminmarke oder die kleine Uhr links an einer Karte. Die Erklärung zeigt:
+
+1. **Voraussichtliches Ende**, den erwarteten Start und die Terminvergleiche.
+2. **Grundlage**, wenn Annahmen Ihre Aufmerksamkeit benötigen.
+3. **Warum dieser Zeitpunkt** mit der vorherigen Arbeit auf der Maschine, einem früheren Arbeitsgang auf einer anderen Maschine oder der nächsten Schicht, auf die gewartet wird. Auch der erste Arbeitsgang einer Wartekette kann erscheinen.
+4. **Frühere Arbeitsgänge dieses Auftrags** mit Maschinen und Fortschritt oder erwarteten Endzeiten, danach weitere Hinweise.
+
+Prüfen Sie die Annahmen, bevor Sie sich auf die Zeit verlassen:
+
+- **Lange angehalten**: Die Prognose nimmt an, dass der Arbeitsgang an seinem Platz weitergeht. Spätere Arbeit wartet weiterhin darauf.
+- **Nie gestartet**: Dieser Hinweis erscheint nur mit **Nach geplanten Terminen** oder **Liefertermin zuerst** unter **Planungseinstellungen**. Die Prognose nimmt an, dass der Arbeitsgang startet, sobald seine Maschine frei ist. Mit **Nach der Warteschlange** oder **Nach der Warteschlange, nicht vor dem geplanten Termin** erscheint weder dieser Hinweis noch **Kein geplanter Start**. Der Arbeitsgang behält seinen Platz in der Warteschlange.
+- **Kein geplanter Start**: Dieser Hinweis erscheint nur mit **Nach geplanten Terminen** oder **Liefertermin zuerst**. Die Prognose plant den Arbeitsgang nach der Arbeit mit Termin auf seiner Maschine ein.
+- **Wartet auf früheren Arbeitsgang**: Ein früherer Arbeitsgang ist noch auf keiner Maschine oder liegt im Hallenpool. Die angezeigten Zeiten können zu optimistisch sein.
+
+Diese Arbeitsgänge erhalten weiterhin erwartete Zeiten. Das Warnsymbol zeigt dieselben Annahmen. **Keine Prognose** bedeutet, dass der Arbeitsgang im Hallenpool liegt oder die Prognose gerade nicht verfügbar ist. Pool-Arbeit erhält eine Prognose, sobald sie einer Maschine zugewiesen ist. Ohne erwartetes Ende wird nur der Termin mit heute verglichen. Lassen sich Details nicht laden, zeigen Sie erneut darauf.
+
+### Aktualisierungen auf der Plantafel verfolgen
+
+Nach einer gespeicherten Verschiebung aktualisieren sich erwartete Endzeiten und Terminvergleiche automatisch. Der geöffnete Planer prüft etwa jede Minute auf Terminplanänderungen. Aktualisierungen pausieren während des Ziehens, beim Speichern einer Verschiebung oder solange ein Sortierdialog, ein Zuweisungsdialog oder der Dialog **Zurück in den Pool** geöffnet ist.
+
+Karten gleiten an ihre neue Position. Die abgelegte Karte erhält kurz eine Umrandung. Eine geänderte Prognose hebt die Terminmarke kurz hervor. Diese Hinweise ändern den Kartenstatus nicht. Bei eingeschalteter Bewegungsreduktion auf Ihrem Gerät erscheinen Umrandungen statt Gleit- und Größenbewegungen. Durch Filter ausgeblendete Karten bleiben ausgeblendet. Eine geänderte Priorität kann dazu führen, dass eine Karte einen Prioritätsfilter erfüllt oder nicht mehr erfüllt.
 
 ## Zuweisungs-Gantt und Planungshinweise
 
@@ -168,7 +210,7 @@ Laufende Arbeit muss vor der Übergabe auf ihrer Maschine gestoppt werden. Abges
 
 Sie können höchstens 25 Maschinen gleichzeitig anzeigen, zusätzlich zu Hallenpools. Die Suche filtert nur den unter **Suchen in** gewählten Bereich. Status-, Prioritäts- und Tagfilter gelten für die Liste nicht zugewiesener Operationen und alle Warteschlangen. Der Importfilter begrenzt nur die Liste nicht zugewiesener Operationen auf einen ERP-Upload. Ändert sich die Warteschlange während Ihrer Sortierung, wird sie aktualisiert und Sie müssen erneut sortieren.
 
-Bei Verschiebungen ohne Dialog bestimmt mit **Nach Warteschlangenposition sortieren** die Ablage die genaue Position; laufende Karten und Karten in Wartestellung bleiben oben. Ohne diese Option bestimmen Sortierregeln die Ansicht. Die Auswahlliste **Verschiebungen** bietet **Anfang der Warteschlange** oder **Ende der Warteschlange**. Dies gilt auch für neu zugewiesene Operationen, die Sie aus der Liste nicht zugewiesener Arbeit auf eine Maschine oder einen Hallenpool ziehen.
+Bei Verschiebungen ohne Dialog bestimmt mit **Nach Warteschlangenposition sortieren** die Ablage die genaue Position, auch für laufende und angehaltene Karten innerhalb ihrer Spalte. Ohne diese Option bestimmen Sortierregeln die Ansicht. Die Auswahlliste **Verschiebungen** bietet **Anfang der Warteschlange** oder **Ende der Warteschlange**. Dies gilt auch für neu zugewiesene Operationen, die Sie aus der Liste nicht zugewiesener Arbeit auf eine Maschine oder einen Hallenpool ziehen.
 
 ## OP, AG, P, Seq, Qty und Auslastung lesen
 

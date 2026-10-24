@@ -66,6 +66,19 @@ In the card details, choose **Late for delivery → Show in table** for late ord
 
 **Not planned at all → Show list** opens **Orders that are not planned**. These orders have a delivery date but no operation assigned to a machine or hall pool, so they appear on no planning board. Open an order and choose **Assign steps** to select machines, or **Open in planner**. Follow the [planning workflow](/en/platform-intro/workflows/assignment-planner).
 
+### Read Forecast Assumptions
+
+Hover over the warning icon to read what the expected times assume.
+
+- **On hold for a long time** (previously **On hold too long**): the hold limit has passed. The forecast assumes the step continues in its queue position, so later work still waits for it.
+- **Never started**: this note appears only with **Follow planned dates** or **Delivery date first** under **Planning settings**; work planned more than three days ago is forecast to start as soon as its machine is free. With **Follow the queue** or **Follow the queue, not before the planned date**, neither this note nor **No planned start** appears, and the step keeps its place in the queue.
+- **No planned start**: this note appears only with **Follow planned dates** or **Delivery date first**. The forecast places the step after the machine’s dated work.
+- **Waits for an earlier step**: that step is not on a machine yet or is still in a hall pool. Expected times may be too optimistic.
+
+These notes explain the expected times. They do not remove the work from the forecast or mean that it is finished.
+
+For a step’s waiting chain and expected end, open its card in [Assignment Planner](/en/platform-intro/pages/assignment-planner#explain-an-expected-end).
+
 ### Open the Forecaster Help
 
 Click the information icon beside **Forecaster** on the summary card, in its details, or in the table column heading. You can also select **How does the Forecaster work?** at the bottom of the card's details. Clicking the card's information icon opens the help directly, without opening the card's details.

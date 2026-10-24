@@ -6,6 +6,48 @@ toc: false
 
 ## Releases
 
+<Update label="2026-10-24" description="v1.5.133" tags={["Funktion", "Verbesserung", "Fehlerbehebung"]}>
+  {/* commits: 9feba5e, ddc5e82, 6e942ef, aeb6276, cad3c73, c11f2f3, 66e9467, 55d221c, 5a8ecd5, 168fd59, 4f91a26, c01411f, 1098f2e, dae0f22, 04b5f81, 54edacd, 71455e2, 7ae67bd, 6c73125, 0363411, 3aecefe, 000bcba */}
+
+  **Release-Datum:** 24. Oktober 2026
+
+  ### Neue Funktionen
+
+  #### [Reihenfolge und Arbeitsgang-Priorität gemeinsam ändern](/de/platform-intro/pages/assignment-planner)
+  {/* feature: queue-operation-priority */}
+
+  Aktivieren Sie im Zuweisungsplaner **Filtern & Sortieren → Nach Warteschlangenposition sortieren**. Schieben Sie einen Arbeitsgang vor dringendere Arbeit, kann seine Priorität steigen. Beim Zurückschieben kann sie sinken. Innerhalb einer Warteschlange kann auch das Vorziehen vor einen gleich dringenden Arbeitsgang die Priorität um eine Stufe erhöhen. Bei den Standardstufen wird aus dem zweiten von zwei AG70-Arbeitsgängen beim Vorziehen an die Spitze AG100. Ändern Sie die **Arbeitsgangpriorität** auf der Karte, rückt diese ebenfalls an die passende Stelle. **Rückgängig** im Prioritätshinweis nach dem Ziehen stellt die Priorität wieder her und behält die Ablageposition bei. Folgen Sie [Maschinenzuweisungen planen](/de/platform-intro/workflows/assignment-planner).
+
+  Dieses Verhalten ist standardmäßig eingeschaltet. Administratoren können es unter **Admin-Panel → Prioritätsstufen → So werden Prioritäten verwendet → Reihenfolge und Arbeitsgang-Priorität bleiben im Einklang** ausschalten. Unter **Welche Zahl ist dringender?** legen sie außerdem fest, ob höhere oder niedrigere Zahlen dringender sind. Die Sortierung nach Priorität und Datum berücksichtigt diese Auswahl.
+
+  Ein aufgeteilter Arbeitsgang hat auf allen Maschinen und in allen Pools dieselbe Priorität. Beim Ziehen eines Anteils behalten die anderen Warteschlangen ihre Reihenfolge. Ändern Sie die Priorität auf der Karte, können auch seine Anteile in diesen Warteschlangen ihre Position ändern. Die Auftragspriorität bleibt unverändert. Dies gilt nur im Warteschlangenmodus. Das Sortieren einer ganzen Warteschlange ändert keine Prioritäten.
+
+  #### [Verstehen, warum ein Arbeitsgang zu diesem Zeitpunkt endet](/de/platform-intro/pages/assignment-planner)
+  {/* feature: queue-operation-priority */}
+
+  Zeigen Sie im Zuweisungsplaner auf die Terminmarke oder die kleine Uhr einer Karte. Lesen Sie **Voraussichtliches Ende**, die Terminvergleiche, **Grundlage**, **Warum dieser Zeitpunkt** und **Frühere Arbeitsgänge dieses Auftrags**. Die Erklärung nennt die Arbeit, auf die der Arbeitsgang wartet, auch auf anderen Maschinen. Folgen Sie [Forecaster-Warnungen prüfen](/de/platform-intro/workflows/assignment-planner#forecaster-warnungen-vor-planänderungen-prüfen).
+
+  Lange angehaltene, nie gestartete Arbeitsgänge und solche ohne geplanten Start erhalten jetzt weiterhin eine Prognose. Hinweise erklären deren Annahmen. **Keine Prognose** bleibt für Arbeit im Hallenpool oder eine gerade nicht verfügbare Prognose. Das Limit für Wartestellung bestimmt jetzt, wann **Lange angehalten** erscheint. Es gibt weder die Maschine frei noch entfernt es Arbeit aus der Prognose. Administratoren ändern es im Zuweisungs-Gantt unter **Planungseinstellungen → Planung**.
+
+  ### Verbesserungen
+
+  #### [Änderungen der Warteschlange leichter verfolgen](/de/platform-intro/pages/assignment-planner)
+  {/* feature: queue-operation-priority */}
+
+  Mit **Filtern & Sortieren → Nach Warteschlangenposition sortieren** folgen Karten und Nummern jetzt genau Ihrer gezogenen Reihenfolge. Laufende und angehaltene Arbeitsgänge werden nicht mehr nach oben gezogen. Das gilt auch für die Vorschau zur Sortierung nach Priorität und Datum. Sie können laufende Arbeit innerhalb ihrer Spalte umordnen. Vor einem Zielwechsel müssen Sie sie stoppen.
+
+  Karten gleiten an ihre neue Position und werden nach dem Ablegen kurz hervorgehoben. Bei geänderter Prognose leuchtet die Terminmarke kurz auf. Bei eingeschalteter Bewegungsreduktion erscheinen Umrandungen statt Bewegung. Prognosen aktualisieren sich nach dem Speichern und bei Terminplanänderungen. Während Sie ziehen oder einen Sortierdialog, einen Zuweisungsdialog oder den Dialog **Zurück in den Pool** prüfen, pausieren die Aktualisierungen.
+
+  Klicken Sie auf den Maschinennamen im Spaltenkopf, um die [Maschinendetails](/de/platform-intro/pages/machine-details) zu öffnen. Strg-Klick oder Mittelklick öffnet einen neuen Tab. Hallenpoolnamen bleiben einfacher Text.
+
+  ### Fehlerbehebungen
+
+  #### [Abgelegte und ausgeblendete Arbeit an ihrem Platz behalten](/de/platform-intro/pages/assignment-planner)
+  {/* feature: queue-operation-priority */}
+
+  Im Warteschlangenmodus konnte eine ungestartete, direkt in eine andere Spalte verschobene Karte ans Ende springen. Jetzt behält sie die Ablageposition. Ändert sich die Warteschlange während einer Verschiebung, behalten durch Filter ausgeblendete Karten ihren Platz, statt ans Ende zu rücken.
+</Update>
+
 <Update label="2026-10-22" description="v1.5.130–v1.5.131" tags={["Funktion", "Verbesserung", "Fehlerbehebung"]}>
   {/* commits: 89f08e1, ec6ed1e, fdfa386, 15a9ed5, 23a788f, d885cd9, 4580312, f6b59f4, ad6bed3, a305e72, 8cc0f7e */}
 

@@ -50,6 +50,23 @@ Priority levels give your team a shared way to recognize the urgency of work. Ea
   </Step>
 </Steps>
 
+### How Priorities Are Used
+
+Administrators open **Admin Panel → Priority Levels → How priorities are used**, below the levels table.
+
+Under **Which number is more urgent?**, choose:
+
+- **Higher number = more urgent**: the default; 150 comes before 100.
+- **Lower number = more urgent**: 1 comes before 5.
+
+This choice controls suggested queue sorting and automatic operation-priority changes. Applying a SAP preset also selects higher numbers first; Epicor and Infor presets select lower numbers first. The preset preview shows the direction. **Reset to defaults** restores higher numbers first as well as the default levels. Your own ascending or descending sorting rules stay as you set them.
+
+**Queue order and operation priority stay in step** is on by default. In the Planner’s queue-position mode, moving a step can change its operation priority. Changing its priority on the card can move it in the queue. Only that operation’s priority changes; order priorities stay unchanged. If you turn this off, dragging only changes queue order and changing priority does not move cards.
+
+Open **How does this work?** for examples using your company’s levels. With the default levels, moving OP30 ahead of OP100 at the top makes it OP150. Moving the second of two OP70 steps to the top of the same queue makes it OP100. If no suitable more urgent level exists, a tie can remain. See [queue and priority behaviour](/en/platform-intro/pages/assignment-planner#queue-order-and-operation-priority).
+
+Each of these settings saves as soon as you change it. Wait for **Setting saved.** If saving fails, the previous choice returns; try again. An amber notice makes it clear when the queue-and-priority setting is off.
+
 ## Manage Page and Machine Permissions
 
 Permissions determine which platform pages and machines a user can access. Use them to give each person access to the areas and machines needed for their work.
@@ -71,7 +88,7 @@ Open the user record in the Admin Panel and select **Edit Permissions**. Select 
 
 ## Default Priorities and Range Limits
 
-Higher priority is more urgent. Defaults: **Low 10, Normal 30, High 70, Critical 100, Highest 150, Extreme 200**. Default colors are green 0–29, blue 30–69, orange 70–99, and red 100+. Companies can set names, values, and colors or apply **SAP Delivery Priority**, **Epicor Kinetic Material Queue Priority**, or **Infor M3 Customer Order Priority** presets.
+By default, higher numbers mean more urgent work. **Which number is more urgent?** lets administrators reverse this. Defaults: **Low 10, Normal 30, High 70, Critical 100, Highest 150, Extreme 200**. Default colors are green 0–29, blue 30–69, orange 70–99, and red 100+. Companies can set names, values, and colors or apply **SAP Delivery Priority**, **Epicor Kinetic Material Queue Priority**, or **Infor M3 Customer Order Priority** presets.
 
 Custom priority settings allow **0–999**, while the Add Order form states **1–200**. This mismatch needs product confirmation; follow validation in the current form instead of assuming one range applies everywhere. Existing priorities are protected during ERP re-imports.
 

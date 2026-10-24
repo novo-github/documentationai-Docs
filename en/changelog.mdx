@@ -6,6 +6,48 @@ toc: false
 
 ## Releases
 
+<Update label="2026-10-24" description="v1.5.133" tags={["feature", "improvement", "fix"]}>
+  {/* commits: 9feba5e, ddc5e82, 6e942ef, aeb6276, cad3c73, c11f2f3, 66e9467, 55d221c, 5a8ecd5, 168fd59, 4f91a26, c01411f, 1098f2e, dae0f22, 04b5f81, 54edacd, 71455e2, 7ae67bd, 6c73125, 0363411, 3aecefe, 000bcba */}
+
+  **Release date:** October 24, 2026
+
+  ### New Features
+
+  #### [Keep Queue Order and Operation Priority Together](/en/platform-intro/pages/assignment-planner)
+  {/* feature: queue-operation-priority */}
+
+  In Assignment Planner, enable **Filter & Sort → Sort by Queue Position**. Moving a step ahead of more urgent work can raise its operation priority; moving it back can lower it. Within one queue, moving ahead of an equally urgent step can raise it one level too. With the default levels, moving the second of two OP70 steps to the top makes it OP100. Changing **Operation priority** on the card also moves it to the fitting position. **Undo** in a drag’s priority notice restores the priority and keeps the dropped position. Follow [Plan Machine Assignments](/en/platform-intro/workflows/assignment-planner).
+
+  This is on by default. Administrators can turn it off under **Admin Panel → Priority Levels → How priorities are used → Queue order and operation priority stay in step**. Under **Which number is more urgent?**, they can also choose whether higher or lower numbers mean greater urgency. Priority-and-date sorting follows that choice.
+
+  A split step shares its priority across machines and pools. Dragging one part leaves the other queues in place; changing its priority on the card can move its parts in those queues too. Order priority stays unchanged. This applies only in queue-position mode; applying a whole-queue sort does not change priorities.
+
+  #### [See Why a Step Ends at Its Expected Time](/en/platform-intro/pages/assignment-planner)
+  {/* feature: queue-operation-priority */}
+
+  Hover over a card’s date tab or small clock in Assignment Planner. Read **Expected end**, the date checks, **Based on**, **Why this time**, and **Earlier steps of this order**. The explanation names work it waits for, including work on other machines. Follow [review Forecaster warnings](/en/platform-intro/workflows/assignment-planner#review-forecaster-warnings-before-changing-the-plan).
+
+  Steps held for a long time, never started, or without a planned start now keep a forecast, with notes explaining its assumptions. **No forecast** remains for hall-pool work or when a forecast is unavailable. The hold limit now controls when **On hold for a long time** appears; it does not free the machine or remove work from the forecast. Administrators adjust it in **Assignment Gantt → Planning settings → Planning**.
+
+  ### Improvements
+
+  #### [Follow Queue Changes More Easily](/en/platform-intro/pages/assignment-planner)
+  {/* feature: queue-operation-priority */}
+
+  With **Filter & Sort → Sort by Queue Position** on, cards and their numbers now follow your dragged order exactly. Running and on-hold steps are no longer pulled to the top, including in the priority-and-date sort preview. You can reorder running work within its column; stop it before moving it to another destination.
+
+  Cards slide into position and briefly highlight after a drop. A changed forecast briefly highlights its date marker. With reduced motion enabled, outlines replace movement. Forecasts update after saves and as the schedule changes; updates pause while you drag or review a sorting dialog, an assignment dialog, or the **Back to pool** dialog.
+
+  Click a machine name in its column header to open [Machine Details](/en/platform-intro/pages/machine-details). Ctrl-click or middle-click opens a new tab. Hall-pool names remain plain text.
+
+  ### Fixes
+
+  #### [Keep Dropped and Hidden Work in Place](/en/platform-intro/pages/assignment-planner)
+  {/* feature: queue-operation-priority */}
+
+  In queue-position mode, an unstarted card moved directly to another column could jump to the end; it now keeps the dropped position. When the queue changes during a move, cards hidden by filters keep their place instead of being pushed to the end.
+</Update>
+
 <Update label="2026-10-22" description="v1.5.130–v1.5.131" tags={["feature", "improvement", "fix"]}>
   {/* commits: 89f08e1, ec6ed1e, fdfa386, 15a9ed5, 23a788f, d885cd9, 4580312, f6b59f4, ad6bed3, a305e72, 8cc0f7e */}
 

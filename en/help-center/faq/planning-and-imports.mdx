@@ -23,7 +23,7 @@ description: "Find answers about operation priorities, planning dates, grouping,
 | Why do Orders and the Gantt show different warning counts? | [Answer](/en/help-center/faq/planning-and-imports#forecast-counts) |
 | How do I find orders that are missing from every planning board? | [Answer](/en/help-center/faq/planning-and-imports#unplanned-orders) |
 | What does “at risk” mean, and can the expected finish be too early? | [Answer](/en/help-center/faq/planning-and-imports#forecast-risk) |
-| Why does work move ahead of an assignment that is on hold? | [Answer](/en/help-center/faq/planning-and-imports#held-work) |
+| Why does a long-held step still delay the work behind it? | [Answer](/en/help-center/faq/planning-and-imports#held-work) |
 | Does trying a different ordering change my plan? | [Answer](/en/help-center/faq/planning-and-imports#save-plan) |
 | Why can I not move an assignment or undo its move? | [Answer](/en/help-center/faq/planning-and-imports#move-undo) |
 | How do I tell the forecast that a machine runs several jobs at once? | [Answer](/en/help-center/faq/planning-and-imports#parallel-jobs) |
@@ -59,6 +59,15 @@ description: "Find answers about operation priorities, planning dates, grouping,
 | Does Handed over mean the whole step is finished? | [Answer](/en/help-center/faq/planning-and-imports#handover-status) |
 | Can I undo a handover? | [Answer](/en/help-center/faq/planning-and-imports#handover-undo) |
 | Why do I see “This step was changed in the meantime”? | [Answer](/en/help-center/faq/planning-and-imports#handover-changed) |
+| Why did dragging a step change its priority? | [Answer](/en/help-center/faq/planning-and-imports#drag-priority) |
+| Why did my card move when I changed its priority? | [Answer](/en/help-center/faq/planning-and-imports#priority-moves-card) |
+| Does Undo put my dragged card back? | [Answer](/en/help-center/faq/planning-and-imports#drag-priority-undo) |
+| Who decides whether a smaller priority number is more urgent? | [Answer](/en/help-center/faq/planning-and-imports#priority-direction) |
+| Can I move a running step down the Planner queue? | [Answer](/en/help-center/faq/planning-and-imports#running-queue-position) |
+| Why is my step expected to end at that time? | [Answer](/en/help-center/faq/planning-and-imports#forecast-explanation) |
+| Why does my card say No forecast? | [Answer](/en/help-center/faq/planning-and-imports#no-forecast) |
+| Why do cards move or briefly light up without me refreshing? | [Answer](/en/help-center/faq/planning-and-imports#planner-updates) |
+| How do I open a machine from the Planner? | [Answer](/en/help-center/faq/planning-and-imports#planner-machine-link) |
 
 <a id="operation-priority" />
 
@@ -172,9 +181,9 @@ Open **Orders & Products → Forecaster → Not planned at all → Show list**. 
 
 <a id="held-work" />
 
-## Why does work move ahead of an assignment that is on hold?
+## Why does a long-held step still delay the work behind it?
 
-After **Hold limit (working hours)**, the forecast treats that assignment as parked and lets work behind it move up. The paused work is not finished. Only working time counts; without shifts, 24 hours count as the full limit. Administrators change the limit in **Planning settings**. See [Assignment Gantt](/en/platform-intro/pages/assignment-gantt).
+The forecast assumes the paused step continues in its queue position, so later work still waits. Passing **Hold limit (working hours)** only adds **On hold for a long time**; it does not free the machine. Administrators set the limit in **Assignment Gantt → Planning settings → Planning**. Only machine working time counts; without planned shifts, 24 hours count as the full limit. See [planning settings](/en/platform-intro/pages/assignment-gantt#planning-settings).
 
 <a id="save-plan" />
 
@@ -296,7 +305,7 @@ Check whether another step with a lower number in the same work order is still u
 
 ## How do I put one order before another without raising its operation priority?
 
-Enable **Sort by Queue Position** in Assignment Planner and drag the card to the place you want. For moves without a dialog, it lands where you drop it, and everyone sees the saved queue order. A handover places the remaining work at the top of its destination queue. Running and on-hold cards stay on top. To sort the whole queue at once, choose **Sort by priority and date** in the machine or hall-pool header, review the proposal, and choose **Apply order**. This button is available to administrators and users with access to the Orders page and the machine. Operators do not see it. Follow the [queue sorting steps](/en/platform-intro/workflows/assignment-planner#sort-a-queue-by-priority-and-date).
+Ask an administrator to turn off **Admin Panel → Priority Levels → Queue order and operation priority stay in step**. Then enable **Sort by Queue Position** and drag the card; only its place changes. While the setting is on, use **Undo** in a drag’s priority notice to restore the priority and keep the new place. Applying **Sort by priority and date** does not change priorities either. See [queue and priority behaviour](/en/platform-intro/pages/assignment-planner#queue-order-and-operation-priority).
 
 <a id="queue-sort-access" />
 
@@ -332,7 +341,7 @@ Your own saved sorting takes precedence. A reset also saves a personal copy of t
 
 ## Why are running orders no longer at the top in Data Acquisition?
 
-Previously, running and on-hold orders stayed on top automatically with **Sort by Queue Position** on. In Data Acquisition V3, they now keep their queue position by default with **Keep in place**. Open **Card Display Settings → Sort Order** and choose **Running and on-hold orders → At the top** to show them first. In Assignment Planner, running and on-hold cards still stay on top. With queue sorting off, add **Running and on-hold orders** as a rule and choose **At the top** or **At the bottom**. It comes before the waiting-order rule. Select **Save**. Follow the [display setup steps](/en/platform-intro/workflows/data-acquisition#configure-the-data-acquisition-v3-display).
+Previously, running and on-hold orders stayed on top automatically with **Sort by Queue Position** on. In Data Acquisition V3, they now keep their queue position by default with **Keep in place**. Open **Card Display Settings → Sort Order** and choose **Running and on-hold orders → At the top** to show them first. In Assignment Planner, queue-position mode keeps running and on-hold cards at the positions you set by dragging. With queue sorting off, add **Running and on-hold orders** as a rule and choose **At the top** or **At the bottom**. It comes before the waiting-order rule. Select **Save**. Follow the [display setup steps](/en/platform-intro/workflows/data-acquisition#configure-the-data-acquisition-v3-display).
 
 <a id="terminal-sorting-reset" />
 
@@ -394,3 +403,57 @@ The first part is back in its machine’s queue on hold, with its recorded times
 ## Why do I see “This step was changed in the meantime”?
 
 The step changed while you were reviewing it. The dialog closes. Data Acquisition refreshes the list; Assignment Planner refreshes both queues. You then see the notice **This step was changed in the meantime. The list has been refreshed.** Check the current step before trying again. Review the machine, running state, and quantities instead of repeating the old choice. See [return work to the pool](/en/platform-intro/workflows/data-acquisition#back-to-pool).
+
+<a id="drag-priority" />
+
+## Why did dragging a step change its priority?
+
+With **Sort by Queue Position** on, moving ahead of more urgent work can raise operation priority; moving behind can lower it. In the same queue, passing equally urgent work can change it by one company level too, if a suitable level fits. Only the moved operation changes. For a split step, all parts show the new priority, but other queues keep their order. See [queue and priority behaviour](/en/platform-intro/pages/assignment-planner#queue-order-and-operation-priority).
+
+<a id="priority-moves-card" />
+
+## Why did my card move when I changed its priority?
+
+In queue-position mode, changing the **OP** chip can move the card past work that is less urgent when raised, or more urgent when lowered. Equal-priority cards keep their relative order. For a split step, its parts can move in other accessible queues too. Administrators can turn this off under **Admin Panel → Priority Levels → Queue order and operation priority stay in step**. Follow [set an operation priority](/en/platform-intro/workflows/assignment-planner#set-an-operation-priority-and-filter-the-plan).
+
+<a id="drag-priority-undo" />
+
+## Does Undo put my dragged card back?
+
+**Undo** in a drag’s priority-change notice restores the previous operation priority and keeps the card where you dropped it. Drag the card again if you also want to change its place; that can change the priority again. This differs from undoing a whole-queue sort. See [reorder work and check its priority](/en/platform-intro/workflows/assignment-planner#reorder-work-and-check-its-priority).
+
+<a id="priority-direction" />
+
+## Who decides whether a smaller priority number is more urgent?
+
+Administrators choose **Higher number = more urgent** or **Lower number = more urgent** under **Admin Panel → Priority Levels → How priorities are used → Which number is more urgent?** Each change saves immediately. SAP presets select higher numbers first; Epicor and Infor select lower numbers first. Resetting the levels restores higher numbers first. Your own sorting-rule directions remain unchanged. Follow [company priority setup](/en/platform-intro/workflows/assignment-planner#set-how-the-company-uses-priorities).
+
+<a id="running-queue-position" />
+
+## Can I move a running step down the Planner queue?
+
+Yes. With **Sort by Queue Position** on, running and on-hold steps keep the place you set, including their queue number. You can reorder running work within its column. Stop it on the machine before moving it to another destination. The priority-and-date proposal also sorts running and on-hold work. See [queue sorting](/en/platform-intro/pages/assignment-planner#queue-position-and-sorting-rules).
+
+<a id="forecast-explanation" />
+
+## Why is my step expected to end at that time?
+
+Hover over the Planner card’s date tab or small clock. **Why this time** names the machine, earlier work, or shift it waits for. **Earlier steps of this order** shows preceding work, even on other machines. Read **Based on** for assumptions about long holds, missed starts, or missing planning details. If details fail to load, hover again. Follow [review Forecaster warnings](/en/platform-intro/workflows/assignment-planner#review-forecaster-warnings-before-changing-the-plan).
+
+<a id="no-forecast" />
+
+## Why does my card say No forecast?
+
+The step is still in a hall pool, or the forecast is not available right now. Hover over **No forecast** to read the reason. Pool work gets a forecast once it is assigned to a machine. Long-held, never-started, and undated machine steps now get expected times with assumption notes. If an earlier step has no machine, a later step can still have a forecast that is too optimistic. See [forecast explanations](/en/platform-intro/pages/assignment-planner#explain-an-expected-end).
+
+<a id="planner-updates" />
+
+## Why do cards move or briefly light up without me refreshing?
+
+The Planner updates forecasts after saves and checks for schedule changes about every minute. Cards slide when their order changes; a dropped card and changed forecast marker briefly highlight. These cues do not change status. Updates pause while you drag, save moves, or use a sorting dialog, an assignment dialog, or the **Back to pool** dialog. With reduced motion enabled on your device, outlines replace movement. See [board updates](/en/platform-intro/pages/assignment-planner#follow-updates-on-the-board).
+
+<a id="planner-machine-link" />
+
+## How do I open a machine from the Planner?
+
+Click the machine name in its column header. Ctrl-click or middle-click opens it in a new tab. Hall-pool names are not links. See [Machine Details](/en/platform-intro/pages/machine-details).

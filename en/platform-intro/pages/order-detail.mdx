@@ -71,11 +71,13 @@ To undo a handover manually, administrators and users with access to the Orders 
 
 The **Forecaster** card shows when this order is expected to finish, based on what is happening on the machines now. **Updated** followed by a date tells you when the forecast was refreshed.
 
-The step count shows how many steps are on a machine. For example, **3 of 5 steps are on a machine** means two steps still have no machine; it does not mean three steps are complete. If some steps have no machine or no date, the order will finish later than shown. An amber **at risk** result means the remaining work barely fits or an earlier step is not planned.
+The step count shows how many steps are on a machine. For example, **3 of 5 steps are on a machine** means two steps still have no machine; it does not mean three steps are complete. If an earlier step has no machine yet or is still in a hall pool, the expected finish may be too optimistic. An amber **at risk** result means the remaining work barely fits or an earlier step is not planned.
 
 Click the information icon beside **Forecaster** to open **How does the Forecaster work?**. The help explains the colours and when expected times can be too early. Reading it does not change dates or queues. See the [Forecaster explanation](/en/platform-intro/pages/assignment-gantt) and [planning workflow](/en/platform-intro/workflows/assignment-planner) to review the missing details.
 
 Review the step marked **This step sets the order's finish.** to see which work determines the expected completion. The timing and attention notes help you distinguish this assignment’s delay from the risk to its order. Choose **Show in the Assignment Gantt** to follow the order and the work holding it up on the timeline.
+
+Steps held for a long time, never started, or without a planned start still get expected times. Paused work is expected to continue in its queue position. The notes **Never started** and **No planned start** appear only when **Follow planned dates** or **Delivery date first** is selected under **Planning settings**. They explain that never-started work starts when its machine is free and undated work follows dated steps. With **Follow the queue** or **Follow the queue, not before the planned date**, neither note appears and the step keeps its place in the queue. See [forecast assumptions](/en/platform-intro/pages/assignment-gantt#review-attention-and-waiting-work).
 
 ## Read Timeline Details
 

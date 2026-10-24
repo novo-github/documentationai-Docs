@@ -42,9 +42,11 @@ A machine queue assigns work to a specific machine. A **Hall Pool** holds work f
 
 The readiness badge indicates when pooled work is ready to be claimed by a machine. Placing work in a hall pool leaves the machine choice open until it is claimed; the badge helps you decide when work can be picked up.
 
-You can move unstarted work directly between machine and hall-pool columns and choose the start or end of the destination queue. For started work, stop it first and hand over the remainder using the dialog described below. Recorded work stays on the original machine.
+You can move unstarted work directly between machine and hall-pool columns. With **Sort by Queue Position** on, drop it at the position you want. With sorting rules on, your **Moves** choice sets the start or end of the destination queue. For started work, stop it first and hand over the remainder using the dialog described below. Recorded work stays on the original machine.
 
 You can also assign work to a destination marked **Work center**. Its queue contains orders and assignments without sensor KPIs. Review the destination before confirming a move. See [Work Centers](/en/platform-intro/pages/work-centers).
+
+Click a machine name in its column header to open [Machine Details](/en/platform-intro/pages/machine-details). Ctrl-click or middle-click opens a new tab. Clicking the name does not start a drag. Hall-pool names are not links.
 
 ### Hand Over Started Work
 
@@ -52,7 +54,7 @@ Administrators and users with access to the Orders page can drag a started, stop
 
 The original machine keeps its times and good parts. Its part leaves the active queue and shows **Handed over**. The rest goes to the top of the destination queue, including when you drop onto a collapsed pool. Your display sorting can affect where its card appears. Both queues update. For example, 40 good parts out of 100 leave 60 for the next machine. There is no automatic undo for a handover.
 
-A running card stays locked with **Running. Stop it on the machine before moving it.** Finished and cancelled work cannot be handed over. An unstarted planned or released card still moves without a dialog. An unstarted card marked in progress or on hold opens a move confirmation; it moves the whole step without leaving recorded work behind. Reordering within the same queue is unchanged.
+A running card can be reordered within its column. Moving it to another destination is blocked with **Running. Stop it on the machine before moving it.** Finished and cancelled work cannot be handed over. An unstarted planned or released card still moves without a dialog. An unstarted card marked in progress or on hold opens a move confirmation; it moves the whole step without leaving recorded work behind.
 
 Grey badges show where work came from or went. Hover for the quantities, person, time, and reason. Narrow cards can show only an icon and numbers. Step context and waiting details show **Partly done:** and where the rest is waiting. If the step changed while you were reviewing it, the queues refresh; check them before trying again. Follow [hand over work](/en/platform-intro/workflows/assignment-planner#hand-over-work).
 
@@ -104,9 +106,25 @@ If a change cannot be saved, the Planner shows an error and reloads the queues i
 
 Each priority filter accepts several values. Type a number to find a value that has no entry in the company legend. When you use both filters, a card must match both. For example, you can find a particular operation priority within orders of a selected priority. See [Plan Machine Assignments](/en/platform-intro/workflows/assignment-planner).
 
+### Queue Order and Operation Priority
+
+With **Sort by Queue Position** on, queue order and operation priority affect each other by default:
+
+- Drag a step ahead of more urgent work to raise its operation priority, or behind less urgent work to lower it. This also applies when moving between columns or assigning work from the unassigned list.
+- Within the same queue, moving past equally urgent work can raise or lower the priority by one company level. For example, with the default levels, moving the second of two OP70 steps to the top makes it OP100.
+- Change the dashed **OP** chip to move the card towards its new priority’s position. It passes less urgent work when raised and more urgent work when lowered. Equal-priority cards keep their relative order.
+
+The Planner uses your company’s priority levels and urgency direction. If a priority already fits, it can stay unchanged. When no suitable level fits between the neighbours, the step can share a neighbour’s priority. A move does not change other operations’ priorities or the order priority.
+
+After a drag changes priority, a notice shows the old and new values. **Undo** restores the old priority and keeps the new queue position.
+
+A step split across machines or pools shares one operation priority. Dragging one part updates that priority everywhere but leaves the other queues in place. Changing the priority on its card can reposition its parts in each accessible queue.
+
+Administrators can turn this off under **Admin Panel → Priority Levels → How priorities are used → Queue order and operation priority stay in step**. When off, dragging only changes order, and changing priority does not move cards. These linked changes do not apply in sorting-rule mode or when applying **Sort by priority and date**. Follow [the planning steps](/en/platform-intro/workflows/assignment-planner).
+
 ## Queue Position and Sorting Rules
 
-**Sort by Queue Position** displays assignments in the order set by dragging them. When this option is off, sorting rules determine the displayed order instead. Each rule has a field and an ascending or descending direction. Additional rules break ties, and their order determines which takes precedence.
+**Sort by Queue Position** displays assignments exactly in the order set by dragging them. Running and on-hold steps keep their place and are numbered there; nothing is pulled to the top. You can reorder running work within its column, but must stop it before moving it to another destination. When this option is off, sorting rules determine the displayed order instead. Each rule has a field and an ascending or descending direction. Additional rules break ties, and their order determines which takes precedence.
 
 The same sorting choices are available in [Data Acquisition V3](/en/platform-intro/pages/data-acquisition). Priority values follow the company levels configured in the [Admin Panel](/en/platform-intro/pages/admin-panel).
 
@@ -114,9 +132,9 @@ The same sorting choices are available in [Data Acquisition V3](/en/platform-int
 
 You need an administrator account, or a user account with access to the Orders page, plus access to the machine. Operators do not see this button. Under **Filter & Sort**, enable **Sort by Queue Position**. Each machine and hall-pool header then offers **Sort by priority and date**, in both column and row layouts.
 
-**Sort queue by priority and date** opens a preview for that queue. Each opening starts with **Order priority**; choose **Operation priority** if you want to use the priorities of individual steps. Higher values come first. For equal priorities, the earliest planned operation start comes first. Missing priorities or dates come last in their comparison. Equal priority and date keep the current order.
+**Sort queue by priority and date** opens a preview for that queue. Each opening starts with **Order priority**; choose **Operation priority** if you want to use the priorities of individual steps. The most urgent values come first, using the company’s **Which number is more urgent?** setting for higher or lower numbers. For equal priorities, the earliest planned operation start comes first. Missing priorities or dates come last in their comparison. Equal priority and date keep the current order.
 
-Running orders stay first, followed by on-hold orders. Each group keeps its current order and shows **Stays on top**. The preview shows proposed positions, previous positions for moved orders, priorities, planned starts, and how many orders would change place. It covers the active queue, including work hidden by your filters.
+Running and on-hold work is sorted with the rest of the active queue. No work stays at the top because of its status. The preview shows proposed positions, previous positions for moved orders, priorities, planned starts, and how many orders would change place. It covers the active queue, including work hidden by your filters.
 
 Choose **Apply order** to save the shared queue order, or choose **Cancel** to leave it unchanged. **New order applied** confirms the change and offers **Undo**. This is a one-time sorting action; you can adjust the order by dragging cards afterwards. Imported orders still join the end of the queue.
 
@@ -144,7 +162,7 @@ Cards can show **Operation Planned Start** and **Operation Planned End**. These 
 
 ## Check Dates with the Forecaster
 
-Open **Forecaster check** to choose which date the cards are measured against. The coloured tab on the left of each card shows whether the job will make that date: red means late, amber means **at risk**, and green means on time. An **at risk** result means the remaining work barely fits or an earlier step is not planned. The machine summary also counts jobs with this warning.
+Open **Forecaster check** to choose which date the cards are measured against. The coloured tab on the left of each card shows whether the job will make that date: red means late and amber means **at risk**. On-time cards with an expected end show a small clock in the same place. An **at risk** result means the remaining work barely fits or an earlier step is not planned. The machine summary also counts jobs with this warning.
 
 If the Forecaster has no expected end for a job, only its date is compared with today. This does not confirm that the work will finish on time. The queue's expected finish tells you when the machine is expected to complete all its queued work. Waiting working time tells you how much work remains.
 
@@ -155,6 +173,30 @@ Under **Forecaster check**, choose **Delivery date**, **Planned end**, **Deliver
 The machine summary’s free time comes from the last expected finish in its queue. If some work has no expected end, that time is only the earliest possible availability. The displayed load is work still booked by the forecast.
 
 Switch the layout to put machines side by side with queues downward, or machines top to bottom with queues to the right. Use **Show unassigned operations** or **Hide unassigned operations** to adjust the workspace. You can display up to 25 machines; hall pools do not count toward that limit.
+
+### Explain an Expected End
+
+Hover over the date tab or small clock on the left of a card. The explanation shows:
+
+1. **Expected end**, the expected start, and the date checks.
+2. **Based on**, when assumptions need your attention.
+3. **Why this time**, naming the work ahead on the machine, an earlier step on another machine, or the next shift it must wait for. It can also show the first step causing a chain of waits.
+4. **Earlier steps of this order**, with their machines and progress or expected ends, followed by any other notes.
+
+Read the assumptions before relying on the time:
+
+- **On hold for a long time**: the forecast assumes the step continues in its queue position. Later work still waits for it.
+- **Never started**: this note appears only with **Follow planned dates** or **Delivery date first** under **Planning settings**; the forecast assumes the step starts as soon as its machine is free. With **Follow the queue** or **Follow the queue, not before the planned date**, neither this note nor **No planned start** appears, and the step keeps its place in the queue.
+- **No planned start**: this note appears only with **Follow planned dates** or **Delivery date first**. The forecast places the step after the machine’s dated work.
+- **Waits for an earlier step**: an earlier step has no machine yet or is still in a hall pool. The displayed times may be too optimistic.
+
+These steps still get expected times. The warning icon carries the same assumptions. **No forecast** means the step is in a hall pool or the forecast is not available right now. Pool work gets a forecast once assigned to a machine. Without an expected end, only the date is compared with today. If details fail to load, hover again to retry.
+
+### Follow Updates on the Board
+
+After a saved move, expected ends and date checks refresh automatically. The open Planner checks for schedule changes about every minute. Updates pause while you drag, while a move is being saved, or while a sorting dialog, an assignment dialog, or the **Back to pool** dialog is open.
+
+Cards slide to their new positions. The dropped card briefly gains an outline, and a changed forecast briefly highlights its date marker. These cues do not change the card’s status. With reduced motion enabled on your device, outlines replace sliding and scaling. Cards hidden by filters remain hidden; a changed priority can make a card enter or leave a priority filter.
 
 ## Assignment Gantt and Scheduling Feedback
 
@@ -168,7 +210,7 @@ Running work must be stopped on its machine before a handover. Finished and canc
 
 At most 25 machines can be shown at once, plus hall pools. Search only filters the area chosen under **Search in**. Status, priority, and tag filters apply to the unassigned list and all queues. The import filter narrows only the unassigned list to one ERP upload. If the queue changes while you reorder, it refreshes and you must redo the reorder.
 
-For moves without a dialog, with **Queue Position** on, dropping a card sets its exact position; running and on-hold cards stay at the top. With it off, sort-rule precedence controls the view, and the **Moves** dropdown offers **Start of Queue** or **End of Queue**. This also applies to newly assigned operations dropped from the unassigned list onto a machine or hall pool.
+For moves without a dialog, with **Queue Position** on, dropping a card sets its exact position, including running and on-hold cards within their column. With it off, sort-rule precedence controls the view, and the **Moves** dropdown offers **Start of Queue** or **End of Queue**. This also applies to newly assigned operations dropped from the unassigned list onto a machine or hall pool.
 
 ## Read OP, AG, P, Seq, Qty, and Utilization
 

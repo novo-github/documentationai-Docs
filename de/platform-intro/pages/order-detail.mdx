@@ -71,11 +71,13 @@ Um eine Übergabe manuell rückgängig zu machen, [löschen Administratoren und 
 
 Die Karte **Forecaster** zeigt, wann dieser Auftrag voraussichtlich fertig wird. Grundlage ist der aktuelle Stand auf den Maschinen. **Aktualisiert** mit anschließendem Datum zeigt, wann die Prognose zuletzt erneuert wurde.
 
-Die Anzahl der Arbeitsgänge zeigt, wie viele auf einer Maschine sind. Beispielsweise bedeutet **3 von 5 Arbeitsgängen sind auf einer Maschine**, dass zwei Arbeitsgänge noch keine Maschine haben. Es bedeutet nicht, dass drei Arbeitsgänge fertig sind. Fehlt einigen Arbeitsgängen eine Maschine oder ein Termin, wird der Auftrag später fertig als angezeigt. Das gelbe Ergebnis **gefährdet** bedeutet, dass die restliche Arbeit kaum noch passt oder ein früherer Arbeitsgang nicht geplant ist.
+Die Anzahl der Arbeitsgänge zeigt, wie viele auf einer Maschine sind. Beispielsweise bedeutet **3 von 5 Arbeitsgängen sind auf einer Maschine**, dass zwei Arbeitsgänge noch keine Maschine haben. Es bedeutet nicht, dass drei Arbeitsgänge fertig sind. Ist ein früherer Arbeitsgang noch auf keiner Maschine oder liegt er im Hallenpool, kann das erwartete Ende zu optimistisch sein. Das gelbe Ergebnis **gefährdet** bedeutet, dass die restliche Arbeit kaum noch passt oder ein früherer Arbeitsgang nicht geplant ist.
 
 Klicken Sie auf das Informationssymbol neben **Forecaster**, um **Wie funktioniert der Forecaster?** zu öffnen. Die Hilfe erklärt die Farben und wann erwartete Zeiten zu früh sein können. Das Lesen ändert keine Termine oder Warteschlangen. Prüfen Sie fehlende Angaben mithilfe der [Forecaster-Erklärung](/de/platform-intro/pages/assignment-gantt) und des Ablaufs [Maschinenzuweisungen planen](/de/platform-intro/workflows/assignment-planner).
 
 Prüfen Sie den mit **Dieser Schritt bestimmt das Ende des Auftrags.** markierten Schritt. Er bestimmt den erwarteten Abschluss. Zeitangaben und Warnungen unterscheiden die Verzögerung dieser Zuweisung vom Risiko für ihren Auftrag. Mit **Im Zuweisungs-Gantt zeigen** verfolgen Sie den Auftrag und aufhaltende Arbeit auf der Zeitleiste.
+
+Lange angehaltene, nie gestartete Arbeitsgänge und solche ohne geplanten Start erhalten weiterhin erwartete Zeiten. Pausierte Arbeit wird an ihrem Warteschlangenplatz als fortgesetzt eingeplant. Die Hinweise **Nie gestartet** und **Kein geplanter Start** erscheinen nur, wenn unter **Planungseinstellungen** die Option **Nach geplanten Terminen** oder **Liefertermin zuerst** gewählt ist. Sie erklären, dass nie begonnene Arbeit startet, sobald die Maschine frei ist, und Arbeit ohne Termin der Arbeit mit Termin folgt. Mit **Nach der Warteschlange** oder **Nach der Warteschlange, nicht vor dem geplanten Termin** erscheint keiner dieser Hinweise. Der Arbeitsgang behält seinen Platz in der Warteschlange. Siehe [Prognoseannahmen](/de/platform-intro/pages/assignment-gantt#warnungen-und-wartende-arbeit-prüfen).
 
 ## Details in der Zeitleiste lesen
 

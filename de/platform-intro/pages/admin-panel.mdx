@@ -38,7 +38,7 @@ Prioritätsstufen helfen Ihrem Team, die Dringlichkeit von Arbeit einheitlich zu
 
 <Steps>
   <Step title="Öffnen Sie die Prioritätsstufen" icon="arrow-right" title-type="p">
-    Öffnen Sie im **Administrationsbereich** den Bereich für **Prioritätsstufen**.
+    Öffnen Sie **Admin-Panel → Prioritätsstufen**.
   </Step>
   <Step title="Wählen Sie eine Vorlage oder passen Sie die Stufen an" icon="arrow-right" title-type="p">
     Wenden Sie eine Vorlage an, um die Prioritätsnummerierung von **SAP**, **Epicor Kinetic** oder **Infor M3** zu verwenden.
@@ -49,6 +49,23 @@ Prioritätsstufen helfen Ihrem Team, die Dringlichkeit von Arbeit einheitlich zu
     Speichern Sie Ihre Änderungen, damit dieselben Stufen im [Auftrags-Upload](/de/platform-intro/pages/erp-upload-planner), im [Zuweisungsplaner](/de/platform-intro/pages/assignment-planner) und in der [Auftragsverwaltung](/de/platform-intro/pages/orders-products) verfügbar sind.
   </Step>
 </Steps>
+
+### So werden Prioritäten verwendet
+
+Administratoren öffnen **Admin-Panel → Prioritätsstufen → So werden Prioritäten verwendet** unterhalb der Stufentabelle.
+
+Wählen Sie unter **Welche Zahl ist dringender?**:
+
+- **Höhere Zahl = dringender**: die Voreinstellung; 150 kommt vor 100.
+- **Niedrigere Zahl = dringender**: 1 kommt vor 5.
+
+Diese Auswahl bestimmt vorgeschlagene Warteschlangensortierungen und automatische Änderungen der Arbeitsgangpriorität. Eine SAP-Vorlage wählt zusätzlich höhere Zahlen zuerst. Epicor- und Infor-Vorlagen wählen niedrigere Zahlen zuerst. Die Vorschau der Vorlage zeigt die Richtung. Das Zurücksetzen auf Standardwerte stellt neben den Standardstufen auch höhere Zahlen zuerst wieder her. Ihre eigenen aufsteigenden oder absteigenden Sortierregeln bleiben wie eingestellt.
+
+**Reihenfolge und Arbeitsgang-Priorität bleiben im Einklang** ist standardmäßig eingeschaltet. Im Warteschlangenmodus des Planers kann das Verschieben eines Arbeitsgangs dessen Priorität ändern. Ändern Sie seine Priorität auf der Karte, kann er in der Warteschlange rücken. Nur die Priorität dieses Arbeitsgangs ändert sich. Auftragsprioritäten bleiben unverändert. Schalten Sie dies aus, ändert Ziehen nur die Reihenfolge. Eine geänderte Priorität verschiebt dann keine Karten.
+
+Öffnen Sie **Wie funktioniert das?** für Beispiele mit Ihren Unternehmensstufen. Bei den Standardstufen wird aus AG30 beim Vorziehen vor AG100 an die Spitze AG150. Ziehen Sie den zweiten von zwei AG70-Arbeitsgängen an die Spitze derselben Warteschlange, wird daraus AG100. Fehlt eine passende dringendere Stufe, kann ein Gleichstand bestehen bleiben. Siehe [Reihenfolge und Priorität](/de/platform-intro/pages/assignment-planner#reihenfolge-und-arbeitsgangpriorität).
+
+Jede dieser Einstellungen wird sofort beim Ändern gespeichert. Warten Sie auf **Einstellung gespeichert.** Schlägt das Speichern fehl, kehrt die vorherige Auswahl zurück. Versuchen Sie es erneut. Ein gelber Hinweis zeigt deutlich, wenn die Verknüpfung von Reihenfolge und Priorität ausgeschaltet ist.
 
 ## Seiten- und Maschinenberechtigungen verwalten
 
@@ -71,7 +88,7 @@ Berechtigungen legen fest, auf welche Plattformseiten und Maschinen ein Benutzer
 
 ## Standardprioritäten und Wertebereichsgrenzen
 
-Höhere Priorität bedeutet höhere Dringlichkeit. Standards sind **Low 10, Normal 30, High 70, Critical 100, Highest 150, Extreme 200**. Standardfarben sind Grün 0–29, Blau 30–69, Orange 70–99 und Rot ab 100. Unternehmen können Namen, Werte und Farben setzen oder Vorlagen für **SAP Delivery Priority**, **Epicor Kinetic Material Queue Priority** und **Infor M3 Customer Order Priority** verwenden.
+Standardmäßig bedeuten höhere Zahlen dringendere Arbeit. Unter **Welche Zahl ist dringender?** können Administratoren dies umkehren. Standards sind **Low 10, Normal 30, High 70, Critical 100, Highest 150, Extreme 200**. Standardfarben sind Grün 0–29, Blau 30–69, Orange 70–99 und Rot ab 100. Unternehmen können Namen, Werte und Farben setzen oder Vorlagen für **SAP Delivery Priority**, **Epicor Kinetic Material Queue Priority** und **Infor M3 Customer Order Priority** verwenden.
 
 Benutzerdefinierte Prioritätsstufen erlauben **0–999**, das Auftragsformular nennt **1–200**. Dieser Unterschied benötigt Produktbestätigung. Beachten Sie die Validierung des aktuellen Formulars statt eines universellen Bereichs. Vorhandene Prioritäten bleiben bei ERP-Neuimporten geschützt.
 

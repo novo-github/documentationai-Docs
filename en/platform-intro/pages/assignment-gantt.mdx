@@ -54,7 +54,7 @@ Order 4711 is due Thursday. Cutting on Laser 2 is planned for Tuesday, followed 
 | **At risk** | Amber | Not late yet, but the remaining work barely fits or an earlier step is not planned. |
 | **Late +3 h** | Red | Expected to finish three hours after the date. |
 | **Late, date passed** | Red | The date has passed and the order is unfinished. |
-| **Finish not known** | Blue | The date is still ahead, but a step has no machine or no date, so no finish can be worked out. |
+| **Finish not known** | Blue | The date is still ahead, but no expected finish is available, for example because a step is still in a hall pool. |
 
 The **delivery date** is your promise to the customer; missing it is red. The **planned end** is the finish in your own plan; missing it is amber. See the [Forecaster glossary](/en/platform-intro/concepts/glossary#forecaster) for the renamed labels.
 
@@ -87,11 +87,16 @@ If expected times are unavailable, jobs appear at their planned times without de
 
 Choose **By order** to review affected orders or **By cause** to find assignments holding up other work. Open a warning and use **Show the assignment it is waiting for** to trace a delay. Notes distinguish **Measured against the delivery date**, **Measured against the original plan**, and **Measured against the plan in Watchmen**.
 
-**Never started** means an assignment is more than three days past its planned start and no longer holds up the forecast queue. **No planned start** means it cannot be placed on the timeline. **On hold too long** means the hold limit has been passed, so the forecast lets the assignments behind it move up. These warnings do not mean the work is finished.
+- **On hold for a long time** (previously **On hold too long**): the hold limit has passed. The forecast assumes the step continues in its queue position, so later work still waits for it.
+- **Never started**: this note appears only with **Follow planned dates** or **Delivery date first** under **Planning settings**; work planned more than three days ago is forecast to start as soon as its machine is free. With **Follow the queue** or **Follow the queue, not before the planned date**, neither this note nor **No planned start** appears, and the step keeps its place in the queue.
+- **No planned start**: this note appears only with **Follow planned dates** or **Delivery date first**. The forecast places the step after the machine’s dated work.
+- **Waits for an earlier step**: that step is not on a machine yet or is still in a hall pool. Expected times may be too optimistic.
+
+These notes explain the expected times. They do not remove the work from the forecast or mean that it is finished.
 
 ### Read Machine Availability
 
-The machine summary shows the remaining work booked by the forecast. If an assignment has no expected end, the displayed free time is only the earliest possible time. This can happen with work never started, work without a date, or a hold beyond the limit.
+The machine summary shows the remaining work booked by the forecast. If an assignment has no expected end, the displayed free time is only the earliest possible time. The machine may be busy for longer. Long holds, missed starts, and missing planned starts now keep a forecast with assumption notes.
 
 ## Follow a Whole Order
 
@@ -132,7 +137,9 @@ Administrators open **Planning settings → Planning** to choose **How does your
 | **Follow the queue, not before the planned date** | Keeps queue order but waits for each planned start. A later-dated assignment can hold up everything behind it. |
 | **Delivery date first** | Orders work that can still arrive on time by delivery date. Already-late work goes first only if it does not make other work late. |
 
-**Hold limit (working hours)** determines when paused work stops holding its machine in the forecast. Enter a duration between 1 minute and 720 hours. Only the machine’s working time counts; a weekend without shifts uses none. Where no shifts are planned, 24 hours count as the full limit. After the limit, the assignment is warned about and the work behind it moves up.
+**Hold limit (working hours)** determines when **On hold for a long time** appears. It does not remove work from the forecast or free its machine. The step keeps its queue position and is expected to continue there. Enter a duration between 1 minute and 720 hours. Only the machine’s working time counts; a weekend without shifts uses none. Where no shifts are planned, 24 hours count as the full limit.
+
+For example, with an 8-hour limit on a machine working 8 hours a day, a step paused on Monday at 10:00 gets the note on Tuesday at 10:00.
 
 For machine capacity, administrators set **Jobs in parallel** in [Machine Configuration](/en/platform-intro/pages/machine-configuration).
 

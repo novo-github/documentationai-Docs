@@ -417,7 +417,7 @@ Expected times show when work is likely to happen, including delays. Planned tim
 
 - **On time**: green; expected to finish before the date.
 - **Late +3 h**: red; expected to finish three hours after the date. **Late, date passed** means the date has passed and the order is unfinished.
-- **Finish not known**: blue; the date is ahead, but a step has no machine or no date, so no finish can be worked out.
+- **Finish not known**: blue; the date is ahead, but no expected finish is available, for example because a step is still in a hall pool.
 
 Missing the delivery date is red. Missing only the planned end is amber.
 
@@ -434,15 +434,33 @@ The step count tells you how many of the order's steps have a machine. It does n
 
 #### Earlier Step Not Planned
 
-**Earlier step not planned** warns that the times shown assume that step is already finished. Check for a missing machine or date, a hall-pool step, work never started, or a hold beyond its limit before relying on later finishes.
+**Earlier step not planned** warns that the displayed times assume the earlier step is already finished. Check earlier steps that have no machine yet or are still in a hall pool before relying on later finishes. Long-held and never-started machine steps still occupy time in the forecast.
 
 #### Never Started and No Planned Start
 
-**Never started** identifies work planned more than three days ago that no longer holds up the forecast queue. **No planned start** means no forecast can be made for that assignment. Neither means the work is complete.
+**Never started** and **No planned start** appear only when **Follow planned dates** or **Delivery date first** is selected under **Planning settings**. **Never started** identifies work whose planned start is long past; the forecast assumes it starts as soon as its machine is free. **No planned start** means the forecast places it after the machine’s dated work. With **Follow the queue** or **Follow the queue, not before the planned date**, neither note appears and the step keeps its place in the queue. Both types of work still get expected times.
 
-#### On Hold Too Long
+#### On Hold for a Long Time
 
-**On hold too long** means paused work has passed **Hold limit (working hours)**. It stops holding the machine in the forecast, and assignments behind it move up. Administrators set the limit using machine working time.
+**On hold for a long time** (previously **On hold too long**) means paused work has passed **Hold limit (working hours)**. It remains in the forecast and keeps its queue position, so later work still waits for it. The limit only controls when the note appears. Administrators set it in Assignment Gantt’s planning settings using machine working time.
+
+#### Based On
+
+**Based on** lists assumptions behind a step’s expected times, such as a long hold, a missing planned start, or missing earlier work. The same assumptions appear at the warning icon. Read them before relying on the forecast.
+
+#### Why This Time
+
+**Why this time** explains what a step waits for: its machine, an earlier step, or the next shift. **Earlier steps of this order** lists the preceding work and its progress. Hover over a Planner card’s date tab or clock to read these details.
+
+#### Waits for an Earlier Step
+
+**Waits for an earlier step** means an earlier step is not on a machine yet or remains in a hall pool. The later step still has a forecast, but its times may be too optimistic.
+
+#### No Forecast
+
+**No forecast** marks hall-pool work or a forecast that is not available right now. It does not mean that work is finished. Pool work gets a forecast once it is on a machine. Until an expected end exists, the Planner only compares the date with today.
+
+[Read the card explanation](/en/platform-intro/pages/assignment-planner#explain-an-expected-end).
 
 #### Load and Earliest Availability
 
@@ -966,7 +984,7 @@ Preparation, production start, interval end, and resume controls. Explicit actio
 
 ### Priority
 
-Urgency number, higher meaning more urgent. Company levels can be customized; the order form and custom settings expose different ranges.
+An urgency number interpreted using the company’s **Which number is more urgent?** setting. **Higher number = more urgent** is the default; **Lower number = more urgent** reverses it. Administrators choose the direction and levels in **Admin Panel → Priority Levels**.
 
 [Learn more](/en/platform-intro/pages/admin-panel).
 
@@ -1044,9 +1062,15 @@ The dashboard tooltip states 95% and directs changes to an admin. Automatic repl
 
 [Learn more](/en/platform-intro/concepts/calculations#oee).
 
+### Queue Order and Operation Priority Stay in Step
+
+**Queue order and operation priority stay in step** is an administrator setting, on by default. In the Planner’s queue-position mode, dragging a step can change its operation priority, and changing its card priority can reposition its parts in accessible queues. Turning it off separates the two actions. **Undo** in a drag’s priority notice restores priority and keeps the dropped position.
+
+[Learn more](/en/platform-intro/pages/admin-panel#how-priorities-are-used).
+
 ### Queue Position / Queue load
 
-**Sort by Queue Position** shows the saved card sequence. Queue load describes the planned work in that queue. In Assignment Planner, running and on-hold cards stay on top. Data Acquisition V3 has separate choices for where these orders appear.
+**Sort by Queue Position** shows the saved card sequence. Queue load describes the planned work in that queue. In Assignment Planner, running and on-hold cards keep their queue positions and can be reordered within their column. Data Acquisition V3 has separate choices for where these orders appear.
 
 [Learn more](/en/platform-intro/pages/assignment-planner).
 
@@ -1222,7 +1246,7 @@ Optional company inputs for the CO₂ estimate, including waste, renewable share
 
 ### Stays on top
 
-**Stays on top** marks running and on-hold work in the priority-and-date preview. Running work comes first, then on-hold work. Each group keeps its current order while the other work is sorted.
+The former **Stays on top** label has been removed from the Planner’s priority-and-date preview. Running and on-hold work is sorted with all other active work. In queue-position mode, cards follow the dragged order.
 
 [Learn more](/en/platform-intro/pages/assignment-planner).
 

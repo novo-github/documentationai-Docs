@@ -91,7 +91,7 @@ A link with a search uses **Everything** for that visit without replacing your s
     Drag it directly onto the destination machine or hall-pool column. You do not need to unassign it first.
   </Step>
   <Step title="Choose its queue position" icon="arrow-right" title-type="p">
-    Choose the start or end of the destination queue and review the resulting plan.
+    With **Sort by Queue Position** on, drop the card at the position you want. Wait for the move to finish saving, then check its position and operation priority. With sorting rules on, **Moves** chooses the start or end of the queue.
   </Step>
 </Steps>
 
@@ -108,7 +108,7 @@ Administrators and users with access to the Orders page can choose any hall pool
     A running card stays locked with **Running. Stop it on the machine before moving it.** Use the normal stop action in [Data Acquisition](/en/platform-intro/workflows/data-acquisition) and record the quantities first.
   </Step>
   <Step title="Drag the stopped step to its destination" icon="arrow-right" title-type="p">
-    Drop the card on a hall-pool or another machine column. The handover dialog opens even if started work is marked **Planned** or **Released**. Moving within the same column only reorders the queue.
+    Drop the card on a hall-pool or another machine column. The handover dialog opens even if started work is marked **Planned** or **Released**. Moving within the same column reorders the queue and can also change the operation priority.
   </Step>
   <Step title="Review quantities and pass on the reason" icon="arrow-right" title-type="p">
     Check **Planned**, **Done here**, and **Left**. Review **Quantity left**: only good parts reduce the suggested remainder. Change it if parts need to be made again, or leave it empty if unknown. If nothing is left, finish the step unless more parts are needed. Add **Reason (optional)** for the next operator.
@@ -120,11 +120,32 @@ Administrators and users with access to the Orders page can choose any hall pool
 
 For example, if 40 of 100 planned parts are good, the original machine keeps 40 and the next machine receives 60. Hover over a grey badge to check the destination or source and any reason. If the step changed during review, inspect the refreshed queues before trying again.
 
+## Reorder Work and Check Its Priority
+
+Use your normal Planner and machine access. The link between queue order and operation priority must be enabled in the company settings described below.
+
+<Steps>
+  <Step title="Use queue-position mode" icon="arrow-right" title-type="p">
+    Open **Filter & Sort → Sort by Queue Position**. Clear filters and any search covering the queue if you need to see every position and its number.
+  </Step>
+  <Step title="Place the step" icon="arrow-right" title-type="p">
+    Drag the card to its new position within the machine or hall pool. Running and on-hold cards keep the positions you set. Running work can move within its column; stop it before changing its destination. Wait for each move to save before reordering the destination again.
+  </Step>
+  <Step title="Review the changed priority" icon="arrow-right" title-type="p">
+    Read the notice and the dashed **OP** chip. Moving ahead of more urgent or equally urgent work within the queue can raise the priority; moving behind can lower it. With the default levels, moving the second of two OP70 steps to the top makes it OP100. To change a tie, the next company level must fit between the surrounding steps. A priority that already fits can stay unchanged.
+  </Step>
+  <Step title="Keep or undo the priority change" icon="arrow-right" title-type="p">
+    Select **Undo** in the priority notice if you want the old priority back. The card stays where you dropped it. For a split step, check all parts: the new priority appears everywhere, but this drag does not reorder the other queues.
+  </Step>
+</Steps>
+
+Expected ends and date checks refresh after the move. Hover over the date marker to review its explanation. See [queue and priority details](/en/platform-intro/pages/assignment-planner#queue-order-and-operation-priority).
+
 ## Set an Operation Priority and Filter the Plan
 
 <Steps>
   <Step title="Choose the priority to change" icon="arrow-right" title-type="p">
-    On an operation or queue card, select the dashed **OP** chip to set **Operation priority**. Use **P** to change **Order priority** instead. The two values are independent.
+    On an operation or queue card, select the dashed **OP** chip to set **Operation priority**. Use **P** to change **Order priority** instead. The two values are independent. In queue-position mode, changing **Operation priority** can move the card and any split parts in other accessible queues. Equal-priority cards keep their relative order. Administrators can switch off this link between priority and position.
   </Step>
   <Step title="Choose matching priorities" icon="arrow-right" title-type="p">
     Use **Order priority** and **Operation priority** to select one or more values. Type a number if it is absent from the legend. With both filters set, work must match both in the unassigned panel and machine columns.
@@ -157,7 +178,7 @@ You need access to the Planner and the machine, plus an administrator account or
     Under **Filter & Sort**, enable **Sort by Queue Position**. In the machine or hall-pool header, choose **Sort by priority and date**. The preview covers the active queue, including cards hidden by filters.
   </Step>
   <Step title="Choose the priority and review" icon="arrow-right" title-type="p">
-    Each opening starts with **Order priority**. Choose **Operation priority** to use step priorities instead. Higher priorities come first, then earlier planned operation starts. Check proposed positions and the previous positions of moved work. Running orders stay first, followed by on-hold orders; **Stays on top** marks these groups.
+    Each opening starts with **Order priority**. Choose **Operation priority** to use step priorities instead. The most urgent priorities come first, using the company’s higher-or-lower-number choice, then earlier planned operation starts. Check proposed and previous positions. Running and on-hold steps are sorted too; nothing is kept at the top because of its status.
   </Step>
   <Step title="Apply or leave the order unchanged" icon="arrow-right" title-type="p">
     Choose **Apply order** to save the shared sequence. Choose **Cancel** to keep the existing order. If the queue changed during review, check the updated proposal before applying. If loading fails, retry; applying remains unavailable until loading succeeds. If no positions change, there is nothing to apply.
@@ -168,6 +189,27 @@ You need access to the Planner and the machine, plus an administrator account or
 </Steps>
 
 With queue sorting on and no filters or relevant search, card numbers show the positions in each queue. Clear priority, operation priority and tag filters, restore the usual status selection, and clear search in that area if numbers are missing.
+
+## Set How the Company Uses Priorities
+
+You need an administrator account. These settings affect the company’s priority-and-date proposals and linked queue changes.
+
+<Steps>
+  <Step title="Open the priority settings" icon="arrow-right" title-type="p">
+    Open **Admin Panel → Priority Levels → How priorities are used** below the levels table.
+  </Step>
+  <Step title="Choose the urgency direction" icon="arrow-right" title-type="p">
+    Under **Which number is more urgent?**, choose **Higher number = more urgent** or **Lower number = more urgent**. Higher numbers are the default. Applying SAP, Epicor, or Infor presets also sets their direction; resetting the levels restores higher numbers first.
+  </Step>
+  <Step title="Choose whether queue and priority affect each other" icon="arrow-right" title-type="p">
+    Leave **Queue order and operation priority stay in step** on to link dragging and card priority changes. Turn it off to let dragging change only order and priority changes leave cards in place. Open **How does this work?** to review examples with your levels.
+  </Step>
+  <Step title="Check that the choice was saved" icon="arrow-right" title-type="p">
+    Each setting saves immediately. Wait for **Setting saved.** If saving fails, the previous choice returns; try again. An amber notice remains visible while the link is off. Review a queue in Assignment Planner using **Sort by Queue Position**.
+  </Step>
+</Steps>
+
+Your own sorting-rule directions remain as set. See [company priority settings](/en/platform-intro/pages/admin-panel#how-priorities-are-used).
 
 ## Save or Use Company Sorting
 
@@ -191,10 +233,15 @@ A saved personal choice or reset does not follow later company-default changes. 
 
 <Steps>
   <Step title="Check which date the warning refers to" icon="arrow-right" title-type="p">
-    Open **Forecaster check** in Assignment Planner and review the selected date. The card's coloured tab compares the job with this date: red means late, amber means **at risk**, and green means on time.
+    Open **Forecaster check** in Assignment Planner and review the selected date. The card’s date marker compares the job with this date: red means late and amber means **at risk**. An on-time step with an expected end shows a small clock.
+  </Step>
+  <Step title="Check why this step ends then" icon="arrow-right" title-type="p">
+    Hover over its date tab or small clock. Read **Expected end** and the date checks, then **Based on** for assumptions. Under **Why this time**, check the machine, earlier step, or shift it waits for. **Earlier steps of this order** helps you find missing machine assignments. If details fail to load, hover again.
+
+    Long-held, never-started, and undated steps still get expected times. **No forecast** means hall-pool work or an unavailable forecast. Assign pool work to a machine and review the result. If an earlier step has no machine yet, the later step’s time may be too optimistic.
   </Step>
   <Step title="Read the explanation" icon="arrow-right" title-type="p">
-    Choose **How does the Forecaster work?** at the bottom of the menu. This opens the help without changing your selected date check. Read what the colours mean and when times may be too early, then close the help to return to planning.
+    For general help, open **Forecaster check → How does the Forecaster work?**. This opens the help without changing your selected date check. Read what the colours mean and when times may be too early, then close the help to return to planning.
   </Step>
   <Step title="Review the expected times" icon="arrow-right" title-type="p">
     Open [Assignment Gantt](/en/platform-intro/pages/assignment-gantt). In the view options, choose **Expected times** to include delays or **Planned dates** to inspect the plan. Open **Attention** to review the most important warnings first. Follow the related order to check steps without a machine or date. Also check planned durations, machine shifts, and whether current work has been recorded on the PDA/BDE.
@@ -258,7 +305,7 @@ If the Forecaster has no expected end, the Planner only compares the job's date 
 
 Administrators open **Planning settings → Planning** in Assignment Gantt. Choose **How does your plant decide what runs next?** and review the [ordering choices](/en/platform-intro/pages/assignment-gantt). Set **Hold limit (working hours)** between 1 minute and 720 hours, then save. Confirm the displayed forecast rule. Other users can compare alternatives without changing this company setting.
 
-Only working time counts toward the hold limit. Without planned shifts, 24 hours count as the full limit. Once exceeded, paused work stops holding the machine in the forecast and work behind it moves up.
+Only working time counts toward the hold limit. Without planned shifts, 24 hours count as the full limit. Once exceeded, **On hold for a long time** appears. The step stays in the forecast and keeps its queue position; later work still waits for it.
 
 ## Review Conflicts After an Order Import
 
@@ -270,7 +317,7 @@ Move an eligible assignment to the intended queue when appropriate. If work has 
 
 Unstarted planned or released work moves directly. Started, stopped work opens the handover dialog. Running work must stop first, and finished or cancelled work stays on its machine. Up to 25 machines can be shown; hall pools do not count toward that limit.
 
-For moves without a dialog, with Queue Position enabled, running and on-hold assignments stay at the top and a drop sets the exact position. With it disabled, sorting rules control the view and **Moves** chooses the start/end destination. If another change refreshes the queue while you reorder, redo the reorder against the refreshed queue.
+For moves without a dialog, with **Sort by Queue Position** enabled, a drop sets the exact position. Running and on-hold assignments keep the position you set within their column. With it disabled, sorting rules control the view and **Moves** chooses the start/end destination. If another change refreshes the queue while you reorder, redo the reorder against the refreshed queue.
 
 Use [Assignment Gantt](/en/platform-intro/pages/assignment-gantt) to inspect the timeline. Its drag-to-reschedule mode is **Experimental and read-only**; use supported planner controls for changes.
 
@@ -287,6 +334,7 @@ Use the view switch to open Assignment Gantt for a timeline review. Use its **Mo
 - Whether overlap warnings should be resolved manually or through automatic arrangement of future assignments.
 - Whether expected times include all steps, durations, and shifts before you rely on them.
 - Whether to save a compared plan or leave the existing plan unchanged.
+- Whether to keep a priority change caused by dragging or use **Undo** to restore the priority while keeping the position.
 
 ## Expected Result
 

@@ -91,7 +91,7 @@ Ein Link mit einer Suche verwendet für diesen Besuch **Überall**, ohne Ihre ge
     Ziehen Sie die Karte direkt auf die Zielmaschine oder den Ziel-Hallenpool. Sie müssen die Zuweisung vorher nicht aufheben.
   </Step>
   <Step title="Wählen Sie die Warteschlangenposition" icon="arrow-right" title-type="p">
-    Wählen Sie den Anfang oder das Ende der Zielwarteschlange und prüfen Sie den entstandenen Plan.
+    Mit **Nach Warteschlangenposition sortieren** legen Sie die Karte an der gewünschten Stelle ab. Warten Sie, bis die Verschiebung gespeichert ist. Prüfen Sie dann Position und Arbeitsgangpriorität. Bei Sortierregeln bestimmt **Verschiebungen** den Anfang oder das Ende der Warteschlange.
   </Step>
 </Steps>
 
@@ -108,7 +108,7 @@ Administratoren und Benutzer mit Zugriff auf die Seite Aufträge können einen b
     Eine laufende Karte bleibt gesperrt und zeigt **Läuft. Erst an der Maschine stoppen, dann verschieben.** Nutzen Sie zuerst die normale Stoppaktion in der [Betriebsdatenerfassung](/de/platform-intro/workflows/data-acquisition) und erfassen Sie die Mengen.
   </Step>
   <Step title="Ziehen Sie den gestoppten Schritt auf sein Ziel" icon="arrow-right" title-type="p">
-    Legen Sie die Karte auf einem Hallenpool oder einer anderen Maschinenspalte ab. Der Übergabedialog öffnet sich auch dann, wenn begonnene Arbeit als **Geplant** oder **Freigegeben** markiert ist. Das Verschieben innerhalb derselben Spalte ändert nur die Reihenfolge.
+    Legen Sie die Karte auf einem Hallenpool oder einer anderen Maschinenspalte ab. Der Übergabedialog öffnet sich auch dann, wenn begonnene Arbeit als **Geplant** oder **Freigegeben** markiert ist. Das Verschieben innerhalb derselben Spalte ändert die Reihenfolge und kann auch die Arbeitsgangpriorität ändern.
   </Step>
   <Step title="Prüfen Sie die Mengen und geben Sie den Grund weiter" icon="arrow-right" title-type="p">
     Prüfen Sie **Geplant**, **Hier gefertigt** und **Offen**. Kontrollieren Sie **Restmenge**: Nur Gutteile verringern den Vorschlag. Ändern Sie die Menge bei nötiger Nachfertigung oder lassen Sie sie leer, wenn sie unbekannt ist. Ist nichts mehr offen, schließen Sie den Schritt ab, sofern keine weiteren Teile benötigt werden. Ergänzen Sie **Grund (optional)** für die nächste Person.
@@ -120,11 +120,32 @@ Administratoren und Benutzer mit Zugriff auf die Seite Aufträge können einen b
 
 Sind beispielsweise 40 von 100 geplanten Teilen gut, behält die ursprüngliche Maschine 40 und die nächste erhält 60. Zeigen Sie auf eine graue Kennzeichnung, um Ziel oder Herkunft und einen vorhandenen Grund zu prüfen. Wurde der Schritt während der Prüfung geändert, kontrollieren Sie die aktualisierten Warteschlangen vor einem erneuten Versuch.
 
+## Arbeit umordnen und ihre Priorität prüfen
+
+Nutzen Sie Ihren üblichen Planer- und Maschinenzugriff. Die Verbindung zwischen Reihenfolge und Arbeitsgangpriorität muss in den unten beschriebenen Unternehmenseinstellungen eingeschaltet sein.
+
+<Steps>
+  <Step title="Nutzen Sie den Warteschlangenmodus" icon="arrow-right" title-type="p">
+    Öffnen Sie **Filtern & Sortieren → Nach Warteschlangenposition sortieren**. Entfernen Sie Filter und eine Suche in dieser Warteschlange, wenn Sie alle Positionen und Nummern sehen möchten.
+  </Step>
+  <Step title="Platzieren Sie den Arbeitsgang" icon="arrow-right" title-type="p">
+    Ziehen Sie die Karte an ihre neue Position auf der Maschine oder im Hallenpool. Laufende und angehaltene Karten behalten die von Ihnen gesetzten Positionen. Laufende Arbeit lässt sich innerhalb ihrer Spalte umordnen. Vor einem Zielwechsel müssen Sie sie stoppen. Warten Sie, bis jede Verschiebung gespeichert ist, bevor Sie das Ziel erneut umordnen.
+  </Step>
+  <Step title="Prüfen Sie die geänderte Priorität" icon="arrow-right" title-type="p">
+    Lesen Sie den Hinweis und die gestrichelte **AG**-Anzeige. Vorziehen vor dringendere oder gleich dringende Arbeit innerhalb der Warteschlange kann die Priorität erhöhen. Zurückschieben kann sie senken. Bei den Standardstufen wird aus dem zweiten von zwei AG70-Arbeitsgängen beim Vorziehen an die Spitze AG100. Bei einem Gleichstand muss die nächste Unternehmensstufe zwischen die umliegenden Arbeitsgänge passen. Eine bereits passende Priorität kann unverändert bleiben.
+  </Step>
+  <Step title="Behalten Sie die Priorität oder machen Sie die Änderung rückgängig" icon="arrow-right" title-type="p">
+    Wählen Sie **Rückgängig** im Prioritätshinweis, um die alte Priorität wiederherzustellen. Die Karte bleibt an der Ablageposition. Prüfen Sie bei einem aufgeteilten Arbeitsgang alle Anteile: Die neue Priorität erscheint überall. Das Ziehen ordnet die anderen Warteschlangen jedoch nicht um.
+  </Step>
+</Steps>
+
+Erwartete Endzeiten und Terminvergleiche aktualisieren sich nach der Verschiebung. Zeigen Sie auf die Terminmarke, um ihre Erklärung zu prüfen. Siehe [Reihenfolge und Priorität](/de/platform-intro/pages/assignment-planner#reihenfolge-und-arbeitsgangpriorität).
+
 ## Arbeitsgangpriorität festlegen und den Plan filtern
 
 <Steps>
   <Step title="Wählen Sie die zu ändernde Priorität" icon="arrow-right" title-type="p">
-    Wählen Sie auf einer Operations- oder Warteschlangenkarte die gestrichelte **AG**-Anzeige für **Arbeitsgangpriorität**. Mit **P** ändern Sie stattdessen die **Auftragspriorität**. Die beiden Werte sind unabhängig.
+    Wählen Sie auf einer Operations- oder Warteschlangenkarte die gestrichelte **AG**-Anzeige für **Arbeitsgangpriorität**. Mit **P** ändern Sie stattdessen die **Auftragspriorität**. Die beiden Werte sind unabhängig. Im Warteschlangenmodus kann eine geänderte **Arbeitsgangpriorität** die Karte und aufgeteilte Anteile in anderen zugänglichen Warteschlangen verschieben. Gleich dringende Karten behalten ihre relative Reihenfolge. Administratoren können diese Verbindung von Priorität und Position ausschalten.
   </Step>
   <Step title="Wählen Sie passende Prioritäten" icon="arrow-right" title-type="p">
     Wählen Sie unter **Auftragspriorität** und **Arbeitsgangpriorität** einen oder mehrere Werte. Geben Sie eine Zahl ein, wenn sie in der Legende fehlt. Sind beide Filter gesetzt, muss die Arbeit beide erfüllen. Das gilt für ungeplante Operationen und Maschinenspalten.
@@ -157,7 +178,7 @@ Sie benötigen Zugriff auf Planer und Maschine sowie ein Administratorkonto oder
     Aktivieren Sie unter **Filtern & Sortieren** die Option **Nach Warteschlangenposition sortieren**. Wählen Sie im Kopf der Maschine oder des Hallenpools **Nach Priorität und Datum sortieren**. Die Vorschau umfasst die aktive Warteschlange, auch durch Filter ausgeblendete Karten.
   </Step>
   <Step title="Wählen Sie die Priorität und prüfen Sie den Vorschlag" icon="arrow-right" title-type="p">
-    Beim Öffnen ist immer **Auftragspriorität** ausgewählt. Wählen Sie **Arbeitsgangpriorität**, um stattdessen die Prioritäten einzelner Schritte zu verwenden. Höhere Prioritäten kommen zuerst, danach frühere geplante Operationsstarts. Prüfen Sie die vorgeschlagenen und die vorherigen Positionen verschobener Arbeit. Laufende Aufträge stehen zuerst, danach Aufträge in Wartestellung. **Bleibt oben** kennzeichnet diese Gruppen.
+    Beim Öffnen ist immer **Auftragspriorität** ausgewählt. Wählen Sie **Arbeitsgangpriorität**, um stattdessen die Prioritäten einzelner Schritte zu verwenden. Die dringendsten Prioritäten kommen zuerst. Dabei gilt die Unternehmensauswahl für höhere oder niedrigere Zahlen. Danach folgen frühere geplante Operationsstarts. Prüfen Sie vorgeschlagene und vorherige Positionen. Laufende und angehaltene Schritte werden ebenfalls sortiert. Nichts bleibt wegen seines Status oben.
   </Step>
   <Step title="Übernehmen oder behalten Sie die Reihenfolge" icon="arrow-right" title-type="p">
     Wählen Sie **Reihenfolge übernehmen**, um die gemeinsame Reihenfolge zu speichern. Wählen Sie **Abbrechen**, um die vorhandene Reihenfolge zu behalten. Hat sich die Warteschlange während der Prüfung geändert, prüfen Sie den aktualisierten Vorschlag vor dem Übernehmen. Schlägt das Laden fehl, versuchen Sie es erneut. Das Übernehmen bleibt bis zum erfolgreichen Laden gesperrt. Ohne Positionsänderung gibt es nichts zu übernehmen.
@@ -168,6 +189,27 @@ Sie benötigen Zugriff auf Planer und Maschine sowie ein Administratorkonto oder
 </Steps>
 
 Bei eingeschalteter Warteschlangensortierung ohne Filter oder betreffende Suche zeigen Kartennummern die Positionen je Warteschlange. Fehlen die Nummern, entfernen Sie Prioritäts-, Arbeitsgangprioritäts- und Tag-Filter, stellen Sie die übliche Statusauswahl wieder her und leeren Sie die Suche in diesem Bereich.
+
+## Verwendung der Unternehmensprioritäten einstellen
+
+Sie benötigen ein Administratorkonto. Diese Einstellungen beeinflussen Vorschläge nach Priorität und Datum sowie verknüpfte Warteschlangenänderungen im Unternehmen.
+
+<Steps>
+  <Step title="Öffnen Sie die Prioritätseinstellungen" icon="arrow-right" title-type="p">
+    Öffnen Sie **Admin-Panel → Prioritätsstufen → So werden Prioritäten verwendet** unterhalb der Stufentabelle.
+  </Step>
+  <Step title="Wählen Sie die Dringlichkeitsrichtung" icon="arrow-right" title-type="p">
+    Wählen Sie unter **Welche Zahl ist dringender?** entweder **Höhere Zahl = dringender** oder **Niedrigere Zahl = dringender**. Höhere Zahlen sind die Voreinstellung. SAP-, Epicor- oder Infor-Vorlagen setzen auch ihre Richtung. Das Zurücksetzen der Stufen stellt höhere Zahlen zuerst wieder her.
+  </Step>
+  <Step title="Wählen Sie, ob Reihenfolge und Priorität einander beeinflussen" icon="arrow-right" title-type="p">
+    Lassen Sie **Reihenfolge und Arbeitsgang-Priorität bleiben im Einklang** eingeschaltet, um Ziehen und Prioritätsänderungen auf Karten zu verbinden. Schalten Sie es aus, damit Ziehen nur die Reihenfolge ändert und Prioritätsänderungen Karten an ihrem Platz lassen. Öffnen Sie **Wie funktioniert das?** für Beispiele mit Ihren Stufen.
+  </Step>
+  <Step title="Prüfen Sie die gespeicherte Auswahl" icon="arrow-right" title-type="p">
+    Jede Einstellung wird sofort gespeichert. Warten Sie auf **Einstellung gespeichert.** Schlägt das Speichern fehl, kehrt die vorherige Auswahl zurück. Versuchen Sie es erneut. Solange die Verbindung ausgeschaltet ist, bleibt ein gelber Hinweis sichtbar. Prüfen Sie im Zuweisungsplaner eine Warteschlange mit **Nach Warteschlangenposition sortieren**.
+  </Step>
+</Steps>
+
+Die Richtung Ihrer eigenen Sortierregeln bleibt wie eingestellt. Siehe [Unternehmensprioritäten](/de/platform-intro/pages/admin-panel#so-werden-prioritäten-verwendet).
 
 ## Firmensortierung speichern oder übernehmen
 
@@ -191,10 +233,15 @@ Eine gespeicherte persönliche Auswahl oder ein Zurücksetzen folgt späteren Ä
 
 <Steps>
   <Step title="Prüfen Sie den Vergleichstermin" icon="arrow-right" title-type="p">
-    Öffnen Sie im Zuweisungsplaner die Auswahl für die Terminprüfung mit dem **Forecaster** und prüfen Sie den gewählten Termin. Die farbige Marke an der Karte vergleicht den Auftrag mit diesem Termin: Rot bedeutet verspätet, Gelb **gefährdet** und Grün im Termin.
+    Öffnen Sie im Zuweisungsplaner die Auswahl für die Terminprüfung mit dem **Forecaster** und prüfen Sie den gewählten Termin. Die Terminmarke an der Karte vergleicht den Auftrag mit diesem Termin: Rot bedeutet verspätet und Gelb **gefährdet**. Ein pünktlicher Arbeitsgang mit erwartetem Ende zeigt eine kleine Uhr.
+  </Step>
+  <Step title="Prüfen Sie den Grund für die Endzeit dieses Arbeitsgangs" icon="arrow-right" title-type="p">
+    Zeigen Sie auf seine Terminmarke oder die kleine Uhr. Lesen Sie **Voraussichtliches Ende** und die Terminvergleiche, dann die Annahmen unter **Grundlage**. Prüfen Sie unter **Warum dieser Zeitpunkt**, auf welche Maschine, welchen früheren Arbeitsgang oder welche Schicht er wartet. **Frühere Arbeitsgänge dieses Auftrags** hilft Ihnen, fehlende Maschinenzuweisungen zu finden. Lassen sich Details nicht laden, zeigen Sie erneut darauf.
+
+    Lange angehaltene, nie gestartete Arbeitsgänge und solche ohne Termin erhalten weiterhin erwartete Zeiten. **Keine Prognose** bedeutet Arbeit im Hallenpool oder eine nicht verfügbare Prognose. Weisen Sie Pool-Arbeit einer Maschine zu und prüfen Sie das Ergebnis. Fehlt einem früheren Arbeitsgang noch die Maschine, kann die Zeit des späteren Arbeitsgangs zu optimistisch sein.
   </Step>
   <Step title="Lesen Sie die Erklärung" icon="arrow-right" title-type="p">
-    Wählen Sie unten im Menü **Wie funktioniert der Forecaster?**. Die Hilfe öffnet sich, ohne Ihren gewählten Vergleichstermin zu ändern. Lesen Sie, was die Farben bedeuten und wann Zeiten zu früh sein können. Schließen Sie anschließend die Hilfe, um zur Planung zurückzukehren.
+    Für allgemeine Hilfe öffnen Sie **Forecaster-Prüfung → Wie funktioniert der Forecaster?**. Die Hilfe öffnet sich, ohne Ihren gewählten Vergleichstermin zu ändern. Lesen Sie, was die Farben bedeuten und wann Zeiten zu früh sein können. Schließen Sie anschließend die Hilfe, um zur Planung zurückzukehren.
   </Step>
   <Step title="Prüfen Sie die erwarteten Zeiten" icon="arrow-right" title-type="p">
     Öffnen Sie [Assignment Gantt](/de/platform-intro/pages/assignment-gantt). Wählen Sie in den Ansichtsoptionen die erwarteten Zeiten einschließlich Verzögerungen oder die geplanten Termine zur Prüfung Ihres Plans. Öffnen Sie die Warnungsübersicht und prüfen Sie die wichtigsten Warnungen zuerst. Öffnen Sie den zugehörigen Auftrag, um Arbeitsgänge ohne Maschine oder Termin zu prüfen. Kontrollieren Sie außerdem geplante Dauern, Maschinenschichten und die zeitnahe Erfassung laufender Arbeit am PDA/BDE.
@@ -258,7 +305,7 @@ Hat der Forecaster kein erwartetes Ende, vergleicht der Zuweisungsplaner nur den
 
 Administratoren öffnen im Zuweisungs-Gantt **Planungseinstellungen → Planung**. Wählen Sie **Wie entscheidet Ihr Werk, was als Nächstes läuft?** und prüfen Sie die [Reihenfolgen](/de/platform-intro/pages/assignment-gantt). Stellen Sie **Limit für Wartestellung (Arbeitsstunden)** zwischen 1 Minute und 720 Stunden ein und speichern Sie. Prüfen Sie die angezeigte Prognoseregel. Andere Benutzer können Alternativen vergleichen, ohne diese Unternehmenseinstellung zu ändern.
 
-Nur Arbeitszeit zählt zum Limit. Ohne geplante Schichten zählen 24 Stunden als volles Limit. Nach Überschreitung belegt pausierte Arbeit die Maschine in der Prognose nicht mehr. Arbeit dahinter rückt auf.
+Nur Arbeitszeit zählt zum Limit. Ohne geplante Schichten zählen 24 Stunden als volles Limit. Nach Überschreitung erscheint **Lange angehalten**. Der Arbeitsgang bleibt in der Prognose und behält seinen Platz in der Warteschlange. Spätere Arbeit wartet weiterhin darauf.
 
 ## Konflikte nach einem Auftragsimport prüfen
 
@@ -270,7 +317,7 @@ Verschieben Sie eine zulässige Zuweisung bei Bedarf in die vorgesehene Wartesch
 
 Ungestartete geplante oder freigegebene Arbeit wird direkt verschoben. Begonnene, gestoppte Arbeit öffnet den Übergabedialog. Laufende Arbeit muss zuerst gestoppt werden. Abgeschlossene oder stornierte Arbeit bleibt auf ihrer Maschine. Bis zu 25 Maschinen sind sichtbar. Hallenpools zählen nicht zu dieser Grenze.
 
-Bei Verschiebungen ohne Dialog bleiben mit **Nach Warteschlangenposition sortieren** laufende Zuweisungen und solche in Wartestellung oben. Die Ablage bestimmt die genaue Position. Ohne diese Option bestimmen Sortierregeln die Ansicht und **Verschiebungen** den Anfang oder das Ende des Ziels. Aktualisiert eine andere Änderung die Warteschlange während der Sortierung, wiederholen Sie diese auf dem aktualisierten Stand.
+Bei Verschiebungen ohne Dialog bestimmt mit **Nach Warteschlangenposition sortieren** die Ablage die genaue Position. Laufende und angehaltene Zuweisungen behalten innerhalb ihrer Spalte den von Ihnen gesetzten Platz. Ohne diese Option bestimmen Sortierregeln die Ansicht und **Verschiebungen** den Anfang oder das Ende des Ziels. Aktualisiert eine andere Änderung die Warteschlange während der Sortierung, wiederholen Sie diese auf dem aktualisierten Stand.
 
 [Assignment Gantt](/de/platform-intro/pages/assignment-gantt) zeigt die Zeitleiste. Verschiebung durch Ziehen ist **Experimental und schreibgeschützt**. Verwenden Sie unterstützte Planersteuerungen für Änderungen.
 
@@ -287,6 +334,7 @@ Bei Verschiebungen ohne Dialog bleiben mit **Nach Warteschlangenposition sortier
 - Ob Warnungen zu Überschneidungen manuell oder durch automatische Anordnung zukünftiger Zuweisungen gelöst werden sollen.
 - Ob erwartete Zeiten alle Arbeitsgänge, Dauern und Schichten berücksichtigen, bevor Sie sich darauf verlassen.
 - Ob Sie einen verglichenen Plan speichern oder den bestehenden Plan beibehalten.
+- Ob Sie eine durch Ziehen geänderte Priorität behalten oder mit **Rückgängig** die Priorität wiederherstellen und die Position beibehalten.
 
 ## Erwartetes Ergebnis
 

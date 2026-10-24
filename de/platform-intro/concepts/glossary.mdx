@@ -417,7 +417,7 @@ Erwartete Zeiten zeigen, wann Arbeit voraussichtlich stattfindet, einschließlic
 
 - **Im Termin**: Grün; endet voraussichtlich vor dem Termin.
 - **Verspätet +3 h**: Rot; endet voraussichtlich drei Stunden nach dem Termin. **verspätet, Termin vorbei** bedeutet, dass der Termin vorbei und der Auftrag nicht fertig ist.
-- **Ende nicht bekannt**: Blau; der Termin liegt noch in der Zukunft, aber einem Arbeitsgang fehlt eine Maschine oder ein Termin. Deshalb lässt sich kein Ende ermitteln.
+- **Ende nicht bekannt**: Blau; der Termin liegt noch in der Zukunft, aber es liegt kein erwartetes Ende vor, etwa weil ein Arbeitsgang noch im Hallenpool liegt.
 
 Wird der Liefertermin verfehlt, erscheint die Warnung rot. Wird nur das geplante Ende verfehlt, erscheint sie gelb.
 
@@ -434,15 +434,33 @@ Die Anzahl zeigt, wie viele Arbeitsgänge des Auftrags eine Maschine haben. Sie 
 
 #### Früherer Schritt nicht geplant
 
-**Früherer Schritt nicht geplant** warnt, dass die angezeigten Zeiten diesen Schritt bereits als fertig voraussetzen. Prüfen Sie fehlende Maschinen oder Termine, Schritte im Hallenpool, nie gestartete Arbeit oder eine Unterbrechung über das Limit hinaus, bevor Sie sich auf spätere Endzeiten verlassen.
+**Früherer Schritt nicht geplant** warnt, dass die angezeigten Zeiten den früheren Schritt bereits als fertig voraussetzen. Prüfen Sie frühere Arbeitsgänge, die noch keine Maschine haben oder im Hallenpool liegen, bevor Sie sich auf spätere Endzeiten verlassen. Lange angehaltene und nie gestartete Arbeitsgänge auf Maschinen belegen weiterhin Zeit in der Prognose.
 
 #### Nie gestartet und kein geplanter Start
 
-**Nie gestartet** kennzeichnet vor mehr als drei Tagen geplante Arbeit, die die Warteschlange der Prognose nicht mehr aufhält. **Kein geplanter Start** bedeutet, dass für diese Zuweisung keine Prognose möglich ist. Beides bedeutet nicht, dass die Arbeit fertig ist.
+**Nie gestartet** und **Kein geplanter Start** erscheinen nur, wenn unter **Planungseinstellungen** die Option **Nach geplanten Terminen** oder **Liefertermin zuerst** gewählt ist. **Nie gestartet** kennzeichnet Arbeit, deren geplanter Start lange zurückliegt. Die Prognose nimmt an, dass sie startet, sobald die Maschine frei ist. **Kein geplanter Start** bedeutet, dass die Prognose sie nach der Arbeit mit Termin auf ihrer Maschine einplant. Mit **Nach der Warteschlange** oder **Nach der Warteschlange, nicht vor dem geplanten Termin** erscheint keiner dieser Hinweise. Der Arbeitsgang behält seinen Platz in der Warteschlange. Beide Arten von Arbeit erhalten weiterhin erwartete Zeiten.
 
-#### Zu lange angehalten
+#### Lange angehalten
 
-**Zu lange angehalten** bedeutet, dass pausierte Arbeit das **Limit für Wartestellung (Arbeitsstunden)** überschritten hat. Sie belegt ihre Maschine in der Prognose nicht mehr. Zuweisungen dahinter rücken auf. Administratoren stellen das Limit anhand der Maschinenarbeitszeit ein.
+**Lange angehalten** (bisher **Zu lange angehalten**) bedeutet, dass pausierte Arbeit das **Limit für Wartestellung (Arbeitsstunden)** überschritten hat. Sie bleibt in der Prognose und behält ihre Warteschlangenposition. Spätere Arbeit wartet weiterhin darauf. Das Limit bestimmt nur, wann der Hinweis erscheint. Administratoren stellen es in den Planungseinstellungen des Zuweisungs-Gantts anhand der Maschinenarbeitszeit ein.
+
+#### Grundlage
+
+**Grundlage** nennt Annahmen hinter den erwarteten Zeiten eines Arbeitsgangs, etwa eine lange Unterbrechung, einen fehlenden geplanten Start oder fehlende frühere Arbeit. Dieselben Annahmen erscheinen am Warnsymbol. Prüfen Sie diese, bevor Sie sich auf die Prognose verlassen.
+
+#### Warum dieser Zeitpunkt
+
+**Warum dieser Zeitpunkt** erklärt, worauf ein Arbeitsgang wartet: seine Maschine, einen früheren Arbeitsgang oder die nächste Schicht. **Frühere Arbeitsgänge dieses Auftrags** listet die vorherige Arbeit und ihren Fortschritt. Zeigen Sie auf die Terminmarke oder Uhr einer Planerkarte, um die Details zu lesen.
+
+#### Wartet auf früheren Arbeitsgang
+
+**Wartet auf früheren Arbeitsgang** bedeutet, dass ein früherer Arbeitsgang noch auf keiner Maschine ist oder im Hallenpool liegt. Der spätere Arbeitsgang hat weiterhin eine Prognose. Seine Zeiten können aber zu optimistisch sein.
+
+#### Keine Prognose
+
+**Keine Prognose** kennzeichnet Arbeit im Hallenpool oder eine gerade nicht verfügbare Prognose. Es bedeutet nicht, dass die Arbeit fertig ist. Pool-Arbeit erhält eine Prognose, sobald sie auf einer Maschine ist. Solange ein erwartetes Ende fehlt, vergleicht der Planer nur den Termin mit heute.
+
+[Die Kartenerklärung lesen](/de/platform-intro/pages/assignment-planner#ein-voraussichtliches-ende-erklären).
 
 #### Last und früheste Verfügbarkeit
 
@@ -966,7 +984,7 @@ Steuerungen für Vorbereitung, Produktionsstart, Intervallende und Fortsetzung. 
 
 ### Priority
 
-Dringlichkeitszahl; höher bedeutet dringlicher. Unternehmensstufen sind anpassbar; Auftragsformular und Einstellungen zeigen unterschiedliche Wertebereiche.
+Eine Dringlichkeitszahl, deren Bedeutung die Unternehmenseinstellung **Welche Zahl ist dringender?** festlegt. **Höhere Zahl = dringender** ist die Voreinstellung. **Niedrigere Zahl = dringender** kehrt sie um. Administratoren wählen Richtung und Stufen unter **Admin-Panel → Prioritätsstufen**.
 
 [Mehr erfahren](/de/platform-intro/pages/admin-panel).
 
@@ -1044,9 +1062,15 @@ Der Dashboard-Tooltip nennt 95 % und verweist für Änderungen auf einen Admin. 
 
 [Mehr erfahren](/de/platform-intro/concepts/calculations#oee).
 
+### Reihenfolge und Arbeitsgang-Priorität bleiben im Einklang
+
+**Reihenfolge und Arbeitsgang-Priorität bleiben im Einklang** ist eine standardmäßig eingeschaltete Administratoreinstellung. Im Warteschlangenmodus des Planers kann Ziehen die Arbeitsgangpriorität ändern. Eine geänderte Priorität auf der Karte kann ihre Anteile in zugänglichen Warteschlangen umordnen. Ausschalten trennt beide Aktionen. **Rückgängig** im Prioritätshinweis nach dem Ziehen stellt die Priorität wieder her und behält die Ablageposition bei.
+
+[Mehr erfahren](/de/platform-intro/pages/admin-panel#so-werden-prioritäten-verwendet).
+
 ### Queue Position / Queue load
 
-**Nach Warteschlangenposition sortieren** zeigt die gespeicherte Kartenreihenfolge. Die Warteschlangenauslastung beschreibt die darin geplante Arbeit. Im Zuweisungsplaner bleiben laufende Aufträge und Aufträge in Wartestellung oben. In der Betriebsdatenerfassung V3 gibt es eine getrennte Auswahl für deren Position.
+**Nach Warteschlangenposition sortieren** zeigt die gespeicherte Kartenreihenfolge. Die Warteschlangenauslastung beschreibt die darin geplante Arbeit. Im Zuweisungsplaner behalten laufende und angehaltene Karten ihre Warteschlangenposition und lassen sich innerhalb ihrer Spalte umordnen. In der Betriebsdatenerfassung V3 gibt es eine getrennte Auswahl für deren Position.
 
 [Mehr erfahren](/de/platform-intro/pages/assignment-planner).
 
@@ -1222,7 +1246,7 @@ Optionale Unternehmensdaten für die CO₂-Schätzung, etwa Abfall, erneuerbarer
 
 ### Bleibt oben
 
-**Bleibt oben** kennzeichnet laufende Arbeit und Arbeit in Wartestellung in der Vorschau zur Sortierung nach Priorität und Datum. Laufende Arbeit kommt zuerst, danach Arbeit in Wartestellung. Innerhalb beider Gruppen bleibt die bisherige Reihenfolge erhalten, während die übrige Arbeit sortiert wird.
+Die frühere Bezeichnung **Bleibt oben** wurde aus der Vorschau zur Sortierung nach Priorität und Datum im Planer entfernt. Laufende und angehaltene Arbeit wird mit aller übrigen aktiven Arbeit sortiert. Im Warteschlangenmodus folgen Karten der gezogenen Reihenfolge.
 
 [Mehr erfahren](/de/platform-intro/pages/assignment-planner).
 
