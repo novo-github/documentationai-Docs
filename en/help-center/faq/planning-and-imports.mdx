@@ -44,7 +44,7 @@ description: "Find answers about operation priorities, planning dates, grouping,
 | Can I put waiting orders last and keep the planned queue order? | [Answer](/en/help-center/faq/planning-and-imports#waiting-queue) |
 | Why is my order still marked as waiting after the previous step finished? | [Answer](/en/help-center/faq/planning-and-imports#waiting-refresh) |
 | How do I put one order before another without raising its operation priority? | [Answer](/en/help-center/faq/planning-and-imports#priority-queue) |
-| Why can’t I see the button to sort by priority and date? | [Answer](/en/help-center/faq/planning-and-imports#queue-sort-access) |
+| Where is the button to sort by priority and date? | [Answer](/en/help-center/faq/planning-and-imports#queue-sort-access) |
 | Can I undo a queue sort, and why did the proposal change? | [Answer](/en/help-center/faq/planning-and-imports#queue-sort-undo) |
 | Why have the numbers on my Planner cards disappeared? | [Answer](/en/help-center/faq/planning-and-imports#queue-numbers) |
 | Who can set the sorting everyone starts with? | [Answer](/en/help-center/faq/planning-and-imports#company-sorting) |
@@ -58,7 +58,7 @@ description: "Find answers about operation priorities, planning dates, grouping,
 | Why is the quantity left higher than I expected? | [Answer](/en/help-center/faq/planning-and-imports#handover-quantity) |
 | Does Handed over mean the whole step is finished? | [Answer](/en/help-center/faq/planning-and-imports#handover-status) |
 | Can I undo a handover? | [Answer](/en/help-center/faq/planning-and-imports#handover-undo) |
-| Why do I see “This step was changed in the meantime”? | [Answer](/en/help-center/faq/planning-and-imports#handover-changed) |
+| Why do I see “This operation was changed in the meantime”? | [Answer](/en/help-center/faq/planning-and-imports#handover-changed) |
 | Why did dragging a step change its priority? | [Answer](/en/help-center/faq/planning-and-imports#drag-priority) |
 | Why did my card move when I changed its priority? | [Answer](/en/help-center/faq/planning-and-imports#priority-moves-card) |
 | Does Undo put my dragged card back? | [Answer](/en/help-center/faq/planning-and-imports#drag-priority-undo) |
@@ -68,6 +68,18 @@ description: "Find answers about operation priorities, planning dates, grouping,
 | Why does my card say No forecast? | [Answer](/en/help-center/faq/planning-and-imports#no-forecast) |
 | Why do cards move or briefly light up without me refreshing? | [Answer](/en/help-center/faq/planning-and-imports#planner-updates) |
 | How do I open a machine from the Planner? | [Answer](/en/help-center/faq/planning-and-imports#planner-machine-link) |
+| How do I find a sequence with fewer late orders? | [Answer](/en/help-center/faq/planning-and-imports#improve-plan-options) |
+| How do I stop a proposal from moving one operation? | [Answer](/en/help-center/faq/planning-and-imports#keep-place) |
+| Will Improve plan change my priorities? | [Answer](/en/help-center/faq/planning-and-imports#proposal-priorities) |
+| Why does dragging cards leave the expected end unchanged? | [Answer](/en/help-center/faq/planning-and-imports#forecast-queue-rule) |
+| Why does the proposal change more planned dates than positions? | [Answer](/en/help-center/faq/planning-and-imports#proposal-dates) |
+| Can the Planner choose machines for waiting pool work? | [Answer](/en/help-center/faq/planning-and-imports#distribute-pool) |
+| Why does some work stay in the pool? | [Answer](/en/help-center/faq/planning-and-imports#pool-stays) |
+| Why does distribution include work I cannot see on the board? | [Answer](/en/help-center/faq/planning-and-imports#pool-hidden-work) |
+| Why can I not save the proposal yet? | [Answer](/en/help-center/faq/planning-and-imports#proposal-unavailable) |
+| Are the before and after times new delivery dates? | [Answer](/en/help-center/faq/planning-and-imports#proposal-expected-end) |
+| Can I sort a queue by delivery date? | [Answer](/en/help-center/faq/planning-and-imports#resort-by-date) |
+| Why do English labels now say operation instead of step? | [Answer](/en/help-center/faq/planning-and-imports#operation-wording) |
 
 <a id="operation-priority" />
 
@@ -171,7 +183,7 @@ Orders & Products counts open orders late for delivery across the company. Assig
 
 ## How do I find orders that are missing from every planning board?
 
-Open **Orders & Products → Forecaster → Not planned at all → Show list**. These orders have a delivery date but no operation on a machine or in a hall pool. Open an order to **Assign steps**. A step also needs a planned start before it counts as planned. Follow the [planning workflow](/en/platform-intro/workflows/assignment-planner).
+Open **Orders & Products → Forecaster → Not planned at all → Show list**. These orders have a delivery date but no operation on a machine or in a hall pool. Open an order to **Assign operations**. A step also needs a planned start before it counts as planned. Follow the [planning workflow](/en/platform-intro/workflows/assignment-planner).
 
 <a id="forecast-risk" />
 
@@ -189,7 +201,7 @@ The forecast assumes the paused step continues in its queue position, so later w
 
 ## Does trying a different ordering change my plan?
 
-No. **Show on board** is a preview. **Save as plan** changes eligible queue positions and Watchmen planned dates after review. Running, on-hold, and blocked work keep their place, so the saved result can differ from the preview. Delivery dates stay unchanged. Follow [Compare and Save a Plan](/en/platform-intro/workflows/assignment-planner).
+No. Comparing options in **Improve plan** and using **Show on board** only previews changes. **Save as plan** saves the displayed queue and planned-date changes, plus any operation-priority changes shown for the searched sequence. Delivery dates stay unchanged. **Undo** restores saved changes. Follow [Compare and Save a Plan](/en/platform-intro/workflows/assignment-planner#compare-and-save-a-plan).
 
 <a id="move-undo" />
 
@@ -287,13 +299,13 @@ A hall pool loads up to 500 assignments; a machine queue loads up to 100. With *
 
 ## How do I move orders that cannot start to the bottom?
 
-In Data Acquisition V3, open **Card Display Settings → Sort Order**. With **Sort by Queue Position** off, click **Add sort rule**, select **Waiting on a previous step** and choose **At the bottom**. This rule comes before priority or date, but after **Running and on-hold orders** if you add that rule. **At the top** lets you review waiting orders first. Select **Save** to apply your choice. Follow [Configure the Data Acquisition V3 Display](/en/platform-intro/workflows/data-acquisition#configure-the-data-acquisition-v3-display).
+In Data Acquisition V3, open **Card Display Settings → Sort Order**. With **Sort by Queue Position** off, click **Add sort rule**, select **Waiting on a previous operation** and choose **At the bottom**. This rule comes before priority or date, but after **Running and on-hold orders** if you add that rule. **At the top** lets you review waiting orders first. Select **Save** to apply your choice. Follow [Configure the Data Acquisition V3 Display](/en/platform-intro/workflows/data-acquisition#configure-the-data-acquisition-v3-display).
 
 <a id="waiting-queue" />
 
 ## Can I put waiting orders last and keep the planned queue order?
 
-Yes. With **Sort by Queue Position** on in Data Acquisition V3, choose **Orders waiting on a previous step → At the bottom**. Waiting work appears after other orders. To bring running and on-hold work first as well, choose **Running and on-hold orders → At the top**. Select **Save**. The queue order stays the same within each group. **Keep in place** restores the usual queue display. Your choice is saved for your account and applies to the machine list and **Pool**. These options are not offered in Assignment Planner. See [Data Acquisition](/en/platform-intro/pages/data-acquisition).
+Yes. With **Sort by Queue Position** on in Data Acquisition V3, choose **Orders waiting on a previous operation → At the bottom**. Waiting work appears after other orders. To bring running and on-hold work first as well, choose **Running and on-hold orders → At the top**. Select **Save**. The queue order stays the same within each group. **Keep in place** restores the usual queue display. Your choice is saved for your account and applies to the machine list and **Pool**. These options are not offered in Assignment Planner. See [Data Acquisition](/en/platform-intro/pages/data-acquisition).
 
 <a id="waiting-refresh" />
 
@@ -305,19 +317,19 @@ Check whether another step with a lower number in the same work order is still u
 
 ## How do I put one order before another without raising its operation priority?
 
-Ask an administrator to turn off **Admin Panel → Priority Levels → Queue order and operation priority stay in step**. Then enable **Sort by Queue Position** and drag the card; only its place changes. While the setting is on, use **Undo** in a drag’s priority notice to restore the priority and keep the new place. Applying **Sort by priority and date** does not change priorities either. See [queue and priority behaviour](/en/platform-intro/pages/assignment-planner#queue-order-and-operation-priority).
+Ask an administrator to turn off **Admin Panel → Priority Levels → Queue order and operation priority stay in step**. Then enable **Sort by Queue Position** and drag the card; only its place changes. While the setting is on, use **Undo** in a drag’s priority notice to restore the priority and keep the new place. Applying **Re-sort** does not change priorities either. See [queue and priority behaviour](/en/platform-intro/pages/assignment-planner#queue-order-and-operation-priority).
 
 <a id="queue-sort-access" />
 
-## Why can’t I see the button to sort by priority and date?
+## Where is the button to sort by priority and date?
 
-The button appears only with **Sort by Queue Position** on. You need an administrator account or a user account with access to the Orders page, plus access to the machine. Operators do not see it. See [Assignment Planner](/en/platform-intro/pages/assignment-planner).
+It is now **Re-sort**, on the last line of a machine or hall-pool header. In Assignment Planner, enable **Sort by Queue Position**. You need planning access and access to the machine. Gantt also offers it on each machine row. It now lets you choose a priority or date and keep selected operations in place. See [Re-sort a Queue](/en/platform-intro/pages/assignment-planner#re-sort-a-queue).
 
 <a id="queue-sort-undo" />
 
 ## Can I undo a queue sort, and why did the proposal change?
 
-After applying, use **Undo** in the **New order applied** confirmation. If someone changes the queue while you review a proposal, it reloads for you to check again. If loading fails, retry before applying. If undo fails, the queue reloads; check its current order before adjusting it. Follow the [queue sorting steps](/en/platform-intro/workflows/assignment-planner#sort-a-queue-by-priority-and-date).
+After applying, use **Undo** in the **New sequence applied** confirmation. If someone changes the queue while you review a proposal, it reloads for you to check again. If loading fails, retry before applying. If undo fails, the queue reloads; check its current order before adjusting it. Follow the [queue sorting steps](/en/platform-intro/workflows/assignment-planner#sort-a-queue-by-priority-and-date).
 
 <a id="queue-numbers" />
 
@@ -400,9 +412,9 @@ The first part is back in its machine’s queue on hold, with its recorded times
 
 <a id="handover-changed" />
 
-## Why do I see “This step was changed in the meantime”?
+## Why do I see “This operation was changed in the meantime”?
 
-The step changed while you were reviewing it. The dialog closes. Data Acquisition refreshes the list; Assignment Planner refreshes both queues. You then see the notice **This step was changed in the meantime. The list has been refreshed.** Check the current step before trying again. Review the machine, running state, and quantities instead of repeating the old choice. See [return work to the pool](/en/platform-intro/workflows/data-acquisition#back-to-pool).
+The step changed while you were reviewing it. The dialog closes. Data Acquisition refreshes the list; Assignment Planner refreshes both queues. You then see the notice **This operation was changed in the meantime. The list has been refreshed.** Check the current step before trying again. Review the machine, running state, and quantities instead of repeating the old choice. See [return work to the pool](/en/platform-intro/workflows/data-acquisition#back-to-pool).
 
 <a id="drag-priority" />
 
@@ -432,13 +444,13 @@ Administrators choose **Higher number = more urgent** or **Lower number = more u
 
 ## Can I move a running step down the Planner queue?
 
-Yes. With **Sort by Queue Position** on, running and on-hold steps keep the place you set, including their queue number. You can reorder running work within its column. Stop it on the machine before moving it to another destination. The priority-and-date proposal also sorts running and on-hold work. See [queue sorting](/en/platform-intro/pages/assignment-planner#queue-position-and-sorting-rules).
+Yes. With **Sort by Queue Position** on, running and on-hold steps keep the place you set, including their queue number. You can reorder running work within its column. Stop it on the machine before moving it to another destination. **Re-sort** also sorts running and on-hold work. The search in **Improve plan** keeps that work in place. See [queue sorting](/en/platform-intro/pages/assignment-planner#queue-position-and-sorting-rules).
 
 <a id="forecast-explanation" />
 
 ## Why is my step expected to end at that time?
 
-Hover over the Planner card’s date tab or small clock. **Why this time** names the machine, earlier work, or shift it waits for. **Earlier steps of this order** shows preceding work, even on other machines. Read **Based on** for assumptions about long holds, missed starts, or missing planning details. If details fail to load, hover again. Follow [review Forecaster warnings](/en/platform-intro/workflows/assignment-planner#review-forecaster-warnings-before-changing-the-plan).
+Hover over the Planner card’s date tab or small clock. **Why this time** names the machine, earlier work, or shift it waits for. **Earlier operations of this order** shows preceding work, even on other machines. Read **Based on** for assumptions about long holds, missed starts, or missing planning details. If details fail to load, hover again. Follow [review Forecaster warnings](/en/platform-intro/workflows/assignment-planner#review-forecaster-warnings-before-changing-the-plan).
 
 <a id="no-forecast" />
 
@@ -457,3 +469,75 @@ The Planner updates forecasts after saves and checks for schedule changes about 
 ## How do I open a machine from the Planner?
 
 Click the machine name in its column header. Ctrl-click or middle-click opens it in a new tab. Hall-pool names are not links. See [Machine Details](/en/platform-intro/pages/machine-details).
+
+<a id="improve-plan-options" />
+
+## How do I find a sequence with fewer late orders?
+
+Open the sparkle **Improve plan** in a Planner machine header or in Gantt. Under **1 · Choose an option**, compare **Best operation sequence** with the fixed rules. The figures compare late orders and delay after saving with today. Review **2 · What changes**, then use **Save as plan**. [Follow the steps](/en/platform-intro/workflows/assignment-planner#compare-and-save-a-plan).
+
+<a id="keep-place" />
+
+## How do I stop a proposal from moving one operation?
+
+Clear **Can move** for that operation in **Re-sort**, **Best operation sequence**, or the existing machine work in **Distribute to machines**. It keeps its exact place. The searched table first shows only operations that change place or whose status changes. **Show all (N more operations)** shows the rest, including unchanged machines; **Show only the changes** returns to the shorter list. A machine group’s checkbox covers its whole queue. Changed expected ends outside your selection appear under **Also changes expected ends on other machines**. Fixed-rule choices in **Improve plan** have no such control. See [planning choices](/en/platform-intro/pages/assignment-planner#choose-an-option).
+
+<a id="proposal-priorities" />
+
+## Will Improve plan change my priorities?
+
+**Keep priorities** leaves priorities unchanged. **Least delay** and **Fewest changes** can change operation priorities as shown in the proposal. Order priorities never change. Turning off **Queue order and operation priority stay in step** leaves operation priorities unchanged for all searched options. See [option effects](/en/platform-intro/pages/assignment-planner#choose-an-option).
+
+<a id="forecast-queue-rule" />
+
+## Why does dragging cards leave the expected end unchanged?
+
+Your forecast may follow planned dates or delivery dates instead of the queue. With **Follow planned dates**, **Improve plan** can also set new planned dates so the forecast follows the proposal. With **Delivery date first**, the forecast chooses the sequence itself; the Planner hides **Improve plan** and **Distribute to machines**. See [forecast rules and dragging](/en/platform-intro/pages/assignment-planner#when-dragging-does-not-change-expected-ends).
+
+<a id="proposal-dates" />
+
+## Why does the proposal change more planned dates than positions?
+
+With **Follow planned dates** or **Follow the queue, not before the planned date**, saving **Best operation sequence** also sets new planned dates for waiting operations on reordered machines, so the forecast follows the new sequence. Other waiting operations may start at different times even if their positions stay the same. The selected option shows how many planned dates change; check this before **Save as plan**. With **Follow the queue**, saving the sequence sets no planned dates; any operation-priority changes remain as shown. Original operation dates and delivery dates stay unchanged; **Undo** restores the saved plan changes. See [review and save](/en/platform-intro/pages/assignment-planner#review-and-save).
+
+<a id="distribute-pool" />
+
+## Can the Planner choose machines for waiting pool work?
+
+Yes. With planning access and **Sort by Queue Position** on, open **Distribute to machines** in the hall-pool header. Choose machines and pool operations with **Place**, review destinations, then select **Apply this sequence**. Existing machine work keeps its relative sequence. **Undo** returns placed work to the pool in its previous order. [Follow the steps](/en/platform-intro/workflows/assignment-planner#distribute-pool-work).
+
+<a id="pool-stays" />
+
+## Why does some work stay in the pool?
+
+Read the reason beside the operation. No machine may be selected, its earlier operation may also stay in the pool, every placement may delay other orders, or the search may have stopped before reaching it. Clearing **Place** also leaves it in the pool. Try **Search longer** when offered if the search stopped early. See [pool distribution](/en/platform-intro/pages/assignment-planner#distribute-pool-work-to-machines).
+
+<a id="pool-hidden-work" />
+
+## Why does distribution include work I cannot see on the board?
+
+The proposal uses the whole waiting hall pool, including work hidden by board filters or not yet shown. Review its complete list and clear **Place** for anything you want to leave in the pool. See [pool selection](/en/platform-intro/pages/assignment-planner#distribute-pool-work-to-machines).
+
+<a id="proposal-unavailable" />
+
+## Why can I not save the proposal yet?
+
+Wait while **Updating…** recalculates after a machine, **Can move**, or **Place** change. If every operation must keep its place, allow some to move. If a plan or pool conflict appears, choose **Recalculate** and review again. A search may also find no better result; use **Search longer** when offered. See [review and save](/en/platform-intro/pages/assignment-planner#review-and-save).
+
+<a id="proposal-expected-end" />
+
+## Are the before and after times new delivery dates?
+
+No. The information icon beside **Expected end** explains that now is the forecast with today’s sequence and after is the forecast if you apply the proposal. Neither time is the planned end or the delivery date; those are in the details. Click the row or **Details** for the planned end, delivery date, full verdict, and assumptions. Delivery dates do not change. See [review and save](/en/platform-intro/pages/assignment-planner#review-and-save).
+
+<a id="resort-by-date" />
+
+## Can I sort a queue by delivery date?
+
+Yes. Open **Re-sort → 1 · Sort by → Delivery date**. The earliest dates come first; missing dates come last. You can also choose **Planned end**, **Order date**, **Order priority**, or **Operation priority**. Clear **Can move** for operations that must keep their place, then review and apply. See [Re-sort a Queue](/en/platform-intro/workflows/assignment-planner#re-sort-a-queue).
+
+<a id="operation-wording" />
+
+## Why do English labels now say operation instead of step?
+
+Both refer to a production operation within an order. English labels now use “operation” consistently, for example **Operations of this order** and **Show operations**. The wording does not create extra work or change the operation sequence. See the [operation glossary](/en/platform-intro/concepts/glossary#op-ag).

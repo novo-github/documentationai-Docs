@@ -44,7 +44,7 @@ In Data Acquisition V3, **Sort by Queue Position** displays the order set by dra
 
 ### Choose Where Running and On-Hold Orders Appear
 
-**Running and on-hold orders**: Orders in progress or on hold. Example: an order that was started and is on hold for a tool change. This differs from ⚠️ **Waiting on a previous step**, where an earlier step is unfinished.
+**Running and on-hold orders**: Orders in progress or on hold. Example: an order that was started and is on hold for a tool change. This differs from ⚠️ **Waiting on a previous operation**, where an earlier step is unfinished.
 
 Open **Card Display Settings → Sort Order** using the gear icon. Your sorting mode determines the choices:
 
@@ -55,12 +55,12 @@ Select **Save** to apply the display choices to the machine's order list and **P
 
 ### Put Waiting Orders After Work That Can Start
 
-Orders marked ⚠️ **Waiting on a previous step** have an earlier step in the same work order that is neither completed nor cancelled. Step numbers determine the sequence. An earlier step without an assignment also counts as unfinished. For example, step #70 waits until #60 is finished.
+Orders marked ⚠️ **Waiting on a previous operation** have an earlier step in the same work order that is neither completed nor cancelled. Step numbers determine the sequence. An earlier step without an assignment also counts as unfinished. For example, step #70 waits until #60 is finished.
 
 Use the gear icon in the top bar to open **Card Display Settings → Sort Order**. Choose the option for your sorting mode:
 
-- With **Sort by Queue Position** off, click **Add sort rule**. A new numbered rule line appears. Select **Waiting on a previous step** in that line’s list. Instead of the up/down arrow, this rule has a button that starts at **At the bottom**, placing waiting orders after other work. Click it to switch to **At the top** and review waiting orders first. This rule comes before priority and date, but after **Running and on-hold orders** when that rule is present. Your remaining rules sort work within each group.
-- With **Sort by Queue Position** on, use **Orders waiting on a previous step**. **Keep in place** keeps the usual queue display. **At the bottom** places waiting work after other orders. Use the separate **Running and on-hold orders** choice to bring active work to the top. The queue order set in Assignment Planner stays the same within each group.
+- With **Sort by Queue Position** off, click **Add sort rule**. A new numbered rule line appears. Select **Waiting on a previous operation** in that line’s list. Instead of the up/down arrow, this rule has a button that starts at **At the bottom**, placing waiting orders after other work. Click it to switch to **At the top** and review waiting orders first. This rule comes before priority and date, but after **Running and on-hold orders** when that rule is present. Your remaining rules sort work within each group.
+- With **Sort by Queue Position** on, use **Orders waiting on a previous operation**. **Keep in place** keeps the usual queue display. **At the bottom** places waiting work after other orders. Use the separate **Running and on-hold orders** choice to bring active work to the top. The queue order set in Assignment Planner stays the same within each group.
 
 Select **Save** to apply your choice. Neither option moves waiting work until you choose it. Your choice is saved for your account and applies to the machine's order list and the **Pool** tab. These waiting-order options are only available in Data Acquisition V3, not in Assignment Planner.
 
@@ -90,7 +90,7 @@ Confirm with **Back to pool**. The work goes to the top of the hall pool, where 
 
 The pool card shows where the work came from and how many parts were already made, or who sent back an unstarted step and when. Hover over its grey badge for details and the reason. Step context and waiting-step details show **Partly done:** with quantities and the remaining destination. Handing work over does not finish the whole step or release later steps that are waiting for it.
 
-Finished or cancelled steps cannot be sent back. Without a hall, the button is unavailable; ask your planner. If all planned parts are made, finish the step unless more are needed. There is no automatic undo for a handover. If **This step was changed in the meantime. The list has been refreshed.** appears, review the refreshed list before trying again. Follow [return work to the pool](/en/platform-intro/workflows/data-acquisition#back-to-pool).
+Finished or cancelled steps cannot be sent back. Without a hall, the button is unavailable; ask your planner. If all planned parts are made, finish the step unless more are needed. There is no automatic undo for a handover. If **This operation was changed in the meantime. The list has been refreshed.** appears, review the refreshed list before trying again. Follow [return work to the pool](/en/platform-intro/workflows/data-acquisition#back-to-pool).
 
 ## Interval Times and Timeline Display
 
@@ -153,7 +153,7 @@ Starting or stopping production updates the related order status. An assignment 
 
 In the **Pool** tab, claim work from the machine's hall pool. If no assignment exists, search unplanned operations or use **Find/Create Immediate Order**. **Job Context** combines order, work-order, operation, and assignment notes.
 
-**Waiting on a previous step / Blocked by** means an earlier operation is unfinished. **Start anyway** remains available; review the dependency before proceeding. The concurrent-order prompt asks for confirmation if another assignment is running. Over-production offers **Put on hold** or **Mark as finished**.
+**Waiting on a previous operation / Blocked by** means an earlier operation is unfinished. **Start anyway** remains available; review the dependency before proceeding. The concurrent-order prompt asks for confirmation if another assignment is running. Over-production offers **Put on hold** or **Mark as finished**.
 
 Unbound or unlabeled machine time belongs to no order. Deleting a recorded interval is irreversible.
 

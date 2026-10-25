@@ -63,7 +63,7 @@ Eine **Aktive Schicht** beginnt bei Leerlauf, Produktion oder Rüsten und endet 
 
 ### AG / OP / Arbeitsgang / Operation
 
-Eine Operation ist ein Produktionsschritt. Der gestrichelte OP-Chip (deutsch AG) zeigt die Operationspriorität; P zeigt die Auftragspriorität.
+Die englische Oberfläche nennt einen Produktionsarbeitsgang jetzt „operation“ statt „step“. Die deutschen Bezeichnungen bleiben gleich. Eine Operation ist ein Produktionsschritt. Der gestrichelte OP-Chip (deutsch AG) zeigt die Operationspriorität; P zeigt die Auftragspriorität.
 
 [Mehr erfahren](/de/platform-intro/pages/assignment-planner).
 
@@ -175,6 +175,12 @@ Anteil der Produktion an der gesamten erfassten Maschinenzeit. AVL bleibt auch a
 
 ## B
 
+### Beste Operationsfolge
+
+**Beste Operationsfolge** in **Plan verbessern** sucht weniger verspätete Aufträge, dann weniger Gesamtverspätung und frühere erwartete Enden. Bei Gleichstand sollen dringendere Aufträge gemäß ihrer unveränderten Auftragspriorität früher fertig werden; zuletzt entscheiden weniger Änderungen. **Prioritäten beibehalten** ändert keine Priorität. **Geringste Verspätung** sucht das beste Ergebnis. **Wenigste Änderungen** begrenzt die gesuchte Folge auf höchstens 3 Verschiebungen. **Empfohlen** markiert den Vorschlag.
+
+[Mehr erfahren](/de/platform-intro/pages/assignment-planner).
+
 ### Zurück in den Pool
 
 **Zurück in den Pool** gibt offene Arbeit aus der Betriebsdatenerfassung V3 in den eigenen Hallenpool der Maschine zurück. Dies ist auch die Bestätigung im Zuweisungsplaner, nachdem Sie eine begonnene, gestoppte Karte auf einem Hallenpool abgelegt haben. Administratoren und Benutzer mit Zugriff auf die Seite Aufträge können dort jeden Hallenpool wählen. Andere Benutzer können Arbeit nur in den Pool der Halle ihrer aktuellen Maschine zurückgeben. Alle benötigen Zugriff auf die aktuelle Maschine des Schritts. Hat die Arbeit begonnen, bleiben Zeiten und Gutteile auf der ursprünglichen Maschine. Nur der Rest wird weitergegeben. **Grund (optional)** gibt eine Notiz an die nächste Person weiter.
@@ -196,6 +202,12 @@ PDA und BDE bezeichnen dasselbe Bedienerterminal zum Starten von Arbeit und Buch
 [Mehr erfahren](/de/platform-intro/pages/machine-history).
 
 ## C
+
+### Darf verschoben werden / Einplanen
+
+Entfernen Sie **Darf verschoben werden**, damit ein vorhandener Arbeitsgang im Vorschlag seinen genauen Warteschlangenplatz behält. Pool-Arbeitsgänge verwenden **Einplanen**. Entfernen Sie dies, bleibt der Arbeitsgang im Pool. Feste Regeln in **Plan verbessern** bieten keine Auswahl **Darf verschoben werden**.
+
+[Mehr erfahren](/de/platform-intro/pages/assignment-planner).
 
 ### Card Display Settings / Columns / Highlight
 
@@ -282,6 +294,12 @@ Anzahl der benötigten Maschinenzyklen je Fertigteil.
 [Mehr erfahren](/de/platform-intro/pages/orders-products).
 
 ## D
+
+### Auf Maschinen verteilen
+
+**Auf Maschinen verteilen** schlägt Maschinen und Plätze für ausgewählte Hallenpool-Arbeitsgänge vor. Vorhandene Maschinenarbeit behält ihre relative Folge. Die Zusammenfassung vergleicht verspätete Aufträge mit dem Verbleib der Arbeit im Pool. Erst das Übernehmen ändert den Plan.
+
+[Mehr erfahren](/de/platform-intro/pages/assignment-planner).
 
 ### d / ±1d / T / Days
 
@@ -468,7 +486,7 @@ Die Anzahl zeigt, wie viele Arbeitsgänge des Auftrags eine Maschine haben. Sie 
 
 #### Als Plan speichern
 
-**Als Plan speichern** ändert nach der Prüfung geeignete Warteschlangenplätze und geplante Termine in Watchmen. Die ursprünglichen Termine bleiben daneben verfügbar. Eine Vorschau speichert keinen Plan. Liefertermine bleiben unverändert.
+**Als Plan speichern** speichert nach der Prüfung die angezeigten Änderungen an Warteschlange und Watchmen-Planterminen. Die gesuchte Folge kann auch Arbeitsgangprioritäten wie angezeigt ändern. Ursprüngliche Arbeitsgangtermine und Liefertermine bleiben erhalten. **Rückgängig** stellt die gespeicherten Änderungen zurück.
 
 #### Parallele Aufträge
 
@@ -532,6 +550,12 @@ Stunden in Daueranzeigen. Std Run Time ist eine andere Bezeichnung und bedeutet 
 [Mehr erfahren](/de/platform-intro/concepts/calculations).
 
 ## I
+
+### Plan verbessern
+
+**Plan verbessern** öffnet denselben Vergleich im Zuweisungsplaner und im Gantt. **Heute** markiert die aktuelle Unternehmensregel. **Bestes Ergebnis** kennzeichnet eine Verbesserung bei verspäteten Aufträgen und Verspätung nach dem Speichern. Prüfen Sie **2 · Was sich ändert** vor **Als Plan speichern**.
+
+[Mehr erfahren](/de/platform-intro/pages/assignment-planner).
 
 ### Immediate order
 
@@ -1076,6 +1100,12 @@ Der Dashboard-Tooltip nennt 95 % und verweist für Änderungen auf einen Admin. 
 
 ## R
 
+### Neu sortieren
+
+**Neu sortieren** (bisher **Nach Priorität und Datum sortieren**) schlägt eine Warteschlangenfolge nach einer Priorität oder einem Termin vor. Über **Darf verschoben werden** halten Sie einzelne Arbeitsgänge fest. Die Aktion ändert keine Prioritäten und sortiert nicht fortlaufend automatisch.
+
+[Mehr erfahren](/de/platform-intro/pages/assignment-planner).
+
 ### Verhältnisgrenzwerte
 
 Lesen Sie die gewählte Bedingung: Rüst- und Zyklusprüfungen vergleichen Zeiten mit Plan oder Basiswert. Produktionsprüfungen messen den Rückstand gegenüber dem Tempo. Auftragsfortschritt vergleicht Fertigstellung und verstrichenen Zeitplan. Derselbe Prozentwert bedeutet nicht bei jeder Kennzahl dasselbe.
@@ -1357,6 +1387,12 @@ Geplante Belastung einer Maschinenwarteschlange anhand geplanter Zeiten, nicht e
 [Mehr erfahren](/de/platform-intro/pages/assignment-planner).
 
 ## W
+
+### Restarbeit / Voraussichtliches Ende
+
+**Restarbeit** ist die geplante Arbeit abzüglich bereits erfasster Arbeit. Ein Strich bedeutet, dass sie unbekannt ist. In Planungsvorschlägen vergleicht **Voraussichtliches Ende** die Prognose mit der heutigen Folge mit der Prognose nach dem Übernehmen. Geplante Enden und Liefertermine stehen getrennt in den **Details**.
+
+[Mehr erfahren](/de/platform-intro/pages/assignment-planner).
 
 ### Waiting on a previous step / Blocked by
 

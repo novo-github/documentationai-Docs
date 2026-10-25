@@ -169,30 +169,37 @@ Erwartete Endzeiten und Terminvergleiche aktualisieren sich nach der Verschiebun
   </Step>
 </Steps>
 
-## Eine Warteschlange nach Priorität und Datum sortieren
+<a id="eine-warteschlange-nach-priorität-und-datum-sortieren" />
 
-Sie benötigen Zugriff auf Planer und Maschine sowie ein Administratorkonto oder ein Benutzerkonto mit Zugriff auf die Auftragsseite. Operatoren können diese Aktion nicht nutzen. Die Maschine oder der Hallenpool muss bereits Arbeit enthalten.
+## Eine Warteschlange neu sortieren
+
+Sie benötigen Planungszugriff und Zugriff auf die Maschine. Die Maschine oder der Hallenpool muss Arbeit enthalten.
 
 <Steps>
-  <Step title="Öffnen Sie die Warteschlangenvorschau" icon="arrow-right" title-type="p">
-    Aktivieren Sie unter **Filtern & Sortieren** die Option **Nach Warteschlangenposition sortieren**. Wählen Sie im Kopf der Maschine oder des Hallenpools **Nach Priorität und Datum sortieren**. Die Vorschau umfasst die aktive Warteschlange, auch durch Filter ausgeblendete Karten.
+  <Step title="Öffnen Sie die Vorschau" icon="arrow-right" title-type="p">
+    Aktivieren Sie im Zuweisungsplaner **Filtern & Sortieren → Nach Warteschlangenposition sortieren**. Wählen Sie **Neu sortieren** in der letzten Zeile des Maschinen- oder Hallenpoolkopfs. Im Zuweisungs-Gantt nutzen Sie **Neu sortieren** in der Maschinenzeile. Der Vorschlag enthält auch durch Filter ausgeblendete aktive Arbeit.
   </Step>
-  <Step title="Wählen Sie die Priorität und prüfen Sie den Vorschlag" icon="arrow-right" title-type="p">
-    Beim Öffnen ist immer **Auftragspriorität** ausgewählt. Wählen Sie **Arbeitsgangpriorität**, um stattdessen die Prioritäten einzelner Schritte zu verwenden. Die dringendsten Prioritäten kommen zuerst. Dabei gilt die Unternehmensauswahl für höhere oder niedrigere Zahlen. Danach folgen frühere geplante Operationsstarts. Prüfen Sie vorgeschlagene und vorherige Positionen. Laufende und angehaltene Schritte werden ebenfalls sortiert. Nichts bleibt wegen seines Status oben.
+  <Step title="Wählen Sie das Sortiermerkmal" icon="arrow-right" title-type="p">
+    Wählen Sie unter **1 · Sortieren nach** die Option **Auftragspriorität**, **Arbeitsgang-Priorität**, **Geplantes Ende**, **Liefertermin** oder **Auftragsdatum**. Der Firmenstandard wird zuerst aufgeführt und ist ausgewählt, sofern angeboten. Dringende Prioritäten oder frühe Termine kommen zuerst.
   </Step>
-  <Step title="Übernehmen oder behalten Sie die Reihenfolge" icon="arrow-right" title-type="p">
-    Wählen Sie **Reihenfolge übernehmen**, um die gemeinsame Reihenfolge zu speichern. Wählen Sie **Abbrechen**, um die vorhandene Reihenfolge zu behalten. Hat sich die Warteschlange während der Prüfung geändert, prüfen Sie den aktualisierten Vorschlag vor dem Übernehmen. Schlägt das Laden fehl, versuchen Sie es erneut. Das Übernehmen bleibt bis zum erfolgreichen Laden gesperrt. Ohne Positionsänderung gibt es nichts zu übernehmen.
+  <Step title="Halten Sie ausgewählte Arbeitsgänge fest" icon="arrow-right" title-type="p">
+    Entfernen Sie **Darf verschoben werden** bei Arbeitsgängen, die ihren genauen Platz behalten sollen. **Keine auswählen** hält alle fest. **Alle auswählen** erlaubt das Verschieben. Laufende und angehaltene Arbeit kann bei dieser Sortierung verschoben werden. Warten Sie, bis **Wird aktualisiert…** verschwindet.
   </Step>
-  <Step title="Prüfen Sie das Ergebnis oder machen Sie es rückgängig" icon="arrow-right" title-type="p">
-    Prüfen Sie nach **Neue Reihenfolge übernommen** die Warteschlange. Wählen Sie in dieser Bestätigung **Rückgängig**, um die vorherige Reihenfolge wiederherzustellen. Schlägt das fehl, prüfen Sie die neu geladene Warteschlange vor weiteren Anpassungen. Sie können Karten weiterhin ziehen. Neue Importe kommen ans Ende. Diese Aktion sortiert nicht fortlaufend automatisch.
+  <Step title="Prüfen und übernehmen Sie" icon="arrow-right" title-type="p">
+    Prüfen Sie bisherige und neue Plätze, die gewählte Priorität oder den Termin sowie **Restarbeit**. Nutzen Sie **Spalten** für Zusatzangaben oder klicken Sie auf eine Zeile für **Details**. Wählen Sie **Reihenfolge übernehmen** zum Speichern oder **Abbrechen**, um die Warteschlange unverändert zu lassen. Prioritäten ändern sich nicht.
+  </Step>
+  <Step title="Prüfen Sie das Ergebnis oder setzen Sie es zurück" icon="arrow-right" title-type="p">
+    Mit **Rückgängig** in der Bestätigung stellen Sie die vorherige Folge wieder her. Ändert sich die Warteschlange während der Prüfung, lesen Sie den aktualisierten Vorschlag. Schlägt das Zurücksetzen fehl, prüfen Sie die aktuelle Warteschlange. Die Sortierung erfolgt einmalig. Spätere Importe kommen ans Ende.
   </Step>
 </Steps>
 
 Bei eingeschalteter Warteschlangensortierung ohne Filter oder betreffende Suche zeigen Kartennummern die Positionen je Warteschlange. Fehlen die Nummern, entfernen Sie Prioritäts-, Arbeitsgangprioritäts- und Tag-Filter, stellen Sie die übliche Statusauswahl wieder her und leeren Sie die Suche in diesem Bereich.
 
+Sortierregeln und Grenzen finden Sie unter [Eine Warteschlange neu sortieren](/de/platform-intro/pages/assignment-planner#eine-warteschlange-neu-sortieren).
+
 ## Verwendung der Unternehmensprioritäten einstellen
 
-Sie benötigen ein Administratorkonto. Diese Einstellungen beeinflussen Vorschläge nach Priorität und Datum sowie verknüpfte Warteschlangenänderungen im Unternehmen.
+Sie benötigen ein Administratorkonto. Diese Einstellungen beeinflussen die Prioritätssortierung, Warteschlangenverschiebungen und Arbeitsgangprioritäten in gesuchten Vorschlägen.
 
 <Steps>
   <Step title="Öffnen Sie die Prioritätseinstellungen" icon="arrow-right" title-type="p">
@@ -272,20 +279,49 @@ Hat der Forecaster kein erwartetes Ende, vergleicht der Zuweisungsplaner nur den
 
 ## Einen Plan vergleichen und speichern
 
+Sie benötigen Planungszugriff und Zugriff auf die Maschinen, deren Planung Sie ändern möchten. Dort muss wartende Arbeit liegen. Prüfen Sie fehlende frühere Arbeitsgänge, Dauern und Schichten, bevor Sie sich auf Prognoseverbesserungen verlassen.
+
 <Steps>
-  <Step title="Wählen Sie Maschinen und vergleichen Sie" icon="arrow-right" title-type="p">
-    Öffnen Sie im Zuweisungs-Gantt **Plan verbessern**. Vergleichen Sie **Heute** mit den anderen Reihenfolgen für die Maschinen auf der Plantafel. Prüfen Sie **Gefährdete Liefertermine**, **Verspätung gesamt** und die Liste der Zuweisungen, die sich verschieben würden.
+  <Step title="Öffnen Sie Plan verbessern für die gewünschten Maschinen" icon="arrow-right" title-type="p">
+    Aktivieren Sie im Zuweisungsplaner **Nach Warteschlangenposition sortieren** und wählen Sie im Maschinenkopf das Stern-Symbol **Plan verbessern**. Wählen Sie **Diese Maschine** oder **Alle Maschinen in &lt;Halle&gt;** und die gewünschten Maschinen. Im Gantt umfasst das Symbol neben **Forecaster** die Maschinen auf der Plantafel. Das Symbol einer Maschinenzeile umfasst diese Maschine oder ihre Halle.
   </Step>
-  <Step title="Unterscheiden Sie Vorschau und Speicherergebnis" icon="arrow-right" title-type="p">
-    Mit **Auf Plantafel zeigen** sehen Sie eine Alternative ohne Speicherung. Lesen Sie, was das Speichern tatsächlich bewirkt. Laufende, angehaltene und blockierte Zuweisungen bleiben an ihrem Platz. Verschlechtert das Speichern die Lieferung, wählen Sie **Zurück zu heute** und prüfen Sie stattdessen fehlende Planungsschritte.
+  <Step title="Vergleichen Sie die Optionen" icon="arrow-right" title-type="p">
+    Vergleichen Sie unter **1 · Option wählen** verspätete Aufträge und die Verspätung mit heute. Wählen Sie **Beste Operationsfolge** oder eine feste Regel. Innerhalb der gesuchten Folge wählen Sie **Prioritäten beibehalten**, **Geringste Verspätung** oder **Wenigste Änderungen**. **Empfohlen** markiert den Vorschlag. **Warum diese Reihenfolge?** erklärt ihn.
   </Step>
-  <Step title="Prüfen und speichern Sie" icon="arrow-right" title-type="p">
-    Wählen Sie **Als Plan speichern**. Prüfen Sie geänderte Warteschlangenplätze und Termine, die Wirkung auf Aufträge sowie **Unverändert bleiben**. Bestätigen Sie nur die gewünschten Änderungen. Liefertermine und die Reihenfolgeregel des Werks bleiben erhalten. Hat jemand während der Prüfung den Plan geändert, wird nichts gespeichert. Prüfen Sie die neu geladene Plantafel erneut.
+  <Step title="Entscheiden Sie, was sich bewegen darf" icon="arrow-right" title-type="p">
+    Entfernen Sie bei **Beste Operationsfolge** die Auswahl **Darf verschoben werden** für Arbeit, die ihren genauen Platz behalten soll. Das Kästchen einer Maschinengruppe umfasst alle ihre Arbeitsgänge. Laufende und angehaltene Arbeitsgänge bleiben an ihrem Platz. Die Tabelle zeigt zunächst nur Arbeitsgänge mit geändertem Platz oder Status. Wählen Sie **Alle zeigen (N weitere Arbeitsgänge)** für den Rest, auch unveränderte Maschinen. Mit **Nur die Änderungen zeigen** kehren Sie zurück. Feste Regeln bieten keine Auswahl **Darf verschoben werden**. Warten Sie, bis **Wird aktualisiert…** verschwindet.
   </Step>
-  <Step title="Prüfen Sie das Ergebnis" icon="arrow-right" title-type="p">
-    Kontrollieren Sie die neue Warteschlange und Watchmen-Termine auf der Plantafel und im Zuweisungsplaner. Mit **Rückgängig** kehren Sie bei Bedarf zum vorherigen Plan zurück.
+  <Step title="Lesen Sie die Änderungen beim Speichern" icon="arrow-right" title-type="p">
+    Prüfen Sie unter **2 · Was sich ändert** Warteschlangenplätze, **Voraussichtliches Ende** vor und nach dem Übernehmen, Prioritätsänderungen und die Anzahl neuer Plantermine. Arbeitsgänge außerhalb Ihrer Auswahl mit geändertem erwartetem Ende stehen unter **Ändert auch voraussichtliche Enden auf anderen Maschinen**. Öffnen Sie per Klick auf eine Zeile die **Details** und prüfen Sie Annahmen. Im Gantt zeigt **Auf Plantafel zeigen** eine andere feste Regel ohne Speicherung als Vorschau.
+  </Step>
+  <Step title="Speichern Sie oder suchen Sie weiter" icon="arrow-right" title-type="p">
+    Nutzen Sie **Länger suchen**, sofern angeboten, um weitere Reihenfolgen zu prüfen. **Anhalten und bisher Bestes zeigen** beendet die Suche mit dem bisherigen Ergebnis. Sind Sie zufrieden, wählen Sie **Als Plan speichern**. Liefertermine, ursprüngliche Arbeitsgangtermine und die Prognoseregel des Unternehmens bleiben erhalten.
+  </Step>
+  <Step title="Prüfen Sie den gespeicherten Plan oder setzen Sie ihn zurück" icon="arrow-right" title-type="p">
+    Prüfen Sie die aktualisierte Plantafel. **Rückgängig** stellt gespeicherte Änderungen an Warteschlange, Priorität und Planterminen zurück. Bietet ein Konflikt **Neu berechnen** an, prüfen Sie vor dem Speichern einen neuen Vorschlag. Kann der Plan nicht zurückgesetzt werden, prüfen Sie vor weiteren Änderungen die aktuelle Plantafel.
   </Step>
 </Steps>
+
+## Pool-Arbeit verteilen
+
+Sie benötigen Planungszugriff, Zugriff auf die gewählten Maschinen und wartende Arbeitsgänge in einem Hallenpool. Aktivieren Sie im Zuweisungsplaner **Nach Warteschlangenposition sortieren**. Bei der Prognoseregel **Liefertermin zuerst** fehlt die Schaltfläche zum Verteilen.
+
+<Steps>
+  <Step title="Öffnen Sie den Hallenpoolvorschlag" icon="arrow-right" title-type="p">
+    Wählen Sie **Auf Maschinen verteilen** in der letzten Zeile des Hallenpoolkopfs. Der Dialog heißt **Pool &lt;Halle&gt; auf Maschinen verteilen**. Wählen Sie die gewünschten Maschinen. Die Pool-Liste enthält auch Arbeit, die Ihre Plantafelfilter ausblenden.
+  </Step>
+  <Step title="Wählen Sie einzuplanende und festzuhaltende Arbeit" icon="arrow-right" title-type="p">
+    Lassen Sie **Einplanen** für gewünschte Pool-Arbeitsgänge markiert. Entfernen Sie die Markierung, damit ein Arbeitsgang im Pool bleibt. Entfernen Sie **Darf verschoben werden** bei vorhandenen Maschinenarbeitsgängen, die ihren genauen Platz behalten sollen. Pool-Arbeit kann dann nicht davor eingefügt werden. Das Kästchen einer Maschinengruppe umfasst alle ihre vorhandenen Arbeitsgänge.
+  </Step>
+  <Step title="Prüfen Sie Ziele und verbleibende Pool-Arbeit" icon="arrow-right" title-type="p">
+    Vergleichen Sie die Optionskarten **Prioritäten beibehalten**, **Geringste Verspätung** und **Wenigste Änderungen**. Eine ist als **Empfohlen** markiert. Jede vergleicht verspätete Aufträge und Verspätung mit dem Verbleib der Arbeit im Pool. Die Zusammenfassung zeigt beispielsweise **3 Arbeitsgänge eingeplant, 1 bleibt im Pool.** und **N verspätete Aufträge statt M, wenn sie im Pool blieben.** Sie vergleicht verspätete Aufträge nach dem Einplanen mit dem Fall, dass die Arbeit im Pool bliebe. Lesen Sie bei jeder eingeplanten Zeile **→ &lt;Maschine&gt;, Platz N** und das erwartete Ende. Gründe für nicht eingeplante Arbeit beginnen mit **Bleibt im Pool:**. Prüfen Sie Prioritätsänderungen, neue Plantermine und Auswirkungen auf andere Maschinen. Hat die Suche einen Arbeitsgang noch nicht erreicht, versuchen Sie **Länger suchen**, sofern angeboten.
+  </Step>
+  <Step title="Übernehmen und prüfen Sie" icon="arrow-right" title-type="p">
+    Warten Sie, bis **Wird aktualisiert…** verschwindet. Wählen Sie dann **Diese Reihenfolge übernehmen**. Prüfen Sie die Karten auf ihren Maschinen. **Rückgängig** bringt eingeplante Arbeit in der vorherigen Reihenfolge in den Pool zurück und stellt die übrigen gespeicherten Änderungen zurück. Ändert sich der Pool, prüfen Sie die aktualisierte Liste oder wählen Sie **Neu berechnen**, sofern angeboten.
+  </Step>
+</Steps>
+
+Wählen Sie in **Plan verbessern** die Option **Alle Maschinen in &lt;Halle&gt;**. Bei wartender Pool-Arbeit erscheint **Auch die N im Pool wartenden Arbeitsgänge einplanen**, zunächst nicht markiert. Markieren Sie diese Auswahl, damit Pool-Zeilen mit Kästchen **Einplanen** erscheinen. Wählen Sie dann die gewünschten Arbeitsgänge. Grenzen und Gründe für verbleibende Arbeit finden Sie unter [Pool-Arbeit auf Maschinen verteilen](/de/platform-intro/pages/assignment-planner#pool-arbeit-auf-maschinen-verteilen).
 
 ## Eine Zuweisung nach Prüfung ihrer Wirkung verschieben
 
@@ -352,7 +388,7 @@ Die Maschinenwarteschlange spiegelt die letzte Planungsentscheidung wider, zukü
 - Umfasst Ihre Suche eine Warteschlange, schließen Sie sie vor dem Ablegen am Ende, damit die Arbeit ganz am Ende landet. Andernfalls kann sie zwischen den Karten eingeordnet werden. **Nicht zugewiesen** lässt Maschinenwarteschlangen und Pools ungefiltert.
 - Entspricht die angezeigte Reihenfolge nicht Ihrer Anordnung durch Ziehen, prüfen Sie, ob nach Warteschlangenposition oder nach Regeln sortiert wird.
 - Laufende Arbeit muss vor der Übergabe gestoppt werden. Abgeschlossene und stornierte Arbeit bleibt auf ihrer Maschine.
-- Prüfen Sie unter **Plan verbessern** das tatsächliche Ergebnis des Speicherns. Eine Vorschau kann günstiger aussehen, weil manche Arbeit beim Speichern an ihrem Platz bleiben muss.
+- Prüfen Sie unter **Plan verbessern** das tatsächliche Ergebnis des Speicherns. Vergleichen Sie vor dem Speichern das vorhergesagte Ergebnis jeder Option. Manche Arbeit muss ihren Platz behalten.
 - **Zeiten können zu früh sein**: Prüfen Sie fehlende Maschinen oder Termine, geplante Dauern, Schichtpläne und aktuelle Produktionseinträge, bevor Sie sich auf das Ende verlassen.
 - Warnungszahlen unterscheiden sich: Assignment Gantt umfasst die angezeigten Maschinen von letzter Woche bis drei Wochen voraus. Aufträge & Produkte zählt verspätete Lieferungen im gesamten Unternehmen.
 

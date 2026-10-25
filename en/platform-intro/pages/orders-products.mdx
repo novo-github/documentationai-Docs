@@ -62,9 +62,9 @@ In the **Forecaster** column, the top result checks the delivery date and the bo
 
 While the Forecaster's late-order filter is active, you see every late order regardless of date range and status. Order, product, customer, and machine filters still apply. The company-wide count can differ from [Assignment Gantt](/en/platform-intro/pages/assignment-gantt), which shows warnings for the displayed machines from last week to three weeks ahead.
 
-In the card details, choose **Late for delivery → Show in table** for late orders or **Of these, steps not planned → Show in table** for late orders with missing steps. The active filter reads **Forecaster: late for delivery** or **Forecaster: late, steps not planned**. Date range and status filters are paused for either choice; remove the Forecaster filter to use them again. **Partly planned** identifies work with steps still not assigned.
+In the card details, choose **Late for delivery → Show in table** for late orders or **Of these, operations not planned → Show in table** for late orders with missing steps. The active filter reads **Forecaster: late for delivery** or **Forecaster: late, operations not planned**. Date range and status filters are paused for either choice; remove the Forecaster filter to use them again. **Partly planned** identifies work with steps still not assigned.
 
-**Not planned at all → Show list** opens **Orders that are not planned**. These orders have a delivery date but no operation assigned to a machine or hall pool, so they appear on no planning board. Open an order and choose **Assign steps** to select machines, or **Open in planner**. Follow the [planning workflow](/en/platform-intro/workflows/assignment-planner).
+**Not planned at all → Show list** opens **Orders that are not planned**. These orders have a delivery date but no operation assigned to a machine or hall pool, so they appear on no planning board. Open an order and choose **Assign operations** to select machines, or **Open in planner**. Follow the [planning workflow](/en/platform-intro/workflows/assignment-planner).
 
 ### Read Forecast Assumptions
 
@@ -73,7 +73,7 @@ Hover over the warning icon to read what the expected times assume.
 - **On hold for a long time** (previously **On hold too long**): the hold limit has passed. The forecast assumes the step continues in its queue position, so later work still waits for it.
 - **Never started**: this note appears only with **Follow planned dates** or **Delivery date first** under **Planning settings**; work planned more than three days ago is forecast to start as soon as its machine is free. With **Follow the queue** or **Follow the queue, not before the planned date**, neither this note nor **No planned start** appears, and the step keeps its place in the queue.
 - **No planned start**: this note appears only with **Follow planned dates** or **Delivery date first**. The forecast places the step after the machine’s dated work.
-- **Waits for an earlier step**: that step is not on a machine yet or is still in a hall pool. Expected times may be too optimistic.
+- **Waits for an earlier operation**: that step is not on a machine yet or is still in a hall pool. Expected times may be too optimistic.
 
 These notes explain the expected times. They do not remove the work from the forecast or mean that it is finished.
 

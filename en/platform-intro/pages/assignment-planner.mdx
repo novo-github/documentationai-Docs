@@ -120,7 +120,7 @@ After a drag changes priority, a notice shows the old and new values. **Undo** r
 
 A step split across machines or pools shares one operation priority. Dragging one part updates that priority everywhere but leaves the other queues in place. Changing the priority on its card can reposition its parts in each accessible queue.
 
-Administrators can turn this off under **Admin Panel → Priority Levels → How priorities are used → Queue order and operation priority stay in step**. When off, dragging only changes order, and changing priority does not move cards. These linked changes do not apply in sorting-rule mode or when applying **Sort by priority and date**. Follow [the planning steps](/en/platform-intro/workflows/assignment-planner).
+Administrators can turn this off under **Admin Panel → Priority Levels → How priorities are used → Queue order and operation priority stay in step**. When off, dragging only changes order, and changing priority does not move cards. These linked changes do not apply in sorting-rule mode or when applying **Re-sort**. Follow [the planning steps](/en/platform-intro/workflows/assignment-planner).
 
 ## Queue Position and Sorting Rules
 
@@ -128,17 +128,21 @@ Administrators can turn this off under **Admin Panel → Priority Levels → How
 
 The same sorting choices are available in [Data Acquisition V3](/en/platform-intro/pages/data-acquisition). Priority values follow the company levels configured in the [Admin Panel](/en/platform-intro/pages/admin-panel).
 
-### Sort a Queue by Priority and Date
+<a id="sort-a-queue-by-priority-and-date" />
 
-You need an administrator account, or a user account with access to the Orders page, plus access to the machine. Operators do not see this button. Under **Filter & Sort**, enable **Sort by Queue Position**. Each machine and hall-pool header then offers **Sort by priority and date**, in both column and row layouts.
+### Re-sort a Queue
 
-**Sort queue by priority and date** opens a preview for that queue. Each opening starts with **Order priority**; choose **Operation priority** if you want to use the priorities of individual steps. The most urgent values come first, using the company’s **Which number is more urgent?** setting for higher or lower numbers. For equal priorities, the earliest planned operation start comes first. Missing priorities or dates come last in their comparison. Equal priority and date keep the current order.
+You need planning access: an administrator account or access to the Orders page, plus access to the machine. In Assignment Planner, enable **Filter & Sort → Sort by Queue Position**. Choose **Re-sort** (previously **Sort by priority and date**) on the last line of a machine or hall-pool header. It is also available on each machine row in [Assignment Gantt](/en/platform-intro/pages/assignment-gantt).
 
-Running and on-hold work is sorted with the rest of the active queue. No work stays at the top because of its status. The preview shows proposed positions, previous positions for moved orders, priorities, planned starts, and how many orders would change place. It covers the active queue, including work hidden by your filters.
+Under **1 · Sort by**, choose **Order priority**, **Operation priority**, **Planned end**, **Delivery date**, or **Order date**. The company default is listed first and selected when supported. Priorities use the company’s urgency direction; dates put the earliest first. Missing values come last. Equal values use the planned operation start, then the current place. **Planned end** uses the operation’s end, or its work order’s end when the operation has none.
 
-Choose **Apply order** to save the shared queue order, or choose **Cancel** to leave it unchanged. **New order applied** confirms the change and offers **Undo**. This is a one-time sorting action; you can adjust the order by dragging cards afterwards. Imported orders still join the end of the queue.
+The proposal includes the whole active queue, including work hidden by filters. **Place** compares current and proposed positions. **Work left** shows remaining planned work; a dash means it is unknown. Clear **Can move** to keep an operation at its exact place. **Select all** or **Select none** changes the whole selection. Running and on-hold work can be sorted here; unlike the search in **Improve plan**, status does not fix its place.
 
-If the queue changed during review, a notice appears and the preview updates. Review it again before applying. If loading fails, retry; applying stays unavailable until a proposal loads. Applying is also unavailable when nothing would change. If undo fails, the queue reloads; check its current order before making another change. Follow the [queue sorting steps](/en/platform-intro/workflows/assignment-planner#sort-a-queue-by-priority-and-date).
+Use **Columns** to choose optional details; your choice is remembered. Click a row or its information icon for **Details**, including forecast assumptions and dates. Close the panel with its close button or by clicking outside it.
+
+Choose **Apply sequence** to save, or **Cancel** to leave the queue unchanged. **New sequence applied** offers **Undo**. Re-sorting does not change priorities. You can still drag cards afterwards; this action does not keep sorting automatically.
+
+While **Updating…** appears, wait for the new proposal before applying. If the queue changes during review, check the refreshed proposal. If nothing changes or every operation is fixed, there is nothing to apply. Allow some operations to move. If undo fails, review the current queue. Follow [Re-sort a Queue](/en/platform-intro/workflows/assignment-planner#re-sort-a-queue).
 
 ### Read Queue Position Numbers
 
@@ -159,6 +163,66 @@ Choose **Reset to company default** to copy the current company mode, rules, and
 Cards can show **Operation Planned Start** and **Operation Planned End**. These describe one operation's planned window. Use them to sequence individual steps within an order.
 
 **Order Planned Start** and **Order Planned End** describe the whole order. Every operation in that order shares these dates, so sorting by them keeps its steps together. **Work Order Planned Start** and **Work Order Planned End** describe the work order's planned window.
+
+## Improve a Plan
+
+With planning access and access to the machine, enable **Filter & Sort → Sort by Queue Position**. Select the sparkle icon **Improve plan** on the last line of a machine header. Choose **This machine** or **All machines in &lt;hall&gt;**, then clear any machines you want to leave out. Operations keep their machines unless you include pool work.
+
+The same dialog opens from [Assignment Gantt](/en/platform-intro/pages/assignment-gantt). Its toolbar sparkle covers the machines on the board; a machine row’s sparkle starts with that machine and offers its hall.
+
+### Choose an Option
+
+Under **1 · Choose an option**, compare **Best operation sequence** with **Follow planned dates**, **Follow the queue**, **Follow the queue, not before the planned date**, and **Delivery date first**. **Today** marks the current company rule. **Best result** marks an option that improves on today. Every result compares late orders and delay after saving with today.
+
+**Best operation sequence** tries many sequences. It favours fewer late orders, then less total delay, then earlier expected ends. If these tie, order priority favours more urgent orders finishing first without changing their priority; fewer changes decide last. It also considers work waiting on other machines. Within this choice, select:
+
+- **Keep priorities**: changes no priority and keeps more urgent operations ahead.
+- **Least delay**: aims for the best result and shows any operation priorities that must change.
+- **Fewest changes**: finds the best result with at most 3 moves; operation priorities may change.
+
+**Recommended** marks the suggested choice. Identical results appear only once. Order priorities never change. When the company turns off **Queue order and operation priority stay in step**, these options leave operation priorities unchanged too.
+
+The search keeps running and on-hold operations in place and respects the operation sequence within an order. Clear **Can move** to keep other operations at their exact places. Use **Select all**, **Select none**, or a machine group’s checkbox to change several at once. The table first shows only operations that change place or whose status changes. **Show all (N more operations)** shows the rest, including machines that do not change; **Show only the changes** returns to the shorter list. Fixed-rule choices have no **Can move** controls.
+
+The first search shows **Looking for the best operation sequence…**, followed by lines for reading the machines’ queues, trying other sequences with a running count, checking every delivery date with the best result so far, and preparing the options. After the search, the bottom left shows **Checked N sequences in X seconds**, with **Search longer** beside it when offered. In **Distribute to machines**, this reads **Checked N arrangements in X seconds**. **Stop and show the best so far** stops the search and keeps any result found. **Search longer**, when offered, tries further sequences; it is no longer offered after the longer search. A stopped search with no improvement does not prove that no better sequence exists.
+
+### Review and Save
+
+Under **2 · What changes**, the table shows **Can move**, **Place** (now → new), **Order**, **Operation sequence** (the operation number chip), **Product**, **Machine** (when several machines are included), **Work left**, and **Expected end** (now → after). **Can move** appears for the searched sequence. There is no separate status column. **Columns** lets you hide **Operation sequence**, **Product**, **Machine**, **Work left**, and **Expected end**. **Can move**, **Place**, and **Order** always stay visible where offered. Your column choices are remembered.
+
+The time after applying uses red for **late** and amber for **at risk**. Click a row or **Details** to read the full verdict, planned end, delivery date, **Based on**, and **Why this time**. The information icon beside **Expected end** explains: now is the forecast with today’s sequence; after is the forecast if you apply the proposal. Neither is the planned end or the delivery date; those are in the details.
+
+Operations outside your selection whose expected ends change appear under **Also changes expected ends on other machines**. Check them and the number of planned dates and priorities that will change. **Why this sequence?** explains the proposed sequence.
+
+When the company’s forecast rule is **Follow planned dates** or **Follow the queue, not before the planned date**, saving **Best operation sequence** also sets new planned dates for waiting operations on the reordered machines. This makes the forecast follow the new sequence. The selected option says **Applying sets new planned dates for N operations on this machine.** or **Applying sets new planned dates for N operations on these machines.** More planned dates can change than operations move. With **Follow the queue**, saving the sequence sets no planned dates; any operation-priority changes remain as shown.
+
+When earlier work is missing from the plan, the dialog shows a short line such as **N operations wait behind an operation that isn't planned.** with an information icon. Those waiting operations cannot be moved, and their times are too optimistic. Planning the earlier operations helps most.
+
+Choose **Save as plan** after reviewing. Nothing changes while you compare. Saving can change queues, operation priorities, and Watchmen planned dates as shown. It keeps original operation dates and delivery dates. **New plan saved** offers **Undo**, which restores the saved queue, priority, and plan changes. If the plan changed and **Recalculate** appears, review the new proposal before saving. If undo cannot restore the old plan, review the current board.
+
+Changing a selection keeps the table visible with **Updating…**. Saving and **Search longer** wait for the updated result. Follow [Compare and Save a Plan](/en/platform-intro/workflows/assignment-planner#compare-and-save-a-plan).
+
+### When Dragging Does Not Change Expected Ends
+
+With **Follow planned dates**, dragging changes queue position and can change priority, but expected ends follow planned dates. Saving **Best operation sequence** also sets new planned dates for waiting operations on reordered machines with **Follow planned dates** or **Follow the queue, not before the planned date**. With **Follow the queue**, it sets no planned dates. Check the selected option’s planned-date count before saving.
+
+With **Delivery date first**, the forecast chooses its own sequence; the Planner hides **Improve plan** and **Distribute to machines**. Reordering cards does not change expected ends under that rule. Gantt still shows the **Improve plan** sparkle, but its **Best operation sequence** card offers no sequence and explains why.
+
+The Planner shows a note only for **Follow planned dates** and **Delivery date first**. **Hide this note** dismisses it for you. Administrators can use **Change in planning settings** to open the Gantt’s settings. With either queue-following rule, the forecast follows queue changes and this note is absent.
+
+## Distribute Pool Work to Machines
+
+With planning access, enable **Sort by Queue Position** and choose **Distribute to machines** beside **Re-sort** in a hall-pool header. The dialog is titled **Distribute &lt;hall&gt; pool to machines**. Choose the hall’s machines to use and tick **Place** for each pool operation to include. The list covers the whole waiting pool, including cards hidden by board filters. It is not limited to the cards you currently see.
+
+Existing machine operations keep their relative sequence while pool operations fit between them. Clear **Can move** on an existing operation to keep its exact place; new pool work cannot be inserted ahead of it. The machine group’s checkbox changes all its existing operations together. Running and on-hold work stays in place.
+
+The dialog offers option cards **Keep priorities**, **Least delay**, and **Fewest changes**, with one marked **Recommended**. Each compares late orders and delay with leaving the work in the pool. The summary shows results such as **3 operations placed, 1 stays in the pool.** and **N late orders instead of M if they stayed in the pool.** It compares late orders after placing with what would happen if the work stayed in the pool.
+
+Each placed row shows **→ &lt;machine&gt;, place N** and its expected end. Reasons for work left out start with **Stays in the pool:**. No machine may be selected, an earlier operation may also stay in the pool, every placement may delay other orders, or the search may have stopped before reaching the operation. Try **Search longer** when offered for that last case. Review any priority and planned-date changes.
+
+Choose **Apply this sequence** to place the selected work as proposed. **Operations placed on the machines** offers **Undo**, which returns placed operations to the pool in its previous order and restores the other saved changes. If the pool changes during review, the list can update and recalculate. If a conflict appears when applying, choose **Recalculate** and review again.
+
+In **Improve plan**, choose **All machines in &lt;hall&gt;**. When the pool has waiting operations, **Also place the N operations waiting in the pool** appears and starts unchecked. Check it to show pool rows with a **Place** box for each operation. The pool choice is absent when the pool is empty. Without pool inclusion, that dialog only rearranges work already on machines. Follow [Distribute Pool Work](/en/platform-intro/workflows/assignment-planner#distribute-pool-work).
 
 ## Check Dates with the Forecaster
 
@@ -181,14 +245,14 @@ Hover over the date tab or small clock on the left of a card. The explanation sh
 1. **Expected end**, the expected start, and the date checks.
 2. **Based on**, when assumptions need your attention.
 3. **Why this time**, naming the work ahead on the machine, an earlier step on another machine, or the next shift it must wait for. It can also show the first step causing a chain of waits.
-4. **Earlier steps of this order**, with their machines and progress or expected ends, followed by any other notes.
+4. **Earlier operations of this order**, with their machines and progress or expected ends, followed by any other notes.
 
 Read the assumptions before relying on the time:
 
 - **On hold for a long time**: the forecast assumes the step continues in its queue position. Later work still waits for it.
 - **Never started**: this note appears only with **Follow planned dates** or **Delivery date first** under **Planning settings**; the forecast assumes the step starts as soon as its machine is free. With **Follow the queue** or **Follow the queue, not before the planned date**, neither this note nor **No planned start** appears, and the step keeps its place in the queue.
 - **No planned start**: this note appears only with **Follow planned dates** or **Delivery date first**. The forecast places the step after the machine’s dated work.
-- **Waits for an earlier step**: an earlier step has no machine yet or is still in a hall pool. The displayed times may be too optimistic.
+- **Waits for an earlier operation**: an earlier step has no machine yet or is still in a hall pool. The displayed times may be too optimistic.
 
 These steps still get expected times. The warning icon carries the same assumptions. **No forecast** means the step is in a hall pool or the forecast is not available right now. Pool work gets a forecast once assigned to a machine. Without an expected end, only the date is compared with today. If details fail to load, hover again to retry.
 

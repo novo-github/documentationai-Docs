@@ -63,7 +63,7 @@ An **Active shift** starts at idle, production, or preparation and ends accordin
 
 ### AG / OP / Arbeitsgang / Operation
 
-An operation is one production step. The dashed OP chip (AG in German) shows operation priority; P shows order priority.
+An operation is one production activity in a work order. English labels now use “operation” where they previously said “step”, such as **Operations of this order**. The dashed OP chip (AG in German) shows operation priority; P shows order priority.
 
 [Learn more](/en/platform-intro/pages/assignment-planner).
 
@@ -175,6 +175,12 @@ Share of total recorded machine time in Production. AVL remains AVL in German an
 
 ## B
 
+### Best operation sequence
+
+**Best operation sequence** in **Improve plan** searches for fewer late orders, then less total delay, then earlier expected ends. If these tie, order priority favours more urgent orders finishing first without changing their priority; fewer changes decide last. **Keep priorities** changes no priority. **Least delay** seeks the best result. **Fewest changes** limits the searched sequence to at most 3 moves. **Recommended** marks the suggested option.
+
+[Learn more](/en/platform-intro/pages/assignment-planner).
+
 ### Back to pool
 
 **Back to pool** returns unfinished work to the machine’s own hall pool from Data Acquisition V3. It is also the confirmation button in Assignment Planner after you drop a started, stopped card onto a hall pool. Administrators and users with access to the Orders page can choose any hall pool there. Other users can only return work to the pool of its current machine’s hall. Everyone needs access to the step’s current machine. If work has started, its times and good parts stay on the original machine and only the remainder is passed on. **Reason (optional)** gives the next operator a note.
@@ -196,6 +202,12 @@ English PDA and German BDE refer to the same operator terminal for starting work
 [Learn more](/en/platform-intro/pages/machine-history).
 
 ## C
+
+### Can move / Place
+
+Clear **Can move** to keep an existing operation at its exact queue place in a proposal. Pool operations use **Place** instead: clearing it leaves the operation in the pool. Fixed-rule choices in **Improve plan** do not offer **Can move**.
+
+[Learn more](/en/platform-intro/pages/assignment-planner).
 
 ### Card Display Settings / Columns / Highlight
 
@@ -282,6 +294,12 @@ Number of machine cycles needed for one finished part.
 [Learn more](/en/platform-intro/pages/orders-products).
 
 ## D
+
+### Distribute to machines
+
+**Distribute to machines** proposes machines and places for selected hall-pool operations. Existing machine work keeps its relative sequence. The summary compares late orders with leaving the work in the pool. Nothing changes until you apply.
+
+[Learn more](/en/platform-intro/pages/assignment-planner).
 
 ### d / ±1d / T / Days
 
@@ -432,9 +450,11 @@ The step count tells you how many of the order's steps have a machine. It does n
 
 **Partly planned** means some steps still lack an assignment. **Not planned at all** identifies orders with a delivery date but no operation assigned to a machine or hall pool. They appear on no planning board.
 
-#### Earlier Step Not Planned
+<a id="earlier-step-not-planned" />
 
-**Earlier step not planned** warns that the displayed times assume the earlier step is already finished. Check earlier steps that have no machine yet or are still in a hall pool before relying on later finishes. Long-held and never-started machine steps still occupy time in the forecast.
+#### Earlier Operation Not Planned
+
+**Earlier operation not planned** warns that the displayed times assume the earlier step is already finished. Check earlier steps that have no machine yet or are still in a hall pool before relying on later finishes. Long-held and never-started machine steps still occupy time in the forecast.
 
 #### Never Started and No Planned Start
 
@@ -450,11 +470,13 @@ The step count tells you how many of the order's steps have a machine. It does n
 
 #### Why This Time
 
-**Why this time** explains what a step waits for: its machine, an earlier step, or the next shift. **Earlier steps of this order** lists the preceding work and its progress. Hover over a Planner card’s date tab or clock to read these details.
+**Why this time** explains what a step waits for: its machine, an earlier step, or the next shift. **Earlier operations of this order** lists the preceding work and its progress. Hover over a Planner card’s date tab or clock to read these details.
 
-#### Waits for an Earlier Step
+<a id="waits-for-an-earlier-step" />
 
-**Waits for an earlier step** means an earlier step is not on a machine yet or remains in a hall pool. The later step still has a forecast, but its times may be too optimistic.
+#### Waits for an Earlier Operation
+
+**Waits for an earlier operation** means an earlier step is not on a machine yet or remains in a hall pool. The later step still has a forecast, but its times may be too optimistic.
 
 #### No Forecast
 
@@ -468,7 +490,7 @@ The step count tells you how many of the order's steps have a machine. It does n
 
 #### Save as Plan
 
-**Save as plan** changes eligible queue positions and planned dates in Watchmen after review. Original dates remain available beside them. A preview does not save a plan, and delivery dates stay unchanged.
+**Save as plan** saves the displayed queue and Watchmen planned-date changes after review. The searched sequence can also change operation priorities as shown. Original operation dates and delivery dates stay unchanged. **Undo** restores the saved changes.
 
 #### Jobs in Parallel
 
@@ -532,6 +554,12 @@ Hours in duration displays. Std Run Time is a different label meaning Standard r
 [Learn more](/en/platform-intro/concepts/calculations).
 
 ## I
+
+### Improve plan
+
+**Improve plan** opens the same comparison in Assignment Planner and Gantt. **Today** marks the current company rule; **Best result** marks an improvement in late orders and delay after saving. Review **2 · What changes** before **Save as plan**.
+
+[Learn more](/en/platform-intro/pages/assignment-planner).
 
 ### Immediate order
 
@@ -1076,6 +1104,12 @@ The dashboard tooltip states 95% and directs changes to an admin. Automatic repl
 
 ## R
 
+### Re-sort
+
+**Re-sort** (previously **Sort by priority and date**) proposes a queue sequence using one priority or date. It lets you fix individual operations with **Can move**. It does not change priorities or keep sorting automatically.
+
+[Learn more](/en/platform-intro/pages/assignment-planner).
+
 ### Ratio thresholds
 
 Read the selected condition: setup and cycle checks compare time with a plan or baseline; production checks measure a shortfall against pace. Order progress compares completion with the elapsed schedule. The same percentage does not mean the same thing for every measure.
@@ -1358,11 +1392,19 @@ Planned load of a machine queue, based on planned durations, not recorded produc
 
 ## W
 
-### Waiting on a previous step / Blocked by
+### Work left / Expected end
 
-⚠️ **Waiting on a previous step** means a step with a lower number in the same work order is neither completed nor cancelled. An earlier step without an assignment also counts as unfinished. **Start anyway** remains available; review the dependency before using it.
+**Work left** is planned work minus work already recorded. A dash means it is unknown. In planning proposals, **Expected end** compares the forecast with today’s sequence against the forecast after applying. Planned ends and delivery dates are separate and appear in **Details**.
 
-In Data Acquisition V3, the **Waiting on a previous step** sorting rule offers **At the bottom** or **At the top**. It comes before priority and date. If you also add **Running and on-hold orders**, that rule comes first. With **Sort by Queue Position** on, **Orders waiting on a previous step** offers **Keep in place** or **At the bottom**, preserving queue order within each group. Both options are off until you choose them and are saved for your account.
+[Learn more](/en/platform-intro/pages/assignment-planner).
+
+<a id="waiting-on-a-previous-step--blocked-by" />
+
+### Waiting on a previous operation / Blocked by
+
+⚠️ **Waiting on a previous operation** means a step with a lower number in the same work order is neither completed nor cancelled. An earlier step without an assignment also counts as unfinished. **Start anyway** remains available; review the dependency before using it.
+
+In Data Acquisition V3, the **Waiting on a previous operation** sorting rule offers **At the bottom** or **At the top**. It comes before priority and date. If you also add **Running and on-hold orders**, that rule comes first. With **Sort by Queue Position** on, **Orders waiting on a previous operation** offers **Keep in place** or **At the bottom**, preserving queue order within each group. Both options are off until you choose them and are saved for your account.
 
 [Learn more](/en/platform-intro/pages/data-acquisition).
 

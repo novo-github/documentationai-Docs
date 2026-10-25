@@ -6,6 +6,37 @@ toc: false
 
 ## Releases
 
+<Update label="2026-10-25" description="v1.5.134" tags={["feature", "improvement"]}>
+  {/* commits: 4acc82a, d67e364, 3351a8f, 4b56cc1, 5bd6786, 0726209, 9f0e710, d7f484d, c0f7a26, 17fcdc3, 8a3f468, 42b5606, b1937e7, 24cee21, 8b6bf8f, 307a203, 26602bf, 73c0a2e, 111f34c, a099ece, 1c134d2, 9a1600f, f0b691f, 14f5cb9, 226b3c0, 242c019, 4625cac, f8968ae, b599cf4 */}
+
+  **Release period:** October 24–25, 2026
+
+  ### New Features
+
+  #### [Compare Plans and Choose What Can Move](/en/platform-intro/pages/assignment-planner#improve-a-plan)
+  {/* feature: planner-best-order */}
+
+  With planning access, open the sparkle icon **Improve plan** at the bottom of a machine header in Assignment Planner, with **Sort by Queue Position** on. The same dialog opens from the sparkle beside **Forecaster** in Assignment Gantt or from a machine row. Compare **Best operation sequence** with fixed rules by late orders and delay. Choose **This machine**, **All machines in &lt;hall&gt;**, or the Gantt board’s machines.
+
+  Choose **Keep priorities**, **Least delay**, or **Fewest changes** within the searched sequence. Clear **Can move** for operations that must keep their place. Running and on-hold operations stay in place during this search. Review expected ends, priority changes, and any new planned dates before **Save as plan**. **Undo** restores the saved changes. Follow [Compare and Save a Plan](/en/platform-intro/workflows/assignment-planner#compare-and-save-a-plan).
+
+  #### [Place Pool Work on Machines with Less Delay](/en/platform-intro/pages/assignment-planner#distribute-pool-work-to-machines)
+  {/* feature: planner-best-order */}
+
+  With planning access and **Sort by Queue Position** on, select **Distribute to machines** in a hall-pool header. Choose machines and tick **Place** for the operations to include. The proposal shows each destination and place, expected ends, and reasons for work that stays in the pool. It includes pool work hidden by board filters.
+
+  Existing machine operations keep their relative sequence while pool work fits between them. Clear **Can move** to keep an existing operation at its exact place. Review any priority or planned-date changes, then select **Apply this sequence**. **Undo** returns placed work to the pool in its previous order. Follow [Distribute Pool Work](/en/platform-intro/workflows/assignment-planner#distribute-pool-work).
+
+  ### Improvements
+
+  #### [Re-sort by the Priority or Date You Need](/en/platform-intro/pages/assignment-planner#re-sort-a-queue)
+  {/* feature: planner-best-order */}
+
+  With planning access, use **Re-sort** (previously **Sort by priority and date**) in a Planner queue header or at the bottom of a Gantt machine row. Choose **Order priority**, **Operation priority**, **Planned end**, **Delivery date**, or **Order date**. Clear **Can move** to leave individual operations in place, review the proposal, then select **Apply sequence**. **Undo** restores the previous sequence. Follow [Re-sort a Queue](/en/platform-intro/workflows/assignment-planner#re-sort-a-queue).
+
+  The planning dialogs let you choose **Columns** and click a row for **Details**. **Expected end** compares today’s forecast with the result after applying; planned ends and delivery dates are in the details. English labels now say “operation” wherever they mean an order’s production operation, for example **Show operations** in Gantt.
+</Update>
+
 <Update label="2026-10-24" description="v1.5.133" tags={["feature", "improvement", "fix"]}>
   {/* commits: 9feba5e, ddc5e82, 6e942ef, aeb6276, cad3c73, c11f2f3, 66e9467, 55d221c, 5a8ecd5, 168fd59, 4f91a26, c01411f, 1098f2e, dae0f22, 04b5f81, 54edacd, 71455e2, 7ae67bd, 6c73125, 0363411, 3aecefe, 000bcba */}
 

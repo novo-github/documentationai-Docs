@@ -6,6 +6,37 @@ toc: false
 
 ## Releases
 
+<Update label="2026-10-25" description="v1.5.134" tags={["Funktion", "Verbesserung"]}>
+  {/* commits: 4acc82a, d67e364, 3351a8f, 4b56cc1, 5bd6786, 0726209, 9f0e710, d7f484d, c0f7a26, 17fcdc3, 8a3f468, 42b5606, b1937e7, 24cee21, 8b6bf8f, 307a203, 26602bf, 73c0a2e, 111f34c, a099ece, 1c134d2, 9a1600f, f0b691f, 14f5cb9, 226b3c0, 242c019, 4625cac, f8968ae, b599cf4 */}
+
+  **Release-Zeitraum:** 24.–25. Oktober 2026
+
+  ### Neue Funktionen
+
+  #### [Pläne vergleichen und Verschiebungen gezielt erlauben](/de/platform-intro/pages/assignment-planner#einen-plan-verbessern)
+  {/* feature: planner-best-order */}
+
+  Öffnen Sie mit Planungszugriff das Stern-Symbol **Plan verbessern** unten im Maschinenkopf des Zuweisungsplaners. Aktivieren Sie dafür **Nach Warteschlangenposition sortieren**. Derselbe Dialog öffnet sich über das Stern-Symbol neben **Forecaster** im Zuweisungs-Gantt oder in einer Maschinenzeile. Vergleichen Sie **Beste Operationsfolge** mit festen Regeln anhand verspäteter Aufträge und der Verspätung. Wählen Sie **Diese Maschine**, **Alle Maschinen in &lt;Halle&gt;** oder die Maschinen auf der Gantt-Plantafel.
+
+  Wählen Sie innerhalb der gesuchten Folge **Prioritäten beibehalten**, **Geringste Verspätung** oder **Wenigste Änderungen**. Entfernen Sie **Darf verschoben werden** bei Arbeitsgängen, die ihren Platz behalten sollen. Laufende und angehaltene Arbeitsgänge bleiben bei dieser Suche an ihrem Platz. Prüfen Sie erwartete Enden, Prioritätsänderungen und neue Plantermine vor **Als Plan speichern**. **Rückgängig** stellt die gespeicherten Änderungen zurück. Folgen Sie [Einen Plan vergleichen und speichern](/de/platform-intro/workflows/assignment-planner#einen-plan-vergleichen-und-speichern).
+
+  #### [Pool-Arbeit mit weniger Verspätung auf Maschinen verteilen](/de/platform-intro/pages/assignment-planner#pool-arbeit-auf-maschinen-verteilen)
+  {/* feature: planner-best-order */}
+
+  Wählen Sie mit Planungszugriff und eingeschalteter Option **Nach Warteschlangenposition sortieren** im Hallenpoolkopf **Auf Maschinen verteilen**. Wählen Sie Maschinen und markieren Sie die gewünschten Arbeitsgänge unter **Einplanen**. Der Vorschlag zeigt Zielmaschine, Platz, erwartetes Ende und Gründe für Arbeit, die im Pool bleibt. Er enthält auch Pool-Arbeit, die Ihre Filter auf der Plantafel ausblenden.
+
+  Vorhandene Maschinenarbeitsgänge behalten ihre relative Reihenfolge. Pool-Arbeit wird dazwischen eingeplant. Entfernen Sie **Darf verschoben werden**, damit ein vorhandener Arbeitsgang seinen genauen Platz behält. Prüfen Sie Prioritätsänderungen und Plantermine, dann wählen Sie **Diese Reihenfolge übernehmen**. **Rückgängig** bringt eingeplante Arbeit in der vorherigen Reihenfolge in den Pool zurück. Folgen Sie [Pool-Arbeit verteilen](/de/platform-intro/workflows/assignment-planner#pool-arbeit-verteilen).
+
+  ### Verbesserungen
+
+  #### [Nach der benötigten Priorität oder dem passenden Termin sortieren](/de/platform-intro/pages/assignment-planner#eine-warteschlange-neu-sortieren)
+  {/* feature: planner-best-order */}
+
+  Nutzen Sie mit Planungszugriff **Neu sortieren** (bisher **Nach Priorität und Datum sortieren**) im Warteschlangenkopf des Planers oder unten in einer Gantt-Maschinenzeile. Wählen Sie **Auftragspriorität**, **Arbeitsgang-Priorität**, **Geplantes Ende**, **Liefertermin** oder **Auftragsdatum**. Entfernen Sie **Darf verschoben werden**, um einzelne Arbeitsgänge festzuhalten. Prüfen Sie den Vorschlag und wählen Sie **Reihenfolge übernehmen**. **Rückgängig** stellt die vorherige Reihenfolge wieder her. Folgen Sie [Eine Warteschlange neu sortieren](/de/platform-intro/workflows/assignment-planner#eine-warteschlange-neu-sortieren).
+
+  In den Planungsdialogen wählen Sie **Spalten** und öffnen per Klick auf eine Zeile deren **Details**. **Voraussichtliches Ende** vergleicht die heutige Prognose mit dem Ergebnis nach dem Übernehmen. Geplantes Ende und Liefertermin stehen in den Details. Die englische Oberfläche verwendet jetzt „operation“ für Produktionsarbeitsgänge. Die deutschen Bezeichnungen bleiben unverändert.
+</Update>
+
 <Update label="2026-10-24" description="v1.5.133" tags={["Funktion", "Verbesserung", "Fehlerbehebung"]}>
   {/* commits: 9feba5e, ddc5e82, 6e942ef, aeb6276, cad3c73, c11f2f3, 66e9467, 55d221c, 5a8ecd5, 168fd59, 4f91a26, c01411f, 1098f2e, dae0f22, 04b5f81, 54edacd, 71455e2, 7ae67bd, 6c73125, 0363411, 3aecefe, 000bcba */}
 

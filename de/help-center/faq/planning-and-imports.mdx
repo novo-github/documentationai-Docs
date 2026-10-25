@@ -44,7 +44,7 @@ description: "Antworten zu Arbeitsgangprioritäten, Planungsterminen, Gruppierun
 | Kann ich wartende Aufträge unten anzeigen und die geplante Reihenfolge behalten? | [Antwort](/de/help-center/faq/planning-and-imports#waiting-queue) |
 | Warum wartet mein Auftrag noch, obwohl der vorherige Schritt fertig ist? | [Antwort](/de/help-center/faq/planning-and-imports#waiting-refresh) |
 | Wie setze ich einen Auftrag vor einen anderen, ohne seine Arbeitsgangpriorität zu erhöhen? | [Antwort](/de/help-center/faq/planning-and-imports#priority-queue) |
-| Warum sehe ich die Schaltfläche zum Sortieren nach Priorität und Datum nicht? | [Antwort](/de/help-center/faq/planning-and-imports#queue-sort-access) |
+| Wo ist die Schaltfläche zum Sortieren nach Priorität und Datum? | [Antwort](/de/help-center/faq/planning-and-imports#queue-sort-access) |
 | Kann ich eine Sortierung rückgängig machen und warum ändert sich der Vorschlag? | [Antwort](/de/help-center/faq/planning-and-imports#queue-sort-undo) |
 | Warum sind die Nummern auf meinen Planungskarten verschwunden? | [Antwort](/de/help-center/faq/planning-and-imports#queue-numbers) |
 | Wer kann die Sortierung festlegen, mit der alle beginnen? | [Antwort](/de/help-center/faq/planning-and-imports#company-sorting) |
@@ -68,6 +68,18 @@ description: "Antworten zu Arbeitsgangprioritäten, Planungsterminen, Gruppierun
 | Warum zeigt meine Karte Keine Prognose? | [Antwort](/de/help-center/faq/planning-and-imports#no-forecast) |
 | Warum bewegen sich Karten oder leuchten kurz auf, ohne dass ich aktualisiere? | [Antwort](/de/help-center/faq/planning-and-imports#planner-updates) |
 | Wie öffne ich eine Maschine aus dem Planer? | [Antwort](/de/help-center/faq/planning-and-imports#planner-machine-link) |
+| Wie finde ich eine Reihenfolge mit weniger verspäteten Aufträgen? | [Antwort](/de/help-center/faq/planning-and-imports#improve-plan-options) |
+| Wie verhindere ich, dass ein Vorschlag einen Arbeitsgang verschiebt? | [Antwort](/de/help-center/faq/planning-and-imports#keep-place) |
+| Ändert Plan verbessern meine Prioritäten? | [Antwort](/de/help-center/faq/planning-and-imports#proposal-priorities) |
+| Warum bleibt das erwartete Ende beim Ziehen von Karten gleich? | [Antwort](/de/help-center/faq/planning-and-imports#forecast-queue-rule) |
+| Warum ändert der Vorschlag mehr Plantermine als Positionen? | [Antwort](/de/help-center/faq/planning-and-imports#proposal-dates) |
+| Kann der Planer Maschinen für wartende Pool-Arbeit auswählen? | [Antwort](/de/help-center/faq/planning-and-imports#distribute-pool) |
+| Warum bleibt manche Arbeit im Pool? | [Antwort](/de/help-center/faq/planning-and-imports#pool-stays) |
+| Warum enthält die Verteilung Arbeit, die ich auf der Plantafel nicht sehe? | [Antwort](/de/help-center/faq/planning-and-imports#pool-hidden-work) |
+| Warum kann ich den Vorschlag noch nicht speichern? | [Antwort](/de/help-center/faq/planning-and-imports#proposal-unavailable) |
+| Sind die Zeiten vorher und nachher neue Liefertermine? | [Antwort](/de/help-center/faq/planning-and-imports#proposal-expected-end) |
+| Kann ich eine Warteschlange nach Liefertermin sortieren? | [Antwort](/de/help-center/faq/planning-and-imports#resort-by-date) |
+| Warum steht in der englischen Oberfläche jetzt operation statt step? | [Antwort](/de/help-center/faq/planning-and-imports#operation-wording) |
 
 <a id="operation-priority" />
 
@@ -189,7 +201,7 @@ Die Prognose nimmt an, dass der pausierte Arbeitsgang an seinem Platz weitergeht
 
 ## Ändert das Ausprobieren einer anderen Reihenfolge meinen Plan?
 
-Nein. **Auf Plantafel zeigen** ist eine Vorschau. **Als Plan speichern** ändert nach der Prüfung geeignete Warteschlangenplätze und geplante Watchmen-Termine. Laufende, angehaltene und blockierte Arbeit bleibt an ihrem Platz. Daher kann das gespeicherte Ergebnis von der Vorschau abweichen. Liefertermine bleiben erhalten. Folgen Sie dem [Planungsvergleich](/de/platform-intro/workflows/assignment-planner).
+Nein. Optionen in **Plan verbessern** und **Auf Plantafel zeigen** sind Vorschauen. **Als Plan speichern** speichert die angezeigten Änderungen an Warteschlange und Planterminen sowie angezeigte Arbeitsgangprioritäten der gesuchten Folge. Liefertermine bleiben erhalten. **Rückgängig** stellt gespeicherte Änderungen zurück. Folgen Sie [Einen Plan vergleichen und speichern](/de/platform-intro/workflows/assignment-planner#einen-plan-vergleichen-und-speichern).
 
 <a id="move-undo" />
 
@@ -305,15 +317,15 @@ Prüfen Sie, ob ein weiterer Schritt mit niedrigerer Nummer im selben Arbeitsauf
 
 ## Wie setze ich einen Auftrag vor einen anderen, ohne seine Arbeitsgangpriorität zu erhöhen?
 
-Bitten Sie einen Administrator, **Admin-Panel → Prioritätsstufen → Reihenfolge und Arbeitsgang-Priorität bleiben im Einklang** auszuschalten. Aktivieren Sie dann **Nach Warteschlangenposition sortieren** und ziehen Sie die Karte. Nur ihr Platz ändert sich. Ist die Einstellung eingeschaltet, stellt **Rückgängig** im Prioritätshinweis nach dem Ziehen die Priorität wieder her und behält den neuen Platz bei. Auch das Übernehmen von **Nach Priorität und Datum sortieren** ändert keine Prioritäten. Siehe [Reihenfolge und Priorität](/de/platform-intro/pages/assignment-planner#reihenfolge-und-arbeitsgangpriorität).
+Bitten Sie einen Administrator, **Admin-Panel → Prioritätsstufen → Reihenfolge und Arbeitsgang-Priorität bleiben im Einklang** auszuschalten. Aktivieren Sie dann **Nach Warteschlangenposition sortieren** und ziehen Sie die Karte. Nur ihr Platz ändert sich. Ist die Einstellung eingeschaltet, stellt **Rückgängig** im Prioritätshinweis nach dem Ziehen die Priorität wieder her und behält den neuen Platz bei. Auch das Übernehmen von **Neu sortieren** ändert keine Prioritäten. Siehe [Reihenfolge und Priorität](/de/platform-intro/pages/assignment-planner#reihenfolge-und-arbeitsgangpriorität).
 
 Eine Übergabe setzt die restliche Arbeit an den Anfang der Zielwarteschlange. Die Ablageposition gilt für Verschiebungen ohne Dialog. Folgen Sie [Arbeit übergeben](/de/platform-intro/workflows/assignment-planner#hand-over-work).
 
 <a id="queue-sort-access" />
 
-## Warum sehe ich die Schaltfläche zum Sortieren nach Priorität und Datum nicht?
+## Wo ist die Schaltfläche zum Sortieren nach Priorität und Datum?
 
-Die Schaltfläche erscheint nur bei eingeschalteter Option **Nach Warteschlangenposition sortieren**. Sie benötigen ein Administratorkonto oder ein Benutzerkonto mit Zugriff auf die Auftragsseite sowie Zugriff auf die Maschine. Operatoren sehen sie nicht. Siehe [Zuweisungsplaner](/de/platform-intro/pages/assignment-planner).
+Sie heißt jetzt **Neu sortieren** und steht in der letzten Zeile eines Maschinen- oder Hallenpoolkopfs. Aktivieren Sie im Zuweisungsplaner **Nach Warteschlangenposition sortieren**. Sie benötigen Planungszugriff und Zugriff auf die Maschine. Im Gantt steht die Funktion auch in jeder Maschinenzeile. Sie können jetzt eine Priorität oder einen Termin wählen und einzelne Arbeitsgänge festhalten. Siehe [Eine Warteschlange neu sortieren](/de/platform-intro/pages/assignment-planner#eine-warteschlange-neu-sortieren).
 
 <a id="queue-sort-undo" />
 
@@ -434,7 +446,7 @@ Administratoren wählen unter **Admin-Panel → Prioritätsstufen → So werden 
 
 ## Kann ich einen laufenden Arbeitsgang im Planer nach unten schieben?
 
-Ja. Mit **Nach Warteschlangenposition sortieren** behalten laufende und angehaltene Arbeitsgänge den von Ihnen gesetzten Platz samt Warteschlangennummer. Laufende Arbeit können Sie innerhalb ihrer Spalte umordnen. Vor einem Zielwechsel müssen Sie sie an der Maschine stoppen. Auch der Vorschlag nach Priorität und Datum sortiert laufende und angehaltene Arbeit. Siehe [Warteschlangensortierung](/de/platform-intro/pages/assignment-planner#warteschlangenposition-und-sortierregeln).
+Ja. Mit **Nach Warteschlangenposition sortieren** behalten laufende und angehaltene Arbeitsgänge den von Ihnen gesetzten Platz samt Warteschlangennummer. Laufende Arbeit können Sie innerhalb ihrer Spalte umordnen. Vor einem Zielwechsel müssen Sie sie an der Maschine stoppen. **Neu sortieren** bezieht auch laufende und angehaltene Arbeit ein. Die Suche in **Plan verbessern** hält diese Arbeit an ihrem Platz. Siehe [Warteschlangensortierung](/de/platform-intro/pages/assignment-planner#warteschlangenposition-und-sortierregeln).
 
 <a id="forecast-explanation" />
 
@@ -459,3 +471,75 @@ Der Planer aktualisiert Prognosen nach dem Speichern und prüft etwa jede Minute
 ## Wie öffne ich eine Maschine aus dem Planer?
 
 Klicken Sie auf den Maschinennamen im Spaltenkopf. Strg-Klick oder Mittelklick öffnet sie in einem neuen Tab. Hallenpoolnamen sind keine Links. Siehe [Maschinendetails](/de/platform-intro/pages/machine-details).
+
+<a id="improve-plan-options" />
+
+## Wie finde ich eine Reihenfolge mit weniger verspäteten Aufträgen?
+
+Öffnen Sie das Stern-Symbol **Plan verbessern** im Maschinenkopf des Planers oder im Gantt. Vergleichen Sie unter **1 · Option wählen** die **Beste Operationsfolge** mit den festen Regeln. Die Zahlen vergleichen verspätete Aufträge und die Verspätung nach dem Speichern mit heute. Prüfen Sie **2 · Was sich ändert** und wählen Sie **Als Plan speichern**. [Zum Ablauf](/de/platform-intro/workflows/assignment-planner#einen-plan-vergleichen-und-speichern).
+
+<a id="keep-place" />
+
+## Wie verhindere ich, dass ein Vorschlag einen Arbeitsgang verschiebt?
+
+Entfernen Sie **Darf verschoben werden** bei diesem Arbeitsgang in **Neu sortieren**, **Beste Operationsfolge** oder bei vorhandener Maschinenarbeit in **Auf Maschinen verteilen**. Er behält seinen genauen Platz. Die Tabelle der gesuchten Folge zeigt zunächst nur Arbeitsgänge mit geändertem Platz oder Status. **Alle zeigen (N weitere Arbeitsgänge)** zeigt den Rest, auch unveränderte Maschinen. **Nur die Änderungen zeigen** kehrt zur kürzeren Liste zurück. Das Kästchen einer Maschinengruppe umfasst ihre ganze Warteschlange. Geänderte erwartete Enden außerhalb Ihrer Auswahl stehen unter **Ändert auch voraussichtliche Enden auf anderen Maschinen**. Feste Regeln in **Plan verbessern** bieten diese Auswahl nicht. Siehe [Planungsoptionen](/de/platform-intro/pages/assignment-planner#eine-option-wählen).
+
+<a id="proposal-priorities" />
+
+## Ändert Plan verbessern meine Prioritäten?
+
+**Prioritäten beibehalten** lässt Prioritäten unverändert. **Geringste Verspätung** und **Wenigste Änderungen** können Arbeitsgangprioritäten wie im Vorschlag angezeigt ändern. Auftragsprioritäten bleiben immer erhalten. Ist **Reihenfolge und Arbeitsgang-Priorität bleiben im Einklang** ausgeschaltet, ändern alle gesuchten Optionen keine Arbeitsgangprioritäten. Siehe [Wirkung der Optionen](/de/platform-intro/pages/assignment-planner#eine-option-wählen).
+
+<a id="forecast-queue-rule" />
+
+## Warum bleibt das erwartete Ende beim Ziehen von Karten gleich?
+
+Ihre Prognose folgt möglicherweise Planterminen oder Lieferterminen statt der Warteschlange. Bei **Nach geplanten Terminen** kann **Plan verbessern** auch neue Plantermine setzen, damit die Prognose dem Vorschlag folgt. Bei **Liefertermin zuerst** wählt die Prognose die Folge selbst. Der Planer blendet **Plan verbessern** und **Auf Maschinen verteilen** aus. Siehe [Prognoseregeln und Ziehen](/de/platform-intro/pages/assignment-planner#wenn-ziehen-das-erwartete-ende-nicht-ändert).
+
+<a id="proposal-dates" />
+
+## Warum ändert der Vorschlag mehr Plantermine als Positionen?
+
+Bei **Nach geplanten Terminen** oder **Nach der Warteschlange, nicht vor dem geplanten Termin** setzt das Speichern der Option **Beste Operationsfolge** auch neue Plantermine für wartende Arbeitsgänge auf neu geordneten Maschinen. So folgt die Prognose der neuen Folge. Andere wartende Arbeitsgänge können zu anderen Zeiten starten, obwohl ihr Platz gleich bleibt. Die ausgewählte Option zeigt, wie viele Plantermine sich ändern. Prüfen Sie diese Anzahl vor **Als Plan speichern**. Bei **Nach der Warteschlange** setzt das Speichern der Folge keine Plantermine. Angezeigte Änderungen an Arbeitsgangprioritäten gelten weiterhin. Ursprüngliche Arbeitsgangtermine und Liefertermine bleiben erhalten. **Rückgängig** stellt die gespeicherten Planänderungen zurück. Siehe [Prüfen und speichern](/de/platform-intro/pages/assignment-planner#prüfen-und-speichern).
+
+<a id="distribute-pool" />
+
+## Kann der Planer Maschinen für wartende Pool-Arbeit auswählen?
+
+Ja. Öffnen Sie mit Planungszugriff und eingeschalteter Option **Nach Warteschlangenposition sortieren** im Hallenpoolkopf **Auf Maschinen verteilen**. Wählen Sie Maschinen und Pool-Arbeitsgänge unter **Einplanen**, prüfen Sie die Ziele und wählen Sie **Diese Reihenfolge übernehmen**. Vorhandene Maschinenarbeit behält ihre relative Folge. **Rückgängig** bringt eingeplante Arbeit in der vorherigen Reihenfolge in den Pool zurück. [Zum Ablauf](/de/platform-intro/workflows/assignment-planner#pool-arbeit-verteilen).
+
+<a id="pool-stays" />
+
+## Warum bleibt manche Arbeit im Pool?
+
+Lesen Sie den Grund neben dem Arbeitsgang. Es kann keine Maschine ausgewählt sein, sein früherer Arbeitsgang bleibt ebenfalls im Pool, jede Platzierung verspätet andere Aufträge oder die Suche hat ihn noch nicht erreicht. Entfernen Sie **Einplanen**, bleibt er ebenfalls im Pool. Versuchen Sie bei früh beendeter Suche **Länger suchen**, sofern angeboten. Siehe [Pool-Verteilung](/de/platform-intro/pages/assignment-planner#pool-arbeit-auf-maschinen-verteilen).
+
+<a id="pool-hidden-work" />
+
+## Warum enthält die Verteilung Arbeit, die ich auf der Plantafel nicht sehe?
+
+Der Vorschlag verwendet den ganzen wartenden Hallenpool, auch durch Plantafelfilter ausgeblendete oder noch nicht angezeigte Arbeit. Prüfen Sie die vollständige Liste und entfernen Sie **Einplanen** bei Arbeit, die im Pool bleiben soll. Siehe [Pool-Auswahl](/de/platform-intro/pages/assignment-planner#pool-arbeit-auf-maschinen-verteilen).
+
+<a id="proposal-unavailable" />
+
+## Warum kann ich den Vorschlag noch nicht speichern?
+
+Warten Sie, während **Wird aktualisiert…** nach einer Maschinenänderung oder einer Änderung unter **Darf verschoben werden** oder **Einplanen** neu rechnet. Müssen alle Arbeitsgänge ihren Platz behalten, erlauben Sie einigen das Verschieben. Bei einem Plan- oder Pool-Konflikt wählen Sie **Neu berechnen** und prüfen erneut. Die Suche kann auch ohne besseres Ergebnis enden. Nutzen Sie **Länger suchen**, sofern angeboten. Siehe [Prüfen und speichern](/de/platform-intro/pages/assignment-planner#prüfen-und-speichern).
+
+<a id="proposal-expected-end" />
+
+## Sind die Zeiten vorher und nachher neue Liefertermine?
+
+Nein. Das Informationssymbol neben **Voraussichtliches Ende** erklärt: Jetzt ist die Prognose mit der heutigen Reihenfolge, danach die Prognose, wenn Sie den Vorschlag übernehmen. Keine dieser Zeiten ist das geplante Ende oder der Liefertermin. Diese stehen in den Details. Klicken Sie auf die Zeile oder **Details** für geplantes Ende, Liefertermin, vollständige Bewertung und Annahmen. Liefertermine ändern sich nicht. Siehe [Prüfen und speichern](/de/platform-intro/pages/assignment-planner#prüfen-und-speichern).
+
+<a id="resort-by-date" />
+
+## Kann ich eine Warteschlange nach Liefertermin sortieren?
+
+Ja. Öffnen Sie **Neu sortieren → 1 · Sortieren nach → Liefertermin**. Frühe Termine kommen zuerst, fehlende Termine zuletzt. Sie können auch **Geplantes Ende**, **Auftragsdatum**, **Auftragspriorität** oder **Arbeitsgang-Priorität** wählen. Entfernen Sie **Darf verschoben werden** bei Arbeitsgängen, die ihren Platz behalten sollen. Prüfen Sie den Vorschlag und übernehmen Sie ihn. Siehe [Eine Warteschlange neu sortieren](/de/platform-intro/workflows/assignment-planner#eine-warteschlange-neu-sortieren).
+
+<a id="operation-wording" />
+
+## Warum steht in der englischen Oberfläche jetzt operation statt step?
+
+Beide Wörter meinen einen Produktionsarbeitsgang innerhalb eines Auftrags. Die englische Oberfläche verwendet dafür jetzt einheitlich „operation“. Die deutschen Bezeichnungen bleiben gleich. Die Wortwahl erzeugt keine zusätzliche Arbeit und ändert keine Arbeitsgangfolge. Siehe [Arbeitsgang im Glossar](/de/platform-intro/concepts/glossary#op-ag).
