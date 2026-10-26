@@ -89,6 +89,11 @@ description: "Antworten zu Arbeitsgangprioritäten, Planungsterminen, Gruppierun
 | Verliere ich meine Einstellungen, wenn eine Vorlage geändert oder gelöscht wird? | [Antwort](/de/help-center/faq/planning-and-imports#template-personal-choices) |
 | Warum kann ich eine am Terminal ausgeblendete Aktion im Planer weiterhin nutzen? | [Antwort](/de/help-center/faq/planning-and-imports#template-other-pages) |
 | Wo sind die Erklärungen zu Vorlagen und Prioritäten geblieben? | [Antwort](/de/help-center/faq/planning-and-imports#setting-explanations) |
+| Wo ändere ich die Gantt-Balken und die Zeilenhöhe? | [Antwort](/de/help-center/faq/planning-and-imports#gantt-settings) |
+| Warum fehlen Plan verbessern und Neu sortieren im Gantt? | [Antwort](/de/help-center/faq/planning-and-imports#gantt-planning-access) |
+| Warum ist Beste Operationsfolge ausgegraut? | [Antwort](/de/help-center/faq/planning-and-imports#delivery-sequence-disabled) |
+| Warum wurde die Gantt-Plantafel nach Rückgängig neu geladen? | [Antwort](/de/help-center/faq/planning-and-imports#gantt-undo-not-saved) |
+| Wo ist der Hinweis zur Prognose nach Planterminen geblieben? | [Antwort](/de/help-center/faq/planning-and-imports#forecast-hint-location) |
 
 <a id="operation-priority" />
 
@@ -204,7 +209,7 @@ Aufträge & Produkte zählt offene Aufträge mit Lieferverzögerung im ganzen Un
 
 ## Warum verzögert ein lange angehaltener Arbeitsgang weiterhin die Arbeit dahinter?
 
-Die Prognose nimmt an, dass der pausierte Arbeitsgang an seinem Platz weitergeht. Spätere Arbeit wartet deshalb weiterhin. Das Überschreiten von **Limit für Wartestellung (Arbeitsstunden)** ergänzt nur **Lange angehalten** und gibt die Maschine nicht frei. Administratoren stellen das Limit im Zuweisungs-Gantt unter **Planungseinstellungen → Planung** ein. Nur Maschinenarbeitszeit zählt. Ohne geplante Schichten zählen 24 Stunden als volles Limit. Siehe [Planungseinstellungen](/de/platform-intro/pages/assignment-gantt#planungseinstellungen).
+Die Prognose nimmt an, dass der pausierte Arbeitsgang an seinem Platz weitergeht. Spätere Arbeit wartet deshalb weiterhin. Das Überschreiten von **Limit für Wartestellung (Arbeitsstunden)** ergänzt nur **Lange angehalten** und gibt die Maschine nicht frei. Admins und Super Admins stellen das Limit im Zuweisungs-Gantt unter **Ansichtsoptionen → Planung** ein und wählen **Speichern**. Nur Maschinenarbeitszeit zählt. Ohne geplante Schichten zählen 24 Stunden als volles Limit. Siehe [Planungseinstellungen](/de/platform-intro/pages/assignment-gantt#planungseinstellungen).
 
 <a id="save-plan" />
 
@@ -228,7 +233,7 @@ Ein Administrator stellt in den Basisinformationen der Maschine **Planung → Pa
 
 ## Wer kann ändern, was der Forecaster als Nächstes einplant?
 
-Administratoren wählen unter **Planungseinstellungen** im Zuweisungs-Gantt die Reihenfolge des Werks. Andere Benutzer mit Planungszugriff können unter **Plan verbessern** Alternativen vergleichen, ohne diese Einstellung zu ändern. Siehe [Reihenfolgen](/de/platform-intro/pages/assignment-gantt).
+Nur Admins und Super Admins wählen unter **Ansichtsoptionen → Planung** die Reihenfolge des Werks und dann **Speichern**. Alle anderen, die Gantt öffnen können, sehen diese Einstellungen schreibgeschützt. Sie sehen **Bitten Sie einen Admin, diese Werte zu ändern.** Mit Planungszugriff können Sie unter **Plan verbessern** Alternativen vergleichen, ohne die Unternehmensregel zu ändern. Folgen Sie [Die Prognoseregel des Werks einstellen](/de/platform-intro/workflows/assignment-planner#die-prognoseregel-des-werks-einstellen).
 
 <a id="forecast-help" />
 
@@ -340,7 +345,7 @@ Sie heißt jetzt **Neu sortieren** und steht in der letzten Zeile eines Maschine
 
 ## Kann ich eine Sortierung rückgängig machen und warum ändert sich der Vorschlag?
 
-Wählen Sie nach dem Übernehmen **Rückgängig** in der Bestätigung **Neue Reihenfolge übernommen**. Ändert jemand die Warteschlange während Ihrer Prüfung, wird der Vorschlag neu geladen. Prüfen Sie ihn erneut. Schlägt das Laden fehl, versuchen Sie es vor dem Übernehmen erneut. Schlägt das Rückgängigmachen fehl, wird die Warteschlange neu geladen. Prüfen Sie die aktuelle Reihenfolge vor weiteren Anpassungen. Folgen Sie den [Sortierschritten](/de/platform-intro/workflows/assignment-planner#eine-warteschlange-nach-priorität-und-datum-sortieren).
+Wählen Sie nach dem Übernehmen **Rückgängig** in der Bestätigung **Neue Reihenfolge übernommen**. Ändert jemand die Warteschlange während Ihrer Prüfung, wird der Vorschlag neu geladen. Prüfen Sie ihn erneut. Schlägt das Laden fehl, versuchen Sie es vor dem Übernehmen erneut. Schlägt das Rückgängigmachen fehl, wird die Warteschlange neu geladen. Im Gantt erscheint vorher **Die alte Reihenfolge konnte nicht wiederhergestellt werden. Die Tafel zeigt jetzt den aktuellen Plan.**, wenn **Rückgängig** nicht gespeichert werden kann. Prüfen Sie die aktuelle Reihenfolge vor weiteren Anpassungen. Folgen Sie den [Sortierschritten](/de/platform-intro/workflows/assignment-planner#eine-warteschlange-nach-priorität-und-datum-sortieren).
 
 <a id="queue-numbers" />
 
@@ -509,7 +514,7 @@ Entfernen Sie **Darf verschoben werden** bei diesem Arbeitsgang in **Neu sortier
 
 ## Warum bleibt das erwartete Ende beim Ziehen von Karten gleich?
 
-Ihre Prognose folgt möglicherweise Planterminen oder Lieferterminen statt der Warteschlange. Bei **Nach geplanten Terminen** kann **Plan verbessern** auch neue Plantermine setzen, damit die Prognose dem Vorschlag folgt. Bei **Liefertermin zuerst** wählt die Prognose die Folge selbst. Der Planer blendet **Plan verbessern** und **Auf Maschinen verteilen** aus. Siehe [Prognoseregeln und Ziehen](/de/platform-intro/pages/assignment-planner#wenn-ziehen-das-erwartete-ende-nicht-ändert).
+Ihre Prognose folgt möglicherweise Planterminen oder Lieferterminen statt der Warteschlange. Zeigen Sie auf **Manuelle Warteschlangenreihenfolge**, um die Erklärung zu lesen. Die Anzeige erscheint nur, wenn **Filtern & Sortieren → Nach Warteschlangenposition sortieren** eingeschaltet ist. Sie ersetzt den gesonderten Prognosehinweis. Bei **Nach geplanten Terminen** kann **Plan verbessern** auch neue Plantermine setzen, damit die Prognose dem Vorschlag folgt. Bei **Liefertermin zuerst** wählt die Prognose die Folge selbst. Der Planer blendet **Plan verbessern** und **Auf Maschinen verteilen** aus. Siehe [Prognoseregeln und Ziehen](/de/platform-intro/pages/assignment-planner#wenn-ziehen-das-erwartete-ende-nicht-ändert).
 
 <a id="proposal-dates" />
 
@@ -612,3 +617,33 @@ BDE-Zugriffsvorlagen gelten nur für die Betriebsdatenerfassung V3. Sie ändern 
 ## Wo sind die Erklärungen zu Vorlagen und Prioritäten geblieben?
 
 Öffnen Sie das Informationssymbol neben dem Titel unter **Admin-Panel → BDE-Zugriffsvorlagen** oder **Admin-Panel → Prioritätsstufen**. Die Erklärungen stehen jetzt dort statt unter dem Titel. Das gilt auch für **Welche Zahl ist dringender?** und **Reihenfolge und Arbeitsgang-Priorität bleiben im Einklang**. Siehe [Administrationsbereich](/de/platform-intro/pages/admin-panel#so-werden-prioritäten-verwendet).
+
+<a id="gantt-settings" />
+
+## Wo ändere ich die Gantt-Balken und die Zeilenhöhe?
+
+Öffnen Sie **Ansichtsoptionen → Plantafel**. Unter **Balken zeigen** wählen Sie **Erwartete Zeiten** oder **Geplante Termine**. Mit **Zeilenhöhe** bestimmen Sie den Platz je Zeile. Diese Auswahl ist Ihre eigene und wirkt sofort. Das Informationssymbol neben **Balken zeigen** erklärt die Auswahl. Nur Admins und Super Admins ändern Unternehmenseinstellungen unter **Ansichtsoptionen → Planung** und wählen **Speichern**. Siehe [Gantt-Ansichtsoptionen](/de/platform-intro/pages/assignment-gantt#ansichtsoptionen-und-grenzen).
+
+<a id="gantt-planning-access" />
+
+## Warum fehlen Plan verbessern und Neu sortieren im Gantt?
+
+Beide Aktionen benötigen Planungszugriff: ein Admin- oder Super-Admin-Konto oder einen Benutzer mit Zugriff auf **Aufträge & Produkte**. Zum Öffnen von Gantt benötigen Sie Seitenzugriff auf **Zuweisungsplaner**, sofern Sie kein Admin sind. Ohne Planungszugriff blendet Gantt **Plan verbessern** in der Werkzeugleiste und in Maschinenzeilen sowie **Neu sortieren** in Maschinenzeilen aus. Zugriff auf die Seite allein reicht dafür nicht aus. Siehe [Planungsaktionen im Gantt](/de/platform-intro/pages/assignment-gantt#warteschlangen-vor-dem-speichern-vergleichen).
+
+<a id="delivery-sequence-disabled" />
+
+## Warum ist Beste Operationsfolge ausgegraut?
+
+Bei **Liefertermin zuerst** kann eine gesuchte Folge das voraussichtliche Ende nicht ändern. Im Gantt ist **Beste Operationsfolge** deshalb nicht verfügbar. Eine Suche startet nicht. Mit Planungszugriff können Sie in **Plan verbessern** weiterhin die festen Regeln vergleichen und speichern. Folgen Sie [Einen Plan vergleichen und speichern](/de/platform-intro/workflows/assignment-planner#einen-plan-vergleichen-und-speichern).
+
+<a id="gantt-undo-not-saved" />
+
+## Warum wurde die Gantt-Plantafel nach Rückgängig neu geladen?
+
+Kann **Rückgängig** nach **Plan verbessern** oder **Neu sortieren** nicht gespeichert werden, zeigt Gantt **Die alte Reihenfolge konnte nicht wiederhergestellt werden. Die Tafel zeigt jetzt den aktuellen Plan.** und lädt die Plantafel neu. Gehen Sie nicht davon aus, dass der frühere Plan wiederhergestellt wurde. Prüfen Sie die aktuelle Reihenfolge und Termine vor weiteren Änderungen. Siehe [Einen Plan vergleichen und speichern](/de/platform-intro/workflows/assignment-planner#einen-plan-vergleichen-und-speichern).
+
+<a id="forecast-hint-location" />
+
+## Wo ist der Hinweis zur Prognose nach Planterminen geblieben?
+
+Der gesonderte Hinweis und seine Schaltfläche zum Ausblenden wurden entfernt. Zeigen Sie im Zuweisungsplaner auf **Manuelle Warteschlangenreihenfolge**. Die Anzeige erscheint nur, wenn **Filtern & Sortieren → Nach Warteschlangenposition sortieren** eingeschaltet ist. Bei Prognosen nach Plan- oder Lieferterminen erklärt sie, dass Verschieben Reihenfolge und Priorität ändert, aber nicht das voraussichtliche Ende. **Plan verbessern** kann neue Plantermine setzen. Siehe [Prognoseregeln und Ziehen](/de/platform-intro/pages/assignment-planner#wenn-ziehen-das-erwartete-ende-nicht-ändert).

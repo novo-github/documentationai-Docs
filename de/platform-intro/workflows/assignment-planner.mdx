@@ -10,7 +10,7 @@ Planen Sie ungeplante Arbeit in Maschinenwarteschlangen oder gemeinsamen Hallenp
 ## Bevor Sie beginnen
 
 <Callout kind="info" title="Ablaufzugriff">
-- Erforderlicher Zugriff: Admin oder Seitenfreigabe `assignment_planner` mit entsprechendem Maschinenzugriff.
+- Erforderlicher Zugriff: Admin oder ein Konto mit Seitenzugriff auf **Zuweisungsplaner** sowie Zugriff auf die betreffenden Maschinen.
 - Einstiegspunkte: `/assignment-planner`
 </Callout>
 
@@ -101,24 +101,24 @@ Begonnene, gestoppte Arbeit nutzt die unten beschriebenen Übergabeschritte. Lau
 
 ## Begonnene Arbeit an eine andere Warteschlange übergeben
 
-Administratoren und Benutzer mit Zugriff auf die Seite Aufträge können einen beliebigen Hallenpool oder eine andere zugängliche Maschine wählen. Alle Benutzer benötigen Zugriff auf die aktuelle Maschine des Schritts. Andere Benutzer können den Schritt im Zuweisungsplaner und in der Betriebsdatenerfassung nur in den Pool der Halle seiner aktuellen Maschine zurückgeben. Der Schritt muss begonnen haben und danach gestoppt worden sein. Abgeschlossene oder stornierte Schritte können nicht übergeben werden.
+Administratoren und Benutzer mit Zugriff auf die Seite Aufträge können einen beliebigen Hallenpool oder eine andere zugängliche Maschine wählen. Alle Benutzer benötigen Zugriff auf die aktuelle Maschine des Arbeitsgangs. Andere Benutzer können den Arbeitsgang im Zuweisungsplaner und in der Betriebsdatenerfassung nur in den Pool der Halle seiner aktuellen Maschine zurückgeben. Der Arbeitsgang muss begonnen haben und danach gestoppt worden sein. Abgeschlossene oder stornierte Arbeitsgänge können nicht übergeben werden.
 
 <Steps>
   <Step title="Prüfen Sie, ob die Arbeit gestoppt ist" icon="arrow-right" title-type="p">
     Eine laufende Karte bleibt gesperrt und zeigt **Läuft. Erst an der Maschine stoppen, dann verschieben.** Nutzen Sie zuerst die normale Stoppaktion in der [Betriebsdatenerfassung](/de/platform-intro/workflows/data-acquisition) und erfassen Sie die Mengen.
   </Step>
-  <Step title="Ziehen Sie den gestoppten Schritt auf sein Ziel" icon="arrow-right" title-type="p">
+  <Step title="Ziehen Sie den gestoppten Arbeitsgang auf sein Ziel" icon="arrow-right" title-type="p">
     Legen Sie die Karte auf einem Hallenpool oder einer anderen Maschinenspalte ab. Der Übergabedialog öffnet sich auch dann, wenn begonnene Arbeit als **Geplant** oder **Freigegeben** markiert ist. Das Verschieben innerhalb derselben Spalte ändert die Reihenfolge und kann auch die Arbeitsgangpriorität ändern.
   </Step>
   <Step title="Prüfen Sie die Mengen und geben Sie den Grund weiter" icon="arrow-right" title-type="p">
-    Prüfen Sie **Geplant**, **Hier gefertigt** und **Offen**. Kontrollieren Sie **Restmenge**: Nur Gutteile verringern den Vorschlag. Ändern Sie die Menge bei nötiger Nachfertigung oder lassen Sie sie leer, wenn sie unbekannt ist. Ist nichts mehr offen, schließen Sie den Schritt ab, sofern keine weiteren Teile benötigt werden. Ergänzen Sie **Grund (optional)** für die nächste Person.
+    Prüfen Sie **Geplant**, **Hier gefertigt** und **Offen**. Kontrollieren Sie **Restmenge**: Nur Gutteile verringern den Vorschlag. Ändern Sie die Menge bei nötiger Nachfertigung oder lassen Sie sie leer, wenn sie unbekannt ist. Ist nichts mehr offen, schließen Sie den Arbeitsgang ab, sofern keine weiteren Teile benötigt werden. Ergänzen Sie **Grund (optional)** für die nächste Person.
   </Step>
   <Step title="Bestätigen und prüfen Sie die Warteschlangen" icon="arrow-right" title-type="p">
-    Prüfen Sie das Ziel und wählen Sie **Zurück in den Pool** oder für eine Maschine **Verschieben**. Eine Übergabe lässt sich nicht automatisch rückgängig machen. Die ursprüngliche Maschine behält ihre Zeiten und Gutteile mit der Kennzeichnung **Übergeben**. Der Rest kommt an den Anfang der Zielwarteschlange, auch bei Ablage auf einem eingeklappten Pool. Beide Warteschlangen aktualisieren sich. Der Schritt bleibt offen, bis die restliche Arbeit fertig ist.
+    Prüfen Sie das Ziel und wählen Sie **Zurück in den Pool** oder für eine Maschine **Verschieben**. Eine Übergabe lässt sich nicht automatisch rückgängig machen. Die ursprüngliche Maschine behält ihre Zeiten und Gutteile mit der Kennzeichnung **Übergeben**. Der Rest kommt an den Anfang der Zielwarteschlange, auch bei Ablage auf einem eingeklappten Pool. Beide Warteschlangen aktualisieren sich. Der Arbeitsgang bleibt offen, bis die restliche Arbeit fertig ist.
   </Step>
 </Steps>
 
-Sind beispielsweise 40 von 100 geplanten Teilen gut, behält die ursprüngliche Maschine 40 und die nächste erhält 60. Zeigen Sie auf eine graue Kennzeichnung, um Ziel oder Herkunft und einen vorhandenen Grund zu prüfen. Wurde der Schritt während der Prüfung geändert, kontrollieren Sie die aktualisierten Warteschlangen vor einem erneuten Versuch.
+Sind beispielsweise 40 von 100 geplanten Teilen gut, behält die ursprüngliche Maschine 40 und die nächste erhält 60. Zeigen Sie auf eine graue Kennzeichnung, um Ziel oder Herkunft und einen vorhandenen Grund zu prüfen. Wurde der Arbeitsgang während der Prüfung geändert, kontrollieren Sie die aktualisierten Warteschlangen vor einem erneuten Versuch.
 
 ## Arbeit umordnen und ihre Priorität prüfen
 
@@ -139,7 +139,7 @@ Nutzen Sie Ihren üblichen Planer- und Maschinenzugriff. Die Verbindung zwischen
   </Step>
 </Steps>
 
-Erwartete Endzeiten und Terminvergleiche aktualisieren sich nach der Verschiebung. Zeigen Sie auf die Terminmarke, um ihre Erklärung zu prüfen. Siehe [Reihenfolge und Priorität](/de/platform-intro/pages/assignment-planner#reihenfolge-und-arbeitsgangpriorität).
+Erwartete Endzeiten und Terminvergleiche aktualisieren sich nach der Verschiebung. Bleiben erwartete Enden gleich, zeigen Sie auf **Manuelle Warteschlangenreihenfolge**. Die Anzeige erscheint nur, wenn **Filtern & Sortieren → Nach Warteschlangenposition sortieren** eingeschaltet ist. Bei Prognosen nach Plan- oder Lieferterminen erklärt sie, warum Ziehen das voraussichtliche Ende nicht ändert und wie **Plan verbessern** neue Plantermine setzen kann. Zeigen Sie auf die Terminmarke, um ihre Erklärung zu prüfen. Siehe [Reihenfolge und Priorität](/de/platform-intro/pages/assignment-planner#reihenfolge-und-arbeitsgangpriorität).
 
 ## Arbeitsgangpriorität festlegen und den Plan filtern
 
@@ -162,7 +162,7 @@ Erwartete Endzeiten und Terminvergleiche aktualisieren sich nach der Verschiebun
     Aktivieren Sie in den Sortier- und Filteroptionen die Sortierung nach Warteschlangenposition, um die durch Ziehen festgelegte Reihenfolge anzuzeigen. Schalten Sie die Option aus, um nach Feldern wie Priorität oder Datum zu sortieren.
   </Step>
   <Step title="Legen Sie den Vorrang der Regeln fest" icon="arrow-right" title-type="p">
-    Wählen Sie **Geplanter Operationsstart** oder **Geplantes Operationsende**, um einzelne Schritte zu sortieren. Mit **Geplanter Auftragsstart** oder **Geplantes Auftragsende** bleiben Schritte eines Auftrags zusammen. Wählen Sie aufsteigende oder absteigende Sortierung. Ergänzen Sie Regeln für Gleichstände und ziehen Sie diese in die Reihenfolge ihres Vorrangs.
+    Wählen Sie **Geplanter Operationsstart** oder **Geplantes Operationsende**, um einzelne Arbeitsgänge zu sortieren. Mit **Geplanter Auftragsstart** oder **Geplantes Auftragsende** bleiben Arbeitsgänge eines Auftrags zusammen. Wählen Sie aufsteigende oder absteigende Sortierung. Ergänzen Sie Regeln für Gleichstände und ziehen Sie diese in die Reihenfolge ihres Vorrangs.
   </Step>
   <Step title="Heben Sie wichtige Details hervor" icon="arrow-right" title-type="p">
     Öffnen Sie die Hervorhebungsfunktion und wählen Sie Felder aus den Gruppen Auftrag, Arbeitsauftrag, Produkt, Operation, Planung und Zuweisung. Prüfen Sie die gewählten Hervorhebungen auf den Karten, etwa Priorität, Fälligkeit oder Kunde.
@@ -189,7 +189,7 @@ Sie benötigen Planungszugriff und Zugriff auf die Maschine. Die Maschine oder d
     Prüfen Sie bisherige und neue Plätze, die gewählte Priorität oder den Termin sowie **Restarbeit**. Nutzen Sie **Spalten** für Zusatzangaben oder klicken Sie auf eine Zeile für **Details**. Wählen Sie **Reihenfolge übernehmen** zum Speichern oder **Abbrechen**, um die Warteschlange unverändert zu lassen. Prioritäten ändern sich nicht.
   </Step>
   <Step title="Prüfen Sie das Ergebnis oder setzen Sie es zurück" icon="arrow-right" title-type="p">
-    Mit **Rückgängig** in der Bestätigung stellen Sie die vorherige Folge wieder her. Ändert sich die Warteschlange während der Prüfung, lesen Sie den aktualisierten Vorschlag. Schlägt das Zurücksetzen fehl, prüfen Sie die aktuelle Warteschlange. Die Sortierung erfolgt einmalig. Spätere Importe kommen ans Ende.
+    Mit **Rückgängig** in der Bestätigung stellen Sie die vorherige Folge wieder her. Ändert sich die Warteschlange während der Prüfung, lesen Sie den aktualisierten Vorschlag. Kann **Rückgängig** im Gantt nicht gespeichert werden, erscheint **Die alte Reihenfolge konnte nicht wiederhergestellt werden. Die Tafel zeigt jetzt den aktuellen Plan.** und die Plantafel wird neu geladen. Prüfen Sie die aktuelle Warteschlange vor weiteren Änderungen. Die Sortierung erfolgt einmalig. Spätere Importe kommen ans Ende.
   </Step>
 </Steps>
 
@@ -251,7 +251,7 @@ Eine gespeicherte persönliche Auswahl oder ein Zurücksetzen folgt späteren Ä
     Für allgemeine Hilfe öffnen Sie **Forecaster-Prüfung → Wie funktioniert der Forecaster?**. Die Hilfe öffnet sich, ohne Ihren gewählten Vergleichstermin zu ändern. Lesen Sie, was die Farben bedeuten und wann Zeiten zu früh sein können. Schließen Sie anschließend die Hilfe, um zur Planung zurückzukehren.
   </Step>
   <Step title="Prüfen Sie die erwarteten Zeiten" icon="arrow-right" title-type="p">
-    Öffnen Sie [Assignment Gantt](/de/platform-intro/pages/assignment-gantt). Wählen Sie in den Ansichtsoptionen die erwarteten Zeiten einschließlich Verzögerungen oder die geplanten Termine zur Prüfung Ihres Plans. Öffnen Sie die Warnungsübersicht und prüfen Sie die wichtigsten Warnungen zuerst. Öffnen Sie den zugehörigen Auftrag, um Arbeitsgänge ohne Maschine oder Termin zu prüfen. Kontrollieren Sie außerdem geplante Dauern, Maschinenschichten und die zeitnahe Erfassung laufender Arbeit am PDA/BDE.
+    Öffnen Sie [Assignment Gantt](/de/platform-intro/pages/assignment-gantt). Öffnen Sie **Ansichtsoptionen → Plantafel → Balken zeigen → Erwartete Zeiten** für Zeiten einschließlich Verzögerungen oder **Geplante Termine** zur Prüfung Ihres Plans. Das Informationssymbol erklärt die Balken. Unter **Ansichtsoptionen → Plantafel → Zeilenhöhe** ändern Sie die Zeilenhöhe. Beide Einstellungen sind Ihre eigenen und wirken sofort. Öffnen Sie die Warnungsübersicht und prüfen Sie die wichtigsten Warnungen zuerst. Öffnen Sie den zugehörigen Auftrag, um Arbeitsgänge ohne Maschine oder Termin zu prüfen. Kontrollieren Sie außerdem geplante Dauern, Maschinenschichten und die zeitnahe Erfassung laufender Arbeit am PDA/BDE.
   </Step>
   <Step title="Entscheiden Sie über eine Planänderung" icon="arrow-right" title-type="p">
     Das Lesen der Prognose ändert nichts. Öffnen Sie **Plan verbessern**, wenn Sie Reihenfolgen wartender Aufträge vergleichen möchten. Prüfen Sie den Vergleich, bevor Sie **Als Plan speichern** wählen. Das Speichern ändert geplante Termine und Warteschlangen. Es lässt sich rückgängig machen und ändert nie Liefertermine.
@@ -260,20 +260,22 @@ Eine gespeicherte persönliche Auswahl oder ein Zurücksetzen folgt späteren Ä
 
 Hat der Forecaster kein erwartetes Ende, vergleicht der Zuweisungsplaner nur den Auftragstermin mit heute. Sind erwartete Zeiten im Assignment Gantt nicht verfügbar, sehen Sie geplante Zeiten ohne Verzögerungen, während der Forecaster es erneut versucht. Keine dieser Ansichten bestätigt eine rechtzeitige Lieferung.
 
-## Verspätete Aufträge finden und fehlende Schritte planen
+<a id="verspätete-aufträge-finden-und-fehlende-schritte-planen" />
+
+## Verspätete Aufträge finden und fehlende Arbeitsgänge planen
 
 <Steps>
   <Step title="Finden Sie die betroffenen Aufträge" icon="arrow-right" title-type="p">
-    Öffnen Sie mit Zugriff auf Aufträge & Produkte den **Forecaster**. Wählen Sie **Liefertermin gefährdet → In der Tabelle zeigen** oder **Davon mit nicht geplanten Schritten → In der Tabelle zeigen**. Zeitraum und Statusfilter pausieren. Auftrag, Produkt, Kunde und Maschine gelten weiter.
+    Öffnen Sie mit Zugriff auf Aufträge & Produkte den **Forecaster**. Wählen Sie **Liefertermin gefährdet → In der Tabelle zeigen** oder für die Teilmenge mit ungeplanten Arbeitsgängen **In der Tabelle zeigen**. Zeitraum und Statusfilter pausieren. Auftrag, Produkt, Kunde und Maschine gelten weiter.
   </Step>
   <Step title="Finden Sie Aufträge außerhalb der Plantafel" icon="arrow-right" title-type="p">
-    Wählen Sie **Gar nicht geplant → Liste zeigen**. Öffnen Sie einen Auftrag und wählen Sie **Schritte zuweisen** oder **Im Planer öffnen**. Diese Aufträge haben einen Liefertermin, aber keinen Arbeitsgang auf einer Maschine oder in einem Hallenpool.
+    Wählen Sie **Gar nicht geplant → Liste zeigen**. Öffnen Sie einen Auftrag und weisen Sie seine Arbeitsgänge zu oder wählen Sie **Im Planer öffnen**. Diese Aufträge haben einen Liefertermin, aber keinen Arbeitsgang auf einer Maschine oder in einem Hallenpool.
   </Step>
-  <Step title="Weisen Sie den fehlenden früheren Schritt zu" icon="arrow-right" title-type="p">
-    Prüfen Sie im Zuweisungs-Gantt **Handlungsbedarf → Früherer Schritt nicht geplant**. Folgen Sie **Diesen Schritt anzeigen** und dann, wenn verfügbar, **Einer Maschine zuweisen**. Wählen Sie eine Maschine, auf der Sie planen dürfen. Auch ein Schritt im Hallenpool benötigt eine Maschine.
+  <Step title="Weisen Sie den fehlenden früheren Arbeitsgang zu" icon="arrow-right" title-type="p">
+    Prüfen Sie im Zuweisungs-Gantt unter **Handlungsbedarf** die Warnung zum ungeplanten früheren Arbeitsgang. Lassen Sie den Arbeitsgang anzeigen und wählen Sie dann, wenn verfügbar, **Einer Maschine zuweisen**. Wählen Sie eine Maschine, auf der Sie planen dürfen. Auch ein Arbeitsgang im Hallenpool benötigt eine Maschine.
   </Step>
   <Step title="Prüfen Sie Termine und die neue Prognose" icon="arrow-right" title-type="p">
-    Die Zuweisung verwendet die eigenen geplanten Termine des Schritts. Fehlt ein geplanter Start, setzen Sie Termine, bevor Sie ihn als geplant betrachten. Prüfen Sie die neu berechneten Zeiten der späteren Schritte und ob der Liefertermin weiterhin gefährdet ist.
+    Die Zuweisung verwendet die eigenen geplanten Termine des Arbeitsgangs. Fehlt ein geplanter Start, setzen Sie Termine, bevor Sie ihn als geplant betrachten. Prüfen Sie die neu berechneten Zeiten der späteren Arbeitsgänge und ob der Liefertermin weiterhin gefährdet ist.
   </Step>
 </Steps>
 
@@ -283,10 +285,10 @@ Sie benötigen Planungszugriff und Zugriff auf die Maschinen, deren Planung Sie 
 
 <Steps>
   <Step title="Öffnen Sie Plan verbessern für die gewünschten Maschinen" icon="arrow-right" title-type="p">
-    Aktivieren Sie im Zuweisungsplaner **Nach Warteschlangenposition sortieren** und wählen Sie im Maschinenkopf das Stern-Symbol **Plan verbessern**. Wählen Sie **Diese Maschine** oder **Alle Maschinen in &lt;Halle&gt;** und die gewünschten Maschinen. Im Gantt umfasst das Symbol neben **Forecaster** die Maschinen auf der Plantafel. Das Symbol einer Maschinenzeile umfasst diese Maschine oder ihre Halle.
+    Aktivieren Sie im Zuweisungsplaner **Nach Warteschlangenposition sortieren** und wählen Sie im Maschinenkopf das Stern-Symbol **Plan verbessern**. Wählen Sie **Diese Maschine** oder **Alle Maschinen in &lt;Halle&gt;** und die gewünschten Maschinen. Im Gantt erscheinen diese Aktionen nur mit Planungszugriff. Das Symbol neben **Forecaster** umfasst die Maschinen auf der Plantafel. Das Symbol einer Maschinenzeile umfasst diese Maschine oder ihre Halle.
   </Step>
   <Step title="Vergleichen Sie die Optionen" icon="arrow-right" title-type="p">
-    Vergleichen Sie unter **1 · Option wählen** verspätete Aufträge und die Verspätung mit heute. Wählen Sie **Beste Operationsfolge** oder eine feste Regel. Innerhalb der gesuchten Folge wählen Sie **Prioritäten beibehalten**, **Geringste Verspätung** oder **Wenigste Änderungen**. **Empfohlen** markiert den Vorschlag. **Warum diese Reihenfolge?** erklärt ihn.
+    Vergleichen Sie unter **1 · Option wählen** verspätete Aufträge und die Verspätung mit heute. Wählen Sie **Beste Operationsfolge** oder eine feste Regel. Innerhalb der gesuchten Folge wählen Sie **Prioritäten beibehalten**, **Geringste Verspätung** oder **Wenigste Änderungen**. **Empfohlen** markiert den Vorschlag. **Warum diese Reihenfolge?** erklärt ihn. Nutzen Sie bei **Liefertermin zuerst** Gantt, um die festen Regeln zu vergleichen. **Beste Operationsfolge** ist ausgegraut, weil eine gesuchte Folge das voraussichtliche Ende nicht ändern kann. Eine Suche startet nicht.
   </Step>
   <Step title="Entscheiden Sie, was sich bewegen darf" icon="arrow-right" title-type="p">
     Entfernen Sie bei **Beste Operationsfolge** die Auswahl **Darf verschoben werden** für Arbeit, die ihren genauen Platz behalten soll. Das Kästchen einer Maschinengruppe umfasst alle ihre Arbeitsgänge. Laufende und angehaltene Arbeitsgänge bleiben an ihrem Platz. Die Tabelle zeigt zunächst nur Arbeitsgänge mit geändertem Platz oder Status. Wählen Sie **Alle zeigen (N weitere Arbeitsgänge)** für den Rest, auch unveränderte Maschinen. Mit **Nur die Änderungen zeigen** kehren Sie zurück. Feste Regeln bieten keine Auswahl **Darf verschoben werden**. Warten Sie, bis **Wird aktualisiert…** verschwindet.
@@ -298,7 +300,7 @@ Sie benötigen Planungszugriff und Zugriff auf die Maschinen, deren Planung Sie 
     Nutzen Sie **Länger suchen**, sofern angeboten, um weitere Reihenfolgen zu prüfen. **Anhalten und bisher Bestes zeigen** beendet die Suche mit dem bisherigen Ergebnis. Sind Sie zufrieden, wählen Sie **Als Plan speichern**. Liefertermine, ursprüngliche Arbeitsgangtermine und die Prognoseregel des Unternehmens bleiben erhalten.
   </Step>
   <Step title="Prüfen Sie den gespeicherten Plan oder setzen Sie ihn zurück" icon="arrow-right" title-type="p">
-    Prüfen Sie die aktualisierte Plantafel. **Rückgängig** stellt gespeicherte Änderungen an Warteschlange, Priorität und Planterminen zurück. Bietet ein Konflikt **Neu berechnen** an, prüfen Sie vor dem Speichern einen neuen Vorschlag. Kann der Plan nicht zurückgesetzt werden, prüfen Sie vor weiteren Änderungen die aktuelle Plantafel.
+    Prüfen Sie die aktualisierte Plantafel. **Rückgängig** stellt gespeicherte Änderungen an Warteschlange, Priorität und Planterminen zurück. Bietet ein Konflikt **Neu berechnen** an, prüfen Sie vor dem Speichern einen neuen Vorschlag. Kann **Rückgängig** im Gantt nicht gespeichert werden, erscheint **Die alte Reihenfolge konnte nicht wiederhergestellt werden. Die Tafel zeigt jetzt den aktuellen Plan.** vor dem Neuladen der Plantafel. Prüfen Sie den aktuellen Plan vor weiteren Änderungen.
   </Step>
 </Steps>
 
@@ -339,7 +341,19 @@ Wählen Sie in **Plan verbessern** die Option **Alle Maschinen in &lt;Halle&gt;*
 
 ## Die Prognoseregel des Werks einstellen
 
-Administratoren öffnen im Zuweisungs-Gantt **Planungseinstellungen → Planung**. Wählen Sie **Wie entscheidet Ihr Werk, was als Nächstes läuft?** und prüfen Sie die [Reihenfolgen](/de/platform-intro/pages/assignment-gantt). Stellen Sie **Limit für Wartestellung (Arbeitsstunden)** zwischen 1 Minute und 720 Stunden ein und speichern Sie. Prüfen Sie die angezeigte Prognoseregel. Andere Benutzer können Alternativen vergleichen, ohne diese Unternehmenseinstellung zu ändern.
+Nur Admins und Super Admins können Unternehmenseinstellungen zur Planung ändern. Alle anderen, die Gantt öffnen können, sehen die Werte schreibgeschützt mit **Bitten Sie einen Admin, diese Werte zu ändern.**
+
+<Steps>
+  <Step title="Öffnen Sie den gemeinsamen Einstellungsdialog" icon="arrow-right" title-type="p">
+    Öffnen Sie im Zuweisungs-Gantt **Ansichtsoptionen → Planung**. Unter **Ansichtsoptionen → Plantafel** stehen Ihre eigenen Anzeigeeinstellungen, die sofort wirken.
+  </Step>
+  <Step title="Prüfen Sie die Unternehmensregel und eine mögliche Vorschau" icon="arrow-right" title-type="p">
+    Prüfen Sie **Wie entscheidet Ihr Werk, was als Nächstes läuft?** und die [Reihenfolgen](/de/platform-intro/pages/assignment-gantt#planungseinstellungen). Zeigt die Plantafel eine andere Regel als Vorschau, nennt der Hinweis **Die Plantafel zeigt eine Vorschau: &lt;Regel&gt;.** sie hier. Die Vorschau ändert die Unternehmensregel nicht.
+  </Step>
+  <Step title="Speichern Sie die Unternehmensauswahl" icon="arrow-right" title-type="p">
+    Wählen Sie die Regel und stellen Sie **Limit für Wartestellung (Arbeitsstunden)** zwischen 1 Minute und 720 Stunden ein. Wählen Sie **Speichern** und prüfen Sie die angezeigte Prognoseregel.
+  </Step>
+</Steps>
 
 Nur Arbeitszeit zählt zum Limit. Ohne geplante Schichten zählen 24 Stunden als volles Limit. Nach Überschreitung erscheint **Lange angehalten**. Der Arbeitsgang bleibt in der Prognose und behält seinen Platz in der Warteschlange. Spätere Arbeit wartet weiterhin darauf.
 

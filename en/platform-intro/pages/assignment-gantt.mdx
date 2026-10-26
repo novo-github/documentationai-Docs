@@ -5,7 +5,7 @@ description: "Review expected times, trace delivery delays, and compare or save 
 
 ## Overview
 
-**Access:** Admin or an account granted **Assignment Planner** access (`assignment_planner`), with the relevant Machine Access. Route: `/assignment-gantt`.
+**Access:** Admin, or an account with **Assignment Planner** page access, plus the relevant machine access. **Improve plan** and **Re-sort** also need planning access: an Admin or Super Admin account, or a User with access to **Orders & Products**.
 
 Assignment Gantt shows assignments across selected machines and time. Use it to inspect planned windows, spot overlaps, and open related orders.
 
@@ -13,7 +13,7 @@ Use the view switch to move between Assignment Planner and Assignment Gantt. Rev
 
 ## What Can I Change?
 
-Use **Move** on an assignment to change eligible waiting work. Use **Improve plan → Save as plan** to review and save a different arrangement for the machines on the board. Reading the forecast or showing a preview changes nothing.
+Use **Move** on an assignment to change eligible waiting work. With planning access, use **Improve plan → Save as plan** to review and save a different arrangement for the machines on the board. Reading the forecast or showing a preview changes nothing.
 
 **Drag-to-reschedule is labelled Experimental and read-only.** Use the supported move and save controls described below to change the plan.
 
@@ -36,9 +36,9 @@ The same help is available on [Orders & Products](/en/platform-intro/pages/order
 ### How Expected Times Are Worked Out
 
 - Running work continues from its current progress, using the quantity produced and time worked so far.
-- Waiting jobs follow your plant's rule from the planning settings: planned dates, queue order, or delivery date first. A job that takes longer pushes back the work behind it.
+- Waiting jobs follow your plant's rule under **View options → Planning**: planned dates, queue order, or delivery date first. A job that takes longer pushes back the work behind it.
 - Machines work within their planned shifts. Nights, weekends, and breaks without a shift are skipped.
-- Each step waits for the previous step of its order to finish, even when it uses another machine.
+- Each operation waits for the previous operation of its order to finish, even when it uses another machine.
 
 The Forecaster updates by itself about every minute.
 
@@ -51,10 +51,10 @@ Order 4711 is due Thursday. Cutting on Laser 2 is planned for Tuesday, followed 
 | Help label | Colour | Meaning |
 | --- | --- | --- |
 | **On time** | Green | Expected to finish before the date. |
-| **At risk** | Amber | Not late yet, but the remaining work barely fits or an earlier step is not planned. |
+| **At risk** | Amber | Not late yet, but the remaining work barely fits or an earlier operation is not planned. |
 | **Late +3 h** | Red | Expected to finish three hours after the date. |
 | **Late, date passed** | Red | The date has passed and the order is unfinished. |
-| **Finish not known** | Blue | The date is still ahead, but no expected finish is available, for example because a step is still in a hall pool. |
+| **Finish not known** | Blue | The date is still ahead, but no expected finish is available, for example because an operation is still in a hall pool. |
 
 The **delivery date** is your promise to the customer; missing it is red. The **planned end** is the finish in your own plan; missing it is amber. See the [Forecaster glossary](/en/platform-intro/concepts/glossary#forecaster) for the renamed labels.
 
@@ -62,7 +62,7 @@ The **delivery date** is your promise to the customer; missing it is red. The **
 
 The Forecaster only knows what is recorded in the Watchmen Platform. Expected times can be too early when:
 
-- A step has no machine yet. Its work is treated as done when working out the expected times.
+- An operation has no machine yet. Its work is treated as done when working out the expected times.
 - A job has no planned duration. One hour is assumed.
 - A machine has no shift plan. It is treated as available around the clock.
 - Work is not started, paused, and finished on the PDA/BDE as it happens.
@@ -75,7 +75,7 @@ The Forecaster never changes your plan by itself. Dates and queues change only w
 
 ## Compare Expected Times and Planned Dates
 
-Open the view options and choose **Expected times** to see when each job is expected to run, including delays. Choose **Planned dates** to see each job at its planned time, without delays. The explanation below the choice changes with your selection.
+Open **View options → Board → Bars show → Expected times** to see when each job is expected to run, including delays. Choose **Planned dates** to see each job at its planned time. Open the information icon beside **Bars show** for an explanation. These are your own display choices and take effect at once.
 
 If expected times are unavailable, jobs appear at their planned times without delays. The Forecaster tries again by itself. If some times are still being worked out, they are close but may move by a few minutes.
 
@@ -87,10 +87,10 @@ If expected times are unavailable, jobs appear at their planned times without de
 
 Choose **By order** to review affected orders or **By cause** to find assignments holding up other work. Open a warning and use **Show the assignment it is waiting for** to trace a delay. Notes distinguish **Measured against the delivery date**, **Measured against the original plan**, and **Measured against the plan in Watchmen**.
 
-- **On hold for a long time** (previously **On hold too long**): the hold limit has passed. The forecast assumes the step continues in its queue position, so later work still waits for it.
-- **Never started**: this note appears only with **Follow planned dates** or **Delivery date first** under **Planning settings**; work planned more than three days ago is forecast to start as soon as its machine is free. With **Follow the queue** or **Follow the queue, not before the planned date**, neither this note nor **No planned start** appears, and the step keeps its place in the queue.
-- **No planned start**: this note appears only with **Follow planned dates** or **Delivery date first**. The forecast places the step after the machine’s dated work.
-- **Waits for an earlier operation**: that step is not on a machine yet or is still in a hall pool. Expected times may be too optimistic.
+- **On hold for a long time** (previously **On hold too long**): the hold limit has passed. The forecast assumes the operation continues in its queue position, so later work still waits for it.
+- **Never started**: this note appears only with **Follow planned dates** or **Delivery date first** under **View options → Planning** in Assignment Gantt; work planned more than three days ago is forecast to start as soon as its machine is free. With **Follow the queue** or **Follow the queue, not before the planned date**, neither this note nor **No planned start** appears, and the operation keeps its place in the queue.
+- **No planned start**: this note appears only with **Follow planned dates** or **Delivery date first**. The forecast places the operation after the machine’s dated work.
+- **Waits for an earlier operation**: that operation is not on a machine yet or is still in a hall pool. Expected times may be too optimistic.
 
 These notes explain the expected times. They do not remove the work from the forecast or mean that it is finished.
 
@@ -104,19 +104,19 @@ For handed-over work, the order route shows **Partly done:** with good parts mad
 
 Select **Order view** and type at least two characters of the order name or number. **Show the whole order on the board** highlights its assignments and outlines work it is waiting for. Other work is dimmed. **Show operations** lists its route; **Back to machines** returns to the machine view.
 
-A step in a hall pool is not yet on a machine. A missing expected end means the order will finish later than shown. If only part of the route can be shown, the page says so. Open **Earlier operation not planned** and choose **Assign to a machine** when available. The step keeps its own planned dates and the later steps are forecast again. Without a planned start, assigning a machine alone still leaves the step unplanned.
+An operation in a hall pool is not yet on a machine. A missing expected end means the order will finish later than shown. If only part of the route can be shown, the page says so. Open **Earlier operation not planned** and choose **Assign to a machine** when available. The operation keeps its own planned dates and the later operations are forecast again. Without a planned start, assigning a machine alone still leaves the operation unplanned.
 
 ## Move Waiting Work
 
 Open an assignment and choose **Move → Earlier**, **Later**, **Run next**, or **To machine…**. Check its expected start and end, the other assignments delayed, and the number of late orders before saving. The review also shows how many assignments on that machine will be replanned.
 
-Running, on-hold, and finished assignments cannot move this way. Work already recorded prevents changing the machine. A move cannot put a step before an earlier step of the same order on that machine. When the plant orders work by delivery date, you can change the machine but cannot reorder the queue by hand. Claim hall-pool work in the Assignment Planner.
+Running, on-hold, and finished assignments cannot move this way. Work already recorded prevents changing the machine. A move cannot put an operation before an earlier operation of the same order on that machine. When the plant orders work by delivery date, you can change the machine but cannot reorder the queue by hand. Claim hall-pool work in the Assignment Planner.
 
 Use **Undo** to reverse a move. If the queue has changed since, automatic undo is refused; move the work back by hand after reviewing the current queue.
 
 ## Compare Queue Orders Before Saving
 
-Open the sparkle icon **Improve plan** beside **Forecaster** in the toolbar to compare plans for the machines on the board. The sparkle on the last line of a machine row starts with **This machine** and also offers **All machines in &lt;hall&gt;**. The dialog is the same as in Assignment Planner.
+With planning access, open the sparkle icon **Improve plan** beside **Forecaster** in the toolbar to compare plans for the machines on the board. The sparkle on the last line of a machine row starts with **This machine** and also offers **All machines in &lt;hall&gt;**. The dialog is the same as in Assignment Planner.
 
 Under **1 · Choose an option**, compare **Best operation sequence** with the four fixed rules. Each shows late orders and delay after saving against today. **Today** marks the company’s current rule; **Best result** marks an improvement. Within **Best operation sequence**, choose **Keep priorities**, **Least delay**, or **Fewest changes**. The search keeps running and on-hold operations in place. Clear **Can move** to fix other operations at their exact places. Fixed rules do not offer these checkboxes.
 
@@ -126,19 +126,25 @@ Review changes on other machines, priority changes, and any planned-date count. 
 
 With **Follow planned dates** or **Follow the queue, not before the planned date** as the company’s forecast rule, saving **Best operation sequence** also sets new planned dates for waiting operations on the reordered machines, so the forecast follows the new sequence. The selected option shows how many planned dates change. With **Follow the queue**, saving the sequence sets no planned dates; any operation-priority changes remain as shown.
 
-With **Delivery date first**, Gantt still shows the **Improve plan** sparkle. Its **Best operation sequence** card offers no sequence and says **Your forecast always sorts by delivery date, so a different sequence can't change expected ends.** The Planner hides its sparkle under this rule.
+With **Delivery date first**, users with planning access can still open **Improve plan** in Gantt and compare and save the fixed rules. **Best operation sequence** is greyed out and no search starts. Its explanation reads **Your forecast always sorts by delivery date, so a searched sequence can't change expected ends.** The Planner hides its sparkle under this rule.
 
-Choose **Save as plan** to save the displayed changes. The searched sequence can change operation priorities when the company links priorities to queue order. It never changes order priorities. Saving keeps original operation dates, delivery dates, and the company’s forecast rule. **New plan saved** offers **Undo**, which restores the saved changes. If a conflict appears, the dialog stays open; use **Recalculate** and review again. After saving or undoing, the board refreshes. If undo cannot restore the old plan, check the current board.
+Choose **Save as plan** to save the displayed changes. The searched sequence can change operation priorities when the company links priorities to queue order. It never changes order priorities. Saving keeps original operation dates, delivery dates, and the company’s forecast rule. **New plan saved** offers **Undo**, which restores the saved changes. If a conflict appears, the dialog stays open; use **Recalculate** and review again. After saving or undoing, the board refreshes. If **Undo** cannot be saved, the message **The old sequence could not be put back. The board now shows the current plan.** appears and the board reloads. Check the current plan before making another change.
 
 For search choices and limits, see [Improve a Plan](/en/platform-intro/pages/assignment-planner#improve-a-plan). Follow [Compare and Save a Plan](/en/platform-intro/workflows/assignment-planner#compare-and-save-a-plan).
 
 ### Re-sort One Machine
 
-Choose **Re-sort** beside the sparkle on the last line of a machine row. Pick **Order priority**, **Operation priority**, **Planned end**, **Delivery date**, or **Order date**. Clear **Can move** for operations that must keep their place. Review, then choose **Apply sequence**. **Undo** restores the previous sequence; the board refreshes after either action. Unlike the searched sequence, re-sorting can include running and on-hold work. See [Re-sort a Queue](/en/platform-intro/pages/assignment-planner#re-sort-a-queue).
+With planning access, choose **Re-sort** beside the sparkle on the last line of a machine row. Pick **Order priority**, **Operation priority**, **Planned end**, **Delivery date**, or **Order date**. Clear **Can move** for operations that must keep their place. Review, then choose **Apply sequence**. **Undo** restores the previous sequence; the board refreshes after either action. If **Undo** cannot be saved, the message **The old sequence could not be put back. The board now shows the current plan.** appears before the board reloads. Review its current order. Unlike the searched sequence, re-sorting can include running and on-hold work. See [Re-sort a Queue](/en/platform-intro/pages/assignment-planner#re-sort-a-queue).
 
-## Planning Settings
+<a id="planning-settings" />
 
-Administrators open **Planning settings → Planning** to choose **How does your plant decide what runs next?** This rule is used by the forecast and delay notifications. Comparing or previewing alternatives does not change it.
+## View Options: Board and Planning
+
+The tune icon in the Gantt toolbar opens **View options**. Its tooltip has the same name. The separate **Planning settings** button, previously available only to Admins and Super Admins, is gone. **View options → Board** contains your own display choices, which apply at once. **View options → Planning** contains the company settings.
+
+Only Admins and Super Admins can change **View options → Planning → How does your plant decide what runs next?** and choose **Save**. This rule is used by the forecast and delay notifications. Comparing or previewing alternatives does not change it.
+
+Everyone else who can open Gantt can read the company settings but cannot change them. The dialog says **Ask an admin to change these.** If the board shows a preview, the note reads **The board is showing a preview: &lt;rule&gt;.** with the rule’s name.
 
 | Ordering | Effect on waiting assignments |
 | --- | --- |
@@ -147,9 +153,9 @@ Administrators open **Planning settings → Planning** to choose **How does your
 | **Follow the queue, not before the planned date** | Keeps queue order but waits for each planned start. A later-dated assignment can hold up everything behind it. |
 | **Delivery date first** | Orders work that can still arrive on time by delivery date. Already-late work goes first only if it does not make other work late. |
 
-**Hold limit (working hours)** determines when **On hold for a long time** appears. It does not remove work from the forecast or free its machine. The step keeps its queue position and is expected to continue there. Enter a duration between 1 minute and 720 hours. Only the machine’s working time counts; a weekend without shifts uses none. Where no shifts are planned, 24 hours count as the full limit.
+**Hold limit (working hours)** determines when **On hold for a long time** appears. It does not remove work from the forecast or free its machine. The operation keeps its queue position and is expected to continue there. Enter a duration between 1 minute and 720 hours. Only the machine’s working time counts; a weekend without shifts uses none. Where no shifts are planned, 24 hours count as the full limit.
 
-For example, with an 8-hour limit on a machine working 8 hours a day, a step paused on Monday at 10:00 gets the note on Tuesday at 10:00.
+For example, with an 8-hour limit on a machine working 8 hours a day, an operation paused on Monday at 10:00 gets the note on Tuesday at 10:00.
 
 For machine capacity, administrators set **Jobs in parallel** in [Machine Configuration](/en/platform-intro/pages/machine-configuration).
 
@@ -157,7 +163,7 @@ For machine capacity, administrators set **Jobs in parallel** in [Machine Config
 
 Select up to 25 machines. You can tick several machines or a hall group while the selection menu is open. Close it to apply the selection and update the timeline. Clearing the selection while the menu is closed takes effect immediately. Gantt has no hall-pool columns; use [Assignment Planner](/en/platform-intro/pages/assignment-planner) for pools.
 
-Use **View options → Bars show** to choose **Expected times** or **Planned dates**. Compare **Planned (original)**, **Planned (Watchmen)**, **Expected**, and **Actual** in the assignment details. **Row height** offers **Normal**, **Compact**, and **Large**. Drag to pan, use Ctrl with the mouse wheel to zoom, or press N to return to now.
+Use **View options → Board → Bars show** to choose **Expected times** or **Planned dates**. Compare **Planned (original)**, **Planned (Watchmen)**, **Expected**, and **Actual** in the assignment details. **Row height** offers **Normal**, **Compact**, and **Large**. Both display choices are your own and take effect immediately. Drag to pan, use Ctrl with the mouse wheel to zoom, or press N to return to now.
 
 **Forecaster unavailable** means you see planned times without calculated delays. **Forecaster: approximate** means expected times may still shift slightly. **Incomplete** means some assignments could not be loaded; select fewer machines.
 

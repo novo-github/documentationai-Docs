@@ -5,7 +5,7 @@ description: "A planning surface for assigning work to machines, arranging futur
 
 ## Overview
 
-**Access:** Admin or Page Access `assignment_planner`, with relevant Machine Access. [Roles and access](/en/platform-intro/concepts/roles-and-access).
+**Access:** Admin, or an account with **Assignment Planner** page access, plus the relevant machine access. [Roles and access](/en/platform-intro/concepts/roles-and-access).
 
 Give planners a drag-and-drop workspace for deciding which machine should run which work next, plus a timeline for reviewing assignments across machines and time.
 
@@ -50,13 +50,13 @@ Click a machine name in its column header to open [Machine Details](/en/platform
 
 ### Hand Over Started Work
 
-Administrators and users with access to the Orders page can drag a started, stopped step to any hall pool or another machine they can access. Every user needs access to the step’s current machine. Other users can only return the step to the pool of its current machine’s hall, in Assignment Planner or Data Acquisition. The dialog shows **Planned**, **Done here**, and **Left**. Review **Quantity left** and add **Reason (optional)** for the next operator. Only good parts reduce the suggested remainder; scrap must be made again. Leave the quantity empty if unknown. Confirm with **Back to pool** for a pool or **Move** for a machine.
+Administrators and users with access to the Orders page can drag a started, stopped operation to any hall pool or another machine they can access. Every user needs access to the operation’s current machine. Other users can only return the operation to the pool of its current machine’s hall, in Assignment Planner or Data Acquisition. The dialog shows **Planned**, **Done here**, and **Left**. Review **Quantity left** and add **Reason (optional)** for the next operator. Only good parts reduce the suggested remainder; scrap must be made again. Leave the quantity empty if unknown. Confirm with **Back to pool** for a pool or **Move** for a machine.
 
 The original machine keeps its times and good parts. Its part leaves the active queue and shows **Handed over**. The rest goes to the top of the destination queue, including when you drop onto a collapsed pool. Your display sorting can affect where its card appears. Both queues update. For example, 40 good parts out of 100 leave 60 for the next machine. There is no automatic undo for a handover.
 
-A running card can be reordered within its column. Moving it to another destination is blocked with **Running. Stop it on the machine before moving it.** Finished and cancelled work cannot be handed over. An unstarted planned or released card still moves without a dialog. An unstarted card marked in progress or on hold opens a move confirmation; it moves the whole step without leaving recorded work behind.
+A running card can be reordered within its column. Moving it to another destination is blocked with **Running. Stop it on the machine before moving it.** Finished and cancelled work cannot be handed over. An unstarted planned or released card still moves without a dialog. An unstarted card marked in progress or on hold opens a move confirmation; it moves the whole operation without leaving recorded work behind.
 
-Grey badges show where work came from or went. Hover for the quantities, person, time, and reason. Narrow cards can show only an icon and numbers. Step context and waiting details show **Partly done:** and where the rest is waiting. If the step changed while you were reviewing it, the queues refresh; check them before trying again. Follow [hand over work](/en/platform-intro/workflows/assignment-planner#hand-over-work).
+Grey badges show where work came from or went. Hover for the quantities, person, time, and reason. Narrow cards can show only an icon and numbers. Operation context and waiting details show **Partly done:** and where the rest is waiting. If the operation changed while you were reviewing it, the queues refresh; check them before trying again. Follow [hand over work](/en/platform-intro/workflows/assignment-planner#hand-over-work).
 
 ### Choose Where Hall Pools Appear
 
@@ -110,21 +110,21 @@ Each priority filter accepts several values. Type a number to find a value that 
 
 With **Sort by Queue Position** on, queue order and operation priority affect each other by default:
 
-- Drag a step ahead of more urgent work to raise its operation priority, or behind less urgent work to lower it. This also applies when moving between columns or assigning work from the unassigned list.
-- Within the same queue, moving past equally urgent work can raise or lower the priority by one company level. For example, with the default levels, moving the second of two OP70 steps to the top makes it OP100.
+- Drag an operation ahead of more urgent work to raise its operation priority, or behind less urgent work to lower it. This also applies when moving between columns or assigning work from the unassigned list.
+- Within the same queue, moving past equally urgent work can raise or lower the priority by one company level. For example, with the default levels, moving the second of two OP70 operations to the top makes it OP100.
 - Change the dashed **OP** chip to move the card towards its new priority’s position. It passes less urgent work when raised and more urgent work when lowered. Equal-priority cards keep their relative order.
 
-The Planner uses your company’s priority levels and urgency direction. If a priority already fits, it can stay unchanged. When no suitable level fits between the neighbours, the step can share a neighbour’s priority. A move does not change other operations’ priorities or the order priority.
+The Planner uses your company’s priority levels and urgency direction. If a priority already fits, it can stay unchanged. When no suitable level fits between the neighbours, the operation can share a neighbour’s priority. A move does not change other operations’ priorities or the order priority.
 
 After a drag changes priority, a notice shows the old and new values. **Undo** restores the old priority and keeps the new queue position.
 
-A step split across machines or pools shares one operation priority. Dragging one part updates that priority everywhere but leaves the other queues in place. Changing the priority on its card can reposition its parts in each accessible queue.
+An operation split across machines or pools shares one operation priority. Dragging one part updates that priority everywhere but leaves the other queues in place. Changing the priority on its card can reposition its parts in each accessible queue.
 
 Administrators can turn this off under **Admin Panel → Priority Levels → How priorities are used → Queue order and operation priority stay in step**. When off, dragging only changes order, and changing priority does not move cards. These linked changes do not apply in sorting-rule mode or when applying **Re-sort**. Follow [the planning steps](/en/platform-intro/workflows/assignment-planner).
 
 ## Queue Position and Sorting Rules
 
-**Sort by Queue Position** displays assignments exactly in the order set by dragging them. Running and on-hold steps keep their place and are numbered there; nothing is pulled to the top. You can reorder running work within its column, but must stop it before moving it to another destination. When this option is off, sorting rules determine the displayed order instead. Each rule has a field and an ascending or descending direction. Additional rules break ties, and their order determines which takes precedence.
+**Sort by Queue Position** displays assignments exactly in the order set by dragging them. Running and on-hold operations keep their place and are numbered there; nothing is pulled to the top. You can reorder running work within its column, but must stop it before moving it to another destination. When this option is off, sorting rules determine the displayed order instead. Each rule has a field and an ascending or descending direction. Additional rules break ties, and their order determines which takes precedence.
 
 The same sorting choices are available in [Data Acquisition V3](/en/platform-intro/pages/data-acquisition). Priority values follow the company levels configured in the [Admin Panel](/en/platform-intro/pages/admin-panel).
 
@@ -160,9 +160,9 @@ Choose **Reset to company default** to copy the current company mode, rules, and
 
 ### Choose the Date for Sorting
 
-Cards can show **Operation Planned Start** and **Operation Planned End**. These describe one operation's planned window. Use them to sequence individual steps within an order.
+Cards can show **Operation Planned Start** and **Operation Planned End**. These describe one operation's planned window. Use them to sequence individual operations within an order.
 
-**Order Planned Start** and **Order Planned End** describe the whole order. Every operation in that order shares these dates, so sorting by them keeps its steps together. **Work Order Planned Start** and **Work Order Planned End** describe the work order's planned window.
+**Order Planned Start** and **Order Planned End** describe the whole order. Every operation in that order shares these dates, so sorting by them keeps its operations together. **Work Order Planned Start** and **Work Order Planned End** describe the work order's planned window.
 
 ## Improve a Plan
 
@@ -206,9 +206,9 @@ Changing a selection keeps the table visible with **Updating…**. Saving and **
 
 With **Follow planned dates**, dragging changes queue position and can change priority, but expected ends follow planned dates. Saving **Best operation sequence** also sets new planned dates for waiting operations on reordered machines with **Follow planned dates** or **Follow the queue, not before the planned date**. With **Follow the queue**, it sets no planned dates. Check the selected option’s planned-date count before saving.
 
-With **Delivery date first**, the forecast chooses its own sequence; the Planner hides **Improve plan** and **Distribute to machines**. Reordering cards does not change expected ends under that rule. Gantt still shows the **Improve plan** sparkle, but its **Best operation sequence** card offers no sequence and explains why.
+With **Delivery date first**, the forecast chooses its own sequence; the Planner hides **Improve plan** and **Distribute to machines**. Reordering cards does not change expected ends under that rule. With planning access, Gantt still offers **Improve plan** with the fixed rules. **Best operation sequence** is greyed out with a reason, and no search starts.
 
-The Planner shows a note only for **Follow planned dates** and **Delivery date first**. **Hide this note** dismisses it for you. Administrators can use **Change in planning settings** to open the Gantt’s settings. With either queue-following rule, the forecast follows queue changes and this note is absent.
+Hover over **Manual queue order** to read the forecast explanation. The chip appears only while **Filter & Sort → Sort by Queue Position** is on. With **Follow planned dates** or **Delivery date first**, it explains that moving cards changes the order and priority, not expected ends, and that **Improve plan** can set new planned dates. This replaces the separate forecast banner and its dismiss button. With either queue-following rule, this extra explanation is absent.
 
 ## Distribute Pool Work to Machines
 
@@ -226,13 +226,13 @@ In **Improve plan**, choose **All machines in &lt;hall&gt;**. When the pool has 
 
 ## Check Dates with the Forecaster
 
-Open **Forecaster check** to choose which date the cards are measured against. The coloured tab on the left of each card shows whether the job will make that date: red means late and amber means **at risk**. On-time cards with an expected end show a small clock in the same place. An **at risk** result means the remaining work barely fits or an earlier step is not planned. The machine summary also counts jobs with this warning.
+Open **Forecaster check** to choose which date the cards are measured against. The coloured tab on the left of each card shows whether the job will make that date: red means late and amber means **at risk**. On-time cards with an expected end show a small clock in the same place. An **at risk** result means the remaining work barely fits or an earlier operation is not planned. The machine summary also counts jobs with this warning.
 
 If the Forecaster has no expected end for a job, only its date is compared with today. This does not confirm that the work will finish on time. The queue's expected finish tells you when the machine is expected to complete all its queued work. Waiting working time tells you how much work remains.
 
-For the explanation, open **Forecaster check → How does the Forecaster work?**. The menu closes and the help opens without changing your selected date check. It explains the colours, how shifts and earlier steps affect expected times, and why missing planning details can make times too early. You can also read the [Forecaster explanation](/en/platform-intro/pages/assignment-gantt) or follow [Plan Machine Assignments](/en/platform-intro/workflows/assignment-planner).
+For the explanation, open **Forecaster check → How does the Forecaster work?**. The menu closes and the help opens without changing your selected date check. It explains the colours, how shifts and earlier operations affect expected times, and why missing planning details can make times too early. You can also read the [Forecaster explanation](/en/platform-intro/pages/assignment-gantt) or follow [Plan Machine Assignments](/en/platform-intro/workflows/assignment-planner).
 
-Under **Forecaster check**, choose **Delivery date**, **Planned end**, **Delivery date & planned end**, or **Off**. Read the card’s expected end and remaining buffer to understand the warning. An unplanned earlier step makes the expected end too optimistic.
+Under **Forecaster check**, choose **Delivery date**, **Planned end**, **Delivery date & planned end**, or **Off**. Read the card’s expected end and remaining buffer to understand the warning. An unplanned earlier operation makes the expected end too optimistic.
 
 The machine summary’s free time comes from the last expected finish in its queue. If some work has no expected end, that time is only the earliest possible availability. The displayed load is work still booked by the forecast.
 
@@ -244,17 +244,17 @@ Hover over the date tab or small clock on the left of a card. The explanation sh
 
 1. **Expected end**, the expected start, and the date checks.
 2. **Based on**, when assumptions need your attention.
-3. **Why this time**, naming the work ahead on the machine, an earlier step on another machine, or the next shift it must wait for. It can also show the first step causing a chain of waits.
+3. **Why this time**, naming the work ahead on the machine, an earlier operation on another machine, or the next shift it must wait for. It can also show the first operation causing a chain of waits.
 4. **Earlier operations of this order**, with their machines and progress or expected ends, followed by any other notes.
 
 Read the assumptions before relying on the time:
 
-- **On hold for a long time**: the forecast assumes the step continues in its queue position. Later work still waits for it.
-- **Never started**: this note appears only with **Follow planned dates** or **Delivery date first** under **Planning settings**; the forecast assumes the step starts as soon as its machine is free. With **Follow the queue** or **Follow the queue, not before the planned date**, neither this note nor **No planned start** appears, and the step keeps its place in the queue.
-- **No planned start**: this note appears only with **Follow planned dates** or **Delivery date first**. The forecast places the step after the machine’s dated work.
-- **Waits for an earlier operation**: an earlier step has no machine yet or is still in a hall pool. The displayed times may be too optimistic.
+- **On hold for a long time**: the forecast assumes the operation continues in its queue position. Later work still waits for it.
+- **Never started**: this note appears only with **Follow planned dates** or **Delivery date first** under **View options → Planning** in Assignment Gantt; the forecast assumes the operation starts as soon as its machine is free. With **Follow the queue** or **Follow the queue, not before the planned date**, neither this note nor **No planned start** appears, and the operation keeps its place in the queue.
+- **No planned start**: this note appears only with **Follow planned dates** or **Delivery date first**. The forecast places the operation after the machine’s dated work.
+- **Waits for an earlier operation**: an earlier operation has no machine yet or is still in a hall pool. The displayed times may be too optimistic.
 
-These steps still get expected times. The warning icon carries the same assumptions. **No forecast** means the step is in a hall pool or the forecast is not available right now. Pool work gets a forecast once assigned to a machine. Without an expected end, only the date is compared with today. If details fail to load, hover again to retry.
+These operations still get expected times. The warning icon carries the same assumptions. **No forecast** means the operation is in a hall pool or the forecast is not available right now. Pool work gets a forecast once assigned to a machine. Without an expected end, only the date is compared with today. If details fail to load, hover again to retry.
 
 ### Follow Updates on the Board
 
@@ -266,7 +266,7 @@ Cards slide to their new positions. The dropped card briefly gains an outline, a
 
 Use the view switch to open [Assignment Gantt](/en/platform-intro/pages/assignment-gantt). Review expected starts and finishes, trace delays under **Attention**, and compare waiting work with **Improve plan**. Its **Move** controls let you review the effects of an eligible assignment’s move before saving.
 
-**Save as plan** updates eligible queue positions and planned dates. Running and on-hold work keep their place. Review the work left unchanged, especially assignments behind an unplanned earlier step. Follow [Plan Machine Assignments](/en/platform-intro/workflows/assignment-planner) for review and saving steps.
+**Save as plan** updates eligible queue positions and planned dates. Running and on-hold work keep their place. Review the work left unchanged, especially assignments behind an unplanned earlier operation. Follow [Plan Machine Assignments](/en/platform-intro/workflows/assignment-planner) for review and saving steps.
 
 ## Why Can I Not Move a Card?
 
@@ -281,7 +281,7 @@ For moves without a dialog, with **Queue Position** on, dropping a card sets its
 - The dashed **OP** chip shows **Operation priority**; **P** shows the independent **Order priority**.
 - **Seq / Nr.** is the operation sequence. **Qty / Menge** is quantity; **Dur / Dauer** is duration.
 - **Prep / Rüst** is preparation; **Prod.** is production. **util. / Ausl.** is planned queue load from planned durations, not actual utilization.
-- Order Planned dates are shared across an order; Operation Planned dates belong to one step.
+- Order Planned dates are shared across an order; Operation Planned dates belong to one operation.
 
 For example, 50 parts at 2 minutes per part add 100 planned production minutes, plus fixed preparation time. [Assignment Gantt](/en/platform-intro/pages/assignment-gantt) shows time windows; its drag-to-reschedule mode is Experimental and read-only. See [calculations](/en/platform-intro/concepts/calculations#deviations).
 

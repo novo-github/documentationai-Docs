@@ -7,7 +7,7 @@ toc: false
 ## Releases
 
 <Update label="2026-10-25" description="v1.5.135" tags={["Funktion", "Verbesserung"]}>
-  {/* commits: 033699c, 28ca01a, ae916d8, 847092e, 7214092, 319eb6d, 40bff17, d440a5e, 4d2e3c0, cc0e5b0, 4f741f4, 52818b5, a6ade7b */}
+  {/* commits: 033699c, 28ca01a, ae916d8, 847092e, 7214092, 319eb6d, 40bff17, d440a5e, 4d2e3c0, cc0e5b0, 4f741f4, 52818b5, a6ade7b, 5d84697, dac1feb, 4582ced */}
 
   **Release-Datum:** 25. Oktober 2026
 
@@ -28,6 +28,17 @@ toc: false
   {/* feature: admin-settings-info-icons */}
 
   Administratoren können jetzt die Informationssymbole neben den Titeln unter **Admin-Panel → BDE-Zugriffsvorlagen** und **Admin-Panel → Prioritätsstufen** öffnen. Dort stehen die Erklärungen statt als Textzeile unter dem Titel. Bei den Prioritätseinstellungen betrifft dies die Abschnittsbeschreibung, **Welche Zahl ist dringender?** und **Reihenfolge und Arbeitsgang-Priorität bleiben im Einklang**.
+
+  #### [Kleinere Verbesserungen im Zuweisungsplaner und im Zuweisungs-Gantt](/de/platform-intro/pages/assignment-gantt)
+  {/* feature: planner-gantt-polish */}
+
+  - **Ansichtsoptionen** enthält jetzt **Plantafel** und **Planung** im selben Dialog. Die Auswahl unter **Plantafel** ist Ihre eigene und wirkt sofort. Nur Admins und Super Admins ändern **Planung** und wählen **Speichern**. Alle anderen sehen die Werte schreibgeschützt mit **Bitten Sie einen Admin, diese Werte zu ändern.**
+  - Der gesonderte Prognosehinweis im Planer ist entfernt. Bei **Nach geplanten Terminen** oder **Liefertermin zuerst** zeigen Sie auf **Manuelle Warteschlangenreihenfolge**, um die Erklärung zu lesen. Die Anzeige erscheint nur, wenn **Filtern & Sortieren → Nach Warteschlangenposition sortieren** eingeschaltet ist.
+  - Im Gantt erscheinen **Plan verbessern** in der Werkzeugleiste und den Maschinenzeilen sowie **Neu sortieren** in den Maschinenzeilen nur mit Planungszugriff.
+  - Bei **Liefertermin zuerst** ist **Beste Operationsfolge** in **Plan verbessern** im Gantt ausgegraut. Die Erklärung nennt den Grund, warum sie das voraussichtliche Ende nicht ändern kann. Die festen Regeln lassen sich weiterhin vergleichen und speichern.
+  - Schlägt **Rückgängig** nach **Plan verbessern** oder **Neu sortieren** im Gantt fehl, erscheint **Die alte Reihenfolge konnte nicht wiederhergestellt werden. Die Tafel zeigt jetzt den aktuellen Plan.** und die Plantafel wird neu geladen.
+
+  Folgen Sie [Einen Plan vergleichen und speichern](/de/platform-intro/workflows/assignment-planner#einen-plan-vergleichen-und-speichern) oder [Die Prognoseregel des Werks einstellen](/de/platform-intro/workflows/assignment-planner#die-prognoseregel-des-werks-einstellen).
 </Update>
 
 <Update label="2026-10-25" description="v1.5.134" tags={["Funktion", "Verbesserung"]}>

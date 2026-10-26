@@ -89,6 +89,11 @@ description: "Find answers about operation priorities, planning dates, grouping,
 | Will I lose my own settings when a template changes or is deleted? | [Answer](/en/help-center/faq/planning-and-imports#template-personal-choices) |
 | Why can I still use an action in the Planner when it is hidden at the terminal? | [Answer](/en/help-center/faq/planning-and-imports#template-other-pages) |
 | Where have the explanations for templates and priorities gone? | [Answer](/en/help-center/faq/planning-and-imports#setting-explanations) |
+| Where do I change the Gantt bars and row height? | [Answer](/en/help-center/faq/planning-and-imports#gantt-settings) |
+| Why are Improve plan and Re-sort missing in Gantt? | [Answer](/en/help-center/faq/planning-and-imports#gantt-planning-access) |
+| Why is Best operation sequence greyed out? | [Answer](/en/help-center/faq/planning-and-imports#delivery-sequence-disabled) |
+| Why did the Gantt board reload after I chose Undo? | [Answer](/en/help-center/faq/planning-and-imports#gantt-undo-not-saved) |
+| Where has the note about forecasts following planned dates gone? | [Answer](/en/help-center/faq/planning-and-imports#forecast-hint-location) |
 
 <a id="operation-priority" />
 
@@ -204,7 +209,7 @@ Open **Orders & Products → Forecaster → Not planned at all → Show list**. 
 
 ## Why does a long-held step still delay the work behind it?
 
-The forecast assumes the paused step continues in its queue position, so later work still waits. Passing **Hold limit (working hours)** only adds **On hold for a long time**; it does not free the machine. Administrators set the limit in **Assignment Gantt → Planning settings → Planning**. Only machine working time counts; without planned shifts, 24 hours count as the full limit. See [planning settings](/en/platform-intro/pages/assignment-gantt#planning-settings).
+The forecast assumes the paused step continues in its queue position, so later work still waits. Passing **Hold limit (working hours)** only adds **On hold for a long time**; it does not free the machine. Admins and Super Admins set the limit in Assignment Gantt under **View options → Planning** and choose **Save**. Only machine working time counts; without planned shifts, 24 hours count as the full limit. See [planning settings](/en/platform-intro/pages/assignment-gantt#planning-settings).
 
 <a id="save-plan" />
 
@@ -228,7 +233,7 @@ An administrator sets **Planning → Jobs in parallel** in the machine’s basic
 
 ## Who can change what the Forecaster runs next?
 
-Administrators choose the plant’s ordering under **Planning settings** in Assignment Gantt. Other users with planning access can compare alternatives in **Improve plan** without changing that setting. See the [ordering choices](/en/platform-intro/pages/assignment-gantt).
+Only Admins and Super Admins choose the plant’s ordering under **View options → Planning** and select **Save**. Everyone else who can open Gantt can read these settings but cannot edit them; they see **Ask an admin to change these.** With planning access, you can compare alternatives in **Improve plan** without changing the company rule. Follow [Set the Plant’s Forecast Rule](/en/platform-intro/workflows/assignment-planner#set-the-plants-forecast-rule).
 
 <a id="forecast-help" />
 
@@ -338,7 +343,7 @@ It is now **Re-sort**, on the last line of a machine or hall-pool header. In Ass
 
 ## Can I undo a queue sort, and why did the proposal change?
 
-After applying, use **Undo** in the **New sequence applied** confirmation. If someone changes the queue while you review a proposal, it reloads for you to check again. If loading fails, retry before applying. If undo fails, the queue reloads; check its current order before adjusting it. Follow the [queue sorting steps](/en/platform-intro/workflows/assignment-planner#sort-a-queue-by-priority-and-date).
+After applying, use **Undo** in the **New sequence applied** confirmation. If someone changes the queue while you review a proposal, it reloads for you to check again. If loading fails, retry before applying. If undo fails, the queue reloads. In Gantt, the message **The old sequence could not be put back. The board now shows the current plan.** appears first when **Undo** cannot be saved. Check the current order before adjusting it. Follow the [queue sorting steps](/en/platform-intro/workflows/assignment-planner#sort-a-queue-by-priority-and-date).
 
 <a id="queue-numbers" />
 
@@ -507,7 +512,7 @@ Clear **Can move** for that operation in **Re-sort**, **Best operation sequence*
 
 ## Why does dragging cards leave the expected end unchanged?
 
-Your forecast may follow planned dates or delivery dates instead of the queue. With **Follow planned dates**, **Improve plan** can also set new planned dates so the forecast follows the proposal. With **Delivery date first**, the forecast chooses the sequence itself; the Planner hides **Improve plan** and **Distribute to machines**. See [forecast rules and dragging](/en/platform-intro/pages/assignment-planner#when-dragging-does-not-change-expected-ends).
+Your forecast may follow planned dates or delivery dates instead of the queue. Hover over **Manual queue order** for the explanation; it replaces the separate forecast banner. The chip appears only while **Filter & Sort → Sort by Queue Position** is on. With **Follow planned dates**, **Improve plan** can also set new planned dates so the forecast follows the proposal. With **Delivery date first**, the forecast chooses the sequence itself; the Planner hides **Improve plan** and **Distribute to machines**. See [forecast rules and dragging](/en/platform-intro/pages/assignment-planner#when-dragging-does-not-change-expected-ends).
 
 <a id="proposal-dates" />
 
@@ -610,3 +615,33 @@ BDE access templates only control Data Acquisition V3. They do not change action
 ## Where have the explanations for templates and priorities gone?
 
 Open the information icon beside the title in **Admin Panel → BDE access templates** or **Admin Panel → Priority Levels**. Explanations now appear there instead of below the title. This also covers **Which number is more urgent?** and **Queue order and operation priority stay in step**. See [Admin Panel](/en/platform-intro/pages/admin-panel#how-priorities-are-used).
+
+<a id="gantt-settings" />
+
+## Where do I change the Gantt bars and row height?
+
+Open **View options → Board**. Use **Bars show** for **Expected times** or **Planned dates**, and **Row height** for the space each row uses. These choices are your own and apply immediately. The information icon beside **Bars show** explains the choice. Only Admins and Super Admins can change company settings under **View options → Planning** and choose **Save**. See [Gantt view controls](/en/platform-intro/pages/assignment-gantt#view-controls-and-limits).
+
+<a id="gantt-planning-access" />
+
+## Why are Improve plan and Re-sort missing in Gantt?
+
+Both actions require planning access: an Admin or Super Admin account, or a User with access to **Orders & Products**. Opening Gantt itself requires **Assignment Planner** page access, unless you are an Admin. Without planning access, Gantt hides **Improve plan** in the toolbar and machine rows and **Re-sort** in machine rows. Access to the page alone does not make these actions available. See [Gantt planning actions](/en/platform-intro/pages/assignment-gantt#compare-queue-orders-before-saving).
+
+<a id="delivery-sequence-disabled" />
+
+## Why is Best operation sequence greyed out?
+
+With **Delivery date first**, a searched sequence cannot change expected ends. In Gantt, **Best operation sequence** is therefore unavailable and no search starts. With planning access, **Improve plan** still lets you compare and save the fixed rules. Follow [Compare and Save a Plan](/en/platform-intro/workflows/assignment-planner#compare-and-save-a-plan).
+
+<a id="gantt-undo-not-saved" />
+
+## Why did the Gantt board reload after I chose Undo?
+
+If **Undo** after **Improve plan** or **Re-sort** cannot be saved, Gantt shows **The old sequence could not be put back. The board now shows the current plan.** and reloads the board. Do not assume the previous plan was restored. Review the current order and dates before making another change. See [compare and save a plan](/en/platform-intro/workflows/assignment-planner#compare-and-save-a-plan).
+
+<a id="forecast-hint-location" />
+
+## Where has the note about forecasts following planned dates gone?
+
+The separate banner and its dismiss button have been removed. Hover over **Manual queue order** in Assignment Planner. The chip appears only while **Filter & Sort → Sort by Queue Position** is on. For forecasts following planned or delivery dates, the explanation says that moving cards changes order and priority, not expected ends, and that **Improve plan** can set new planned dates. See [forecast rules and dragging](/en/platform-intro/pages/assignment-planner#when-dragging-does-not-change-expected-ends).

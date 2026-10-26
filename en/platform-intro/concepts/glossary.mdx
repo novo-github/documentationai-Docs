@@ -177,7 +177,7 @@ Share of total recorded machine time in Production. AVL remains AVL in German an
 
 ### Best operation sequence
 
-**Best operation sequence** in **Improve plan** searches for fewer late orders, then less total delay, then earlier expected ends. If these tie, order priority favours more urgent orders finishing first without changing their priority; fewer changes decide last. **Keep priorities** changes no priority. **Least delay** seeks the best result. **Fewest changes** limits the searched sequence to at most 3 moves. **Recommended** marks the suggested option.
+**Best operation sequence** in **Improve plan** searches for fewer late orders, then less total delay, then earlier expected ends. If these tie, order priority favours more urgent orders finishing first without changing their priority; fewer changes decide last. **Keep priorities** changes no priority. **Least delay** seeks the best result. **Fewest changes** limits the searched sequence to at most 3 moves. **Recommended** marks the suggested option. With **Delivery date first**, this option is greyed out in Gantt and no search starts. You can still compare the fixed rules.
 
 [Learn more](/en/platform-intro/pages/assignment-planner).
 
@@ -470,11 +470,11 @@ The step count tells you how many of the order's steps have a machine. It does n
 
 #### Never Started and No Planned Start
 
-**Never started** and **No planned start** appear only when **Follow planned dates** or **Delivery date first** is selected under **Planning settings**. **Never started** identifies work whose planned start is long past; the forecast assumes it starts as soon as its machine is free. **No planned start** means the forecast places it after the machine’s dated work. With **Follow the queue** or **Follow the queue, not before the planned date**, neither note appears and the step keeps its place in the queue. Both types of work still get expected times.
+**Never started** and **No planned start** appear only when **Follow planned dates** or **Delivery date first** is selected under **View options → Planning** in Assignment Gantt. **Never started** identifies work whose planned start is long past; the forecast assumes it starts as soon as its machine is free. **No planned start** means the forecast places it after the machine’s dated work. With **Follow the queue** or **Follow the queue, not before the planned date**, neither note appears and the operation keeps its place in the queue. Both types of work still get expected times.
 
 #### On Hold for a Long Time
 
-**On hold for a long time** (previously **On hold too long**) means paused work has passed **Hold limit (working hours)**. It remains in the forecast and keeps its queue position, so later work still waits for it. The limit only controls when the note appears. Administrators set it in Assignment Gantt’s planning settings using machine working time.
+**On hold for a long time** (previously **On hold too long**) means paused work has passed **Hold limit (working hours)**. It remains in the forecast and keeps its queue position, so later work still waits for it. The limit only controls when the note appears. Admins and Super Admins set it under **View options → Planning** in Assignment Gantt using machine working time, then choose **Save**.
 
 #### Based On
 
@@ -1401,6 +1401,14 @@ Marker for downtime without an assigned reason.
 Planned load of a machine queue, based on planned durations, not recorded production.
 
 [Learn more](/en/platform-intro/pages/assignment-planner).
+
+## V
+
+### View options
+
+In Assignment Gantt, **View options → Board** contains your own bar and row-height choices. They apply at once. Only Admins and Super Admins can change company settings under **View options → Planning** and choose **Save**. Everyone else who can open Gantt sees the values read-only with **Ask an admin to change these.** A preview is identified by **The board is showing a preview: &lt;rule&gt;.** with the rule’s name.
+
+[Learn more](/en/platform-intro/pages/assignment-gantt).
 
 ## W
 

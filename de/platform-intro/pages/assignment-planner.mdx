@@ -5,7 +5,7 @@ description: "Eine Planungsoberfläche für Maschinenzuweisungen, die Anordnung 
 
 ## Überblick
 
-**Zugriff:** Admin oder Seitenfreigabe `assignment_planner` mit entsprechendem Maschinenzugriff. [Rollen und Zugriff](/de/platform-intro/concepts/roles-and-access).
+**Zugriff:** Admin oder ein Konto mit Seitenzugriff auf **Zuweisungsplaner** sowie Zugriff auf die betreffenden Maschinen. [Rollen und Zugriff](/de/platform-intro/concepts/roles-and-access).
 
 Geben Sie Planern einen Drag-and-Drop-Arbeitsbereich, um die nächste Arbeit einer Maschine festzulegen, sowie eine Zeitleiste zur Prüfung von Zuweisungen über Maschinen und Zeiträume hinweg.
 
@@ -50,13 +50,13 @@ Klicken Sie auf den Maschinennamen im Spaltenkopf, um die [Maschinendetails](/de
 
 ### Begonnene Arbeit übergeben
 
-Administratoren und Benutzer mit Zugriff auf die Seite Aufträge können einen begonnenen, gestoppten Schritt auf einen beliebigen Hallenpool oder eine andere zugängliche Maschine ziehen. Alle Benutzer benötigen Zugriff auf die aktuelle Maschine des Schritts. Andere Benutzer können den Schritt im Zuweisungsplaner und in der Betriebsdatenerfassung nur in den Pool der Halle seiner aktuellen Maschine zurückgeben. Der Dialog zeigt **Geplant**, **Hier gefertigt** und **Offen**. Prüfen Sie **Restmenge** und ergänzen Sie **Grund (optional)** für die nächste Person. Nur Gutteile verringern die vorgeschlagene Restmenge. Ausschuss muss nachgefertigt werden. Lassen Sie die Menge leer, wenn sie unbekannt ist. Bestätigen Sie für einen Pool mit **Zurück in den Pool**, für eine Maschine mit **Verschieben**.
+Administratoren und Benutzer mit Zugriff auf die Seite Aufträge können einen begonnenen, gestoppten Arbeitsgang auf einen beliebigen Hallenpool oder eine andere zugängliche Maschine ziehen. Alle Benutzer benötigen Zugriff auf die aktuelle Maschine des Arbeitsgangs. Andere Benutzer können den Arbeitsgang im Zuweisungsplaner und in der Betriebsdatenerfassung nur in den Pool der Halle seiner aktuellen Maschine zurückgeben. Der Dialog zeigt **Geplant**, **Hier gefertigt** und **Offen**. Prüfen Sie **Restmenge** und ergänzen Sie **Grund (optional)** für die nächste Person. Nur Gutteile verringern die vorgeschlagene Restmenge. Ausschuss muss nachgefertigt werden. Lassen Sie die Menge leer, wenn sie unbekannt ist. Bestätigen Sie für einen Pool mit **Zurück in den Pool**, für eine Maschine mit **Verschieben**.
 
 Die ursprüngliche Maschine behält ihre Zeiten und Gutteile. Ihr Anteil verlässt die aktive Warteschlange und zeigt **Übergeben**. Der Rest kommt an den Anfang der Zielwarteschlange, auch beim Ablegen auf einem eingeklappten Pool. Ihre Anzeigesortierung kann beeinflussen, wo die Karte erscheint. Beide Warteschlangen aktualisieren sich. Bei 40 Gutteilen von 100 bleiben beispielsweise 60 für die nächste Maschine. Eine Übergabe lässt sich nicht automatisch rückgängig machen.
 
-Eine laufende Karte können Sie innerhalb ihrer Spalte umordnen. Ein Zielwechsel ist gesperrt mit **Läuft. Erst an der Maschine stoppen, dann verschieben.** Abgeschlossene und stornierte Arbeit kann nicht übergeben werden. Eine ungestartete geplante oder freigegebene Karte wird weiterhin ohne Dialog verschoben. Eine ungestartete Karte mit dem Status in Bearbeitung oder in Wartestellung öffnet eine Verschiebebestätigung. Der ganze Schritt wird verschoben, ohne erfasste Arbeit zurückzulassen.
+Eine laufende Karte können Sie innerhalb ihrer Spalte umordnen. Ein Zielwechsel ist gesperrt mit **Läuft. Erst an der Maschine stoppen, dann verschieben.** Abgeschlossene und stornierte Arbeit kann nicht übergeben werden. Eine ungestartete geplante oder freigegebene Karte wird weiterhin ohne Dialog verschoben. Eine ungestartete Karte mit dem Status in Bearbeitung oder in Wartestellung öffnet eine Verschiebebestätigung. Der ganze Arbeitsgang wird verschoben, ohne erfasste Arbeit zurückzulassen.
 
-Graue Kennzeichnungen zeigen Herkunft oder Ziel der Arbeit. Zeigen Sie darauf, um Mengen, Person, Zeit und Grund zu lesen. Schmale Karten können nur ein Symbol und Zahlen zeigen. Schrittinformationen und Wartedetails zeigen **Teilweise gefertigt:** und das Ziel der restlichen Arbeit. Wurde der Schritt während Ihrer Prüfung geändert, aktualisieren sich die Warteschlangen. Prüfen Sie sie vor einem erneuten Versuch. Folgen Sie [Arbeit übergeben](/de/platform-intro/workflows/assignment-planner#hand-over-work).
+Graue Kennzeichnungen zeigen Herkunft oder Ziel der Arbeit. Zeigen Sie darauf, um Mengen, Person, Zeit und Grund zu lesen. Schmale Karten können nur ein Symbol und Zahlen zeigen. Arbeitsgangsinformationen und Wartedetails zeigen **Teilweise gefertigt:** und das Ziel der restlichen Arbeit. Wurde der Arbeitsgang während Ihrer Prüfung geändert, aktualisieren sich die Warteschlangen. Prüfen Sie sie vor einem erneuten Versuch. Folgen Sie [Arbeit übergeben](/de/platform-intro/workflows/assignment-planner#hand-over-work).
 
 ### Platzierung der Hallenpools wählen
 
@@ -160,7 +160,7 @@ Mit **Auf Firmenstandard zurücksetzen** übernehmen Sie den aktuellen Firmenmod
 
 ### Termine für die Sortierung wählen
 
-Karten können **Geplanter Operationsstart** und **Geplantes Operationsende** anzeigen. Diese Werte beschreiben das geplante Zeitfenster einer Operation. Damit sortieren Sie einzelne Schritte innerhalb eines Auftrags.
+Karten können **Geplanter Operationsstart** und **Geplantes Operationsende** anzeigen. Diese Werte beschreiben das geplante Zeitfenster einer Operation. Damit sortieren Sie einzelne Arbeitsgänge innerhalb eines Auftrags.
 
 **Geplanter Auftragsstart** und **Geplantes Auftragsende** beschreiben den gesamten Auftrag. Alle Operationen dieses Auftrags teilen diese Termine und bleiben beim Sortieren danach zusammen. **Geplanter Arbeitsauftragsstart** und **Geplantes Arbeitsauftragsende** beschreiben das geplante Zeitfenster des Arbeitsauftrags.
 
@@ -206,9 +206,9 @@ Nach einer Auswahländerung bleibt die Tabelle mit **Wird aktualisiert…** sich
 
 Bei **Nach geplanten Terminen** ändert Ziehen den Warteschlangenplatz und möglicherweise die Priorität. Erwartete Enden folgen jedoch den Planterminen. Das Speichern der Option **Beste Operationsfolge** setzt bei **Nach geplanten Terminen** oder **Nach der Warteschlange, nicht vor dem geplanten Termin** auch neue Plantermine für wartende Arbeitsgänge auf neu geordneten Maschinen. Bei **Nach der Warteschlange** setzt es keine Plantermine. Prüfen Sie vor dem Speichern die Anzahl in der ausgewählten Option.
 
-Bei **Liefertermin zuerst** wählt die Prognose ihre eigene Folge. Der Planer blendet **Plan verbessern** und **Auf Maschinen verteilen** aus. Das Umordnen von Karten ändert bei dieser Regel keine erwarteten Enden. Im Gantt bleibt das Stern-Symbol **Plan verbessern** sichtbar. Dort bietet die Karte **Beste Operationsfolge** keine Folge an und erklärt den Grund.
+Bei **Liefertermin zuerst** wählt die Prognose ihre eigene Folge. Der Planer blendet **Plan verbessern** und **Auf Maschinen verteilen** aus. Das Umordnen von Karten ändert bei dieser Regel keine erwarteten Enden. Mit Planungszugriff bietet Gantt weiterhin **Plan verbessern** mit den festen Regeln. **Beste Operationsfolge** ist mit einer Begründung ausgegraut. Eine Suche startet nicht.
 
-Der Planer zeigt nur für **Nach geplanten Terminen** und **Liefertermin zuerst** einen Hinweis. **Hinweis ausblenden** schließt ihn für Sie. Administratoren öffnen über **In den Planungseinstellungen ändern** die Einstellungen im Gantt. Bei beiden Regeln nach Warteschlange folgt die Prognose den Warteschlangenänderungen. Dieser Hinweis erscheint dann nicht.
+Zeigen Sie auf **Manuelle Warteschlangenreihenfolge**, um die Prognoseerklärung zu lesen. Die Anzeige erscheint nur, wenn **Filtern & Sortieren → Nach Warteschlangenposition sortieren** eingeschaltet ist. Bei **Nach geplanten Terminen** oder **Liefertermin zuerst** erklärt sie, dass Verschieben Reihenfolge und Priorität ändert, aber nicht das voraussichtliche Ende. **Plan verbessern** kann neue Plantermine setzen. Diese Erklärung ersetzt den gesonderten Prognosehinweis und seine Schaltfläche zum Ausblenden. Bei beiden Regeln nach Warteschlange fehlt diese zusätzliche Erklärung.
 
 ## Pool-Arbeit auf Maschinen verteilen
 
@@ -232,7 +232,7 @@ Hat der Forecaster noch kein erwartetes Ende für einen Auftrag, wird nur dessen
 
 Öffnen Sie die Auswahl für die Terminprüfung und wählen Sie unten **Wie funktioniert der Forecaster?**. Das Menü schließt sich und die Hilfe öffnet sich. Ihr gewählter Vergleichstermin bleibt unverändert. Die Hilfe erklärt die Farben, den Einfluss von Schichten und vorherigen Arbeitsgängen sowie zu frühe Zeiten bei fehlenden Planungsangaben. Lesen Sie auch die [Forecaster-Erklärung](/de/platform-intro/pages/assignment-gantt) oder folgen Sie dem Ablauf [Maschinenzuweisungen planen](/de/platform-intro/workflows/assignment-planner).
 
-Wählen Sie unter **Forecaster-Prüfung** zwischen **Liefertermin**, **Geplantes Ende**, **Liefertermin & geplantes Ende** und **Aus**. Lesen Sie das voraussichtliche Ende und den verbleibenden Puffer auf der Karte, um die Warnung zu verstehen. Ein ungeplanter früherer Schritt macht das erwartete Ende zu optimistisch.
+Wählen Sie unter **Forecaster-Prüfung** zwischen **Liefertermin**, **Geplantes Ende**, **Liefertermin & geplantes Ende** und **Aus**. Lesen Sie das voraussichtliche Ende und den verbleibenden Puffer auf der Karte, um die Warnung zu verstehen. Ein ungeplanter früherer Arbeitsgang macht das erwartete Ende zu optimistisch.
 
 Die freie Zeit in der Maschinenübersicht folgt dem letzten erwarteten Ende in ihrer Warteschlange. Fehlt bei Arbeit ein voraussichtliches Ende, ist diese Zeit nur die frühestmögliche Verfügbarkeit. Die angezeigte Last ist die von der Prognose noch eingeplante Arbeit.
 
@@ -250,7 +250,7 @@ Zeigen Sie auf die Terminmarke oder die kleine Uhr links an einer Karte. Die Erk
 Prüfen Sie die Annahmen, bevor Sie sich auf die Zeit verlassen:
 
 - **Lange angehalten**: Die Prognose nimmt an, dass der Arbeitsgang an seinem Platz weitergeht. Spätere Arbeit wartet weiterhin darauf.
-- **Nie gestartet**: Dieser Hinweis erscheint nur mit **Nach geplanten Terminen** oder **Liefertermin zuerst** unter **Planungseinstellungen**. Die Prognose nimmt an, dass der Arbeitsgang startet, sobald seine Maschine frei ist. Mit **Nach der Warteschlange** oder **Nach der Warteschlange, nicht vor dem geplanten Termin** erscheint weder dieser Hinweis noch **Kein geplanter Start**. Der Arbeitsgang behält seinen Platz in der Warteschlange.
+- **Nie gestartet**: Dieser Hinweis erscheint nur mit **Nach geplanten Terminen** oder **Liefertermin zuerst** unter **Ansichtsoptionen → Planung** im Zuweisungs-Gantt. Die Prognose nimmt an, dass der Arbeitsgang startet, sobald seine Maschine frei ist. Mit **Nach der Warteschlange** oder **Nach der Warteschlange, nicht vor dem geplanten Termin** erscheint weder dieser Hinweis noch **Kein geplanter Start**. Der Arbeitsgang behält seinen Platz in der Warteschlange.
 - **Kein geplanter Start**: Dieser Hinweis erscheint nur mit **Nach geplanten Terminen** oder **Liefertermin zuerst**. Die Prognose plant den Arbeitsgang nach der Arbeit mit Termin auf seiner Maschine ein.
 - **Wartet auf früheren Arbeitsgang**: Ein früherer Arbeitsgang ist noch auf keiner Maschine oder liegt im Hallenpool. Die angezeigten Zeiten können zu optimistisch sein.
 
@@ -266,7 +266,7 @@ Karten gleiten an ihre neue Position. Die abgelegte Karte erhält kurz eine Umra
 
 Öffnen Sie über die Ansichtsauswahl das [Zuweisungs-Gantt](/de/platform-intro/pages/assignment-gantt). Prüfen Sie erwartete Start- und Endzeiten, verfolgen Sie Verzögerungen unter **Handlungsbedarf** und vergleichen Sie wartende Arbeit mit **Plan verbessern**. Mit **Verschieben** prüfen Sie die Auswirkungen einer zulässigen Verschiebung vor dem Speichern.
 
-**Als Plan speichern** aktualisiert geeignete Warteschlangenplätze und geplante Termine. Laufende und angehaltene Arbeit bleibt an ihrem Platz. Prüfen Sie unveränderte Arbeit, besonders Zuweisungen hinter einem ungeplanten früheren Schritt. Die Prüf- und Speicherschritte finden Sie unter [Maschinenzuweisungen planen](/de/platform-intro/workflows/assignment-planner).
+**Als Plan speichern** aktualisiert geeignete Warteschlangenplätze und geplante Termine. Laufende und angehaltene Arbeit bleibt an ihrem Platz. Prüfen Sie unveränderte Arbeit, besonders Zuweisungen hinter einem ungeplanten früheren Arbeitsgang. Die Prüf- und Speicherschritte finden Sie unter [Maschinenzuweisungen planen](/de/platform-intro/workflows/assignment-planner).
 
 ## Warum kann ich eine Karte nicht verschieben?
 
@@ -281,7 +281,7 @@ Bei Verschiebungen ohne Dialog bestimmt mit **Nach Warteschlangenposition sortie
 - Die gestrichelte **AG**-Anzeige steht für **Arbeitsgangpriorität**, **P** für die unabhängige **Auftragspriorität**.
 - **Seq / Nr.** ist die Operationssequenz, **Qty / Menge** die Menge und **Dur / Dauer** die Dauer.
 - **Prep / Rüst** bedeutet Vorbereitung; **Prod.** bedeutet Produktion. **util. / Ausl.** ist die geplante Warteschlangenlast anhand von Planzeiten, keine tatsächliche Auslastung.
-- Order Planned dates gelten für den Gesamtauftrag; Operation Planned dates für einen Schritt.
+- Order Planned dates gelten für den Gesamtauftrag; Operation Planned dates für einen Arbeitsgang.
 
 Beispielsweise ergeben 50 Teile mit 2 Minuten je Teil 100 geplante Produktionsminuten, zuzüglich fester Rüstzeit. [Assignment Gantt](/de/platform-intro/pages/assignment-gantt) zeigt Zeitfenster; seine Verschiebung durch Ziehen ist Experimental und schreibgeschützt. Siehe [Berechnungen](/de/platform-intro/concepts/calculations#deviations).
 

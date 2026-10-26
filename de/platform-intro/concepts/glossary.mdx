@@ -91,6 +91,12 @@ Analyseumfang: voller 24-Stunden-Tag gegenüber geplanter Schichtzeit. Vergleich
 
 [Mehr erfahren](/de/platform-intro/pages/machine-history).
 
+### Ansichtsoptionen
+
+Im Zuweisungs-Gantt enthält **Ansichtsoptionen → Plantafel** Ihre eigene Auswahl für Balken und Zeilenhöhe. Sie wirkt sofort. Nur Admins und Super Admins können unter **Ansichtsoptionen → Planung** Unternehmenseinstellungen ändern und **Speichern** wählen. Alle anderen, die Gantt öffnen können, sehen die Werte schreibgeschützt mit **Bitten Sie einen Admin, diese Werte zu ändern.** Bei einer Vorschau erscheint **Die Plantafel zeigt eine Vorschau: &lt;Regel&gt;.** mit dem Namen der Regel.
+
+[Mehr erfahren](/de/platform-intro/pages/assignment-gantt).
+
 ### API-Access Keys
 
 Schlüssel für den Zugriff anderer Systeme auf die Plattform. Ein neuer Schlüssel wird nur einmal angezeigt.
@@ -177,7 +183,7 @@ Anteil der Produktion an der gesamten erfassten Maschinenzeit. AVL bleibt auch a
 
 ### Beste Operationsfolge
 
-**Beste Operationsfolge** in **Plan verbessern** sucht weniger verspätete Aufträge, dann weniger Gesamtverspätung und frühere erwartete Enden. Bei Gleichstand sollen dringendere Aufträge gemäß ihrer unveränderten Auftragspriorität früher fertig werden; zuletzt entscheiden weniger Änderungen. **Prioritäten beibehalten** ändert keine Priorität. **Geringste Verspätung** sucht das beste Ergebnis. **Wenigste Änderungen** begrenzt die gesuchte Folge auf höchstens 3 Verschiebungen. **Empfohlen** markiert den Vorschlag.
+**Beste Operationsfolge** in **Plan verbessern** sucht weniger verspätete Aufträge, dann weniger Gesamtverspätung und frühere erwartete Enden. Bei Gleichstand sollen dringendere Aufträge gemäß ihrer unveränderten Auftragspriorität früher fertig werden; zuletzt entscheiden weniger Änderungen. **Prioritäten beibehalten** ändert keine Priorität. **Geringste Verspätung** sucht das beste Ergebnis. **Wenigste Änderungen** begrenzt die gesuchte Folge auf höchstens 3 Verschiebungen. **Empfohlen** markiert den Vorschlag. Bei **Liefertermin zuerst** ist diese Option im Gantt ausgegraut. Eine Suche startet nicht. Sie können weiterhin die festen Regeln vergleichen.
 
 [Mehr erfahren](/de/platform-intro/pages/assignment-planner).
 
@@ -468,11 +474,11 @@ Die Anzahl zeigt, wie viele Arbeitsgänge des Auftrags eine Maschine haben. Sie 
 
 #### Nie gestartet und kein geplanter Start
 
-**Nie gestartet** und **Kein geplanter Start** erscheinen nur, wenn unter **Planungseinstellungen** die Option **Nach geplanten Terminen** oder **Liefertermin zuerst** gewählt ist. **Nie gestartet** kennzeichnet Arbeit, deren geplanter Start lange zurückliegt. Die Prognose nimmt an, dass sie startet, sobald die Maschine frei ist. **Kein geplanter Start** bedeutet, dass die Prognose sie nach der Arbeit mit Termin auf ihrer Maschine einplant. Mit **Nach der Warteschlange** oder **Nach der Warteschlange, nicht vor dem geplanten Termin** erscheint keiner dieser Hinweise. Der Arbeitsgang behält seinen Platz in der Warteschlange. Beide Arten von Arbeit erhalten weiterhin erwartete Zeiten.
+**Nie gestartet** und **Kein geplanter Start** erscheinen nur, wenn unter **Ansichtsoptionen → Planung** im Zuweisungs-Gantt die Option **Nach geplanten Terminen** oder **Liefertermin zuerst** gewählt ist. **Nie gestartet** kennzeichnet Arbeit, deren geplanter Start lange zurückliegt. Die Prognose nimmt an, dass sie startet, sobald die Maschine frei ist. **Kein geplanter Start** bedeutet, dass die Prognose sie nach der Arbeit mit Termin auf ihrer Maschine einplant. Mit **Nach der Warteschlange** oder **Nach der Warteschlange, nicht vor dem geplanten Termin** erscheint keiner dieser Hinweise. Der Arbeitsgang behält seinen Platz in der Warteschlange. Beide Arten von Arbeit erhalten weiterhin erwartete Zeiten.
 
 #### Lange angehalten
 
-**Lange angehalten** (bisher **Zu lange angehalten**) bedeutet, dass pausierte Arbeit das **Limit für Wartestellung (Arbeitsstunden)** überschritten hat. Sie bleibt in der Prognose und behält ihre Warteschlangenposition. Spätere Arbeit wartet weiterhin darauf. Das Limit bestimmt nur, wann der Hinweis erscheint. Administratoren stellen es in den Planungseinstellungen des Zuweisungs-Gantts anhand der Maschinenarbeitszeit ein.
+**Lange angehalten** (bisher **Zu lange angehalten**) bedeutet, dass pausierte Arbeit das **Limit für Wartestellung (Arbeitsstunden)** überschritten hat. Sie bleibt in der Prognose und behält ihre Warteschlangenposition. Spätere Arbeit wartet weiterhin darauf. Das Limit bestimmt nur, wann der Hinweis erscheint. Admins und Super Admins stellen es im Zuweisungs-Gantt unter **Ansichtsoptionen → Planung** anhand der Maschinenarbeitszeit ein und wählen **Speichern**.
 
 #### Grundlage
 

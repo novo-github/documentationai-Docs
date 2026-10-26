@@ -10,7 +10,7 @@ Turn unassigned work into machine queues or shared hall pools and review how fut
 ## Before You Begin
 
 <Callout kind="info" title="Workflow access">
-- Required access: Admin or Page Access `assignment_planner`, with relevant Machine Access.
+- Required access: Admin, or an account with **Assignment Planner** page access, plus the relevant machine access.
 - Entry points: `/assignment-planner`
 </Callout>
 
@@ -101,24 +101,24 @@ Started, stopped work uses the handover steps below. Running work must stop firs
 
 ## Hand Over Started Work to Another Queue
 
-Administrators and users with access to the Orders page can choose any hall pool or another machine they can access. Every user needs access to the step’s current machine. Other users can only return the step to the pool of its current machine’s hall, in Assignment Planner or Data Acquisition. The step must have started and then stopped. Finished or cancelled steps cannot be handed over.
+Administrators and users with access to the Orders page can choose any hall pool or another machine they can access. Every user needs access to the operation’s current machine. Other users can only return the operation to the pool of its current machine’s hall, in Assignment Planner or Data Acquisition. The operation must have started and then stopped. Finished or cancelled operations cannot be handed over.
 
 <Steps>
   <Step title="Check that the work is stopped" icon="arrow-right" title-type="p">
     A running card stays locked with **Running. Stop it on the machine before moving it.** Use the normal stop action in [Data Acquisition](/en/platform-intro/workflows/data-acquisition) and record the quantities first.
   </Step>
-  <Step title="Drag the stopped step to its destination" icon="arrow-right" title-type="p">
+  <Step title="Drag the stopped operation to its destination" icon="arrow-right" title-type="p">
     Drop the card on a hall-pool or another machine column. The handover dialog opens even if started work is marked **Planned** or **Released**. Moving within the same column reorders the queue and can also change the operation priority.
   </Step>
   <Step title="Review quantities and pass on the reason" icon="arrow-right" title-type="p">
-    Check **Planned**, **Done here**, and **Left**. Review **Quantity left**: only good parts reduce the suggested remainder. Change it if parts need to be made again, or leave it empty if unknown. If nothing is left, finish the step unless more parts are needed. Add **Reason (optional)** for the next operator.
+    Check **Planned**, **Done here**, and **Left**. Review **Quantity left**: only good parts reduce the suggested remainder. Change it if parts need to be made again, or leave it empty if unknown. If nothing is left, finish the operation unless more parts are needed. Add **Reason (optional)** for the next operator.
   </Step>
   <Step title="Confirm and review the queues" icon="arrow-right" title-type="p">
-    Check the destination, then choose **Back to pool** or **Move** for a machine. There is no automatic undo for a handover. The original machine keeps its times and good parts, marked **Handed over**. The rest goes to the top of the destination queue, even when dropped onto a collapsed pool. Both queues update. The step remains open until the remainder is finished.
+    Check the destination, then choose **Back to pool** or **Move** for a machine. There is no automatic undo for a handover. The original machine keeps its times and good parts, marked **Handed over**. The rest goes to the top of the destination queue, even when dropped onto a collapsed pool. Both queues update. The operation remains open until the remainder is finished.
   </Step>
 </Steps>
 
-For example, if 40 of 100 planned parts are good, the original machine keeps 40 and the next machine receives 60. Hover over a grey badge to check the destination or source and any reason. If the step changed during review, inspect the refreshed queues before trying again.
+For example, if 40 of 100 planned parts are good, the original machine keeps 40 and the next machine receives 60. Hover over a grey badge to check the destination or source and any reason. If the operation changed during review, inspect the refreshed queues before trying again.
 
 ## Reorder Work and Check Its Priority
 
@@ -128,18 +128,18 @@ Use your normal Planner and machine access. The link between queue order and ope
   <Step title="Use queue-position mode" icon="arrow-right" title-type="p">
     Open **Filter & Sort → Sort by Queue Position**. Clear filters and any search covering the queue if you need to see every position and its number.
   </Step>
-  <Step title="Place the step" icon="arrow-right" title-type="p">
+  <Step title="Place the operation" icon="arrow-right" title-type="p">
     Drag the card to its new position within the machine or hall pool. Running and on-hold cards keep the positions you set. Running work can move within its column; stop it before changing its destination. Wait for each move to save before reordering the destination again.
   </Step>
   <Step title="Review the changed priority" icon="arrow-right" title-type="p">
-    Read the notice and the dashed **OP** chip. Moving ahead of more urgent or equally urgent work within the queue can raise the priority; moving behind can lower it. With the default levels, moving the second of two OP70 steps to the top makes it OP100. To change a tie, the next company level must fit between the surrounding steps. A priority that already fits can stay unchanged.
+    Read the notice and the dashed **OP** chip. Moving ahead of more urgent or equally urgent work within the queue can raise the priority; moving behind can lower it. With the default levels, moving the second of two OP70 operations to the top makes it OP100. To change a tie, the next company level must fit between the surrounding operations. A priority that already fits can stay unchanged.
   </Step>
   <Step title="Keep or undo the priority change" icon="arrow-right" title-type="p">
-    Select **Undo** in the priority notice if you want the old priority back. The card stays where you dropped it. For a split step, check all parts: the new priority appears everywhere, but this drag does not reorder the other queues.
+    Select **Undo** in the priority notice if you want the old priority back. The card stays where you dropped it. For a split operation, check all parts: the new priority appears everywhere, but this drag does not reorder the other queues.
   </Step>
 </Steps>
 
-Expected ends and date checks refresh after the move. Hover over the date marker to review its explanation. See [queue and priority details](/en/platform-intro/pages/assignment-planner#queue-order-and-operation-priority).
+Expected ends and date checks refresh after the move. Hover over the date marker to review its explanation. If expected ends stay the same, hover over **Manual queue order**. The chip appears only while **Filter & Sort → Sort by Queue Position** is on. For forecasts following planned or delivery dates, its explanation says why dragging does not change expected ends and how **Improve plan** can set new planned dates. See [queue and priority details](/en/platform-intro/pages/assignment-planner#queue-order-and-operation-priority).
 
 ## Set an Operation Priority and Filter the Plan
 
@@ -162,7 +162,7 @@ Expected ends and date checks refresh after the move. Hover over the date marker
     In the sort/filter options, enable **Sort by Queue Position** to use the order set by dragging assignments. Turn it off to sort by fields such as priority or date.
   </Step>
   <Step title="Set rule precedence" icon="arrow-right" title-type="p">
-    Choose **Operation Planned Start** or **Operation Planned End** to sequence individual steps. Choose **Order Planned Start** or **Order Planned End** to keep an order’s steps together. Set ascending or descending order. Add rules to break ties and drag them into the order of precedence.
+    Choose **Operation Planned Start** or **Operation Planned End** to sequence individual operations. Choose **Order Planned Start** or **Order Planned End** to keep an order’s operations together. Set ascending or descending order. Add rules to break ties and drag them into the order of precedence.
   </Step>
   <Step title="Emphasize the details you need" icon="arrow-right" title-type="p">
     Open **Highlight** and select fields from Order, Work Order, Product, Operation, Planning, and Assignment. Check the cards for your selected highlights, such as priority, due date, or customer.
@@ -189,7 +189,7 @@ You need planning access and access to the machine. The machine or hall pool mus
     Review current and new places, the chosen priority or date, and **Work left**. Use **Columns** for optional details or click a row for **Details**. Select **Apply sequence** to save, or **Cancel** to leave the queue unchanged. Priorities do not change.
   </Step>
   <Step title="Check or undo" icon="arrow-right" title-type="p">
-    Use **Undo** in the confirmation to restore the previous sequence. If the queue changes during review, check the refreshed proposal. If undo fails, check the current queue. This is a one-time sort; later imports join the end.
+    Use **Undo** in the confirmation to restore the previous sequence. If the queue changes during review, check the refreshed proposal. In Gantt, if **Undo** cannot be saved, the message **The old sequence could not be put back. The board now shows the current plan.** appears and the board reloads. Check the current queue before changing it again. This is a one-time sort; later imports join the end.
   </Step>
 </Steps>
 
@@ -240,18 +240,18 @@ A saved personal choice or reset does not follow later company-default changes. 
 
 <Steps>
   <Step title="Check which date the warning refers to" icon="arrow-right" title-type="p">
-    Open **Forecaster check** in Assignment Planner and review the selected date. The card’s date marker compares the job with this date: red means late and amber means **at risk**. An on-time step with an expected end shows a small clock.
+    Open **Forecaster check** in Assignment Planner and review the selected date. The card’s date marker compares the job with this date: red means late and amber means **at risk**. An on-time operation with an expected end shows a small clock.
   </Step>
-  <Step title="Check why this step ends then" icon="arrow-right" title-type="p">
-    Hover over its date tab or small clock. Read **Expected end** and the date checks, then **Based on** for assumptions. Under **Why this time**, check the machine, earlier step, or shift it waits for. **Earlier operations of this order** helps you find missing machine assignments. If details fail to load, hover again.
+  <Step title="Check why this operation ends then" icon="arrow-right" title-type="p">
+    Hover over its date tab or small clock. Read **Expected end** and the date checks, then **Based on** for assumptions. Under **Why this time**, check the machine, earlier operation, or shift it waits for. **Earlier operations of this order** helps you find missing machine assignments. If details fail to load, hover again.
 
-    Long-held, never-started, and undated steps still get expected times. **No forecast** means hall-pool work or an unavailable forecast. Assign pool work to a machine and review the result. If an earlier step has no machine yet, the later step’s time may be too optimistic.
+    Long-held, never-started, and undated operations still get expected times. **No forecast** means hall-pool work or an unavailable forecast. Assign pool work to a machine and review the result. If an earlier operation has no machine yet, the later operation’s time may be too optimistic.
   </Step>
   <Step title="Read the explanation" icon="arrow-right" title-type="p">
     For general help, open **Forecaster check → How does the Forecaster work?**. This opens the help without changing your selected date check. Read what the colours mean and when times may be too early, then close the help to return to planning.
   </Step>
   <Step title="Review the expected times" icon="arrow-right" title-type="p">
-    Open [Assignment Gantt](/en/platform-intro/pages/assignment-gantt). In the view options, choose **Expected times** to include delays or **Planned dates** to inspect the plan. Open **Attention** to review the most important warnings first. Follow the related order to check steps without a machine or date. Also check planned durations, machine shifts, and whether current work has been recorded on the PDA/BDE.
+    Open [Assignment Gantt](/en/platform-intro/pages/assignment-gantt). Open **View options → Board → Bars show → Expected times** to include delays or **Planned dates** to inspect the plan. The information icon explains the bars. You can also change **View options → Board → Row height**; both choices are your own and take effect immediately. Open **Attention** to review the most important warnings first. Follow the related order to check operations without a machine or date. Also check planned durations, machine shifts, and whether current work has been recorded on the PDA/BDE.
   </Step>
   <Step title="Decide whether to change the plan" icon="arrow-right" title-type="p">
     Reading the forecast changes nothing. If you want to compare waiting-job sequences, open **Improve plan**. Review the comparison before choosing **Save as plan**. Saving changes planned dates and queues, can be undone, and never changes delivery dates.
@@ -260,7 +260,9 @@ A saved personal choice or reset does not follow later company-default changes. 
 
 If the Forecaster has no expected end, the Planner only compares the job's date with today. If expected times are unavailable in Assignment Gantt, you see planned times without delays while the Forecaster tries again. Neither view confirms that delivery will be on time.
 
-## Find Late Orders and Plan Missing Steps
+<a id="find-late-orders-and-plan-missing-steps" />
+
+## Find Late Orders and Plan Missing Operations
 
 <Steps>
   <Step title="Find the orders needing work" icon="arrow-right" title-type="p">
@@ -269,11 +271,11 @@ If the Forecaster has no expected end, the Planner only compares the job's date 
   <Step title="Find orders absent from the board" icon="arrow-right" title-type="p">
     Choose **Not planned at all → Show list**. Open an order and select **Assign operations** or **Open in planner**. These orders have a delivery date but no operation on a machine or in a hall pool.
   </Step>
-  <Step title="Assign the missing earlier step" icon="arrow-right" title-type="p">
-    In Assignment Gantt, inspect **Attention → Earlier operation not planned**. Follow **Show that operation**, then **Assign to a machine** when available. Select a machine you may plan on. A step waiting in a hall pool needs a machine too.
+  <Step title="Assign the missing earlier operation" icon="arrow-right" title-type="p">
+    In Assignment Gantt, inspect **Attention → Earlier operation not planned**. Follow **Show that operation**, then **Assign to a machine** when available. Select a machine you may plan on. An operation waiting in a hall pool needs a machine too.
   </Step>
   <Step title="Check dates and the new forecast" icon="arrow-right" title-type="p">
-    The assignment uses the step’s own planned dates. If no planned start exists, set dates before treating it as planned. Review the recalculated times for later steps and check whether the order still risks missing delivery.
+    The assignment uses the operation’s own planned dates. If no planned start exists, set dates before treating it as planned. Review the recalculated times for later operations and check whether the order still risks missing delivery.
   </Step>
 </Steps>
 
@@ -283,10 +285,10 @@ You need planning access and access to the machines you want to change. Have wai
 
 <Steps>
   <Step title="Open Improve plan for the right machines" icon="arrow-right" title-type="p">
-    In Assignment Planner, enable **Sort by Queue Position** and select the machine header’s sparkle **Improve plan**. Choose **This machine** or **All machines in &lt;hall&gt;** and select machines. In Gantt, the toolbar sparkle beside **Forecaster** covers the board’s machines; a row sparkle covers that machine or its hall.
+    In Assignment Planner, enable **Sort by Queue Position** and select the machine header’s sparkle **Improve plan**. Choose **This machine** or **All machines in &lt;hall&gt;** and select machines. In Gantt, these controls appear only with planning access. The toolbar sparkle beside **Forecaster** covers the board’s machines; a row sparkle covers that machine or its hall.
   </Step>
   <Step title="Compare the options" icon="arrow-right" title-type="p">
-    Under **1 · Choose an option**, compare late orders and delay against today. Choose **Best operation sequence** or a fixed rule. Within the searched sequence, choose **Keep priorities**, **Least delay**, or **Fewest changes**. **Recommended** marks the suggestion. Read **Why this sequence?** for its reasons.
+    Under **1 · Choose an option**, compare late orders and delay against today. Choose **Best operation sequence** or a fixed rule. Within the searched sequence, choose **Keep priorities**, **Least delay**, or **Fewest changes**. **Recommended** marks the suggestion. Read **Why this sequence?** for its reasons. With **Delivery date first**, use Gantt to compare the fixed rules. **Best operation sequence** is greyed out because a searched sequence cannot change expected ends; no search starts.
   </Step>
   <Step title="Decide what may move" icon="arrow-right" title-type="p">
     For **Best operation sequence**, clear **Can move** for work that must keep its exact place. Use a machine group’s checkbox for all its operations. Running and on-hold operations stay in place. The table first shows only operations that change place or whose status changes. Select **Show all (N more operations)** for the rest, including unchanged machines, or **Show only the changes** to return. Fixed rules have no **Can move** controls. Wait for any **Updating…** to finish.
@@ -298,7 +300,7 @@ You need planning access and access to the machines you want to change. Have wai
     Use **Search longer** when offered if you want more sequences checked. **Stop and show the best so far** ends the search with what it found. When satisfied, select **Save as plan**. This keeps delivery dates, original operation dates, and the company’s forecast rule.
   </Step>
   <Step title="Check or undo the saved plan" icon="arrow-right" title-type="p">
-    Review the updated board. **Undo** restores the saved queue, priority, and planned-date changes. If a conflict offers **Recalculate**, review a new proposal before saving. If undo cannot restore the plan, check the current board before making another change.
+    Review the updated board. **Undo** restores the saved queue, priority, and planned-date changes. If a conflict offers **Recalculate**, review a new proposal before saving. In Gantt, if **Undo** cannot be saved, the message **The old sequence could not be put back. The board now shows the current plan.** appears before the board reloads. Check the current plan before making another change.
   </Step>
 </Steps>
 
@@ -339,9 +341,21 @@ In **Improve plan**, select **All machines in &lt;hall&gt;**. If the pool has wa
 
 ## Set the Plant’s Forecast Rule
 
-Administrators open **Planning settings → Planning** in Assignment Gantt. Choose **How does your plant decide what runs next?** and review the [ordering choices](/en/platform-intro/pages/assignment-gantt). Set **Hold limit (working hours)** between 1 minute and 720 hours, then save. Confirm the displayed forecast rule. Other users can compare alternatives without changing this company setting.
+Only Admins and Super Admins can change company planning settings. Everyone else who can open Gantt can read them and sees **Ask an admin to change these.**
 
-Only working time counts toward the hold limit. Without planned shifts, 24 hours count as the full limit. Once exceeded, **On hold for a long time** appears. The step stays in the forecast and keeps its queue position; later work still waits for it.
+<Steps>
+  <Step title="Open the shared settings dialog" icon="arrow-right" title-type="p">
+    In Assignment Gantt, open **View options → Planning**. **View options → Board** holds your own display choices, which take effect immediately.
+  </Step>
+  <Step title="Check the company rule and any preview" icon="arrow-right" title-type="p">
+    Review **How does your plant decide what runs next?** and the [ordering choices](/en/platform-intro/pages/assignment-gantt#planning-settings). If you are previewing a different rule on the board, the note **The board is showing a preview: &lt;rule&gt;.** names it here. Previewing does not change the company rule.
+  </Step>
+  <Step title="Save the company choices" icon="arrow-right" title-type="p">
+    Choose the rule and set **Hold limit (working hours)** between 1 minute and 720 hours, then choose **Save**. Confirm the displayed forecast rule.
+  </Step>
+</Steps>
+
+Only working time counts toward the hold limit. Without planned shifts, 24 hours count as the full limit. Once exceeded, **On hold for a long time** appears. The operation stays in the forecast and keeps its queue position; later work still waits for it.
 
 ## Review Conflicts After an Order Import
 
@@ -368,7 +382,7 @@ Use the view switch to open Assignment Gantt for a timeline review. Use its **Mo
 - Whether a job should stay unassigned, move to another machine, or be removed from a queue.
 - Which machines should appear in the Gantt timeline.
 - Whether overlap warnings should be resolved manually or through automatic arrangement of future assignments.
-- Whether expected times include all steps, durations, and shifts before you rely on them.
+- Whether expected times include all operations, durations, and shifts before you rely on them.
 - Whether to save a compared plan or leave the existing plan unchanged.
 - Whether to keep a priority change caused by dragging or use **Undo** to restore the priority while keeping the position.
 

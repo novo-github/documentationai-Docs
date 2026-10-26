@@ -7,7 +7,7 @@ toc: false
 ## Releases
 
 <Update label="2026-10-25" description="v1.5.135" tags={["feature", "improvement"]}>
-  {/* commits: 033699c, 28ca01a, ae916d8, 847092e, 7214092, 319eb6d, 40bff17, d440a5e, 4d2e3c0, cc0e5b0, 4f741f4, 52818b5, a6ade7b */}
+  {/* commits: 033699c, 28ca01a, ae916d8, 847092e, 7214092, 319eb6d, 40bff17, d440a5e, 4d2e3c0, cc0e5b0, 4f741f4, 52818b5, a6ade7b, 5d84697, dac1feb, 4582ced */}
 
   **Release date:** October 25, 2026
 
@@ -28,6 +28,17 @@ toc: false
   {/* feature: admin-settings-info-icons */}
 
   Administrators can now open the information icons beside titles in **Admin Panel → BDE access templates** and **Admin Panel → Priority Levels** to read explanations. These replace the text lines below the titles. In priority settings, this includes the section description, **Which number is more urgent?**, and **Queue order and operation priority stay in step**.
+
+  #### [Smaller improvements in Assignment Planner and Assignment Gantt](/en/platform-intro/pages/assignment-gantt)
+  {/* feature: planner-gantt-polish */}
+
+  - **View options** now holds **Board** and **Planning** in one dialog. **Board** choices are your own and apply at once. Only Admins and Super Admins change **Planning** and choose **Save**. Everyone else sees the values read-only with **Ask an admin to change these.**
+  - The Planner’s forecast banner is gone. With **Follow planned dates** or **Delivery date first**, hover over **Manual queue order** for its explanation. The chip appears only while **Filter & Sort → Sort by Queue Position** is on.
+  - In Gantt, **Improve plan** in the toolbar and machine rows, and **Re-sort** in machine rows, appear only with planning access.
+  - With **Delivery date first**, Gantt’s **Improve plan** greys out **Best operation sequence** and explains why it cannot change expected ends. You can still compare and save the fixed rules.
+  - If **Undo** after **Improve plan** or **Re-sort** fails in Gantt, it shows **The old sequence could not be put back. The board now shows the current plan.** and reloads the board.
+
+  Follow [Compare and Save a Plan](/en/platform-intro/workflows/assignment-planner#compare-and-save-a-plan) or [Set the Plant’s Forecast Rule](/en/platform-intro/workflows/assignment-planner#set-the-plants-forecast-rule).
 </Update>
 
 <Update label="2026-10-25" description="v1.5.134" tags={["feature", "improvement"]}>
