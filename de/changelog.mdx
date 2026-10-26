@@ -16,7 +16,7 @@ toc: false
   #### [Die BDE-Seite mit BDE-Zugriffsvorlagen auf mehreren Maschinen einheitlich machen](/de/platform-intro/pages/bde-access-templates)
   {/* feature: bde-layouts */}
 
-  Administratoren und Super Admins können jetzt **Admin-Panel → BDE-Zugriffsvorlagen → Neue Vorlage** öffnen. Wählen Sie Maschinen, dauerhaft sichtbare oder hervorgehobene Felder, eine feste Sortierung und Aktualisierung sowie erlaubte Aktionen. So können etwa angezeigte Liefertermine immer hervorgehoben bleiben, während jede Person weitere Hervorhebungen selbst wählt. Folgen Sie [Die BDE-Seite auf mehreren Maschinen einheitlich machen](/de/platform-intro/workflows/bde-access-templates).
+  Administratoren können jetzt **Admin-Panel → BDE-Zugriffsvorlagen → Neue Vorlage** öffnen. Wählen Sie Maschinen, dauerhaft sichtbare oder hervorgehobene Felder, eine feste Sortierung und Aktualisierung sowie erlaubte Aktionen. So können etwa angezeigte Liefertermine immer hervorgehoben bleiben, während jede Person weitere Hervorhebungen selbst wählt. Folgen Sie [Die BDE-Seite auf mehreren Maschinen einheitlich machen](/de/platform-intro/workflows/bde-access-templates).
 
   Die Vorlage gilt auf den BDE-V3-Seiten dieser Maschinen für alle, auch für Administratoren. Andere Seiten bleiben unverändert. Arbeit stoppen und Mengen buchen bleibt möglich, auch wenn Statusänderungen oder Intervallkorrekturen ausgeblendet sind. Persönliche Anzeigeeinstellungen bleiben gespeichert. Ohne Vorlage arbeitet eine Maschine wie bisher.
 
@@ -32,7 +32,7 @@ toc: false
   #### [Kleinere Verbesserungen im Zuweisungsplaner und im Zuweisungs-Gantt](/de/platform-intro/pages/assignment-gantt)
   {/* feature: planner-gantt-polish */}
 
-  - **Ansichtsoptionen** enthält jetzt **Plantafel** und **Planung** im selben Dialog. Die Auswahl unter **Plantafel** ist Ihre eigene und wirkt sofort. Nur Admins und Super Admins ändern **Planung** und wählen **Speichern**. Alle anderen sehen die Werte schreibgeschützt mit **Bitten Sie einen Admin, diese Werte zu ändern.**
+  - **Ansichtsoptionen** enthält jetzt **Plantafel** und **Planung** im selben Dialog. Die Auswahl unter **Plantafel** ist Ihre eigene und wirkt sofort. Nur Admins ändern **Planung** und wählen **Speichern**. Alle anderen sehen die Werte schreibgeschützt mit **Bitten Sie einen Admin, diese Werte zu ändern.**
   - Der gesonderte Prognosehinweis im Planer ist entfernt. Bei **Nach geplanten Terminen** oder **Liefertermin zuerst** zeigen Sie auf **Manuelle Warteschlangenreihenfolge**, um die Erklärung zu lesen. Die Anzeige erscheint nur, wenn **Filtern & Sortieren → Nach Warteschlangenposition sortieren** eingeschaltet ist.
   - Im Gantt erscheinen **Plan verbessern** in der Werkzeugleiste und den Maschinenzeilen sowie **Neu sortieren** in den Maschinenzeilen nur mit Planungszugriff.
   - Bei **Liefertermin zuerst** ist **Beste Operationsfolge** in **Plan verbessern** im Gantt ausgegraut. Die Erklärung nennt den Grund, warum sie das voraussichtliche Ende nicht ändern kann. Die festen Regeln lassen sich weiterhin vergleichen und speichern.
@@ -140,13 +140,13 @@ toc: false
 
   Mit Zugriff auf die Maschine können Sie in der Betriebsdatenerfassung V3 einen Schritt auswählen und **Zurück in den Pool** wählen. Bei ausgewähltem Schritt ersetzt dies **Erstellen**. Laufende Arbeit stoppen Sie zuerst wie gewohnt und erfassen die Mengen. Danach folgt gegebenenfalls die Zeitauswahl von **BDE Assist**. Die Arbeit geht in den Hallenpool der Maschine zurück. Administratoren und Benutzer mit Zugriff auf die Seite Aufträge können im Zuweisungsplaner einen Schritt, der begonnen und danach gestoppt wurde, auf einen beliebigen Hallenpool oder eine andere zugängliche Maschine ziehen. Sie benötigen auch Zugriff auf die aktuelle Maschine des Schritts. Andere Benutzer mit Zugriff auf diese Maschine können den Schritt in der Betriebsdatenerfassung und im Zuweisungsplaner nur in deren eigenen Hallenpool zurückgeben. Ungestartete Schritte werden im Zuweisungsplaner weiterhin direkt ohne Dialog verschoben.
 
-  Hat die Arbeit begonnen, bleiben erfasste Zeiten und Gutteile auf der ursprünglichen Maschine. Prüfen Sie **Restmenge**, ergänzen Sie **Grund (optional)** für die nächste Person und bestätigen Sie. Beispielsweise bleiben bei 40 Gutteilen von 100 noch 60 für die nächste Maschine. Bei der Rückgabe eines ungestarteten Schritts wird der ganze Schritt verschoben. In beiden Fällen kommt die zurückgegebene oder übergebene Arbeit an den Anfang der Zielwarteschlange. Folgen Sie [Arbeit am Terminal zurückgeben](/de/platform-intro/workflows/data-acquisition#back-to-pool) oder [Arbeit im Planer übergeben](/de/platform-intro/workflows/assignment-planner#hand-over-work).
+  Hat die Arbeit begonnen, bleiben erfasste Zeiten und Gutteile auf der ursprünglichen Maschine. Prüfen Sie **Restmenge**, ergänzen Sie **Grund (optional)** für die nächste Person und bestätigen Sie. Beispielsweise bleiben bei 40 Gutteilen von 100 noch 60 für die nächste Maschine. Bei der Rückgabe eines ungestarteten Schritts wird der ganze Schritt verschoben. In beiden Fällen kommt die zurückgegebene oder übergebene Arbeit an den Anfang der Zielwarteschlange. Folgen Sie [Arbeit auf der BDE-Seite zurückgeben](/de/platform-intro/workflows/data-acquisition#back-to-pool) oder [Arbeit im Planer übergeben](/de/platform-intro/workflows/assignment-planner#hand-over-work).
 
   Abgeschlossene oder stornierte Arbeit kann nicht zurückgegeben werden. In der Betriebsdatenerfassung muss die Maschine einer Halle zugeordnet sein. Eine Übergabe lässt sich nicht automatisch rückgängig machen. Prüfen Sie Ziel und Menge vor dem Bestätigen.
 
   ### Verbesserungen
 
-  #### [Position laufender Aufträge am Terminal wählen](/de/platform-intro/pages/data-acquisition)
+  #### [Position laufender Aufträge auf der BDE-Seite wählen](/de/platform-intro/pages/data-acquisition)
   {/* feature: planner-queue-sort */}
 
   Öffnen Sie in der Betriebsdatenerfassung V3 **Kartenanzeige-Einstellungen → Sortierreihenfolge**. Bisher blieben laufende Aufträge und Aufträge in Wartestellung bei eingeschalteter Option **Nach Warteschlangenposition sortieren** automatisch oben. Jetzt behalten sie mit der Voreinstellung **Position beibehalten** ihren Platz in der Warteschlange. Wählen Sie **Laufende Aufträge und Aufträge in Wartestellung → Ganz oben**, um sie zuerst anzuzeigen. So können Sie einen gestarteten Auftrag, der wegen eines Werkzeugwechsels in Wartestellung ist, nach oben holen. Im Zuweisungsplaner bleiben laufende Aufträge und Aufträge in Wartestellung weiterhin oben.
@@ -353,7 +353,7 @@ toc: false
   #### [Passende Stillstandsgründe je Maschine anbieten](/de/platform-intro/pages/machine-configuration)
   {/* feature: machine-downtime-reasons */}
 
-  Administratoren können unter **Maschineneinstellungen → Stillstandsgründe** alle Gründe oder eine Auswahl anbieten, Gründe anlegen oder bearbeiten und die Auswahl **Auf andere Maschinen übertragen**. Dabei wird die bisherige Auswahl der Zielmaschinen ersetzt. **Code** und **Kategorie** helfen Bedienern beim Erkennen der Gründe. Kategoriefilter grenzen die Kacheln am Terminal ein.
+  Administratoren können unter **Maschineneinstellungen → Stillstandsgründe** alle Gründe oder eine Auswahl anbieten, Gründe anlegen oder bearbeiten und die Auswahl **Auf andere Maschinen übertragen**. Dabei wird die bisherige Auswahl der Zielmaschinen ersetzt. **Code** und **Kategorie** helfen Bedienern beim Erkennen der Gründe. Kategoriefilter grenzen die Kacheln auf der BDE-Seite ein.
 
   Wählen Sie beim Bearbeiten unter **Verfügbar auf Maschinen**, wo ein Grund auswählbar ist. Änderungen am Grund selbst gelten für alle Maschinen. Beim Löschen bleiben frühere Stillstandseinträge erhalten, verlieren aber ihren Grund. Verliert eine Maschine ihren letzten ausgewählten Grund, zeigt sie wieder alle Gründe. Folgen Sie [Stillstandsgründe erstellen und verwalten](/de/platform-intro/workflows/timeline-reason-creation).
 
@@ -421,7 +421,7 @@ toc: false
 
   Nach einem Zustellproblem kann das Watchmen-Team den neuesten geplanten Wochenbericht für die letzte abgeschlossene Woche, den neuesten geplanten Monatsbericht für den letzten abgeschlossenen Monat oder beide manuell erneut versenden. Nur Empfänger, die beim fehlgeschlagenen Versand keine E-Mail erhalten haben, bekommen den Bericht. Wer ihn bereits erhalten hat, bekommt keine zweite E-Mail. Der erneute Versand erfolgt nicht automatisch und kann nicht von Kunden gestartet werden.
 
-  Administratoren und Super Admins können außerdem im **Berichtsarchiv** die Versandanzahl prüfen und einen fertigen Bericht herunterladen. Folgen Sie [Berichte herunterladen und aktualisieren](/de/platform-intro/workflows/reports).
+  Administratoren können außerdem im **Berichtsarchiv** die Versandanzahl prüfen und einen fertigen Bericht herunterladen. Folgen Sie [Berichte herunterladen und aktualisieren](/de/platform-intro/workflows/reports).
 
   ### Fehlerbehebungen
 
@@ -453,7 +453,7 @@ toc: false
   #### [Berichte an einem Ort finden und aktualisieren](/de/platform-intro/pages/report-archive)
   {/* feature: report-archive */}
 
-  Als Administrator oder Super Admin können Sie das **Berichtsarchiv** jetzt über die Archivschaltfläche neben der Auswahl **Zeitplan** / **Trend** oben auf den Berichtsseiten öffnen. Öffnen Sie **Berichte** im Seitenmenü, um im Archiv Berichte der Arten **Wöchentlich**, **Monatlich** und **Export** zu finden. Andere Benutzer sehen das Archiv nicht. Filtern Sie nach Zeitraum, Maschine oder Quelle. Prüfen Sie, ob ein Bericht **Bereit** ist, und laden Sie die verfügbare Datei herunter. Geplante Berichte können per E-Mail versendet werden. Das Archiv zeigt die Anzahl der versendeten E-Mails.
+  Als Administrator können Sie das **Berichtsarchiv** jetzt über die Archivschaltfläche neben der Auswahl **Zeitplan** / **Trend** oben auf den Berichtsseiten öffnen. Öffnen Sie **Berichte** im Seitenmenü, um im Archiv Berichte der Arten **Wöchentlich**, **Monatlich** und **Export** zu finden. Andere Benutzer sehen das Archiv nicht. Filtern Sie nach Zeitraum, Maschine oder Quelle. Prüfen Sie, ob ein Bericht **Bereit** ist, und laden Sie die verfügbare Datei herunter. Geplante Berichte können per E-Mail versendet werden. Das Archiv zeigt die Anzahl der versendeten E-Mails.
 
   Mit **Mit aktuellen Daten neu erstellen** prüfen Sie einen vorhandenen Bericht anhand der aktuellen Produktionsaufzeichnungen. Bei unveränderten Daten erhalten Sie einen Hinweis. Schlägt die Aktualisierung fehl, bleibt die bisherige Version verfügbar. Dauert die Erstellung länger, erscheint der Bericht im Archiv, sobald er fertig ist. Versuchen Sie als anderer Benutzer den Export später erneut. Folgen Sie [Berichte herunterladen und aktualisieren](/de/platform-intro/workflows/reports).
 

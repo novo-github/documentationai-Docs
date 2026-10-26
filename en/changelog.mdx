@@ -16,7 +16,7 @@ toc: false
   #### [Make the BDE Page the Same on Several Machines with BDE Access Templates](/en/platform-intro/pages/bde-access-templates)
   {/* feature: bde-layouts */}
 
-  Administrators and Super Admins can now open **Admin Panel → BDE access templates → New template** to choose machines, fields that stay visible or highlighted, fixed sorting and automatic refresh, and allowed actions. For example, keep delivery dates highlighted wherever they are shown while letting each person choose other highlights. Follow [Make the BDE Page the Same on Several Machines](/en/platform-intro/workflows/bde-access-templates).
+  Administrators can now open **Admin Panel → BDE access templates → New template** to choose machines, fields that stay visible or highlighted, fixed sorting and automatic refresh, and allowed actions. For example, keep delivery dates highlighted wherever they are shown while letting each person choose other highlights. Follow [Make the BDE Page the Same on Several Machines](/en/platform-intro/workflows/bde-access-templates).
 
   The template applies to everyone on those machines’ Data Acquisition V3 pages, including administrators. Other pages stay unchanged. Stopping work and recording quantities remain available even when status changes or interval corrections are hidden. Personal display choices stay saved; a machine without a template works as before.
 
@@ -32,7 +32,7 @@ toc: false
   #### [Smaller improvements in Assignment Planner and Assignment Gantt](/en/platform-intro/pages/assignment-gantt)
   {/* feature: planner-gantt-polish */}
 
-  - **View options** now holds **Board** and **Planning** in one dialog. **Board** choices are your own and apply at once. Only Admins and Super Admins change **Planning** and choose **Save**. Everyone else sees the values read-only with **Ask an admin to change these.**
+  - **View options** now holds **Board** and **Planning** in one dialog. **Board** choices are your own and apply at once. Only Admins change **Planning** and choose **Save**. Everyone else sees the values read-only with **Ask an admin to change these.**
   - The Planner’s forecast banner is gone. With **Follow planned dates** or **Delivery date first**, hover over **Manual queue order** for its explanation. The chip appears only while **Filter & Sort → Sort by Queue Position** is on.
   - In Gantt, **Improve plan** in the toolbar and machine rows, and **Re-sort** in machine rows, appear only with planning access.
   - With **Delivery date first**, Gantt’s **Improve plan** greys out **Best operation sequence** and explains why it cannot change expected ends. You can still compare and save the fixed rules.
@@ -140,13 +140,13 @@ toc: false
 
   Anyone with access to the machine can now select a step in Data Acquisition V3 and choose **Back to pool**. This replaces **Create** while a step is selected. Running work goes through the normal stop and quantity entry first, followed by any **PDA Assist** choice. Work returns to the machine's own hall pool. Administrators and users with access to the Orders page can drag a step that was started and then stopped in Assignment Planner to any hall pool or another machine they can access. They also need access to the step’s current machine. Other users with access to that machine can only return the step to its own hall pool, in Data Acquisition or Assignment Planner. Steps that have not started still move directly in Assignment Planner without a dialog, as before.
 
-  If work has started, its recorded times and good parts stay on the original machine. Review **Quantity left**, add **Reason (optional)** for the next operator, and confirm. For example, 40 good parts out of 100 leave 60 for the next machine. When returning a step that has not started, the whole step moves. In both cases, the returned or handed-over work goes to the top of the destination queue. Follow [return work from the terminal](/en/platform-intro/workflows/data-acquisition#back-to-pool) or [hand over work in the Planner](/en/platform-intro/workflows/assignment-planner#hand-over-work).
+  If work has started, its recorded times and good parts stay on the original machine. Review **Quantity left**, add **Reason (optional)** for the next operator, and confirm. For example, 40 good parts out of 100 leave 60 for the next machine. When returning a step that has not started, the whole step moves. In both cases, the returned or handed-over work goes to the top of the destination queue. Follow [return work from the PDA page](/en/platform-intro/workflows/data-acquisition#back-to-pool) or [hand over work in the Planner](/en/platform-intro/workflows/assignment-planner#hand-over-work).
 
   Finished or cancelled work cannot be sent back. Data Acquisition needs a machine assigned to a hall. There is no automatic undo for a handover; check the destination and quantity before confirming.
 
   ### Improvements
 
-  #### [Choose Where Running Orders Appear at the Terminal](/en/platform-intro/pages/data-acquisition)
+  #### [Choose Where Running Orders Appear on the PDA Page](/en/platform-intro/pages/data-acquisition)
   {/* feature: planner-queue-sort */}
 
   In Data Acquisition V3, open **Card Display Settings → Sort Order**. Previously, running and on-hold orders stayed on top automatically with **Sort by Queue Position** on. They now keep their queue position by default with **Keep in place**. To show them first, choose **Running and on-hold orders → At the top**. For example, you can bring an order that was started and is on hold for a tool change to the top. In Assignment Planner, running and on-hold cards still stay on top.
@@ -353,7 +353,7 @@ toc: false
   #### [Offer the Right Downtime Reasons on Each Machine](/en/platform-intro/pages/machine-configuration)
   {/* feature: machine-downtime-reasons */}
 
-  Administrators can open **Machine Settings → Downtime reasons** to offer all reasons or a selected list, create or edit reasons, and **Apply to other machines**. Copying replaces the destinations' selections. Optional **Code** and **Category** help operators recognize reasons; category filters narrow the terminal's tiles.
+  Administrators can open **Machine Settings → Downtime reasons** to offer all reasons or a selected list, create or edit reasons, and **Apply to other machines**. Copying replaces the destinations' selections. Optional **Code** and **Category** help operators recognize reasons; category filters narrow the PDA page's tiles.
 
   Use **Available on machines** when editing a reason to choose where it can be selected. Editing the reason itself affects every machine. Deleting it keeps past downtime entries but removes their reason; a machine losing its last selected reason returns to all reasons. Follow [Create and Manage Downtime Reasons](/en/platform-intro/workflows/timeline-reason-creation).
 
@@ -421,7 +421,7 @@ toc: false
 
   After a delivery problem, the Watchmen team can manually resend the latest scheduled weekly report for the last completed week, the latest scheduled monthly report for the last completed month, or both. Only recipients missed by the failed delivery receive it; anyone who already received the report gets no second email. Redelivery is not automatic, and customers cannot start it themselves.
 
-  Administrators and Super Admins can also open **Report archive** to check delivery counts and download a ready report. Follow [Download and Update Reports](/en/platform-intro/workflows/reports).
+  Administrators can also open **Report archive** to check delivery counts and download a ready report. Follow [Download and Update Reports](/en/platform-intro/workflows/reports).
 
   ### Fixes
 
@@ -453,7 +453,7 @@ toc: false
   #### [Find and Update Your Reports in One Archive](/en/platform-intro/pages/report-archive)
   {/* feature: report-archive */}
 
-  Administrators and Super Admins can now open **Report archive** from the archive button next to the **Timeline** / **Trend** switch at the top of the Reports pages. Open **Reports** in the side menu to find **Weekly**, **Monthly**, and **Export** reports in the archive. Other users do not see the archive. Filter by period, machine, or source, check whether a report is **Ready**, and download the available file. Scheduled reports can be delivered by email; the archive shows the delivery count.
+  Administrators can now open **Report archive** from the archive button next to the **Timeline** / **Trend** switch at the top of the Reports pages. Open **Reports** in the side menu to find **Weekly**, **Monthly**, and **Export** reports in the archive. Other users do not see the archive. Filter by period, machine, or source, check whether a report is **Ready**, and download the available file. Scheduled reports can be delivered by email; the archive shows the delivery count.
 
   Select **Rebuild with current data** to check an existing report against current production records. If nothing changed, the archive tells you. If rebuilding fails, the previous version remains available. A report that takes longer to create appears in the archive when ready. Other users should try the export again later. Follow [Download and Update Reports](/en/platform-intro/workflows/reports).
 

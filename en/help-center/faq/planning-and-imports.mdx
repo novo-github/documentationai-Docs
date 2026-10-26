@@ -50,7 +50,7 @@ description: "Find answers about operation priorities, planning dates, grouping,
 | Who can set the sorting everyone starts with? | [Answer](/en/help-center/faq/planning-and-imports#company-sorting) |
 | Why hasn’t my sorting changed with the company default? | [Answer](/en/help-center/faq/planning-and-imports#sorting-default-updates) |
 | Why are running orders no longer at the top in Data Acquisition? | [Answer](/en/help-center/faq/planning-and-imports#running-sort) |
-| How do I restore company sorting at the terminal? | [Answer](/en/help-center/faq/planning-and-imports#terminal-sorting-reset) |
+| How do I restore company sorting on the PDA page? | [Answer](/en/help-center/faq/planning-and-imports#pda-sorting-reset) |
 | How do I return work when my machine cannot finish it? | [Answer](/en/help-center/faq/planning-and-imports#back-to-pool) |
 | Where has the Create button gone? | [Answer](/en/help-center/faq/planning-and-imports#create-after-selection) |
 | Why is Back to pool unavailable? | [Answer](/en/help-center/faq/planning-and-imports#return-disabled) |
@@ -80,14 +80,14 @@ description: "Find answers about operation priorities, planning dates, grouping,
 | Are the before and after times new delivery dates? | [Answer](/en/help-center/faq/planning-and-imports#proposal-expected-end) |
 | Can I sort a queue by delivery date? | [Answer](/en/help-center/faq/planning-and-imports#resort-by-date) |
 | Why do English labels now say operation instead of step? | [Answer](/en/help-center/faq/planning-and-imports#operation-wording) |
-| Who can give several terminals the same settings? | [Answer](/en/help-center/faq/planning-and-imports#shared-terminal-settings) |
-| Why can’t I hide a field or change sorting or automatic refresh? | [Answer](/en/help-center/faq/planning-and-imports#locked-terminal-settings) |
+| Who can give several BDE pages the same settings? | [Answer](/en/help-center/faq/planning-and-imports#shared-pda-settings) |
+| Why can’t I hide a field or change sorting or automatic refresh? | [Answer](/en/help-center/faq/planning-and-imports#locked-pda-settings) |
 | Why is a field set to always be highlighted still missing? | [Answer](/en/help-center/faq/planning-and-imports#template-highlights) |
-| Why can’t I change an order’s status or take work from the pool? | [Answer](/en/help-center/faq/planning-and-imports#hidden-terminal-actions) |
-| Why can I read intervals and notes but not correct them? | [Answer](/en/help-center/faq/planning-and-imports#read-only-terminal-details) |
-| When will my open terminal show a changed template? | [Answer](/en/help-center/faq/planning-and-imports#template-refresh) |
+| Why can’t I change an order’s status or take work from the pool? | [Answer](/en/help-center/faq/planning-and-imports#hidden-pda-actions) |
+| Why can I read intervals and notes but not correct them? | [Answer](/en/help-center/faq/planning-and-imports#read-only-pda-details) |
+| When will my open BDE page show a changed template? | [Answer](/en/help-center/faq/planning-and-imports#template-refresh) |
 | Will I lose my own settings when a template changes or is deleted? | [Answer](/en/help-center/faq/planning-and-imports#template-personal-choices) |
-| Why can I still use an action in the Planner when it is hidden at the terminal? | [Answer](/en/help-center/faq/planning-and-imports#template-other-pages) |
+| Why can I still use an action in the Planner when it is hidden on the BDE page? | [Answer](/en/help-center/faq/planning-and-imports#template-other-pages) |
 | Where have the explanations for templates and priorities gone? | [Answer](/en/help-center/faq/planning-and-imports#setting-explanations) |
 | Where do I change the Gantt bars and row height? | [Answer](/en/help-center/faq/planning-and-imports#gantt-settings) |
 | Why are Improve plan and Re-sort missing in Gantt? | [Answer](/en/help-center/faq/planning-and-imports#gantt-planning-access) |
@@ -209,7 +209,7 @@ Open **Orders & Products → Forecaster → Not planned at all → Show list**. 
 
 ## Why does a long-held step still delay the work behind it?
 
-The forecast assumes the paused step continues in its queue position, so later work still waits. Passing **Hold limit (working hours)** only adds **On hold for a long time**; it does not free the machine. Admins and Super Admins set the limit in Assignment Gantt under **View options → Planning** and choose **Save**. Only machine working time counts; without planned shifts, 24 hours count as the full limit. See [planning settings](/en/platform-intro/pages/assignment-gantt#planning-settings).
+The forecast assumes the paused step continues in its queue position, so later work still waits. Passing **Hold limit (working hours)** only adds **On hold for a long time**; it does not free the machine. Admins set the limit in Assignment Gantt under **View options → Planning** and choose **Save**. Only machine working time counts; without planned shifts, 24 hours count as the full limit. See [planning settings](/en/platform-intro/pages/assignment-gantt#planning-settings).
 
 <a id="save-plan" />
 
@@ -233,7 +233,7 @@ An administrator sets **Planning → Jobs in parallel** in the machine’s basic
 
 ## Who can change what the Forecaster runs next?
 
-Only Admins and Super Admins choose the plant’s ordering under **View options → Planning** and select **Save**. Everyone else who can open Gantt can read these settings but cannot edit them; they see **Ask an admin to change these.** With planning access, you can compare alternatives in **Improve plan** without changing the company rule. Follow [Set the Plant’s Forecast Rule](/en/platform-intro/workflows/assignment-planner#set-the-plants-forecast-rule).
+Only Admins choose the plant’s ordering under **View options → Planning** and select **Save**. Everyone else who can open Gantt can read these settings but cannot edit them; they see **Ask an admin to change these.** With planning access, you can compare alternatives in **Improve plan** without changing the company rule. Follow [Set the Plant’s Forecast Rule](/en/platform-intro/workflows/assignment-planner#set-the-plants-forecast-rule).
 
 <a id="forecast-help" />
 
@@ -369,9 +369,9 @@ Your own saved sorting takes precedence. A reset also saves a personal copy of t
 
 Previously, running and on-hold orders stayed on top automatically with **Sort by Queue Position** on. In Data Acquisition V3, they now keep their queue position by default with **Keep in place**. Open **Card Display Settings → Sort Order** and choose **Running and on-hold orders → At the top** to show them first. In Assignment Planner, queue-position mode keeps running and on-hold cards at the positions you set by dragging. With queue sorting off, add **Running and on-hold orders** as a rule and choose **At the top** or **At the bottom**. It comes before the waiting-order rule. Select **Save**. Follow the [display setup steps](/en/platform-intro/workflows/data-acquisition#configure-the-data-acquisition-v3-display).
 
-<a id="terminal-sorting-reset" />
+<a id="pda-sorting-reset" />
 
-## How do I restore company sorting at the terminal?
+## How do I restore company sorting on the PDA page?
 
 In Data Acquisition V3, open **Card Display Settings → Sort Order → Reset to company sorting**, then **Save**. A tick means the mode and rules already match, so the button is unavailable. Reset keeps the queue-mode choices for running and waiting orders but replaces sort rules; add any special running- or waiting-order rules again. Without a company default, the icon labelled **Reset to default (no company default set yet)** restores standard choices. See [Data Acquisition](/en/platform-intro/pages/data-acquisition#use-the-company-sorting-default).
 
@@ -562,13 +562,13 @@ Yes. Open **Re-sort → 1 · Sort by → Delivery date**. The earliest dates com
 
 Both refer to a production operation within an order. English labels now use “operation” consistently, for example **Operations of this order** and **Show operations**. The wording does not create extra work or change the operation sequence. See the [operation glossary](/en/platform-intro/concepts/glossary#op-ag).
 
-<a id="shared-terminal-settings" />
+<a id="shared-pda-settings" />
 
-## Who can give several terminals the same settings?
+## Who can give several BDE pages the same settings?
 
-Administrators and Super Admins can open **Admin Panel → BDE access templates → New template**, select machines, and choose required fields, highlights, optional fixed sorting and refresh, and allowed actions. Follow [Make the BDE Page the Same on Several Machines](/en/platform-intro/workflows/bde-access-templates).
+Administrators can open **Admin Panel → BDE access templates → New template**, select machines, and choose required fields, highlights, optional fixed sorting and refresh, and allowed actions. Follow [Make the BDE Page the Same on Several Machines](/en/platform-intro/workflows/bde-access-templates).
 
-<a id="locked-terminal-settings" />
+<a id="locked-pda-settings" />
 
 ## Why can’t I hide a field or change sorting or automatic refresh?
 
@@ -580,13 +580,13 @@ The machine may use a template. **Set by the template** marks required choices. 
 
 **Always highlighted** only adds a highlight when the field is visible. Show the field in **Card Display Settings**, or ask an administrator to also select it under **Always shown**. See [template display settings](/en/platform-intro/pages/bde-access-templates#display-settings).
 
-<a id="hidden-terminal-actions" />
+<a id="hidden-pda-actions" />
 
 ## Why can’t I change an order’s status or take work from the pool?
 
 The machine’s template can hide status changes, taking or returning pool work, and adding orders. These limits apply to administrators too. Stopping and choosing **Hold** or **Completed**, and booking quantities, still work. **PDA Assist** also stays available as before. Ask an administrator to review **Allowed on the BDE page**. See [allowed actions](/en/platform-intro/pages/bde-access-templates#allowed-actions).
 
-<a id="read-only-terminal-details" />
+<a id="read-only-pda-details" />
 
 ## Why can I read intervals and notes but not correct them?
 
@@ -594,7 +594,7 @@ The template can turn off **Correct interval times and quantities** or **Edit no
 
 <a id="template-refresh" />
 
-## When will my open terminal show a changed template?
+## When will my open BDE page show a changed template?
 
 At its next automatic refresh, every 5 minutes unless another interval is set. Use the page’s refresh button to pick up changes immediately. This also applies when a template is assigned or removed. See [changes and limits](/en/platform-intro/pages/bde-access-templates#changes-and-limits).
 
@@ -606,7 +606,7 @@ No. Your personal choices stay saved. Removing a machine from a template or dele
 
 <a id="template-other-pages" />
 
-## Why can I still use an action in the Planner when it is hidden at the terminal?
+## Why can I still use an action in the Planner when it is hidden on the BDE page?
 
 BDE access templates only control Data Acquisition V3. They do not change actions on other pages or grant page or machine access. See [template limits](/en/platform-intro/pages/bde-access-templates#changes-and-limits).
 
@@ -620,13 +620,13 @@ Open the information icon beside the title in **Admin Panel → BDE access templ
 
 ## Where do I change the Gantt bars and row height?
 
-Open **View options → Board**. Use **Bars show** for **Expected times** or **Planned dates**, and **Row height** for the space each row uses. These choices are your own and apply immediately. The information icon beside **Bars show** explains the choice. Only Admins and Super Admins can change company settings under **View options → Planning** and choose **Save**. See [Gantt view controls](/en/platform-intro/pages/assignment-gantt#view-controls-and-limits).
+Open **View options → Board**. Use **Bars show** for **Expected times** or **Planned dates**, and **Row height** for the space each row uses. These choices are your own and apply immediately. The information icon beside **Bars show** explains the choice. Only Admins can change company settings under **View options → Planning** and choose **Save**. See [Gantt view controls](/en/platform-intro/pages/assignment-gantt#view-controls-and-limits).
 
 <a id="gantt-planning-access" />
 
 ## Why are Improve plan and Re-sort missing in Gantt?
 
-Both actions require planning access: an Admin or Super Admin account, or a User with access to **Orders & Products**. Opening Gantt itself requires **Assignment Planner** page access, unless you are an Admin. Without planning access, Gantt hides **Improve plan** in the toolbar and machine rows and **Re-sort** in machine rows. Access to the page alone does not make these actions available. See [Gantt planning actions](/en/platform-intro/pages/assignment-gantt#compare-queue-orders-before-saving).
+Both actions require planning access: an Admin account, or a User with access to **Orders & Products**. Opening Gantt itself requires **Assignment Planner** page access, unless you are an Admin. Without planning access, Gantt hides **Improve plan** in the toolbar and machine rows and **Re-sort** in machine rows. Access to the page alone does not make these actions available. See [Gantt planning actions](/en/platform-intro/pages/assignment-gantt#compare-queue-orders-before-saving).
 
 <a id="delivery-sequence-disabled" />
 

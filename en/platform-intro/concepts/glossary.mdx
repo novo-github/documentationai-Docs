@@ -189,13 +189,13 @@ Share of total recorded machine time in Production. AVL remains AVL in German an
 
 ### BDE access templates
 
-**BDE access templates** are shared settings for selected machines’ Data Acquisition V3 pages. Administrators manage them in the Admin Panel. Each machine uses at most one template. The rules apply to everyone on that terminal, including administrators, without changing other pages.
+**BDE access templates** are shared settings for selected machines’ Data Acquisition V3 pages. Administrators manage them in the Admin Panel. Each machine uses at most one template. The rules apply to everyone on that BDE page, including administrators, without changing other pages.
 
 - **Always shown** keeps selected fields visible.
 - **Always highlighted** keeps selected fields highlighted when they are visible.
 - **Use a fixed sorting** and **Use a fixed auto-refresh** replace personal choices on those machines while keeping them saved.
 - **Allowed on the BDE page** controls which actions appear. On means allowed.
-- **Set by the template** marks a locked choice. **Sorting is set by the template** marks sorting you can review but cannot change at the terminal.
+- **Set by the template** marks a locked choice. **Sorting is set by the template** marks sorting you can review but cannot change on the BDE page.
 
 [Learn more](/en/platform-intro/pages/bde-access-templates).
 
@@ -203,7 +203,7 @@ Share of total recorded machine time in Production. AVL remains AVL in German an
 
 ### BDE / PDA / Betriebsdatenerfassung / Production Data Acquisition
 
-English PDA and German BDE refer to the same operator terminal for starting work and booking quantities. PDA Entry is BDE-Eintrag; **PDA Assist** is **BDE Assist**.
+English PDA and German BDE refer to the same operator screen for starting work and booking quantities. PDA Entry is BDE-Eintrag; **PDA Assist** is **BDE Assist**.
 
 [Learn more](/en/platform-intro/pages/data-acquisition).
 
@@ -474,7 +474,7 @@ The step count tells you how many of the order's steps have a machine. It does n
 
 #### On Hold for a Long Time
 
-**On hold for a long time** (previously **On hold too long**) means paused work has passed **Hold limit (working hours)**. It remains in the forecast and keeps its queue position, so later work still waits for it. The limit only controls when the note appears. Admins and Super Admins set it under **View options → Planning** in Assignment Gantt using machine working time, then choose **Save**.
+**On hold for a long time** (previously **On hold too long**) means paused work has passed **Hold limit (working hours)**. It remains in the forecast and keeps its queue position, so later work still waits for it. The limit only controls when the note appears. Admins set it under **View options → Planning** in Assignment Gantt using machine working time, then choose **Save**.
 
 #### Based On
 
@@ -945,7 +945,7 @@ Produced-piece counts. PCS on Hall Plan and kiosk figures stays unchanged across
 
 #### Right now
 
-**Right now** in the **PDA Assist** dialog shows current assistance information. Open it at the right edge of the terminal. An amber dot means automatic ending is counting down; green means no countdown. A brief glow follows a corrected time.
+**Right now** in the **PDA Assist** dialog shows current assistance information. Open it at the right edge of the PDA page. An amber dot means automatic ending is counting down; green means no countdown. A brief glow follows a corrected time.
 
 [Learn more](/en/platform-intro/pages/data-acquisition).
 
@@ -1130,7 +1130,7 @@ Read the selected condition: setup and cycle checks compare time with a plan or 
 
 ### Report archive
 
-Only Administrators and Super Admins can open **Report archive**. Other users do not see it.
+Only Administrators can open **Report archive**. Other users do not see it.
 
 **Report archive** contains **Weekly**, **Monthly**, and **Export** reports. **Scheduled** means a scheduled report; **By user** means someone requested it.
 
@@ -1408,7 +1408,7 @@ Planned load of a machine queue, based on planned durations, not recorded produc
 
 ### View options
 
-In Assignment Gantt, **View options → Board** contains your own bar and row-height choices. They apply at once. Only Admins and Super Admins can change company settings under **View options → Planning** and choose **Save**. Everyone else who can open Gantt sees the values read-only with **Ask an admin to change these.** A preview is identified by **The board is showing a preview: &lt;rule&gt;.** with the rule’s name.
+In Assignment Gantt, **View options → Board** contains your own bar and row-height choices. They apply at once. Only Admins can change company settings under **View options → Planning** and choose **Save**. Everyone else who can open Gantt sees the values read-only with **Ask an admin to change these.** A preview is identified by **The board is showing a preview: &lt;rule&gt;.** with the rule’s name.
 
 [Learn more](/en/platform-intro/pages/assignment-gantt).
 

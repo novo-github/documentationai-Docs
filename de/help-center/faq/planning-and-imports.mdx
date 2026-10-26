@@ -50,7 +50,7 @@ description: "Antworten zu Arbeitsgangprioritäten, Planungsterminen, Gruppierun
 | Wer kann die Sortierung festlegen, mit der alle beginnen? | [Antwort](/de/help-center/faq/planning-and-imports#company-sorting) |
 | Warum hat sich meine Sortierung trotz geändertem Firmenstandard nicht geändert? | [Antwort](/de/help-center/faq/planning-and-imports#sorting-default-updates) |
 | Warum stehen laufende Aufträge in der Betriebsdatenerfassung nicht mehr ganz oben? | [Antwort](/de/help-center/faq/planning-and-imports#running-sort) |
-| Wie stelle ich am Terminal die Firmensortierung wieder her? | [Antwort](/de/help-center/faq/planning-and-imports#terminal-sorting-reset) |
+| Wie stelle ich auf der BDE-Seite die Firmensortierung wieder her? | [Antwort](/de/help-center/faq/planning-and-imports#pda-sorting-reset) |
 | Wie gebe ich Arbeit zurück, wenn meine Maschine sie nicht fertigstellen kann? | [Antwort](/de/help-center/faq/planning-and-imports#back-to-pool) |
 | Wo ist die Schaltfläche **Erstellen** geblieben? | [Antwort](/de/help-center/faq/planning-and-imports#create-after-selection) |
 | Warum ist Zurück in den Pool nicht verfügbar? | [Antwort](/de/help-center/faq/planning-and-imports#return-disabled) |
@@ -80,14 +80,14 @@ description: "Antworten zu Arbeitsgangprioritäten, Planungsterminen, Gruppierun
 | Sind die Zeiten vorher und nachher neue Liefertermine? | [Antwort](/de/help-center/faq/planning-and-imports#proposal-expected-end) |
 | Kann ich eine Warteschlange nach Liefertermin sortieren? | [Antwort](/de/help-center/faq/planning-and-imports#resort-by-date) |
 | Warum steht in der englischen Oberfläche jetzt operation statt step? | [Antwort](/de/help-center/faq/planning-and-imports#operation-wording) |
-| Wer kann mehrere Terminals einheitlich einstellen? | [Antwort](/de/help-center/faq/planning-and-imports#shared-terminal-settings) |
-| Warum kann ich ein Feld nicht ausblenden oder Sortierung und Aktualisierung nicht ändern? | [Antwort](/de/help-center/faq/planning-and-imports#locked-terminal-settings) |
+| Wer kann mehrere BDE-Seiten einheitlich einstellen? | [Antwort](/de/help-center/faq/planning-and-imports#shared-pda-settings) |
+| Warum kann ich ein Feld nicht ausblenden oder Sortierung und Aktualisierung nicht ändern? | [Antwort](/de/help-center/faq/planning-and-imports#locked-pda-settings) |
 | Warum fehlt ein Feld, das immer hervorgehoben sein soll? | [Antwort](/de/help-center/faq/planning-and-imports#template-highlights) |
-| Warum kann ich den Auftragsstatus nicht ändern oder keine Arbeit aus dem Pool übernehmen? | [Antwort](/de/help-center/faq/planning-and-imports#hidden-terminal-actions) |
-| Warum kann ich Intervalle und Notizen lesen, aber nicht korrigieren? | [Antwort](/de/help-center/faq/planning-and-imports#read-only-terminal-details) |
-| Wann zeigt mein geöffnetes Terminal eine geänderte Vorlage? | [Antwort](/de/help-center/faq/planning-and-imports#template-refresh) |
+| Warum kann ich den Auftragsstatus nicht ändern oder keine Arbeit aus dem Pool übernehmen? | [Antwort](/de/help-center/faq/planning-and-imports#hidden-pda-actions) |
+| Warum kann ich Intervalle und Notizen lesen, aber nicht korrigieren? | [Antwort](/de/help-center/faq/planning-and-imports#read-only-pda-details) |
+| Wann zeigt meine geöffnete BDE-Seite eine geänderte Vorlage? | [Antwort](/de/help-center/faq/planning-and-imports#template-refresh) |
 | Verliere ich meine Einstellungen, wenn eine Vorlage geändert oder gelöscht wird? | [Antwort](/de/help-center/faq/planning-and-imports#template-personal-choices) |
-| Warum kann ich eine am Terminal ausgeblendete Aktion im Planer weiterhin nutzen? | [Antwort](/de/help-center/faq/planning-and-imports#template-other-pages) |
+| Warum kann ich eine auf der BDE-Seite ausgeblendete Aktion im Planer weiterhin nutzen? | [Antwort](/de/help-center/faq/planning-and-imports#template-other-pages) |
 | Wo sind die Erklärungen zu Vorlagen und Prioritäten geblieben? | [Antwort](/de/help-center/faq/planning-and-imports#setting-explanations) |
 | Wo ändere ich die Gantt-Balken und die Zeilenhöhe? | [Antwort](/de/help-center/faq/planning-and-imports#gantt-settings) |
 | Warum fehlen Plan verbessern und Neu sortieren im Gantt? | [Antwort](/de/help-center/faq/planning-and-imports#gantt-planning-access) |
@@ -209,7 +209,7 @@ Aufträge & Produkte zählt offene Aufträge mit Lieferverzögerung im ganzen Un
 
 ## Warum verzögert ein lange angehaltener Arbeitsgang weiterhin die Arbeit dahinter?
 
-Die Prognose nimmt an, dass der pausierte Arbeitsgang an seinem Platz weitergeht. Spätere Arbeit wartet deshalb weiterhin. Das Überschreiten von **Limit für Wartestellung (Arbeitsstunden)** ergänzt nur **Lange angehalten** und gibt die Maschine nicht frei. Admins und Super Admins stellen das Limit im Zuweisungs-Gantt unter **Ansichtsoptionen → Planung** ein und wählen **Speichern**. Nur Maschinenarbeitszeit zählt. Ohne geplante Schichten zählen 24 Stunden als volles Limit. Siehe [Planungseinstellungen](/de/platform-intro/pages/assignment-gantt#planungseinstellungen).
+Die Prognose nimmt an, dass der pausierte Arbeitsgang an seinem Platz weitergeht. Spätere Arbeit wartet deshalb weiterhin. Das Überschreiten von **Limit für Wartestellung (Arbeitsstunden)** ergänzt nur **Lange angehalten** und gibt die Maschine nicht frei. Admins stellen das Limit im Zuweisungs-Gantt unter **Ansichtsoptionen → Planung** ein und wählen **Speichern**. Nur Maschinenarbeitszeit zählt. Ohne geplante Schichten zählen 24 Stunden als volles Limit. Siehe [Planungseinstellungen](/de/platform-intro/pages/assignment-gantt#planungseinstellungen).
 
 <a id="save-plan" />
 
@@ -233,7 +233,7 @@ Ein Administrator stellt in den Basisinformationen der Maschine **Planung → Pa
 
 ## Wer kann ändern, was der Forecaster als Nächstes einplant?
 
-Nur Admins und Super Admins wählen unter **Ansichtsoptionen → Planung** die Reihenfolge des Werks und dann **Speichern**. Alle anderen, die Gantt öffnen können, sehen diese Einstellungen schreibgeschützt. Sie sehen **Bitten Sie einen Admin, diese Werte zu ändern.** Mit Planungszugriff können Sie unter **Plan verbessern** Alternativen vergleichen, ohne die Unternehmensregel zu ändern. Folgen Sie [Die Prognoseregel des Werks einstellen](/de/platform-intro/workflows/assignment-planner#die-prognoseregel-des-werks-einstellen).
+Nur Admins wählen unter **Ansichtsoptionen → Planung** die Reihenfolge des Werks und dann **Speichern**. Alle anderen, die Gantt öffnen können, sehen diese Einstellungen schreibgeschützt. Sie sehen **Bitten Sie einen Admin, diese Werte zu ändern.** Mit Planungszugriff können Sie unter **Plan verbessern** Alternativen vergleichen, ohne die Unternehmensregel zu ändern. Folgen Sie [Die Prognoseregel des Werks einstellen](/de/platform-intro/workflows/assignment-planner#die-prognoseregel-des-werks-einstellen).
 
 <a id="forecast-help" />
 
@@ -371,9 +371,9 @@ Ihre eigene gespeicherte Sortierung hat Vorrang. Auch das Zurücksetzen speicher
 
 Bisher blieben laufende Aufträge und Aufträge in Wartestellung bei eingeschalteter Option **Nach Warteschlangenposition sortieren** automatisch oben. In der Betriebsdatenerfassung V3 behalten sie jetzt mit der Voreinstellung **Position beibehalten** ihren Platz in der Warteschlange. Öffnen Sie **Kartenanzeige-Einstellungen → Sortierreihenfolge** und wählen Sie **Laufende Aufträge und Aufträge in Wartestellung → Ganz oben**, um sie zuerst anzuzeigen. Im Zuweisungsplaner behalten laufende und angehaltene Karten im Warteschlangenmodus die durch Ziehen gesetzten Positionen. Ist die Warteschlangensortierung ausgeschaltet, ergänzen Sie **Laufende Aufträge und Aufträge in Wartestellung** als Regel und wählen **Ganz oben** oder **Ganz unten**. Die Regel steht vor der Regel für wartende Aufträge. Wählen Sie **Speichern**. Folgen Sie den [Schritten zur Darstellung](/de/platform-intro/workflows/data-acquisition#die-darstellung-der-betriebsdatenerfassung-v3-einstellen).
 
-<a id="terminal-sorting-reset" />
+<a id="pda-sorting-reset" />
 
-## Wie stelle ich am Terminal die Firmensortierung wieder her?
+## Wie stelle ich auf der BDE-Seite die Firmensortierung wieder her?
 
 Öffnen Sie in der Betriebsdatenerfassung V3 **Kartenanzeige-Einstellungen → Sortierreihenfolge → Auf Firmensortierung zurücksetzen** und wählen Sie **Speichern**. Ein Haken bedeutet, dass Modus und Regeln bereits übereinstimmen. Die Schaltfläche ist dann gesperrt. Das Zurücksetzen behält die Auswahl für laufende und wartende Aufträge im Warteschlangenmodus bei, ersetzt aber die Sortierregeln. Ergänzen Sie besondere Regeln für laufende oder wartende Aufträge erneut. Ohne Firmenstandard stellt das Symbol **Auf Standard zurücksetzen (noch kein Firmenstandard festgelegt)** die Standardauswahl her. Siehe [Betriebsdatenerfassung](/de/platform-intro/pages/data-acquisition#den-firmenstandard-für-die-sortierung-nutzen).
 
@@ -564,13 +564,13 @@ Ja. Öffnen Sie **Neu sortieren → 1 · Sortieren nach → Liefertermin**. Frü
 
 Beide Wörter meinen einen Produktionsarbeitsgang innerhalb eines Auftrags. Die englische Oberfläche verwendet dafür jetzt einheitlich „operation“. Die deutschen Bezeichnungen bleiben gleich. Die Wortwahl erzeugt keine zusätzliche Arbeit und ändert keine Arbeitsgangfolge. Siehe [Arbeitsgang im Glossar](/de/platform-intro/concepts/glossary#op-ag).
 
-<a id="shared-terminal-settings" />
+<a id="shared-pda-settings" />
 
-## Wer kann mehrere Terminals einheitlich einstellen?
+## Wer kann mehrere BDE-Seiten einheitlich einstellen?
 
-Administratoren und Super Admins öffnen **Admin-Panel → BDE-Zugriffsvorlagen → Neue Vorlage**. Dort wählen sie Maschinen, vorgeschriebene Felder und Hervorhebungen, eine optionale feste Sortierung und Aktualisierung sowie erlaubte Aktionen. Folgen Sie [Die BDE-Seite auf mehreren Maschinen einheitlich machen](/de/platform-intro/workflows/bde-access-templates).
+Administratoren öffnen **Admin-Panel → BDE-Zugriffsvorlagen → Neue Vorlage**. Dort wählen sie Maschinen, vorgeschriebene Felder und Hervorhebungen, eine optionale feste Sortierung und Aktualisierung sowie erlaubte Aktionen. Folgen Sie [Die BDE-Seite auf mehreren Maschinen einheitlich machen](/de/platform-intro/workflows/bde-access-templates).
 
-<a id="locked-terminal-settings" />
+<a id="locked-pda-settings" />
 
 ## Warum kann ich ein Feld nicht ausblenden oder Sortierung und Aktualisierung nicht ändern?
 
@@ -582,13 +582,13 @@ Die Maschine verwendet möglicherweise eine Vorlage. **Von der Vorlage festgeleg
 
 **Immer hervorgehoben** wirkt nur, wenn das Feld sichtbar ist. Blenden Sie es in den **Kartenanzeige-Einstellungen** ein. Soll es für alle sichtbar sein, bitten Sie einen Administrator, es auch unter **Immer angezeigt** auszuwählen. Siehe [Anzeigeeinstellungen der Vorlage](/de/platform-intro/pages/bde-access-templates#anzeigeeinstellungen).
 
-<a id="hidden-terminal-actions" />
+<a id="hidden-pda-actions" />
 
 ## Warum kann ich den Auftragsstatus nicht ändern oder keine Arbeit aus dem Pool übernehmen?
 
 Die Maschinenvorlage kann Statusänderungen, das Übernehmen und Zurückgeben von Pool-Arbeit sowie das Hinzufügen von Aufträgen ausblenden. Das gilt auch für Administratoren. Beim Stoppen bleiben **In Wartestellung** und **Abgeschlossen** wählbar. Mengen buchen bleibt möglich. Auch **BDE Assist** bleibt wie bisher verfügbar. Bitten Sie einen Administrator, **Auf der BDE-Seite erlaubt** zu prüfen. Siehe [erlaubte Aktionen](/de/platform-intro/pages/bde-access-templates#erlaubte-aktionen).
 
-<a id="read-only-terminal-details" />
+<a id="read-only-pda-details" />
 
 ## Warum kann ich Intervalle und Notizen lesen, aber nicht korrigieren?
 
@@ -596,7 +596,7 @@ Die Vorlage kann **Zeiten und Mengen von Intervallen korrigieren** oder **Notize
 
 <a id="template-refresh" />
 
-## Wann zeigt mein geöffnetes Terminal eine geänderte Vorlage?
+## Wann zeigt meine geöffnete BDE-Seite eine geänderte Vorlage?
 
 Bei der nächsten automatischen Aktualisierung, alle 5 Minuten, sofern kein anderer Abstand eingestellt ist. Nutzen Sie die Aktualisieren-Schaltfläche der Seite, um Änderungen sofort zu übernehmen. Das gilt auch beim Zuweisen oder Entfernen einer Vorlage. Siehe [Änderungen und Grenzen](/de/platform-intro/pages/bde-access-templates#änderungen-und-grenzen).
 
@@ -608,7 +608,7 @@ Nein. Ihre persönlichen Einstellungen bleiben gespeichert. Wird die Maschine au
 
 <a id="template-other-pages" />
 
-## Warum kann ich eine am Terminal ausgeblendete Aktion im Planer weiterhin nutzen?
+## Warum kann ich eine auf der BDE-Seite ausgeblendete Aktion im Planer weiterhin nutzen?
 
 BDE-Zugriffsvorlagen gelten nur für die Betriebsdatenerfassung V3. Sie ändern weder Aktionen auf anderen Seiten noch gewähren sie Seiten- oder Maschinenzugriff. Siehe [Grenzen der Vorlagen](/de/platform-intro/pages/bde-access-templates#änderungen-und-grenzen).
 
@@ -622,7 +622,7 @@ BDE-Zugriffsvorlagen gelten nur für die Betriebsdatenerfassung V3. Sie ändern 
 
 ## Wo ändere ich die Gantt-Balken und die Zeilenhöhe?
 
-Öffnen Sie **Ansichtsoptionen → Plantafel**. Unter **Balken zeigen** wählen Sie **Erwartete Zeiten** oder **Geplante Termine**. Mit **Zeilenhöhe** bestimmen Sie den Platz je Zeile. Diese Auswahl ist Ihre eigene und wirkt sofort. Das Informationssymbol neben **Balken zeigen** erklärt die Auswahl. Nur Admins und Super Admins ändern Unternehmenseinstellungen unter **Ansichtsoptionen → Planung** und wählen **Speichern**. Siehe [Gantt-Ansichtsoptionen](/de/platform-intro/pages/assignment-gantt#ansichtsoptionen-und-grenzen).
+Öffnen Sie **Ansichtsoptionen → Plantafel**. Unter **Balken zeigen** wählen Sie **Erwartete Zeiten** oder **Geplante Termine**. Mit **Zeilenhöhe** bestimmen Sie den Platz je Zeile. Diese Auswahl ist Ihre eigene und wirkt sofort. Das Informationssymbol neben **Balken zeigen** erklärt die Auswahl. Nur Admins ändern Unternehmenseinstellungen unter **Ansichtsoptionen → Planung** und wählen **Speichern**. Siehe [Gantt-Ansichtsoptionen](/de/platform-intro/pages/assignment-gantt#ansichtsoptionen-und-grenzen).
 
 <a id="gantt-planning-access" />
 

@@ -62,7 +62,7 @@ In der Betriebsdatenerfassung V3 zeigt **Nach Warteschlangenposition sortieren**
 
 Öffnen Sie über das Zahnradsymbol **Kartenanzeige-Einstellungen → Sortierreihenfolge**. Ihr Sortiermodus bestimmt die Auswahl:
 
-- Ist **Nach Warteschlangenposition sortieren** eingeschaltet, steht **Laufende Aufträge und Aufträge in Wartestellung** über der Auswahl für wartende Aufträge. Bisher blieben diese Aufträge automatisch oben. Jetzt behalten sie mit der Voreinstellung **Position beibehalten** ihren Platz in der Warteschlange. Wählen Sie **Laufende Aufträge und Aufträge in Wartestellung → Ganz oben**, um sie vor anderen Aufträgen anzuzeigen. Im Zuweisungsplaner folgt der Warteschlangenmodus der gezogenen Reihenfolge, auch für laufende und angehaltene Arbeit. Am Terminal können Sie diese Gruppen weiterhin zuerst anzeigen lassen.
+- Ist **Nach Warteschlangenposition sortieren** eingeschaltet, steht **Laufende Aufträge und Aufträge in Wartestellung** über der Auswahl für wartende Aufträge. Bisher blieben diese Aufträge automatisch oben. Jetzt behalten sie mit der Voreinstellung **Position beibehalten** ihren Platz in der Warteschlange. Wählen Sie **Laufende Aufträge und Aufträge in Wartestellung → Ganz oben**, um sie vor anderen Aufträgen anzuzeigen. Im Zuweisungsplaner folgt der Warteschlangenmodus der gezogenen Reihenfolge, auch für laufende und angehaltene Arbeit. Auf der BDE-Seite können Sie diese Gruppen weiterhin zuerst anzeigen lassen.
 - Ist **Nach Warteschlangenposition sortieren** ausgeschaltet, nutzen Sie **Sortierregel hinzufügen** und wählen **Laufende Aufträge und Aufträge in Wartestellung**. Wählen Sie **Ganz oben** oder **Ganz unten**. Diese Regel bleibt an erster Stelle. Danach folgt die Regel für wartende Aufträge, falls Sie sie hinzufügen, und anschließend folgen Prioritäts- und Datumsregeln.
 
 Wählen Sie **Speichern**, um die Anzeige für die Auftragsliste der Maschine und den **Pool** zu übernehmen. Diese Auswahl ist vom Firmenstandard für die Sortierung getrennt. Folgen Sie den [Schritten zur Darstellung](/de/platform-intro/workflows/data-acquisition#die-darstellung-der-betriebsdatenerfassung-v3-einstellen).
@@ -124,7 +124,7 @@ Die Übersicht über den Bedienelementen zeigt Auftrag, Intervallnummer sowie ge
 - Korrigieren Sie unter **Mengen** die Werte für **Gutmenge**, **Material-Ausschuss** und **Arbeits-Ausschuss**. Geben Sie Mengen am Computer mit der Tastatur oder am Touchscreen mit dem Ziffernblock ein. Im kumulativen Modus geben Sie den gesamten Maschinenzählerstand ein.
 - Wählen Sie **Produktion** oder **Rüsten**, um den Intervalltyp zu korrigieren. Die Übersicht zeigt den vorgesehenen Typ neben dem gespeicherten.
 
-Auf Bildschirmen mit geringer Höhe steht die Übersicht oben in zwei Zeilen und der Ziffernblock ist kleiner. Auf besonders niedrigen Bildschirmen, etwa Terminals mit 1024×600, zeigen die Räder weniger Zeilen mit **−5 Min.** und **+5 Min.** daneben; der Hinweis unter den Bedienelementen entfällt.
+Auf Bildschirmen mit geringer Höhe steht die Übersicht oben in zwei Zeilen und der Ziffernblock ist kleiner. Auf besonders niedrigen Bildschirmen, etwa Bildschirmen mit 1024×600, zeigen die Räder weniger Zeilen mit **−5 Min.** und **+5 Min.** daneben; der Hinweis unter den Bedienelementen entfällt.
 
 Wählen Sie **Speichern**, um Ihre Änderungen gemeinsam zu übernehmen. **Intervall gespeichert.** bestätigt den Erfolg. Intervalltabelle und Zeitleiste aktualisieren sich. **Abbrechen** verwirft Änderungen vor dem Speichern. Haben Sie bereits **Speichern** gewählt, nimmt Abbrechen einen danach abgeschlossenen Speichervorgang nicht zurück. Prüfen Sie die Tabelle.
 
@@ -155,7 +155,7 @@ Das Starten oder Stoppen der Produktion aktualisiert den zugehörigen Auftragsst
 
 ## PDA-/BDE-Schaltflächen und Mengenbezeichnungen
 
-**PDA (Production Data Acquisition)** und **BDE (Betriebsdatenerfassung)** bezeichnen dasselbe Bedienerterminal. Tabs umfassen **Assignments**, **Pool**, **Downtime reasons**, **Tickets** und **Knowledge Base**.
+**PDA (Production Data Acquisition)** und **BDE (Betriebsdatenerfassung)** bezeichnen dieselbe Bedienseite. Tabs umfassen **Assignments**, **Pool**, **Downtime reasons**, **Tickets** und **Knowledge Base**.
 
 **Prep** beginnt Vorbereitung (deutsch **Vorber.**, auch Rüsten), **Start** die Produktion, **Stop** beendet ein Intervall und **Continue** setzt es fort. Explizite Aktionen umfassen Start/End Preparation und Start/End Shift.
 
@@ -191,7 +191,7 @@ Der Auswahldialog vergleicht **Jetzt** mit **Danach** und zeigt, welcher Auftrag
 
 Nach einer automatischen Anpassung stellt **Rückgängig** die gedrückte Zeit wieder her. **Ändern…** öffnet Alternativen. Dort stellt **Zurück zur gedrückten Zeit** die ursprüngliche Zeit wieder her. Eine passende Zeit innerhalb der automatischen Grenze kann sofort gelten. Bei mehreren Zeiten bestimmen die Maschineneinstellungen, ob Sie gefragt werden oder die Auswahl automatisch erfolgt. Zeiten jenseits der automatischen Grenze benötigen immer Ihre Auswahl.
 
-Die Intervallliste kennzeichnet Änderungen mit **Angepasst**, **Auto-beendet** oder **Verbessert**. Öffnen Sie die Erklärung für Zeitänderung und Grund. **Auto-beendet** bedeutet, dass ein vergessenes Produktionsintervall nach der eingestellten Aus- oder Leerlaufdauer beendet wurde. Dies funktioniert auch bei geschlossenem Terminal. Prüfen Sie danach die Mengen: Automatisches Beenden bucht sie nicht. Rüsten endet niemals auf diese Weise.
+Die Intervallliste kennzeichnet Änderungen mit **Angepasst**, **Auto-beendet** oder **Verbessert**. Öffnen Sie die Erklärung für Zeitänderung und Grund. **Auto-beendet** bedeutet, dass ein vergessenes Produktionsintervall nach der eingestellten Aus- oder Leerlaufdauer beendet wurde. Dies funktioniert auch bei geschlossener BDE-Seite. Prüfen Sie danach die Mengen: Automatisches Beenden bucht sie nicht. Rüsten endet niemals auf diese Weise.
 
 Ist automatisches Beenden aktiv, kann **Maschine aus, Auftrag läuft noch** die verbleibenden Minuten anzeigen. Pausieren oder Stummschalten der Warnung hält das automatische Beenden nicht an. Bitten Sie einen Administrator um eine Änderung in der [Maschinenkonfiguration](/de/platform-intro/pages/machine-configuration).
 
