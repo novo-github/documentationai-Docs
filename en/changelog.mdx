@@ -419,9 +419,16 @@ toc: false
   #### [Receive Scheduled Reports That Were Missed](/en/platform-intro/pages/report-archive)
   {/* feature: scheduled-report-redelivery */}
 
-  Scheduled reports can now be sent again to recipients who missed them. You can also open **Report archive** to check delivery counts and download a ready report. Follow [Download and Update Reports](/en/platform-intro/workflows/reports).
+  After a delivery problem, the Watchmen team can manually resend the latest scheduled weekly report for the last completed week, the latest scheduled monthly report for the last completed month, or both. Only recipients missed by the failed delivery receive it; anyone who already received the report gets no second email. Redelivery is not automatic, and customers cannot start it themselves.
+
+  Administrators and Super Admins can also open **Report archive** to check delivery counts and download a ready report. Follow [Download and Update Reports](/en/platform-intro/workflows/reports).
 
   ### Fixes
+
+  #### [Receive Report Emails with German Subjects](/en/platform-intro/pages/report-archive)
+  {/* feature: scheduled-report-german-subjects */}
+
+  Scheduled report emails with German subjects, for example subjects containing umlauts, could fail to send and now arrive.
 
   #### [Read Company Priorities on Hall Displays](/en/platform-intro/pages/hall-plan)
   {/* feature: hall-plan-kiosk-priorities */}
@@ -446,9 +453,9 @@ toc: false
   #### [Find and Update Your Reports in One Archive](/en/platform-intro/pages/report-archive)
   {/* feature: report-archive */}
 
-  Open **Report archive** to find **Weekly**, **Monthly**, and **Export** reports. Filter by period, machine, or source, check whether a report is **Ready**, and download the available file. Scheduled reports can be delivered by email; the archive shows the delivery count.
+  Administrators and Super Admins can now open **Report archive** from the archive button next to the **Timeline** / **Trend** switch at the top of the Reports pages. Open **Reports** in the side menu to find **Weekly**, **Monthly**, and **Export** reports in the archive. Other users do not see the archive. Filter by period, machine, or source, check whether a report is **Ready**, and download the available file. Scheduled reports can be delivered by email; the archive shows the delivery count.
 
-  Select **Rebuild with current data** to check an existing report against current production records. If nothing changed, the archive tells you. If rebuilding fails, the previous version remains available. A report that takes longer to create appears in the archive when ready. Follow [Download and Update Reports](/en/platform-intro/workflows/reports).
+  Select **Rebuild with current data** to check an existing report against current production records. If nothing changed, the archive tells you. If rebuilding fails, the previous version remains available. A report that takes longer to create appears in the archive when ready. Other users should try the export again later. Follow [Download and Update Reports](/en/platform-intro/workflows/reports).
 
   ### Improvements
 
