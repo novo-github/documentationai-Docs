@@ -80,6 +80,15 @@ description: "Antworten zu Arbeitsgangprioritäten, Planungsterminen, Gruppierun
 | Sind die Zeiten vorher und nachher neue Liefertermine? | [Antwort](/de/help-center/faq/planning-and-imports#proposal-expected-end) |
 | Kann ich eine Warteschlange nach Liefertermin sortieren? | [Antwort](/de/help-center/faq/planning-and-imports#resort-by-date) |
 | Warum steht in der englischen Oberfläche jetzt operation statt step? | [Antwort](/de/help-center/faq/planning-and-imports#operation-wording) |
+| Wer kann mehrere Terminals einheitlich einstellen? | [Antwort](/de/help-center/faq/planning-and-imports#shared-terminal-settings) |
+| Warum kann ich ein Feld nicht ausblenden oder Sortierung und Aktualisierung nicht ändern? | [Antwort](/de/help-center/faq/planning-and-imports#locked-terminal-settings) |
+| Warum fehlt ein Feld, das immer hervorgehoben sein soll? | [Antwort](/de/help-center/faq/planning-and-imports#template-highlights) |
+| Warum kann ich den Auftragsstatus nicht ändern oder keine Arbeit aus dem Pool übernehmen? | [Antwort](/de/help-center/faq/planning-and-imports#hidden-terminal-actions) |
+| Warum kann ich Intervalle und Notizen lesen, aber nicht korrigieren? | [Antwort](/de/help-center/faq/planning-and-imports#read-only-terminal-details) |
+| Wann zeigt mein geöffnetes Terminal eine geänderte Vorlage? | [Antwort](/de/help-center/faq/planning-and-imports#template-refresh) |
+| Verliere ich meine Einstellungen, wenn eine Vorlage geändert oder gelöscht wird? | [Antwort](/de/help-center/faq/planning-and-imports#template-personal-choices) |
+| Warum kann ich eine am Terminal ausgeblendete Aktion im Planer weiterhin nutzen? | [Antwort](/de/help-center/faq/planning-and-imports#template-other-pages) |
+| Wo sind die Erklärungen zu Vorlagen und Prioritäten geblieben? | [Antwort](/de/help-center/faq/planning-and-imports#setting-explanations) |
 
 <a id="operation-priority" />
 
@@ -363,17 +372,23 @@ Bisher blieben laufende Aufträge und Aufträge in Wartestellung bei eingeschalt
 
 Öffnen Sie in der Betriebsdatenerfassung V3 **Kartenanzeige-Einstellungen → Sortierreihenfolge → Auf Firmensortierung zurücksetzen** und wählen Sie **Speichern**. Ein Haken bedeutet, dass Modus und Regeln bereits übereinstimmen. Die Schaltfläche ist dann gesperrt. Das Zurücksetzen behält die Auswahl für laufende und wartende Aufträge im Warteschlangenmodus bei, ersetzt aber die Sortierregeln. Ergänzen Sie besondere Regeln für laufende oder wartende Aufträge erneut. Ohne Firmenstandard stellt das Symbol **Auf Standard zurücksetzen (noch kein Firmenstandard festgelegt)** die Standardauswahl her. Siehe [Betriebsdatenerfassung](/de/platform-intro/pages/data-acquisition#den-firmenstandard-für-die-sortierung-nutzen).
 
+Bei **Die Sortierung ist von der Vorlage festgelegt** können Sie die Sortierung hier nicht zurücksetzen. Bitten Sie einen Administrator, die [Maschinenvorlage](/de/platform-intro/pages/bde-access-templates) zu prüfen.
+
 <a id="back-to-pool" />
 
 ## Wie gebe ich Arbeit zurück, wenn meine Maschine sie nicht fertigstellen kann?
 
 Wählen Sie in der Betriebsdatenerfassung V3 den Schritt und **Zurück in den Pool**. Laufende Arbeit öffnet zuerst den normalen Stoppdialog für Mengen und danach gegebenenfalls die Zeitauswahl von **BDE Assist**. Bestätigen Sie Restmenge und optionalen Grund im Rückgabedialog. Die Arbeit geht in den eigenen Hallenpool Ihrer Maschine. Erfasste Zeiten und Gutteile bleiben auf der ursprünglichen Maschine. Folgen Sie [Arbeit in den Pool zurückgeben](/de/platform-intro/workflows/data-acquisition#back-to-pool).
 
+Die Maschinenvorlage muss **Aufträge an den Pool zurückgeben** erlauben. Fehlt die Aktion, bitten Sie einen Administrator, die [Vorlage](/de/platform-intro/pages/bde-access-templates) zu prüfen.
+
 <a id="create-after-selection" />
 
 ## Wo ist die Schaltfläche **Erstellen** geblieben?
 
 In der Betriebsdatenerfassung V3 erscheint bei ausgewähltem Schritt **Zurück in den Pool** anstelle von **Erstellen**. Tippen Sie erneut auf die ausgewählte Karte, um die Auswahl aufzuheben. Danach können Sie wieder Arbeit erstellen. Siehe [Betriebsdatenerfassung](/de/platform-intro/pages/data-acquisition).
+
+Eine Maschinenvorlage kann auch Auftragserstellung oder Rückgabe ausblenden. Fehlt die Aktion nach dem Aufheben der Auswahl weiterhin, bitten Sie einen Administrator, die [erlaubten Aktionen](/de/platform-intro/pages/bde-access-templates#erlaubte-aktionen) zu prüfen.
 
 <a id="return-disabled" />
 
@@ -543,3 +558,57 @@ Ja. Öffnen Sie **Neu sortieren → 1 · Sortieren nach → Liefertermin**. Frü
 ## Warum steht in der englischen Oberfläche jetzt operation statt step?
 
 Beide Wörter meinen einen Produktionsarbeitsgang innerhalb eines Auftrags. Die englische Oberfläche verwendet dafür jetzt einheitlich „operation“. Die deutschen Bezeichnungen bleiben gleich. Die Wortwahl erzeugt keine zusätzliche Arbeit und ändert keine Arbeitsgangfolge. Siehe [Arbeitsgang im Glossar](/de/platform-intro/concepts/glossary#op-ag).
+
+<a id="shared-terminal-settings" />
+
+## Wer kann mehrere Terminals einheitlich einstellen?
+
+Administratoren und Super Admins öffnen **Admin-Panel → BDE-Zugriffsvorlagen → Neue Vorlage**. Dort wählen sie Maschinen, vorgeschriebene Felder und Hervorhebungen, eine optionale feste Sortierung und Aktualisierung sowie erlaubte Aktionen. Folgen Sie [Die BDE-Seite auf mehreren Maschinen einheitlich machen](/de/platform-intro/workflows/bde-access-templates).
+
+<a id="locked-terminal-settings" />
+
+## Warum kann ich ein Feld nicht ausblenden oder Sortierung und Aktualisierung nicht ändern?
+
+Die Maschine verwendet möglicherweise eine Vorlage. **Von der Vorlage festgelegt** kennzeichnet vorgeschriebene Einstellungen. **Die Sortierung ist von der Vorlage festgelegt** bedeutet, dass Sie sie hier nicht ändern können. Weitere Felder und Hervorhebungen können Sie selbst wählen. Bitten Sie einen Administrator, gemeinsame Vorgaben unter [BDE-Zugriffsvorlagen](/de/platform-intro/pages/bde-access-templates) zu ändern.
+
+<a id="template-highlights" />
+
+## Warum fehlt ein Feld, das immer hervorgehoben sein soll?
+
+**Immer hervorgehoben** wirkt nur, wenn das Feld sichtbar ist. Blenden Sie es in Ihren Anzeigeeinstellungen ein. Soll es für alle sichtbar sein, bitten Sie einen Administrator, es auch unter **Immer angezeigt** auszuwählen. Siehe [Anzeigeeinstellungen der Vorlage](/de/platform-intro/pages/bde-access-templates#anzeigeeinstellungen).
+
+<a id="hidden-terminal-actions" />
+
+## Warum kann ich den Auftragsstatus nicht ändern oder keine Arbeit aus dem Pool übernehmen?
+
+Die Maschinenvorlage kann Statusänderungen, das Übernehmen und Zurückgeben von Pool-Arbeit sowie das Hinzufügen von Aufträgen ausblenden. Das gilt auch für Administratoren. Beim Stoppen bleiben **In Wartestellung** und **Abgeschlossen** wählbar. Mengen buchen bleibt möglich. Auch **BDE Assist** bleibt wie bisher verfügbar. Bitten Sie einen Administrator, **Auf der BDE-Seite erlaubt** zu prüfen. Siehe [erlaubte Aktionen](/de/platform-intro/pages/bde-access-templates#erlaubte-aktionen).
+
+<a id="read-only-terminal-details" />
+
+## Warum kann ich Intervalle und Notizen lesen, aber nicht korrigieren?
+
+Die Vorlage kann **Zeiten und Mengen von Intervallen korrigieren** oder **Notizen und Auftragsdetails bearbeiten** auf der BDE-Seite dieser Maschine ausschalten. Die Angaben bleiben lesbar, die Bearbeitung ist ausgeblendet oder gesperrt. Bitten Sie einen Administrator, die [erlaubten Aktionen der Vorlage](/de/platform-intro/pages/bde-access-templates#erlaubte-aktionen) zu prüfen.
+
+<a id="template-refresh" />
+
+## Wann zeigt mein geöffnetes Terminal eine geänderte Vorlage?
+
+Bei der nächsten automatischen Aktualisierung, alle 5 Minuten, sofern kein anderer Abstand eingestellt ist. Nutzen Sie die Aktualisieren-Schaltfläche der Seite, um Änderungen sofort zu übernehmen. Das gilt auch beim Zuweisen oder Entfernen einer Vorlage. Siehe [Änderungen und Grenzen](/de/platform-intro/pages/bde-access-templates#änderungen-und-grenzen).
+
+<a id="template-personal-choices" />
+
+## Verliere ich meine Einstellungen, wenn eine Vorlage geändert oder gelöscht wird?
+
+Nein. Ihre persönlichen Einstellungen bleiben gespeichert. Wird die Maschine aus einer Vorlage entfernt oder die Vorlage gelöscht, gelten wieder die persönlichen Einstellungen. Bei einem Wechsel gelten stattdessen die Vorgaben der neuen Vorlage. Jede Maschine kann nur eine Vorlage verwenden. Folgen Sie [Die BDE-Seite auf mehreren Maschinen einheitlich machen](/de/platform-intro/workflows/bde-access-templates).
+
+<a id="template-other-pages" />
+
+## Warum kann ich eine am Terminal ausgeblendete Aktion im Planer weiterhin nutzen?
+
+BDE-Zugriffsvorlagen gelten nur für die Betriebsdatenerfassung V3. Sie ändern weder Aktionen auf anderen Seiten noch gewähren sie Seiten- oder Maschinenzugriff. Siehe [Grenzen der Vorlagen](/de/platform-intro/pages/bde-access-templates#änderungen-und-grenzen).
+
+<a id="setting-explanations" />
+
+## Wo sind die Erklärungen zu Vorlagen und Prioritäten geblieben?
+
+Öffnen Sie das Informationssymbol neben dem Titel unter **Admin-Panel → BDE-Zugriffsvorlagen** oder **Admin-Panel → Prioritätsstufen**. Die Erklärungen stehen jetzt dort statt unter dem Titel. Das gilt auch für **Welche Zahl ist dringender?** und **Reihenfolge und Arbeitsgang-Priorität bleiben im Einklang**. Siehe [Administrationsbereich](/de/platform-intro/pages/admin-panel#so-werden-prioritäten-verwendet).

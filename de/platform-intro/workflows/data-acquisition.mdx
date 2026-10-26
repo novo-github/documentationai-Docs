@@ -16,6 +16,8 @@ Steuern Sie die Live-Produktionsverfolgung für eine Maschine und erfassen Sie Z
 
 Beginnen Sie auf der [Seite Betriebsdatenerfassung (BDE)](/de/platform-intro/pages/data-acquisition).
 
+Eine [BDE-Zugriffsvorlage](/de/platform-intro/pages/bde-access-templates) kann Anzeigeeinstellungen festlegen und Aktionen für alle ausblenden, auch für Administratoren. Prüfen Sie die folgenden Bedingungen, bevor Sie Arbeit hinzufügen, Intervalle korrigieren oder Arbeit in den Pool zurückgeben.
+
 ### Voraussetzungen
 - Die Maschine hat eine Warteschlange oder einen Live-Auftrag, an dem gearbeitet werden kann.
 
@@ -29,7 +31,7 @@ Beginnen Sie auf der [Seite Betriebsdatenerfassung (BDE)](/de/platform-intro/pag
     Prüfen Sie offene Zuweisungen oder nutzen Sie eine Zeitfensteransicht und wählen Sie anschließend die Aufgabe aus. Beachten Sie die Operationsfolgenummer und vorhandene Operations- oder Zuweisungsnotizen. Zuweisungsspalten und Sortierung können personalisiert werden.
   </Step>
   <Step title="Finden Sie bei Bedarf ungeplante Arbeit" icon="arrow-right" title-type="p">
-    Wenn die benötigte Operation nicht geplant ist, suchen Sie danach und weisen Sie diese direkt auf der BDE-Seite der Maschine zu.
+    Ist der benötigte Arbeitsgang ungeplant und erlaubt die Vorlage **Aufträge an der Maschine hinzufügen**, suchen Sie ihn und weisen Sie ihn direkt zu. Andernfalls bitten Sie Ihre Planung, die Arbeit zuzuweisen.
   </Step>
   <Step title="Starten Sie die Arbeit oder markieren Sie die Vorbereitung je nach Situation" icon="arrow-right" title-type="p">
     Starten Sie die Arbeit oder markieren Sie die Vorbereitung je nach aktueller Shopfloor-Situation. Wenn bereits eine andere Zuweisung läuft, prüfen Sie die Warnung, bevor Sie fortfahren.
@@ -51,6 +53,8 @@ Beginnen Sie auf der [Seite Betriebsdatenerfassung (BDE)](/de/platform-intro/pag
 <a id="back-to-pool" />
 
 ## Offene Arbeit in den Pool zurückgeben
+
+Die Maschinenvorlage muss **Aufträge an den Pool zurückgeben** erlauben. Andernfalls ist die Rückgabeaktion ausgeblendet.
 
 Sie benötigen Zugriff auf die Betriebsdatenerfassung V3 dieser Maschine. Die Maschine muss einer Halle angehören. Der Schritt muss auf dieser Maschine liegen und darf weder abgeschlossen noch storniert sein. Sie können Arbeit nur in den eigenen Hallenpool der Maschine zurückgeben. Bitten Sie die Planung, eine andere Halle oder eine bestimmte Maschine auszuwählen.
 
@@ -110,6 +114,8 @@ Bei **Dieser Schritt wurde inzwischen geändert. Die Liste wurde aktualisiert.**
 
 ## Ein Intervall korrigieren
 
+In der Betriebsdatenerfassung V3 muss die Vorlage **Zeiten und Mengen von Intervallen korrigieren** erlauben. Andernfalls können Sie die Intervallliste nur lesen. Die Bearbeitung in der Auftragsverwaltung bleibt von dieser Vorlage unberührt.
+
 Sie benötigen Zugriff auf die Betriebsdatenerfassung V3 der Maschine oder auf die Auftragsseite, wenn Sie in der Auftragsverwaltung bearbeiten. Das Intervall muss bereits vorhanden sein. Operatoren verwenden die Betriebsdatenerfassung.
 
 <Steps>
@@ -131,6 +137,8 @@ Sie benötigen Zugriff auf die Betriebsdatenerfassung V3 der Maschine oder auf d
 </Steps>
 
 ## Die Darstellung der Betriebsdatenerfassung V3 einstellen
+
+Öffnen Sie die **Kartenanzeige-Einstellungen** und achten Sie auf **Von der Vorlage festgelegt**. Vorgeschriebene Felder und Hervorhebungen bleiben angehakt und gesperrt. Weitere können Sie selbst wählen. Bei **Die Sortierung ist von der Vorlage festgelegt** prüfen Sie die Zusammenfassung und überspringen die folgenden Sortier- und Rücksetzschritte. Ist die Aktualisierung festgelegt, behalten Sie den angezeigten Abstand und überspringen auch diesen Schritt. Ihre persönlichen Einstellungen bleiben für die Nutzung ohne diese Vorgaben gespeichert.
 
 <Steps>
   <Step title="Wählen Sie die Anzeige der Intervallbalken" icon="arrow-right" title-type="p">
@@ -166,6 +174,8 @@ Erfassen Sie Materialausschuss und Fertigungsausschuss beim Stoppen oder Fortset
 Das Starten und Stoppen der Produktion aktualisiert den zugehörigen Auftragsstatus. Eine Zuweisung wird abgeschlossen, wenn die produzierte Menge genau der geplanten Menge entspricht. Erscheint ein Hinweis zur Überproduktion, prüfen Sie die Mengen und den Auftragsabschluss, bevor Sie fortfahren.
 
 ## Arbeit übernehmen, während des Laufs buchen und abschließen
+
+Für Pool-Arbeit muss **Aufträge aus dem Hallen-Pool übernehmen** erlaubt sein. Zum Hinzufügen oder Suchen ungeplanter Arbeit muss **Aufträge an der Maschine hinzufügen** erlaubt sein. Fehlt eine Aktion, bitten Sie einen Administrator, die Vorlage zu prüfen. Starten, Stoppen und Mengen buchen bleibt wie bisher verfügbar.
 
 1. Übernehmen Sie Arbeit aus dem **Pool** Ihrer Maschinenhalle. Suchen Sie bei Bedarf eine ungeplante Operation oder verwenden Sie **Find/Create Immediate Order**.
 2. Verwenden Sie **Prep / Vorber.** zur Vorbereitung, danach **Start** für Produktion. Prüfen Sie Hinweise zu anderen laufenden Aufträgen oder unfertigen Vorgängerschritten.

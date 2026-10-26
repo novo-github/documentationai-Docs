@@ -1,0 +1,69 @@
+---
+title: "BDE-Zugriffsvorlagen"
+description: "Legen Sie gemeinsame Anzeigeeinstellungen und erlaubte Aktionen für mehrere Maschinenterminals fest."
+---
+
+## Überblick
+
+**Zugriff:** Administratoren und Super Admins erstellen und bearbeiten Vorlagen. Alle Personen mit Zugriff auf eine Maschine verwenden deren Vorlage in der Betriebsdatenerfassung V3, auch Administratoren.
+
+Öffnen Sie **Admin-Panel → BDE-Zugriffsvorlagen**. Eine Vorlage legt gemeinsame Einstellungen für die ausgewählten Maschinen fest. Alles, was sie offenlässt, wählt jede Person selbst. PDA und BDE bezeichnen dasselbe Bedienerterminal.
+
+## Was Sie sehen können
+
+Die Liste zeigt den Namen jeder Vorlage und **Maschinen mit dieser Vorlage**. Sie sehen die ersten drei Maschinennamen und die Anzahl weiterer Maschinen. Zeigen Sie auf die Namen, um die vollständige Liste zu sehen. **Keine Maschinen** bedeutet, dass die Vorlage keiner Maschine zugewiesen ist.
+
+Öffnen Sie das Informationssymbol neben einem Titel, um die Erklärung zu lesen.
+
+## Was Sie tun können
+
+Wählen Sie **Neue Vorlage** oder bearbeiten oder löschen Sie eine vorhandene Vorlage. Geben Sie ihr im Editor einen eindeutigen Namen und wählen Sie Maschinen aus der nach Halle gruppierten Liste. Nutzt eine Maschine bereits eine andere Vorlage, steht deren Name daneben. Wählen Sie die Maschine aus, wechselt sie beim Speichern zu dieser Vorlage. Jede Maschine kann nur eine Vorlage verwenden. Klicken Sie auf einen Hallennamen oder dessen Kontrollkästchen, um alle Maschinen dieser Halle auszuwählen. Sind bereits alle ausgewählt, hebt ein Klick die Auswahl für die Halle auf.
+
+Folgen Sie [Die BDE-Seite auf mehreren Maschinen einheitlich machen](/de/platform-intro/workflows/bde-access-templates), um eine Vorlage anzulegen und am Terminal zu prüfen.
+
+## Anzeigeeinstellungen
+
+| Einstellung | Wirkung in der Betriebsdatenerfassung V3 |
+| --- | --- |
+| **Immer angezeigt** | Ergänzt die persönliche Auswahl sichtbarer Felder. Diese Felder bleiben in den Terminaleinstellungen angehakt und gesperrt. Andere Felder bleiben frei wählbar. Der Auftrag selbst bleibt immer sichtbar. |
+| **Immer hervorgehoben** | Hebt diese Felder hervor, wenn sie angezeigt werden. Ein ausgeblendetes Feld wird dadurch nicht sichtbar. Jede Person kann weitere Hervorhebungen ergänzen, diese aber nicht entfernen. |
+| **Feste automatische Aktualisierung verwenden** | Aktualisiert Aufträge und Daten alle 1, 3, 5 oder 10 Minuten. Am Terminal kann niemand diesen Abstand ändern. |
+| **Feste Sortierung verwenden** | Ersetzt die persönliche Sortierung auf diesen Maschinen. Wählen Sie die Warteschlangenposition oder mindestens eine Sortierregel. Bei Sortierung nach Warteschlangenposition wählen Sie **Laufende Aufträge und Aufträge in Wartestellung** (**Ganz oben** / **Position beibehalten**) und **Aufträge, die auf einen vorherigen Schritt warten** (**Ganz unten** / **Position beibehalten**). Am Terminal ist die Sortierung nur einsehbar. |
+
+Gesperrte Einstellungen zeigen **Von der Vorlage festgelegt**. Bei fester Sortierung erscheint **Die Sortierung ist von der Vorlage festgelegt**. Persönliche Einstellungen bleiben gespeichert und gelten wieder, sobald die Vorlage diese Auswahl nicht mehr vorgibt. Ohne feste Sortierung gilt die persönliche Sortierung. Gibt es keine gespeicherte Auswahl, gilt die Firmensortierung.
+
+Neue Vorlagen beginnen ohne vorgeschriebene Felder, Hervorhebungen, feste Sortierung oder feste Aktualisierung.
+
+## Erlaubte Aktionen
+
+Unter **Auf der BDE-Seite erlaubt** bedeutet ein eingeschalteter Schalter, dass die Aktion erlaubt ist. Bei einer neuen Vorlage sind alle Aktionen eingeschaltet. Schalten Sie eine Aktion aus, um ihre Bedienelemente auf den BDE-Seiten der ausgewählten Maschinen auszublenden.
+
+| Schalter | Wirkung beim Ausschalten |
+| --- | --- |
+| **Auftragsstatus ändern** | Der Status bleibt sichtbar, sein Menü lässt sich aber nicht öffnen. Beim Stoppen können Sie weiterhin **In Wartestellung** oder **Abgeschlossen** wählen. |
+| **Zeiten und Mengen von Intervallen korrigieren** | Die Intervallliste bleibt lesbar. Die Bedienelemente zum Bearbeiten von Zeiten und Mengen verschwinden. |
+| **Notizen und Auftragsdetails bearbeiten** | Die Seitenleiste des Auftrags bleibt lesbar. Notizen und Details lassen sich dort nicht ändern. |
+| **Aufträge an der Maschine hinzufügen** | Aufträge erstellen und ungeplante Arbeitsgänge suchen ist nicht verfügbar. Die Suche filtert weiterhin Arbeit, die bereits auf der Maschine liegt. |
+| **Aufträge aus dem Hallen-Pool übernehmen** | Auf Pool-Karten fehlt die Aktion zum Übernehmen auf die Maschine. |
+| **Aufträge an den Pool zurückgeben** | Die Aktion zum Zurückgeben von Arbeit oder Weitergeben ihrer Restmenge ist ausgeblendet. |
+
+Rüsten, Produktionsstart, Stopp, Mengenbuchung, Stillstandsgründe, **BDE Assist** und Warnungen bleiben wie bisher verfügbar.
+
+## Änderungen und Grenzen
+
+Änderungen erreichen geöffnete BDE-Seiten bei der nächsten automatischen Aktualisierung, alle 5 Minuten, sofern kein anderer Abstand eingestellt ist. Nutzen Sie die Aktualisieren-Schaltfläche der Seite, um sie sofort zu übernehmen.
+
+Entfernen Sie eine Maschine aus einer Vorlage oder löschen Sie die Vorlage, gelten wieder die persönlichen Einstellungen. Die Löschbestätigung zeigt die Anzahl betroffener Maschinen. Beim Bearbeiten bleiben inaktive Maschinen der Vorlage zugewiesen, auch wenn sie in der Maschinenauswahl fehlen.
+
+Vorlagen gelten nur für die Betriebsdatenerfassung V3. Sie ändern weder den Planer noch andere Seiten oder die Betriebsdatenerfassung V2. Ohne Vorlage arbeitet eine Maschine wie bisher. Seiten- und Maschinenzugriff bleiben unabhängig von den Vorlageneinstellungen.
+
+## Verwandte Seiten
+
+- [Administrationsbereich](/de/platform-intro/pages/admin-panel)
+- [Betriebsdatenerfassung](/de/platform-intro/pages/data-acquisition)
+- [Fragen zu Planung und Auftragsimport](/de/help-center/faq/planning-and-imports)
+
+## Verwandte Abläufe
+
+- [Die BDE-Seite auf mehreren Maschinen einheitlich machen](/de/platform-intro/workflows/bde-access-templates)
+- [Betriebsdatenerfassung durchführen](/de/platform-intro/workflows/data-acquisition)

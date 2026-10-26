@@ -80,6 +80,15 @@ description: "Find answers about operation priorities, planning dates, grouping,
 | Are the before and after times new delivery dates? | [Answer](/en/help-center/faq/planning-and-imports#proposal-expected-end) |
 | Can I sort a queue by delivery date? | [Answer](/en/help-center/faq/planning-and-imports#resort-by-date) |
 | Why do English labels now say operation instead of step? | [Answer](/en/help-center/faq/planning-and-imports#operation-wording) |
+| Who can give several terminals the same settings? | [Answer](/en/help-center/faq/planning-and-imports#shared-terminal-settings) |
+| Why can’t I hide a field or change sorting or automatic refresh? | [Answer](/en/help-center/faq/planning-and-imports#locked-terminal-settings) |
+| Why is a field set to always be highlighted still missing? | [Answer](/en/help-center/faq/planning-and-imports#template-highlights) |
+| Why can’t I change an order’s status or take work from the pool? | [Answer](/en/help-center/faq/planning-and-imports#hidden-terminal-actions) |
+| Why can I read intervals and notes but not correct them? | [Answer](/en/help-center/faq/planning-and-imports#read-only-terminal-details) |
+| When will my open terminal show a changed template? | [Answer](/en/help-center/faq/planning-and-imports#template-refresh) |
+| Will I lose my own settings when a template changes or is deleted? | [Answer](/en/help-center/faq/planning-and-imports#template-personal-choices) |
+| Why can I still use an action in the Planner when it is hidden at the terminal? | [Answer](/en/help-center/faq/planning-and-imports#template-other-pages) |
+| Where have the explanations for templates and priorities gone? | [Answer](/en/help-center/faq/planning-and-imports#setting-explanations) |
 
 <a id="operation-priority" />
 
@@ -361,17 +370,23 @@ Previously, running and on-hold orders stayed on top automatically with **Sort b
 
 In Data Acquisition V3, open **Card Display Settings → Sort Order → Reset to company sorting**, then **Save**. A tick means the mode and rules already match, so the button is unavailable. Reset keeps the queue-mode choices for running and waiting orders but replaces sort rules; add any special running- or waiting-order rules again. Without a company default, the icon labelled **Reset to default (no company default set yet)** restores standard choices. See [Data Acquisition](/en/platform-intro/pages/data-acquisition#use-the-company-sorting-default).
 
+If **Sorting is set by the template** appears, you cannot reset sorting here. Ask an administrator to review the [machine template](/en/platform-intro/pages/bde-access-templates).
+
 <a id="back-to-pool" />
 
 ## How do I return work when my machine cannot finish it?
 
 In Data Acquisition V3, select the step and choose **Back to pool**. Running work first opens the normal stop dialog for quantities, then any **PDA Assist** time choice. Confirm the remaining quantity and optional reason in the return dialog. Work goes to your machine’s own hall pool; recorded times and good parts stay on the original machine. Follow [return work to the pool](/en/platform-intro/workflows/data-acquisition#back-to-pool).
 
+The machine’s template must allow **Send orders back to the pool**. If the action is missing, ask an administrator to review the [template](/en/platform-intro/pages/bde-access-templates).
+
 <a id="create-after-selection" />
 
 ## Where has the Create button gone?
 
 In Data Acquisition V3, **Create** becomes **Back to pool** while a step is selected. Tap the selected card again to clear the selection and bring **Create** back. See [Data Acquisition](/en/platform-intro/pages/data-acquisition).
+
+A machine template can also hide order creation or returning work. If clearing the selection does not bring the action back, ask an administrator to check [allowed actions](/en/platform-intro/pages/bde-access-templates#allowed-actions).
 
 <a id="return-disabled" />
 
@@ -541,3 +556,57 @@ Yes. Open **Re-sort → 1 · Sort by → Delivery date**. The earliest dates com
 ## Why do English labels now say operation instead of step?
 
 Both refer to a production operation within an order. English labels now use “operation” consistently, for example **Operations of this order** and **Show operations**. The wording does not create extra work or change the operation sequence. See the [operation glossary](/en/platform-intro/concepts/glossary#op-ag).
+
+<a id="shared-terminal-settings" />
+
+## Who can give several terminals the same settings?
+
+Administrators and Super Admins can open **Admin Panel → BDE access templates → New template**, select machines, and choose required fields, highlights, optional fixed sorting and refresh, and allowed actions. Follow [Make the BDE Page the Same on Several Machines](/en/platform-intro/workflows/bde-access-templates).
+
+<a id="locked-terminal-settings" />
+
+## Why can’t I hide a field or change sorting or automatic refresh?
+
+The machine may use a template. **Set by the template** marks required choices. **Sorting is set by the template** means sorting is fixed here. You can still choose other fields and highlights. Ask an administrator to change the shared choices in [BDE Access Templates](/en/platform-intro/pages/bde-access-templates).
+
+<a id="template-highlights" />
+
+## Why is a field set to always be highlighted still missing?
+
+**Always highlighted** only adds a highlight when the field is visible. Show the field in your display settings, or ask an administrator to also select it under **Always shown**. See [template display settings](/en/platform-intro/pages/bde-access-templates#display-settings).
+
+<a id="hidden-terminal-actions" />
+
+## Why can’t I change an order’s status or take work from the pool?
+
+The machine’s template can hide status changes, taking or returning pool work, and adding orders. These limits apply to administrators too. Stopping and choosing **Hold** or **Completed**, and booking quantities, still work. **PDA Assist** also stays available as before. Ask an administrator to review **Allowed on the BDE page**. See [allowed actions](/en/platform-intro/pages/bde-access-templates#allowed-actions).
+
+<a id="read-only-terminal-details" />
+
+## Why can I read intervals and notes but not correct them?
+
+The template can turn off **Correct interval times and quantities** or **Edit notes and order details** on this machine’s BDE page. The information stays readable, but editing controls are hidden or unavailable. Ask an administrator to review the [template’s allowed actions](/en/platform-intro/pages/bde-access-templates#allowed-actions).
+
+<a id="template-refresh" />
+
+## When will my open terminal show a changed template?
+
+At its next automatic refresh, every 5 minutes unless another interval is set. Use the page’s refresh button to pick up changes immediately. This also applies when a template is assigned or removed. See [changes and limits](/en/platform-intro/pages/bde-access-templates#changes-and-limits).
+
+<a id="template-personal-choices" />
+
+## Will I lose my own settings when a template changes or is deleted?
+
+No. Your personal choices stay saved. Removing a machine from a template or deleting the template returns it to personal settings. Assigning it to another template applies that template’s requirements instead. Each machine can use only one template. Follow [Make the BDE Page the Same on Several Machines](/en/platform-intro/workflows/bde-access-templates).
+
+<a id="template-other-pages" />
+
+## Why can I still use an action in the Planner when it is hidden at the terminal?
+
+BDE access templates only control Data Acquisition V3. They do not change actions on other pages or grant page or machine access. See [template limits](/en/platform-intro/pages/bde-access-templates#changes-and-limits).
+
+<a id="setting-explanations" />
+
+## Where have the explanations for templates and priorities gone?
+
+Open the information icon beside the title in **Admin Panel → BDE access templates** or **Admin Panel → Priority Levels**. Explanations now appear there instead of below the title. This also covers **Which number is more urgent?** and **Queue order and operation priority stay in step**. See [Admin Panel](/en/platform-intro/pages/admin-panel#how-priorities-are-used).

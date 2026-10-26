@@ -1,0 +1,68 @@
+---
+title: "Make the BDE Page the Same on Several Machines"
+description: "Give several machine terminals shared display settings and allowed actions."
+---
+
+## Goal
+
+Make selected Data Acquisition V3 terminals follow the same required settings while keeping other choices personal.
+
+## Before You Begin
+
+<Callout kind="info" title="Workflow access">
+- Required access: Admin or Super Admin.
+- Entry point: **Admin Panel → BDE access templates**.
+</Callout>
+
+### Preconditions
+
+- The machines already exist.
+- Decide which display choices and actions should be shared on their terminals.
+
+## Steps
+
+<Steps>
+  <Step title="Create or open a template" icon="arrow-right" title-type="p">
+    Open **Admin Panel → BDE access templates → New template**, or edit an existing template. Give it a unique name.
+  </Step>
+  <Step title="Choose the machines" icon="arrow-right" title-type="p">
+    Select machines from the list grouped by hall. Click a hall name or its checkbox to select every machine in that hall. If all are already selected, clicking clears the hall’s selection. Check any other template name shown beside a machine: saving moves that machine from its previous template to this one.
+  </Step>
+  <Step title="Choose required fields and highlights" icon="arrow-right" title-type="p">
+    Under **Always shown**, tick the fields everyone must see. Under **Always highlighted**, tick the fields to highlight whenever shown. To keep a field both visible and highlighted, select it in both lists. People can still choose additional fields and highlights.
+  </Step>
+  <Step title="Set refresh and sorting if needed" icon="arrow-right" title-type="p">
+    Turn on **Use a fixed auto-refresh** to choose 1, 3, 5, or 10 minutes. Turn on **Use a fixed sorting** to set queue-position sorting or at least one sorting rule. With queue-position sorting, choose **Running and on-hold orders** (**At the top** / **Keep in place**) and **Orders waiting on a previous operation** (**At the bottom** / **Keep in place**). Leave either switch off to keep that choice personal.
+  </Step>
+  <Step title="Choose allowed actions" icon="arrow-right" title-type="p">
+    Under **Allowed on the BDE page**, leave on the actions people may use. Switch off those to hide. All are allowed initially. These choices apply to administrators too. Review the [action effects](/en/platform-intro/pages/bde-access-templates#allowed-actions), especially the difference between changing a status and stopping work.
+  </Step>
+  <Step title="Save and check at the terminal" icon="arrow-right" title-type="p">
+    Save the template. Open a selected machine’s Data Acquisition V3 page and use its refresh button. Check the required fields, highlights, sorting, refresh interval, and available actions. Open terminal settings to see **Set by the template** and, when applicable, **Sorting is set by the template**. Other open terminals pick up changes at their next automatic refresh, every 5 minutes unless another interval is set.
+  </Step>
+</Steps>
+
+## Decision Points
+
+- To adjust several terminals, edit their shared template and save once.
+- To move a machine to another template, select it in that template and save. A machine can use only one template.
+- To return one machine to personal settings, remove it from the template and save. To release all its machines, delete the template and review the affected machine count before confirming.
+
+## Expected Result
+
+Selected terminals use the template’s required settings for everyone. Personal choices remain saved. Other pages, including the Planner, keep their existing actions.
+
+## Common Problems and Edge Cases
+
+- **A template with this name already exists.**: choose another name.
+- **Add at least one sort rule, or sort by queue position.**: add a rule, choose queue-position sorting, or turn fixed sorting off.
+- A required highlight is missing: check whether the field is visible. Add it to **Always shown** if everyone must see it.
+- A terminal still shows old choices: use its refresh button or wait for its next automatic refresh.
+- An inactive machine is absent from the selection: editing keeps its existing template assignment.
+- A template shows **No machines**: select machines before expecting it to affect a terminal.
+
+## Related Pages
+
+- [BDE Access Templates](/en/platform-intro/pages/bde-access-templates)
+- [Admin Panel](/en/platform-intro/pages/admin-panel)
+- [Run Data Acquisition](/en/platform-intro/workflows/data-acquisition)

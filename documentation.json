@@ -233,6 +233,11 @@
                             "title": "Admin Panel",
                             "path": "en/platform-intro/pages/admin-panel",
                             "icon": "file-text"
+                          },
+                          {
+                            "title": "BDE Access Templates",
+                            "path": "en/platform-intro/pages/bde-access-templates",
+                            "icon": "file-text"
                           }
                         ]
                       },
@@ -426,6 +431,11 @@
                           {
                             "title": "Manage Halls",
                             "path": "en/platform-intro/workflows/hall-management",
+                            "icon": "play-circle"
+                          },
+                          {
+                            "title": "Make the BDE Page the Same on Several Machines",
+                            "path": "en/platform-intro/workflows/bde-access-templates",
                             "icon": "play-circle"
                           },
                           {
@@ -775,6 +785,11 @@
                             "title": "Administrationsbereich",
                             "path": "de/platform-intro/pages/admin-panel",
                             "icon": "file-text"
+                          },
+                          {
+                            "title": "BDE-Zugriffsvorlagen",
+                            "path": "de/platform-intro/pages/bde-access-templates",
+                            "icon": "file-text"
                           }
                         ]
                       },
@@ -968,6 +983,11 @@
                           {
                             "title": "Hallen verwalten",
                             "path": "de/platform-intro/workflows/hall-management",
+                            "icon": "play-circle"
+                          },
+                          {
+                            "title": "Die BDE-Seite auf mehreren Maschinen einheitlich machen",
+                            "path": "de/platform-intro/workflows/bde-access-templates",
                             "icon": "play-circle"
                           },
                           {

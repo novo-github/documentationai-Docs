@@ -16,6 +16,8 @@ Control live production tracking for a machine and record assignments, produced 
 
 Begin on the [Data Acquisition (PDA) page](/en/platform-intro/pages/data-acquisition).
 
+A machine’s [BDE access template](/en/platform-intro/pages/bde-access-templates) can fix display choices and hide actions for everyone, including administrators. Check the conditions below before adding work, correcting intervals, or returning work to the pool.
+
 ### Preconditions
 - The machine has a queue or a live order to work on.
 
@@ -29,7 +31,7 @@ Begin on the [Data Acquisition (PDA) page](/en/platform-intro/pages/data-acquisi
     Review open assignments or use a time-window view, then select the job to work on. Check the operation sequence number and available operation or assignment notes for context. Assignment columns and sorting can be personalized.
   </Step>
   <Step title="Find unplanned work when needed" icon="arrow-right" title-type="p">
-    If the required operation is not planned, search for it and assign it directly to the machine from the PDA page.
+    If the required operation is not planned and the template allows **Add orders on the machine**, search for it and assign it directly. Otherwise, ask your planner to assign the work.
   </Step>
   <Step title="Start production or preparation" icon="arrow-right" title-type="p">
     Start or mark preparation depending on the current shop-floor situation. If another assignment is already running, review the warning before continuing.
@@ -51,6 +53,8 @@ Begin on the [Data Acquisition (PDA) page](/en/platform-intro/pages/data-acquisi
 <a id="back-to-pool" />
 
 ## Return Unfinished Work to the Pool
+
+The machine’s template must allow **Send orders back to the pool**. Otherwise the return action is hidden.
 
 You need access to the machine's Data Acquisition V3 page. The machine must belong to a hall, and the step must be on this machine and neither finished nor cancelled. You can return work only to this machine's own hall pool. Ask a planner to choose another hall or a specific machine.
 
@@ -110,6 +114,8 @@ If **This operation was changed in the meantime. The list has been refreshed.** 
 
 ## Correct an Interval
 
+On Data Acquisition V3, the template must allow **Correct interval times and quantities**. Otherwise, you can only read the interval list. Editing from Order Management is unaffected by this template.
+
 You need access to the machine's Data Acquisition V3 page, or access to the order page when editing from Order Management. The interval must already exist. Operators use Data Acquisition.
 
 <Steps>
@@ -131,6 +137,8 @@ You need access to the machine's Data Acquisition V3 page, or access to the orde
 </Steps>
 
 ## Configure the Data Acquisition V3 Display
+
+Open **Card Display Settings** and check for **Set by the template**. Required fields and highlights stay ticked and locked; you can choose others. If **Sorting is set by the template** appears, review the summary and skip the sorting and reset steps below. If automatic refresh is fixed, keep its displayed interval and skip that step. Your personal choices stay saved for use without these requirements.
 
 <Steps>
   <Step title="Choose whether to show interval bars" icon="arrow-right" title-type="p">
@@ -166,6 +174,8 @@ Keep material scrap and work scrap in their separate fields when stopping or con
 Starting and stopping production updates the related order status. An assignment is marked complete when the produced quantity exactly matches the planned quantity. If an over-production prompt appears, review the quantities and order completion before continuing.
 
 ## Claim Work, Book During a Run, and Finish Safely
+
+Taking pool work requires **Take orders from the hall pool** to be allowed. Adding or finding unplanned work requires **Add orders on the machine**. If an action is hidden, ask an administrator to review the template. Starting, stopping, and booking quantities remain available as before.
 
 1. If work is in the **Pool**, claim an assignment from your machine's hall. If needed, search an unplanned operation or use **Find/Create Immediate Order**.
 2. Use **Prep** for preparation, then **Start** for production. Review concurrent-order or unfinished-previous-step prompts before continuing.

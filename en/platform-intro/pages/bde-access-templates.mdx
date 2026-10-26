@@ -1,0 +1,69 @@
+---
+title: "BDE Access Templates"
+description: "Set shared display choices and allowed actions for several machine terminals."
+---
+
+## Overview
+
+**Access:** Administrators and Super Admins create and edit templates. Anyone with access to a machine uses its template on Data Acquisition V3, including administrators.
+
+Open **Admin Panel → BDE access templates**. A template sets shared choices for the selected machines. Everything it leaves open stays each person’s own choice. PDA and BDE refer to the same operator screen.
+
+## What You Can See
+
+The list shows each template’s name and **Machines using this template**. It shows the first three machine names and how many more there are. Hover over the names to see the full list. **No machines** means the template is not assigned to a machine.
+
+Open the information icon beside a title to read its explanation.
+
+## What You Can Do
+
+Choose **New template**, or edit or delete an existing template. In the editor, give it a unique name and select machines from the list grouped by hall. A machine already using another template shows that template’s name. Selecting it moves the machine to this template when you save. Each machine can use only one template. Click a hall name or its checkbox to select every machine in that hall. If all are already selected, clicking clears the hall’s selection.
+
+Follow [Make the BDE Page the Same on Several Machines](/en/platform-intro/workflows/bde-access-templates) to create a template and check it at a terminal.
+
+## Display Settings
+
+| Setting | Effect on Data Acquisition V3 |
+| --- | --- |
+| **Always shown** | Adds fields to each person’s visible fields. These fields stay ticked and locked in terminal settings. Other fields remain optional. The order itself always stays visible. |
+| **Always highlighted** | Adds highlights when those fields are shown. It does not make a hidden field visible. People can add other highlights but cannot remove these. |
+| **Use a fixed auto-refresh** | Refreshes orders and data every 1, 3, 5, or 10 minutes. Nobody can change that interval at the terminal. |
+| **Use a fixed sorting** | Replaces personal sorting on these machines. Choose queue position or at least one sorting rule. With queue-position sorting, choose **Running and on-hold orders** (**At the top** / **Keep in place**) and **Orders waiting on a previous operation** (**At the bottom** / **Keep in place**). The terminal shows the sorting for review only. |
+
+Locked choices show **Set by the template**. Fixed sorting shows **Sorting is set by the template**. Personal choices stay saved and apply again when the template no longer fixes that setting. Without fixed sorting, personal sorting applies, or the company sorting if the person has no saved choice.
+
+New templates start without required fields, highlights, fixed sorting, or fixed refresh.
+
+## Allowed Actions
+
+Under **Allowed on the BDE page**, an on switch allows the action. All actions start on for a new template. Switch off an action to hide its controls on the selected machines’ BDE pages.
+
+| Switch | What switching it off changes |
+| --- | --- |
+| **Change the order status** | The status stays visible, but its menu cannot be opened. Stopping an order and choosing **Hold** or **Completed** still works. |
+| **Correct interval times and quantities** | The interval list stays readable, but time and quantity editing controls disappear. |
+| **Edit notes and order details** | You can read the order’s side panel but cannot edit its notes or details. |
+| **Add orders on the machine** | Order creation and the search for unplanned operations are unavailable. Search still filters work already on the machine. |
+| **Take orders from the hall pool** | Pool cards have no action to take work onto the machine. |
+| **Send orders back to the pool** | The action to return work or pass on its remaining quantity is hidden. |
+
+Preparation, production start, stop, quantity booking, downtime reasons, **PDA Assist**, and warnings remain available as before.
+
+## Changes and Limits
+
+Changes reach open BDE pages at their next automatic refresh, every 5 minutes unless another interval is set. Use the page’s refresh button to apply them immediately.
+
+Removing a machine from a template, or deleting the template, returns it to personal settings. The deletion confirmation shows how many machines are affected. Editing a template keeps its inactive machines assigned even when they do not appear in the machine selection.
+
+Templates apply only to Data Acquisition V3. They do not change the Planner, other pages, or Data Acquisition V2. A machine without a template continues as before. Page and machine access remain separate from template choices.
+
+## Related Pages
+
+- [Admin Panel](/en/platform-intro/pages/admin-panel)
+- [Data Acquisition](/en/platform-intro/pages/data-acquisition)
+- [Planning and Order Import FAQs](/en/help-center/faq/planning-and-imports)
+
+## Related Workflows
+
+- [Make the BDE Page the Same on Several Machines](/en/platform-intro/workflows/bde-access-templates)
+- [Run Data Acquisition](/en/platform-intro/workflows/data-acquisition)

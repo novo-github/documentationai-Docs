@@ -1,0 +1,68 @@
+---
+title: "Die BDE-Seite auf mehreren Maschinen einheitlich machen"
+description: "Legen Sie gemeinsame Anzeigeeinstellungen und erlaubte Aktionen für mehrere Maschinenterminals fest."
+---
+
+## Ziel
+
+Geben Sie ausgewählten BDE-V3-Terminals gemeinsame Einstellungen vor. Lassen Sie die übrigen Einstellungen jeder Person selbst zur Wahl.
+
+## Bevor Sie beginnen
+
+<Callout kind="info" title="Ablaufzugriff">
+- Erforderlicher Zugriff: Admin oder Super Admin.
+- Einstiegspunkt: **Admin-Panel → BDE-Zugriffsvorlagen**.
+</Callout>
+
+### Voraussetzungen
+
+- Die Maschinen sind bereits angelegt.
+- Legen Sie fest, welche Anzeigeeinstellungen und Aktionen auf den Terminals gemeinsam gelten sollen.
+
+## Schritte
+
+<Steps>
+  <Step title="Erstellen oder öffnen Sie eine Vorlage" icon="arrow-right" title-type="p">
+    Öffnen Sie **Admin-Panel → BDE-Zugriffsvorlagen → Neue Vorlage** oder bearbeiten Sie eine vorhandene Vorlage. Geben Sie ihr einen eindeutigen Namen.
+  </Step>
+  <Step title="Wählen Sie die Maschinen" icon="arrow-right" title-type="p">
+    Wählen Sie Maschinen aus der nach Halle gruppierten Liste. Klicken Sie auf einen Hallennamen oder dessen Kontrollkästchen, um alle Maschinen dieser Halle auszuwählen. Sind bereits alle ausgewählt, hebt ein Klick die Auswahl für die Halle auf. Prüfen Sie einen daneben angezeigten anderen Vorlagennamen: Beim Speichern wechselt diese Maschine von ihrer bisherigen zu dieser Vorlage.
+  </Step>
+  <Step title="Wählen Sie vorgeschriebene Felder und Hervorhebungen" icon="arrow-right" title-type="p">
+    Markieren Sie unter **Immer angezeigt** die Felder, die alle sehen müssen. Markieren Sie unter **Immer hervorgehoben** die Felder, die bei Anzeige hervorgehoben werden sollen. Soll ein Feld immer sichtbar und hervorgehoben sein, wählen Sie es in beiden Listen. Weitere Felder und Hervorhebungen kann jede Person selbst wählen.
+  </Step>
+  <Step title="Legen Sie bei Bedarf Aktualisierung und Sortierung fest" icon="arrow-right" title-type="p">
+    Schalten Sie **Feste automatische Aktualisierung verwenden** ein und wählen Sie 1, 3, 5 oder 10 Minuten. Schalten Sie **Feste Sortierung verwenden** ein. Wählen Sie die Sortierung nach Warteschlangenposition oder mindestens eine Sortierregel. Bei Sortierung nach Warteschlangenposition wählen Sie **Laufende Aufträge und Aufträge in Wartestellung** (**Ganz oben** / **Position beibehalten**) und **Aufträge, die auf einen vorherigen Schritt warten** (**Ganz unten** / **Position beibehalten**). Lassen Sie den jeweiligen Schalter aus, wenn die Auswahl persönlich bleiben soll.
+  </Step>
+  <Step title="Wählen Sie erlaubte Aktionen" icon="arrow-right" title-type="p">
+    Lassen Sie unter **Auf der BDE-Seite erlaubt** die erlaubten Aktionen eingeschaltet. Schalten Sie die Aktionen aus, die ausgeblendet werden sollen. Anfangs sind alle erlaubt. Die Auswahl gilt auch für Administratoren. Prüfen Sie die [Wirkung der Aktionen](/de/platform-intro/pages/bde-access-templates#erlaubte-aktionen), besonders den Unterschied zwischen Statusänderung und Stoppen.
+  </Step>
+  <Step title="Speichern und prüfen Sie am Terminal" icon="arrow-right" title-type="p">
+    Speichern Sie die Vorlage. Öffnen Sie die BDE-V3-Seite einer ausgewählten Maschine und nutzen Sie deren Aktualisieren-Schaltfläche. Prüfen Sie vorgeschriebene Felder, Hervorhebungen, Sortierung, Aktualisierungsabstand und verfügbare Aktionen. In den Terminaleinstellungen sehen Sie **Von der Vorlage festgelegt** und gegebenenfalls **Die Sortierung ist von der Vorlage festgelegt**. Andere geöffnete Terminals übernehmen Änderungen bei der nächsten automatischen Aktualisierung, alle 5 Minuten, sofern kein anderer Abstand eingestellt ist.
+  </Step>
+</Steps>
+
+## Entscheidungspunkte
+
+- Bearbeiten und speichern Sie die gemeinsame Vorlage, um mehrere Terminals anzupassen.
+- Wählen Sie eine Maschine in einer anderen Vorlage aus und speichern Sie, um sie dorthin zu verschieben. Eine Maschine kann nur eine Vorlage verwenden.
+- Entfernen Sie eine Maschine aus der Vorlage und speichern Sie, damit wieder persönliche Einstellungen gelten. Um alle Maschinen freizugeben, löschen Sie die Vorlage. Prüfen Sie vor der Bestätigung die Anzahl betroffener Maschinen.
+
+## Erwartetes Ergebnis
+
+Die ausgewählten Terminals verwenden die vorgeschriebenen Einstellungen für alle Personen. Persönliche Einstellungen bleiben gespeichert. Andere Seiten, auch der Planer, behalten ihre bisherigen Aktionen.
+
+## Häufige Probleme und Sonderfälle
+
+- **Es gibt bereits eine Vorlage mit diesem Namen.**: Wählen Sie einen anderen Namen.
+- **Fügen Sie mindestens eine Sortierregel hinzu oder sortieren Sie nach Warteschlangenposition.**: Ergänzen Sie eine Regel, wählen Sie die Warteschlangenposition oder schalten Sie die feste Sortierung aus.
+- Eine vorgeschriebene Hervorhebung fehlt: Prüfen Sie, ob das Feld sichtbar ist. Ergänzen Sie es unter **Immer angezeigt**, wenn alle es sehen müssen.
+- Ein Terminal zeigt noch alte Einstellungen: Nutzen Sie dessen Aktualisieren-Schaltfläche oder warten Sie auf die nächste automatische Aktualisierung.
+- Eine inaktive Maschine fehlt in der Auswahl: Beim Bearbeiten bleibt ihre bisherige Vorlagenzuweisung erhalten.
+- Eine Vorlage zeigt **Keine Maschinen**: Wählen Sie Maschinen aus, damit die Vorlage ein Terminal beeinflusst.
+
+## Verwandte Seiten
+
+- [BDE-Zugriffsvorlagen](/de/platform-intro/pages/bde-access-templates)
+- [Administrationsbereich](/de/platform-intro/pages/admin-panel)
+- [Betriebsdatenerfassung durchführen](/de/platform-intro/workflows/data-acquisition)

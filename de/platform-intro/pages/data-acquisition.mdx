@@ -36,6 +36,20 @@ Wählen Sie zum Maschinenwechsel den Maschinennamen in der oberen Navigationslei
 - Informationen und Reihenfolge auf Zuweisungskarten konfigurieren.
 - Zeitachsen-Gründe anwenden und zugehörige Unterstützungsinhalte prüfen.
 
+## Einstellungen aus einer Maschinenvorlage
+
+Ein Administrator kann dieser Maschine eine [BDE-Zugriffsvorlage](/de/platform-intro/pages/bde-access-templates) zuweisen. Sie gilt in der Betriebsdatenerfassung V3 für alle, auch für Administratoren.
+
+In den **Kartenanzeige-Einstellungen** bleiben vorgeschriebene Felder und Hervorhebungen angehakt und mit **Von der Vorlage festgelegt** gesperrt. Vorgeschriebene Hervorhebungen gelten nur für sichtbare Felder. Sie können weitere Felder und Hervorhebungen selbst wählen. **Die Sortierung ist von der Vorlage festgelegt** bedeutet, dass Sie die Reihenfolge einsehen, hier aber weder ändern noch zurücksetzen können. Auch ein fester Aktualisierungsabstand ist gesperrt.
+
+Ihre eigenen Einstellungen bleiben gespeichert. Sie gelten wieder, sobald die Vorlage diese Auswahl nicht mehr vorgibt. Ohne Vorlage arbeitet die Seite wie bisher. Die folgenden Sortieranleitungen gelten, wenn die Vorlage die Sortierung offenlässt.
+
+Die Vorlage kann Statusänderungen, Intervallkorrekturen, Auftragserstellung sowie das Übernehmen und Zurückgeben von Pool-Arbeit ausblenden. Auftragsnotizen und Details sind möglicherweise nur lesbar. Ist das Hinzufügen von Aufträgen ausgeschaltet, filtert die Suche weiterhin Arbeit dieser Maschine. Ungeplante Arbeitsgänge findet sie dann nicht. Fragen Sie bei fehlenden Aktionen einen Administrator.
+
+Rüsten, Produktionsstart, Stopp, Mengenbuchung, Stillstandsgründe, **BDE Assist** und Warnungen bleiben wie bisher verfügbar. Auch bei ausgeschalteten Statusänderungen können Sie beim Stoppen **In Wartestellung** oder **Abgeschlossen** wählen. Andere Seiten wie der Planer bleiben unverändert.
+
+Vorlagenänderungen erscheinen bei der nächsten automatischen Aktualisierung, alle 5 Minuten, sofern kein anderer Abstand eingestellt ist. Über die Aktualisieren-Schaltfläche der Seite übernehmen Sie sie sofort.
+
 ## Arbeit auswählen und einordnen
 
 Nutzen Sie die Ansicht offener Zuweisungen oder eine Zeitfensteransicht, um Arbeit für die aktuelle Maschine zu finden. Ist eine Operation noch ungeplant, können Sie sie direkt auf dieser Seite suchen und zuweisen. Operationsfolgenummern auf den Auftragsanzeigen helfen Ihnen, die Arbeitsreihenfolge zu erkennen. Operations- und Zuweisungsnotizen liefern Anweisungen und Kontext.
@@ -76,7 +90,7 @@ Das Zurücksetzen behält die Auswahl für laufende und wartende Aufträge im Wa
 
 ## Arbeit in den Hallenpool zurückgeben
 
-Mit Zugriff auf diese Maschine können Sie in der Betriebsdatenerfassung V3 offene Arbeit in ihren eigenen Hallenpool zurückgeben. Wählen Sie den Schritt aus: **Erstellen** wechselt zu **Zurück in den Pool**. Tippen Sie erneut auf die ausgewählte Karte, um die Auswahl aufzuheben und wieder Arbeit erstellen zu können.
+Mit Zugriff auf diese Maschine können Sie in der Betriebsdatenerfassung V3 offene Arbeit in ihren eigenen Hallenpool zurückgeben, sofern die Vorlage **Aufträge an den Pool zurückgeben** erlaubt. Wählen Sie den Schritt aus: **Erstellen** wechselt zu **Zurück in den Pool**. Tippen Sie erneut auf die ausgewählte Karte, um die Auswahl aufzuheben und wieder Arbeit erstellen zu können.
 
 Bei laufender Arbeit öffnet **Zurück in den Pool** zuerst den normalen Stoppdialog. Unten erscheint **Erst stoppen – dann zurück in den Pool**. Erfassen Sie die Mengen und stoppen Sie das Intervall. Fragt **BDE Assist** nach einer Zeit, treffen oder schließen Sie diese Auswahl, bevor sich der Rückgabedialog öffnet. Schließen Sie den Stoppdialog oder buchen Sie ohne zu stoppen, endet diese Abfolge.
 
@@ -93,6 +107,8 @@ Die Pool-Karte zeigt Herkunft und bereits gefertigte Teile oder Person und Zeitp
 Abgeschlossene oder stornierte Schritte können nicht zurückgegeben werden. Ohne Halle ist die Schaltfläche nicht verfügbar. Wenden Sie sich an die Planung. Sind alle geplanten Teile gefertigt, schließen Sie den Schritt ab, sofern keine weiteren benötigt werden. Eine Übergabe lässt sich nicht automatisch rückgängig machen. Bei **Dieser Schritt wurde inzwischen geändert. Die Liste wurde aktualisiert.** prüfen Sie die aktualisierte Liste vor einem erneuten Versuch. Folgen Sie [Arbeit in den Pool zurückgeben](/de/platform-intro/workflows/data-acquisition#back-to-pool).
 
 ## Intervallzeiten und Zeitleistendarstellung
+
+Schaltet die Maschinenvorlage **Zeiten und Mengen von Intervallen korrigieren** aus, bleibt die Intervallliste nur lesbar. Die folgenden Bearbeitungsschritte gelten, wenn Korrekturen erlaubt sind.
 
 Ein Intervall erfasst einen Abschnitt von Rüsten oder Produktion. Öffnen Sie in der Betriebsdatenerfassung V3 die Intervallliste des Auftrags. Tippen Sie einmal auf eine Start- oder Endzeit, um **Intervall bearbeiten** unter **Start** oder **Ende** zu öffnen. Das Uhrsymbol und der Hinweis **Tippen zum Ändern** kennzeichnen bearbeitbare Zeiten. Der Stift öffnet **Mengen**.
 
@@ -165,7 +181,7 @@ Ungebundene oder unbeschriftete Maschinenzeit gehört zu keinem Auftrag. Die Lö
 | **Zeitfenster + Offen** | Offene Zuweisungen innerhalb ±1/3/5/7 Tagen; für tägliche Arbeit. |
 | **Zeitfenster + Alle Status** | Alle Schritte im gewählten Datumsfenster, einschließlich abgeschlossener und stornierter Schritte. |
 
-**Card Display Settings / Columns / Highlight** werden je Benutzer gespeichert. **Nach Warteschlangenposition sortieren** folgt der geplanten Warteschlange. Wählen Sie unter **Sortierreihenfolge**, wo laufende und wartende Aufträge erscheinen.
+Ihre Kartenanzeige und Hervorhebungen werden je Benutzer gespeichert. Eine Maschinenvorlage ergänzt vorgeschriebene Felder und Hervorhebungen und kann Sortierung und automatische Aktualisierung festlegen. **Nach Warteschlangenposition sortieren** folgt der geplanten Warteschlange. Wählen Sie unter **Sortierreihenfolge**, wo laufende und wartende Aufträge erscheinen.
 
 ## Unterstützte Intervallzeiten prüfen
 
