@@ -23,7 +23,7 @@ Make selected Data Acquisition V3 pages follow the same required settings while 
 
 <Steps>
   <Step title="Create or open a template" icon="arrow-right" title-type="p">
-    Open **Admin Panel → BDE access templates → New template**, or edit an existing template. Give it a unique name.
+    Open **Admin Panel → BDE access templates → New template**, or edit an existing template. A name is required, with up to 80 characters, and must be unique within your company. Capitalisation and spaces before or after the name do not make it different: “Saws” and “ saws ” count as the same name. Names in other companies do not count.
   </Step>
   <Step title="Choose the machines" icon="arrow-right" title-type="p">
     Select machines from the list grouped by hall. Click a hall name or its checkbox to select every machine in that hall. If all are already selected, clicking clears the hall’s selection. Check any other template name shown beside a machine: saving moves that machine from its previous template to this one.
@@ -38,7 +38,7 @@ Make selected Data Acquisition V3 pages follow the same required settings while 
     Under **Allowed on the BDE page**, leave on the actions people may use. Switch off those to hide. All are allowed initially. These choices apply to administrators too. Review the [action effects](/en/platform-intro/pages/bde-access-templates#allowed-actions), especially the difference between changing a status and stopping work.
   </Step>
   <Step title="Save and check on the BDE page" icon="arrow-right" title-type="p">
-    Save the template. Open a selected machine’s Data Acquisition V3 page and use its refresh button. Check the required fields, highlights, sorting, refresh interval, and available actions. Open **Card Display Settings** to see **Set by the template** and, when applicable, **Sorting is set by the template**. Other open BDE pages pick up changes at their next automatic refresh, every 5 minutes unless another interval is set.
+    Save the template. Open a selected machine’s Data Acquisition V3 page and use its refresh button or reload the page. Check the required fields, highlights, sorting, refresh interval, and available actions. Open **Card Display Settings** to see **Set by the template** and, when applicable, **Sorting is set by the template**. Other open BDE pages pick up changes at their next automatic refresh, every 5 minutes unless another interval is set. You can also use each page’s refresh button or reload it. Other devices do not update instantly; a screen left open keeps the old choices until one of these happens.
   </Step>
 </Steps>
 
@@ -54,10 +54,10 @@ Selected BDE pages use the template’s required settings for everyone. Personal
 
 ## Common Problems and Edge Cases
 
-- **A template with this name already exists.**: choose another name.
+- **A template with this name already exists.**: choose a name of up to 80 characters that no other template in your company uses. Changing capitalisation or spaces before or after the name does not help. Names in other companies do not count.
 - **Add at least one sort rule, or sort by queue position.**: add a rule, choose queue-position sorting, or turn fixed sorting off.
 - A required highlight is missing: check whether the field is visible. Add it to **Always shown** if everyone must see it.
-- A BDE page still shows old choices: use its refresh button or wait for its next automatic refresh.
+- A BDE page still shows old choices: use its refresh button, reload the page, or wait for its next automatic refresh. Other devices do not update instantly.
 - An inactive machine is absent from the selection: editing keeps its existing template assignment.
 - A template shows **No machines**: select machines before expecting it to affect a BDE page.
 

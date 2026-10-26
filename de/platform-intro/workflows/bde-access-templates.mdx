@@ -23,7 +23,7 @@ Geben Sie ausgewählten BDE-V3-Seiten gemeinsame Einstellungen vor. Lassen Sie d
 
 <Steps>
   <Step title="Erstellen oder öffnen Sie eine Vorlage" icon="arrow-right" title-type="p">
-    Öffnen Sie **Admin-Panel → BDE-Zugriffsvorlagen → Neue Vorlage** oder bearbeiten Sie eine vorhandene Vorlage. Geben Sie ihr einen eindeutigen Namen.
+    Öffnen Sie **Admin-Panel → BDE-Zugriffsvorlagen → Neue Vorlage** oder bearbeiten Sie eine vorhandene Vorlage. Ein Name ist erforderlich, darf höchstens 80 Zeichen lang sein und muss innerhalb Ihres Unternehmens eindeutig sein. Groß- und Kleinschreibung sowie Leerzeichen vor oder nach dem Namen machen keinen Unterschied: „Sägen“ und „ sägen “ gelten als derselbe Name. Namen anderer Unternehmen zählen nicht mit.
   </Step>
   <Step title="Wählen Sie die Maschinen" icon="arrow-right" title-type="p">
     Wählen Sie Maschinen aus der nach Halle gruppierten Liste. Klicken Sie auf einen Hallennamen oder dessen Kontrollkästchen, um alle Maschinen dieser Halle auszuwählen. Sind bereits alle ausgewählt, hebt ein Klick die Auswahl für die Halle auf. Prüfen Sie einen daneben angezeigten anderen Vorlagennamen: Beim Speichern wechselt diese Maschine von ihrer bisherigen zu dieser Vorlage.
@@ -38,7 +38,7 @@ Geben Sie ausgewählten BDE-V3-Seiten gemeinsame Einstellungen vor. Lassen Sie d
     Lassen Sie unter **Auf der BDE-Seite erlaubt** die erlaubten Aktionen eingeschaltet. Schalten Sie die Aktionen aus, die ausgeblendet werden sollen. Anfangs sind alle erlaubt. Die Auswahl gilt auch für Administratoren. Prüfen Sie die [Wirkung der Aktionen](/de/platform-intro/pages/bde-access-templates#erlaubte-aktionen), besonders den Unterschied zwischen Statusänderung und Stoppen.
   </Step>
   <Step title="Speichern und prüfen Sie auf der BDE-Seite" icon="arrow-right" title-type="p">
-    Speichern Sie die Vorlage. Öffnen Sie die BDE-V3-Seite einer ausgewählten Maschine und nutzen Sie deren Aktualisieren-Schaltfläche. Prüfen Sie vorgeschriebene Felder, Hervorhebungen, Sortierung, Aktualisierungsabstand und verfügbare Aktionen. In den **Kartenanzeige-Einstellungen** sehen Sie **Von der Vorlage festgelegt** und gegebenenfalls **Die Sortierung ist von der Vorlage festgelegt**. Andere geöffnete BDE-Seiten übernehmen Änderungen bei der nächsten automatischen Aktualisierung, alle 5 Minuten, sofern kein anderer Abstand eingestellt ist.
+    Speichern Sie die Vorlage. Öffnen Sie die BDE-V3-Seite einer ausgewählten Maschine und nutzen Sie deren Aktualisieren-Schaltfläche oder laden Sie die Seite neu. Prüfen Sie vorgeschriebene Felder, Hervorhebungen, Sortierung, Aktualisierungsabstand und verfügbare Aktionen. In den **Kartenanzeige-Einstellungen** sehen Sie **Von der Vorlage festgelegt** und gegebenenfalls **Die Sortierung ist von der Vorlage festgelegt**. Andere geöffnete BDE-Seiten übernehmen Änderungen bei der nächsten automatischen Aktualisierung, alle 5 Minuten, sofern kein anderer Abstand eingestellt ist. Auch dort können Sie die Aktualisieren-Schaltfläche nutzen oder die Seite neu laden. Andere Geräte übernehmen Änderungen nicht sofort; ein geöffnet gebliebener Bildschirm zeigt bis dahin die bisherigen Einstellungen.
   </Step>
 </Steps>
 
@@ -54,10 +54,10 @@ Die ausgewählten BDE-Seiten verwenden die vorgeschriebenen Einstellungen für a
 
 ## Häufige Probleme und Sonderfälle
 
-- **Es gibt bereits eine Vorlage mit diesem Namen.**: Wählen Sie einen anderen Namen.
+- **Es gibt bereits eine Vorlage mit diesem Namen.**: Wählen Sie einen Namen mit höchstens 80 Zeichen, den keine andere Vorlage Ihres Unternehmens verwendet. Geänderte Groß- und Kleinschreibung oder Leerzeichen vor oder nach dem Namen helfen nicht. Namen anderer Unternehmen zählen nicht mit.
 - **Fügen Sie mindestens eine Sortierregel hinzu oder sortieren Sie nach Warteschlangenposition.**: Ergänzen Sie eine Regel, wählen Sie die Warteschlangenposition oder schalten Sie die feste Sortierung aus.
 - Eine vorgeschriebene Hervorhebung fehlt: Prüfen Sie, ob das Feld sichtbar ist. Ergänzen Sie es unter **Immer angezeigt**, wenn alle es sehen müssen.
-- Eine BDE-Seite zeigt noch alte Einstellungen: Nutzen Sie deren Aktualisieren-Schaltfläche oder warten Sie auf die nächste automatische Aktualisierung.
+- Eine BDE-Seite zeigt noch alte Einstellungen: Nutzen Sie deren Aktualisieren-Schaltfläche, laden Sie die Seite neu oder warten Sie auf die nächste automatische Aktualisierung. Andere Geräte übernehmen Änderungen nicht sofort.
 - Eine inaktive Maschine fehlt in der Auswahl: Beim Bearbeiten bleibt ihre bisherige Vorlagenzuweisung erhalten.
 - Eine Vorlage zeigt **Keine Maschinen**: Wählen Sie Maschinen aus, damit die Vorlage eine BDE-Seite beeinflusst.
 

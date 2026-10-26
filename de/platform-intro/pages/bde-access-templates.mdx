@@ -11,7 +11,7 @@ description: "Legen Sie gemeinsame Anzeigeeinstellungen und erlaubte Aktionen f�
 
 ## Was Sie sehen können
 
-Die Liste zeigt den Namen jeder Vorlage und **Maschinen mit dieser Vorlage**. Sie sehen die ersten drei Maschinennamen und die Anzahl weiterer Maschinen. Zeigen Sie auf die Namen, um die vollständige Liste zu sehen. **Keine Maschinen** bedeutet, dass die Vorlage keiner Maschine zugewiesen ist.
+Die Liste zeigt den Namen jeder Vorlage und **Maschinen mit dieser Vorlage**. Sie sehen die ersten drei Maschinennamen, danach **+N weitere**. Zeigen Sie auf die Namen, um die vollständige Liste zu sehen. **Keine Maschinen** bedeutet, dass die Vorlage keiner Maschine zugewiesen ist. Jede Zeile bietet **Bearbeiten** und **Löschen**.
 
 Öffnen Sie das Informationssymbol neben einem Titel, um die Erklärung zu lesen.
 
@@ -19,14 +19,18 @@ Die Liste zeigt den Namen jeder Vorlage und **Maschinen mit dieser Vorlage**. Si
 
 Wählen Sie **Neue Vorlage** oder bearbeiten oder löschen Sie eine vorhandene Vorlage. Geben Sie ihr im Editor einen eindeutigen Namen und wählen Sie Maschinen aus der nach Halle gruppierten Liste. Nutzt eine Maschine bereits eine andere Vorlage, steht deren Name daneben. Wählen Sie die Maschine aus, wechselt sie beim Speichern zu dieser Vorlage. Jede Maschine kann nur eine Vorlage verwenden. Klicken Sie auf einen Hallennamen oder dessen Kontrollkästchen, um alle Maschinen dieser Halle auszuwählen. Sind bereits alle ausgewählt, hebt ein Klick die Auswahl für die Halle auf.
 
+Ein Name ist erforderlich, darf höchstens 80 Zeichen lang sein und muss innerhalb Ihres Unternehmens eindeutig sein. Groß- und Kleinschreibung sowie Leerzeichen vor oder nach dem Namen machen keinen Unterschied: „Sägen“ und „ sägen “ gelten als derselbe Name. Namen anderer Unternehmen zählen nicht mit. Beim Speichern eines doppelten Namens erscheint **Es gibt bereits eine Vorlage mit diesem Namen.**
+
+Der Editor zeigt in dieser Reihenfolge: **Name**, **Maschinen mit dieser Vorlage**, **Immer angezeigt**, **Immer hervorgehoben**, **Feste automatische Aktualisierung verwenden**, **Feste Sortierung verwenden** und **Auf der BDE-Seite erlaubt**.
+
 Folgen Sie [Die BDE-Seite auf mehreren Maschinen einheitlich machen](/de/platform-intro/workflows/bde-access-templates), um eine Vorlage anzulegen und auf der BDE-Seite zu prüfen.
 
 ## Anzeigeeinstellungen
 
 | Einstellung | Wirkung in der Betriebsdatenerfassung V3 |
 | --- | --- |
-| **Immer angezeigt** | Ergänzt die persönliche Auswahl sichtbarer Felder. Diese Felder bleiben in den **Kartenanzeige-Einstellungen** angehakt und gesperrt. Andere Felder bleiben frei wählbar. Der Auftrag selbst bleibt immer sichtbar. |
-| **Immer hervorgehoben** | Hebt diese Felder hervor, wenn sie angezeigt werden. Ein ausgeblendetes Feld wird dadurch nicht sichtbar. Jede Person kann weitere Hervorhebungen ergänzen, diese aber nicht entfernen. |
+| **Immer angezeigt** | Listet Felder in denselben Gruppen wie die **Kartenanzeige-Einstellungen**. Ergänzt die persönliche Auswahl sichtbarer Felder. Diese Felder bleiben in den **Kartenanzeige-Einstellungen** angehakt und gesperrt. Andere Felder bleiben frei wählbar. Der Auftrag selbst bleibt immer sichtbar. |
+| **Immer hervorgehoben** | Bietet acht Felder: **Auftragsdatum**, **Lieferdatum**, **Auftragsnotizen**, **Arbeitsauftragsnotizen**, **Produktbeschreibung**, **Operationsbeschreibung**, **Operationsnotizen** und **Zuweisungsnotizen**. Hebt diese Felder hervor, wenn sie angezeigt werden. Ein ausgeblendetes Feld wird dadurch nicht sichtbar. Jede Person kann weitere Hervorhebungen ergänzen, diese aber nicht entfernen. |
 | **Feste automatische Aktualisierung verwenden** | Aktualisiert Aufträge und Daten alle 1, 3, 5 oder 10 Minuten. Auf der BDE-Seite kann niemand diesen Abstand ändern. |
 | **Feste Sortierung verwenden** | Ersetzt die persönliche Sortierung auf diesen Maschinen. Wählen Sie die Warteschlangenposition oder mindestens eine Sortierregel. Bei Sortierung nach Warteschlangenposition wählen Sie **Laufende Aufträge und Aufträge in Wartestellung** (**Position beibehalten** / **Ganz oben**) und **Aufträge, die auf einen vorherigen Schritt warten** (**Position beibehalten** / **Ganz unten**). Auf der BDE-Seite ist die Sortierung nur einsehbar. |
 
@@ -51,7 +55,7 @@ Rüsten, Produktionsstart, Stopp, Mengenbuchung, Stillstandsgründe, **BDE Assis
 
 ## Änderungen und Grenzen
 
-Änderungen erreichen geöffnete BDE-Seiten bei der nächsten automatischen Aktualisierung, alle 5 Minuten, sofern kein anderer Abstand eingestellt ist. Nutzen Sie die Aktualisieren-Schaltfläche der Seite, um sie sofort zu übernehmen.
+Änderungen erreichen geöffnete BDE-Seiten bei der nächsten automatischen Aktualisierung, alle 5 Minuten, sofern kein anderer Abstand eingestellt ist. Nutzen Sie die Aktualisieren-Schaltfläche der Seite oder laden Sie die Seite neu, um sie sofort zu übernehmen. Andere Geräte übernehmen Änderungen nicht sofort; ein geöffnet gebliebener Bildschirm zeigt bis dahin die bisherigen Einstellungen.
 
 Entfernen Sie eine Maschine aus einer Vorlage oder löschen Sie die Vorlage, gelten wieder die persönlichen Einstellungen. Die Löschbestätigung zeigt die Anzahl betroffener Maschinen. Beim Bearbeiten bleiben inaktive Maschinen der Vorlage zugewiesen, auch wenn sie in der Maschinenauswahl fehlen.
 
