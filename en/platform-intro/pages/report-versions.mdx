@@ -1,0 +1,150 @@
+---
+title: "Report Versions"
+description: "Compare Version 1 and Version 2, choose your email report, and understand the new workbook."
+---
+
+## Overview
+
+**Access:** You can choose the version for your own report emails in your profile. With access to Timeline Analysis and the relevant machines, you can choose a version for an export. Only Administrators can open the report archive.
+
+The Watchmen Platform offers **Version 1** and **Version 2** as Excel workbooks. Version 1 remains your email preference until you change it. You can switch in either direction at any time.
+
+## What You Can See
+
+| Version | What it includes |
+| --- | --- |
+| **Version 1** | OEE, availability and performance per machine and shift, daily values on one sheet per machine, and idle time grouped by stop length. |
+| **Version 2** | Findings that need attention, figures beside their targets, shift comparisons, cycles and cycle times, downtime reasons, orders and operations worked on, and one page per machine with days and shifts. Weekly and monthly emails also include planned work for the next 7 days when available. |
+
+Under **What you get**, the list follows the selected tab. **Download an example** downloads that version with made-up data. The example is German when the interface is German and English for other interface languages.
+
+## What You Can Do
+
+- Open your profile → **Newsletter Preferences** card → **Newsletter report version**. Choose **Version 1** or **Version 2**, then **Save Preferences** at the top right of the card header.
+- Open Timeline Analysis through **Reports** in the side menu. After choosing machines and dates, select **Generate report → Download Report (XLSX)**. In the export dialog on the Timeline Analysis page, choose **Report version**, then **Generate report** for that export. Your current saved preference is selected each time the dialog opens. This export choice does not change your email preference.
+- If you receive the introduction email, choose a version without signing in, then confirm it on the page that opens.
+
+Follow [choose, download and update reports](/en/platform-intro/workflows/reports).
+
+## What is in Version 2
+
+### Summary
+
+Start with **How to read this report:** at the top, then **What needs attention**. Up to 7 short findings each have an **Open →** link to the place to look. For example: “Lathe 3: OEE 70%, 6 pts below its target of 76%”. Findings draw attention to:
+
+- A machine more than 5 points below its OEE, availability or performance target. The two biggest gaps name the machines; further machines are counted together.
+- A shift clearly below another shift or clearly lower than in the previous period.
+- Operations expected to miss delivery, from **Up next** in report emails only.
+- Idle time up 10% or more from the previous period, or 20% or more of idle time without a reason.
+- A day more than 5 points below the period's average OEE, or the machine with the most uneven cycle times.
+
+Grey findings then show the biggest downtime reason and the machine best against its target. The biggest-reason line is left out when almost no idle time has a reason.
+
+Key figures show OEE, availability and performance with their targets, production time and idle time. Cycles appear when recorded; orders worked on and operations completed appear when there was order work. Each shows the change from the previous week, month or period. **By shift** compares each shift over all machines.
+
+Daily charts show OEE, availability and performance with a dashed average target. **How the time was used** divides planned hours into **Production**, **Preparation**, **Idle** and **Off**. Other charts show **Idle time by reason** and **Cycles per day**, or **How long the stops were** when there are no cycles. Titles state the result, such as “Weakest day: Wed 14/10 at 51%”.
+
+The machine table has a **Target** column beside each figure. A ● marks machines clearly below a target. Click a machine name to open its page.
+
+### Days
+
+Each grid shows one figure: OEE, availability, performance, production time in hours, idle time in hours or cycles. Machines are rows, days are columns, with a **Target** column and the period value at the end.
+
+▲ means at or above the machine's target; ▼ means below. Orange means more than 5 points below target. Grey means no shift planned. Hours and cycles use shading: darker means more.
+
+### Shifts
+
+This sheet appears only when shifts are set. Otherwise, **Summary** says “No shifts are set for these machines, so the report shows no shift figures.”
+
+**By shift** compares shifts and shows changes from the previous period in points. Charts show daily OEE, availability and performance by shift, how time was used, idle time by reason and cycles per day. Grids compare each machine and shift with a **Target** column. **Each shift, day by day** helps you find differences on individual days.
+
+### Downtime
+
+See idle time by reason, which machine lost time to what, and idle time per day by reason. Daily comparisons show the five biggest reasons and group the rest as **Other**. Stop lengths show how long the stops were. This sheet appears when reasons or stops were recorded.
+
+### Cycles
+
+This sheet appears only when cycles were recorded. Otherwise, **Summary** says “No cycles were recorded in this period, so the report shows no cycle figures.” A machine without cycles shows **No cycles recorded**.
+
+For each machine, compare cycle counts, average, median, fastest and slowest cycle times, how much cycle times vary, and the typical time between cycles. Charts show cycles and cycle time per day, and cycles by hour of the day.
+
+### Orders
+
+See the operations worked on in the period, per machine: order, customer, product, **Operation sequence** such as “#20”, and status in the platform's words, such as **Completed** or **Handed over**. The table includes production time, produced quantity, scrap, progress, minutes per piece against the plan, and delivery date. Red marks more than 10% slower than planned.
+
+**Operations per machine** and **Production time by order** show where work took place; the order chart shows the top ten. Operations handed over during the period count as completed but still show **Handed over**. Operation priority is on **Up next**, not this sheet.
+
+### Up next
+
+This sheet appears only in weekly and monthly report emails, never in exports. It shows the planner's forecast when the report was built, for the 7 days after the period.
+
+For each operation, read the queue number, order, customer, product, operation sequence, priority such as “OP150”, status, remaining quantity and hours, expected start and end, and **On time?**. The header says “Forecast from … It changes when the plan changes.” A footer counts operations that start later or have no forecast yet. See [planned work in email reports](/en/platform-intro/pages/report-versions#planned-work-in-email-reports) for how this outlook is kept.
+
+### One Page per Machine
+
+Each machine has its own tab named after it, with **← Summary** to return. **In focus** gives up to 3 findings, such as “OEE more than 5 pts below its target on 3 of 5 days; weakest Wed 14/10 at 58%”.
+
+Tiles compare OEE, availability and performance with the machine's targets, for example “▼ 4 pts below target 60%”. Other tiles show production time, idle time with its biggest reason, cycles, operations worked on and energy, with how much of it was wasted.
+
+Three daily charts show OEE, availability and performance with dashed targets. Further charts show how time was used, idle time by reason and cycles per day. **By shift** compares this machine's shifts.
+
+In **Day by day**, each day is bold with its shifts below. Read energy, energy wasted and the main downtime reason alongside the day's figures. The closing rows are **Average, days with data** and **Average, Monday to Friday**. **Operations on this machine** follows the daily figures.
+
+### All data
+
+Use one filterable table with a row per machine, day and shift for your own filters and pivot tables.
+
+### Notes
+
+Read what each figure means and how averages are calculated. **Colours and symbols** explains the marks used throughout the workbook.
+
+<a id="colours-targets-and-averages" />
+
+## How to read colours and symbols
+
+- The target is the machine's rating, the same rating used in Version 1.
+- ▲ means at or above target; ▼ means below target.
+- Orange always means “look here”: more than 5 points below target, late work, slower than plan, uneven cycle times, the biggest reason or the weakest day.
+- Grey means no shift planned.
+- Shading means less → more, never good or bad.
+- A dashed line is the target.
+- Machine states are **Production**, **Preparation**, **Idle** and **Off**.
+
+Averages use only days with planned time and data. The company average gives each machine equal weight. Days without planned shifts do not count against targets or averages, so results can differ from the Version 1 overview. Figures include the machine's current state in the same way as the platform's day, week and month views.
+
+### Planned Work in Email Reports
+
+**Up next** records the plan when the report is first created. Rebuilding with current data keeps that outlook as it was; it does not replace it with today's plan. If a forecast is unavailable, planned dates are used and the sheet says so. The outlook is omitted when the period ended more than 7 days before the report was created.
+
+## Confirm Your Choice from an Email
+
+You may receive an email titled “A new version of your machine report is available”. It has last week's report attached in the new version, with your own machines and figures. It asks “Which version would you like to receive?” and offers **Get the new version (Version 2)** and **Keep my current report (Version 1)**. Nothing changes until you choose.
+
+Either button opens a Watchmen page titled **Newsletter report version**, without requiring sign-in. Confirm once with the same button text. Opening the link alone makes no change. After confirmation, the page shows **Done. From the next report on, you get the new version (Version 2).** or **Done. You keep getting your current report (Version 1).**, followed by **Open my profile**. You can switch in either direction later.
+
+The choice links are personal and expire after 60 days. An expired link shows **This link has expired. You can choose the version in your profile.** and **Open my profile**. Use your profile for an invalid or incomplete link too. You may need to sign in to open your profile. See [User Profile](/en/platform-intro/pages/user-profile).
+
+## Your Weekly and Monthly Report Emails
+
+Each person receives the version they chose, one report email per week or month. Switching in the middle of a week never causes a second email. Version 1 emails are unchanged.
+
+Version 2 report emails end with:
+
+> This is the new version of your report (Version 2). You can switch back to your previous report at any time in your profile under Newsletter report version.
+
+Follow the profile link to change your choice.
+
+## Limits
+
+- Both versions are Excel workbooks.
+- Sections depend on the available records. Without cycles, cycle figures are omitted and the report explains why. Without work on orders, there is no orders sheet. Without shifts, the shift overview is omitted with a note.
+- Exports contain work from the selected period and have no **Up next** sheet.
+- Your version preference applies to both weekly and monthly report emails. You still need the corresponding newsletter subscription to receive them.
+- Scheduled emails contain your chosen version. Changing versions does not send a second scheduled email for a period you already received.
+
+## Related Pages
+
+- [User Profile](/en/platform-intro/pages/user-profile)
+- [Timeline Analysis](/en/platform-intro/pages/timeline-analysis)
+- [Report Archive](/en/platform-intro/pages/report-archive)
+- [Report FAQs](/en/help-center/faq/reports)

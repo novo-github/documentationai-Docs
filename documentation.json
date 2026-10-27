@@ -200,6 +200,11 @@
                             "title": "Report Archive",
                             "path": "en/platform-intro/pages/report-archive",
                             "icon": "file-text"
+                          },
+                          {
+                            "title": "Report Versions",
+                            "path": "en/platform-intro/pages/report-versions",
+                            "icon": "file-text"
                           }
                         ]
                       },
@@ -402,7 +407,7 @@
                         "icon": "folder",
                         "pages": [
                           {
-                            "title": "Download and Update Reports",
+                            "title": "Choose, Download and Update Reports",
                             "path": "en/platform-intro/workflows/reports",
                             "icon": "play-circle"
                           }
@@ -752,6 +757,11 @@
                             "title": "Berichtsarchiv",
                             "path": "de/platform-intro/pages/report-archive",
                             "icon": "file-text"
+                          },
+                          {
+                            "title": "Berichtsversionen",
+                            "path": "de/platform-intro/pages/report-versions",
+                            "icon": "file-text"
                           }
                         ]
                       },
@@ -954,7 +964,7 @@
                         "icon": "folder",
                         "pages": [
                           {
-                            "title": "Berichte herunterladen und aktualisieren",
+                            "title": "Berichte wählen, herunterladen und aktualisieren",
                             "path": "de/platform-intro/workflows/reports",
                             "icon": "play-circle"
                           }

@@ -1,24 +1,71 @@
 ---
-title: "Download and Update Reports"
-description: "Find a completed report, download it, and check it against current production records."
+title: "Choose, Download and Update Reports"
+description: "Choose a version for emails or exports, download reports, and update them after production records change."
 ---
 
 ## Goal
 
-Download the report for the machines and period you need, and update it after production records change.
+Choose the version of your email reports or an export, download the report you need, and update it after production records change.
 
 ## Before You Begin
 
 <Callout kind="info" title="Workflow access">
+You can choose your own email version in your profile. If you receive the introduction email, you can confirm a choice through it without signing in. Exports require access to Timeline Analysis and the relevant machines.
+
 Only Administrators can open **Report archive**. Other users do not see it. Open **Reports** in the side menu. At the top of Timeline Analysis or Trend Analysis, select the archive button with the tooltip **Report archive** next to the **Timeline** / **Trend** switch.
 </Callout>
 
 ### Preconditions
 
-- A report has been requested or scheduled. You can also request an export from [Timeline Analysis](/en/platform-intro/pages/timeline-analysis).
+- To receive email reports, enable the weekly or monthly newsletter subscription in your profile.
+- To download an existing report, it must have been requested or scheduled. You can also create an export from [Timeline Analysis](/en/platform-intro/pages/timeline-analysis).
 - You know which machines and period you want to review.
 
 ## Steps
+
+<a id="choose-email-version" />
+
+### Choose Your Email Version in Your Profile
+
+<Steps>
+  <Step title="Compare the versions" icon="arrow-right" title-type="p">
+    Open your profile → **Newsletter Preferences** card → **Newsletter report version**. Select **Version 1** or **Version 2** and read **What you get**. Use **Download an example** to compare made-up data.
+  </Step>
+  <Step title="Save your preference" icon="arrow-right" title-type="p">
+    Keep the weekly and monthly subscriptions you want enabled. Choose **Save Preferences** at the top right of the card header and wait for saving to finish. Both subscriptions use the selected version from the next report. Repeat these steps whenever you want to switch back.
+  </Step>
+</Steps>
+
+<a id="choose-from-email" />
+
+### Choose from the Introduction Email
+
+<Steps>
+  <Step title="Open your choice" icon="arrow-right" title-type="p">
+    You may receive an email titled “A new version of your machine report is available”, with last week's report attached in the new version, using your own machines and figures. Choose **Get the new version (Version 2)** or **Keep my current report (Version 1)**. The **Newsletter report version** page opens without requiring sign-in. Opening it alone does not change your preference.
+  </Step>
+  <Step title="Confirm on the page" icon="arrow-right" title-type="p">
+    Select **Get the new version (Version 2)** or **Keep my current report (Version 1)**, as shown for your choice. The page then shows **Done. From the next report on, you get the new version (Version 2).** or **Done. You keep getting your current report (Version 1).** Use **Open my profile** to change your choice later; sign in if asked.
+  </Step>
+</Steps>
+
+<a id="create-export" />
+
+### Create an Export in Either Version
+
+<Steps>
+  <Step title="Choose machines and dates" icon="arrow-right" title-type="p">
+    Open [Timeline Analysis](/en/platform-intro/pages/timeline-analysis) through **Reports** in the side menu. Choose your machines and period, then **Generate report → Download Report (XLSX)**.
+  </Step>
+  <Step title="Choose the report version" icon="arrow-right" title-type="p">
+    Under **Report version**, your latest saved email preference is selected. Choose **Version 1** or **Version 2**. Read **What you get** or select **Download an example** before starting. Exports include work in the period, without planned work for the next 7 days.
+  </Step>
+  <Step title="Create and download" icon="arrow-right" title-type="p">
+    Select **Generate report** and follow the displayed progress until you can download the workbook. The export choice leaves your email preference unchanged. If creation takes longer, Administrators can return through **Report archive**; other users should try the export again later.
+  </Step>
+</Steps>
+
+### Download or Update an Existing Report
 
 <Steps>
   <Step title="Find the report" icon="arrow-right" title-type="p">
@@ -37,15 +84,22 @@ Only Administrators can open **Report archive**. Other users do not see it. Open
 
 ## Decision Points
 
+- Choose Version 1 for the familiar workbook or Version 2 for findings, targets, shifts and additional production details.
+- Save in your profile for future emails, or choose in the export dialog for one download only.
 - Download the existing report, or rebuild it to include corrected production records.
 - Narrow the search to **Scheduled** or **By user**, or include both with **All sources**.
 
 ## Expected Result
 
+Your saved preference controls future weekly and monthly emails. An export uses the version chosen for that download.
+
 You have the available report for the selected machines and period. After a successful rebuild, you know whether its contents changed.
 
 ## Common Problems and Edge Cases
 
+- Email choice links are personal and expire after 60 days. An expired link shows **This link has expired. You can choose the version in your profile.** Select **Open my profile**, sign in, and choose the version there. Use your profile for invalid or incomplete links too.
+- An unchanged newsletter preference: select **Save Preferences** at the top right of the card header after choosing a tab.
+- Missing planned work in an export: exports have no **Up next** sheet. Use a recent weekly or monthly Version 2 report for that outlook.
 - **No reports found.**: broaden the machine, source, or period filters.
 - **No files available**: there is no file to download; check the report status.
 - **Failed**: creation did not complete successfully. If an action fails, try again.
@@ -54,6 +108,8 @@ You have the available report for the selected machines and period. After a succ
 
 ## Related Pages
 
+- [Report Versions](/en/platform-intro/pages/report-versions)
+- [User Profile](/en/platform-intro/pages/user-profile)
 - [Report Archive](/en/platform-intro/pages/report-archive)
 - [Timeline Analysis](/en/platform-intro/pages/timeline-analysis)
 - [Trend Analysis](/en/platform-intro/pages/trend-analysis)

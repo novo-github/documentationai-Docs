@@ -1,0 +1,150 @@
+---
+title: "Berichtsversionen"
+description: "Vergleichen Sie Version 1 und Version 2, wählen Sie Ihren E-Mail-Bericht und lesen Sie die neue Arbeitsmappe."
+---
+
+## Überblick
+
+**Zugriff:** Sie wählen die Version Ihrer eigenen Bericht-E-Mails im Profil. Mit Zugriff auf die Zeitleistenanalyse und die betreffenden Maschinen können Sie eine Version für einen Export wählen. Nur Administratoren können das Berichtsarchiv öffnen.
+
+Die Watchmen-Plattform bietet **Version 1** und **Version 2** als Excel-Arbeitsmappen. Version 1 bleibt Ihre E-Mail-Auswahl, bis Sie diese ändern. Sie können jederzeit in beide Richtungen wechseln.
+
+## Was Sie sehen können
+
+| Version | Inhalt |
+| --- | --- |
+| **Version 1** | OEE, Verfügbarkeit und Leistung je Maschine und Schicht, Tageswerte auf einem Blatt je Maschine und Leerlaufzeit nach Länge der Stopps. |
+| **Version 2** | Hinweise auf Handlungsbedarf, Kennzahlen neben ihren Zielen, Schichtvergleiche, Zyklen und Zykluszeiten, Stillstandsgründe, bearbeitete Aufträge und Arbeitsgänge sowie eine Seite je Maschine mit Tagen und Schichten. Wöchentliche und monatliche E-Mails enthalten außerdem geplante Arbeit für die nächsten 7 Tage, sofern verfügbar. |
+
+Unter **Das erhalten Sie** folgt die Liste dem gewählten Reiter. **Beispiel herunterladen** lädt diese Version mit erfundenen Daten herunter. Bei deutscher Oberfläche erhalten Sie das Beispiel auf Deutsch, bei anderen Oberflächensprachen auf Englisch.
+
+## Was Sie tun können
+
+- Wählen Sie in Ihrem Profil → Karte **Newsletter-Einstellungen** → **Berichtsversion im Newsletter** den Reiter **Version 1** oder **Version 2**. Wählen Sie **Einstellungen speichern** oben rechts im Kartenkopf.
+- Öffnen Sie die Zeitleistenanalyse über **Berichte** im Seitenmenü. Wählen Sie Maschinen und Zeitraum, dann **Bericht generieren → XLSX herunterladen**. Wählen Sie im Exportdialog auf der Seite Zeitleistenanalyse die **Berichtsversion** und dann **Bericht generieren** für diesen Export. Bei jedem Öffnen ist Ihre aktuell gespeicherte Auswahl vorausgewählt. Die Exportauswahl ändert Ihre E-Mail-Auswahl nicht.
+- Wenn Sie die Einführungs-E-Mail erhalten, wählen Sie darüber ohne Anmeldung eine Version und bestätigen Sie diese auf der geöffneten Seite.
+
+Folgen Sie [Berichte wählen, herunterladen und aktualisieren](/de/platform-intro/workflows/reports).
+
+## Was Version 2 enthält
+
+### Übersicht
+
+Beginnen Sie oben mit **So lesen Sie diesen Bericht:** und anschließend **Worauf Sie achten sollten**. Bis zu 7 kurze Hinweise haben jeweils einen **Öffnen →**-Link zur Stelle, die Sie prüfen können. Ein Beispiel: „Drehmaschine 3: OEE 70 %, 6 Pkt. unter dem Ziel von 76 %“. Die Hinweise zeigen:
+
+- Eine Maschine mehr als 5 Punkte unter ihrem Ziel für OEE, Verfügbarkeit oder Leistung. Die beiden größten Abweichungen nennen die Maschinen; weitere Maschinen werden zusammengezählt.
+- Eine Schicht deutlich unter einer anderen Schicht oder deutlich unter ihrem Wert im vorherigen Zeitraum.
+- Arbeitsgänge mit erwarteter Lieferverzögerung, aus **Als Nächstes** und nur in Bericht-E-Mails.
+- Mindestens 10 % mehr Leerlaufzeit als im vorherigen Zeitraum oder mindestens 20 % der Leerlaufzeit ohne Grund.
+- Einen Tag mehr als 5 Punkte unter der durchschnittlichen OEE des Zeitraums oder die Maschine mit den ungleichmäßigsten Zykluszeiten.
+
+Danach zeigen graue Hinweise den größten Stillstandsgrund und die Maschine mit dem besten Ergebnis gegenüber ihrem Ziel. Die Zeile zum größten Grund entfällt, wenn fast keine Leerlaufzeit einen Grund hat.
+
+Die Kennzahlen zeigen OEE, Verfügbarkeit und Leistung mit ihren Zielen sowie Produktionszeit und Leerlaufzeit. Zyklen erscheinen, wenn sie erfasst wurden. Bearbeitete Aufträge und abgeschlossene Arbeitsgänge erscheinen, wenn an Aufträgen gearbeitet wurde. Jede Kennzahl zeigt die Änderung zur vorherigen Woche, zum vorherigen Monat oder Zeitraum. **Nach Schicht** vergleicht jede Schicht über alle Maschinen.
+
+Die Diagramme **OEE je Tag**, **Verfügbarkeit je Tag** und **Leistung je Tag** zeigen das durchschnittliche Ziel als gestrichelte Linie. **Wie die Zeit genutzt wurde** teilt geplante Stunden in **Produktion**, **Vorbereitung**, **Leerlauf** und **Aus** auf. Weitere Diagramme zeigen **Leerlauf nach Grund** und **Zyklen je Tag**, ohne Zyklen stattdessen **Wie lange die Stopps dauerten**. Diagrammtitel nennen das Ergebnis, etwa „Schwächster Tag: Mi 14.10. mit 51 %“.
+
+In der Maschinentabelle steht neben jeder Kennzahl die Spalte **Ziel**. Ein ● markiert Maschinen deutlich unter einem Ziel. Klicken Sie auf einen Maschinennamen, um dessen Seite zu öffnen.
+
+### Tage
+
+Jedes Raster zeigt eine Kennzahl: OEE, Verfügbarkeit, Leistung, Produktionszeit in Stunden, Leerlaufzeit in Stunden oder Zyklen. Maschinen stehen in den Zeilen, Tage in den Spalten. Dazu kommen die Spalte **Ziel** und am Ende der Wert für den Zeitraum.
+
+▲ bedeutet am oder über dem Maschinenziel; ▼ bedeutet darunter. Orange bedeutet mehr als 5 Punkte unter dem Ziel. Grau bedeutet keine geplante Schicht. Stunden und Zyklen sind abgestuft eingefärbt: dunkler bedeutet mehr.
+
+### Schichten
+
+Dieses Blatt erscheint nur, wenn Schichten festgelegt sind. Andernfalls steht in der **Übersicht**: „Für diese Maschinen sind keine Schichten hinterlegt, daher zeigt der Bericht keine Schichtwerte.“
+
+**Nach Schicht** zeigt Änderungen zum vorherigen Zeitraum in Punkten. Diagramme zeigen tägliche OEE, Verfügbarkeit und Leistung je Schicht, die Zeitverteilung, Leerlaufzeit nach Grund und Zyklen je Tag. Raster vergleichen jede Maschine und Schicht mit einer Spalte **Ziel**. **Jede Schicht, Tag für Tag** hilft Ihnen, Unterschiede an einzelnen Tagen zu finden.
+
+### Stillstände
+
+Sehen Sie Leerlaufzeit nach Grund, welche Maschine wodurch Zeit verloren hat und die Leerlaufzeit je Tag nach Grund. Tagesvergleiche zeigen die fünf größten Gründe und fassen den Rest unter **Sonstige** zusammen. Die Stopplängen zeigen, wie lange die Stopps dauerten. Dieses Blatt erscheint, wenn Gründe oder Stopps erfasst wurden.
+
+### Zyklen
+
+Dieses Blatt erscheint nur, wenn Zyklen erfasst wurden. Andernfalls steht in der **Übersicht**: „In diesem Zeitraum wurden keine Zyklen erfasst, daher zeigt der Bericht keine Zykluswerte.“ Bei einer Maschine ohne Zyklen steht **Keine Zyklen erfasst**.
+
+Vergleichen Sie je Maschine die Zyklusanzahl, durchschnittliche, mittlere (Median), schnellste und langsamste Zykluszeit, die Schwankung der Zykluszeiten und den typischen Abstand zwischen Zyklen. Diagramme zeigen Zyklen und Zykluszeit je Tag sowie Zyklen nach Tagesstunde.
+
+### Aufträge
+
+Sehen Sie die im Zeitraum bearbeiteten Arbeitsgänge je Maschine: Auftrag, Kunde, **Artikel**, **Operationsfolge** wie „#20“ und den Status mit den Bezeichnungen der Plattform, etwa **Abgeschlossen** oder **Übergeben**. Die Tabelle enthält Produktionszeit, produzierte Menge, Ausschuss, Fortschritt, Minuten je Stück im Vergleich zum Plan und Liefertermin. Rot bedeutet mehr als 10 % langsamer als geplant.
+
+**Arbeitsgänge je Maschine** und **Produktionszeit nach Auftrag** zeigen, wo gearbeitet wurde. Das Auftragsdiagramm zeigt die zehn größten. Im Zeitraum übergebene Arbeitsgänge zählen als abgeschlossen, zeigen aber weiterhin **Übergeben**. Die Arbeitsgangpriorität steht unter **Als Nächstes**, nicht auf diesem Blatt.
+
+### Als Nächstes
+
+Dieses Blatt erscheint nur in wöchentlichen und monatlichen Bericht-E-Mails, nie in Exporten. Es zeigt die Prognose der Planung bei der Berichtserstellung für die 7 Tage nach dem Zeitraum.
+
+Lesen Sie je Arbeitsgang Warteschlangennummer, Auftrag, Kunde, **Artikel**, Operationsfolge, Priorität wie „AG150“, Status, Restmenge und Reststunden, voraussichtlichen Start und Ende sowie **Pünktlich?**. Oben steht „Prognose vom … Sie ändert sich, wenn sich der Plan ändert.“ Unten werden Arbeitsgänge gezählt, die später beginnen oder noch keine Prognose haben. Unter [geplante Arbeit in E-Mail-Berichten](/de/platform-intro/pages/report-versions#geplante-arbeit-in-e-mail-berichten) lesen Sie, wie dieser Ausblick erhalten bleibt.
+
+### Eine Seite je Maschine
+
+Jede Maschine hat einen eigenen Reiter mit ihrem Namen und den Link **← Übersicht** zurück. **Im Fokus** zeigt bis zu 3 Hinweise, etwa „OEE an 3 von 5 Tagen mehr als 5 Pkt. unter dem Ziel; am schwächsten Mi 14.10. mit 58 %“.
+
+Kacheln vergleichen OEE, Verfügbarkeit und Leistung mit den Maschinenzielen, beispielsweise „▼ 4 Pkt. unter Ziel 60 %“. Weitere Kacheln zeigen Produktionszeit, Leerlaufzeit mit ihrem größten Grund, Zyklen, bearbeitete Arbeitsgänge sowie Energie und wie viel davon verschwendet wurde.
+
+Drei Tagesdiagramme zeigen OEE, Verfügbarkeit und Leistung mit gestrichelten Zielen. Weitere Diagramme zeigen die Zeitverteilung, Leerlaufzeit nach Grund und Zyklen je Tag. **Nach Schicht** vergleicht die Schichten dieser Maschine.
+
+Unter **Tag für Tag** steht jeder Tag fett mit seinen Schichten darunter. Neben den Tageswerten finden Sie Energie, verschwendete Energie und den wichtigsten Stillstandsgrund. Die beiden Abschlusszeilen heißen **Durchschnitt, Tage mit Daten** und **Durchschnitt, Montag bis Freitag**. Danach folgt **Arbeitsgänge auf dieser Maschine**.
+
+### Alle Daten
+
+Nutzen Sie eine filterbare Tabelle mit einer Zeile je Maschine, Tag und Schicht für eigene Filter und Pivot-Tabellen.
+
+### Hinweise
+
+Lesen Sie, was die Kennzahlen bedeuten und wie Durchschnittswerte berechnet werden. **Farben und Symbole** erklärt die Zeichen der Arbeitsmappe.
+
+<a id="farben-ziele-und-durchschnittswerte" />
+
+## Farben und Symbole lesen
+
+- Das Ziel ist die Maschinenbewertung, dieselbe Bewertung wie in Version 1.
+- ▲ bedeutet am oder über dem Ziel; ▼ bedeutet darunter.
+- Orange bedeutet immer „hier genauer hinsehen“: mehr als 5 Punkte unter dem Ziel, verspätete Arbeit, langsamer als geplant, ungleichmäßige Zykluszeiten, der größte Grund oder der schwächste Tag.
+- Grau bedeutet keine geplante Schicht.
+- Farbabstufungen bedeuten weniger → mehr, niemals gut oder schlecht.
+- Eine gestrichelte Linie zeigt das Ziel.
+- Maschinenzustände sind **Produktion**, **Vorbereitung**, **Leerlauf** und **Aus**.
+
+Durchschnittswerte berücksichtigen nur Tage mit geplanter Zeit und Daten. Im Unternehmensdurchschnitt zählt jede Maschine gleich viel. Tage ohne geplante Schichten zählen nicht gegen Ziele oder Durchschnittswerte. Deshalb können Ergebnisse von der Übersicht in Version 1 abweichen. Die Kennzahlen berücksichtigen den aktuellen Maschinenzustand ebenso wie die Tages-, Wochen- und Monatsansichten der Plattform.
+
+### Geplante Arbeit in E-Mail-Berichten
+
+**Als Nächstes** hält den Plan bei der ersten Erstellung des Berichts fest. Eine Neuerstellung mit aktuellen Daten behält diesen Ausblick bei und ersetzt ihn nicht durch den heutigen Plan. Ist keine Prognose verfügbar, verwendet das Blatt geplante Termine und weist darauf hin. Der Ausblick entfällt, wenn der Zeitraum bei der Berichtserstellung seit mehr als 7 Tagen beendet war.
+
+## Auswahl aus einer E-Mail bestätigen
+
+Sie erhalten möglicherweise eine E-Mail mit dem Betreff „Eine neue Version Ihres Maschinenberichts ist verfügbar“. Im Anhang finden Sie den Bericht der letzten Woche in der neuen Version, mit Ihren eigenen Maschinen und Zahlen. Die E-Mail fragt, welche Version Sie erhalten möchten, und bietet **Neue Version erhalten (Version 2)** und **Bisherigen Bericht behalten (Version 1)**. Bis zu Ihrer Auswahl ändert sich nichts.
+
+Beide Schaltflächen öffnen eine Watchmen-Seite mit dem Titel **Berichtsversion im Newsletter**, ohne Anmeldung. Bestätigen Sie einmal mit demselben Schaltflächentext. Das Öffnen des Links allein ändert nichts. Danach zeigt die Seite **Erledigt. Ab dem nächsten Bericht erhalten Sie die neue Version (Version 2).** oder **Erledigt. Sie erhalten weiter Ihren bisherigen Bericht (Version 1).** sowie **Mein Profil öffnen**. Sie können später in beide Richtungen wechseln.
+
+Die Auswahllinks sind persönlich und laufen nach 60 Tagen ab. Ein abgelaufener Link zeigt **Dieser Link ist abgelaufen. Sie können die Version in Ihrem Profil wählen.** und **Mein Profil öffnen**. Nutzen Sie Ihr Profil auch bei einem ungültigen oder unvollständigen Link. Zum Öffnen Ihres Profils müssen Sie sich gegebenenfalls anmelden. Siehe [Benutzerprofil](/de/platform-intro/pages/user-profile).
+
+## Ihre wöchentlichen und monatlichen Bericht-E-Mails
+
+Jede Person erhält ihre gewählte Version in einer Bericht-E-Mail pro Woche oder Monat. Ein Wechsel mitten in der Woche löst nie eine zweite E-Mail aus. Die E-Mails der Version 1 bleiben unverändert.
+
+Bericht-E-Mails der Version 2 enden mit:
+
+> Dies ist die neue Version Ihres Berichts (Version 2). Sie können jederzeit in Ihrem Profil unter „Berichtsversion im Newsletter“ zu Ihrem bisherigen Bericht zurückwechseln.
+
+Folgen Sie dem Profillink, um Ihre Auswahl zu ändern.
+
+## Grenzen
+
+- Beide Versionen sind Excel-Arbeitsmappen.
+- Abschnitte hängen von den vorhandenen Aufzeichnungen ab. Ohne Zyklen entfallen Zykluswerte; der Bericht erklärt dies. Ohne bearbeitete Aufträge gibt es kein Auftragsblatt. Ohne Schichten entfällt die Schichtübersicht mit einem Hinweis.
+- Exporte enthalten die Arbeit des gewählten Zeitraums und kein Blatt **Als Nächstes**.
+- Ihre Versionsauswahl gilt für wöchentliche und monatliche Bericht-E-Mails. Für den Empfang benötigen Sie weiterhin das entsprechende Newsletter-Abonnement.
+- Geplante E-Mails enthalten Ihre gewählte Version. Ein Versionswechsel löst keine zweite geplante E-Mail für einen bereits erhaltenen Zeitraum aus.
+
+## Verwandte Seiten
+
+- [Benutzerprofil](/de/platform-intro/pages/user-profile)
+- [Zeitleistenanalyse](/de/platform-intro/pages/timeline-analysis)
+- [Berichtsarchiv](/de/platform-intro/pages/report-archive)
+- [Fragen zu Berichten](/de/help-center/faq/reports)
