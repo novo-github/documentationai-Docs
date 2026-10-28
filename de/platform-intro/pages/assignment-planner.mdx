@@ -73,6 +73,8 @@ Blenden Sie die Liste nicht zugewiesener Operationen aus, bleiben die Pools am l
 
 ## Suche, Filter und Kartendetails
 
+**Filtern & Sortieren** ordnet die Einstellungen in **Filter**, **Sortierung** und **Anzeige**. Jede Gruppe hat ein Informationssymbol. **Filter** bestimmt, welche Maschinen, Hallenpools und Arbeitsgänge erscheinen. Hier steht auch der ERP-Importfilter. **Sortierung** legt die Kartenreihenfolge und die Position verschobener Arbeit fest. **Anzeige** bestimmt sichtbare Werte, Hervorhebungen und die Termin-Markierung des Forecasters.
+
 Öffnen Sie über das Informationssymbol den **Leitfaden zum Zuweisungsplaner**, wenn Sie Hilfe zu Filtern, Sortierung oder zum Verschieben von Karten benötigen.
 
 Drücken Sie Strg+F (⌘F auf dem Mac) oder klicken Sie auf das Lupensymbol in der stets sichtbaren Leiste **Filtern & Sortieren**. Geben Sie Auftrag, Produkt oder Kunde ein. Wählen Sie unter **Suchen in** den Suchbereich:
@@ -91,6 +93,8 @@ Ein Link, der den Planer mit einer Suche öffnet, verwendet für diesen Besuch *
 Wählen Sie Maschinen nach Halle aus. Klicken Sie auf das Kontrollkästchen oder den Hallennamen, um die ganze Halle aus- oder abzuwählen. Freie Flächen in der Überschrift ändern die Auswahl nicht. Sie können bis zu 25 Maschinen und zusätzlich Hallenpools anzeigen. Statusfilter gelten für einzelne Zuweisungen. Auftragstags erscheinen, wenn Ihr Unternehmen welche festgelegt hat. Der Importfilter begrenzt nur die Liste nicht zugewiesener Operationen auf einen ERP-Upload.
 
 **Spalten** bestimmt die sichtbaren Werte auf Karten. Manche Werte lassen sich nicht ausblenden. **Hervorhebung** betont sichtbare Werte. Beide Einstellungen werden in Ihrem Profil gespeichert. Ein ausgeblendeter Wert wird erst hervorgehoben, wenn Sie ihn einblenden. Sie können hier auch Operations- und Zuweisungsnotizen lesen und bearbeiten.
+
+Wenn Maschinen in Zeilen angezeigt werden, können Sie **Filtern & Sortieren → Anzeige → Ganzer Text** ein- oder ausschalten. Ihre Auswahl wird für Ihr Konto gespeichert. Eingeschaltet zeigt jede Karte alle Werte vollständig, auch lange Arbeitsgangbeschreibungen. Jede Karte wird nur so hoch wie ihre eigenen Werte. Eine lange Notiz streckt die anderen Karten nicht. Ausgeschaltet nutzt jeder Wert eine Zeile. Lange Werte werden abgeschnitten; zeigen Sie darauf, um sie vollständig zu lesen. In der Spaltenansicht zeigen Karten immer alle Werte vollständig. Dort gibt es diese Schaltfläche nicht. In der Zeilenansicht stehen **Auftragsdatum** und **Lieferdatum** jeweils auf einer eigenen Zeile, damit **Lieferdatum** lesbar bleibt.
 
 ### Weitere Karten einer Warteschlange anzeigen
 
@@ -126,6 +130,8 @@ Administratoren können dies unter **Admin-Panel → Prioritätsstufen → So we
 
 **Nach Warteschlangenposition sortieren** zeigt Zuweisungen genau in der Reihenfolge, die Sie durch Ziehen festlegen. Laufende und angehaltene Arbeitsgänge behalten ihren Platz und erhalten dort ihre Nummer. Nichts wird nach oben gezogen. Sie können laufende Arbeit innerhalb ihrer Spalte umordnen. Vor einem Zielwechsel müssen Sie sie stoppen. Ist diese Option ausgeschaltet, bestimmen Sortierregeln die angezeigte Reihenfolge. Jede Regel umfasst ein Feld und eine aufsteigende oder absteigende Richtung. Weitere Regeln lösen Gleichstände auf; die Reihenfolge der Regeln bestimmt ihren Vorrang.
 
+Sie können Regeln unter **Filtern & Sortieren → Sortierung** bearbeiten, während **Nach Warteschlangenposition sortieren** eingeschaltet ist. Diese gespeicherten Regeln ordnen nicht zugewiesene Arbeitsgänge und gelten für **Neu sortieren → Sortierregeln**. Ihre Bearbeitung verschiebt keine Arbeit in Maschinen- oder Hallenpool-Warteschlangen. Übernehmen Sie **Neu sortieren**, um eine Warteschlange entsprechend zu ordnen. Auf der BDE-Seite und in BDE-Zugriffsvorlagen bleiben Regeln bei eingeschalteter Warteschlangensortierung gesperrt.
+
 Dieselben Sortiermöglichkeiten stehen in der [Betriebsdatenerfassung V3](/de/platform-intro/pages/data-acquisition) zur Verfügung. Die Prioritäten entsprechen den unternehmensweiten Stufen aus dem [Admin-Panel](/de/platform-intro/pages/admin-panel).
 
 <a id="eine-warteschlange-nach-priorität-und-datum-sortieren" />
@@ -134,9 +140,22 @@ Dieselben Sortiermöglichkeiten stehen in der [Betriebsdatenerfassung V3](/de/pl
 
 Sie benötigen Planungszugriff: ein Administratorkonto oder Zugriff auf die Auftragsseite sowie Zugriff auf die Maschine. Aktivieren Sie im Zuweisungsplaner **Filtern & Sortieren → Nach Warteschlangenposition sortieren**. Wählen Sie **Neu sortieren** (bisher **Nach Priorität und Datum sortieren**) in der letzten Zeile eines Maschinen- oder Hallenpoolkopfs. Die Funktion steht auch in jeder Maschinenzeile im [Zuweisungs-Gantt](/de/platform-intro/pages/assignment-gantt) bereit.
 
-Wählen Sie unter **1 · Sortieren nach** die Option **Auftragspriorität**, **Arbeitsgang-Priorität**, **Geplantes Ende**, **Liefertermin** oder **Auftragsdatum**. Der Firmenstandard wird zuerst aufgeführt und ist ausgewählt, sofern er angeboten wird. Prioritäten folgen der Dringlichkeitsrichtung des Unternehmens, Termine dem frühesten Datum. Fehlende Werte stehen zuletzt. Bei gleichen Werten entscheidet der geplante Arbeitsgangstart, danach der bisherige Platz. **Geplantes Ende** verwendet das Ende des Arbeitsgangs oder, wenn es fehlt, das Ende seines Arbeitsauftrags.
+Unter **Sortieren nach** steht **Sortierregeln** als erster Reiter. Er ist bei jedem Öffnen ausgewählt. Er beginnt mit den Regeln, die Ihr Planer bei ausgeschaltetem **Nach Warteschlangenposition sortieren** nutzt. Gantt verwendet dieselben Planerregeln.
+
+Die Regelbearbeitung ist immer sichtbar. Wählen Sie unter **Regeln aus**:
+
+- **Meine Sortierung**: stellt Ihre Planerregeln wieder her.
+- **Firmenstandard**: übernimmt die von einem Administrator für alle gespeicherten Regeln. Diese Auswahl erscheint nur, wenn ein Firmenstandard vorliegt.
+
+Bearbeiten Sie die Regeln darunter, um nur für dieses Neusortieren eine andere Folge zu verwenden. Wählen Sie je Regel, wonach sie sortiert, und die aufsteigende oder absteigende Richtung. **Sortierregel hinzufügen** ergänzt eine Regel. Entfernen Sie nicht benötigte Regeln. **Angepasst** erscheint, wenn die Regeln weder Ihren eigenen noch denen des Unternehmens entsprechen. Stimmen beide überein, ist **Meine Sortierung** ausgewählt. Diese Änderungen ersetzen keine gespeicherte persönliche oder Firmensortierung. Beim erneuten Öffnen gelten wieder Ihre Planerregeln.
+
+Die Regeln gelten in ihrer Reihenfolge. Spätere Regeln lösen Gleichstände auf. Der Vorschlag entspricht der Plantafel bei ausgeschalteter Warteschlangensortierung, außer bei festgehaltenen Arbeitsgängen. Nutzen Sie beispielsweise zuerst Auftragspriorität, dann Arbeitsgangpriorität und zuletzt den geplanten Auftragsstart. Ergänzen Sie mindestens eine Regel. Ohne Regel können Sie die Folge nicht übernehmen.
+
+Die weiteren Reiter bleiben **Auftragspriorität**, **Arbeitsgangpriorität** (bisher **Arbeitsgang-Priorität**), **Geplantes Ende**, **Liefertermin** und **Auftragsdatum**. Dort folgen Prioritäten der Dringlichkeitsrichtung des Unternehmens, Termine dem frühesten Datum. Fehlende Werte stehen zuletzt. Bei gleichen Werten entscheidet der geplante Arbeitsgangstart, danach der bisherige Platz. **Geplantes Ende** verwendet das Ende des Arbeitsgangs oder, wenn es fehlt, das Ende seines Arbeitsauftrags.
 
 Der Vorschlag enthält die gesamte aktive Warteschlange, auch durch Filter ausgeblendete Arbeit. **Platz** vergleicht bisherige und vorgeschlagene Positionen. **Restarbeit** zeigt die verbleibende geplante Arbeit. Ein Strich bedeutet, dass sie unbekannt ist. Entfernen Sie **Darf verschoben werden**, damit ein Arbeitsgang seinen genauen Platz behält. **Alle auswählen** oder **Keine auswählen** ändert die gesamte Auswahl. Laufende und angehaltene Arbeit kann hier mitsortiert werden. Anders als bei der Suche in **Plan verbessern** hält ihr Status sie nicht fest.
+
+Bei **Sortierregeln** zeigt die Tabelle eine Spalte je Regel in deren Reihenfolge. Jede Überschrift nennt die Regel und ihren Richtungspfeil. Prioritäten erscheinen als kleine Marken, Termine mit Uhrzeit, sofern vorhanden. Die Terminüberschriften unterscheiden **Geplanter Arbeitsgangstart** und **Geplantes Arbeitsgangende** von **Geplanter Auftragsstart** und **Geplantes Auftragsende**. Ein Strich bedeutet, dass kein Wert angezeigt wird. **Spalten → Sortierregeln** blendet alle Regelspalten gemeinsam ein oder aus. Auf schmalen Bildschirmen stehen ihre Werte zusammen.
 
 Wählen Sie unter **Spalten** die gewünschten Zusatzangaben. Ihre Auswahl bleibt gespeichert. Klicken Sie auf eine Zeile oder ihr Informationssymbol, um **Details** mit Prognoseannahmen und Terminen zu lesen. Schließen Sie die Ansicht mit der Schließen-Schaltfläche oder einem Klick außerhalb.
 

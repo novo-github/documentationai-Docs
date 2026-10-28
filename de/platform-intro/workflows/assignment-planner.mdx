@@ -159,13 +159,13 @@ Erwartete Endzeiten und Terminvergleiche aktualisieren sich nach der Verschiebun
 
 <Steps>
   <Step title="Wählen Sie manuelle Reihenfolge oder Sortierregeln" icon="arrow-right" title-type="p">
-    Aktivieren Sie in den Sortier- und Filteroptionen die Sortierung nach Warteschlangenposition, um die durch Ziehen festgelegte Reihenfolge anzuzeigen. Schalten Sie die Option aus, um nach Feldern wie Priorität oder Datum zu sortieren.
+    Öffnen Sie **Filtern & Sortieren → Sortierung**. Aktivieren Sie **Nach Warteschlangenposition sortieren**, um die durch Ziehen festgelegte Folge anzuzeigen. Schalten Sie die Option aus, um Warteschlangen nach Regeln wie Priorität oder Datum anzuzeigen. Sie können Regeln in beiden Modi bearbeiten. Bei eingeschalteter Warteschlangenposition ordnen sie nicht zugewiesene Arbeitsgänge und gelten für **Neu sortieren → Sortierregeln**, ohne bestehende Warteschlangen zu verschieben.
   </Step>
   <Step title="Legen Sie den Vorrang der Regeln fest" icon="arrow-right" title-type="p">
     Wählen Sie **Geplanter Operationsstart** oder **Geplantes Operationsende**, um einzelne Arbeitsgänge zu sortieren. Mit **Geplanter Auftragsstart** oder **Geplantes Auftragsende** bleiben Arbeitsgänge eines Auftrags zusammen. Wählen Sie aufsteigende oder absteigende Sortierung. Ergänzen Sie Regeln für Gleichstände und ziehen Sie diese in die Reihenfolge ihres Vorrangs.
   </Step>
   <Step title="Heben Sie wichtige Details hervor" icon="arrow-right" title-type="p">
-    Öffnen Sie die Hervorhebungsfunktion und wählen Sie Felder aus den Gruppen Auftrag, Arbeitsauftrag, Produkt, Operation, Planung und Zuweisung. Prüfen Sie die gewählten Hervorhebungen auf den Karten, etwa Priorität, Fälligkeit oder Kunde.
+    Öffnen Sie **Filtern & Sortieren → Anzeige → Hervorhebung** und wählen Sie die benötigten Werte. Prüfen Sie die Hervorhebungen auf den Karten, etwa Priorität, Fälligkeit oder Kunde. Wenn Maschinen in Zeilen angezeigt werden, können Sie **Filtern & Sortieren → Anzeige → Ganzer Text** ein- oder ausschalten. Ihre Auswahl wird für Ihr Konto gespeichert. Eingeschaltet zeigt jede Karte alle Werte vollständig, auch lange Arbeitsgangbeschreibungen. Jede Karte wird nur so hoch wie ihre eigenen Werte. Eine lange Notiz streckt die anderen Karten nicht. Ausgeschaltet nutzt jeder Wert eine Zeile. Lange Werte werden abgeschnitten; zeigen Sie darauf, um sie vollständig zu lesen. In der Spaltenansicht zeigen Karten immer alle Werte vollständig. Dort gibt es diese Schaltfläche nicht.
   </Step>
 </Steps>
 
@@ -180,16 +180,18 @@ Sie benötigen Planungszugriff und Zugriff auf die Maschine. Die Maschine oder d
     Aktivieren Sie im Zuweisungsplaner **Filtern & Sortieren → Nach Warteschlangenposition sortieren**. Wählen Sie **Neu sortieren** in der letzten Zeile des Maschinen- oder Hallenpoolkopfs. Im Zuweisungs-Gantt nutzen Sie **Neu sortieren** in der Maschinenzeile. Der Vorschlag enthält auch durch Filter ausgeblendete aktive Arbeit.
   </Step>
   <Step title="Wählen Sie das Sortiermerkmal" icon="arrow-right" title-type="p">
-    Wählen Sie unter **1 · Sortieren nach** die Option **Auftragspriorität**, **Arbeitsgang-Priorität**, **Geplantes Ende**, **Liefertermin** oder **Auftragsdatum**. Der Firmenstandard wird zuerst aufgeführt und ist ausgewählt, sofern angeboten. Dringende Prioritäten oder frühe Termine kommen zuerst.
+    Der erste Reiter **Sortierregeln** ist ausgewählt. Er nutzt die Regeln, nach denen Ihr Planer bei ausgeschalteter Warteschlangenposition sortiert. Gantt beginnt mit denselben Regeln. Wählen Sie unter **Regeln aus** die Option **Meine Sortierung** oder, sofern vorhanden, **Firmenstandard**. Bearbeiten Sie die Regeln direkt darunter nur für dieses Neusortieren. **Angepasst** bedeutet, dass sie keiner Auswahl entsprechen. **Meine Sortierung** stellt Ihre eigenen Regeln wieder her. Behalten Sie mindestens eine Regel, sonst können Sie die Folge nicht übernehmen.
+
+    Um stattdessen nach einer einzelnen Priorität oder einem Termin zu sortieren, wählen Sie **Auftragspriorität**, **Arbeitsgangpriorität**, **Geplantes Ende**, **Liefertermin** oder **Auftragsdatum**.
   </Step>
   <Step title="Halten Sie ausgewählte Arbeitsgänge fest" icon="arrow-right" title-type="p">
     Entfernen Sie **Darf verschoben werden** bei Arbeitsgängen, die ihren genauen Platz behalten sollen. **Keine auswählen** hält alle fest. **Alle auswählen** erlaubt das Verschieben. Laufende und angehaltene Arbeit kann bei dieser Sortierung verschoben werden. Warten Sie, bis **Wird aktualisiert…** verschwindet.
   </Step>
   <Step title="Prüfen und übernehmen Sie" icon="arrow-right" title-type="p">
-    Prüfen Sie bisherige und neue Plätze, die gewählte Priorität oder den Termin sowie **Restarbeit**. Nutzen Sie **Spalten** für Zusatzangaben oder klicken Sie auf eine Zeile für **Details**. Wählen Sie **Reihenfolge übernehmen** zum Speichern oder **Abbrechen**, um die Warteschlange unverändert zu lassen. Prioritäten ändern sich nicht.
+    Prüfen Sie bisherige und neue Plätze sowie **Restarbeit**. Prüfen Sie bei **Sortierregeln** die Spalte und den Richtungspfeil jeder Regel. **Spalten → Sortierregeln** blendet alle Regelspalten ein oder aus. Klicken Sie auf eine Zeile für **Details**. Festgehaltene Arbeitsgänge behalten ihren genauen Platz. Die übrigen füllen die freien Plätze in Regelreihenfolge. Wählen Sie **Reihenfolge übernehmen** zum Speichern oder **Abbrechen**, um die Warteschlange unverändert zu lassen. Prioritäten ändern sich nicht.
   </Step>
   <Step title="Prüfen Sie das Ergebnis oder setzen Sie es zurück" icon="arrow-right" title-type="p">
-    Mit **Rückgängig** in der Bestätigung stellen Sie die vorherige Folge wieder her. Ändert sich die Warteschlange während der Prüfung, lesen Sie den aktualisierten Vorschlag. Kann **Rückgängig** im Gantt nicht gespeichert werden, erscheint **Die alte Reihenfolge konnte nicht wiederhergestellt werden. Die Tafel zeigt jetzt den aktuellen Plan.** und die Plantafel wird neu geladen. Prüfen Sie die aktuelle Warteschlange vor weiteren Änderungen. Die Sortierung erfolgt einmalig. Spätere Importe kommen ans Ende.
+    Mit **Rückgängig** in der Bestätigung stellen Sie die vorherige Folge wieder her. Ändert sich die Warteschlange während der Prüfung, lesen Sie den aktualisierten Vorschlag. Kann **Rückgängig** im Gantt nicht gespeichert werden, erscheint **Die alte Reihenfolge konnte nicht wiederhergestellt werden. Die Tafel zeigt jetzt den aktuellen Plan.** und die Plantafel wird neu geladen. Prüfen Sie die aktuelle Warteschlange vor weiteren Änderungen. Die Sortierung erfolgt einmalig. Spätere Importe kommen ans Ende. Hier bearbeitete Regeln werden nicht als persönliche oder Firmensortierung gespeichert. Beim erneuten Öffnen gelten wieder Ihre Planerregeln.
   </Step>
 </Steps>
 
@@ -375,6 +377,7 @@ Bei Verschiebungen ohne Dialog bestimmt mit **Nach Warteschlangenposition sortie
 
 ## Entscheidungspunkte
 
+- Nutzen Sie **Meine Sortierung**, **Firmenstandard** oder vorübergehend geänderte Regeln für ein Neusortieren. Um andere persönliche Regeln zu behalten, bearbeiten Sie sie unter **Filtern & Sortieren → Sortierung**.
 - Ob Sie gestoppte Arbeit an einen Hallenpool oder direkt an eine andere Maschine übergeben.
 - Ob Pools neben der Liste oder im Board stehen sollen.
 - Ob Sie nur die Liste, Pools, Maschinen oder alle drei Bereiche durchsuchen.
@@ -392,6 +395,7 @@ Die Maschinenwarteschlange spiegelt die letzte Planungsentscheidung wider, zukü
 
 ## Häufige Probleme und Sonderfälle
 
+- Keine Regeln mehr unter **Neu sortieren → Sortierregeln**: Ergänzen Sie vor dem Übernehmen mindestens eine Regel. Warten Sie nach Regeländerungen auf den aktualisierten Vorschlag und prüfen Sie ihn erneut.
 - Sie können bis zu 25 Maschinen und zusätzlich Hallenpools anzeigen. Das Zuweisungs-Gantt zeigt bis zu 25 Maschinen ohne Pool-Spalten.
 - Erscheint kein Pool, haken Sie eine Halle unter **Hallenpools → Welche Pools anzeigen** an. Fehlt das Platzierungsmenü, nutzen Sie einen breiteren Bildschirm.
 - Zeigt eine Warteschlange nur 40 Karten, wählen Sie **40 weitere anzeigen** oder die kleinere Restzahl. Anzahl und Zusammenfassung berücksichtigen jede Karte in der Warteschlange, auch die noch nicht angezeigten.

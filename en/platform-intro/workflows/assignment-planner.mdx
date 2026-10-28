@@ -159,13 +159,13 @@ Expected ends and date checks refresh after the move. Hover over the date marker
 
 <Steps>
   <Step title="Choose manual order or sorting rules" icon="arrow-right" title-type="p">
-    In the sort/filter options, enable **Sort by Queue Position** to use the order set by dragging assignments. Turn it off to sort by fields such as priority or date.
+    Open **Filter & Sort → Sort**. Enable **Sort by Queue Position** to show the order set by dragging assignments. Turn it off to display queues by rules such as priority or date. You can edit the rules in either mode. With queue position on, they order unassigned operations and supply **Re-sort → Sort rules**, without moving existing queues.
   </Step>
   <Step title="Set rule precedence" icon="arrow-right" title-type="p">
     Choose **Operation Planned Start** or **Operation Planned End** to sequence individual operations. Choose **Order Planned Start** or **Order Planned End** to keep an order’s operations together. Set ascending or descending order. Add rules to break ties and drag them into the order of precedence.
   </Step>
   <Step title="Emphasize the details you need" icon="arrow-right" title-type="p">
-    Open **Highlight** and select fields from Order, Work Order, Product, Operation, Planning, and Assignment. Check the cards for your selected highlights, such as priority, due date, or customer.
+    Open **Filter & Sort → Display → Highlight** and select the values you need. Check the cards for your selected highlights, such as priority, due date, or customer. When machines are shown in rows, **Filter & Sort → Display → Show full text** is an on/off button remembered for your account. With it on, every value is shown in full and each card is only as tall as its own values. One long note does not stretch the other cards. With it off, each value uses one line; long values are cut off, and you can hover over a value to read it all. In the column layout, cards always show every value in full, so this button is absent.
   </Step>
 </Steps>
 
@@ -180,16 +180,18 @@ You need planning access and access to the machine. The machine or hall pool mus
     In Assignment Planner, enable **Filter & Sort → Sort by Queue Position**. Choose **Re-sort** on the last line of the machine or hall-pool header. In Assignment Gantt, use **Re-sort** on the machine row. The proposal includes active work hidden by filters.
   </Step>
   <Step title="Choose what determines the sequence" icon="arrow-right" title-type="p">
-    Under **1 · Sort by**, choose **Order priority**, **Operation priority**, **Planned end**, **Delivery date**, or **Order date**. The company default is listed first and selected when supported. Urgent priorities or early dates come first.
+    The first tab, **Sort rules**, is selected. It uses the rules your Planner sorts by when queue position is off. Gantt starts with those same rules. Under **Rules from**, choose **My sorting** or **Company standard**, if available. Edit the rules directly below the choice for this re-sort only. **Changed** means they match neither choice. **My sorting** restores your own rules. Keep at least one rule or you cannot apply.
+
+    To sort by a single priority or date instead, choose **Order priority**, **Operation priority**, **Planned end**, **Delivery date**, or **Order date**.
   </Step>
   <Step title="Keep selected operations in place" icon="arrow-right" title-type="p">
     Clear **Can move** for any operation that must keep its exact place. **Select none** fixes all operations; **Select all** allows them to move. Running and on-hold work can move in this sort. Wait until **Updating…** disappears.
   </Step>
   <Step title="Review and apply" icon="arrow-right" title-type="p">
-    Review current and new places, the chosen priority or date, and **Work left**. Use **Columns** for optional details or click a row for **Details**. Select **Apply sequence** to save, or **Cancel** to leave the queue unchanged. Priorities do not change.
+    Review current and new places and **Work left**. On **Sort rules**, check each rule’s column and direction arrow. Use **Columns → Sort rules** to show or hide all rule columns, or click a row for **Details**. Fixed operations keep their exact places; the others fill the remaining places in rule order. Select **Apply sequence** to save, or **Cancel** to leave the queue unchanged. Priorities do not change.
   </Step>
   <Step title="Check or undo" icon="arrow-right" title-type="p">
-    Use **Undo** in the confirmation to restore the previous sequence. If the queue changes during review, check the refreshed proposal. In Gantt, if **Undo** cannot be saved, the message **The old sequence could not be put back. The board now shows the current plan.** appears and the board reloads. Check the current queue before changing it again. This is a one-time sort; later imports join the end.
+    Use **Undo** in the confirmation to restore the previous sequence. If the queue changes during review, check the refreshed proposal. In Gantt, if **Undo** cannot be saved, the message **The old sequence could not be put back. The board now shows the current plan.** appears and the board reloads. Check the current queue before changing it again. This is a one-time sort; later imports join the end. Rules edited in this dialog are not saved as your personal or company sorting. Reopening starts with your Planner’s rules again.
   </Step>
 </Steps>
 
@@ -375,6 +377,7 @@ Use the view switch to open Assignment Gantt for a timeline review. Use its **Mo
 
 ## Decision Points
 
+- Use **My sorting**, **Company standard**, or temporary rules for one re-sort. To keep different personal rules, edit them in **Filter & Sort → Sort**.
 - Whether to hand over stopped work to a hall pool or directly to another machine.
 - Whether to keep pools beside the list or within the board.
 - Whether to search only the list, pools, machines, or all three.
@@ -392,6 +395,7 @@ The machine queue reflects the latest planning decision, future assignments foll
 
 ## Common Problems and Edge Cases
 
+- No rules left in **Re-sort → Sort rules**: add at least one rule before applying. After changing rules, wait for the updated proposal and review it again.
 - You can show up to 25 machines plus hall pools. Gantt shows up to 25 machines without pool columns.
 - If no pool appears, tick a hall under **Hall pools → Which pools to show**. Use a wider screen if the placement menu is unavailable.
 - If a queue shows only 40 cards, use **Show 40 more**, or the smaller remaining number. The count and summary include every card in the queue, also the ones not shown yet.

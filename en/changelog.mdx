@@ -6,6 +6,46 @@ toc: false
 
 ## Releases
 
+<Update label="2026-10-28" description="v1.5.138" tags={["feature", "improvement", "fix"]}>
+  {/* commits: f4f0a0ae, 28fb8f88, 9ae27a9b, 8c410269 */}
+
+  **Release date:** October 28, 2026
+
+  ### New Features
+
+  #### [Put a Queue into Your Sort Rule Order](/en/platform-intro/pages/assignment-planner#re-sort-a-queue)
+  {/* feature: resort-by-sort-rules */}
+
+  With planning access, open **Re-sort → Sort rules** in a Planner queue header or Gantt machine row. This tab opens first. Under **Rules from**, choose **My sorting** or **Company standard**, when available. You can also edit the rules directly for this re-sort only. **Changed** means they match neither choice; your saved sorting stays unchanged.
+
+  Review one column per rule, keep any operations in place with **Can move**, then choose **Apply sequence**. For example, sort by order priority, then operation priority, then planned order start before arranging individual cards by hand. Priorities stay unchanged. **Undo** restores the previous sequence. Follow [Re-sort a Queue](/en/platform-intro/workflows/assignment-planner#re-sort-a-queue).
+
+  ### Improvements
+
+  #### [Adjust Sorting and Read Planning Cards More Easily](/en/platform-intro/pages/assignment-planner)
+  {/* feature: planner-sorting-and-display */}
+
+  In **Filter & Sort**, the **Filter**, **Sort**, and **Display** groups each have an information icon. The ERP import filter is now under **Filter**. **Re-sort** choices are tabs in one row again.
+
+  When machines are shown in rows, **Filter & Sort → Display → Show full text** is an on/off button remembered for your account. With it on, every value is shown in full and each card is only as tall as its own values. One long note does not stretch the other cards. With it off, each value uses one line; long values are cut off, and you can hover over a value to read it all. In the column layout, cards always show every value in full, so this button is absent.
+
+  Planner sort rules stay editable with **Sort by Queue Position** on. They order unassigned operations and provide the rules for **Re-sort → Sort rules**; editing them leaves existing queue positions in place. Follow [Sort and Highlight Planning Cards](/en/platform-intro/workflows/assignment-planner#sort-and-highlight-planning-cards).
+
+  #### [Start Fixed PDA Sorting from the Company Choices](/en/platform-intro/pages/bde-access-templates)
+  {/* feature: bde-template-company-sorting */}
+
+  Administrators can open **Admin Panel → BDE access templates** to edit a template. Turning on **Use a fixed sorting** starts from the company sorting only if a company sorting is saved in the Planner and the template had no fixed sorting before. Otherwise, the starting choices are unchanged. **Use company sorting** appears in the sorting section only when company sorting exists. It shows a tick while the template already uses that sorting. It copies the sort mode and rules; choices for running and on-hold orders and for orders waiting on a previous operation stay unchanged. Without company sorting, the section keeps its usual reset to the built-in default.
+
+  Saving is available only after a change. Follow [the template workflow](/en/platform-intro/workflows/bde-access-templates).
+
+  ### Fixes
+
+  #### [Read Delivery Dates on Cards in Rows](/en/platform-intro/pages/assignment-planner#search-filters-and-card-details)
+  {/* feature: planner-card-date-visibility */}
+
+  **Order Date** and **Delivery Date** previously shared one line on cards in rows, which could cut off **Delivery Date**. Each date now has its own line.
+</Update>
+
 <Update label="2026-10-27" description="v1.5.136" tags={["feature"]}>
   {/* commits: 83d9e7e, d04d054, 0a9056d, 9c590b4, 71ac5d8, be30306, 3041a54, 71ac556, b488e3b, 5fcaec5, f450160, 7511a1c, 2d8d464, 047961c, ddc0b69 */}
 

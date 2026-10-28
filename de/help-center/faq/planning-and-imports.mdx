@@ -95,6 +95,14 @@ description: "Antworten zu Arbeitsgangprioritäten, Planungsterminen, Gruppierun
 | Warum ist Beste Operationsfolge ausgegraut? | [Antwort](/de/help-center/faq/planning-and-imports#delivery-sequence-disabled) |
 | Warum wurde die Gantt-Plantafel nach Rückgängig neu geladen? | [Antwort](/de/help-center/faq/planning-and-imports#gantt-undo-not-saved) |
 | Wo ist der Hinweis zur Prognose nach Planterminen geblieben? | [Antwort](/de/help-center/faq/planning-and-imports#forecast-hint-location) |
+| Wie bringe ich eine Warteschlange in die Reihenfolge meiner Sortierregeln? | [Antwort](/de/help-center/faq/planning-and-imports#resort-by-rules) |
+| Ändern Regeln in Neu sortieren meine gespeicherte Sortierung? | [Antwort](/de/help-center/faq/planning-and-imports#resort-temporary-rules) |
+| Warum bleibt meine Warteschlange nach einer Regeländerung unverändert? | [Antwort](/de/help-center/faq/planning-and-imports#queue-mode-rules) |
+| Wie sehe ich die Werte für jede Sortierregel? | [Antwort](/de/help-center/faq/planning-and-imports#resort-rule-columns) |
+| Wie lese ich lange Beschreibungen auf Planungskarten? | [Antwort](/de/help-center/faq/planning-and-imports#planner-full-text) |
+| Wo ist der Filter für einen einzelnen ERP-Import? | [Antwort](/de/help-center/faq/planning-and-imports#planner-import-filter-location) |
+| Wie nutze ich die Firmensortierung in einer BDE-Vorlage? | [Antwort](/de/help-center/faq/planning-and-imports#template-company-sorting) |
+| Warum kann ich eine gerade geöffnete Vorlage nicht speichern? | [Antwort](/de/help-center/faq/planning-and-imports#template-save-unchanged) |
 
 <a id="operation-priority" />
 
@@ -340,7 +348,7 @@ Eine Übergabe setzt die restliche Arbeit an den Anfang der Zielwarteschlange. D
 
 ## Wo ist die Schaltfläche zum Sortieren nach Priorität und Datum?
 
-Sie heißt jetzt **Neu sortieren** und steht in der letzten Zeile eines Maschinen- oder Hallenpoolkopfs. Aktivieren Sie im Zuweisungsplaner **Nach Warteschlangenposition sortieren**. Sie benötigen Planungszugriff und Zugriff auf die Maschine. Im Gantt steht die Funktion auch in jeder Maschinenzeile. Sie können jetzt eine Priorität oder einen Termin wählen und einzelne Arbeitsgänge festhalten. Siehe [Eine Warteschlange neu sortieren](/de/platform-intro/pages/assignment-planner#eine-warteschlange-neu-sortieren).
+Sie heißt jetzt **Neu sortieren** und steht in der letzten Zeile eines Maschinen- oder Hallenpoolkopfs. Aktivieren Sie im Zuweisungsplaner **Nach Warteschlangenposition sortieren**. Sie benötigen Planungszugriff und Zugriff auf die Maschine. Im Gantt steht die Funktion auch in jeder Maschinenzeile. Die Funktion beginnt mit **Sortierregeln**. Sie können auch eine einzelne Priorität oder einen Termin wählen und einzelne Arbeitsgänge festhalten. Siehe [Eine Warteschlange neu sortieren](/de/platform-intro/pages/assignment-planner#eine-warteschlange-neu-sortieren).
 
 <a id="queue-sort-undo" />
 
@@ -557,7 +565,7 @@ Nein. Das Informationssymbol neben **Voraussichtliches Ende** erklärt: Jetzt is
 
 ## Kann ich eine Warteschlange nach Liefertermin sortieren?
 
-Ja. Öffnen Sie **Neu sortieren → 1 · Sortieren nach → Liefertermin**. Frühe Termine kommen zuerst, fehlende Termine zuletzt. Sie können auch **Geplantes Ende**, **Auftragsdatum**, **Auftragspriorität** oder **Arbeitsgang-Priorität** wählen. Entfernen Sie **Darf verschoben werden** bei Arbeitsgängen, die ihren Platz behalten sollen. Prüfen Sie den Vorschlag und übernehmen Sie ihn. Siehe [Eine Warteschlange neu sortieren](/de/platform-intro/workflows/assignment-planner#eine-warteschlange-neu-sortieren).
+Ja. Öffnen Sie **Neu sortieren → Sortieren nach → Liefertermin**. Frühe Termine kommen zuerst, fehlende Termine zuletzt. Sie können auch **Geplantes Ende**, **Auftragsdatum**, **Auftragspriorität** oder **Arbeitsgangpriorität** wählen. Entfernen Sie **Darf verschoben werden** bei Arbeitsgängen, die ihren Platz behalten sollen. Prüfen Sie den Vorschlag und übernehmen Sie ihn. Siehe [Eine Warteschlange neu sortieren](/de/platform-intro/workflows/assignment-planner#eine-warteschlange-neu-sortieren).
 
 <a id="operation-wording" />
 
@@ -654,3 +662,51 @@ Kann **Rückgängig** nach **Plan verbessern** oder **Neu sortieren** nicht gesp
 ## Wo ist der Hinweis zur Prognose nach Planterminen geblieben?
 
 Der gesonderte Hinweis und seine Schaltfläche zum Ausblenden wurden entfernt. Zeigen Sie im Zuweisungsplaner auf **Manuelle Warteschlangenreihenfolge**. Die Anzeige erscheint nur, wenn **Filtern & Sortieren → Nach Warteschlangenposition sortieren** eingeschaltet ist. Bei Prognosen nach Plan- oder Lieferterminen erklärt sie, dass Verschieben Reihenfolge und Priorität ändert, aber nicht das voraussichtliche Ende. **Plan verbessern** kann neue Plantermine setzen. Siehe [Prognoseregeln und Ziehen](/de/platform-intro/pages/assignment-planner#wenn-ziehen-das-erwartete-ende-nicht-ändert).
+
+<a id="resort-by-rules" />
+
+## Wie bringe ich eine Warteschlange in die Reihenfolge meiner Sortierregeln?
+
+Öffnen Sie mit Planungs- und Maschinenzugriff **Neu sortieren → Sortierregeln** im Planer-Warteschlangenkopf oder in einer Gantt-Maschinenzeile. Aktivieren Sie im Planer zuerst **Nach Warteschlangenposition sortieren**. Wählen Sie **Meine Sortierung**, prüfen Sie den Vorschlag und wählen Sie **Reihenfolge übernehmen**. Arbeitsgänge ohne Haken bei **Darf verschoben werden** behalten ihren Platz. Die übrigen folgen Ihren Regeln. Prioritäten bleiben unverändert. Folgen Sie [Eine Warteschlange neu sortieren](/de/platform-intro/workflows/assignment-planner#eine-warteschlange-neu-sortieren).
+
+<a id="resort-temporary-rules" />
+
+## Ändern Regeln in Neu sortieren meine gespeicherte Sortierung?
+
+Nein. **Regeln aus → Meine Sortierung** stellt Ihre Planerregeln wieder her. **Firmenstandard** übernimmt die Regeln des Administrators, sofern vorhanden. **Angepasst** bedeutet, dass die aktuellen Regeln keiner Auswahl entsprechen. Diese Änderungen gelten nur für dieses Neusortieren. Beim erneuten Öffnen gelten wieder Ihre Planerregeln. Um andere persönliche Regeln zu behalten, bearbeiten Sie **Filtern & Sortieren → Sortierung** im Planer. Siehe [Eine Warteschlange neu sortieren](/de/platform-intro/pages/assignment-planner#eine-warteschlange-neu-sortieren).
+
+<a id="queue-mode-rules" />
+
+## Warum bleibt meine Warteschlange nach einer Regeländerung unverändert?
+
+Bei eingeschaltetem **Nach Warteschlangenposition sortieren** bestimmen gespeicherte Plätze die Maschinen- und Hallenpool-Warteschlangen. Regeln bleiben bearbeitbar. Sie ordnen nicht zugewiesene Arbeitsgänge und gelten für **Neu sortieren → Sortierregeln**. Übernehmen Sie diesen Vorschlag, um eine Warteschlange neu zu ordnen. Auf der BDE-Seite und in BDE-Zugriffsvorlagen bleiben Regeln im Warteschlangenmodus gesperrt. Folgen Sie [Planungskarten sortieren und hervorheben](/de/platform-intro/workflows/assignment-planner#planungskarten-sortieren-und-hervorheben).
+
+<a id="resort-rule-columns" />
+
+## Wie sehe ich die Werte für jede Sortierregel?
+
+Unter **Neu sortieren → Sortierregeln** hat jede Regel eine Spalte mit Richtungspfeil. **Spalten → Sortierregeln** blendet alle gemeinsam ein oder aus. Auf schmalen Bildschirmen stehen die Werte zusammen. Ein Strich bedeutet, dass kein Wert angezeigt wird. Siehe [Warteschlangenvorschau](/de/platform-intro/pages/assignment-planner#eine-warteschlange-neu-sortieren).
+
+<a id="planner-full-text" />
+
+## Wie lese ich lange Beschreibungen auf Planungskarten?
+
+Wenn Maschinen in Zeilen angezeigt werden, können Sie **Filtern & Sortieren → Anzeige → Ganzer Text** ein- oder ausschalten. Ihre Auswahl wird für Ihr Konto gespeichert. Eingeschaltet zeigt jede Karte alle Werte vollständig, auch lange Arbeitsgangbeschreibungen. Jede Karte wird nur so hoch wie ihre eigenen Werte. Eine lange Notiz streckt die anderen Karten nicht. Ausgeschaltet nutzt jeder Wert eine Zeile. Lange Werte werden abgeschnitten; zeigen Sie darauf, um sie vollständig zu lesen. In der Spaltenansicht zeigen Karten immer alle Werte vollständig. Dort gibt es diese Schaltfläche nicht. In der Zeilenansicht stehen **Auftragsdatum** und **Lieferdatum** jeweils auf einer eigenen Zeile, damit **Lieferdatum** lesbar bleibt. Siehe [Kartendetails](/de/platform-intro/pages/assignment-planner#suche-filter-und-kartendetails).
+
+<a id="planner-import-filter-location" />
+
+## Wo ist der Filter für einen einzelnen ERP-Import?
+
+Öffnen Sie **Filtern & Sortieren → Filter**. Der Importfilter steht jetzt bei den anderen Filtern. Er begrenzt nur nicht zugewiesene Arbeitsgänge auf den gewählten ERP-Upload. **Sortierung** enthält die Reihenfolgeoptionen, **Anzeige** die Kartendarstellung. Jede Gruppe hat ein Informationssymbol. Siehe [Planerfilter](/de/platform-intro/pages/assignment-planner#suche-filter-und-kartendetails).
+
+<a id="template-company-sorting" />
+
+## Wie nutze ich die Firmensortierung in einer BDE-Vorlage?
+
+Öffnen Sie als Administrator **Admin-Panel → BDE-Zugriffsvorlagen** und bearbeiten Sie die Vorlage. Das Einschalten von **Feste Sortierung verwenden** beginnt nur dann mit der Firmensortierung, wenn im Planer eine Firmensortierung gespeichert ist und die Vorlage zuvor keine feste Sortierung hatte. Andernfalls bleibt die bisherige Vorauswahl unverändert. **Firmensortierung übernehmen** erscheint im Sortierbereich nur, wenn eine Firmensortierung vorhanden ist. Ein Haken zeigt, dass die Vorlage diese Sortierung bereits verwendet. Die Schaltfläche kopiert Sortiermodus und Regeln. Die Auswahl für laufende und angehaltene Aufträge sowie für Aufträge, die auf einen vorherigen Arbeitsgang warten, bleibt unverändert. Ohne Firmensortierung bietet der Bereich weiterhin das übliche Zurücksetzen auf die Standardvorgaben der Watchmen-Plattform. Prüfen und speichern Sie die Vorlage. Folgen Sie [dem Vorlagenablauf](/de/platform-intro/workflows/bde-access-templates).
+
+<a id="template-save-unchanged" />
+
+## Warum kann ich eine gerade geöffnete Vorlage nicht speichern?
+
+Speichern ist erst möglich, nachdem Sie die Vorlage geändert haben. Wenn Sie die Einstellungen nur prüfen, gibt es nichts zu speichern. Auch das Übernehmen einer bereits übereinstimmenden Firmensortierung ändert nichts. Siehe [BDE-Zugriffsvorlagen](/de/platform-intro/pages/bde-access-templates#anzeigeeinstellungen).

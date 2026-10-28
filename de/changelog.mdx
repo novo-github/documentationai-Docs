@@ -6,6 +6,46 @@ toc: false
 
 ## Releases
 
+<Update label="2026-10-28" description="v1.5.138" tags={["Funktion", "Verbesserung", "Fehlerbehebung"]}>
+  {/* commits: f4f0a0ae, 28fb8f88, 9ae27a9b, 8c410269 */}
+
+  **Release-Datum:** 28. Oktober 2026
+
+  ### Neue Funktionen
+
+  #### [Eine Warteschlange nach Ihren Sortierregeln ordnen](/de/platform-intro/pages/assignment-planner#eine-warteschlange-neu-sortieren)
+  {/* feature: resort-by-sort-rules */}
+
+  Öffnen Sie mit Planungszugriff **Neu sortieren → Sortierregeln** im Planer-Warteschlangenkopf oder in einer Gantt-Maschinenzeile. Dieser Reiter öffnet sich zuerst. Wählen Sie unter **Regeln aus** die Option **Meine Sortierung** oder, sofern vorhanden, **Firmenstandard**. Sie können die Regeln auch direkt nur für dieses Neusortieren bearbeiten. **Angepasst** bedeutet, dass sie keiner der beiden Auswahlen entsprechen. Ihre gespeicherte Sortierung bleibt erhalten.
+
+  Prüfen Sie eine Spalte je Regel. Halten Sie bei Bedarf Arbeitsgänge mit **Darf verschoben werden** fest und wählen Sie **Reihenfolge übernehmen**. Sortieren Sie beispielsweise nach Auftragspriorität, dann Arbeitsgangpriorität und anschließend geplantem Auftragsstart, bevor Sie einzelne Karten von Hand anordnen. Prioritäten bleiben unverändert. **Rückgängig** stellt die vorherige Folge wieder her. Folgen Sie [Eine Warteschlange neu sortieren](/de/platform-intro/workflows/assignment-planner#eine-warteschlange-neu-sortieren).
+
+  ### Verbesserungen
+
+  #### [Sortierung leichter anpassen und Planungskarten vollständig lesen](/de/platform-intro/pages/assignment-planner)
+  {/* feature: planner-sorting-and-display */}
+
+  Unter **Filtern & Sortieren** haben die Gruppen **Filter**, **Sortierung** und **Anzeige** jeweils ein Informationssymbol. Der ERP-Importfilter steht jetzt unter **Filter**. Die Auswahl unter **Neu sortieren** besteht wieder aus Reitern in einer Reihe.
+
+  Wenn Maschinen in Zeilen angezeigt werden, können Sie **Filtern & Sortieren → Anzeige → Ganzer Text** ein- oder ausschalten. Ihre Auswahl wird für Ihr Konto gespeichert. Eingeschaltet zeigt jede Karte alle Werte vollständig, auch lange Arbeitsgangbeschreibungen. Jede Karte wird nur so hoch wie ihre eigenen Werte. Eine lange Notiz streckt die anderen Karten nicht. Ausgeschaltet nutzt jeder Wert eine Zeile. Lange Werte werden abgeschnitten; zeigen Sie darauf, um sie vollständig zu lesen. In der Spaltenansicht zeigen Karten immer alle Werte vollständig. Dort gibt es diese Schaltfläche nicht.
+
+  Die Sortierregeln im Planer bleiben bei eingeschaltetem **Nach Warteschlangenposition sortieren** bearbeitbar. Sie ordnen nicht zugewiesene Arbeitsgänge und liefern die Regeln für **Neu sortieren → Sortierregeln**. Ihre Bearbeitung lässt bestehende Warteschlangenpositionen unverändert. Folgen Sie [Planungskarten sortieren und hervorheben](/de/platform-intro/workflows/assignment-planner#planungskarten-sortieren-und-hervorheben).
+
+  #### [Feste BDE-Sortierung mit den Firmenvorgaben beginnen](/de/platform-intro/pages/bde-access-templates)
+  {/* feature: bde-template-company-sorting */}
+
+  Administratoren können unter **Admin-Panel → BDE-Zugriffsvorlagen** eine Vorlage bearbeiten. Das Einschalten von **Feste Sortierung verwenden** beginnt nur dann mit der Firmensortierung, wenn im Planer eine Firmensortierung gespeichert ist und die Vorlage zuvor keine feste Sortierung hatte. Andernfalls bleibt die bisherige Vorauswahl unverändert. **Firmensortierung übernehmen** erscheint im Sortierbereich nur, wenn eine Firmensortierung vorhanden ist. Ein Haken zeigt, dass die Vorlage diese Sortierung bereits verwendet. Die Schaltfläche kopiert Sortiermodus und Regeln. Die Auswahl für laufende und angehaltene Aufträge sowie für Aufträge, die auf einen vorherigen Arbeitsgang warten, bleibt unverändert. Ohne Firmensortierung bietet der Bereich weiterhin das übliche Zurücksetzen auf die Standardvorgaben der Watchmen-Plattform.
+
+  Speichern ist erst nach einer Änderung möglich. Folgen Sie [dem Vorlagenablauf](/de/platform-intro/workflows/bde-access-templates).
+
+  ### Fehlerbehebungen
+
+  #### [Liefertermine auf Karten in Zeilen lesen](/de/platform-intro/pages/assignment-planner#suche-filter-und-kartendetails)
+  {/* feature: planner-card-date-visibility */}
+
+  **Auftragsdatum** und **Lieferdatum** teilten sich bisher auf Karten in Zeilen eine Zeile. Dadurch konnte **Lieferdatum** abgeschnitten werden. Jedes Datum hat jetzt seine eigene Zeile.
+</Update>
+
 <Update label="2026-10-27" description="v1.5.136" tags={["Funktion"]}>
   {/* commits: 83d9e7e, d04d054, 0a9056d, 9c590b4, 71ac5d8, be30306, 3041a54, 71ac556, b488e3b, 5fcaec5, f450160, 7511a1c, 2d8d464, 047961c, ddc0b69 */}
 

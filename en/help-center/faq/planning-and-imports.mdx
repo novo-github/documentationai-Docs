@@ -95,6 +95,14 @@ description: "Find answers about operation priorities, planning dates, grouping,
 | Why is Best operation sequence greyed out? | [Answer](/en/help-center/faq/planning-and-imports#delivery-sequence-disabled) |
 | Why did the Gantt board reload after I chose Undo? | [Answer](/en/help-center/faq/planning-and-imports#gantt-undo-not-saved) |
 | Where has the note about forecasts following planned dates gone? | [Answer](/en/help-center/faq/planning-and-imports#forecast-hint-location) |
+| How do I put a queue into the same order as my sort rules? | [Answer](/en/help-center/faq/planning-and-imports#resort-by-rules) |
+| Does changing rules in Re-sort change my saved sorting? | [Answer](/en/help-center/faq/planning-and-imports#resort-temporary-rules) |
+| Why does changing a sort rule leave my queue where it is? | [Answer](/en/help-center/faq/planning-and-imports#queue-mode-rules) |
+| How do I see the values used by every sort rule? | [Answer](/en/help-center/faq/planning-and-imports#resort-rule-columns) |
+| How do I read long descriptions on planning cards? | [Answer](/en/help-center/faq/planning-and-imports#planner-full-text) |
+| Where is the filter for one ERP import? | [Answer](/en/help-center/faq/planning-and-imports#planner-import-filter-location) |
+| How do I use company sorting in a PDA template? | [Answer](/en/help-center/faq/planning-and-imports#template-company-sorting) |
+| Why can’t I save a template I just opened? | [Answer](/en/help-center/faq/planning-and-imports#template-save-unchanged) |
 
 <a id="operation-priority" />
 
@@ -338,7 +346,7 @@ Ask an administrator to turn off **Admin Panel → Priority Levels → Queue ord
 
 ## Where is the button to sort by priority and date?
 
-It is now **Re-sort**, on the last line of a machine or hall-pool header. In Assignment Planner, enable **Sort by Queue Position**. You need planning access and access to the machine. Gantt also offers it on each machine row. It now lets you choose a priority or date and keep selected operations in place. See [Re-sort a Queue](/en/platform-intro/pages/assignment-planner#re-sort-a-queue).
+It is now **Re-sort**, on the last line of a machine or hall-pool header. In Assignment Planner, enable **Sort by Queue Position**. You need planning access and access to the machine. Gantt also offers it on each machine row. It starts with **Sort rules** and also lets you choose a single priority or date and keep selected operations in place. See [Re-sort a Queue](/en/platform-intro/pages/assignment-planner#re-sort-a-queue).
 
 <a id="queue-sort-undo" />
 
@@ -555,7 +563,7 @@ No. The information icon beside **Expected end** explains that now is the foreca
 
 ## Can I sort a queue by delivery date?
 
-Yes. Open **Re-sort → 1 · Sort by → Delivery date**. The earliest dates come first; missing dates come last. You can also choose **Planned end**, **Order date**, **Order priority**, or **Operation priority**. Clear **Can move** for operations that must keep their place, then review and apply. See [Re-sort a Queue](/en/platform-intro/workflows/assignment-planner#re-sort-a-queue).
+Yes. Open **Re-sort → Sort by → Delivery date**. The earliest dates come first; missing dates come last. You can also choose **Planned end**, **Order date**, **Order priority**, or **Operation priority**. Clear **Can move** for operations that must keep their place, then review and apply. See [Re-sort a Queue](/en/platform-intro/workflows/assignment-planner#re-sort-a-queue).
 
 <a id="operation-wording" />
 
@@ -652,3 +660,51 @@ If **Undo** after **Improve plan** or **Re-sort** cannot be saved, Gantt shows *
 ## Where has the note about forecasts following planned dates gone?
 
 The separate banner and its dismiss button have been removed. Hover over **Manual queue order** in Assignment Planner. The chip appears only while **Filter & Sort → Sort by Queue Position** is on. For forecasts following planned or delivery dates, the explanation says that moving cards changes order and priority, not expected ends, and that **Improve plan** can set new planned dates. See [forecast rules and dragging](/en/platform-intro/pages/assignment-planner#when-dragging-does-not-change-expected-ends).
+
+<a id="resort-by-rules" />
+
+## How do I put a queue into the same order as my sort rules?
+
+With planning access and machine access, open **Re-sort → Sort rules** in the Planner queue header or Gantt machine row. In the Planner, first enable **Sort by Queue Position**. Choose **My sorting**, review the proposal, then **Apply sequence**. Operations with **Can move** cleared keep their places; the others follow your rules. Priorities stay unchanged. Follow [Re-sort a Queue](/en/platform-intro/workflows/assignment-planner#re-sort-a-queue).
+
+<a id="resort-temporary-rules" />
+
+## Does changing rules in Re-sort change my saved sorting?
+
+No. **Rules from → My sorting** restores your Planner rules; **Company standard** copies the administrator’s rules when available. **Changed** means the current rules match neither choice. These changes apply only to this re-sort. Reopening starts with your Planner rules again. To keep different personal rules, edit **Filter & Sort → Sort** in the Planner. See [Re-sort a Queue](/en/platform-intro/pages/assignment-planner#re-sort-a-queue).
+
+<a id="queue-mode-rules" />
+
+## Why does changing a sort rule leave my queue where it is?
+
+With **Sort by Queue Position** on, saved positions determine machine and hall-pool queues. You can still edit rules: they order unassigned operations and supply **Re-sort → Sort rules**. Apply that proposal to reorder a queue. On the PDA page and in BDE access templates, rules stay locked in queue-position mode. Follow [Sort and Highlight Planning Cards](/en/platform-intro/workflows/assignment-planner#sort-and-highlight-planning-cards).
+
+<a id="resort-rule-columns" />
+
+## How do I see the values used by every sort rule?
+
+On **Re-sort → Sort rules**, each rule has a column with its direction arrow. Use **Columns → Sort rules** to show or hide them all together. On a narrow screen, the values sit together. A dash means no value is shown. See [the queue preview](/en/platform-intro/pages/assignment-planner#re-sort-a-queue).
+
+<a id="planner-full-text" />
+
+## How do I read long descriptions on planning cards?
+
+When machines are shown in rows, **Filter & Sort → Display → Show full text** is an on/off button remembered for your account. With it on, every value is shown in full and each card is only as tall as its own values. One long note does not stretch the other cards. With it off, each value uses one line; long values are cut off, and you can hover over a value to read it all. In the column layout, cards always show every value in full, so this button is absent. In the row layout, **Order Date** and **Delivery Date** each have their own line, so **Delivery Date** remains readable. See [card details](/en/platform-intro/pages/assignment-planner#search-filters-and-card-details).
+
+<a id="planner-import-filter-location" />
+
+## Where is the filter for one ERP import?
+
+Open **Filter & Sort → Filter**. The import filter is now grouped with the other filters. It narrows only unassigned operations to the chosen ERP upload. **Sort** holds ordering choices and **Display** holds card display choices; each group has an information icon. See [Planner filters](/en/platform-intro/pages/assignment-planner#search-filters-and-card-details).
+
+<a id="template-company-sorting" />
+
+## How do I use company sorting in a PDA template?
+
+As an administrator, open **Admin Panel → BDE access templates** and edit the template. Turning on **Use a fixed sorting** starts from the company sorting only if a company sorting is saved in the Planner and the template had no fixed sorting before. Otherwise, the starting choices are unchanged. **Use company sorting** appears in the sorting section only when company sorting exists. It shows a tick while the template already uses that sorting. It copies the sort mode and rules; choices for running and on-hold orders and for orders waiting on a previous operation stay unchanged. Without company sorting, the section keeps its usual reset to the built-in default. Review and save the template. Follow [the template workflow](/en/platform-intro/workflows/bde-access-templates).
+
+<a id="template-save-unchanged" />
+
+## Why can’t I save a template I just opened?
+
+Saving is available only after you change the template. If you only opened it to check the settings, there is nothing to save. Copying company sorting that already matches also leaves it unchanged. See [BDE Access Templates](/en/platform-intro/pages/bde-access-templates#display-settings).

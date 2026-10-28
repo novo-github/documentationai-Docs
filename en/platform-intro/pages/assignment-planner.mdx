@@ -73,6 +73,8 @@ Hiding the unassigned list leaves the pools at the left edge. The placement menu
 
 ## Search, Filters, and Card Details
 
+**Filter & Sort** groups the controls under **Filter**, **Sort**, and **Display**. Each group has an information icon. **Filter** chooses which machines, hall pools, and operations appear; the ERP import filter is here too. **Sort** sets card order and where moved work lands. **Display** controls visible values, highlights, and the Forecaster’s delivery marker.
+
 Open the information icon for **Assignment Planner Guide** when you need help with filters, sorting, or moving cards.
 
 Press Ctrl+F (⌘F on a Mac) or click the search icon in the always-visible **Filter & Sort** bar. Enter an order, product, or customer. Under **Search in**, choose the area to filter:
@@ -91,6 +93,8 @@ A link that opens the Planner with a search uses **Everything** for that visit w
 Select machines by hall; click the hall checkbox or hall name to select or clear the whole hall. Empty space in the heading does not change the selection. You can show up to 25 machines plus hall pools. Status filters apply to individual assignments. Order tags appear when your company has defined them. The import filter narrows only the unassigned list to one ERP upload.
 
 **Columns** controls the values shown on cards. Some values cannot be hidden. **Highlight** emphasizes visible values. Both choices are saved to your profile. Highlighting a hidden value has no visible effect until you show it. You can also read and edit operation or assignment notes here.
+
+When machines are shown in rows, **Filter & Sort → Display → Show full text** is an on/off button remembered for your account. With it on, every value is shown in full and each card is only as tall as its own values. One long note does not stretch the other cards. With it off, each value uses one line; long values are cut off, and you can hover over a value to read it all. In the column layout, cards always show every value in full, so this button is absent. In the row layout, **Order Date** and **Delivery Date** each have their own line, so **Delivery Date** remains readable.
 
 ### Reveal More Cards in a Queue
 
@@ -126,6 +130,8 @@ Administrators can turn this off under **Admin Panel → Priority Levels → How
 
 **Sort by Queue Position** displays assignments exactly in the order set by dragging them. Running and on-hold operations keep their place and are numbered there; nothing is pulled to the top. You can reorder running work within its column, but must stop it before moving it to another destination. When this option is off, sorting rules determine the displayed order instead. Each rule has a field and an ascending or descending direction. Additional rules break ties, and their order determines which takes precedence.
 
+You can edit rules under **Filter & Sort → Sort** while **Sort by Queue Position** is on. These saved rules order unassigned operations and supply **Re-sort → Sort rules**. Editing them does not move work in machine or hall-pool queues. Apply **Re-sort** to put a queue into that order. On the PDA page and in BDE access templates, rules remain locked while queue-position sorting is on.
+
 The same sorting choices are available in [Data Acquisition V3](/en/platform-intro/pages/data-acquisition). Priority values follow the company levels configured in the [Admin Panel](/en/platform-intro/pages/admin-panel).
 
 <a id="sort-a-queue-by-priority-and-date" />
@@ -134,9 +140,22 @@ The same sorting choices are available in [Data Acquisition V3](/en/platform-int
 
 You need planning access: an administrator account or access to the Orders page, plus access to the machine. In Assignment Planner, enable **Filter & Sort → Sort by Queue Position**. Choose **Re-sort** (previously **Sort by priority and date**) on the last line of a machine or hall-pool header. It is also available on each machine row in [Assignment Gantt](/en/platform-intro/pages/assignment-gantt).
 
-Under **1 · Sort by**, choose **Order priority**, **Operation priority**, **Planned end**, **Delivery date**, or **Order date**. The company default is listed first and selected when supported. Priorities use the company’s urgency direction; dates put the earliest first. Missing values come last. Equal values use the planned operation start, then the current place. **Planned end** uses the operation’s end, or its work order’s end when the operation has none.
+Under **Sort by**, **Sort rules** is the first tab and is selected whenever you open the dialog. It starts with the rules your Planner uses when **Sort by Queue Position** is off. Gantt uses those same Planner rules.
+
+The rule editor is always visible. Under **Rules from**, choose:
+
+- **My sorting**: restore your Planner’s rules.
+- **Company standard**: copy the rules an administrator saved for everyone. This choice appears only when a company default exists.
+
+Edit the rules below the choice to use a different order for this re-sort only. Select what each rule sorts by and set its ascending or descending direction. Use **Add sort rule** for another rule, or remove one you do not need. **Changed** appears when the rules match neither your own nor the company’s. If both match, **My sorting** is selected. These edits do not replace saved personal or company sorting. Reopening starts again with your Planner’s rules.
+
+Rules apply in order; later rules break ties. The proposal follows the same order as your board with queue-position sorting off, except for operations you keep fixed. For example, use order priority first, operation priority second, and planned order start third. Add at least one rule; without a rule, you cannot apply the sequence.
+
+The other tabs remain **Order priority**, **Operation priority**, **Planned end**, **Delivery date**, and **Order date**. On these tabs, priorities use the company’s urgency direction; dates put the earliest first. Missing values come last. Equal values use the planned operation start, then the current place. **Planned end** uses the operation’s end, or its work order’s end when the operation has none.
 
 The proposal includes the whole active queue, including work hidden by filters. **Place** compares current and proposed positions. **Work left** shows remaining planned work; a dash means it is unknown. Clear **Can move** to keep an operation at its exact place. **Select all** or **Select none** changes the whole selection. Running and on-hold work can be sorted here; unlike the search in **Improve plan**, status does not fix its place.
+
+On **Sort rules**, the table has one column per rule, in rule order. Each heading shows the rule and its direction arrow. Priorities appear as chips; dates and times appear where available. Planned-date headings distinguish **Operation planned start** and **Operation planned end** from **Order planned start** and **Order planned end**. A dash means no value is shown. **Columns → Sort rules** shows or hides all rule columns together. On narrow screens, their values are grouped together.
 
 Use **Columns** to choose optional details; your choice is remembered. Click a row or its information icon for **Details**, including forecast assumptions and dates. Close the panel with its close button or by clicking outside it.
 
