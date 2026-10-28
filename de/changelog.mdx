@@ -6,6 +6,37 @@ toc: false
 
 ## Releases
 
+<Update label="2026-10-28" description="v1.5.139" tags={["Funktion", "Verbesserung", "Fehlerbehebung"]}>
+  {/* commits: 70c393a6, 26527adb, ea7c1238, 39d3b621, 23eadec2, 6787e8cb, 9692284e, b503f010, 6846752f, 2ef3a400, 41114a79, cab94d71, 29585c9f, 55f1dd26, 85ecb629, 4187da06, 2013e1a2, 81ad8891, aa6b5a03, f3bba30c, b68a9ca1, 53c00357 */}
+
+  **Release-Datum:** 28. Oktober 2026
+
+  ### Neue Funktionen
+
+  #### [Zuletzt abgeschlossene Arbeitsgänge wieder öffnen](/de/platform-intro/pages/data-acquisition#recently-completed)
+  {/* feature: bde-completion */}
+
+  Auf der BDE-Seite zeigt **Zuletzt abgeschlossen** die letzten fünf abgeschlossenen Arbeitsgänge dieser Maschine, neueste zuerst. Wählen Sie **Auf Wartestellung setzen**, dann unter **Einreihen** die Option **Nach Firmensortierung**, **Ganz oben** oder **Ganz unten** und bestätigen Sie. Prioritäten und Termine bleiben erhalten. **Anzeigen** führt zum wieder geöffneten Arbeitsgang. Folgen Sie [Einen abgeschlossenen Arbeitsgang wieder öffnen](/de/platform-intro/workflows/data-acquisition#reopen-completed).
+
+  Die Kennzeichnung **Wieder geöffnet** auf BDE- und Planerkarten zeigt den Zeitpunkt. Ihre Erklärung nennt die Person und die gewählte Einreihung. Administratoren steuern das Wiederöffnen unter **Admin-Panel → BDE-Zugriffsvorlagen → Auf der BDE-Seite erlaubt → Abgeschlossene Arbeitsgänge wieder öffnen**. Übergebene Anteile können Sie hier nicht wieder öffnen.
+
+  ### Verbesserungen
+
+  #### [Das Ergebnis beim Buchen und Stoppen erkennen](/de/platform-intro/pages/data-acquisition#produktionsmengen-ausschuss-und-abschluss)
+  {/* feature: bde-completion */}
+
+  Das Informationssymbol in der Ecke des Mengendialogs erklärt **Abbrechen**, **Weiter** und **Stopp**. **Abbrechen** schließt ohne Buchung. **Weiter** bucht Mengen, beendet das Intervall und startet sofort ein neues, ohne Abschlussfrage. **Stopp** bucht Mengen, beendet das Intervall und setzt den Arbeitsgang in Wartestellung. Meldungen nennen den Arbeitsgang und bestätigen das Ergebnis.
+
+  **Geplante Menge erreicht** nennt jetzt den Arbeitsgang und zeigt dieselbe Mengenanzeige wie seine Karte. **Abschließen** ist vorausgewählt. Wählen Sie **In Wartestellung lassen**, wenn noch Teile zu buchen sind. Schließen Sie die Frage ohne Auswahl, bleibt der Arbeitsgang in Wartestellung. Beide Möglichkeiten bleiben bei ausgeschalteten Statusänderungen verfügbar. Die Frage wartet, bis eine mögliche Zeitauswahl von **BDE Assist** abgeschlossen ist. Folgen Sie [Mengen und Abschluss prüfen](/de/platform-intro/workflows/data-acquisition#mengen-und-abschluss-prüfen).
+
+  ### Fehlerbehebungen
+
+  #### [Ausschuss beim Erreichen der Planmenge mitzählen](/de/platform-intro/pages/data-acquisition#produktionsmengen-ausschuss-und-abschluss)
+  {/* feature: bde-completion */}
+
+  Bisher zählten nur Gutteile, sodass nach **Stopp** bei 97 Gutteilen und 3 Teilen Materialausschuss von 100 geplanten Teilen keine Abschlussfrage erschien. Jetzt zählen Gutteile, Materialausschuss und Arbeitsausschuss aus allen Intervallen mit, sodass die Frage in diesem Beispiel erscheint.
+</Update>
+
 <Update label="2026-10-28" description="v1.5.138" tags={["Funktion", "Verbesserung", "Fehlerbehebung"]}>
   {/* commits: f4f0a0ae, 28fb8f88, 9ae27a9b, 8c410269 */}
 

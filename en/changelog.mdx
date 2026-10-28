@@ -6,6 +6,37 @@ toc: false
 
 ## Releases
 
+<Update label="2026-10-28" description="v1.5.139" tags={["feature", "improvement", "fix"]}>
+  {/* commits: 70c393a6, 26527adb, ea7c1238, 39d3b621, 23eadec2, 6787e8cb, 9692284e, b503f010, 6846752f, 2ef3a400, 41114a79, cab94d71, 29585c9f, 55f1dd26, 85ecb629, 4187da06, 2013e1a2, 81ad8891, aa6b5a03, f3bba30c, b68a9ca1, 53c00357 */}
+
+  **Release date:** October 28, 2026
+
+  ### New Features
+
+  #### [Reopen Recently Completed Operations](/en/platform-intro/pages/data-acquisition#recently-completed)
+  {/* feature: bde-completion */}
+
+  On the PDA page, **Recently completed** shows the machine’s last five completed operations, newest first. Choose **Set on hold**, then **Put in queue → By company sorting**, **At the top**, or **At the bottom**, and confirm. Priorities and dates stay unchanged. **Show** takes you to the reopened operation. Follow [Reopen a Completed Operation](/en/platform-intro/workflows/data-acquisition#reopen-completed).
+
+  The **Reopened** badge on PDA and Planner cards shows when it was reopened; its explanation names who reopened it and where it was placed. Administrators control reopening under **Admin Panel → BDE access templates → Allowed on the BDE page → Reopen completed operations**. Handed-over parts cannot be reopened here.
+
+  ### Improvements
+
+  #### [See What Happens When You Book and Stop](/en/platform-intro/pages/data-acquisition#production-quantities-scrap-and-completion)
+  {/* feature: bde-completion */}
+
+  The quantity dialog’s information icon in the corner explains **Cancel**, **Continue**, and **Stop**. **Cancel** closes without booking. **Continue** books quantities, ends the interval and starts a new one immediately, without a completion question. **Stop** books quantities, ends the interval and puts the operation on hold. Notices name the operation and confirm the result.
+
+  **Planned quantity reached** now names the operation and uses its card’s quantity readout. **Complete** is preselected; choose **Keep on hold** if parts still need booking. Closing the question keeps it on hold. Both choices remain available when status changes are switched off. The question waits until any **PDA Assist** time choice is finished. Follow [Review Quantities and Completion](/en/platform-intro/workflows/data-acquisition#review-quantities-and-completion).
+
+  ### Fixes
+
+  #### [Count Scrap When Checking Whether the Plan Is Reached](/en/platform-intro/pages/data-acquisition#production-quantities-scrap-and-completion)
+  {/* feature: bde-completion */}
+
+  Previously, only good parts counted, so 97 good parts plus 3 material scrap against a plan of 100 did not bring the completion question after **Stop**. Good parts, material scrap, and work scrap now count across all intervals, so this example brings the question.
+</Update>
+
 <Update label="2026-10-28" description="v1.5.138" tags={["feature", "improvement", "fix"]}>
   {/* commits: f4f0a0ae, 28fb8f88, 9ae27a9b, 8c410269 */}
 

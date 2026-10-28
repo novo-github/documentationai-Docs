@@ -103,6 +103,15 @@ description: "Find answers about operation priorities, planning dates, grouping,
 | Where is the filter for one ERP import? | [Answer](/en/help-center/faq/planning-and-imports#planner-import-filter-location) |
 | How do I use company sorting in a PDA template? | [Answer](/en/help-center/faq/planning-and-imports#template-company-sorting) |
 | Why can’t I save a template I just opened? | [Answer](/en/help-center/faq/planning-and-imports#template-save-unchanged) |
+| What do Cancel, Continue, and Stop do with my quantities? | [Answer](/en/help-center/faq/planning-and-imports#stop-buttons) |
+| Why does it say the planned quantity is reached when I have only 97 good parts? | [Answer](/en/help-center/faq/planning-and-imports#completion-with-scrap) |
+| Why am I not asked to complete the operation? | [Answer](/en/help-center/faq/planning-and-imports#completion-question-missing) |
+| I completed an operation by mistake. How can I book more parts? | [Answer](/en/help-center/faq/planning-and-imports#reopen-completed) |
+| Why can’t I see Set on hold on a completed operation? | [Answer](/en/help-center/faq/planning-and-imports#reopen-action-missing) |
+| Where does a reopened operation go in the queue? | [Answer](/en/help-center/faq/planning-and-imports#reopen-queue-placement) |
+| Can I see who reopened an operation? | [Answer](/en/help-center/faq/planning-and-imports#reopened-badge) |
+| Why can’t I find an older operation in Recently completed? | [Answer](/en/help-center/faq/planning-and-imports#recent-completed-limit) |
+| I closed Back to pool without choosing. Why is my operation on hold? | [Answer](/en/help-center/faq/planning-and-imports#cancelled-return-after-stop) |
 
 <a id="operation-priority" />
 
@@ -599,7 +608,7 @@ The machine may use a template. **Set by the template** marks required choices. 
 
 ## Why can’t I change an order’s status or take work from the pool?
 
-The machine’s template can hide status changes, taking or returning pool work, and adding orders. These limits apply to administrators too. Stopping and choosing **Hold** or **Completed**, and booking quantities, still work. **PDA Assist** also stays available as before. Ask an administrator to review **Allowed on the BDE page**. See [allowed actions](/en/platform-intro/pages/bde-access-templates#allowed-actions).
+The machine’s template can hide status changes, taking or returning pool work, and adding orders. These limits apply to administrators too. Booking quantities still works. After **Stop**, **Complete** and **Keep on hold** remain available when the planned quantity is reached. **Reopen completed operations** controls reopening separately. **PDA Assist** also stays available as before. Ask an administrator to review **Allowed on the BDE page**. See [allowed actions](/en/platform-intro/pages/bde-access-templates#allowed-actions).
 
 <a id="read-only-pda-details" />
 
@@ -708,3 +717,57 @@ As an administrator, open **Admin Panel → BDE access templates** and edit the 
 ## Why can’t I save a template I just opened?
 
 Saving is available only after you change the template. If you only opened it to check the settings, there is nothing to save. Copying company sorting that already matches also leaves it unchanged. See [BDE Access Templates](/en/platform-intro/pages/bde-access-templates#display-settings).
+
+<a id="stop-buttons" />
+
+## What do Cancel, Continue, and Stop do with my quantities?
+
+**Cancel** closes without booking. **Continue** books the quantities, ends the interval and starts a new one immediately. **Stop** books quantities and ends the interval; you can decide to complete the operation when the plan is reached. Tap the information icon in the quantity dialog for help. See [button effects](/en/platform-intro/pages/data-acquisition#production-quantities-scrap-and-completion).
+
+<a id="completion-with-scrap" />
+
+## Why does it say the planned quantity is reached when I have only 97 good parts?
+
+**Planned quantity reached** counts good parts and all scrap across every interval. For a plan of 100, 97 good parts plus 3 material scrap is enough to ask. It does not complete the operation automatically. Choose **Keep on hold** if parts still need booking, or **Complete** when all parts are booked. Closing the question keeps it on hold. Follow [Review Quantities and Completion](/en/platform-intro/workflows/data-acquisition#review-quantities-and-completion).
+
+<a id="completion-question-missing" />
+
+## Why am I not asked to complete the operation?
+
+The question follows **Stop** when good parts plus all scrap reach or exceed the plan. **Continue** does not ask. Finish or close any **PDA Assist** time choice first. **Back to pool** opens its return dialog instead. Below plan, ask your planner to close the operation or use its status menu if allowed. See [completion rules](/en/platform-intro/pages/data-acquisition#production-quantities-scrap-and-completion).
+
+<a id="reopen-completed" />
+
+## I completed an operation by mistake. How can I book more parts?
+
+On the machine’s PDA page, open **Recently completed → Set on hold**. Check the operation, choose its place under **Put in queue**, and confirm **Set on hold**. Choose **Show** in the notice to open **All Open** with it selected. It is on hold again so you can book more parts. Follow [Reopen a Completed Operation](/en/platform-intro/workflows/data-acquisition#reopen-completed).
+
+<a id="reopen-action-missing" />
+
+## Why can’t I see Set on hold on a completed operation?
+
+The machine’s template may block **Reopen completed operations**. An administrator can enable it under **Admin Panel → BDE access templates → Allowed on the BDE page**, while leaving **Change the order status** off. Reopening starts allowed, including in existing templates. **Handed over** parts never offer this action; ask your planner about reversing a handover. See [allowed actions](/en/platform-intro/pages/bde-access-templates#allowed-actions).
+
+<a id="reopen-queue-placement" />
+
+## Where does a reopened operation go in the queue?
+
+Choose **By company sorting**, **At the top**, or **At the bottom** under **Put in queue**. Company sorting uses the saved rules shown below the choices; it is unavailable until an administrator saves company sorting in the Planner. Your last successful choice is remembered. Otherwise, company sorting is selected when available, and the top when it is not. Priorities and dates stay unchanged. See [placement rules](/en/platform-intro/pages/data-acquisition#recently-completed).
+
+<a id="reopened-badge" />
+
+## Can I see who reopened an operation?
+
+Yes. Open the explanation of **Reopened** on its PDA or Planner card. It shows who reopened it, the date and time, the machine when available, and its queue placement. Both Planner card layouts show the badge. It disappears after the operation is completed or cancelled again. See [Recognize Reopened Work](/en/platform-intro/pages/assignment-planner#recognize-reopened-work).
+
+<a id="recent-completed-limit" />
+
+## Why can’t I find an older operation in Recently completed?
+
+**Recently completed** shows only the last five operations completed on the selected machine, newest first. Search narrows those five; it does not search older completions. Clear search if needed. Use **Time Window + All Statuses** to find older work and ask your planner for help reopening it. See [Recently Completed](/en/platform-intro/pages/data-acquisition#recently-completed).
+
+<a id="cancelled-return-after-stop" />
+
+## I closed Back to pool without choosing. Why is my operation on hold?
+
+If you already chose **Stop** and booked quantities, closing the return dialog does not restart the interval or undo that booking. The operation stays on hold, and **Interval ended – on hold** confirms it. Follow [Return Unfinished Work to the Pool](/en/platform-intro/workflows/data-acquisition#back-to-pool).

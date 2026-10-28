@@ -1016,9 +1016,15 @@ Setup before production. Vorber. is used on German PDA buttons; Rüst appears on
 
 [Learn more](/en/platform-intro/pages/data-acquisition).
 
+### Planned quantity reached
+
+**Planned quantity reached** asks after **Stop** when good parts plus all scrap across the operation’s intervals reach or exceed the plan. **Complete** closes it; **Keep on hold** leaves it open for later booking. Closing the question also keeps it on hold.
+
+[Learn more](/en/platform-intro/pages/data-acquisition#production-quantities-scrap-and-completion).
+
 ### Prep / Start / Stop / Continue
 
-Preparation, production start, interval end, and resume controls. Explicit actions also include Start/End Preparation and Start/End Shift.
+**Prep** starts preparation and **Start** starts production. In the quantity dialog, **Continue** books quantities, ends the running interval and immediately starts a new one. **Stop** books and ends the interval, then asks about completion when the plan is reached. **Cancel** closes without booking.
 
 [Learn more](/en/platform-intro/pages/data-acquisition).
 
@@ -1120,6 +1126,12 @@ The dashboard tooltip states 95% and directs changes to an admin. Automatic repl
 
 [Learn more](/en/platform-intro/pages/assignment-planner).
 
+### Put in queue
+
+**Put in queue** chooses where a reopened operation returns: **By company sorting**, **At the top**, or **At the bottom**. Company sorting uses its saved rules without changing priorities, dates, or the company sorting itself.
+
+[Learn more](/en/platform-intro/pages/data-acquisition#recently-completed).
+
 ## R
 
 ### Re-sort
@@ -1195,6 +1207,24 @@ The active shift is still in progress. Its end follows the machine's active shif
 **Running and on-hold orders**: Orders in progress or on hold. Example: an order that was started and is on hold for a tool change. In Data Acquisition V3 queue sorting, choose **Keep in place** or **At the top**. As a sort rule, this group offers **At the top** or **At the bottom** and comes before the waiting-order rule.
 
 [Learn more](/en/platform-intro/pages/data-acquisition).
+
+### Recently completed
+
+**Recently completed** shows the selected machine’s last five completed operations, newest first. Its cards are read-only, with **Set on hold** available when reopening is allowed and the part was not handed over.
+
+[Learn more](/en/platform-intro/pages/data-acquisition#recently-completed).
+
+### Reopen completed operations
+
+**Reopen completed operations** is the template switch for **Set on hold** in **Recently completed**. It starts on and works separately from **Change the order status**.
+
+[Learn more](/en/platform-intro/pages/bde-access-templates#allowed-actions).
+
+### Reopened
+
+**Reopened** marks an operation reopened after completion or cancellation. Its explanation shows who reopened it, when, the machine when available, and its queue placement. The badge appears on PDA and Planner cards until the operation is completed or cancelled again.
+
+[Learn more](/en/platform-intro/pages/assignment-planner#recognize-reopened-work).
 
 ## S
 

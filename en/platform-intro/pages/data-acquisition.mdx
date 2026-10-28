@@ -46,7 +46,7 @@ Your own choices stay saved. They apply again when the template no longer fixes 
 
 The template can hide status changes, interval corrections, order creation, and taking or returning pool work. Order notes and details may be readable only. If adding orders is off, search still filters this machine’s work but cannot find unplanned operations. Ask an administrator about a missing action.
 
-Preparation, production start, stop, quantity booking, downtime reasons, **PDA Assist**, and warnings stay available as before. Even with status changes off, stopping still lets you choose **Hold** or **Completed**. Other pages, such as the Planner, are unaffected.
+Preparation, production start, stop, quantity booking, downtime reasons, **PDA Assist**, and warnings stay available as before. Even with status changes off, **Planned quantity reached** still lets you choose **Complete** or **Keep on hold**. Reopening completed work has its own **Reopen completed operations** switch. Other pages, such as the Planner, are unaffected.
 
 Template changes appear at the next automatic refresh, every 5 minutes unless another interval is set. Use the page’s refresh button or reload the page to pick them up immediately. Other devices do not update instantly; a screen left open keeps the old choices until one of these happens.
 
@@ -149,15 +149,32 @@ Timeline entries for idle and stopped periods update as you switch between runni
 
 ## Production Quantities, Scrap, and Completion
 
-When stopping or continuing an interval, you can enter produced quantity and record **material scrap** and **work scrap** separately. Keeping the two scrap categories separate lets you review the breakdown and their combined total in [Orders & Products](/en/platform-intro/pages/orders-products) and [Order Analysis](/en/platform-intro/pages/order-detail). Displayed production totals include the submitted scrap quantities.
+When stopping or continuing an interval, enter good quantity, material scrap, and work scrap separately. Review the breakdown in [Orders & Products](/en/platform-intro/pages/orders-products) or [Order Analysis](/en/platform-intro/pages/order-detail).
 
-Starting or stopping production updates the related order status. An assignment is marked complete when the produced quantity exactly matches the planned quantity. An over-production prompt can help you review completion when production exceeds the plan.
+In the quantity dialog, tap the information icon in the corner to read what each button does:
+
+| Button | Result |
+| --- | --- |
+| **Cancel** | Closes the dialog without booking anything. |
+| **Continue** | Books quantities, ends the running interval, and starts a new interval immediately. No completion question appears. |
+| **Stop** | Books quantities, ends the running interval, and puts the operation on hold. If the planned quantity is reached, you choose whether to complete it. |
+
+After **Stop**, **Planned quantity reached** appears when good parts plus material scrap, work scrap, and any older scrap reach or exceed the planned quantity across all intervals. Scrap counts once. For example, 97 good parts plus 3 material scrap reaches a plan of 100; 96 plus 3 does not. The question shows the order, operation sequence and product, with the same quantity readout as its card.
+
+- **Complete** is preselected. Choose it when all parts have been booked; the operation leaves the open list.
+- **Keep on hold** leaves the operation open so you can book missing parts later. Closing the question without choosing also keeps it on hold.
+
+Reaching the quantity does not complete the operation automatically. If the planned quantity is zero or empty, the question appears after every **Stop**. Both choices work even when the template hides ordinary status changes. Below the planned quantity, this question is not offered: ask your planner to close the operation, or use the status menu if your template allows it. If material runs out and work must continue elsewhere, use [Back to pool](/en/platform-intro/workflows/data-acquisition#back-to-pool).
+
+If **PDA Assist** offers a time choice after stopping, finish or close it first; the completion question follows. During **Back to pool**, the return dialog takes its place. Closing that return dialog after stopping leaves the operation on hold.
+
+Notices identify the operation. After **Continue**, you see **Interval ended – new interval started**. After stopping without a follow-up question, you see **Interval ended – on hold**, or **Interval ended** if it is not on hold. After the completion choice, **Operation completed** or **Operation on hold** confirms the result. Follow [Review Quantities and Completion](/en/platform-intro/workflows/data-acquisition#review-quantities-and-completion).
 
 ## PDA / BDE Buttons and Quantity Labels
 
 **PDA (Production Data Acquisition)** and **BDE (Betriebsdatenerfassung)** are the same operator screen. Tabs include **Assignments**, **Pool**, **Downtime reasons**, **Tickets**, and **Knowledge Base**.
 
-**Prep** starts preparation (German **Vorber.**; also called Rüsten), **Start** starts production, **Stop** ends an interval, and **Continue** resumes. Explicit actions include Start/End Preparation and Start/End Shift.
+**Prep** starts preparation (German **Vorber.**; also called Rüsten), **Start** starts production, **Stop** ends an interval, and **Continue** books quantities, ends the running interval, and starts a new one immediately. Explicit actions include Start/End Preparation and Start/End Shift.
 
 **Good qty. / Gutmenge** is good output. **Mat. / MA** is Material Scrap; **Work / AA** is Work Scrap. **Total = Input + MA + AA**. **Rework Qty** is the amount requiring rework. **Cycle Count** is sensor-detected; **PDA Entry / BDE-Eintrag** is operator-entered. Switching the progress source changes only the display.
 
@@ -169,7 +186,7 @@ Starting or stopping production updates the related order status. An assignment 
 
 In the **Pool** tab, claim work from the machine's hall pool. If no assignment exists, search unplanned operations or use **Find/Create Immediate Order**. **Job Context** combines order, work-order, operation, and assignment notes.
 
-**Waiting on a previous operation / Blocked by** means an earlier operation is unfinished. **Start anyway** remains available; review the dependency before proceeding. The concurrent-order prompt asks for confirmation if another assignment is running. Over-production offers **Put on hold** or **Mark as finished**.
+**Waiting on a previous operation / Blocked by** means an earlier operation is unfinished. **Start anyway** remains available; review the dependency before proceeding. The concurrent-order prompt asks for confirmation if another assignment is running. When the planned quantity is reached after **Stop**, choose **Complete** or **Keep on hold**.
 
 Unbound or unlabeled machine time belongs to no order. Deleting a recorded interval is irreversible.
 
@@ -180,8 +197,33 @@ Unbound or unlabeled machine time belongs to no order. Deleting a recorded inter
 | **All Open** | All open assignments, with no date filter. |
 | **Time Window + Open** | Open assignments in a ±1/3/5/7-day window; useful for daily work. |
 | **Time Window + All Statuses** | All steps in the chosen date window, including completed and cancelled ones. |
+| **Recently completed** | The last five operations completed on this machine, newest first, with no date filter. |
 
 **Card Display Settings / Columns / Highlight** are saved per user. A machine template adds its required fields and highlights and can fix sorting and automatic refresh. **Sort by Queue Position** follows the planned queue. Choose where running and waiting orders appear under **Sort Order**.
+
+<a id="recently-completed" />
+
+### Review and Reopen Completed Work
+
+On the PDA page, choose **Recently completed**, the fourth view mode. It shows only the last five completed operations of this machine, newest first. The time-window control is unavailable here. The view is remembered, and search filters these five cards. To review older work, use **Time Window + All Statuses**.
+
+Cards follow your display settings and show booked quantities and **Completed** with the completion time; a missing time appears as “–”. The cards are read-only: you cannot select them, start or stop them, change their status from a menu, or edit their notes or intervals here. Switching to this view keeps any previously selected open operation selected; the page’s main controls still refer to that operation.
+
+If the machine’s template allows **Reopen completed operations**, choose **Set on hold** on a card. In the confirmation, check the order, operation sequence and product. Under **Put in queue**, choose:
+
+| Choice | Where the operation returns |
+| --- | --- |
+| **By company sorting** | Uses the company’s saved priority and date rules. **Company sorting:** shows those rules below the choices. It places the operation behind the last active operation that ranks before it, never ahead of running work. Other operations keep their relative order. |
+| **At the top** | Returns it to the top of this machine’s queue. |
+| **At the bottom** | Returns it to the bottom of this machine’s queue. |
+
+Your last successful choice is remembered. Otherwise, **By company sorting** is selected when company sorting exists, and **At the top** when it does not. Without saved company sorting, **By company sorting** is unavailable. If that sorting is removed while the confirmation is open, the choice falls back to **At the top**. Company rules update when the page refreshes and when you open the confirmation.
+
+Confirm with **Set on hold**. To leave the operation completed, tap outside the confirmation. Reopening changes its queue placement without changing priorities, dates, or the saved company sorting. Your display sorting can affect where the card appears.
+
+After reopening, the card leaves this view. Choose **Show** in the notice to switch to **All Open** and select it. You can then book more parts. **Reopened** with the time appears on PDA and Planner cards. Its explanation names the person, date, time, machine when available, and queue placement. The badge disappears when the operation is completed or cancelled again.
+
+**No completed operations yet** means this machine has none to show. Refresh if the list cannot be loaded. If reopening fails, review the message before trying again. **Set on hold** is hidden when the template blocks reopening and on **Handed over** parts. Ask your planner about reversing a handover. Follow [Reopen a Completed Operation](/en/platform-intro/workflows/data-acquisition#reopen-completed).
 
 ## Check Assisted Interval Times
 

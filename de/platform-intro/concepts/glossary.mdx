@@ -1018,9 +1018,15 @@ Vorbereitung vor der Produktion. Vorber. steht auf deutschen BDE-Schaltflächen,
 
 [Mehr erfahren](/de/platform-intro/pages/data-acquisition).
 
+### Geplante Menge erreicht
+
+**Geplante Menge erreicht** fragt nach **Stopp**, sobald Gutteile und gesamter Ausschuss aus allen Intervallen des Arbeitsgangs die Planmenge erreichen oder überschreiten. **Abschließen** schließt ihn ab. **In Wartestellung lassen** hält ihn für spätere Buchungen offen. Auch das Schließen der Frage lässt ihn in Wartestellung.
+
+[Mehr erfahren](/de/platform-intro/pages/data-acquisition#produktionsmengen-ausschuss-und-abschluss).
+
 ### Prep / Start / Stop / Continue
 
-Steuerungen für Vorbereitung, Produktionsstart, Intervallende und Fortsetzung. Explizite Aktionen umfassen auch Start/End Preparation und Start/End Shift.
+**Vorber.** beginnt Rüsten und **Start** die Produktion. Im Mengendialog bucht **Weiter** Mengen, beendet das laufende Intervall und startet sofort ein neues. **Stopp** bucht und beendet das Intervall. Bei erreichter Planmenge folgt die Abschlussfrage. **Abbrechen** schließt ohne Buchung.
 
 [Mehr erfahren](/de/platform-intro/pages/data-acquisition).
 
@@ -1122,6 +1128,12 @@ Der Dashboard-Tooltip nennt 95 % und verweist für Änderungen auf einen Admin. 
 
 [Mehr erfahren](/de/platform-intro/pages/assignment-planner).
 
+### Einreihen
+
+**Einreihen** bestimmt den Platz eines wieder geöffneten Arbeitsgangs: **Nach Firmensortierung**, **Ganz oben** oder **Ganz unten**. Die Firmensortierung nutzt ihre gespeicherten Regeln, ohne Prioritäten, Termine oder die Firmensortierung selbst zu ändern.
+
+[Mehr erfahren](/de/platform-intro/pages/data-acquisition#recently-completed).
+
 ## R
 
 ### Neu sortieren
@@ -1197,6 +1209,24 @@ Die aktive Schicht läuft noch. Ihr Ende richtet sich nach den Einstellungen fü
 **Laufende Aufträge und Aufträge in Wartestellung**: Aufträge in Bearbeitung oder in Wartestellung. Beispiel: ein gestarteter Auftrag, der wegen eines Werkzeugwechsels in Wartestellung ist. In der Warteschlangensortierung der Betriebsdatenerfassung V3 wählen Sie **Position beibehalten** oder **Ganz oben**. Als Sortierregel bietet diese Gruppe **Ganz oben** oder **Ganz unten** und steht vor der Regel für wartende Aufträge.
 
 [Mehr erfahren](/de/platform-intro/pages/data-acquisition).
+
+### Zuletzt abgeschlossen
+
+**Zuletzt abgeschlossen** zeigt die letzten fünf abgeschlossenen Arbeitsgänge der ausgewählten Maschine, neueste zuerst. Die Karten sind nur lesbar. **Auf Wartestellung setzen** ist verfügbar, wenn das Wiederöffnen erlaubt ist und der Anteil nicht übergeben wurde.
+
+[Mehr erfahren](/de/platform-intro/pages/data-acquisition#recently-completed).
+
+### Abgeschlossene Arbeitsgänge wieder öffnen
+
+**Abgeschlossene Arbeitsgänge wieder öffnen** ist der Vorlagenschalter für **Auf Wartestellung setzen** unter **Zuletzt abgeschlossen**. Er ist zunächst eingeschaltet und wirkt unabhängig von **Auftragsstatus ändern**.
+
+[Mehr erfahren](/de/platform-intro/pages/bde-access-templates#erlaubte-aktionen).
+
+### Wieder geöffnet
+
+**Wieder geöffnet** kennzeichnet einen nach Abschluss oder Stornierung wieder geöffneten Arbeitsgang. Die Erklärung zeigt Person, Zeitpunkt, Maschine, sofern vorhanden, und Einreihung. Die Kennzeichnung erscheint auf BDE- und Planerkarten bis zum erneuten Abschluss oder Stornieren.
+
+[Mehr erfahren](/de/platform-intro/pages/assignment-planner#wieder-geöffnete-arbeit-erkennen).
 
 ## S
 

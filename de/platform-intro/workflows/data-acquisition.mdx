@@ -40,7 +40,7 @@ Eine [BDE-Zugriffsvorlage](/de/platform-intro/pages/bde-access-templates) kann A
     Stoppen Sie das Arbeitsintervall, wenn der Lauf endet oder pausiert.
   </Step>
   <Step title="Geben Sie die produzierte Menge und weitere Abschlussdetails ein" icon="arrow-right" title-type="p">
-    Geben Sie beim Stoppen oder Fortsetzen eines Intervalls die produzierte Menge, Materialausschuss, Fertigungsausschuss und weitere Abschlussdetails ein.
+    Geben Sie **Gutmenge**, **Material-Ausschuss** und **Arbeits-Ausschuss** ein. **Weiter** bucht und startet sofort ein neues Intervall. **Stopp** bucht und beendet es. Erscheint nach **Stopp** die Frage **Geplante Menge erreicht**, wählen Sie **Abschließen** oder **In Wartestellung lassen**. Siehe [Mengen und Abschluss prüfen](/de/platform-intro/workflows/data-acquisition#mengen-und-abschluss-prüfen).
   </Step>
   <Step title="Wenden Sie Zeitachsen-Gründe an" icon="arrow-right" title-type="p">
     Ergänzen Sie Gründe in der Zeitleiste, wenn Stillstand oder besondere Ereignisse erklärt werden müssen. Prüfen Sie nach Wechseln zwischen laufender, pausierter und gestoppter Produktion die Leerlauf- und Stillstandseinträge, damit die Aufzeichnung dem tatsächlichen Ablauf entspricht.
@@ -169,9 +169,47 @@ Sie benötigen Zugriff auf die Betriebsdatenerfassung V3 der Maschine oder auf d
 
 ## Mengen und Abschluss prüfen
 
-Erfassen Sie Materialausschuss und Fertigungsausschuss beim Stoppen oder Fortsetzen eines Intervalls in den jeweiligen Feldern. Prüfen Sie die Aufschlüsselung und den Gesamtausschuss in [Aufträge & Produkte](/de/platform-intro/pages/orders-products) oder der [Auftragsanalyse](/de/platform-intro/pages/order-detail). Angezeigte Produktionsgesamtmengen enthalten den eingegebenen Ausschuss.
+Erfassen Sie **Material-Ausschuss** und **Arbeits-Ausschuss** beim Buchen getrennt. Sie benötigen Zugriff auf die BDE-Seite dieser Maschine. Allgemeine Statusänderungen müssen für die Abschlussentscheidung nach **Stopp** nicht erlaubt sein.
 
-Das Starten und Stoppen der Produktion aktualisiert den zugehörigen Auftragsstatus. Eine Zuweisung wird abgeschlossen, wenn die produzierte Menge genau der geplanten Menge entspricht. Erscheint ein Hinweis zur Überproduktion, prüfen Sie die Mengen und den Auftragsabschluss, bevor Sie fortfahren.
+<Steps>
+  <Step title="Geben Sie die Mengen ein" icon="arrow-right" title-type="p">
+    Öffnen Sie den Stoppdialog für den laufenden Arbeitsgang. Geben Sie **Gutmenge**, **Material-Ausschuss** und **Arbeits-Ausschuss** ein. Das Informationssymbol erklärt bei Bedarf die Schaltflächen.
+  </Step>
+  <Step title="Entscheiden Sie über Weiterarbeiten oder Stoppen" icon="arrow-right" title-type="p">
+    **Abbrechen** schließt ohne Buchung. **Weiter** bucht Mengen, beendet dieses Intervall und startet sofort ein neues, ohne Abschlussfrage. Wählen Sie **Stopp**, um zu buchen und das laufende Intervall zu beenden.
+  </Step>
+  <Step title="Prüfen Sie die Abschlussfrage" icon="arrow-right" title-type="p">
+    Treffen oder schließen Sie zuerst eine mögliche Zeitauswahl von **BDE Assist**. **Geplante Menge erreicht** erscheint danach, wenn Gutteile und gesamter Ausschuss aus allen Intervallen des Arbeitsgangs die Planmenge erreichen oder überschreiten. Beispielsweise erreichen 97 Gutteile und 3 Teile Materialausschuss eine Planmenge von 100. Prüfen Sie den genannten Arbeitsgang und seine Mengen.
+  </Step>
+  <Step title="Schließen Sie den Arbeitsgang ab oder lassen Sie ihn offen" icon="arrow-right" title-type="p">
+    Wählen Sie das vorausgewählte **Abschließen**, wenn alle Teile gebucht sind, oder **In Wartestellung lassen**, um fehlende Teile später zu buchen. Auch das Schließen der Frage lässt ihn in Wartestellung. Prüfen Sie die Meldung **Arbeitsgang abgeschlossen** oder **Arbeitsgang in Wartestellung**. Allein das Erreichen der Menge schließt ihn nicht ab.
+  </Step>
+</Steps>
+
+Unterhalb der Planmenge erscheint keine Abschlussfrage. Bitten Sie Ihre Planung um den Abschluss oder nutzen Sie das Statusmenü, wenn Ihre Vorlage es erlaubt. Bei Materialmangel können Sie [offene Arbeit in den Pool zurückgeben](/de/platform-intro/workflows/data-acquisition#back-to-pool). Dabei erscheint statt der Abschlussfrage der Rückgabedialog.
+
+<a id="reopen-completed" />
+
+## Einen abgeschlossenen Arbeitsgang wieder öffnen
+
+Sie benötigen Zugriff auf die BDE-Seite dieser Maschine. Ihre Vorlage muss **Abgeschlossene Arbeitsgänge wieder öffnen** erlauben. Der Arbeitsgang muss zu den letzten fünf abgeschlossenen Arbeitsgängen dieser Maschine gehören und darf kein übergebener Anteil sein.
+
+<Steps>
+  <Step title="Finden Sie den abgeschlossenen Arbeitsgang" icon="arrow-right" title-type="p">
+    Wählen Sie die vierte Ansicht **Zuletzt abgeschlossen**. Prüfen Sie Auftrag, Arbeitsgangnummer, Produkt, Abschlusszeitpunkt und Mengen. Diese Karten sind nur lesbar. Wählen Sie auf der passenden Karte **Auf Wartestellung setzen**.
+  </Step>
+  <Step title="Wählen Sie die Einreihung" icon="arrow-right" title-type="p">
+    Wählen Sie unter **Einreihen** zwischen **Nach Firmensortierung**, **Ganz oben** und **Ganz unten**. Bei Firmensortierung lesen Sie die Regeln unter der Auswahl. Ohne gespeicherte Firmensortierung ist diese Möglichkeit nicht verfügbar. Ihre letzte erfolgreiche Auswahl bleibt gespeichert. Andernfalls ist die Firmensortierung vorausgewählt, falls vorhanden, sonst der Anfang. Prioritäten und Termine bleiben erhalten.
+  </Step>
+  <Step title="Bestätigen Sie das Wiederöffnen" icon="arrow-right" title-type="p">
+    Prüfen Sie den Arbeitsgang und wählen Sie **Auf Wartestellung setzen**. Soll er abgeschlossen bleiben, tippen Sie außerhalb der Bestätigung. Nach erfolgreichem Wiederöffnen verschwindet die Karte aus der abgeschlossenen Liste.
+  </Step>
+  <Step title="Zeigen Sie den wieder geöffneten Arbeitsgang an" icon="arrow-right" title-type="p">
+    Wählen Sie in der Meldung **Anzeigen**. **Alle Offen** öffnet sich mit dem ausgewählten Arbeitsgang in Wartestellung. Sie können weitere Teile buchen. Die Kennzeichnung **Wieder geöffnet** und ihre Erklärung auf der BDE- oder Planerkarte zeigen Person, Zeitpunkt und Einreihung.
+  </Step>
+</Steps>
+
+Ist der Arbeitsgang älter als die letzten fünf, suchen Sie ihn unter **Zeitfenster + Alle Status** und bitten Sie Ihre Planung um Hilfe beim Wiederöffnen. Fehlt **Auf Wartestellung setzen**, lassen Sie die Vorlage von einem Administrator prüfen. Bei übergebenen Anteilen benötigen Sie Ihre Planung. Unter [Zuletzt abgeschlossen](/de/platform-intro/pages/data-acquisition#recently-completed) finden Sie Einreihungsregeln und Anzeigegrenzen.
 
 ## Arbeit übernehmen, während des Laufs buchen und abschließen
 
@@ -181,7 +219,7 @@ Für Pool-Arbeit muss **Aufträge aus dem Hallen-Pool übernehmen** erlaubt sein
 2. Verwenden Sie **Prep / Vorber.** zur Vorbereitung, danach **Start** für Produktion. Prüfen Sie Hinweise zu anderen laufenden Aufträgen oder unfertigen Vorgängerschritten.
 3. Buchen Sie über **Mid Booking / Zwischenbuchung** Gutmenge, **Mat. / MA** und **Work / AA** während des Laufs. Das Intervall wird geschlossen und neu gestartet. Scheitert der Neustart, bleiben Mengen gespeichert. Drücken Sie Start statt erneut zu buchen.
 4. Geben Sie in **Cumulative** den ganzen Zählerstand ein, etwa 1450, statt des Zuwachses.
-5. Prüfen Sie beim Stoppen die Mengen. Bei Überproduktion wählen Sie **Put on hold** oder **Mark as finished**. Beschriften Sie Stillstand unter **Downtime reasons**.
+5. Prüfen Sie nach **Stopp** die Mengen. Erscheint **Geplante Menge erreicht**, wählen Sie **Abschließen** oder **In Wartestellung lassen**. Ergänzen Sie bei Stillstand einen Stillstandsgrund.
 
 Intervalllöschung ist endgültig. Operatoren können Aufträge & Produkte oder Alarmregeln nicht öffnen. Nutzen Sie freigegebene BDE-Ansichten oder fragen Sie Ihre Administration. [Warnungen von BDE Assist](/de/platform-intro/pages/data-acquisition) können veraltete Daten und unpassende Maschinen-/Auftragszustände melden.
 
@@ -206,6 +244,8 @@ Ein Administrator muss Warnungen für diese Maschine zuerst aktivieren. Alle Per
 
 ## Entscheidungspunkte
 
+- Ob alle Teile gebucht sind oder der Arbeitsgang für spätere Buchungen in Wartestellung bleiben soll.
+- Wo ein wieder geöffneter Arbeitsgang in der Maschinenwarteschlange erscheinen soll.
 - Ob Sie die Arbeit hier abschließen oder den Rest in den Hallenpool zurückgeben.
 - Ob der aktuelle Zeitpunkt zur Vorbereitung, aktiven Produktion oder einem Stopp gehört.
 - Ob für die Aufgabe eine vorhandene Zuweisung oder ein direkter Live-Auftrag verwendet werden soll.
@@ -218,6 +258,8 @@ Die Maschinen-Zeitleiste, die Intervallliste und die Produktionsdaten spiegeln d
 
 ## Häufige Probleme und Sonderfälle
 
+- Keine Abschlussfrage nach **Weiter**: Damit beginnt ein neues Intervall. Die Frage folgt nach **Stopp**, wenn die Gesamtmenge den Plan erreicht.
+- Keine Firmensortierung beim Wiederöffnen verfügbar: Wählen Sie **Ganz oben** oder **Ganz unten** oder bitten Sie einen Administrator, im Planer eine Firmensortierung zu speichern.
 - Ist **Speichern** gesperrt, ändern Sie einen Wert oder beheben Sie den angezeigten Zeitfehler. Ein geändertes Ende muss nach dem Start liegen. Geänderte Zeiten dürfen nicht in der Zukunft liegen. Warten Sie, wenn **Speichert…** erscheint.
 - Bei **Speichern hat nicht geklappt. Bitte erneut versuchen.** bleibt die Bearbeitung geöffnet. Prüfen Sie Ihre Eingaben und versuchen Sie erneut zu speichern.
 - Kann ein laufendes Intervall in der Auftragsverwaltung nicht geladen werden, versuchen Sie erneut, es zu öffnen. Es bleibt geschlossen, bis die gespeicherten Werte gelesen werden können.

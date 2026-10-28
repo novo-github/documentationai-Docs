@@ -46,7 +46,7 @@ Ihre eigenen Einstellungen bleiben gespeichert. Sie gelten wieder, sobald die Vo
 
 Die Vorlage kann Statusänderungen, Intervallkorrekturen, Auftragserstellung sowie das Übernehmen und Zurückgeben von Pool-Arbeit ausblenden. Auftragsnotizen und Details sind möglicherweise nur lesbar. Ist das Hinzufügen von Aufträgen ausgeschaltet, filtert die Suche weiterhin Arbeit dieser Maschine. Ungeplante Arbeitsgänge findet sie dann nicht. Fragen Sie bei fehlenden Aktionen einen Administrator.
 
-Rüsten, Produktionsstart, Stopp, Mengenbuchung, Stillstandsgründe, **BDE Assist** und Warnungen bleiben wie bisher verfügbar. Auch bei ausgeschalteten Statusänderungen können Sie beim Stoppen **In Wartestellung** oder **Abgeschlossen** wählen. Andere Seiten wie der Planer bleiben unverändert.
+Rüsten, Produktionsstart, Stopp, Mengenbuchung, Stillstandsgründe, **BDE Assist** und Warnungen bleiben wie bisher verfügbar. Auch bei ausgeschalteten Statusänderungen können Sie unter **Geplante Menge erreicht** weiterhin **Abschließen** oder **In Wartestellung lassen** wählen. Für das Wiederöffnen gibt es den eigenen Schalter **Abgeschlossene Arbeitsgänge wieder öffnen**. Andere Seiten wie der Planer bleiben unverändert.
 
 Vorlagenänderungen erscheinen bei der nächsten automatischen Aktualisierung, alle 5 Minuten, sofern kein anderer Abstand eingestellt ist. Über die Aktualisieren-Schaltfläche der Seite oder durch erneutes Laden der Seite übernehmen Sie sie sofort. Andere Geräte übernehmen Änderungen nicht sofort; ein geöffnet gebliebener Bildschirm zeigt bis dahin die bisherigen Einstellungen.
 
@@ -149,15 +149,32 @@ Zeitleisteneinträge für Leerlauf und Stillstand aktualisieren sich beim Wechse
 
 ## Produktionsmengen, Ausschuss und Abschluss
 
-Beim Stoppen oder Fortsetzen eines Intervalls können Sie die produzierte Menge eingeben und **Materialausschuss** sowie **Fertigungsausschuss** getrennt erfassen. So können Sie die beiden Ausschusskategorien und ihre gemeinsame Summe in [Aufträge & Produkte](/de/platform-intro/pages/orders-products) und der [Auftragsanalyse](/de/platform-intro/pages/order-detail) prüfen. Angezeigte Produktionsgesamtmengen enthalten die eingegebenen Ausschussmengen.
+Geben Sie beim Stoppen oder Fortsetzen eines Intervalls **Gutmenge**, **Material-Ausschuss** und **Arbeits-Ausschuss** getrennt ein. Prüfen Sie die Aufschlüsselung in [Aufträge & Produkte](/de/platform-intro/pages/orders-products) oder der [Auftragsanalyse](/de/platform-intro/pages/order-detail).
 
-Das Starten oder Stoppen der Produktion aktualisiert den zugehörigen Auftragsstatus. Eine Zuweisung wird abgeschlossen, wenn die produzierte Menge genau der geplanten Menge entspricht. Bei einer Überschreitung kann ein Hinweis zur Überproduktion dabei helfen, den Auftragsabschluss zu prüfen.
+Tippen Sie im Mengendialog auf das Informationssymbol in der Ecke. Es erklärt die Schaltflächen:
+
+| Schaltfläche | Ergebnis |
+| --- | --- |
+| **Abbrechen** (bisher **Abbruch**) | Schließt den Dialog, ohne etwas zu buchen. |
+| **Weiter** | Bucht Mengen, beendet das laufende Intervall und startet sofort ein neues. Es erscheint keine Abschlussfrage. |
+| **Stopp** | Bucht Mengen, beendet das laufende Intervall und setzt den Arbeitsgang in Wartestellung. Ist die Planmenge erreicht, entscheiden Sie über den Abschluss. |
+
+Nach **Stopp** erscheint **Geplante Menge erreicht**, sobald Gutteile, Materialausschuss, Arbeitsausschuss und älterer Ausschuss zusammen die Planmenge erreichen oder überschreiten. Alle Intervalle zählen mit, Ausschuss wird einmal gezählt. Beispielsweise erreichen 97 Gutteile und 3 Teile Materialausschuss eine Planmenge von 100; 96 plus 3 nicht. Die Frage zeigt Auftrag, Arbeitsgangnummer und Produkt sowie dieselbe Mengenanzeige wie die Karte.
+
+- **Abschließen** ist vorausgewählt. Wählen Sie es, wenn alle Teile gebucht sind. Der Arbeitsgang verlässt die offene Liste.
+- **In Wartestellung lassen** hält den Arbeitsgang offen, damit Sie fehlende Teile später buchen können. Auch das Schließen der Frage ohne Auswahl lässt ihn in Wartestellung.
+
+Das Erreichen der Menge schließt den Arbeitsgang nicht automatisch ab. Ist die Planmenge 0 oder leer, erscheint die Frage nach jedem **Stopp**. Beide Möglichkeiten bleiben verfügbar, wenn die Vorlage allgemeine Statusänderungen ausblendet. Unterhalb der Planmenge erscheint diese Frage nicht. Bitten Sie Ihre Planung um den Abschluss oder nutzen Sie das Statusmenü, wenn Ihre Vorlage es erlaubt. Geht Material aus und soll die Arbeit anderswo weitergehen, nutzen Sie [Zurück in den Pool](/de/platform-intro/workflows/data-acquisition#back-to-pool).
+
+Bietet **BDE Assist** nach dem Stoppen eine Zeitauswahl an, treffen oder schließen Sie diese zuerst. Danach folgt die Abschlussfrage. Bei **Zurück in den Pool** erscheint stattdessen der Rückgabedialog. Schließen Sie diesen nach dem Stoppen ohne Auswahl, bleibt der Arbeitsgang in Wartestellung.
+
+Meldungen nennen den Arbeitsgang. Nach **Weiter** erscheint **Intervall beendet – neues Intervall gestartet**. Nach einem Stopp ohne weitere Frage sehen Sie **Intervall beendet – In Wartestellung** oder **Intervall beendet**, falls der Arbeitsgang nicht in Wartestellung ist. Nach der Abschlussentscheidung bestätigt **Arbeitsgang abgeschlossen** oder **Arbeitsgang in Wartestellung** das Ergebnis. Folgen Sie [Mengen und Abschluss prüfen](/de/platform-intro/workflows/data-acquisition#mengen-und-abschluss-prüfen).
 
 ## PDA-/BDE-Schaltflächen und Mengenbezeichnungen
 
 **PDA (Production Data Acquisition)** und **BDE (Betriebsdatenerfassung)** bezeichnen dieselbe Bedienseite. Tabs umfassen **Assignments**, **Pool**, **Downtime reasons**, **Tickets** und **Knowledge Base**.
 
-**Prep** beginnt Vorbereitung (deutsch **Vorber.**, auch Rüsten), **Start** die Produktion, **Stop** beendet ein Intervall und **Continue** setzt es fort. Explizite Aktionen umfassen Start/End Preparation und Start/End Shift.
+**Vorber.** beginnt Rüsten, **Start** die Produktion und **Stopp** beendet ein Intervall. **Weiter** bucht Mengen, beendet das laufende Intervall und startet sofort ein neues. Weitere Aktionen beginnen oder beenden Rüsten und Schichten.
 
 **Good qty. / Gutmenge** ist guter Ausstoß. **Mat. / MA** bedeutet Materialausschuss, **Work / AA** Fertigungsausschuss. **Gesamt = Eingabe + MA + AA**. **Rework Qty** ist die Nacharbeitsmenge. **Cycle Count** kommt vom Sensor, **PDA Entry / BDE-Eintrag** vom Bediener. Die Auswahl der Fortschrittsquelle ändert nur die Anzeige.
 
@@ -169,7 +186,7 @@ Das Starten oder Stoppen der Produktion aktualisiert den zugehörigen Auftragsst
 
 Übernehmen Sie im **Pool** Arbeit aus dem Hall Pool Ihrer Maschine. Fehlt eine Zuweisung, suchen Sie ungeplante Operationen oder verwenden Sie **Find/Create Immediate Order**. **Job Context** verbindet Notizen aus Auftrag, Arbeitsauftrag, Operation und Zuweisung.
 
-**Waiting on a previous step / Blocked by** bedeutet, dass eine frühere Operation nicht fertig ist. **Start anyway** ist dennoch verfügbar. Prüfen Sie vorher die Abhängigkeit. Bei bereits laufender anderer Zuweisung erscheint eine Bestätigung. Überproduktion bietet **Put on hold** oder **Mark as finished**.
+**Wartet auf einen vorherigen Schritt** / **Blockiert durch** bedeutet, dass ein früherer Arbeitsgang noch nicht abgeschlossen ist. **Trotzdem starten** ist dennoch verfügbar. Prüfen Sie vorher die Abhängigkeit. Bei bereits laufender anderer Zuweisung erscheint eine Bestätigung. Ist die Planmenge nach **Stopp** erreicht, wählen Sie **Abschließen** oder **In Wartestellung lassen**.
 
 Ungebundene oder unbeschriftete Maschinenzeit gehört zu keinem Auftrag. Die Löschung eines erfassten Intervalls ist endgültig.
 
@@ -180,8 +197,33 @@ Ungebundene oder unbeschriftete Maschinenzeit gehört zu keinem Auftrag. Die Lö
 | **Alle Offen** | Alle offenen Zuweisungen ohne Datumsfilter. |
 | **Zeitfenster + Offen** | Offene Zuweisungen innerhalb ±1/3/5/7 Tagen; für tägliche Arbeit. |
 | **Zeitfenster + Alle Status** | Alle Schritte im gewählten Datumsfenster, einschließlich abgeschlossener und stornierter Schritte. |
+| **Zuletzt abgeschlossen** | Die letzten fünf auf dieser Maschine abgeschlossenen Arbeitsgänge, neueste zuerst, ohne Datumsfilter. |
 
 Ihre Kartenanzeige und Hervorhebungen werden je Benutzer gespeichert. Eine Maschinenvorlage ergänzt vorgeschriebene Felder und Hervorhebungen und kann Sortierung und automatische Aktualisierung festlegen. **Nach Warteschlangenposition sortieren** folgt der geplanten Warteschlange. Wählen Sie unter **Sortierreihenfolge**, wo laufende und wartende Aufträge erscheinen.
+
+<a id="recently-completed" />
+
+### Abgeschlossene Arbeit prüfen und wieder öffnen
+
+Wählen Sie auf der BDE-Seite **Zuletzt abgeschlossen**, die vierte Ansicht. Sie zeigt nur die letzten fünf abgeschlossenen Arbeitsgänge dieser Maschine, neueste zuerst. Die Zeitfensterauswahl ist hier nicht verfügbar. Die Ansicht bleibt gespeichert. Die Suche filtert diese fünf Karten. Nutzen Sie für ältere Arbeit **Zeitfenster + Alle Status**.
+
+Die Karten folgen Ihren Anzeigeeinstellungen. Sie zeigen gebuchte Mengen und **Abgeschlossen** mit dem Abschlusszeitpunkt. Fehlt dieser, erscheint „–“. Die Karten sind nur lesbar: Sie können sie hier weder auswählen noch starten, stoppen, über ein Statusmenü ändern oder ihre Notizen und Intervalle bearbeiten. Beim Wechsel in diese Ansicht bleibt ein zuvor ausgewählter offener Arbeitsgang ausgewählt. Die Hauptbedienelemente der Seite beziehen sich weiterhin darauf.
+
+Erlaubt die Maschinenvorlage **Abgeschlossene Arbeitsgänge wieder öffnen**, wählen Sie auf einer Karte **Auf Wartestellung setzen**. Prüfen Sie in der Bestätigung Auftrag, Arbeitsgangnummer und Produkt. Wählen Sie unter **Einreihen**:
+
+| Auswahl | Wohin der Arbeitsgang zurückkehrt |
+| --- | --- |
+| **Nach Firmensortierung** | Nutzt die gespeicherten Prioritäts- und Terminregeln des Unternehmens. **Firmensortierung:** zeigt diese unter der Auswahl. Der Arbeitsgang wird hinter dem letzten aktiven Arbeitsgang eingeordnet, der nach diesen Regeln davor gehört, niemals vor laufender Arbeit. Die übrigen Arbeitsgänge behalten ihre relative Reihenfolge. |
+| **Ganz oben** | Kehrt an den Anfang der Warteschlange dieser Maschine zurück. |
+| **Ganz unten** | Kehrt ans Ende der Warteschlange dieser Maschine zurück. |
+
+Ihre letzte erfolgreiche Auswahl bleibt gespeichert. Andernfalls ist **Nach Firmensortierung** vorausgewählt, wenn eine Firmensortierung vorhanden ist, sonst **Ganz oben**. Ohne gespeicherte Firmensortierung ist **Nach Firmensortierung** nicht verfügbar. Wird diese Sortierung bei geöffneter Bestätigung entfernt, wechselt die Auswahl zu **Ganz oben**. Die Firmenregeln werden beim Aktualisieren der Seite und beim Öffnen der Bestätigung aktualisiert.
+
+Bestätigen Sie mit **Auf Wartestellung setzen**. Soll der Arbeitsgang abgeschlossen bleiben, tippen Sie außerhalb der Bestätigung. Das Wiederöffnen ändert die Einreihung, ohne Prioritäten, Termine oder die gespeicherte Firmensortierung zu ändern. Ihre Anzeigesortierung kann beeinflussen, wo die Karte erscheint.
+
+Nach dem Wiederöffnen verschwindet die Karte aus dieser Ansicht. Wählen Sie in der Meldung **Anzeigen**, um zu **Alle Offen** zu wechseln und den Arbeitsgang auszuwählen. Danach können Sie weitere Teile buchen. Auf BDE- und Planerkarten erscheint **Wieder geöffnet** mit dem Zeitpunkt. Die Erklärung nennt Person, Datum, Uhrzeit, Maschine, sofern vorhanden, und Einreihung. Die Kennzeichnung verschwindet, wenn der Arbeitsgang erneut abgeschlossen oder storniert wird.
+
+**Noch keine abgeschlossenen Arbeitsgänge** bedeutet, dass diese Maschine keine anzuzeigen hat. Aktualisieren Sie die Seite, wenn die Liste nicht geladen werden kann. Schlägt das Wiederöffnen fehl, prüfen Sie die Meldung vor einem erneuten Versuch. **Auf Wartestellung setzen** fehlt, wenn die Vorlage das Wiederöffnen sperrt, sowie bei Anteilen mit **Übergeben**. Bitten Sie Ihre Planung um Hilfe, wenn Sie eine Übergabe rückgängig machen müssen. Folgen Sie [Einen abgeschlossenen Arbeitsgang wieder öffnen](/de/platform-intro/workflows/data-acquisition#reopen-completed).
 
 ## Unterstützte Intervallzeiten prüfen
 

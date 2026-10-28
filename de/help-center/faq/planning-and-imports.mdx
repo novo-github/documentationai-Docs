@@ -103,6 +103,15 @@ description: "Antworten zu Arbeitsgangprioritäten, Planungsterminen, Gruppierun
 | Wo ist der Filter für einen einzelnen ERP-Import? | [Antwort](/de/help-center/faq/planning-and-imports#planner-import-filter-location) |
 | Wie nutze ich die Firmensortierung in einer BDE-Vorlage? | [Antwort](/de/help-center/faq/planning-and-imports#template-company-sorting) |
 | Warum kann ich eine gerade geöffnete Vorlage nicht speichern? | [Antwort](/de/help-center/faq/planning-and-imports#template-save-unchanged) |
+| Was machen Abbrechen, Weiter und Stopp mit meinen Mengen? | [Antwort](/de/help-center/faq/planning-and-imports#stop-buttons) |
+| Warum ist die geplante Menge schon bei 97 Gutteilen erreicht? | [Antwort](/de/help-center/faq/planning-and-imports#completion-with-scrap) |
+| Warum werde ich nicht gefragt, ob der Arbeitsgang abgeschlossen ist? | [Antwort](/de/help-center/faq/planning-and-imports#completion-question-missing) |
+| Ich habe einen Arbeitsgang versehentlich abgeschlossen. Wie buche ich weitere Teile? | [Antwort](/de/help-center/faq/planning-and-imports#reopen-completed) |
+| Warum fehlt Auf Wartestellung setzen bei einem abgeschlossenen Arbeitsgang? | [Antwort](/de/help-center/faq/planning-and-imports#reopen-action-missing) |
+| Wo erscheint ein wieder geöffneter Arbeitsgang in der Warteschlange? | [Antwort](/de/help-center/faq/planning-and-imports#reopen-queue-placement) |
+| Kann ich sehen, wer einen Arbeitsgang wieder geöffnet hat? | [Antwort](/de/help-center/faq/planning-and-imports#reopened-badge) |
+| Warum finde ich einen älteren Arbeitsgang nicht unter Zuletzt abgeschlossen? | [Antwort](/de/help-center/faq/planning-and-imports#recent-completed-limit) |
+| Ich habe Zurück in den Pool ohne Auswahl geschlossen. Warum ist mein Arbeitsgang in Wartestellung? | [Antwort](/de/help-center/faq/planning-and-imports#cancelled-return-after-stop) |
 
 <a id="operation-priority" />
 
@@ -601,7 +610,7 @@ Die Maschine verwendet möglicherweise eine Vorlage. **Von der Vorlage festgeleg
 
 ## Warum kann ich den Auftragsstatus nicht ändern oder keine Arbeit aus dem Pool übernehmen?
 
-Die Maschinenvorlage kann Statusänderungen, das Übernehmen und Zurückgeben von Pool-Arbeit sowie das Hinzufügen von Aufträgen ausblenden. Das gilt auch für Administratoren. Beim Stoppen bleiben **In Wartestellung** und **Abgeschlossen** wählbar. Mengen buchen bleibt möglich. Auch **BDE Assist** bleibt wie bisher verfügbar. Bitten Sie einen Administrator, **Auf der BDE-Seite erlaubt** zu prüfen. Siehe [erlaubte Aktionen](/de/platform-intro/pages/bde-access-templates#erlaubte-aktionen).
+Die Maschinenvorlage kann Statusänderungen, das Übernehmen und Zurückgeben von Pool-Arbeit sowie das Hinzufügen von Aufträgen ausblenden. Das gilt auch für Administratoren. Mengen buchen bleibt möglich. Nach **Stopp** bleiben **Abschließen** und **In Wartestellung lassen** bei erreichter Planmenge verfügbar. **Abgeschlossene Arbeitsgänge wieder öffnen** steuert das Wiederöffnen getrennt. Auch **BDE Assist** bleibt wie bisher verfügbar. Bitten Sie einen Administrator, **Auf der BDE-Seite erlaubt** zu prüfen. Siehe [erlaubte Aktionen](/de/platform-intro/pages/bde-access-templates#erlaubte-aktionen).
 
 <a id="read-only-pda-details" />
 
@@ -710,3 +719,57 @@ Wenn Maschinen in Zeilen angezeigt werden, können Sie **Filtern & Sortieren →
 ## Warum kann ich eine gerade geöffnete Vorlage nicht speichern?
 
 Speichern ist erst möglich, nachdem Sie die Vorlage geändert haben. Wenn Sie die Einstellungen nur prüfen, gibt es nichts zu speichern. Auch das Übernehmen einer bereits übereinstimmenden Firmensortierung ändert nichts. Siehe [BDE-Zugriffsvorlagen](/de/platform-intro/pages/bde-access-templates#anzeigeeinstellungen).
+
+<a id="stop-buttons" />
+
+## Was machen Abbrechen, Weiter und Stopp mit meinen Mengen?
+
+**Abbrechen** schließt ohne Buchung. **Weiter** bucht Mengen, beendet das Intervall und startet sofort ein neues. **Stopp** bucht Mengen und beendet das Intervall. Bei erreichter Planmenge entscheiden Sie über den Abschluss. Das Informationssymbol im Mengendialog erklärt die Schaltflächen. Siehe [Wirkung der Schaltflächen](/de/platform-intro/pages/data-acquisition#produktionsmengen-ausschuss-und-abschluss).
+
+<a id="completion-with-scrap" />
+
+## Warum ist die geplante Menge schon bei 97 Gutteilen erreicht?
+
+**Geplante Menge erreicht** zählt Gutteile und gesamten Ausschuss aus allen Intervallen. Bei einer Planmenge von 100 reichen 97 Gutteile und 3 Teile Materialausschuss für die Frage. Der Arbeitsgang wird nicht automatisch abgeschlossen. Wählen Sie **In Wartestellung lassen**, wenn noch Teile zu buchen sind, sonst **Abschließen**. Schließen Sie die Frage ohne Auswahl, bleibt er in Wartestellung. Folgen Sie [Mengen und Abschluss prüfen](/de/platform-intro/workflows/data-acquisition#mengen-und-abschluss-prüfen).
+
+<a id="completion-question-missing" />
+
+## Warum werde ich nicht gefragt, ob der Arbeitsgang abgeschlossen ist?
+
+Die Frage folgt nach **Stopp**, wenn Gutteile und gesamter Ausschuss die Planmenge erreichen oder überschreiten. **Weiter** fragt nicht. Treffen oder schließen Sie zuerst eine mögliche Zeitauswahl von **BDE Assist**. Bei **Zurück in den Pool** erscheint stattdessen der Rückgabedialog. Unterhalb der Planmenge bitten Sie Ihre Planung um den Abschluss oder nutzen das Statusmenü, falls erlaubt. Siehe [Abschlussregeln](/de/platform-intro/pages/data-acquisition#produktionsmengen-ausschuss-und-abschluss).
+
+<a id="reopen-completed" />
+
+## Ich habe einen Arbeitsgang versehentlich abgeschlossen. Wie buche ich weitere Teile?
+
+Öffnen Sie auf der BDE-Seite der Maschine **Zuletzt abgeschlossen → Auf Wartestellung setzen**. Prüfen Sie den Arbeitsgang, wählen Sie den Platz unter **Einreihen** und bestätigen Sie **Auf Wartestellung setzen**. **Anzeigen** in der Meldung öffnet **Alle Offen** mit dem ausgewählten Arbeitsgang. Er ist wieder in Wartestellung, sodass Sie weitere Teile buchen können. Folgen Sie [Einen abgeschlossenen Arbeitsgang wieder öffnen](/de/platform-intro/workflows/data-acquisition#reopen-completed).
+
+<a id="reopen-action-missing" />
+
+## Warum fehlt Auf Wartestellung setzen bei einem abgeschlossenen Arbeitsgang?
+
+Die Maschinenvorlage kann **Abgeschlossene Arbeitsgänge wieder öffnen** sperren. Ein Administrator kann dies unter **Admin-Panel → BDE-Zugriffsvorlagen → Auf der BDE-Seite erlaubt** einschalten und **Auftragsstatus ändern** ausgeschaltet lassen. Anfangs ist das Wiederöffnen erlaubt, auch in bestehenden Vorlagen. Bei Anteilen mit **Übergeben** fehlt diese Aktion immer. Bitten Sie Ihre Planung um Hilfe beim Rückgängigmachen einer Übergabe. Siehe [erlaubte Aktionen](/de/platform-intro/pages/bde-access-templates#erlaubte-aktionen).
+
+<a id="reopen-queue-placement" />
+
+## Wo erscheint ein wieder geöffneter Arbeitsgang in der Warteschlange?
+
+Wählen Sie unter **Einreihen** zwischen **Nach Firmensortierung**, **Ganz oben** und **Ganz unten**. Die Firmensortierung nutzt die darunter angezeigten gespeicherten Regeln. Sie ist erst verfügbar, wenn ein Administrator eine Firmensortierung im Planer speichert. Ihre letzte erfolgreiche Auswahl bleibt gespeichert. Andernfalls ist die Firmensortierung vorausgewählt, falls vorhanden, sonst der Anfang. Prioritäten und Termine bleiben erhalten. Siehe [Einreihungsregeln](/de/platform-intro/pages/data-acquisition#recently-completed).
+
+<a id="reopened-badge" />
+
+## Kann ich sehen, wer einen Arbeitsgang wieder geöffnet hat?
+
+Ja. Öffnen Sie die Erklärung zu **Wieder geöffnet** auf der BDE- oder Planerkarte. Sie zeigt Person, Datum, Uhrzeit, Maschine, sofern vorhanden, und Einreihung. Beide Planeransichten zeigen die Kennzeichnung. Sie verschwindet nach erneutem Abschluss oder Stornieren. Siehe [Wieder geöffnete Arbeit erkennen](/de/platform-intro/pages/assignment-planner#wieder-geöffnete-arbeit-erkennen).
+
+<a id="recent-completed-limit" />
+
+## Warum finde ich einen älteren Arbeitsgang nicht unter Zuletzt abgeschlossen?
+
+**Zuletzt abgeschlossen** zeigt nur die letzten fünf abgeschlossenen Arbeitsgänge der ausgewählten Maschine, neueste zuerst. Die Suche filtert diese fünf und sucht keine älteren Abschlüsse. Leeren Sie die Suche bei Bedarf. Finden Sie ältere Arbeit unter **Zeitfenster + Alle Status** und bitten Sie Ihre Planung um Hilfe beim Wiederöffnen. Siehe [Zuletzt abgeschlossen](/de/platform-intro/pages/data-acquisition#recently-completed).
+
+<a id="cancelled-return-after-stop" />
+
+## Ich habe Zurück in den Pool ohne Auswahl geschlossen. Warum ist mein Arbeitsgang in Wartestellung?
+
+Haben Sie bereits **Stopp** gewählt und Mengen gebucht, startet das Schließen des Rückgabedialogs das Intervall nicht neu und macht die Buchung nicht rückgängig. Der Arbeitsgang bleibt in Wartestellung. **Intervall beendet – In Wartestellung** bestätigt dies. Folgen Sie [Offene Arbeit in den Pool zurückgeben](/de/platform-intro/workflows/data-acquisition#back-to-pool).
