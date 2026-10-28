@@ -16,7 +16,7 @@ Control live production tracking for a machine and record assignments, produced 
 
 Begin on the [Data Acquisition (PDA) page](/en/platform-intro/pages/data-acquisition).
 
-A machine’s [BDE access template](/en/platform-intro/pages/bde-access-templates) can fix display choices and hide actions for everyone, including administrators. Check the conditions below before adding work, correcting intervals, or returning work to the pool.
+A machine’s [BDE access template](/en/platform-intro/pages/bde-access-templates) can fix display choices and block actions for everyone, including administrators. Check the conditions below before adding work, correcting intervals, or returning work to the pool.
 
 ### Preconditions
 - The machine has a queue or a live order to work on.
@@ -54,7 +54,7 @@ A machine’s [BDE access template](/en/platform-intro/pages/bde-access-template
 
 ## Return Unfinished Work to the Pool
 
-The machine’s template must allow **Send orders back to the pool**. Otherwise the return action is hidden.
+The machine’s template must allow **Send orders back to the pool**. Otherwise the return action stays visible but disabled. Hover over or tap it to read **Locked for this machine (BDE template).**
 
 You need access to the machine's Data Acquisition V3 page. The machine must belong to a hall, and the step must be on this machine and neither finished nor cancelled. You can return work only to this machine's own hall pool. Ask a planner to choose another hall or a specific machine.
 
@@ -209,11 +209,11 @@ You need access to this machine’s PDA page. Its template must allow **Reopen c
   </Step>
 </Steps>
 
-If the operation is older than the last five, use **Time Window + All Statuses** to find it and ask your planner for help reopening it. If **Set on hold** is missing, ask an administrator to check the template; handed-over parts need your planner’s help. See [Recently Completed](/en/platform-intro/pages/data-acquisition#recently-completed) for placement rules and display limits.
+If the operation is older than the last five, use **Time Window + All Statuses** to find it and ask your planner for help reopening it. If **Set on hold** is disabled, ask an administrator to check the template; handed-over parts need your planner’s help. See [Recently Completed](/en/platform-intro/pages/data-acquisition#recently-completed) for placement rules and display limits.
 
 ## Claim Work, Book During a Run, and Finish Safely
 
-Taking pool work requires **Take orders from the hall pool** to be allowed. Adding or finding unplanned work requires **Add orders on the machine**. If an action is hidden, ask an administrator to review the template. Starting, stopping, and booking quantities remain available as before.
+Taking pool work requires **Take orders from the hall pool** to be allowed. Adding or finding unplanned work requires **Add orders on the machine**. Ask an administrator to review the template if an action shows **Locked for this machine (BDE template).** Starting, stopping, and booking quantities remain available as before.
 
 1. If work is in the **Pool**, claim an assignment from your machine's hall. If needed, search an unplanned operation or use **Find/Create Immediate Order**.
 2. Use **Prep** for preparation, then **Start** for production. Review concurrent-order or unfinished-previous-step prompts before continuing.

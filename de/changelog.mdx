@@ -6,6 +6,35 @@ toc: false
 
 ## Releases
 
+<Update label="2026-10-28" description="v1.5.140" tags={["Funktion", "Verbesserung"]}>
+  {/* commits: 979a812f, 146845ae, 9b81bb88, f97b8b11, 9af4f680, 7e814e74, 842bd22e, 9169335c, db4258db */}
+
+  **Release-Datum:** 28. Oktober 2026
+
+  ### Neue Funktionen
+
+  #### [Importierte Arbeit passend in die Warteschlange einreihen](/de/platform-intro/pages/erp-upload-planner#queue-placement)
+  {/* feature: import-queue-placement */}
+
+  Mit Zugriff auf den ERP-Upload öffnen Sie **Spalten zuordnen → Operationsfelder**. Direkt unter der Zeile **Operationsbeschreibung** finden Sie **Neue Arbeitsgänge in der Warteschlange**. **Nach Sortierung** ist vorausgewählt, auch bei gespeicherten Zuordnungen ohne Einreihungsauswahl. Mit **Ändern** bearbeiten Sie die Regeln für den Import. Alternativ wählen Sie **Am Anfang** oder **Am Ende**. Auswahl und Regeln werden mit Ihrer Zuordnung gespeichert.
+
+  **Nach Sortierung** fügt Arbeit hinter dem letzten Arbeitsgang ein, der vorher an der Reihe ist. Bestehende Arbeit wird nicht umsortiert. Ein neuer Arbeitsgang mit Start am 23. Oktober folgt beispielsweise auf den letzten mit früherem Start. Die relative Reihenfolge manuell angeordneter Arbeit bleibt erhalten. Laufende Arbeit bleibt davor. Die Einreihung ändert nie Prioritäten oder Termine. Prüfen Sie die Auswahl vor dem Speichern und danach die Anzahl eingereihter Arbeitsgänge. Folgen Sie dem [Importablauf](/de/platform-intro/workflows/order-upload-planner).
+
+  ### Verbesserungen
+
+  #### [Erkennen, warum eine BDE-Aktion gesperrt ist](/de/platform-intro/pages/data-acquisition#einstellungen-aus-einer-maschinenvorlage)
+  {/* feature: bde-template-disabled-actions */}
+
+  Durch eine Maschinenvorlage gesperrte Aktionen bleiben jetzt sichtbar und lesbar, sind aber nicht bedienbar. Zeigen oder tippen Sie darauf, um **Für diese Maschine gesperrt (BDE-Vorlage).** zu lesen. Dies gilt für das Erstellen von Aufträgen, das Übernehmen und Zurückgeben von Pool-Arbeit, das Wiederöffnen abgeschlossener Arbeit, die Symbole zur Intervallbearbeitung und das Speichern von Notizen oder Details. Ist das Hinzufügen von Aufträgen gesperrt, filtert die Suche weiterhin Arbeit dieser Maschine.
+
+  Administratoren ändern erlaubte Aktionen unter **Admin-Panel → BDE-Zugriffsvorlagen → Auf der BDE-Seite erlaubt**. Ein gesperrtes Statusmenü öffnet sich weiterhin nicht. Übergebene Anteile haben weiterhin keine Aktion zum Wiederöffnen. Folgen Sie dem [Vorlagenablauf](/de/platform-intro/workflows/bde-access-templates).
+
+  #### [Karten- und Arbeitsganghinweise leichter verstehen](/de/platform-intro/pages/assignment-planner)
+  {/* feature: wording-fixes */}
+
+  Im Planer beschreibt die Erklärung zu **Ganzer Text** jetzt die tatsächliche Anzeige: Jede Karte ist nur so hoch wie ihre eigenen Werte. Auf der BDE-Seite heißt es einheitlich „Arbeitsgang“ statt „Schritt“ und „abgeschlossen“ statt „fertig“. Das gilt etwa für **Aufträge, die auf einen vorherigen Arbeitsgang warten**, **Wartet auf einen vorherigen Arbeitsgang**, den Dialog **Vorheriger Arbeitsgang nicht abgeschlossen** und die Meldungen zu **Zurück in den Pool**.
+</Update>
+
 <Update label="2026-10-28" description="v1.5.139" tags={["Funktion", "Verbesserung", "Fehlerbehebung"]}>
   {/* commits: 70c393a6, 26527adb, ea7c1238, 39d3b621, 23eadec2, 6787e8cb, 9692284e, b503f010, 6846752f, 2ef3a400, 41114a79, cab94d71, 29585c9f, 55f1dd26, 85ecb629, 4187da06, 2013e1a2, 81ad8891, aa6b5a03, f3bba30c, b68a9ca1, 53c00357 */}
 

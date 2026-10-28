@@ -51,6 +51,32 @@ Map **Order priority** and **Operation priority** separately. In the column-mapp
 
 Operation priorities must be whole numbers of zero or more. Text, fractions, and negative values are marked for correction; the initial value does not replace them. Non-numeric order priorities are also marked. Re-importing never changes the priority of existing orders or operations.
 
+<a id="queue-placement" />
+
+## Choose Where Imported Work Enters the Queue
+
+In **Map Columns → Operation Fields**, find **New operations in the queue** directly below the **Operation Description** row. **By sorting** is first and preselected. A saved mapping without a placement choice also starts with **By sorting**.
+
+| Choice | Where the imported work goes |
+| --- | --- |
+| **By sorting** | Behind the last active operation that comes before it or is equal under the selected rules, never ahead of running work. Existing operations are not re-sorted. |
+| **At the start** | At the front, behind running work. |
+| **At the end** | At the back, as imports did previously. |
+
+With **By sorting**, read the rules below the choice. Choose **Change** to edit them for this import. The import uses its own saved rules first, otherwise the company’s rules. Without either, it uses the standard rules: **Order priority** ↓, then **Delivery Date** ↑. **By sorting** is available even without company sorting.
+
+When company rules exist, **Use company sorting** restores them and follows the company sorting again. A tick shows when the rules already match. **Company sorting:** appears when the rules match the company sorting. **Own sorting:** identifies rules chosen for the import that differ from the company’s; **Sorting:** appears for the standard rules when no company sorting exists. Removing all your rules also restores the company rules or the standard rules.
+
+**Save Mapping** saves the placement choice and any rules chosen for the import. **Load Mapping** restores them.
+
+Open the information icon for an example sorted by planned start. Before importing, the queue is A (20 October), D (28 October, moved forward manually), B (22 October), C (24 October). A new operation N (23 October) goes behind B, giving A, D, B, N, C. D stays second. Existing work keeps its relative order, though inserting work ahead of it can change its position number. This does not keep the queue continuously sorted.
+
+Placement applies to machine queues and hall pools. It includes new work, additional assignments for parallel work, and operations moved to another destination during import. A repeat import that only updates an existing assignment leaves its position unchanged. Placement never changes priorities or dates.
+
+For several operations entering the same queue, **By sorting** inserts them in rule order. **At the start** uses company rule order when company rules exist, otherwise spreadsheet order.
+
+The check summary shows **New operations in the queue:** with your choice. After saving with **By sorting** or **At the start**, a separate line reports the number of operations placed and queues affected, if any work was placed. It also appears alongside conflicts, skipped rows, or warnings. The count includes moved operations. Follow the [import workflow](/en/platform-intro/workflows/order-upload-planner).
+
 ## Review the Import's Impact
 
 After mapping and preview, open **What this import will change**. The summary groups new, updated, and existing records by orders, products, customers, operations, and assignments. Existing records are reused; they do not necessarily represent new records created by the import.

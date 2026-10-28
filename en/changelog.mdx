@@ -6,6 +6,35 @@ toc: false
 
 ## Releases
 
+<Update label="2026-10-28" description="v1.5.140" tags={["feature", "improvement"]}>
+  {/* commits: 979a812f, 146845ae, 9b81bb88, f97b8b11, 9af4f680, 7e814e74, 842bd22e, 9169335c, db4258db */}
+
+  **Release date:** October 28, 2026
+
+  ### New Features
+
+  #### [Choose Where Imported Work Enters the Queue](/en/platform-intro/pages/erp-upload-planner#queue-placement)
+  {/* feature: import-queue-placement */}
+
+  With access to ERP Uploads, open **Map Columns → Operation Fields**. Find **New operations in the queue** directly below the **Operation Description** row. **By sorting** is preselected, including for saved mappings without a placement choice. Choose **Change** to edit the import’s rules, or choose **At the start** or **At the end**. The choice and rules are saved with your mapping.
+
+  **By sorting** inserts work behind the last operation that belongs before it, without re-sorting existing work. For example, a new operation planned for 23 October follows the last one with an earlier planned start; manually arranged work keeps its relative order. Running work stays ahead. Placement never changes priorities or dates. Review the choice before saving and the placement count afterwards. Follow the [import workflow](/en/platform-intro/workflows/order-upload-planner).
+
+  ### Improvements
+
+  #### [See Why a PDA Action Is Unavailable](/en/platform-intro/pages/data-acquisition#settings-set-by-a-machine-template)
+  {/* feature: bde-template-disabled-actions */}
+
+  Actions blocked by a machine template now stay visible and readable, but disabled. Hover over or tap one to see **Locked for this machine (BDE template).** This covers creating orders, taking or returning pool work, reopening completed work, interval edit icons, and saving notes or details. Search still filters the machine’s work when adding orders is blocked.
+
+  Administrators can change allowed actions under **Admin Panel → BDE access templates → Allowed on the BDE page**. A blocked status menu still does not open, and handed-over parts still have no reopening action. Follow the [template workflow](/en/platform-intro/workflows/bde-access-templates).
+
+  #### [Read Clearer Card and Operation Explanations](/en/platform-intro/pages/assignment-planner)
+  {/* feature: wording-fixes */}
+
+  In the Planner, the **Show full text** explanation now matches the display: each card is only as tall as its own values. The German wording on the PDA page is now consistent across waiting notices, the start confirmation, and messages for returning work to the pool.
+</Update>
+
 <Update label="2026-10-28" description="v1.5.139" tags={["feature", "improvement", "fix"]}>
   {/* commits: 70c393a6, 26527adb, ea7c1238, 39d3b621, 23eadec2, 6787e8cb, 9692284e, b503f010, 6846752f, 2ef3a400, 41114a79, cab94d71, 29585c9f, 55f1dd26, 85ecb629, 4187da06, 2013e1a2, 81ad8891, aa6b5a03, f3bba30c, b68a9ca1, 53c00357 */}
 

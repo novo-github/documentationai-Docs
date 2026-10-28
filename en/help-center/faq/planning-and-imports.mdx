@@ -88,7 +88,7 @@ description: "Find answers about operation priorities, planning dates, grouping,
 | Why can I read intervals and notes but not correct them? | [Answer](/en/help-center/faq/planning-and-imports#read-only-pda-details) |
 | When will my open BDE page show a changed template? | [Answer](/en/help-center/faq/planning-and-imports#template-refresh) |
 | Will I lose my own settings when a template changes or is deleted? | [Answer](/en/help-center/faq/planning-and-imports#template-personal-choices) |
-| Why can I still use an action in the Planner when it is hidden on the BDE page? | [Answer](/en/help-center/faq/planning-and-imports#template-other-pages) |
+| Why can I still use an action in the Planner when it is blocked on the PDA page? | [Answer](/en/help-center/faq/planning-and-imports#template-other-pages) |
 | Where have the explanations for templates and priorities gone? | [Answer](/en/help-center/faq/planning-and-imports#setting-explanations) |
 | Where do I change the Gantt bars and row height? | [Answer](/en/help-center/faq/planning-and-imports#gantt-settings) |
 | Why are Improve plan and Re-sort missing in Gantt? | [Answer](/en/help-center/faq/planning-and-imports#gantt-planning-access) |
@@ -107,11 +107,16 @@ description: "Find answers about operation priorities, planning dates, grouping,
 | Why does it say the planned quantity is reached when I have only 97 good parts? | [Answer](/en/help-center/faq/planning-and-imports#completion-with-scrap) |
 | Why am I not asked to complete the operation? | [Answer](/en/help-center/faq/planning-and-imports#completion-question-missing) |
 | I completed an operation by mistake. How can I book more parts? | [Answer](/en/help-center/faq/planning-and-imports#reopen-completed) |
-| Why can’t I see Set on hold on a completed operation? | [Answer](/en/help-center/faq/planning-and-imports#reopen-action-missing) |
+| Why is Set on hold disabled or missing on a completed operation? | [Answer](/en/help-center/faq/planning-and-imports#reopen-action-missing) |
 | Where does a reopened operation go in the queue? | [Answer](/en/help-center/faq/planning-and-imports#reopen-queue-placement) |
 | Can I see who reopened an operation? | [Answer](/en/help-center/faq/planning-and-imports#reopened-badge) |
 | Why can’t I find an older operation in Recently completed? | [Answer](/en/help-center/faq/planning-and-imports#recent-completed-limit) |
 | I closed Back to pool without choosing. Why is my operation on hold? | [Answer](/en/help-center/faq/planning-and-imports#cancelled-return-after-stop) |
+| Why are imported operations no longer at the end of the queue? | [Answer](/en/help-center/faq/planning-and-imports#import-queue-choice) |
+| Will importing undo the order I arranged manually? | [Answer](/en/help-center/faq/planning-and-imports#import-manual-order) |
+| Can I choose different sorting rules just for an import? | [Answer](/en/help-center/faq/planning-and-imports#import-sorting-rules) |
+| Why does the placement count include operations that already existed? | [Answer](/en/help-center/faq/planning-and-imports#import-placement-count) |
+| Why can I see a button but cannot use it? | [Answer](/en/help-center/faq/planning-and-imports#template-disabled-action) |
 
 <a id="operation-priority" />
 
@@ -401,7 +406,7 @@ If **Sorting is set by the template** appears, you cannot reset sorting here. As
 
 In Data Acquisition V3, select the step and choose **Back to pool**. Running work first opens the normal stop dialog for quantities, then any **PDA Assist** time choice. Confirm the remaining quantity and optional reason in the return dialog. Work goes to your machine’s own hall pool; recorded times and good parts stay on the original machine. Follow [return work to the pool](/en/platform-intro/workflows/data-acquisition#back-to-pool).
 
-The machine’s template must allow **Send orders back to the pool**. If the action is missing, ask an administrator to review the [template](/en/platform-intro/pages/bde-access-templates).
+The machine’s template must allow **Send orders back to the pool**. If the action is disabled, ask an administrator to review the [template](/en/platform-intro/pages/bde-access-templates).
 
 <a id="create-after-selection" />
 
@@ -409,13 +414,13 @@ The machine’s template must allow **Send orders back to the pool**. If the act
 
 In Data Acquisition V3, **Create** becomes **Back to pool** while a step is selected. Tap the selected card again to clear the selection and bring **Create** back. See [Data Acquisition](/en/platform-intro/pages/data-acquisition).
 
-A machine template can also hide order creation or returning work. If clearing the selection does not bring the action back, ask an administrator to check [allowed actions](/en/platform-intro/pages/bde-access-templates#allowed-actions).
+A machine template can also block order creation or returning work. These actions remain visible but disabled. Hover over or tap one to read **Locked for this machine (BDE template).** Ask an administrator to check [allowed actions](/en/platform-intro/pages/bde-access-templates#allowed-actions).
 
 <a id="return-disabled" />
 
 ## Why is Back to pool unavailable?
 
-Finished and cancelled steps stay on the machine. A machine without a hall has no pool; ask your planner to check its hall. Hover over the unavailable button to read the reason. A running step can use **Back to pool**, but you must stop it in the dialog first. See [return requirements](/en/platform-intro/workflows/data-acquisition#back-to-pool).
+The template may block the action; its explanation says **Locked for this machine (BDE template).** Ask an administrator to review it. Finished and cancelled operations stay on the machine. A machine without a hall has no pool; ask your planner to check its hall. Hover over the unavailable button to read the reason. A running operation can use **Back to pool**, but you must stop it in the dialog first. See [return requirements](/en/platform-intro/workflows/data-acquisition#back-to-pool).
 
 <a id="handover-machine" />
 
@@ -608,13 +613,13 @@ The machine may use a template. **Set by the template** marks required choices. 
 
 ## Why can’t I change an order’s status or take work from the pool?
 
-The machine’s template can hide status changes, taking or returning pool work, and adding orders. These limits apply to administrators too. Booking quantities still works. After **Stop**, **Complete** and **Keep on hold** remain available when the planned quantity is reached. **Reopen completed operations** controls reopening separately. **PDA Assist** also stays available as before. Ask an administrator to review **Allowed on the BDE page**. See [allowed actions](/en/platform-intro/pages/bde-access-templates#allowed-actions).
+The machine’s template can block status changes, taking or returning pool work, and adding orders. Action buttons stay visible but disabled, with **Locked for this machine (BDE template).** on hover or tap. A blocked status menu does not open. These limits apply to administrators too. Booking quantities still works. After **Stop**, **Complete** and **Keep on hold** remain available when the planned quantity is reached. **Reopen completed operations** controls reopening separately. **PDA Assist** also stays available as before. Ask an administrator to review **Allowed on the BDE page**. See [allowed actions](/en/platform-intro/pages/bde-access-templates#allowed-actions).
 
 <a id="read-only-pda-details" />
 
 ## Why can I read intervals and notes but not correct them?
 
-The template can turn off **Correct interval times and quantities** or **Edit notes and order details** on this machine’s BDE page. The information stays readable, but editing controls are hidden or unavailable. Ask an administrator to review the [template’s allowed actions](/en/platform-intro/pages/bde-access-templates#allowed-actions).
+The template can turn off **Correct interval times and quantities** or **Edit notes and order details** on this machine’s BDE page. The information stays readable. Interval edit icons and **Save** stay visible but disabled, with **Locked for this machine (BDE template).** on hover or tap. Notes and details remain read-only. Ask an administrator to review the [template’s allowed actions](/en/platform-intro/pages/bde-access-templates#allowed-actions).
 
 <a id="template-refresh" />
 
@@ -630,7 +635,7 @@ No. Your personal choices stay saved. Removing a machine from a template or dele
 
 <a id="template-other-pages" />
 
-## Why can I still use an action in the Planner when it is hidden on the BDE page?
+## Why can I still use an action in the Planner when it is blocked on the PDA page?
 
 BDE access templates only control Data Acquisition V3. They do not change actions on other pages or grant page or machine access. See [template limits](/en/platform-intro/pages/bde-access-templates#changes-and-limits).
 
@@ -744,9 +749,9 @@ On the machine’s PDA page, open **Recently completed → Set on hold**. Check 
 
 <a id="reopen-action-missing" />
 
-## Why can’t I see Set on hold on a completed operation?
+## Why is Set on hold disabled or missing on a completed operation?
 
-The machine’s template may block **Reopen completed operations**. An administrator can enable it under **Admin Panel → BDE access templates → Allowed on the BDE page**, while leaving **Change the order status** off. Reopening starts allowed, including in existing templates. **Handed over** parts never offer this action; ask your planner about reversing a handover. See [allowed actions](/en/platform-intro/pages/bde-access-templates#allowed-actions).
+If **Set on hold** is visible but disabled, the machine’s template may block **Reopen completed operations**. Hover over or tap it to read **Locked for this machine (BDE template).** An administrator can enable it under **Admin Panel → BDE access templates → Allowed on the BDE page**, while leaving **Change the order status** off. Reopening starts allowed, including in existing templates. **Handed over** parts never offer this action; ask your planner about reversing a handover. See [allowed actions](/en/platform-intro/pages/bde-access-templates#allowed-actions).
 
 <a id="reopen-queue-placement" />
 
@@ -771,3 +776,33 @@ Yes. Open the explanation of **Reopened** on its PDA or Planner card. It shows w
 ## I closed Back to pool without choosing. Why is my operation on hold?
 
 If you already chose **Stop** and booked quantities, closing the return dialog does not restart the interval or undo that booking. The operation stays on hold, and **Interval ended – on hold** confirms it. Follow [Return Unfinished Work to the Pool](/en/platform-intro/workflows/data-acquisition#back-to-pool).
+
+<a id="import-queue-choice" />
+
+## Why are imported operations no longer at the end of the queue?
+
+**New operations in the queue** now starts with **By sorting**, including when a saved mapping has no placement choice. Find the choice in **Operation Fields**, directly below the **Operation Description** row. Choose **At the end** for the previous behaviour or **At the start** to place work behind running operations. Save the mapping to reuse the choice. Follow the [import workflow](/en/platform-intro/workflows/order-upload-planner).
+
+<a id="import-manual-order" />
+
+## Will importing undo the order I arranged manually?
+
+**By sorting** does not re-sort existing work. It inserts each incoming operation behind the last operation that belongs before it or is equal under the rules, never ahead of running work. Existing work keeps its relative order, though inserting work ahead of it can change its position number. Placement never changes priorities or dates. See the [queue example](/en/platform-intro/pages/erp-upload-planner#queue-placement).
+
+<a id="import-sorting-rules" />
+
+## Can I choose different sorting rules just for an import?
+
+Yes. In **Operation Fields**, directly below the **Operation Description** row, choose **New operations in the queue → By sorting → Change** and edit the rules. They are saved with the mapping. **Use company sorting**, when available, restores the company rules. Without your own or company rules, the import uses **Order priority** ↓, then **Delivery Date** ↑. See [import sorting rules](/en/platform-intro/pages/erp-upload-planner#queue-placement).
+
+<a id="import-placement-count" />
+
+## Why does the placement count include operations that already existed?
+
+The count includes operations moved to another destination during import and additional assignments for parallel work, as well as new work. A repeat import that only updates an existing assignment does not move it. The separate line appears after saving with **By sorting** or **At the start** when work was placed, even alongside warnings or conflicts. See [import results](/en/platform-intro/pages/erp-upload-planner#queue-placement).
+
+<a id="template-disabled-action" />
+
+## Why can I see a button but cannot use it?
+
+Hover over or tap it. **Locked for this machine (BDE template).** means the machine’s template blocks the action, including for administrators. Ask an administrator to review **Admin Panel → BDE access templates → Allowed on the BDE page**. The status stays visible without a menu when status changes are blocked. See [allowed actions](/en/platform-intro/pages/bde-access-templates#allowed-actions).

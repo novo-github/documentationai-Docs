@@ -42,7 +42,7 @@ description: "Antworten zu Arbeitsgangprioritäten, Planungsterminen, Gruppierun
 | Warum wurde meine Operation hinzugefügt, aber nicht an der gewählten Position eingeordnet? | [Antwort](/de/help-center/faq/planning-and-imports#large-pool) |
 | Wie verschiebe ich Aufträge, die noch nicht starten können, nach unten? | [Antwort](/de/help-center/faq/planning-and-imports#waiting-sort) |
 | Kann ich wartende Aufträge unten anzeigen und die geplante Reihenfolge behalten? | [Antwort](/de/help-center/faq/planning-and-imports#waiting-queue) |
-| Warum wartet mein Auftrag noch, obwohl der vorherige Schritt fertig ist? | [Antwort](/de/help-center/faq/planning-and-imports#waiting-refresh) |
+| Warum wartet mein Auftrag noch, obwohl der vorherige Arbeitsgang abgeschlossen ist? | [Antwort](/de/help-center/faq/planning-and-imports#waiting-refresh) |
 | Wie setze ich einen Auftrag vor einen anderen, ohne seine Arbeitsgangpriorität zu erhöhen? | [Antwort](/de/help-center/faq/planning-and-imports#priority-queue) |
 | Wo ist die Schaltfläche zum Sortieren nach Priorität und Datum? | [Antwort](/de/help-center/faq/planning-and-imports#queue-sort-access) |
 | Kann ich eine Sortierung rückgängig machen und warum ändert sich der Vorschlag? | [Antwort](/de/help-center/faq/planning-and-imports#queue-sort-undo) |
@@ -58,7 +58,7 @@ description: "Antworten zu Arbeitsgangprioritäten, Planungsterminen, Gruppierun
 | Warum ist die Restmenge höher als erwartet? | [Antwort](/de/help-center/faq/planning-and-imports#handover-quantity) |
 | Bedeutet Übergeben, dass der ganze Schritt fertig ist? | [Antwort](/de/help-center/faq/planning-and-imports#handover-status) |
 | Kann ich eine Übergabe rückgängig machen? | [Antwort](/de/help-center/faq/planning-and-imports#handover-undo) |
-| Warum sehe ich „Dieser Schritt wurde inzwischen geändert“? | [Antwort](/de/help-center/faq/planning-and-imports#handover-changed) |
+| Warum sehe ich „Dieser Arbeitsgang wurde inzwischen geändert“? | [Antwort](/de/help-center/faq/planning-and-imports#handover-changed) |
 | Warum hat Ziehen die Priorität meines Arbeitsgangs geändert? | [Antwort](/de/help-center/faq/planning-and-imports#drag-priority) |
 | Warum ist meine Karte nach einer Prioritätsänderung gerückt? | [Antwort](/de/help-center/faq/planning-and-imports#priority-moves-card) |
 | Legt Rückgängig meine gezogene Karte wieder zurück? | [Antwort](/de/help-center/faq/planning-and-imports#drag-priority-undo) |
@@ -88,7 +88,7 @@ description: "Antworten zu Arbeitsgangprioritäten, Planungsterminen, Gruppierun
 | Warum kann ich Intervalle und Notizen lesen, aber nicht korrigieren? | [Antwort](/de/help-center/faq/planning-and-imports#read-only-pda-details) |
 | Wann zeigt meine geöffnete BDE-Seite eine geänderte Vorlage? | [Antwort](/de/help-center/faq/planning-and-imports#template-refresh) |
 | Verliere ich meine Einstellungen, wenn eine Vorlage geändert oder gelöscht wird? | [Antwort](/de/help-center/faq/planning-and-imports#template-personal-choices) |
-| Warum kann ich eine auf der BDE-Seite ausgeblendete Aktion im Planer weiterhin nutzen? | [Antwort](/de/help-center/faq/planning-and-imports#template-other-pages) |
+| Warum kann ich eine auf der BDE-Seite gesperrte Aktion im Planer weiterhin nutzen? | [Antwort](/de/help-center/faq/planning-and-imports#template-other-pages) |
 | Wo sind die Erklärungen zu Vorlagen und Prioritäten geblieben? | [Antwort](/de/help-center/faq/planning-and-imports#setting-explanations) |
 | Wo ändere ich die Gantt-Balken und die Zeilenhöhe? | [Antwort](/de/help-center/faq/planning-and-imports#gantt-settings) |
 | Warum fehlen Plan verbessern und Neu sortieren im Gantt? | [Antwort](/de/help-center/faq/planning-and-imports#gantt-planning-access) |
@@ -107,11 +107,16 @@ description: "Antworten zu Arbeitsgangprioritäten, Planungsterminen, Gruppierun
 | Warum ist die geplante Menge schon bei 97 Gutteilen erreicht? | [Antwort](/de/help-center/faq/planning-and-imports#completion-with-scrap) |
 | Warum werde ich nicht gefragt, ob der Arbeitsgang abgeschlossen ist? | [Antwort](/de/help-center/faq/planning-and-imports#completion-question-missing) |
 | Ich habe einen Arbeitsgang versehentlich abgeschlossen. Wie buche ich weitere Teile? | [Antwort](/de/help-center/faq/planning-and-imports#reopen-completed) |
-| Warum fehlt Auf Wartestellung setzen bei einem abgeschlossenen Arbeitsgang? | [Antwort](/de/help-center/faq/planning-and-imports#reopen-action-missing) |
+| Warum ist Auf Wartestellung setzen bei einem abgeschlossenen Arbeitsgang gesperrt oder fehlt? | [Antwort](/de/help-center/faq/planning-and-imports#reopen-action-missing) |
 | Wo erscheint ein wieder geöffneter Arbeitsgang in der Warteschlange? | [Antwort](/de/help-center/faq/planning-and-imports#reopen-queue-placement) |
 | Kann ich sehen, wer einen Arbeitsgang wieder geöffnet hat? | [Antwort](/de/help-center/faq/planning-and-imports#reopened-badge) |
 | Warum finde ich einen älteren Arbeitsgang nicht unter Zuletzt abgeschlossen? | [Antwort](/de/help-center/faq/planning-and-imports#recent-completed-limit) |
 | Ich habe Zurück in den Pool ohne Auswahl geschlossen. Warum ist mein Arbeitsgang in Wartestellung? | [Antwort](/de/help-center/faq/planning-and-imports#cancelled-return-after-stop) |
+| Warum stehen importierte Arbeitsgänge nicht mehr am Ende der Warteschlange? | [Antwort](/de/help-center/faq/planning-and-imports#import-queue-choice) |
+| Geht meine manuell angeordnete Reihenfolge beim Import verloren? | [Antwort](/de/help-center/faq/planning-and-imports#import-manual-order) |
+| Kann ich eigene Sortierregeln nur für einen Import wählen? | [Antwort](/de/help-center/faq/planning-and-imports#import-sorting-rules) |
+| Warum zählt die Einreihung auch Arbeitsgänge mit, die schon vorhanden waren? | [Antwort](/de/help-center/faq/planning-and-imports#import-placement-count) |
+| Warum sehe ich eine Schaltfläche, kann sie aber nicht nutzen? | [Antwort](/de/help-center/faq/planning-and-imports#template-disabled-action) |
 
 <a id="operation-priority" />
 
@@ -331,19 +336,19 @@ Ein Hallenpool lädt bis zu 500 Zuweisungen, eine Maschinenwarteschlange bis zu 
 
 ## Wie verschiebe ich Aufträge, die noch nicht starten können, nach unten?
 
-Öffnen Sie in der Betriebsdatenerfassung V3 **Kartenanzeige-Einstellungen → Sortierreihenfolge**. Schalten Sie **Nach Warteschlangenposition sortieren** aus. Klicken Sie auf **Sortierregel hinzufügen**, wählen Sie **Wartet auf einen vorherigen Schritt** und dann **Ganz unten**. Diese Regel steht vor Priorität oder Datum, aber nach **Laufende Aufträge und Aufträge in Wartestellung**, wenn Sie diese Regel ergänzen. Mit **Ganz oben** prüfen Sie wartende Aufträge zuerst. Wählen Sie **Speichern**, um Ihre Auswahl zu übernehmen. Folgen Sie [Die Darstellung der Betriebsdatenerfassung V3 einstellen](/de/platform-intro/workflows/data-acquisition#die-darstellung-der-betriebsdatenerfassung-v3-einstellen).
+Öffnen Sie in der Betriebsdatenerfassung V3 **Kartenanzeige-Einstellungen → Sortierreihenfolge**. Schalten Sie **Nach Warteschlangenposition sortieren** aus. Klicken Sie auf **Sortierregel hinzufügen**, wählen Sie **Wartet auf einen vorherigen Arbeitsgang** und dann **Ganz unten**. Diese Regel steht vor Priorität oder Datum, aber nach **Laufende Aufträge und Aufträge in Wartestellung**, wenn Sie diese Regel ergänzen. Mit **Ganz oben** prüfen Sie wartende Aufträge zuerst. Wählen Sie **Speichern**, um Ihre Auswahl zu übernehmen. Folgen Sie [Die Darstellung der Betriebsdatenerfassung V3 einstellen](/de/platform-intro/workflows/data-acquisition#die-darstellung-der-betriebsdatenerfassung-v3-einstellen).
 
 <a id="waiting-queue" />
 
 ## Kann ich wartende Aufträge unten anzeigen und die geplante Reihenfolge behalten?
 
-Ja. Ist **Nach Warteschlangenposition sortieren** in der Betriebsdatenerfassung V3 eingeschaltet, wählen Sie **Aufträge, die auf einen vorherigen Schritt warten → Ganz unten**. Wartende Arbeit erscheint hinter anderen Aufträgen. Um zusätzlich laufende Arbeit und Arbeit in Wartestellung zuerst zu sehen, wählen Sie **Laufende Aufträge und Aufträge in Wartestellung → Ganz oben**. Wählen Sie **Speichern**. Innerhalb jeder Gruppe bleibt die Reihenfolge der Warteschlange gleich. **Position beibehalten** stellt die gewohnte Warteschlangenansicht wieder her. Ihre Auswahl wird für Ihr Konto gespeichert und gilt für die Maschinenliste und den **Pool**. Im Zuweisungsplaner stehen diese Optionen nicht zur Verfügung. Siehe [Betriebsdatenerfassung](/de/platform-intro/pages/data-acquisition).
+Ja. Ist **Nach Warteschlangenposition sortieren** in der Betriebsdatenerfassung V3 eingeschaltet, wählen Sie **Aufträge, die auf einen vorherigen Arbeitsgang warten → Ganz unten**. Wartende Arbeit erscheint hinter anderen Aufträgen. Um zusätzlich laufende Arbeit und Arbeit in Wartestellung zuerst zu sehen, wählen Sie **Laufende Aufträge und Aufträge in Wartestellung → Ganz oben**. Wählen Sie **Speichern**. Innerhalb jeder Gruppe bleibt die Reihenfolge der Warteschlange gleich. **Position beibehalten** stellt die gewohnte Warteschlangenansicht wieder her. Ihre Auswahl wird für Ihr Konto gespeichert und gilt für die Maschinenliste und den **Pool**. Im Zuweisungsplaner stehen diese Optionen nicht zur Verfügung. Siehe [Betriebsdatenerfassung](/de/platform-intro/pages/data-acquisition).
 
 <a id="waiting-refresh" />
 
-## Warum wartet mein Auftrag noch, obwohl der vorherige Schritt fertig ist?
+## Warum wartet mein Auftrag noch, obwohl der vorherige Arbeitsgang abgeschlossen ist?
 
-Prüfen Sie, ob ein weiterer Schritt mit niedrigerer Nummer im selben Arbeitsauftrag noch unfertig ist. Auch ein Schritt ohne Zuweisung zählt als unfertig. Frühere Schritte müssen abgeschlossen oder storniert sein. Sobald keiner mehr unfertig ist, wechselt der Auftrag bei der nächsten Aktualisierung zur startbereiten Gruppe. Siehe [wartende Aufträge in der Betriebsdatenerfassung](/de/platform-intro/pages/data-acquisition).
+Prüfen Sie, ob ein weiterer Arbeitsgang mit niedrigerer Nummer im selben Arbeitsauftrag noch offen ist. Auch ein Arbeitsgang ohne Zuweisung zählt als offen. Frühere Arbeitsgänge müssen abgeschlossen oder storniert sein. Sobald keiner mehr offen ist, wechselt der Auftrag bei der nächsten Aktualisierung zur startbereiten Gruppe. Siehe [wartende Aufträge in der Betriebsdatenerfassung](/de/platform-intro/pages/data-acquisition).
 
 <a id="priority-queue" />
 
@@ -403,21 +408,21 @@ Bei **Die Sortierung ist von der Vorlage festgelegt** können Sie die Sortierung
 
 Wählen Sie in der Betriebsdatenerfassung V3 den Schritt und **Zurück in den Pool**. Laufende Arbeit öffnet zuerst den normalen Stoppdialog für Mengen und danach gegebenenfalls die Zeitauswahl von **BDE Assist**. Bestätigen Sie Restmenge und optionalen Grund im Rückgabedialog. Die Arbeit geht in den eigenen Hallenpool Ihrer Maschine. Erfasste Zeiten und Gutteile bleiben auf der ursprünglichen Maschine. Folgen Sie [Arbeit in den Pool zurückgeben](/de/platform-intro/workflows/data-acquisition#back-to-pool).
 
-Die Maschinenvorlage muss **Aufträge an den Pool zurückgeben** erlauben. Fehlt die Aktion, bitten Sie einen Administrator, die [Vorlage](/de/platform-intro/pages/bde-access-templates) zu prüfen.
+Die Maschinenvorlage muss **Aufträge an den Pool zurückgeben** erlauben. Ist die Aktion gesperrt, bitten Sie einen Administrator, die [Vorlage](/de/platform-intro/pages/bde-access-templates) zu prüfen.
 
 <a id="create-after-selection" />
 
 ## Wo ist die Schaltfläche **Erstellen** geblieben?
 
-In der Betriebsdatenerfassung V3 erscheint bei ausgewähltem Schritt **Zurück in den Pool** anstelle von **Erstellen**. Tippen Sie erneut auf die ausgewählte Karte, um die Auswahl aufzuheben. Danach können Sie wieder Arbeit erstellen. Siehe [Betriebsdatenerfassung](/de/platform-intro/pages/data-acquisition).
+In der Betriebsdatenerfassung V3 erscheint bei ausgewähltem Arbeitsgang **Zurück in den Pool** anstelle von **Erstellen**. Tippen Sie erneut auf die ausgewählte Karte, um die Auswahl aufzuheben. Danach können Sie wieder Arbeit erstellen. Siehe [Betriebsdatenerfassung](/de/platform-intro/pages/data-acquisition).
 
-Eine Maschinenvorlage kann auch Auftragserstellung oder Rückgabe ausblenden. Fehlt die Aktion nach dem Aufheben der Auswahl weiterhin, bitten Sie einen Administrator, die [erlaubten Aktionen](/de/platform-intro/pages/bde-access-templates#erlaubte-aktionen) zu prüfen.
+Eine Maschinenvorlage kann auch Auftragserstellung oder Rückgabe sperren. Diese Aktionen bleiben sichtbar, sind aber nicht bedienbar. Zeigen oder tippen Sie darauf, um **Für diese Maschine gesperrt (BDE-Vorlage).** zu lesen. Bitten Sie einen Administrator, die [erlaubten Aktionen](/de/platform-intro/pages/bde-access-templates#erlaubte-aktionen) zu prüfen.
 
 <a id="return-disabled" />
 
 ## Warum ist Zurück in den Pool nicht verfügbar?
 
-Abgeschlossene und stornierte Schritte bleiben auf der Maschine. Eine Maschine ohne Halle hat keinen Pool. Bitten Sie die Planung, die Hallenzuordnung zu prüfen. Zeigen Sie auf die nicht verfügbare Schaltfläche, um den Grund zu lesen. Bei laufender Arbeit können Sie **Zurück in den Pool** wählen, müssen aber zuerst im Dialog stoppen. Siehe [Voraussetzungen für die Rückgabe](/de/platform-intro/workflows/data-acquisition#back-to-pool).
+Die Vorlage kann die Aktion sperren. Ihre Erklärung lautet dann **Für diese Maschine gesperrt (BDE-Vorlage).** Bitten Sie einen Administrator um Prüfung. Abgeschlossene und stornierte Arbeitsgänge bleiben auf der Maschine. Eine Maschine ohne Halle hat keinen Pool. Bitten Sie die Planung, die Hallenzuordnung zu prüfen. Zeigen Sie auf die nicht verfügbare Schaltfläche, um den Grund zu lesen. Bei laufender Arbeit können Sie **Zurück in den Pool** wählen, müssen aber zuerst im Dialog stoppen. Siehe [Voraussetzungen für die Rückgabe](/de/platform-intro/workflows/data-acquisition#back-to-pool).
 
 <a id="handover-machine" />
 
@@ -452,9 +457,9 @@ Der erste Anteil steht wieder in der Warteschlange seiner Maschine, in Wartestel
 
 <a id="handover-changed" />
 
-## Warum sehe ich „Dieser Schritt wurde inzwischen geändert“?
+## Warum sehe ich „Dieser Arbeitsgang wurde inzwischen geändert“?
 
-Der Schritt wurde während Ihrer Prüfung geändert. Der Dialog schließt sich. Die Betriebsdatenerfassung aktualisiert die Liste, der Zuweisungsplaner beide Warteschlangen. Danach erscheint der Hinweis **Dieser Schritt wurde inzwischen geändert. Die Liste wurde aktualisiert.** Prüfen Sie den aktuellen Schritt vor einem erneuten Versuch. Kontrollieren Sie Maschine, laufende Arbeit und Mengen, bevor Sie erneut entscheiden. Siehe [Arbeit in den Pool zurückgeben](/de/platform-intro/workflows/data-acquisition#back-to-pool).
+Der Arbeitsgang wurde während Ihrer Prüfung geändert. Der Dialog schließt sich. Die Betriebsdatenerfassung aktualisiert die Liste, der Zuweisungsplaner beide Warteschlangen. Danach erscheint der Hinweis **Dieser Arbeitsgang wurde inzwischen geändert. Die Liste wurde aktualisiert.** Prüfen Sie den aktuellen Arbeitsgang vor einem erneuten Versuch. Kontrollieren Sie Maschine, laufende Arbeit und Mengen, bevor Sie erneut entscheiden. Siehe [Arbeit in den Pool zurückgeben](/de/platform-intro/workflows/data-acquisition#back-to-pool).
 
 <a id="drag-priority" />
 
@@ -610,13 +615,13 @@ Die Maschine verwendet möglicherweise eine Vorlage. **Von der Vorlage festgeleg
 
 ## Warum kann ich den Auftragsstatus nicht ändern oder keine Arbeit aus dem Pool übernehmen?
 
-Die Maschinenvorlage kann Statusänderungen, das Übernehmen und Zurückgeben von Pool-Arbeit sowie das Hinzufügen von Aufträgen ausblenden. Das gilt auch für Administratoren. Mengen buchen bleibt möglich. Nach **Stopp** bleiben **Abschließen** und **In Wartestellung lassen** bei erreichter Planmenge verfügbar. **Abgeschlossene Arbeitsgänge wieder öffnen** steuert das Wiederöffnen getrennt. Auch **BDE Assist** bleibt wie bisher verfügbar. Bitten Sie einen Administrator, **Auf der BDE-Seite erlaubt** zu prüfen. Siehe [erlaubte Aktionen](/de/platform-intro/pages/bde-access-templates#erlaubte-aktionen).
+Die Maschinenvorlage kann Statusänderungen, das Übernehmen und Zurückgeben von Pool-Arbeit sowie das Hinzufügen von Aufträgen sperren. Aktionsschaltflächen bleiben sichtbar, sind aber nicht bedienbar. Beim Zeigen oder Tippen erscheint **Für diese Maschine gesperrt (BDE-Vorlage).** Ein gesperrtes Statusmenü öffnet sich nicht. Das gilt auch für Administratoren. Mengen buchen bleibt möglich. Nach **Stopp** bleiben **Abschließen** und **In Wartestellung lassen** bei erreichter Planmenge verfügbar. **Abgeschlossene Arbeitsgänge wieder öffnen** steuert das Wiederöffnen getrennt. Auch **BDE Assist** bleibt wie bisher verfügbar. Bitten Sie einen Administrator, **Auf der BDE-Seite erlaubt** zu prüfen. Siehe [erlaubte Aktionen](/de/platform-intro/pages/bde-access-templates#erlaubte-aktionen).
 
 <a id="read-only-pda-details" />
 
 ## Warum kann ich Intervalle und Notizen lesen, aber nicht korrigieren?
 
-Die Vorlage kann **Zeiten und Mengen von Intervallen korrigieren** oder **Notizen und Auftragsdetails bearbeiten** auf der BDE-Seite dieser Maschine ausschalten. Die Angaben bleiben lesbar, die Bearbeitung ist ausgeblendet oder gesperrt. Bitten Sie einen Administrator, die [erlaubten Aktionen der Vorlage](/de/platform-intro/pages/bde-access-templates#erlaubte-aktionen) zu prüfen.
+Die Vorlage kann **Zeiten und Mengen von Intervallen korrigieren** oder **Notizen und Auftragsdetails bearbeiten** auf der BDE-Seite dieser Maschine ausschalten. Die Angaben bleiben lesbar. Symbole zur Intervallbearbeitung und **Speichern** bleiben sichtbar, sind aber gesperrt. Beim Zeigen oder Tippen erscheint **Für diese Maschine gesperrt (BDE-Vorlage).** Notizen und Details bleiben nur lesbar. Bitten Sie einen Administrator, die [erlaubten Aktionen der Vorlage](/de/platform-intro/pages/bde-access-templates#erlaubte-aktionen) zu prüfen.
 
 <a id="template-refresh" />
 
@@ -632,7 +637,7 @@ Nein. Ihre persönlichen Einstellungen bleiben gespeichert. Wird die Maschine au
 
 <a id="template-other-pages" />
 
-## Warum kann ich eine auf der BDE-Seite ausgeblendete Aktion im Planer weiterhin nutzen?
+## Warum kann ich eine auf der BDE-Seite gesperrte Aktion im Planer weiterhin nutzen?
 
 BDE-Zugriffsvorlagen gelten nur für die Betriebsdatenerfassung V3. Sie ändern weder Aktionen auf anderen Seiten noch gewähren sie Seiten- oder Maschinenzugriff. Siehe [Grenzen der Vorlagen](/de/platform-intro/pages/bde-access-templates#änderungen-und-grenzen).
 
@@ -746,9 +751,9 @@ Die Frage folgt nach **Stopp**, wenn Gutteile und gesamter Ausschuss die Planmen
 
 <a id="reopen-action-missing" />
 
-## Warum fehlt Auf Wartestellung setzen bei einem abgeschlossenen Arbeitsgang?
+## Warum ist Auf Wartestellung setzen bei einem abgeschlossenen Arbeitsgang gesperrt oder fehlt?
 
-Die Maschinenvorlage kann **Abgeschlossene Arbeitsgänge wieder öffnen** sperren. Ein Administrator kann dies unter **Admin-Panel → BDE-Zugriffsvorlagen → Auf der BDE-Seite erlaubt** einschalten und **Auftragsstatus ändern** ausgeschaltet lassen. Anfangs ist das Wiederöffnen erlaubt, auch in bestehenden Vorlagen. Bei Anteilen mit **Übergeben** fehlt diese Aktion immer. Bitten Sie Ihre Planung um Hilfe beim Rückgängigmachen einer Übergabe. Siehe [erlaubte Aktionen](/de/platform-intro/pages/bde-access-templates#erlaubte-aktionen).
+Ist **Auf Wartestellung setzen** sichtbar, aber nicht bedienbar, kann die Maschinenvorlage **Abgeschlossene Arbeitsgänge wieder öffnen** sperren. Beim Zeigen oder Tippen erscheint **Für diese Maschine gesperrt (BDE-Vorlage).** Ein Administrator kann dies unter **Admin-Panel → BDE-Zugriffsvorlagen → Auf der BDE-Seite erlaubt** einschalten und **Auftragsstatus ändern** ausgeschaltet lassen. Anfangs ist das Wiederöffnen erlaubt, auch in bestehenden Vorlagen. Bei Anteilen mit **Übergeben** fehlt diese Aktion immer. Bitten Sie Ihre Planung um Hilfe beim Rückgängigmachen einer Übergabe. Siehe [erlaubte Aktionen](/de/platform-intro/pages/bde-access-templates#erlaubte-aktionen).
 
 <a id="reopen-queue-placement" />
 
@@ -773,3 +778,33 @@ Ja. Öffnen Sie die Erklärung zu **Wieder geöffnet** auf der BDE- oder Planerk
 ## Ich habe Zurück in den Pool ohne Auswahl geschlossen. Warum ist mein Arbeitsgang in Wartestellung?
 
 Haben Sie bereits **Stopp** gewählt und Mengen gebucht, startet das Schließen des Rückgabedialogs das Intervall nicht neu und macht die Buchung nicht rückgängig. Der Arbeitsgang bleibt in Wartestellung. **Intervall beendet – In Wartestellung** bestätigt dies. Folgen Sie [Offene Arbeit in den Pool zurückgeben](/de/platform-intro/workflows/data-acquisition#back-to-pool).
+
+<a id="import-queue-choice" />
+
+## Warum stehen importierte Arbeitsgänge nicht mehr am Ende der Warteschlange?
+
+**Neue Arbeitsgänge in der Warteschlange** beginnt jetzt mit **Nach Sortierung**, auch wenn eine gespeicherte Zuordnung keine Einreihungsauswahl enthält. Sie finden die Auswahl im Abschnitt **Operationsfelder**, direkt unter der Zeile **Operationsbeschreibung**. Wählen Sie **Am Ende** für das bisherige Verhalten oder **Am Anfang**, um Arbeit hinter laufenden Arbeitsgängen einzureihen. Speichern Sie die Zuordnung, um die Auswahl erneut zu verwenden. Folgen Sie dem [Importablauf](/de/platform-intro/workflows/order-upload-planner).
+
+<a id="import-manual-order" />
+
+## Geht meine manuell angeordnete Reihenfolge beim Import verloren?
+
+**Nach Sortierung** sortiert bestehende Arbeit nicht um. Jeder hinzukommende Arbeitsgang wird hinter dem letzten eingefügt, der nach den Regeln vorher oder gleichrangig an der Reihe ist. Laufende Arbeit bleibt davor. Bestehende Arbeit behält ihre relative Reihenfolge. Wird Arbeit davor eingefügt, kann sich jedoch ihre Positionsnummer ändern. Die Einreihung ändert nie Prioritäten oder Termine. Siehe das [Warteschlangenbeispiel](/de/platform-intro/pages/erp-upload-planner#queue-placement).
+
+<a id="import-sorting-rules" />
+
+## Kann ich eigene Sortierregeln nur für einen Import wählen?
+
+Ja. Wählen Sie im Abschnitt **Operationsfelder**, direkt unter der Zeile **Operationsbeschreibung**, **Neue Arbeitsgänge in der Warteschlange → Nach Sortierung → Ändern** und bearbeiten Sie die Regeln. Sie werden mit der Zuordnung gespeichert. **Firmensortierung übernehmen** stellt die Firmenregeln wieder her, sofern vorhanden. Ohne eigene oder Firmenregeln nutzt der Import **Auftragspriorität** ↓, dann **Lieferdatum** ↑. Siehe [Sortierregeln für den Import](/de/platform-intro/pages/erp-upload-planner#queue-placement).
+
+<a id="import-placement-count" />
+
+## Warum zählt die Einreihung auch Arbeitsgänge mit, die schon vorhanden waren?
+
+Die Anzahl umfasst neben neuer Arbeit auch Arbeitsgänge, die beim Import an ein anderes Ziel verschoben werden, und zusätzliche Zuweisungen für parallele Arbeit. Aktualisiert ein erneuter Import nur eine bestehende Zuweisung, verschiebt er sie nicht. Die eigene Ergebniszeile erscheint nach dem Speichern mit **Nach Sortierung** oder **Am Anfang**, wenn Arbeit eingereiht wurde, auch neben Warnungen oder Konflikten. Siehe [Importergebnisse](/de/platform-intro/pages/erp-upload-planner#queue-placement).
+
+<a id="template-disabled-action" />
+
+## Warum sehe ich eine Schaltfläche, kann sie aber nicht nutzen?
+
+Zeigen oder tippen Sie darauf. **Für diese Maschine gesperrt (BDE-Vorlage).** bedeutet, dass die Maschinenvorlage die Aktion sperrt, auch für Administratoren. Bitten Sie einen Administrator, **Admin-Panel → BDE-Zugriffsvorlagen → Auf der BDE-Seite erlaubt** zu prüfen. Bei gesperrten Statusänderungen bleibt der Status sichtbar, öffnet aber kein Menü. Siehe [erlaubte Aktionen](/de/platform-intro/pages/bde-access-templates#erlaubte-aktionen).

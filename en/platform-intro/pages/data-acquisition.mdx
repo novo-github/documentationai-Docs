@@ -44,7 +44,7 @@ In **Card Display Settings**, required fields and highlights stay ticked and loc
 
 Your own choices stay saved. They apply again when the template no longer fixes those settings, and on machines without a template. With no template, the page works as before. The sorting instructions below apply when the template leaves sorting open.
 
-The template can hide status changes, interval corrections, order creation, and taking or returning pool work. Order notes and details may be readable only. If adding orders is off, search still filters this machine’s work but cannot find unplanned operations. Ask an administrator about a missing action.
+The template can block order creation, taking or returning pool work, reopening completed operations, interval corrections, and saving notes or details. Their buttons and edit icons stay visible and readable, but disabled. Hover over or tap one to read **Locked for this machine (BDE template).** Notes and details stay readable only; **Save** remains visible even when nothing has changed. A blocked status still looks normal, but tapping it opens no menu. If adding orders is off, search still filters this machine’s work but cannot find unplanned operations. Ask an administrator to review a blocked action.
 
 Preparation, production start, stop, quantity booking, downtime reasons, **PDA Assist**, and warnings stay available as before. Even with status changes off, **Planned quantity reached** still lets you choose **Complete** or **Keep on hold**. Reopening completed work has its own **Reopen completed operations** switch. Other pages, such as the Planner, are unaffected.
 
@@ -108,7 +108,7 @@ Finished or cancelled steps cannot be sent back. Without a hall, the button is u
 
 ## Interval Times and Timeline Display
 
-If the machine’s template switches off **Correct interval times and quantities**, the interval list is readable only. The editing steps below apply when corrections are allowed.
+If the machine’s template switches off **Correct interval times and quantities**, the interval list is readable only and the edit icons are disabled. Hover over or tap an icon to read **Locked for this machine (BDE template).** Start and end times stay plain text. The editing steps below apply when corrections are allowed.
 
 An interval records a stretch of preparation or production. In Data Acquisition V3, open the order's interval list. Tap a start or end time once to open **Edit interval** on **Start** or **End**. The clock icon and **Tap to change** hint identify editable times. The pencil opens **Quantities**.
 
@@ -164,7 +164,7 @@ After **Stop**, **Planned quantity reached** appears when good parts plus materi
 - **Complete** is preselected. Choose it when all parts have been booked; the operation leaves the open list.
 - **Keep on hold** leaves the operation open so you can book missing parts later. Closing the question without choosing also keeps it on hold.
 
-Reaching the quantity does not complete the operation automatically. If the planned quantity is zero or empty, the question appears after every **Stop**. Both choices work even when the template hides ordinary status changes. Below the planned quantity, this question is not offered: ask your planner to close the operation, or use the status menu if your template allows it. If material runs out and work must continue elsewhere, use [Back to pool](/en/platform-intro/workflows/data-acquisition#back-to-pool).
+Reaching the quantity does not complete the operation automatically. If the planned quantity is zero or empty, the question appears after every **Stop**. Both choices work even when the template blocks ordinary status changes. Below the planned quantity, this question is not offered: ask your planner to close the operation, or use the status menu if your template allows it. If material runs out and work must continue elsewhere, use [Back to pool](/en/platform-intro/workflows/data-acquisition#back-to-pool).
 
 If **PDA Assist** offers a time choice after stopping, finish or close it first; the completion question follows. During **Back to pool**, the return dialog takes its place. Closing that return dialog after stopping leaves the operation on hold.
 
@@ -223,7 +223,7 @@ Confirm with **Set on hold**. To leave the operation completed, tap outside the 
 
 After reopening, the card leaves this view. Choose **Show** in the notice to switch to **All Open** and select it. You can then book more parts. **Reopened** with the time appears on PDA and Planner cards. Its explanation names the person, date, time, machine when available, and queue placement. The badge disappears when the operation is completed or cancelled again.
 
-**No completed operations yet** means this machine has none to show. Refresh if the list cannot be loaded. If reopening fails, review the message before trying again. **Set on hold** is hidden when the template blocks reopening and on **Handed over** parts. Ask your planner about reversing a handover. Follow [Reopen a Completed Operation](/en/platform-intro/workflows/data-acquisition#reopen-completed).
+**No completed operations yet** means this machine has none to show. Refresh if the list cannot be loaded. If reopening fails, review the message before trying again. **Set on hold** stays visible but disabled when the template blocks reopening. Hover over or tap it to read **Locked for this machine (BDE template).** It is absent on **Handed over** parts. Ask your planner about reversing a handover. Follow [Reopen a Completed Operation](/en/platform-intro/workflows/data-acquisition#reopen-completed).
 
 ## Check Assisted Interval Times
 

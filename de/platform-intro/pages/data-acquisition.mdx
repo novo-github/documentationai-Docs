@@ -44,7 +44,7 @@ In den **Kartenanzeige-Einstellungen** bleiben vorgeschriebene Felder und Hervor
 
 Ihre eigenen Einstellungen bleiben gespeichert. Sie gelten wieder, sobald die Vorlage diese Auswahl nicht mehr vorgibt, und auf Maschinen ohne Vorlage. Ohne Vorlage arbeitet die Seite wie bisher. Die folgenden Sortieranleitungen gelten, wenn die Vorlage die Sortierung offenlässt.
 
-Die Vorlage kann Statusänderungen, Intervallkorrekturen, Auftragserstellung sowie das Übernehmen und Zurückgeben von Pool-Arbeit ausblenden. Auftragsnotizen und Details sind möglicherweise nur lesbar. Ist das Hinzufügen von Aufträgen ausgeschaltet, filtert die Suche weiterhin Arbeit dieser Maschine. Ungeplante Arbeitsgänge findet sie dann nicht. Fragen Sie bei fehlenden Aktionen einen Administrator.
+Die Vorlage kann das Erstellen von Aufträgen, das Übernehmen und Zurückgeben von Pool-Arbeit, das Wiederöffnen abgeschlossener Arbeitsgänge, Intervallkorrekturen und das Speichern von Notizen oder Details sperren. Die Schaltflächen und Bearbeitungssymbole bleiben sichtbar und lesbar, sind aber nicht bedienbar. Zeigen oder tippen Sie darauf, um **Für diese Maschine gesperrt (BDE-Vorlage).** zu lesen. Notizen und Details bleiben nur lesbar. **Speichern** bleibt auch ohne Änderungen sichtbar. Ein gesperrter Status sieht weiterhin normal aus. Tippen öffnet jedoch kein Menü. Ist das Hinzufügen von Aufträgen ausgeschaltet, filtert die Suche weiterhin Arbeit dieser Maschine. Ungeplante Arbeitsgänge findet sie dann nicht. Bitten Sie einen Administrator, eine gesperrte Aktion zu prüfen.
 
 Rüsten, Produktionsstart, Stopp, Mengenbuchung, Stillstandsgründe, **BDE Assist** und Warnungen bleiben wie bisher verfügbar. Auch bei ausgeschalteten Statusänderungen können Sie unter **Geplante Menge erreicht** weiterhin **Abschließen** oder **In Wartestellung lassen** wählen. Für das Wiederöffnen gibt es den eigenen Schalter **Abgeschlossene Arbeitsgänge wieder öffnen**. Andere Seiten wie der Planer bleiben unverändert.
 
@@ -58,7 +58,7 @@ In der Betriebsdatenerfassung V3 zeigt **Nach Warteschlangenposition sortieren**
 
 ### Position laufender Aufträge und Aufträge in Wartestellung wählen
 
-**Laufende Aufträge und Aufträge in Wartestellung**: Aufträge in Bearbeitung oder in Wartestellung. Beispiel: ein gestarteter Auftrag, der wegen eines Werkzeugwechsels in Wartestellung ist. Das unterscheidet sich von ⚠️ **Wartet auf einen vorherigen Schritt**: Dort ist ein früherer Schritt noch unfertig.
+**Laufende Aufträge und Aufträge in Wartestellung**: Aufträge in Bearbeitung oder in Wartestellung. Beispiel: ein gestarteter Auftrag, der wegen eines Werkzeugwechsels in Wartestellung ist. Das unterscheidet sich von ⚠️ **Wartet auf einen vorherigen Arbeitsgang**: Dort ist ein früherer Arbeitsgang noch nicht abgeschlossen.
 
 Öffnen Sie über das Zahnradsymbol **Kartenanzeige-Einstellungen → Sortierreihenfolge**. Ihr Sortiermodus bestimmt die Auswahl:
 
@@ -69,16 +69,16 @@ Wählen Sie **Speichern**, um die Anzeige für die Auftragsliste der Maschine un
 
 ### Wartende Aufträge hinter startbereiter Arbeit anzeigen
 
-Aufträge mit ⚠️ **Wartet auf einen vorherigen Schritt** haben einen früheren Schritt im selben Arbeitsauftrag, der weder abgeschlossen noch storniert ist. Die Nummern der Arbeitsgänge bestimmen ihre Reihenfolge. Ein früherer Schritt ohne Zuweisung zählt ebenfalls als unfertig. Zum Beispiel wartet Schritt #70, bis #60 fertig ist.
+Aufträge mit ⚠️ **Wartet auf einen vorherigen Arbeitsgang** haben einen früheren Arbeitsgang im selben Arbeitsauftrag, der weder abgeschlossen noch storniert ist. Die Nummern der Arbeitsgänge bestimmen ihre Reihenfolge. Ein früherer Arbeitsgang ohne Zuweisung zählt ebenfalls als nicht abgeschlossen. Zum Beispiel wartet Arbeitsgang #70, bis #60 abgeschlossen ist.
 
 Öffnen Sie über das Zahnradsymbol in der oberen Leiste **Kartenanzeige-Einstellungen → Sortierreihenfolge**. Wählen Sie die Option für Ihre Sortierart:
 
-- Ist **Nach Warteschlangenposition sortieren** ausgeschaltet, klicken Sie auf **Sortierregel hinzufügen**. Eine neue nummerierte Regelzeile erscheint. Wählen Sie in der Liste dieser Zeile **Wartet auf einen vorherigen Schritt**. Statt des Auf-/Abwärtspfeils hat diese Regel eine Schaltfläche, die zunächst **Ganz unten** zeigt. Damit erscheinen wartende Aufträge hinter anderer Arbeit. Klicken Sie darauf, um zu **Ganz oben** zu wechseln und wartende Aufträge zuerst zu prüfen. Diese Regel steht vor Priorität und Datum, aber nach **Laufende Aufträge und Aufträge in Wartestellung**, wenn diese Regel vorhanden ist. Ihre übrigen Regeln sortieren die Arbeit innerhalb jeder Gruppe.
-- Ist **Nach Warteschlangenposition sortieren** eingeschaltet, nutzen Sie **Aufträge, die auf einen vorherigen Schritt warten**. **Position beibehalten** behält die gewohnte Warteschlangenansicht bei. **Ganz unten** zeigt wartende Arbeit hinter anderen Aufträgen. Mit der getrennten Auswahl **Laufende Aufträge und Aufträge in Wartestellung** können Sie aktive Arbeit nach oben holen. Die im Zuweisungsplaner festgelegte Reihenfolge bleibt innerhalb jeder Gruppe erhalten.
+- Ist **Nach Warteschlangenposition sortieren** ausgeschaltet, klicken Sie auf **Sortierregel hinzufügen**. Eine neue nummerierte Regelzeile erscheint. Wählen Sie in der Liste dieser Zeile **Wartet auf einen vorherigen Arbeitsgang**. Statt des Auf-/Abwärtspfeils hat diese Regel eine Schaltfläche, die zunächst **Ganz unten** zeigt. Damit erscheinen wartende Aufträge hinter anderer Arbeit. Klicken Sie darauf, um zu **Ganz oben** zu wechseln und wartende Aufträge zuerst zu prüfen. Diese Regel steht vor Priorität und Datum, aber nach **Laufende Aufträge und Aufträge in Wartestellung**, wenn diese Regel vorhanden ist. Ihre übrigen Regeln sortieren die Arbeit innerhalb jeder Gruppe.
+- Ist **Nach Warteschlangenposition sortieren** eingeschaltet, nutzen Sie **Aufträge, die auf einen vorherigen Arbeitsgang warten**. **Position beibehalten** behält die gewohnte Warteschlangenansicht bei. **Ganz unten** zeigt wartende Arbeit hinter anderen Aufträgen. Mit der getrennten Auswahl **Laufende Aufträge und Aufträge in Wartestellung** können Sie aktive Arbeit nach oben holen. Die im Zuweisungsplaner festgelegte Reihenfolge bleibt innerhalb jeder Gruppe erhalten.
 
 Wählen Sie **Speichern**, um Ihre Auswahl zu übernehmen. Erst wenn Sie eine dieser Optionen wählen, wird wartende Arbeit entsprechend einsortiert. Ihre Auswahl wird für Ihr Konto gespeichert und gilt für die Auftragsliste der Maschine und den Tab **Pool**. Diese Optionen für wartende Aufträge gibt es nur in der Betriebsdatenerfassung V3, nicht im Zuweisungsplaner.
 
-Sobald kein früherer Schritt mehr unfertig ist, erscheint der Auftrag bei der nächsten Aktualisierung in der startbereiten Gruppe. Folgen Sie [Die Darstellung der Betriebsdatenerfassung V3 einstellen](/de/platform-intro/workflows/data-acquisition#die-darstellung-der-betriebsdatenerfassung-v3-einstellen).
+Sobald kein früherer Arbeitsgang mehr offen ist, erscheint der Auftrag bei der nächsten Aktualisierung in der startbereiten Gruppe. Folgen Sie [Die Darstellung der Betriebsdatenerfassung V3 einstellen](/de/platform-intro/workflows/data-acquisition#die-darstellung-der-betriebsdatenerfassung-v3-einstellen).
 
 ### Den Firmenstandard für die Sortierung nutzen
 
@@ -90,25 +90,25 @@ Das Zurücksetzen behält die Auswahl für laufende und wartende Aufträge im Wa
 
 ## Arbeit in den Hallenpool zurückgeben
 
-Mit Zugriff auf diese Maschine können Sie in der Betriebsdatenerfassung V3 offene Arbeit in ihren eigenen Hallenpool zurückgeben, sofern die Vorlage **Aufträge an den Pool zurückgeben** erlaubt. Wählen Sie den Schritt aus: **Erstellen** wechselt zu **Zurück in den Pool**. Tippen Sie erneut auf die ausgewählte Karte, um die Auswahl aufzuheben und wieder Arbeit erstellen zu können.
+Mit Zugriff auf diese Maschine können Sie in der Betriebsdatenerfassung V3 offene Arbeit in ihren eigenen Hallenpool zurückgeben, sofern die Vorlage **Aufträge an den Pool zurückgeben** erlaubt. Wählen Sie den Arbeitsgang aus: **Erstellen** wechselt zu **Zurück in den Pool**. Tippen Sie erneut auf die ausgewählte Karte, um die Auswahl aufzuheben und wieder Arbeit erstellen zu können.
 
 Bei laufender Arbeit öffnet **Zurück in den Pool** zuerst den normalen Stoppdialog. Unten erscheint **Erst stoppen – dann zurück in den Pool**. Erfassen Sie die Mengen und stoppen Sie das Intervall. Fragt **BDE Assist** nach einer Zeit, treffen oder schließen Sie diese Auswahl, bevor sich der Rückgabedialog öffnet. Schließen Sie den Stoppdialog oder buchen Sie ohne zu stoppen, endet diese Abfolge.
 
 Unter **Zurück in den Pool geben** gilt:
 
-- Hat die Arbeit noch nicht begonnen, wird der ganze Schritt in den Pool verschoben.
+- Hat die Arbeit noch nicht begonnen, wird der ganze Arbeitsgang in den Pool verschoben.
 - Hat die Arbeit begonnen, bleiben erfasste Zeiten und Gutteile auf dieser Maschine. **Geplant**, **Hier gefertigt** und **Offen** fassen die Mengen zusammen. **Restmenge** beginnt mit Planmenge minus Gutteile, mindestens 0. Ausschuss verringert die Restmenge nicht. Ändern Sie die Menge, wenn Teile nachgefertigt werden müssen. Lassen Sie sie leer, wenn sie unbekannt ist. Bei unbekannter Planmenge beginnt sie leer.
 - **Grund (optional)** gibt eine Notiz mit bis zu 500 Zeichen an die nächste Maschine weiter, etwa „Spindel defekt“.
 
-Bestätigen Sie mit **Zurück in den Pool**. Die Arbeit kommt an den Anfang des Hallenpools. Eine andere Maschine dieser Halle kann sie wie gewohnt übernehmen. Die Liste aktualisiert sich, die Auswahl wird aufgehoben und unten erscheint eine Bestätigung. Nach begonnener Arbeit zeigt die ursprüngliche Karte **Übergeben** statt **Abgeschlossen**. Wählen Sie den dritten Ansichtsreiter mit dem Historiensymbol, **Zeitfenster + Alle Status**, um den übergebenen Anteil zu finden. Er zeigt alle Schritte im gewählten Datumsfenster, einschließlich abgeschlossener und stornierter Schritte. **Alle Offen** und **Zeitfenster + Offen** blenden den übergebenen Anteil aus.
+Bestätigen Sie mit **Zurück in den Pool**. Die Arbeit kommt an den Anfang des Hallenpools. Eine andere Maschine dieser Halle kann sie wie gewohnt übernehmen. Die Liste aktualisiert sich, die Auswahl wird aufgehoben und unten erscheint eine Bestätigung. Nach begonnener Arbeit zeigt die ursprüngliche Karte **Übergeben** statt **Abgeschlossen**. Wählen Sie den dritten Ansichtsreiter mit dem Historiensymbol, **Zeitfenster + Alle Status**, um den übergebenen Anteil zu finden. Er zeigt alle Arbeitsgänge im gewählten Datumsfenster, einschließlich abgeschlossener und stornierter Arbeitsgänge. **Alle Offen** und **Zeitfenster + Offen** blenden den übergebenen Anteil aus.
 
-Die Pool-Karte zeigt Herkunft und bereits gefertigte Teile oder Person und Zeitpunkt der Rückgabe eines ungestarteten Schritts. Zeigen Sie auf die graue Kennzeichnung, um Details und Grund zu lesen. Schrittinformationen und Details zu wartenden Schritten zeigen **Teilweise gefertigt:** mit Mengen und dem Ziel der restlichen Arbeit. Die Übergabe schließt den gesamten Schritt nicht ab. Nachfolgende Schritte warten weiter auf seinen Abschluss.
+Die Pool-Karte zeigt Herkunft und bereits gefertigte Teile oder Person und Zeitpunkt der Rückgabe eines ungestarteten Arbeitsgangs. Zeigen Sie auf die graue Kennzeichnung, um Details und Grund zu lesen. Arbeitsganginformationen und Details zu wartenden Arbeitsgängen zeigen **Teilweise gefertigt:** mit Mengen und dem Ziel der restlichen Arbeit. Die Übergabe schließt den gesamten Arbeitsgang nicht ab. Nachfolgende Arbeitsgänge warten weiter auf seinen Abschluss.
 
-Abgeschlossene oder stornierte Schritte können nicht zurückgegeben werden. Ohne Halle ist die Schaltfläche nicht verfügbar. Wenden Sie sich an die Planung. Sind alle geplanten Teile gefertigt, schließen Sie den Schritt ab, sofern keine weiteren benötigt werden. Eine Übergabe lässt sich nicht automatisch rückgängig machen. Bei **Dieser Schritt wurde inzwischen geändert. Die Liste wurde aktualisiert.** prüfen Sie die aktualisierte Liste vor einem erneuten Versuch. Folgen Sie [Arbeit in den Pool zurückgeben](/de/platform-intro/workflows/data-acquisition#back-to-pool).
+Abgeschlossene oder stornierte Arbeitsgänge können nicht zurückgegeben werden. Ohne Halle ist die Schaltfläche nicht verfügbar. Wenden Sie sich an die Planung. Sind alle geplanten Teile gefertigt, schließen Sie den Arbeitsgang ab, sofern keine weiteren benötigt werden. Eine Übergabe lässt sich nicht automatisch rückgängig machen. Bei **Dieser Arbeitsgang wurde inzwischen geändert. Die Liste wurde aktualisiert.** prüfen Sie die aktualisierte Liste vor einem erneuten Versuch. Folgen Sie [Arbeit in den Pool zurückgeben](/de/platform-intro/workflows/data-acquisition#back-to-pool).
 
 ## Intervallzeiten und Zeitleistendarstellung
 
-Schaltet die Maschinenvorlage **Zeiten und Mengen von Intervallen korrigieren** aus, bleibt die Intervallliste nur lesbar. Die folgenden Bearbeitungsschritte gelten, wenn Korrekturen erlaubt sind.
+Schaltet die Maschinenvorlage **Zeiten und Mengen von Intervallen korrigieren** aus, bleibt die Intervallliste nur lesbar. Die Bearbeitungssymbole sind gesperrt. Zeigen oder tippen Sie darauf, um **Für diese Maschine gesperrt (BDE-Vorlage).** zu lesen. Start- und Endzeiten bleiben reiner Text. Die folgenden Bearbeitungsschritte gelten, wenn Korrekturen erlaubt sind.
 
 Ein Intervall erfasst einen Abschnitt von Rüsten oder Produktion. Öffnen Sie in der Betriebsdatenerfassung V3 die Intervallliste des Auftrags. Tippen Sie einmal auf eine Start- oder Endzeit, um **Intervall bearbeiten** unter **Start** oder **Ende** zu öffnen. Das Uhrsymbol und der Hinweis **Tippen zum Ändern** kennzeichnen bearbeitbare Zeiten. Der Stift öffnet **Mengen**.
 
@@ -164,7 +164,7 @@ Nach **Stopp** erscheint **Geplante Menge erreicht**, sobald Gutteile, Materiala
 - **Abschließen** ist vorausgewählt. Wählen Sie es, wenn alle Teile gebucht sind. Der Arbeitsgang verlässt die offene Liste.
 - **In Wartestellung lassen** hält den Arbeitsgang offen, damit Sie fehlende Teile später buchen können. Auch das Schließen der Frage ohne Auswahl lässt ihn in Wartestellung.
 
-Das Erreichen der Menge schließt den Arbeitsgang nicht automatisch ab. Ist die Planmenge 0 oder leer, erscheint die Frage nach jedem **Stopp**. Beide Möglichkeiten bleiben verfügbar, wenn die Vorlage allgemeine Statusänderungen ausblendet. Unterhalb der Planmenge erscheint diese Frage nicht. Bitten Sie Ihre Planung um den Abschluss oder nutzen Sie das Statusmenü, wenn Ihre Vorlage es erlaubt. Geht Material aus und soll die Arbeit anderswo weitergehen, nutzen Sie [Zurück in den Pool](/de/platform-intro/workflows/data-acquisition#back-to-pool).
+Das Erreichen der Menge schließt den Arbeitsgang nicht automatisch ab. Ist die Planmenge 0 oder leer, erscheint die Frage nach jedem **Stopp**. Beide Möglichkeiten bleiben verfügbar, wenn die Vorlage allgemeine Statusänderungen sperrt. Unterhalb der Planmenge erscheint diese Frage nicht. Bitten Sie Ihre Planung um den Abschluss oder nutzen Sie das Statusmenü, wenn Ihre Vorlage es erlaubt. Geht Material aus und soll die Arbeit anderswo weitergehen, nutzen Sie [Zurück in den Pool](/de/platform-intro/workflows/data-acquisition#back-to-pool).
 
 Bietet **BDE Assist** nach dem Stoppen eine Zeitauswahl an, treffen oder schließen Sie diese zuerst. Danach folgt die Abschlussfrage. Bei **Zurück in den Pool** erscheint stattdessen der Rückgabedialog. Schließen Sie diesen nach dem Stoppen ohne Auswahl, bleibt der Arbeitsgang in Wartestellung.
 
@@ -186,7 +186,7 @@ Meldungen nennen den Arbeitsgang. Nach **Weiter** erscheint **Intervall beendet 
 
 Übernehmen Sie im **Pool** Arbeit aus dem Hall Pool Ihrer Maschine. Fehlt eine Zuweisung, suchen Sie ungeplante Operationen oder verwenden Sie **Find/Create Immediate Order**. **Job Context** verbindet Notizen aus Auftrag, Arbeitsauftrag, Operation und Zuweisung.
 
-**Wartet auf einen vorherigen Schritt** / **Blockiert durch** bedeutet, dass ein früherer Arbeitsgang noch nicht abgeschlossen ist. **Trotzdem starten** ist dennoch verfügbar. Prüfen Sie vorher die Abhängigkeit. Bei bereits laufender anderer Zuweisung erscheint eine Bestätigung. Ist die Planmenge nach **Stopp** erreicht, wählen Sie **Abschließen** oder **In Wartestellung lassen**.
+**Wartet auf einen vorherigen Arbeitsgang** / **Blockiert durch** bedeutet, dass ein früherer Arbeitsgang noch nicht abgeschlossen ist. **Trotzdem starten** ist dennoch verfügbar. Prüfen Sie vorher die Abhängigkeit. Bei bereits laufender anderer Zuweisung erscheint eine Bestätigung. Ist die Planmenge nach **Stopp** erreicht, wählen Sie **Abschließen** oder **In Wartestellung lassen**.
 
 Ungebundene oder unbeschriftete Maschinenzeit gehört zu keinem Auftrag. Die Löschung eines erfassten Intervalls ist endgültig.
 
@@ -223,7 +223,7 @@ Bestätigen Sie mit **Auf Wartestellung setzen**. Soll der Arbeitsgang abgeschlo
 
 Nach dem Wiederöffnen verschwindet die Karte aus dieser Ansicht. Wählen Sie in der Meldung **Anzeigen**, um zu **Alle Offen** zu wechseln und den Arbeitsgang auszuwählen. Danach können Sie weitere Teile buchen. Auf BDE- und Planerkarten erscheint **Wieder geöffnet** mit dem Zeitpunkt. Die Erklärung nennt Person, Datum, Uhrzeit, Maschine, sofern vorhanden, und Einreihung. Die Kennzeichnung verschwindet, wenn der Arbeitsgang erneut abgeschlossen oder storniert wird.
 
-**Noch keine abgeschlossenen Arbeitsgänge** bedeutet, dass diese Maschine keine anzuzeigen hat. Aktualisieren Sie die Seite, wenn die Liste nicht geladen werden kann. Schlägt das Wiederöffnen fehl, prüfen Sie die Meldung vor einem erneuten Versuch. **Auf Wartestellung setzen** fehlt, wenn die Vorlage das Wiederöffnen sperrt, sowie bei Anteilen mit **Übergeben**. Bitten Sie Ihre Planung um Hilfe, wenn Sie eine Übergabe rückgängig machen müssen. Folgen Sie [Einen abgeschlossenen Arbeitsgang wieder öffnen](/de/platform-intro/workflows/data-acquisition#reopen-completed).
+**Noch keine abgeschlossenen Arbeitsgänge** bedeutet, dass diese Maschine keine anzuzeigen hat. Aktualisieren Sie die Seite, wenn die Liste nicht geladen werden kann. Schlägt das Wiederöffnen fehl, prüfen Sie die Meldung vor einem erneuten Versuch. **Auf Wartestellung setzen** bleibt sichtbar, ist aber gesperrt, wenn die Vorlage das Wiederöffnen nicht erlaubt. Zeigen oder tippen Sie darauf, um **Für diese Maschine gesperrt (BDE-Vorlage).** zu lesen. Bei Anteilen mit **Übergeben** fehlt die Aktion weiterhin. Bitten Sie Ihre Planung um Hilfe, wenn Sie eine Übergabe rückgängig machen müssen. Folgen Sie [Einen abgeschlossenen Arbeitsgang wieder öffnen](/de/platform-intro/workflows/data-acquisition#reopen-completed).
 
 ## Unterstützte Intervallzeiten prüfen
 

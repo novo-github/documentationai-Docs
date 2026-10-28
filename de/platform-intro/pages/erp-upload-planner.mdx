@@ -51,6 +51,32 @@ Ordnen Sie **Auftragspriorität** und **Arbeitsgangpriorität** getrennt zu. Bei
 
 Arbeitsgangprioritäten müssen ganze Zahlen ab 0 sein. Text, Dezimalzahlen und negative Werte werden zur Korrektur markiert. Der Anfangswert ersetzt sie nicht. Nicht-numerische Auftragsprioritäten werden ebenfalls markiert. Ein erneuter Import ändert nie die Priorität bestehender Aufträge oder Arbeitsgänge.
 
+<a id="queue-placement" />
+
+## Importierte Arbeit in die Warteschlange einreihen
+
+Unter **Spalten zuordnen → Operationsfelder**, direkt unter der Zeile **Operationsbeschreibung**, finden Sie die Auswahl **Neue Arbeitsgänge in der Warteschlange**. **Nach Sortierung** steht zuerst und ist vorausgewählt. Auch eine gespeicherte Zuordnung ohne Einreihungsauswahl beginnt mit **Nach Sortierung**.
+
+| Auswahl | Wo die importierte Arbeit eingereiht wird |
+| --- | --- |
+| **Nach Sortierung** | Hinter dem letzten aktiven Arbeitsgang, der nach den gewählten Regeln vorher oder gleichrangig an der Reihe ist. Laufende Arbeit bleibt davor. Bestehende Arbeitsgänge werden nicht umsortiert. |
+| **Am Anfang** | Vorne, hinter laufender Arbeit. |
+| **Am Ende** | Hinten, wie bisher beim Import. |
+
+Lesen Sie bei **Nach Sortierung** die Regeln unter der Auswahl. Mit **Ändern** passen Sie sie für diesen Import an. Der Import verwendet zuerst seine eigenen gespeicherten Regeln, sonst die Firmenregeln. Fehlt beides, gelten die Standardregeln: **Auftragspriorität** ↓, dann **Lieferdatum** ↑. **Nach Sortierung** ist auch ohne Firmensortierung verfügbar.
+
+Sind Firmenregeln vorhanden, stellt **Firmensortierung übernehmen** diese wieder her. Der Import folgt dann wieder der Firmensortierung. Ein Haken zeigt, dass die Regeln bereits übereinstimmen. **Firmensortierung:** erscheint, wenn die Regeln der Firmensortierung entsprechen. **Eigene Sortierung:** kennzeichnet für den Import gewählte Regeln, die von den Firmenregeln abweichen. **Sortierung:** erscheint bei den Standardregeln ohne Firmensortierung. Entfernen Sie alle eigenen Regeln, gelten ebenfalls wieder die Firmen- oder Standardregeln.
+
+Wenn Sie die Zuordnung speichern, werden auch die Einreihungsauswahl und die für den Import gewählten Regeln gespeichert. Beim Laden einer gespeicherten Zuordnung werden sie wiederhergestellt.
+
+Öffnen Sie das Informationssymbol für ein Beispiel nach Starttermin. Vor dem Import lautet die Folge A (20. Oktober), D (28. Oktober, manuell vorgezogen), B (22. Oktober), C (24. Oktober). Der neue Arbeitsgang N (23. Oktober) kommt hinter B. Daraus wird A, D, B, N, C. D bleibt an zweiter Stelle. Bestehende Arbeit behält ihre relative Reihenfolge. Wird Arbeit davor eingefügt, kann sich jedoch ihre Positionsnummer ändern. Die Warteschlange wird dadurch nicht fortlaufend sortiert.
+
+Die Einreihung gilt für Maschinenwarteschlangen und Hallenpools. Sie umfasst neue Arbeit, zusätzliche Zuweisungen für parallele Arbeit und Arbeitsgänge, die beim Import an ein anderes Ziel verschoben werden. Aktualisiert ein erneuter Import nur eine bestehende Zuweisung, bleibt deren Position erhalten. Die Einreihung ändert nie Prioritäten oder Termine.
+
+Kommen mehrere Arbeitsgänge in dieselbe Warteschlange, fügt **Nach Sortierung** sie in der Reihenfolge der Regeln ein. **Am Anfang** nutzt die Reihenfolge der Firmenregeln, sofern vorhanden, sonst die Reihenfolge der Tabelle.
+
+Die Prüfungsübersicht zeigt **Neue Arbeitsgänge in der Warteschlange:** mit Ihrer Auswahl. Nach dem Speichern mit **Nach Sortierung** oder **Am Anfang** nennt eine eigene Zeile die Anzahl eingereihter Arbeitsgänge und betroffener Warteschlangen, sofern Arbeit eingereiht wurde. Sie erscheint auch neben Konflikten, übersprungenen Zeilen oder Warnungen. Die Anzahl umfasst auch verschobene Arbeitsgänge. Folgen Sie dem [Importablauf](/de/platform-intro/workflows/order-upload-planner).
+
 ## Auswirkungen des Imports prüfen
 
 Öffnen Sie nach der Spaltenzuordnung und Vorschau die Übersicht der vorgesehenen Importänderungen. Sie zeigt neue, aktualisierte und bestehende Datensätze, gegliedert nach Aufträgen, Produkten, Kunden, Operationen und Zuweisungen. Bestehende Datensätze werden wiederverwendet; sie stehen nicht zwangsläufig für neu angelegte Datensätze.

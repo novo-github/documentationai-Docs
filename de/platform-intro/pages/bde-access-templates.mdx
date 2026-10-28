@@ -32,7 +32,7 @@ Folgen Sie [Die BDE-Seite auf mehreren Maschinen einheitlich machen](/de/platfor
 | **Immer angezeigt** | Listet Felder in denselben Gruppen wie die **Kartenanzeige-Einstellungen**. Ergänzt die persönliche Auswahl sichtbarer Felder. Diese Felder bleiben in den **Kartenanzeige-Einstellungen** angehakt und gesperrt. Andere Felder bleiben frei wählbar. Der Auftrag selbst bleibt immer sichtbar. |
 | **Immer hervorgehoben** | Bietet acht Felder: **Auftragsdatum**, **Lieferdatum**, **Auftragsnotizen**, **Arbeitsauftragsnotizen**, **Produktbeschreibung**, **Operationsbeschreibung**, **Operationsnotizen** und **Zuweisungsnotizen**. Hebt diese Felder hervor, wenn sie angezeigt werden. Ein ausgeblendetes Feld wird dadurch nicht sichtbar. Jede Person kann weitere Hervorhebungen ergänzen, diese aber nicht entfernen. |
 | **Feste automatische Aktualisierung verwenden** | Aktualisiert Aufträge und Daten alle 1, 3, 5 oder 10 Minuten. Auf der BDE-Seite kann niemand diesen Abstand ändern. |
-| **Feste Sortierung verwenden** | Ersetzt die persönliche Sortierung auf diesen Maschinen. Wählen Sie die Warteschlangenposition oder mindestens eine Sortierregel. Bei Sortierung nach Warteschlangenposition wählen Sie **Laufende Aufträge und Aufträge in Wartestellung** (**Position beibehalten** / **Ganz oben**) und **Aufträge, die auf einen vorherigen Schritt warten** (**Position beibehalten** / **Ganz unten**). Auf der BDE-Seite ist die Sortierung nur einsehbar. |
+| **Feste Sortierung verwenden** | Ersetzt die persönliche Sortierung auf diesen Maschinen. Wählen Sie die Warteschlangenposition oder mindestens eine Sortierregel. Bei Sortierung nach Warteschlangenposition wählen Sie **Laufende Aufträge und Aufträge in Wartestellung** (**Position beibehalten** / **Ganz oben**) und **Aufträge, die auf einen vorherigen Arbeitsgang warten** (**Position beibehalten** / **Ganz unten**). Auf der BDE-Seite ist die Sortierung nur einsehbar. |
 
 Gesperrte Einstellungen zeigen **Von der Vorlage festgelegt**. Bei fester Sortierung erscheint **Die Sortierung ist von der Vorlage festgelegt**. Persönliche Einstellungen bleiben gespeichert und gelten wieder, sobald die Vorlage diese Auswahl nicht mehr vorgibt. Ohne feste Sortierung gilt die persönliche Sortierung. Gibt es keine gespeicherte Auswahl, gilt die Firmensortierung.
 
@@ -46,17 +46,17 @@ Speichern ist erst möglich, nachdem Sie die Vorlage geändert haben.
 
 ## Erlaubte Aktionen
 
-Unter **Auf der BDE-Seite erlaubt** bedeutet ein eingeschalteter Schalter, dass die Aktion erlaubt ist. Bei einer neuen Vorlage sind alle Aktionen eingeschaltet. Schalten Sie eine Aktion aus, um ihre Bedienelemente auf den BDE-Seiten der ausgewählten Maschinen auszublenden.
+Unter **Auf der BDE-Seite erlaubt** bedeutet ein eingeschalteter Schalter, dass die Aktion erlaubt ist. Bei einer neuen Vorlage sind alle Aktionen eingeschaltet. Schalten Sie eine Aktion aus, um sie auf den BDE-Seiten der ausgewählten Maschinen zu sperren. Gesperrte Aktionsschaltflächen und Bearbeitungssymbole bleiben sichtbar und lesbar, sind aber nicht bedienbar. Zeigen oder tippen Sie darauf, um **Für diese Maschine gesperrt (BDE-Vorlage).** zu lesen.
 
 | Schalter | Wirkung beim Ausschalten |
 | --- | --- |
 | **Auftragsstatus ändern** | Der Status bleibt sichtbar, sein Menü lässt sich aber nicht öffnen. Nach **Stopp** bleiben **Abschließen** und **In Wartestellung lassen** bei erreichter Planmenge verfügbar. Für das Wiederöffnen gibt es einen eigenen Schalter. |
-| **Abgeschlossene Arbeitsgänge wieder öffnen** | Blendet **Auf Wartestellung setzen** unter **Zuletzt abgeschlossen** aus. Die abgeschlossenen Karten bleiben lesbar. Das Wiederöffnen ist standardmäßig erlaubt, auch in bestehenden Vorlagen. |
-| **Zeiten und Mengen von Intervallen korrigieren** | Die Intervallliste bleibt lesbar. Die Bedienelemente zum Bearbeiten von Zeiten und Mengen verschwinden. |
-| **Notizen und Auftragsdetails bearbeiten** | Die Seitenleiste des Auftrags bleibt lesbar. Notizen und Details lassen sich dort nicht ändern. |
-| **Aufträge an der Maschine hinzufügen** | Aufträge erstellen und ungeplante Arbeitsgänge suchen ist nicht verfügbar. Die Suche filtert weiterhin Arbeit, die bereits auf der Maschine liegt. |
-| **Aufträge aus dem Hallen-Pool übernehmen** | Auf Pool-Karten fehlt die Aktion zum Übernehmen auf die Maschine. |
-| **Aufträge an den Pool zurückgeben** | Die Aktion zum Zurückgeben von Arbeit oder Weitergeben ihrer Restmenge ist ausgeblendet. |
+| **Abgeschlossene Arbeitsgänge wieder öffnen** | Sperrt **Auf Wartestellung setzen** unter **Zuletzt abgeschlossen**. Übergebene Anteile haben weiterhin keine Schaltfläche zum Wiederöffnen. Die abgeschlossenen Karten bleiben lesbar. Das Wiederöffnen ist standardmäßig erlaubt, auch in bestehenden Vorlagen. |
+| **Zeiten und Mengen von Intervallen korrigieren** | Die Intervallliste bleibt lesbar. Bearbeitungssymbole bleiben sichtbar, sind aber gesperrt. Start- und Endzeiten bleiben reiner Text. |
+| **Notizen und Auftragsdetails bearbeiten** | Die Seitenleiste des Auftrags bleibt lesbar. Notizen und Details lassen sich dort nicht ändern. **Speichern** bleibt sichtbar und gesperrt, auch ohne Änderungen. |
+| **Aufträge an der Maschine hinzufügen** | **Erstellen** bleibt sichtbar, ist aber gesperrt. Die Suche bleibt verfügbar und filtert Arbeit auf der Maschine. Ungeplante Arbeitsgänge zeigt sie nicht. |
+| **Aufträge aus dem Hallen-Pool übernehmen** | **Der Maschine zuweisen** bleibt auf Pool-Karten sichtbar, ist aber gesperrt. |
+| **Aufträge an den Pool zurückgeben** | Die Aktion zum Zurückgeben von Arbeit oder Weitergeben ihrer Restmenge bleibt sichtbar, ist aber gesperrt. |
 
 Rüsten, Produktionsstart, Stopp, Mengenbuchung, Stillstandsgründe, **BDE Assist** und Warnungen bleiben wie bisher verfügbar.
 

@@ -16,7 +16,7 @@ Steuern Sie die Live-Produktionsverfolgung für eine Maschine und erfassen Sie Z
 
 Beginnen Sie auf der [Seite Betriebsdatenerfassung (BDE)](/de/platform-intro/pages/data-acquisition).
 
-Eine [BDE-Zugriffsvorlage](/de/platform-intro/pages/bde-access-templates) kann Anzeigeeinstellungen festlegen und Aktionen für alle ausblenden, auch für Administratoren. Prüfen Sie die folgenden Bedingungen, bevor Sie Arbeit hinzufügen, Intervalle korrigieren oder Arbeit in den Pool zurückgeben.
+Eine [BDE-Zugriffsvorlage](/de/platform-intro/pages/bde-access-templates) kann Anzeigeeinstellungen festlegen und Aktionen für alle sperren, auch für Administratoren. Prüfen Sie die folgenden Bedingungen, bevor Sie Arbeit hinzufügen, Intervalle korrigieren oder Arbeit in den Pool zurückgeben.
 
 ### Voraussetzungen
 - Die Maschine hat eine Warteschlange oder einen Live-Auftrag, an dem gearbeitet werden kann.
@@ -54,26 +54,26 @@ Eine [BDE-Zugriffsvorlage](/de/platform-intro/pages/bde-access-templates) kann A
 
 ## Offene Arbeit in den Pool zurückgeben
 
-Die Maschinenvorlage muss **Aufträge an den Pool zurückgeben** erlauben. Andernfalls ist die Rückgabeaktion ausgeblendet.
+Die Maschinenvorlage muss **Aufträge an den Pool zurückgeben** erlauben. Andernfalls bleibt die Rückgabeaktion sichtbar, ist aber gesperrt. Zeigen oder tippen Sie darauf, um **Für diese Maschine gesperrt (BDE-Vorlage).** zu lesen.
 
-Sie benötigen Zugriff auf die Betriebsdatenerfassung V3 dieser Maschine. Die Maschine muss einer Halle angehören. Der Schritt muss auf dieser Maschine liegen und darf weder abgeschlossen noch storniert sein. Sie können Arbeit nur in den eigenen Hallenpool der Maschine zurückgeben. Bitten Sie die Planung, eine andere Halle oder eine bestimmte Maschine auszuwählen.
+Sie benötigen Zugriff auf die Betriebsdatenerfassung V3 dieser Maschine. Die Maschine muss einer Halle angehören. Der Arbeitsgang muss auf dieser Maschine liegen und darf weder abgeschlossen noch storniert sein. Sie können Arbeit nur in den eigenen Hallenpool der Maschine zurückgeben. Bitten Sie die Planung, eine andere Halle oder eine bestimmte Maschine auszuwählen.
 
 <Steps>
-  <Step title="Wählen Sie den Schritt zur Rückgabe aus" icon="arrow-right" title-type="p">
-    Wählen Sie die Karte des Schritts. **Erstellen** wechselt zu **Zurück in den Pool**. Wählen Sie **Zurück in den Pool**. Möchten Sie stattdessen Arbeit erstellen, tippen Sie erneut auf die ausgewählte Karte, um die Auswahl aufzuheben.
+  <Step title="Wählen Sie den Arbeitsgang zur Rückgabe aus" icon="arrow-right" title-type="p">
+    Wählen Sie die Karte des Arbeitsgangs. **Erstellen** wechselt zu **Zurück in den Pool**. Wählen Sie **Zurück in den Pool**. Möchten Sie stattdessen Arbeit erstellen, tippen Sie erneut auf die ausgewählte Karte, um die Auswahl aufzuheben.
   </Step>
   <Step title="Stoppen Sie laufende Arbeit und erfassen Sie die Mengen" icon="arrow-right" title-type="p">
-    Läuft der Schritt, öffnet sich der normale Stoppdialog. Unten erscheint **Erst stoppen – dann zurück in den Pool**. Erfassen Sie Gutteile und Ausschuss und stoppen Sie. Treffen oder schließen Sie eine mögliche Zeitauswahl von **BDE Assist**. Danach öffnet sich der Rückgabedialog. Schließen Sie den Stoppdialog oder buchen Sie ohne zu stoppen, endet die Rückgabeabfolge.
+    Läuft der Arbeitsgang, öffnet sich der normale Stoppdialog. Unten erscheint **Erst stoppen – dann zurück in den Pool**. Erfassen Sie Gutteile und Ausschuss und stoppen Sie. Treffen oder schließen Sie eine mögliche Zeitauswahl von **BDE Assist**. Danach öffnet sich der Rückgabedialog. Schließen Sie den Stoppdialog oder buchen Sie ohne zu stoppen, endet die Rückgabeabfolge.
   </Step>
   <Step title="Prüfen Sie Restmenge und Grund" icon="arrow-right" title-type="p">
-    Unter **Zurück in den Pool geben** wird ein ungestarteter Schritt als Ganzes verschoben. Prüfen Sie bei begonnener Arbeit **Geplant**, **Hier gefertigt** und **Offen**. **Restmenge** schlägt Planmenge minus Gutteile vor. Ausschuss verringert sie nicht. Ändern Sie die Menge für nachzufertigende Teile oder lassen Sie sie leer, wenn sie unbekannt ist. Sind alle geplanten Teile gefertigt, schließen Sie den Schritt ab, sofern keine weiteren benötigt werden. Ergänzen Sie **Grund (optional)**, damit die nächste Person die Rückgabe versteht.
+    Unter **Zurück in den Pool geben** wird ein ungestarteter Arbeitsgang als Ganzes verschoben. Prüfen Sie bei begonnener Arbeit **Geplant**, **Hier gefertigt** und **Offen**. **Restmenge** schlägt Planmenge minus Gutteile vor. Ausschuss verringert sie nicht. Ändern Sie die Menge für nachzufertigende Teile oder lassen Sie sie leer, wenn sie unbekannt ist. Sind alle geplanten Teile gefertigt, schließen Sie den Arbeitsgang ab, sofern keine weiteren benötigt werden. Ergänzen Sie **Grund (optional)**, damit die nächste Person die Rückgabe versteht.
   </Step>
   <Step title="Bestätigen und prüfen Sie beide Anteile" icon="arrow-right" title-type="p">
-    Prüfen Sie Ziel und Menge und bestätigen Sie **Zurück in den Pool**. Eine Übergabe lässt sich nicht automatisch rückgängig machen. Die Auswahl wird aufgehoben und unten erscheint eine Bestätigung. Der ganze ungestartete Schritt oder die restliche begonnene Arbeit kommt an den Anfang des Hallenpools. Eine andere Maschine der Halle kann sie wie gewohnt übernehmen. Bei begonnener Arbeit wählen Sie den dritten Ansichtsreiter mit dem Historiensymbol, **Zeitfenster + Alle Status**, um den übergebenen Anteil zu finden. Er zeigt alle Schritte im gewählten Datumsfenster, einschließlich abgeschlossener und stornierter Schritte. **Alle Offen** und **Zeitfenster + Offen** blenden den übergebenen Anteil aus. Der ursprüngliche Anteil zeigt **Übergeben**. Seine Zeiten und Gutteile bleiben auf dieser Maschine.
+    Prüfen Sie Ziel und Menge und bestätigen Sie **Zurück in den Pool**. Eine Übergabe lässt sich nicht automatisch rückgängig machen. Die Auswahl wird aufgehoben und unten erscheint eine Bestätigung. Der ganze ungestartete Arbeitsgang oder die restliche begonnene Arbeit kommt an den Anfang des Hallenpools. Eine andere Maschine der Halle kann sie wie gewohnt übernehmen. Bei begonnener Arbeit wählen Sie den dritten Ansichtsreiter mit dem Historiensymbol, **Zeitfenster + Alle Status**, um den übergebenen Anteil zu finden. Er zeigt alle Arbeitsgänge im gewählten Datumsfenster, einschließlich abgeschlossener und stornierter Arbeitsgänge. **Alle Offen** und **Zeitfenster + Offen** blenden den übergebenen Anteil aus. Der ursprüngliche Anteil zeigt **Übergeben**. Seine Zeiten und Gutteile bleiben auf dieser Maschine.
   </Step>
 </Steps>
 
-Bei **Dieser Schritt wurde inzwischen geändert. Die Liste wurde aktualisiert.** prüfen Sie den aktualisierten Schritt vor einem erneuten Versuch. Eine nicht verfügbare Schaltfläche erklärt, ob der Schritt abgeschlossen ist oder die Maschine keine Halle hat. Kennzeichnungen und Mengenregeln finden Sie unter [Betriebsdatenerfassung](/de/platform-intro/pages/data-acquisition).
+Bei **Dieser Arbeitsgang wurde inzwischen geändert. Die Liste wurde aktualisiert.** prüfen Sie den aktualisierten Arbeitsgang vor einem erneuten Versuch. Eine nicht verfügbare Schaltfläche erklärt, ob der Arbeitsgang abgeschlossen ist oder die Maschine keine Halle hat. Kennzeichnungen und Mengenregeln finden Sie unter [Betriebsdatenerfassung](/de/platform-intro/pages/data-acquisition).
 
 ## Aktive Hilfe und automatisches Ende prüfen
 
@@ -157,13 +157,13 @@ Sie benötigen Zugriff auf die Betriebsdatenerfassung V3 der Maschine oder auf d
     Ist **Nach Warteschlangenposition sortieren** eingeschaltet, wählen Sie **Laufende Aufträge und Aufträge in Wartestellung → Position beibehalten**, um der gespeicherten Warteschlange zu folgen. **Ganz oben** zeigt aktive Arbeit zuerst. Ist die Warteschlangensortierung ausgeschaltet, nutzen Sie **Sortierregel hinzufügen**, wählen **Laufende Aufträge und Aufträge in Wartestellung** und dann **Ganz oben** oder **Ganz unten**. Diese Regel bleibt an erster Stelle.
   </Step>
   <Step title="Wählen Sie die Position wartender Arbeit" icon="arrow-right" title-type="p">
-    Aufträge mit ⚠️ warten auf einen früheren Arbeitsgang. Wählen Sie bei eingeschalteter Warteschlangensortierung **Aufträge, die auf einen vorherigen Schritt warten → Ganz unten**, um sie hinter anderer Arbeit anzuzeigen. **Position beibehalten** behält ihre Warteschlangenplatzierung bei. Ist die Warteschlangensortierung ausgeschaltet, ergänzen Sie **Wartet auf einen vorherigen Schritt** und wählen **Ganz unten** oder **Ganz oben**. Diese Regel steht nach der Regel für laufende Aufträge, falls vorhanden, und vor Priorität oder Datum.
+    Aufträge mit ⚠️ warten auf einen früheren Arbeitsgang. Wählen Sie bei eingeschalteter Warteschlangensortierung **Aufträge, die auf einen vorherigen Arbeitsgang warten → Ganz unten**, um sie hinter anderer Arbeit anzuzeigen. **Position beibehalten** behält ihre Warteschlangenplatzierung bei. Ist die Warteschlangensortierung ausgeschaltet, ergänzen Sie **Wartet auf einen vorherigen Arbeitsgang** und wählen **Ganz unten** oder **Ganz oben**. Diese Regel steht nach der Regel für laufende Aufträge, falls vorhanden, und vor Priorität oder Datum.
   </Step>
   <Step title="Übernehmen Sie bei Bedarf die Firmensortierung" icon="arrow-right" title-type="p">
     Wählen Sie für die Firmenvorgaben **Auf Firmensortierung zurücksetzen**. Ein Haken bedeutet, dass Modus und Regeln bereits übereinstimmen. Die Schaltfläche ist dann gesperrt. Ohne Firmenstandard stellt **Auf Standard zurücksetzen (noch kein Firmenstandard festgelegt)** die Standardauswahl her. Das Zurücksetzen ersetzt Regeln. Fügen Sie Regeln für laufende oder wartende Aufträge deshalb danach erneut hinzu. Ihre Auswahl für diese Gruppen im Warteschlangenmodus bleibt erhalten.
   </Step>
   <Step title="Speichern und prüfen Sie Maschinenliste und Pool" icon="arrow-right" title-type="p">
-    Wählen Sie **Speichern**. Prüfen Sie die Maschinenliste und den **Pool**. Die Auswahl für laufende Aufträge beginnt mit **Position beibehalten**. Wartende Arbeit wird erst durch Ihre Auswahl verschoben. Sind frühere Schritte fertig, erscheint wartende Arbeit bei der nächsten Aktualisierung unter startbereiter Arbeit. Diese Anzeigeauswahl wird für Ihr Konto gespeichert. Speichern Sie andere Anzeigeänderungen, folgen Sie weiterhin der Firmensortierung. Speichern Sie eine eigene Sortierung oder ein Zurücksetzen, bleiben diese Werte auch bei späteren Änderungen des Firmenstandards erhalten.
+    Wählen Sie **Speichern**. Prüfen Sie die Maschinenliste und den **Pool**. Die Auswahl für laufende Aufträge beginnt mit **Position beibehalten**. Wartende Arbeit wird erst durch Ihre Auswahl verschoben. Sind frühere Arbeitsgänge abgeschlossen, erscheint wartende Arbeit bei der nächsten Aktualisierung unter startbereiter Arbeit. Diese Anzeigeauswahl wird für Ihr Konto gespeichert. Speichern Sie andere Anzeigeänderungen, folgen Sie weiterhin der Firmensortierung. Speichern Sie eine eigene Sortierung oder ein Zurücksetzen, bleiben diese Werte auch bei späteren Änderungen des Firmenstandards erhalten.
   </Step>
 </Steps>
 
@@ -209,11 +209,11 @@ Sie benötigen Zugriff auf die BDE-Seite dieser Maschine. Ihre Vorlage muss **Ab
   </Step>
 </Steps>
 
-Ist der Arbeitsgang älter als die letzten fünf, suchen Sie ihn unter **Zeitfenster + Alle Status** und bitten Sie Ihre Planung um Hilfe beim Wiederöffnen. Fehlt **Auf Wartestellung setzen**, lassen Sie die Vorlage von einem Administrator prüfen. Bei übergebenen Anteilen benötigen Sie Ihre Planung. Unter [Zuletzt abgeschlossen](/de/platform-intro/pages/data-acquisition#recently-completed) finden Sie Einreihungsregeln und Anzeigegrenzen.
+Ist der Arbeitsgang älter als die letzten fünf, suchen Sie ihn unter **Zeitfenster + Alle Status** und bitten Sie Ihre Planung um Hilfe beim Wiederöffnen. Ist **Auf Wartestellung setzen** gesperrt, lassen Sie die Vorlage von einem Administrator prüfen. Bei übergebenen Anteilen benötigen Sie Ihre Planung. Unter [Zuletzt abgeschlossen](/de/platform-intro/pages/data-acquisition#recently-completed) finden Sie Einreihungsregeln und Anzeigegrenzen.
 
 ## Arbeit übernehmen, während des Laufs buchen und abschließen
 
-Für Pool-Arbeit muss **Aufträge aus dem Hallen-Pool übernehmen** erlaubt sein. Zum Hinzufügen oder Suchen ungeplanter Arbeit muss **Aufträge an der Maschine hinzufügen** erlaubt sein. Fehlt eine Aktion, bitten Sie einen Administrator, die Vorlage zu prüfen. Starten, Stoppen und Mengen buchen bleibt wie bisher verfügbar.
+Für Pool-Arbeit muss **Aufträge aus dem Hallen-Pool übernehmen** erlaubt sein. Zum Hinzufügen oder Suchen ungeplanter Arbeit muss **Aufträge an der Maschine hinzufügen** erlaubt sein. Bitten Sie einen Administrator, die Vorlage zu prüfen, wenn eine Aktion **Für diese Maschine gesperrt (BDE-Vorlage).** zeigt. Starten, Stoppen und Mengen buchen bleibt wie bisher verfügbar.
 
 1. Übernehmen Sie Arbeit aus dem **Pool** Ihrer Maschinenhalle. Suchen Sie bei Bedarf eine ungeplante Operation oder verwenden Sie **Find/Create Immediate Order**.
 2. Verwenden Sie **Prep / Vorber.** zur Vorbereitung, danach **Start** für Produktion. Prüfen Sie Hinweise zu anderen laufenden Aufträgen oder unfertigen Vorgängerschritten.
