@@ -6,6 +6,37 @@ toc: false
 
 ## Releases
 
+<Update label="2026-10-30" description="v1.5.144" tags={["feature", "improvement"]}>
+  {/* commits: cf0ccc7, d3aeca4, 53ca73d */}
+
+  **Release date:** October 30, 2026
+
+  ### New Features
+
+  #### [See Production Without an Order in the Report](/en/platform-intro/pages/report-versions#production-without-an-order)
+  {/* feature: report-v2-readability-unbooked */}
+
+  Version 2 now shows **Production without an order**: time a machine produced while no operation was booked on it. Stretches of at least 5 minutes count, using the same rule as **Improve intervals**. Open **Summary → Production without an order** for hours, the share of production and the change from the previous period. **Production without an order per machine** compares hours, biggest first. On each machine page, **Longest stretches without an order** lists up to five stretches to review.
+
+  For example, 2 hours without an operation booked out of 10 production hours gives a 20% share. The machine is marked orange in the chart and its **Without order (h)** value, and listed under **What needs attention**. These figures appear only if your company booked operations on its machines, for any order, in the report period or the 90 days before it. Work centers are excluded. Follow [review production without an order](/en/platform-intro/workflows/reports#review-unbooked-production).
+
+  #### [Review Work Centers Separately from Machines](/en/platform-intro/pages/report-versions#work-centers)
+  {/* feature: report-v2-readability-unbooked */}
+
+  Previously, work centers appeared with 0% OEE and availability. A work center has no sensor, so Version 2 now shows only the operations booked on it, with no OEE, availability, performance, machine states or cycles anywhere in the report. Open **Summary → Work centers**, after the machine table, and click a name to open its page. The page has a purple tab and the same work-center icon as on the platform. Booked hours are operation times, not machine time.
+
+  A work center with no operations still has a summary row saying **No operations booked in this period**. Its page says **No operations were booked on this work center in this period.** Follow [review work centers in a report](/en/platform-intro/workflows/reports#review-work-centers).
+
+  ### Improvements
+
+  #### [Read Report Tables More Easily](/en/platform-intro/pages/report-versions#readable-tables)
+  {/* feature: report-v2-readability-unbooked */}
+
+  Version 2 tables fit their columns to the contents without shrinking text. Headings wrap between words; numbers, dates and statuses stay complete. Long free text ends in “…” only when it cannot fit. **Orders** groups operations under a heading row per machine instead of a machine column. Click a heading to open its page. Work-center headings show the same work-center icon as on the platform. Narrow day charts use “Mon 19” instead of “Mon 19/10”.
+
+  When the main downtime reason would not fit in **Day by day**, the report first leaves out the daily wasted energy column, then the energy column. A note directs you to **All data** for those values. **All data** also fits its columns to the text.
+</Update>
+
 <Update label="2026-10-28" description="v1.5.140" tags={["feature", "improvement"]}>
   {/* commits: 979a812f, 146845ae, 9b81bb88, f97b8b11, 9af4f680, 7e814e74, 842bd22e, 9169335c, db4258db */}
 

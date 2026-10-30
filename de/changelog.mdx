@@ -6,6 +6,37 @@ toc: false
 
 ## Releases
 
+<Update label="2026-10-30" description="v1.5.144" tags={["Funktion", "Verbesserung"]}>
+  {/* commits: cf0ccc7, d3aeca4, 53ca73d */}
+
+  **Release-Datum:** 30. Oktober 2026
+
+  ### Neue Funktionen
+
+  #### [Produktion ohne Auftrag im Bericht sehen](/de/platform-intro/pages/report-versions#production-without-an-order)
+  {/* feature: report-v2-readability-unbooked */}
+
+  Version 2 zeigt jetzt **Produktion ohne Auftrag**: Zeit, in der eine Maschine produziert hat, ohne dass ein Arbeitsgang auf ihr gebucht war. Es zählen Abschnitte ab 5 Minuten nach derselben Regel wie bei **Intervalle verbessern**. Öffnen Sie **Übersicht → Produktion ohne Auftrag** für Stunden, den Anteil an der Produktion und die Änderung zum vorherigen Zeitraum. **Produktion ohne Auftrag je Maschine** vergleicht Stunden, größte zuerst. Auf jeder Maschinenseite zeigt **Längste Zeiten ohne Auftrag** bis zu fünf Abschnitte zur Prüfung.
+
+  Fehlt beispielsweise bei 2 von 10 Produktionsstunden eine Arbeitsgangbuchung, ergibt das einen Anteil von 20 %. Die Maschine wird im Diagramm und bei ihrem Wert **Ohne Auftrag (h)** orange markiert und unter **Worauf Sie achten sollten** aufgeführt. Diese Werte erscheinen nur, wenn Ihr Unternehmen im Berichtszeitraum oder in den 90 Tagen davor Arbeitsgänge gebucht hat. Der Auftrag spielt dabei keine Rolle. Arbeitsplätze bleiben ausgeschlossen. Folgen Sie [Produktion ohne Auftrag prüfen](/de/platform-intro/workflows/reports#review-unbooked-production).
+
+  #### [Arbeitsplätze getrennt von Maschinen prüfen](/de/platform-intro/pages/report-versions#work-centers)
+  {/* feature: report-v2-readability-unbooked */}
+
+  Bisher erschienen Arbeitsplätze mit 0 % OEE und Verfügbarkeit. Ein Arbeitsplatz hat keinen Sensor. Deshalb zeigt Version 2 jetzt ausschließlich die dort gebuchten Arbeitsgänge und im gesamten Bericht keine OEE, Verfügbarkeit, Leistung, Maschinenzustände oder Zyklen für ihn. Öffnen Sie **Übersicht → Arbeitsplätze** nach der Maschinentabelle und klicken Sie auf einen Namen, um seine Seite zu öffnen. Die Seite hat einen violetten Reiter und dasselbe Arbeitsplatz-Symbol wie auf der Plattform. Gebuchte Stunden sind Arbeitsgangzeiten, keine Maschinenzeit.
+
+  Auch ohne Arbeitsgänge hat ein Arbeitsplatz eine Übersichtszeile mit **Keine Arbeitsgänge in diesem Zeitraum gebucht**. Seine Seite zeigt **In diesem Zeitraum wurden auf diesem Arbeitsplatz keine Arbeitsgänge gebucht.** Folgen Sie [Arbeitsplätze im Bericht prüfen](/de/platform-intro/workflows/reports#review-work-centers).
+
+  ### Verbesserungen
+
+  #### [Berichtstabellen leichter lesen](/de/platform-intro/pages/report-versions#readable-tables)
+  {/* feature: report-v2-readability-unbooked */}
+
+  Tabellen der Version 2 passen ihre Spalten an den Inhalt an, ohne die Schrift zu verkleinern. Überschriften brechen zwischen Wörtern um. Zahlen, Datumsangaben und Status bleiben vollständig. Lange Freitexte enden nur dann mit „…“, wenn sie nicht hineinpassen. **Aufträge** gruppiert Arbeitsgänge unter einer Überschriftszeile je Maschine statt in einer Maschinenspalte. Klicken Sie auf eine Überschrift, um die Seite zu öffnen. Arbeitsplatzüberschriften zeigen dasselbe Arbeitsplatz-Symbol wie auf der Plattform. Schmale Tagesdiagramme nutzen „Mo 19.“ statt „Mo 19.10.“.
+
+  Wenn der wichtigste Stillstandsgrund unter **Tag für Tag** nicht hineinpassen würde, entfällt zuerst die Spalte für täglich verschwendete Energie, danach die Energiespalte. Ein Hinweis verweist für diese Werte auf **Alle Daten**. Auch **Alle Daten** passt die Spalten an den Text an.
+</Update>
+
 <Update label="2026-10-28" description="v1.5.140" tags={["Funktion", "Verbesserung"]}>
   {/* commits: 979a812f, 146845ae, 9b81bb88, f97b8b11, 9af4f680, 7e814e74, 842bd22e, 9169335c, db4258db */}
 

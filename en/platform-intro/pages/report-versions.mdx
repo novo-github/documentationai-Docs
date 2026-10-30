@@ -28,6 +28,12 @@ Follow [choose, download and update reports](/en/platform-intro/workflows/report
 
 ## What is in Version 2
 
+<a id="readable-tables" />
+
+### Readable Tables
+
+Columns fit their contents without shrinking text. Headings wrap between words. Numbers, dates and statuses stay complete; free text ends in “…” only when it cannot fit. Narrow day charts label days “Mon 19” instead of “Mon 19/10”. On **Up next**, long customer names can still end in “…”.
+
 ### Summary
 
 Start with **How to read this report:** at the top, then **What needs attention**. Up to 7 short findings each have an **Open →** link to the place to look. For example: “Lathe 3: OEE 70%, 6 pts below its target of 76%”. Findings draw attention to:
@@ -36,6 +42,7 @@ Start with **How to read this report:** at the top, then **What needs attention*
 - A shift clearly below another shift or clearly lower than in the previous period.
 - Operations expected to miss delivery, from **Up next** in report emails only.
 - Idle time up 10% or more from the previous period, or 20% or more of idle time without a reason.
+- A machine with at least 20% of its production time and at least 2 hours while no operation was booked on it. Both limits must be reached. See [production without an order](/en/platform-intro/pages/report-versions#production-without-an-order).
 - A day more than 5 points below the period's average OEE, or the machine with the most uneven cycle times.
 
 Grey findings then show the biggest downtime reason and the machine best against its target. The biggest-reason line is left out when almost no idle time has a reason.
@@ -46,11 +53,19 @@ Daily charts show OEE, availability and performance with a dashed average target
 
 The machine table has a **Target** column beside each figure. A ● marks machines clearly below a target. Click a machine name to open its page.
 
+When included, **Production without an order** appears immediately after the key-figure tiles. Its hint directs you to book these times under **Improve intervals**. The card shows hours, the share as **20 % of production time**, for example, and the change **vs. previous week**, **vs. previous month** or **vs. previous period**.
+
+**Production without an order per machine** shows hours per machine, biggest first. The title names the machine with the most hours, for example **Lathe 3 has the most hours without an order (6.5 h)**. With none, it says **Every production hour was booked to an order**. The machine table includes **Without order (h)**.
+
+A machine’s chart bar and **Without order (h)** value turn orange when at least 20% of its production time and at least 2 hours had no operation booked. It also gets a line under **What needs attention**, for example **Lathe 3: 6.5 h production without an order (31 % of its production)**, and under **In focus** on its own page. The summary card gets an orange stripe when the company total reaches both limits.
+
 ### Days
 
 Each grid shows one figure: OEE, availability, performance, production time in hours, idle time in hours or cycles. Machines are rows, days are columns, with a **Target** column and the period value at the end.
 
 ▲ means at or above the machine's target; ▼ means below. Orange means more than 5 points below target. Grey means no shift planned. Hours and cycles use shading: darker means more.
+
+When included, **Production without an order (h)** shows hours per machine and day. Darker means more hours nobody booked to an order.
 
 ### Shifts
 
@@ -70,11 +85,15 @@ For each machine, compare cycle counts, average, median, fastest and slowest cyc
 
 ### Orders
 
+Operations are grouped under a heading row per machine instead of a machine column. Click a heading to open that machine’s page. Work centers appear here too, with the same work-center icon as on the platform after their names.
+
 See the operations worked on in the period, per machine: order, customer, product, **Operation sequence** such as “#20”, and status in the platform's words, such as **Completed** or **Handed over**. The table includes production time, produced quantity, scrap, progress, minutes per piece against the plan, and delivery date. Red marks more than 10% slower than planned.
 
 **Operations per machine** and **Production time by order** show where work took place; the order chart shows the top ten. Operations handed over during the period count as completed but still show **Handed over**. Operation priority is on **Up next**, not this sheet.
 
 ### Up next
+
+Work-center names in the headings have the same work-center icon as on the platform after them.
 
 This sheet appears only in weekly and monthly report emails, never in exports. It shows the planner's forecast when the report was built, for the 7 days after the period.
 
@@ -88,15 +107,52 @@ Tiles compare OEE, availability and performance with the machine's targets, for 
 
 Three daily charts show OEE, availability and performance with dashed targets. Further charts show how time was used, idle time by reason and cycles per day. **By shift** compares this machine's shifts.
 
-In **Day by day**, each day is bold with its shifts below. Read energy, energy wasted and the main downtime reason alongside the day's figures. The closing rows are **Average, days with data** and **Average, Monday to Friday**. **Operations on this machine** follows the daily figures.
+In **Day by day**, each day is bold with its shifts below. Read energy, energy wasted and the main downtime reason alongside the day's figures. If the main downtime reason would not fit, the report first leaves out the daily wasted energy column, then the energy column. A note below the table directs you to **All data**: **Wasted energy per day is in the "All data" sheet.** or **Energy per day is in the "All data" sheet.** The closing rows are **Average, days with data** and **Average, Monday to Friday**. **Operations on this machine** follows the daily figures.
+
+When included, the **Production without an order** card shows hours and the share of production time. **Without order (h)** in **Day by day** appears on day rows only, not shift rows.
+
+After **Day by day**, **Longest stretches without an order** lists up to five stretches, longest first, with **Day**, **From – to** and **Without order (h)**. The hint says **Book these times to an order on the platform under "Improve intervals".** With no stretches, it says **Every production hour of this machine was booked to an order.**
+
+<a id="work-centers" />
+
+### Work Centers
+
+A work center has no sensor. The report shows only the operations booked on it, with no OEE, availability, performance, machine states or cycles for it anywhere. It is excluded from machine tiles, findings and the machine table in **Summary**, and from **Days**, **Shifts**, **Downtime**, **Cycles** and **All data**. Production without an order also excludes work centers.
+
+In **Summary**, **Work centers** follows the machine table. Its columns are **Work center**, **Operations**, **Completed**, **Orders**, **Booked production (h)**, **Preparation (h)**, **Produced** and **Scrap**. **Preparation (h)** appears only when there was preparation. Click a name to open its page. Booked hours are the booked operation times, not machine time.
+
+Each work-center page has a purple tab. Its subtitle shows work center, hall and period, separated by dots. A sentence explains why there is no OEE. The tiles show:
+
+- **Operations worked on**, with the completed count, such as **3 completed**.
+- **Orders worked on**.
+- **Booked production time**, with preparation hours when present, such as **Preparation 1 h**.
+- **Produced**, with **Scrap** when recorded.
+
+Then **Operations on this work center** lists the booked operations.
+
+A work center with no operations in the period still has a row in **Work centers** saying **No operations booked in this period**. Its page says **No operations were booked on this work center in this period.**
+
+The same work-center icon as on the platform appears after its name in the **Orders** and **Up next** headings, the **Work centers** section and the page title. **Notes** also shows the icon beside its explanation. See [Work Centers](/en/platform-intro/pages/work-centers).
 
 ### All data
 
-Use one filterable table with a row per machine, day and shift for your own filters and pivot tables.
+Use one filterable table with a row per machine, day and shift for your own filters and pivot tables. Columns fit their text. When included, **Without order (h)** appears on day rows only.
 
 ### Notes
 
-Read what each figure means and how averages are calculated. **Colours and symbols** explains the marks used throughout the workbook.
+Read what each figure means and how averages are calculated. **Colours and symbols** explains the marks used throughout the workbook. The **Production without an order** entry explains the term when it is included.
+
+<a id="production-without-an-order" />
+
+## Production Without an Order
+
+**Production without an order** is time a machine produced while no operation was booked on it. Version 2 counts stretches of at least 5 minutes, using the same rule as **Improve intervals**. The hours for a day never exceed that day’s production time.
+
+These figures appear only if your company booked operations on its machines, for any order, in the report period or the 90 days before it. Work centers are excluded. A missing section does not mean every production hour was booked.
+
+Use **Summary → Production without an order** to see the hours, share and change from the previous period. For example, 2 hours without an operation booked out of 10 production hours is 20%. The machine’s bar in **Production without an order per machine** and its **Without order (h)** value turn orange when both 20% and 2 hours are reached. It is also listed under **What needs attention** and **In focus**. The company card gets an orange stripe when its total reaches both limits.
+
+Open the machine’s page and review **Longest stretches without an order**. Check what was worked before correcting bookings. The hint directs you to **Improve intervals**. Its **Production without an order** notice is information only; it cannot create an interval. Follow [review production without an order](/en/platform-intro/workflows/reports#review-unbooked-production).
 
 <a id="colours-targets-and-averages" />
 

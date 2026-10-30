@@ -39,6 +39,18 @@ To collect sensor readings again, change **Kind** to **Machine**, save, then ass
 
 Administrators can also set **Downtime reasons** for a work center. Choose all company reasons or a fixed selection in its [machine configuration](/en/platform-intro/pages/machine-configuration). Without machine data, interval assistance cannot suggest times or check past intervals.
 
+## Work Centers in Version 2 Reports
+
+A work center has no sensor, so Version 2 shows only the operations booked on it. It has no OEE, availability, performance, machine states or cycles anywhere in the report. It is excluded from machine tiles, findings and the machine table in **Summary**, and from **Days**, **Shifts**, **Downtime**, **Cycles** and **All data**. Production without an order also excludes work centers.
+
+Open **Summary → Work centers**, after the machine table. Compare **Work center**, **Operations**, **Completed**, **Orders**, **Booked production (h)**, **Produced** and **Scrap**. **Preparation (h)** appears between booked production and produced quantities only when there was preparation. Click a name to open its page.
+
+The page has a purple tab and the same work-center icon as on the platform. Its subtitle shows work center, hall and period. A sentence explains the absence of OEE. Tiles show **Operations worked on** with the completed count, **Orders worked on**, **Booked production time** with preparation hours when present, and **Produced** with scrap when recorded. **Operations on this work center** follows. Booked hours are the booked operation times, not machine time.
+
+With no operations in the period, the summary row says **No operations booked in this period**. The page says **No operations were booked on this work center in this period.**
+
+The icon also follows the work-center name in **Orders**, **Up next**, the summary section and the page title; **Notes** explains it. See [Report Versions](/en/platform-intro/pages/report-versions#work-centers) and [review work centers in a report](/en/platform-intro/workflows/reports#review-work-centers).
+
 ## Limits
 
 Work centers have no live sensor state, OEE, performance, or availability. They are excluded from machine-state counters and sensor analytics, including Trend Analysis. An empty KPI display does not mean zero performance.

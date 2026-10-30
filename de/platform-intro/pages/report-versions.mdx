@@ -28,6 +28,12 @@ Folgen Sie [Berichte wählen, herunterladen und aktualisieren](/de/platform-intr
 
 ## Was Version 2 enthält
 
+<a id="readable-tables" />
+
+### Lesbare Tabellen
+
+Spalten passen sich ihrem Inhalt an, ohne die Schrift zu verkleinern. Überschriften brechen zwischen Wörtern um. Zahlen, Datumsangaben und Status bleiben vollständig. Freitext endet nur dann mit „…“, wenn er nicht hineinpassen kann. Schmale Tagesdiagramme beschriften Tage mit „Mo 19.“ statt „Mo 19.10.“. Unter **Als Nächstes** können lange Kundennamen weiterhin mit „…“ enden.
+
 ### Übersicht
 
 Beginnen Sie oben mit **So lesen Sie diesen Bericht:** und anschließend **Worauf Sie achten sollten**. Bis zu 7 kurze Hinweise haben jeweils einen **Öffnen →**-Link zur Stelle, die Sie prüfen können. Ein Beispiel: „Drehmaschine 3: OEE 70 %, 6 Pkt. unter dem Ziel von 76 %“. Die Hinweise zeigen:
@@ -36,6 +42,7 @@ Beginnen Sie oben mit **So lesen Sie diesen Bericht:** und anschließend **Worau
 - Eine Schicht deutlich unter einer anderen Schicht oder deutlich unter ihrem Wert im vorherigen Zeitraum.
 - Arbeitsgänge mit erwarteter Lieferverzögerung, aus **Als Nächstes** und nur in Bericht-E-Mails.
 - Mindestens 10 % mehr Leerlaufzeit als im vorherigen Zeitraum oder mindestens 20 % der Leerlaufzeit ohne Grund.
+- Eine Maschine mit mindestens 20 % ihrer Produktionszeit und mindestens 2 Stunden, in denen kein Arbeitsgang auf ihr gebucht war. Beide Grenzen müssen erreicht sein. Siehe [Produktion ohne Auftrag](/de/platform-intro/pages/report-versions#production-without-an-order).
 - Einen Tag mehr als 5 Punkte unter der durchschnittlichen OEE des Zeitraums oder die Maschine mit den ungleichmäßigsten Zykluszeiten.
 
 Danach zeigen graue Hinweise den größten Stillstandsgrund und die Maschine mit dem besten Ergebnis gegenüber ihrem Ziel. Die Zeile zum größten Grund entfällt, wenn fast keine Leerlaufzeit einen Grund hat.
@@ -46,11 +53,19 @@ Die Diagramme **OEE je Tag**, **Verfügbarkeit je Tag** und **Leistung je Tag** 
 
 In der Maschinentabelle steht neben jeder Kennzahl die Spalte **Ziel**. Ein ● markiert Maschinen deutlich unter einem Ziel. Klicken Sie auf einen Maschinennamen, um dessen Seite zu öffnen.
 
+Wenn enthalten, erscheint **Produktion ohne Auftrag** direkt nach den Kennzahlenkacheln. Der Hinweis fordert Sie auf, diese Zeiten unter **Intervalle verbessern** zuzuordnen. Die Karte zeigt Stunden, den Anteil beispielsweise als **20 % der Produktionszeit** und die Änderung **ggü. Vorwoche**, **ggü. Vormonat** oder **ggü. Vorzeitraum**.
+
+**Produktion ohne Auftrag je Maschine** zeigt Stunden je Maschine, größte zuerst. Der Titel nennt die Maschine mit den meisten Stunden, etwa **Drehmaschine 3 hat die meisten Stunden ohne Auftrag (6,5 h)**. Gibt es keine, steht dort **Jede Produktionsstunde war einem Auftrag zugeordnet**. Die Maschinentabelle enthält **Ohne Auftrag (h)**.
+
+Der Diagrammbalken einer Maschine und ihr Wert **Ohne Auftrag (h)** werden orange, wenn bei mindestens 20 % ihrer Produktionszeit und mindestens 2 Stunden kein Arbeitsgang gebucht war. Sie erhält außerdem eine Zeile unter **Worauf Sie achten sollten**, etwa **Drehmaschine 3: 6,5 h Produktion ohne Auftrag (31 % der Produktionszeit)**, sowie unter **Im Fokus** auf ihrer eigenen Seite. Die Übersichtskarte erhält einen orangefarbenen Streifen, wenn die Unternehmenssumme beide Grenzen erreicht.
+
 ### Tage
 
 Jedes Raster zeigt eine Kennzahl: OEE, Verfügbarkeit, Leistung, Produktionszeit in Stunden, Leerlaufzeit in Stunden oder Zyklen. Maschinen stehen in den Zeilen, Tage in den Spalten. Dazu kommen die Spalte **Ziel** und am Ende der Wert für den Zeitraum.
 
 ▲ bedeutet am oder über dem Maschinenziel; ▼ bedeutet darunter. Orange bedeutet mehr als 5 Punkte unter dem Ziel. Grau bedeutet keine geplante Schicht. Stunden und Zyklen sind abgestuft eingefärbt: dunkler bedeutet mehr.
+
+Wenn enthalten, zeigt **Produktion ohne Auftrag (h)** Stunden je Maschine und Tag. Dunkler heißt mehr Stunden, die keinem Auftrag zugeordnet sind.
 
 ### Schichten
 
@@ -70,11 +85,15 @@ Vergleichen Sie je Maschine die Zyklusanzahl, durchschnittliche, mittlere (Media
 
 ### Aufträge
 
+Arbeitsgänge sind unter einer Überschriftszeile je Maschine statt in einer Maschinenspalte gruppiert. Klicken Sie auf eine Überschrift, um die Seite der Maschine zu öffnen. Auch Arbeitsplätze erscheinen hier. Nach ihrem Namen steht dasselbe Arbeitsplatz-Symbol wie auf der Plattform.
+
 Sehen Sie die im Zeitraum bearbeiteten Arbeitsgänge je Maschine: Auftrag, Kunde, **Artikel**, **Operationsfolge** wie „#20“ und den Status mit den Bezeichnungen der Plattform, etwa **Abgeschlossen** oder **Übergeben**. Die Tabelle enthält Produktionszeit, produzierte Menge, Ausschuss, Fortschritt, Minuten je Stück im Vergleich zum Plan und Liefertermin. Rot bedeutet mehr als 10 % langsamer als geplant.
 
 **Arbeitsgänge je Maschine** und **Produktionszeit nach Auftrag** zeigen, wo gearbeitet wurde. Das Auftragsdiagramm zeigt die zehn größten. Im Zeitraum übergebene Arbeitsgänge zählen als abgeschlossen, zeigen aber weiterhin **Übergeben**. Die Arbeitsgangpriorität steht unter **Als Nächstes**, nicht auf diesem Blatt.
 
 ### Als Nächstes
+
+Nach Arbeitsplatznamen in den Überschriften steht dasselbe Arbeitsplatz-Symbol wie auf der Plattform.
 
 Dieses Blatt erscheint nur in wöchentlichen und monatlichen Bericht-E-Mails, nie in Exporten. Es zeigt die Prognose der Planung bei der Berichtserstellung für die 7 Tage nach dem Zeitraum.
 
@@ -88,15 +107,52 @@ Kacheln vergleichen OEE, Verfügbarkeit und Leistung mit den Maschinenzielen, be
 
 Drei Tagesdiagramme zeigen OEE, Verfügbarkeit und Leistung mit gestrichelten Zielen. Weitere Diagramme zeigen die Zeitverteilung, Leerlaufzeit nach Grund und Zyklen je Tag. **Nach Schicht** vergleicht die Schichten dieser Maschine.
 
-Unter **Tag für Tag** steht jeder Tag fett mit seinen Schichten darunter. Neben den Tageswerten finden Sie Energie, verschwendete Energie und den wichtigsten Stillstandsgrund. Die beiden Abschlusszeilen heißen **Durchschnitt, Tage mit Daten** und **Durchschnitt, Montag bis Freitag**. Danach folgt **Arbeitsgänge auf dieser Maschine**.
+Unter **Tag für Tag** steht jeder Tag fett mit seinen Schichten darunter. Neben den Tageswerten finden Sie Energie, verschwendete Energie und den wichtigsten Stillstandsgrund. Wenn der wichtigste Stillstandsgrund nicht hineinpassen würde, entfällt zuerst die Spalte für täglich verschwendete Energie, danach die Energiespalte. Ein Hinweis unter der Tabelle verweist auf **Alle Daten**: **Verschwendete Energie je Tag steht im Blatt „Alle Daten“.** oder **Energie je Tag steht im Blatt „Alle Daten“.** Die beiden Abschlusszeilen heißen **Durchschnitt, Tage mit Daten** und **Durchschnitt, Montag bis Freitag**. Danach folgt **Arbeitsgänge auf dieser Maschine**.
+
+Wenn enthalten, zeigt die Karte **Produktion ohne Auftrag** Stunden und den Anteil an der Produktionszeit. **Ohne Auftrag (h)** unter **Tag für Tag** steht nur in Tageszeilen, nicht in Schichtzeilen.
+
+Nach **Tag für Tag** listet **Längste Zeiten ohne Auftrag** bis zu fünf Abschnitte, längste zuerst, mit **Tag**, **Von – bis** und **Ohne Auftrag (h)**. Der Hinweis lautet **Ordnen Sie diese Zeiten auf der Plattform unter „Intervalle verbessern“ einem Auftrag zu.** Ohne solche Abschnitte steht dort **Jede Produktionsstunde dieser Maschine war einem Auftrag zugeordnet.**
+
+<a id="work-centers" />
+
+### Arbeitsplätze
+
+Ein Arbeitsplatz hat keinen Sensor. Der Bericht zeigt ausschließlich die dort gebuchten Arbeitsgänge und im gesamten Bericht keine OEE, Verfügbarkeit, Leistung, Maschinenzustände oder Zyklen für ihn. Er bleibt aus Maschinenkacheln, Hinweisen und der Maschinentabelle in der **Übersicht** sowie aus **Tage**, **Schichten**, **Stillstände**, **Zyklen** und **Alle Daten** ausgeschlossen. Auch Produktion ohne Auftrag schließt Arbeitsplätze aus.
+
+In der **Übersicht** folgt **Arbeitsplätze** auf die Maschinentabelle. Die Spalten heißen **Arbeitsplatz**, **Arbeitsgänge**, **Abgeschlossen**, **Aufträge**, **Gebuchte Produktion (h)**, **Vorbereitung (h)**, **Gefertigt** und **Ausschuss**. **Vorbereitung (h)** erscheint nur, wenn es Vorbereitung gab. Klicken Sie auf einen Namen, um seine Seite zu öffnen. Gebuchte Stunden sind die gebuchten Arbeitsgangzeiten, keine Maschinenzeit.
+
+Jede Arbeitsplatzseite hat einen violetten Reiter. Ihr Untertitel zeigt Arbeitsplatz, Halle und Zeitraum, getrennt durch Punkte. Ein Satz erklärt, warum es keine OEE gibt. Die Kacheln zeigen:
+
+- **Bearbeitete Arbeitsgänge**, mit der Anzahl abgeschlossener Arbeitsgänge, etwa **3 abgeschlossen**.
+- **Bearbeitete Aufträge**.
+- **Gebuchte Produktionszeit**, gegebenenfalls mit Vorbereitungsstunden, etwa **Vorbereitung 1 h**.
+- **Gefertigt**, mit **Ausschuss**, sofern erfasst.
+
+Danach listet **Arbeitsgänge auf diesem Arbeitsplatz** die gebuchten Arbeitsgänge.
+
+Ein Arbeitsplatz ohne Arbeitsgänge im Zeitraum hat weiterhin eine Zeile unter **Arbeitsplätze** mit **Keine Arbeitsgänge in diesem Zeitraum gebucht**. Seine Seite zeigt **In diesem Zeitraum wurden auf diesem Arbeitsplatz keine Arbeitsgänge gebucht.**
+
+Dasselbe Arbeitsplatz-Symbol wie auf der Plattform steht nach seinem Namen in den Überschriften unter **Aufträge** und **Als Nächstes**, im Abschnitt **Arbeitsplätze** und im Seitentitel. **Hinweise** zeigt das Symbol ebenfalls neben seiner Erklärung. Siehe [Arbeitsplätze](/de/platform-intro/pages/work-centers).
 
 ### Alle Daten
 
-Nutzen Sie eine filterbare Tabelle mit einer Zeile je Maschine, Tag und Schicht für eigene Filter und Pivot-Tabellen.
+Nutzen Sie eine filterbare Tabelle mit einer Zeile je Maschine, Tag und Schicht für eigene Filter und Pivot-Tabellen. Die Spalten passen sich ihrem Text an. Wenn enthalten, steht **Ohne Auftrag (h)** nur in Tageszeilen.
 
 ### Hinweise
 
-Lesen Sie, was die Kennzahlen bedeuten und wie Durchschnittswerte berechnet werden. **Farben und Symbole** erklärt die Zeichen der Arbeitsmappe.
+Lesen Sie, was die Kennzahlen bedeuten und wie Durchschnittswerte berechnet werden. **Farben und Symbole** erklärt die Zeichen der Arbeitsmappe. Der Eintrag **Produktion ohne Auftrag** erklärt den Begriff, wenn er enthalten ist.
+
+<a id="production-without-an-order" />
+
+## Produktion ohne Auftrag
+
+**Produktion ohne Auftrag** ist Zeit, in der eine Maschine produziert hat, ohne dass ein Arbeitsgang auf ihr gebucht war. Version 2 zählt Abschnitte ab 5 Minuten nach derselben Regel wie **Intervalle verbessern**. Die Stunden eines Tages übersteigen nie dessen Produktionszeit.
+
+Diese Werte erscheinen nur, wenn Ihr Unternehmen im Berichtszeitraum oder in den 90 Tagen davor Arbeitsgänge gebucht hat. Der Auftrag spielt dabei keine Rolle. Arbeitsplätze bleiben ausgeschlossen. Ein fehlender Abschnitt bedeutet nicht, dass jede Produktionsstunde gebucht war.
+
+Unter **Übersicht → Produktion ohne Auftrag** sehen Sie Stunden, Anteil und Änderung zum vorherigen Zeitraum. Fehlt beispielsweise bei 2 von 10 Produktionsstunden eine Arbeitsgangbuchung, ergibt das 20 %. Der Maschinenbalken in **Produktion ohne Auftrag je Maschine** und der Wert **Ohne Auftrag (h)** werden orange, wenn sowohl 20 % als auch 2 Stunden erreicht sind. Die Maschine wird außerdem unter **Worauf Sie achten sollten** und **Im Fokus** aufgeführt. Die Unternehmenskarte erhält einen orangefarbenen Streifen, wenn ihre Summe beide Grenzen erreicht.
+
+Öffnen Sie die Maschinenseite und prüfen Sie **Längste Zeiten ohne Auftrag**. Klären Sie vor einer Buchungskorrektur, welche Arbeit stattgefunden hat. Der Hinweis verweist auf **Intervalle verbessern**. Dessen Hinweis **Produktion ohne Auftrag** ist nur eine Information und legt kein Intervall an. Folgen Sie [Produktion ohne Auftrag prüfen](/de/platform-intro/workflows/reports#review-unbooked-production).
 
 <a id="farben-ziele-und-durchschnittswerte" />
 

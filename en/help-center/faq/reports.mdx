@@ -21,6 +21,11 @@ description: "Find reports, understand their status, and update them after produ
 | Why are there two reports for the same period in the archive? | [Answer](/en/help-center/faq/reports#archive-versions) |
 | Why do some averages differ from the old overview? | [Answer](/en/help-center/faq/reports#figures) |
 | Why are cycles, shifts or orders missing from my report? | [Answer](/en/help-center/faq/reports#missing-sections) |
+| What does production without an order mean? | [Answer](/en/help-center/faq/reports#unbooked-meaning) |
+| Why can’t I see production without an order in my report? | [Answer](/en/help-center/faq/reports#unbooked-missing) |
+| How do I check which order bookings are missing? | [Answer](/en/help-center/faq/reports#unbooked-review) |
+| Why does a work center have no OEE in the report? | [Answer](/en/help-center/faq/reports#work-centers) |
+| Why are energy columns missing from Day by day? | [Answer](/en/help-center/faq/reports#daily-energy) |
 
 <a id="find-report" />
 
@@ -119,3 +124,37 @@ Version 2 averages only days with planned time and data, then gives each machine
 ## Why are cycles, shifts or orders missing from my report?
 
 Version 2 includes sections when the relevant records exist. Without cycles, it omits cycle figures and explains why. Without work on orders, there is no orders sheet. Without shifts, it omits the shift overview with a note. See [report limits](/en/platform-intro/pages/report-versions#limits).
+
+<a id="unbooked-meaning" />
+
+## What does production without an order mean?
+
+**Production without an order** is time a machine produced while no operation was booked on it. Version 2 counts stretches of at least 5 minutes, using the same rule as **Improve intervals**. A day’s hours never exceed its production time. A machine’s chart bar and **Without order (h)** value turn orange at both 20% of its production time and 2 hours; it is also listed under **What needs attention** and **In focus**. See [production without an order](/en/platform-intro/pages/report-versions#production-without-an-order).
+
+<a id="unbooked-missing" />
+
+## Why can’t I see production without an order in my report?
+
+These figures appear only in Version 2 and only if your company booked operations on its machines, for any order, in the report period or the 90 days before it. Work centers are never included. A missing section does not mean every production hour was booked. See [production without an order](/en/platform-intro/pages/report-versions#production-without-an-order).
+
+<a id="unbooked-review" />
+
+## How do I check which order bookings are missing?
+
+Open the machine’s page in a Version 2 report and read **Longest stretches without an order** after **Day by day**. It lists up to five stretches, longest first. Check which work took place. With machine access, you can use **Improve intervals** on a day with recorded intervals to compare times with machine activity. Its **Production without an order** notice cannot create an interval. Follow [review production without an order](/en/platform-intro/workflows/reports#review-unbooked-production).
+
+<a id="work-centers" />
+
+## Why does a work center have no OEE in the report?
+
+A work center has no sensor, so Version 2 shows only the operations booked on it. It has no OEE, availability, performance, machine states or cycles anywhere in the report. It is also excluded from production without an order.
+
+Open **Summary → Work centers**, after the machine table, for operations, completed operations, orders, booked production hours, preparation hours when present, produced quantities and scrap. Click a name to open its page with a purple tab and the same work-center icon as on the platform. Read **Operations worked on**, **Orders worked on**, **Booked production time**, **Produced** and **Operations on this work center**. Booked hours are operation times, not machine time.
+
+With no operations, the summary row says **No operations booked in this period**. The page says **No operations were booked on this work center in this period.** Follow [review work centers in a report](/en/platform-intro/workflows/reports#review-work-centers).
+
+<a id="daily-energy" />
+
+## Why are energy columns missing from Day by day?
+
+The values are in **All data**. When the main downtime reason would not fit in **Day by day**, Version 2 first leaves out the daily wasted energy column, then the energy column. A note below the table says **Wasted energy per day is in the "All data" sheet.** or **Energy per day is in the "All data" sheet.** See [Report Versions](/en/platform-intro/pages/report-versions#readable-tables).

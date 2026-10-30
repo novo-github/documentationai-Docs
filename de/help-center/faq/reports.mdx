@@ -21,6 +21,11 @@ description: "Finden Sie Berichte, verstehen Sie ihren Status und aktualisieren 
 | Warum enthält das Archiv zwei Berichte für denselben Zeitraum? | [Antwort](/de/help-center/faq/reports#archive-versions) |
 | Warum weichen manche Durchschnittswerte von der alten Übersicht ab? | [Antwort](/de/help-center/faq/reports#figures) |
 | Warum fehlen Zyklen, Schichten oder Aufträge in meinem Bericht? | [Antwort](/de/help-center/faq/reports#missing-sections) |
+| Was bedeutet Produktion ohne Auftrag? | [Antwort](/de/help-center/faq/reports#unbooked-meaning) |
+| Warum sehe ich Produktion ohne Auftrag nicht in meinem Bericht? | [Antwort](/de/help-center/faq/reports#unbooked-missing) |
+| Wie prüfe ich, welche Auftragsbuchungen fehlen? | [Antwort](/de/help-center/faq/reports#unbooked-review) |
+| Warum hat ein Arbeitsplatz im Bericht keine OEE? | [Antwort](/de/help-center/faq/reports#work-centers) |
+| Warum fehlen Energiespalten unter Tag für Tag? | [Antwort](/de/help-center/faq/reports#daily-energy) |
 
 <a id="find-report" />
 
@@ -119,3 +124,37 @@ Version 2 berücksichtigt nur Tage mit geplanter Zeit und Daten. Im Unternehmens
 ## Warum fehlen Zyklen, Schichten oder Aufträge in meinem Bericht?
 
 Version 2 enthält Abschnitte, wenn die entsprechenden Aufzeichnungen vorhanden sind. Ohne Zyklen entfallen Zykluswerte; der Bericht erklärt dies. Ohne bearbeitete Aufträge gibt es kein Auftragsblatt. Ohne Schichten entfällt die Schichtübersicht mit einem Hinweis. Siehe [Berichtsgrenzen](/de/platform-intro/pages/report-versions#grenzen).
+
+<a id="unbooked-meaning" />
+
+## Was bedeutet Produktion ohne Auftrag?
+
+**Produktion ohne Auftrag** ist Zeit, in der eine Maschine produziert hat, ohne dass ein Arbeitsgang auf ihr gebucht war. Version 2 zählt Abschnitte ab 5 Minuten nach derselben Regel wie **Intervalle verbessern**. Die Stunden eines Tages übersteigen nie dessen Produktionszeit. Der Maschinenbalken und der Wert **Ohne Auftrag (h)** werden orange, wenn sowohl 20 % der Produktionszeit als auch 2 Stunden erreicht sind. Die Maschine wird außerdem unter **Worauf Sie achten sollten** und **Im Fokus** aufgeführt. Siehe [Produktion ohne Auftrag](/de/platform-intro/pages/report-versions#production-without-an-order).
+
+<a id="unbooked-missing" />
+
+## Warum sehe ich Produktion ohne Auftrag nicht in meinem Bericht?
+
+Diese Werte erscheinen nur in Version 2 und nur, wenn Ihr Unternehmen im Berichtszeitraum oder in den 90 Tagen davor Arbeitsgänge gebucht hat. Der Auftrag spielt dabei keine Rolle. Arbeitsplätze sind nie enthalten. Ein fehlender Abschnitt bedeutet nicht, dass jede Produktionsstunde gebucht war. Siehe [Produktion ohne Auftrag](/de/platform-intro/pages/report-versions#production-without-an-order).
+
+<a id="unbooked-review" />
+
+## Wie prüfe ich, welche Auftragsbuchungen fehlen?
+
+Öffnen Sie die Maschinenseite in einem Bericht der Version 2 und lesen Sie **Längste Zeiten ohne Auftrag** nach **Tag für Tag**. Die Tabelle zeigt bis zu fünf Abschnitte, längste zuerst. Klären Sie, welche Arbeit stattgefunden hat. Mit Maschinenzugriff können Sie an einem Tag mit erfassten Intervallen über **Intervalle verbessern** Zeiten mit Maschinenaktivität vergleichen. Der Hinweis **Produktion ohne Auftrag** legt kein Intervall an. Folgen Sie [Produktion ohne Auftrag prüfen](/de/platform-intro/workflows/reports#review-unbooked-production).
+
+<a id="work-centers" />
+
+## Warum hat ein Arbeitsplatz im Bericht keine OEE?
+
+Ein Arbeitsplatz hat keinen Sensor. Deshalb zeigt Version 2 ausschließlich die dort gebuchten Arbeitsgänge. Im gesamten Bericht hat er keine OEE, Verfügbarkeit, Leistung, Maschinenzustände oder Zyklen. Auch Produktion ohne Auftrag schließt ihn aus.
+
+Öffnen Sie **Übersicht → Arbeitsplätze** nach der Maschinentabelle für Arbeitsgänge, abgeschlossene Arbeitsgänge, Aufträge, gebuchte Produktionsstunden, gegebenenfalls Vorbereitungsstunden, gefertigte Mengen und Ausschuss. Klicken Sie auf einen Namen, um seine Seite mit violettem Reiter und demselben Arbeitsplatz-Symbol wie auf der Plattform zu öffnen. Lesen Sie **Bearbeitete Arbeitsgänge**, **Bearbeitete Aufträge**, **Gebuchte Produktionszeit**, **Gefertigt** und **Arbeitsgänge auf diesem Arbeitsplatz**. Gebuchte Stunden sind Arbeitsgangzeiten, keine Maschinenzeit.
+
+Ohne Arbeitsgänge zeigt die Übersichtszeile **Keine Arbeitsgänge in diesem Zeitraum gebucht**. Die Seite zeigt **In diesem Zeitraum wurden auf diesem Arbeitsplatz keine Arbeitsgänge gebucht.** Folgen Sie [Arbeitsplätze im Bericht prüfen](/de/platform-intro/workflows/reports#review-work-centers).
+
+<a id="daily-energy" />
+
+## Warum fehlen Energiespalten unter Tag für Tag?
+
+Die Werte stehen unter **Alle Daten**. Wenn der wichtigste Stillstandsgrund unter **Tag für Tag** nicht hineinpassen würde, entfällt in Version 2 zuerst die Spalte für täglich verschwendete Energie, danach die Energiespalte. Ein Hinweis unter der Tabelle lautet **Verschwendete Energie je Tag steht im Blatt „Alle Daten“.** oder **Energie je Tag steht im Blatt „Alle Daten“.** Siehe [Berichtsversionen](/de/platform-intro/pages/report-versions#readable-tables).
