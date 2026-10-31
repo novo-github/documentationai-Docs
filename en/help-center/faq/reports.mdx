@@ -23,9 +23,13 @@ description: "Find reports, understand their status, and update them after produ
 | Why are cycles, shifts or orders missing from my report? | [Answer](/en/help-center/faq/reports#missing-sections) |
 | What does production without an order mean? | [Answer](/en/help-center/faq/reports#unbooked-meaning) |
 | Why can’t I see production without an order in my report? | [Answer](/en/help-center/faq/reports#unbooked-missing) |
-| How do I check which order bookings are missing? | [Answer](/en/help-center/faq/reports#unbooked-review) |
+| How do I check which production has no interval? | [Answer](/en/help-center/faq/reports#unbooked-review) |
 | Why does a work center have no OEE in the report? | [Answer](/en/help-center/faq/reports#work-centers) |
 | Why are energy columns missing from Day by day? | [Answer](/en/help-center/faq/reports#daily-energy) |
+| Why does my report say “Get more out of this report with the PDA page”? | [Answer](/en/help-center/faq/reports#pda-use) |
+| Why are my test orders missing from the report? | [Answer](/en/help-center/faq/reports#test-orders) |
+| Can I add an interval for production that has already happened? | [Answer](/en/help-center/faq/reports#past-interval) |
+| Why is the main downtime reason missing from the summary table? | [Answer](/en/help-center/faq/reports#summary-reason) |
 
 <a id="find-report" />
 
@@ -123,38 +127,62 @@ Version 2 averages only days with planned time and data, then gives each machine
 
 ## Why are cycles, shifts or orders missing from my report?
 
-Version 2 includes sections when the relevant records exist. Without cycles, it omits cycle figures and explains why. Without work on orders, there is no orders sheet. Without shifts, it omits the shift overview with a note. See [report limits](/en/platform-intro/pages/report-versions#limits).
+Version 2 includes sections when the relevant records exist. Without cycles, it omits cycle figures and explains why. With fewer than 5 intervals of real operations in the period, excluding test orders, there is no orders sheet or order figures. Without shifts, it omits the shift overview with a note. See [report limits](/en/platform-intro/pages/report-versions#limits).
 
 <a id="unbooked-meaning" />
 
 ## What does production without an order mean?
 
-**Production without an order** is time a machine produced while no operation was booked on it. Version 2 counts stretches of at least 5 minutes, using the same rule as **Improve intervals**. A day’s hours never exceed its production time. A machine’s chart bar and **Without order (h)** value turn orange at both 20% of its production time and 2 hours; it is also listed under **What needs attention** and **In focus**. See [production without an order](/en/platform-intro/pages/report-versions#production-without-an-order).
+**Production without an order** is production time during which no interval of an operation was running on the machine. Version 2 counts stretches of at least 5 minutes, using the same rule as **Improve intervals**. A day’s hours never exceed its production time. A machine’s chart bar and **Without order (h)** value turn orange at both 20% of its production time and 2 hours; it is also listed under **What needs attention** and **In focus**. See [production without an order](/en/platform-intro/pages/report-versions#production-without-an-order).
 
 <a id="unbooked-missing" />
 
 ## Why can’t I see production without an order in my report?
 
-These figures appear only in Version 2 and only if your company booked operations on its machines, for any order, in the report period or the 90 days before it. Work centers are never included. A missing section does not mean every production hour was booked. See [production without an order](/en/platform-intro/pages/report-versions#production-without-an-order).
+These figures appear only in Version 2 and only if your company recorded at least 5 intervals of real operations in the report period, excluding test orders. Below that minimum, **Get more out of this report with the PDA page** on the first page explains the limited PDA use. Work centers are never included. A missing section does not mean every production hour was covered by an interval. See [production without an order](/en/platform-intro/pages/report-versions#production-without-an-order).
 
 <a id="unbooked-review" />
 
-## How do I check which order bookings are missing?
+## How do I check which production has no interval?
 
-Open the machine’s page in a Version 2 report and read **Longest stretches without an order** after **Day by day**. It lists up to five stretches, longest first. Check which work took place. With machine access, you can use **Improve intervals** on a day with recorded intervals to compare times with machine activity. Its **Production without an order** notice cannot create an interval. Follow [review production without an order](/en/platform-intro/workflows/reports#review-unbooked-production).
+Open the machine’s page in a Version 2 report and read **Longest stretches without an order** after **Day by day**. It lists up to five stretches, longest first. Check which work took place. With machine access, you can use **Improve intervals** on a day with recorded intervals to compare times with machine activity. You cannot yet add a new interval for a past time. If the time belongs to an operation immediately before or after it, you can extend that operation’s existing interval. Follow [review production without an order](/en/platform-intro/workflows/reports#review-unbooked-production).
 
 <a id="work-centers" />
 
 ## Why does a work center have no OEE in the report?
 
-A work center has no sensor, so Version 2 shows only the operations booked on it. It has no OEE, availability, performance, machine states or cycles anywhere in the report. It is also excluded from production without an order.
+A work center has no sensor, so Version 2 shows only its operations, from their intervals. It has no OEE, availability, performance, machine states or cycles anywhere in the report. It is also excluded from production without an order.
 
-Open **Summary → Work centers**, after the machine table, for operations, completed operations, orders, booked production hours, preparation hours when present, produced quantities and scrap. Click a name to open its page with a purple tab and the same work-center icon as on the platform. Read **Operations worked on**, **Orders worked on**, **Booked production time**, **Produced** and **Operations on this work center**. Booked hours are operation times, not machine time.
+Open **Summary → Work centers**, after the machine table, for operations, completed operations, orders, **Production in intervals (h)**, preparation hours when present, produced quantities and scrap. Click a name to open its page with a purple tab and the same work-center icon as on the platform. Read **Operations worked on**, **Orders worked on**, **Production time in intervals**, **Produced** and **Operations on this work center**. These hours come from operation intervals, not sensor measurements.
 
-With no operations, the summary row says **No operations booked in this period**. The page says **No operations were booked on this work center in this period.** Follow [review work centers in a report](/en/platform-intro/workflows/reports#review-work-centers).
+Below the report’s five-interval minimum, the **Summary → Work centers** row and the work center’s page show **PDA page barely used in this period**. Once the minimum is met, a work center without operations shows **No operation intervals in this period** in the row and **This work center has no operation intervals in this period.** on its page. Follow [review work centers in a report](/en/platform-intro/workflows/reports#review-work-centers).
 
 <a id="daily-energy" />
 
 ## Why are energy columns missing from Day by day?
 
 The values are in **All data**. When the main downtime reason would not fit in **Day by day**, Version 2 first leaves out the daily wasted energy column, then the energy column. A note below the table says **Wasted energy per day is in the "All data" sheet.** or **Energy per day is in the "All data" sheet.** See [Report Versions](/en/platform-intro/pages/report-versions#readable-tables).
+
+<a id="pda-use" />
+
+## Why does my report say “Get more out of this report with the PDA page”?
+
+Version 2 needs at least 5 intervals of real operations in the report period to show order figures and production without an order. Test orders and earlier periods do not count. With fewer intervals, including none, **Get more out of this report with the PDA page** on the first page explains what is missing. Start and stop your actual work on the PDA page to record it. **Up next** can still appear in email reports. Follow [check missing order figures](/en/platform-intro/workflows/reports#check-order-figures).
+
+<a id="test-orders" />
+
+## Why are my test orders missing from the report?
+
+Version 2 excludes test orders from all order lists and counts, including **Up next** and the five-interval minimum. It recognises “test” in the order, customer or product name, such as “TEST-01” or “Testauftrag”; names such as “Contest” or “Testo” remain included. Test-order intervals still cover machine time, so they do not create extra production without an order. See [test orders](/en/platform-intro/pages/report-versions#test-orders).
+
+<a id="past-interval" />
+
+## Can I add an interval for production that has already happened?
+
+You cannot yet add a new interval for a past time. **Improve intervals** lists production without an order for review. If the time belongs to an operation immediately before or after it, you can extend that operation’s existing interval by adjusting its start or end. Check what actually happened first. Follow [review production without an order](/en/platform-intro/workflows/reports#review-unbooked-production).
+
+<a id="summary-reason" />
+
+## Why is the main downtime reason missing from the summary table?
+
+Version 2 gives machine names more room in **Summary**. If the main downtime reason column still cannot fit, it is left out with the note **The main downtime reason of each machine is on its own page and in the "Downtime" sheet.** Very long machine names can still end in “…”. See [readable report tables](/en/platform-intro/pages/report-versions#readable-tables).

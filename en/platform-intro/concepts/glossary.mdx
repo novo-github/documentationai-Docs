@@ -1060,9 +1060,15 @@ Production, distinct from the PRO abbreviation for Performance.
 
 [Learn more](/en/platform-intro/pages/machines).
 
+### Production time in intervals
+
+**Production time in intervals** is the production time recorded in a work center’s operation intervals. It is not a sensor measurement. Preparation hours are shown separately when present.
+
+[Learn more](/en/platform-intro/pages/report-versions#work-centers).
+
 ### Production without an order
 
-**Production without an order** is time a machine produced while no operation was booked on it. Version 2 counts stretches of at least 5 minutes, using the same rule as **Improve intervals**, capped at each day’s production time. It appears only if the company booked operations on its machines, for any order, in the report period or the 90 days before it. Work centers are excluded; a missing section does not mean every production hour was booked.
+**Production without an order** is production time during which no interval of an operation was running on the machine. Version 2 counts stretches of at least 5 minutes, using the same rule as **Improve intervals**, capped at each day’s production time. It appears only if the company recorded at least 5 intervals of real operations in the report period, excluding test orders. Work centers are excluded; a missing section does not mean every production hour was covered by an interval. Test-order intervals still cover machine time even though the orders are excluded from report lists and counts.
 
 A machine’s chart bar and **Without order (h)** value turn orange at both 20% of its production time and 2 hours. It is also listed under **What needs attention** and **In focus**.
 
@@ -1510,7 +1516,7 @@ The part of an order for one product, with a planned quantity and operations.
 
 ### Work center
 
-A **Work center** is a workplace without an AVA. It shows today’s worked orders and the waiting queue and can receive assignments. It has no sensor KPIs and is excluded from state counters and sensor analytics. Sensor-based rules never trigger for it. Version 2 reports show only the operations booked on work centers under **Summary → Work centers** and on their own pages. They have no OEE, availability, performance, machine states or cycles anywhere in the report, and are excluded from production without an order.
+A **Work center** is a workplace without an AVA. It shows today’s worked orders and the waiting queue and can receive assignments. It has no sensor KPIs and is excluded from state counters and sensor analytics. Sensor-based rules never trigger for it. Version 2 reports show only work-center operations, from their intervals, under **Summary → Work centers** and on their own pages. They have no OEE, availability, performance, machine states or cycles anywhere in the report, and are excluded from production without an order.
 
 [Learn more](/en/platform-intro/pages/work-centers).
 

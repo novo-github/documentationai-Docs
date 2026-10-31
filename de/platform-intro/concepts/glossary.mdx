@@ -1062,9 +1062,15 @@ Produktion, zu unterscheiden vom Kürzel PRO für Performance beziehungsweise Le
 
 [Mehr erfahren](/de/platform-intro/pages/machines).
 
+### Produktionszeit in Intervallen
+
+**Produktionszeit in Intervallen** ist die in Arbeitsgangintervallen erfasste Produktionszeit eines Arbeitsplatzes. Sie stammt nicht aus Sensormessungen. Vorbereitungsstunden werden gesondert gezeigt, sofern vorhanden.
+
+[Mehr erfahren](/de/platform-intro/pages/report-versions#work-centers).
+
 ### Produktion ohne Auftrag
 
-**Produktion ohne Auftrag** ist Zeit, in der eine Maschine produziert hat, ohne dass ein Arbeitsgang auf ihr gebucht war. Version 2 zählt Abschnitte ab 5 Minuten nach derselben Regel wie **Intervalle verbessern**, höchstens die Produktionszeit des jeweiligen Tages. Die Werte erscheinen nur, wenn das Unternehmen im Berichtszeitraum oder in den 90 Tagen davor Arbeitsgänge gebucht hat, unabhängig vom Auftrag. Arbeitsplätze bleiben ausgeschlossen. Ein fehlender Abschnitt bedeutet nicht, dass jede Produktionsstunde gebucht war.
+**Produktion ohne Auftrag** ist Produktionszeit, in der auf der Maschine kein Intervall eines Arbeitsgangs lief. Version 2 zählt Abschnitte ab 5 Minuten nach derselben Regel wie **Intervalle verbessern**, höchstens die Produktionszeit des jeweiligen Tages. Die Werte erscheinen nur, wenn das Unternehmen im Berichtszeitraum mindestens 5 Intervalle echter Arbeitsgänge erfasst hat. Testaufträge zählen nicht mit. Arbeitsplätze bleiben ausgeschlossen. Ein fehlender Abschnitt bedeutet nicht, dass jede Produktionsstunde durch ein Intervall abgedeckt war. Intervalle von Testaufträgen decken weiterhin Maschinenzeit ab, obwohl diese Aufträge aus Listen und Zählungen des Berichts ausgeschlossen sind.
 
 Der Maschinenbalken und der Wert **Ohne Auftrag (h)** werden orange, wenn sowohl 20 % der Produktionszeit als auch 2 Stunden erreicht sind. Die Maschine wird außerdem unter **Worauf Sie achten sollten** und **Im Fokus** aufgeführt.
 
@@ -1502,7 +1508,7 @@ Teil eines Auftrags für ein Produkt mit geplanter Menge und Operationen.
 
 ### Arbeitsplatz
 
-Ein **Arbeitsplatz** hat keine AVA. Er zeigt heute bearbeitete Aufträge sowie die Warteschlange und kann Zuweisungen erhalten. Er hat keine Sensorkennzahlen und zählt nicht zu Zustandszählern oder Sensorauswertungen. Sensorbasierte Regeln lösen für ihn nie aus. Berichte der Version 2 zeigen ausschließlich die auf Arbeitsplätzen gebuchten Arbeitsgänge unter **Übersicht → Arbeitsplätze** und auf ihren eigenen Seiten. Sie haben im gesamten Bericht keine OEE, Verfügbarkeit, Leistung, Maschinenzustände oder Zyklen und bleiben aus Produktion ohne Auftrag ausgeschlossen.
+Ein **Arbeitsplatz** hat keine AVA. Er zeigt heute bearbeitete Aufträge sowie die Warteschlange und kann Zuweisungen erhalten. Er hat keine Sensorkennzahlen und zählt nicht zu Zustandszählern oder Sensorauswertungen. Sensorbasierte Regeln lösen für ihn nie aus. Berichte der Version 2 zeigen nur die Arbeitsgänge der Arbeitsplätze, aus deren Intervallen, unter **Übersicht → Arbeitsplätze** und auf ihren eigenen Seiten. Sie haben im gesamten Bericht keine OEE, Verfügbarkeit, Leistung, Maschinenzustände oder Zyklen und bleiben aus Produktion ohne Auftrag ausgeschlossen.
 
 [Mehr erfahren](/de/platform-intro/pages/work-centers).
 

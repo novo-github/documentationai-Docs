@@ -20,7 +20,7 @@ Only Administrators can open **Report archive**. Other users do not see it. Open
 - To receive email reports, enable the weekly or monthly newsletter subscription in your profile.
 - To download an existing report, it must have been requested or scheduled. You can also create an export from [Timeline Analysis](/en/platform-intro/pages/timeline-analysis).
 - You know which machines and period you want to review.
-- To review missing order bookings, use Version 2. Your company must have booked operations on its machines, for any order, in the report period or the 90 days before it. Work centers are excluded from this measure. Reviewing intervals also requires access to the machine.
+- To review production without operation intervals, use Version 2. Your company must have recorded at least 5 intervals of real operations in the report period, excluding test orders. Work centers are excluded from this measure. Reviewing intervals also requires access to the machine.
 
 ## Steps
 
@@ -83,19 +83,35 @@ Only Administrators can open **Report archive**. Other users do not see it. Open
   </Step>
 </Steps>
 
+<a id="check-order-figures" />
+
+### Check Missing Order Figures
+
+<Steps>
+  <Step title="Read the explanation on the first page" icon="arrow-right" title-type="p">
+    Open **Summary** in a Version 2 report. With fewer than 5 intervals of real operations in the period, **Get more out of this report with the PDA page** directly below **What needs attention** explains why order figures are missing. The box also appears when no intervals were recorded. Test orders do not count, and intervals from earlier periods do not count towards the minimum. **Up next** remains available in eligible email reports.
+  </Step>
+  <Step title="Record the work as it happens" icon="arrow-right" title-type="p">
+    With access to the machine’s PDA page, start and stop the operations you actually work on and record quantities and scrap. Follow [Run Data Acquisition (PDA)](/en/platform-intro/workflows/data-acquisition). You cannot yet add a new interval for a past time.
+  </Step>
+  <Step title="Review a period with enough recorded work" icon="arrow-right" title-type="p">
+    Create a Version 2 export for the period you want to review, or ask an Administrator to update an existing report through **Report archive → Rebuild with current data**. With at least 5 intervals of real operations in that period, the report includes order figures and production without an order. Compare quantities, scrap and time per piece against the plan.
+  </Step>
+</Steps>
+
 <a id="review-unbooked-production" />
 
 ### Review Production Without an Order
 
 <Steps>
   <Step title="Find the machines to review" icon="arrow-right" title-type="p">
-    Open **Summary → Production without an order**, immediately after the key-figure tiles. This is time a machine produced while no operation was booked on it. Read the hours, share of production time and change from the previous week, month or period. **Production without an order per machine** lists hours, biggest first; the machine table shows **Without order (h)**. A machine’s bar and table value turn orange at both 20% of its production time and 2 hours. It also appears under **What needs attention** and **In focus**. The summary card gets an orange stripe when the company total reaches both limits.
+    Open **Summary → Production without an order**, immediately after the key-figure tiles. This is production time during which no interval of an operation was running on the machine. Read the hours, share of production time and change from the previous week, month or period. **Production without an order per machine** lists hours, biggest first; the machine table shows **Without order (h)**. A machine’s bar and table value turn orange at both 20% of its production time and 2 hours. It also appears under **What needs attention** and **In focus**. The summary card gets an orange stripe when the company total reaches both limits.
   </Step>
   <Step title="Check the longest stretches" icon="arrow-right" title-type="p">
-    Open the machine’s report page. Read the **Production without an order** card and **Without order (h)** in the day rows of **Day by day**. After that table, **Longest stretches without an order** lists up to five stretches, longest first, with **Day**, **From – to** and **Without order (h)**. These count stretches of at least 5 minutes, using the same rule as **Improve intervals**. Check which work actually took place. With none, the report says **Every production hour of this machine was booked to an order.**
+    Open the machine’s report page. Read the **Production without an order** card and **Without order (h)** in the day rows of **Day by day**. After that table, **Longest stretches without an order** lists up to five stretches, longest first, with **Day**, **From – to** and **Without order (h)**. These count stretches of at least 5 minutes, using the same rule as **Improve intervals**. Check which work actually took place. With none, it says **Every production hour of this machine was in an interval of an operation.**
   </Step>
   <Step title="Review the recorded intervals" icon="arrow-right" title-type="p">
-    With access to the machine, open its detail page and choose an affected day with recorded intervals. Select **Improve intervals** in the timeline header. Follow [review and improve intervals](/en/platform-intro/workflows/improve-intervals) to compare recorded times with machine activity. **Production without an order** is information only; it cannot create missing intervals. Confirm which order the time belongs to before changing bookings. After corrections, Administrators can update the report through **Report archive → Rebuild with current data**.
+    With access to the machine, open its detail page and choose an affected day with recorded intervals. Select **Improve intervals** in the timeline header. Follow [review and improve intervals](/en/platform-intro/workflows/improve-intervals) to compare recorded times with machine activity. **Production without an order** is information only. You cannot yet add a new interval for a past time. Confirm which operation the time belongs to. If it ran immediately before or after that time, extend its existing interval by adjusting the start or end to match the work. If no such interval exists, you cannot add the missing interval yet. After corrections, Administrators can update the report through **Report archive → Rebuild with current data**.
   </Step>
 </Steps>
 
@@ -105,12 +121,12 @@ Only Administrators can open **Report archive**. Other users do not see it. Open
 
 <Steps>
   <Step title="Find the separate work-center section" icon="arrow-right" title-type="p">
-    Open **Summary → Work centers**, after the machine table. Compare **Work center**, **Operations**, **Completed**, **Orders**, **Booked production (h)**, **Preparation (h)** when there was preparation, **Produced** and **Scrap**. A work center with no operations still has a row saying **No operations booked in this period**. Click its name to open its page.
+    Open **Summary → Work centers**, after the machine table. Compare **Work center**, **Operations**, **Completed**, **Orders**, **Production in intervals (h)**, **Preparation (h)** when there was preparation, **Produced** and **Scrap**. Below the five-interval minimum for the report, the row shows **PDA page barely used in this period**. Once the minimum is met, a work center without operations shows **No operation intervals in this period**. Click its name to open its page.
   </Step>
   <Step title="Review a work center’s operations" icon="arrow-right" title-type="p">
     The page has a purple tab and the same work-center icon as on the platform. Its subtitle shows work center, hall and period. A work center has no sensor, so the report shows no OEE, availability, performance, machine states or cycles for it anywhere. It is excluded from machine figures and production without an order.
 
-    Read **Operations worked on** with the completed count, **Orders worked on**, **Booked production time** with preparation hours when present, and **Produced** with scrap when recorded. Check **Operations on this work center** below. Booked hours are the booked operation times, not machine time. With no operations, the page says **No operations were booked on this work center in this period.**
+    Read **Operations worked on** with the completed count, **Orders worked on**, **Production time in intervals** with preparation hours when present, and **Produced** with scrap when recorded. Check **Operations on this work center** below. These hours come from operation intervals, not sensor measurements. Below the report’s five-interval minimum, the page shows **PDA page barely used in this period**. Once the minimum is met, a page without operations shows **This work center has no operation intervals in this period.**
   </Step>
 </Steps>
 
@@ -120,7 +136,9 @@ Only Administrators can open **Report archive**. Other users do not see it. Open
 - Save in your profile for future emails, or choose in the export dialog for one download only.
 - Download the existing report, or rebuild it to include corrected production records.
 - Narrow the search to **Scheduled** or **By user**, or include both with **All sources**.
-- Review missing bookings on machine pages; review work-center operations on their separate pages.
+- Review missing intervals on machine pages; review work-center operations on their separate pages.
+- If order figures are absent, check the first-page explanation and the five-interval minimum before interpreting the missing values.
+- Extend an existing interval only when the missing time belongs to the operation immediately before or after it.
 
 ## Expected Result
 
@@ -128,7 +146,7 @@ Your saved preference controls future weekly and monthly emails. An export uses 
 
 You have the available report for the selected machines and period. After a successful rebuild, you know whether its contents changed.
 
-You can identify production that needs a booking review and check work-center operations separately from machine figures.
+You can identify production whose intervals need review and check work-center operations separately from machine figures.
 
 ## Common Problems and Edge Cases
 
@@ -140,8 +158,9 @@ You can identify production that needs a booking review and check work-center op
 - **Failed**: creation did not complete successfully. If an action fails, try again.
 - A failed refresh keeps the previous version available. Check its version before using it.
 - **Not emailed** describes email delivery, not whether the report is ready.
-- A missing **Production without an order** section does not mean every production hour was booked. It is absent when your company booked no operations on its machines, for any order, in the report period or the 90 days before it. Work centers are never included.
-- If **Improve intervals** is missing, choose a day with recorded intervals. The review does not create missing intervals.
+- A missing **Production without an order** section does not mean every production hour was covered by an interval. It is absent when your company recorded fewer than 5 intervals of real operations in the report period, excluding test orders. Work centers are never included.
+- Test orders are excluded from lists and counts, including **Up next**, but their intervals still cover machine time for production without an order. See [test orders](/en/platform-intro/pages/report-versions#test-orders).
+- If **Improve intervals** is missing, choose a day with recorded intervals. You cannot yet create a new interval for a past time.
 
 ## Related Pages
 

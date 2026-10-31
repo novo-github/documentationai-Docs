@@ -30,7 +30,7 @@ Die Maschine hat Maschinendaten und der gewählte Tag mindestens ein Intervall. 
     Öffnen Sie einen Tag. Vergleichen Sie **Jetzt** mit **Danach**, Auftragsname und hinzugefügte oder entfernte Zeit. Wählen Sie eine Option und haken Sie nur passende Änderungen an. Die Tagesvorschau folgt Ihrer Auswahl. Start- und Endoptionen nutzen tatsächliche Ereignisse aus der jüngsten Aktivität innerhalb der Fragegrenze. Datenlücken unter 10 Minuten und andere Unterbrechungen unter 2 Minuten teilen diese Aktivität nicht. Rüsten folgt seinen getrennten Einstellungen. Rüstvorschläge können das Rüsten beim ersten Produktionsbeginn nach Rüstbeginn beenden.
   </Step>
   <Step title="Prüfen Sie Ausnahmen einzeln" icon="arrow-right" title-type="p">
-    Vorschläge jenseits der automatischen Grenze sind nicht angehakt. Sie bleiben auch aus den Gesamtsummen ausgeschlossen. Haken Sie einen solchen Vorschlag erst an, nachdem Sie Zeit und Wirkung geprüft haben. Auch **Überlappungen (Warnung)** bleibt ohne Häkchen: Gleichzeitige Arbeit kann beabsichtigt sein. Prüfen Sie vor einer Änderung die parallele Kapazität der Maschine. **Produktion ohne Auftrag** ist nur ein Hinweis und erstellt kein Intervall.
+    Vorschläge jenseits der automatischen Grenze sind nicht angehakt. Sie bleiben auch aus den Gesamtsummen ausgeschlossen. Haken Sie einen solchen Vorschlag erst an, nachdem Sie Zeit und Wirkung geprüft haben. Auch **Überlappungen (Warnung)** bleibt ohne Häkchen: Gleichzeitige Arbeit kann beabsichtigt sein. Prüfen Sie vor einer Änderung die parallele Kapazität der Maschine. **Produktion ohne Auftrag** listet Zeiten zur Prüfung. Ein neues Intervall für eine vergangene Zeit können Sie noch nicht anlegen. Gehört sie zu einem Arbeitsgang direkt davor oder danach, können Sie das vorhandene Intervall durch Ändern von Start oder Ende verlängern. Prüfen Sie, ob die Änderung zur tatsächlichen Arbeit passt.
   </Step>
   <Step title="Übernehmen und prüfen Sie das Ergebnis" icon="arrow-right" title-type="p">
     Nutzen Sie **Auswahl übernehmen** mit der angezeigten Anzahl. Administratoren können stattdessen **Überall das Beste übernehmen** wählen und die Bestätigung prüfen. Überlappungen und Vorschläge jenseits der automatischen Grenze bleiben ausgeschlossen. Lesen Sie übernommene und übersprungene Änderungen sowie verbleibende Überlappungswarnungen. Auftragszeiten ändern sich sofort. OEE und Berichte folgen bei ihrer nächsten Berechnung.
@@ -51,7 +51,7 @@ Die ausgewählten Intervalle und die Maschinenzeitleiste zeigen korrigierte Auft
 - Ohne Maschinendaten lassen sich Intervalle nicht prüfen. Dies gilt auch für Arbeitsplätze ohne Sensorwerte.
 - Keine Vorschläge bedeutet, dass die Intervalle im Zeitraum nach den gewählten Regeln zu den Maschinendaten passen.
 - Ist eine Änderung nicht mehr nutzbar, prüfen Sie die neu geladenen Vorschläge und versuchen Sie es erneut. Die Sammelaktion für Administratoren überspringt unbrauchbare Änderungen und meldet das Ergebnis.
-- Prüfen Sie bei ungebuchter Produktion gesondert, welche Arbeit stattgefunden hat. Dieses Werkzeug legt keine Aufträge oder Intervalle an.
+- Prüfen Sie bei Produktion ohne Auftrag gesondert, welche Arbeit stattgefunden hat. Gibt es direkt davor oder danach kein Intervall des betreffenden Arbeitsgangs, können Sie noch kein neues vergangenes Intervall ergänzen. Siehe [Produktion ohne Auftrag im Bericht prüfen](/de/platform-intro/workflows/reports#review-unbooked-production).
 
 ## Verwandte Seiten
 

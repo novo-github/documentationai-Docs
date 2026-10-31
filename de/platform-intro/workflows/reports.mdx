@@ -20,7 +20,7 @@ Nur Administratoren können das **Berichtsarchiv** öffnen. Andere Benutzer sehe
 - Aktivieren Sie für Bericht-E-Mails das wöchentliche oder monatliche Newsletter-Abonnement in Ihrem Profil.
 - Zum Herunterladen eines vorhandenen Berichts muss dieser angefordert oder geplant worden sein. Sie können auch einen Export aus der [Zeitleistenanalyse](/de/platform-intro/pages/timeline-analysis) erstellen.
 - Sie wissen, welche Maschinen und welchen Zeitraum Sie prüfen möchten.
-- Nutzen Sie Version 2 zur Prüfung fehlender Auftragsbuchungen. Ihr Unternehmen muss im Berichtszeitraum oder in den 90 Tagen davor Arbeitsgänge gebucht haben. Der Auftrag spielt dabei keine Rolle. Arbeitsplätze bleiben aus dieser Kennzahl ausgeschlossen. Für die Intervallprüfung benötigen Sie außerdem Zugriff auf die Maschine.
+- Nutzen Sie Version 2 zur Prüfung von Produktion ohne Arbeitsgangintervalle. Ihr Unternehmen muss im Berichtszeitraum mindestens 5 Intervalle echter Arbeitsgänge erfasst haben. Testaufträge zählen nicht mit. Arbeitsplätze bleiben aus dieser Kennzahl ausgeschlossen. Für die Intervallprüfung benötigen Sie außerdem Zugriff auf die Maschine.
 
 ## Schritte
 
@@ -83,19 +83,35 @@ Nur Administratoren können das **Berichtsarchiv** öffnen. Andere Benutzer sehe
   </Step>
 </Steps>
 
+<a id="check-order-figures" />
+
+### Fehlende Auftragszahlen prüfen
+
+<Steps>
+  <Step title="Lesen Sie die Erklärung auf der ersten Seite" icon="arrow-right" title-type="p">
+    Öffnen Sie die **Übersicht** in einem Bericht der Version 2. Bei weniger als 5 Intervallen echter Arbeitsgänge im Zeitraum erklärt **Mehr aus diesem Bericht mit der BDE-Seite** direkt unter **Worauf Sie achten sollten**, warum Auftragszahlen fehlen. Der Kasten erscheint auch bei 0 Intervallen. Testaufträge und Intervalle aus früheren Zeiträumen zählen für die Mindestzahl nicht mit. **Als Nächstes** bleibt in passenden E-Mail-Berichten verfügbar.
+  </Step>
+  <Step title="Erfassen Sie Arbeit während der Ausführung" icon="arrow-right" title-type="p">
+    Starten und stoppen Sie mit Zugriff auf die BDE-Seite der Maschine die Arbeitsgänge, die Sie tatsächlich bearbeiten. Erfassen Sie Mengen und Ausschuss. Folgen Sie [Betriebsdatenerfassung durchführen](/de/platform-intro/workflows/data-acquisition). Ein neues Intervall für eine vergangene Zeit können Sie noch nicht anlegen.
+  </Step>
+  <Step title="Prüfen Sie einen Zeitraum mit genügend erfasster Arbeit" icon="arrow-right" title-type="p">
+    Erstellen Sie einen Export der Version 2 für den gewünschten Zeitraum. Oder bitten Sie einen Administrator, einen vorhandenen Bericht über **Berichtsarchiv → Mit aktuellen Daten neu erstellen** zu aktualisieren. Ab 5 Intervallen echter Arbeitsgänge in diesem Zeitraum enthält der Bericht Auftragszahlen und Produktion ohne Auftrag. Vergleichen Sie Mengen, Ausschuss und Zeit je Stück mit dem Plan.
+  </Step>
+</Steps>
+
 <a id="review-unbooked-production" />
 
 ### Produktion ohne Auftrag prüfen
 
 <Steps>
   <Step title="Finden Sie die zu prüfenden Maschinen" icon="arrow-right" title-type="p">
-    Öffnen Sie **Übersicht → Produktion ohne Auftrag** direkt nach den Kennzahlenkacheln. Dies ist Zeit, in der eine Maschine produziert hat, ohne dass ein Arbeitsgang auf ihr gebucht war. Lesen Sie Stunden, Anteil an der Produktionszeit und Änderung zur Vorwoche, zum Vormonat oder zum vorherigen Zeitraum. **Produktion ohne Auftrag je Maschine** listet Stunden, größte zuerst. Die Maschinentabelle zeigt **Ohne Auftrag (h)**. Der Balken und Tabellenwert einer Maschine werden orange, wenn sowohl 20 % ihrer Produktionszeit als auch 2 Stunden erreicht sind. Sie erscheint außerdem unter **Worauf Sie achten sollten** und **Im Fokus**. Die Übersichtskarte erhält einen orangefarbenen Streifen, wenn die Unternehmenssumme beide Grenzen erreicht.
+    Öffnen Sie **Übersicht → Produktion ohne Auftrag** direkt nach den Kennzahlenkacheln. Dies ist Produktionszeit, in der auf der Maschine kein Intervall eines Arbeitsgangs lief. Lesen Sie Stunden, Anteil an der Produktionszeit und Änderung zur Vorwoche, zum Vormonat oder zum vorherigen Zeitraum. **Produktion ohne Auftrag je Maschine** listet Stunden, größte zuerst. Die Maschinentabelle zeigt **Ohne Auftrag (h)**. Der Balken und Tabellenwert einer Maschine werden orange, wenn sowohl 20 % ihrer Produktionszeit als auch 2 Stunden erreicht sind. Sie erscheint außerdem unter **Worauf Sie achten sollten** und **Im Fokus**. Die Übersichtskarte erhält einen orangefarbenen Streifen, wenn die Unternehmenssumme beide Grenzen erreicht.
   </Step>
   <Step title="Prüfen Sie die längsten Abschnitte" icon="arrow-right" title-type="p">
-    Öffnen Sie die Berichtsseite der Maschine. Lesen Sie die Karte **Produktion ohne Auftrag** und **Ohne Auftrag (h)** in den Tageszeilen unter **Tag für Tag**. Danach listet **Längste Zeiten ohne Auftrag** bis zu fünf Abschnitte, längste zuerst, mit **Tag**, **Von – bis** und **Ohne Auftrag (h)**. Es zählen Abschnitte ab 5 Minuten nach derselben Regel wie **Intervalle verbessern**. Klären Sie, welche Arbeit tatsächlich stattgefunden hat. Gibt es keine solchen Abschnitte, zeigt der Bericht **Jede Produktionsstunde dieser Maschine war einem Auftrag zugeordnet.**
+    Öffnen Sie die Berichtsseite der Maschine. Lesen Sie die Karte **Produktion ohne Auftrag** und **Ohne Auftrag (h)** in den Tageszeilen unter **Tag für Tag**. Danach listet **Längste Zeiten ohne Auftrag** bis zu fünf Abschnitte, längste zuerst, mit **Tag**, **Von – bis** und **Ohne Auftrag (h)**. Es zählen Abschnitte ab 5 Minuten nach derselben Regel wie **Intervalle verbessern**. Klären Sie, welche Arbeit tatsächlich stattgefunden hat. Gibt es keine solchen Abschnitte, steht dort **Jede Produktionsstunde dieser Maschine lag in einem Intervall eines Arbeitsgangs.**
   </Step>
   <Step title="Prüfen Sie die erfassten Intervalle" icon="arrow-right" title-type="p">
-    Öffnen Sie mit Maschinenzugriff die Detailseite der Maschine und wählen Sie einen betroffenen Tag mit erfassten Intervallen. Wählen Sie im Kopf der Zeitleiste **Intervalle verbessern**. Folgen Sie [Intervalle prüfen und verbessern](/de/platform-intro/workflows/improve-intervals), um erfasste Zeiten mit Maschinenaktivität zu vergleichen. **Produktion ohne Auftrag** ist nur ein Hinweis und legt keine fehlenden Intervalle an. Klären Sie vor einer Buchungsänderung, zu welchem Auftrag die Zeit gehört. Nach Korrekturen können Administratoren den Bericht über **Berichtsarchiv → Mit aktuellen Daten neu erstellen** aktualisieren.
+    Öffnen Sie mit Maschinenzugriff die Detailseite der Maschine und wählen Sie einen betroffenen Tag mit erfassten Intervallen. Wählen Sie im Kopf der Zeitleiste **Intervalle verbessern**. Folgen Sie [Intervalle prüfen und verbessern](/de/platform-intro/workflows/improve-intervals), um erfasste Zeiten mit Maschinenaktivität zu vergleichen. **Produktion ohne Auftrag** ist nur ein Hinweis. Ein neues Intervall für eine vergangene Zeit können Sie noch nicht anlegen. Klären Sie, zu welchem Arbeitsgang die Zeit gehört. Lief er direkt davor oder danach, verlängern Sie sein vorhandenes Intervall durch Ändern von Start oder Ende entsprechend der tatsächlichen Arbeit. Gibt es kein solches Intervall, können Sie das fehlende Intervall noch nicht ergänzen. Nach Korrekturen können Administratoren den Bericht über **Berichtsarchiv → Mit aktuellen Daten neu erstellen** aktualisieren.
   </Step>
 </Steps>
 
@@ -105,12 +121,12 @@ Nur Administratoren können das **Berichtsarchiv** öffnen. Andere Benutzer sehe
 
 <Steps>
   <Step title="Finden Sie den eigenen Arbeitsplatzabschnitt" icon="arrow-right" title-type="p">
-    Öffnen Sie **Übersicht → Arbeitsplätze** nach der Maschinentabelle. Vergleichen Sie **Arbeitsplatz**, **Arbeitsgänge**, **Abgeschlossen**, **Aufträge**, **Gebuchte Produktion (h)**, gegebenenfalls **Vorbereitung (h)**, **Gefertigt** und **Ausschuss**. Die Vorbereitungsspalte erscheint nur, wenn es Vorbereitung gab. Ein Arbeitsplatz ohne Arbeitsgänge hat weiterhin eine Zeile mit **Keine Arbeitsgänge in diesem Zeitraum gebucht**. Klicken Sie auf seinen Namen, um seine Seite zu öffnen.
+    Öffnen Sie **Übersicht → Arbeitsplätze** nach der Maschinentabelle. Vergleichen Sie **Arbeitsplatz**, **Arbeitsgänge**, **Abgeschlossen**, **Aufträge**, **Produktion in Intervallen (h)**, gegebenenfalls **Vorbereitung (h)**, **Produziert** und **Ausschuss**. Die Vorbereitungsspalte erscheint nur, wenn es Vorbereitung gab. Unterhalb der Mindestzahl von fünf Intervallen für den Bericht zeigt die Zeile **BDE-Seite in diesem Zeitraum kaum genutzt**. Ist die Mindestzahl erreicht, zeigt ein Arbeitsplatz ohne Arbeitsgänge **Keine Intervalle von Arbeitsgängen in diesem Zeitraum**. Klicken Sie auf seinen Namen, um seine Seite zu öffnen.
   </Step>
   <Step title="Prüfen Sie die Arbeitsgänge eines Arbeitsplatzes" icon="arrow-right" title-type="p">
     Die Seite hat einen violetten Reiter und dasselbe Arbeitsplatz-Symbol wie auf der Plattform. Ihr Untertitel zeigt Arbeitsplatz, Halle und Zeitraum. Ein Arbeitsplatz hat keinen Sensor. Deshalb zeigt der Bericht für ihn nirgends OEE, Verfügbarkeit, Leistung, Maschinenzustände oder Zyklen. Er bleibt aus Maschinenkennzahlen und Produktion ohne Auftrag ausgeschlossen.
 
-    Lesen Sie **Bearbeitete Arbeitsgänge** mit der Anzahl abgeschlossener Arbeitsgänge, **Bearbeitete Aufträge**, **Gebuchte Produktionszeit** gegebenenfalls mit Vorbereitungsstunden und **Gefertigt** mit erfasstem Ausschuss. Prüfen Sie darunter **Arbeitsgänge auf diesem Arbeitsplatz**. Gebuchte Stunden sind die gebuchten Arbeitsgangzeiten, keine Maschinenzeit. Ohne Arbeitsgänge zeigt die Seite **In diesem Zeitraum wurden auf diesem Arbeitsplatz keine Arbeitsgänge gebucht.**
+    Lesen Sie **Bearbeitete Arbeitsgänge** mit der Anzahl abgeschlossener Arbeitsgänge, **Bearbeitete Aufträge**, **Produktionszeit in Intervallen** gegebenenfalls mit Vorbereitungsstunden und **Produziert** mit erfasstem Ausschuss. Prüfen Sie darunter **Arbeitsgänge auf diesem Arbeitsplatz**. Diese Stunden stammen aus Arbeitsgangintervallen, nicht aus Sensormessungen. Unterhalb der Mindestzahl von fünf Intervallen für den Bericht zeigt die Seite **BDE-Seite in diesem Zeitraum kaum genutzt**. Ist die Mindestzahl erreicht, zeigt eine Seite ohne Arbeitsgänge **Dieser Arbeitsplatz hat in diesem Zeitraum keine Intervalle von Arbeitsgängen.**
   </Step>
 </Steps>
 
@@ -120,7 +136,9 @@ Nur Administratoren können das **Berichtsarchiv** öffnen. Andere Benutzer sehe
 - Speichern Sie im Profil für künftige E-Mails oder wählen Sie im Exportdialog nur für einen Download.
 - Laden Sie den vorhandenen Bericht herunter oder erstellen Sie ihn neu, um korrigierte Produktionsaufzeichnungen einzubeziehen.
 - Grenzen Sie die Suche auf **Geplant** oder **Von Benutzer** ein oder berücksichtigen Sie beides mit **Alle Quellen**.
-- Prüfen Sie fehlende Buchungen auf Maschinenseiten und Arbeitsplatz-Arbeitsgänge auf deren eigenen Seiten.
+- Prüfen Sie fehlende Intervalle auf Maschinenseiten und Arbeitsplatz-Arbeitsgänge auf deren eigenen Seiten.
+- Fehlen Auftragszahlen, prüfen Sie zuerst die Erklärung auf der ersten Seite und die Mindestzahl von fünf Intervallen.
+- Verlängern Sie ein vorhandenes Intervall nur, wenn die fehlende Zeit zum Arbeitsgang direkt davor oder danach gehört.
 
 ## Erwartetes Ergebnis
 
@@ -128,7 +146,7 @@ Ihre gespeicherte Auswahl bestimmt künftige wöchentliche und monatliche E-Mail
 
 Sie haben den verfügbaren Bericht für die gewählten Maschinen und den Zeitraum. Nach erfolgreicher Aktualisierung wissen Sie, ob sich sein Inhalt geändert hat.
 
-Sie erkennen Produktion, deren Buchungen geprüft werden sollten, und können Arbeitsplatz-Arbeitsgänge getrennt von Maschinenkennzahlen prüfen.
+Sie erkennen Produktion, deren Intervalle geprüft werden sollten, und können Arbeitsplatz-Arbeitsgänge getrennt von Maschinenkennzahlen prüfen.
 
 ## Häufige Probleme und Sonderfälle
 
@@ -140,8 +158,9 @@ Sie erkennen Produktion, deren Buchungen geprüft werden sollten, und können Ar
 - **Fehlgeschlagen**: Die Erstellung wurde nicht erfolgreich abgeschlossen. Versuchen Sie eine fehlgeschlagene Aktion erneut.
 - Bei fehlgeschlagener Aktualisierung bleibt die bisherige Version verfügbar. Prüfen Sie ihre Version vor der Verwendung.
 - **Nicht per E-Mail versendet** beschreibt den E-Mail-Versand, nicht die Fertigstellung des Berichts.
-- Ein fehlender Abschnitt **Produktion ohne Auftrag** bedeutet nicht, dass jede Produktionsstunde gebucht war. Er fehlt, wenn Ihr Unternehmen im Berichtszeitraum oder in den 90 Tagen davor keine Arbeitsgänge gebucht hat, unabhängig vom Auftrag. Arbeitsplätze sind nie enthalten.
-- Fehlt **Intervalle verbessern**, wählen Sie einen Tag mit erfassten Intervallen. Die Prüfung legt keine fehlenden Intervalle an.
+- Ein fehlender Abschnitt **Produktion ohne Auftrag** bedeutet nicht, dass jede Produktionsstunde durch ein Intervall abgedeckt war. Er fehlt, wenn Ihr Unternehmen im Berichtszeitraum weniger als 5 Intervalle echter Arbeitsgänge erfasst hat. Testaufträge zählen nicht mit. Arbeitsplätze sind nie enthalten.
+- Testaufträge bleiben aus Listen und Zählungen ausgeschlossen, auch unter **Als Nächstes**. Ihre Intervalle decken für Produktion ohne Auftrag weiterhin Maschinenzeit ab. Siehe [Testaufträge](/de/platform-intro/pages/report-versions#test-orders).
+- Fehlt **Intervalle verbessern**, wählen Sie einen Tag mit erfassten Intervallen. Ein neues Intervall für eine vergangene Zeit können Sie noch nicht anlegen.
 
 ## Verwandte Seiten
 

@@ -41,13 +41,13 @@ Administrators can also set **Downtime reasons** for a work center. Choose all c
 
 ## Work Centers in Version 2 Reports
 
-A work center has no sensor, so Version 2 shows only the operations booked on it. It has no OEE, availability, performance, machine states or cycles anywhere in the report. It is excluded from machine tiles, findings and the machine table in **Summary**, and from **Days**, **Shifts**, **Downtime**, **Cycles** and **All data**. Production without an order also excludes work centers.
+A work center has no sensor, so Version 2 shows only its operations, from their intervals. It has no OEE, availability, performance, machine states or cycles anywhere in the report. It is excluded from machine tiles, findings and the machine table in **Summary**, and from **Days**, **Shifts**, **Downtime**, **Cycles** and **All data**. Production without an order also excludes work centers.
 
-Open **Summary → Work centers**, after the machine table. Compare **Work center**, **Operations**, **Completed**, **Orders**, **Booked production (h)**, **Produced** and **Scrap**. **Preparation (h)** appears between booked production and produced quantities only when there was preparation. Click a name to open its page.
+Open **Summary → Work centers**, after the machine table. Compare **Work center**, **Operations**, **Completed**, **Orders**, **Production in intervals (h)**, **Produced** and **Scrap**. **Preparation (h)** appears between **Production in intervals (h)** and **Produced** only when there was preparation. Click a name to open its page.
 
-The page has a purple tab and the same work-center icon as on the platform. Its subtitle shows work center, hall and period. A sentence explains the absence of OEE. Tiles show **Operations worked on** with the completed count, **Orders worked on**, **Booked production time** with preparation hours when present, and **Produced** with scrap when recorded. **Operations on this work center** follows. Booked hours are the booked operation times, not machine time.
+The page has a purple tab and the same work-center icon as on the platform. Its subtitle shows work center, hall and period. A sentence explains the absence of OEE. Tiles show **Operations worked on** with the completed count, **Orders worked on**, **Production time in intervals** with preparation hours when present, and **Produced** with scrap when recorded. **Operations on this work center** follows. These hours come from operation intervals, not sensor measurements.
 
-With no operations in the period, the summary row says **No operations booked in this period**. The page says **No operations were booked on this work center in this period.**
+Order figures require at least 5 intervals of real operations in the report period, excluding test orders. Below that minimum, the **Summary → Work centers** row and the work center’s page show **PDA page barely used in this period**. Once the minimum is met, a work center without operations shows **No operation intervals in this period** in the row and **This work center has no operation intervals in this period.** on its page.
 
 The icon also follows the work-center name in **Orders**, **Up next**, the summary section and the page title; **Notes** explains it. See [Report Versions](/en/platform-intro/pages/report-versions#work-centers) and [review work centers in a report](/en/platform-intro/workflows/reports#review-work-centers).
 

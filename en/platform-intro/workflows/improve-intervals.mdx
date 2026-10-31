@@ -30,7 +30,7 @@ The machine has machine data, and the selected day has at least one interval. Th
     Expand a day. Compare **Now** and **After**, the order name, and the time added or removed. Choose an option and tick only the changes that match what happened. The day preview follows your selection. Start and end options use actual events from the most recent activity within the asking limit. Short data gaps under 10 minutes and other interruptions under 2 minutes do not split that activity. Setup follows its separate settings. Preparation suggestions can end setup at the first production after setup began.
   </Step>
   <Step title="Review exceptions separately" icon="arrow-right" title-type="p">
-    Suggestions beyond the automatic limit start unticked. They also stay out of the summary totals. Tick one yourself only after checking its time and effect. **Overlaps (warning)** also starts unticked: simultaneous work may be intentional. Check the machine’s parallel capacity before changing an overlap. **Production without an order** is information only and cannot create an interval.
+    Suggestions beyond the automatic limit start unticked. They also stay out of the summary totals. Tick one yourself only after checking its time and effect. **Overlaps (warning)** also starts unticked: simultaneous work may be intentional. Check the machine’s parallel capacity before changing an overlap. **Production without an order** lists times to review. You cannot yet add a new interval for a past time. If that time belongs to an operation immediately before or after it, you can extend the existing interval by adjusting its start or end. Check that the change matches the work that took place.
   </Step>
   <Step title="Apply and check the result" icon="arrow-right" title-type="p">
     Use **Apply selected** with the displayed count. Administrators may instead choose **Apply best everywhere** and review the confirmation. That action excludes overlaps and suggestions beyond the automatic limit. Read the applied and skipped counts and any remaining overlap warnings. Order times change immediately; OEE and reports follow at their next calculation.
@@ -51,7 +51,7 @@ The chosen intervals and machine timeline show the corrected order times. Change
 - Without machine data, the review cannot check intervals. This includes work centers without sensor readings.
 - No suggestions means the intervals in the period match the machine data under the selected rules.
 - If a change can no longer be used, review the refreshed suggestions and try again. The administrator bulk action skips unusable changes and reports the result.
-- Unbooked production requires a separate check of what was worked; this tool does not create orders or intervals.
+- Production without an order requires a separate check of what was worked. If there is no interval of the relevant operation immediately before or after the time, you cannot add a new past interval yet. See [review production without an order in a report](/en/platform-intro/workflows/reports#review-unbooked-production).
 
 ## Related Pages
 

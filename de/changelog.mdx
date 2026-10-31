@@ -6,6 +6,37 @@ toc: false
 
 ## Releases
 
+<Update label="2026-10-31" description="v1.5.145–v1.5.146" tags={["Funktion", "Verbesserung", "Fehlerbehebung"]}>
+  {/* commits: 1debfc3, bb1ae50, 16301c7 */}
+
+  **Release-Zeitraum:** 30.–31. Oktober 2026
+
+  ### Neue Funktionen
+
+  #### [Verstehen, warum Auftragszahlen fehlen](/de/platform-intro/pages/report-versions#pda-use)
+  {/* feature: report-v2-readability-unbooked */}
+
+  Version 2 erklärt jetzt, wenn die BDE-Seite kaum genutzt wurde. Öffnen Sie die **Übersicht** und schauen Sie auf der ersten Seite direkt unter **Worauf Sie achten sollten**. Der Kasten **Mehr aus diesem Bericht mit der BDE-Seite** nennt die wenigen erfassten Intervalle, auch wenn es keine gab. Er erklärt, was das Starten und Stoppen von Arbeitsgängen auf der BDE-Seite zum Bericht beiträgt: welche Aufträge und Arbeitsgänge auf jeder Maschine liefen, mit produzierter Menge und Ausschuss, Zeit je Stück im Vergleich zum Plan und Produktion ohne Auftrag.
+
+  Auftragszahlen und **Produktion ohne Auftrag** erscheinen erst ab 5 Intervallen echter Arbeitsgänge im Berichtszeitraum. Testaufträge zählen nicht mit. Bei weniger Intervallen fehlen diese Werte und das Blatt **Aufträge**. **Als Nächstes** bleibt in passenden E-Mail-Berichten verfügbar. Folgen Sie [fehlende Auftragszahlen prüfen](/de/platform-intro/workflows/reports#check-order-figures).
+
+  ### Verbesserungen
+
+  #### [Maschinennamen und Intervallzeiten leichter lesen](/de/platform-intro/pages/report-versions#readable-tables)
+  {/* feature: report-v2-readability-unbooked */}
+
+  In der **Übersicht** erhalten Maschinennamen mehr Platz. Bei Bedarf entfällt die Spalte **Häufigster Stillstandsgrund** mit dem Hinweis **Der häufigste Stillstandsgrund jeder Maschine steht auf ihrer Seite und im Blatt „Stillstände“.** Sehr lange Namen können weiterhin mit „…“ enden.
+
+  Die Begriffe im Bericht entsprechen jetzt der Plattform: **Produkt**, **Produziert**, die Spalte **Lieferdatum** und **Produktionszeit in Intervallen** auf Arbeitsplatzseiten. Der Hinweis unter **Produktion ohne Auftrag** erklärt die heutigen Möglichkeiten: Prüfen Sie die Zeiten unter **Intervalle verbessern**. Gehört die Zeit zu einem Arbeitsgang direkt davor oder danach, können Sie dessen vorhandenes Intervall verlängern. Ein neues Intervall für eine vergangene Zeit können Sie noch nicht anlegen. Folgen Sie [Produktion ohne Auftrag prüfen](/de/platform-intro/workflows/reports#review-unbooked-production).
+
+  ### Fehlerbehebungen
+
+  #### [Berichtsergebnisse ohne Testaufträge lesen](/de/platform-intro/pages/report-versions#test-orders)
+  {/* feature: report-v2-readability-unbooked */}
+
+  Testaufträge erschienen bisher in Listen und Zählungen des Berichts. Version 2 lässt sie jetzt aus, auch unter **Als Nächstes**. Ihre Intervalle decken weiterhin Maschinenzeit ab. Diese Zeit wird also nicht allein wegen eines Testauftrags zu Produktion ohne Auftrag.
+</Update>
+
 <Update label="2026-10-30" description="v1.5.144" tags={["Funktion", "Verbesserung"]}>
   {/* commits: cf0ccc7, d3aeca4, 53ca73d */}
 

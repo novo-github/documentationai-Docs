@@ -6,6 +6,37 @@ toc: false
 
 ## Releases
 
+<Update label="2026-10-31" description="v1.5.145–v1.5.146" tags={["feature", "improvement", "fix"]}>
+  {/* commits: 1debfc3, bb1ae50, 16301c7 */}
+
+  **Release period:** October 30–31, 2026
+
+  ### New Features
+
+  #### [Understand Why Order Figures Are Missing](/en/platform-intro/pages/report-versions#pda-use)
+  {/* feature: report-v2-readability-unbooked */}
+
+  Version 2 now explains when the PDA page was barely used. Open **Summary** and look directly below **What needs attention** on the first page. **Get more out of this report with the PDA page** shows how few intervals were recorded, including when there were none, and explains what starting and stopping operations on the PDA page adds to your report: which orders and operations ran on each machine, with produced quantity and scrap, time per piece against the plan, and production without an order.
+
+  Order figures and **Production without an order** appear only with at least 5 intervals of real operations in the report period. Test orders do not count. With fewer intervals, these figures and the **Orders** sheet are absent; **Up next** remains available in eligible email reports. Follow [check missing order figures](/en/platform-intro/workflows/reports#check-order-figures).
+
+  ### Improvements
+
+  #### [Read Machine Names and Interval Times More Clearly](/en/platform-intro/pages/report-versions#readable-tables)
+  {/* feature: report-v2-readability-unbooked */}
+
+  In **Summary**, machine names get more room. If needed, the main downtime reason column is left out with the note **The main downtime reason of each machine is on its own page and in the "Downtime" sheet.** Very long names may still end in “…”.
+
+  The date column is now **Delivery date** (previously **Delivery**). Work-center pages now use **Production time in intervals**, with **Production in intervals (h)** as the summary column label. The hint under **Production without an order** now explains the current options: review the times under **Improve intervals** and, if the time belongs to an operation immediately before or after it, extend that operation’s existing interval. You cannot yet add a new interval for a past time. Follow [review production without an order](/en/platform-intro/workflows/reports#review-unbooked-production).
+
+  ### Fixes
+
+  #### [Keep Test Orders Out of Report Results](/en/platform-intro/pages/report-versions#test-orders)
+  {/* feature: report-v2-readability-unbooked */}
+
+  Test orders previously appeared in report lists and counts; Version 2 now leaves them out, including under **Up next**. Their intervals still cover machine time, so that time does not become production without an order just because the order is a test.
+</Update>
+
 <Update label="2026-10-30" description="v1.5.144" tags={["feature", "improvement"]}>
   {/* commits: cf0ccc7, d3aeca4, 53ca73d */}
 
