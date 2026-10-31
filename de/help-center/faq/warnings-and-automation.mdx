@@ -12,7 +12,7 @@ description: "BDE Assist, Alarmton sowie Automator-Vorlagen und Benachrichtigung
 | Werden beim Kopieren auch ungespeicherte Warnungseinstellungen übernommen? | [Antwort](/de/help-center/faq/warnings-and-automation#copy-settings) |
 | Sendet eine ausgewählte Automator-Vorlage sofort Alarme? | [Antwort](/de/help-center/faq/warnings-and-automation#template) |
 | Warum sehe ich einen Automator-Alarm, erhalte aber keine E-Mail? | [Antwort](/de/help-center/faq/warnings-and-automation#email) |
-| Warum bleiben Rüst- und Ausschusswerte erst gleich und springen dann? | [Antwort](/de/help-center/faq/warnings-and-automation#metrics) |
+| Warum bleiben Vorbereitungs- und Ausschusswerte erst gleich und springen dann? | [Antwort](/de/help-center/faq/warnings-and-automation#metrics) |
 | Warum löst mein Alarm nach dem Wechsel zu aktiven Schichten nicht mehr aus? | [Antwort](/de/help-center/faq/warnings-and-automation#active-shift-alerts) |
 | Warum löst meine Regel für einen Arbeitsplatz nie aus? | [Antwort](/de/help-center/faq/warnings-and-automation#work-center-alert) |
 | Kann ich vor einer verspäteten Lieferung einen Alarm erhalten? | [Antwort](/de/help-center/faq/warnings-and-automation#delivery-alert) |
@@ -21,7 +21,7 @@ description: "BDE Assist, Alarmton sowie Automator-Vorlagen und Benachrichtigung
 | Wie verhindere ich, dass der Assistent mein Intervall beendet? | [Antwort](/de/help-center/faq/warnings-and-automation#stop-auto-end) |
 | Der Assistent hat die falsche Zeit gewählt. Wie ändere ich sie? | [Antwort](/de/help-center/faq/warnings-and-automation#change-time) |
 | Warum fragt der Assistent bei manchen Zeiten und übernimmt andere selbst? | [Antwort](/de/help-center/faq/warnings-and-automation#older-time) |
-| Kann der Assistent auch Rüstzeiten korrigieren? | [Antwort](/de/help-center/faq/warnings-and-automation#preparation) |
+| Kann der Assistent auch Vorbereitungszeiten korrigieren? | [Antwort](/de/help-center/faq/warnings-and-automation#preparation) |
 | Wie korrigiere ich Intervalle vergangener Tage? | [Antwort](/de/help-center/faq/warnings-and-automation#review) |
 | Warum sind manche Intervallvorschläge nicht ausgewählt? | [Antwort](/de/help-center/faq/warnings-and-automation#unticked) |
 | Warum ändern sich Auftragszeiten vor dem Bericht? | [Antwort](/de/help-center/faq/warnings-and-automation#report-time) |
@@ -30,7 +30,7 @@ description: "BDE Assist, Alarmton sowie Automator-Vorlagen und Benachrichtigung
 | Was bedeutet der grüne oder gelbe Punkt neben BDE Assist? | [Antwort](/de/help-center/faq/warnings-and-automation#assist-status) |
 | Wie wählt der Assistent Zeiten und wo sehe ich ein Beispiel? | [Antwort](/de/help-center/faq/warnings-and-automation#times-help) |
 | Warum ändert eine kurze Datenlücke den vorgeschlagenen Start nicht? | [Antwort](/de/help-center/faq/warnings-and-automation#short-gaps) |
-| Kann ich Rüstkorrekturen unabhängig von Produktionskorrekturen ändern? | [Antwort](/de/help-center/faq/warnings-and-automation#separate-setup) |
+| Kann ich Vorbereitungskorrekturen unabhängig von Produktionskorrekturen ändern? | [Antwort](/de/help-center/faq/warnings-and-automation#separate-setup) |
 | Warum sind nach dem Einschalten der Hilfe schon Optionen ausgewählt? | [Antwort](/de/help-center/faq/warnings-and-automation#recommended-options) |
 | Kann ich vor dem Speichern sehen, wie eine Warnung aussieht? | [Antwort](/de/help-center/faq/warnings-and-automation#warning-preview) |
 
@@ -78,9 +78,11 @@ Ohne E-Mail-Empfänger erscheint der Alarm in den Ereignissen, aber niemand erh�
 
 <a id="metrics" />
 
-## Warum bleiben Rüst- und Ausschusswerte erst gleich und springen dann?
+<a id="warum-bleiben-rüst--und-ausschusswerte-erst-gleich-und-springen-dann" />
 
-Diese Werte ändern sich mit einer BDE-Meldung. Die Rüstprüfung vergleicht die gesamte bisherige Rüstzeit mit der Planzeit. Ausschuss stammt aus BDE-Produktionsmeldungen des aktuellen Auftrags. Ein Sensor allein aktualisiert keinen eingegebenen Ausschuss. Siehe [Automator-Kennzahlen](/de/platform-intro/pages/automator).
+## Warum bleiben Vorbereitungs- und Ausschusswerte erst gleich und springen dann?
+
+Diese Werte ändern sich mit einer BDE-Meldung. Die Vorbereitungsprüfung vergleicht die gesamte bisherige Vorbereitungszeit mit der Planzeit. Ausschuss stammt aus BDE-Produktionsmeldungen des aktuellen Auftrags. Ein Sensor allein aktualisiert keinen eingegebenen Ausschuss. Siehe [Automator-Kennzahlen](/de/platform-intro/pages/automator).
 
 <a id="active-shift-alerts" />
 
@@ -133,9 +135,11 @@ Eine einzelne passende Zeit innerhalb der automatischen Grenze kann sofort gelte
 
 <a id="preparation" />
 
-## Kann der Assistent auch Rüstzeiten korrigieren?
+<a id="kann-der-assistent-auch-rüstzeiten-korrigieren" />
 
-Ja. Je nach erlaubten Optionen kann Rüsten beim Ende des vorherigen Intervalls, beim Produktionsstopp oder beim Einschalten der Maschine beginnen. Sein Ende kann auf den ersten Produktionsbeginn nach Rüstbeginn verschoben werden. Automatisches Beenden nach Aus- oder Leerlaufzeit beendet niemals Rüsten. Siehe [BDE-Assist-Einstellungen](/de/platform-intro/pages/machine-configuration).
+## Kann der Assistent auch Vorbereitungszeiten korrigieren?
+
+Ja. Je nach erlaubten Optionen kann Vorbereitung am Ende des vorherigen Intervalls, beim Produktionsstopp oder beim Einschalten der Maschine beginnen. Ihr Ende kann auf den ersten Produktionsbeginn nach Vorbereitungsbeginn verschoben werden. Automatisches Beenden nach Aus- oder Leerlaufzeit beendet niemals Vorbereitung. Siehe [BDE-Assist-Einstellungen](/de/platform-intro/pages/machine-configuration).
 
 <a id="review" />
 
@@ -183,13 +187,15 @@ Er nutzt tatsächliche Maschinenereignisse oder das Ende des vorherigen Interval
 
 ## Warum ändert eine kurze Datenlücke den vorgeschlagenen Start nicht?
 
-Fehlende Daten unter 10 Minuten teilen Produktion nicht in einen neuen Abschnitt. Leerlauf-, Aus- oder Rüstunterbrechungen unter 2 Minuten werden ebenfalls ignoriert. Beispielsweise bleibt bei einer fünfminütigen Datenlücke während der Produktion der frühere Produktionsbeginn verfügbar. Siehe [angebotene Intervallzeiten](/de/platform-intro/pages/data-acquisition).
+Fehlende Daten unter 10 Minuten teilen Produktion nicht in einen neuen Abschnitt. Unterbrechungen durch Leerlauf, Aus oder Vorbereitung unter 2 Minuten werden ebenfalls ignoriert. Beispielsweise bleibt bei einer fünfminütigen Datenlücke während der Produktion der frühere Produktionsbeginn verfügbar. Siehe [angebotene Intervallzeiten](/de/platform-intro/pages/data-acquisition).
 
 <a id="separate-setup" />
 
-## Kann ich Rüstkorrekturen unabhängig von Produktionskorrekturen ändern?
+<a id="kann-ich-rüstkorrekturen-unabhängig-von-produktionskorrekturen-ändern" />
 
-Ja. Administratoren können Rüstoptionen unter **Maschineneinstellungen → BDE Assist → Startzeit** und **Endzeit** getrennt wählen und dann **Speichern**. Bestehende Maschinen behalten ihr bisheriges Verhalten, bis diese Auswahl geändert wird. Die Rüstoptionen steuern auch **Intervalle verbessern**. Folgen Sie [Maschine konfigurieren](/de/platform-intro/workflows/machine-configuration).
+## Kann ich Vorbereitungskorrekturen unabhängig von Produktionskorrekturen ändern?
+
+Ja. Administratoren können Vorbereitungsoptionen unter **Maschineneinstellungen → BDE Assist → Startzeit** und **Endzeit** getrennt wählen und dann **Speichern**. Bestehende Maschinen behalten ihr bisheriges Verhalten, bis diese Auswahl geändert wird. Die Vorbereitungsoptionen steuern auch **Intervalle verbessern**. Folgen Sie [Maschine konfigurieren](/de/platform-intro/workflows/machine-configuration).
 
 <a id="recommended-options" />
 

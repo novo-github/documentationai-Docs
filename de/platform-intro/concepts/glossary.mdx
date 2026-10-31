@@ -5,7 +5,7 @@ description: "Alphabetische Watchmen-Begriffe und genaue englische/deutsche Bild
 
 ## Die Bezeichnung auf Ihrem Bildschirm finden
 
-Jeder Eintrag enthält englische und deutsche Oberflächenbezeichnungen. Suchen Sie nach dem genauen Kürzel, etwa **PRO**, **AA**, **AG**, **WDB** oder **Vorber.** PRO bedeutet Leistung; AA ist Fertigungsausschuss; AG ist der Operationsprioritätschip; WDB bezeichnet die Wissensdatenbank. Definitionen verweisen auf die passende Anwendungsseite.
+Jeder Eintrag enthält englische und deutsche Oberflächenbezeichnungen. Suchen Sie nach dem genauen Kürzel, etwa **PRO**, **AA**, **AG**, **WDB** oder **Vorber.** PRO bedeutet Leistung; AA ist Fertigungsausschuss; AG ist der Arbeitsgangprioritätschip; WDB bezeichnet die Wissensdatenbank. Definitionen verweisen auf die passende Anwendungsseite.
 
 Verwandte Referenzen: [Berechnungen](/de/platform-intro/concepts/calculations) und [Rollen und Zugriff](/de/platform-intro/concepts/roles-and-access).
 
@@ -53,9 +53,9 @@ An Ihrem Konto angemeldete Geräte. Einzelne Sitzungen können aus der Ferne abg
 
 ### Aktive Schicht
 
-Eine **Aktive Schicht** beginnt bei Leerlauf, Produktion oder Rüsten und endet nach den Zeiteinstellungen der Maschine. Die zugewiesene Schichtgruppe wird nicht verwendet. Das Einschalten entfernt geplante Schichten ab heute und erhält bereits heute erfasste Schichten. Das Ausschalten beendet die laufende aktive Schicht sofort und legt ab heute geplante Schichten aus der Gruppe an.
+Eine **Aktive Schicht** beginnt bei Leerlauf, Produktion oder Vorbereitung und endet nach den Zeiteinstellungen der Maschine. Die zugewiesene Schichtgruppe wird nicht verwendet. Das Einschalten entfernt geplante Schichten ab heute und erhält bereits heute erfasste Schichten. Das Ausschalten beendet die laufende aktive Schicht sofort und legt ab heute geplante Schichten aus der Gruppe an.
 
-**Wartet auf die nächste aktive Schicht** und **wartet auf Maschinenstart** bedeuten, dass noch keine neue aktive Schicht begonnen hat. Bis die Maschine in Leerlauf, Produktion oder Rüsten geht, erscheinen geplante Schichten der zugewiesenen Gruppe. Die Maschine nutzt weiterhin aktive Schichten.
+**Wartet auf die nächste aktive Schicht** und **wartet auf Maschinenstart** bedeuten, dass noch keine neue aktive Schicht begonnen hat. Bis die Maschine in Leerlauf, Produktion oder Vorbereitung geht, erscheinen geplante Schichten der zugewiesenen Gruppe. Die Maschine nutzt weiterhin aktive Schichten.
 
 [Mehr erfahren](/de/platform-intro/pages/machine-configuration).
 
@@ -63,7 +63,7 @@ Eine **Aktive Schicht** beginnt bei Leerlauf, Produktion oder Rüsten und endet 
 
 ### AG / OP / Arbeitsgang / Operation
 
-Die englische Oberfläche nennt einen Produktionsarbeitsgang jetzt „operation“ statt „step“. Die deutschen Bezeichnungen bleiben gleich. Eine Operation ist ein Produktionsschritt. Der gestrichelte OP-Chip (deutsch AG) zeigt die Operationspriorität; P zeigt die Auftragspriorität.
+Ein **Arbeitsgang** ist eine Tätigkeit innerhalb eines Arbeitsauftrags. Die deutsche Oberfläche verwendet dafür einheitlich **Arbeitsgang** (bisher auch **Operation**, Schritt oder Vorgang). Die englische Bezeichnung bleibt **Operation**. Die gestrichelte AG-Anzeige zeigt die Arbeitsgangpriorität; P zeigt die Auftragspriorität.
 
 [Mehr erfahren](/de/platform-intro/pages/assignment-planner).
 
@@ -105,7 +105,7 @@ Schlüssel für den Zugriff anderer Systeme auf die Plattform. Ein neuer Schlüs
 
 ### Assignment / Zuweisung
 
-Eine Operation auf einer Maschine oder in einem Hall Pool. Intervalle erfassen die tatsächliche Arbeit daran.
+Ein Arbeitsgang auf einer Maschine oder in einem Hall Pool. Intervalle erfassen die tatsächliche Arbeit daran.
 
 [Mehr erfahren](/de/platform-intro/pages/assignment-planner).
 
@@ -181,15 +181,17 @@ Anteil der Produktion an der gesamten erfassten Maschinenzeit. AVL bleibt auch a
 
 ## B
 
-### Beste Operationsfolge
+<a id="beste-operationsfolge" />
 
-**Beste Operationsfolge** in **Plan verbessern** sucht weniger verspätete Aufträge, dann weniger Gesamtverspätung und frühere erwartete Enden. Bei Gleichstand sollen dringendere Aufträge gemäß ihrer unveränderten Auftragspriorität früher fertig werden; zuletzt entscheiden weniger Änderungen. **Prioritäten beibehalten** ändert keine Priorität. **Geringste Verspätung** sucht das beste Ergebnis. **Wenigste Änderungen** begrenzt die gesuchte Folge auf höchstens 3 Verschiebungen. **Empfohlen** markiert den Vorschlag. Bei **Liefertermin zuerst** ist diese Option im Gantt ausgegraut. Eine Suche startet nicht. Sie können weiterhin die festen Regeln vergleichen.
+### Beste Reihenfolge
+
+**Beste Reihenfolge** (bisher **Beste Operationsfolge**) bezeichnet die Reihenfolge in der Warteschlange. Die Option in **Plan verbessern** sucht weniger verspätete Aufträge, dann weniger Gesamtverspätung und frühere erwartete Enden. Bei Gleichstand sollen dringendere Aufträge gemäß ihrer unveränderten Auftragspriorität früher fertig werden; zuletzt entscheiden weniger Änderungen. **Prioritäten beibehalten** ändert keine Priorität. **Geringste Verspätung** sucht das beste Ergebnis. **Wenigste Änderungen** begrenzt die gesuchte Folge auf höchstens 3 Verschiebungen. **Empfohlen** markiert den Vorschlag. Bei **Liefertermin zuerst** ist diese Option im Gantt ausgegraut. Eine Suche startet nicht. Sie können weiterhin die festen Regeln vergleichen.
 
 [Mehr erfahren](/de/platform-intro/pages/assignment-planner).
 
 ### Zurück in den Pool
 
-**Zurück in den Pool** gibt offene Arbeit aus der Betriebsdatenerfassung V3 in den eigenen Hallenpool der Maschine zurück. Dies ist auch die Bestätigung im Zuweisungsplaner, nachdem Sie eine begonnene, gestoppte Karte auf einem Hallenpool abgelegt haben. Administratoren und Benutzer mit Zugriff auf die Seite Aufträge können dort jeden Hallenpool wählen. Andere Benutzer können Arbeit nur in den Pool der Halle ihrer aktuellen Maschine zurückgeben. Alle benötigen Zugriff auf die aktuelle Maschine des Schritts. Hat die Arbeit begonnen, bleiben Zeiten und Gutteile auf der ursprünglichen Maschine. Nur der Rest wird weitergegeben. **Grund (optional)** gibt eine Notiz an die nächste Person weiter.
+**Zurück in den Pool** gibt offene Arbeit aus der Betriebsdatenerfassung V3 in den eigenen Hallenpool der Maschine zurück. Dies ist auch die Bestätigung im Zuweisungsplaner, nachdem Sie eine begonnene, gestoppte Karte auf einem Hallenpool abgelegt haben. Administratoren und Benutzer mit Zugriff auf die Seite Aufträge können dort jeden Hallenpool wählen. Andere Benutzer können Arbeit nur in den Pool der Halle ihrer aktuellen Maschine zurückgeben. Alle benötigen Zugriff auf die aktuelle Maschine des Arbeitsgangs. Hat die Arbeit begonnen, bleiben Zeiten und Gutteile auf der ursprünglichen Maschine. Nur der Rest wird weitergegeben. **Grund (optional)** gibt eine Notiz an die nächste Person weiter.
 
 [Mehr erfahren](/de/platform-intro/pages/data-acquisition).
 
@@ -327,7 +329,7 @@ Tage in Zeitfenstern und Fälligkeitshinweisen. ±1d bedeutet einen Tag in beide
 
 ### Dev. / Deviation / Abweichung
 
-Tatsächliche Zeit minus geplante Zeit. Eine negative Zeitabweichung bedeutet schneller als geplant.
+Tatsächliche Zeit minus geplante Zeit. Eine negative Zeitabweichung bedeutet schneller als geplant. **Abweichung Vorbereitungszeit** (bisher **Rüstzeit Abweichung**) vergleicht die erfassten Vorbereitungsintervalle mit der geplanten Vorbereitungszeit.
 
 [Mehr erfahren](/de/platform-intro/concepts/calculations#deviations).
 
@@ -377,7 +379,7 @@ Dauer eines geplanten oder erfassten Zeitraums. Prüfen Sie, ob das Feld Plan- o
 
 ### Intervall bearbeiten
 
-**Intervall bearbeiten** öffnet dieselbe Bearbeitung in Betriebsdatenerfassung V3 und Auftragsverwaltung. Korrigieren Sie erfasste Arbeit unter **Start**, **Ende** und **Mengen**. **Produktion** und **Rüsten** bezeichnen den Typ. Ein Punkt neben einem Reiter kennzeichnet ungespeicherte Änderungen.
+**Intervall bearbeiten** öffnet dieselbe Bearbeitung in Betriebsdatenerfassung V3 und Auftragsverwaltung. Korrigieren Sie erfasste Arbeit unter **Start**, **Ende** und **Mengen**. **Produktion** und **Vorbereitung** bezeichnen den Typ. Ein Punkt neben einem Reiter kennzeichnet ungespeicherte Änderungen.
 
 [Mehr erfahren](/de/platform-intro/pages/data-acquisition).
 
@@ -466,11 +468,11 @@ Wird der Liefertermin verfehlt, erscheint die Warnung rot. Wird nur das geplante
 Die Anzahl zeigt, wie viele Arbeitsgänge des Auftrags eine Maschine haben. Sie zählt keine fertigen Arbeitsgänge. Arbeit ohne Maschine kann dazu führen, dass das erwartete Ende zu früh erscheint.
 #### Teilweise geplant und gar nicht geplant
 
-**Teilweise geplant** bedeutet, dass einigen Schritten noch eine Zuweisung fehlt. **Gar nicht geplant** kennzeichnet Aufträge mit Liefertermin, aber ohne Arbeitsgang auf einer Maschine oder in einem Hallenpool. Sie erscheinen auf keiner Plantafel.
+**Teilweise geplant** bedeutet, dass einigen Arbeitsgängen noch eine Zuweisung fehlt. **Gar nicht geplant** kennzeichnet Aufträge mit Liefertermin, aber ohne Arbeitsgang auf einer Maschine oder in einem Hallenpool. Sie erscheinen auf keiner Plantafel.
 
 #### Früherer Schritt nicht geplant
 
-**Früherer Schritt nicht geplant** warnt, dass die angezeigten Zeiten den früheren Schritt bereits als fertig voraussetzen. Prüfen Sie frühere Arbeitsgänge, die noch keine Maschine haben oder im Hallenpool liegen, bevor Sie sich auf spätere Endzeiten verlassen. Lange angehaltene und nie gestartete Arbeitsgänge auf Maschinen belegen weiterhin Zeit in der Prognose.
+**Früherer Schritt nicht geplant** warnt, dass die angezeigten Zeiten den früheren Arbeitsgang bereits als abgeschlossen voraussetzen. Prüfen Sie frühere Arbeitsgänge, die noch keine Maschine haben oder im Hallenpool liegen, bevor Sie sich auf spätere Endzeiten verlassen. Lange angehaltene und nie gestartete Arbeitsgänge auf Maschinen belegen weiterhin Zeit in der Prognose.
 
 #### Nie gestartet und kein geplanter Start
 
@@ -537,7 +539,7 @@ Ohne Mangel produzierte Teile, getrennt von Material- und Fertigungsausschuss.
 
 ### Übergeben
 
-**Übergeben** kennzeichnet den beendeten Anteil auf der ursprünglichen Maschine, wenn die restliche Arbeit weitergegeben wurde. Im Auftrag verweist die neutrale Kennzeichnung auf übergebene Schritte. Der gesamte Schritt oder Auftrag ist damit nicht fertig.
+**Übergeben** kennzeichnet den beendeten Anteil auf der ursprünglichen Maschine, wenn die restliche Arbeit weitergegeben wurde. Im Auftrag verweist die neutrale Kennzeichnung auf übergebene Arbeitsgänge. Der gesamte Arbeitsgang oder Auftrag ist damit nicht abgeschlossen.
 
 [Mehr erfahren](/de/platform-intro/pages/data-acquisition).
 
@@ -557,7 +559,7 @@ Hallenübersicht, die unbeaufsichtigt mit API-Schlüssel statt Anmeldung läuft.
 
 ### Hall Pool
 
-Gemeinsame Hallenwarteschlange. Eine Zuweisung hat keine feste Maschine, bis eine Maschine der Halle sie in der BDE übernimmt. Im Zuweisungsplaner wählen Sie unter **Hallenpools** die Hallen und deren Platzierung. **Im Board** stellt Pools neben ihre Maschinen. **Neben der Liste** hält sie neben der Liste nicht zugewiesener Operationen, während Sie durch Maschinen scrollen. Pools zählen nicht zur Grenze von 25 Maschinen. **Pool einklappen** lässt einen schmalen Streifen stehen, der weiterhin Karten annimmt. **Pool ausklappen** zeigt seine Karten wieder.
+Gemeinsame Hallenwarteschlange. Eine Zuweisung hat keine feste Maschine, bis eine Maschine der Halle sie in der BDE übernimmt. Im Zuweisungsplaner wählen Sie unter **Hallenpools** die Hallen und deren Platzierung. **Im Board** stellt Pools neben ihre Maschinen. **Neben der Liste** hält sie neben der Liste nicht zugewiesener Arbeitsgänge, während Sie durch Maschinen scrollen. Pools zählen nicht zur Grenze von 25 Maschinen. **Pool einklappen** lässt einen schmalen Streifen stehen, der weiterhin Karten annimmt. **Pool ausklappen** zeigt seine Karten wieder.
 
 [Mehr erfahren](/de/platform-intro/pages/assignment-planner).
 
@@ -633,7 +635,7 @@ Importwerte für neue Aufträge oder Arbeitsgänge mit leeren Prioritätszellen 
 
 ### Job Context
 
-Gemeinsam an der Maschine angezeigte Notizen aus Auftrag, Arbeitsauftrag, Operation und Zuweisung.
+Gemeinsam an der Maschine angezeigte Notizen aus Auftrag, Arbeitsauftrag, Arbeitsgang und Zuweisung.
 
 [Mehr erfahren](/de/platform-intro/pages/data-acquisition).
 
@@ -799,9 +801,11 @@ Minuten in Daueranzeigen. Gewöhnliche Minuten und Industrieminuten sind untersc
 
 [Mehr erfahren](/de/platform-intro/concepts/calculations#quantities).
 
-### min prep / Min. Rüst
+<a id="min-prep--min-rüst" />
 
-Minuten für die Vorbereitung beziehungsweise das Rüsten einer Operation.
+### min prep / Min. Vorb.
+
+Minuten für die Vorbereitung eines Arbeitsgangs.
 
 [Mehr erfahren](/de/platform-intro/concepts/calculations#deviations).
 
@@ -813,7 +817,7 @@ Der niedrigste Wert in der Zyklusstatistik. Min. Zykluszeit bedeutet minimale Zy
 
 ### min/pc / Min./Stk
 
-Minuten je Stück, verwendet für geplante Operationszeiten.
+Minuten je Stück, verwendet für geplante Arbeitsgangzeiten.
 
 [Mehr erfahren](/de/platform-intro/concepts/calculations#deviations).
 
@@ -839,7 +843,7 @@ Durchschnittliche Zeit in Automator vom Auslösen eines Ereignisses bis zu seine
 
 ### Neue Arbeitsgänge in der Warteschlange
 
-Die Auswahl beim Import, wo Arbeit in Maschinenwarteschlangen und Hallenpools eingereiht wird. Sie finden sie im Abschnitt **Operationsfelder**, direkt unter der Zeile **Operationsbeschreibung**. **Nach Sortierung** ist vorausgewählt und fügt Arbeit nach den angezeigten Regeln ein, ohne bestehende Arbeitsgänge umzusortieren. **Am Anfang** reiht Arbeit hinter laufenden Arbeitsgängen ein, **Am Ende** hinten. Die Einreihung ändert nie Prioritäten oder Termine. **Firmensortierung:** erscheint, wenn die Regeln der Firmensortierung entsprechen. **Eigene Sortierung:** kennzeichnet für den Import gewählte Regeln, die von den Firmenregeln abweichen. **Sortierung:** erscheint bei den Standardregeln ohne Firmensortierung.
+Die Auswahl beim Import, wo Arbeit in Maschinenwarteschlangen und Hallenpools eingereiht wird. Sie finden sie im Abschnitt **Felder des Arbeitsgangs**, direkt unter der Zeile **Arbeitsgangbeschreibung**. **Nach Sortierung** ist vorausgewählt und fügt Arbeit nach den angezeigten Regeln ein, ohne bestehende Arbeitsgänge umzusortieren. **Am Anfang** reiht Arbeit hinter laufenden Arbeitsgängen ein, **Am Ende** hinten. Die Einreihung ändert nie Prioritäten oder Termine. **Firmensortierung:** erscheint, wenn die Regeln der Firmensortierung entsprechen. **Eigene Sortierung:** kennzeichnet für den Import gewählte Regeln, die von den Firmenregeln abweichen. **Sortierung:** erscheint bei den Standardregeln ohne Firmensortierung.
 
 [Mehr erfahren](/de/platform-intro/pages/erp-upload-planner#queue-placement).
 
@@ -875,7 +879,7 @@ Kennzeichen der ERP-Prüfung: Ein neuer Datensatz würde angelegt.
 
 ### No. / Nr. / Row number
 
-Zeilennummer in Administrationstabellen. Nr. an einer Operation kann dagegen die Sequenznummer meinen.
+Zeilennummer in Administrationstabellen. Nr. an einem Arbeitsgang kann dagegen die **Arbeitsgangfolge** meinen.
 
 [Mehr erfahren](/de/platform-intro/pages/admin-panel).
 
@@ -891,19 +895,19 @@ Gesamtkennzahl aus Verfügbarkeit, Leistung und Qualität. Die genaue Serverform
 
 ### Order / Auftrag / External Order ID
 
-Gesamtauftrag, identifiziert durch den Auftragsnamen; enthält Arbeitsaufträge, Operationen und Zuweisungen.
+Gesamtauftrag, identifiziert durch den Auftragsnamen; enthält Arbeitsaufträge, Arbeitsgänge und Zuweisungen.
 
 [Mehr erfahren](/de/platform-intro/pages/order-detail).
 
 ### Order Planned dates / Operation Planned dates
 
-Auftragsdaten gelten für den ganzen Auftrag; Operationsdaten gehören zu einem Schritt und dienen der Schrittfolge.
+Auftragsdaten gelten für den ganzen Auftrag; Arbeitsgangtermine gehören zu einem Arbeitsgang und beschreiben dessen geplantes Zeitfenster.
 
 [Mehr erfahren](/de/platform-intro/pages/assignment-planner).
 
 ### Auftragspriorität / Arbeitsgangpriorität
 
-Unabhängige Dringlichkeitswerte für den Gesamtauftrag und einen Produktionsschritt. Der Planer zeigt **P** für den Auftrag und eine gestrichelte **AG**-Anzeige für den Arbeitsgang. Auch Auftragsformulare bieten die Arbeitsgangpriorität zur Auswahl. Die gestrichelte **AG**-Anzeige steht neben dem Arbeitsgangnamen. Neue Arbeitsgänge beginnen mit 100. Sind beide Prioritätsfilter gesetzt, muss Arbeit beide erfüllen.
+Unabhängige Dringlichkeitswerte für den Gesamtauftrag und einen Arbeitsgang. Der Planer zeigt **P** für den Auftrag und eine gestrichelte **AG**-Anzeige für den Arbeitsgang. Auch Auftragsformulare bieten die Arbeitsgangpriorität zur Auswahl. Die gestrichelte **AG**-Anzeige steht neben dem Arbeitsgangnamen. Neue Arbeitsgänge beginnen mit 100. Sind beide Prioritätsfilter gesetzt, muss Arbeit beide erfüllen.
 
 [Mehr erfahren](/de/platform-intro/pages/assignment-planner).
 
@@ -925,7 +929,9 @@ Gebuchte Menge übersteigt die Planung. Prüfen Sie die Mengen und wählen Sie W
 
 [Mehr erfahren](/de/platform-intro/pages/data-acquisition).
 
-### Operation gefährdet
+<a id="operation-gefährdet" />
+
+### Arbeitsgang gefährdet
 
 Automator-Vorlage, die 15 % Produktionsrückstand mit 25 % langsameren Zyklen gegenüber der Basis-Zykluszeit verbindet. Ihre Bedingungen sind von der Lieferbewertung des Forecasters getrennt.
 
@@ -941,7 +947,7 @@ Automator-Vorlage, die 15 % Produktionsrückstand mit 25 % langsameren Zyklen ge
 
 ### P / Order priority
 
-Prioritätschip für den Gesamtauftrag, unabhängig von der OP- beziehungsweise AG-Priorität der Operation.
+Prioritätschip für den Gesamtauftrag, unabhängig von der OP- beziehungsweise AG-Priorität des Arbeitsgangs.
 
 [Mehr erfahren](/de/platform-intro/pages/assignment-planner).
 
@@ -963,9 +969,11 @@ Stückzahlen. PCS in Hallen- und Kioskkennzahlen bleibt sprachübergreifend glei
 
 [Mehr erfahren](/de/platform-intro/pages/data-acquisition).
 
-#### Rüsten (Vorbereitung)
+<a id="rüsten-vorbereitung" />
 
-**Rüsten (Vorbereitung)** gruppiert in **BDE Assist** die erlaubten Rüstzeiten getrennt von der Produktion. Administratoren können beide Gruppen unabhängig ändern. Diese Optionen steuern auch die Prüfung vergangener Intervalle.
+#### Vorbereitung
+
+**Vorbereitung** gruppiert in **BDE Assist** die erlaubten Vorbereitungszeiten getrennt von der Produktion. Administratoren können beide Gruppen unabhängig ändern. Diese Optionen steuern auch die Prüfung vergangener Intervalle.
 
 [Mehr erfahren](/de/platform-intro/pages/machine-configuration).
 
@@ -1018,9 +1026,11 @@ Häufigkeit der Prüfung einer Automator-Regel.
 
 [Mehr erfahren](/de/platform-intro/pages/automator).
 
-### Prep / Prep. / Vorber. / Rüst / Preparation / Vorbereitung / Rüsten
+<a id="prep--prep--vorber--rüst--preparation--vorbereitung--rüsten" />
 
-Vorbereitung vor der Produktion. Vorber. steht auf deutschen BDE-Schaltflächen, Rüst auf Planungskarten. Beide bezeichnen die Vorbereitung.
+### Prep / Prep. / Vorber. / Vorb. / Preparation / Vorbereitung
+
+Vorbereitung ist die Arbeit vor der Produktion. Die deutsche Oberfläche verwendet **Vorbereitung** (bisher **Rüsten**). **Vorber.** steht auf BDE-Schaltflächen, **Vorb.** (bisher **Rüst**) auf Planungskarten. **Min. Vorb.** (bisher **Min. Rüst**) bezeichnet Vorbereitungsminuten.
 
 [Mehr erfahren](/de/platform-intro/pages/data-acquisition).
 
@@ -1032,13 +1042,13 @@ Vorbereitung vor der Produktion. Vorber. steht auf deutschen BDE-Schaltflächen,
 
 ### Prep / Start / Stop / Continue
 
-**Vorber.** beginnt Rüsten und **Start** die Produktion. Im Mengendialog bucht **Weiter** Mengen, beendet das laufende Intervall und startet sofort ein neues. **Stopp** bucht und beendet das Intervall. Bei erreichter Planmenge folgt die Abschlussfrage. **Abbrechen** schließt ohne Buchung.
+**Vorber.** beginnt Vorbereitung und **Start** die Produktion. Im Mengendialog bucht **Weiter** Mengen, beendet das laufende Intervall und startet sofort ein neues. **Stopp** bucht und beendet das Intervall. Bei erreichter Planmenge folgt die Abschlussfrage. **Abbrechen** schließt ohne Buchung.
 
 [Mehr erfahren](/de/platform-intro/pages/data-acquisition).
 
 ### Position in der Warteschlange
 
-**Position in der Warteschlange** zeigt den Platz eines wartenden Arbeitsgangs unter **Als Nächstes**. Laufende Schritte haben keine Nummer.
+**Position in der Warteschlange** zeigt den Platz eines wartenden Arbeitsgangs unter **Als Nächstes**. Laufende Arbeitsgänge haben keine Nummer.
 
 [Mehr erfahren](/de/platform-intro/pages/machine-details).
 
@@ -1164,7 +1174,7 @@ Der Dashboard-Tooltip nennt 95 % und verweist für Änderungen auf einen Admin. 
 
 ### Verhältnisgrenzwerte
 
-Lesen Sie die gewählte Bedingung: Rüst- und Zyklusprüfungen vergleichen Zeiten mit Plan oder Basiswert. Produktionsprüfungen messen den Rückstand gegenüber dem Tempo. Auftragsfortschritt vergleicht Fertigstellung und verstrichenen Zeitplan. Derselbe Prozentwert bedeutet nicht bei jeder Kennzahl dasselbe.
+Lesen Sie die gewählte Bedingung: Vorbereitungs- und Zyklusprüfungen vergleichen Zeiten mit Plan oder Basiswert. Produktionsprüfungen messen den Rückstand gegenüber dem Tempo. Auftragsfortschritt vergleicht Fertigstellung und verstrichenen Zeitplan. Derselbe Prozentwert bedeutet nicht bei jeder Kennzahl dasselbe.
 
 [Mehr erfahren](/de/platform-intro/pages/automator).
 
@@ -1258,7 +1268,7 @@ Verworfene Teile, getrennt in Materialausschuss MA und Fertigungsausschuss AA.
 
 ### Suchen in
 
-Suchbereich im Zuweisungsplaner: **Nicht zugewiesen** durchsucht die Liste nicht zugewiesener Operationen, **Hallenpools** die Pool-Arbeit, **Maschinen** die Arbeit auf Maschinen und **Überall** alle drei Bereiche. Die Suche findet Auftrag, Produkt oder Kunde, keine Maschinennamen. Ihre Auswahl wird gespeichert. Voreingestellt ist **Nicht zugewiesen**.
+Suchbereich im Zuweisungsplaner: **Nicht zugewiesen** durchsucht die Liste nicht zugewiesener Arbeitsgänge, **Hallenpools** die Pool-Arbeit, **Maschinen** die Arbeit auf Maschinen und **Überall** alle drei Bereiche. Die Suche findet Auftrag, Produkt oder Kunde, keine Maschinennamen. Ihre Auswahl wird gespeichert. Voreingestellt ist **Nicht zugewiesen**.
 
 [Mehr erfahren](/de/platform-intro/pages/assignment-planner).
 
@@ -1274,9 +1284,13 @@ Für Sensoren mit Stromversorgung über die Maschine. Ein fehlendes Signal ersch
 
 [Mehr erfahren](/de/platform-intro/pages/machine-configuration).
 
-### Seq / Nr. / Sequence / Sequenz
+<a id="operation-sequence" />
 
-Schrittnummer einer Operation innerhalb eines Arbeitsauftrags, etwa 10, 20, 30.Im Hallenplan steht die Arbeitsgangfolge mit # beim Produkt oder in der Auftragskarte. Die Position hängt von **Produktinformationen** und einem vorhandenen Produktbild ab.
+<a id="seq--nr--sequence--sequenz" />
+
+### Seq / Nr. / Sequence / Arbeitsgangfolge
+
+Die **Arbeitsgangfolge** (bisher **Operationsfolge**) bezeichnet die Nummer eines Arbeitsgangs innerhalb eines Arbeitsauftrags, etwa #10, #20 oder #30. Sie ist unabhängig von seinem Platz in der Maschinenwarteschlange. Im Hallenplan steht die Nummer beim Produkt oder in der Auftragskarte, abhängig von **Produktinformationen** und einem vorhandenen Produktbild.
 
 [Mehr erfahren](/de/platform-intro/pages/order-detail).
 
@@ -1442,7 +1456,7 @@ Zweiten Authentifizierungsschritt auf dem vertrauten Gerät für 30 Tage übersp
 
 ### Unassigned operation
 
-Operation ohne Maschine, aufgelistet im linken Bereich des Zuweisungsplaners.
+Arbeitsgang ohne Maschine, aufgelistet im linken Bereich des Zuweisungsplaners.
 
 [Mehr erfahren](/de/platform-intro/pages/assignment-planner).
 
@@ -1502,7 +1516,7 @@ Angaben zum drahtlosen Netzwerk eines registrierten Hallendisplays.
 
 ### WO / Work Order / Arbeitsauftrag
 
-Teil eines Auftrags für ein Produkt mit geplanter Menge und Operationen.
+Teil eines Auftrags für ein Produkt mit geplanter Menge und Arbeitsgängen.
 
 [Mehr erfahren](/de/platform-intro/pages/order-detail).
 

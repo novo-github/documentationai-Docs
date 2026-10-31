@@ -35,13 +35,13 @@ Filter und Sortierung werden bei der Rückkehr zur Maschinenseite wiederhergeste
 
 ## Heutige Aufträge und Warteschlange
 
-Ein hier beendeter und weitergegebener Anteil zeigt **Übergeben** mit einer grauen Kennzeichnung für Ziel und hier gefertigte Gutteile. Eingehende Arbeit zeigt Herkunft und bereits gefertigte Teile. Zeigen Sie für Details auf die Kennzeichnung. Diese Angaben erscheinen auch auf Arbeitsplatzkarten. Der gesamte Schritt kann noch offen sein. Siehe [Übergabedetails](/de/platform-intro/pages/order-detail#handed-over-work).
+Ein hier beendeter und weitergegebener Anteil zeigt **Übergeben** mit einer grauen Kennzeichnung für Ziel und hier gefertigte Gutteile. Eingehende Arbeit zeigt Herkunft und bereits gefertigte Teile. Zeigen Sie für Details auf die Kennzeichnung. Diese Angaben erscheinen auch auf Arbeitsplatzkarten. Der gesamte Arbeitsgang kann noch offen sein. Siehe [Übergabedetails](/de/platform-intro/pages/order-detail#handed-over-work).
 
-**Aufträge heute** (bisher **Live-Aufträge**) zeigt heute bearbeitete Arbeitsgänge, laufende Arbeit zuerst und danach die jüngste Arbeit. Die Karten enthalten Auftrag, Produkt, Folgenummer, Status, Zeiten sowie Auftrags- und Arbeitsgangpriorität. Nur laufende Arbeitsgänge haben einen farbigen Rand. Ein gestern begonnener Arbeitsgang behält sein tatsächliches Startdatum und seine Startzeit.
+**Aufträge heute** (bisher **Live-Aufträge**) zeigt heute bearbeitete Arbeitsgänge, laufende Arbeit zuerst und danach die jüngste Arbeit. Die Karten enthalten Auftrag, Produkt, **Arbeitsgangfolge**, Status, Zeiten sowie Auftrags- und Arbeitsgangpriorität. Nur laufende Arbeitsgänge haben einen farbigen Rand. Ein gestern begonnener Arbeitsgang behält sein tatsächliches Startdatum und seine Startzeit.
 
 **Als Nächstes** (bisher **Geplante Aufträge**) zeigt die ersten 10 wartenden Arbeitsgänge in der Reihenfolge der Maschine, auch Arbeit für andere Tage. Nummern zeigen den Platz jedes Arbeitsgangs. Die Karten zeigen geplante Zeiten. Laufende Arbeit bleibt unter **Aufträge heute**. Wartet keine Arbeit, ist die Warteschlangenansicht ausgeblendet. Öffnen Sie für die vollständige Warteschlange die [Maschinenseite](/de/platform-intro/pages/machine-details).
 
-Jede Liste zeigt zwei Karten gleichzeitig. Längere Listen rücken alle 8 Sekunden weiter. Sie können auch selbst scrollen. Eine einzelne laufende Karte bleibt sichtbar. Laufen mehrere Arbeitsgänge gleichzeitig, stehen diese am Listenanfang. Die Bewegung pausiert, solange Sie auf die Liste zeigen, sie mit der Tastatur fokussieren oder bedienen. Die Einstellung für reduzierte Bewegung schaltet den automatischen Wechsel aus. Die Positionsanzeige zeigt Ihre Stelle in der Liste. Bei **Als Nächstes** zählt die Gesamtzahl auch wartende Schritte jenseits der ersten 10.
+Jede Liste zeigt zwei Karten gleichzeitig. Längere Listen rücken alle 8 Sekunden weiter. Sie können auch selbst scrollen. Eine einzelne laufende Karte bleibt sichtbar. Laufen mehrere Arbeitsgänge gleichzeitig, stehen diese am Listenanfang. Die Bewegung pausiert, solange Sie auf die Liste zeigen, sie mit der Tastatur fokussieren oder bedienen. Die Einstellung für reduzierte Bewegung schaltet den automatischen Wechsel aus. Die Positionsanzeige zeigt Ihre Stelle in der Liste. Bei **Als Nächstes** zählt die Gesamtzahl auch wartende Arbeitsgänge jenseits der ersten 10.
 
 Klicken Sie auf eine Karte, um den Auftrag in einem neuen Tab zu öffnen, sofern Sie Zugriff auf die Auftragsseite haben. Die heutigen Listen werden jede Minute aktualisiert. Folgen Sie [Maschine live überwachen](/de/platform-intro/workflows/live-machine-monitoring).
 
@@ -73,16 +73,16 @@ Wählen Sie in der Ansichtsauswahl **Arbeitsplätze**, um Arbeitsplätze ohne AV
 | Produktion | Production | Grün | Produziert. |
 | Leerlauf | Idle | Orange | Eingeschaltet, produziert nicht. |
 | Aus / Gestoppt | Off / Stopped | Rot | Ausgeschaltet. |
-| In Vorbereitung | Preparation | Blau | Wird gerüstet. |
+| In Vorbereitung | Preparation | Blau | Wird vorbereitet. |
 | Unbekannt | Unknown | Grau | Kein nutzbares Signal. |
 
 Ringanzeigen verwenden **OEE**, **AVL** (Verfügbarkeit) und **PRO** (Leistung). Die Beschriftung unter dem mittigen Wert identifiziert die Kennzahl. **PRO bedeutet nicht Produktion.** Definitionen finden Sie unter [Berechnungen](/de/platform-intro/concepts/calculations#oee).
 
 ## Aktive Schichten verstehen
 
-**Aktive Schicht** kennzeichnet eine Maschine, deren Schichten der Maschinenaktivität folgen. Eine Schicht beginnt bei Leerlauf, Produktion oder Rüsten und endet nach den Schichteinstellungen der Maschine. Die zugewiesene Schichtgruppe wird nicht verwendet. Siehe [Maschinenkonfiguration](/de/platform-intro/pages/machine-configuration).
+**Aktive Schicht** kennzeichnet eine Maschine, deren Schichten der Maschinenaktivität folgen. Eine Schicht beginnt bei Leerlauf, Produktion oder Vorbereitung und endet nach den Schichteinstellungen der Maschine. Die zugewiesene Schichtgruppe wird nicht verwendet. Siehe [Maschinenkonfiguration](/de/platform-intro/pages/machine-configuration).
 
-**Wartet auf die nächste aktive Schicht** oder **wartet auf Maschinenstart** bedeutet, dass die nächste Schicht noch nicht begonnen hat. Sie startet automatisch bei Leerlauf, Produktion oder Rüsten. Bis dahin werden geplante Schichten der zugewiesenen Schichtgruppe angezeigt. Diese Anzeige schaltet aktive Schichten nicht aus.
+**Wartet auf die nächste aktive Schicht** oder **wartet auf Maschinenstart** bedeutet, dass die nächste Schicht noch nicht begonnen hat. Sie startet automatisch bei Leerlauf, Produktion oder Vorbereitung. Bis dahin werden geplante Schichten der zugewiesenen Schichtgruppe angezeigt. Diese Anzeige schaltet aktive Schichten nicht aus.
 
 ## Hauptentitäten
 

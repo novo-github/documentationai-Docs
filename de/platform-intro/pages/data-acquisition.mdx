@@ -32,7 +32,7 @@ Wählen Sie zum Maschinenwechsel den Maschinennamen in der oberen Navigationslei
 - Arbeit starten oder stoppen.
 - Produzierte Menge, Materialausschuss und Fertigungsausschuss beim Stoppen oder Fortsetzen eines Intervalls erfassen.
 - Live-Aufträge erstellen oder verwenden.
-- Nach ungeplanten Operationen suchen und diese direkt der Maschine zuweisen.
+- Nach ungeplanten Arbeitsgängen suchen und diese direkt der Maschine zuweisen.
 - Informationen und Reihenfolge auf Zuweisungskarten konfigurieren.
 - Zeitachsen-Gründe anwenden und zugehörige Unterstützungsinhalte prüfen.
 
@@ -46,13 +46,13 @@ Ihre eigenen Einstellungen bleiben gespeichert. Sie gelten wieder, sobald die Vo
 
 Die Vorlage kann das Erstellen von Aufträgen, das Übernehmen und Zurückgeben von Pool-Arbeit, das Wiederöffnen abgeschlossener Arbeitsgänge, Intervallkorrekturen und das Speichern von Notizen oder Details sperren. Die Schaltflächen und Bearbeitungssymbole bleiben sichtbar und lesbar, sind aber nicht bedienbar. Zeigen oder tippen Sie darauf, um **Für diese Maschine gesperrt (BDE-Vorlage).** zu lesen. Notizen und Details bleiben nur lesbar. **Speichern** bleibt auch ohne Änderungen sichtbar. Ein gesperrter Status sieht weiterhin normal aus. Tippen öffnet jedoch kein Menü. Ist das Hinzufügen von Aufträgen ausgeschaltet, filtert die Suche weiterhin Arbeit dieser Maschine. Ungeplante Arbeitsgänge findet sie dann nicht. Bitten Sie einen Administrator, eine gesperrte Aktion zu prüfen.
 
-Rüsten, Produktionsstart, Stopp, Mengenbuchung, Stillstandsgründe, **BDE Assist** und Warnungen bleiben wie bisher verfügbar. Auch bei ausgeschalteten Statusänderungen können Sie unter **Geplante Menge erreicht** weiterhin **Abschließen** oder **In Wartestellung lassen** wählen. Für das Wiederöffnen gibt es den eigenen Schalter **Abgeschlossene Arbeitsgänge wieder öffnen**. Andere Seiten wie der Planer bleiben unverändert.
+Vorbereitung, Produktionsstart, Stopp, Mengenbuchung, Stillstandsgründe, **BDE Assist** und Warnungen bleiben wie bisher verfügbar. Auch bei ausgeschalteten Statusänderungen können Sie unter **Geplante Menge erreicht** weiterhin **Abschließen** oder **In Wartestellung lassen** wählen. Für das Wiederöffnen gibt es den eigenen Schalter **Abgeschlossene Arbeitsgänge wieder öffnen**. Andere Seiten wie der Planer bleiben unverändert.
 
 Vorlagenänderungen erscheinen bei der nächsten automatischen Aktualisierung, alle 5 Minuten, sofern kein anderer Abstand eingestellt ist. Über die Aktualisieren-Schaltfläche der Seite oder durch erneutes Laden der Seite übernehmen Sie sie sofort. Andere Geräte übernehmen Änderungen nicht sofort; ein geöffnet gebliebener Bildschirm zeigt bis dahin die bisherigen Einstellungen.
 
 ## Arbeit auswählen und einordnen
 
-Nutzen Sie die Ansicht offener Zuweisungen oder eine Zeitfensteransicht, um Arbeit für die aktuelle Maschine zu finden. Ist eine Operation noch ungeplant, können Sie sie direkt auf dieser Seite suchen und zuweisen. Operationsfolgenummern auf den Auftragsanzeigen helfen Ihnen, die Arbeitsreihenfolge zu erkennen. Operations- und Zuweisungsnotizen liefern Anweisungen und Kontext.
+Nutzen Sie die Ansicht offener Zuweisungen oder eine Zeitfensteransicht, um Arbeit für die aktuelle Maschine zu finden. Ist ein Arbeitsgang noch ungeplant, können Sie ihn direkt auf dieser Seite suchen und zuweisen. Arbeitsgangfolgen auf den Auftragsanzeigen helfen Ihnen, die Arbeitsreihenfolge zu erkennen. Notizen zu Arbeitsgängen und Zuweisungen liefern Anweisungen und Kontext.
 
 In der Betriebsdatenerfassung V3 zeigt **Nach Warteschlangenposition sortieren** die durch Ziehen festgelegte Reihenfolge. Schalten Sie diese Option aus, um nach Regeln wie Priorität oder Datum zu sortieren. Für diese Regeln können Sie eine aufsteigende oder absteigende Richtung wählen. Die Regeln stehen in einer nummerierten Liste: Regel 1 entscheidet zuerst, spätere Regeln lösen Gleichstände auf. Um den Vorrang zu ändern, ändern Sie die Auswahl in der Liste einer Zeile, entfernen Sie eine Regel mit der roten Schaltfläche zum Entfernen oder ergänzen Sie mit **Sortierregel hinzufügen** eine Zeile. Diese allgemeinen Sortiermöglichkeiten stehen auch im [Zuweisungsplaner](/de/platform-intro/pages/assignment-planner) zur Verfügung.
 
@@ -110,7 +110,7 @@ Abgeschlossene oder stornierte Arbeitsgänge können nicht zurückgegeben werden
 
 Schaltet die Maschinenvorlage **Zeiten und Mengen von Intervallen korrigieren** aus, bleibt die Intervallliste nur lesbar. Die Bearbeitungssymbole sind gesperrt. Zeigen oder tippen Sie darauf, um **Für diese Maschine gesperrt (BDE-Vorlage).** zu lesen. Start- und Endzeiten bleiben reiner Text. Die folgenden Bearbeitungsschritte gelten, wenn Korrekturen erlaubt sind.
 
-Ein Intervall erfasst einen Abschnitt von Rüsten oder Produktion. Öffnen Sie in der Betriebsdatenerfassung V3 die Intervallliste des Auftrags. Tippen Sie einmal auf eine Start- oder Endzeit, um **Intervall bearbeiten** unter **Start** oder **Ende** zu öffnen. Das Uhrsymbol und der Hinweis **Tippen zum Ändern** kennzeichnen bearbeitbare Zeiten. Der Stift öffnet **Mengen**.
+Ein Intervall erfasst einen Abschnitt von Vorbereitung oder Produktion. Öffnen Sie in der Betriebsdatenerfassung V3 die Intervallliste des Auftrags. Tippen Sie einmal auf eine Start- oder Endzeit, um **Intervall bearbeiten** unter **Start** oder **Ende** zu öffnen. Das Uhrsymbol und der Hinweis **Tippen zum Ändern** kennzeichnen bearbeitbare Zeiten. Der Stift öffnet **Mengen**.
 
 Zeiten zeigen Stunden und Minuten. Bei einem anderen Tag steht davor das Datum als Tag/Monat, zum Beispiel 20/10 14:30. Ein laufendes Ende zeigt **Läuft noch**.
 
@@ -122,7 +122,7 @@ Die Übersicht über den Bedienelementen zeigt Auftrag, Intervallnummer sowie ge
 - Nutzen Sie am Computer **−** und **+**, halten Sie eine Schaltfläche für wiederholte Schritte gedrückt oder tippen Sie Stunden und Minuten ein. Sie können auch das Mausrad verwenden. Minuten- und Stundenschritte gehen in die nächste Stunde oder den nächsten Tag über.
 - **−5 Min.** und **+5 Min.** verschieben die gewählte Zeit um fünf Minuten. Wiederholtes Tippen addiert sich.
 - Korrigieren Sie unter **Mengen** die Werte für **Gutmenge**, **Material-Ausschuss** und **Arbeits-Ausschuss**. Geben Sie Mengen am Computer mit der Tastatur oder am Touchscreen mit dem Ziffernblock ein. Im kumulativen Modus geben Sie den gesamten Maschinenzählerstand ein.
-- Wählen Sie **Produktion** oder **Rüsten**, um den Intervalltyp zu korrigieren. Die Übersicht zeigt den vorgesehenen Typ neben dem gespeicherten.
+- Wählen Sie **Produktion** oder **Vorbereitung**, um den Intervalltyp zu korrigieren. Die Übersicht zeigt den vorgesehenen Typ neben dem gespeicherten.
 
 Auf Bildschirmen mit geringer Höhe steht die Übersicht oben in zwei Zeilen und der Ziffernblock ist kleiner. Auf besonders niedrigen Bildschirmen, etwa Bildschirmen mit 1024×600, zeigen die Räder weniger Zeilen mit **−5 Min.** und **+5 Min.** daneben; der Hinweis unter den Bedienelementen entfällt.
 
@@ -174,7 +174,7 @@ Meldungen nennen den Arbeitsgang. Nach **Weiter** erscheint **Intervall beendet 
 
 **PDA (Production Data Acquisition)** und **BDE (Betriebsdatenerfassung)** bezeichnen dieselbe Bedienseite. Tabs umfassen **Assignments**, **Pool**, **Downtime reasons**, **Tickets** und **Knowledge Base**.
 
-**Vorber.** beginnt Rüsten, **Start** die Produktion und **Stopp** beendet ein Intervall. **Weiter** bucht Mengen, beendet das laufende Intervall und startet sofort ein neues. Weitere Aktionen beginnen oder beenden Rüsten und Schichten.
+**Vorber.** beginnt Vorbereitung, **Start** die Produktion und **Stopp** beendet ein Intervall. **Weiter** bucht Mengen, beendet das laufende Intervall und startet sofort ein neues. Weitere Aktionen beginnen oder beenden Vorbereitung und Schichten.
 
 **Good qty. / Gutmenge** ist guter Ausstoß. **Mat. / MA** bedeutet Materialausschuss, **Work / AA** Fertigungsausschuss. **Gesamt = Eingabe + MA + AA**. **Rework Qty** ist die Nacharbeitsmenge. **Cycle Count** kommt vom Sensor, **PDA Entry / BDE-Eintrag** vom Bediener. Die Auswahl der Fortschrittsquelle ändert nur die Anzeige.
 
@@ -184,7 +184,7 @@ Meldungen nennen den Arbeitsgang. Nach **Weiter** erscheint **Intervall beendet 
 
 **Mid Booking (Zwischenbuchung)** speichert Mengen während des Laufs durch Schließen und Neustarten des Intervalls. Schlägt der Neustart fehl, bleiben Mengen gespeichert. Drücken Sie **Start** zum Fortsetzen und prüfen Sie den Laufzustand vor einer weiteren Buchung.
 
-Übernehmen Sie im **Pool** Arbeit aus dem Hall Pool Ihrer Maschine. Fehlt eine Zuweisung, suchen Sie ungeplante Operationen oder verwenden Sie **Find/Create Immediate Order**. **Job Context** verbindet Notizen aus Auftrag, Arbeitsauftrag, Operation und Zuweisung.
+Übernehmen Sie im **Pool** Arbeit aus dem Hall Pool Ihrer Maschine. Fehlt eine Zuweisung, suchen Sie ungeplante Arbeitsgänge oder verwenden Sie **Find/Create Immediate Order**. **Job Context** verbindet Notizen aus Auftrag, Arbeitsauftrag, Arbeitsgang und Zuweisung.
 
 **Wartet auf einen vorherigen Arbeitsgang** / **Blockiert durch** bedeutet, dass ein früherer Arbeitsgang noch nicht abgeschlossen ist. **Trotzdem starten** ist dennoch verfügbar. Prüfen Sie vorher die Abhängigkeit. Bei bereits laufender anderer Zuweisung erscheint eine Bestätigung. Ist die Planmenge nach **Stopp** erreicht, wählen Sie **Abschließen** oder **In Wartestellung lassen**.
 
@@ -196,7 +196,7 @@ Ungebundene oder unbeschriftete Maschinenzeit gehört zu keinem Auftrag. Die Lö
 | --- | --- |
 | **Alle Offen** | Alle offenen Zuweisungen ohne Datumsfilter. |
 | **Zeitfenster + Offen** | Offene Zuweisungen innerhalb ±1/3/5/7 Tagen; für tägliche Arbeit. |
-| **Zeitfenster + Alle Status** | Alle Schritte im gewählten Datumsfenster, einschließlich abgeschlossener und stornierter Schritte. |
+| **Zeitfenster + Alle Status** | Alle Arbeitsgänge im gewählten Datumsfenster, einschließlich abgeschlossener und stornierter Arbeitsgänge. |
 | **Zuletzt abgeschlossen** | Die letzten fünf auf dieser Maschine abgeschlossenen Arbeitsgänge, neueste zuerst, ohne Datumsfilter. |
 
 Ihre Kartenanzeige und Hervorhebungen werden je Benutzer gespeichert. Eine Maschinenvorlage ergänzt vorgeschriebene Felder und Hervorhebungen und kann Sortierung und automatische Aktualisierung festlegen. **Nach Warteschlangenposition sortieren** folgt der geplanten Warteschlange. Wählen Sie unter **Sortierreihenfolge**, wo laufende und wartende Aufträge erscheinen.
@@ -227,13 +227,13 @@ Nach dem Wiederöffnen verschwindet die Karte aus dieser Ansicht. Wählen Sie in
 
 ## Unterstützte Intervallzeiten prüfen
 
-Aktiviert ein Administrator **BDE Assist**, können verspätete Start- und Stoppzeiten auf Zeiten aus den Maschinendaten verschoben werden. Dies gilt für Produktion und Rüsten in der Betriebsdatenerfassung V3. Manuelle Zeitänderungen und Zwischenbuchungen erhalten diese automatischen Anpassungen nicht.
+Aktiviert ein Administrator **BDE Assist**, können verspätete Start- und Stoppzeiten auf Zeiten aus den Maschinendaten verschoben werden. Dies gilt für Produktion und Vorbereitung in der Betriebsdatenerfassung V3. Manuelle Zeitänderungen und Zwischenbuchungen erhalten diese automatischen Anpassungen nicht.
 
 Der Auswahldialog vergleicht **Jetzt** mit **Danach** und zeigt, welcher Auftrag Zeit gewinnt oder verliert. Wählen Sie eine Hauptoption oder öffnen Sie **Andere Zeiten** für frühere Möglichkeiten, neueste zuerst. Sie können auch eine Markierung in der Zeitleiste antippen. Behalten Sie die gedrückte Zeit, wenn keine passt. Das Schließen des ersten Auswahldialogs behält diese Zeit bei.
 
 Nach einer automatischen Anpassung stellt **Rückgängig** die gedrückte Zeit wieder her. **Ändern…** öffnet Alternativen. Dort stellt **Zurück zur gedrückten Zeit** die ursprüngliche Zeit wieder her. Eine passende Zeit innerhalb der automatischen Grenze kann sofort gelten. Bei mehreren Zeiten bestimmen die Maschineneinstellungen, ob Sie gefragt werden oder die Auswahl automatisch erfolgt. Zeiten jenseits der automatischen Grenze benötigen immer Ihre Auswahl.
 
-Die Intervallliste kennzeichnet Änderungen mit **Angepasst**, **Auto-beendet** oder **Verbessert**. Öffnen Sie die Erklärung für Zeitänderung und Grund. **Auto-beendet** bedeutet, dass ein vergessenes Produktionsintervall nach der eingestellten Aus- oder Leerlaufdauer beendet wurde. Dies funktioniert auch bei geschlossener BDE-Seite. Prüfen Sie danach die Mengen: Automatisches Beenden bucht sie nicht. Rüsten endet niemals auf diese Weise.
+Die Intervallliste kennzeichnet Änderungen mit **Angepasst**, **Auto-beendet** oder **Verbessert**. Öffnen Sie die Erklärung für Zeitänderung und Grund. **Auto-beendet** bedeutet, dass ein vergessenes Produktionsintervall nach der eingestellten Aus- oder Leerlaufdauer beendet wurde. Dies funktioniert auch bei geschlossener BDE-Seite. Prüfen Sie danach die Mengen: Automatisches Beenden bucht sie nicht. Vorbereitung endet niemals auf diese Weise.
 
 Ist automatisches Beenden aktiv, kann **Maschine aus, Auftrag läuft noch** die verbleibenden Minuten anzeigen. Pausieren oder Stummschalten der Warnung hält das automatische Beenden nicht an. Bitten Sie einen Administrator um eine Änderung in der [Maschinenkonfiguration](/de/platform-intro/pages/machine-configuration).
 
@@ -249,7 +249,7 @@ Der Dialog zeigt, welche Hilfe auf dieser Maschine aktiv ist. **Gerade jetzt** z
 
 Angeboten werden nur Zeiten aus der Maschinenaktivität oder das Ende des vorherigen Intervalls. Die Hauptauswahl nutzt die jüngste Aktivität. Frühere Zeiten stehen unter **Andere Zeiten**, neueste zuerst, mit insgesamt bis zu 20 angebotenen Zeiten. Zeiten vor dem Ende des vorherigen Auftrags oder jenseits der Fragegrenze entfallen. Sie werden nie auf eine Grenze verschoben.
 
-Öffnen Sie das Informationssymbol neben dem Titel des Auswahldialogs für eine kurze Erklärung. Fehlende Daten unter 10 Minuten sowie Leerlauf-, Aus- oder Rüstunterbrechungen unter 2 Minuten teilen einen Aktivitätsabschnitt nicht. Beispielsweise macht eine fünfminütige Datenlücke während der Produktion die Rückkehr der Daten nicht zu einem neuen Produktionsbeginn.
+Öffnen Sie das Informationssymbol neben dem Titel des Auswahldialogs für eine kurze Erklärung. Fehlende Daten unter 10 Minuten sowie Unterbrechungen durch Leerlauf, Aus oder Vorbereitung unter 2 Minuten teilen einen Aktivitätsabschnitt nicht. Beispielsweise macht eine fünfminütige Datenlücke während der Produktion die Rückkehr der Daten nicht zu einem neuen Produktionsbeginn.
 
 ## Einen Stillstandsgrund wählen
 

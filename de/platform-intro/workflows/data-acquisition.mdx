@@ -28,7 +28,7 @@ Eine [BDE-Zugriffsvorlage](/de/platform-intro/pages/bde-access-templates) kann A
     Öffnen Sie die BDE über die Maschinendetails. Wenn Sie bereits die BDE einer anderen Maschine ansehen, wählen Sie deren Namen in der oberen Navigationsleiste und anschließend die Zielmaschine aus der nach Halle gruppierten Liste. Es erscheinen nur Maschinen, auf die Sie zugreifen dürfen.
   </Step>
   <Step title="Prüfen Sie verfügbare Zuweisungen und wählen Sie die Aufgabe aus" icon="arrow-right" title-type="p">
-    Prüfen Sie offene Zuweisungen oder nutzen Sie eine Zeitfensteransicht und wählen Sie anschließend die Aufgabe aus. Beachten Sie die Operationsfolgenummer und vorhandene Operations- oder Zuweisungsnotizen. Zuweisungsspalten und Sortierung können personalisiert werden.
+    Prüfen Sie offene Zuweisungen oder nutzen Sie eine Zeitfensteransicht und wählen Sie anschließend die Aufgabe aus. Beachten Sie die Arbeitsgangfolge und vorhandene Notizen zum Arbeitsgang oder zur Zuweisung. Zuweisungsspalten und Sortierung können personalisiert werden.
   </Step>
   <Step title="Finden Sie bei Bedarf ungeplante Arbeit" icon="arrow-right" title-type="p">
     Ist der benötigte Arbeitsgang ungeplant und erlaubt die Vorlage **Aufträge an der Maschine hinzufügen**, suchen Sie ihn und weisen Sie ihn direkt zu. Andernfalls bitten Sie Ihre Planung, die Arbeit zuzuweisen.
@@ -129,7 +129,7 @@ Sie benötigen Zugriff auf die Betriebsdatenerfassung V3 der Maschine oder auf d
     Wählen Sie **Start** oder **Ende**. Drehen Sie am Touchscreen die Räder für Tag, Stunde und Minute. Nutzen Sie am Computer **−** und **+** oder tippen Sie Stunden und Minuten ein. **−5 Min.** und **+5 Min.** funktionieren auf beiden Geräten: Zweimal **+5 Min.** verschiebt die Zeit um zehn Minuten nach vorne. Die andere Zeit bleibt auf ihrer Karte sichtbar. Tippen Sie darauf, um die Seite zu wechseln. Stoppen Sie ein laufendes Intervall mit der normalen Stoppaktion, bevor Sie sein Ende korrigieren.
   </Step>
   <Step title="Korrigieren Sie bei Bedarf Mengen und Typ" icon="arrow-right" title-type="p">
-    Geben Sie unter **Mengen** die Werte für **Gutmenge**, **Material-Ausschuss** und **Arbeits-Ausschuss** mit der Tastatur oder dem Ziffernblock am Touchscreen ein. Ist der kumulative Modus gewählt, geben Sie den gesamten Maschinenzählerstand ein. Wählen Sie **Produktion** oder **Rüsten**, falls der gespeicherte Typ falsch ist. Ein laufendes Intervall kann nicht zu einem Typ wechseln, der beim selben Auftrag bereits läuft.
+    Geben Sie unter **Mengen** die Werte für **Gutmenge**, **Material-Ausschuss** und **Arbeits-Ausschuss** mit der Tastatur oder dem Ziffernblock am Touchscreen ein. Ist der kumulative Modus gewählt, geben Sie den gesamten Maschinenzählerstand ein. Wählen Sie **Produktion** oder **Vorbereitung**, falls der gespeicherte Typ falsch ist. Ein laufendes Intervall kann nicht zu einem Typ wechseln, der beim selben Auftrag bereits läuft.
   </Step>
   <Step title="Prüfen und speichern Sie die Änderungen gemeinsam" icon="arrow-right" title-type="p">
     Beim Wechsel zwischen den Bereichen bleiben Ihre Änderungen erhalten. Prüfen Sie die geänderten Zeiten, bei vorhandenem Start und Ende die Dauer neben **Neue Dauer:** und einen vorgesehenen Typwechsel in der Übersicht. Wählen Sie **Speichern**. **Intervall gespeichert.** bestätigt den Erfolg. Tabelle und Zeitleiste aktualisieren sich. Mit **Abbrechen** verwerfen Sie Änderungen vor dem Speichern. Haben Sie bereits **Speichern** gewählt, prüfen Sie die Tabelle: Abbrechen nimmt einen danach abgeschlossenen Speichervorgang nicht zurück.
@@ -215,8 +215,8 @@ Ist der Arbeitsgang älter als die letzten fünf, suchen Sie ihn unter **Zeitfen
 
 Für Pool-Arbeit muss **Aufträge aus dem Hallen-Pool übernehmen** erlaubt sein. Zum Hinzufügen oder Suchen ungeplanter Arbeit muss **Aufträge an der Maschine hinzufügen** erlaubt sein. Bitten Sie einen Administrator, die Vorlage zu prüfen, wenn eine Aktion **Für diese Maschine gesperrt (BDE-Vorlage).** zeigt. Starten, Stoppen und Mengen buchen bleibt wie bisher verfügbar.
 
-1. Übernehmen Sie Arbeit aus dem **Pool** Ihrer Maschinenhalle. Suchen Sie bei Bedarf eine ungeplante Operation oder verwenden Sie **Find/Create Immediate Order**.
-2. Verwenden Sie **Prep / Vorber.** zur Vorbereitung, danach **Start** für Produktion. Prüfen Sie Hinweise zu anderen laufenden Aufträgen oder unfertigen Vorgängerschritten.
+1. Übernehmen Sie Arbeit aus dem **Pool** Ihrer Maschinenhalle. Suchen Sie bei Bedarf einen ungeplanten Arbeitsgang oder verwenden Sie **Find/Create Immediate Order**.
+2. Verwenden Sie **Prep / Vorber.** zur Vorbereitung, danach **Start** für Produktion. Prüfen Sie Hinweise zu anderen laufenden Aufträgen oder noch nicht abgeschlossenen vorherigen Arbeitsgängen.
 3. Buchen Sie über **Mid Booking / Zwischenbuchung** Gutmenge, **Mat. / MA** und **Work / AA** während des Laufs. Das Intervall wird geschlossen und neu gestartet. Scheitert der Neustart, bleiben Mengen gespeichert. Drücken Sie Start statt erneut zu buchen.
 4. Geben Sie in **Cumulative** den ganzen Zählerstand ein, etwa 1450, statt des Zuwachses.
 5. Prüfen Sie nach **Stopp** die Mengen. Erscheint **Geplante Menge erreicht**, wählen Sie **Abschließen** oder **In Wartestellung lassen**. Ergänzen Sie bei Stillstand einen Stillstandsgrund.
@@ -249,7 +249,7 @@ Ein Administrator muss Warnungen für diese Maschine zuerst aktivieren. Alle Per
 - Ob Sie die Arbeit hier abschließen oder den Rest in den Hallenpool zurückgeben.
 - Ob der aktuelle Zeitpunkt zur Vorbereitung, aktiven Produktion oder einem Stopp gehört.
 - Ob für die Aufgabe eine vorhandene Zuweisung oder ein direkter Live-Auftrag verwendet werden soll.
-- Ob eine ungeplante Operation direkt der Maschine zugewiesen werden soll.
+- Ob ein ungeplanter Arbeitsgang direkt der Maschine zugewiesen werden soll.
 - Ob fortgefahren werden soll, wenn bereits eine andere Zuweisung läuft.
 
 ## Erwartetes Ergebnis

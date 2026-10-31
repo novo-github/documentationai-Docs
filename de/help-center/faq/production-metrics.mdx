@@ -11,7 +11,7 @@ Die Watchmen-Plattform verbindet Produktionsmengen und Maschinenzeiten. Vergleic
 | --- | --- |
 | Wie viele produzierte Teile sind Gutteile? | [Qualität](#quality) |
 | Welcher Anteil des ausgewählten Zeitraums entfällt auf die Produktion? | [Verfügbarkeit](#availability) |
-| Welcher Anteil der Einschaltzeit entfällt auf Produktion oder Rüsten? | [Leistung](#performance) |
+| Welcher Anteil der Einschaltzeit entfällt auf Produktion oder Vorbereitung? | [Leistung](#performance) |
 | Wie werden die drei Prozentwerte kombiniert? | [Gesamtanlageneffektivität (OEE)](#oee) |
 | Wie finde ich die Aufträge, die letzte Woche auf einer Maschine liefen? | [Antwort](/de/help-center/faq/production-metrics#worked-orders) |
 | Warum unterscheidet sich gebuchte Produktionszeit von der Produktionszeit der Maschine? | [Antwort](/de/help-center/faq/production-metrics#booked-states) |
@@ -27,7 +27,7 @@ Die Watchmen-Plattform verbindet Produktionsmengen und Maschinenzeiten. Vergleic
 | Kann ich Zeit und Mengen eintippen, statt Räder zu drehen? | [Antwort](/de/help-center/faq/production-metrics#interval-keyboard) |
 | Warum sehe ich − und + statt der Räder? | [Antwort](/de/help-center/faq/production-metrics#interval-device-controls) |
 | Warum kann ich ein laufendes Intervall nicht in der Auftragsverwaltung beenden? | [Antwort](/de/help-center/faq/production-metrics#interval-running-end) |
-| Kann ich ein Intervall von Produktion auf Rüsten umstellen? | [Antwort](/de/help-center/faq/production-metrics#interval-type) |
+| Kann ich ein Intervall von Produktion auf Vorbereitung umstellen? | [Antwort](/de/help-center/faq/production-metrics#interval-type) |
 | Warum ist Speichern beim Bearbeiten eines Intervalls gesperrt? | [Antwort](/de/help-center/faq/production-metrics#interval-save) |
 | Gebe ich beim Korrigieren einer kumulativen Menge den gesamten Zählerstand ein? | [Antwort](/de/help-center/faq/production-metrics#interval-cumulative) |
 | Warum wurden meine Änderungen trotz Abbrechen gespeichert? | [Antwort](/de/help-center/faq/production-metrics#interval-cancel) |
@@ -40,12 +40,12 @@ Stellen Sie sich eine Maschine vor, die über sieben Stunden betrachtet wird:
 | Maschinenzustand | Bedeutung in diesem Beispiel | Dauer |
 | --- | --- | --- |
 | Produktion | Teile herstellen | 3 Stunden |
-| Vorbereitung | Für die Produktion rüsten | 1 Stunde |
-| Leerlauf | Eingeschaltet, aber weder in Produktion noch beim Rüsten | 1 Stunde |
+| Vorbereitung | Für die Produktion vorbereiten | 1 Stunde |
+| Leerlauf | Eingeschaltet, aber weder in Produktion noch bei der Vorbereitung | 1 Stunde |
 | Aus | Ausgeschaltet | 2 Stunden |
 | **Gesamt** | **Alle vier Zustände im ausgewählten Zeitraum** | **7 Stunden** |
 
-Die Maschine produziert **100 Teile**: **95 Gutteile** und **5 Ausschussteile**. Vorbereitungszeit wird auch Rüstzeit genannt. Leerlauf und ausgeschaltete Zeit sind getrennte Zustände.
+Die Maschine produziert **100 Teile**: **95 Gutteile** und **5 Ausschussteile**. Leerlauf und ausgeschaltete Zeit sind getrennte Zustände.
 
 <a id="quality" />
 
@@ -107,7 +107,7 @@ Das bedeutet: 80 % der Einschaltzeit entfielen auf Produktion oder Vorbereitung.
 
 Diese zeitbasierte Berechnung vergleicht keine tatsächliche Geschwindigkeit mit einer idealen Zykluszeit. Vorbereitungszeit zählt zur Leistung, aber nicht zur Verfügbarkeit. Berücksichtigen Sie diese Definitionen beim Vergleich der beiden Kennzahlen.
 
-Eine Maschine mit viel Rüstzeit kann beispielsweise eine hohe Leistung und zugleich eine niedrige Verfügbarkeit haben. Prüfen Sie die zugrunde liegenden Zustände in der [Zeitleistenanalyse](/de/platform-intro/pages/timeline-analysis), bevor Sie daraus auf Ausstoß oder Geschwindigkeit schließen.
+Eine Maschine mit viel Vorbereitungszeit kann beispielsweise eine hohe Leistung und zugleich eine niedrige Verfügbarkeit haben. Prüfen Sie die zugrunde liegenden Zustände in der [Zeitleistenanalyse](/de/platform-intro/pages/timeline-analysis), bevor Sie daraus auf Ausstoß oder Geschwindigkeit schließen.
 
 <a id="oee" />
 
@@ -221,9 +221,11 @@ Die Bearbeitung wählt die Bedienelemente passend zu Ihrem Gerät. Touchscreens 
 
 <a id="interval-type" />
 
-## Kann ich ein Intervall von Produktion auf Rüsten umstellen?
+<a id="kann-ich-ein-intervall-von-produktion-auf-rüsten-umstellen" />
 
-Ja. Wählen Sie in der Bearbeitung **Rüsten** oder **Produktion** und anschließend **Speichern**. Ein laufendes Intervall kann nicht zu **Produktion** oder **Rüsten** wechseln, wenn beim selben Auftrag bereits ein anderes Intervall dieses Typs läuft. Prüfen Sie das andere Intervall und stoppen Sie es über die normalen Bedienelemente, falls diese Arbeit beendet ist. Für beendete Intervalle gilt diese Einschränkung nicht. Siehe [Grenzen beim Bearbeiten](/de/platform-intro/pages/data-acquisition#grenzen-beim-bearbeiten).
+## Kann ich ein Intervall von Produktion auf Vorbereitung umstellen?
+
+Ja. Wählen Sie in der Bearbeitung **Vorbereitung** oder **Produktion** und anschließend **Speichern**. Ein laufendes Intervall kann nicht zu **Produktion** oder **Vorbereitung** wechseln, wenn beim selben Auftrag bereits ein anderes Intervall dieses Typs läuft. Prüfen Sie das andere Intervall und stoppen Sie es über die normalen Bedienelemente, falls diese Arbeit beendet ist. Für beendete Intervalle gilt diese Einschränkung nicht. Siehe [Grenzen beim Bearbeiten](/de/platform-intro/pages/data-acquisition#grenzen-beim-bearbeiten).
 
 <a id="interval-save" />
 

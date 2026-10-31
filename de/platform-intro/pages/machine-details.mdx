@@ -35,7 +35,7 @@ Geben Sie Benutzern eine detaillierte, datumsbezogene Sicht auf die Live- oder j
 
 **Gearbeitet** öffnet sich zuerst. Die Ansicht zeigt Arbeitsgänge, die am oben gewählten Datum bearbeitet wurden, laufende Arbeit zuerst und danach die jüngste Arbeit. Ändern Sie den Tag mit der Datumsauswahl der Seite. Die heutige Liste wird während der Ansicht jede Minute aktualisiert. **Frühere Tage in der Maschinenhistorie ansehen** öffnet die längere Betrachtung.
 
-**Als Nächstes** (bisher **Geplant**) zeigt die gesamte Warteschlange der Maschine, unabhängig vom gewählten Datum. Laufende Arbeitsgänge stehen oben ohne Positionsnummer. Wartende Arbeitsgänge folgen in Ausführungsreihenfolge, nummeriert ab 1. Abgeschlossene und stornierte Schritte fehlen. Die Karten zeigen den geplanten Start und das geplante Ende mit Datum.
+**Als Nächstes** (bisher **Geplant**) zeigt die gesamte Warteschlange der Maschine, unabhängig vom gewählten Datum. Laufende Arbeitsgänge stehen oben ohne Positionsnummer. Wartende Arbeitsgänge folgen in Ausführungsreihenfolge, nummeriert ab 1. Abgeschlossene und stornierte Arbeitsgänge fehlen. Die Karten zeigen den geplanten Start und das geplante Ende mit Datum.
 
 Grenzen Sie **Als Nächstes** mit den Statusfiltern ein. Die Nummern behalten dabei ihre ursprüngliche Position. Ändern Sie den Status über das Statusmenü der Karte. Wenn Sie einen Arbeitsgang abschließen, verschwindet er aus der Warteschlange und **Gearbeitet** wird aktualisiert. Nutzen Sie zum Ändern der Reihenfolge den [Planungsablauf](/de/platform-intro/workflows/assignment-planner).
 
@@ -73,9 +73,9 @@ Energiewerte je Schicht verwenden die örtlichen Anfangs- und Endzeiten der Schi
 
 ## Aktive Schichten verstehen
 
-**Aktive Schicht** kennzeichnet eine Maschine, deren Schichten der Maschinenaktivität folgen. Eine Schicht beginnt bei Leerlauf, Produktion oder Rüsten und endet nach den Schichteinstellungen der Maschine. Die zugewiesene Schichtgruppe wird nicht verwendet. Siehe [Maschinenkonfiguration](/de/platform-intro/pages/machine-configuration).
+**Aktive Schicht** kennzeichnet eine Maschine, deren Schichten der Maschinenaktivität folgen. Eine Schicht beginnt bei Leerlauf, Produktion oder Vorbereitung und endet nach den Schichteinstellungen der Maschine. Die zugewiesene Schichtgruppe wird nicht verwendet. Siehe [Maschinenkonfiguration](/de/platform-intro/pages/machine-configuration).
 
-**Wartet auf die nächste aktive Schicht** oder **wartet auf Maschinenstart** bedeutet, dass die nächste Schicht noch nicht begonnen hat. Sie startet automatisch bei Leerlauf, Produktion oder Rüsten. Bis dahin werden geplante Schichten der zugewiesenen Schichtgruppe angezeigt. Diese Anzeige schaltet aktive Schichten nicht aus.
+**Wartet auf die nächste aktive Schicht** oder **wartet auf Maschinenstart** bedeutet, dass die nächste Schicht noch nicht begonnen hat. Sie startet automatisch bei Leerlauf, Produktion oder Vorbereitung. Bis dahin werden geplante Schichten der zugewiesenen Schichtgruppe angezeigt. Diese Anzeige schaltet aktive Schichten nicht aus.
 
 ## Maschineneinstellungen öffnen
 
@@ -85,11 +85,11 @@ Administratoren sehen im Kopf der Seite das Zahnrad **Maschineneinstellungen**, 
 
 Mit Zugriff auf diese Maschine wählen Sie **Intervalle verbessern** im Kopf der Zeitleiste. Die Schaltfläche erscheint, wenn der gewählte Tag mindestens ein Intervall enthält. Der Dialog startet mit dieser Maschine und diesem Tag. Administratoren können unter **Maschinen** weitere zugängliche Maschinen ergänzen. Andere Personen prüfen eine Maschine.
 
-Wählen Sie einen **Zeitraum**, der spätestens heute endet. Eine längere Auswahl wird mit Hinweis auf ihre jüngsten 60 Tage gekürzt. Wählen Sie unter **Anzeigen** Vorschläge zu Start, Ende, Rüsten, Nachbarintervallen oder ungebuchter Produktion. Wählen Sie dann **Vorschläge suchen**.
+Wählen Sie einen **Zeitraum**, der spätestens heute endet. Eine längere Auswahl wird mit Hinweis auf ihre jüngsten 60 Tage gekürzt. Wählen Sie unter **Anzeigen** Vorschläge zu Start, Ende, Vorbereitung, Nachbarintervallen oder ungebuchter Produktion. Wählen Sie dann **Vorschläge suchen**.
 
 Öffnen Sie einen Tag, um **Jetzt** mit **Danach** zu vergleichen. Jeder Vorschlag zeigt Auftrag, Zeitänderung, Optionen und hinzugefügte oder entfernte Minuten. Die Tagesvorschau folgt Ihrer Auswahl. Die Zusammenfassung zeigt auch ungebuchte Produktion und verbleibende Überlappungen.
 
-Start- und Endvorschläge nutzen tatsächliche Maschinenereignisse aus der jüngsten Aktivität innerhalb der Fragegrenze dieser Maschine. Eine Zeit wird nie auf eine Grenze verschoben, an der nichts passiert ist. Datenlücken unter 10 Minuten sowie Leerlauf-, Aus- oder Rüstunterbrechungen unter 2 Minuten teilen die Aktivität nicht. Rüsten folgt eigenen erlaubten Optionen, getrennt von der Produktion. Nur Optionen innerhalb der automatischen Grenze gehen in die besten Vorschläge und die Gesamtsummen ein.
+Start- und Endvorschläge nutzen tatsächliche Maschinenereignisse aus der jüngsten Aktivität innerhalb der Fragegrenze dieser Maschine. Eine Zeit wird nie auf eine Grenze verschoben, an der nichts passiert ist. Datenlücken unter 10 Minuten sowie Unterbrechungen durch Leerlauf, Aus oder Vorbereitung unter 2 Minuten teilen die Aktivität nicht. Vorbereitung folgt eigenen erlaubten Optionen, getrennt von der Produktion. Nur Optionen innerhalb der automatischen Grenze gehen in die besten Vorschläge und die Gesamtsummen ein.
 
 Nur Vorschläge, deren beste Option innerhalb der automatischen Grenze liegt, sind vorausgewählt. **Überlappungen (Warnung)** bleibt ohne Häkchen und erscheint, wenn gleichzeitige Intervalle die unter **Parallele Aufträge** eingestellte Anzahl überschreiten. Parallele Arbeit kann richtig sein; Überlappungen sind erlaubt. Prüfen Sie jede vor einer Korrektur.
 

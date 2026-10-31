@@ -41,7 +41,7 @@ Spaltenüberschriften und Zeilenanzahl bleiben unverändert. Wenn Sie die Dateis
 
 ## Zeit- und Prioritätseinstellungen verstehen
 
-Zeitfelder können standardmäßig oder als Industrieminuten interpretiert werden. Wählen Sie die Konvention, die zu Ihren Quelldaten passt. Die Upload-Prüfung nennt die betroffene Zeile und erklärt, wann ein Zeitwert oder die Einstellung für Industrieminuten die Rüst- oder Produktionszeit verändert. Prüfen Sie diese Erläuterungen vor der Bestätigung.
+Zeitfelder können standardmäßig oder als Industrieminuten interpretiert werden. Wählen Sie die Konvention, die zu Ihren Quelldaten passt. Die Upload-Prüfung nennt die betroffene Zeile und erklärt, wann ein Zeitwert oder die Einstellung für Industrieminuten die Vorbereitungs- oder Produktionszeit verändert. Prüfen Sie diese Erläuterungen vor der Bestätigung.
 
 Prioritätsnamen, Nummern und Farben entsprechen den unternehmensweiten Stufen aus dem [Administrationsbereich](/de/platform-intro/pages/admin-panel). Dieselben Stufen gelten in der Auftragsverwaltung und im Zuweisungsplaner, sodass Sie importierte Prioritäten im gesamten Plan einheitlich prüfen können.
 
@@ -55,7 +55,7 @@ Arbeitsgangprioritäten müssen ganze Zahlen ab 0 sein. Text, Dezimalzahlen und 
 
 ## Importierte Arbeit in die Warteschlange einreihen
 
-Unter **Spalten zuordnen → Operationsfelder**, direkt unter der Zeile **Operationsbeschreibung**, finden Sie die Auswahl **Neue Arbeitsgänge in der Warteschlange**. **Nach Sortierung** steht zuerst und ist vorausgewählt. Auch eine gespeicherte Zuordnung ohne Einreihungsauswahl beginnt mit **Nach Sortierung**.
+Unter **Spalten zuordnen → Felder des Arbeitsgangs**, direkt unter der Zeile **Arbeitsgangbeschreibung**, finden Sie die Auswahl **Neue Arbeitsgänge in der Warteschlange**. **Nach Sortierung** steht zuerst und ist vorausgewählt. Auch eine gespeicherte Zuordnung ohne Einreihungsauswahl beginnt mit **Nach Sortierung**.
 
 | Auswahl | Wo die importierte Arbeit eingereiht wird |
 | --- | --- |
@@ -63,7 +63,7 @@ Unter **Spalten zuordnen → Operationsfelder**, direkt unter der Zeile **Operat
 | **Am Anfang** | Vorne, hinter laufender Arbeit. |
 | **Am Ende** | Hinten, wie bisher beim Import. |
 
-Lesen Sie bei **Nach Sortierung** die Regeln unter der Auswahl. Mit **Ändern** passen Sie sie für diesen Import an. Der Import verwendet zuerst seine eigenen gespeicherten Regeln, sonst die Firmenregeln. Fehlt beides, gelten die Standardregeln: **Auftragspriorität** ↓, dann **Lieferdatum** ↑. **Nach Sortierung** ist auch ohne Firmensortierung verfügbar.
+Lesen Sie bei **Nach Sortierung** die Regeln unter der Auswahl. Mit **Ändern** passen Sie sie für diesen Import an. Der Import verwendet zuerst seine eigenen gespeicherten Regeln, sonst die Firmenregeln. Fehlt beides, gelten die Standardregeln: **Auftragspriorität** ↓, dann **Liefertermin** ↑. **Nach Sortierung** ist auch ohne Firmensortierung verfügbar.
 
 Sind Firmenregeln vorhanden, stellt **Firmensortierung übernehmen** diese wieder her. Der Import folgt dann wieder der Firmensortierung. Ein Haken zeigt, dass die Regeln bereits übereinstimmen. **Firmensortierung:** erscheint, wenn die Regeln der Firmensortierung entsprechen. **Eigene Sortierung:** kennzeichnet für den Import gewählte Regeln, die von den Firmenregeln abweichen. **Sortierung:** erscheint bei den Standardregeln ohne Firmensortierung. Entfernen Sie alle eigenen Regeln, gelten ebenfalls wieder die Firmen- oder Standardregeln.
 
@@ -79,13 +79,13 @@ Die Prüfungsübersicht zeigt **Neue Arbeitsgänge in der Warteschlange:** mit I
 
 ## Auswirkungen des Imports prüfen
 
-Öffnen Sie nach der Spaltenzuordnung und Vorschau die Übersicht der vorgesehenen Importänderungen. Sie zeigt neue, aktualisierte und bestehende Datensätze, gegliedert nach Aufträgen, Produkten, Kunden, Operationen und Zuweisungen. Bestehende Datensätze werden wiederverwendet; sie stehen nicht zwangsläufig für neu angelegte Datensätze.
+Öffnen Sie nach der Spaltenzuordnung und Vorschau die Übersicht der vorgesehenen Importänderungen. Sie zeigt neue, aktualisierte und bestehende Datensätze, gegliedert nach Aufträgen, Produkten, Kunden, Arbeitsgängen und Zuweisungen. Bestehende Datensätze werden wiederverwendet; sie stehen nicht zwangsläufig für neu angelegte Datensätze.
 
-Klappen Sie die Details pro Zeile auf, um Terminänderungen, neue Operationen und Zuweisungen sowie neu berechnete Dauern zu prüfen. So können Sie die Auswirkungen auf Ihren aktuellen Plan vor der Bestätigung beurteilen.
+Klappen Sie die Details pro Zeile auf, um Terminänderungen, neue Arbeitsgänge und Zuweisungen sowie neu berechnete Dauern zu prüfen. So können Sie die Auswirkungen auf Ihren aktuellen Plan vor der Bestätigung beurteilen.
 
 ## Planungskonflikte lösen
 
-Ein Planungskonflikt entsteht, wenn die Datei eine Operation zuweist, die bereits an anderer Stelle eingeplant ist. Konflikte werden unter dem zugehörigen Auftrag angezeigt und enthalten eine Begründung, etwa bereits erfasste Produktion für eine Zuweisung.
+Ein Planungskonflikt entsteht, wenn die Datei einen Arbeitsgang zuweist, der bereits an anderer Stelle eingeplant ist. Konflikte werden unter dem zugehörigen Auftrag angezeigt und enthalten eine Begründung, etwa bereits erfasste Produktion für eine Zuweisung.
 
 | Entscheidung | Auswirkung |
 | --- | --- |
@@ -117,7 +117,7 @@ Pflichtzuordnungen sind **Order Number, Product, Planned Start, Planned End**. D
 
 | Abschnitt | Bedeutung für Ihren Import |
 | --- | --- |
-| **Wie Datensätze zugeordnet werden** | Der Produktname bestimmt das Produkt, der Auftragsname den Auftrag. Ein Arbeitsauftrag verbindet Auftrag und Produkt, eine Operation Arbeitsauftrag und Folgenummer, eine Zuweisung Operation und Maschine. |
+| **Wie Datensätze zugeordnet werden** | Der Produktname bestimmt das Produkt, der Auftragsname den Auftrag. Ein Arbeitsauftrag verbindet Auftrag und Produkt, ein Arbeitsgang Arbeitsauftrag und **Arbeitsgangfolge**, eine Zuweisung Arbeitsgang und Maschine. |
 | **Aus der Datei aktualisiert** | Leere Zellen erhalten den aktuellen Wert. Bereits auf mehrere Maschinen aufgeteilte Mengen bleiben unverändert und werden zur Prüfung markiert. |
 | **Nie geändert** | Bestehende geschützte Werte bleiben auch bei abweichenden Angaben erhalten. Der Produktionsverlauf wird nie geändert. |
 | **Nur für neue Datensätze** | Geschützte Werte aus der Datei werden nur bei neuen Aufträgen, Arbeitsgängen oder Produkten verwendet. Fehlende Zeilen löschen nichts. |
@@ -135,7 +135,7 @@ Die ältere Importversion für eine einzelne Maschine ist als **Legacy** gekennz
 - Produktionsauftrag
 - Produkt
 - Kunde
-- Operation
+- Arbeitsgang
 - Zuweisung
 - Maschine
 

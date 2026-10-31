@@ -31,16 +31,16 @@ Lesen Sie vor der Grenzwertwahl die Beschreibung der Bedingung. Die Kennzahlen v
 
 | Kennzahl | Was sie prüft |
 | --- | --- |
-| Rüstzeit | Gesamte bisherige Rüstzeit des aktuellen Auftrags im Vergleich zur geplanten Rüstzeit. |
+| **Vorbereitungsdauer** | Gesamte bisherige Vorbereitungszeit des aktuellen Auftrags im Vergleich zur geplanten Vorbereitungszeit. |
 | Produktionsrückstand | Rückstand der bisherigen Produktion des aktuellen Auftrags gegenüber dem erwarteten Tempo. |
-| Zykluszeit | Letzter abgeschlossener Zyklus im Vergleich zur Basis-Zykluszeit der Operation. |
+| Zykluszeit | Letzter abgeschlossener Zyklus im Vergleich zur Basis-Zykluszeit des Arbeitsgangs. |
 | Auftragsfortschritt | Produzierte Menge im Vergleich zum erwarteten Fortschritt anhand der bis zum Liefertermin verstrichenen Zeit. |
 | Ausschussmenge und -quote | Ausschussteile oder deren Anteil an allen Teilen aus den BDE-Produktionsmeldungen des aktuellen Auftrags. Wählen Sie Materialausschuss, Arbeits-/Bearbeitungsausschuss oder beide. |
 | Langsame Zyklen | Anzahl der jüngsten Zyklen, die nach Ihren Einstellungen als langsam gelten. |
 
 Wählen Sie für langsame Zyklen eine ganze Zahl von 1 bis 1000 für die Anzahl zu prüfender Zyklen. Legen Sie ein positives Vielfaches der erwarteten Zykluszeit fest: 2 bedeutet doppelt so lang. Anzahlen müssen ganze Zahlen sein. Füllen Sie alle Einstellungen einer Bedingung aus und wählen Sie einen zur Kennzahl passenden Vergleich.
 
-Rüst- und Ausschusswerte ändern sich erst mit einer BDE-Meldung. Sie können konstant bleiben und dann springen. Ein Sensor allein aktualisiert keine eingegebenen Ausschussmengen.
+Vorbereitungs- und Ausschusswerte ändern sich erst mit einer BDE-Meldung. Sie können konstant bleiben und dann springen. Ein Sensor allein aktualisiert keine eingegebenen Ausschussmengen.
 
 ## Forecaster-Alarme
 
@@ -71,16 +71,16 @@ Wählen Sie **Mit einer Vorlage starten**, um eine Regel vorauszufüllen, oder *
 
 | Vorlage | Anfangsbedingung |
 | --- | --- |
-| **Rüsten dauert zu lange** | Rüstzeit erreicht 120 % der geplanten Rüstzeit. |
+| **Vorbereitung dauert zu lange** (bisher **Rüsten dauert zu lange**) | Vorbereitungszeit erreicht 120 % der geplanten Vorbereitungszeit. |
 | **Produktion hinter dem erwarteten Tempo** | Produktion liegt mindestens 15 % hinter dem Tempo. |
 | **Zykluszeit zu langsam** | Letzter Zyklus ist mindestens 25 % langsamer als die Basis-Zykluszeit. |
 | **Wiederholte Zyklus-Lücken** | 3 der letzten 10 Zyklen dauern mindestens doppelt so lang wie erwartet. |
 | **Zu hohe Ausschussquote** | Gesamtausschuss erreicht 3 %. |
-| **Operation gefährdet** | Produktion liegt 15 % hinter dem Tempo und Zyklen sind 25 % langsamer. |
+| **Arbeitsgang gefährdet** (bisher **Operation gefährdet**) | Produktion liegt 15 % hinter dem Tempo und Zyklen sind 25 % langsamer. |
 | **Auftrag gerät in Verzug** | Auftragsfortschritt liegt mindestens 15 Prozentpunkte hinter dem verstrichenen Zeitplan. |
 | **Sensor getrennt** | Seit 5 Minuten kein Sensorsignal; standardmäßig nur während aktiver Schichten. |
 
-Passen Sie diese Anfangswerte an Ihren Prozess an. Zyklusprüfungen benötigen Zykluserkennung und Basis-Zykluszeit, Tempoprüfungen eine geplante Produktionszeit. Rüstprüfungen benötigen geplante Rüstzeit und erfasste Rüstintervalle. Ausschussprüfungen benötigen produzierte Mengen und Ausschuss aus BDE-Meldungen. Auftragsfortschritt benötigt geplante Termine und Mengen. Prüfen Sie die Voraussetzungen jeder Vorlage und ob eine Operation aktiv laufen muss.
+Passen Sie diese Anfangswerte an Ihren Prozess an. Zyklusprüfungen benötigen Zykluserkennung und Basis-Zykluszeit, Tempoprüfungen eine geplante Produktionszeit. Vorbereitungsprüfungen benötigen geplante Vorbereitungszeit und erfasste Vorbereitungsintervalle. Ausschussprüfungen benötigen produzierte Mengen und Ausschuss aus BDE-Meldungen. Auftragsfortschritt benötigt geplante Termine und Mengen. Prüfen Sie die Voraussetzungen jeder Vorlage und ob ein Arbeitsgang aktiv laufen muss.
 
 ## Ereigniseingang, SLA und MTTR
 

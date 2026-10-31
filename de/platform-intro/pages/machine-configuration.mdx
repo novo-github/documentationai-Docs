@@ -67,7 +67,7 @@ Für Aus, Leerlauf und Vorbereitung werden automatische Grundregeln in dieser Re
 
 ## Einstellungen aktiver Schichten
 
-Administratoren wählen in der Maschinenkonfiguration **Schichten → Aktive Schicht**. Wenn die Einstellung eingeschaltet ist, beginnt eine Schicht automatisch bei Leerlauf, Produktion oder Rüsten. Ist sie ausgeschaltet, folgen die Schichten dem Plan der zugewiesenen Schichtgruppe.
+Administratoren wählen in der Maschinenkonfiguration **Schichten → Aktive Schicht**. Wenn die Einstellung eingeschaltet ist, beginnt eine Schicht automatisch bei Leerlauf, Produktion oder Vorbereitung. Ist sie ausgeschaltet, folgen die Schichten dem Plan der zugewiesenen Schichtgruppe.
 
 | Einstellung | Wirkung |
 | --- | --- |
@@ -83,7 +83,7 @@ Beim Ausschalten erklärt **Zurück zu geplanten Schichten?**, dass die laufende
 
 Die Kennzeichnung **Aktive Schicht** zeigt, welche Maschinen diese Einstellung nutzen. Ihre Erklärung nennt Mindest-, Stillstands- und Höchstdauer. Manche Alarmregeln lösen für diese Maschinen nicht aus. Prüfen Sie den Regelhinweis, bevor Sie sich darauf verlassen. Die Schritte finden Sie unter [Maschine konfigurieren](/de/platform-intro/workflows/machine-configuration).
 
-**Wartet auf die nächste aktive Schicht** oder **wartet auf Maschinenstart** bedeutet, dass die nächste Schicht noch nicht begonnen hat. Sie startet automatisch bei Leerlauf, Produktion oder Rüsten. Bis dahin werden geplante Schichten der zugewiesenen Schichtgruppe angezeigt. Diese Anzeige schaltet aktive Schichten nicht aus.
+**Wartet auf die nächste aktive Schicht** oder **wartet auf Maschinenstart** bedeutet, dass die nächste Schicht noch nicht begonnen hat. Sie startet automatisch bei Leerlauf, Produktion oder Vorbereitung. Bis dahin werden geplante Schichten der zugewiesenen Schichtgruppe angezeigt. Diese Anzeige schaltet aktive Schichten nicht aus.
 
 ## BDE Assist: Intervallhilfe und Warnungen
 
@@ -97,19 +97,19 @@ Die Intervallhilfe im laufenden Betrieb ist standardmäßig aus. Aktivieren Sie 
 
 Unter **Startzeit → Fertigungsauftrag: Start zurücksetzen auf …** wählen Sie erlaubte Zeiten:
 
-- **Ende des vorherigen Intervalls** ordnet die Umrüstzeit dem neuen Auftrag zu. Legen Sie die maximale Lücke und die erlaubte Aus-Zeit zwischen den Intervallen fest.
+- **Ende des vorherigen Intervalls** ordnet die Vorbereitungszeit dem neuen Auftrag zu. Legen Sie die maximale Lücke und die erlaubte Aus-Zeit zwischen den Intervallen fest.
 - **Beginn des Leerlaufs** berücksichtigt den Leerlauf vor der jüngsten Produktion, etwa das Aufwärmen.
 - **Produktionsbeginn** verwendet den Beginn des jüngsten Produktionsabschnitts.
 
-Unter **Rüsten (Vorbereitung): Start zurücksetzen auf …** wählen Sie Rüstoptionen unabhängig davon:
+Unter **Vorbereitung: Start zurücksetzen auf …** wählen Sie Vorbereitungsoptionen unabhängig davon:
 
 - **Ende des vorherigen Auftrags** berücksichtigt die Zeit seit dem letzten Auftrag, auch wenn die Maschine dazwischen aus war. Die maximale Lücke gilt weiterhin.
 - **Als die Maschine aufhörte zu produzieren** verwendet das Ende der letzten Produktion.
-- **Als die Maschine eingeschaltet wurde** berücksichtigt Rüsten seit dem Einschalten, auch wenn seitdem Probeteile produziert wurden.
+- **Als die Maschine eingeschaltet wurde** berücksichtigt Vorbereitung seit dem Einschalten, auch wenn seitdem Probeteile produziert wurden.
 
-Unter **Endzeit → Fertigungsauftrag: Ende zurücksetzen auf …** nutzt **Ende der letzten Produktion** den letzten Produktionszeitpunkt. **Ende der Aktivität** schließt den folgenden Leerlauf bis zum Ausschalten ein. Unter **Rüsten (Vorbereitung)** beendet **Als die Produktion begann** das Rüsten beim ersten Produktionsbeginn nach Rüstbeginn. Beispiel: Rüsten ab 08:00, Produktion ab 08:40 und **Stopp** um 08:46 ergeben ein Rüstende um 08:40.
+Unter **Endzeit → Fertigungsauftrag: Ende zurücksetzen auf …** nutzt **Ende der letzten Produktion** den letzten Produktionszeitpunkt. **Ende der Aktivität** schließt den folgenden Leerlauf bis zum Ausschalten ein. Unter **Vorbereitung** beendet **Als die Produktion begann** die Vorbereitung beim ersten Produktionsbeginn nach Vorbereitungsbeginn. Beispiel: Vorbereitung ab 08:00, Produktion ab 08:40 und **Stopp** um 08:46 ergeben ein Vorbereitungsende um 08:40.
 
-Gespeicherte Maschinen behalten ihr bisheriges Verhalten, bis Sie diese Optionen ändern. Produktionsoptionen steuern die Rüstoptionen nicht mehr. Jeder Bereich für Start und Ende zeigt, wie weit zurück Zeiten angeboten werden können. Die Informationssymbole neben den Optionen öffnen kleine Beispiele.
+Gespeicherte Maschinen behalten ihr bisheriges Verhalten, bis Sie diese Optionen ändern. Produktionsoptionen steuern die Vorbereitungsoptionen nicht mehr. Jeder Bereich für Start und Ende zeigt, wie weit zurück Zeiten angeboten werden können. Die Informationssymbole neben den Optionen öffnen kleine Beispiele.
 
 Diese Optionen steuern auch **Intervalle verbessern**. Ist die Intervallhilfe aus, öffnen Sie **Erlaubte Zeiten für „Intervalle verbessern“**, um sie zu ändern. Die Prüfung vergangener Tage schlägt nur Änderungen vor. Jemand muss sie übernehmen.
 
@@ -123,11 +123,11 @@ Stellen Sie **Automatisch übernehmen bis (Stunden)** und **Bediener fragen bis 
 
 Angeboten werden nur tatsächliche Maschinenereignisse oder das Ende des vorherigen Intervalls. Zeiten werden nie auf eine Grenze verschoben, an der nichts passiert ist. Die jüngsten Zeiten erscheinen zuerst. Frühere finden Sie unter **Andere Zeiten**, neueste zuerst, mit insgesamt bis zu 20 angebotenen Zeiten. Zeiten vor dem Ende des vorherigen Auftrags werden nicht angeboten.
 
-Fehlende Daten unter 10 Minuten teilen einen Aktivitätsabschnitt nicht. Leerlauf-, Aus- oder Rüstphasen unter 2 Minuten werden ebenfalls ignoriert. Längere Unterbrechungen zählen einzeln. Beispielsweise kann Produktion ab 19:33 mit einer fünfminütigen Datenlücke um 20:10 weiterhin einen Start um 19:33 ergeben.
+Fehlende Daten unter 10 Minuten teilen einen Aktivitätsabschnitt nicht. Leerlauf-, Aus- oder Vorbereitungsphasen unter 2 Minuten werden ebenfalls ignoriert. Längere Unterbrechungen zählen einzeln. Beispielsweise kann Produktion ab 19:33 mit einer fünfminütigen Datenlücke um 20:10 weiterhin einen Start um 19:33 ergeben.
 
 ### Vergessene Intervalle automatisch beenden
 
-Aktivieren Sie **Vergessene Intervalle automatisch beenden**. Wählen Sie **aus** oder **aus oder im Leerlauf** und die Wartezeit. Bei aktivierter Einstellung läuft die Prüfung weiter, auch wenn niemand die BDE-Seite geöffnet hat. Nur Produktionsintervalle enden so, niemals Rüstintervalle.
+Aktivieren Sie **Vergessene Intervalle automatisch beenden**. Wählen Sie **aus** oder **aus oder im Leerlauf** und die Wartezeit. Bei aktivierter Einstellung läuft die Prüfung weiter, auch wenn niemand die BDE-Seite geöffnet hat. Nur Produktionsintervalle enden so, niemals Vorbereitungsintervalle.
 
 Das Ende wird auf den letzten Produktionszeitpunkt gesetzt. Wurde nichts produziert, gilt der Zeitpunkt, als die Maschine stoppte. Dabei werden keine Mengen gebucht und der Auftrag wird nicht abgeschlossen. Bediener müssen Mengen anschließend prüfen und buchen. Um automatisches Beenden zu verhindern, schalten Sie diese Option aus und wählen **Speichern**.
 

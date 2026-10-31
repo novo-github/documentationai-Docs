@@ -5,7 +5,7 @@ description: "Vergleichen Sie erfasste Arbeit mit Maschinenaktivität, bevor Sie
 
 ## Ziel
 
-Finden Sie verspätete Starts, zu späte oder frühe Enden, Lücken, verlängertes Rüsten, Überlappungen und Produktion ohne Auftrag. Prüfen Sie die Wirkung vor einer Zeitänderung.
+Finden Sie verspätete Starts, zu späte oder frühe Enden, Lücken, verlängerte Vorbereitung, Überlappungen und Produktion ohne Auftrag. Prüfen Sie die Wirkung vor einer Zeitänderung.
 
 ## Bevor Sie beginnen
 
@@ -27,7 +27,7 @@ Die Maschine hat Maschinendaten und der gewählte Tag mindestens ein Intervall. 
     Wählen Sie **Zeitraum** und unter **Anzeigen** die Vorschlagsgruppen. Sie können bis zu 60 Tage bis spätestens heute prüfen. Längere Auswahlen werden mit Hinweis gekürzt. Administratoren können unter **Maschinen** weitere zugängliche Maschinen ergänzen und bei Bedarf **Alle auswählen** oder **Leeren** nutzen. Wählen Sie nach einer Änderung **Vorschläge suchen**.
   </Step>
   <Step title="Vergleichen Sie jeden Vorschlag" icon="arrow-right" title-type="p">
-    Öffnen Sie einen Tag. Vergleichen Sie **Jetzt** mit **Danach**, Auftragsname und hinzugefügte oder entfernte Zeit. Wählen Sie eine Option und haken Sie nur passende Änderungen an. Die Tagesvorschau folgt Ihrer Auswahl. Start- und Endoptionen nutzen tatsächliche Ereignisse aus der jüngsten Aktivität innerhalb der Fragegrenze. Datenlücken unter 10 Minuten und andere Unterbrechungen unter 2 Minuten teilen diese Aktivität nicht. Rüsten folgt seinen getrennten Einstellungen. Rüstvorschläge können das Rüsten beim ersten Produktionsbeginn nach Rüstbeginn beenden.
+    Öffnen Sie einen Tag. Vergleichen Sie **Jetzt** mit **Danach**, Auftragsname und hinzugefügte oder entfernte Zeit. Wählen Sie eine Option und haken Sie nur passende Änderungen an. Die Tagesvorschau folgt Ihrer Auswahl. Start- und Endoptionen nutzen tatsächliche Ereignisse aus der jüngsten Aktivität innerhalb der Fragegrenze. Datenlücken unter 10 Minuten und andere Unterbrechungen unter 2 Minuten teilen diese Aktivität nicht. Vorbereitung folgt ihren getrennten Einstellungen. Vorbereitungsvorschläge können die Vorbereitung beim ersten Produktionsbeginn nach Vorbereitungsbeginn beenden.
   </Step>
   <Step title="Prüfen Sie Ausnahmen einzeln" icon="arrow-right" title-type="p">
     Vorschläge jenseits der automatischen Grenze sind nicht angehakt. Sie bleiben auch aus den Gesamtsummen ausgeschlossen. Haken Sie einen solchen Vorschlag erst an, nachdem Sie Zeit und Wirkung geprüft haben. Auch **Überlappungen (Warnung)** bleibt ohne Häkchen: Gleichzeitige Arbeit kann beabsichtigt sein. Prüfen Sie vor einer Änderung die parallele Kapazität der Maschine. **Produktion ohne Auftrag** listet Zeiten zur Prüfung. Ein neues Intervall für eine vergangene Zeit können Sie noch nicht anlegen. Gehört sie zu einem Arbeitsgang direkt davor oder danach, können Sie das vorhandene Intervall durch Ändern von Start oder Ende verlängern. Prüfen Sie, ob die Änderung zur tatsächlichen Arbeit passt.

@@ -7,7 +7,7 @@ description: "Ein tabellenorientierter Arbeitsbereich zur Überwachung, Filterun
 
 **Zugriff:** Admin oder Seitenfreigabe `orders`; nie Operator. [Rollen und Zugriff](/de/platform-intro/concepts/roles-and-access).
 
-Überwachen Sie Produktionsaufträge, finden Sie Arbeit mit Handlungsbedarf und öffnen Sie die Auftragsdetails, um Operationen und Zuweisungen zu prüfen oder zu ändern.
+Überwachen Sie Produktionsaufträge, finden Sie Arbeit mit Handlungsbedarf und öffnen Sie die Auftragsdetails, um Arbeitsgänge und Zuweisungen zu prüfen oder zu ändern.
 
 Benutzer öffnen diese Seite über die Dashboard-Navigation.
 
@@ -23,7 +23,7 @@ Benutzer öffnen diese Seite über die Dashboard-Navigation.
 - Eine Auftragstabelle mit Steuerelementen zum Wechseln zwischen Ergebnisseiten.
 - Filter für Kunde, Auftrag, Produkt, Maschine, Datumsbereich, Zuweisungsstatus und laufende Produktion.
 - Übersichtskarten für **Gesamt**, **Geplant**, **In Bearbeitung**, **Abgeschlossen**, **Live** und **Forecaster**.
-- Kundencodes, Operationssequenznummern, geplante Zykluszeiten, Dauer, Abweichung und Erläuterungen zur Produktionsleistung.
+- Kundencodes, Arbeitsgangfolgen, geplante Zykluszeiten, Dauer, Abweichung und Erläuterungen zur Produktionsleistung.
 - Gruppierte Aufträge mit einzelnen Zuweisungen.
 - Fortschritt auf Basis von BDE-Produktionseinträgen oder erkannten Zykluszahlen.
 - Materialausschuss, Fertigungsausschuss und produzierte Gesamtmengen einschließlich des erfassten Ausschusses.
@@ -44,7 +44,7 @@ Wählen Sie ein mit **Arbeitsplatz** gekennzeichnetes Ziel, wenn ein Arbeitsgang
 
 ### Aufträge, Arbeitsaufträge und Zuweisungen verstehen
 
-Ein Produktionsauftrag fasst die geplante Arbeit zusammen. Darin enthalten Arbeitsaufträge die einzelnen Operationen. Zuweisungen verbinden diese Arbeit mit ihrem geplanten Produktionsziel. Erweitern Sie einen gruppierten Auftrag, um seine einzelnen Zuweisungen zu prüfen, oder öffnen Sie die [Auftragsdetails](/de/platform-intro/pages/order-detail), um die vollständige Struktur zu sehen.
+Ein Produktionsauftrag fasst die geplante Arbeit zusammen. Darin enthalten Arbeitsaufträge die einzelnen Arbeitsgänge. Zuweisungen verbinden diese Arbeit mit ihrem geplanten Produktionsziel. Erweitern Sie einen gruppierten Auftrag, um seine einzelnen Zuweisungen zu prüfen, oder öffnen Sie die [Auftragsdetails](/de/platform-intro/pages/order-detail), um die vollständige Struktur zu sehen.
 
 ### Summen und Fortschritt lesen
 
@@ -62,7 +62,7 @@ In der Spalte **Forecaster** bezieht sich das obere Ergebnis auf den Liefertermi
 
 Solange der Filter für verspätete Aufträge des Forecasters aktiv ist, sehen Sie alle verspäteten Aufträge unabhängig von Zeitraum und Status. Die Filter für Auftrag, Produkt, Kunde und Maschine gelten weiter. Die unternehmensweite Anzahl kann vom [Assignment Gantt](/de/platform-intro/pages/assignment-gantt) abweichen. Dort sehen Sie Warnungen für die angezeigten Maschinen von letzter Woche bis drei Wochen voraus.
 
-Wählen Sie in den Kartendetails **Liefertermin gefährdet → In der Tabelle zeigen** für verspätete Aufträge oder **Davon mit nicht geplanten Schritten → In der Tabelle zeigen** für verspätete Aufträge mit noch nicht eingeplanten Arbeitsgängen. Der aktive Filter heißt **Forecaster: Liefertermin gefährdet** oder **Forecaster: verspätet, Schritte nicht geplant**. Zeitraum und Statusfilter sind bei beiden Auswahlen pausiert. Entfernen Sie den Forecaster-Filter, um sie wieder zu verwenden. **Teilweise geplant** kennzeichnet Arbeit mit noch nicht zugewiesenen Schritten.
+Wählen Sie in den Kartendetails **Liefertermin gefährdet → In der Tabelle zeigen** für verspätete Aufträge oder **Davon mit nicht geplanten Schritten → In der Tabelle zeigen** für verspätete Aufträge mit noch nicht eingeplanten Arbeitsgängen. Der aktive Filter heißt **Forecaster: Liefertermin gefährdet** oder **Forecaster: verspätet, Schritte nicht geplant**. Zeitraum und Statusfilter sind bei beiden Auswahlen pausiert. Entfernen Sie den Forecaster-Filter, um sie wieder zu verwenden. **Teilweise geplant** kennzeichnet Arbeit mit noch nicht zugewiesenen Arbeitsgängen.
 
 **Gar nicht geplant → Liste zeigen** öffnet **Nicht geplante Aufträge**. Diese Aufträge haben einen Liefertermin, aber keinen Arbeitsgang auf einer Maschine oder in einem Hallenpool. Deshalb erscheinen sie auf keiner Plantafel. Öffnen Sie einen Auftrag und wählen Sie mit **Schritte zuweisen** die Maschinen oder nutzen Sie **Im Planer öffnen**. Folgen Sie dem [Planungsablauf](/de/platform-intro/workflows/assignment-planner).
 
@@ -101,7 +101,7 @@ Wählen Sie neben der Datumsauswahl geplante oder tatsächliche Termine. Damit l
 
 ## Status und Lieferwarnungen
 
-Ein Auftrag mit übergebener Arbeit trägt in der Zelle mit seinem Auftragsnamen die neutrale Kennzeichnung **Übergeben**. Zeigen Sie darauf, um je betroffenem Schritt die Gutteile auf der ursprünglichen Maschine und das Ziel der Restmenge zu sehen. Auch die Zeile der ursprünglichen Zuweisung zeigt **Übergeben**. Der gesamte Auftrag ist damit nicht fertig. Nach der Übergabe kann er **Geplant** zeigen, bis die nächste Maschine beginnt. Siehe [Übergabedetails](/de/platform-intro/pages/order-detail#handed-over-work).
+Ein Auftrag mit übergebener Arbeit trägt in der Zelle mit seinem Auftragsnamen die neutrale Kennzeichnung **Übergeben**. Zeigen Sie darauf, um je betroffenem Arbeitsgang die Gutteile auf der ursprünglichen Maschine und das Ziel der Restmenge zu sehen. Auch die Zeile der ursprünglichen Zuweisung zeigt **Übergeben**. Der gesamte Auftrag ist damit nicht abgeschlossen. Nach der Übergabe kann er **Geplant** zeigen, bis die nächste Maschine beginnt. Siehe [Übergabedetails](/de/platform-intro/pages/order-detail#handed-over-work).
 
 | Englischer Status | Deutsche Bezeichnung | Bedeutung |
 | --- | --- | --- |
@@ -119,7 +119,7 @@ Der Auftragsstatus folgt seinen Zuweisungen. **Live** bedeutet ein jetzt laufend
 
 **PDA Entry / BDE-Eintrag** verwendet Bedienermengen, **Cycle Count** Sensorzahlen. Die Auswahl ändert die Fortschrittsanzeige, nicht Buchungen. **Mat. / MA** und **Work / AA** sind getrennte Ausschusskategorien. Gesamt ist Eingabe + MA + AA.
 
-**Seq / Nr.** bedeutet Operationssequenz, **Prep. / Rüst** Vorbereitung, **Prod.** Produktion und **Dev. / Abweichung** Istzeit minus Planzeit. Eine negative Zeitabweichung bedeutet schneller als geplant. **Cycles Per Product / Press per Product** bestimmt die Zyklen je Fertigteil. Formeln finden Sie unter [Berechnungen](/de/platform-intro/concepts/calculations).
+**Seq / Nr.** bedeutet Arbeitsgangfolge, **Prep. / Vorb.** Vorbereitung, **Prod.** Produktion und **Dev. / Abweichung** Istzeit minus Planzeit. Eine negative Zeitabweichung bedeutet schneller als geplant. **Cycles Per Product / Press per Product** bestimmt die Zyklen je Fertigteil. Formeln finden Sie unter [Berechnungen](/de/platform-intro/concepts/calculations).
 
 ## Hauptentitäten
 
