@@ -66,6 +66,8 @@ Nur Administratoren können das **Berichtsarchiv** öffnen. Andere Benutzer sehe
   </Step>
 </Steps>
 
+<a id="download-or-update" />
+
 ### Vorhandenen Bericht herunterladen oder aktualisieren
 
 <Steps>
@@ -76,10 +78,10 @@ Nur Administratoren können das **Berichtsarchiv** öffnen. Andere Benutzer sehe
     **In Warteschlange** und **Wird erstellt** bedeuten, dass der Bericht noch nicht fertig ist. Kehren Sie später zurück, wenn die Erstellung länger als üblich dauert. Warten Sie vor dem Herunterladen auf **Bereit**.
   </Step>
   <Step title="Aktualisieren Sie ihn nach geänderten Produktionsaufzeichnungen" icon="arrow-right" title-type="p">
-    Wählen Sie **Mit aktuellen Daten neu erstellen**, wenn Sie einen Bericht auf Basis der aktuellen Aufzeichnungen benötigen. Warten Sie während **Wird aktualisiert**. Lesen Sie, ob der Bericht aktualisiert wurde oder unverändert blieb. Schlägt die Aktualisierung fehl, bleibt die bisherige Version verfügbar.
+    Wählen Sie **Mit aktuellen Daten neu erstellen**, wenn Sie einen Bericht auf Basis der aktuellen Aufzeichnungen benötigen. Warten Sie während **Wird aktualisiert**. Lesen Sie, ob der Bericht aktualisiert wurde oder unverändert blieb. Prüfen Sie nach einer Aktualisierung **Stand** und Aktualisierungszeit. **Zuletzt geprüft** entfällt, wenn die Angabe dieselbe Minute wie die Aktualisierung zeigt. Schlägt die Aktualisierung fehl, bleibt der bisherige Stand verfügbar.
   </Step>
   <Step title="Laden Sie das Ergebnis herunter und prüfen Sie es" icon="arrow-right" title-type="p">
-    Laden Sie die verfügbare Datei herunter. Prüfen Sie Maschinen, Zeitraum und angezeigte Version vor der Weitergabe. Prüfen Sie die E-Mail-Anzahl gesondert, wenn Sie wissen müssen, ob der Bericht per E-Mail versendet wurde.
+    Laden Sie die verfügbare Datei herunter. Sie enthält immer den neuesten Stand. Prüfen Sie Maschinen, Zeitraum, Aufbau und Stand vor der Weitergabe. **Version 2** neben dem Zeitraum bezeichnet den Aufbau, **Stand** den aktualisierten Bericht. Zeigen Sie mit dem Mauszeiger auf eine der beiden Angaben, um die Erklärung zu lesen. Beim ersten Stand fehlt die Standzeile. Die Neuerstellung versendet bereits versendete E-Mails nicht erneut. Prüfen Sie die E-Mail-Anzahl gesondert, wenn Sie wissen müssen, ob der Bericht per E-Mail versendet wurde.
   </Step>
 </Steps>
 
@@ -156,7 +158,7 @@ Sie erkennen Produktion, deren Intervalle geprüft werden sollten, und können A
 - **Keine Berichte gefunden.**: Erweitern Sie die Filter für Maschine, Quelle oder Zeitraum.
 - **Keine Dateien verfügbar**: Es gibt keine Datei zum Herunterladen. Prüfen Sie den Berichtsstatus.
 - **Fehlgeschlagen**: Die Erstellung wurde nicht erfolgreich abgeschlossen. Versuchen Sie eine fehlgeschlagene Aktion erneut.
-- Bei fehlgeschlagener Aktualisierung bleibt die bisherige Version verfügbar. Prüfen Sie ihre Version vor der Verwendung.
+- Bei fehlgeschlagener Aktualisierung bleibt der bisherige Stand verfügbar. Prüfen Sie vor der Verwendung Stand und Aktualisierungszeit, sofern angezeigt.
 - **Nicht per E-Mail versendet** beschreibt den E-Mail-Versand, nicht die Fertigstellung des Berichts.
 - Ein fehlender Abschnitt **Produktion ohne Auftrag** bedeutet nicht, dass jede Produktionsstunde durch ein Intervall abgedeckt war. Er fehlt, wenn Ihr Unternehmen im Berichtszeitraum weniger als 5 Intervalle echter Arbeitsgänge erfasst hat. Testaufträge zählen nicht mit. Arbeitsplätze sind nie enthalten.
 - Testaufträge bleiben aus Listen und Zählungen ausgeschlossen, auch unter **Als Nächstes**. Ihre Intervalle decken für Produktion ohne Auftrag weiterhin Maschinenzeit ab. Siehe [Testaufträge](/de/platform-intro/pages/report-versions#test-orders).

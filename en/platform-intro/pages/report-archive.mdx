@@ -35,17 +35,27 @@ Follow [Download and Update Reports](/en/platform-intro/workflows/reports).
 
 ## Recognize the Report Version
 
-**Version 2** beside the period identifies the new report. Rows without this badge use Version 1.
+**Version 2** beside the period identifies the new report layout. Rows without this badge use Version 1. Point to the badge to read:
+
+> **Report Version 2, the new layout. Each person chooses Version 1 or 2 in their profile under Newsletter report version.**
 
 Scheduled reports in both versions can appear for the same period when subscribers choose different versions. Compare the contents in [Report Versions](/en/platform-intro/pages/report-versions).
 
 ## Rebuild with Current Data
 
-Select **Rebuild with current data** on an existing report to check it against current production records. **Refreshing** means this check is still underway.
+Every scheduled report is checked automatically once, 3 days after it was sent. If the data changed, the report gets a new revision. If nothing changed, it stays as it is. This is why a weekly report can show **Revision 2** even if nobody rebuilt it manually.
 
-If the contents changed, the report is updated. Its version and update time help you recognize the new result. If nothing changed, you see **Checked against current data: nothing changed.** The last-checked time tells you when the check happened.
+As an Administrator, you can also select **Rebuild with current data** at any time to check an existing report against current production records. **Refreshing** means this check is still underway.
 
-If refreshing fails, the previous version stays available. For example, after production entries are corrected, rebuild the report before using it to review the period again.
+If the contents changed, the report is updated. The update line says **Revision**, for example **Revision 3, updated …**. The number identifies the updated report; **Version 2** beside the period identifies its layout. A report can therefore show both **Version 2** and **Revision 3**. A report that has never been updated shows no revision line.
+
+Point to the revision text to read:
+
+> **Rebuilt with newer data. Downloads here are always the latest revision. Emails that were already sent are not sent again.**
+
+If nothing changed, you see **Checked against current data: nothing changed.** **Last checked** shows when a later check found nothing new. It is hidden when the check and update show the same minute.
+
+If refreshing fails, the previous revision stays available. You see **Refresh failed, the previous revision is still available: …** For example, after production entries are corrected, rebuild the report before using it to review the period again.
 
 ## Scheduled Reports and Email
 
@@ -61,7 +71,7 @@ In the meantime, Administrators can download the ready report from **Report arch
 
 **No reports found.** means no reports match the current selection. Broaden the filters before requesting another report. **No files available** means there is no file to download for that report.
 
-If a report takes longer than usual, Administrators can return to the archive later. It appears there as soon as it is ready. Other users should try the export again later. If loading or downloading fails, try again. A failed refresh leaves the previous report available.
+If a report takes longer than usual, Administrators can return to the archive later. It appears there as soon as it is ready. Other users should try the export again later. If loading or downloading fails, try again. A failed refresh leaves the previous revision available.
 
 ## Related Pages
 

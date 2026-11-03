@@ -66,6 +66,8 @@ Only Administrators can open **Report archive**. Other users do not see it. Open
   </Step>
 </Steps>
 
+<a id="download-or-update" />
+
 ### Download or Update an Existing Report
 
 <Steps>
@@ -76,10 +78,10 @@ Only Administrators can open **Report archive**. Other users do not see it. Open
     **Queued** and **Building** mean the report is not ready yet. Return later if creation takes longer than usual. Look for **Ready** before downloading.
   </Step>
   <Step title="Update it if production records changed" icon="arrow-right" title-type="p">
-    Select **Rebuild with current data** if you need a report based on the current records. Wait while it is **Refreshing**. Read whether the report was updated or nothing changed. If the refresh fails, the previous version remains available.
+    Select **Rebuild with current data** if you need a report based on the current records. Wait while it is **Refreshing**. Read whether the report was updated or nothing changed. If updated, check **Revision** and the update time. **Last checked** is hidden when it shows the same minute as the update. If the refresh fails, the previous revision remains available.
   </Step>
   <Step title="Download and check the result" icon="arrow-right" title-type="p">
-    Download the available file. Check the machines, period, and displayed version before sharing it. Check the email count separately if you need to know whether the report was emailed.
+    Download the available file; it always contains the latest revision. Check the machines, period, layout and revision before sharing it. **Version 2** beside the period identifies the layout; **Revision** identifies the updated report. Point to either for an explanation. The first revision has no revision line. Rebuilding does not send already-sent emails again. Check the email count separately if you need to know whether the report was emailed.
   </Step>
 </Steps>
 
@@ -156,7 +158,7 @@ You can identify production whose intervals need review and check work-center op
 - **No reports found.**: broaden the machine, source, or period filters.
 - **No files available**: there is no file to download; check the report status.
 - **Failed**: creation did not complete successfully. If an action fails, try again.
-- A failed refresh keeps the previous version available. Check its version before using it.
+- A failed refresh keeps the previous revision available. Check its revision and update time, if shown, before using it.
 - **Not emailed** describes email delivery, not whether the report is ready.
 - A missing **Production without an order** section does not mean every production hour was covered by an interval. It is absent when your company recorded fewer than 5 intervals of real operations in the report period, excluding test orders. Work centers are never included.
 - Test orders are excluded from lists and counts, including **Up next**, but their intervals still cover machine time for production without an order. See [test orders](/en/platform-intro/pages/report-versions#test-orders).

@@ -5,6 +5,9 @@ description: "Find reports, understand their status, and update them after produ
 
 | Your question | Read the answer |
 | --- | --- |
+| Why does my report show Revision 3 and Version 2? | [Answer](/en/help-center/faq/reports#revision-layout) |
+| Will I get another email when a report is rebuilt? | [Answer](/en/help-center/faq/reports#revision-email) |
+| Why is the last check time missing from my report? | [Answer](/en/help-center/faq/reports#last-check) |
 | Where can I find a report I requested earlier? | [Answer](/en/help-center/faq/reports#find-report) |
 | Why is my report not ready to download? | [Answer](/en/help-center/faq/reports#waiting) |
 | How do I include corrected production entries in an old report? | [Answer](/en/help-center/faq/reports#rebuild) |
@@ -31,6 +34,26 @@ description: "Find reports, understand their status, and update them after produ
 | Can I add an interval for production that has already happened? | [Answer](/en/help-center/faq/reports#past-interval) |
 | Why is the main downtime reason missing from the summary table? | [Answer](/en/help-center/faq/reports#summary-reason) |
 
+<a id="revision-layout" />
+
+## Why does my report show Revision 3 and Version 2?
+
+**Revision 3** means the report was rebuilt with newer data and is now in its third state. A new revision appears when an automatic check or **Rebuild with current data** finds changes. Every scheduled report is checked automatically once, 3 days after it was sent. If the data changed, the report gets a new revision. If nothing changed, it stays as it is. As an Administrator, you can also select **Rebuild with current data** at any time.
+
+**Version 2** beside the period identifies the layout. Each person chooses **Version 1** or **Version 2** in their profile under **Newsletter report version**. The two numbers are independent. Point to either for an explanation. A report that has never been updated shows no revision line. See [Report Archive](/en/platform-intro/pages/report-archive).
+
+<a id="revision-email" />
+
+## Will I get another email when a report is rebuilt?
+
+Emails already sent are not sent again. Administrators can download the latest revision from **Report archive**. Follow [download or update an existing report](/en/platform-intro/workflows/reports#download-or-update).
+
+<a id="last-check" />
+
+## Why is the last check time missing from my report?
+
+**Last checked** is hidden when the check and update show the same minute. It appears when a later check found nothing new. See [Report Archive](/en/platform-intro/pages/report-archive).
+
 <a id="find-report" />
 
 ## Where can I find a report I requested earlier?
@@ -47,13 +70,13 @@ Only Administrators can open **Report archive**. Other users do not see it. Open
 
 ## How do I include corrected production entries in an old report?
 
-Select **Rebuild with current data**. The archive tells you whether the report changed and shows its version and update time. If the check finds no changes, it says so. Follow [Download and Update Reports](/en/platform-intro/workflows/reports).
+Select **Rebuild with current data**. The archive tells you whether the report changed and shows its revision and update time. If the check finds no changes, it says so. Follow [Download and Update Reports](/en/platform-intro/workflows/reports).
 
 <a id="failed-refresh" />
 
 ## Have I lost my report if the update fails?
 
-No. The previous version remains available after a failed refresh. Check its version before using it and try the refresh again. See [Report Archive](/en/platform-intro/pages/report-archive).
+No. The previous revision remains available after a failed refresh. Check its revision and update time, if shown, before using it and try the refresh again. See [Report Archive](/en/platform-intro/pages/report-archive).
 
 <a id="email" />
 

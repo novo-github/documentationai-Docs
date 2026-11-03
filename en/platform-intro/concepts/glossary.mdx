@@ -1178,6 +1178,12 @@ Read the selected condition: setup and cycle checks compare time with a plan or 
 
 [Learn more](/en/platform-intro/pages/report-versions).
 
+### Revision
+
+**Revision** identifies an updated report in the archive. Its number increases when the report is rebuilt with changed contents. Every scheduled report is checked automatically once, 3 days after it was sent. If the data changed, the report gets a new revision. If nothing changed, it stays as it is. As an Administrator, you can also select **Rebuild with current data** at any time. For example, **Revision 3, updated …** shows its revision and update time. The first revision has no revision line. Downloads always contain the latest revision; emails already sent are not sent again. **Version 2** beside the period refers to the report layout.
+
+[Learn more](/en/platform-intro/pages/report-archive).
+
 ### Report archive
 
 Only Administrators can open **Report archive**. Other users do not see it.
@@ -1192,7 +1198,7 @@ Only Administrators can open **Report archive**. Other users do not see it.
 | **Failed** | Creation did not finish successfully. |
 | **Refreshing** | Being checked against current data. |
 
-**Rebuild with current data** checks an existing report and updates it if the contents changed. **Not emailed** describes email delivery, not creation status. A failed refresh keeps the previous version available.
+**Rebuild with current data** checks an existing report and updates it if the contents changed. **Not emailed** describes email delivery, not creation status. A failed refresh keeps the previous revision available.
 
 [Learn more](/en/platform-intro/pages/report-archive).
 
