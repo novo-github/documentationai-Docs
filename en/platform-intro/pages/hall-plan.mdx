@@ -22,6 +22,7 @@ Users open a hall-specific route, often from a shared link or display device.
 
 - Machines, current states, active orders, and produced pieces across the hall.
 - OEE, availability, performance, and machine-time metrics.
+- In **V2** and **V3**, the chosen downtime reason for a machine that is currently idle or off.
 - Live information alongside previous-shift information.
 - A compact, paginated machine view for large halls.
 - Display connectivity and last-seen information for managed devices.
@@ -42,6 +43,16 @@ Users open a hall-specific route, often from a shared link or display device.
 In the Hall Plan display settings, choose the view version, zoom, visible production metrics, and machine sorting. Select a language and refresh frequency that suit the people using the display. Page rotation lets an unattended screen move through the configured views, while the kiosk navigation settings determine which production statistics are available.
 
 Review current machine states, active orders, and produced pieces together with OEE, availability, performance, and machine times. Compare live information with the previous shift and use planned and actual setup, production, and cycle times to understand deviations. Company branding helps identify the shared hall display.
+
+Administrators can choose **Display version → V2** or **V3**, then show or hide **Visible columns → Downtime reason**. Only administrators can save these hall display settings. The selection is saved per hall and per display version. If the hall's display settings were saved before this option was added, enable it once for each version you use. Halls whose display settings have never been saved show the card by default. Follow [Set Up a Hall Plan Display](/en/platform-intro/workflows/hall-display-setup#downtime-reason).
+
+<a id="downtime-reason" />
+
+### Read the Current Downtime Reason
+
+In **V2** and **V3**, the **Downtime reason** card appears at the end of each machine's key figures on the first slide, after **OEE**, **AVL**, **PRO**, **PCS**, and the production, idle and off times. It shows the reason the machine operator chose on the [PDA page](/en/platform-intro/pages/data-acquisition#choose-a-downtime-reason) for the current downtime. The reason's colour marks the left edge. Long names are shortened; hover over the card to read the full name.
+
+The card appears only while the machine is idle or off and a reason was chosen. It is hidden during production, when no reason was chosen, or when **Downtime reason** is switched off in the display settings. The previous shift never shows it. **V1** is unchanged.
 
 ### Show Product Information
 

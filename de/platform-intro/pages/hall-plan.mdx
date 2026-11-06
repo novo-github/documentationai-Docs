@@ -22,6 +22,7 @@ Benutzer öffnen eine hallenspezifische Route, oft über einen geteilten Link od
 
 - Maschinen, aktuelle Zustände, aktive Aufträge und produzierte Teile in der Halle.
 - OEE, Verfügbarkeit, Leistung und Maschinenzeit-Kennzahlen.
+- In **V2** und **V3** den gewählten Stillstandsgrund einer Maschine, die gerade in Leerlauf oder Aus ist.
 - Live-Informationen neben Informationen aus der vorherigen Schicht.
 - Eine kompakte, paginierte Maschinenansicht für große Hallen.
 - Verbindung und Zeitpunkt der letzten Aktivität verwalteter Displays.
@@ -42,6 +43,16 @@ Benutzer öffnen eine hallenspezifische Route, oft über einen geteilten Link od
 Wählen Sie in den Anzeigeeinstellungen des Hallenplans die Ansichtsversion, Zoomstufe, sichtbaren Produktionskennzahlen und Maschinensortierung. Passen Sie Sprache und Aktualisierungshäufigkeit an die Personen an, die das Display nutzen. Die Seitenrotation wechselt auf einem unbeaufsichtigten Bildschirm durch die konfigurierten Ansichten. Die Einstellungen der Kiosk-Navigation bestimmen, welche Produktionsstatistiken verfügbar sind.
 
 Betrachten Sie aktuelle Maschinenzustände, aktive Aufträge und produzierte Teile gemeinsam mit OEE, Verfügbarkeit, Leistung und Maschinenzeiten. Vergleichen Sie Live-Informationen mit der vorherigen Schicht und nutzen Sie geplante und tatsächliche Vorbereitungs-, Produktions- und Zykluszeiten, um Abweichungen nachzuvollziehen. Das Unternehmensbranding hilft dabei, die gemeinsame Hallenanzeige zuzuordnen.
+
+Administratoren können **Anzeigeversion → V2** oder **V3** wählen und unter **Angezeigte Spalten → Stillstandsgrund** die Karte ein- oder ausblenden. Nur Administratoren können diese Anzeigeeinstellungen der Halle speichern. Die Auswahl gilt je Halle und Anzeigeversion. Wurden die Anzeigeeinstellungen der Halle vor Einführung dieser Option gespeichert, schalten Sie sie einmal für jede verwendete Version ein. Bei Hallen, deren Anzeigeeinstellungen noch nie gespeichert wurden, erscheint die Karte standardmäßig. Folgen Sie [Hallenplandisplay einrichten](/de/platform-intro/workflows/hall-display-setup#downtime-reason).
+
+<a id="downtime-reason" />
+
+### Den aktuellen Stillstandsgrund lesen
+
+In **V2** und **V3** erscheint die Karte **Stillstandsgrund** am Ende der Kennzahlen jeder Maschine auf der ersten Ansicht, nach **OEE**, **AVL**, **PRO**, **PCS** sowie den Produktions-, Leerlauf- und Aus-Zeiten. Sie zeigt den Grund, den der Maschinenbediener auf der [BDE-Seite](/de/platform-intro/pages/data-acquisition#einen-stillstandsgrund-wählen) für den laufenden Stillstand gewählt hat. Der linke Rand trägt die Farbe des Grundes. Lange Namen werden gekürzt. Zeigen Sie mit der Maus auf die Karte, um den vollständigen Namen zu lesen.
+
+Die Karte erscheint nur bei Leerlauf oder Aus, wenn ein Grund gewählt wurde. Während der Produktion, ohne gewählten Grund oder bei ausgeschaltetem **Stillstandsgrund** in den Anzeigeeinstellungen bleibt sie verborgen. Die vorherige Schicht zeigt sie nie. **V1** bleibt unverändert.
 
 ### Produktinformationen anzeigen
 

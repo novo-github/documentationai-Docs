@@ -19,6 +19,18 @@ description: "Register a hall display, choose kiosk information and timing, and 
 
 Check both parts of the rotation on the display. **No orders worked in this shift** explains an empty order view. If you shorten the page-switch time, check the order switch again: its maximum becomes shorter too. Confirm that order and operation priorities use your company’s levels.
 
+<a id="downtime-reason" />
+
+## Show the Current Downtime Reason
+
+Only administrators can save these hall display settings.
+
+1. Open the Hall Plan display settings and choose **Display version → V2** or **V3**. **V1** does not show the card.
+2. Under **Visible columns**, select the **Downtime reason** checkbox. The choice is saved automatically for the hall and display version as soon as you tick or clear the checkbox. If the hall's display settings were saved before this option was added, enable it once for each version you use. Halls whose display settings have never been saved show the card by default.
+3. Check a machine that is currently idle or off and whose machine operator chose a reason on the [PDA page](/en/platform-intro/pages/data-acquisition#choose-a-downtime-reason). On the first slide, look at the end of its key figures for the reason card. Its left edge uses the reason's colour. Hover over a shortened name to read it in full.
+
+The card is absent while the machine produces, when no reason was chosen, and from the previous shift. Clear **Downtime reason** if you want to hide the card for that hall and display version. The choice is saved automatically as soon as you clear the checkbox. See [Hall Plan](/en/platform-intro/pages/hall-plan#downtime-reason).
+
 ## Choose Product Information
 
 1. In the Hall Plan display settings, choose **Product information → On** to show the active order's product image, product name, and operation sequence (#) next to the machine image.

@@ -15,6 +15,7 @@ description: "Understand automatic shifts and find products, operation numbers, 
 | How do I check only certain shifts in machine history? | [Answer](/en/help-center/faq/shifts-and-hall-plan#history-shifts) |
 | Why can I not change how often Hall Plan switches to orders? | [Answer](/en/help-center/faq/shifts-and-hall-plan#order-switch) |
 | Which orders appear when Hall Plan switches away from key figures? | [Answer](/en/help-center/faq/shifts-and-hall-plan#shift-orders) |
+| Why don't I see the downtime reason in Hall Plan? | [Answer](/en/help-center/faq/shifts-and-hall-plan#downtime-reason) |
 
 <a id="automatic-shifts" />
 
@@ -75,3 +76,11 @@ Select the shifts you want to review. The charts follow that selection, includin
 ## Which orders appear when Hall Plan switches away from key figures?
 
 The order view shows orders worked during the shift. **No orders worked in this shift** explains an empty view. Administrators control the alternating display with **Key figures / orders switch**. See [Hall Plan](/en/platform-intro/pages/hall-plan).
+
+<a id="downtime-reason" />
+
+## Why don't I see the downtime reason in Hall Plan?
+
+The **Downtime reason** card appears only in **V2** or **V3**, on the first slide at the end of the machine's key figures. The machine must be idle or off, and the machine operator must have chosen a reason for the current downtime on the PDA page. It is absent during production and from the previous shift. **V1** does not show it.
+
+If your hall's display settings were saved before this option was added, an administrator must enable **Visible columns → Downtime reason** once for each display version you use. The choice is saved automatically for the hall and display version as soon as the administrator ticks or clears the checkbox. Halls whose display settings have never been saved show it by default. Follow [Set Up a Hall Plan Display](/en/platform-intro/workflows/hall-display-setup#downtime-reason).

@@ -6,6 +6,23 @@ toc: false
 
 ## Releases
 
+<Update label="2026-11-06" description="v1.5.154" tags={["Funktion"]}>
+  {/* commits: 0b2523b2, ec23205 */}
+
+  **Release-Datum:** 6. November 2026
+
+  ### Neue Funktionen
+
+  #### [Im Hallenplan sehen, warum eine Maschine stillsteht](/de/platform-intro/pages/hall-plan#downtime-reason)
+  {/* feature: hall-plan-downtime-reason */}
+
+  Der Hallenplan zeigt in **V2** und **V3** jetzt eine Karte **Stillstandsgrund** am Ende der Kennzahlen jeder Maschine auf der ersten Ansicht. Sie zeigt den Grund, den der Maschinenbediener auf der BDE-Seite für den laufenden Stillstand gewählt hat. Der linke Kartenrand trägt die Farbe des Grundes. Zeigen Sie mit der Maus auf einen gekürzten Namen, um ihn vollständig zu lesen.
+
+  Die Karte erscheint nur bei Leerlauf oder Aus, wenn ein Grund gewählt wurde. Während der Produktion und in der vorherigen Schicht erscheint sie nicht. **V1** bleibt unverändert.
+
+  Administratoren können in den Anzeigeeinstellungen des Hallenplans **Anzeigeversion → V2** oder **V3** wählen, dann **Angezeigte Spalten → Stillstandsgrund** auswählen. Die Auswahl wird automatisch für die Halle und Anzeigeversion gespeichert, sobald Sie das Kontrollkästchen auswählen oder abwählen. Wurden die Anzeigeeinstellungen der Halle vor dieser Aktualisierung gespeichert, schalten Sie die Karte einmal für jede verwendete Version ein. Bei Hallen, deren Anzeigeeinstellungen noch nie gespeichert wurden, erscheint sie standardmäßig. Folgen Sie [Hallenplandisplay einrichten](/de/platform-intro/workflows/hall-display-setup#downtime-reason).
+</Update>
+
 <Update label="2026-11-05" description="v1.5.153" tags={["Verbesserung", "Fehlerbehebung"]}>
   {/* commits: 80ad747, 4f03059, 61ac086 */}
 

@@ -15,6 +15,7 @@ description: "Verstehen Sie automatische Schichten und finden Sie Produkte, Arbe
 | Wie prüfe ich nur bestimmte Schichten in der Maschinenhistorie? | [Antwort](/de/help-center/faq/shifts-and-hall-plan#history-shifts) |
 | Warum kann ich den Wechsel zu Aufträgen im Hallenplan nicht einstellen? | [Antwort](/de/help-center/faq/shifts-and-hall-plan#order-switch) |
 | Welche Aufträge zeigt der Hallenplan beim Wechsel von den Kennzahlen? | [Antwort](/de/help-center/faq/shifts-and-hall-plan#shift-orders) |
+| Warum sehe ich im Hallenplan keinen Stillstandsgrund? | [Antwort](/de/help-center/faq/shifts-and-hall-plan#downtime-reason) |
 
 <a id="automatic-shifts" />
 
@@ -75,3 +76,11 @@ Wählen Sie die gewünschten Schichten aus. Die Diagramme folgen dieser Auswahl,
 ## Welche Aufträge zeigt der Hallenplan beim Wechsel von den Kennzahlen?
 
 Die Auftragsansicht zeigt während der Schicht bearbeitete Aufträge. **Keine Aufträge in dieser Schicht bearbeitet** erklärt eine leere Ansicht. Administratoren steuern die wechselnde Anzeige mit **Wechsel Kennzahlen / Aufträge**. Siehe [Hallenplan](/de/platform-intro/pages/hall-plan).
+
+<a id="downtime-reason" />
+
+## Warum sehe ich im Hallenplan keinen Stillstandsgrund?
+
+Die Karte **Stillstandsgrund** erscheint nur in **V2** oder **V3**, auf der ersten Ansicht am Ende der Maschinenkennzahlen. Die Maschine muss in Leerlauf oder Aus sein. Außerdem muss der Maschinenbediener auf der BDE-Seite einen Grund für den laufenden Stillstand gewählt haben. Während der Produktion und in der vorherigen Schicht erscheint die Karte nicht. **V1** zeigt sie nicht.
+
+Wurden die Anzeigeeinstellungen Ihrer Halle vor Einführung dieser Option gespeichert, muss ein Administrator **Angezeigte Spalten → Stillstandsgrund** einmal für jede verwendete Anzeigeversion einschalten. Die Auswahl wird automatisch für die Halle und Anzeigeversion gespeichert, sobald der Administrator das Kontrollkästchen auswählt oder abwählt. Bei Hallen, deren Anzeigeeinstellungen noch nie gespeichert wurden, erscheint die Karte standardmäßig. Folgen Sie [Hallenplandisplay einrichten](/de/platform-intro/workflows/hall-display-setup#downtime-reason).

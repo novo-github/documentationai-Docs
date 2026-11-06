@@ -6,6 +6,23 @@ toc: false
 
 ## Releases
 
+<Update label="2026-11-06" description="v1.5.154" tags={["feature"]}>
+  {/* commits: 0b2523b2, ec23205 */}
+
+  **Release date:** November 6, 2026
+
+  ### New Features
+
+  #### [See Why a Machine Is Standing Still in Hall Plan](/en/platform-intro/pages/hall-plan#downtime-reason)
+  {/* feature: hall-plan-downtime-reason */}
+
+  Hall Plan now shows a **Downtime reason** card at the end of each machine's key figures on the first slide in **V2** and **V3**. It shows the reason the machine operator chose on the PDA page for the current downtime. The reason's colour marks the card's left edge. Hover over a shortened name to read it in full.
+
+  The card appears only while the machine is idle or off and a reason was chosen. It is absent during production and from the previous shift. **V1** is unchanged.
+
+  Administrators can open the Hall Plan display settings, choose **Display version → V2** or **V3**, then select **Visible columns → Downtime reason**. The choice is saved automatically for the hall and display version as soon as you tick or clear the checkbox. If the hall's display settings were saved before this update, enable the card once for each version you use. Halls whose display settings have never been saved show it by default. Follow [Set Up a Hall Plan Display](/en/platform-intro/workflows/hall-display-setup#downtime-reason).
+</Update>
+
 <Update label="2026-11-05" description="v1.5.153" tags={["improvement", "fix"]}>
   {/* commits: 80ad747, 4f03059, 61ac086 */}
 
