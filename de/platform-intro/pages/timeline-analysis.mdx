@@ -52,6 +52,8 @@ Stillstand bedeutet Leerlauf (orange) oder Aus (rot). **Downtime Analysis (label
 
 Automatische Gründe folgen spezifischer Grundregel, deren DEFAULT-Regel und danach Global-Regeln. Die Wirkung administrativer Typ- und Stufe-1–5-Felder ist unbestätigt. [Berechnungen](/de/platform-intro/concepts/calculations) erklärt AVL, PRO und den gewählten Zeitraum.
 
+Seit dem 5. November 2026 (v1.5.153) greifen **Regeln für Stillstandsgründe** bei mehr Stillständen in Leerlauf und Aus, wenn der Maschinenbediener keinen Grund gewählt hat. Bei Maschinen mit Regeln kann dadurch mehr Stillstandszeit einen Grund erhalten. Die Summen je Grund in Berichten und Diagrammen können sich ändern. Stillstände vor der Aktualisierung bleiben unverändert. Ein vom Maschinenbediener gewählter Grund hat immer Vorrang. Siehe [automatische Regeln](/de/platform-intro/workflows/timeline-reason-creation#automatische-regeln).
+
 ## Codes von Stillstandsgründen lesen
 
 Beschriftungen in Stillstandsdiagrammen enthalten den Code eines Grundes, sofern vorhanden. Kurze Beschriftungen können abgeschnitten sein. Zeigen Sie auf einen Balken oder ein Kreissegment, um Name, Code und Kategorie vollständig zu lesen. Kategorien helfen beim Erkennen der Gründe. Die Diagramme gruppieren weiterhin nach Grund.

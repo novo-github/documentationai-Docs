@@ -6,6 +6,33 @@ toc: false
 
 ## Releases
 
+<Update label="2026-11-05" description="v1.5.153" tags={["improvement", "fix"]}>
+  {/* commits: 80ad747, 4f03059, 61ac086 */}
+
+  **Release date:** November 5, 2026
+
+  ### Improvements
+
+  #### [Automatically Explain More Idle and Off Downtime](/en/platform-intro/pages/machine-configuration#timeline-rules-and-ranges)
+  {/* feature: live-downtime-reason */}
+
+  **Downtime reason rules** now apply to idle and off downtimes whenever the machine operator has chosen no reason. Previously, the rules mostly did not apply to these downtimes. A reason chosen by the machine operator always takes priority.
+
+  On machines with rules, more downtimes can now receive a reason, so downtime reason totals in reports and charts can change. Downtimes from before this update are unchanged. Administrators can review **Machine Settings → Downtime reason rules**; see [automatic rules](/en/platform-intro/workflows/timeline-reason-creation#automatic-rules).
+
+  ### Fixes
+
+  #### [Keep Your Chosen Reason Visible During Downtime](/en/platform-intro/pages/data-acquisition#choose-a-downtime-reason)
+  {/* feature: live-downtime-reason */}
+
+  On the PDA page, a reason chosen under **Downtime reasons** or by tapping the latest timeline segment now stays in the running downtime's tooltip after a page refresh, instead of disappearing until the downtime ends. This also works when the downtime began before the last 8 hours shown on the timeline.
+
+  #### [Keep Your Chosen Reason When the Machine Restarts](/en/platform-intro/pages/data-acquisition#choose-a-downtime-reason)
+  {/* feature: live-downtime-reason */}
+
+  A chosen reason could previously be lost when downtime ended; it is now reliably saved onto that downtime, including when you choose it shortly after the machine restarts while the reason tiles are still offered. Follow [choose a downtime reason](/en/platform-intro/workflows/data-acquisition#label-downtime-with-an-available-reason).
+</Update>
+
 <Update label="2026-11-04" description="v1.5.151" tags={["improvement"]}>
   {/* commits: 0c61a6d */}
 

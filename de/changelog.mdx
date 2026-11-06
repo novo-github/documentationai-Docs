@@ -6,6 +6,33 @@ toc: false
 
 ## Releases
 
+<Update label="2026-11-05" description="v1.5.153" tags={["Verbesserung", "Fehlerbehebung"]}>
+  {/* commits: 80ad747, 4f03059, 61ac086 */}
+
+  **Release-Datum:** 5. November 2026
+
+  ### Verbesserungen
+
+  #### [Mehr Stillstände bei Leerlauf und Aus automatisch begründen](/de/platform-intro/pages/machine-configuration#zeitachsenregeln-und-zeitbereiche)
+  {/* feature: live-downtime-reason */}
+
+  **Regeln für Stillstandsgründe** greifen jetzt bei Stillständen in Leerlauf und Aus, wenn der Maschinenbediener keinen Grund gewählt hat. Bisher wurden die Regeln auf diese Stillstände meist nicht angewendet. Ein vom Maschinenbediener gewählter Grund hat immer Vorrang.
+
+  Bei Maschinen mit Regeln können dadurch mehr Stillstände einen Grund erhalten. Die Summen je Stillstandsgrund in Berichten und Diagrammen können sich deshalb ändern. Stillstände vor dieser Aktualisierung bleiben unverändert. Administratoren können **Maschineneinstellungen → Regeln für Stillstandsgründe** prüfen; siehe [automatische Regeln](/de/platform-intro/workflows/timeline-reason-creation#automatische-regeln).
+
+  ### Fehlerbehebungen
+
+  #### [Gewählten Grund während des Stillstands weiter sehen](/de/platform-intro/pages/data-acquisition#einen-stillstandsgrund-wählen)
+  {/* feature: live-downtime-reason */}
+
+  Wählen Sie auf der BDE-Seite unter **Stillstandsgründe** oder durch Antippen des neuesten Timeline-Abschnitts einen Grund, bleibt er jetzt nach einer Seitenaktualisierung im Tooltip des laufenden Stillstands in der Timeline sichtbar, statt bis zum Ende des Stillstands zu verschwinden. Das gilt auch, wenn der Stillstand vor den letzten 8 Stunden begonnen hat, die die Timeline zeigt.
+
+  #### [Gewählten Grund beim Wiederanlaufen behalten](/de/platform-intro/pages/data-acquisition#einen-stillstandsgrund-wählen)
+  {/* feature: live-downtime-reason */}
+
+  Ein gewählter Grund konnte bisher beim Ende des Stillstands verloren gehen; er wird jetzt zuverlässig diesem Stillstand zugeordnet, auch wenn Sie ihn kurz nach dem Wiederanlaufen wählen, solange die Grundkacheln noch angeboten werden. Folgen Sie [Stillstand mit einem verfügbaren Grund beschriften](/de/platform-intro/workflows/data-acquisition#stillstand-mit-einem-verfügbaren-grund-beschriften).
+</Update>
+
 <Update label="2026-11-04" description="v1.5.151" tags={["Verbesserung"]}>
   {/* commits: 0c61a6d */}
 

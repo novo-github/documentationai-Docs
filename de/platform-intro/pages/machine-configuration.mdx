@@ -61,6 +61,10 @@ Wählen Sie die tatsächliche Kapazität. Beispielsweise erlaubt 2 der Prognose,
 
 ## Zeitachsenregeln und Zeitbereiche
 
+Administratoren können **Maschineneinstellungen → Regeln für Stillstandsgründe** prüfen. Ein vom Maschinenbediener gewählter Grund hat immer Vorrang. Wählt der Maschinenbediener keinen Grund, greifen die Regeln bei Stillständen in Leerlauf und Aus.
+
+Seit dem 5. November 2026 (v1.5.153) greifen die Regeln bei mehr Stillständen in Leerlauf und Aus. Die Summen je Stillstandsgrund in Berichten und Diagrammen können sich daher bei Maschinen mit Regeln ändern. Stillstände vor der Aktualisierung bleiben unverändert. Siehe [automatische Regeln](/de/platform-intro/workflows/timeline-reason-creation#automatische-regeln).
+
 Für Aus, Leerlauf und Vorbereitung werden automatische Grundregeln in dieser Reihenfolge geprüft: spezifische Regel des Grundes, dessen **DEFAULT**-Regel, danach **Global**-Regeln. Konfigurieren Sie nur benötigte Regeln.
 
 **Timeline ranges / Time range** sind Dauerklassen, etwa 1–5 und 5–30 Minuten, für **Idletime Distribution**. Stillstandsgründe besitzen Typ- und Stufe-1–5-Felder; deren genaue Wirkung ist in der Referenz nicht belegt.

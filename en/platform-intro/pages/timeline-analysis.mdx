@@ -52,6 +52,8 @@ Downtime is Idle (orange) or Off (red). **Downtime Analysis (labeled)** groups i
 
 Automatic timeline reasons follow the specific reason rule, its DEFAULT rule, then Global rules. Admin-defined reason type and level 1–5 effects are unconfirmed. The [calculations reference](/en/platform-intro/concepts/calculations) explains AVL, PRO, and the role of the selected period.
 
+Since November 5, 2026 (v1.5.153), **Downtime reason rules** apply to more idle and off downtimes when the machine operator has chosen no reason. On machines with rules, more downtime can therefore receive a reason, changing the totals by reason in reports and charts. Downtimes from before the update remain unchanged. A reason chosen by the machine operator always takes priority. See [automatic rules](/en/platform-intro/workflows/timeline-reason-creation#automatic-rules).
+
 ## Read Downtime Reason Codes
 
 Downtime chart labels include a reason's code when one is set. Short labels may be cut off; hover over a bar or pie slice to read the full name, code, and category. Categories help identify reasons; the charts still group by reason.

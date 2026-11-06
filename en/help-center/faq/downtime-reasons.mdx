@@ -13,6 +13,10 @@ description: "Choose reasons, understand codes, and manage machine availability.
 | Why can I not untick this machine for a reason? | [Answer](/en/help-center/faq/downtime-reasons#last-reason) |
 | What happens if I delete a downtime reason? | [Answer](/en/help-center/faq/downtime-reasons#delete) |
 | The reason was created, but its machines were not saved. Should I create it again? | [Answer](/en/help-center/faq/downtime-reasons#create-retry) |
+| Why does the reason I chose for the current downtime disappear? | [Answer](/en/help-center/faq/downtime-reasons#live-reason) |
+| Can I still choose a reason just after the machine starts again? | [Answer](/en/help-center/faq/downtime-reasons#after-restart) |
+| Why do my downtime reason totals look different since this update? | [Answer](/en/help-center/faq/downtime-reasons#changed-totals) |
+| Which wins, my chosen reason or the rules? | [Answer](/en/help-center/faq/downtime-reasons#reason-priority) |
 
 <a id="manage" />
 
@@ -61,3 +65,27 @@ Past downtime entries remain but lose that reason. A machine that loses its last
 ## The reason was created, but its machines were not saved. Should I create it again?
 
 No. The reason already exists. Check the machine checklist in the same form and save again. If the machine selection changed elsewhere, review the reloaded choices before retrying. See [Create and Manage Downtime Reasons](/en/platform-intro/workflows/timeline-reason-creation).
+
+<a id="live-reason" />
+
+## Why does the reason I chose for the current downtime disappear?
+
+This was a display problem fixed in v1.5.153. Your chosen reason now stays in the running downtime’s tooltip after a page refresh, even when the downtime began before the last 8 hours shown. See [choose a downtime reason](/en/platform-intro/pages/data-acquisition#choose-a-downtime-reason).
+
+<a id="after-restart" />
+
+## Can I still choose a reason just after the machine starts again?
+
+Yes, if the reason tiles are still offered shortly after the restart. Your choice is saved onto the downtime that just ended. A reason chosen while the downtime was running is also kept when it ends. Follow [choose a downtime reason](/en/platform-intro/workflows/data-acquisition#label-downtime-with-an-available-reason).
+
+<a id="changed-totals" />
+
+## Why do my downtime reason totals look different since this update?
+
+Since November 5, 2026 (v1.5.153), **Downtime reason rules** apply to more idle and off downtimes when no reason was chosen by the machine operator. On machines with rules, more downtime can receive a reason, so totals by reason in reports and charts can change. Downtimes from before the update remain unchanged. See [automatic rules](/en/platform-intro/workflows/timeline-reason-creation#automatic-rules).
+
+<a id="reason-priority" />
+
+## Which wins, my chosen reason or the rules?
+
+The reason chosen by the machine operator always takes priority over **Downtime reason rules**. For idle and off downtimes, the rules apply only when the machine operator chose no reason. See [Machine Configuration](/en/platform-intro/pages/machine-configuration#timeline-rules-and-ranges).

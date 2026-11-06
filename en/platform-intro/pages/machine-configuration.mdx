@@ -61,6 +61,10 @@ Set the value to match actual capacity. For example, 2 means the forecast can al
 
 ## Timeline Rules and Ranges
 
+Administrators can review **Machine Settings → Downtime reason rules**. A reason chosen by the machine operator always takes priority. If the machine operator chooses no reason, the rules apply to idle and off downtimes.
+
+Since November 5, 2026 (v1.5.153), the rules apply to more idle and off downtimes. Downtime reason totals in reports and charts can therefore change for machines with rules. Downtimes from before the update remain unchanged. See [automatic rules](/en/platform-intro/workflows/timeline-reason-creation#automatic-rules).
+
 For Off, Idle, and Preparation, automatic reason rules are checked in this order: the reason's specific rule, its **DEFAULT** rule, then **Global** rules. Configure only the rules needed.
 
 **Timeline ranges / Time range** are duration buckets, for example 1–5 and 5–30 minutes, used in **Idletime Distribution**. Timeline reasons have type and level 1–5 fields, but their exact effects are not established in the reference.

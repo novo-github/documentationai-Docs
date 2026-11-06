@@ -13,6 +13,10 @@ description: "Gründe auswählen, Codes verstehen und Verfügbarkeit je Maschine
 | Warum kann ich diese Maschine bei einem Grund nicht abwählen? | [Antwort](/de/help-center/faq/downtime-reasons#last-reason) |
 | Was passiert beim Löschen eines Stillstandsgrundes? | [Antwort](/de/help-center/faq/downtime-reasons#delete) |
 | Der Grund wurde angelegt, seine Maschinen aber nicht gespeichert. Soll ich ihn erneut anlegen? | [Antwort](/de/help-center/faq/downtime-reasons#create-retry) |
+| Warum verschwindet mein gewählter Grund beim laufenden Stillstand? | [Antwort](/de/help-center/faq/downtime-reasons#live-reason) |
+| Kann ich kurz nach dem Wiederanlaufen noch einen Grund wählen? | [Antwort](/de/help-center/faq/downtime-reasons#after-restart) |
+| Warum sehen meine Summen je Stillstandsgrund seit dieser Aktualisierung anders aus? | [Antwort](/de/help-center/faq/downtime-reasons#changed-totals) |
+| Was hat Vorrang: mein gewählter Grund oder die Regeln? | [Antwort](/de/help-center/faq/downtime-reasons#reason-priority) |
 
 <a id="manage" />
 
@@ -61,3 +65,27 @@ Frühere Stillstandseinträge bleiben erhalten, verlieren aber diesen Grund. Ein
 ## Der Grund wurde angelegt, seine Maschinen aber nicht gespeichert. Soll ich ihn erneut anlegen?
 
 Nein. Der Grund existiert bereits. Prüfen Sie im selben Formular die Maschinenliste und speichern Sie erneut. Wurde die Auswahl anderswo geändert, prüfen Sie vor einem weiteren Versuch die neu geladenen Angaben. Siehe [Stillstandsgründe erstellen und verwalten](/de/platform-intro/workflows/timeline-reason-creation).
+
+<a id="live-reason" />
+
+## Warum verschwindet mein gewählter Grund beim laufenden Stillstand?
+
+Das war ein Anzeigeproblem, das mit v1.5.153 behoben wurde. Ihr gewählter Grund bleibt jetzt nach einer Seitenaktualisierung im Tooltip des laufenden Stillstands in der Timeline sichtbar, auch wenn der Stillstand vor den letzten 8 angezeigten Stunden begonnen hat. Siehe [einen Stillstandsgrund wählen](/de/platform-intro/pages/data-acquisition#einen-stillstandsgrund-wählen).
+
+<a id="after-restart" />
+
+## Kann ich kurz nach dem Wiederanlaufen noch einen Grund wählen?
+
+Ja, wenn die Grundkacheln kurz nach dem Wiederanlaufen noch angeboten werden. Ihre Auswahl wird dem gerade beendeten Stillstand zugeordnet. Auch ein während des laufenden Stillstands gewählter Grund bleibt beim Ende erhalten. Folgen Sie [Stillstand mit einem verfügbaren Grund beschriften](/de/platform-intro/workflows/data-acquisition#stillstand-mit-einem-verfügbaren-grund-beschriften).
+
+<a id="changed-totals" />
+
+## Warum sehen meine Summen je Stillstandsgrund seit dieser Aktualisierung anders aus?
+
+Seit dem 5. November 2026 (v1.5.153) greifen **Regeln für Stillstandsgründe** bei mehr Stillständen in Leerlauf und Aus, wenn der Maschinenbediener keinen Grund gewählt hat. Bei Maschinen mit Regeln kann dadurch mehr Stillstandszeit einen Grund erhalten. Die Summen je Grund in Berichten und Diagrammen können sich deshalb ändern. Stillstände vor der Aktualisierung bleiben unverändert. Siehe [automatische Regeln](/de/platform-intro/workflows/timeline-reason-creation#automatische-regeln).
+
+<a id="reason-priority" />
+
+## Was hat Vorrang: mein gewählter Grund oder die Regeln?
+
+Der vom Maschinenbediener gewählte Grund hat immer Vorrang vor den **Regeln für Stillstandsgründe**. Bei Stillständen in Leerlauf und Aus greifen die Regeln nur, wenn der Maschinenbediener keinen Grund gewählt hat. Siehe [Maschinenkonfiguration](/de/platform-intro/pages/machine-configuration#zeitachsenregeln-und-zeitbereiche).
