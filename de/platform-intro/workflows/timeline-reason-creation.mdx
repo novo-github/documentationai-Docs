@@ -21,7 +21,7 @@ Prüfen Sie vorhandene Gründe vor dem Anlegen. Stimmen Sie Namen und Codes mit 
 
 <Steps>
   <Step title="Öffnen Sie die Gründe einer Maschine" icon="arrow-right" title-type="p">
-    Öffnen Sie als Administrator **Maschineneinstellungen → Stillstandsgründe**. Sie können Gründe auch in der Verwaltung der Zeitachsengründe im [Administrationsbereich](/de/platform-intro/pages/admin-panel) anlegen und bearbeiten.
+    Öffnen Sie als Administrator **Maschineneinstellungen → Stillstandsgründe**. Sie können Gründe auch unter **Admin-Panel → Analysatoren konfigurieren → Stillstandsgründe** anlegen und bearbeiten. Siehe [Admin-Panel](/de/platform-intro/pages/admin-panel).
   </Step>
   <Step title="Wählen Sie alle Gründe oder eine feste Liste" icon="arrow-right" title-type="p">
     Mit **Alle Gründe (Standard)** erscheinen später angelegte Gründe automatisch. Wählen Sie alternativ **Nur ausgewählte Gründe** und mindestens einen Grund. Nutzen Sie Suche und Filter. **Alle sichtbaren auswählen** ergänzt sichtbare Gründe. Leeren entfernt die gesamte Auswahl.
@@ -42,11 +42,29 @@ Prüfen Sie vorhandene Gründe vor dem Anlegen. Stimmen Sie Namen und Codes mit 
 
 ## Automatische Regeln
 
-Maschinenauswahlen begrenzen manuelle Zuordnungen. Automatische Zeitachsenregeln verwenden weiterhin alle Unternehmensgründe. Richten Sie diese in der [Maschinenkonfiguration](/de/platform-intro/pages/machine-configuration) ein.
+Maschinenauswahlen begrenzen auch die Gründe für automatische Regeln und Schichtpausen. Richten Sie die Regeln in der [Maschinenkonfiguration](/de/platform-intro/pages/machine-configuration) ein.
 
-Ein vom Maschinenbediener gewählter Grund hat immer Vorrang. Wählt der Maschinenbediener keinen Grund, greifen die Regeln bei Stillständen in Leerlauf und Aus.
+Ein vom Maschinenbediener gewählter oder von Hand gesetzter Grund hat Vorrang. Ist die [automatische Pausenkennzeichnung](/de/platform-intro/pages/break-settings) eingeschaltet, folgt der Grund einer passenden Pause. **Regeln für Stillstandsgründe** gelten für die übrige Zeit in Leerlauf oder Aus. Ohne passenden Grund bleibt die Zeit unbeschriftet.
 
 Seit dem 5. November 2026 (v1.5.153) greifen die Regeln bei mehr Stillständen in Leerlauf und Aus. Berücksichtigen Sie beim Vergleich von Berichten oder Diagrammen über diese Aktualisierung hinweg, dass bei Maschinen mit Regeln mehr Stillstandszeit einen Grund erhält. Stillstände vor der Aktualisierung bleiben unverändert.
+
+<a id="delete-reason" />
+
+## Einen gemeinsamen Grund löschen
+
+<Steps>
+  <Step title="Öffnen Sie den Löschhinweis" icon="arrow-right" title-type="p">
+    Öffnen Sie als Administrator **Admin-Panel → Analysatoren konfigurieren → Stillstandsgründe** und wählen Sie **Löschen** im Zeilenmenü des Grundes.
+  </Step>
+  <Step title="Prüfen Sie die Verwendung des Grundes" icon="arrow-right" title-type="p">
+    Lesen Sie **Beim Löschen wird dieser Grund entfernt aus:**. Prüfen Sie die aufgeführten früheren Stillstände, Grundlisten der Maschinen, Regeln für Stillstandsgründe und Pausen. **Dieser Grund wird nirgends verwendet.** bedeutet, dass keine betroffen sind. Erscheint nur der allgemeine Hinweis, laden die Details noch oder konnten nicht geladen werden.
+  </Step>
+  <Step title="Löschen Sie und prüfen Sie betroffene Einstellungen" icon="arrow-right" title-type="p">
+    Bestätigen Sie das Löschen nur, wenn diese Verwendungen den Grund verlieren sollen. Frühere Stillstände bleiben ohne Ersatzgrund erhalten. Die Regeln für Stillstandsgründe, die diesen Grund vergeben, werden entfernt. Diese Zeit bekommt dann den Standardgrund der Maschine. Schichtpausen zeigen **Kein Stillstandsgrund**. Prüfen Sie danach diese Pausen und die Maschinenauswahl. Eine eingeschränkte Liste bleibt nach dem Löschen ihres letzten Grundes leer, bis Sie sie ändern.
+  </Step>
+</Steps>
+
+Um nur den Grund eines Stillstands zu entfernen, wählen Sie dort **Grund entfernen**, statt den gemeinsamen Grund zu löschen. Möchten Sie frühere Zuordnungen behalten, den Grund aber auf einer Maschine nicht mehr anbieten, ändern Sie deren Grundauswahl.
 
 ## Entscheidungspunkte
 
@@ -60,7 +78,7 @@ Bediener sehen die Gründe, die auf ihrer Maschine erlaubt sind. Diagramme zeige
 
 - Ein doppelter Code lässt sich nicht speichern. Wählen Sie einen anderen Code oder bearbeiten Sie den vorhandenen Grund.
 - Über die Verfügbarkeitsliste können Sie einer Maschine nicht ihren letzten verfügbaren Grund entziehen. Geben Sie der genannten Maschine zuerst einen anderen Grund oder lassen Sie diesen ausgewählt.
-- Beim Löschen eines Grundes bleiben frühere Stillstandseinträge erhalten, verlieren aber ihren Grund. Eine Maschine ohne verbleibenden ausgewählten Grund bietet danach alle Gründe. Lesen Sie vor der Bestätigung den Löschhinweis.
+- Das Löschen eines gemeinsamen Grundes entfernt ihn auch aus Regeln für Stillstandsgründe, Standardgründen und Schichtpausen. Prüfen Sie die Verwendungen im Löschhinweis und danach die betroffenen Einstellungen.
 - Ändert jemand gleichzeitig die Auswahl, wird der aktuelle Stand geladen. Prüfen Sie ihn und versuchen Sie es erneut.
 - Eine geöffnete BDE-Seite übernimmt neue Verfügbarkeit beim nächsten Aktualisieren. Auch eine abgelehnte Grundauswahl aktualisiert die Liste.
 

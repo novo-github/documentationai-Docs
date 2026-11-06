@@ -1,0 +1,82 @@
+---
+title: "Break Settings"
+description: "Give finished downtime during scheduled shift breaks the right reason automatically."
+---
+
+## Overview
+
+**Access:** Admin only for settings. People who can open a machine’s history or analysis see the resulting reasons there. [Roles and access](/en/platform-intro/concepts/roles-and-access).
+
+Use **Break settings** to give idle or off downtime the reason of a scheduled shift break. Administrators open **Admin Panel → Configure Shifts and Scheduling → Shifts**, then **Break settings** directly left of **Add Shift**.
+
+## What You Can See
+
+- **Label breaks automatically**, off by default.
+- Two choices for downtime that starts before a break or ends after it.
+- **Tolerance**, shown only when labelling just the break.
+- A notice if no break has a reason, and a warning listing machines that do not offer a break's reason.
+
+The dialog loads the current saved settings each time you open it. Use the information icons beside the title and choices for explanations and examples.
+
+## What You Can Do
+
+Enable or stop automatic labelling for the whole company. Choose the mode and tolerance, then select **Save**. **Saved** confirms the change.
+
+After enabling and saving, edit each shift and choose a **Downtime reason** for each break. The list shows company reasons alphabetically, with the code before the name, for example “F2 · Pause”. **No downtime reason** leaves that break without an automatic break label. A deleted reason also appears as **No downtime reason**.
+
+The **Breaks** column shows the reason after each break's length only while automatic labelling is on. Turning it off keeps saved reasons but hides them in the table and greys out their choices in the editor. The choices are also unavailable while settings load or if loading fails. Reopen **Break settings** and try again if needed.
+
+Follow [set up automatic break labels](/en/platform-intro/workflows/shift-management#automatic-break-labels).
+
+<a id="settings" />
+
+## Settings and Their Effect
+
+**Label breaks automatically** applies to finished idle or off downtimes from activation onward. Earlier completed downtime stays unchanged. Downtimes that end while the switch is off are not labelled later, even after it is turned on again. Labelling always starts from the moment the switch is turned on. Labels appear after the downtime ends; allow a few minutes. The Watchmen Platform keeps checking even when nobody has the page open.
+
+Under **If a downtime starts before the break or ends after it**, choose:
+
+| Choice | Effect |
+| --- | --- |
+| **Label only the break (recommended)** | Gives the break reason to the part inside the break and its tolerance. Remaining parts use the usual rules for their own length, or stay without a reason. |
+| **Label the whole downtime** | Gives the reason to all of the overlapping downtime. A long breakdown can then be hidden under the break reason. If several breaks overlap the downtime, the break with the longest overlap supplies the reason. |
+
+**Tolerance** accepts whole minutes from 0 to 15 before and after a break. The first activation starts with **Label only the break (recommended)** and 5 minutes. Tolerance does not apply to **Label the whole downtime**.
+
+For example, a 9:15–9:30 break has the reason “Pause” and 5 minutes of tolerance. If the machine is idle from 9:12–9:33, the whole downtime gets “Pause”. It lies within the break and its tolerance, so nothing is split.
+
+For a 9:15–9:30 break, 5 minutes of tolerance and downtime from 9:00–9:50:
+
+- **Label only the break (recommended)** labels 9:10–9:35 with the break reason. The other parts follow their usual rules.
+- **Label the whole downtime** gives all 50 minutes the break reason.
+- A separate downtime from 9:00–9:12 gets no break label: it touches only the tolerance, not the actual break.
+
+## Which Reason Takes Priority?
+
+A reason chosen by the machine operator or set by hand comes first. Automatic labelling never replaces or splits that choice. A reason cleared by hand stays empty.
+
+Next comes the scheduled break's reason, if enabled and available on the machine. The machine's downtime reason rules apply to the remaining time. If no reason applies, that time stays unlabelled.
+
+If the machine operator chooses a reason after the downtime ended, that reason replaces the break label for the whole downtime, also when the downtime had been split into parts around the break. Parts whose reason someone set or cleared by hand keep that choice. See [choose a downtime reason](/en/platform-intro/pages/data-acquisition#choose-a-downtime-reason).
+
+<a id="limits" />
+
+## Limits and Warnings
+
+- The machine needs a shift group in which the shift is scheduled on that day. Machines using **Active shift** have no fixed break labels. Night-shift breaks can cross midnight.
+- Only idle and off downtime is labelled. Production, preparation and time without data are excluded. Running downtime does not yet show an automatic break reason.
+- A break needs a reason that the machine offers. If a warning lists a machine and reason, add the reason to that machine's allowed list or choose another break reason. A break without a valid reason is skipped.
+- If two breaks are so close that their tolerances meet, each break’s tolerance ends halfway between them, so one break’s reason never spills into the other break.
+- Splitting downtime changes counts and averages by reason because each part counts separately. Total time in each machine state stays the same. Break labels do not change planned time or OEE.
+- Deleting a shared downtime reason removes it from shift breaks while keeping their times. Choose a replacement in each affected break if you want automatic labelling to continue.
+
+## Related Pages
+
+- [Admin Panel](/en/platform-intro/pages/admin-panel#manage-shift-breaks)
+- [Machine Configuration](/en/platform-intro/pages/machine-configuration#downtime-reasons-for-this-machine)
+- [Timeline Analysis](/en/platform-intro/pages/timeline-analysis#read-automatically-labelled-breaks)
+
+## Related Workflows
+
+- [Manage Shift Definitions](/en/platform-intro/workflows/shift-management#automatic-break-labels)
+- [Create and Manage Downtime Reasons](/en/platform-intro/workflows/timeline-reason-creation)

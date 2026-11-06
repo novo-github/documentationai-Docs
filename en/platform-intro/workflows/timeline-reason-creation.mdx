@@ -21,7 +21,7 @@ Check existing reasons before creating another. Agree names and codes with your 
 
 <Steps>
   <Step title="Open a machine’s reasons" icon="arrow-right" title-type="p">
-    As an administrator, open **Machine Settings → Downtime reasons**. You can also create and edit reasons in the timeline reason area of the [Admin Panel](/en/platform-intro/pages/admin-panel).
+    As an administrator, open **Machine Settings → Downtime reasons**. You can also create and edit reasons under **Admin Panel → Configure Analyzers → Downtime reasons**. See [Admin Panel](/en/platform-intro/pages/admin-panel).
   </Step>
   <Step title="Choose all reasons or a fixed list" icon="arrow-right" title-type="p">
     Choose **All reasons (default)** to include future reasons automatically. Or choose **Only selected reasons** and tick at least one. Search and filter the list as needed. **Select all visible** adds visible reasons; clearing removes the entire selection.
@@ -42,11 +42,29 @@ Check existing reasons before creating another. Agree names and codes with your 
 
 ## Automatic Rules
 
-Machine selections limit manual assignment. Automatic timeline rules still use company-wide reasons. Configure them in [Machine Configuration](/en/platform-intro/pages/machine-configuration).
+Machine selections also limit the reasons automatic rules and shift breaks can use. Configure the rules in [Machine Configuration](/en/platform-intro/pages/machine-configuration).
 
-A reason chosen by the machine operator always takes priority. If the machine operator chooses no reason, the rules apply to idle and off downtimes.
+A reason chosen by the machine operator or set by hand takes priority. When [automatic break labels](/en/platform-intro/pages/break-settings) are enabled, an eligible break's reason comes next. **Downtime reason rules** apply to the remaining idle or off time; without a matching reason, the time stays unlabelled.
 
 Since November 5, 2026 (v1.5.153), the rules apply to more idle and off downtimes. When comparing reports or charts across this update, allow for more downtime receiving a reason on machines with rules. Downtimes from before the update remain unchanged.
+
+<a id="delete-reason" />
+
+## Delete a Shared Reason
+
+<Steps>
+  <Step title="Open the deletion notice" icon="arrow-right" title-type="p">
+    As an administrator, open **Admin Panel → Configure Analyzers → Downtime reasons**, then select **Delete** in the reason’s row menu.
+  </Step>
+  <Step title="Review where the reason is used" icon="arrow-right" title-type="p">
+    Read **Deleting this reason removes it from:**. Check the listed past downtimes, machine reason lists, downtime reason rules and breaks. **This reason is not used anywhere.** means none are affected. If only the general notice appears, the details are still loading or could not be loaded.
+  </Step>
+  <Step title="Delete and check affected settings" icon="arrow-right" title-type="p">
+    Confirm deletion only if these uses should lose the reason. Past downtimes stay without a replacement reason. The downtime reason rules that give this reason are removed. That time then gets the default reason of the machine. Shift breaks show **No downtime reason**. Check those breaks and machine selections afterwards. A restricted list that loses its last reason stays empty until you change it.
+  </Step>
+</Steps>
+
+To clear only one downtime's label, use **Remove label** on that period instead of deleting the shared reason. To keep existing labels but stop offering the reason on one machine, change that machine's reason selection.
 
 ## Decision Points
 
@@ -60,7 +78,7 @@ Operators see the reasons allowed on their machine. Charts show codes, and their
 
 - A duplicate code cannot be saved. Choose another code or edit the existing reason.
 - You cannot remove a machine’s only remaining reason through the availability checklist. Give the named machine another reason first, or keep this one ticked.
-- Deleting a reason keeps past downtime entries but removes their reason. A machine losing its last selected reason then offers all reasons. Read the deletion notice before confirming.
+- Deleting a shared reason also removes it from downtime reason rules, defaults and shift breaks. Review the uses in the deletion notice and check the affected settings afterwards.
 - If someone changes the selection at the same time, the latest selection reloads. Review it and retry.
 - An already open PDA page picks up new availability on its next refresh. A rejected reason selection also updates its list.
 

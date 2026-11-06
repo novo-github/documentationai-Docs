@@ -1422,7 +1422,7 @@ A reason's optional **Code**, such as F12, is unique within the company and uses
 
 ### All reasons (default) / Only selected reasons
 
-**All reasons (default)** includes every company reason and future additions. **Only selected reasons** limits operators to a fixed list with at least one reason. Deleting its last selected reason returns a machine to all reasons.
+**All reasons (default)** includes every company reason and future additions. **Only selected reasons** limits operators to a fixed list with at least one reason. Deleting the last selected reason leaves that restricted list empty until an administrator changes it.
 
 [Learn more](/en/platform-intro/pages/machine-configuration).
 
@@ -1432,11 +1432,25 @@ The machines where operators can select a reason. Unticking a machine marked **A
 
 [Learn more](/en/platform-intro/pages/admin-panel).
 
+### Break settings / Label breaks automatically
+
+**Break settings** lets administrators enable **Label breaks automatically** for the company. Finished idle or off downtime during a scheduled shift break can receive that break's **Downtime reason**. **No downtime reason** skips that break. A person's choice always takes priority.
+
+### Label only the break (recommended) / Label the whole downtime
+
+**Label only the break (recommended)** gives the break's reason only to the overlapping break time and its tolerance. **Label the whole downtime** gives it to all of an overlapping downtime, which can hide a longer breakdown.
+
+### Tolerance
+
+In **Break settings**, **Tolerance** adds 0–15 minutes before and after a break when only the break is labelled. It starts at 5 minutes. The downtime must overlap the actual break; touching only the tolerance is not enough.
+
+[Learn more](/en/platform-intro/pages/break-settings).
+
 ### Timeline rules
 
 Automatic reasons selected by specific reason rule, then its DEFAULT rule, then Global rules, for Off, Idle, or Preparation.
 
-**Downtime reason rules** apply to idle and off downtimes when the machine operator has chosen no reason. A reason chosen by the machine operator always takes priority.
+A reason chosen by the machine operator or set by hand takes priority. When [automatic break labels](/en/platform-intro/pages/break-settings) are enabled, an eligible break's reason comes next. **Downtime reason rules** apply to the remaining idle or off time; without a matching reason, the time stays unlabelled.
 
 [Learn more](/en/platform-intro/pages/machine-configuration).
 

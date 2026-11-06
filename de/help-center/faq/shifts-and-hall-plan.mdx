@@ -16,6 +16,11 @@ description: "Verstehen Sie automatische Schichten und finden Sie Produkte, Arbe
 | Warum kann ich den Wechsel zu Aufträgen im Hallenplan nicht einstellen? | [Antwort](/de/help-center/faq/shifts-and-hall-plan#order-switch) |
 | Welche Aufträge zeigt der Hallenplan beim Wechsel von den Kennzahlen? | [Antwort](/de/help-center/faq/shifts-and-hall-plan#shift-orders) |
 | Warum sehe ich im Hallenplan keinen Stillstandsgrund? | [Antwort](/de/help-center/faq/shifts-and-hall-plan#downtime-reason) |
+| Wie erhalten Pausen automatisch einen Grund? | [Antwort](/de/help-center/faq/shifts-and-hall-plan#automatic-break-labels) |
+| Warum ist der Stillstandsgrund der Pause ausgegraut? | [Antwort](/de/help-center/faq/shifts-and-hall-plan#grey-break-reason) |
+| Warum hat meine Pause noch keinen Grund erhalten? | [Antwort](/de/help-center/faq/shifts-and-hall-plan#missing-break-label) |
+| Kennzeichnet die Toleranz jeden Stopp in der Nähe einer Pause? | [Antwort](/de/help-center/faq/shifts-and-hall-plan#break-tolerance) |
+| Wie schalte ich automatische Pausengründe aus? | [Antwort](/de/help-center/faq/shifts-and-hall-plan#stop-break-labels) |
 
 <a id="automatic-shifts" />
 
@@ -84,3 +89,33 @@ Die Auftragsansicht zeigt während der Schicht bearbeitete Aufträge. **Keine Au
 Die Karte **Stillstandsgrund** erscheint nur in **V2** oder **V3**, auf der ersten Ansicht am Ende der Maschinenkennzahlen. Die Maschine muss in Leerlauf oder Aus sein. Außerdem muss der Maschinenbediener auf der BDE-Seite einen Grund für den laufenden Stillstand gewählt haben. Während der Produktion und in der vorherigen Schicht erscheint die Karte nicht. **V1** zeigt sie nicht.
 
 Wurden die Anzeigeeinstellungen Ihrer Halle vor Einführung dieser Option gespeichert, muss ein Administrator **Angezeigte Spalten → Stillstandsgrund** einmal für jede verwendete Anzeigeversion einschalten. Die Auswahl wird automatisch für die Halle und Anzeigeversion gespeichert, sobald der Administrator das Kontrollkästchen auswählt oder abwählt. Bei Hallen, deren Anzeigeeinstellungen noch nie gespeichert wurden, erscheint die Karte standardmäßig. Folgen Sie [Hallenplandisplay einrichten](/de/platform-intro/workflows/hall-display-setup#downtime-reason).
+
+<a id="automatic-break-labels" />
+
+## Wie erhalten Pausen automatisch einen Grund?
+
+Öffnen Sie als Administrator **Admin-Panel → Schichten und Zeitplanung konfigurieren**, dann **Pauseneinstellungen** direkt links neben **Schicht hinzufügen**. Schalten Sie **Pausen automatisch kennzeichnen** ein, wählen Sie die gewünschte Option und **Speichern**. Bearbeiten Sie danach jede Schicht und wählen Sie für jede Pause einen **Stillstandsgrund**. Maschinen mit **Aktive Schicht** werden nicht gekennzeichnet. Die Maschine muss den Pausengrund anbieten. Folgen Sie [Pausen automatisch kennzeichnen einrichten](/de/platform-intro/workflows/shift-management#automatic-break-labels).
+
+<a id="grey-break-reason" />
+
+## Warum ist der Stillstandsgrund der Pause ausgegraut?
+
+**Pausen automatisch kennzeichnen** muss eingeschaltet und gespeichert sein, bevor Sie einen Grund wählen können. Die Auswahl ist auch gesperrt, während die Einstellungen laden oder wenn das Laden scheitert. Öffnen Sie **Pauseneinstellungen**, schalten Sie **Pausen automatisch kennzeichnen** ein und wählen Sie **Speichern**. Bearbeiten Sie danach die Schicht erneut. Beim Ausschalten bleiben gespeicherte Pausengründe erhalten, werden aber in der Tabelle ausgeblendet. Siehe [Pauseneinstellungen](/de/platform-intro/pages/break-settings).
+
+<a id="missing-break-label" />
+
+## Warum hat meine Pause noch keinen Grund erhalten?
+
+Ein laufender Stillstand wird noch nicht gekennzeichnet. Warten Sie nach seinem Ende einige Minuten. Die Auswahl einer Person bleibt erhalten. Prüfen Sie, ob der Schalter eingeschaltet ist, die Pause einen auf der Maschine angebotenen Grund hat und die Schichtgruppe diese Schicht am Tag des Stillstands vorsieht. **Aktive Schicht** nutzt keine festen Pausen. Der Stillstand muss die eigentliche Pause überlappen, nicht nur ihre Toleranz. Früher beendete Stillstände bleiben unverändert. Siehe [Grenzen und Warnungen](/de/platform-intro/pages/break-settings#limits).
+
+<a id="break-tolerance" />
+
+## Kennzeichnet die Toleranz jeden Stopp in der Nähe einer Pause?
+
+Nein. Der Stillstand muss die eigentliche Pause überlappen. Bei einer Pause von 9:15–9:30 und 5 Minuten **Toleranz** erhält ein Stillstand von 9:00–9:50 den Pausengrund für 9:10–9:35. Ein Stopp, der um 9:12 endet, erhält keinen Pausengrund. Die Toleranz gilt nur für **Nur die Pause kennzeichnen (empfohlen)**. Siehe [Pauseneinstellungen](/de/platform-intro/pages/break-settings#settings).
+
+<a id="stop-break-labels" />
+
+## Wie schalte ich automatische Pausengründe aus?
+
+Ein Administrator öffnet **Pauseneinstellungen**, schaltet **Pausen automatisch kennzeichnen** aus und wählt **Speichern**. Gespeicherte Pausengründe bleiben erhalten. Die Tabelle blendet sie aus und ihre Auswahl wird ausgegraut. Folgen Sie [automatische Pausenkennzeichnung einrichten oder beenden](/de/platform-intro/workflows/shift-management#automatic-break-labels).

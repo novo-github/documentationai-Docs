@@ -80,6 +80,12 @@ Bei Maschinen mit geplanten Schichten verwendet **All Day** 24 Stunden und **Pla
 
 Wählen Sie die Schichten für Ihre Prüfung aus. Die Diagramme verwenden die ausgewählten Schichten. Öffnen Sie die Schichtdetails, um die Zeiten zu prüfen. Wählen Sie **Ganzer Tag** für den vollständigen Tag. Energiewerte je Schicht folgen den örtlichen Schichtzeiten des Unternehmens. Folgen Sie [Maschinenhistorie prüfen](/de/platform-intro/workflows/machine-history-review).
 
+## Automatisch gekennzeichnete Pausen lesen
+
+Schaltet ein Administrator die [automatische Pausenkennzeichnung](/de/platform-intro/pages/break-settings) ein, können beendete Stillstände in Leerlauf oder Aus den Grund einer geplanten Schichtpause erhalten. Die Auswahl einer Person hat Vorrang. Bereits früher beendete Stillstände werden beim Einschalten nicht neu gekennzeichnet.
+
+Bei **Nur die Pause kennzeichnen (empfohlen)** kann ein längerer Stillstand als mehrere Abschnitte erscheinen: die Pause mit ihrer Toleranz sowie die Zeit davor oder danach. Jeder Abschnitt zählt bei Anzahlen und Durchschnittswerten je Grund als eigener Stillstand. Die übrigen Abschnitte folgen den Regeln für ihre jeweilige Länge. Die Gesamtzeit je Maschinenzustand bleibt gleich. Bei **Den ganzen Stillstand kennzeichnen** kann eine lange Störung vollständig unter dem Pausengrund erscheinen.
+
 ## Codes von Stillstandsgründen lesen
 
 Beschriftungen in Stillstandsdiagrammen enthalten den Code eines Grundes, sofern vorhanden. Kurze Beschriftungen können abgeschnitten sein. Zeigen Sie auf einen Balken oder ein Kreissegment, um Name, Code und Kategorie vollständig zu lesen. Kategorien helfen beim Erkennen der Gründe. Die Diagramme gruppieren weiterhin nach Grund.

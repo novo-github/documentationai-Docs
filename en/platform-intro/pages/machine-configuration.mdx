@@ -61,7 +61,7 @@ Set the value to match actual capacity. For example, 2 means the forecast can al
 
 ## Timeline Rules and Ranges
 
-Administrators can review **Machine Settings → Downtime reason rules**. A reason chosen by the machine operator always takes priority. If the machine operator chooses no reason, the rules apply to idle and off downtimes.
+Administrators can review **Machine Settings → Downtime reason rules**. A reason chosen by the machine operator or set by hand takes priority. When [automatic break labels](/en/platform-intro/pages/break-settings) are enabled, an eligible break's reason comes next. **Downtime reason rules** apply to the remaining idle or off time; without a matching reason, the time stays unlabelled.
 
 Since November 5, 2026 (v1.5.153), the rules apply to more idle and off downtimes. Downtime reason totals in reports and charts can therefore change for machines with rules. Downtimes from before the update remain unchanged. See [automatic rules](/en/platform-intro/workflows/timeline-reason-creation#automatic-rules).
 
@@ -182,7 +182,7 @@ Save the tab to keep this machine's selection. **Apply to other machines** repla
 
 **New reason** opens the shared reason form. The current machine starts ticked under **Available on machines**. Keep it ticked if the reason should be offered here. Editing a reason's name, code, category, or colour affects every machine using it. See [Create and Manage Downtime Reasons](/en/platform-intro/workflows/timeline-reason-creation) for availability and deletion limits.
 
-The selection limits what people can assign. Automatic timeline rules still use the company-wide reasons, so history can contain a reason that is no longer selectable.
+The selection limits both the reasons people can assign and the reasons automatic rules and shift breaks can use. Removing a reason from this list keeps past labels. Deleting the shared reason also removes it from rules, defaults and breaks. If deletion empties a restricted list, the machine offers no reasons until an administrator changes it. Check the warnings in [Break Settings](/en/platform-intro/pages/break-settings) for breaks whose reason this machine does not offer.
 
 ## Main Entities
 

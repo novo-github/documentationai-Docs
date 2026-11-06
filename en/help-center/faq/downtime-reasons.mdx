@@ -17,12 +17,13 @@ description: "Choose reasons, understand codes, and manage machine availability.
 | Can I still choose a reason just after the machine starts again? | [Answer](/en/help-center/faq/downtime-reasons#after-restart) |
 | Why do my downtime reason totals look different since this update? | [Answer](/en/help-center/faq/downtime-reasons#changed-totals) |
 | Which wins, my chosen reason or the rules? | [Answer](/en/help-center/faq/downtime-reasons#reason-priority) |
+| Why is one downtime now counted as several? | [Answer](/en/help-center/faq/downtime-reasons#split-break-downtime) |
 
 <a id="manage" />
 
 ## Who can change the downtime reasons?
 
-Only administrators can create, edit, delete, or restrict reasons. Use **Machine Settings → Downtime reasons** or the timeline reason area in the Admin Panel. Editing a shared reason changes it for all machines. Follow [Create and Manage Downtime Reasons](/en/platform-intro/workflows/timeline-reason-creation).
+Only administrators can create, edit, delete, or restrict reasons. Use **Machine Settings → Downtime reasons** or **Admin Panel → Configure Analyzers → Downtime reasons**. Editing a shared reason changes it for all machines. Follow [Create and Manage Downtime Reasons](/en/platform-intro/workflows/timeline-reason-creation).
 
 <a id="missing" />
 
@@ -58,7 +59,7 @@ The change would leave that machine without any reason. Give it another reason f
 
 ## What happens if I delete a downtime reason?
 
-Past downtime entries remain but lose that reason. A machine that loses its last selected reason offers all reasons again. To clear only one timeline label, use **Remove label** instead. See [Create and Manage Downtime Reasons](/en/platform-intro/workflows/timeline-reason-creation).
+The deletion notice shows where the reason is used. Past downtimes remain without a replacement reason. Reason charts and reports are updated for the affected days. Reports you already received stay as they were. The reason is also removed from machine lists, downtime reason rules, defaults and breaks. Break times stay. A restricted machine list stays restricted even if it loses its last reason. To clear only one timeline label, use **Remove label** instead. Follow [delete a shared reason](/en/platform-intro/workflows/timeline-reason-creation#delete-reason).
 
 <a id="create-retry" />
 
@@ -84,8 +85,16 @@ Yes, if the reason tiles are still offered shortly after the restart. Your choic
 
 Since November 5, 2026 (v1.5.153), **Downtime reason rules** apply to more idle and off downtimes when no reason was chosen by the machine operator. On machines with rules, more downtime can receive a reason, so totals by reason in reports and charts can change. Downtimes from before the update remain unchanged. See [automatic rules](/en/platform-intro/workflows/timeline-reason-creation#automatic-rules).
 
+Since November 6, 2026 (v1.5.155), administrators can also enable automatic break labels. After activation, eligible finished downtime can move from a rule reason to a break reason, and labelling only the break can change counts and averages. A person’s choice stays. See [Break Settings](/en/platform-intro/pages/break-settings).
+
 <a id="reason-priority" />
 
 ## Which wins, my chosen reason or the rules?
 
-The reason chosen by the machine operator always takes priority over **Downtime reason rules**. For idle and off downtimes, the rules apply only when the machine operator chose no reason. See [Machine Configuration](/en/platform-intro/pages/machine-configuration#timeline-rules-and-ranges).
+A reason chosen by the machine operator or set by hand takes priority. When [automatic break labels](/en/platform-intro/pages/break-settings) are enabled, an eligible break's reason comes next. **Downtime reason rules** apply to the remaining idle or off time; without a matching reason, the time stays unlabelled.
+
+<a id="split-break-downtime" />
+
+## Why is one downtime now counted as several?
+
+**Label only the break (recommended)** can split downtime into the break and time before or after it. Each part counts separately in counts and averages by reason. Total time in each machine state stays the same. **Label the whole downtime** avoids that split but can hide a long breakdown under the break reason. See [automatically labelled breaks](/en/platform-intro/pages/timeline-analysis#read-automatically-labelled-breaks).

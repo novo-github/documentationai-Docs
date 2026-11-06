@@ -54,6 +54,12 @@ Automatic timeline reasons follow the specific reason rule, its DEFAULT rule, th
 
 Since November 5, 2026 (v1.5.153), **Downtime reason rules** apply to more idle and off downtimes when the machine operator has chosen no reason. On machines with rules, more downtime can therefore receive a reason, changing the totals by reason in reports and charts. Downtimes from before the update remain unchanged. A reason chosen by the machine operator always takes priority. See [automatic rules](/en/platform-intro/workflows/timeline-reason-creation#automatic-rules).
 
+## Read Automatically Labelled Breaks
+
+If an administrator enables [automatic break labels](/en/platform-intro/pages/break-settings), finished idle or off downtime can receive the reason of a scheduled shift break. A person's choice takes priority. Earlier completed downtime is not relabelled when the setting is turned on.
+
+With **Label only the break (recommended)**, a longer downtime can appear as several parts: the break with its tolerance, plus the time before or after it. Each part counts as one downtime in counts and averages by reason. The remaining parts use the rules for their own length. Total time in each machine state stays the same. With **Label the whole downtime**, a long breakdown can appear entirely under the break's reason.
+
 ## Read Downtime Reason Codes
 
 Downtime chart labels include a reason's code when one is set. Short labels may be cut off; hover over a bar or pie slice to read the full name, code, and category. Categories help identify reasons; the charts still group by reason.

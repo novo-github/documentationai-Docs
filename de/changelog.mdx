@@ -6,6 +6,32 @@ toc: false
 
 ## Releases
 
+<Update label="2026-11-06" description="v1.5.155" tags={["Funktion", "Verbesserung"]}>
+  {/* commits: 5aabc2f6, b0aabc96, 5573c06f, 8080fc77, 5e623530, 5c19b814, 48a30e8f, a88440a8, 2702a557, e7d436fe, 18ea20c8, 81913557, 9af752c, 78d5b7a, 1700b5a, d188fc4, 0b6c963, db7f969, af6d4ed, 2e4801c, 4fb1543, b2a42a4, 19718f6, 628bf48, e3d6c08, 6082b7b */}
+
+  **Release-Datum:** 6. November 2026
+
+  ### Neue Funktionen
+
+  #### [Schichtpausen automatisch kennzeichnen](/de/platform-intro/pages/break-settings)
+  {/* feature: shift-break-labels */}
+
+  Administratoren können jeder Schichtpause jetzt einen **Stillstandsgrund** geben. Öffnen Sie **Admin-Panel → Schichten und Zeitplanung konfigurieren**, dann **Pauseneinstellungen** direkt links neben **Schicht hinzufügen**. Schalten Sie **Pausen automatisch kennzeichnen** ein, wählen Sie den zu kennzeichnenden Zeitraum und anschließend **Speichern**. Bearbeiten Sie jede Schicht, um die Gründe ihrer Pausen auszuwählen. Folgen Sie [Pausen automatisch kennzeichnen einrichten](/de/platform-intro/workflows/shift-management#automatic-break-labels).
+
+  **Nur die Pause kennzeichnen (empfohlen)** beginnt mit 5 Minuten **Toleranz** vor und nach der Pause. Bei einer Pause von 9:15–9:30 und einem Stillstand von 9:00–9:50 erhält 9:10–9:35 den Pausengrund. **Den ganzen Stillstand kennzeichnen** gibt allen 50 Minuten diesen Grund. Dadurch kann eine längere Störung verborgen bleiben.
+
+  Die Kennzeichnung gilt ab dem Einschalten und erfolgt nach Ende eines Stillstands in Leerlauf oder Aus. Früher beendete Stillstände bleiben unverändert. Ein von einer Person gewählter Grund bleibt erhalten. Maschinen mit **Aktive Schicht** werden nicht gekennzeichnet. Maschinen müssen den Pausengrund anbieten. Die Einstellungen warnen vor Maschinen, die ihn nicht anbieten.
+
+  ### Verbesserungen
+
+  #### [Vor dem Löschen sehen, wo ein Stillstandsgrund verwendet wird](/de/platform-intro/pages/admin-panel#stillstandsgründe-verwalten)
+  {/* feature: shift-break-labels */}
+
+  Administratoren sehen im Löschhinweis jetzt die betroffenen früheren Stillstände, Grundlisten der Maschinen, Regeln für Stillstandsgründe und Pausen. Öffnen Sie **Admin-Panel → Analysatoren konfigurieren → Stillstandsgründe** und wählen Sie **Löschen** im Zeilenmenü des Grundes. Folgen Sie [einen gemeinsamen Grund löschen](/de/platform-intro/workflows/timeline-reason-creation#delete-reason).
+
+  Beim Löschen wird der Grund dort entfernt. Frühere Stillstände bleiben ohne Ersatzgrund erhalten. Diagramme und Berichte nach Stillstandsgründen werden für die betroffenen Tage aktualisiert. Bereits erhaltene Berichte bleiben unverändert. Betroffene Regeln für Stillstandsgründe werden entfernt. Diese Zeit bekommt dann den Standardgrund der Maschine.
+</Update>
+
 <Update label="2026-11-06" description="v1.5.154" tags={["Funktion"]}>
   {/* commits: 0b2523b2, ec23205 */}
 

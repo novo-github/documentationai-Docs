@@ -113,7 +113,9 @@ Bei **Dieser Arbeitsgang wurde inzwischen geändert. Die Liste wurde aktualisier
 3. Zum Korrigieren einer bestehenden Zuordnung öffnen Sie die Grundauswahl des Zeitraums. Wählen Sie einen verfügbaren Grund oder **Grund entfernen** zum Aufheben der Zuordnung.
 4. Wird der Grund wegen geänderter Verfügbarkeit abgelehnt, prüfen Sie die aktualisierte Liste und wählen Sie erneut. Fehlt der benötigte Grund, fragen Sie einen Administrator. Siehe [Fragen zu Stillstandsgründen](/de/help-center/faq/downtime-reasons).
 
-Ihre Auswahl hat immer Vorrang vor den **Regeln für Stillstandsgründe**. Wählen Sie keinen Grund, greifen bei Stillständen in Leerlauf und Aus die Regeln der Maschine. Siehe [automatische Regeln](/de/platform-intro/workflows/timeline-reason-creation#automatische-regeln).
+Wählt der Maschinenbediener nach dem Ende des Stillstands einen Grund, ersetzt dieser den Pausengrund für den gesamten Stillstand. Das gilt auch, wenn der Stillstand um die Pause herum in Abschnitte aufgeteilt wurde. Abschnitte, deren Grund jemand von Hand gesetzt oder entfernt hat, behalten diese Auswahl. Das Setzen oder Entfernen eines Grundes von Hand schützt diese Auswahl vor automatischer Kennzeichnung.
+
+Ein vom Maschinenbediener gewählter oder von Hand gesetzter Grund hat Vorrang. Ist die [automatische Pausenkennzeichnung](/de/platform-intro/pages/break-settings) eingeschaltet, folgt der Grund einer passenden Pause. **Regeln für Stillstandsgründe** gelten für die übrige Zeit in Leerlauf oder Aus. Ohne passenden Grund bleibt die Zeit unbeschriftet. Siehe [automatische Regeln](/de/platform-intro/workflows/timeline-reason-creation#automatische-regeln).
 
 ## Ein Intervall korrigieren
 

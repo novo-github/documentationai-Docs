@@ -61,7 +61,7 @@ Wählen Sie die tatsächliche Kapazität. Beispielsweise erlaubt 2 der Prognose,
 
 ## Zeitachsenregeln und Zeitbereiche
 
-Administratoren können **Maschineneinstellungen → Regeln für Stillstandsgründe** prüfen. Ein vom Maschinenbediener gewählter Grund hat immer Vorrang. Wählt der Maschinenbediener keinen Grund, greifen die Regeln bei Stillständen in Leerlauf und Aus.
+Administratoren können **Maschineneinstellungen → Regeln für Stillstandsgründe** prüfen. Ein vom Maschinenbediener gewählter oder von Hand gesetzter Grund hat Vorrang. Ist die [automatische Pausenkennzeichnung](/de/platform-intro/pages/break-settings) eingeschaltet, folgt der Grund einer passenden Pause. **Regeln für Stillstandsgründe** gelten für die übrige Zeit in Leerlauf oder Aus. Ohne passenden Grund bleibt die Zeit unbeschriftet.
 
 Seit dem 5. November 2026 (v1.5.153) greifen die Regeln bei mehr Stillständen in Leerlauf und Aus. Die Summen je Stillstandsgrund in Berichten und Diagrammen können sich daher bei Maschinen mit Regeln ändern. Stillstände vor der Aktualisierung bleiben unverändert. Siehe [automatische Regeln](/de/platform-intro/workflows/timeline-reason-creation#automatische-regeln).
 
@@ -182,7 +182,7 @@ Speichern Sie den Tab für diese Maschine. **Auf andere Maschinen übertragen** 
 
 **Neuer Grund** öffnet das gemeinsame Formular. Die aktuelle Maschine ist unter **Verfügbar auf Maschinen** vorausgewählt. Lassen Sie sie ausgewählt, wenn der Grund hier verfügbar sein soll. Änderungen an Name, Code, Kategorie oder Farbe gelten für alle Maschinen, die den Grund verwenden. [Stillstandsgründe erstellen und verwalten](/de/platform-intro/workflows/timeline-reason-creation) erklärt Verfügbarkeit und Löschfolgen.
 
-Die Auswahl begrenzt, welche Gründe Personen zuweisen können. Automatische Zeitachsenregeln nutzen weiterhin alle Unternehmensgründe. Deshalb kann die Historie einen heute nicht mehr auswählbaren Grund enthalten.
+Die Auswahl begrenzt sowohl die manuell zuweisbaren Gründe als auch die Gründe für automatische Regeln und Schichtpausen. Das Entfernen aus dieser Liste erhält frühere Zuordnungen. Das Löschen des gemeinsamen Grundes entfernt ihn auch aus Regeln, Standardgründen und Pausen. Wird eine eingeschränkte Liste dadurch leer, bietet die Maschine keine Gründe an, bis ein Administrator sie ändert. Prüfen Sie in den [Pauseneinstellungen](/de/platform-intro/pages/break-settings) die Warnungen zu Pausen, deren Grund diese Maschine nicht anbietet.
 
 ## Hauptentitäten
 

@@ -1,0 +1,82 @@
+---
+title: "Pauseneinstellungen"
+description: "Beendete Stillstände während geplanter Schichtpausen automatisch mit dem passenden Grund kennzeichnen."
+---
+
+## Überblick
+
+**Zugriff:** Nur Admins können die Einstellungen ändern. Personen mit Zugriff auf die Historie oder Analyse einer Maschine sehen dort die daraus entstehenden Gründe. [Rollen und Zugriff](/de/platform-intro/concepts/roles-and-access).
+
+Mit **Pauseneinstellungen** geben Sie Stillständen in Leerlauf oder Aus den Grund einer geplanten Schichtpause. Administratoren öffnen **Admin-Panel → Schichten und Zeitplanung konfigurieren**, dann **Pauseneinstellungen** direkt links neben **Schicht hinzufügen**.
+
+## Was Sie sehen können
+
+- **Pausen automatisch kennzeichnen**, anfangs ausgeschaltet.
+- Zwei Möglichkeiten für Stillstände, die vor einer Pause beginnen oder nach ihr enden.
+- **Toleranz**, nur sichtbar, wenn Sie ausschließlich die Pause kennzeichnen.
+- Einen Hinweis, wenn noch keine Pause einen Grund hat, sowie eine Warnung mit Maschinen, die einen Pausengrund nicht anbieten.
+
+Bei jedem Öffnen lädt der Dialog die aktuell gespeicherten Einstellungen. Die Informationssymbole neben Titel und Auswahlmöglichkeiten zeigen Erklärungen und Beispiele.
+
+## Was Sie tun können
+
+Schalten Sie die automatische Kennzeichnung für das gesamte Unternehmen ein oder aus. Wählen Sie den Zeitraum und die Toleranz, dann **Speichern**. **Gespeichert** bestätigt die Änderung.
+
+Bearbeiten Sie nach dem Einschalten und Speichern jede Schicht. Wählen Sie für jede Pause einen **Stillstandsgrund**. Die Liste zeigt die Unternehmensgründe alphabetisch, mit dem Code vor dem Namen, zum Beispiel „F2 · Pause“. **Kein Stillstandsgrund** lässt diese Pause ohne automatische Pausenkennzeichnung. Ein gelöschter Grund erscheint ebenfalls als **Kein Stillstandsgrund**.
+
+Die Spalte **Pausen** zeigt den Grund nach der Pausenlänge nur bei eingeschalteter Kennzeichnung. Beim Ausschalten bleiben gespeicherte Gründe erhalten. Die Tabelle blendet sie aus und ihre Auswahl beim Bearbeiten wird ausgegraut. Die Auswahl ist auch gesperrt, während Einstellungen laden oder das Laden scheitert. Öffnen Sie bei Bedarf **Pauseneinstellungen** erneut und versuchen Sie es noch einmal.
+
+Folgen Sie [Pausen automatisch kennzeichnen einrichten](/de/platform-intro/workflows/shift-management#automatic-break-labels).
+
+<a id="settings" />
+
+## Einstellungen und ihre Wirkung
+
+**Pausen automatisch kennzeichnen** gilt für beendete Stillstände in Leerlauf oder Aus ab dem Einschalten. Früher beendete Stillstände bleiben unverändert. Stillstände, die bei ausgeschaltetem Schalter enden, werden auch nach erneutem Einschalten nicht nachträglich gekennzeichnet. Die Kennzeichnung beginnt immer ab dem Einschalten. Gründe erscheinen nach dem Ende des Stillstands. Warten Sie einige Minuten. Die Watchmen-Plattform prüft auch weiter, wenn niemand die Seite geöffnet hat.
+
+Unter **Wenn ein Stillstand vor der Pause beginnt oder nach ihr endet** wählen Sie:
+
+| Auswahl | Wirkung |
+| --- | --- |
+| **Nur die Pause kennzeichnen (empfohlen)** | Gibt dem Teil innerhalb der Pause und ihrer Toleranz den Pausengrund. Die übrigen Teile folgen den üblichen Regeln für ihre jeweilige Länge oder bleiben ohne Grund. |
+| **Den ganzen Stillstand kennzeichnen** | Gibt dem gesamten überlappenden Stillstand den Grund. Eine lange Störung kann dadurch unter dem Pausengrund verborgen bleiben. Überlappt der Stillstand mehrere Pausen, gilt der Grund der Pause mit der längsten Überlappung. |
+
+**Toleranz** erlaubt ganze Minuten von 0 bis 15 vor und nach einer Pause. Beim ersten Einschalten sind **Nur die Pause kennzeichnen (empfohlen)** und 5 Minuten vorausgewählt. Bei **Den ganzen Stillstand kennzeichnen** gilt keine Toleranz.
+
+Beispiel: Eine Pause von 9:15–9:30 hat den Grund „Pause“ und 5 Minuten Toleranz. Steht die Maschine von 9:12–9:33 im Leerlauf, erhält der gesamte Stillstand „Pause“. Er liegt innerhalb der Pause und ihrer Toleranz und wird deshalb nicht aufgeteilt.
+
+Bei einer Pause von 9:15–9:30, 5 Minuten Toleranz und einem Stillstand von 9:00–9:50:
+
+- **Nur die Pause kennzeichnen (empfohlen)** gibt 9:10–9:35 den Pausengrund. Die übrigen Teile folgen ihren üblichen Regeln.
+- **Den ganzen Stillstand kennzeichnen** gibt allen 50 Minuten den Pausengrund.
+- Ein eigener Stillstand von 9:00–9:12 erhält keinen Pausengrund. Er berührt nur die Toleranz, nicht die eigentliche Pause.
+
+## Welcher Grund hat Vorrang?
+
+Ein vom Maschinenbediener gewählter oder von Hand gesetzter Grund steht an erster Stelle. Die automatische Kennzeichnung ersetzt diese Auswahl nie und teilt den Stillstand nicht auf. Ein von Hand entfernter Grund bleibt leer.
+
+Danach folgt der Grund der geplanten Pause, sofern die Kennzeichnung eingeschaltet und der Grund auf der Maschine verfügbar ist. Für die übrige Zeit gelten die Regeln für Stillstandsgründe der Maschine. Passt kein Grund, bleibt die Zeit unbeschriftet.
+
+Wählt der Maschinenbediener nach dem Ende des Stillstands einen Grund, ersetzt dieser den Pausengrund für den gesamten Stillstand. Das gilt auch, wenn der Stillstand um die Pause herum in Abschnitte aufgeteilt wurde. Abschnitte, deren Grund jemand von Hand gesetzt oder entfernt hat, behalten diese Auswahl. Siehe [einen Stillstandsgrund wählen](/de/platform-intro/pages/data-acquisition#einen-stillstandsgrund-wählen).
+
+<a id="limits" />
+
+## Grenzen und Warnungen
+
+- Die Maschine benötigt eine Schichtgruppe, in der die Schicht an diesem Tag geplant ist. Maschinen mit **Aktive Schicht** erhalten keine festen Pausengründe. Pausen in Nachtschichten können über Mitternacht reichen.
+- Nur Stillstände in Leerlauf und Aus werden gekennzeichnet. Produktion, Vorbereitung und Zeiten ohne Daten sind ausgenommen. Laufende Stillstände zeigen noch keinen automatischen Pausengrund.
+- Eine Pause braucht einen Grund, den die Maschine anbietet. Nennt eine Warnung Maschine und Grund, ergänzen Sie den Grund in der erlaubten Liste der Maschine oder wählen Sie einen anderen Pausengrund. Eine Pause ohne gültigen Grund wird übersprungen.
+- Liegen zwei Pausen so nah beieinander, dass sich ihre Toleranzen berühren, endet die Toleranz jeder Pause in der Mitte zwischen ihnen, damit der Grund einer Pause nicht in die andere hineinreicht.
+- Das Aufteilen ändert Anzahlen und Durchschnittswerte je Grund, da jeder Abschnitt einzeln zählt. Die Gesamtzeit je Maschinenzustand bleibt gleich. Pausengründe ändern weder geplante Zeit noch OEE.
+- Das Löschen eines gemeinsamen Stillstandsgrundes entfernt ihn aus Schichtpausen. Deren Zeiten bleiben erhalten. Wählen Sie in jeder betroffenen Pause einen Ersatz, wenn die automatische Kennzeichnung weiterlaufen soll.
+
+## Verwandte Seiten
+
+- [Administrationsbereich](/de/platform-intro/pages/admin-panel#schichtpausen-verwalten)
+- [Maschinenkonfiguration](/de/platform-intro/pages/machine-configuration#stillstandsgründe-dieser-maschine)
+- [Zeitleistenanalyse](/de/platform-intro/pages/timeline-analysis#automatisch-gekennzeichnete-pausen-lesen)
+
+## Verwandte Abläufe
+
+- [Schichtdefinitionen verwalten](/de/platform-intro/workflows/shift-management#automatic-break-labels)
+- [Stillstandsgründe erstellen und verwalten](/de/platform-intro/workflows/timeline-reason-creation)

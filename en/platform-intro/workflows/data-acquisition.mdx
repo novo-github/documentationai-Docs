@@ -113,7 +113,9 @@ If **This operation was changed in the meantime. The list has been refreshed.** 
 3. To correct an existing timeline label, open the period’s reason picker and choose an available reason, or **Remove label** to clear it.
 4. If the reason is rejected because availability changed, review the updated list and choose again. Ask an administrator if the required reason is missing. See [Downtime Reasons FAQs](/en/help-center/faq/downtime-reasons).
 
-Your choice always takes priority over **Downtime reason rules**. If you choose no reason, the machine’s rules apply to idle and off downtimes. See [automatic rules](/en/platform-intro/workflows/timeline-reason-creation#automatic-rules).
+If the machine operator chooses a reason after the downtime ended, that reason replaces the break label for the whole downtime, also when the downtime had been split into parts around the break. Parts whose reason someone set or cleared by hand keep that choice. Setting or clearing a label by hand protects that choice from automatic labelling.
+
+A reason chosen by the machine operator or set by hand takes priority. When [automatic break labels](/en/platform-intro/pages/break-settings) are enabled, an eligible break's reason comes next. **Downtime reason rules** apply to the remaining idle or off time; without a matching reason, the time stays unlabelled. See [automatic rules](/en/platform-intro/workflows/timeline-reason-creation#automatic-rules).
 
 ## Correct an Interval
 

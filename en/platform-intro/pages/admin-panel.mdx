@@ -28,7 +28,7 @@ The machine list marks entries of kind **Work center**. These workplaces have no
 ## What You Can Do
 
 - Create and maintain halls, shifts, and operators.
-- Manage timeline reasons and other platform-wide setup items.
+- Manage downtime reasons and other platform-wide setup items.
 - Review and update supporting configuration needed by planning and machine pages.
 - Define company priority levels and manage user access to pages and machines.
 
@@ -99,7 +99,7 @@ Open the user record in the Admin Panel and select **Edit Permissions**. Select 
 | **Configure Factory** | Halls and Displays, Machine Tags, Machines. |
 | **Configure Shifts and Scheduling** | Shifts, Shift groups, Machine Operators. |
 | **Configure Products & Orders** | Products, Orders, Order Tags, ERP template download. |
-| **Configure Analyzers** | Timeline Reasons and Energy Price. |
+| **Configure Analyzers** | **Downtime reasons** and Energy Price. |
 | **Configure Security and API** | API-Access Keys and Ticket Tags. |
 
 **Priority Levels** and **AI Assistant Data Access** are also in the Admin Panel. ERP Uploads itself is in Planner at `/erp-uploads`.
@@ -126,15 +126,25 @@ Administrators can select **Change email** in user management in the Admin Panel
 
 The pending notice shows the address awaiting confirmation. Use **Resend** after the displayed wait or **Cancel change** if the request is no longer needed. Follow [Change Your Email Address](/en/platform-intro/workflows/change-email).
 
+## Manage Shift Breaks
+
+Administrators open **Admin Panel → Configure Shifts and Scheduling → Shifts**, then **Break settings** directly left of **Add Shift**. Turn on **Label breaks automatically** and save before choosing a **Downtime reason** for each break in the shift editor. **No downtime reason** leaves that break without an automatic break label.
+
+While the switch is on, the **Breaks** column shows each break's reason after its length. When it is off, these reasons are hidden in the table and the reason choices in the editor are greyed out. Saved choices are kept. The choices are also unavailable while settings load or cannot be loaded.
+
+See [Break Settings](/en/platform-intro/pages/break-settings) for the company-wide options and limits, or follow [set up automatic break labels](/en/platform-intro/workflows/shift-management#automatic-break-labels).
+
 ## Manage Downtime Reasons
 
-Only administrators can create, edit, or delete reasons. Open the timeline reason area in the Admin Panel. The table shows **Code**, **Category**, and **Available on** alongside the reason, description, colour, and level. Search by code or text and filter by category. The availability column shows whether a reason is available everywhere or on a number of machines; its explanation lists their names.
+Only administrators can create, edit, or delete reasons. Open **Admin Panel → Configure Analyzers → Downtime reasons**. The table shows **Code**, **Category**, and **Available on** alongside the reason, description, colour, and level. Search by code or text and filter by category. The availability column shows whether a reason is available everywhere or on a number of machines; its explanation lists their names.
 
 In the reason form, **Code** and **Category** are optional. Codes become uppercase and must be unique within your company. Use up to 20 letters, digits, dots, underscores, slashes, or hyphens, starting with a letter or digit. Choose an existing category or enter one. **Pick colour** opens the colour selector; you can enter a colour value directly or use **Random colour**. New reasons start with a random colour.
 
 Under **Available on machines**, click the checkbox or machine name to choose where operators can use this reason. Clicking other parts of the row leaves the selection unchanged. Unticking a machine marked **All reasons** gives it a fixed list of the other current reasons. Later reasons will no longer appear there automatically. You cannot leave a machine without a reason this way: give it another reason first or keep this one ticked.
 
-Editing a shared reason affects all machines. Deleting it keeps past downtime entries but removes their reason. If deletion removes a machine's last selected reason, that machine offers all reasons again. Review the deletion notice before proceeding.
+Editing a shared reason affects all machines. Select **Delete** in the reason’s row menu and review **Deleting this reason removes it from:**. The notice lists the affected past downtimes, machine reason lists, downtime reason rules and breaks, with counts and example names where available. **This reason is not used anywhere.** appears when there are no uses. While the details load, or if they cannot load, only a general notice appears; deletion remains available.
+
+Deleting the reason keeps past downtime entries but removes their reason without assigning another. It also removes the reason from machine lists, downtime reason rules, defaults and shift breaks. Break times stay unchanged. Future time covered by a removed rule gets the machine's remaining default reason, if any. Reason charts and reports are updated for the affected days. Reports you already received stay as they were. Restricted machine lists stay restricted; deleting their last reason leaves them with none until an administrator changes the selection.
 
 Use [Create and Manage Downtime Reasons](/en/platform-intro/workflows/timeline-reason-creation) for the steps. To set an entire machine's list, use [Machine Configuration](/en/platform-intro/pages/machine-configuration).
 
@@ -143,7 +153,7 @@ Use [Create and Manage Downtime Reasons](/en/platform-intro/workflows/timeline-r
 - Hall
 - Shift
 - Operator
-- Timeline Reason
+- Downtime Reason
 - Machine Type
 - Priority Level
 - User Permissions
@@ -168,4 +178,4 @@ Use [Create and Manage Downtime Reasons](/en/platform-intro/workflows/timeline-r
 - [Manage Halls](/en/platform-intro/workflows/hall-management)
 - [Manage Shift Definitions](/en/platform-intro/workflows/shift-management)
 - [Manage Operators](/en/platform-intro/workflows/operator-management)
-- [Create Timeline Reasons](/en/platform-intro/workflows/timeline-reason-creation)
+- [Create Downtime Reasons](/en/platform-intro/workflows/timeline-reason-creation)

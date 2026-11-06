@@ -17,12 +17,13 @@ description: "Gründe auswählen, Codes verstehen und Verfügbarkeit je Maschine
 | Kann ich kurz nach dem Wiederanlaufen noch einen Grund wählen? | [Antwort](/de/help-center/faq/downtime-reasons#after-restart) |
 | Warum sehen meine Summen je Stillstandsgrund seit dieser Aktualisierung anders aus? | [Antwort](/de/help-center/faq/downtime-reasons#changed-totals) |
 | Was hat Vorrang: mein gewählter Grund oder die Regeln? | [Antwort](/de/help-center/faq/downtime-reasons#reason-priority) |
+| Warum zählt ein Stillstand jetzt als mehrere? | [Antwort](/de/help-center/faq/downtime-reasons#split-break-downtime) |
 
 <a id="manage" />
 
 ## Wer kann Stillstandsgründe ändern?
 
-Nur Administratoren können Gründe anlegen, bearbeiten, löschen oder einschränken. Nutzen Sie **Maschineneinstellungen → Stillstandsgründe** oder die Verwaltung der Zeitachsengründe im Administrationsbereich. Änderungen an einem gemeinsamen Grund gelten für alle Maschinen. Folgen Sie [Stillstandsgründe erstellen und verwalten](/de/platform-intro/workflows/timeline-reason-creation).
+Nur Administratoren können Gründe anlegen, bearbeiten, löschen oder einschränken. Nutzen Sie **Maschineneinstellungen → Stillstandsgründe** oder **Admin-Panel → Analysatoren konfigurieren → Stillstandsgründe**. Änderungen an einem gemeinsamen Grund gelten für alle Maschinen. Folgen Sie [Stillstandsgründe erstellen und verwalten](/de/platform-intro/workflows/timeline-reason-creation).
 
 <a id="missing" />
 
@@ -58,7 +59,7 @@ Die Änderung würde die Maschine ohne Grund lassen. Geben Sie ihr zuerst einen 
 
 ## Was passiert beim Löschen eines Stillstandsgrundes?
 
-Frühere Stillstandseinträge bleiben erhalten, verlieren aber diesen Grund. Eine Maschine ohne verbleibenden ausgewählten Grund bietet wieder alle Gründe an. Um nur eine Zuordnung in der Zeitleiste zu entfernen, nutzen Sie stattdessen **Grund entfernen**. Siehe [Stillstandsgründe erstellen und verwalten](/de/platform-intro/workflows/timeline-reason-creation).
+Der Löschhinweis zeigt, wo der Grund verwendet wird. Frühere Stillstände bleiben ohne Ersatzgrund erhalten. Diagramme und Berichte nach Stillstandsgründen werden für die betroffenen Tage aktualisiert. Bereits erhaltene Berichte bleiben unverändert. Der Grund wird auch aus Maschinenlisten, Regeln für Stillstandsgründe, Standardgründen und Pausen entfernt. Pausenzeiten bleiben erhalten. Eine eingeschränkte Maschinenliste bleibt eingeschränkt, auch wenn sie ihren letzten Grund verliert. Um nur eine Zuordnung zu entfernen, nutzen Sie **Grund entfernen**. Folgen Sie [einen gemeinsamen Grund löschen](/de/platform-intro/workflows/timeline-reason-creation#delete-reason).
 
 <a id="create-retry" />
 
@@ -84,8 +85,16 @@ Ja, wenn die Grundkacheln kurz nach dem Wiederanlaufen noch angeboten werden. Ih
 
 Seit dem 5. November 2026 (v1.5.153) greifen **Regeln für Stillstandsgründe** bei mehr Stillständen in Leerlauf und Aus, wenn der Maschinenbediener keinen Grund gewählt hat. Bei Maschinen mit Regeln kann dadurch mehr Stillstandszeit einen Grund erhalten. Die Summen je Grund in Berichten und Diagrammen können sich deshalb ändern. Stillstände vor der Aktualisierung bleiben unverändert. Siehe [automatische Regeln](/de/platform-intro/workflows/timeline-reason-creation#automatische-regeln).
 
+Seit dem 6. November 2026 (v1.5.155) können Administratoren außerdem automatische Pausengründe einschalten. Danach können passende beendete Stillstände einen Pausengrund statt eines Regelgrundes erhalten. Wird nur die Pause gekennzeichnet, können sich Anzahlen und Durchschnittswerte ändern. Die Auswahl einer Person bleibt erhalten. Siehe [Pauseneinstellungen](/de/platform-intro/pages/break-settings).
+
 <a id="reason-priority" />
 
 ## Was hat Vorrang: mein gewählter Grund oder die Regeln?
 
-Der vom Maschinenbediener gewählte Grund hat immer Vorrang vor den **Regeln für Stillstandsgründe**. Bei Stillständen in Leerlauf und Aus greifen die Regeln nur, wenn der Maschinenbediener keinen Grund gewählt hat. Siehe [Maschinenkonfiguration](/de/platform-intro/pages/machine-configuration#zeitachsenregeln-und-zeitbereiche).
+Ein vom Maschinenbediener gewählter oder von Hand gesetzter Grund hat Vorrang. Ist die [automatische Pausenkennzeichnung](/de/platform-intro/pages/break-settings) eingeschaltet, folgt der Grund einer passenden Pause. **Regeln für Stillstandsgründe** gelten für die übrige Zeit in Leerlauf oder Aus. Ohne passenden Grund bleibt die Zeit unbeschriftet.
+
+<a id="split-break-downtime" />
+
+## Warum zählt ein Stillstand jetzt als mehrere?
+
+**Nur die Pause kennzeichnen (empfohlen)** kann einen Stillstand in die Pause und die Zeit davor oder danach aufteilen. Jeder Abschnitt zählt bei Anzahlen und Durchschnittswerten je Grund einzeln. Die Gesamtzeit je Maschinenzustand bleibt gleich. **Den ganzen Stillstand kennzeichnen** vermeidet diese Aufteilung, kann aber eine lange Störung unter dem Pausengrund verbergen. Siehe [automatisch gekennzeichnete Pausen](/de/platform-intro/pages/timeline-analysis#automatisch-gekennzeichnete-pausen-lesen).

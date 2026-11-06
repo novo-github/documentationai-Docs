@@ -257,7 +257,9 @@ Als Maschinenbediener können Sie einen Grund wählen, während der Stillstand n
 
 Wenn die Maschine wieder anläuft, wird Ihre Auswahl diesem Stillstand zugeordnet. Werden die Grundkacheln kurz nach dem Wiederanlaufen noch angeboten, wird ein dort gewählter Grund dem gerade beendeten Stillstand zugeordnet.
 
-Ihre Auswahl hat immer Vorrang vor den **Regeln für Stillstandsgründe**. Wählen Sie keinen Grund, greifen bei Stillständen in Leerlauf und Aus die Regeln der Maschine. Folgen Sie [Stillstand mit einem verfügbaren Grund beschriften](/de/platform-intro/workflows/data-acquisition#stillstand-mit-einem-verfügbaren-grund-beschriften).
+Ein vom Maschinenbediener gewählter oder von Hand gesetzter Grund hat Vorrang. Ist die [automatische Pausenkennzeichnung](/de/platform-intro/pages/break-settings) eingeschaltet, folgt der Grund einer passenden Pause. **Regeln für Stillstandsgründe** gelten für die übrige Zeit in Leerlauf oder Aus. Ohne passenden Grund bleibt die Zeit unbeschriftet. Folgen Sie [Stillstand mit einem verfügbaren Grund beschriften](/de/platform-intro/workflows/data-acquisition#stillstand-mit-einem-verfügbaren-grund-beschriften).
+
+Automatische Pausengründe erscheinen erst nach Ende des Stillstands, nicht im Tooltip des laufenden Stillstands. Wählt der Maschinenbediener nach dem Ende des Stillstands einen Grund, ersetzt dieser den Pausengrund für den gesamten Stillstand. Das gilt auch, wenn der Stillstand um die Pause herum in Abschnitte aufgeteilt wurde. Abschnitte, deren Grund jemand von Hand gesetzt oder entfernt hat, behalten diese Auswahl. Einen von Hand gesetzten oder entfernten Grund ersetzt die automatische Pausenkennzeichnung nie.
 
 **Stillstandsgründe** bietet nur die auf dieser Maschine verfügbaren Gründe an. Eine Kachel kann in der Ecke einen Code zeigen. Nutzen Sie die Kategorien oberhalb der Kacheln, um die Liste einzugrenzen. Diese erscheinen nur, wenn Gründe Kategorien besitzen.
 

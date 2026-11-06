@@ -23,7 +23,7 @@ Begin on the [Admin Panel page](/en/platform-intro/pages/admin-panel).
 
 <Steps>
   <Step title="Open the shift management area" icon="arrow-right" title-type="p">
-    Open the shift management area.
+    Open **Admin Panel → Configure Shifts and Scheduling → Shifts**.
   </Step>
   <Step title="Create or edit the needed shifts" icon="arrow-right" title-type="p">
     Create or edit the needed shifts.
@@ -45,9 +45,36 @@ A shift has a start, end, and optional breaks; a shift group defines weekday pat
 
 Switching on removes scheduled shifts from today onward but keeps shifts already recorded today. Switching off ends the running active shift immediately and creates scheduled shifts from the group from today. Check the assigned group first. Follow [Configure a Machine](/en/platform-intro/workflows/machine-configuration) to change the setting and review alert-rule limitations.
 
+<a id="automatic-break-labels" />
+
+## Set Up Automatic Break Labels
+
+Use this when idle or off time during scheduled breaks should receive a break reason automatically. You need Admin access, shifts with break times, and a shift group assigned to each machine. Machines using **Active shift** do not use scheduled break labels. First [create the reasons and make them available on the machines](/en/platform-intro/workflows/timeline-reason-creation).
+
+<Steps>
+  <Step title="Enable break labelling" icon="arrow-right" title-type="p">
+    Open **Admin Panel → Configure Shifts and Scheduling → Shifts**, then select **Break settings** directly left of **Add Shift**. Turn on **Label breaks automatically**. It is off by default.
+  </Step>
+  <Step title="Choose how much time receives the reason" icon="arrow-right" title-type="p">
+    Start with **Label only the break (recommended)** and set **Tolerance** from 0 to 15 minutes before and after the break. The first activation starts at 5 minutes. Choose **Label the whole downtime** only if all overlapping downtime should get the break reason, including a longer breakdown. Select **Save**.
+  </Step>
+  <Step title="Choose a reason for each break" icon="arrow-right" title-type="p">
+    Edit the shift. For each break, choose **Downtime reason**, then save the shift. **No downtime reason** skips automatic labelling for that break. Check the reason shown after the break's length in the **Breaks** column.
+  </Step>
+  <Step title="Check the machines and schedule" icon="arrow-right" title-type="p">
+    Reopen **Break settings**. If no break has a reason, edit the shifts to add one. If the warning lists machines that do not offer a break's reason, add it to their allowed reasons or choose another break reason. Check that the shift group schedules the shift on the intended weekday.
+  </Step>
+  <Step title="Review a finished downtime" icon="arrow-right" title-type="p">
+    After an idle or off downtime overlaps a break and ends, allow a few minutes for the label to appear. Review it in [Machine History](/en/platform-intro/pages/machine-history#read-automatically-labelled-breaks). A reason chosen by a person stays unchanged.
+  </Step>
+</Steps>
+
+To stop automatic labelling, turn off **Label breaks automatically** and select **Save**. Stored break reasons stay saved, but their choices become greyed out and the table hides them. See [Break Settings](/en/platform-intro/pages/break-settings) for examples and limits.
+
 ## Decision Points
 
 - Whether a new shift should stand alone or belong to an existing group.
+- For automatic labels, choose whether only the break or the whole downtime should receive the reason.
 
 ## Expected Result
 
@@ -57,6 +84,8 @@ The platform can use the shift setup for weekly planning and daily machine inter
 
 - A shift definition can exist before it is assigned to any machine.
 - Editing a shared shift structure may affect multiple machines.
+- If the break reason is greyed out, save **Label breaks automatically** as on and wait for the settings to load. If loading fails, reopen **Break settings** and try again.
+- A running downtime is not labelled automatically yet. Earlier completed downtimes stay unchanged.
 
 ## Related Pages
 

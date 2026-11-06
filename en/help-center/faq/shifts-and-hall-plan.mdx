@@ -16,6 +16,11 @@ description: "Understand automatic shifts and find products, operation numbers, 
 | Why can I not change how often Hall Plan switches to orders? | [Answer](/en/help-center/faq/shifts-and-hall-plan#order-switch) |
 | Which orders appear when Hall Plan switches away from key figures? | [Answer](/en/help-center/faq/shifts-and-hall-plan#shift-orders) |
 | Why don't I see the downtime reason in Hall Plan? | [Answer](/en/help-center/faq/shifts-and-hall-plan#downtime-reason) |
+| How do I give breaks a reason automatically? | [Answer](/en/help-center/faq/shifts-and-hall-plan#automatic-break-labels) |
+| Why is the break’s downtime reason greyed out? | [Answer](/en/help-center/faq/shifts-and-hall-plan#grey-break-reason) |
+| Why has my break not received a reason? | [Answer](/en/help-center/faq/shifts-and-hall-plan#missing-break-label) |
+| Does tolerance label every stop near a break? | [Answer](/en/help-center/faq/shifts-and-hall-plan#break-tolerance) |
+| How do I turn automatic break labels off? | [Answer](/en/help-center/faq/shifts-and-hall-plan#stop-break-labels) |
 
 <a id="automatic-shifts" />
 
@@ -84,3 +89,33 @@ The order view shows orders worked during the shift. **No orders worked in this 
 The **Downtime reason** card appears only in **V2** or **V3**, on the first slide at the end of the machine's key figures. The machine must be idle or off, and the machine operator must have chosen a reason for the current downtime on the PDA page. It is absent during production and from the previous shift. **V1** does not show it.
 
 If your hall's display settings were saved before this option was added, an administrator must enable **Visible columns → Downtime reason** once for each display version you use. The choice is saved automatically for the hall and display version as soon as the administrator ticks or clears the checkbox. Halls whose display settings have never been saved show it by default. Follow [Set Up a Hall Plan Display](/en/platform-intro/workflows/hall-display-setup#downtime-reason).
+
+<a id="automatic-break-labels" />
+
+## How do I give breaks a reason automatically?
+
+As an administrator, open **Admin Panel → Configure Shifts and Scheduling → Shifts**, then **Break settings** directly left of **Add Shift**. Enable **Label breaks automatically**, choose the mode and select **Save**. Then edit each shift and choose a **Downtime reason** for each break. Machines using **Active shift** are not labelled. The machine must offer the break’s reason. Follow [set up automatic break labels](/en/platform-intro/workflows/shift-management#automatic-break-labels).
+
+<a id="grey-break-reason" />
+
+## Why is the break’s downtime reason greyed out?
+
+**Label breaks automatically** must be on and saved before you can choose a reason. The choice is also unavailable while settings load or if loading fails. Open **Break settings**, turn on **Label breaks automatically** and select **Save**, then edit the shift again. Turning the switch off keeps saved break reasons but hides them in the table. See [Break Settings](/en/platform-intro/pages/break-settings).
+
+<a id="missing-break-label" />
+
+## Why has my break not received a reason?
+
+A running downtime is not labelled yet; allow a few minutes after it ends. A person’s choice is kept. Check that the switch is on, the break has a reason offered on the machine, and the machine’s shift group schedules that shift on the day of the downtime. **Active shift** does not use fixed breaks. The downtime must overlap the actual break, not just its tolerance. Earlier completed downtimes stay unchanged. See [limits and warnings](/en/platform-intro/pages/break-settings#limits).
+
+<a id="break-tolerance" />
+
+## Does tolerance label every stop near a break?
+
+No. The downtime must overlap the actual break. With a 9:15–9:30 break and 5 minutes of **Tolerance**, downtime from 9:00–9:50 gets the break reason from 9:10–9:35. A stop ending at 9:12 gets no break label. Tolerance applies only to **Label only the break (recommended)**. See [Break Settings](/en/platform-intro/pages/break-settings#settings).
+
+<a id="stop-break-labels" />
+
+## How do I turn automatic break labels off?
+
+An administrator can open **Break settings**, turn off **Label breaks automatically**, then select **Save**. Stored break reasons remain, but the table hides them and their choices are greyed out. Follow [set up or stop automatic break labels](/en/platform-intro/workflows/shift-management#automatic-break-labels).

@@ -240,6 +240,11 @@
                             "icon": "file-text"
                           },
                           {
+                            "title": "Break Settings",
+                            "path": "en/platform-intro/pages/break-settings",
+                            "icon": "file-text"
+                          },
+                          {
                             "title": "BDE Access Templates",
                             "path": "en/platform-intro/pages/bde-access-templates",
                             "icon": "file-text"
@@ -794,6 +799,11 @@
                           {
                             "title": "Administrationsbereich",
                             "path": "de/platform-intro/pages/admin-panel",
+                            "icon": "file-text"
+                          },
+                          {
+                            "title": "Pauseneinstellungen",
+                            "path": "de/platform-intro/pages/break-settings",
                             "icon": "file-text"
                           },
                           {

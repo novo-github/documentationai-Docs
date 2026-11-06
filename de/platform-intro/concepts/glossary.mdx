@@ -1432,7 +1432,7 @@ Der optionale **Code** eines Grundes, etwa F12, ist im Unternehmen eindeutig und
 
 ### Alle Gründe (Standard) / Nur ausgewählte Gründe
 
-**Alle Gründe (Standard)** enthält jeden Unternehmensgrund und spätere Ergänzungen. **Nur ausgewählte Gründe** begrenzt die Bedienerauswahl auf eine feste Liste mit mindestens einem Grund. Das Löschen ihres letzten ausgewählten Grundes stellt eine Maschine auf alle Gründe zurück.
+**Alle Gründe (Standard)** enthält jeden Unternehmensgrund und spätere Ergänzungen. **Nur ausgewählte Gründe** begrenzt die Auswahl der Maschinenbediener auf eine feste Liste mit mindestens einem Grund. Das Löschen des letzten ausgewählten Grundes lässt diese eingeschränkte Liste leer, bis ein Administrator sie ändert.
 
 [Mehr erfahren](/de/platform-intro/pages/machine-configuration).
 
@@ -1442,11 +1442,25 @@ Die Maschinen, auf denen Bediener einen Grund wählen können. Wählen Sie eine 
 
 [Mehr erfahren](/de/platform-intro/pages/admin-panel).
 
+### Pauseneinstellungen / Pausen automatisch kennzeichnen
+
+Unter **Pauseneinstellungen** können Administratoren **Pausen automatisch kennzeichnen** für das Unternehmen einschalten. Beendete Stillstände in Leerlauf oder Aus während einer geplanten Schichtpause können deren **Stillstandsgrund** erhalten. **Kein Stillstandsgrund** nimmt die Pause davon aus. Die Auswahl einer Person hat immer Vorrang.
+
+### Nur die Pause kennzeichnen (empfohlen) / Den ganzen Stillstand kennzeichnen
+
+**Nur die Pause kennzeichnen (empfohlen)** gibt nur der überlappenden Pausenzeit mit ihrer Toleranz den Pausengrund. **Den ganzen Stillstand kennzeichnen** gibt ihn dem gesamten überlappenden Stillstand. Dadurch kann eine längere Störung verborgen bleiben.
+
+### Toleranz
+
+In den **Pauseneinstellungen** erweitert **Toleranz** die Pause um 0–15 Minuten davor und danach, wenn nur die Pause gekennzeichnet wird. Anfangs sind es 5 Minuten. Der Stillstand muss die eigentliche Pause überlappen. Nur die Toleranz zu berühren reicht nicht.
+
+[Mehr erfahren](/de/platform-intro/pages/break-settings).
+
 ### Timeline rules
 
 Automatische Gründe für Aus, Leerlauf oder Vorbereitung: zuerst spezifische Grundregel, dann deren DEFAULT-Regel, dann Global-Regeln.
 
-**Regeln für Stillstandsgründe** greifen bei Stillständen in Leerlauf und Aus, wenn der Maschinenbediener keinen Grund gewählt hat. Ein vom Maschinenbediener gewählter Grund hat immer Vorrang.
+Ein vom Maschinenbediener gewählter oder von Hand gesetzter Grund hat Vorrang. Ist die [automatische Pausenkennzeichnung](/de/platform-intro/pages/break-settings) eingeschaltet, folgt der Grund einer passenden Pause. **Regeln für Stillstandsgründe** gelten für die übrige Zeit in Leerlauf oder Aus. Ohne passenden Grund bleibt die Zeit unbeschriftet.
 
 [Mehr erfahren](/de/platform-intro/pages/machine-configuration).
 

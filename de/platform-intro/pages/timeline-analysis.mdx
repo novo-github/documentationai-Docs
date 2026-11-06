@@ -54,6 +54,12 @@ Automatische Gründe folgen spezifischer Grundregel, deren DEFAULT-Regel und dan
 
 Seit dem 5. November 2026 (v1.5.153) greifen **Regeln für Stillstandsgründe** bei mehr Stillständen in Leerlauf und Aus, wenn der Maschinenbediener keinen Grund gewählt hat. Bei Maschinen mit Regeln kann dadurch mehr Stillstandszeit einen Grund erhalten. Die Summen je Grund in Berichten und Diagrammen können sich ändern. Stillstände vor der Aktualisierung bleiben unverändert. Ein vom Maschinenbediener gewählter Grund hat immer Vorrang. Siehe [automatische Regeln](/de/platform-intro/workflows/timeline-reason-creation#automatische-regeln).
 
+## Automatisch gekennzeichnete Pausen lesen
+
+Schaltet ein Administrator die [automatische Pausenkennzeichnung](/de/platform-intro/pages/break-settings) ein, können beendete Stillstände in Leerlauf oder Aus den Grund einer geplanten Schichtpause erhalten. Die Auswahl einer Person hat Vorrang. Bereits früher beendete Stillstände werden beim Einschalten nicht neu gekennzeichnet.
+
+Bei **Nur die Pause kennzeichnen (empfohlen)** kann ein längerer Stillstand als mehrere Abschnitte erscheinen: die Pause mit ihrer Toleranz sowie die Zeit davor oder danach. Jeder Abschnitt zählt bei Anzahlen und Durchschnittswerten je Grund als eigener Stillstand. Die übrigen Abschnitte folgen den Regeln für ihre jeweilige Länge. Die Gesamtzeit je Maschinenzustand bleibt gleich. Bei **Den ganzen Stillstand kennzeichnen** kann eine lange Störung vollständig unter dem Pausengrund erscheinen.
+
 ## Codes von Stillstandsgründen lesen
 
 Beschriftungen in Stillstandsdiagrammen enthalten den Code eines Grundes, sofern vorhanden. Kurze Beschriftungen können abgeschnitten sein. Zeigen Sie auf einen Balken oder ein Kreissegment, um Name, Code und Kategorie vollständig zu lesen. Kategorien helfen beim Erkennen der Gründe. Die Diagramme gruppieren weiterhin nach Grund.

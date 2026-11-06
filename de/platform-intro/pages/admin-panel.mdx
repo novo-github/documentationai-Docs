@@ -28,7 +28,7 @@ Die Maschinenliste kennzeichnet Einträge der Art **Arbeitsplatz**. Diese Arbeit
 ## Was Sie tun können
 
 - Hallen, Schichten und Mitarbeitende anlegen und pflegen.
-- Zeitachsen-Gründe und andere plattformweite Einrichtungselemente verwalten.
+- Stillstandsgründe und andere plattformweite Einrichtungselemente verwalten.
 - Die unterstützende Konfiguration prüfen und aktualisieren, die Planungs- und Maschinenseiten benötigen.
 - Unternehmensweite Prioritätsstufen festlegen und Benutzerzugriffe auf Seiten und Maschinen verwalten.
 
@@ -99,7 +99,7 @@ Berechtigungen legen fest, auf welche Plattformseiten und Maschinen ein Benutzer
 | **Configure Factory** | Halls und Displays, Machine Tags, Machines. |
 | **Configure Shifts and Scheduling** | Schichten, Schichtgruppen, Machine Operators. |
 | **Configure Products & Orders** | Produkte, Aufträge, Auftragstags, ERP-Vorlagendownload. |
-| **Configure Analyzers** | Timeline Reasons und Energy Price. |
+| **Analysatoren konfigurieren** | **Stillstandsgründe** und Energy Price. |
 | **Configure Security and API** | API-Access Keys und Ticket Tags. |
 
 **Priority Levels** und **AI Assistant Data Access** liegen ebenfalls hier. ERP Uploads selbst befindet sich im Planungsbereich unter `/erp-uploads`.
@@ -126,15 +126,25 @@ Administratoren können in der Benutzerverwaltung des Administrationsbereichs od
 
 Der Hinweis zur ausstehenden Änderung zeigt die noch zu bestätigende Adresse. Wählen Sie nach der angezeigten Wartezeit **Erneut senden** oder bei Bedarf **Änderung abbrechen**. Folgen Sie [E-Mail-Adresse ändern](/de/platform-intro/workflows/change-email).
 
+## Schichtpausen verwalten
+
+Administratoren öffnen **Admin-Panel → Schichten und Zeitplanung konfigurieren**, dann **Pauseneinstellungen** direkt links neben **Schicht hinzufügen**. Schalten Sie **Pausen automatisch kennzeichnen** ein und speichern Sie, bevor Sie beim Bearbeiten einer Schicht jeder Pause einen **Stillstandsgrund** zuweisen. **Kein Stillstandsgrund** lässt die Pause ohne automatische Pausenkennzeichnung.
+
+Solange der Schalter eingeschaltet ist, zeigt die Spalte **Pausen** den Grund nach der Pausenlänge. Bei ausgeschaltetem Schalter sind die Gründe in der Tabelle ausgeblendet und die Grundauswahl beim Bearbeiten ausgegraut. Gespeicherte Auswahlen bleiben erhalten. Die Auswahl ist auch gesperrt, während die Einstellungen laden oder nicht geladen werden können.
+
+Die [Pauseneinstellungen](/de/platform-intro/pages/break-settings) erklären die unternehmensweiten Optionen und Grenzen. Folgen Sie [Pausen automatisch kennzeichnen einrichten](/de/platform-intro/workflows/shift-management#automatic-break-labels).
+
 ## Stillstandsgründe verwalten
 
-Nur Administratoren können Gründe anlegen, bearbeiten oder löschen. Öffnen Sie im Administrationsbereich die Verwaltung der Zeitachsengründe. Die Tabelle zeigt **Code**, **Kategorie** und **Verfügbar auf** neben Grund, Beschreibung, Farbe und Stufe. Suchen Sie nach Code oder Text und filtern Sie nach Kategorie. Die Verfügbarkeit zeigt alle Maschinen oder eine Maschinenanzahl. Die Erklärung dazu nennt deren Namen.
+Nur Administratoren können Gründe anlegen, bearbeiten oder löschen. Öffnen Sie **Admin-Panel → Analysatoren konfigurieren → Stillstandsgründe**. Die Tabelle zeigt **Code**, **Kategorie** und **Verfügbar auf** neben Grund, Beschreibung, Farbe und Stufe. Suchen Sie nach Code oder Text und filtern Sie nach Kategorie. Die Verfügbarkeit zeigt alle Maschinen oder eine Maschinenanzahl. Die Erklärung dazu nennt deren Namen.
 
 Im Formular sind **Code** und **Kategorie** optional. Codes werden in Großbuchstaben gespeichert und müssen im Unternehmen eindeutig sein. Verwenden Sie bis zu 20 Buchstaben, Ziffern, Punkte, Unterstriche, Schrägstriche oder Bindestriche. Beginnen Sie mit einem Buchstaben oder einer Ziffer. Wählen Sie eine vorhandene Kategorie oder geben Sie eine neue ein. **Farbe wählen** öffnet die Farbauswahl. Sie können einen Farbwert direkt eingeben oder **Zufällige Farbe** nutzen. Neue Gründe erhalten anfangs eine zufällige Farbe.
 
 Klicken Sie unter **Verfügbar auf Maschinen** auf das Kontrollkästchen oder den Maschinennamen, um festzulegen, wo Bediener den Grund nutzen dürfen. Andere Bereiche der Zeile ändern die Auswahl nicht. Wenn Sie eine mit **Alle Gründe** markierte Maschine abwählen, erhält diese eine feste Liste der übrigen aktuellen Gründe. Später angelegte Gründe erscheinen dort nicht mehr automatisch. Sie können eine Maschine auf diese Weise nicht ohne Grund lassen. Geben Sie ihr zuerst einen anderen Grund oder lassen Sie diesen ausgewählt.
 
-Änderungen an einem gemeinsamen Grund gelten für alle Maschinen. Beim Löschen bleiben frühere Stillstandseinträge erhalten, verlieren aber ihren Grund. Verliert eine Maschine dabei ihren letzten ausgewählten Grund, bietet sie wieder alle Gründe an. Prüfen Sie vor dem Löschen den Hinweis.
+Änderungen an einem gemeinsamen Grund gelten für alle Maschinen. Wählen Sie **Löschen** im Zeilenmenü des Grundes und prüfen Sie **Beim Löschen wird dieser Grund entfernt aus:**. Der Hinweis nennt betroffene frühere Stillstände, Grundlisten der Maschinen, Regeln für Stillstandsgründe und Pausen. Soweit verfügbar erscheinen Anzahlen und beispielhafte Namen. Ohne Verwendung erscheint **Dieser Grund wird nirgends verwendet.** Während die Details laden oder wenn sie nicht geladen werden können, erscheint nur ein allgemeiner Hinweis. Löschen bleibt möglich.
+
+Beim Löschen bleiben frühere Stillstände erhalten, verlieren aber ihren Grund ohne Ersatz. Der Grund wird auch aus Maschinenlisten, Regeln für Stillstandsgründe, Standardgründen und Schichtpausen entfernt. Die Pausenzeiten bleiben erhalten. Künftig erhält die Zeit einer entfernten Regel den verbleibenden Standardgrund der Maschine, sofern vorhanden. Diagramme und Berichte nach Stillstandsgründen werden für die betroffenen Tage aktualisiert. Bereits erhaltene Berichte bleiben unverändert. Eingeschränkte Maschinenlisten bleiben eingeschränkt. Nach dem Löschen ihres letzten Grundes bieten sie keinen Grund an, bis ein Administrator die Auswahl ändert.
 
 Die Schritte finden Sie unter [Stillstandsgründe erstellen und verwalten](/de/platform-intro/workflows/timeline-reason-creation). Für die gesamte Grundliste einer Maschine nutzen Sie die [Maschinenkonfiguration](/de/platform-intro/pages/machine-configuration).
 
@@ -143,7 +153,7 @@ Die Schritte finden Sie unter [Stillstandsgründe erstellen und verwalten](/de/p
 - Halle
 - Schicht
 - Mitarbeitender
-- Zeitachsen-Grund
+- Stillstandsgrund
 - Maschinentyp
 - Prioritätsstufe
 - Benutzerberechtigungen
@@ -168,5 +178,5 @@ Die Schritte finden Sie unter [Stillstandsgründe erstellen und verwalten](/de/p
 - [Hallen verwalten](/de/platform-intro/workflows/hall-management)
 - [Schichtdefinitionen verwalten](/de/platform-intro/workflows/shift-management)
 - [Mitarbeitende verwalten](/de/platform-intro/workflows/operator-management)
-- [Zeitachsen-Gründe erstellen](/de/platform-intro/workflows/timeline-reason-creation)
+- [Stillstandsgründe erstellen](/de/platform-intro/workflows/timeline-reason-creation)
 
