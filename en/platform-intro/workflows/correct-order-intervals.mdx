@@ -1,0 +1,60 @@
+---
+title: "Correct Intervals from the Orders Table"
+description: "Review, correct or delete recorded intervals without leaving the order list."
+---
+
+## Goal
+
+Correct recorded times or quantities, or delete an incorrect interval, while keeping your place in the order table.
+
+## Before You Begin
+
+<Callout kind="info" title="Workflow access">
+You need access to **Orders & Products** as an Admin or User and access to the assignment's machine. Machine operators use the PDA page.
+</Callout>
+
+### Preconditions
+
+The assignment has at least one recorded interval. Start in the table on [Orders & Products](/en/platform-intro/pages/orders-products).
+
+## Steps
+
+<Steps>
+  <Step title="Find the assignment" icon="arrow-right" title-type="p">
+    Find the order. If it is grouped, expand it with the arrow or assignment count. Clicking the order name opens its details in a new tab instead. To keep a name or **Assignment Status** visible while scrolling, use its heading's pin button.
+  </Step>
+  <Step title="Open the interval list" icon="arrow-right" title-type="p">
+    In **Intervals**, select the assignment's count with **Show intervals**. The column is shown by default. If you have hidden it, show it again under **Columns → Intervals**. Check the order, operation and machine at the top of the panel. The newest intervals appear first, and the summary identifies how many are still running.
+  </Step>
+  <Step title="Correct the saved work" icon="arrow-right" title-type="p">
+    Tap a start or end time to open **Edit interval** on **Start** or **End**, or select the pencil for **Quantities**. Check the saved values, correct the time, quantities or interval type, and choose **Save**. For detailed controls and time checks, follow [Correct an Interval](/en/platform-intro/workflows/data-acquisition#correct-an-interval).
+  </Step>
+  <Step title="Delete only an incorrect interval" icon="arrow-right" title-type="p">
+    If the whole interval should be removed, select its red bin, **Delete interval**. Check the interval in the confirmation before confirming. Deletion cannot be undone. **Interval deleted.** confirms success. Skip this step when you only need a correction.
+  </Step>
+  <Step title="Check the result and return to the table" icon="arrow-right" title-type="p">
+    Review the reloaded interval list and updated count. Select **Close** or press Esc to return to the table with your filters and scroll position preserved. Close the panel before opening another assignment. **Open order** opens the full order in a new tab.
+  </Step>
+</Steps>
+
+## Decision Points
+
+Correct an interval when the work took place but its recorded details are wrong. Delete it only when the entire record should be removed. You cannot add, split or combine intervals here. Use the normal stop action on the PDA page to end a running interval; entering an end in this editor cannot stop it.
+
+## Expected Result
+
+The saved intervals and the row's interval count reflect your change. Table quantities, progress and deviations can take about five minutes to catch up.
+
+## Common Problems and Edge Cases
+
+- A zero count or dash cannot open the panel. Expand a grouped order and choose an assignment with recorded intervals.
+- **The intervals could not be loaded.**: select **Try again**.
+- **You don't have access to this machine.**: ask an administrator to review your machine access. This message has no **Try again** button.
+- If deletion fails, read the message in the confirmation and check the interval before retrying.
+- **Still running** means there is no saved end. You cannot clear an existing end or switch a running interval to a type already running on the same order.
+
+## Related Pages
+
+- [Orders & Products](/en/platform-intro/pages/orders-products#intervals-panel)
+- [Order Detail](/en/platform-intro/pages/order-detail)
+- [Data Acquisition](/en/platform-intro/pages/data-acquisition#limits-when-editing)

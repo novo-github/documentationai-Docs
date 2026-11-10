@@ -467,7 +467,7 @@ toc: false
 </Update>
 
 <Update label="2026-10-22" description="v1.5.130–v1.5.131" tags={["feature", "improvement", "fix"]}>
-  {/* commits: 89f08e1, ec6ed1e, fdfa386, 15a9ed5, 23a788f, d885cd9, 4580312, f6b59f4, ad6bed3, a305e72, 8cc0f7e */}
+  {/* commits: 89f08e1, ec6ed1e, fdfa386, 15a9ed5, 23a788f, d885cd9, 4580312, f6b59f4, ad6bed3, a305e72, 8cc0f7e, 3e899f0f, 73a220ff, 71a24a7b, 707c0edf, 7dc414ed, 02cdb70c, 7e8f7522, 396fa9f9, 43c36683, 132f5f48, e40e6b06, 38df20e7, 9fb996e7, 8a4a449e, 4c9efc0b, e3d63383, f57dbcb6, bdb2dfdf */}
 
   **Release date:** October 22, 2026
 
@@ -496,6 +496,15 @@ toc: false
 
   Finished or cancelled work cannot be sent back. Data Acquisition needs a machine assigned to a hall. There is no automatic undo for a handover; check the destination and quantity before confirming.
 
+  #### [Open Orders and Correct Intervals from the Table](/en/platform-intro/pages/orders-products#table-quick-access)
+  {/* feature: orders-table-quick-access */}
+
+  With access to **Orders & Products** and the machine, you can now correct or delete recorded intervals without leaving the table. In the **Intervals** column of the table on **Orders & Products**, click an assignment's interval count; its tooltip is **Show intervals**. Then tap a time or the pencil to edit. The side panel identifies the order and machine and shows available planning details. Deletion asks for confirmation and cannot be undone. Follow [Correct Intervals from the Orders Table](/en/platform-intro/workflows/correct-order-intervals).
+
+  Click an order name to open it in a new tab. For grouped orders, the arrow and assignment count still expand or collapse the group. The pin buttons let you keep the order name, assignment status or product name visible while scrolling sideways. Your choice is saved for your account; the order name starts pinned. The checkbox, warning mark and live dot always stay visible.
+
+  After a saved change or deletion, the interval list reloads and the row's interval count updates immediately. Table quantities, progress and deviations can take about five minutes to catch up. You cannot add, split or combine intervals in this panel.
+
   ### Improvements
 
   #### [Choose Where Running Orders Appear on the PDA Page](/en/platform-intro/pages/data-acquisition)
@@ -523,6 +532,11 @@ toc: false
   {/* feature: assignment-handover */}
 
   In Data Acquisition V3, confirmation messages for actions such as claiming work were missing. They now appear at the bottom of the page, including confirmations when you send work back to the pool.
+
+  #### [Read German Interval Headings on the PDA Page](/en/platform-intro/pages/data-acquisition)
+  {/* feature: orders-table-quick-access */}
+
+  The German PDA V3 interval list previously showed the English headings “Interval” and “Cumul.”; it now shows **Intervall** and **Kumuliert**. The English list now reads **Interval** and **Cumulative** (previously “Cumul.”).
 </Update>
 
 <Update label="2026-10-21" description="v1.5.129" tags={["feature", "fix"]}>

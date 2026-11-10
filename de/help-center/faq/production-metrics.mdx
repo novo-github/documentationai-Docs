@@ -32,6 +32,8 @@ Die Watchmen-Plattform verbindet Produktionsmengen und Maschinenzeiten. Vergleic
 | Gebe ich beim Korrigieren einer kumulativen Menge den gesamten Zählerstand ein? | [Antwort](/de/help-center/faq/production-metrics#interval-cumulative) |
 | Warum wurden meine Änderungen trotz Abbrechen gespeichert? | [Antwort](/de/help-center/faq/production-metrics#interval-cancel) |
 | Warum öffnet sich mein laufendes Intervall nicht zur Bearbeitung? | [Antwort](/de/help-center/faq/production-metrics#interval-load) |
+| Kann ich ein Intervall direkt aus der Auftragsliste korrigieren oder löschen? | [Antwort](/de/help-center/faq/production-metrics#orders-correct-intervals) |
+| Warum sind die Summen nach einer Intervalländerung noch unverändert? | [Antwort](/de/help-center/faq/production-metrics#orders-interval-refresh) |
 
 ### Ein Beispiel für alle vier Kennzahlen
 
@@ -250,6 +252,18 @@ Haben Sie bereits **Speichern** gewählt, kann das Speichern auch nach **Abbrech
 ## Warum öffnet sich mein laufendes Intervall nicht zur Bearbeitung?
 
 In der Auftragsverwaltung lädt die Bearbeitung zuerst die gespeicherten Intervallmengen. Schlägt dies fehl, bleibt sie geschlossen und zeigt **Das Intervall konnte nicht geladen werden. Bitte erneut versuchen.** Versuchen Sie erneut, das Intervall zu öffnen. Siehe [Erfasste Intervalle bearbeiten](/de/platform-intro/pages/order-detail#erfasste-intervalle-bearbeiten).
+
+<a id="orders-correct-intervals" />
+
+## Kann ich ein Intervall direkt aus der Auftragsliste korrigieren oder löschen?
+
+Ja. Mit Zugriff auf **Aufträge & Produkte** und die Maschine wählen Sie die Intervallanzahl einer Zuweisung mit **Intervalle anzeigen**. Tippen Sie zum Bearbeiten auf eine Zeit oder zum Ändern der Mengen auf den Stift. Der rote Papierkorb, **Intervall löschen**, fragt nach einer Bestätigung. Eine Löschung kann nicht rückgängig gemacht werden. Ihre Filter und Scrollposition bleiben erhalten. Folgen Sie [Intervalle aus der Auftragstabelle korrigieren](/de/platform-intro/workflows/correct-order-intervals).
+
+<a id="orders-interval-refresh" />
+
+## Warum sind die Summen nach einer Intervalländerung noch unverändert?
+
+Der Seitenbereich lädt die gespeicherten Intervalle neu und aktualisiert sofort die Intervallanzahl in der Zeile. Mengen, Fortschritt und Abweichungen in der Tabelle können etwa fünf Minuten später folgen. Prüfen Sie das Intervall im Seitenbereich, bevor Sie erneut korrigieren. Siehe [Ergebnis prüfen](/de/platform-intro/workflows/correct-order-intervals).
 
 ## Wo kann ich die Ergebnisse genauer untersuchen?
 

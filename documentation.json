@@ -372,6 +372,11 @@
                             "title": "Create a Production Order",
                             "path": "en/platform-intro/workflows/create-production-order",
                             "icon": "play-circle"
+                          },
+                          {
+                            "title": "Correct Intervals from the Orders Table",
+                            "path": "en/platform-intro/workflows/correct-order-intervals",
+                            "icon": "play-circle"
                           }
                         ]
                       },
@@ -933,6 +938,11 @@
                           {
                             "title": "Produktionsauftrag erstellen",
                             "path": "de/platform-intro/workflows/create-production-order",
+                            "icon": "play-circle"
+                          },
+                          {
+                            "title": "Intervalle aus der Auftragstabelle korrigieren",
+                            "path": "de/platform-intro/workflows/correct-order-intervals",
                             "icon": "play-circle"
                           }
                         ]

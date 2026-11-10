@@ -32,7 +32,7 @@ Benutzer öffnen diese Seite über die Dashboard-Navigation.
 
 - Den vollständigen Auftragsbestand durchsuchen, filtern und sortieren.
 - Gruppierte Aufträge erweitern, um einzelne Zuweisungen zu prüfen.
-- Eine bestimmte Auftragsdetailseite öffnen.
+- Auftragsdetails in einem neuen Tab öffnen oder Intervalle in einem Seitenbereich korrigieren und löschen.
 - Produkt- oder Auftragserstellungsabläufe starten.
 - Aufträge mit Handlungsbedarf aufgrund überschrittener Dauern, verschlechterter Zykluszeiten oder überfälliger Termine erkennen.
 - Mehrere Aufträge für eine detaillierte Analyse auswählen.
@@ -45,6 +45,30 @@ Wählen Sie ein mit **Arbeitsplatz** gekennzeichnetes Ziel, wenn ein Arbeitsgang
 ### Aufträge, Arbeitsaufträge und Zuweisungen verstehen
 
 Ein Produktionsauftrag fasst die geplante Arbeit zusammen. Darin enthalten Arbeitsaufträge die einzelnen Arbeitsgänge. Zuweisungen verbinden diese Arbeit mit ihrem geplanten Produktionsziel. Erweitern Sie einen gruppierten Auftrag, um seine einzelnen Zuweisungen zu prüfen, oder öffnen Sie die [Auftragsdetails](/de/platform-intro/pages/order-detail), um die vollständige Struktur zu sehen.
+
+<a id="table-quick-access" />
+
+### Wichtige Spalten sichtbar halten und einen Auftrag öffnen
+
+Auswahlkästchen, Warnsymbol und Live-Punkt bleiben beim seitlichen Scrollen links stehen. Anfangs bleibt auch der Auftragsname sichtbar. Nutzen Sie die Stecknadel in der Überschrift von Auftragsname, **Auftragsstatus** oder Produktname für **Diese Spalte beim seitlichen Scrollen sichtbar halten**. Wählen Sie sie erneut für **Diese Spalte nicht mehr fest anzeigen**. Ihre Auswahl wird für Ihr Konto gespeichert, auch wenn Sie alle drei lösen.
+
+Gewählte Spalten stehen direkt hinter den drei festen Spalten, immer in dieser Reihenfolge: Auftragsname, **Auftragsstatus**, Produktname. Heften Sie beispielsweise nur den Produktnamen an, steht er vor dem Auftragsnamen. Anheften sortiert keine Zeilen und ändert die Spaltenbreite nicht.
+
+Klicken Sie auf einen Auftragsnamen, um die Details in einem neuen Tab zu öffnen. Bei gruppierten Aufträgen klappen Sie die Gruppe mit dem Pfeil oder der Anzahl der Zuweisungen auf oder zu. Ein Klick auf den Namen öffnet den Auftrag. Das Öffnen-Symbol ganz rechts bleibt verfügbar.
+
+<a id="intervals-panel" />
+
+### Intervalle aus der Tabelle prüfen und korrigieren
+
+Mit Zugriff auf diese Seite und die Maschine können Sie hier Intervalle bearbeiten und löschen. Klicken Sie unter **Intervalle** auf die Anzahl einer Zuweisung mit **Intervalle anzeigen**, um den Seitenbereich zu öffnen. Klappen Sie einen gruppierten Auftrag zuerst auf und wählen Sie eine Zuweisungszeile. Bei 0 oder einem Strich lässt sich der Bereich nicht öffnen. Ihre Filter und Scrollposition bleiben erhalten.
+
+Der Bereich zeigt die gespeicherten Intervalle dieser Zuweisung, die neuesten zuerst. Die Nummerierung beginnt beim ältesten Intervall. Sie sehen Start, Ende, Dauer und Mengen sowie die Gesamtanzahl und die Anzahl noch laufender Intervalle. **Kumuliert** zeigt bei kumulativen Intervallen den Maschinenzählerstand, sonst einen Strich. Vorbereitungszeilen haben eine eigene Farbe. Oben stehen vorhandene Angaben zu Auftrag, Produkt, Arbeitsgang, Maschine, Kunde, Status, Auftragspriorität und Arbeitsgangpriorität. Dazu kommen Liefertermin, geplanter Zeitraum und geplante Menge. Fehlende Angaben werden ausgelassen.
+
+- Tippen Sie auf eine Start- oder Endzeit, um diesen Teil von **Intervall bearbeiten** zu öffnen. Der Stift öffnet **Mengen**. Prüfen Sie Ihre Änderungen und wählen Sie **Speichern**. Es gelten dieselben [Bearbeitungsgrenzen](/de/platform-intro/pages/data-acquisition#grenzen-beim-bearbeiten) wie auf der BDE-Seite.
+- Wählen Sie den roten Papierkorb, **Intervall löschen**, und prüfen Sie die Bestätigung vor dem Löschen. Eine Löschung kann nicht rückgängig gemacht werden. **Intervall gelöscht.** bestätigt den Erfolg.
+- **Auftrag öffnen** zeigt den vollständigen Auftrag in einem neuen Tab. Mit **Schließen** oder Esc kehren Sie zur Tabelle zurück. Schließen Sie diesen Bereich, bevor Sie eine andere Zuweisung wählen.
+
+Nach dem Speichern oder Löschen lädt der Bereich die Intervalle neu. Die Tabelle zeigt sofort die neue Intervallanzahl. Mengen, Fortschritt und Abweichungen können etwa fünf Minuten später folgen. Hier können Sie keine Intervalle hinzufügen, teilen oder zusammenführen. Folgen Sie [Intervalle aus der Auftragstabelle korrigieren](/de/platform-intro/workflows/correct-order-intervals).
 
 ### Summen und Fortschritt lesen
 
@@ -153,4 +177,4 @@ Der Auftragsstatus folgt seinen Zuweisungen. **Live** bedeutet ein jetzt laufend
 - [Produkt erstellen](/de/platform-intro/workflows/create-product)
 - [Produktionsauftrag erstellen](/de/platform-intro/workflows/create-production-order)
 - [Maschinenzuweisungen planen](/de/platform-intro/workflows/assignment-planner)
-
+- [Intervalle aus der Auftragstabelle korrigieren](/de/platform-intro/workflows/correct-order-intervals)

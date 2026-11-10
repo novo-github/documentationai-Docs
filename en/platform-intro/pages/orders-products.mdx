@@ -32,7 +32,7 @@ Users open it from the dashboard navigation.
 
 - Search, filter, and sort across the complete order dataset.
 - Expand grouped orders to review individual assignments.
-- Open a specific order detail page.
+- Open order details in a new tab, or correct and delete intervals in a side panel.
 - Start product or order creation flows.
 - Identify orders that need attention because of exceeded durations, degraded cycle times, or overdue dates.
 - Select multiple orders for detailed analysis.
@@ -45,6 +45,30 @@ Choose a destination marked **Work center** when an operation belongs at a workp
 ### Understand Orders, Work Orders, and Assignments
 
 A production order brings the planned work together. Within it, work orders contain operations, and assignments connect that work to its planned production destination. Expand a grouped order to inspect its individual assignments, or open [Order Detail](/en/platform-intro/pages/order-detail) to review the full structure.
+
+<a id="table-quick-access" />
+
+### Keep Key Columns Visible and Open an Order
+
+The checkbox, warning mark and live dot stay on the left when you scroll sideways. The order name also stays visible by default. Use the pin in the order name, assignment status or product name heading to choose **Keep this column visible when scrolling sideways**. Select it again for **Stop keeping this column visible**. Your choice is saved for your account, including when you unpin all three.
+
+Chosen columns move directly after the three fixed columns, in this order: order name, assignment status, product name. For example, pinning only the product name puts it before the order name. Pinning does not sort the rows or change the column's width.
+
+Click an order name to open its details in a new tab. For a grouped order, use the arrow or assignment count to expand or collapse it; clicking the name opens the order. The open icon at the far right is still available.
+
+<a id="intervals-panel" />
+
+### Review and Correct Intervals from the Table
+
+With access to this page and the machine, you can edit and delete intervals here. In **Intervals**, click an assignment's count with **Show intervals** to open its side panel. For a grouped order, expand the group first and choose an assignment row. A count of zero or a dash cannot open the panel. Your filters and scroll position stay in place.
+
+The panel shows the saved intervals for that assignment, newest first. Interval numbers count from the oldest. You see start, end, duration and quantities, plus the interval total and how many are still running. **Cumulative** shows the machine’s counter reading for cumulative intervals, otherwise a dash. Preparation rows have their own colour. The header identifies the order, product, operation, machine, customer, status, order priority and operation priority where available. It also shows the delivery date, planned window and planned quantity. Missing details are left out.
+
+- Tap a start or end time to open that part of **Edit interval**. The pencil opens **Quantities**. Review the changes and choose **Save**. The same [editing limits](/en/platform-intro/pages/data-acquisition#limits-when-editing) apply as on the PDA page.
+- Select the red bin, **Delete interval**, and review the confirmation before deleting. Deletion cannot be undone. **Interval deleted.** confirms success.
+- Use **Open order** for the full order in a new tab. Use **Close** or Esc to return to the table. Close this panel before choosing another assignment.
+
+After saving or deleting, the panel reloads the intervals and the table updates the interval count immediately. Table quantities, progress and deviations can take about five minutes to catch up. You cannot add, split or combine intervals here. Follow [Correct Intervals from the Orders Table](/en/platform-intro/workflows/correct-order-intervals).
 
 ### Read Totals and Progress
 
@@ -153,3 +177,4 @@ Order status follows its assignments. **Live** means an interval is running now.
 - [Create a Product](/en/platform-intro/workflows/create-product)
 - [Create a Production Order](/en/platform-intro/workflows/create-production-order)
 - [Plan Machine Assignments](/en/platform-intro/workflows/assignment-planner)
+- [Correct Intervals from the Orders Table](/en/platform-intro/workflows/correct-order-intervals)

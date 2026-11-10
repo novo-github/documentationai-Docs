@@ -1,0 +1,60 @@
+---
+title: "Intervalle aus der Auftragstabelle korrigieren"
+description: "Prüfen, korrigieren oder löschen Sie erfasste Intervalle direkt aus der Auftragsliste."
+---
+
+## Ziel
+
+Korrigieren Sie erfasste Zeiten oder Mengen oder löschen Sie ein falsches Intervall, ohne Ihre Stelle in der Auftragstabelle zu verlieren.
+
+## Bevor Sie beginnen
+
+<Callout kind="info" title="Ablaufzugriff">
+Sie benötigen als Admin oder User Zugriff auf **Aufträge & Produkte** sowie auf die Maschine der Zuweisung. Maschinenbediener nutzen die BDE-Seite.
+</Callout>
+
+### Voraussetzungen
+
+Die Zuweisung hat mindestens ein erfasstes Intervall. Beginnen Sie in der Tabelle unter [Aufträge & Produkte](/de/platform-intro/pages/orders-products).
+
+## Schritte
+
+<Steps>
+  <Step title="Finden Sie die Zuweisung" icon="arrow-right" title-type="p">
+    Suchen Sie den Auftrag. Klappen Sie einen gruppierten Auftrag mit dem Pfeil oder der Anzahl der Zuweisungen auf. Ein Klick auf den Auftragsnamen öffnet dagegen die Details in einem neuen Tab. Mit der Stecknadel in der Überschrift halten Sie einen Namen oder den **Auftragsstatus** beim Scrollen sichtbar.
+  </Step>
+  <Step title="Öffnen Sie die Intervallliste" icon="arrow-right" title-type="p">
+    Wählen Sie unter **Intervalle** die Anzahl der Zuweisung mit **Intervalle anzeigen**. Die Spalte ist standardmäßig sichtbar. Haben Sie sie ausgeblendet, blenden Sie sie unter **Spalten → Intervalle** wieder ein. Prüfen Sie Auftrag, Arbeitsgang und Maschine oben im Seitenbereich. Die neuesten Intervalle stehen zuerst. Die Übersicht nennt die Anzahl noch laufender Intervalle.
+  </Step>
+  <Step title="Korrigieren Sie die erfasste Arbeit" icon="arrow-right" title-type="p">
+    Tippen Sie auf eine Start- oder Endzeit, um **Intervall bearbeiten** unter **Start** oder **Ende** zu öffnen. Der Stift öffnet **Mengen**. Prüfen Sie die gespeicherten Werte, korrigieren Sie Zeit, Mengen oder Intervalltyp und wählen Sie **Speichern**. Die Bedienelemente und Zeitprüfungen erklärt [Ein Intervall korrigieren](/de/platform-intro/workflows/data-acquisition#ein-intervall-korrigieren).
+  </Step>
+  <Step title="Löschen Sie nur ein falsches Intervall" icon="arrow-right" title-type="p">
+    Soll das gesamte Intervall entfernt werden, wählen Sie seinen roten Papierkorb, **Intervall löschen**. Prüfen Sie das Intervall in der Bestätigung, bevor Sie zustimmen. Eine Löschung kann nicht rückgängig gemacht werden. **Intervall gelöscht.** bestätigt den Erfolg. Überspringen Sie diesen Schritt, wenn Sie nur etwas korrigieren möchten.
+  </Step>
+  <Step title="Prüfen Sie das Ergebnis und kehren Sie zur Tabelle zurück" icon="arrow-right" title-type="p">
+    Prüfen Sie die neu geladene Intervallliste und die aktualisierte Anzahl. Wählen Sie **Schließen** oder drücken Sie Esc, um mit Ihren Filtern und Ihrer Scrollposition zur Tabelle zurückzukehren. Schließen Sie den Bereich vor dem Öffnen einer anderen Zuweisung. **Auftrag öffnen** zeigt den vollständigen Auftrag in einem neuen Tab.
+  </Step>
+</Steps>
+
+## Entscheidungspunkte
+
+Korrigieren Sie ein Intervall, wenn die Arbeit stattgefunden hat, aber die Angaben falsch sind. Löschen Sie es nur, wenn der gesamte Eintrag entfernt werden soll. Hier können Sie keine Intervalle hinzufügen, teilen oder zusammenführen. Beenden Sie ein laufendes Intervall mit der normalen Stoppaktion auf der BDE-Seite. Die Eingabe eines Endes in dieser Bearbeitung kann es nicht stoppen.
+
+## Erwartetes Ergebnis
+
+Die gespeicherten Intervalle und die Intervallanzahl in der Zeile zeigen Ihre Änderung. Mengen, Fortschritt und Abweichungen in der Tabelle können etwa fünf Minuten später folgen.
+
+## Häufige Probleme und Sonderfälle
+
+- Bei 0 oder einem Strich lässt sich der Bereich nicht öffnen. Klappen Sie einen gruppierten Auftrag auf und wählen Sie eine Zuweisung mit erfassten Intervallen.
+- **Die Intervalle konnten nicht geladen werden.**: Wählen Sie **Erneut versuchen**.
+- **Sie haben keinen Zugriff auf diese Maschine.**: Bitten Sie einen Administrator, Ihren Maschinenzugriff zu prüfen. Bei dieser Meldung gibt es keine Schaltfläche **Erneut versuchen**.
+- Schlägt das Löschen fehl, lesen Sie die Meldung in der Bestätigung und prüfen Sie das Intervall vor einem erneuten Versuch.
+- **Läuft noch** bedeutet, dass kein Ende gespeichert ist. Sie können ein vorhandenes Ende nicht entfernen. Ein laufendes Intervall kann nicht zu einem Typ wechseln, der bei diesem Auftrag bereits läuft.
+
+## Verwandte Seiten
+
+- [Aufträge & Produkte](/de/platform-intro/pages/orders-products#intervals-panel)
+- [Auftragsdetails](/de/platform-intro/pages/order-detail)
+- [Betriebsdatenerfassung](/de/platform-intro/pages/data-acquisition#grenzen-beim-bearbeiten)

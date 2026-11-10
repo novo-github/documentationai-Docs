@@ -475,7 +475,7 @@ toc: false
 </Update>
 
 <Update label="2026-10-22" description="v1.5.130–v1.5.131" tags={["Funktion", "Verbesserung", "Fehlerbehebung"]}>
-  {/* commits: 89f08e1, ec6ed1e, fdfa386, 15a9ed5, 23a788f, d885cd9, 4580312, f6b59f4, ad6bed3, a305e72, 8cc0f7e */}
+  {/* commits: 89f08e1, ec6ed1e, fdfa386, 15a9ed5, 23a788f, d885cd9, 4580312, f6b59f4, ad6bed3, a305e72, 8cc0f7e, 3e899f0f, 73a220ff, 71a24a7b, 707c0edf, 7dc414ed, 02cdb70c, 7e8f7522, 396fa9f9, 43c36683, 132f5f48, e40e6b06, 38df20e7, 9fb996e7, 8a4a449e, 4c9efc0b, e3d63383, f57dbcb6, bdb2dfdf */}
 
   **Release-Datum:** 22. Oktober 2026
 
@@ -504,6 +504,15 @@ toc: false
 
   Abgeschlossene oder stornierte Arbeit kann nicht zurückgegeben werden. In der Betriebsdatenerfassung muss die Maschine einer Halle zugeordnet sein. Eine Übergabe lässt sich nicht automatisch rückgängig machen. Prüfen Sie Ziel und Menge vor dem Bestätigen.
 
+  #### [Aufträge öffnen und Intervalle direkt in der Tabelle korrigieren](/de/platform-intro/pages/orders-products#table-quick-access)
+  {/* feature: orders-table-quick-access */}
+
+  Mit Zugriff auf **Aufträge & Produkte** und die Maschine können Sie erfasste Intervalle jetzt direkt aus der Tabelle korrigieren oder löschen. Klicken Sie in der Spalte **Intervalle** der Tabelle unter **Aufträge & Produkte** auf die Intervallanzahl einer Zuweisung; der Tooltip lautet **Intervalle anzeigen**. Tippen Sie dann zum Bearbeiten auf eine Zeit oder den Stift. Der Seitenbereich zeigt Auftrag, Maschine und vorhandene Planungsangaben. Eine Löschung erfordert eine Bestätigung und kann nicht rückgängig gemacht werden. Folgen Sie [Intervalle aus der Auftragstabelle korrigieren](/de/platform-intro/workflows/correct-order-intervals).
+
+  Klicken Sie auf einen Auftragsnamen, um ihn in einem neuen Tab zu öffnen. Bei gruppierten Aufträgen klappen der Pfeil und die Anzahl der Zuweisungen weiterhin die Gruppe auf oder zu. Mit den Stecknadeln halten Sie Auftragsname, **Auftragsstatus** oder Produktname beim seitlichen Scrollen sichtbar. Ihre Auswahl wird für Ihr Konto gespeichert; anfangs ist der Auftragsname angeheftet. Auswahlkästchen, Warnsymbol und Live-Punkt bleiben immer sichtbar.
+
+  Nach dem Speichern oder Löschen wird die Intervallliste neu geladen. Die Intervallanzahl in der Zeile ändert sich sofort. Mengen, Fortschritt und Abweichungen in der Tabelle können etwa fünf Minuten später folgen. In diesem Seitenbereich können Sie keine Intervalle hinzufügen, teilen oder zusammenführen.
+
   ### Verbesserungen
 
   #### [Position laufender Aufträge auf der BDE-Seite wählen](/de/platform-intro/pages/data-acquisition)
@@ -531,6 +540,11 @@ toc: false
   {/* feature: assignment-handover */}
 
   In der Betriebsdatenerfassung V3 fehlten Bestätigungen für Aktionen wie das Übernehmen von Arbeit. Sie erscheinen jetzt unten auf der Seite, auch beim Zurückgeben in den Pool.
+
+  #### [Deutsche Intervallüberschriften auf der BDE-Seite lesen](/de/platform-intro/pages/data-acquisition)
+  {/* feature: orders-table-quick-access */}
+
+  Die deutsche Intervallliste der BDE V3 zeigte bisher die englischen Überschriften „Interval“ und „Cumul.“; jetzt zeigt sie **Intervall** und **Kumuliert**. Die englische Liste zeigt jetzt **Interval** und **Cumulative** (bisher „Cumul.“).
 </Update>
 
 <Update label="2026-10-21" description="v1.5.129" tags={["Funktion", "Fehlerbehebung"]}>
