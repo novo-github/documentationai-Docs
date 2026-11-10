@@ -50,7 +50,7 @@ Your choice applies to this export only. Version 2 includes cycles, downtime rea
 
 Downtime is Idle (orange) or Off (red). **Downtime Analysis (labeled)** groups it by assigned reason. An unlabeled warning means a reason is still missing. **Timeline ranges / Time range** are duration buckets, such as 1–5 or 5–30 minutes, used in **Idletime Distribution**. **Focus Mode** enlarges the analysis by hiding surrounding controls.
 
-Automatic timeline reasons follow the specific reason rule, its DEFAULT rule, then Global rules. Admin-defined reason type and level 1–5 effects are unconfirmed. The [calculations reference](/en/platform-intro/concepts/calculations) explains AVL, PRO, and the role of the selected period.
+For each machine and state (Off, Idle or Preparation), the downtime first gets the reason of the rule whose length range fits. If no range fits, it gets that state’s **Default Reason**. If neither gives a reason, or the machine does not offer that reason, the downtime gets no automatic reason. Admin-defined reason type and level 1–5 effects are unconfirmed. The [calculations reference](/en/platform-intro/concepts/calculations) explains AVL, PRO, and the role of the selected period.
 
 Since November 5, 2026 (v1.5.153), **Downtime reason rules** apply to more idle and off downtimes when the machine operator has chosen no reason. On machines with rules, more downtime can therefore receive a reason, changing the totals by reason in reports and charts. Downtimes from before the update remain unchanged. A reason chosen by the machine operator always takes priority. See [automatic rules](/en/platform-intro/workflows/timeline-reason-creation#automatic-rules).
 
@@ -71,7 +71,7 @@ See [downtime reason settings](/en/platform-intro/pages/admin-panel) for how adm
 - Machine
 - Shift
 - Timeline Event
-- Timeline Reason
+- Downtime Reason
 
 ## Outcomes and Limits
 
@@ -92,4 +92,4 @@ See [downtime reason settings](/en/platform-intro/pages/admin-panel) for how adm
 
 - [Review Machine History](/en/platform-intro/workflows/machine-history-review)
 - [Run Data Acquisition (PDA)](/en/platform-intro/workflows/data-acquisition)
-- [Create Timeline Reasons](/en/platform-intro/workflows/timeline-reason-creation)
+- [Create and Manage Downtime Reasons](/en/platform-intro/workflows/timeline-reason-creation)

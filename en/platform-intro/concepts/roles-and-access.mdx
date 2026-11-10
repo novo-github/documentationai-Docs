@@ -1,6 +1,6 @@
 ---
 title: "Roles, Page Access & Machine Access"
-description: "Understand Admin, User, and Operator roles, restricted pages, machine permissions, and missing-access messages."
+description: "Understand Admin, User, and Machine operator roles, restricted pages, machine permissions, and missing-access messages."
 ---
 
 ## Which Role Do I Have?
@@ -11,7 +11,7 @@ Your role sets the outer limit of your access. **Page Access** and **Machine Acc
 | --- | --- |
 | **Admin** | Manage settings, invite users, edit machines, change access, and use admin-only pages within their own company. |
 | **User** | Everyday work within the pages and machines granted by an admin. Cannot invite users or edit machines. |
-| **Operator** | Limited shop-floor access granted by an admin. Never has Hall Plan, Orders & Products, or Alert Rules. |
+| **Machine operator** | Limited shop-floor access granted by an admin. Never has Hall Plan, Orders & Products, or Alert Rules. |
 
 **System (Automator)** is an automated actor in event history, not a human role.
 
@@ -21,12 +21,12 @@ Your role sets the outer limit of your access. **Page Access** and **Machine Acc
 
 | Access class | Pages |
 | --- | --- |
-| **Admin only** | Admin Panel, Organization Statistics / Org Stats, Leaderboard, Automator, Peak Optimizer, Machine Configuration. These cannot be granted to a User or Operator. |
+| **Admin only** | Admin Panel, Organization Statistics / Org Stats, Leaderboard, Automator, Peak Optimizer, Machine Configuration. These cannot be granted to a User or Machine operator. |
 | **Grantable page access** | Orders & Products (`orders`), Alert Rules (`alert_rules`), Shift Planner (`scheduler`), Assignment Planner and Assignment Gantt (`assignment_planner`), ERP Uploads (`erp_uploads`), Kanban (`tickets`), Knowledge Base (`knowledge_base`), AI Chats / Chat History (`ai_chats`), Versus (`versus`), Timeline Analysis (`reports_timeline`), Trend Analysis (`reports_trend`). |
-| **Available to non-operators** | Machines and Hall Plan. Machine visibility still depends on Machine Access. |
+| **Available to Admin and User** | Machines and Hall Plan. Machine visibility still depends on Machine Access. |
 | **Personal and feedback pages** | User Profile, Feedback, and Roadmap are available to all roles. |
 
-An Operator cannot receive Orders & Products, Alert Rules, or Hall Plan even if a grantable-page list would otherwise include them. **Full Access** includes all grantable pages within the role; an empty selected-page list includes none. It does not turn a User into an Admin.
+A Machine operator cannot receive Orders & Products, Alert Rules, or Hall Plan even if a grantable-page list would otherwise include them. **Full Access** includes all grantable pages within the role; an empty selected-page list includes none. It does not turn a User into an Admin.
 
 The frontend has a Leaderboard route and an admin-only rule, but its current sidebar availability needs confirmation. Ask your admin if it is not reachable.
 
@@ -48,10 +48,12 @@ Machine Access is independent of Page Access. An admin may grant all machines or
 
 Admins can use [Invite Users and Manage Permissions](/en/platform-intro/workflows/user-access-management) for the full workflow.
 
-## Operator Credentials and Promotion
+<a id="operator-credentials-and-promotion" />
 
-An admin creates operator accounts. Generated passwords are shown once; copy or download them before closing. Generating a new password ends that operator's active sessions. Deactivation ends access immediately while preserving past shifts, labels, and assignments.
+## Machine operator credentials and promotion
 
-**Promote to user** grants access to all machines regardless of the previous machine list. Review the resulting permissions deliberately. Email verification is separate from activation; unverified operators can still sign in, and verification email is not sent automatically.
+An administrator creates machine operator accounts. Generated passwords are shown once; copy or download them before closing. Generating a new password ends that machine operator's active sessions. Deactivation ends access immediately while preserving past shifts, labels, and assignments.
 
-See [Manage Operators](/en/platform-intro/workflows/operator-management), [User Profile](/en/platform-intro/pages/user-profile), and the [Help Center](/en/help-center).
+**Promote to user** grants access to all machines regardless of the previous machine list. Review the resulting permissions deliberately. Email verification is separate from activation; unverified machine operators can still sign in, and verification email is not sent automatically.
+
+See [Manage machine operators](/en/platform-intro/workflows/operator-management), [User Profile](/en/platform-intro/pages/user-profile), and the [Help Center](/en/help-center).

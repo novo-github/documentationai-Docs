@@ -21,6 +21,10 @@ description: "Verstehen Sie automatische Schichten und finden Sie Produkte, Arbe
 | Warum hat meine Pause noch keinen Grund erhalten? | [Antwort](/de/help-center/faq/shifts-and-hall-plan#missing-break-label) |
 | Kennzeichnet die Toleranz jeden Stopp in der Nähe einer Pause? | [Antwort](/de/help-center/faq/shifts-and-hall-plan#break-tolerance) |
 | Wie schalte ich automatische Pausengründe aus? | [Antwort](/de/help-center/faq/shifts-and-hall-plan#stop-break-labels) |
+| Muss ich eine eingegebene Schichtzeit noch mit Enter übernehmen? | [Antwort](/de/help-center/faq/shifts-and-hall-plan#typed-time) |
+| Warum kann ich meine Schichtpause nicht speichern? | [Antwort](/de/help-center/faq/shifts-and-hall-plan#break-validation) |
+| Darf eine Schichtpause über Mitternacht gehen? | [Antwort](/de/help-center/faq/shifts-and-hall-plan#overnight-break) |
+| Wo sehe ich alle Pausen, ohne jede Schicht zu öffnen? | [Antwort](/de/help-center/faq/shifts-and-hall-plan#break-list) |
 
 <a id="automatic-shifts" />
 
@@ -94,7 +98,7 @@ Wurden die Anzeigeeinstellungen Ihrer Halle vor Einführung dieser Option gespei
 
 ## Wie erhalten Pausen automatisch einen Grund?
 
-Öffnen Sie als Administrator **Admin-Panel → Schichten und Zeitplanung konfigurieren**, dann **Pauseneinstellungen** direkt links neben **Schicht hinzufügen**. Schalten Sie **Pausen automatisch kennzeichnen** ein, wählen Sie die gewünschte Option und **Speichern**. Bearbeiten Sie danach jede Schicht und wählen Sie für jede Pause einen **Stillstandsgrund**. Maschinen mit **Aktive Schicht** werden nicht gekennzeichnet. Die Maschine muss den Pausengrund anbieten. Folgen Sie [Pausen automatisch kennzeichnen einrichten](/de/platform-intro/workflows/shift-management#automatic-break-labels).
+Öffnen Sie als Administrator **Admin-Panel → Schichten und Zeitplanung konfigurieren → Schichten**, dann **Pauseneinstellungen** direkt links neben **Schicht hinzufügen**. Schalten Sie **Pausen automatisch kennzeichnen** ein, wählen Sie die gewünschte Option und **Speichern**. Bearbeiten Sie danach jede Schicht und wählen Sie für jede Pause einen **Stillstandsgrund**. Maschinen mit **Aktive Schicht** werden nicht gekennzeichnet. Die Maschine muss den Pausengrund anbieten. Folgen Sie [Pausen automatisch kennzeichnen einrichten](/de/platform-intro/workflows/shift-management#automatic-break-labels).
 
 <a id="grey-break-reason" />
 
@@ -119,3 +123,33 @@ Nein. Der Stillstand muss die eigentliche Pause überlappen. Bei einer Pause von
 ## Wie schalte ich automatische Pausengründe aus?
 
 Ein Administrator öffnet **Pauseneinstellungen**, schaltet **Pausen automatisch kennzeichnen** aus und wählt **Speichern**. Gespeicherte Pausengründe bleiben erhalten. Die Tabelle blendet sie aus und ihre Auswahl wird ausgegraut. Folgen Sie [automatische Pausenkennzeichnung einrichten oder beenden](/de/platform-intro/workflows/shift-management#automatic-break-labels).
+
+<a id="typed-time" />
+
+## Muss ich eine eingegebene Schichtzeit noch mit Enter übernehmen?
+
+Nein. Geben Sie eine vollständige Schicht- oder Pausenzeit ein. Klicken Sie danach woanders oder drücken Sie Tab. Die Uhrzeit bleibt erhalten. Das frühere Zurücksetzen auf die alte Zeit ist behoben. Speichern Sie die Schicht, um die Änderungen zu behalten. Siehe [Schichtzeiten und Pausen](/de/platform-intro/pages/admin-panel#schichtpausen-verwalten).
+
+<a id="break-validation" />
+
+## Warum kann ich meine Schichtpause nicht speichern?
+
+Jede dieser Meldungen unter der Pause verhindert das Speichern:
+
+- **Die Endzeit der Pause muss nach der Startzeit liegen.**
+- **Start- und Endzeit der Pause müssen innerhalb der Schichtzeit liegen.**
+- **Eine Pause darf höchstens 1 Stunde dauern.**
+
+Korrigieren Sie die Zeiten so, dass die Pause ein gültiges Ende hat, innerhalb der Schicht liegt und höchstens eine Stunde dauert. Folgen Sie [Schichtdefinitionen verwalten](/de/platform-intro/workflows/shift-management).
+
+<a id="overnight-break" />
+
+## Darf eine Schichtpause über Mitternacht gehen?
+
+Ja, wenn sie innerhalb einer Nachtschicht liegt und höchstens eine Stunde dauert. Beispielsweise dauert 23:30–00:15 genau 45 Minuten und zeigt **Pause über Mitternacht · endet am nächsten Tag**. Endet die Pause genau um 00:00, erscheint dieser Hinweis nicht. Siehe [Schichtzeiten und Pausen](/de/platform-intro/pages/admin-panel#schichtpausen-verwalten).
+
+<a id="break-list" />
+
+## Wo sehe ich alle Pausen, ohne jede Schicht zu öffnen?
+
+Öffnen Sie als Administrator **Admin-Panel → Schichten und Zeitplanung konfigurieren → Schichten**. Die Spalte **Pausen** nach dem Schichtende zeigt Zeiten und Länge jeder Pause in derselben Reihenfolge wie beim Bearbeiten. Ein Strich bedeutet, dass keine Pausen vorhanden sind. Siehe [Administrationsbereich](/de/platform-intro/pages/admin-panel#schichtpausen-verwalten).

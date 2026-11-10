@@ -79,7 +79,7 @@ The interval above lasts `900` seconds (15 minutes). The timestamps define its e
 
 ## BDE production data export
 
-In addition to machine states, production data recorded by operators in Novo AI can be transferred to a customer receiving system. One record represents one continuous production or preparation interval linked to a machine assignment. When available, the record also includes the related order, work order, operation, product, and operator information.
+In addition to machine states, production data recorded by machine operators in Novo AI can be transferred to a customer receiving system. One record represents one continuous production or preparation interval linked to a machine assignment. When available, the record also includes the related order, work order, operation, product, and machine operator information.
 
 <Callout kind="info" collapsed="false">
 
@@ -100,8 +100,8 @@ In addition to machine states, production data recorded by operators in Novo AI 
 | `end_time`               | Optional | Timestamp | `2026-08-27T09:15:00+02:00` | End of the recorded activity. May be empty while the interval is ongoing.                                      |
 | `assignment_status`      | Required | String    | `in_progress`               | Current assignment status, such as `planned`, `in_progress`, `completed`, `hold`, `unplanned`, or `cancelled`. |
 | `assignment_role`        | Optional | String    | `primary`                   | Assignment role, such as `primary`, `secondary`, or `parallel`.                                                |
-| `operator_id`            | Optional | String    | `OPERATOR-42`               | Identifier of the assigned operator when available.                                                            |
-| `operator_name`          | Optional | String    | `Maria Schmidt`             | Human-readable operator name.                                                                                  |
+| `operator_id`            | Optional | String    | `OPERATOR-42`               | Identifier of the assigned machine operator when available.                                                            |
+| `operator_name`          | Optional | String    | `Maria Schmidt`             | Human-readable machine operator name.                                                                                  |
 | `order_id`               | Optional | String    | `ORDER-201`                 | Novo AI order identifier.                                                                                      |
 | `external_order_id`      | Optional | String    | `ERP-4500123`               | Order identifier from the customer ERP system.                                                                 |
 | `order_name`             | Optional | String    | `Customer order 4500123`    | Human-readable order name.                                                                                     |
@@ -159,16 +159,16 @@ is_cumulative: false
 updated_at: 2026-08-27T09:17:20+02:00
 ```
 
-The interval above represents 75 minutes of production on `MACHINE-12`. It is linked to the customer order, work order, operation, product, and assigned operator. During this interval, the operator reported `25` produced parts and `1` scrap part.
+The interval above represents 75 minutes of production on `MACHINE-12`. It is linked to the customer order, work order, operation, product, and assigned machine operator. During this interval, the machine operator reported `25` produced parts and `1` scrap part.
 
 ### BDE export items to agree
 
-- **Included information:** which order, work-order, operation, product, operator, quantity, and assignment fields are required.
+- **Included information:** which order, work-order, operation, product, machine operator, quantity, and assignment fields are required.
 - **Identifier mapping:** which Novo AI and customer ERP identifiers should be transferred.
 - **Ongoing intervals:** whether intervals without an `end_time` should be transferred.
 - **Quantity behavior:** whether quantities are interval-specific or cumulative.
 - **Corrections:** how later changes to times, quantities, assignments, or statuses should be transferred.
-- **Operator information:** whether operator identifiers and names may be included.
+- **Machine operator information:** whether machine operator identifiers and names may be included.
 - **Target interface:** database table/view, API endpoint, message interface, or file exchange.
 - **Receiving-system validation:** how the customer confirms that assignments, identifiers, timestamps, and quantities are stored correctly.
 

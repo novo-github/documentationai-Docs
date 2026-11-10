@@ -21,6 +21,10 @@ description: "Understand automatic shifts and find products, operation numbers, 
 | Why has my break not received a reason? | [Answer](/en/help-center/faq/shifts-and-hall-plan#missing-break-label) |
 | Does tolerance label every stop near a break? | [Answer](/en/help-center/faq/shifts-and-hall-plan#break-tolerance) |
 | How do I turn automatic break labels off? | [Answer](/en/help-center/faq/shifts-and-hall-plan#stop-break-labels) |
+| Do I still need Enter to keep a typed shift time? | [Answer](/en/help-center/faq/shifts-and-hall-plan#typed-time) |
+| Why can I not save my shift break? | [Answer](/en/help-center/faq/shifts-and-hall-plan#break-validation) |
+| Can a shift break cross midnight? | [Answer](/en/help-center/faq/shifts-and-hall-plan#overnight-break) |
+| Where can I see all breaks without opening each shift? | [Answer](/en/help-center/faq/shifts-and-hall-plan#break-list) |
 
 <a id="automatic-shifts" />
 
@@ -119,3 +123,33 @@ No. The downtime must overlap the actual break. With a 9:15–9:30 break and 5 m
 ## How do I turn automatic break labels off?
 
 An administrator can open **Break settings**, turn off **Label breaks automatically**, then select **Save**. Stored break reasons remain, but the table hides them and their choices are greyed out. Follow [set up or stop automatic break labels](/en/platform-intro/workflows/shift-management#automatic-break-labels).
+
+<a id="typed-time" />
+
+## Do I still need Enter to keep a typed shift time?
+
+No. Type a complete shift or break time, then click elsewhere or press Tab. The time stays; the earlier problem that restored the old time is fixed. Save the shift to keep your changes. See [shift times and breaks](/en/platform-intro/pages/admin-panel#manage-shift-breaks).
+
+<a id="break-validation" />
+
+## Why can I not save my shift break?
+
+Any of these messages below the break blocks saving:
+
+- **Break end time must be after break start time.**
+- **Break start and end time must stay inside the shift time.**
+- **A break can be 1 hour at most.**
+
+Correct the times so the break has a valid end, lies within the shift and lasts at most one hour. Follow [Manage Shift Definitions](/en/platform-intro/workflows/shift-management).
+
+<a id="overnight-break" />
+
+## Can a shift break cross midnight?
+
+Yes, if it is inside an overnight shift and lasts at most one hour. For example, 23:30–00:15 lasts 45 minutes and shows **Break over midnight · ends the next day**. A break ending exactly at 00:00 does not show this hint. See [shift times and breaks](/en/platform-intro/pages/admin-panel#manage-shift-breaks).
+
+<a id="break-list" />
+
+## Where can I see all breaks without opening each shift?
+
+As an administrator, open **Admin Panel → Configure Shifts and Scheduling → Shifts**. The **Breaks** column after the shift end shows each break’s times and length in the editor’s order. A dash means there are no breaks. See [Admin Panel](/en/platform-intro/pages/admin-panel#manage-shift-breaks).

@@ -76,6 +76,53 @@ toc: false
   A chosen reason could previously be lost when downtime ended; it is now reliably saved onto that downtime, including when you choose it shortly after the machine restarts while the reason tiles are still offered. Follow [choose a downtime reason](/en/platform-intro/workflows/data-acquisition#label-downtime-with-an-available-reason).
 </Update>
 
+<Update label="2026-11-05" description="v1.5.152" tags={["feature", "improvement", "fix"]}>
+  {/* commits: 6da07660, c2d5fec1, 2e8b5847, b5c9ec94, 735b6201, 6b62610d, 0850ba5f, 8999484d, 0d86e2bf, 60ae6fcc, 00a7f915, a12bbc5, 9084d7f, 22401c8 */}
+
+  **Release date:** November 5, 2026
+
+  ### New Features
+
+  #### [Choose to Offer No Downtime Reasons on a Machine](/en/platform-intro/pages/machine-configuration#downtime-reasons-for-this-machine)
+  {/* feature: empty-machine-reason-list */}
+
+  Administrators can now save **Machine Settings → Downtime reasons → Only selected reasons** with nothing ticked. Machine operators then cannot pick a downtime reason on that machine. **Apply to other machines** can copy this empty selection too, replacing the destinations' current lists.
+
+  Removing or deleting a machine's last selected reason leaves it with none. It no longer starts offering every reason. A reason offered nowhere shows **No machines** under **Available on**. Follow [manage machine reason selections](/en/platform-intro/workflows/timeline-reason-creation).
+
+  ### Improvements
+
+  #### [Check Shift Breaks and Overnight Times at a Glance](/en/platform-intro/pages/admin-panel#manage-shift-breaks)
+  {/* feature: shift-times-and-breaks */}
+
+  Administrators can review each break's times and length in the new **Breaks** column under **Admin Panel → Configure Shifts and Scheduling → Shifts**. No breaks shows a dash.
+
+  A shift ending before its start is valid: 10:00–09:00 lasts 23 hours and shows **Overnight shift · ends the next day**. Equal start and end times are not allowed: **Shift start and end time must be different.** A break inside a night shift, such as 23:30–00:15, shows **Break over midnight · ends the next day**. A break ending exactly at 00:00 does not show this hint.
+
+  In the shift editor, use the small − / + controls with a mouse or the wheel on a touch screen. Fully typed times now stay when you click elsewhere or press Tab; previously, the old time could return unless you pressed Enter. Each break must lie within the shift and last at most one hour. Problems appear below the affected break as you edit and block saving until corrected. Follow [Manage Shift Definitions](/en/platform-intro/workflows/shift-management).
+
+  #### [Edit Reason Details and Machine Availability Side by Side](/en/platform-intro/pages/admin-panel#manage-downtime-reasons)
+  {/* feature: downtime-reason-form */}
+
+  Administrators now see reason details on the left and **Available on machines** on the right under **Admin Panel → Configure Analyzers → Downtime reasons**. Machines appear by name, and the information icon beside the list title explains fixed lists. The chosen reason type is easier to read, and missing-name or reason-type notices use your language.
+
+  #### [Find Familiar Actions under Consistent Names](/en/platform-intro/pages/admin-panel)
+  {/* feature: consistent-user-terms */}
+
+  **Downtime reasons** (previously **Timeline Reasons**) and **Downtime reason rules** (previously **Timeline Rules**) now use consistent wording across the Watchmen Platform. The rule sections are **Rules for the Off state**, **Rules for the Idle state** and **Rules for the Preparation state**.
+
+  Buttons and dialogs now say **Add machine operator**, **Update machine operator** and **Deactivate machine operator**. Machine shift assignment uses **Select machine operator**. Leaderboard headings now say **Top OEE machine operators** (previously **Top OEE Operators**) and **Top performance machine operators** (previously **Top Performance Operators**). The ranking panel in Org Stats is titled **Machine operators** (previously **Operators**). PDA Assist and warning texts now say machine operator.
+
+  Administrators can open **Admin Panel → Configure Shifts and Scheduling → Machine operators** to manage accounts. Account notices now use your selected language. Follow [manage machine operator accounts](/en/platform-intro/workflows/operator-management).
+
+  ### Fixes
+
+  #### [Keep Automatic Reasons Within the Machine's Allowed List](/en/platform-intro/pages/machine-configuration#timeline-rules-and-ranges)
+  {/* feature: machine-reason-rules */}
+
+  Automatic rules no longer assign a reason that the machine does not offer; a rule naming an unavailable reason leaves the downtime without that reason. Under **Machine Settings → Downtime reason rules**, the old choice remains greyed out and marked **not available on this machine**, with a warning to choose another reason; see [review automatic rules](/en/platform-intro/workflows/timeline-reason-creation#automatic-rules).
+</Update>
+
 <Update label="2026-11-04" description="v1.5.151" tags={["improvement"]}>
   {/* commits: 0c61a6d */}
 

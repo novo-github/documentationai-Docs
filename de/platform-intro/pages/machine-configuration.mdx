@@ -20,7 +20,7 @@ Administratoren öffnen **Maschineneinstellungen** über das Zahnrad im Kopf der
 
 ## Was Sie sehen können
 
-- Vertikale Tabs für Bereiche wie Basisinformationen, AVA-Zuweisungen, Energieüberwachung, Bewertungen, Zeitachsenbereiche, Zeitachsenregeln und Funktionen.
+- Vertikale Tabs für Bereiche wie Basisinformationen, AVA-Zuweisungen, Energieüberwachung, Bewertungen, **Zeitspannen**, **Regeln für Stillstandsgründe** und Funktionen.
 - Anzeigen für nicht gespeicherte Änderungen an Tabs.
 
 ## Was Sie tun können
@@ -59,15 +59,23 @@ Administratoren stellen in den Basisinformationen der Maschine **Planung → Par
 
 Wählen Sie die tatsächliche Kapazität. Beispielsweise erlaubt 2 der Prognose, zwei Zuweisungen gleichzeitig einzuplanen. Folgen Sie [Maschine konfigurieren](/de/platform-intro/workflows/machine-configuration).
 
-## Zeitachsenregeln und Zeitbereiche
+<a id="zeitachsenregeln-und-zeitbereiche" />
+
+## Regeln für Stillstandsgründe und Zeitbereiche
 
 Administratoren können **Maschineneinstellungen → Regeln für Stillstandsgründe** prüfen. Ein vom Maschinenbediener gewählter oder von Hand gesetzter Grund hat Vorrang. Ist die [automatische Pausenkennzeichnung](/de/platform-intro/pages/break-settings) eingeschaltet, folgt der Grund einer passenden Pause. **Regeln für Stillstandsgründe** gelten für die übrige Zeit in Leerlauf oder Aus. Ohne passenden Grund bleibt die Zeit unbeschriftet.
 
 Seit dem 5. November 2026 (v1.5.153) greifen die Regeln bei mehr Stillständen in Leerlauf und Aus. Die Summen je Stillstandsgrund in Berichten und Diagrammen können sich daher bei Maschinen mit Regeln ändern. Stillstände vor der Aktualisierung bleiben unverändert. Siehe [automatische Regeln](/de/platform-intro/workflows/timeline-reason-creation#automatische-regeln).
 
-Für Aus, Leerlauf und Vorbereitung werden automatische Grundregeln in dieser Reihenfolge geprüft: spezifische Regel des Grundes, dessen **DEFAULT**-Regel, danach **Global**-Regeln. Konfigurieren Sie nur benötigte Regeln.
+Jede Maschine hat eigene Regeln unter **Regeln für den Status „Aus“**, **Regeln für den Status „Leerlauf“** und **Regeln für den Status „In Vorbereitung“**. Wählen Sie **Neue Regel hinzufügen**, wählen Sie einen Grund und legen Sie mit **zwischen** den Bereich für die Stillstandsdauer in Sekunden fest. Stellen Sie bei Bedarf den **Standardgrund** für diesen Status ein.
 
-**Timeline ranges / Time range** sind Dauerklassen, etwa 1–5 und 5–30 Minuten, für **Idletime Distribution**. Stillstandsgründe besitzen Typ- und Stufe-1–5-Felder; deren genaue Wirkung ist in der Referenz nicht belegt.
+Der Stillstand erhält zuerst den Grund der Regel, deren Zeitbereich passt. Passt kein Bereich, erhält er den **Standardgrund** des Status. Ergibt beides keinen Grund oder bietet die Maschine diesen Grund nicht an, erhält der Stillstand keinen automatischen Grund.
+
+Die Auswahl unter **Regeln für Stillstandsgründe** enthält nur auf dieser Maschine verfügbare Gründe sowie **Kein Grund** für eine Auswahl ohne Grund. Verwendet eine vorhandene Regel einen aus der Maschinenliste entfernten Grund, bleibt er ausgegraut mit **auf dieser Maschine nicht verfügbar** sichtbar. Eine Warnung über den Regeln fordert zur Wahl eines anderen Grundes auf. Andere nicht verfügbare Gründe erscheinen nicht in der Auswahl. Solange die nicht verfügbare Auswahl bleibt, erhält der Stillstand von dieser Regel keinen Grund. Ein vom Maschinenbediener gewählter Grund bleibt unberührt.
+
+Prüfen Sie nach einer Änderung der Grundliste **Regeln für den Status „Aus“**, **Regeln für den Status „Leerlauf“** und **Regeln für den Status „In Vorbereitung“**. Folgen Sie [automatische Regeln prüfen](/de/platform-intro/workflows/timeline-reason-creation#automatische-regeln).
+
+**Timeline ranges / Time range** sind Dauerklassen, etwa 1–5 und 5–30 Minuten, für **Idletime Distribution**.
 
 ## Einstellungen aktiver Schichten
 
@@ -119,9 +127,9 @@ Diese Optionen steuern auch **Intervalle verbessern**. Ist die Intervallhilfe au
 
 ### Wie Änderungen übernommen werden
 
-Wählen Sie unter **Wie Änderungen übernommen werden** zwischen **Bediener fragen** und **Automatisch das Beste wählen**, wenn mehrere Zeiten passen. Die automatische Auswahl nutzt den frühesten erlaubten Start oder das späteste erlaubte Ende. Bediener können eine automatische Anpassung mit **Rückgängig** aufheben oder über **Ändern…** eine andere Zeit wählen.
+Wählen Sie unter **Wie Änderungen übernommen werden** zwischen **Maschinenbediener fragen** und **Automatisch das Beste wählen**, wenn mehrere Zeiten passen. Die automatische Auswahl nutzt den frühesten erlaubten Start oder das späteste erlaubte Ende. Maschinenbediener können eine automatische Anpassung mit **Rückgängig** aufheben oder über **Ändern…** eine andere Zeit wählen.
 
-Stellen Sie **Automatisch übernehmen bis (Stunden)** und **Bediener fragen bis (Stunden)** ein. Beide erlauben 0,5–12 Stunden in halbstündigen Schritten und stehen standardmäßig auf 6 Stunden. Die Fragegrenze darf nicht kleiner als die automatische Grenze sein. Zeiten zwischen beiden Grenzen benötigen eine Auswahl. Ältere Zeiten werden nicht angeboten. Für das Ende des vorherigen Intervalls gelten zusätzlich die eigenen Lückenbedingungen.
+Stellen Sie **Automatisch übernehmen bis (Stunden)** und **Maschinenbediener fragen bis (Stunden)** ein. Beide erlauben 0,5–12 Stunden in halbstündigen Schritten und stehen standardmäßig auf 6 Stunden. Die Fragegrenze darf nicht kleiner als die automatische Grenze sein. Zeiten zwischen beiden Grenzen benötigen eine Auswahl. Ältere Zeiten werden nicht angeboten. Für das Ende des vorherigen Intervalls gelten zusätzlich die eigenen Lückenbedingungen.
 
 Öffnen Sie **Wie Änderungen übernommen werden → Wie werden die Zeiten gewählt?**, um die Grenzen dieser Maschine zu lesen und die sechs Beispiele anzusehen: **Später Start**, **Mehrere Zeiten**, **Kurze Lücke ignoriert**, **Aus zwischen Aufträgen**, **Später Stopp** und **Vergessener Stopp**. Mit **Zurück** und **Weiter** gehen Sie durch Maschinenaktivität, Bedienhandlung und Ergebnis.
 
@@ -133,9 +141,9 @@ Fehlende Daten unter 10 Minuten teilen einen Aktivitätsabschnitt nicht. Leerlau
 
 Aktivieren Sie **Vergessene Intervalle automatisch beenden**. Wählen Sie **aus** oder **aus oder im Leerlauf** und die Wartezeit. Bei aktivierter Einstellung läuft die Prüfung weiter, auch wenn niemand die BDE-Seite geöffnet hat. Nur Produktionsintervalle enden so, niemals Vorbereitungsintervalle.
 
-Das Ende wird auf den letzten Produktionszeitpunkt gesetzt. Wurde nichts produziert, gilt der Zeitpunkt, als die Maschine stoppte. Dabei werden keine Mengen gebucht und der Auftrag wird nicht abgeschlossen. Bediener müssen Mengen anschließend prüfen und buchen. Um automatisches Beenden zu verhindern, schalten Sie diese Option aus und wählen **Speichern**.
+Das Ende wird auf den letzten Produktionszeitpunkt gesetzt. Wurde nichts produziert, gilt der Zeitpunkt, als die Maschine stoppte. Dabei werden keine Mengen gebucht und der Auftrag wird nicht abgeschlossen. Maschinenbediener müssen Mengen anschließend prüfen und buchen. Um automatisches Beenden zu verhindern, schalten Sie diese Option aus und wählen **Speichern**.
 
-Kommt das automatische Ende vor der Warnung **Maschine aus, Auftrag läuft noch**, sehen Bediener diese Warnung nicht. Die Einstellungen weisen darauf hin. Das Pausieren einer Warnung oder Stummschalten des Tons schaltet automatisches Beenden nicht aus.
+Kommt das automatische Ende vor der Warnung **Maschine aus, Auftrag läuft noch**, sehen Maschinenbediener diese Warnung nicht. Die Einstellungen weisen darauf hin. Das Pausieren einer Warnung oder Stummschalten des Tons schaltet automatisches Beenden nicht aus.
 
 ### Warnungen einstellen
 
@@ -153,17 +161,17 @@ Aktivieren Sie **Warnungen**. Wählen Sie je Warnung Verzögerung, Schweregrad u
 
 **Mehrere Aufträge laufen** erscheint erst oberhalb der unter **Parallele Aufträge** eingestellten Anzahl. **Live-Daten veraltet** benötigt mindestens 5 Minuten Verzögerung. Andere Verzögerungen in Minuten benötigen mindestens 1 Minute.
 
-**Info** ist ein stiller Hinweis in der Warnungsliste. **Warnung** zeigt einen orangefarbenen Hinweis und orange leuchtende Seitenränder. **Kritisch** zeigt einen roten Hinweis mit blinkendem Bildschirmrand. **Pausieren** bestimmt, wie lange Bediener eine Warnung ausblenden und stummschalten können. Besteht das Problem weiter, kehrt sie danach zurück.
+**Info** ist ein stiller Hinweis in der Warnungsliste. **Warnung** zeigt einen orangefarbenen Hinweis und orange leuchtende Seitenränder. **Kritisch** zeigt einen roten Hinweis mit blinkendem Bildschirmrand. **Pausieren** bestimmt, wie lange Maschinenbediener eine Warnung ausblenden und stummschalten können. Besteht das Problem weiter, kehrt sie danach zurück.
 
-Öffnen Sie das Informationssymbol neben einer Warnung mit dem Zeiger, dem Tastaturfokus oder durch Antippen. **Wann sie erscheint** zeigt die Verzögerung ab dem auslösenden Ereignis. Bei der Warnung für eine ausgeschaltete Maschine zeigt eine zweite Markierung das automatische Ende, sofern aktiviert. **Was der Bediener sieht** zeigt den gewählten Schweregrad und bei eingeschaltetem Ton einen Lautsprecher. Die Vorschau folgt den angezeigten Einstellungen einschließlich ungespeicherter Änderungen. Sie blinkt nicht und spielt keinen Alarm ab.
+Öffnen Sie das Informationssymbol neben einer Warnung mit dem Zeiger, dem Tastaturfokus oder durch Antippen. **Wann sie erscheint** zeigt die Verzögerung ab dem auslösenden Ereignis. Bei der Warnung für eine ausgeschaltete Maschine zeigt eine zweite Markierung das automatische Ende, sofern aktiviert. **Was der Maschinenbediener sieht** zeigt den gewählten Schweregrad und bei eingeschaltetem Ton einen Lautsprecher. Die Vorschau folgt den angezeigten Einstellungen einschließlich ungespeicherter Änderungen. Sie blinkt nicht und spielt keinen Alarm ab.
 
-**So sehen Bediener Warnungen** vergleicht die drei Schweregrade. Die schwebende Warnungs-Schaltfläche unten links listet alle aktiven Warnungen und erlaubt deren Zurückstellen.
+**So sehen Maschinenbediener Warnungen** vergleicht die drei Schweregrade. Die schwebende Warnungs-Schaltfläche unten links listet alle aktiven Warnungen und erlaubt deren Zurückstellen.
 
 ### Alarmton
 
 Aktivieren Sie **Alarmton** und den Lautsprecher jeder Warnung, die hörbar sein soll. **Info** bleibt stumm. Wählen Sie Lautstärke, Wiederholungsabstand und die Beschränkung auf aktive Schichten. Testen Sie die Lautstärke: **Warnung** spielt zwei Töne, **Kritisch** drei wechselnde hohe und tiefe Töne.
 
-Der Ton wiederholt sich, bis die Warnung erledigt oder pausiert ist. Bediener können ihr Gerät stummschalten. Der Browser benötigt einen Tipp auf die Seite, bevor er Ton abspielen kann. Manche Browser können keine Alarmtöne abspielen.
+Der Ton wiederholt sich, bis die Warnung erledigt oder pausiert ist. Maschinenbediener können ihr Gerät stummschalten. Der Browser benötigt einen Tipp auf die Seite, bevor er Ton abspielen kann. Manche Browser können keine Alarmtöne abspielen.
 
 ### Einstellungen zurücksetzen, speichern und kopieren
 
@@ -176,9 +184,9 @@ Der Ton wiederholt sich, bis die Warnung erledigt oder pausiert ist. Bediener k�
 Administratoren nutzen **Maschineneinstellungen → Stillstandsgründe** für Maschinen und Arbeitsplätze. Speichern Sie eine neue Maschine, bevor Sie ihre Gründe festlegen.
 
 - **Alle Gründe (Standard)** bietet jeden Unternehmensgrund an, auch später angelegte Gründe.
-- **Nur ausgewählte Gründe** bietet eine feste Liste an. Wählen Sie vor dem Speichern mindestens einen Grund. Suchen Sie nach Code oder Grund und filtern Sie nach Kategorie. **Alle sichtbaren auswählen** ergänzt die sichtbaren Gründe. Das Leeren der Auswahl entfernt alle Häkchen, auch ausgeblendete.
+- **Nur ausgewählte Gründe** bietet eine feste Liste an. Sie können sie ohne ausgewählten Grund speichern. Maschinenbediener können dann auf dieser Maschine keinen Stillstandsgrund wählen. Suchen Sie nach Code oder Grund und filtern Sie nach Kategorie. **Alle sichtbaren auswählen** ergänzt die sichtbaren Gründe. Das Leeren der Auswahl entfernt alle Häkchen, auch ausgeblendete.
 
-Speichern Sie den Tab für diese Maschine. **Auf andere Maschinen übertragen** ersetzt die Listen der Zielmaschinen durch die aktuelle Auswahl oder den Modus für alle Gründe. Prüfen Sie vor der Bestätigung die Ziele.
+Speichern Sie den Tab für diese Maschine. **Auf andere Maschinen übertragen** ersetzt die Listen der Zielmaschinen durch die aktuelle Auswahl oder den Modus für alle Gründe. Eine leere Auswahl ersetzt die Listen der Zielmaschinen durch eine Liste ohne Gründe. Prüfen Sie vor der Bestätigung die Ziele.
 
 **Neuer Grund** öffnet das gemeinsame Formular. Die aktuelle Maschine ist unter **Verfügbar auf Maschinen** vorausgewählt. Lassen Sie sie ausgewählt, wenn der Grund hier verfügbar sein soll. Änderungen an Name, Code, Kategorie oder Farbe gelten für alle Maschinen, die den Grund verwenden. [Stillstandsgründe erstellen und verwalten](/de/platform-intro/workflows/timeline-reason-creation) erklärt Verfügbarkeit und Löschfolgen.
 
@@ -190,7 +198,7 @@ Die Auswahl begrenzt sowohl die manuell zuweisbaren Gründe als auch die Gründe
 - Halle
 - Schichtgruppe
 - Energie-Monitor
-- Zeitachsenregel
+- Regeln für Stillstandsgründe
 - Funktion
 
 ## Ergebnisse und Grenzen

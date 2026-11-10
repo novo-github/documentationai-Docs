@@ -42,7 +42,7 @@ Eine [BDE-Zugriffsvorlage](/de/platform-intro/pages/bde-access-templates) kann A
   <Step title="Geben Sie die produzierte Menge und weitere Abschlussdetails ein" icon="arrow-right" title-type="p">
     Geben Sie **Gutmenge**, **Material-Ausschuss** und **Arbeits-Ausschuss** ein. **Weiter** bucht und startet sofort ein neues Intervall. **Stopp** bucht und beendet es. Erscheint nach **Stopp** die Frage **Geplante Menge erreicht**, wählen Sie **Abschließen** oder **In Wartestellung lassen**. Siehe [Mengen und Abschluss prüfen](/de/platform-intro/workflows/data-acquisition#mengen-und-abschluss-prüfen).
   </Step>
-  <Step title="Wenden Sie Zeitachsen-Gründe an" icon="arrow-right" title-type="p">
+  <Step title="Wählen Sie Stillstandsgründe" icon="arrow-right" title-type="p">
     Ergänzen Sie Gründe in der Zeitleiste, wenn Stillstand oder besondere Ereignisse erklärt werden müssen. Prüfen Sie nach Wechseln zwischen laufender, pausierter und gestoppter Produktion die Leerlauf- und Stillstandseinträge, damit die Aufzeichnung dem tatsächlichen Ablauf entspricht.
   </Step>
   <Step title="Prüfen Sie offene Tickets oder Wissenseinträge, wenn der Fall Unterstützungskontext benötigt" icon="arrow-right" title-type="p">
@@ -111,7 +111,7 @@ Bei **Dieser Arbeitsgang wurde inzwischen geändert. Die Liste wurde aktualisier
 1. Wählen Sie während des laufenden Stillstands unter **Stillstandsgründe** eine Kachel oder tippen Sie auf den neuesten Timeline-Abschnitt und wählen Sie einen Grund. Lesen Sie Code und Name. Grenzen Sie die Liste bei Bedarf mit den angebotenen Kategorien ein.
 2. Prüfen Sie den Tooltip des laufenden Stillstands in der Timeline. Ihr Grund bleibt nach einer Seitenaktualisierung sichtbar, auch wenn der Stillstand vor den letzten 8 Stunden begonnen hat, die die Timeline zeigt. Beim Wiederanlaufen wird der Grund diesem Stillstand zugeordnet. Werden die Kacheln kurz danach noch angeboten, können Sie noch einen Grund für den gerade beendeten Stillstand wählen.
 3. Zum Korrigieren einer bestehenden Zuordnung öffnen Sie die Grundauswahl des Zeitraums. Wählen Sie einen verfügbaren Grund oder **Grund entfernen** zum Aufheben der Zuordnung.
-4. Wird der Grund wegen geänderter Verfügbarkeit abgelehnt, prüfen Sie die aktualisierte Liste und wählen Sie erneut. Fehlt der benötigte Grund, fragen Sie einen Administrator. Siehe [Fragen zu Stillstandsgründen](/de/help-center/faq/downtime-reasons).
+4. Wird der Grund wegen geänderter Verfügbarkeit abgelehnt, prüfen Sie die aktualisierte Liste und wählen Sie erneut. Fehlt der benötigte Grund, fragen Sie einen Administrator. Die Maschine kann bewusst keine Gründe anbieten. Sie können erst einen wählen, wenn ein Administrator diese Auswahl ändert. Siehe [Fragen zu Stillstandsgründen](/de/help-center/faq/downtime-reasons).
 
 Wählt der Maschinenbediener nach dem Ende des Stillstands einen Grund, ersetzt dieser den Pausengrund für den gesamten Stillstand. Das gilt auch, wenn der Stillstand um die Pause herum in Abschnitte aufgeteilt wurde. Abschnitte, deren Grund jemand von Hand gesetzt oder entfernt hat, behalten diese Auswahl. Das Setzen oder Entfernen eines Grundes von Hand schützt diese Auswahl vor automatischer Kennzeichnung.
 
@@ -121,7 +121,7 @@ Ein vom Maschinenbediener gewählter oder von Hand gesetzter Grund hat Vorrang. 
 
 In der Betriebsdatenerfassung V3 muss die Vorlage **Zeiten und Mengen von Intervallen korrigieren** erlauben. Andernfalls können Sie die Intervallliste nur lesen. Die Bearbeitung in der Auftragsverwaltung bleibt von dieser Vorlage unberührt.
 
-Sie benötigen Zugriff auf die Betriebsdatenerfassung V3 der Maschine oder auf die Auftragsseite, wenn Sie in der Auftragsverwaltung bearbeiten. Das Intervall muss bereits vorhanden sein. Operatoren verwenden die Betriebsdatenerfassung.
+Sie benötigen Zugriff auf die Betriebsdatenerfassung V3 der Maschine oder auf die Auftragsseite, wenn Sie in der Auftragsverwaltung bearbeiten. Das Intervall muss bereits vorhanden sein. Maschinenbediener verwenden die Betriebsdatenerfassung.
 
 <Steps>
   <Step title="Öffnen Sie die Intervallbearbeitung" icon="arrow-right" title-type="p">
@@ -226,7 +226,7 @@ Für Pool-Arbeit muss **Aufträge aus dem Hallen-Pool übernehmen** erlaubt sein
 4. Geben Sie in **Cumulative** den ganzen Zählerstand ein, etwa 1450, statt des Zuwachses.
 5. Prüfen Sie nach **Stopp** die Mengen. Erscheint **Geplante Menge erreicht**, wählen Sie **Abschließen** oder **In Wartestellung lassen**. Ergänzen Sie bei Stillstand einen Stillstandsgrund.
 
-Intervalllöschung ist endgültig. Operatoren können Aufträge & Produkte oder Alarmregeln nicht öffnen. Nutzen Sie freigegebene BDE-Ansichten oder fragen Sie Ihre Administration. [Warnungen von BDE Assist](/de/platform-intro/pages/data-acquisition) können veraltete Daten und unpassende Maschinen-/Auftragszustände melden.
+Intervalllöschung ist endgültig. Maschinenbediener können Aufträge & Produkte oder Alarmregeln nicht öffnen. Nutzen Sie freigegebene BDE-Ansichten oder fragen Sie Ihre Administration. [Warnungen von BDE Assist](/de/platform-intro/pages/data-acquisition) können veraltete Daten und unpassende Maschinen-/Auftragszustände melden.
 
 ## Auf eine Assistentenwarnung reagieren
 
@@ -271,7 +271,7 @@ Die Maschinen-Zeitleiste, die Intervallliste und die Produktionsdaten spiegeln d
 - Sie können ein gespeichertes Intervallende nicht entfernen. Beenden Sie ein laufendes Intervall mit der normalen Stoppaktion.
 - Benutzer müssen möglicherweise ein Intervall stoppen, bevor sie zu einem anderen wechseln.
 - Fehlende Produktions-, Ausschuss- oder Grundangaben können die Produktionsgeschichte unvollständig lassen.
-- Ein Live-Problem kann sowohl einen Zeitachsen-Grund als auch ein Support-Ticket benötigen.
+- Ein Live-Problem kann sowohl einen Stillstandsgrund als auch ein Support-Ticket benötigen.
 - Die erfasste Gesamtproduktion enthält die eingegebenen Ausschussmengen.
 
 ## Verwandte Seiten

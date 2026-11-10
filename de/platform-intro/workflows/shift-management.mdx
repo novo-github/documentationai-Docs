@@ -23,16 +23,20 @@ Beginnen Sie auf dem [Administrationsbereich](/de/platform-intro/pages/admin-pan
 
 <Steps>
   <Step title="Öffnen Sie den Bereich zur Schichtverwaltung" icon="arrow-right" title-type="p">
-    Öffnen Sie **Admin-Panel → Schichten und Zeitplanung konfigurieren**.
+    Öffnen Sie **Admin-Panel → Schichten und Zeitplanung konfigurieren → Schichten**.
   </Step>
   <Step title="Erstellen oder bearbeiten Sie die benötigten Schichten" icon="arrow-right" title-type="p">
-    Erstellen oder bearbeiten Sie die benötigten Schichten.
+    Geben Sie Beginn und Ende der Schicht sowie die Zeiten jeder Pause ein. Vollständig eingegebene Uhrzeiten bleiben beim Klicken auf eine andere Stelle oder mit Tab erhalten. Sie können auch kleine − / + Schaltflächen mit der Maus oder das Drehrad auf einem Touchscreen nutzen.
+
+    Liegt das Ende vor dem Beginn, läuft die Schicht bis zum nächsten Tag und der Hinweis **Über Mitternacht · endet am nächsten Tag** erscheint automatisch. Beispielsweise ist 10:00–09:00 eine gültige Schicht mit 23 Stunden. Beginn und Ende dürfen nicht gleich sein. Eine gültige Pause von 23:30 bis 00:15 innerhalb einer Nachtschicht zeigt **Pause über Mitternacht · endet am nächsten Tag** und dauert 45 Minuten. Bei einem Pausenende genau um 00:00 erscheint dieser Hinweis nicht.
+
+    Jede Pause muss innerhalb der Schicht liegen und darf höchstens eine Stunde dauern. Korrigieren Sie vor dem Speichern alle Meldungen unter einer Pause.
   </Step>
   <Step title="Gruppieren Sie Schichten dort, wo die Plattform eine wiederverwendbare Schichtgruppe erwartet" icon="arrow-right" title-type="p">
     Gruppieren Sie Schichten dort, wo die Plattform eine wiederverwendbare Schichtgruppe erwartet.
   </Step>
   <Step title="Speichern Sie die Änderung" icon="arrow-right" title-type="p">
-    Speichern Sie die Änderung.
+    Speichern Sie die Änderung. Prüfen Sie Zeiten und Länge jeder Pause in der Spalte **Pausen**. Ein Strich bedeutet, dass die Schicht keine Pausen hat.
   </Step>
   <Step title="Prüfen Sie Maschinen- oder Planeransichten erneut" icon="arrow-right" title-type="p">
     Prüfen Sie Maschinen- oder Planeransichten erneut, wenn die neuen Schichten sofort angewendet werden sollen.
@@ -53,7 +57,7 @@ Nutzen Sie diesen Ablauf, wenn Stillstände in Leerlauf oder Aus während geplan
 
 <Steps>
   <Step title="Schalten Sie die Pausenkennzeichnung ein" icon="arrow-right" title-type="p">
-    Öffnen Sie **Admin-Panel → Schichten und Zeitplanung konfigurieren** und wählen Sie **Pauseneinstellungen** direkt links neben **Schicht hinzufügen**. Schalten Sie **Pausen automatisch kennzeichnen** ein. Die Funktion ist anfangs ausgeschaltet.
+    Öffnen Sie **Admin-Panel → Schichten und Zeitplanung konfigurieren → Schichten** und wählen Sie **Pauseneinstellungen** direkt links neben **Schicht hinzufügen**. Schalten Sie **Pausen automatisch kennzeichnen** ein. Die Funktion ist anfangs ausgeschaltet.
   </Step>
   <Step title="Wählen Sie den Zeitraum für den Grund" icon="arrow-right" title-type="p">
     Beginnen Sie mit **Nur die Pause kennzeichnen (empfohlen)** und einer **Toleranz** von 0 bis 15 Minuten vor und nach der Pause. Beim ersten Einschalten sind 5 Minuten vorausgewählt. Wählen Sie **Den ganzen Stillstand kennzeichnen** nur, wenn der gesamte überlappende Stillstand den Pausengrund erhalten soll, auch eine längere Störung. Wählen Sie **Speichern**.

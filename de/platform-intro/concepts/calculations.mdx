@@ -32,16 +32,16 @@ Eine Multiplikation dieser Verhältnisse mit 95 % Qualität ergäbe **32,57 %**.
 
 ## Zykluszeiten und Intervallleistung
 
-Ein **Intervall (Interval)** ist ein erfasster Arbeitsabschnitt einer Zuweisung. Ein **Zyklus (Cycle)** wird vom Maschinensensor erkannt; eine Bedienereingabe ist eine separate Mengenquelle.
+Ein **Intervall (Interval)** ist ein erfasster Arbeitsabschnitt einer Zuweisung. Ein **Zyklus (Cycle)** wird vom Maschinensensor erkannt; eine Eingabe eines Maschinenbedieners ist eine separate Mengenquelle.
 
 | Kennzahl | Berechnung | Bedeutung |
 | --- | --- | --- |
 | **Intervallleistung (Interval Performance)** | Produktionszeit / gesamte Intervalldauer × 100 | Anteil tatsächlicher Produktion am Arbeitsabschnitt. |
 | **Avg. Cycle Duration** | Gesamte Intervalldauer / erkannte Zyklen | Enthält Pausen und Beladen. |
 | **Avg. Production Cycle Time** | Aktive Produktionszeit / erkannte Zyklen | Aktive Bearbeitungszeit je erkanntem Zyklus. |
-| **Avg. Cycle Time (Operator Input)** | Produktionszeit / eingegebene Menge | Verwendet gebuchte Mengen statt Sensorzyklen. |
+| **Durchschnittliche Zykluszeit (Maschinenbediener-Eingabe)** | Produktionszeit / eingegebene Menge | Verwendet gebuchte Mengen statt Sensorzyklen. |
 
-**Beispiel:** Ein 60-minütiges Intervall enthält 40 Minuten Produktion, 20 erkannte Zyklen und 16 eingegebene Teile. Die Intervallleistung beträgt **66,67 %**. Avg. Cycle Duration beträgt **180 Sekunden**, Avg. Production Cycle Time **120 Sekunden** und Avg. Cycle Time (Operator Input) **150 Sekunden**. Diese Werte beantworten unterschiedliche Fragen.
+**Beispiel:** Ein 60-minütiges Intervall enthält 40 Minuten Produktion, 20 erkannte Zyklen und 16 eingegebene Teile. Die Intervallleistung beträgt **66,67 %**. Avg. Cycle Duration beträgt **180 Sekunden**, Avg. Production Cycle Time **120 Sekunden** und Durchschnittliche Zykluszeit (Maschinenbediener-Eingabe) **150 Sekunden**. Diese Werte beantworten unterschiedliche Fragen.
 
 Zykluszeiten werden in Sekunden angezeigt. Bei null Zyklen oder null eingegebenen Teilen ist kein aussagekräftiger Durchschnitt berechenbar. Zyklen außerhalb erfasster Intervalle und Unterschiede zwischen Eingaben und Sensorzyklen helfen, Abweichungen zu erklären. Prüfen Sie diese in der [Auftragsanalyse](/de/platform-intro/pages/order-detail).
 
@@ -68,7 +68,7 @@ Bei einem auf mehrere Maschinen verteilten Auftrag wird jede Maschine mit ihrem 
 
 **Gesamtmenge auf Zuweisungskarten = Eingabemenge + Materialausschuss (Mat. / MA) + Fertigungsausschuss (Work / AA).** Zum Beispiel ergeben 95 eingegebene Gutteile + 3 Materialausschussteile + 2 Fertigungsausschussteile insgesamt **100**. **Rework Qty** bezeichnet Nacharbeit; eine Regel zum Addieren dieser Menge zur Gesamtsumme ist hier nicht belegt.
 
-**PDA Entry / BDE-Eintrag** verwendet Bedienerbuchungen; **Cycle Count** verwendet Sensorzählungen. Ein Wechsel der Fortschrittsquelle ändert die Anzeige, nicht die Buchungen. Im Modus **Cumulative** geben Sie den gesamten Zählerstand ein, etwa 1450, statt des Zuwachses im aktuellen Intervall.
+**PDA Entry / BDE-Eintrag** verwendet Buchungen von Maschinenbedienern; **Cycle Count** verwendet Sensorzählungen. Ein Wechsel der Fortschrittsquelle ändert die Anzeige, nicht die Buchungen. Im Modus **Cumulative** geben Sie den gesamten Zählerstand ein, etwa 1450, statt des Zuwachses im aktuellen Intervall.
 
 **Gewöhnliche Minuten = Industrieminuten × 0,6.** Eine Industrieminute ist ein Hundertstel einer Stunde. **500 Industrieminuten = 300 gewöhnliche Minuten = 5 Stunden.** Verwenden Sie die Umrechnung nicht für Dateien, die bereits gewöhnliche Minuten enthalten. Siehe [ERP-Upload-Planer](/de/platform-intro/pages/erp-upload-planner).
 

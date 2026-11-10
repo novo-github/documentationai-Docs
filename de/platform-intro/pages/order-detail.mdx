@@ -5,7 +5,7 @@ description: "Prüfen und bearbeiten Sie einen Produktionsauftrag, seine Arbeits
 
 ## Überblick
 
-**Zugriff:** Wie Aufträge & Produkte: Admin oder `orders`; nie Operator. [Rollen und Zugriff](/de/platform-intro/concepts/roles-and-access).
+**Zugriff:** Wie Aufträge & Produkte: Admin oder ein User mit Seitenzugriff auf **Aufträge & Produkte**; kein Zugriff für Maschinenbediener. [Rollen und Zugriff](/de/platform-intro/concepts/roles-and-access).
 
 Prüfen und bearbeiten Sie einen Produktionsauftrag, seine Arbeitsaufträge, Arbeitsgänge und Zuweisungen. Verbinden Sie mithilfe der Notizen, Zeitleiste und Analyseansichten den Produktionsplan mit der erfassten Arbeit.
 
@@ -85,7 +85,7 @@ Lange angehaltene, nie gestartete Arbeitsgänge und solche ohne geplanten Start 
 
 ## Details in der Zeitleiste lesen
 
-Zeigen Sie auf ein Intervall oder einen Maschinenzustand, um **Start**, **Ende** und **Dauer** zu lesen. Ein Intervall zeigt außerdem vorhandene Auftrags-, Mengen- und Bedienerangaben. **Maschinenzustände** erklärt die Maschinenaktivität während des gebuchten Intervalls. Ein Zustand zeigt seinen **Grund**, wenn einer erfasst wurde. Fehlende Werte werden ausgelassen.
+Zeigen Sie auf ein Intervall oder einen Maschinenzustand, um **Start**, **Ende** und **Dauer** zu lesen. Ein Intervall zeigt außerdem vorhandene Angaben zu Auftrag, Menge und Maschinenbediener. **Maschinenzustände** erklärt die Maschinenaktivität während des gebuchten Intervalls. Ein Zustand zeigt seinen **Grund**, wenn einer erfasst wurde. Fehlende Werte werden ausgelassen.
 
 Datum und Uhrzeit verwenden Tag/Monat/Jahr und Stunden/Minuten. Dauern unter einer Minute erscheinen nur in Sekunden. Zeigen Sie auf die Signallinie, um Messwerte zu dieser Zeit zu lesen. Ein Zykluspunkt zeigt **Zyklus**, **Zeit** und **Dauer** oder **Zyklen** für die stündliche Anzahl.
 
@@ -126,7 +126,7 @@ Folgen Sie [Ein Intervall korrigieren](/de/platform-intro/workflows/data-acquisi
 
 **Gesamt = Eingabe + Mat. (MA) + Work (AA)**. **Sum / Summ.** ist eine Summenzeile; **Avg. / Ø** ein Durchschnitt. **Auto.** in Cycles (Auto. / Planned) bedeutet sensorerkannte Zyklen.
 
-**Avg. Cycle Duration** verwendet gesamte Intervalldauer / erkannte Zyklen, **Avg. Production Cycle Time** Produktionszeit / erkannte Zyklen und **Avg. Cycle Time (Operator Input)** Produktionszeit / Eingabemenge. Zyklusdurchschnitte erscheinen in Sekunden. Abweichungen sind Istzeit minus Planzeit, angezeigt in Minuten und Sekunden. Negative Zeitabweichung bedeutet schneller.
+**Avg. Cycle Duration** verwendet gesamte Intervalldauer / erkannte Zyklen, **Avg. Production Cycle Time** Produktionszeit / erkannte Zyklen und **Durchschnittliche Zykluszeit (Maschinenbediener-Eingabe)** Produktionszeit / Eingabemenge. Zyklusdurchschnitte erscheinen in Sekunden. Abweichungen sind Istzeit minus Planzeit, angezeigt in Minuten und Sekunden. Negative Zeitabweichung bedeutet schneller.
 
 Prüfen Sie **Cycles found outside the intervals** und **Products more / less produced than detected**, um Sensor-/Buchungsunterschiede zu untersuchen. Bei verteilten Aufträgen wird geplante Produktion je Maschine anhand ihrer zugewiesenen Menge berechnet. [Berechnungen](/de/platform-intro/concepts/calculations) enthält Rechenbeispiele.
 

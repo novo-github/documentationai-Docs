@@ -43,8 +43,8 @@ For a **Work center**, use the kind-switching steps below and skip AVA and senso
   <Step title="Set ratings" icon="arrow-right" title-type="p">
     Set ratings so dashboards can compare live results against target expectations.
   </Step>
-  <Step title="Define timeline ranges and timeline rules" icon="arrow-right" title-type="p">
-    Define timeline ranges and timeline rules so machine states are interpreted consistently.
+  <Step title="Define Timeline Ranges and downtime reason rules" icon="arrow-right" title-type="p">
+    Define **Timeline Ranges** and **Downtime reason rules** so machine states are interpreted consistently.
   </Step>
   <Step title="Adjust machine-specific feature settings" icon="arrow-right" title-type="p">
     Adjust feature settings where the platform exposes machine-specific analytical thresholds.
@@ -109,13 +109,13 @@ Configure **PDA Assist** using the warning setup steps below. See [Machine Confi
     As an administrator, open **PDA Assist** and tick **Interval assist**. With no saved options, start and end correction are preselected. Review them before saving. Under **Start time** and **End time**, set the production and setup groups separately. For setup, choose the previous order’s end, switch-on, or production stop as appropriate. Select **When production started** if setup should end at production start. Review gap conditions in [Machine Configuration](/en/platform-intro/pages/machine-configuration).
   </Step>
   <Step title="Choose when to ask" icon="arrow-right" title-type="p">
-    Under **How changes are applied**, choose **Ask the operator** or **Pick the best automatically**. Set the automatic and asking limits in hours. Older times between those limits always require a choice. Open **How are the times chosen?**, choose an example, and use **Back** and **Next** to check the result against this machine’s limits.
+    Under **How changes are applied**, choose **Ask the machine operator** or **Pick the best automatically**. Set the automatic and asking limits in hours. Older times between those limits always require a choice. Open **How are the times chosen?**, choose an example, and use **Back** and **Next** to check the result against this machine’s limits.
   </Step>
   <Step title="Check automatic ending" icon="arrow-right" title-type="p">
     If using **Auto-end forgotten intervals**, set the off or idle condition and waiting time. It affects production only and does not book quantities. To stop automatic ending, turn this option off. Check whether it comes before the off-machine warning.
   </Step>
   <Step title="Set warnings and sound" icon="arrow-right" title-type="p">
-    Tick **Warnings**. With no saved options, three recommended warnings are preselected. Review each warning’s delay and severity. Enable **Alarm sound** and the speaker for each warning that should sound. **Info** stays silent. Set **Snooze** and test the volume. Open each warning’s information icon. Compare **When it appears** with **What the operator sees** before saving; the preview uses your unsaved choices. Check whether automatic ending comes before the warning.
+    Tick **Warnings**. With no saved options, three recommended warnings are preselected. Review each warning’s delay and severity. Enable **Alarm sound** and the speaker for each warning that should sound. **Info** stays silent. Set **Snooze** and test the volume. Open each warning’s information icon. Compare **When it appears** with **What the machine operator sees** before saving; the preview uses your unsaved choices. Check whether automatic ending comes before the warning.
   </Step>
   <Step title="Save or reset" icon="arrow-right" title-type="p">
     Select **Save** for this machine. To restore one section, open it, select **Reset to defaults**, and confirm. Its on/off selection stays unchanged. Select **Save** to keep the reset.
@@ -125,7 +125,7 @@ Configure **PDA Assist** using the warning setup steps below. See [Machine Confi
   </Step>
 </Steps>
 
-Open the machine’s PDA page to check the result. Tap **PDA Assist** at the right edge to see what is enabled for the operator. Follow [Run Data Acquisition](/en/platform-intro/workflows/data-acquisition) for choices and warning actions. For reason selection, follow [Create and Manage Downtime Reasons](/en/platform-intro/workflows/timeline-reason-creation).
+Open the machine’s PDA page to check the result. Tap **PDA Assist** at the right edge to see what is enabled for the machine operator. Follow [Run Data Acquisition](/en/platform-intro/workflows/data-acquisition) for choices and warning actions. For reason selection, follow [Create and Manage Downtime Reasons](/en/platform-intro/workflows/timeline-reason-creation).
 
 ## Decision Points
 

@@ -24,23 +24,32 @@ Prüfen Sie vorhandene Gründe vor dem Anlegen. Stimmen Sie Namen und Codes mit 
     Öffnen Sie als Administrator **Maschineneinstellungen → Stillstandsgründe**. Sie können Gründe auch unter **Admin-Panel → Analysatoren konfigurieren → Stillstandsgründe** anlegen und bearbeiten. Siehe [Admin-Panel](/de/platform-intro/pages/admin-panel).
   </Step>
   <Step title="Wählen Sie alle Gründe oder eine feste Liste" icon="arrow-right" title-type="p">
-    Mit **Alle Gründe (Standard)** erscheinen später angelegte Gründe automatisch. Wählen Sie alternativ **Nur ausgewählte Gründe** und mindestens einen Grund. Nutzen Sie Suche und Filter. **Alle sichtbaren auswählen** ergänzt sichtbare Gründe. Leeren entfernt die gesamte Auswahl.
+    Mit **Alle Gründe (Standard)** erscheinen später angelegte Gründe automatisch. Wählen Sie alternativ **Nur ausgewählte Gründe** und die gewünschten Gründe. Lassen Sie alles abgewählt, wenn die Maschine keine Stillstandsgründe anbieten soll. Nutzen Sie Suche und Filter. **Alle sichtbaren auswählen** ergänzt sichtbare Gründe. Leeren entfernt die gesamte Auswahl.
   </Step>
   <Step title="Erstellen oder bearbeiten Sie einen Grund" icon="arrow-right" title-type="p">
     Nutzen Sie **Neuer Grund** oder die Bearbeitungsaktion neben einem Grund. Geben Sie Name und Beschreibung ein. Der optionale **Code** muss im Unternehmen eindeutig sein und wird in Großbuchstaben gespeichert. Wählen oder ergänzen Sie eine **Kategorie**. Nutzen Sie **Farbe wählen**, einen eingegebenen Farbwert oder **Zufällige Farbe**.
   </Step>
   <Step title="Wählen Sie die Verfügbarkeit" icon="arrow-right" title-type="p">
-    Wählen Sie unter **Verfügbar auf Maschinen**, wo der Grund angeboten werden soll. Beim Anlegen aus den Maschineneinstellungen ist diese Maschine vorausgewählt. Wählen Sie eine mit **Alle Gründe** markierte Maschine ab, erhält sie eine feste Liste der übrigen aktuellen Gründe. Später angelegte Gründe erscheinen dort nicht mehr automatisch.
+    Wählen Sie unter **Verfügbar auf Maschinen**, wo der Grund angeboten werden soll. Beim Anlegen aus den Maschineneinstellungen ist diese Maschine vorausgewählt. Wählen Sie eine Maschine ab, die bisher alle Gründe anbietet, erhält sie eine feste Liste der übrigen aktuellen Gründe. Später angelegte Gründe erscheinen dort nicht mehr automatisch.
   </Step>
   <Step title="Speichern und prüfen Sie die Maschinenauswahl" icon="arrow-right" title-type="p">
     Speichern Sie den Grund und prüfen Sie die Auswahl der Maschine. Speichern Sie den Tab, falls noch ungespeicherte Änderungen bestehen. Wurde der Grund angelegt, aber seine Maschinenauswahl nicht gespeichert, bearbeiten Sie ihn weiter. Prüfen und speichern Sie die Liste erneut. Legen Sie kein Duplikat an.
   </Step>
   <Step title="Übertragen Sie die Auswahl auf andere Maschinen" icon="arrow-right" title-type="p">
-    Nutzen Sie **Auf andere Maschinen übertragen**, wählen Sie Ziele und prüfen Sie den Ersetzungshinweis. Die Bestätigung ersetzt deren Listen durch die aktuelle Auswahl oder den Modus für alle Gründe. Prüfen Sie das Ergebnis.
+    Nutzen Sie **Auf andere Maschinen übertragen**, wählen Sie Ziele und prüfen Sie den Ersetzungshinweis. Die Bestätigung ersetzt deren Listen durch die aktuelle Auswahl oder den Modus für alle Gründe. Eine leere feste Liste lässt alle gewählten Zielmaschinen ohne Gründe. Prüfen Sie das Ergebnis.
   </Step>
 </Steps>
 
 ## Automatische Regeln
+
+<Steps>
+  <Step title="Prüfen Sie Regeln nach einer Änderung der Verfügbarkeit" icon="arrow-right" title-type="p">
+    Öffnen Sie **Maschineneinstellungen → Regeln für Stillstandsgründe**. Prüfen Sie die Warnung über den Regeln und ausgegraute Gründe mit **auf dieser Maschine nicht verfügbar**.
+  </Step>
+  <Step title="Wählen Sie einen verfügbaren Grund und speichern Sie" icon="arrow-right" title-type="p">
+    Angeboten werden nur Gründe dieser Maschine. Ein nicht verfügbarer Grund bleibt nur ausgegraut sichtbar, wenn eine vorhandene Regel ihn bereits verwendet. Ersetzen Sie diese Auswahl durch einen angebotenen Grund. Wählen Sie **Kein Grund**, wenn kein Grund vergeben werden soll. Speichern Sie die Regeln. Solange die alte Auswahl bleibt, wird ihr nicht verfügbarer Grund nicht automatisch vergeben.
+  </Step>
+</Steps>
 
 Maschinenauswahlen begrenzen auch die Gründe für automatische Regeln und Schichtpausen. Richten Sie die Regeln in der [Maschinenkonfiguration](/de/platform-intro/pages/machine-configuration) ein.
 
@@ -68,16 +77,16 @@ Um nur den Grund eines Stillstands zu entfernen, wählen Sie dort **Grund entfer
 
 ## Entscheidungspunkte
 
-Wählen Sie alle Gründe für automatischen Zugriff auf spätere Ergänzungen oder eine feste Liste für eine kürzere Bedienerauswahl. Verwenden Sie einen gemeinsamen Grund bei gleicher Bedeutung wieder. Änderungen gelten für alle Maschinen.
+Wählen Sie alle Gründe für automatischen Zugriff auf spätere Ergänzungen oder eine feste Liste für eine kürzere Auswahl an Gründen für Maschinenbediener. Verwenden Sie einen gemeinsamen Grund bei gleicher Bedeutung wieder. Änderungen gelten für alle Maschinen.
 
 ## Erwartetes Ergebnis
 
-Bediener sehen die Gründe, die auf ihrer Maschine erlaubt sind. Diagramme zeigen Codes und ihre Erklärungen vorhandene Kategorien.
+Maschinenbediener sehen die Gründe, die auf ihrer Maschine erlaubt sind. Diagramme zeigen Codes und ihre Erklärungen vorhandene Kategorien.
 
 ## Häufige Probleme und Sonderfälle
 
 - Ein doppelter Code lässt sich nicht speichern. Wählen Sie einen anderen Code oder bearbeiten Sie den vorhandenen Grund.
-- Über die Verfügbarkeitsliste können Sie einer Maschine nicht ihren letzten verfügbaren Grund entziehen. Geben Sie der genannten Maschine zuerst einen anderen Grund oder lassen Sie diesen ausgewählt.
+- Das Abwählen des letzten Grundes lässt die Maschine ohne Grundauswahl. Wählen Sie wieder einen Grund oder **Alle Gründe (Standard)**, um Gründe anzubieten.
 - Das Löschen eines gemeinsamen Grundes entfernt ihn auch aus Regeln für Stillstandsgründe, Standardgründen und Schichtpausen. Prüfen Sie die Verwendungen im Löschhinweis und danach die betroffenen Einstellungen.
 - Ändert jemand gleichzeitig die Auswahl, wird der aktuelle Stand geladen. Prüfen Sie ihn und versuchen Sie es erneut.
 - Eine geöffnete BDE-Seite übernimmt neue Verfügbarkeit beim nächsten Aktualisieren. Auch eine abgelehnte Grundauswahl aktualisiert die Liste.

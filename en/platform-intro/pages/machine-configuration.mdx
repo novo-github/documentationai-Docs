@@ -20,7 +20,7 @@ Administrators can open **Machine Settings** from the gear in the machine detail
 
 ## What You Can See
 
-- Vertical tabs for setup areas such as basic information, AVA assignments, energy monitoring, ratings, timeline ranges, timeline rules, and features.
+- Vertical tabs for setup areas such as basic information, AVA assignments, energy monitoring, ratings, **Timeline Ranges**, **Downtime reason rules**, and features.
 - Unsaved-change indicators on tabs.
 
 ## What You Can Do
@@ -59,15 +59,23 @@ Administrators set **Planning → Jobs in parallel** in the machine’s basic in
 
 Set the value to match actual capacity. For example, 2 means the forecast can allow two assignments to run together. Follow [Configure a Machine](/en/platform-intro/workflows/machine-configuration).
 
-## Timeline Rules and Ranges
+<a id="timeline-rules-and-ranges" />
+
+## Downtime Reason Rules and Time Ranges
 
 Administrators can review **Machine Settings → Downtime reason rules**. A reason chosen by the machine operator or set by hand takes priority. When [automatic break labels](/en/platform-intro/pages/break-settings) are enabled, an eligible break's reason comes next. **Downtime reason rules** apply to the remaining idle or off time; without a matching reason, the time stays unlabelled.
 
 Since November 5, 2026 (v1.5.153), the rules apply to more idle and off downtimes. Downtime reason totals in reports and charts can therefore change for machines with rules. Downtimes from before the update remain unchanged. See [automatic rules](/en/platform-intro/workflows/timeline-reason-creation#automatic-rules).
 
-For Off, Idle, and Preparation, automatic reason rules are checked in this order: the reason's specific rule, its **DEFAULT** rule, then **Global** rules. Configure only the rules needed.
+Each machine has separate rules under **Rules for the Off state**, **Rules for the Idle state** and **Rules for the Preparation state**. Use **Add new rule**, choose a reason under **Select Reason**, and enter the lower and upper downtime lengths in seconds under **between** and **and**. Set **Default Reason** for that state as needed.
 
-**Timeline ranges / Time range** are duration buckets, for example 1–5 and 5–30 minutes, used in **Idletime Distribution**. Timeline reasons have type and level 1–5 fields, but their exact effects are not established in the reference.
+The downtime first gets the reason of the rule whose length range fits. If no range fits, it gets the state's **Default Reason**. If neither gives a reason, or the machine does not offer that reason, the downtime gets no automatic reason.
+
+The choices in **Downtime reason rules** contain only reasons available on this machine, plus **No reason** for a choice without a reason. If an existing rule uses a reason removed from the machine's list, it stays visible but greyed out and marked **not available on this machine**. A warning above the rules asks you to choose another reason. Other unavailable reasons do not appear in the choices. That rule gives the downtime no reason while its unavailable choice remains. A reason chosen by the machine operator is unaffected.
+
+Review **Rules for the Off state**, **Rules for the Idle state** and **Rules for the Preparation state** after changing the machine's reason list. Follow [review automatic rules](/en/platform-intro/workflows/timeline-reason-creation#automatic-rules).
+
+**Timeline ranges / Time range** are duration buckets, for example 1–5 and 5–30 minutes, used in **Idletime Distribution**.
 
 ## Active Shift Settings
 
@@ -119,11 +127,11 @@ These choices also guide **Improve intervals**. When live assistance is off, exp
 
 ### How Changes Are Applied
 
-Under **How changes are applied**, choose **Ask the operator** or **Pick the best automatically** when several times fit. The automatic choice uses the earliest allowed start or latest allowed end. Operators can reverse an automatic adjustment with **Undo** or choose another time with **Change…**.
+Under **How changes are applied**, choose **Ask the machine operator** or **Pick the best automatically** when several times fit. The automatic choice uses the earliest allowed start or latest allowed end. Machine operators can reverse an automatic adjustment with **Undo** or choose another time with **Change…**.
 
-Set **Apply automatically up to (hours)** and **Ask the operator up to (hours)**. Each accepts 0.5–12 hours in half-hour steps; both default to 6 hours. The asking limit cannot be smaller than the automatic limit. Times between the limits require a choice. Older times are not offered. The previous interval's end also has its own gap conditions.
+Set **Apply automatically up to (hours)** and **Ask the machine operator up to (hours)**. Each accepts 0.5–12 hours in half-hour steps; both default to 6 hours. The asking limit cannot be smaller than the automatic limit. Times between the limits require a choice. Older times are not offered. The previous interval's end also has its own gap conditions.
 
-Open **How changes are applied → How are the times chosen?** to read this machine's limits and try the six examples: **Late start**, **Several times**, **Short gap ignored**, **Off between orders**, **Late stop**, and **Forgotten stop**. Use **Back** and **Next** to move through machine activity, the operator's action, and the result.
+Open **How changes are applied → How are the times chosen?** to read this machine's limits and try the six examples: **Late start**, **Several times**, **Short gap ignored**, **Off between orders**, **Late stop**, and **Forgotten stop**. Use **Back** and **Next** to move through machine activity, the machine operator's action, and the result.
 
 Only real machine events or the previous interval's end are offered. Times are never moved to a limit where nothing happened. The most recent times appear first; earlier choices are under **Other times**, newest first, with up to 20 offered times in total. Nothing before the previous order's end is offered.
 
@@ -133,9 +141,9 @@ Missing data shorter than 10 minutes does not split a stretch of activity. Idle,
 
 Enable **Auto-end forgotten intervals** and choose **off** or **off or idle**, then the waiting time. When enabled, it keeps checking even when nobody has the PDA page open. Only production intervals end this way, never preparation.
 
-The end is set to the last production time, or when the machine stopped if nothing was produced. Quantities are not booked and the order is not marked complete by this action. Operators must check and book quantities afterwards. To prevent automatic ending, turn this option off and select **Save**.
+The end is set to the last production time, or when the machine stopped if nothing was produced. Quantities are not booked and the order is not marked complete by this action. Machine operators must check and book quantities afterwards. To prevent automatic ending, turn this option off and select **Save**.
 
-If automatic ending comes before the **Machine off, order still running** warning, operators will not see that warning. The settings explain this. Snoozing a warning or muting sound does not turn off automatic ending.
+If automatic ending comes before the **Machine off, order still running** warning, machine operators will not see that warning. The settings explain this. Snoozing a warning or muting sound does not turn off automatic ending.
 
 ### Warning Settings
 
@@ -153,17 +161,17 @@ Enable **Warnings**, then choose each warning's delay, severity, and speaker set
 
 **Multiple orders running** appears only when the number exceeds **Jobs in parallel**. **Live data is stale** needs at least 5 minutes of delay; other minute-based delays need at least 1 minute.
 
-**Info** is a silent note in the warning list. **Warning** shows an orange banner and orange light around the whole page. **Critical** shows a red banner and flashing screen border. **Snooze** sets how long operators can hide and silence a warning before it returns if the problem remains.
+**Info** is a silent note in the warning list. **Warning** shows an orange banner and orange light around the whole page. **Critical** shows a red banner and flashing screen border. **Snooze** sets how long machine operators can hide and silence a warning before it returns if the problem remains.
 
-Open the information icon beside a warning by pointing to it, focusing it, or tapping it. **When it appears** shows the delay from the event that starts the wait. For the machine-off warning, a second marker shows automatic ending when enabled. **What the operator sees** previews the chosen severity and shows a speaker when sound is on. It follows the settings currently shown, including unsaved changes. The preview is static and does not flash or play an alarm.
+Open the information icon beside a warning by pointing to it, focusing it, or tapping it. **When it appears** shows the delay from the event that starts the wait. For the machine-off warning, a second marker shows automatic ending when enabled. **What the machine operator sees** previews the chosen severity and shows a speaker when sound is on. It follows the settings currently shown, including unsaved changes. The preview is static and does not flash or play an alarm.
 
-**How operators see warnings** compares the three severities. The floating warning button at the bottom left lists all active warnings and lets operators snooze them.
+**How machine operators see warnings** compares the three severities. The floating warning button at the bottom left lists all active warnings and lets machine operators snooze them.
 
 ### Alarm Sound
 
 Turn on **Alarm sound**, then enable the speaker for each warning that should sound. **Info** is always silent. Set the volume, repeat interval, and whether sound is restricted to active shifts. Test the volume: **Warning** plays two beeps; **Critical** plays three alternating high and low beeps.
 
-Sound repeats until the warning is handled or snoozed. Operators can mute their device. The browser needs a tap on the page before sound can play; some browsers cannot play alarm sounds.
+Sound repeats until the warning is handled or snoozed. Machine operators can mute their device. The browser needs a tap on the page before sound can play; some browsers cannot play alarm sounds.
 
 ### Reset, Save, and Copy Settings
 
@@ -176,9 +184,9 @@ Sound repeats until the warning is handled or snoozed. Operators can mute their 
 Administrators use **Machine Settings → Downtime reasons** for machines and work centers. Save a new machine before setting its reasons.
 
 - **All reasons (default)** offers every company reason, including reasons created later.
-- **Only selected reasons** offers a fixed list. Select at least one reason before saving. Search by code or reason and filter by category. **Select all visible** adds the visible reasons; clearing the selection removes all ticks, including hidden ones.
+- **Only selected reasons** offers a fixed list. You can save it with no reasons ticked. Machine operators then cannot pick a downtime reason on this machine. Search by code or reason and filter by category. **Select all visible** adds the visible reasons; clearing the selection removes all ticks, including hidden ones.
 
-Save the tab to keep this machine's selection. **Apply to other machines** replaces the destinations' lists with the current selection or all-reasons mode. Review the destinations before confirming.
+Save the tab to keep this machine's selection. **Apply to other machines** replaces the destinations' lists with the current selection or all-reasons mode. An empty selection replaces the destinations' lists with no reasons. Review the destinations before confirming.
 
 **New reason** opens the shared reason form. The current machine starts ticked under **Available on machines**. Keep it ticked if the reason should be offered here. Editing a reason's name, code, category, or colour affects every machine using it. See [Create and Manage Downtime Reasons](/en/platform-intro/workflows/timeline-reason-creation) for availability and deletion limits.
 
@@ -190,7 +198,7 @@ The selection limits both the reasons people can assign and the reasons automati
 - Hall
 - Shift Group
 - Energy Monitor
-- Timeline Rule
+- Downtime reason rule
 - Feature
 
 ## Outcomes and Limits

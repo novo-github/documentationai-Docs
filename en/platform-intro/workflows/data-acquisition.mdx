@@ -42,8 +42,8 @@ A machine’s [BDE access template](/en/platform-intro/pages/bde-access-template
   <Step title="Enter quantities and completion details" icon="arrow-right" title-type="p">
     Enter good quantity, material scrap, and work scrap. **Continue** books and starts a new interval immediately; **Stop** books and ends it. When **Planned quantity reached** appears after **Stop**, choose **Complete** or **Keep on hold**. See [Review Quantities and Completion](/en/platform-intro/workflows/data-acquisition#review-quantities-and-completion).
   </Step>
-  <Step title="Apply timeline reasons" icon="arrow-right" title-type="p">
-    Apply timeline reasons if downtime or special events need explanation. Review idle and stopped entries after switching between running, paused, and stopped states to check that the record reflects what happened.
+  <Step title="Apply downtime reasons" icon="arrow-right" title-type="p">
+    Apply downtime reasons if downtime or special events need explanation. Review idle and stopped entries after switching between running, paused, and stopped states to check that the record reflects what happened.
   </Step>
   <Step title="Review related tickets and knowledge" icon="arrow-right" title-type="p">
     Review open tickets or knowledge entries when the issue requires support context.
@@ -66,7 +66,7 @@ You need access to the machine's Data Acquisition V3 page. The machine must belo
     If the step is running, the normal stop dialog opens with **Stop first – then back to pool** at the bottom. Enter good parts and scrap, then stop. Complete or close any **PDA Assist** time choice. The return dialog opens afterwards. Closing the stop dialog or booking without stopping cancels the return sequence.
   </Step>
   <Step title="Review the remaining quantity and reason" icon="arrow-right" title-type="p">
-    In **Send back to the pool**, an unstarted step moves as a whole. For started work, check **Planned**, **Done here**, and **Left**. **Quantity left** suggests planned quantity minus good parts; scrap does not reduce it. Change it for parts that must be made again, or leave it empty if unknown. If all planned parts are made, finish the step instead unless more are needed. Add **Reason (optional)** so the next operator knows why the work was returned.
+    In **Send back to the pool**, an unstarted step moves as a whole. For started work, check **Planned**, **Done here**, and **Left**. **Quantity left** suggests planned quantity minus good parts; scrap does not reduce it. Change it for parts that must be made again, or leave it empty if unknown. If all planned parts are made, finish the step instead unless more are needed. Add **Reason (optional)** so the next machine operator knows why the work was returned.
   </Step>
   <Step title="Confirm and check both parts" icon="arrow-right" title-type="p">
     Check the destination and quantity, then confirm **Back to pool**. There is no automatic undo for a handover. The selection clears and a confirmation appears at the bottom. The whole unstarted step, or the remainder of started work, goes to the top of the hall pool. Another machine in the hall can claim it as usual. For started work, choose the third view tab with the history icon, **Time Window + All Statuses**, to find the handed-over part. It shows all steps in the chosen date window, including completed and cancelled ones. **All Open** and **Time Window + Open** hide the handed-over part. The original part is marked **Handed over**. Its times and good parts stay on this machine.
@@ -111,7 +111,7 @@ If **This operation was changed in the meantime. The list has been refreshed.** 
 1. While the downtime is running, choose a tile under **Downtime reasons**, or tap the latest timeline segment and choose a reason. Read its code and name. Use category chips to narrow the list when available.
 2. Check the running downtime's tooltip. Your reason stays visible after a page refresh, even if the downtime began before the last 8 hours shown on the timeline. When the machine restarts, your reason is saved onto that downtime. If the tiles are still offered shortly after the restart, you can still choose a reason for the downtime that just ended.
 3. To correct an existing timeline label, open the period’s reason picker and choose an available reason, or **Remove label** to clear it.
-4. If the reason is rejected because availability changed, review the updated list and choose again. Ask an administrator if the required reason is missing. See [Downtime Reasons FAQs](/en/help-center/faq/downtime-reasons).
+4. If the reason is rejected because availability changed, review the updated list and choose again. Ask an administrator if the required reason is missing. The machine may intentionally offer no reasons; you cannot choose one until an administrator changes that selection. See [Downtime Reasons FAQs](/en/help-center/faq/downtime-reasons).
 
 If the machine operator chooses a reason after the downtime ended, that reason replaces the break label for the whole downtime, also when the downtime had been split into parts around the break. Parts whose reason someone set or cleared by hand keep that choice. Setting or clearing a label by hand protects that choice from automatic labelling.
 
@@ -121,7 +121,7 @@ A reason chosen by the machine operator or set by hand takes priority. When [aut
 
 On Data Acquisition V3, the template must allow **Correct interval times and quantities**. Otherwise, you can only read the interval list. Editing from Order Management is unaffected by this template.
 
-You need access to the machine's Data Acquisition V3 page, or access to the order page when editing from Order Management. The interval must already exist. Operators use Data Acquisition.
+You need access to the machine's Data Acquisition V3 page, or access to the order page when editing from Order Management. The interval must already exist. Machine operators use Data Acquisition.
 
 <Steps>
   <Step title="Open the interval editor" icon="arrow-right" title-type="p">
@@ -226,7 +226,7 @@ Taking pool work requires **Take orders from the hall pool** to be allowed. Addi
 4. In **Cumulative** mode, enter the full counter, for example 1450, rather than the increment.
 5. After **Stop**, review the quantities. When **Planned quantity reached** appears, choose **Complete** or **Keep on hold**. Label downtime in **Downtime reasons**.
 
-Deleting an interval cannot be undone. Operators cannot open Orders & Products or Alert Rules; use the permitted PDA views or ask your admin for help. [PDA Assist warnings](/en/platform-intro/pages/data-acquisition) can warn about stale data and mismatched machine/order states.
+Deleting an interval cannot be undone. Machine operators cannot open Orders & Products or Alert Rules; use the permitted PDA views or ask your admin for help. [PDA Assist warnings](/en/platform-intro/pages/data-acquisition) can warn about stale data and mismatched machine/order states.
 
 ## Respond to an Assistant Warning
 
@@ -271,7 +271,7 @@ The machine timeline, interval list, and production records reflect what happene
 - You cannot clear an interval's saved end. To end a running interval, use the normal stop action.
 - Users may need to stop an interval before switching to a different one.
 - Missing produced, scrap, or reason details can leave the production story incomplete.
-- A live issue may need both a timeline reason and a support ticket.
+- A live issue may need both a downtime reason and a support ticket.
 - Recorded total production includes submitted scrap quantities.
 
 ## Related Pages

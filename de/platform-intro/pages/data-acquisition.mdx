@@ -34,7 +34,7 @@ Wählen Sie zum Maschinenwechsel den Maschinennamen in der oberen Navigationslei
 - Live-Aufträge erstellen oder verwenden.
 - Nach ungeplanten Arbeitsgängen suchen und diese direkt der Maschine zuweisen.
 - Informationen und Reihenfolge auf Zuweisungskarten konfigurieren.
-- Zeitachsen-Gründe anwenden und zugehörige Unterstützungsinhalte prüfen.
+- Stillstandsgründe anwenden und zugehörige Unterstützungsinhalte prüfen.
 
 ## Einstellungen aus einer Maschinenvorlage
 
@@ -176,7 +176,7 @@ Meldungen nennen den Arbeitsgang. Nach **Weiter** erscheint **Intervall beendet 
 
 **Vorber.** beginnt Vorbereitung, **Start** die Produktion und **Stopp** beendet ein Intervall. **Weiter** bucht Mengen, beendet das laufende Intervall und startet sofort ein neues. Weitere Aktionen beginnen oder beenden Vorbereitung und Schichten.
 
-**Good qty. / Gutmenge** ist guter Ausstoß. **Mat. / MA** bedeutet Materialausschuss, **Work / AA** Fertigungsausschuss. **Gesamt = Eingabe + MA + AA**. **Rework Qty** ist die Nacharbeitsmenge. **Cycle Count** kommt vom Sensor, **PDA Entry / BDE-Eintrag** vom Bediener. Die Auswahl der Fortschrittsquelle ändert nur die Anzeige.
+**Good qty. / Gutmenge** ist guter Ausstoß. **Mat. / MA** bedeutet Materialausschuss, **Work / AA** Fertigungsausschuss. **Gesamt = Eingabe + MA + AA**. **Rework Qty** ist die Nacharbeitsmenge. **Cycle Count** kommt vom Sensor, **PDA Entry / BDE-Eintrag** vom Maschinenbediener. Die Auswahl der Fortschrittsquelle ändert nur die Anzeige.
 
 **Beispiel:** 95 eingegebene Gutteile, 3 Materialausschussteile und 2 Fertigungsausschussteile ergeben insgesamt 100. Im Modus **Cumulative** geben Sie den gesamten Maschinenzählerstand ein, beispielsweise 1450, nicht nur den Intervallzuwachs.
 
@@ -261,7 +261,7 @@ Ein vom Maschinenbediener gewählter oder von Hand gesetzter Grund hat Vorrang. 
 
 Automatische Pausengründe erscheinen erst nach Ende des Stillstands, nicht im Tooltip des laufenden Stillstands. Wählt der Maschinenbediener nach dem Ende des Stillstands einen Grund, ersetzt dieser den Pausengrund für den gesamten Stillstand. Das gilt auch, wenn der Stillstand um die Pause herum in Abschnitte aufgeteilt wurde. Abschnitte, deren Grund jemand von Hand gesetzt oder entfernt hat, behalten diese Auswahl. Einen von Hand gesetzten oder entfernten Grund ersetzt die automatische Pausenkennzeichnung nie.
 
-**Stillstandsgründe** bietet nur die auf dieser Maschine verfügbaren Gründe an. Eine Kachel kann in der Ecke einen Code zeigen. Nutzen Sie die Kategorien oberhalb der Kacheln, um die Liste einzugrenzen. Diese erscheinen nur, wenn Gründe Kategorien besitzen.
+**Stillstandsgründe** bietet nur die auf dieser Maschine verfügbaren Gründe an. Ein Administrator kann die Maschine ohne verfügbare Gründe lassen. Sie können dann keinen Stillstandsgrund wählen. Lassen Sie die Auswahl von einem Administrator prüfen, wenn Sie einen Grund benötigen. Eine Kachel kann in der Ecke einen Code zeigen. Nutzen Sie die Kategorien oberhalb der Kacheln, um die Liste einzugrenzen. Diese erscheinen nur, wenn Gründe Kategorien besitzen.
 
 Gespeicherte Kachelreihenfolgen behalten neu verfügbare Gründe und entfernen gelöschte. Andere Grundauswahlen der Zeitleiste zeigen Gründe alphabetisch mit dem Code vor dem Namen. **Grund entfernen** entfernt die Zuordnung, ohne den Stillstandszeitraum zu löschen.
 

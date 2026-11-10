@@ -20,14 +20,14 @@ Users open it from the main navigation when their role allows it.
 
 ## What You Can See
 
-- Administrative sections for halls, shifts, operators, priority levels, and related setup data.
+- Administrative sections for halls, shifts, machine operators, priority levels, and related setup data.
 - Creation and edit actions for reusable platform records.
 
 The machine list marks entries of kind **Work center**. These workplaces have no AVA. Administrators can create them or change their kind in the [machine configuration](/en/platform-intro/pages/machine-configuration).
 
 ## What You Can Do
 
-- Create and maintain halls, shifts, and operators.
+- Create and maintain halls, shifts, and machine operators.
 - Manage downtime reasons and other platform-wide setup items.
 - Review and update supporting configuration needed by planning and machine pages.
 - Define company priority levels and manage user access to pages and machines.
@@ -97,7 +97,7 @@ Open the user record in the Admin Panel and select **Edit Permissions**. Select 
 | --- | --- |
 | **Invite Team Members / Users** | Invites, roles, Page Access, Machine Access. |
 | **Configure Factory** | Halls and Displays, Machine Tags, Machines. |
-| **Configure Shifts and Scheduling** | Shifts, Shift groups, Machine Operators. |
+| **Configure Shifts and Scheduling** | Shifts, Shift groups, **Machine operators**. |
 | **Configure Products & Orders** | Products, Orders, Order Tags, ERP template download. |
 | **Configure Analyzers** | **Downtime reasons** and Energy Price. |
 | **Configure Security and API** | API-Access Keys and Ticket Tags. |
@@ -112,9 +112,11 @@ Custom priority settings allow **0–999**, while the Add Order form states **1�
 
 ## Security, AI Data Access, and Account Administration
 
+The **Machine operators** area manages accounts with the Machine operator role. Use **Add machine operator** to create an account or **Update machine operator** when editing one. Confirmation notices for creation, changes, replacement passwords and promotion use your selected language. Follow [manage machine operator accounts](/en/platform-intro/workflows/operator-management).
+
 **API-Access Keys** are shown once at creation; copy the key while it is visible. **License Key** is the company licence identifier, not an API key. The Beta AI Assistant can access only data areas enabled here; platform data is not shared with external AI models without admin enablement.
 
-Use [Invite Users and Manage Permissions](/en/platform-intro/workflows/user-access-management), [Set Up a Hall Plan Display](/en/platform-intro/workflows/hall-display-setup), and [Manage Operators](/en/platform-intro/workflows/operator-management) for the tasks.
+Use [Invite Users and Manage Permissions](/en/platform-intro/workflows/user-access-management), [Set Up a Hall Plan Display](/en/platform-intro/workflows/hall-display-setup), and [Manage machine operators](/en/platform-intro/workflows/operator-management) for the tasks.
 
 ## Active Shifts in Machine Lists
 
@@ -122,11 +124,25 @@ In the Admin Panel and company view, **Active shift** identifies machines whose 
 
 ## Change a User's Email
 
-Administrators can select **Change email** in user management in the Admin Panel or company view for users who are not operators. Use this action instead of editing the address in the user form. Enter **New email** and select **Send verification**. The user's current address remains active until they open the link sent to the new address and select **Confirm email change**.
+Administrators can select **Change email** in user management in the Admin Panel or company view for users who are not machine operators. Use this action instead of editing the address in the user form. Enter **New email** and select **Send verification**. The user's current address remains active until they open the link sent to the new address and select **Confirm email change**.
 
 The pending notice shows the address awaiting confirmation. Use **Resend** after the displayed wait or **Cancel change** if the request is no longer needed. Follow [Change Your Email Address](/en/platform-intro/workflows/change-email).
 
 ## Manage Shift Breaks
+
+The **Breaks** column follows the shift end. It lists each break's start, end and length on its own line, in the same order as the editor. A shift without breaks shows a dash. A break from 23:30 to 00:15 shows its actual length of 45 minutes.
+
+When creating or editing a shift, type a complete time and leave the box by clicking elsewhere or pressing Tab. You do not need Enter to keep it. A small time selector opens below the box: use − / + with a mouse or the wheel on a touch screen.
+
+If the shift end is earlier than its start, the shift continues into the next day and **Overnight shift · ends the next day** appears automatically. For example, 10:00–09:00 is a valid 23-hour shift. Start and end cannot be the same: **Shift start and end time must be different.** A break within that shift that crosses midnight shows **Break over midnight · ends the next day**. A break ending exactly at 00:00 does not show this break hint.
+
+Each break must fit within the shift and last at most one hour. These messages appear directly below the affected break while you edit and block saving:
+
+- **Break end time must be after break start time.**
+- **Break start and end time must stay inside the shift time.**
+- **A break can be 1 hour at most.**
+
+Correct all reported problems before saving. Follow [Manage Shift Definitions](/en/platform-intro/workflows/shift-management).
 
 Administrators open **Admin Panel → Configure Shifts and Scheduling → Shifts**, then **Break settings** directly left of **Add Shift**. Turn on **Label breaks automatically** and save before choosing a **Downtime reason** for each break in the shift editor. **No downtime reason** leaves that break without an automatic break label.
 
@@ -136,11 +152,13 @@ See [Break Settings](/en/platform-intro/pages/break-settings) for the company-wi
 
 ## Manage Downtime Reasons
 
-Only administrators can create, edit, or delete reasons. Open **Admin Panel → Configure Analyzers → Downtime reasons**. The table shows **Code**, **Category**, and **Available on** alongside the reason, description, colour, and level. Search by code or text and filter by category. The availability column shows whether a reason is available everywhere or on a number of machines; its explanation lists their names.
+Only administrators can create, edit, or delete reasons. Open **Admin Panel → Configure Analyzers → Downtime reasons**. The table shows **Code**, **Category**, and **Available on** alongside the reason, description, colour, and level. Search by code or text and filter by category. The availability column shows whether a reason is available everywhere or on a number of machines; its explanation lists their names. **No machines** means the reason is offered nowhere.
+
+The reason form shows name, code, category, description, type and colour on the left, with **Available on machines** on the right. The machine list scrolls separately and shows names without an extra all-reasons tag. Open the information icon beside its title for an explanation of fixed lists. Choose a reason type before saving.
 
 In the reason form, **Code** and **Category** are optional. Codes become uppercase and must be unique within your company. Use up to 20 letters, digits, dots, underscores, slashes, or hyphens, starting with a letter or digit. Choose an existing category or enter one. **Pick colour** opens the colour selector; you can enter a colour value directly or use **Random colour**. New reasons start with a random colour.
 
-Under **Available on machines**, click the checkbox or machine name to choose where operators can use this reason. Clicking other parts of the row leaves the selection unchanged. Unticking a machine marked **All reasons** gives it a fixed list of the other current reasons. Later reasons will no longer appear there automatically. You cannot leave a machine without a reason this way: give it another reason first or keep this one ticked.
+Under **Available on machines**, click the checkbox or machine name to choose where machine operators can use this reason. Clicking other parts of the row leaves the selection unchanged. Unticking a machine that currently offers all reasons gives it a fixed list of the other current reasons. Later reasons will no longer appear there automatically. Unticking its last reason leaves that machine with no reasons to choose. You can save a reason with no machines ticked.
 
 Editing a shared reason affects all machines. Select **Delete** in the reason’s row menu and review **Deleting this reason removes it from:**. The notice lists the affected past downtimes, machine reason lists, downtime reason rules and breaks, with counts and example names where available. **This reason is not used anywhere.** appears when there are no uses. While the details load, or if they cannot load, only a general notice appears; deletion remains available.
 
@@ -152,7 +170,7 @@ Use [Create and Manage Downtime Reasons](/en/platform-intro/workflows/timeline-r
 
 - Hall
 - Shift
-- Operator
+- Machine operator
 - Downtime Reason
 - Machine Type
 - Priority Level
@@ -177,5 +195,5 @@ Use [Create and Manage Downtime Reasons](/en/platform-intro/workflows/timeline-r
 
 - [Manage Halls](/en/platform-intro/workflows/hall-management)
 - [Manage Shift Definitions](/en/platform-intro/workflows/shift-management)
-- [Manage Operators](/en/platform-intro/workflows/operator-management)
+- [Manage machine operators](/en/platform-intro/workflows/operator-management)
 - [Create Downtime Reasons](/en/platform-intro/workflows/timeline-reason-creation)

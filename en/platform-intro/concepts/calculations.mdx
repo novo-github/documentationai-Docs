@@ -32,16 +32,16 @@ Multiplying these ratios with 95% quality would give **32.57%**. This is an illu
 
 ## Cycle Times and Interval Performance
 
-An **interval** is one recorded work session on an assignment. A **cycle** is detected from the machine sensor; an operator-entered quantity is a separate source.
+An **interval** is one recorded work session on an assignment. A **cycle** is detected from the machine sensor; a quantity entered by a machine operator is a separate source.
 
 | Figure | Calculation | Interpretation |
 | --- | --- | --- |
 | **Interval Performance** | Production time / total interval duration × 100 | How much of the session was actual production. |
 | **Avg. Cycle Duration** | Total interval duration / detected cycles | Includes pauses and loading. |
 | **Avg. Production Cycle Time** | Active production time / detected cycles | Active machining time per detected cycle. |
-| **Avg. Cycle Time (Operator Input)** | Production time / operator-entered quantity | Uses booked quantity rather than sensor cycles. |
+| **Avg. Cycle Time (machine operator input)** | Production time / quantity entered by the machine operator | Uses booked quantity rather than sensor cycles. |
 
-**Example:** A 60-minute interval contains 40 minutes of production, 20 detected cycles, and 16 entered units. Interval Performance is **66.67%**. Avg. Cycle Duration is **180 seconds**, Avg. Production Cycle Time is **120 seconds**, and Avg. Cycle Time (Operator Input) is **150 seconds**. These values answer different questions.
+**Example:** A 60-minute interval contains 40 minutes of production, 20 detected cycles, and 16 entered units. Interval Performance is **66.67%**. Avg. Cycle Duration is **180 seconds**, Avg. Production Cycle Time is **120 seconds**, and Avg. Cycle Time (machine operator input) is **150 seconds**. These values answer different questions.
 
 Cycle times are displayed in seconds. A zero cycle or quantity denominator cannot yield a meaningful average. Cycles outside recorded intervals and differences between entered quantities and detected cycles help explain discrepancies; review them in [order analysis](/en/platform-intro/pages/order-detail).
 
@@ -68,7 +68,7 @@ When an order is split across machines, each machine is compared with its own as
 
 **Total on assignment cards = Input quantity + Material Scrap (Mat. / MA) + Work Scrap (Work / AA).** For example, 95 entered good units + 3 material scrap + 2 work scrap gives a total of **100**. **Rework Qty** is tracked separately; no rule for adding it to this total is established here.
 
-**PDA Entry / BDE-Eintrag** uses operator bookings; **Cycle Count** uses sensor counts. Changing the progress source changes the display, not the bookings. In **Cumulative** mode, enter the total counter reading, such as 1450, rather than the increment for the current interval.
+**PDA Entry / BDE-Eintrag** uses machine operator bookings; **Cycle Count** uses sensor counts. Changing the progress source changes the display, not the bookings. In **Cumulative** mode, enter the total counter reading, such as 1450, rather than the increment for the current interval.
 
 **Ordinary minutes = industrial minutes × 0.6.** One industrial minute is one hundredth of an hour. **500 industrial minutes = 300 ordinary minutes = 5 hours.** Do not use this conversion for files already containing ordinary minutes. See [ERP Uploads](/en/platform-intro/pages/erp-upload-planner).
 

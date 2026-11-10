@@ -10,7 +10,7 @@ description: "Choose reasons, understand codes, and manage machine availability.
 | Why do new reasons appear on one machine but not another? | [Answer](/en/help-center/faq/downtime-reasons#future) |
 | Can I use the same reason selection on several machines? | [Answer](/en/help-center/faq/downtime-reasons#copy) |
 | What does the code beside a downtime reason mean? | [Answer](/en/help-center/faq/downtime-reasons#code) |
-| Why can I not untick this machine for a reason? | [Answer](/en/help-center/faq/downtime-reasons#last-reason) |
+| Can I remove a machine’s last downtime reason? | [Answer](/en/help-center/faq/downtime-reasons#last-reason) |
 | What happens if I delete a downtime reason? | [Answer](/en/help-center/faq/downtime-reasons#delete) |
 | The reason was created, but its machines were not saved. Should I create it again? | [Answer](/en/help-center/faq/downtime-reasons#create-retry) |
 | Why does the reason I chose for the current downtime disappear? | [Answer](/en/help-center/faq/downtime-reasons#live-reason) |
@@ -18,12 +18,15 @@ description: "Choose reasons, understand codes, and manage machine availability.
 | Why do my downtime reason totals look different since this update? | [Answer](/en/help-center/faq/downtime-reasons#changed-totals) |
 | Which wins, my chosen reason or the rules? | [Answer](/en/help-center/faq/downtime-reasons#reason-priority) |
 | Why is one downtime now counted as several? | [Answer](/en/help-center/faq/downtime-reasons#split-break-downtime) |
+| Why can I not choose any downtime reason on my machine? | [Answer](/en/help-center/faq/downtime-reasons#no-reasons) |
+| Why is a reason greyed out in my automatic rule? | [Answer](/en/help-center/faq/downtime-reasons#unavailable-rule) |
+| What does “No machines” mean beside a reason? | [Answer](/en/help-center/faq/downtime-reasons#no-machines) |
 
 <a id="manage" />
 
 ## Who can change the downtime reasons?
 
-Only administrators can create, edit, delete, or restrict reasons. Use **Machine Settings → Downtime reasons** or **Admin Panel → Configure Analyzers → Downtime reasons**. Editing a shared reason changes it for all machines. Follow [Create and Manage Downtime Reasons](/en/platform-intro/workflows/timeline-reason-creation).
+Only administrators can create, edit, delete, or restrict reasons. Use **Machine Settings → Downtime reasons** or **Admin Panel → Configure Analyzers → Downtime reasons**. The form places reason details on the left and **Available on machines** on the right. The information icon beside the machine list title explains fixed lists. Editing a shared reason changes it for all machines. Follow [Create and Manage Downtime Reasons](/en/platform-intro/workflows/timeline-reason-creation).
 
 <a id="missing" />
 
@@ -35,13 +38,13 @@ The machine may use **Only selected reasons**, or an administrator may have chan
 
 ## Why do new reasons appear on one machine but not another?
 
-**All reasons (default)** includes future additions. A fixed list does not. Unticking a machine marked **All reasons** in **Available on machines** also gives it a fixed list of the other current reasons. See [Machine Configuration](/en/platform-intro/pages/machine-configuration).
+**All reasons (default)** includes future additions. A fixed list does not. Unticking a machine that currently offers all reasons in **Available on machines** also gives it a fixed list of the other current reasons. See [Machine Configuration](/en/platform-intro/pages/machine-configuration).
 
 <a id="copy" />
 
 ## Can I use the same reason selection on several machines?
 
-Yes. Administrators can use **Apply to other machines** in **Downtime reasons**. Review the current selection and destination machines before confirming: their previous lists are replaced. Follow [Create and Manage Downtime Reasons](/en/platform-intro/workflows/timeline-reason-creation).
+Yes. Administrators can use **Apply to other machines** in **Downtime reasons**. Review the current selection and destination machines before confirming: their previous lists are replaced. This also works with an empty fixed list, so none of the chosen machines will offer a reason. Follow [Create and Manage Downtime Reasons](/en/platform-intro/workflows/timeline-reason-creation).
 
 <a id="code" />
 
@@ -51,9 +54,9 @@ It is an optional company code, such as F12, that helps you recognize a reason. 
 
 <a id="last-reason" />
 
-## Why can I not untick this machine for a reason?
+## Can I remove a machine’s last downtime reason?
 
-The change would leave that machine without any reason. Give it another reason first, or keep the current one ticked. See [availability settings](/en/platform-intro/pages/admin-panel).
+Yes. As an administrator, untick the machine under **Available on machines** and save. If it has no other selected reason, it offers none. Deleting its last selected reason also leaves it with none; it does not switch to all reasons. See [availability settings](/en/platform-intro/pages/admin-panel).
 
 <a id="delete" />
 
@@ -98,3 +101,21 @@ A reason chosen by the machine operator or set by hand takes priority. When [aut
 ## Why is one downtime now counted as several?
 
 **Label only the break (recommended)** can split downtime into the break and time before or after it. Each part counts separately in counts and averages by reason. Total time in each machine state stays the same. **Label the whole downtime** avoids that split but can hide a long breakdown under the break reason. See [automatically labelled breaks](/en/platform-intro/pages/timeline-analysis#read-automatically-labelled-breaks).
+
+<a id="no-reasons" />
+
+## Why can I not choose any downtime reason on my machine?
+
+An administrator can save **Only selected reasons** with nothing ticked. The machine then offers no reasons. Removing or deleting its last selected reason has the same result. Ask an administrator to review **Machine Settings → Downtime reasons**, select the needed reasons or choose **All reasons (default)**, and save. Follow [manage reason selections](/en/platform-intro/workflows/timeline-reason-creation).
+
+<a id="unavailable-rule" />
+
+## Why is a reason greyed out in my automatic rule?
+
+The machine no longer offers that reason. It stays visible as **not available on this machine** because this rule already uses it, but the rule cannot assign it. Other unavailable reasons do not appear in the choices. As an administrator, open **Machine Settings → Downtime reason rules**, choose an available reason or **No reason**, and save. Follow [review automatic rules](/en/platform-intro/workflows/timeline-reason-creation#automatic-rules).
+
+<a id="no-machines" />
+
+## What does “No machines” mean beside a reason?
+
+**No machines** under **Available on** means the reason exists but is not offered on any machine. An administrator can edit it, tick machines under **Available on machines**, and save. See [reason availability](/en/platform-intro/pages/admin-panel#manage-downtime-reasons).

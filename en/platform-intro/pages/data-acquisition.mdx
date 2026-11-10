@@ -34,7 +34,7 @@ To switch machines, select the machine name in the top navigation bar. The dropd
 - Create or use live orders.
 - Search for unplanned operations and assign them directly to the machine.
 - Configure the information and ordering shown on assignment cards.
-- Apply timeline reasons and review related support content.
+- Apply downtime reasons and review related support content.
 
 ## Settings Set by a Machine Template
 
@@ -172,11 +172,11 @@ Notices identify the operation. After **Continue**, you see **Interval ended –
 
 ## PDA / BDE Buttons and Quantity Labels
 
-**PDA (Production Data Acquisition)** and **BDE (Betriebsdatenerfassung)** are the same operator screen. Tabs include **Assignments**, **Pool**, **Downtime reasons**, **Tickets**, and **Knowledge Base**.
+**PDA (Production Data Acquisition)** and **BDE (Betriebsdatenerfassung)** are the same machine operator screen. Tabs include **Assignments**, **Pool**, **Downtime reasons**, **Tickets**, and **Knowledge Base**.
 
 **Prep** starts preparation (German **Vorber.**), **Start** starts production, **Stop** ends an interval, and **Continue** books quantities, ends the running interval, and starts a new one immediately. Explicit actions include Start/End Preparation and Start/End Shift.
 
-**Good qty. / Gutmenge** is good output. **Mat. / MA** is Material Scrap; **Work / AA** is Work Scrap. **Total = Input + MA + AA**. **Rework Qty** is the amount requiring rework. **Cycle Count** is sensor-detected; **PDA Entry / BDE-Eintrag** is operator-entered. Switching the progress source changes only the display.
+**Good qty. / Gutmenge** is good output. **Mat. / MA** is Material Scrap; **Work / AA** is Work Scrap. **Total = Input + MA + AA**. **Rework Qty** is the amount requiring rework. **Cycle Count** is sensor-detected; **PDA Entry / BDE-Eintrag** is entered by a machine operator. Switching the progress source changes only the display.
 
 **Example:** 95 entered good units, 3 material scrap, and 2 work scrap produce a total of 100. In **Cumulative** mode, enter the full machine counter, for example 1450, rather than this interval's increment.
 
@@ -261,9 +261,9 @@ A reason chosen by the machine operator or set by hand takes priority. When [aut
 
 Automatic break labels appear only after downtime ends, not in the running downtime's tooltip. If the machine operator chooses a reason after the downtime ended, that reason replaces the break label for the whole downtime, also when the downtime had been split into parts around the break. Parts whose reason someone set or cleared by hand keep that choice. A reason you set or clear by hand is never replaced by automatic break labelling.
 
-**Downtime reasons** offers only the reasons available on this machine. A tile can show a code in its corner. Use the category chips above the tiles to narrow the list; these appear only when reasons have categories.
+**Downtime reasons** offers only the reasons available on this machine. An administrator can leave the machine with no available reasons. You then cannot choose a downtime reason; ask an administrator to check the selection if you need one. A tile can show a code in its corner. Use the category chips above the tiles to narrow the list; these appear only when reasons have categories.
 
-Saved tile arrangements keep newly available reasons and drop deleted ones. Other timeline reason pickers show reasons alphabetically with the code before the name. **Remove label** clears the selected reason without deleting the downtime period.
+Saved tile arrangements keep newly available reasons and drop deleted ones. Other downtime reason pickers show reasons alphabetically with the code before the name. **Remove label** clears the selected reason without deleting the downtime period.
 
 If a reason is no longer allowed, the list updates. Choose an available reason or ask an administrator to check the machine's selection. A historical reason may still appear even when it is no longer selectable. See [Downtime Reasons FAQs](/en/help-center/faq/downtime-reasons).
 

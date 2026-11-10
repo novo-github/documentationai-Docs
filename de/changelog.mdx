@@ -76,6 +76,53 @@ toc: false
   Ein gewählter Grund konnte bisher beim Ende des Stillstands verloren gehen; er wird jetzt zuverlässig diesem Stillstand zugeordnet, auch wenn Sie ihn kurz nach dem Wiederanlaufen wählen, solange die Grundkacheln noch angeboten werden. Folgen Sie [Stillstand mit einem verfügbaren Grund beschriften](/de/platform-intro/workflows/data-acquisition#stillstand-mit-einem-verfügbaren-grund-beschriften).
 </Update>
 
+<Update label="2026-11-05" description="v1.5.152" tags={["Funktion", "Verbesserung", "Fehlerbehebung"]}>
+  {/* commits: 6da07660, c2d5fec1, 2e8b5847, b5c9ec94, 735b6201, 6b62610d, 0850ba5f, 8999484d, 0d86e2bf, 60ae6fcc, 00a7f915, a12bbc5, 9084d7f, 22401c8 */}
+
+  **Release-Datum:** 5. November 2026
+
+  ### Neue Funktionen
+
+  #### [Auf einer Maschine keine Stillstandsgründe anbieten](/de/platform-intro/pages/machine-configuration#stillstandsgründe-dieser-maschine)
+  {/* feature: empty-machine-reason-list */}
+
+  Administratoren können **Maschineneinstellungen → Stillstandsgründe → Nur ausgewählte Gründe** jetzt ohne ausgewählten Grund speichern. Maschinenbediener können dann auf dieser Maschine keinen Stillstandsgrund wählen. Mit **Auf andere Maschinen übertragen** lässt sich auch diese leere Auswahl kopieren. Sie ersetzt die bisherigen Listen der Zielmaschinen.
+
+  Wird der letzte ausgewählte Grund einer Maschine entfernt oder gelöscht, bleibt sie ohne Grund. Sie bietet danach nicht mehr alle Gründe an. Ein nirgends angebotener Grund zeigt unter **Verfügbar auf** den Text **Keine Maschine**. Folgen Sie [Grundauswahl je Maschine verwalten](/de/platform-intro/workflows/timeline-reason-creation).
+
+  ### Verbesserungen
+
+  #### [Schichtpausen und Zeiten über Mitternacht leichter prüfen](/de/platform-intro/pages/admin-panel#schichtpausen-verwalten)
+  {/* feature: shift-times-and-breaks */}
+
+  Administratoren sehen Zeiten und Länge jeder Pause in der neuen Spalte **Pausen** unter **Admin-Panel → Schichten und Zeitplanung konfigurieren → Schichten**. Ohne Pausen erscheint ein Strich.
+
+  Eine Schicht mit Ende vor dem Beginn ist gültig: 10:00–09:00 dauert 23 Stunden und zeigt **Über Mitternacht · endet am nächsten Tag**. Beginn und Ende dürfen nicht gleich sein. Eine Pause innerhalb einer Nachtschicht, etwa 23:30–00:15, zeigt **Pause über Mitternacht · endet am nächsten Tag**. Endet die Pause genau um 00:00, erscheint dieser Hinweis nicht.
+
+  Nutzen Sie beim Bearbeiten mit der Maus die kleinen − / + Schaltflächen oder auf einem Touchscreen das Drehrad. Vollständig eingegebene Uhrzeiten bleiben jetzt beim Klicken auf eine andere Stelle oder mit Tab erhalten. Zuvor konnte ohne Enter wieder die alte Uhrzeit erscheinen. Jede Pause muss innerhalb der Schicht liegen und darf höchstens eine Stunde dauern. Probleme erscheinen beim Bearbeiten unter der betroffenen Pause und verhindern das Speichern bis zur Korrektur. Folgen Sie [Schichtdefinitionen verwalten](/de/platform-intro/workflows/shift-management).
+
+  #### [Grunddetails und Maschinenverfügbarkeit nebeneinander bearbeiten](/de/platform-intro/pages/admin-panel#stillstandsgründe-verwalten)
+  {/* feature: downtime-reason-form */}
+
+  Administratoren sehen unter **Admin-Panel → Analysatoren konfigurieren → Stillstandsgründe** die Grunddetails jetzt links und **Verfügbar auf Maschinen** rechts. Maschinen erscheinen mit ihrem Namen. Das Informationssymbol neben dem Listentitel erklärt feste Listen. Der gewählte Grundtyp ist leichter lesbar. Hinweise zu fehlendem Namen oder Grundtyp erscheinen in Ihrer Sprache.
+
+  #### [Vertraute Aktionen unter einheitlichen Namen finden](/de/platform-intro/pages/admin-panel)
+  {/* feature: consistent-user-terms */}
+
+  **Stillstandsgründe** (zuvor **Timeline Gründe**) und **Regeln für Stillstandsgründe** (zuvor **Timeline-Regeln**) heißen jetzt auf der Watchmen-Plattform einheitlich. Die Regelbereiche heißen **Regeln für den Status „Aus“**, **Regeln für den Status „Leerlauf“** und **Regeln für den Status „In Vorbereitung“**.
+
+  Schaltflächen und Dialoge heißen jetzt einheitlich **Maschinenbediener hinzufügen**, **Maschinenbediener aktualisieren** und **Maschinenbediener deaktivieren**. Bei der Maschinenschichtzuweisung steht **Maschinenbediener auswählen**. Die Überschriften der Bestenliste heißen jetzt **Top-OEE-Maschinenbediener** und **Top-Leistungs-Maschinenbediener**. Der Ranglistenbereich in den Organisationsstatistiken trägt den Titel **Maschinenbediener**. Auch Demo-Konten, BDE Assist und Warnungstexte verwenden die Bezeichnung Maschinenbediener.
+
+  Administratoren öffnen **Admin-Panel → Schichten und Zeitplanung konfigurieren → Maschinenbediener**, um Konten zu verwalten. Kontohinweise erscheinen jetzt in Ihrer gewählten Sprache. Folgen Sie [Maschinenbediener-Konten verwalten](/de/platform-intro/workflows/operator-management).
+
+  ### Fehlerbehebungen
+
+  #### [Automatische Gründe auf die erlaubte Maschinenliste begrenzen](/de/platform-intro/pages/machine-configuration#zeitachsenregeln-und-zeitbereiche)
+  {/* feature: machine-reason-rules */}
+
+  Automatische Regeln vergeben keinen Grund mehr, den die Maschine nicht anbietet. Unter **Maschineneinstellungen → Regeln für Stillstandsgründe** bleibt die alte Auswahl ausgegraut mit **auf dieser Maschine nicht verfügbar** sichtbar, und eine Warnung fordert zur Wahl eines anderen Grundes auf; siehe [automatische Regeln prüfen](/de/platform-intro/workflows/timeline-reason-creation#automatische-regeln).
+</Update>
+
 <Update label="2026-11-04" description="v1.5.151" tags={["Verbesserung"]}>
   {/* commits: 0c61a6d */}
 

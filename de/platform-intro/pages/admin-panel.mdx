@@ -20,14 +20,14 @@ Benutzer öffnen diese Seite über die Hauptnavigation, wenn ihre Rolle es zulä
 
 ## Was Sie sehen können
 
-- Verwaltungsbereiche für Hallen, Schichten, Mitarbeitende, Prioritätsstufen und zugehörige Einrichtungsdaten.
+- Verwaltungsbereiche für Hallen, Schichten, Maschinenbediener, Prioritätsstufen und zugehörige Einrichtungsdaten.
 - Erstellungs- und Bearbeitungsaktionen für wiederverwendbare Plattformdatensätze.
 
 Die Maschinenliste kennzeichnet Einträge der Art **Arbeitsplatz**. Diese Arbeitsplätze haben keine AVA. Administratoren können sie anlegen oder ihre Art in der [Maschinenkonfiguration](/de/platform-intro/pages/machine-configuration) ändern.
 
 ## Was Sie tun können
 
-- Hallen, Schichten und Mitarbeitende anlegen und pflegen.
+- Hallen, Schichten und Maschinenbediener anlegen und pflegen.
 - Stillstandsgründe und andere plattformweite Einrichtungselemente verwalten.
 - Die unterstützende Konfiguration prüfen und aktualisieren, die Planungs- und Maschinenseiten benötigen.
 - Unternehmensweite Prioritätsstufen festlegen und Benutzerzugriffe auf Seiten und Maschinen verwalten.
@@ -97,7 +97,7 @@ Berechtigungen legen fest, auf welche Plattformseiten und Maschinen ein Benutzer
 | --- | --- |
 | **Invite Team Members / Users** | Einladungen, Rollen, Seiten- und Maschinenzugriff. |
 | **Configure Factory** | Halls und Displays, Machine Tags, Machines. |
-| **Configure Shifts and Scheduling** | Schichten, Schichtgruppen, Machine Operators. |
+| **Configure Shifts and Scheduling** | Schichten, Schichtgruppen, **Maschinenbediener**. |
 | **Configure Products & Orders** | Produkte, Aufträge, Auftragstags, ERP-Vorlagendownload. |
 | **Analysatoren konfigurieren** | **Stillstandsgründe** und Energy Price. |
 | **Configure Security and API** | API-Access Keys und Ticket Tags. |
@@ -112,9 +112,11 @@ Benutzerdefinierte Prioritätsstufen erlauben **0–999**, das Auftragsformular 
 
 ## Sicherheit, KI-Datenfreigabe und Kontenverwaltung
 
+Der Bereich **Maschinenbediener** verwaltet Konten mit der Rolle Maschinenbediener. Nutzen Sie **Maschinenbediener hinzufügen** zum Anlegen oder **Maschinenbediener aktualisieren** beim Bearbeiten eines Kontos. Bestätigungen für das Anlegen, Änderungen, neue Passwörter und das Heraufstufen erscheinen in Ihrer gewählten Sprache. Folgen Sie [Maschinenbediener-Konten verwalten](/de/platform-intro/workflows/operator-management).
+
 **API-Access Keys** werden bei Erstellung einmal angezeigt. Kopieren Sie den sichtbaren Schlüssel. **License Key** ist die Unternehmenslizenzkennung, kein API-Schlüssel. Der KI-Assistent in Beta darf nur hier freigegebene Datenbereiche nutzen. Ohne Adminfreigabe werden Plattformdaten nicht mit externen KI-Modellen geteilt.
 
-Aufgaben erklären [Benutzer einladen und Berechtigungen verwalten](/de/platform-intro/workflows/user-access-management), [Hallenplandisplay einrichten](/de/platform-intro/workflows/hall-display-setup) und [Operatoren verwalten](/de/platform-intro/workflows/operator-management).
+Aufgaben erklären [Benutzer einladen und Berechtigungen verwalten](/de/platform-intro/workflows/user-access-management), [Hallenplandisplay einrichten](/de/platform-intro/workflows/hall-display-setup) und [Maschinenbediener verwalten](/de/platform-intro/workflows/operator-management).
 
 ## Aktive Schichten in Maschinenlisten
 
@@ -122,13 +124,27 @@ Im Administrationsbereich und in der Unternehmensansicht kennzeichnet **Aktive S
 
 ## E-Mail eines Benutzers ändern
 
-Administratoren können in der Benutzerverwaltung des Administrationsbereichs oder der Unternehmensansicht **E-Mail ändern** für Benutzer wählen, die keine Operatoren sind. Verwenden Sie diese Aktion, statt die Adresse im Benutzerformular zu bearbeiten. Geben Sie **Neue E-Mail** ein und wählen Sie **Bestätigung senden**. Die bisherige Adresse bleibt aktiv, bis die Person den Link an der neuen Adresse öffnet und **E-Mail-Änderung bestätigen** wählt.
+Administratoren können in der Benutzerverwaltung des Administrationsbereichs oder der Unternehmensansicht **E-Mail ändern** für Benutzer wählen, die keine Maschinenbediener sind. Verwenden Sie diese Aktion, statt die Adresse im Benutzerformular zu bearbeiten. Geben Sie **Neue E-Mail** ein und wählen Sie **Bestätigung senden**. Die bisherige Adresse bleibt aktiv, bis die Person den Link an der neuen Adresse öffnet und **E-Mail-Änderung bestätigen** wählt.
 
 Der Hinweis zur ausstehenden Änderung zeigt die noch zu bestätigende Adresse. Wählen Sie nach der angezeigten Wartezeit **Erneut senden** oder bei Bedarf **Änderung abbrechen**. Folgen Sie [E-Mail-Adresse ändern](/de/platform-intro/workflows/change-email).
 
 ## Schichtpausen verwalten
 
-Administratoren öffnen **Admin-Panel → Schichten und Zeitplanung konfigurieren**, dann **Pauseneinstellungen** direkt links neben **Schicht hinzufügen**. Schalten Sie **Pausen automatisch kennzeichnen** ein und speichern Sie, bevor Sie beim Bearbeiten einer Schicht jeder Pause einen **Stillstandsgrund** zuweisen. **Kein Stillstandsgrund** lässt die Pause ohne automatische Pausenkennzeichnung.
+Die Spalte **Pausen** folgt auf das Schichtende. Sie zeigt Beginn, Ende und Länge jeder Pause in einer eigenen Zeile, in derselben Reihenfolge wie beim Bearbeiten. Ohne Pausen erscheint ein Strich. Eine Pause von 23:30 bis 00:15 zeigt ihre tatsächliche Länge von 45 Minuten.
+
+Geben Sie beim Anlegen oder Bearbeiten einer Schicht eine vollständige Uhrzeit ein. Klicken Sie danach woanders oder drücken Sie Tab. Enter ist zum Übernehmen nicht nötig. Unter dem Feld öffnet sich eine kleine Zeitauswahl: Nutzen Sie mit der Maus − / + oder auf einem Touchscreen das Drehrad.
+
+Liegt das Schichtende vor dem Beginn, läuft die Schicht bis zum nächsten Tag und der Hinweis **Über Mitternacht · endet am nächsten Tag** erscheint automatisch. Beispielsweise ist 10:00–09:00 eine gültige Schicht mit 23 Stunden. Beginn und Ende dürfen nicht gleich sein. Eine darin liegende Pause über Mitternacht zeigt **Pause über Mitternacht · endet am nächsten Tag**. Endet eine Pause genau um 00:00, erscheint dieser Pausenhinweis nicht.
+
+Jede Pause muss innerhalb der Schicht liegen und darf höchstens eine Stunde dauern. Diese Meldungen erscheinen beim Bearbeiten direkt unter der betroffenen Pause und verhindern das Speichern:
+
+- **Die Endzeit der Pause muss nach der Startzeit liegen.**
+- **Start- und Endzeit der Pause müssen innerhalb der Schichtzeit liegen.**
+- **Eine Pause darf höchstens 1 Stunde dauern.**
+
+Korrigieren Sie alle gemeldeten Probleme vor dem Speichern. Folgen Sie [Schichtdefinitionen verwalten](/de/platform-intro/workflows/shift-management).
+
+Administratoren öffnen **Admin-Panel → Schichten und Zeitplanung konfigurieren → Schichten**, dann **Pauseneinstellungen** direkt links neben **Schicht hinzufügen**. Schalten Sie **Pausen automatisch kennzeichnen** ein und speichern Sie, bevor Sie beim Bearbeiten einer Schicht jeder Pause einen **Stillstandsgrund** zuweisen. **Kein Stillstandsgrund** lässt die Pause ohne automatische Pausenkennzeichnung.
 
 Solange der Schalter eingeschaltet ist, zeigt die Spalte **Pausen** den Grund nach der Pausenlänge. Bei ausgeschaltetem Schalter sind die Gründe in der Tabelle ausgeblendet und die Grundauswahl beim Bearbeiten ausgegraut. Gespeicherte Auswahlen bleiben erhalten. Die Auswahl ist auch gesperrt, während die Einstellungen laden oder nicht geladen werden können.
 
@@ -136,11 +152,13 @@ Die [Pauseneinstellungen](/de/platform-intro/pages/break-settings) erklären die
 
 ## Stillstandsgründe verwalten
 
-Nur Administratoren können Gründe anlegen, bearbeiten oder löschen. Öffnen Sie **Admin-Panel → Analysatoren konfigurieren → Stillstandsgründe**. Die Tabelle zeigt **Code**, **Kategorie** und **Verfügbar auf** neben Grund, Beschreibung, Farbe und Stufe. Suchen Sie nach Code oder Text und filtern Sie nach Kategorie. Die Verfügbarkeit zeigt alle Maschinen oder eine Maschinenanzahl. Die Erklärung dazu nennt deren Namen.
+Nur Administratoren können Gründe anlegen, bearbeiten oder löschen. Öffnen Sie **Admin-Panel → Analysatoren konfigurieren → Stillstandsgründe**. Die Tabelle zeigt **Code**, **Kategorie** und **Verfügbar auf** neben Grund, Beschreibung, Farbe und Stufe. Suchen Sie nach Code oder Text und filtern Sie nach Kategorie. Die Verfügbarkeit zeigt alle Maschinen oder eine Maschinenanzahl. Die Erklärung dazu nennt deren Namen. **Keine Maschine** bedeutet, dass der Grund nirgends angeboten wird.
+
+Das Formular zeigt Name, Code, Kategorie, Beschreibung, Typ und Farbe links sowie **Verfügbar auf Maschinen** rechts. Die Maschinenliste lässt sich separat scrollen und zeigt Namen ohne zusätzliche Kennzeichnung für alle Gründe. Das Informationssymbol neben ihrem Titel erklärt feste Listen. Wählen Sie vor dem Speichern einen Grundtyp.
 
 Im Formular sind **Code** und **Kategorie** optional. Codes werden in Großbuchstaben gespeichert und müssen im Unternehmen eindeutig sein. Verwenden Sie bis zu 20 Buchstaben, Ziffern, Punkte, Unterstriche, Schrägstriche oder Bindestriche. Beginnen Sie mit einem Buchstaben oder einer Ziffer. Wählen Sie eine vorhandene Kategorie oder geben Sie eine neue ein. **Farbe wählen** öffnet die Farbauswahl. Sie können einen Farbwert direkt eingeben oder **Zufällige Farbe** nutzen. Neue Gründe erhalten anfangs eine zufällige Farbe.
 
-Klicken Sie unter **Verfügbar auf Maschinen** auf das Kontrollkästchen oder den Maschinennamen, um festzulegen, wo Bediener den Grund nutzen dürfen. Andere Bereiche der Zeile ändern die Auswahl nicht. Wenn Sie eine mit **Alle Gründe** markierte Maschine abwählen, erhält diese eine feste Liste der übrigen aktuellen Gründe. Später angelegte Gründe erscheinen dort nicht mehr automatisch. Sie können eine Maschine auf diese Weise nicht ohne Grund lassen. Geben Sie ihr zuerst einen anderen Grund oder lassen Sie diesen ausgewählt.
+Klicken Sie unter **Verfügbar auf Maschinen** auf das Kontrollkästchen oder den Maschinennamen, um festzulegen, wo Maschinenbediener den Grund nutzen dürfen. Andere Bereiche der Zeile ändern die Auswahl nicht. Wenn Sie eine Maschine abwählen, die bisher alle Gründe anbietet, erhält diese eine feste Liste der übrigen aktuellen Gründe. Später angelegte Gründe erscheinen dort nicht mehr automatisch. Wählen Sie ihren letzten Grund ab, bietet die Maschine keinen Grund mehr zur Auswahl. Sie können einen Grund ohne ausgewählte Maschinen speichern.
 
 Änderungen an einem gemeinsamen Grund gelten für alle Maschinen. Wählen Sie **Löschen** im Zeilenmenü des Grundes und prüfen Sie **Beim Löschen wird dieser Grund entfernt aus:**. Der Hinweis nennt betroffene frühere Stillstände, Grundlisten der Maschinen, Regeln für Stillstandsgründe und Pausen. Soweit verfügbar erscheinen Anzahlen und beispielhafte Namen. Ohne Verwendung erscheint **Dieser Grund wird nirgends verwendet.** Während die Details laden oder wenn sie nicht geladen werden können, erscheint nur ein allgemeiner Hinweis. Löschen bleibt möglich.
 
@@ -152,7 +170,7 @@ Die Schritte finden Sie unter [Stillstandsgründe erstellen und verwalten](/de/p
 
 - Halle
 - Schicht
-- Mitarbeitender
+- Maschinenbediener
 - Stillstandsgrund
 - Maschinentyp
 - Prioritätsstufe
@@ -177,6 +195,6 @@ Die Schritte finden Sie unter [Stillstandsgründe erstellen und verwalten](/de/p
 
 - [Hallen verwalten](/de/platform-intro/workflows/hall-management)
 - [Schichtdefinitionen verwalten](/de/platform-intro/workflows/shift-management)
-- [Mitarbeitende verwalten](/de/platform-intro/workflows/operator-management)
+- [Maschinenbediener verwalten](/de/platform-intro/workflows/operator-management)
 - [Stillstandsgründe erstellen](/de/platform-intro/workflows/timeline-reason-creation)
 

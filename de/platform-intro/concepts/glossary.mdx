@@ -81,7 +81,7 @@ Chatassistent in Beta. Documentation only nutzt Plattformdokumentation; Context-
 
 ### Alert Rules
 
-Klassische Maschinenalarme mit Bedingungen, Empfängern und E-Mail-, SMS- oder Webhook-Kanälen. Operatoren haben keinen Seitenzugriff.
+Klassische Maschinenalarme mit Bedingungen, Empfängern und E-Mail-, SMS- oder Webhook-Kanälen. Maschinenbediener haben keinen Seitenzugriff.
 
 [Mehr erfahren](/de/platform-intro/pages/alert-rules).
 
@@ -123,7 +123,7 @@ Ordnet überlappende zukünftige Zuweisungen automatisch neu; laufende Arbeit bl
 
 ### Auto. / Automatically detected
 
-Vom Sensor erkannte Werte, etwa in Cycles (Auto. / Planned). Gemeint ist keine Bedienereingabe.
+Vom Sensor erkannte Werte, etwa in Cycles (Auto. / Planned). Gemeint ist keine Eingabe eines Maschinenbedieners.
 
 [Mehr erfahren](/de/platform-intro/pages/order-detail).
 
@@ -159,9 +159,11 @@ Gesamte Intervalldauer geteilt durch erkannte Zyklen, einschließlich Pausen und
 
 [Mehr erfahren](/de/platform-intro/concepts/calculations#cycle-times).
 
-### Avg. Cycle Time (Operator Input)
+<a id="avg-cycle-time-operator-input" />
 
-Produktionszeit geteilt durch die Bedienereingabemenge.
+### Durchschnittliche Zykluszeit (Maschinenbediener-Eingabe)
+
+Produktionszeit geteilt durch die vom Maschinenbediener eingegebene Menge.
 
 [Mehr erfahren](/de/platform-intro/concepts/calculations#cycle-times).
 
@@ -551,7 +553,7 @@ Produktionsbereich für Maschinen, Hallenplan, Planungsspalten und Hall Pools.
 
 ### Hall Plan / Hallenplan / Kiosk
 
-Hallenübersicht, die unbeaufsichtigt mit API-Schlüssel statt Anmeldung läuft. Operatoren haben keinen Hallenplanzugriff.
+Hallenübersicht, die unbeaufsichtigt mit ihrem **API-Schlüssel** statt einer Anmeldung läuft. Maschinenbediener haben keinen Hallenplanzugriff.
 
 [Mehr erfahren](/de/platform-intro/pages/hall-plan).
 
@@ -603,7 +605,7 @@ Eine Industrieminute ist ein Hundertstel einer Stunde beziehungsweise 0,6 gewöh
 
 ### Input Quantity / Cycle Count / PDA Entry / BDE-Eintrag
 
-Bedienereingabe gegenüber sensorerkannter Zykluszahl. Ein Wechsel der Fortschrittsquelle ändert nur die Anzeige.
+Von Maschinenbedienern eingegebene Mengen gegenüber sensorerkannter Zykluszahl. Ein Wechsel der Fortschrittsquelle ändert nur die Anzeige.
 
 [Mehr erfahren](/de/platform-intro/pages/orders-products).
 
@@ -695,7 +697,7 @@ Letzter gemeldeter Kontakt des Maschinengeräts; getrennt vom Produktionszustand
 
 ### Leaderboard
 
-Ranglisten für Maschinen und Operatoren nur für Admins. Die aktuelle Navigationserreichbarkeit benötigt Bestätigung.
+Ranglisten für Maschinen und Maschinenbediener nur für Admins. Die aktuelle Navigationserreichbarkeit benötigt Bestätigung.
 
 [Mehr erfahren](/de/platform-intro/pages/leaderboard).
 
@@ -762,6 +764,12 @@ Materialausschuss: aufgrund des Materials verworfene Teile; getrennt vom Fertigu
 Benutzerdefinierte Sensorwerte mit Name, Einheit, Grenzwerten, Genauigkeit und Multiplikationsfaktor, etwa Temperatur.
 
 [Mehr erfahren](/de/platform-intro/pages/machine-configuration).
+
+### Maschinenbediener
+
+**Maschinenbediener** ist die Bezeichnung der Oberfläche für Personen mit der Rolle Maschinenbediener. Sie erscheint in Kontoverwaltung, Planung, Vergleichen und Assistenztexten.
+
+[Mehr erfahren](/de/platform-intro/workflows/operator-management).
 
 ### Machine rating
 
@@ -959,7 +967,7 @@ Stückzahlen. PCS in Hallen- und Kioskkennzahlen bleibt sprachübergreifend glei
 
 ### BDE Assist
 
-**BDE Assist** (bisher **BDE-Assistent**) verbindet Intervallhilfe und Warnungen einer Maschine. Administratoren stellen sie getrennt ein. Bediener können vorgeschlagene Zeiten wählen und Warnungen prüfen, pausieren oder stummschalten.
+**BDE Assist** (bisher **BDE-Assistent**) verbindet Intervallhilfe und Warnungen einer Maschine. Administratoren stellen sie getrennt ein. Maschinenbediener können vorgeschlagene Zeiten wählen und Warnungen prüfen, pausieren oder stummschalten.
 
 [Mehr erfahren](/de/platform-intro/pages/machine-configuration).
 
@@ -1004,7 +1012,7 @@ Es liefen mehr Intervalle gleichzeitig, als die parallele Kapazität der Maschin
 
 ### Peak Optimizer
 
-Operatorvergleich nur für Admins über einen Zeitraum zum Finden guter Ergebnisse und Engpässe.
+Vergleich von Maschinenbedienern nur für Admins über einen Zeitraum zum Finden guter Ergebnisse und Engpässe.
 
 [Mehr erfahren](/de/platform-intro/pages/peak-optimizer).
 
@@ -1314,7 +1322,7 @@ Wöchentliches Muster von Schichten je Wochentag, das Maschinen zugeordnet wird.
 
 ### Shift Planner / Scheduler / Schichtplaner
 
-Seite zur Zuordnung von Schichten und Operatoren zu Maschinen nach Tag oder Woche.
+Seite zur Zuordnung von Schichten und Maschinenbedienern zu Maschinen nach Tag oder Woche.
 
 [Mehr erfahren](/de/platform-intro/pages/scheduler).
 
@@ -1416,9 +1424,11 @@ Zeitklassen, etwa 1–5 oder 5–30 Minuten, zum Zählen von Stillstandshäufigk
 
 [Mehr erfahren](/de/platform-intro/pages/timeline-analysis).
 
-### Timeline reason / Downtime reason / Stillstandsgrund
+<a id="timeline-reason--downtime-reason--stillstandsgrund" />
 
-Eine Beschriftung, die einen Stillstandszeitraum erklärt. Administratoren pflegen gemeinsame Gründe und bestimmen, wo Bediener sie wählen können. Das Entfernen aus der Maschinenauswahl entfernt keine früheren Zuordnungen. Beim Löschen des Grundes bleiben frühere Einträge erhalten, verlieren aber ihren Grund.
+### Stillstandsgrund
+
+Eine Beschriftung, die einen Stillstandszeitraum erklärt. Administratoren pflegen gemeinsame Gründe und bestimmen, wo Maschinenbediener sie wählen können. Das Entfernen aus der Maschinenauswahl entfernt keine früheren Zuordnungen. Beim Löschen des Grundes bleiben frühere Einträge erhalten, verlieren aber ihren Grund.
 
 Im [Hallenplan](/de/platform-intro/pages/hall-plan#downtime-reason) zeigt die Karte **Stillstandsgrund** in **V2** und **V3** den Grund, den der Maschinenbediener auf der BDE-Seite für den laufenden Stillstand gewählt hat. Sie erscheint nur bei Leerlauf oder Aus, wenn ein Grund gewählt und die Karte eingeschaltet wurde. Die vorherige Schicht zeigt sie nie.
 
@@ -1432,15 +1442,27 @@ Der optionale **Code** eines Grundes, etwa F12, ist im Unternehmen eindeutig und
 
 ### Alle Gründe (Standard) / Nur ausgewählte Gründe
 
-**Alle Gründe (Standard)** enthält jeden Unternehmensgrund und spätere Ergänzungen. **Nur ausgewählte Gründe** begrenzt die Auswahl der Maschinenbediener auf eine feste Liste mit mindestens einem Grund. Das Löschen des letzten ausgewählten Grundes lässt diese eingeschränkte Liste leer, bis ein Administrator sie ändert.
+**Alle Gründe (Standard)** enthält jeden Unternehmensgrund und spätere Ergänzungen. **Nur ausgewählte Gründe** begrenzt die Auswahl auf eine feste Liste, die leer sein darf. Bei leerer Liste können Maschinenbediener keinen Stillstandsgrund wählen. Das Löschen des letzten ausgewählten Grundes lässt diese eingeschränkte Liste leer, bis ein Administrator sie ändert.
 
 [Mehr erfahren](/de/platform-intro/pages/machine-configuration).
 
 ### Verfügbar auf Maschinen
 
-Die Maschinen, auf denen Bediener einen Grund wählen können. Wählen Sie eine mit **Alle Gründe** markierte Maschine ab, erhält sie eine feste Liste der übrigen aktuellen Gründe. Spätere Ergänzungen erscheinen nicht mehr automatisch.
+Die Maschinen, auf denen Maschinenbediener einen Grund wählen können. Wählen Sie eine Maschine ab, die bisher alle Gründe anbietet, erhält sie eine feste Liste der übrigen aktuellen Gründe. Spätere Ergänzungen erscheinen nicht mehr automatisch.
 
 [Mehr erfahren](/de/platform-intro/pages/admin-panel).
+
+### Keine Maschine / Kein Grund / auf dieser Maschine nicht verfügbar
+
+**Keine Maschine** unter **Verfügbar auf** bedeutet, dass ein Grund nirgends angeboten wird. **Kein Grund** ist eine Auswahl in automatischen Regeln, die keinen Grund vergibt. **auf dieser Maschine nicht verfügbar** kennzeichnet den Grund einer vorhandenen Regel, den die Maschine nicht mehr anbietet. Die Regel kann ihn nicht vergeben. Andere nicht verfügbare Gründe erscheinen nicht in der Auswahl. Wählen Sie einen verfügbaren Grund oder **Kein Grund** und speichern Sie.
+
+[Mehr erfahren](/de/platform-intro/pages/machine-configuration).
+
+### Über Mitternacht · endet am nächsten Tag / Pause über Mitternacht · endet am nächsten Tag
+
+**Über Mitternacht · endet am nächsten Tag** bedeutet, dass das Schichtende am nächsten Tag liegt. **Pause über Mitternacht · endet am nächsten Tag** kennzeichnet eine innerhalb der Schicht liegende Pause über Mitternacht, etwa 23:30–00:15. Endet die Pause genau um 00:00, erscheint der Pausenhinweis nicht. Jede Pause darf höchstens eine Stunde dauern.
+
+[Mehr erfahren](/de/platform-intro/workflows/shift-management).
 
 ### Pauseneinstellungen / Pausen automatisch kennzeichnen
 
@@ -1456,9 +1478,11 @@ In den **Pauseneinstellungen** erweitert **Toleranz** die Pause um 0–15 Minute
 
 [Mehr erfahren](/de/platform-intro/pages/break-settings).
 
-### Timeline rules
+<a id="timeline-rules" />
 
-Automatische Gründe für Aus, Leerlauf oder Vorbereitung: zuerst spezifische Grundregel, dann deren DEFAULT-Regel, dann Global-Regeln.
+### Regeln für Stillstandsgründe
+
+Regeln, die je Maschine und Status getrennt eingestellt werden: Aus, Leerlauf oder Vorbereitung. Jede Regel vergibt einen Grund für einen Bereich der Stillstandsdauer in Sekunden. Der Stillstand erhält zuerst den Grund der Regel, deren Bereich passt. Passt kein Bereich, erhält er den **Standardgrund** des Status. Ergibt beides keinen Grund oder bietet die Maschine diesen Grund nicht an, erhält der Stillstand keinen automatischen Grund.
 
 Ein vom Maschinenbediener gewählter oder von Hand gesetzter Grund hat Vorrang. Ist die [automatische Pausenkennzeichnung](/de/platform-intro/pages/break-settings) eingeschaltet, folgt der Grund einer passenden Pause. **Regeln für Stillstandsgründe** gelten für die übrige Zeit in Leerlauf oder Aus. Ohne passenden Grund bleibt die Zeit unbeschriftet.
 

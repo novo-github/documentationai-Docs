@@ -59,7 +59,7 @@ The timeline uses Production green, Idle orange, Off red, Preparation blue, and 
 
 ## Read Timeline Details
 
-Hover over an interval or a machine state to read **Start**, **End**, and **Duration**. An interval also shows available order, quantity, and operator information. **Machine states** explains the machine's activity during the booked interval. A state shows its **Reason** when one is recorded. Missing values are left out.
+Hover over an interval or a machine state to read **Start**, **End**, and **Duration**. An interval also shows available order, quantity, and machine operator information. **Machine states** explains the machine's activity during the booked interval. A state shows its **Reason** when one is recorded. Missing values are left out.
 
 Dates and times use day/month/year and hours/minutes. Durations under a minute show seconds only. Hover over the pulse line for readings at that time. A cycle point shows **Cycle**, **Time**, and **Duration**, or **Cycles** for the hourly count.
 
@@ -67,7 +67,7 @@ Dates and times use day/month/year and hours/minutes. Durations under a minute s
 
 **AVL** is production time divided by total recorded time. **PRO** is production plus preparation divided by switched-on time; it means Performance, not Production. The dashboard Quality tooltip shows **95%** and directs changes to an admin. These time definitions differ from textbook OEE. The exact server OEE formula remains unconfirmed.
 
-Cycle-time averages differ by source: full interval time per detected cycle, active production time per detected cycle, or production time per operator-entered quantity. Compare the same period and source. See [calculations and examples](/en/platform-intro/concepts/calculations).
+Cycle-time averages differ by source: full interval time per detected cycle, active production time per detected cycle, or production time divided by the quantity entered by the machine operator. Compare the same period and source. See [calculations and examples](/en/platform-intro/concepts/calculations).
 
 Shift energy totals use the company’s local shift start and end times.
 

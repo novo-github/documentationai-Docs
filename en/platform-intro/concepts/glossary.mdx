@@ -81,7 +81,7 @@ Beta chat assistant. Documentation only uses platform docs; Context-aware may qu
 
 ### Alert Rules
 
-Classic machine alerts using conditions, recipients, and email, SMS, or webhook channels; operators cannot access the page.
+Classic machine alerts using conditions, recipients, and email, SMS, or webhook channels; machine operators cannot access the page.
 
 [Learn more](/en/platform-intro/pages/alert-rules).
 
@@ -117,7 +117,7 @@ Automatically rearranges overlapping future assignments while leaving in-progres
 
 ### Auto. / Automatically detected
 
-Sensor-detected values, as in Cycles (Auto. / Planned). It does not mean operator-entered quantity.
+Sensor-detected values, as in Cycles (Auto. / Planned). It does not mean quantity entered by a machine operator.
 
 [Learn more](/en/platform-intro/pages/order-detail).
 
@@ -153,9 +153,11 @@ Total interval duration divided by detected cycles, including pauses and loading
 
 [Learn more](/en/platform-intro/concepts/calculations#cycle-times).
 
-### Avg. Cycle Time (Operator Input)
+<a id="avg-cycle-time-operator-input" />
 
-Production time divided by the quantity entered by the operator.
+### Avg. Cycle Time (machine operator input)
+
+Production time divided by the quantity entered by the machine operator.
 
 [Learn more](/en/platform-intro/concepts/calculations#cycle-times).
 
@@ -183,7 +185,7 @@ Share of total recorded machine time in Production. AVL remains AVL in German an
 
 ### Back to pool
 
-**Back to pool** returns unfinished work to the machine’s own hall pool from Data Acquisition V3. It is also the confirmation button in Assignment Planner after you drop a started, stopped card onto a hall pool. Administrators and users with access to the Orders page can choose any hall pool there. Other users can only return work to the pool of its current machine’s hall. Everyone needs access to the step’s current machine. If work has started, its times and good parts stay on the original machine and only the remainder is passed on. **Reason (optional)** gives the next operator a note.
+**Back to pool** returns unfinished work to the machine’s own hall pool from Data Acquisition V3. It is also the confirmation button in Assignment Planner after you drop a started, stopped card onto a hall pool. Administrators and users with access to the Orders page can choose any hall pool there. Other users can only return work to the pool of its current machine’s hall. Everyone needs access to the step’s current machine. If work has started, its times and good parts stay on the original machine and only the remainder is passed on. **Reason (optional)** gives the next machine operator a note.
 
 [Learn more](/en/platform-intro/pages/data-acquisition).
 
@@ -203,7 +205,7 @@ Share of total recorded machine time in Production. AVL remains AVL in German an
 
 ### BDE / PDA / Betriebsdatenerfassung / Production Data Acquisition
 
-English PDA and German BDE refer to the same operator screen for starting work and booking quantities. PDA Entry is BDE-Eintrag; **PDA Assist** is **BDE Assist**.
+English PDA and German BDE refer to the same machine operator screen for starting work and booking quantities. PDA Entry is BDE-Eintrag; **PDA Assist** is **BDE Assist**.
 
 [Learn more](/en/platform-intro/pages/data-acquisition).
 
@@ -547,7 +549,7 @@ Production area grouping machines for Hall Plan, planning columns, and Hall Pool
 
 ### Hall Plan / Hallenplan / Kiosk
 
-Hall overview that can run unattended with an API key instead of a login; operators cannot access Hall Plan.
+Hall overview that can run unattended with its **API Key** instead of a login; machine operators cannot access Hall Plan.
 
 [Learn more](/en/platform-intro/pages/hall-plan).
 
@@ -599,7 +601,7 @@ One industrial minute is one hundredth of an hour, or 0.6 ordinary minutes. 500 
 
 ### Input Quantity / Cycle Count / PDA Entry / BDE-Eintrag
 
-Operator-entered quantity versus sensor-detected cycles. Switching the progress source changes the display only.
+Quantity entered by a machine operator versus sensor-detected cycles. Switching the progress source changes the display only.
 
 [Learn more](/en/platform-intro/pages/orders-products).
 
@@ -691,7 +693,7 @@ Most recent time the machine device reported; separate from the machine's produc
 
 ### Leaderboard
 
-Admin-only machine and operator rankings. Current sidebar availability needs confirmation.
+Admin-only rankings of machines and machine operators. Current sidebar availability needs confirmation.
 
 [Learn more](/en/platform-intro/pages/leaderboard).
 
@@ -758,6 +760,12 @@ Material Scrap: parts rejected because of the material, separate from Work Scrap
 Custom sensor readings with name, unit, thresholds, precision, and multiplication factor, such as temperature.
 
 [Learn more](/en/platform-intro/pages/machine-configuration).
+
+### Machine operators
+
+**Machine operators** is the interface name for people with the Machine operator role. It appears in account management, planning, comparisons and assistance texts.
+
+[Learn more](/en/platform-intro/workflows/operator-management).
 
 ### Machine rating
 
@@ -953,7 +961,7 @@ Produced-piece counts. PCS on Hall Plan and kiosk figures stays unchanged across
 
 ### PDA Assist
 
-**PDA Assist** (previously **PDA Assistant**) combines interval assistance and warnings for a machine. Administrators configure them separately. Operators can choose suggested times and review, snooze, or mute warnings.
+**PDA Assist** (previously **PDA Assistant**) combines interval assistance and warnings for a machine. Administrators configure them separately. Machine operators can choose suggested times and review, snooze, or mute warnings.
 
 [Learn more](/en/platform-intro/pages/machine-configuration).
 
@@ -996,7 +1004,7 @@ More intervals ran at once than the machine's parallel capacity. Parallel work m
 
 ### Peak Optimizer
 
-Admin-only comparison of operators over a period to find top performers and bottlenecks.
+Admin-only comparison of machine operators over a period to find top performers and bottlenecks.
 
 [Learn more](/en/platform-intro/pages/peak-optimizer).
 
@@ -1092,7 +1100,7 @@ Hall Plan setting for showing the active order's product image, product name, an
 
 ### Products more / less produced than detected
 
-Difference between operator-entered production quantities and sensor-detected cycles.
+Difference between production quantities entered by machine operators and sensor-detected cycles.
 
 [Learn more](/en/platform-intro/pages/order-detail).
 
@@ -1304,7 +1312,7 @@ Weekly pattern assigning shifts to weekdays, attached to machines.
 
 ### Shift Planner / Scheduler / Schichtplaner
 
-Page for assigning shifts and operators to machines by day or week.
+Page for assigning shifts and machine operators to machines by day or week.
 
 [Learn more](/en/platform-intro/pages/scheduler).
 
@@ -1406,9 +1414,11 @@ Duration buckets, such as 1–5 or 5–30 minutes, used to count downtime freque
 
 [Learn more](/en/platform-intro/pages/timeline-analysis).
 
-### Timeline reason / Downtime reason / Stillstandsgrund
+<a id="timeline-reason--downtime-reason--stillstandsgrund" />
 
-A label explaining a downtime period. Administrators maintain shared reasons and choose where operators may select them. Removing a reason from a machine's selection does not remove past labels. Deleting the reason keeps past entries but removes their reason.
+### Downtime reason
+
+A label explaining a downtime period. Administrators maintain shared reasons and choose where machine operators may select them. Removing a reason from a machine's selection does not remove past labels. Deleting the reason keeps past entries but removes their reason.
 
 In [Hall Plan](/en/platform-intro/pages/hall-plan#downtime-reason), **Downtime reason** is a card in **V2** and **V3** showing the reason the machine operator chose on the PDA page for the current downtime. It appears only while the machine is idle or off, if a reason was chosen and the card is enabled. The previous shift never shows it.
 
@@ -1422,15 +1432,27 @@ A reason's optional **Code**, such as F12, is unique within the company and uses
 
 ### All reasons (default) / Only selected reasons
 
-**All reasons (default)** includes every company reason and future additions. **Only selected reasons** limits operators to a fixed list with at least one reason. Deleting the last selected reason leaves that restricted list empty until an administrator changes it.
+**All reasons (default)** includes every company reason and future additions. **Only selected reasons** limits the choices to a fixed list, which can be empty. An empty list means machine operators cannot choose a downtime reason. Deleting the last selected reason leaves that restricted list empty until an administrator changes it.
 
 [Learn more](/en/platform-intro/pages/machine-configuration).
 
 ### Available on machines
 
-The machines where operators can select a reason. Unticking a machine marked **All reasons** gives it a fixed list of the other current reasons; later additions no longer appear automatically.
+The machines where machine operators can select a reason. Unticking a machine that currently offers all reasons gives it a fixed list of the other current reasons; later additions no longer appear automatically.
 
 [Learn more](/en/platform-intro/pages/admin-panel).
+
+### No machines / No reason / not available on this machine
+
+**No machines** under **Available on** means a reason is offered nowhere. **No reason** is a choice in automatic rules that assigns no reason. **not available on this machine** marks an existing rule's reason that the machine no longer offers; that rule cannot assign it. Other unavailable reasons do not appear in the choices. Choose an available reason or **No reason** and save.
+
+[Learn more](/en/platform-intro/pages/machine-configuration).
+
+### Overnight shift · ends the next day / Break over midnight · ends the next day
+
+**Overnight shift · ends the next day** means the shift end is on the next day. **Break over midnight · ends the next day** marks a break inside the shift that crosses midnight, such as 23:30–00:15. A break ending exactly at 00:00 does not show the break hint. Each break can last at most one hour.
+
+[Learn more](/en/platform-intro/workflows/shift-management).
 
 ### Break settings / Label breaks automatically
 
@@ -1446,9 +1468,11 @@ In **Break settings**, **Tolerance** adds 0–15 minutes before and after a brea
 
 [Learn more](/en/platform-intro/pages/break-settings).
 
-### Timeline rules
+<a id="timeline-rules" />
 
-Automatic reasons selected by specific reason rule, then its DEFAULT rule, then Global rules, for Off, Idle, or Preparation.
+### Downtime reason rules
+
+Rules set separately for each machine and state: Off, Idle or Preparation. Each rule assigns a reason for a range of downtime lengths in seconds. The downtime first gets the reason of the rule whose range fits. If no range fits, it gets the state’s **Default Reason**. If neither gives a reason, or the machine does not offer that reason, the downtime gets no automatic reason.
 
 A reason chosen by the machine operator or set by hand takes priority. When [automatic break labels](/en/platform-intro/pages/break-settings) are enabled, an eligible break's reason comes next. **Downtime reason rules** apply to the remaining idle or off time; without a matching reason, the time stays unlabelled.
 

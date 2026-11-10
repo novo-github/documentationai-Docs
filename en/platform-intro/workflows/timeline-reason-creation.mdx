@@ -1,11 +1,11 @@
 ---
 title: "Create and Manage Downtime Reasons"
-description: "Set up reasons operators can recognize and choose which machines offer them."
+description: "Set up reasons machine operators can recognize and choose which machines offer them."
 ---
 
 ## Goal
 
-Set up reasons operators can recognize and choose which machines offer them.
+Set up reasons machine operators can recognize and choose which machines offer them.
 
 ## Before You Begin
 
@@ -24,23 +24,32 @@ Check existing reasons before creating another. Agree names and codes with your 
     As an administrator, open **Machine Settings → Downtime reasons**. You can also create and edit reasons under **Admin Panel → Configure Analyzers → Downtime reasons**. See [Admin Panel](/en/platform-intro/pages/admin-panel).
   </Step>
   <Step title="Choose all reasons or a fixed list" icon="arrow-right" title-type="p">
-    Choose **All reasons (default)** to include future reasons automatically. Or choose **Only selected reasons** and tick at least one. Search and filter the list as needed. **Select all visible** adds visible reasons; clearing removes the entire selection.
+    Choose **All reasons (default)** to include future reasons automatically. Or choose **Only selected reasons** and tick the reasons you want. Leave all unticked to offer no downtime reasons on this machine. Search and filter the list as needed. **Select all visible** adds visible reasons; clearing removes the entire selection.
   </Step>
   <Step title="Create or edit a reason" icon="arrow-right" title-type="p">
     Use **New reason**, or the edit action beside an existing reason. Enter its name and description. Optional **Code** must be unique within the company and becomes uppercase. Choose or enter a **Category**. Use **Pick colour**, enter a colour value, or choose **Random colour**.
   </Step>
   <Step title="Choose availability" icon="arrow-right" title-type="p">
-    Under **Available on machines**, tick where the reason should be offered. When creating from a machine’s settings, that machine starts ticked. Unticking a machine marked **All reasons** gives it a fixed list of the other current reasons. Future reasons will no longer appear there automatically.
+    Under **Available on machines**, tick where the reason should be offered. When creating from a machine’s settings, that machine starts ticked. Unticking a machine that currently offers all reasons gives it a fixed list of the other current reasons. Future reasons will no longer appear there automatically.
   </Step>
   <Step title="Save and check the machine selection" icon="arrow-right" title-type="p">
     Save the reason, then check the machine’s selection and save the tab if it still has unsaved changes. If the reason was created but its machines could not be saved, keep editing it, check the machine list, and save again. Do not create a duplicate.
   </Step>
   <Step title="Apply the selection to other machines" icon="arrow-right" title-type="p">
-    Use **Apply to other machines**, choose destinations, and review the replacement notice. Confirm to replace their reason lists with the current selection or all-reasons mode. Check the result.
+    Use **Apply to other machines**, choose destinations, and review the replacement notice. Confirm to replace their reason lists with the current selection or all-reasons mode. An empty fixed list leaves all chosen destinations with no reasons. Check the result.
   </Step>
 </Steps>
 
 ## Automatic Rules
+
+<Steps>
+  <Step title="Review rules after changing availability" icon="arrow-right" title-type="p">
+    Open **Machine Settings → Downtime reason rules**. Look for the warning above the rules and greyed-out reasons marked **not available on this machine**.
+  </Step>
+  <Step title="Choose an available reason and save" icon="arrow-right" title-type="p">
+    Only this machine’s reasons are offered. An unavailable reason remains visible, greyed out, only if an existing rule already uses it. Replace that choice with an offered reason, or choose **No reason** when no reason should be assigned. Save the rules. An unavailable reason is not assigned automatically while you leave the old choice in place.
+  </Step>
+</Steps>
 
 Machine selections also limit the reasons automatic rules and shift breaks can use. Configure the rules in [Machine Configuration](/en/platform-intro/pages/machine-configuration).
 
@@ -68,16 +77,16 @@ To clear only one downtime's label, use **Remove label** on that period instead 
 
 ## Decision Points
 
-Choose all reasons for automatic access to future additions, or a fixed list for a shorter operator selection. Reuse a shared reason when its meaning is the same. Editing it affects every machine.
+Choose all reasons for automatic access to future additions, or a fixed list for a shorter choice of reasons for machine operators. Reuse a shared reason when its meaning is the same. Editing it affects every machine.
 
 ## Expected Result
 
-Operators see the reasons allowed on their machine. Charts show codes, and their explanations show categories when provided.
+Machine operators see the reasons allowed on their machine. Charts show codes, and their explanations show categories when provided.
 
 ## Common Problems and Edge Cases
 
 - A duplicate code cannot be saved. Choose another code or edit the existing reason.
-- You cannot remove a machine’s only remaining reason through the availability checklist. Give the named machine another reason first, or keep this one ticked.
+- Unticking the last reason leaves a machine without reason choices. Select a reason again or choose **All reasons (default)** to offer reasons again.
 - Deleting a shared reason also removes it from downtime reason rules, defaults and shift breaks. Review the uses in the deletion notice and check the affected settings afterwards.
 - If someone changes the selection at the same time, the latest selection reloads. Review it and retry.
 - An already open PDA page picks up new availability on its next refresh. A rejected reason selection also updates its list.

@@ -5,7 +5,7 @@ description: "A full editing and analysis page for one production order and its 
 
 ## Overview
 
-**Access:** Same as Orders & Products: Admin or `orders`; never Operator. [Roles and access](/en/platform-intro/concepts/roles-and-access).
+**Access:** Same as Orders & Products: Admin, or a User with page access to **Orders & Products**; never Machine operator. [Roles and access](/en/platform-intro/concepts/roles-and-access).
 
 Inspect and edit a production order, its work orders, operations, and assignments. Use the notes, timeline, and analysis views to connect the production plan with recorded work.
 
@@ -81,7 +81,7 @@ Steps held for a long time, never started, or without a planned start still get 
 
 ## Read Timeline Details
 
-Hover over an interval or a machine state to read **Start**, **End**, and **Duration**. An interval also shows available order, quantity, and operator information. **Machine states** explains the machine's activity during the booked interval. A state shows its **Reason** when one is recorded. Missing values are left out.
+Hover over an interval or a machine state to read **Start**, **End**, and **Duration**. An interval also shows available order, quantity, and machine operator information. **Machine states** explains the machine's activity during the booked interval. A state shows its **Reason** when one is recorded. Missing values are left out.
 
 Dates and times use day/month/year and hours/minutes. Durations under a minute show seconds only. Hover over the pulse line for readings at that time. A cycle point shows **Cycle**, **Time**, and **Duration**, or **Cycles** for the hourly count.
 
@@ -120,7 +120,7 @@ Follow [Correct an Interval](/en/platform-intro/workflows/data-acquisition#corre
 
 **Total = Input + Mat. (MA) + Work (AA)**. **Sum / Summ.** is a totals row; **Avg. / Ø** is an average. **Auto.** in Cycles (Auto. / Planned) means sensor-detected.
 
-**Avg. Cycle Duration** uses full interval duration / detected cycles; **Avg. Production Cycle Time** uses production time / detected cycles; **Avg. Cycle Time (Operator Input)** uses production time / entered quantity. Cycle averages are displayed in seconds. Deviations use actual minus planned, shown in minutes and seconds; negative time deviation means faster.
+**Avg. Cycle Duration** uses full interval duration / detected cycles; **Avg. Production Cycle Time** uses production time / detected cycles; **Avg. Cycle Time (machine operator input)** uses production time / entered quantity. Cycle averages are displayed in seconds. Deviations use actual minus planned, shown in minutes and seconds; negative time deviation means faster.
 
 Check **Cycles found outside the intervals** and **Products more / less produced than detected** to investigate sensor-versus-booking differences. For split orders, planned production is calculated against each machine's assigned quantity. [Calculations](/en/platform-intro/concepts/calculations) gives worked examples.
 
