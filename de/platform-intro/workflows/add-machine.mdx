@@ -1,28 +1,47 @@
 ---
 title: "Maschine oder Arbeitsplatz hinzufügen"
-description: "Verwenden Sie den Adminassistenten, wählen Sie Maschine oder Arbeitsplatz und verbinden Sie Sensoren vor der Live-Datennutzung."
+description: "Erstellen Sie eine Maschine oder einen Arbeitsplatz unter Grundinformationen im Admin-Panel und vervollständigen Sie anschließend die Konfiguration."
 ---
 
 ## Bevor Sie beginnen
 
-**Wer darf das tun: Nur Admin.** Starten Sie unter **Administrationsbereich → Machines → Add Machine**, Route `/admin-panel`. Halten Sie Name, Typ, Halle und gegebenenfalls Schichtgruppe bereit. Maschinenerstellung ist auch von der Maschinenseite dokumentiert.
+**Wer darf das tun: Nur Admin.** Öffnen Sie **Admin-Panel → Maschinen** und wählen Sie oben rechts **Maschine hinzufügen**. Die Konfigurationsseite für eine neue Maschine öffnet sich. Halten Sie den Namen und gegebenenfalls Angaben zu Typ, Halle und Schichtgruppe bereit.
 
-## Basics → Settings & Media → Review
+## Grundinformationen eingeben
 
-1. Geben Sie unter **Basics** Identifikationsdaten ein und wählen Sie **Art**: **Maschine** oder **Arbeitsplatz** sowie den Maschinentyp.
-2. Setzen Sie unter **Settings & Media** die passende Halle, Schichtgruppe, Tags und das Bild.
-3. Prüfen und speichern Sie unter **Review** den Eintrag.
-4. Öffnen Sie für eine **Maschine** die [Maschinenkonfiguration](/de/platform-intro/pages/machine-configuration), um eine AVA zuzuweisen und die Überwachung einzurichten. Überspringen Sie bei einem **Arbeitsplatz** die AVA-Einrichtung. Er kann keine AVA haben.
-5. Prüfen Sie bei einer Maschine die AVA-Zuordnung vor erwarteten Live-Werten.
+Vor dem Erstellen lässt sich nur **Grundinformationen** öffnen. Alle anderen Tabs zeigen ein Schloss und bleiben gesperrt, bis Sie **Erstellen** wählen.
+
+1. Wählen Sie **Art**: **Maschine** oder **Arbeitsplatz**. Ein Arbeitsplatz dient als Ziel für Aufträge und Zuweisungen. Er hat keine AVA und zeigt keine maschinen- oder sensorbasierten Kennzahlen.
+2. Geben Sie **Name** ein, das einzige Pflichtfeld. **Erstellen** bleibt ohne Namen gesperrt. Sie können außerdem eine **Beschreibung** sowie Spannung und Strom angeben.
+3. Prüfen Sie das Datum unter **Datum auswählen**. Es ist auf heute voreingestellt und darf nicht in der Zukunft liegen. Diese Auswahl erscheint nur beim Hinzufügen einer Maschine oder eines Arbeitsplatzes.
+4. Wählen Sie bei Bedarf **Klicken Sie zum Hochladen eines Bildes**. Danach stehen **Bild ändern** und **Bild löschen** zur Verfügung. Klicken Sie auf das Bild, um die Vorschau zu öffnen.
+5. Aktivieren Sie **Sensor wird von der Maschine mit Strom versorgt**, wenn der Sensor beim Ausschalten der Maschine ebenfalls keinen Strom mehr erhält. Ein fehlendes Signal wird dann als ausgeschaltete Maschine statt als unbekannt gewertet.
+6. Wählen Sie unter **Hallen** eine Halle. Geben Sie zum Erstellen einer Halle deren Namen ein und drücken Sie Enter. Unter **Tags** können Sie mehrere Tags auswählen oder durch Eingabe eines neuen Namens und Enter ein Tag erstellen.
+7. Im Abschnitt **Vorkonfigurationen** können Sie unter **AVAs** eine AVA-Sensorbox für eine Maschine wählen. Bei Bedarf wählen Sie im selben Abschnitt auch eine **Schichtgruppe**. Dieser Abschnitt erscheint nur beim Hinzufügen. Bei einem Arbeitsplatz ist **AVAs** gesperrt, da Arbeitsplätze keine AVA haben können.
+8. Entscheiden Sie unter **Schichten**, ob Sie **Aktive Schicht** einschalten möchten. Der Abschnitt **Schichtmodell wählen** unten erklärt die Einstellungen und ihre Wirkung auf die Schichtgruppe.
+9. Geben Sie unter **Planung → Parallele Aufträge** ein, wie viele Aufträge die Maschine gleichzeitig bearbeiten kann. Erlaubt sind ganze Zahlen von 1 bis 100; voreingestellt ist 1. Der Forecaster verwendet diesen Wert.
+10. Öffnen Sie bei Bedarf über **Maschinentyp → Maschinentyp wählen** die Auswahl **Maschinentyp auswählen**. Nach der Auswahl stehen **Maschinentyp ändern** und **Entfernen** zur Verfügung.
+11. Wählen Sie unten rechts **Erstellen**. Die Seite zeigt anschließend die Konfiguration der neuen Maschine oder des neuen Arbeitsplatzes.
 
 ## Schichtmodell wählen
 
-Wählen Sie in der Maschineneinrichtung **Schichten → Aktive Schicht**, wenn Schichten bei Leerlauf, Produktion oder Vorbereitung beginnen sollen. Stellen Sie **Minimale Schichtlänge**, **Stillstand, der eine Schicht beendet** und **Maximale Schichtlänge** ein. Alle Werte müssen größer als 0 sein. Mindest- und Stillstandsdauer dürfen die Höchstdauer nicht überschreiten. Diese beträgt höchstens 24 Stunden. Die Schichtgruppe wird währenddessen nicht verwendet. Lassen Sie die Einstellung für geplante Schichten ausgeschaltet. Lesen Sie vor dem Speichern die [Einstellungen aktiver Schichten](/de/platform-intro/pages/machine-configuration).
+Wählen Sie unter **Grundinformationen** im Abschnitt **Schichten** die Option **Aktive Schicht**, wenn Schichten bei Leerlauf, Produktion oder Vorbereitung beginnen sollen. Stellen Sie **Minimale Schichtlänge**, **Stillstand, der eine Schicht beendet** und **Maximale Schichtlänge** in Stunden ein. Alle Werte müssen größer als 0 sein. Mindest- und Stillstandsdauer dürfen die Höchstdauer nicht überschreiten. Diese beträgt höchstens 24 Stunden. Die Schichtgruppe wird währenddessen nicht verwendet. Lassen Sie die Einstellung für geplante Schichten ausgeschaltet. Lesen Sie vor dem Speichern die [Einstellungen aktiver Schichten](/de/platform-intro/pages/machine-configuration).
+
+## Nach dem Erstellen fortfahren
+
+Die verfügbaren Tabs hängen von der **Art** ab:
+
+- **Maschine**: Zusätzlich zu **Grundinformationen** sind **Energiemonitor**, **Bewertungen**, **Stillstandsgründe**, **Zeitspannen**, **Regeln für Stillstandsgründe**, **Maschinenmerkmale**, **AVA-Zuweisungen** und **BDE Assist** verfügbar.
+- **Arbeitsplatz**: Zusätzlich zu **Grundinformationen** sind nur **Stillstandsgründe** und **BDE Assist** verfügbar. Sensor-Tabs sind ausgeblendet.
+
+Für eine Maschine können Sie später unter **AVA-Zuweisungen** eine AVA zuweisen, wenn Sie unter **Vorkonfigurationen → AVAs** keine gewählt haben. Prüfen Sie die Zuweisung, bevor Sie Live-Werte erwarten.
+
+Für eine Maschine können Sie optional unter **Energiemonitor → Energiemonitor hinzufügen** die Gerätedaten eingeben und **Energiemonitor aktiv** einstellen. **Geräte-ID**, **MAC-Adresse** und **Client-ID** sind erforderlich. **Gerätename** und **IP-Adresse** sind optional. Einzelheiten finden Sie unter [Maschinenkonfiguration](/de/platform-intro/pages/machine-configuration).
 
 ## Erwartetes Ergebnis und häufige Probleme
 
 Der Eintrag erscheint unter [Maschinen](/de/platform-intro/pages/machines) und kann geplante Arbeit erhalten. Eine Maschine ohne AVA sammelt bis zur Zuordnung keine Sensordaten. Ein Arbeitsplatz hat bewusst keine AVA, Sensorkennzahlen, Zustandszähler oder sensorbasierten Alarm-/Automator-Auslösungen.
 
-Ergänzen Sie Pflichtfelder bei blockiertem Speichern. Vervollständigen Sie fehlende Hallen- oder Schichteinrichtung vor entsprechender Planungsnutzung. Siehe [Maschine konfigurieren](/de/platform-intro/workflows/machine-configuration).
+Ist **Erstellen** gesperrt, geben Sie **Name** ein. Vervollständigen Sie fehlende Hallen- oder Schichteinrichtung vor entsprechender Planungsnutzung. Siehe [Maschine konfigurieren](/de/platform-intro/workflows/machine-configuration).
 
 Öffnen Sie **Maschinen → Arbeitsplätze**, um den neuen Arbeitsplatz zu finden. Weisen Sie Aufträge über den [Zuweisungsplaner](/de/platform-intro/pages/assignment-planner) oder die Auftragsverwaltung zu. Die Karte zeigt **Aufträge heute** und **Als Nächstes**.

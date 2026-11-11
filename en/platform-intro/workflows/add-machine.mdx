@@ -1,28 +1,47 @@
 ---
 title: "Add a Machine or Work Center"
-description: "Use the admin setup wizard, choose Machine or Work center, and connect sensors before relying on live data."
+description: "Create a machine or work center from Basic Information in the Admin Panel, then complete its configuration."
 ---
 
 ## Before You Begin
 
-**Who can do this: Admin only.** Start at **Admin Panel → Machines → Add Machine**, route `/admin-panel`. Have the name, type, hall, and any shift-group information ready. Machine creation is also documented from the Machines page.
+**Who can do this: Admin only.** Open **Admin Panel → Machines** and select **Add Machine** at the top right. This opens the configuration page for a new machine. Have the name ready, plus any optional type, hall, and shift-group information.
 
-## Basics → Settings & Media → Review
+## Enter Basic Information
 
-1. In **Basics**, enter identification details and choose **Kind**: **Machine** or **Work center**, plus the machine type.
-2. In **Settings & Media**, set the applicable hall, shift group, tags, and image.
-3. In **Review**, check the record and save it.
-4. For a **Machine**, open [Machine Configuration](/en/platform-intro/pages/machine-configuration) to assign an AVA and complete monitoring settings. For a **Work center**, skip AVA setup; it cannot have an AVA.
-5. For a Machine, verify that the AVA is mapped before expecting live readings.
+Only **Basic Information** can be opened before creation. All other tabs show a lock and stay unavailable until you select **Create**.
+
+1. Choose **Kind**: **Machine** or **Work center**. A work center is a target for orders and assignments. It has no AVA and shows no machine- or sensor-derived KPIs.
+2. Enter **Name**, the only required field. **Create** stays disabled until you enter a name. You can also enter **Description**, **Voltage**, and **Current**.
+3. Check **Select date**. It starts at today and cannot be a future date. This choice appears only when adding a machine or work center.
+4. Optionally select **Click to upload image**. After uploading, use **Change Image** or **Delete Image** as needed. Click the image to preview it.
+5. Enable **Sensor powered by machine** if the sensor loses power whenever the machine is switched off. A missing signal is then treated as the machine being off instead of unknown.
+6. Under **Halls**, choose one hall. To create a hall, type its name and press Enter. Under **Tags**, you can select several tags or type a new tag and press Enter to create it.
+7. In **Pre-configurations**, you can choose an AVA sensor box under **AVAs** for a machine and select a **Shift group** as needed. This section appears only when adding. For a work center, **AVAs** is disabled because work centers cannot have an AVA.
+8. In **Shifts**, choose whether to enable **Active shift**. See **Choose the Shift Model** below for the settings and their effect on the shift group.
+9. In **Planning → Jobs in parallel**, enter how many jobs the machine can run at once. Use a whole number from 1 to 100; the default is 1. The Forecaster uses this value.
+10. Optionally use **Machine Type → Choose Machine Type** to open **Select Machine Type**. After choosing a type, you can use **Change Machine Type** or **Remove**.
+11. Select **Create** at the bottom right. The page becomes the new machine's or work center's configuration.
 
 ## Choose the Shift Model
 
-In the machine setup, use **Shifts → Active shift** if shifts should start with idle, production, or preparation. Set **Minimum shift length**, **Stop that ends a shift**, and **Maximum shift length**. All values must be greater than 0, neither the minimum nor the stop length may exceed the maximum, and the maximum is 24 hours. The shift group is not used while this is enabled. Leave it off for scheduled shifts. See [active shift settings](/en/platform-intro/pages/machine-configuration) before saving.
+In **Basic Information**, use **Shifts → Active shift** if shifts should start with idle, production, or preparation. Set **Minimum shift length**, **Stop that ends a shift**, and **Maximum shift length** in hours. All values must be greater than 0, neither the minimum nor the stop length may exceed the maximum, and the maximum is 24 hours. The shift group is not used while this is enabled. Leave it off for scheduled shifts. See [active shift settings](/en/platform-intro/pages/machine-configuration) before saving.
+
+## Continue After Creation
+
+The available tabs depend on **Kind**:
+
+- **Machine**: **Energy Monitor**, **Ratings**, **Downtime reasons**, **Timeline Ranges**, **Downtime reason rules**, **Machine Features**, **AVA Assignments**, and **PDA Assist** become available alongside **Basic Information**.
+- **Work center**: only **Downtime reasons** and **PDA Assist** become available alongside **Basic Information**. Sensor tabs are hidden.
+
+For a machine, you can assign an AVA later in **AVA Assignments** if you did not choose one under **Pre-configurations → AVAs**. Verify the assignment before expecting live readings.
+
+For a machine, optionally open **Energy Monitor → Add energy monitor** to enter the device details and set **Energy monitor active**. **Device ID**, **MAC address**, and **Client ID** are required. **Device name** and **IP address** are optional. See [Machine Configuration](/en/platform-intro/pages/machine-configuration) for details.
 
 ## Expected Result and Common Problems
 
 The entry appears in [Machines](/en/platform-intro/pages/machines) and can receive planned work. A Machine saved without an AVA collects no sensor data until an AVA is mapped. A Work center intentionally has no AVA, sensor KPIs, state-counter inclusion, or sensor-based alert/Automator triggers.
 
-If required fields block saving, complete them. Finish missing hall or shift setup before relying on those planning views. See [Configure a Machine](/en/platform-intro/workflows/machine-configuration).
+If **Create** is disabled, enter **Name**. Finish missing hall or shift setup before relying on those planning views. See [Configure a Machine](/en/platform-intro/workflows/machine-configuration).
 
 To find the new workplace, open **Machines → Work centers**. Assign orders through [Assignment Planner](/en/platform-intro/pages/assignment-planner) or order management. Its card shows **Orders today** and **Up next**.

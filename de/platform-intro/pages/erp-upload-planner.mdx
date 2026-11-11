@@ -99,7 +99,7 @@ Prüfen Sie nach dem Import die Ergebnisübersicht. Sie zeigt, welche Entscheidu
 
 ## Vier Phasen, Pflichtfelder und Kennzeichen
 
-Die aktuelle Seite heißt **ERP-Uploads**, in dieser Dokumentation auch ERP-Upload-Planer. Öffnen Sie sie im Planungsbereich unter `/erp-uploads`. Ablauf: **Datei hochladen → Spalten zuordnen → Überprüfen & Maschinen zuweisen → Überprüfen & Speichern**. Erlaubte Dateien: **CSV, XLS, XLSX**.
+Die aktuelle Seite heißt **ERP-Uploads**, in dieser Dokumentation auch ERP-Upload-Planer. Öffnen Sie sie über **Planer → ERP-Uploads**. Ablauf: **Datei hochladen → Spalten zuordnen → Überprüfen & Maschinen zuweisen → Überprüfen & Speichern**. Erlaubte Dateien: **CSV, XLS, XLSX**.
 
 Pflichtzuordnungen sind **Order Number, Product, Planned Start, Planned End**. Datum und Uhrzeit können aus einer gemeinsamen oder getrennten Spalten kommen. Ohne Uhrzeit gilt Mitternacht oder die gewählte Tagesanfangs-/Tagesende-Einstellung. Zeilen ohne Zeitplanung oder mit Beginn nach Ende werden nicht verarbeitet.
 
@@ -107,7 +107,7 @@ Pflichtzuordnungen sind **Order Number, Product, Planned Start, Planned End**. D
 - **Industrieminuten:** gewöhnliche Minuten = Industrieminuten × 0,6.
 - Anfangsprioritäten gelten nur für neue Aufträge und Arbeitsgänge. Die Prioritätseinstellungen oben erklären leere Zellen und ungültige Werte.
 - **Commit-Bereich:** **Alle Zeilen** oder **Maschine zugewiesen**; Letzteres importiert nur Zeilen mit Maschine.
-- **Zuordnung speichern / Zuordnung laden:** je Benutzer gespeicherte Zuordnung. Manuelle Maschinen-/Hall-Pool-Zuweisung überschreibt die Zuordnung; **Ausgewaehlte Zeilen zuruecksetzen** stellt sie wieder her.
+- **Zuordnung speichern / Zuordnung laden:** je Benutzer gespeicherte Zuordnung. Manuelle Maschinen-/Hall-Pool-Zuweisung überschreibt die Zuordnung; **Ausgewählte Zeilen zurücksetzen** entfernt die manuelle Auswahl für die ausgewählten Zeilen und übernimmt wieder deren Spaltenzuordnung.
 
 **Überprüfen** ist ein Probelauf ohne Speicherung. **NEU** bedeutet Erstellung, **GEÄ** Aktualisierung und **AUSWIRKUNG** einen beeinflussten berechneten Planungswert. Nach Datenänderungen müssen Sie **Überprüfen** erneut ausführen, bevor **Speichern** speichert.
 

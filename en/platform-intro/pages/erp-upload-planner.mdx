@@ -99,7 +99,7 @@ After import, review the outcome summary. It shows which decisions were applied 
 
 ## Four Stages, Required Fields, and Badges
 
-The current page is **ERP Uploads**, also called ERP Upload Planner in this documentation. Open it in Planner at `/erp-uploads`. Flow: **Upload File → Map Columns → Assign Machines → Review & Save**. Accepted files: **CSV, XLS, XLSX**.
+The current page is **ERP Uploads**, also called ERP Upload Planner in this documentation. Open it through **Planner → ERP Uploads**. Flow: **Upload File → Map Columns → Review & Assign Machines → Review & Save**. Accepted files: **CSV, XLS, XLSX**.
 
 Required mappings are **Order Number, Product, Planned Start, Planned End**. Date/time can be one column or separate columns; a date without time uses midnight or the selected start/end-of-day setting. Rows without schedule information or with start after end are not processed.
 
@@ -107,7 +107,7 @@ Required mappings are **Order Number, Product, Planned Start, Planned End**. Dat
 - **Industrial minutes:** ordinary minutes = industrial minutes × 0.6.
 - Initial priorities apply only to new orders and operations. See the priority settings above for empty cells and invalid values.
 - **Commit scope:** All rows or Machine assigned; the latter imports only rows with a machine assignment.
-- **Save Mapping / Load Mapping:** saved per user. Manual machine or hall-pool assignment overrides mapping; **Reset** restores it.
+- **Save Mapping / Load Mapping:** saved per user. Manual machine or hall-pool assignment overrides mapping; **Reset selected rows** removes the manual choices for the selected rows and restores their column mapping.
 
 **Check** is a dry run and saves nothing. **NEW / NEU** means creation, **CHG / GEÄ** means update, **IMPACT** means a calculated planning value is affected. If data changes after Check, run Check again before **Save** commits.
 
