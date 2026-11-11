@@ -99,17 +99,17 @@ Prüfen Sie nach dem Import die Ergebnisübersicht. Sie zeigt, welche Entscheidu
 
 ## Vier Phasen, Pflichtfelder und Kennzeichen
 
-Die aktuelle Seite heißt **ERP Uploads**, in dieser Dokumentation auch ERP-Upload-Planer. Öffnen Sie sie im Planungsbereich unter `/erp-uploads`. Ablauf: **Upload File → Map Columns → Assign Machines → Review & Save**. Erlaubte Dateien: **CSV, XLS, XLSX**.
+Die aktuelle Seite heißt **ERP-Uploads**, in dieser Dokumentation auch ERP-Upload-Planer. Öffnen Sie sie im Planungsbereich unter `/erp-uploads`. Ablauf: **Datei hochladen → Spalten zuordnen → Überprüfen & Maschinen zuweisen → Überprüfen & Speichern**. Erlaubte Dateien: **CSV, XLS, XLSX**.
 
 Pflichtzuordnungen sind **Order Number, Product, Planned Start, Planned End**. Datum und Uhrzeit können aus einer gemeinsamen oder getrennten Spalten kommen. Ohne Uhrzeit gilt Mitternacht oder die gewählte Tagesanfangs-/Tagesende-Einstellung. Zeilen ohne Zeitplanung oder mit Beginn nach Ende werden nicht verarbeitet.
 
-- **ALL Units / 1 Unit:** geplante Produktionszeit für die Gesamtmenge oder ein Teil.
-- **Industrial minutes:** gewöhnliche Minuten = Industrieminuten × 0,6.
+- **Alle Einheiten / 1 Einheit:** geplante Produktionszeit für die Gesamtmenge oder ein Teil.
+- **Industrieminuten:** gewöhnliche Minuten = Industrieminuten × 0,6.
 - Anfangsprioritäten gelten nur für neue Aufträge und Arbeitsgänge. Die Prioritätseinstellungen oben erklären leere Zellen und ungültige Werte.
-- **Commit scope:** All rows oder Machine assigned; Letzteres importiert nur Zeilen mit Maschine.
-- **Save Mapping / Load Mapping:** je Benutzer gespeicherte Zuordnung. Manuelle Maschinen-/Hall-Pool-Zuweisung überschreibt die Zuordnung; **Reset** stellt sie wieder her.
+- **Commit-Bereich:** **Alle Zeilen** oder **Maschine zugewiesen**; Letzteres importiert nur Zeilen mit Maschine.
+- **Zuordnung speichern / Zuordnung laden:** je Benutzer gespeicherte Zuordnung. Manuelle Maschinen-/Hall-Pool-Zuweisung überschreibt die Zuordnung; **Ausgewaehlte Zeilen zuruecksetzen** stellt sie wieder her.
 
-**Check** ist ein Probelauf ohne Speicherung. **NEW / NEU** bedeutet Erstellung, **CHG / GEÄ** Aktualisierung und **IMPACT** einen beeinflussten berechneten Planungswert. Nach Datenänderungen müssen Sie Check erneut ausführen, bevor **Save** speichert.
+**Überprüfen** ist ein Probelauf ohne Speicherung. **NEU** bedeutet Erstellung, **GEÄ** Aktualisierung und **AUSWIRKUNG** einen beeinflussten berechneten Planungswert. Nach Datenänderungen müssen Sie **Überprüfen** erneut ausführen, bevor **Speichern** speichert.
 
 ## Neuimport, Zuordnung und geschützter Verlauf
 

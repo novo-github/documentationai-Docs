@@ -172,19 +172,19 @@ Meldungen nennen den Arbeitsgang. Nach **Weiter** erscheint **Intervall beendet 
 
 ## PDA-/BDE-Schaltflächen und Mengenbezeichnungen
 
-**PDA (Production Data Acquisition)** und **BDE (Betriebsdatenerfassung)** bezeichnen dieselbe Bedienseite. Tabs umfassen **Assignments**, **Pool**, **Downtime reasons**, **Tickets** und **Knowledge Base**.
+**PDA (Production Data Acquisition)** und **BDE (Betriebsdatenerfassung)** bezeichnen dieselbe Bedienseite. Reiter umfassen **Zuweisungen**, **Pool**, **Stillstandsgrund**, **Tickets** und **WDB**.
 
 **Vorber.** beginnt Vorbereitung, **Start** die Produktion und **Stopp** beendet ein Intervall. **Weiter** bucht Mengen, beendet das laufende Intervall und startet sofort ein neues. Weitere Aktionen beginnen oder beenden Vorbereitung und Schichten.
 
-**Good qty. / Gutmenge** ist guter Ausstoß. **Mat. / MA** bedeutet Materialausschuss, **Work / AA** Fertigungsausschuss. **Gesamt = Eingabe + MA + AA**. **Rework Qty** ist die Nacharbeitsmenge. **Cycle Count** kommt vom Sensor, **PDA Entry / BDE-Eintrag** vom Maschinenbediener. Die Auswahl der Fortschrittsquelle ändert nur die Anzeige.
+**Gutmenge** ist guter Ausstoß. **MA** bedeutet Materialausschuss, **AA** Fertigungsausschuss. **Gesamt = Eingabe + MA + AA**. **Nacharbeit** zeigt die Menge der nachzuarbeitenden Teile. **Zyklusanzahl** kommt vom Sensor, **BDE-Eintrag** vom Maschinenbediener. Die Auswahl der Fortschrittsquelle ändert nur die Anzeige.
 
 **Beispiel:** 95 eingegebene Gutteile, 3 Materialausschussteile und 2 Fertigungsausschussteile ergeben insgesamt 100. Im Modus **Kumuliert** geben Sie den gesamten Maschinenzählerstand ein, beispielsweise 1450, nicht nur den Intervallzuwachs.
 
 ## Zwischenbuchung, Hall Pools und Abhängigkeiten
 
-**Mid Booking (Zwischenbuchung)** speichert Mengen während des Laufs durch Schließen und Neustarten des Intervalls. Schlägt der Neustart fehl, bleiben Mengen gespeichert. Drücken Sie **Start** zum Fortsetzen und prüfen Sie den Laufzustand vor einer weiteren Buchung.
+**Zwischenbuchung** speichert Mengen während des Laufs durch Schließen und Neustarten des Intervalls. Schlägt der Neustart fehl, bleiben Mengen gespeichert. Drücken Sie **Start** zum Fortsetzen und prüfen Sie den Laufzustand vor einer weiteren Buchung.
 
-Übernehmen Sie im **Pool** Arbeit aus dem Hall Pool Ihrer Maschine. Fehlt eine Zuweisung, suchen Sie ungeplante Arbeitsgänge oder verwenden Sie **Find/Create Immediate Order**. **Job Context** verbindet Notizen aus Auftrag, Arbeitsauftrag, Arbeitsgang und Zuweisung.
+Übernehmen Sie im **Pool** Arbeit aus dem Hallen-Pool Ihrer Maschine. Fehlt eine Zuweisung, suchen Sie ungeplante Arbeitsgänge oder verwenden Sie **Sofortauftrag finden/erstellen**. Über die Schaltfläche mit dem Notizsymbol auf der Zuweisungskarte sehen Sie Notizen und Beschreibungen zu Auftrag, Arbeitsauftrag, Arbeitsgang, Zuweisung und Produkt; die kleine Zahl zeigt, wie viele dieser Einträge ausgefüllt sind.
 
 **Wartet auf einen vorherigen Arbeitsgang** / **Blockiert durch** bedeutet, dass ein früherer Arbeitsgang noch nicht abgeschlossen ist. **Trotzdem starten** ist dennoch verfügbar. Prüfen Sie vorher die Abhängigkeit. Bei bereits laufender anderer Zuweisung erscheint eine Bestätigung. Ist die Planmenge nach **Stopp** erreicht, wählen Sie **Abschließen** oder **In Wartestellung lassen**.
 

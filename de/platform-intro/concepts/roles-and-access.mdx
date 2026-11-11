@@ -5,12 +5,12 @@ description: "Verstehen Sie die Rollen Admin, User und Maschinenbediener, Seiten
 
 ## Welche Rolle habe ich?
 
-Ihre Rolle setzt die grundsätzliche Zugriffsgrenze. **Page Access / Seitenzugriff** und **Machine Access / Maschinenzugriff** sind getrennte Berechtigungen innerhalb dieser Grenze.
+Ihre Rolle setzt die grundsätzliche Zugriffsgrenze. **Seitenzugriff** und **Maschinenzugriff** sind getrennte Berechtigungen innerhalb dieser Grenze.
 
 | Rolle | Möglichkeiten |
 | --- | --- |
-| **Admin** | Einstellungen verwalten, Benutzer einladen, Maschinen bearbeiten, Berechtigungen ändern und Adminseiten innerhalb des eigenen Unternehmens nutzen. |
-| **User** | Tägliche Arbeit mit den vom Administrator freigegebenen Seiten und Maschinen. Darf keine Benutzer einladen oder Maschinen bearbeiten. |
+| **Administrator** | Einstellungen verwalten, Benutzer einladen, Maschinen bearbeiten, Berechtigungen ändern und Adminseiten innerhalb des eigenen Unternehmens nutzen. |
+| **Benutzer** | Tägliche Arbeit mit den vom Administrator freigegebenen Seiten und Maschinen. Darf keine Benutzer einladen oder Maschinen bearbeiten. |
 | **Maschinenbediener** | Vom Administrator freigegebener, eingeschränkter Zugriff für die Fertigung. Hat nie Zugriff auf Hallenplan, Aufträge & Produkte oder Alarmregeln. |
 
 **System (Automator)** ist ein automatisierter Akteur im Ereignisverlauf, keine menschliche Rolle.
@@ -38,12 +38,12 @@ Maschinenzugriff ist unabhängig vom Seitenzugriff. Ein Administrator kann alle 
 
 **Beispiel:** Ein Planer mit Zugriff auf den Zuweisungsplaner und nur auf Maschine A kann die Planungsseite für seine freigegebene Maschine nutzen. Seitenzugriff allein gibt Maschine B nicht frei.
 
-**No machine access — contact admin** bedeutet, dass Ihrem Konto keine erreichbaren Maschinen zugewiesen sind. Beim Öffnen einer nicht freigegebenen Seite erscheint **Unauthorized**.
+**Kein Maschinenzugriff** bedeutet, dass Ihrem Konto keine erreichbaren Maschinen zugewiesen sind. Beim Öffnen einer nicht freigegebenen Seite erscheint **Access Restricted**.
 
 ## Wie erhalte ich den benötigten Zugriff?
 
 1. Nennen Sie Ihrer Administration die benötigte Seite, Maschine und Aufgabe.
-2. Die Administration öffnet **Administrationsbereich → Users → Edit Permissions** und prüft Seiten- und Maschinenzugriff getrennt.
+2. Die Administration öffnet **Administrationsbereich → Benutzer → Berechtigungen bearbeiten** und prüft Seiten- und Maschinenzugriff getrennt.
 3. Die Administration speichert die Änderung. Prüfen Sie den Zugriff in Ihrer nächsten Sitzung erneut, wie im bestehenden Berechtigungsleitfaden beschrieben.
 
 Den vollständigen Ablauf erklärt [Benutzer einladen und Berechtigungen verwalten](/de/platform-intro/workflows/user-access-management).
@@ -54,6 +54,6 @@ Den vollständigen Ablauf erklärt [Benutzer einladen und Berechtigungen verwalt
 
 Ein Administrator erstellt Konten für Maschinenbediener. Generierte Passwörter werden einmal angezeigt; kopieren oder laden Sie sie vor dem Schließen herunter. Ein neues Passwort beendet die aktiven Sitzungen dieses Maschinenbedieners. Eine Deaktivierung beendet den Zugriff sofort und erhält bisherige Schichten, Beschriftungen und Zuweisungen.
 
-**Promote to user** gibt Zugriff auf alle Maschinen, unabhängig von der bisherigen Maschinenliste. Prüfen Sie die daraus entstehenden Berechtigungen bewusst. E-Mail-Bestätigung und Aktivierung sind getrennt. Unbestätigte Maschinenbediener können sich weiterhin anmelden; eine Bestätigungsmail wird nicht automatisch versendet.
+**Zum Benutzer heraufstufen** gibt Zugriff auf alle Maschinen, unabhängig von der bisherigen Maschinenliste. Prüfen Sie die daraus entstehenden Berechtigungen bewusst. E-Mail-Bestätigung und Aktivierung sind getrennt. Unbestätigte Maschinenbediener können sich weiterhin anmelden; eine Bestätigungsmail wird nicht automatisch versendet.
 
 Siehe [Maschinenbediener verwalten](/de/platform-intro/workflows/operator-management), [Benutzerprofil](/de/platform-intro/pages/user-profile) und [Help Center](/de/help-center).

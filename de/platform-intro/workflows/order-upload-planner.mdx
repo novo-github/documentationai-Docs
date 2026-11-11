@@ -63,9 +63,9 @@ Beginnen Sie auf der [Seite ERP-Upload-Planer](/de/platform-intro/pages/erp-uplo
 
 ## Die vier Importphasen prüfen
 
-**Upload File → Map Columns → Assign Machines → Review & Save** verwendet CSV, XLS oder XLSX. Ordnen Sie **Order Number, Product, Planned Start, Planned End** zu. Wählen Sie **ALL Units / 1 Unit**, gewöhnliche/Industrieminuten, Importumfang und Anfangsprioritäten für neue Datensätze mit leeren Prioritätszellen. Die Anfangs-Arbeitsgangpriorität ist standardmäßig 100. Save Mapping gilt je Benutzer. Manuelle Maschinen-/Hall-Pool-Zuweisung überschreibt Zuordnungen; Reset stellt diese wieder her.
+**Datei hochladen → Spalten zuordnen → Überprüfen & Maschinen zuweisen → Überprüfen & Speichern** verwendet CSV, XLS oder XLSX. Ordnen Sie **Order Number, Product, Planned Start, Planned End** zu. Wählen Sie **Alle Einheiten / 1 Einheit**, gewöhnliche/Industrieminuten, Importumfang und Anfangsprioritäten für neue Datensätze mit leeren Prioritätszellen. Die Anfangs-Arbeitsgangpriorität ist standardmäßig 100. **Zuordnung speichern** gilt je Benutzer. Manuelle Maschinen-/Hall-Pool-Zuweisung überschreibt Zuordnungen; **Ausgewaehlte Zeilen zuruecksetzen** stellt diese wieder her.
 
-Führen Sie **Check** als Probelauf aus. **NEW / NEU**, **CHG / GEÄ** und **IMPACT** zeigen Erstellung, Aktualisierung und betroffene Planungswerte. Check speichert nichts. Nach Änderungen müssen Sie vor Save erneut Check ausführen.
+Führen Sie **Überprüfen** als Probelauf aus. **NEU**, **GEÄ** und **AUSWIRKUNG** zeigen Erstellung, Aktualisierung und betroffene Planungswerte. **Überprüfen** speichert nichts. Nach Änderungen müssen Sie vor **Speichern** erneut **Überprüfen** ausführen.
 
 Zeilen ohne Planung oder mit Beginn nach Ende werden nicht verarbeitet. Neuimport gleicht Produkt, Auftrag, Arbeitsauftragsprodukt, Arbeitsgangfolge und Maschinenzuweisung ab. Leere Aktualisierungszellen erhalten Werte; Prioritäten, geschützte Felder und Produktionsverlauf bleiben unverändert. Fehlende Zeilen löschen keine Datensätze. Arbeitsgänge mit erfasster Arbeit können nicht verschoben werden; mehrdeutige Mehrfachzielkonflikte benötigen manuelle Prüfung.
 

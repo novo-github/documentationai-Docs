@@ -14,11 +14,11 @@ Es ergänzt die [klassischen Alarmregeln](/de/platform-intro/pages/alert-rules).
 | Einstellung | Bedeutung |
 | --- | --- |
 | Maschinenauswahl | Ausgewählte Maschinen. Ohne Auswahl gilt die Regel für alle Maschinen. |
-| **Condition group** | Mit UND oder ODER kombinierte Bedingungen; Gruppen können verschachtelt werden. |
-| **Polling interval** | Häufigkeit der Bedingungsprüfung. |
+| **Bedingungsgruppe** | Mit UND oder ODER kombinierte Bedingungen; Gruppen können verschachtelt werden. |
+| **Polling-Intervall (Minuten)** | Häufigkeit der Bedingungsprüfung. |
 | **Minimum true duration** | Erforderliche Dauer einer erfüllten Bedingung vor der Ereigniserstellung. |
-| **Clear duration** | Erforderliche Dauer eines normalen Zustands vor dem Aufheben des Ereignisses. |
-| **Requires active shift** | Pausiert Prüfungen außerhalb der aktiven Maschinenschicht. |
+| **Freigabedauer (Minuten)** | Erforderliche Dauer eines normalen Zustands vor dem Aufheben des Ereignisses. |
+| **Aktive Schicht erforderlich** | Pausiert Prüfungen außerhalb der aktiven Maschinenschicht. |
 | **Wartezeit** | Zeit nach einem Alarm bis zur erneuten Alarmierung. Ohne Wartezeit kann erneut alarmiert werden, sobald die Bedingung wieder eintritt. |
 
 **Beispiel:** Eine 30 Sekunden lang erfüllte Bedingung erzeugt kein Ereignis, wenn Minimum true duration 2 Minuten beträgt. Polling interval bestimmt die Prüfhäufigkeit und ist eine andere Einstellung als diese Verzögerung.
@@ -84,10 +84,10 @@ Passen Sie diese Anfangswerte an Ihren Prozess an. Zyklusprüfungen benötigen Z
 
 ## Ereigniseingang, SLA und MTTR
 
-Ein **Event** ist eine Regelauslösung. Es durchläuft **New → Acknowledged → Resolved**. Ein gelöstes Ereignis kann **Reopened** werden. **System (Automator)** als lösendes Konto bedeutet automatische Lösung.
+Ein **Ereignis** ist eine Regelauslösung. Es durchläuft **Neu → Bestätigt → Behoben**. Ein gelöstes Ereignis kann mit **Erneut öffnen** wieder geöffnet werden. **System (Automator)** als lösendes Konto bedeutet automatische Lösung.
 
-- **SLA — Service Level Agreement:** erlaubte Reaktionszeit in Minuten vor Überfälligkeit eines offenen Ereignisses.
-- **SLA Breaches:** offene Ereignisse nach dieser Frist.
+- **SLA fällig in (Minuten)** (SLA = Service Level Agreement): erlaubte Reaktionszeit in Minuten vor Überfälligkeit eines offenen Ereignisses.
+- **SLA-Verstöße:** offene Ereignisse nach dieser Frist.
 - **MTTR — Mean Time To Resolution:** durchschnittliche Dauer vom Auslösen bis zur Lösung.
 
 Bestätigung und Lösung sind unterschiedliche Aktionen. Prüfen Sie Maschine und Bedingung vor dem Kennzeichnen als gelöst.

@@ -5,7 +5,7 @@ description: "Definitionen, Formeln, Einheiten, Filter und Grenzen für OEE, Zyk
 
 ## Vor dem Zahlenvergleich dieselben Daten auswählen
 
-Vergleichen Sie dieselbe Maschine, denselben Zeitraum, dieselbe Schicht und dieselbe Mengenquelle. **All Day** betrachtet volle 24 Stunden; **Planned** nur die geplante Schichtzeit. Ein Arbeitsplatz (Work center) hat keine AVA-Sensorkennzahlen und wird aus Maschinenzustandszählern und Analysen ausgeschlossen.
+Vergleichen Sie dieselbe Maschine, denselben Zeitraum, dieselbe Schicht und dieselbe Mengenquelle. **Ganzer Tag** betrachtet volle 24 Stunden; **Geplant** nur die geplante Schichtzeit. Ein Arbeitsplatz (Work center) hat keine AVA-Sensorkennzahlen und wird aus Maschinenzustandszählern und Analysen ausgeschlossen.
 
 Diese Referenz unterscheidet sichtbare Plattformdefinitionen von Berechnungen, die noch bestätigt werden müssen. Kürzel wie **AVL**, **PRO**, **MA** und **AA** finden Sie im [Glossar](/de/platform-intro/concepts/glossary).
 
@@ -37,8 +37,8 @@ Ein **Intervall (Interval)** ist ein erfasster Arbeitsabschnitt einer Zuweisung.
 | Kennzahl | Berechnung | Bedeutung |
 | --- | --- | --- |
 | **Intervallleistung (Interval Performance)** | Produktionszeit / gesamte Intervalldauer × 100 | Anteil tatsächlicher Produktion am Arbeitsabschnitt. |
-| **Avg. Cycle Duration** | Gesamte Intervalldauer / erkannte Zyklen | Enthält Pausen und Beladen. |
-| **Avg. Production Cycle Time** | Aktive Produktionszeit / erkannte Zyklen | Aktive Bearbeitungszeit je erkanntem Zyklus. |
+| **Ø Zyklusdauer** | Gesamte Intervalldauer / erkannte Zyklen | Enthält Pausen und Beladen. |
+| **Ø Produktionszykluszeit** | Aktive Produktionszeit / erkannte Zyklen | Aktive Bearbeitungszeit je erkanntem Zyklus. |
 | **Durchschnittliche Zykluszeit (Maschinenbediener-Eingabe)** | Produktionszeit / eingegebene Menge | Verwendet gebuchte Mengen statt Sensorzyklen. |
 
 **Beispiel:** Ein 60-minütiges Intervall enthält 40 Minuten Produktion, 20 erkannte Zyklen und 16 eingegebene Teile. Die Intervallleistung beträgt **66,67 %**. Avg. Cycle Duration beträgt **180 Sekunden**, Avg. Production Cycle Time **120 Sekunden** und Durchschnittliche Zykluszeit (Maschinenbediener-Eingabe) **150 Sekunden**. Diese Werte beantworten unterschiedliche Fragen.
@@ -53,10 +53,10 @@ Zykluszeiten werden in Sekunden angezeigt. Bei null Zyklen oder null eingegebene
 | --- | --- |
 | **Geplante Produktionszeit (Planned Production Time)** | Geplante Zeit je Teil × dieser Maschine zugewiesene Menge. |
 | **Geplante Vorbereitungszeit (Planned Preparation Time)** | Feste Vorbereitungsdauer je Arbeitsgang. |
-| **Zykluszeit Abweichung (Cycle Time Deviation)** | Avg. Cycle Duration − geplante Zeit je Teil. |
+| **Zykluszeit Abweichung (Cycle Time Deviation)** | Ø Zyklusdauer − geplante Zeit je Teil. |
 | **Produktionszeit Abweichung (Production Time Deviation)** | Tatsächliche Produktionszeit − geplante Produktionszeit für die zugewiesene Menge. |
 | **Abweichung Vorbereitungszeit (Preparation Time Deviation)** | Erfasste Vorbereitungszeit − geplante Vorbereitungszeit. |
-| **Queue load / util. / Ausl.** | Aus geplanten Zeiten der Warteschlange abgeleitete Auslastung; kein gemessener Auslastungswert. |
+| **Auslastung / Ausl.** | Aus geplanten Zeiten der Warteschlange abgeleitete Auslastung; kein gemessener Auslastungswert. |
 
 **Beispiel:** 2 Minuten je Teil × 50 zugewiesene Teile ergeben **100 geplante Produktionsminuten**. Bei 90 tatsächlichen Minuten beträgt die Produktionsabweichung **−10 Minuten**: schneller als geplant. Abweichungen werden in Minuten und Sekunden angezeigt. Eine negative Zeitabweichung bedeutet weniger Zeit als geplant.
 
@@ -66,7 +66,7 @@ Bei einem auf mehrere Maschinen verteilten Auftrag wird jede Maschine mit ihrem 
 
 ## Mengen, Ausschuss und Industrieminuten
 
-**Gesamtmenge auf Zuweisungskarten = Eingabemenge + Materialausschuss (Mat. / MA) + Fertigungsausschuss (Work / AA).** Zum Beispiel ergeben 95 eingegebene Gutteile + 3 Materialausschussteile + 2 Fertigungsausschussteile insgesamt **100**. **Rework Qty** bezeichnet Nacharbeit; eine Regel zum Addieren dieser Menge zur Gesamtsumme ist hier nicht belegt.
+**Gesamtmenge auf Zuweisungskarten = Eingabemenge + Materialausschuss (MA) + Fertigungsausschuss (AA).** Zum Beispiel ergeben 95 eingegebene Gutteile + 3 Materialausschussteile + 2 Fertigungsausschussteile insgesamt **100**. **Nacharbeit** zeigt die Menge der nachzuarbeitenden Teile; eine Regel zum Addieren dieser Menge zur Gesamtsumme ist hier nicht belegt.
 
 **BDE-Eintrag** verwendet Buchungen von Maschinenbedienern; **Zyklusanzahl** verwendet Sensorzählungen. Ein Wechsel der Fortschrittsquelle ändert die Anzeige, nicht die Buchungen. Im Modus **Kumuliert** geben Sie den gesamten Zählerstand ein, etwa 1450, statt des Zuwachses im aktuellen Intervall.
 
@@ -78,25 +78,25 @@ Bei einem auf mehrere Maschinen verteilten Auftrag wird jede Maschine mit ihrem 
 
 | Bezeichnung | Bedeutung oder Regel |
 | --- | --- |
-| **Live Utilization** | Anteil der gerade produzierenden Maschinen; Momentaufnahme statt Zeitraumdurchschnitt. |
-| **Downtime Reduced** | Verringerter Leerlauf oberhalb der maschineneigenen Referenz der besten Tage, basierend auf den niedrigsten 25 % ihrer Leerlaufrate; nicht die gesamte Leerlaufzeit. |
-| **Revenue Recovered** | Downtime Reduced in Stunden × Hourly Revenue in €/h. Bereits erzielter Wert, keine Prognose. |
-| **Still reachable** | Aktuelle Kosten verschwendeter Energie + Wert der Rückgewinnung der Hälfte der verbleibenden Leerlaufzeit zum selben Stundensatz. |
-| **Production shifts recovered** | Zurückgewonnene Zeit, ausgedrückt in Schichten von jeweils 8 Stunden. |
-| **Workflow Time Saved** | Wirkungskennzahl; ihre genaue Formel ist durch diese Referenz nicht belegt. |
-| **CO₂ / Sustainability Check** | Schätzung mit optionalen Unternehmensdaten wie Fläche, Abfall, erneuerbarem Anteil, Kühlmittel, Transport und Materialeffizienz; die vollständige Formel ist hier nicht belegt. |
+| **Live-Auslastung** | Anteil der gerade produzierenden Maschinen; Momentaufnahme statt Zeitraumdurchschnitt. |
+| **Ausfallzeit reduziert** | Verringerter Leerlauf oberhalb der maschineneigenen Referenz der besten Tage, basierend auf den niedrigsten 25 % ihrer Leerlaufrate; nicht die gesamte Leerlaufzeit. |
+| **Umsatz zurückgewonnen** | **Ausfallzeit reduziert** in Stunden × **Geschätzter Stundenumsatz** in €/h. Bereits erzielter Wert, keine Prognose. |
+| **noch erreichbar** | Aktuelle Kosten verschwendeter Energie + Wert der Rückgewinnung der Hälfte der verbleibenden Leerlaufzeit zum selben Stundensatz. |
+| **Produktionsschichten gewonnen** | Zurückgewonnene Zeit, ausgedrückt in Schichten von jeweils 8 Stunden. |
+| **Workflow-Zeit gespart** | Wirkungskennzahl; ihre genaue Formel ist durch diese Referenz nicht belegt. |
+| **CO₂ / Nachhaltigkeitscheck** | Schätzung mit optionalen Unternehmensdaten wie Fläche, Abfall, erneuerbarem Anteil, Kühlmittel, Transport und Materialeffizienz; die vollständige Formel ist hier nicht belegt. |
 
-**Beispiel:** 4 Stunden Downtime Reduced bei 100 €/h ergeben **400 € Revenue Recovered** und **0,5 zurückgewonnene Schichten**. Bei 6 verbleibenden Leerlaufstunden und 5 € verschwendeten Energiekosten beträgt Still reachable **5 € + (6 × 0,5 × 100 €) = 305 €**. Dies sind Beispielwerte und keine zugesagten Einsparungen.
+**Beispiel:** 4 Stunden **Ausfallzeit reduziert** bei 100 €/h ergeben **400 € Umsatz zurückgewonnen** und **0,5 zurückgewonnene Schichten**. Bei 6 verbleibenden Leerlaufstunden und 5 € verschwendeten Energiekosten beträgt **noch erreichbar** **5 € + (6 × 0,5 × 100 €) = 305 €**. Dies sind Beispielwerte und keine zugesagten Einsparungen.
 
-Wo diese Werte erscheinen, erklären die [Organisationsstatistiken](/de/platform-intro/pages/org-stats). Eine **Maschinenbewertung (Machine rating)** ist ein konfigurierter Vergleichszielwert, kein tatsächlicher Messwert.
+Wo diese Werte erscheinen, erklären die [Organisationsstatistiken](/de/platform-intro/pages/org-stats). Ein **Maschinen-Rating** ist ein konfigurierter Vergleichszielwert, kein tatsächlicher Messwert.
 
 <a id="energy" />
 
 ## Energie und Kosten
 
-**W / kW messen Leistung; kWh misst Energie.** Bei konstanter Leistung gilt: Energie in kWh = Leistung in kW × Stunden. Energiekosten = Energie in kWh × konfigurierter **Energy Price** in €/kWh.
+**W / kW messen Leistung; kWh misst Energie.** Bei konstanter Leistung gilt: Energie in kWh = Leistung in kW × Stunden. Energiekosten = Energie in kWh × konfigurierter **Energiepreis** in €/kWh.
 
-Das Frontend beschreibt **Energy wastage / Energieverschwendung** als Energieverbrauch, während die Maschine nicht produziert. Die Energie-FAQ verwendet Leerlaufenergie als Beispiel. Ob Vorbereitung, ausgeschaltete Zeit und gerätespezifische Faktoren genau einbezogen werden, ist hier nicht bestätigt. Das Leerlaufbeispiel ist daher keine vollständige Dashboardformel.
+Die Plattform beschreibt **Energieverschwendung** als Energieverbrauch, während die Maschine nicht produziert. Die Energie-FAQ verwendet Leerlaufenergie als Beispiel. Ob Vorbereitung, ausgeschaltete Zeit und gerätespezifische Faktoren genau einbezogen werden, ist hier nicht bestätigt. Das Leerlaufbeispiel ist daher keine vollständige Dashboardformel.
 
 Eine optionale Energieüberwachung liefert Werte wie Verbrauch, Spannung, Leistungsfaktor und Frequenz. Unterscheiden Sie Messwerte von Schätzungen anhand von Nennwerten oder Faktoren. Enthaltene Leerlaufenergie gehört zum Gesamtverbrauch und ihre Kosten gehören zu den Gesamtkosten.
 
@@ -110,6 +110,6 @@ Rechenbeispiele finden Sie in den [FAQs zu Energie und Kosten](/de/help-center/f
 - Filter werden mit **UND** kombiniert. Bei aktivem **Kunden-, Auftrags-, Produkt- oder Maschinenfilter** wird der **Datumsbereich ignoriert**.
 - Die Sortierung betrifft alle Aufträge, nicht nur die geladene Ergebnisseite.
 - Die automatische Aktualisierung lädt alle **60 Sekunden** neu.
-- **Needs Attention / Handlungsbedarf** umfasst überschrittene Dauer, verschlechterte Zykluszeit, überschrittenes geplantes Ende und überschrittenen Liefertermin. Abgeschlossene und stornierte Aufträge sind ausgeschlossen.
+- **Handlungsbedarf** umfasst überschrittene Dauer, verschlechterte Zykluszeit, überschrittenes geplantes Ende und überschrittenen Liefertermin. Abgeschlossene und stornierte Aufträge sind ausgeschlossen.
 
 Die Tabelle erklärt [Aufträge & Produkte](/de/platform-intro/pages/orders-products). Bei nicht verfügbaren Seiten helfen [Rollen und Zugriff](/de/platform-intro/concepts/roles-and-access).
