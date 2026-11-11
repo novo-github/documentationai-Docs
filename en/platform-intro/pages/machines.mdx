@@ -31,17 +31,23 @@ This is the main dashboard route for signed-in users and the default landing pag
 - Open a machine to reach its detail page.
 - Start machine creation from here if the user has the right access.
 
-Filters and sorting are restored when the user returns to the Machines page.
+State selections and sorting are restored when you return. Hall, tag, and running-order filters last for the visit.
+
+Select the magnifier beside sorting near the status cards or press Ctrl+F (⌘F on a Mac). The tooltip says **Search (Ctrl+F)**, or **Search (⌘F)** on a Mac. Both open the Find box with your kept text. Type to filter cards, or choose **Open →** on a machine result to open its page. Under **Right now**, combine states such as **Production** and **Idle**. The status cards use the same selection and counts.
+
+Choose halls with status dots, tags, or **Running order** to filter all matching machines. Running orders include preparation and completed work from today; their choices show the machines involved and clear when the day changes. Hall and tag chips on cards set the same filters. Esc and the box's × keep the text active. Remove the **Search: …** chip or use **Reset** below the status cards. See [Search and Filter](/en/platform-intro/pages/search-and-filter) for examples and work-center differences.
+
+On phones and tablets, a round magnifier appears at the bottom right once the Machines page’s own magnifier is out of view. In the work-center view, it appears from the start. It hides while you scroll down and returns when you scroll up or stop scrolling. It stays hidden while the Find box, a dialog, menu, or drawer is open. It does not appear when using a desktop mouse.
 
 ## Today's Orders and the Queue
 
-A part finished here and passed on shows **Handed over** with a grey badge naming the destination and good parts made here. Incoming work shows its source and the parts already made. Hover over the badge for details. These labels also appear on work center cards. The whole step may still be unfinished; see [handover details](/en/platform-intro/pages/order-detail#handed-over-work).
+A part finished here and passed on shows **Handed over** with a grey badge naming the destination and good parts made here. Incoming work shows its source and the parts already made. Hover over the badge for details. These labels also appear on work center cards. The whole operation may still be unfinished; see [handover details](/en/platform-intro/pages/order-detail#handed-over-work).
 
-**Orders today** (previously **Live orders**) shows steps worked today, with running work first and recent work after it. Cards include the order, product, step number, status, times, and order and operation priorities. Only running steps have a coloured edge. A step that began yesterday keeps its actual start date and time.
+**Orders today** (previously **Live orders**) shows operations worked today, with running work first and recent work after it. Cards include the order, product, operation number, status, times, and order and operation priorities. Only running operations have a coloured edge. An operation that began yesterday keeps its actual start date and time.
 
-**Up next** (previously **Planned orders**) shows the first 10 waiting steps in the machine's queue order, including work planned for other days. Numbered badges show each step's place. The cards show planned times. Running work stays in **Orders today**. The queue view is hidden when nothing is waiting; open the [machine page](/en/platform-intro/pages/machine-details) for the whole queue.
+**Up next** (previously **Planned orders**) shows the first 10 waiting operations in the machine's queue order, including work planned for other days. Numbered badges show each operation's place. The cards show planned times. Running work stays in **Orders today**. The queue view is hidden when nothing is waiting; open the [machine page](/en/platform-intro/pages/machine-details) for the whole queue.
 
-Each list shows two cards at a time. Longer lists advance every 8 seconds, or you can scroll by hand. A single running card stays visible; when several steps run together, they lead the list. Movement pauses while you hover, use keyboard focus, or interact with the list. Reduced-motion preferences turn automatic movement off. The position count shows where you are in the list; for **Up next**, the total includes waiting steps beyond the first 10.
+Each list shows two cards at a time. Longer lists advance every 8 seconds, or you can scroll by hand. A single running card stays visible; when several operations run together, they lead the list. Movement pauses while you hover, use keyboard focus, or interact with the list. Reduced-motion preferences turn automatic movement off. The position count shows where you are in the list; for **Up next**, the total includes waiting operations beyond the first 10.
 
 Click a card to open the order in a new tab if you have order-page access. Today's lists refresh every minute. Follow [Monitor a Machine Live](/en/platform-intro/workflows/live-machine-monitoring).
 

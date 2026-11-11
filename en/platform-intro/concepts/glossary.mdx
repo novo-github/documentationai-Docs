@@ -185,7 +185,7 @@ Share of total recorded machine time in Production. AVL remains AVL in German an
 
 ### Back to pool
 
-**Back to pool** returns unfinished work to the machine’s own hall pool from Data Acquisition V3. It is also the confirmation button in Assignment Planner after you drop a started, stopped card onto a hall pool. Administrators and users with access to the Orders page can choose any hall pool there. Other users can only return work to the pool of its current machine’s hall. Everyone needs access to the step’s current machine. If work has started, its times and good parts stay on the original machine and only the remainder is passed on. **Reason (optional)** gives the next machine operator a note.
+**Back to pool** returns unfinished work to the machine’s own hall pool from Data Acquisition V3. It is also the confirmation button in Assignment Planner after you drop a started, stopped card onto a hall pool. Administrators and users with access to the Orders page can choose any hall pool there. Other users can only return work to the pool of its current machine’s hall. Everyone needs access to the operation’s current machine. If work has started, its times and good parts stay on the original machine and only the remainder is passed on. **Reason (optional)** gives the next machine operator a note.
 
 [Learn more](/en/platform-intro/pages/data-acquisition).
 
@@ -209,9 +209,11 @@ English PDA and German BDE refer to the same machine operator screen for startin
 
 [Learn more](/en/platform-intro/pages/data-acquisition).
 
-### Booked time
+<a id="booked-time" />
 
-**Booked time** splits a step’s recorded work into **Preparation** and **Production**. Compare it with **Machine states** to see what the machine did during that work.
+### Time in intervals
+
+**Time in intervals** (previously **Booked time**) splits an operation’s recorded work into **Preparation** and **Production**. Compare it with **Machine states** to see what the machine did during that work.
 
 [Learn more](/en/platform-intro/pages/machine-history).
 
@@ -421,6 +423,22 @@ List of Automator events and count of open events past their response due time.
 
 ## F
 
+<a id="find-box" />
+
+### Find box
+
+Open with Ctrl+F (⌘F on a Mac) or the magnifier. On Machines, it sits beside sorting; phones and tablets also show a floating magnifier when that button is out of view, or from the start in the work-center view. It combines live text search and filter choices on the Planner, Orders & Products, and Machines. On Gantt it opens an order view or goes to a machine.
+
+[Learn more](/en/platform-intro/pages/search-and-filter).
+
+<a id="filter-chip" />
+
+### Filter chip
+
+A removable choice that keeps a filter active. Values of the same kind match either choice; different kinds must all match. **Clear all** restores the default filters. Closing the Find box keeps the choices.
+
+[Learn more](/en/platform-intro/pages/search-and-filter).
+
 ### Feedback
 
 Bugs, improvements, and feature requests sent to Novo AI. Sent, In review, Resolved, Closed are conversation states.
@@ -443,32 +461,34 @@ Expected times show when work is likely to happen, including delays. Planned tim
 
 #### At Risk
 
-**at risk** (previously **tight**) is an amber warning. The order is not late yet, but the remaining work barely fits or an earlier step is not planned. The help calls this **At risk**. Only the name changed; the warning means the same thing.
+**at risk** (previously **tight**) is an amber warning. The order is not late yet, but the remaining work barely fits or an earlier operation is not planned. The help calls this **At risk**. Only the name changed; the warning means the same thing.
 
 #### On Time, Late, and Finish Not Known
 
 - **On time**: green; expected to finish before the date.
 - **Late +3 h**: red; expected to finish three hours after the date. **Late, date passed** means the date has passed and the order is unfinished.
-- **Finish not known**: blue; the date is ahead, but no expected finish is available, for example because a step is still in a hall pool.
+- **Finish not known**: blue; the date is ahead, but no expected finish is available, for example because an operation is still in a hall pool.
 
 Missing the delivery date is red. Missing only the planned end is amber.
 
 #### Times May Be Too Early
 
-**Times may be too early** (previously **Forecast not reliable**) warns that an order may finish later than shown. Check for steps without a machine or date. Missing planned durations, missing shift plans, or delayed production entries can also make expected times too early.
+**Times may be too early** (previously **Forecast not reliable**) warns that an order may finish later than shown. Check for operations without a machine or date. Missing planned durations, missing shift plans, or delayed production entries can also make expected times too early.
 
-#### Steps on a Machine
+<a id="steps-on-a-machine" />
 
-The step count tells you how many of the order's steps have a machine. It does not count finished steps. Work without a machine can make the expected finish too early.
+#### Operations on a Machine
+
+The operation count tells you how many of the order's operations have a machine. It does not count finished operations. Work without a machine can make the expected finish too early.
 #### Partly Planned and Not Planned at All
 
-**Partly planned** means some steps still lack an assignment. **Not planned at all** identifies orders with a delivery date but no operation assigned to a machine or hall pool. They appear on no planning board.
+**Partly planned** means some operations still lack an assignment. **Not planned at all** identifies orders with a delivery date but no operation assigned to a machine or hall pool. They appear on no planning board.
 
 <a id="earlier-step-not-planned" />
 
 #### Earlier Operation Not Planned
 
-**Earlier operation not planned** warns that the displayed times assume the earlier step is already finished. Check earlier steps that have no machine yet or are still in a hall pool before relying on later finishes. Long-held and never-started machine steps still occupy time in the forecast.
+**Earlier operation not planned** warns that the displayed times assume the earlier operation is already finished. Check earlier operations that have no machine yet or are still in a hall pool before relying on later finishes. Long-held and never-started machine operations still occupy time in the forecast.
 
 #### Never Started and No Planned Start
 
@@ -480,17 +500,17 @@ The step count tells you how many of the order's steps have a machine. It does n
 
 #### Based On
 
-**Based on** lists assumptions behind a step’s expected times, such as a long hold, a missing planned start, or missing earlier work. The same assumptions appear at the warning icon. Read them before relying on the forecast.
+**Based on** lists assumptions behind an operation’s expected times, such as a long hold, a missing planned start, or missing earlier work. The same assumptions appear at the warning icon. Read them before relying on the forecast.
 
 #### Why This Time
 
-**Why this time** explains what a step waits for: its machine, an earlier step, or the next shift. **Earlier operations of this order** lists the preceding work and its progress. Hover over a Planner card’s date tab or clock to read these details.
+**Why this time** explains what an operation waits for: its machine, an earlier operation, or the next shift. **Earlier operations of this order** lists the preceding work and its progress. Hover over a Planner card’s date tab or clock to read these details.
 
 <a id="waits-for-an-earlier-step" />
 
 #### Waits for an Earlier Operation
 
-**Waits for an earlier operation** means an earlier step is not on a machine yet or remains in a hall pool. The later step still has a forecast, but its times may be too optimistic.
+**Waits for an earlier operation** means an earlier operation is not on a machine yet or remains in a hall pool. The later operation still has a forecast, but its times may be too optimistic.
 
 #### No Forecast
 
@@ -500,7 +520,7 @@ The step count tells you how many of the order's steps have a machine. It does n
 
 #### Load and Earliest Availability
 
-**Load** in Assignment Gantt compares booked working time with visible shift time. The machine summary shows work still booked by the forecast. When work has no expected end, the machine’s displayed free time is only its earliest possible availability.
+**Load** in Assignment Gantt compares planned working time with visible shift time. The machine summary shows work still planned by the forecast. When work has no expected end, the machine’s displayed free time is only its earliest possible availability.
 
 #### Save as Plan
 
@@ -537,7 +557,7 @@ Parts produced without defects, separate from material and work scrap.
 
 ### Handed over
 
-**Handed over** marks the finished part on the original machine when remaining work has been passed on. On an order, the neutral badge identifies handed-over steps. It does not mean that the whole step or order is finished.
+**Handed over** marks the finished part on the original machine when remaining work has been passed on. On an order, the neutral badge identifies handed-over operations. It does not mean that the whole operation or order is finished.
 
 [Learn more](/en/platform-intro/pages/data-acquisition).
 
@@ -781,7 +801,7 @@ Configured machine targets compared with actual dashboard values, not measuremen
 
 ### Machine states
 
-**Machine states** shows what the machine actually did during booked work, including idle or off time.
+**Machine states** shows what the machine actually did during recorded work, including idle or off time.
 
 [Learn more](/en/platform-intro/pages/machine-history).
 
@@ -911,19 +931,19 @@ Overall job, identified by its order name; contains work orders, operations, and
 
 ### Order Planned dates / Operation Planned dates
 
-Order dates are shared across the order; operation dates belong to one step and can be used to sequence steps.
+Order dates are shared across the order; operation dates belong to individual operations and determine their order.
 
 [Learn more](/en/platform-intro/pages/assignment-planner).
 
 ### Order priority / Operation priority
 
-Independent urgency values for the whole order and one production step. The planner shows **P** for the order and a dashed **OP** for the operation. Order forms also let you choose the operation priority. Its dashed **OP** indicator appears beside the operation name; new operations start at 100. When both priority filters are set, work must match both.
+Independent urgency values for the whole order and one operation. The planner shows **P** for the order and a dashed **OP** for the operation. Order forms also let you choose the operation priority. Its dashed **OP** indicator appears beside the operation name; new operations start at 100. When both priority filters are set, work must match both.
 
 [Learn more](/en/platform-intro/pages/assignment-planner).
 
 ### Orders today
 
-**Orders today** shows running and finished work booked today on a machine or work center, across the whole day.
+**Orders today** shows running and finished work recorded today on a machine or work center, across the whole day.
 
 [Learn more](/en/platform-intro/pages/machines).
 
@@ -954,6 +974,8 @@ Automator template that combines production 15% behind pace with cycles 25% slow
 [Learn more](/en/platform-intro/pages/data-acquisition).
 
 ### P / Order priority
+
+In the Planner Find box, P10 finds order priority 10, OP10 or AG10 finds operation priority 10, and 10 offers both. Names, lowercase letters, and spaces work too. See [Search and Filter](/en/platform-intro/pages/search-and-filter).
 
 Priority chip for the overall order, independent of the operation's OP or AG priority.
 
@@ -1060,7 +1082,7 @@ Setup before production. **Vorber.** is used on German PDA buttons; **Vorb.** (p
 
 ### Position in the queue
 
-**Position in the queue** shows where a waiting step stands in **Up next**. Running steps have no number.
+**Position in the queue** shows where a waiting operation stands in **Up next**. Running operations have no number.
 
 [Learn more](/en/platform-intro/pages/machine-details).
 
@@ -1160,7 +1182,7 @@ The dashboard tooltip states 95% and directs changes to an admin. Automatic repl
 
 ### Queue Order and Operation Priority Stay in Step
 
-**Queue order and operation priority stay in step** is an administrator setting, on by default. In the Planner’s queue-position mode, dragging a step can change its operation priority, and changing its card priority can reposition its parts in accessible queues. Turning it off separates the two actions. **Undo** in a drag’s priority notice restores priority and keeps the dropped position.
+**Queue order and operation priority stay in step** is an administrator setting, on by default. In the Planner’s queue-position mode, dragging an operation can change its operation priority, and changing its card priority can reposition its parts in accessible queues. Turning it off separates the two actions. **Undo** in a drag’s priority notice restores priority and keeps the dropped position.
 
 [Learn more](/en/platform-intro/pages/admin-panel#how-priorities-are-used).
 
@@ -1177,6 +1199,22 @@ The dashboard tooltip states 95% and directs changes to an admin. Automatic repl
 [Learn more](/en/platform-intro/pages/data-acquisition#recently-completed).
 
 ## R
+
+<a id="right-now" />
+
+### Right now
+
+Live state tiles in the Machines Find box. They show the status cards’ counts and share their selection. You can choose several states together.
+
+[Learn more](/en/platform-intro/pages/search-and-filter).
+
+<a id="running-order" />
+
+### Running order
+
+A Machines filter for orders worked on today, including preparation and completed work. It shows the machines involved. Its chips clear when the day changes.
+
+[Learn more](/en/platform-intro/pages/search-and-filter).
 
 ### Re-sort
 
@@ -1278,6 +1316,22 @@ The active shift is still in progress. Its end follows the machine's active shif
 
 ## S
 
+<a id="search-chip" />
+
+### Search: …
+
+Shows that typed text still filters the Planner, Orders & Products, or Machines after the Find box closes. Remove this chip to clear the text. Gantt has no search-text chip.
+
+[Learn more](/en/platform-intro/pages/search-and-filter).
+
+<a id="show-route-go-to" />
+
+### Show route / Go to
+
+Gantt search actions: **Show route** opens an order’s machines in operation order. **Go to** brings a machine’s row into view and adds it when needed; at 25 machines it replaces the last one.
+
+[Learn more](/en/platform-intro/pages/search-and-filter).
+
 ### Scrap / Ausschuss
 
 Rejected parts split into material scrap MA and work scrap AA.
@@ -1306,7 +1360,7 @@ Use when the sensor loses power with the machine; a missing signal then appears 
 
 ### Seq / Nr. / Sequence / Arbeitsgangfolge
 
-An operation's step number within a work order, for example 10, 20, 30. In Hall Plan, the operation sequence is shown with # beside the product or in the order card, depending on **Product information** and whether the product has an image. The German name is **Arbeitsgangfolge**.
+An operation's sequence number within a work order, for example 10, 20, 30. In Hall Plan, the operation sequence is shown with # beside the product or in the order card, depending on **Product information** and whether the product has an image. The German name is **Arbeitsgangfolge**.
 
 [Learn more](/en/platform-intro/pages/order-detail).
 
@@ -1410,7 +1464,7 @@ Automator presets and responses: close on a cleared condition, notify on closure
 
 ### Timeline / Production / Idle / Off / Stopped / Preparation / Unknown
 
-State bar: Production green (Produktion), Idle orange (Leerlauf), Off/Stopped red (Aus/Gestoppt), Preparation blue (In Vorbereitung), Unknown grey (Unbekannt).
+State bar: Production green (Produktion), Idle orange (Leerlauf), Off/Stopped red (Aus/Gestoppt), Preparation blue (In Vorbereitung), Unknown grey (Unbekannt). **Idle time** measures time in the idle state.
 
 [Learn more](/en/platform-intro/pages/machines).
 
@@ -1556,7 +1610,7 @@ In Assignment Gantt, **View options → Board** contains your own bar and row-he
 
 ### Waiting on a previous operation / Blocked by
 
-⚠️ **Waiting on a previous operation** means a step with a lower number in the same work order is neither completed nor cancelled. An earlier step without an assignment also counts as unfinished. **Start anyway** remains available; review the dependency before using it.
+⚠️ **Waiting on a previous operation** means an operation with a lower number in the same work order is neither completed nor cancelled. An earlier operation without an assignment also counts as unfinished. **Start anyway** remains available; review the dependency before using it.
 
 In Data Acquisition V3, the **Waiting on a previous operation** sorting rule offers **At the bottom** or **At the top**. It comes before priority and date. If you also add **Running and on-hold orders**, that rule comes first. With **Sort by Queue Position** on, **Orders waiting on a previous operation** offers **Keep in place** or **At the bottom**, preserving queue order within each group. Both options are off until you choose them and are saved for your account.
 
@@ -1588,6 +1642,6 @@ A **Work center** is a workplace without an AVA. It shows today’s worked order
 
 ### Worked
 
-**Worked** shows steps with recorded work on the selected day, even if they started earlier.
+**Worked** shows operations with recorded work on the selected day, even if they started earlier.
 
 [Learn more](/en/platform-intro/pages/machine-details).

@@ -14,8 +14,8 @@ The Watchmen Platform combines production quantities and machine time to help yo
 | How much switched-on time was used for production or preparation? | [Performance](#performance) |
 | How do the three percentages combine? | [Overall Equipment Effectiveness (OEE)](#oee) |
 | How do I find which orders ran on a machine last week? | [Answer](/en/help-center/faq/production-metrics#worked-orders) |
-| Why is booked production time different from the machine’s production time? | [Answer](/en/help-center/faq/production-metrics#booked-states) |
-| Why are the step’s totals larger than the bars in my selected period? | [Answer](/en/help-center/faq/production-metrics#step-totals) |
+| Why is production time in intervals different from the machine’s production time? | [Answer](/en/help-center/faq/production-metrics#booked-states) |
+| Why are the operation’s totals larger than the bars in my selected period? | [Answer](/en/help-center/faq/production-metrics#step-totals) |
 | Why can I see only the last three months of orders? | [Answer](/en/help-center/faq/production-metrics#history-limit) |
 | Does an empty Orders section mean the machine was off? | [Answer](/en/help-center/faq/production-metrics#empty-orders) |
 | How do I stop the order cards moving while I read them? | [Answer](/en/help-center/faq/production-metrics#order-scrolling) |
@@ -34,6 +34,11 @@ The Watchmen Platform combines production quantities and machine time to help yo
 | Why won’t my running interval open for editing? | [Answer](/en/help-center/faq/production-metrics#interval-load) |
 | Can I correct or delete an interval without leaving the order list? | [Answer](/en/help-center/faq/production-metrics#orders-correct-intervals) |
 | Why are the totals still old after I change an interval? | [Answer](/en/help-center/faq/production-metrics#orders-interval-refresh) |
+| How do I switch machines without choosing the date again? | [Answer](/en/help-center/faq/production-metrics#switch-machine-period) |
+| Why is there no search field in my machine switcher? | [Answer](/en/help-center/faq/production-metrics#switch-machine-search) |
+| How do I show idle and off machines in one hall together? | [Answer](/en/help-center/faq/production-metrics#machine-find-states) |
+| Where is the search button on my phone on the Machines page? | [Answer](/en/help-center/faq/production-metrics#machine-find-phone) |
+| Why does Running order include completed work, and why did its filter disappear overnight? | [Answer](/en/help-center/faq/production-metrics#machine-running-order) |
 
 ### One Example for All Four Metrics
 
@@ -141,19 +146,23 @@ In the multiplication example, the three ratios multiply. Even 80% performance a
 
 ## How do I find which orders ran on a machine last week?
 
-Open machine history, choose the period, and find **Orders**. Click a bar or list row to see the step and its order route. Use **Open order** for the full order if you have access. Follow [Review Machine History](/en/platform-intro/workflows/machine-history-review).
+Open machine history, choose the period, and find **Orders**. Click a bar or list row to see the operation and its order route. Use **Open order** for the full order if you have access. Follow [Review Machine History](/en/platform-intro/workflows/machine-history-review).
 
 <a id="booked-states" />
 
-## Why is booked production time different from the machine’s production time?
+<a id="why-is-booked-production-time-different-from-the-machines-production-time" />
 
-**Booked time** describes how work was recorded as preparation or production. **Machine states** describes what the machine actually did during those bookings, including idle or off time. See [Machine History](/en/platform-intro/pages/machine-history).
+## Why is production time in intervals different from the machine’s production time?
+
+**Time in intervals** describes how work was recorded as preparation or production. **Machine states** describes what the machine actually did during those intervals, including idle or off time. See [Machine History](/en/platform-intro/pages/machine-history).
 
 <a id="step-totals" />
 
-## Why are the step’s totals larger than the bars in my selected period?
+<a id="why-are-the-steps-totals-larger-than-the-bars-in-my-selected-period" />
 
-The step’s details include all its recorded work and produced quantities on this machine. The chart includes only the displayed period. Hover over a bar for the time and machine states of that stretch. See [Machine History](/en/platform-intro/pages/machine-history).
+## Why are the operation’s totals larger than the bars in my selected period?
+
+The operation’s details include all its recorded work and produced quantities on this machine. The chart includes only the displayed period. Hover over a bar for the time and machine states of that stretch. See [Machine History](/en/platform-intro/pages/machine-history).
 
 <a id="history-limit" />
 
@@ -165,7 +174,7 @@ The orders chart and its machine-state row show at most the last 3 months of the
 
 ## Does an empty Orders section mean the machine was off?
 
-No. **No orders were worked on this machine in this period.** means no order work was booked for that period. It appears centred in the empty section. Missing state information has its own message. See [Machine History](/en/platform-intro/pages/machine-history).
+No. **No orders were worked on this machine in this period.** means no order work was recorded for that period. It appears centred in the empty section. Missing state information has its own message. See [Machine History](/en/platform-intro/pages/machine-history).
 
 <a id="order-scrolling" />
 
@@ -270,3 +279,33 @@ The panel reloads the saved intervals and updates the row’s interval count imm
 - [Compare Machines](/en/platform-intro/workflows/compare-machines): compare machines over the same period.
 - [Energy Consumption, Wastage & Costs FAQs](/en/help-center/faq/energy-and-costs): understand the energy impact of active and idle time.
 - [Help Center](/en/help-center): return to all help topics.
+
+<a id="switch-machine-period" />
+
+## How do I switch machines without choosing the date again?
+
+On the machine page, select the machine name in the breadcrumb path at the top of the page and choose another machine; the day stays selected. In history, use the arrow beside the name to keep the date range and tab. The shift is kept by name, even with a different shift order. If the other machine has no shift with that name, **All Shifts** is selected. Browser Back restores the earlier machine’s range. Follow [review machine history](/en/platform-intro/workflows/machine-history-review).
+
+<a id="switch-machine-search" />
+
+## Why is there no search field in my machine switcher?
+
+It appears only when the list has more than 8 machines, including the current one. The machine page, machine history, and PDA page use the same list of accessible machines, grouped by hall. Use ↑/↓ and Enter to choose, or Esc to close. See [machine switching](/en/platform-intro/pages/machine-details).
+
+<a id="machine-find-states" />
+
+## How do I show idle and off machines in one hall together?
+
+On **Machines**, select the magnifier beside sorting, use the floating magnifier on a phone or tablet, or press Ctrl+F (⌘F on a Mac). Under **Right now**, select **Idle** and **Off**, then choose the hall. Either state matches, and the hall must match too. The status cards share the same state selection. **Reset** below the cards clears the search and filters. See [machine filters](/en/platform-intro/pages/machines).
+
+<a id="machine-find-phone" />
+
+## Where is the search button on my phone on the Machines page?
+
+Tap the magnifier beside sorting near the status cards. Once it is out of view, a round magnifier appears at the bottom right on phones and tablets. Stop scrolling or scroll up if it is hidden. In the work-center view it appears from the start. It hides while the Find box, a dialog, menu, or drawer is open. Tapping it reopens your kept search text. See [search on Machines](/en/platform-intro/pages/machines).
+
+<a id="machine-running-order" />
+
+## Why does Running order include completed work, and why did its filter disappear overnight?
+
+**Running order** means work recorded today, including preparation and completed work, not only work running now. It shows the machines involved. Its chips clear when the page changes to the next day; status, hall, and tag filters stay. See [today’s order filters](/en/platform-intro/pages/search-and-filter).

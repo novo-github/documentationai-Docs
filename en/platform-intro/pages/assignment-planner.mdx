@@ -36,6 +36,8 @@ Users open it from the Planner section in the main navigation.
 - Review warnings before overlapping assignments are rearranged.
 - Open Assignment Gantt to inspect the production schedule and use automatic assignment.
 
+On larger screens, scrolling down past the controls brings the board into view. Scroll up from the board's top to return to the controls. The page glides between the controls and the work area and never stops half-way between the two. The footer remains reachable below. This has no button or setting and is off on phones. Ctrl+F opens search from the board without returning to the controls.
+
 ## Machine Queues and Hall Pools
 
 A machine queue assigns work to a specific machine. A **Hall Pool** holds work for a hall when several machines could perform it and the machine choice can stay open. By default, each hall pool appears beside its machine columns. You can drag an operation into it or assign a new operation there.
@@ -67,7 +69,7 @@ On a wide screen, open **Hall pools** above the board. Under **Where to show the
 
 Your placement choice is saved for your account. Under **Which pools to show**, tick the halls you need. This is the same selection as the hall filter. Hall pools do not count toward the 25-machine limit. While a pool loads, it shows a loading indicator.
 
-With **Beside the list**, use **Collapse pool** in the pool header to leave a narrow strip with its name and count. It still accepts cards. For a move without a dialog, a drop places work at the end of the pool, including cards not yet shown. A confirmed handover places the remainder at the top. If your search covers the pool, close it first so the work lands at the very end. Otherwise, the drop can land among the cards. Click the strip or use **Expand pool** to open it again. Collapsed pools are remembered in this browser for the current company.
+With **Beside the list**, use **Collapse pool** in the pool header to leave a narrow strip with its name and count. It still accepts cards. For a move without a dialog, a drop places work at the end of the pool, including cards not yet shown. A confirmed handover places the remainder at the top. If your search covers the pool, clear its text and any order, product, or customer chips first so the work lands at the very end. Otherwise, the drop can land among the cards. Click the strip or use **Expand pool** to open it again. Collapsed pools are remembered in this browser for the current company.
 
 Hiding the unassigned list leaves the pools at the left edge. The placement menu and these columns are available on wide screens. Follow [Plan Machine Assignments](/en/platform-intro/workflows/assignment-planner).
 
@@ -86,9 +88,11 @@ Press Ctrl+F (⌘F on a Mac) or click the search icon in the always-visible **Fi
 | **Machines** | Only work on machines, not machine names. |
 | **Everything** | The list, hall pools, and machines together. |
 
-Search only filters the area chosen under **Search in**. Status, priority, and tag filters apply to the unassigned list and all queues. The import filter narrows only the unassigned list to one ERP upload. Areas outside your search choice keep showing their cards. Your search-area choice is saved for your account. When the search includes the unassigned list, it also shows how many unassigned operations were found. Esc or × closes and clears the search; other filters still apply.
+Text and order, product, and customer chips only filter the area chosen under **Search in**. Status, priority, and tag filters apply to the unassigned list and all queues. The import filter narrows only the unassigned list to one ERP upload. Areas outside your search choice keep showing their cards. Your search-area choice is saved for your account. When the search includes the unassigned list, it also shows how many unassigned operations were found. Esc or the × in the box closes it and keeps the text active as a **Search: …** chip. Remove that chip to clear the text.
 
-A link that opens the Planner with a search uses **Everything** for that visit without changing your saved choice. Opening it from an order, product, or customer can also add a filter chip above the board. Remove that chip to clear its filter; matching unassigned cards are outlined.
+A link with search text uses **Everything** while that text remains, unless you choose another area. A link from an order, product, or customer adds a chip and starts in **Unassigned**, including matching work beyond the first part of the list. These links leave your saved choice unchanged. Remove a chip to clear its filter; order chips outline matching unassigned cards.
+
+Pick suggestions as filter chips or browse **Filter by** to add and remove values. Search priorities by P10 for an order, OP10 for an operation, or 10 for both. Machine and hall-pool choices change the lanes; **Clear all** keeps those lanes. See [Search and Filter](/en/platform-intro/pages/search-and-filter) for categories, combined filters, and keys.
 
 Select machines by hall; click the hall checkbox or hall name to select or clear the whole hall. Empty space in the heading does not change the selection. You can show up to 25 machines plus hall pools. Status filters apply to individual assignments. Order tags appear when your company has defined them. The import filter narrows only the unassigned list to one ERP upload.
 
@@ -106,7 +110,7 @@ On the PDA page, reopening lets you choose its queue placement. This leaves prio
 
 Each machine or pool queue initially shows 40 matching cards. Select **Show 40 more** to reveal the next 40; the button shows a smaller number when fewer remain. The count and summary include every card in the queue, also the ones not shown yet. This works in both layouts. Search filters the work before the first 40 cards are shown.
 
-Revealed cards stay visible after a refresh. For moves without a dialog, dropping at the end places work after every card in the queue, even if you have not revealed them all. If your search covers that queue, close it first so the work lands at the very end. Otherwise, the drop can land among the cards. **Unassigned** does not filter machine queues or pools; **Hall pools**, **Machines**, and **Everything** filter the queues in their chosen area.
+Revealed cards stay visible after a refresh. For moves without a dialog, dropping at the end places work after every card in the queue, even if you have not revealed them all. If your search covers that queue, clear its text and any order, product, or customer chips first so the work lands at the very end. Otherwise, the drop can land among the cards. **Unassigned** does not filter machine queues or pools; **Hall pools**, **Machines**, and **Everything** filter the queues in their chosen area.
 
 If a change cannot be saved, the Planner shows an error and reloads the queues involved. Check them before trying again.
 
@@ -259,7 +263,7 @@ For the explanation, open **Forecaster check → How does the Forecaster work?**
 
 Under **Forecaster check**, choose **Delivery date**, **Planned end**, **Delivery date & planned end**, or **Off**. Read the card’s expected end and remaining buffer to understand the warning. An unplanned earlier operation makes the expected end too optimistic.
 
-The machine summary’s free time comes from the last expected finish in its queue. If some work has no expected end, that time is only the earliest possible availability. The displayed load is work still booked by the forecast.
+The machine summary’s free time comes from the last expected finish in its queue. If some work has no expected end, that time is only the earliest possible availability. The displayed load is work still planned by the forecast.
 
 Switch the layout to put machines side by side with queues downward, or machines top to bottom with queues to the right. Use **Show unassigned operations** or **Hide unassigned operations** to adjust the workspace. You can display up to 25 machines; hall pools do not count toward that limit.
 
@@ -297,7 +301,7 @@ Use the view switch to open [Assignment Gantt](/en/platform-intro/pages/assignme
 
 Running work must be stopped on its machine before a handover. Finished and cancelled work cannot change destination. Started, stopped work opens the handover dialog even if its status is **Planned** or **Released**. Its recorded work always stays on the original machine.
 
-At most 25 machines can be shown at once, plus hall pools. Search only filters the area chosen under **Search in**. Status, priority, and tag filters apply to the unassigned list and all queues. The import filter narrows only the unassigned list to one ERP upload. If the queue changes while you reorder, it refreshes and you must redo the reorder.
+At most 25 machines can be shown at once, plus hall pools. Text and order, product, and customer chips only filter the area chosen under **Search in**. Status, priority, and tag filters apply to the unassigned list and all queues. The import filter narrows only the unassigned list to one ERP upload. If the queue changes while you reorder, it refreshes and you must redo the reorder.
 
 For moves without a dialog, with **Queue Position** on, dropping a card sets its exact position, including running and on-hold cards within their column. With it off, sort-rule precedence controls the view, and the **Moves** dropdown offers **Start of Queue** or **End of Queue**. This also applies to newly assigned operations dropped from the unassigned list onto a machine or hall pool.
 

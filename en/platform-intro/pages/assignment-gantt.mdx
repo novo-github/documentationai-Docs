@@ -19,7 +19,7 @@ Use **Move** on an assignment to change eligible waiting work. With planning acc
 
 ## Read the Planned Times
 
-An assignment is one operation placed on a machine or hall pool. Its planned production time uses the quantity assigned to that machine. The forecast also uses remaining work and the machine’s capacity for simultaneous assignments. **Load** compares booked working time with shift time in the visible range. Without shift time, this share is unknown.
+An assignment is one operation placed on a machine or hall pool. Its planned production time uses the quantity assigned to that machine. The forecast also uses remaining work and the machine’s capacity for simultaneous assignments. **Load** compares planned working time with shift time in the visible range. Without shift time, this share is unknown.
 
 For example, 2 minutes per part × 50 assigned parts gives 100 planned production minutes, plus the operation's fixed preparation time. See [calculations](/en/platform-intro/concepts/calculations#deviations) and [Plan Machine Assignments](/en/platform-intro/workflows/assignment-planner).
 
@@ -96,7 +96,7 @@ These notes explain the expected times. They do not remove the work from the for
 
 ### Read Machine Availability
 
-The machine summary shows the remaining work booked by the forecast. If an assignment has no expected end, the displayed free time is only the earliest possible time. The machine may be busy for longer. Long holds, missed starts, and missing planned starts now keep a forecast with assumption notes.
+The machine summary shows the remaining work planned by the forecast. If an assignment has no expected end, the displayed free time is only the earliest possible time. The machine may be busy for longer. Long holds, missed starts, and missing planned starts now keep a forecast with assumption notes.
 
 ## Follow a Whole Order
 
@@ -105,6 +105,10 @@ For handed-over work, the order route shows **Partly done:** with good parts mad
 Select **Order view** and type at least two characters of the order name or number. **Show the whole order on the board** highlights its assignments and outlines work it is waiting for. Other work is dimmed. **Show operations** lists its route; **Back to machines** returns to the machine view.
 
 An operation in a hall pool is not yet on a machine. A missing expected end means the order will finish later than shown. If only part of the route can be shown, the page says so. Open **Earlier operation not planned** and choose **Assign to a machine** when available. The operation keeps its own planned dates and the later operations are forecast again. Without a planned start, assigning a machine alone still leaves the operation unplanned.
+
+Press Ctrl+F (⌘F on a Mac) or select the toolbar magnifier. Find an order and choose **Show route** to open this order view; remove its chip to leave it. For a machine, choose **Go to** to open its hall, scroll to its row, and highlight it. A missing machine joins the board; at the 25-machine limit it replaces the last one. Choosing a machine outside the order view leaves that view. The result's explanation names these effects.
+
+Only orders and machines can be found here. Text does not filter bars. Esc and the box's × close it and keep the text. With focus on the board, Esc closes an open side panel first. See [Search and Filter](/en/platform-intro/pages/search-and-filter) or follow [find work and machines](/en/platform-intro/workflows/search-and-filter).
 
 ## Move Waiting Work
 

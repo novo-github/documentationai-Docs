@@ -6,6 +6,68 @@ toc: false
 
 ## Releases
 
+<Update label="2026-11-11" description="v1.5.159–v1.5.160" tags={["feature", "improvement", "fix"]}>
+  {/* commits: 1b12f4bc, 7e9fcdcd, e57166e6, 780564cf, aa1b878b, e000436f, b8986267, f70bf86e, 67c3a4dd, 0bc96fac, 052dc222, f42c3a7f, 1714eed3, e6bc5953, 200b3ff3, f10b9012, 35b79853, 996cd8ad, 4d6a00b8, 09f9d741, a6a116f2, c14d977a, 40847ea0, 6ac18638, ad525fad, 762099ba, 40ed2d09, 0dd92c29, 50d3d541, 04e27078, 397e00d1, b6c44594, 9e871a3, 7c97d3d, ce29e20, 6da8362, 472ea80, 981018e9, 7c9495fd, 2dd02f15, 7080c059, 3fdcacd7 */}
+
+  **Release date:** November 11, 2026
+
+  ### New Features
+
+  #### [Find Work and Keep Useful Filters](/en/platform-intro/pages/search-and-filter)
+  {/* feature: find-bar */}
+
+  On **Assignment Planner** and **Orders & Products**, press Ctrl+F (⌘F on a Mac) or select the magnifier. Type to filter live, or choose **Filter by → Customer** and add a customer. Pick suggestions to combine filters: two customers show either customer's work; a customer plus an order priority shows only work matching both. Orders & Products now allows several customers. In the Planner, you can also search priorities by P10 or OP10.
+
+  Esc and the box's × close it and keep the search active. Remove the **Search: …** chip to clear the text. Follow [find work and machines](/en/platform-intro/workflows/search-and-filter).
+
+  #### [Find Machines by State, Hall, Tag, or Today's Orders](/en/platform-intro/pages/machines)
+  {/* feature: machine-find */}
+
+  On **Machines**, select the magnifier beside sorting or press Ctrl+F (⌘F on a Mac). Both reopen the Find box with your kept text. On phones and tablets, a floating magnifier appears at the bottom right when the page’s magnifier is out of view; in the work-center view it appears from the start. Under **Right now**, select several states, such as **Production** and **Idle**. The status cards allow the same selection. Hall choices show machine counts and status dots. Hall and tag filters include matching machines beyond the cards already shown.
+
+  **Running order** finds machines that worked on an order today, including preparation and completed work. These order filters clear when the day changes; the other filters stay. Choose **Open →** on a machine result to open it, or **Reset** below the status cards to clear the search and filters.
+
+  #### [Jump to an Order or Machine in Gantt](/en/platform-intro/pages/assignment-gantt)
+  {/* feature: gantt-find */}
+
+  On **Assignment Gantt**, open the magnifier or press Ctrl+F. Find an order and choose **Show route** to see its machines in operation order. Remove its chip to leave the order view. Choose **Go to** for a machine to open its hall and bring its highlighted row into view.
+
+  A missing machine is added; with 25 machines already shown, it replaces the last one. Choosing a machine outside the current order view leaves that view. The result's explanation tells you before you choose. Gantt finds orders and machines only; typing does not hide bars.
+
+  #### [Switch Machines Without Losing the Day or Period](/en/platform-intro/pages/machine-history)
+  {/* feature: machine-switcher */}
+
+  On the machine page, select the machine name in the breadcrumb path at the top of the page. On machine history, select the arrow beside the name; the name itself still returns to the machine page. Choose another one of your machines to keep the selected day or history period and tab. The shift is kept by name even if the other machine lists shifts in a different order. If it has no shift with that name, **All Shifts** is selected.
+
+  The list groups machines by hall, marks the current machine, and offers search when you have more than 8 machines. Use the arrow keys and Enter to choose, or Esc to close. The PDA page uses the same list with correct hall groups. Follow [review machine history](/en/platform-intro/workflows/machine-history-review).
+
+  ### Improvements
+
+  #### [Give the Board or Table More Screen Space by Scrolling](/en/platform-intro/pages/orders-products)
+  {/* feature: focus-scroll */}
+
+  On **Assignment Planner** and **Orders & Products**, scrolling down past the page controls brings the board or table into view. Scroll up from its top to return to the controls. The page glides between the controls and the work area and never stops half-way between the two. The orders table fits within one screen, with column headings and page controls staying visible while rows scroll.
+
+  You can still scroll down to the footer and open search with Ctrl+F from the work area. This happens automatically on larger screens, with no button or setting; phones keep normal scrolling.
+
+  #### [Read Clearer Names for Operations and Interval Time](/en/platform-intro/pages/machine-history)
+  {/* feature: operation-interval-wording */}
+
+  Machine details and history now say **Time in intervals** (previously **Booked time**). **Improve intervals** uses **Production without an order** (previously **Unbooked production**), and the Gantt load tooltip describes planned working time. German screens consistently call an operation **Arbeitsgang** (previously **Schritt**) and its completed state **abgeschlossen** (previously **fertig**).
+
+  ### Fixes
+
+  #### [Find Products by Name as Well as Number](/en/platform-intro/pages/search-and-filter#product-search)
+  {/* feature: product-name-search */}
+
+  Product search previously missed names such as Flansch DN50 when you typed “flan”; it now matches names and numbers. This applies to Find box suggestions, the product filter on Orders & Products, product selection for a work order in the new-order dialog opened from the Admin Panel and on the order’s detail page (Order Management), the immediate order dialog on the PDA page, and the Admin Panel's product table.
+
+  #### [Get Relevant Results for Short Machine Numbers](/en/platform-intro/pages/machines)
+  {/* feature: machine-search-matches */}
+
+  Searching for “44” could previously return an unrelated machine such as “430 - VOUMARD 150CNC”. Short-number searches no longer include those unrelated matches.
+</Update>
+
 <Update label="2026-11-10" description="v1.5.157" tags={["fix"]}>
   {/* commits: e2991b3 */}
 

@@ -33,6 +33,8 @@ Users usually open it from the Orders & Products page.
 
 Choose a destination marked **Work center** when an operation belongs at a workplace without an AVA. Assignment details and selection lists identify work centers so you can distinguish them from machines. See [Work Centers](/en/platform-intro/pages/work-centers) for the limits of sensor readings.
 
+When adding or editing a work order on this page, search by product name or number to choose its product.
+
 ## Read and Organize Operations
 
 Within a work order, use the sort button beside **Add operation** to sort operations by sequence number. Choose **Ascending** to review lower numbers first or **Descending** to review higher numbers first.
@@ -41,7 +43,7 @@ In the order operation panel, open **Highlight** to emphasize fields across the 
 
 Priority names, numbers, and colors use the company levels configured in the [Admin Panel](/en/platform-intro/pages/admin-panel), keeping order management consistent with imports and assignment planning.
 
-Use **Group by → Operation** to review work by production step, or **Group by → Machine** to review it by machine. Operation sequence labels help you identify each step in either view.
+Use **Group by → Operation** to review work by operation, or **Group by → Machine** to review it by machine. Operation sequence labels help you identify each operation in either view.
 
 When creating an order or editing an operation, choose the operation's priority from the company levels. It is independent of the order priority. New operations and operations without a saved value start at 100. A saved value outside the company levels remains selectable. The dashed **OP** indicator beside an operation's name shows its priority and company colour. Follow [Create a Production Order](/en/platform-intro/workflows/create-production-order).
 
@@ -59,11 +61,11 @@ An assignment is marked complete when its produced quantity exactly matches its 
 
 ### Read Handed-Over Work
 
-The neutral **Handed over** badge beside the order status means that some work has continued elsewhere. Hover over it for one line per affected step: good parts already made, the original quantity, and the machine or pool holding the remainder.
+The neutral **Handed over** badge beside the order status means that some work has continued elsewhere. Hover over it for one line per affected operation: good parts already made, the original quantity, and the machine or pool holding the remainder.
 
-A step can show **Partly done: 40 of 100 on DMU 50 · 60 left in Hall 2 pool**. Once another machine claims it, the line names that machine. After all parts are finished, it shows **Done on DMU 50 (40) and DMU 80 (60)**. These are examples; your quantities and names appear instead.
+An operation can show **Partly done: 40 of 100 on DMU 50 · 60 left in Hall 2 pool**. Once another machine claims it, the line names that machine. After all parts are finished, it shows **Done on DMU 50 (40) and DMU 80 (60)**. These are examples; your quantities and names appear instead.
 
-The first machine's part shows **Handed over** in assignment rows, the forecast, and analysis. Its recorded times and good parts stay there. The receiving assignment shows its source and the quantity already made. Hover over a handover badge for details and any reason. The step and order remain open while the rest is unfinished, so later steps can still be waiting. To pass work on, follow [hand over work in the Planner](/en/platform-intro/workflows/assignment-planner#hand-over-work).
+The first machine's part shows **Handed over** in assignment rows, the forecast, and analysis. Its recorded times and good parts stay there. The receiving assignment shows its source and the quantity already made. Hover over a handover badge for details and any reason. The operation and order remain open while the rest is unfinished, so later operations can still be waiting. To pass work on, follow [hand over work in the Planner](/en/platform-intro/workflows/assignment-planner#hand-over-work).
 
 To undo a handover manually, administrators and users with access to the Orders page first [delete the waiting remainder](/en/help-center/faq/planning-and-imports#handover-undo). Only do this if it has never started on the other machine. Deleting a part also deletes its recorded times. Before deleting, note the original quantity from **Partly done:** or the order’s **Handed over** badge; afterwards, **Done on** no longer shows it. Then select **Edit** (pencil icon) in the first machine’s **Handed over** assignment row. In **Edit Assignment**, choose **Hold**, restore **Planned Qty** to the noted original quantity if known, and select **Save**. If the planned quantity was unknown, there is no original to restore. The part returns to the first machine’s queue on hold with its times and good parts. Its handover label, the order’s handover badge and the partial-completion line disappear.
 
@@ -71,17 +73,17 @@ To undo a handover manually, administrators and users with access to the Orders 
 
 The **Forecaster** card shows when this order is expected to finish, based on what is happening on the machines now. **Updated** followed by a date tells you when the forecast was refreshed.
 
-The step count shows how many steps are on a machine. For example, **3 of 5 operations are on a machine** means two steps still have no machine; it does not mean three steps are complete. If an earlier step has no machine yet or is still in a hall pool, the expected finish may be too optimistic. An amber **at risk** result means the remaining work barely fits or an earlier step is not planned.
+The operation count shows how many operations are on a machine. For example, **3 of 5 operations are on a machine** means two operations still have no machine; it does not mean three operations are complete. If an earlier operation has no machine yet or is still in a hall pool, the expected finish may be too optimistic. An amber **at risk** result means the remaining work barely fits or an earlier operation is not planned.
 
 Click the information icon beside **Forecaster** to open **How does the Forecaster work?**. The help explains the colours and when expected times can be too early. Reading it does not change dates or queues. See the [Forecaster explanation](/en/platform-intro/pages/assignment-gantt) and [planning workflow](/en/platform-intro/workflows/assignment-planner) to review the missing details.
 
-Review the step marked **This operation sets the order's finish.** to see which work determines the expected completion. The timing and attention notes help you distinguish this assignment’s delay from the risk to its order. Choose **Show in the Assignment Gantt** to follow the order and the work holding it up on the timeline.
+Review the operation marked **This operation sets the order's finish.** to see which work determines the expected completion. The timing and attention notes help you distinguish this assignment’s delay from the risk to its order. Choose **Show in the Assignment Gantt** to follow the order and the work holding it up on the timeline.
 
-Steps held for a long time, never started, or without a planned start still get expected times. Paused work is expected to continue in its queue position. The notes **Never started** and **No planned start** appear only when **Follow planned dates** or **Delivery date first** is selected under **View options → Planning** in Assignment Gantt. They explain that never-started work starts when its machine is free and undated work follows dated steps. With **Follow the queue** or **Follow the queue, not before the planned date**, neither note appears and the step keeps its place in the queue. See [forecast assumptions](/en/platform-intro/pages/assignment-gantt#review-attention-and-waiting-work).
+Operations held for a long time, never started, or without a planned start still get expected times. Paused work is expected to continue in its queue position. The notes **Never started** and **No planned start** appear only when **Follow planned dates** or **Delivery date first** is selected under **View options → Planning** in Assignment Gantt. They explain that never-started work starts when its machine is free and undated work follows dated operations. With **Follow the queue** or **Follow the queue, not before the planned date**, neither note appears and the operation keeps its place in the queue. See [forecast assumptions](/en/platform-intro/pages/assignment-gantt#review-attention-and-waiting-work).
 
 ## Read Timeline Details
 
-Hover over an interval or a machine state to read **Start**, **End**, and **Duration**. An interval also shows available order, quantity, and machine operator information. **Machine states** explains the machine's activity during the booked interval. A state shows its **Reason** when one is recorded. Missing values are left out.
+Hover over an interval or a machine state to read **Start**, **End**, and **Duration**. An interval also shows available order, quantity, and machine operator information. **Machine states** explains the machine's activity during the recorded interval. A state shows its **Reason** when one is recorded. Missing values are left out.
 
 Dates and times use day/month/year and hours/minutes. Durations under a minute show seconds only. Hover over the pulse line for readings at that time. A cycle point shows **Cycle**, **Time**, and **Duration**, or **Cycles** for the hourly count.
 
@@ -98,11 +100,11 @@ Deletion is permanent. After confirmation, Order Analysis and the related timeli
 | **Customer (Kunde)** | Who the order is for; name or customer code. |
 | **Order (Auftrag)** | Overall job; order name, also labelled External Order ID. |
 | **Work Order (WO / Arbeitsauftrag)** | One product and its planned quantity within an order; order + product. |
-| **Operation (OP / Operation)** | One production step; work order + sequence code (Seq / Nr.). |
+| **Operation (OP / Operation)** | One production activity; work order + sequence code (Seq / Nr.). |
 | **Assignment (Zuweisung)** | Operation on one machine or hall pool; operation + machine. |
 | **Interval (Intervall)** | Recorded work session; start and end time. |
 
-The **External Product ID** is the product name. Order and operation priorities are independent. Order Planned dates belong to all operations of an order; Operation Planned dates belong to one step.
+The **External Product ID** is the product name. Order and operation priorities are independent. Order Planned dates belong to all operations of an order; Operation Planned dates belong to one operation.
 
 **Example:** An order for 100 housings has a work order for that product, cutting operation 10 and finishing operation 20, machine assignments for each, and intervals recording each run.
 
@@ -137,7 +139,7 @@ When assigning a reason in the timeline, the picker offers only that machine’s
 - **Production order:** the order whose details and production structure you are reviewing.
 - **Customer:** the customer associated with the order.
 - **Work order:** a part of the production order that groups operations.
-- **Operation:** a production step with its own sequence, planned times, notes, and descriptions.
+- **Operation:** a production activity with its own sequence, planned times, notes, and descriptions.
 - **Assignment:** an operation's placement on a machine or in a hall pool for production planning.
 
 ## Outcomes and Limits

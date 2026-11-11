@@ -34,9 +34,13 @@ Sendet der Sensor länger als 20 Minuten kein Signal, zählt der letzte Zustand 
 - Umschalten, ob Tage ohne Output in der Analyse zählen.
 - Vergleichen, wie die Maschine sich über die Zeit entwickelt hat.
 
+Wählen Sie den Pfeil neben dem Maschinennamen in der Pfadzeile oben auf der Seite zum Maschinenwechsel. Der Name selbst öffnet weiterhin die Maschinenseite. Die Liste zeigt Ihre Maschinen nach Halle gruppiert; die aktuelle Maschine hat ein Häkchen. Bei mehr als 8 Maschinen nutzen Sie **Maschinen suchen…**. ↑/↓ und Enter wählen, Esc schließt.
+
+Beim Wechsel bleiben der Zeitraum und die Auswahl **1W** / **1M** / **3M** erhalten. Die gleichnamige Schicht wird ausgewählt, auch bei einer anderen Schichtreihenfolge. Gibt es auf der anderen Maschine keine gleichnamige Schicht, wird **Alle Schichten** gewählt. Die Zurück-Funktion des Browsers öffnet die vorherige Maschine mit ihrem vorherigen Zeitraum. Folgen Sie [Maschinenhistorie prüfen](/de/platform-intro/workflows/machine-history-review).
+
 ## Bearbeitete Aufträge prüfen
 
-Der Bereich **Aufträge** zeigt die im gewählten Zeitraum auf dieser Maschine gebuchte Arbeit. Das Diagramm öffnet sich mit dem gesamten Zeitraum. Die oberen Balken zeigen Arbeitsabschnitte: **Produktion** erscheint als weißer Balken, **Vorbereitung** als weißer Balken mit blauem Rand. Ein Arbeitsgang kann mehrere Balken haben. Darunter sehen Sie die Maschinenzustände auf derselben Zeitachse. Die Legende steht oberhalb des Diagramms.
+Der Bereich **Aufträge** zeigt die im gewählten Zeitraum auf dieser Maschine erfasste Arbeit. Das Diagramm öffnet sich mit dem gesamten Zeitraum. Die oberen Balken zeigen Arbeitsabschnitte: **Produktion** erscheint als weißer Balken, **Vorbereitung** als weißer Balken mit blauem Rand. Ein Arbeitsgang kann mehrere Balken haben. Darunter sehen Sie die Maschinenzustände auf derselben Zeitachse. Die Legende steht oberhalb des Diagramms.
 
 Nutzen Sie **Vergrößern**, **Verkleinern** oder halten Sie beim Scrollen Strg gedrückt. Scrollen Sie seitlich oder ziehen Sie eine freie Diagrammfläche, um sich durch die Zeit zu bewegen. **Ganzer Zeitraum** stellt die vollständige Ansicht wieder her. Verkleinern und Einpassen sind nicht verfügbar, wenn bereits der gesamte Zeitraum sichtbar ist.
 
@@ -50,11 +54,13 @@ Beim Öffnen des Bereichs oder Ändern des Zeitraums ist nichts ausgewählt. Kli
 
 Die Detailansicht steht auf breiten Bildschirmen neben der Liste, auf kleineren darunter. Sie zeigt Status, tatsächliche Zeiten, geplantes Fenster und Mengen des gewählten Arbeitsgangs. **Arbeitsgänge dieses Auftrags** zeigt die vorherigen und nächsten Arbeitsgänge des Auftrags. Mit **Auf einer anderen Maschine** gekennzeichnete Arbeitsgänge sind sichtbar, hier aber nicht auswählbar. Unter **Auftrag** prüfen Sie **Liefertermin**, Status und die Anzahl erledigter Arbeitsgänge.
 
-Mit **Auftrag öffnen** öffnen Sie den vollständigen Auftrag in einem neuen Tab, sofern Sie Zugriff haben. Die Auswahl einer Zeile wählt nur den Arbeitsgang und öffnet keinen Auftrag. Schließen Sie die Detailansicht oder klicken Sie auf eine freie Diagrammfläche, um die Auswahl aufzuheben. Das Prüfen der Historie ändert weder Buchungen noch Planung.
+Mit **Auftrag öffnen** öffnen Sie den vollständigen Auftrag in einem neuen Tab, sofern Sie Zugriff haben. Die Auswahl einer Zeile wählt nur den Arbeitsgang und öffnet keinen Auftrag. Schließen Sie die Detailansicht oder klicken Sie auf eine freie Diagrammfläche, um die Auswahl aufzuheben. Das Prüfen der Historie ändert weder Intervalle noch Planung.
 
-### Gebuchte Zeit und Maschinenzustände vergleichen
+<a id="gebuchte-zeit-und-maschinenzustände-vergleichen" />
 
-**Gebuchte Zeit** teilt die erfasste Zeit des Arbeitsgangs in **Vorbereitung** und **Produktion**. **Maschinenzustände** zeigt, was die Maschine während dieser Buchungen tatsächlich getan hat, einschließlich Leerlauf, ausgeschalteter oder unbekannter Zeit. Das Informationssymbol jedes Bereichs erklärt die Bedeutung. Beispielsweise kann ein als Produktion gebuchter Arbeitsgang Leerlauf enthalten.
+### Zeit in Intervallen und Maschinenzustände vergleichen
+
+**Zeit in Intervallen** teilt die erfasste Zeit des Arbeitsgangs in **Vorbereitung** und **Produktion**. **Maschinenzustände** zeigt, was die Maschine während dieser Intervalle tatsächlich getan hat, einschließlich Leerlauf, ausgeschalteter oder unbekannter Zeit. Das Informationssymbol jedes Bereichs erklärt die Bedeutung. Beispielsweise kann ein als Produktion erfasster Arbeitsgang Leerlauf enthalten.
 
 Die Details umfassen die gesamte erfasste Arbeit dieses Arbeitsgangs auf dieser Maschine, auch außerhalb des gewählten Zeitraums. Zeiten, produzierte Menge und Auswertungssummen können deshalb größer sein als im Diagramm. Zeigen Sie auf einen Balken, um zuerst **Typ**, **Start**, **Ende**, **Dauer** und Maschinenzustände dieses Abschnitts zu lesen. Danach folgen die Arbeitsgangdetails. Das Informationssymbol am Ende einer Listenzeile zeigt den Arbeitsgang, ohne ihn auszuwählen.
 
@@ -62,7 +68,7 @@ Zeigen Sie auf die Zustandszeile, um Zustand, Zeiten, Dauer und einen vorhandene
 
 ### Keine Aufträge oder fehlende Zustände
 
-Ohne gebuchte Arbeit behält der Bereich seinen Platz und zeigt statt eines Diagramms mittig **In diesem Zeitraum wurde an dieser Maschine kein Auftrag bearbeitet.** Das belegt nicht, dass die Maschine ausgeschaltet war. Es bedeutet, dass in diesem Zeitraum keine Auftragsarbeit gebucht wurde.
+Ohne erfasste Arbeit behält der Bereich seinen Platz und zeigt statt eines Diagramms mittig **In diesem Zeitraum wurde an dieser Maschine kein Auftrag bearbeitet.** Das belegt nicht, dass die Maschine ausgeschaltet war. Es bedeutet, dass in diesem Zeitraum keine Auftragsarbeit erfasst wurde.
 
 Fehlende Zustandsangaben sind davon getrennt: Die Zustandszeile kann **Keine Maschinenzustände in diesem Zeitraum.** zeigen, der gewählte Arbeitsgang **Keine Maschinenzustände für diesen Arbeitsgang.** Folgen Sie [Maschinenhistorie prüfen](/de/platform-intro/workflows/machine-history-review).
 

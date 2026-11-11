@@ -31,6 +31,8 @@ Geben Sie Benutzern eine detaillierte, datumsbezogene Sicht auf die Live- oder j
 - BDE, Maschinenhistorie oder Alarmregeln öffnen.
 - Den aktuellen Maschinenzustand und jüngste Ereignisse prüfen.
 
+Wählen Sie den Maschinennamen in der Pfadzeile oben auf der Seite, um eine andere Maschine am selben Tag zu prüfen. Die Liste zeigt nur zugängliche Maschinen, nach Halle gruppiert, sofern es mehrere Gruppen gibt. Ein Häkchen markiert die aktuelle Maschine. Bei mehr als 8 Maschinen grenzt **Maschinen suchen…** die Liste ein. Wählen Sie mit ↑/↓ und Enter; Esc schließt sie. Der gewählte Tag bleibt beim Wechsel erhalten. Folgen Sie [Maschine live überwachen](/de/platform-intro/workflows/live-machine-monitoring).
+
 ## Bearbeitete Aufträge und nächste Arbeit
 
 **Gearbeitet** öffnet sich zuerst. Die Ansicht zeigt Arbeitsgänge, die am oben gewählten Datum bearbeitet wurden, laufende Arbeit zuerst und danach die jüngste Arbeit. Ändern Sie den Tag mit der Datumsauswahl der Seite. Die heutige Liste wird während der Ansicht jede Minute aktualisiert. **Frühere Tage in der Maschinenhistorie ansehen** öffnet die längere Betrachtung.
@@ -47,9 +49,9 @@ Ein an eine andere Maschine oder einen Pool weitergegebener Anteil zeigt auf Kar
 
 Öffnen Sie das Informationssymbol am Ende einer Karte auf einem der beiden Reiter. Es zeigt vorhandene Angaben zu Status, **Start**, **Ende**, **Geplant**, Mengenfortschritt und **Position in der Warteschlange**. Laufende Arbeit zeigt **Läuft noch**. Datum und Uhrzeit beschreiben die tatsächliche Arbeit des Arbeitsgangs, auch wenn sie vor dem gewählten Tag begann. Fehlende Werte werden ausgelassen.
 
-**Gebuchte Zeit** teilt die erfasste Zeit des Arbeitsgangs in **Vorbereitung** und **Produktion**. Unter **Gearbeitet** zeigt **Maschinenzustände**, was die Maschine während dieser Buchungen tatsächlich getan hat. Eine Produktionsbuchung kann beispielsweise Leerlauf enthalten. Diese Summen und die produzierten Mengen umfassen die Arbeit des Arbeitsgangs auf dieser Maschine über alle Tage. Sie sind nicht auf den gewählten Tag begrenzt. Unter **Als Nächstes** sind keine Maschinenzustandsdetails verfügbar.
+**Zeit in Intervallen** teilt die erfasste Zeit des Arbeitsgangs in **Vorbereitung** und **Produktion**. Unter **Gearbeitet** zeigt **Maschinenzustände**, was die Maschine während dieser Intervalle tatsächlich getan hat. Eine Produktionsintervall kann beispielsweise Leerlauf enthalten. Diese Summen und die produzierten Mengen umfassen die Arbeit des Arbeitsgangs auf dieser Maschine über alle Tage. Sie sind nicht auf den gewählten Tag begrenzt. Unter **Als Nächstes** sind keine Maschinenzustandsdetails verfügbar.
 
-Ohne Buchungen am gewählten Tag bleibt **Gearbeitet** leer. Eine leere Warteschlange zeigt **Für diese Maschine ist nichts eingeplant.** Folgen Sie [Maschine live überwachen](/de/platform-intro/workflows/live-machine-monitoring).
+Ohne erfasste Arbeit am gewählten Tag bleibt **Gearbeitet** leer. Eine leere Warteschlange zeigt **Für diese Maschine ist nichts eingeplant.** Folgen Sie [Maschine live überwachen](/de/platform-intro/workflows/live-machine-monitoring).
 
 ## Live Data, Pulse und Last Heartbeat
 
@@ -59,7 +61,7 @@ Die Zeitleiste zeigt Produktion grün, Leerlauf orange, Aus rot, Vorbereitung bl
 
 ## Details in der Zeitleiste lesen
 
-Zeigen Sie auf ein Intervall oder einen Maschinenzustand, um **Start**, **Ende** und **Dauer** zu lesen. Ein Intervall zeigt außerdem vorhandene Angaben zu Auftrag, Menge und Maschinenbediener. **Maschinenzustände** erklärt die Maschinenaktivität während des gebuchten Intervalls. Ein Zustand zeigt seinen **Grund**, wenn einer erfasst wurde. Fehlende Werte werden ausgelassen.
+Zeigen Sie auf ein Intervall oder einen Maschinenzustand, um **Start**, **Ende** und **Dauer** zu lesen. Ein Intervall zeigt außerdem vorhandene Angaben zu Auftrag, Menge und Maschinenbediener. **Maschinenzustände** erklärt die Maschinenaktivität während des erfassten Intervalls. Ein Zustand zeigt seinen **Grund**, wenn einer erfasst wurde. Fehlende Werte werden ausgelassen.
 
 Datum und Uhrzeit verwenden Tag/Monat/Jahr und Stunden/Minuten. Dauern unter einer Minute erscheinen nur in Sekunden. Zeigen Sie auf die Signallinie, um Messwerte zu dieser Zeit zu lesen. Ein Zykluspunkt zeigt **Zyklus**, **Zeit** und **Dauer** oder **Zyklen** für die stündliche Anzahl.
 
@@ -85,15 +87,15 @@ Administratoren sehen im Kopf der Seite das Zahnrad **Maschineneinstellungen**, 
 
 Mit Zugriff auf diese Maschine wählen Sie **Intervalle verbessern** im Kopf der Zeitleiste. Die Schaltfläche erscheint, wenn der gewählte Tag mindestens ein Intervall enthält. Der Dialog startet mit dieser Maschine und diesem Tag. Administratoren können unter **Maschinen** weitere zugängliche Maschinen ergänzen. Andere Personen prüfen eine Maschine.
 
-Wählen Sie einen **Zeitraum**, der spätestens heute endet. Eine längere Auswahl wird mit Hinweis auf ihre jüngsten 60 Tage gekürzt. Wählen Sie unter **Anzeigen** Vorschläge zu Start, Ende, Vorbereitung, Nachbarintervallen oder ungebuchter Produktion. Wählen Sie dann **Vorschläge suchen**.
+Wählen Sie einen **Zeitraum**, der spätestens heute endet. Eine längere Auswahl wird mit Hinweis auf ihre jüngsten 60 Tage gekürzt. Wählen Sie unter **Anzeigen** Vorschläge zu Start, Ende, Vorbereitung, Nachbarintervallen oder **Produktion ohne Auftrag**. Wählen Sie dann **Vorschläge suchen**.
 
-Öffnen Sie einen Tag, um **Jetzt** mit **Danach** zu vergleichen. Jeder Vorschlag zeigt Auftrag, Zeitänderung, Optionen und hinzugefügte oder entfernte Minuten. Die Tagesvorschau folgt Ihrer Auswahl. Die Zusammenfassung zeigt auch ungebuchte Produktion und verbleibende Überlappungen.
+Öffnen Sie einen Tag, um **Jetzt** mit **Danach** zu vergleichen. Jeder Vorschlag zeigt Auftrag, Zeitänderung, Optionen und hinzugefügte oder entfernte Minuten. Die Tagesvorschau folgt Ihrer Auswahl. Die Zusammenfassung zeigt auch **Produktion ohne Auftrag** und verbleibende Überlappungen.
 
 Start- und Endvorschläge nutzen tatsächliche Maschinenereignisse aus der jüngsten Aktivität innerhalb der Fragegrenze dieser Maschine. Eine Zeit wird nie auf eine Grenze verschoben, an der nichts passiert ist. Datenlücken unter 10 Minuten sowie Unterbrechungen durch Leerlauf, Aus oder Vorbereitung unter 2 Minuten teilen die Aktivität nicht. Vorbereitung folgt eigenen erlaubten Optionen, getrennt von der Produktion. Nur Optionen innerhalb der automatischen Grenze gehen in die besten Vorschläge und die Gesamtsummen ein.
 
 Nur Vorschläge, deren beste Option innerhalb der automatischen Grenze liegt, sind vorausgewählt. **Überlappungen (Warnung)** bleibt ohne Häkchen und erscheint, wenn gleichzeitige Intervalle die unter **Parallele Aufträge** eingestellte Anzahl überschreiten. Parallele Arbeit kann richtig sein; Überlappungen sind erlaubt. Prüfen Sie jede vor einer Korrektur.
 
-Übernehmen Sie mit der Aktion für ausgewählte Vorschläge die angehakten Änderungen. Administratoren können nach Prüfung der Bestätigung **Überall das Beste übernehmen** wählen. Überlappungen und Vorschläge jenseits der automatischen Grenze bleiben dabei ausgeschlossen. Ungebuchte Produktion ist nur ein Hinweis. Das Werkzeug erstellt keine fehlenden Intervalle.
+Übernehmen Sie mit der Aktion für ausgewählte Vorschläge die angehakten Änderungen. Administratoren können nach Prüfung der Bestätigung **Überall das Beste übernehmen** wählen. Überlappungen und Vorschläge jenseits der automatischen Grenze bleiben dabei ausgeschlossen. **Produktion ohne Auftrag** ist nur ein Hinweis. Das Werkzeug erstellt keine fehlenden Intervalle.
 
 Die Suche nach Vorschlägen ändert nichts. Die Übernahme ändert historische Auftragszeiten sofort. OEE und Berichte folgen bei ihrer nächsten Berechnung. Ohne Maschinendaten lassen sich Intervalle nicht prüfen. Erlaubte Zeiten kommen aus **BDE Assist**, auch wenn die Intervallhilfe im laufenden Betrieb aus ist. Folgen Sie [Intervalle prüfen und verbessern](/de/platform-intro/workflows/improve-intervals).
 

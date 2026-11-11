@@ -11,7 +11,7 @@ Unterstützen Sie die Live-Ausführung am Shopfloor und die Ereigniserfassung f�
 
 Benutzer öffnen diese Seite normalerweise über die Seite **Maschinendetails**.
 
-Wählen Sie zum Maschinenwechsel den Maschinennamen in der oberen Navigationsleiste. Die Auswahlliste zeigt die anderen für Sie zugänglichen Maschinen nach Halle gruppiert. Die Auswahl öffnet direkt die Betriebsdatenerfassung der jeweiligen Maschine.
+Wählen Sie zum Maschinenwechsel auf der BDE-Seite den Maschinennamen in der oberen Navigationsleiste. Die Liste gruppiert zugängliche Maschinen nach Halle und markiert die aktuelle Maschine mit einem Häkchen. Bei mehr als 8 Maschinen nutzen Sie **Maschinen suchen…**. Wählen Sie mit ↑/↓ und Enter oder schließen Sie mit Esc. Die Auswahl einer anderen Maschine öffnet direkt deren BDE-Seite.
 
 ## Zugriff
 
@@ -186,6 +186,8 @@ Meldungen nennen den Arbeitsgang. Nach **Weiter** erscheint **Intervall beendet 
 
 Übernehmen Sie im **Pool** Arbeit aus dem Hallen-Pool Ihrer Maschine. Fehlt eine Zuweisung, suchen Sie ungeplante Arbeitsgänge oder verwenden Sie **Sofortauftrag finden/erstellen**. Über die Schaltfläche mit dem Notizsymbol auf der Zuweisungskarte sehen Sie Notizen und Beschreibungen zu Auftrag, Arbeitsauftrag, Arbeitsgang, Zuweisung und Produkt; die kleine Zahl zeigt, wie viele dieser Einträge ausgefüllt sind.
 
+Im Dialog **Sofortauftrag finden/erstellen** auf der BDE-Seite finden Sie mit **Produkt suchen** ein Produkt nach Name oder Nummer.
+
 **Wartet auf einen vorherigen Arbeitsgang** / **Blockiert durch** bedeutet, dass ein früherer Arbeitsgang noch nicht abgeschlossen ist. **Trotzdem starten** ist dennoch verfügbar. Prüfen Sie vorher die Abhängigkeit. Bei bereits laufender anderer Zuweisung erscheint eine Bestätigung. Ist die Planmenge nach **Stopp** erreicht, wählen Sie **Abschließen** oder **In Wartestellung lassen**.
 
 Ungebundene oder unbeschriftete Maschinenzeit gehört zu keinem Auftrag. Die Löschung eines erfassten Intervalls ist endgültig.
@@ -273,8 +275,8 @@ Ist ein Grund nicht mehr erlaubt, wird die Liste aktualisiert. Wählen Sie einen
 
 | Warnung | Bedeutung |
 | --- | --- |
-| **Produktion ohne Auftrag** | Die Maschine produziert, aber kein Produktionsauftrag läuft. Die Warnung verschwindet, sobald ein Auftrag startet. |
-| **Maschine aus, Auftrag läuft noch** | Die Maschine ist für die eingestellte Verzögerung aus, während der Auftrag weiter Zeit zählt. Die Warnung verschwindet, wenn der Auftrag endet oder die Maschine wieder läuft. |
+| **Produktion ohne Auftrag** | Die Maschine produziert, aber kein Produktionsauftrag läuft. Die Produktionszeit wird daher in keinem Intervall erfasst. Die Warnung verschwindet, sobald ein Auftrag startet. |
+| **Maschine aus, Auftrag läuft noch** | Die Maschine ist für die eingestellte Verzögerung aus, während das Intervall des Auftrags auf der stehenden Maschine weiterläuft. Die Warnung verschwindet, wenn der Auftrag endet oder die Maschine wieder läuft. |
 | **Auftrag läuft zu lange** | Ein Auftrag läuft länger als der eingestellte Schwellwert. |
 | **Auftrag über Schichtwechsel hinaus offen** | Ein Auftrag aus einer früheren Schicht ist nach der Verzögerung der aktuellen Schicht noch offen. Dafür müssen der Maschine Schichten zugewiesen sein. |
 | **Live-Daten veraltet** | Für die eingestellte Verzögerung sind keine frischen Maschinendaten eingetroffen. Andere Warnungen können unzuverlässig sein. |

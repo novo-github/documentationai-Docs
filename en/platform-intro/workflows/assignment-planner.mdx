@@ -27,7 +27,7 @@ Begin on the [Assignment Planner page](/en/platform-intro/pages/assignment-plann
     Select up to 25 machines and the halls whose pools you need. Pools do not count toward the machine limit. Narrow work with order tags, order and operation priorities, or the status of individual assignments.
   </Step>
   <Step title="Find the work" icon="arrow-right" title-type="p">
-    Open search with Ctrl+F (⌘F on a Mac) or the search icon in **Filter & Sort**. Search for an order, product, or customer. Choose **Search in → Unassigned**, **Hall pools**, **Machines**, or **Everything**. Esc or × clears and closes the search.
+    Open search with Ctrl+F (⌘F on a Mac) or the search icon in **Filter & Sort**. Search for an order, product, or customer. Choose **Search in → Unassigned**, **Hall pools**, **Machines**, or **Everything**. Esc or the × in the box closes it and keeps the text. Remove the **Search: …** chip to clear it.
   </Step>
   <Step title="Choose a machine or hall pool" icon="arrow-right" title-type="p">
     Drag the operation onto a machine column when its destination is known. If several machines in a hall could perform it, drag it into that hall's Hall Pool or assign a new operation there. Use the readiness badge to see when a machine can claim the pooled work.
@@ -41,7 +41,7 @@ Begin on the [Assignment Planner page](/en/platform-intro/pages/assignment-plann
     Update key details such as status, dates, or priority when needed. Review or edit operation and assignment notes to keep instructions with the work.
   </Step>
   <Step title="Review the future schedule" icon="arrow-right" title-type="p">
-    Open Assignment Gantt and select up to 25 machines. Close the machine selection menu to apply your choices. Inspect the timeline for overlaps and open a related order when needed. Gantt has no hall-pool columns.
+    Open Assignment Gantt and select up to 25 machines. Close the machine selection menu to apply your choices. Inspect the timeline for overlaps and open a related order when needed. Use Ctrl+F to find an order with **Show route**, or a machine with **Go to**. At 25 machines, a newly added machine replaces the last one; check the result’s explanation first. Gantt has no hall-pool columns.
   </Step>
   <Step title="Arrange future assignments when needed" icon="arrow-right" title-type="p">
     Open **Improve plan**, compare the alternatives, and review the assignments that would change before choosing **Save as plan**. Running and on-hold work keep their place. Follow the detailed comparison steps below.
@@ -61,7 +61,7 @@ Begin on the [Assignment Planner page](/en/platform-intro/pages/assignment-plann
     Under **Which pools to show**, tick the halls you need. This also changes the hall filter. Each pool appears beside **Unassigned operations** and stays in view while you scroll through the machines. If the list is hidden, pools start at the left edge.
   </Step>
   <Step title="Make room and place work" icon="arrow-right" title-type="p">
-    Use **Collapse pool** to leave a narrow strip. If your search covers the pool, close it first so the work lands at the very end. Otherwise, a drop on the strip can land among the cards. **Unassigned** does not filter pools. You can drop onto the strip even while it is collapsed. Started work opens the handover dialog; after confirmation, its remainder goes to the top. Click the strip or use **Expand pool** to see its cards again. This browser remembers collapsed pools for the current company.
+    Use **Collapse pool** to leave a narrow strip. If your search covers the pool, clear its text and any order, product, or customer chips first so the work lands at the very end. Otherwise, a drop on the strip can land among the cards. **Unassigned** does not filter pools. You can drop onto the strip even while it is collapsed. Started work opens the handover dialog; after confirmation, its remainder goes to the top. Click the strip or use **Expand pool** to see its cards again. This browser remembers collapsed pools for the current company.
   </Step>
 </Steps>
 
@@ -74,12 +74,15 @@ Begin on the [Assignment Planner page](/en/platform-intro/pages/assignment-plann
   <Step title="Choose where to search" icon="arrow-right" title-type="p">
     Under **Search in**, choose **Unassigned** for the list, **Hall pools** for pooled work, **Machines** for work on machines, or **Everything** for all three. Other areas keep showing their cards. The default is **Unassigned**, and your choice is remembered. **Machines** does not search machine names.
   </Step>
+  <Step title="Keep choices as filters" icon="arrow-right" title-type="p">
+    Choose a suggestion or browse **Filter by**. Add a customer and an order priority to show only work matching both; two customers show either customer. You can type P10 for order priority 10 or OP10 for operation priority 10. Text and order, product, and customer chips follow **Search in**. Machine and hall-pool choices add or remove lanes instead of chips.
+  </Step>
   <Step title="Review the matches and clear search" icon="arrow-right" title-type="p">
-    If a queue has more than 40 matches, use **Show 40 more**, or the smaller remaining number, to reveal more. When the search includes the unassigned list, check its found count. Press Esc or × to close and clear search; other filters remain in effect.
+    If a queue has more than 40 matches, use **Show 40 more**, or the smaller remaining number, to reveal more. When the search includes the unassigned list, check its found count. Press Esc or the × in the box to close it and keep filtering. Remove the **Search: …** chip to clear the text, or use **Clear all** under the toolbar to clear the text and restore the default filters together.
   </Step>
 </Steps>
 
-A link with a search uses **Everything** for that visit without replacing your saved choice.
+A link with search text uses **Everything** while its text remains or until you choose another area. An order, product, or customer link starts in **Unassigned** and finds matching work beyond the first part of the list. Neither changes your saved preference. For Orders & Products, Machines, and Gantt, follow [find work and machines](/en/platform-intro/workflows/search-and-filter).
 
 ## Move Work to Another Queue
 
@@ -374,6 +377,8 @@ For moves without a dialog, with **Sort by Queue Position** enabled, a drop sets
 Use [Assignment Gantt](/en/platform-intro/pages/assignment-gantt) to inspect the timeline. Its drag-to-reschedule mode is **Experimental and read-only**; use supported planner controls for changes.
 
 Use the view switch to open Assignment Gantt for a timeline review. Use its **Move** controls for eligible work or return to Assignment Planner to work with queues.
+
+On larger screens, scroll down past the controls to bring the board into view. Ctrl+F still opens search there. Scroll up from the board’s top to return to the controls, or below the board to reach the footer. The page glides between the controls and the work area and never stops half-way between the two. Phones keep normal scrolling.
 
 ## Decision Points
 

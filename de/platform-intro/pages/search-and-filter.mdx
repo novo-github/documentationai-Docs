@@ -1,0 +1,106 @@
+---
+title: "Suchen und filtern"
+description: "Finden Sie Arbeit und Maschinen, kombinieren Sie Filter und behalten oder löschen Sie eine Suche."
+---
+
+## Überblick
+
+**Zugriff:** Die Suche nutzt Ihren bestehenden Zugriff in der Watchmen-Plattform. Maschinen zeigt nur zugängliche Maschinen. Zuweisungsplaner und Zuweisungs-Gantt erfordern Zugriff auf die Planungsseite und die Maschinen. Aufträge & Produkte steht Administratoren und Benutzern mit Seitenzugriff zur Verfügung, nicht Maschinenbedienern. Siehe [Rollen und Zugriff](/de/platform-intro/concepts/roles-and-access).
+
+Nutzen Sie das Suchfenster in [Zuweisungsplaner](/de/platform-intro/pages/assignment-planner), [Aufträge & Produkte](/de/platform-intro/pages/orders-products), [Maschinen](/de/platform-intro/pages/machines) oder [Zuweisungs-Gantt](/de/platform-intro/pages/assignment-gantt). Folgen Sie [Arbeit und Maschinen finden](/de/platform-intro/workflows/search-and-filter) für die Anleitung.
+
+## Öffnen und tippen
+
+Drücken Sie Strg+F (⌘F auf dem Mac) oder wählen Sie die Lupe, um das Suchfenster mit dem beibehaltenen Text zu öffnen. Auf Maschinen steht die Lupe neben der Sortierung bei den Statuskarten. Im Planer steht sie unter **Filtern & Sortieren**, in Aufträge & Produkte im Filterkopf und im Gantt in der Werkzeugleiste.
+
+Auf Smartphones und Tablets erscheint unten rechts eine runde Lupe, sobald die Lupe der Maschinenseite nicht mehr sichtbar ist. In der Arbeitsplatzansicht erscheint sie von Beginn an. Beim Scrollen nach unten verschwindet sie. Beim Scrollen nach oben oder nach einer Scrollpause erscheint sie wieder. Solange das Suchfenster, ein Dialog, ein Menü oder ein Seitenbereich geöffnet ist, bleibt sie ausgeblendet. Bei Bedienung mit einer Desktop-Maus erscheint sie nicht.
+
+Im Planer, in Aufträge & Produkte und auf Maschinen ändern sich die Ergebnisse beim Tippen. Enter ist nicht nötig. Der Text grenzt die Ergebnisse zusätzlich zu Ihren Filtern ein. **Liste wird aktualisiert …** bedeutet, dass sich die Liste noch ändert. Im Gantt finden Sie beim Tippen Ziele zum Öffnen oder Anspringen; die Zeitleiste wird dadurch nicht gefiltert.
+
+<a id="product-search" />
+
+Sie können nach Produktname oder Nummer suchen: in Vorschlägen des Suchfensters und im Produktfilter von Aufträge & Produkte, bei der Produktauswahl für einen Arbeitsauftrag im Dialog für neue Aufträge aus dem Admin-Panel und auf der Detailseite eines Auftrags (Auftragsverwaltung), im Dialog **Sofortauftrag finden/erstellen** auf der BDE-Seite und in der Produkttabelle im Admin-Panel.
+
+## Vorschläge und Kategorien wählen
+
+Wählen Sie einen Vorschlag, um ihn als Filterchip zu behalten. Die Auswahl eines Filters aus getippten Treffern leert den Suchtext; der Chip übernimmt den Filter. Dieselbe Auswahl erscheint in den Filtersteuerungen der Seite.
+
+Wählen Sie bei leerem Suchfeld eine Kategorie unter **Filtern nach**. Scrollen Sie zu weiteren Werten oder tippen Sie, um innerhalb dieser Kategorie zu suchen. **Alle Kategorien** führt zurück. **Alle anzeigen** neben einer Gruppe öffnet deren vollständige Kategorie. Eine Auswahl wie **Alle anzeigen: Kunde** öffnet diese Kategorie ebenfalls.
+
+Ändern Sie die Auswahl einer Zeile mit **Hinzufügen** oder **Entfernen**. Ein Häkchen markiert einen aktiven Wert. Beim Durchsuchen bleibt die Kategorie offen, damit Sie mehrere Werte wählen können. **Zuletzt verwendet** bietet frühere Auswahlen im Planer, in Aufträge & Produkte und im Gantt. Maschinen zeigt stattdessen Zustandskacheln und Hallen.
+
+## Filter kombinieren und entfernen
+
+Bei Werten derselben Art genügt eine Übereinstimmung. Verschiedene Arten müssen alle zutreffen. Die Kunden Müller und Bauer zeigen beispielsweise Arbeit für einen der beiden Kunden. Müller zusammen mit Auftragspriorität Hoch zeigt nur Müllers Arbeit mit hoher Priorität. Getippter Text grenzt diese Ergebnisse weiter ein.
+
+Esc und das × oben im Suchfenster schließen es und behalten den Text. Im Planer, in Aufträge & Produkte und auf Maschinen zeigt ein Chip **Suche: …**, dass der Text die Seite weiter filtert. Öffnen Sie das Fenster erneut, um den Text zu sehen und zu ändern.
+
+Löschen Sie den Text im Feld oder entfernen Sie den Chip **Suche: …**, um die Textsuche aufzuheben. **Alle entfernen** im Suchfenster entfernt die Filterchips und behält den getippten Text. Um Text und Filter gemeinsam zu entfernen, nutzen Sie die Zeile außerhalb des Fensters: **Alle entfernen** unter der Planerleiste, **Alles zurücksetzen** im Filterkopf von Aufträge & Produkte oder **Zurücksetzen** unter den Statuskarten auf Maschinen. Diese Aktionen stellen die voreingestellten Filter wieder her. Die Maschinen- und Hallenpoolauswahl des Planers bleibt bestehen.
+
+## Unterschiede zwischen den Seiten
+
+### Zuweisungsplaner
+
+Das Feld heißt **Auftrag / Produkt / Kunde suchen**. Vorschläge umfassen Aufträge, Produkte, Kunden, Auftragsprioritäten, Arbeitsgangprioritäten, Status, Tags, **ERP-Import**, Maschinen und **Hallenpool**. Tags, Importe und Pools erscheinen, wenn sie verfügbar sind.
+
+Wählen Sie unter **Suchen in** zwischen **Nicht zugewiesen**, **Hallenpools**, **Maschinen** und **Überall**. Text sowie Auftrags-, Produkt- und Kundenchips filtern nur diesen Bereich. **Maschinen** filtert Arbeit in Maschinenwarteschlangen; ein Maschinenvorschlag fügt dagegen deren Spalte oder Zeile hinzu oder entfernt sie. Auch Hallenpoolvorschläge ändern die angezeigten Pools. Sie können höchstens 25 Maschinen zeigen; entfernen Sie zuerst eine, bevor Sie eine weitere hinzufügen. Pools zählen nicht zu dieser Grenze.
+
+Prioritäts-, Status- und Tagfilter gelten für Liste und alle Warteschlangen. Die Importauswahl gilt nur für die Liste nicht zugewiesener Arbeitsgänge. Ein anderer Import ersetzt den bisherigen. Wählen Sie aus der voreingestellten Ansicht einen Status, wird auf diesen eingegrenzt. Entfernen Sie den letzten Statuschip, gelten wieder die voreingestellten Statuswerte.
+
+Suchen Sie Prioritätscodes wie P10 für Auftragspriorität 10, AG10 für Arbeitsgangpriorität 10 oder 10 für beide Arten. Auch OP10 findet Arbeitsgangpriorität 10. Großschreibung und Leerzeichen spielen keine Rolle. Namen funktionieren weiterhin. Die Auswahl zeigt Code, vorhandenen Namen der Unternehmensstufe und deren Farbe. Eine Priorität ohne benannte Stufe bleibt auswählbar.
+
+Links von einem Auftrag, Produkt oder Kunden fügen einen Chip hinzu und beginnen in **Nicht zugewiesen**, auch für Treffer über den ersten Listenteil hinaus. Ein Link mit Suchtext beginnt in **Überall**, solange dieser Text bleibt. Die Wahl eines Suchbereichs ersetzt den Bereich des Links. Das Öffnen eines Links ändert Ihre gespeicherte Voreinstellung nicht.
+
+### Aufträge & Produkte
+
+Das Feld heißt **Auftrag, Produkt, Kunde, Maschine suchen**. Kategorien umfassen Kunden, Aufträge, Produkte, Maschinen, Zuweisungsstatus und **Filter**. Die letzte Kategorie bietet **Forecaster: Liefertermin gefährdet**, **Forecaster: verspätet, Arbeitsgänge nicht geplant** und **Live-Aufträge**.
+
+Sie können mehrere Kunden wählen. Eine Änderung der Kundenauswahl entfernt ausgewählte Aufträge. Auftragsvorschläge richten sich danach nach diesen Kunden. Die Textsuche behält den Datumsbereich bei. Wählen Sie einen Kunden, Auftrag, ein Produkt oder eine Maschine, schränkt der Datumsbereich die Ergebnisse nicht mehr ein. Datums-, Sortier- und Spaltensteuerungen bleiben auf der Seite.
+
+### Maschinen
+
+Bei leerem Feld zeigt **Gerade jetzt** die Zustände **Produktion**, **Leerlauf**, **Aus** und **In Vorbereitung** mit denselben Anzahlen wie die Statuskarten. Wählen Sie mehrere Zustände, um Maschinen in einem dieser Zustände zu sehen. Karten und Kacheln teilen dieselbe Auswahl. Ihre Anzahlen beschreiben alle zugänglichen Maschinen, nicht nur die gefilterten Karten.
+
+Wählen Sie Hallen, Tags oder unter **Laufender Auftrag** einen Auftrag, um Karten einzugrenzen. Hallen zeigen Maschinenanzahlen und farbige Zustandspunkte. Hallen- oder Tagchips auf einer Maschinenkarte ändern dieselben Filter. Diese finden alle passenden Maschinen, auch noch nicht angezeigte Karten.
+
+**Laufender Auftrag** bedeutet heute bearbeitete Aufträge, einschließlich Vorbereitung und abgeschlossener Arbeit. Suchen Sie nach Auftragsname, Auftragsnummer oder Produktname. Jeder Treffer nennt die beteiligten Maschinen. Beim Tageswechsel werden diese Auftragschips entfernt; andere Filter bleiben. Die Zustandsauswahl wird für Ihren nächsten Besuch gespeichert. Hallen-, Tag- und Auftragsauswahlen gelten für den Besuch.
+
+Tippen Sie einen Maschinennamen, um die Karten einzugrenzen. Wählen Sie **Öffnen →** an einem Maschinentreffer, um dessen Seite zu öffnen. In der Arbeitsplatzansicht gelten Hallen-, Tag- und Auftragsfilter. Zustandsfilter und Kacheln fehlen. Das Entfernen der Filter dort behält die gespeicherte Maschinenzustandsauswahl bei.
+
+### Zuweisungs-Gantt
+
+Das Feld heißt **Auftrag oder Maschine suchen**. Unter **Durchsuchen** erscheinen nur Aufträge und Maschinen. Wie die Auftragsauswahl bietet die Suche nur offene Aufträge.
+
+Wählen Sie **Auftrag zeigen**, um die Auftragsansicht mit Maschinen in der Reihenfolge der Arbeitsgänge zu öffnen. Das Suchfenster schließt sich. Ein Auftragschip erscheint neben der Werkzeugleiste und im Suchfenster. Die Auftragsauswahl in der Leiste verwendet dieselbe Auswahl. Entfernen Sie den Chip oder wählen Sie **Entfernen** am ausgewählten Auftrag, um die Auftragsansicht zu verlassen.
+
+**Gehe zu** öffnet die Halle einer Maschine, scrollt zu ihrer Zeile und hebt sie kurz hervor. Eine bereits angezeigte Maschine bleibt an ihrem Platz. Andernfalls wird sie aufgenommen. Bei 25 Maschinen ersetzt sie die zuletzt ausgewählte Maschine; die Erklärung am Treffer nennt den Ersatz. Liegt die Maschine außerhalb der Auftragsansicht, wird diese zuerst verlassen. Es entsteht kein Maschinenchip.
+
+Esc und das × im Suchfenster behalten den Text bis zum nächsten Öffnen. Es gibt keinen Suchtextchip, da der Text keine Balken filtert. Liegt der Fokus auf dem Plan, schließt Esc zuerst die Seitenleiste und danach das Suchfenster. Im Suchfeld schließt Esc nur das Suchfenster.
+
+## Tastaturbedienung
+
+| Taste | Wirkung |
+| --- | --- |
+| Strg+F / ⌘F | Öffnet das Suchfenster oder markiert seinen vorhandenen Text, wenn es bereits offen ist. |
+| ↑ / ↓ | Markiert eine Auswahl. |
+| Enter | Fügt den markierten Filter hinzu oder entfernt ihn, öffnet eine Maschine oder führt die gewählte Gantt-Aktion aus. Ohne markierte Auswahl ändert sich nichts. |
+| Rücktaste bei leerem Feld | Entfernt den letzten Filterchip. |
+| Esc | Schließt das Fenster und behält Text und Filter. Ein offenes Menü oder ein Dialog kann Esc zuerst übernehmen. Beachten Sie die Gantt-Ausnahme oben. |
+
+## Zum Arbeitsbereich scrollen
+
+Scrollen Sie auf größeren Bildschirmen an den oberen Bedienelementen des Planers oder von Aufträge & Produkte vorbei nach unten. Der Plan oder die Tabelle rückt ins Bild. Scrollen Sie vom oberen Rand des Arbeitsbereichs nach oben, um zu den Bedienelementen zurückzukehren. Die Seite gleitet zwischen den Bedienelementen und dem Arbeitsbereich und bleibt nie auf halbem Weg dazwischen stehen. Ist deren Bereich höher als ein Bildschirm, können Sie oberhalb dieses Übergangs normal scrollen.
+
+Die Auftragstabelle ist höchstens einen Bildschirm hoch. Ihre Zeilen scrollen, während Spaltenüberschriften und Seitenauswahl sichtbar bleiben. Kurze Listen behalten ihre natürliche Höhe. Scrollen Sie unterhalb des Arbeitsbereichs weiter zur Fußzeile. Beim Zurückscrollen von unten hält die Seite zuerst am Arbeitsbereich. Scrollen Sie erneut nach oben zu den Bedienelementen.
+
+Es gibt keine Schaltfläche oder Einstellung. Auf Smartphones scrollen Sie wie gewohnt. Die Bewegung pausiert bei offenem Dialog oder beim Ziehen einer Planerkarte. Bei reduzierter Bewegung wechselt die Position ohne Gleiten. Strg+F öffnet die Suche auch bei nicht sichtbaren Seitensteuerungen.
+
+## Grenzen
+
+Die Suche gewährt keinen zusätzlichen Zugriff auf Seiten oder Maschinen. Bei leeren Ergebnissen können andere Filter die Arbeit ausschließen. Prüfen Sie die sichtbaren Chips und im Planer den Suchbereich. Das Schließen des Fensters entfernt sie nicht. Das Gantt durchsucht nur Aufträge und Maschinen.
+
+## Verwandte Seiten
+
+- [Maschinenzuweisungen planen](/de/platform-intro/workflows/assignment-planner)
+- [Maschine live überwachen](/de/platform-intro/workflows/live-machine-monitoring)
+- [Fragen zur Planung](/de/help-center/faq/planning-and-imports)

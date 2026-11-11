@@ -1,0 +1,70 @@
+---
+title: "Find Work and Machines"
+description: "Use search and filters to find work, open a machine, or follow an order in Gantt."
+---
+
+## Goal
+
+Find the work or machine you need and clear the choices when you want the full view again.
+
+## Before You Begin
+
+<Callout kind="info" title="Workflow access">
+Use a page you can access: Machines, Assignment Planner, Assignment Gantt, or Orders & Products. You need access to the relevant machines. Orders & Products requires an Admin account or a User with access to that page; it is not available to Machine operators.
+</Callout>
+
+See [Search and Filter](/en/platform-intro/pages/search-and-filter) for each page's choices.
+
+### Preconditions
+
+- The work or machine already exists and is accessible to you.
+- Choose the page for your task: cards and queues, the orders table, the machine list, or Gantt.
+
+## Steps
+
+<Steps>
+  <Step title="Open search" icon="arrow-right" title-type="p">
+    Press Ctrl+F (⌘F on a Mac) or select the magnifier to open the Find box with your kept text. On Machines, the magnifier sits beside sorting near the status cards. It is in **Filter & Sort** on the Planner, in the filter header on Orders & Products, and in the toolbar on Gantt. On phones and tablets, use the floating magnifier at the bottom right when the Machines controls are out of view, or from the start in its work-center view. On the Planner, choose the area under **Search in**. Use **Everything** to search the list, pools, and machine queues together.
+  </Step>
+  <Step title="Find and keep a choice" icon="arrow-right" title-type="p">
+    Type a name or number. On the Planner, Orders & Products, and Machines, the page filters while you type. Select a suggestion to keep it as a chip. Or leave the field empty, choose **Filter by**, open a category, and use **Add**. Use **Remove** on an active row to undo that choice.
+  </Step>
+  <Step title="Combine the filters you need" icon="arrow-right" title-type="p">
+    Two customers match either customer; a customer and an order priority must both match. In the Planner, try P10 or OP10 for priority 10. On Machines, select several states under **Right now** and a hall to see those states in that hall. A **Running order** filter finds machines that worked on it today, including preparation and completed work.
+  </Step>
+  <Step title="Open or go to a result" icon="arrow-right" title-type="p">
+    On Machines, choose **Open →** for a machine. On Gantt, choose **Show route** for an order or **Go to** for a machine. Gantt adds a missing machine and replaces the last one if 25 are already shown. A machine outside the order view leaves that view. Check the result's explanation before choosing.
+  </Step>
+  <Step title="Close search and keep working" icon="arrow-right" title-type="p">
+    Press Esc or the × at the top of the box. Your text and choices are kept. On the Planner and Orders & Products, you can scroll down to the work area and reopen the box with Ctrl+F while the page controls are out of view.
+  </Step>
+  <Step title="Clear what you no longer need" icon="arrow-right" title-type="p">
+    Remove a filter chip to stop using it. Remove **Search: …** to clear the text, or delete the text in the box. On the Planner, Orders & Products, and Machines, **Clear all** in the box removes the filter chips and keeps the text. To clear both, use **Clear all** under the Planner toolbar, **Reset all** in the Orders & Products filter header, or **Reset** below the Machines status cards. On Gantt, remove the order chip to leave the order view; text there never filters bars.
+  </Step>
+</Steps>
+
+## Decision Points
+
+- Use typed text for a quick search or chips to combine named choices.
+- On the Planner, decide which area the text and order, product, and customer filters should cover.
+- On Gantt, choose an order to follow its route or a machine to inspect its row.
+
+## Expected Result
+
+The page shows matching work or machine cards, or Gantt opens the requested order or machine. Closing the box keeps your choices; clearing them returns to the default filters.
+
+## Common Problems and Edge Cases
+
+- Closing search does not restore the full list. Remove the text chip or reset the filters.
+- An empty result can come from a second filter or the Planner's search area. Check both.
+- Changing customers on Orders & Products clears selected orders. Text keeps the date range; selecting a customer, order, product, or machine overrides it.
+- Running-order filters on Machines clear when the day changes. Work centers have no state filter.
+- Planner **Clear all** keeps machine and hall-pool lanes. At 25 machines, remove a lane before adding another.
+- In Gantt, Esc from the board closes an open side panel before the Find box. Esc from the search field closes the box only.
+
+## Related Pages
+
+- [Search and Filter](/en/platform-intro/pages/search-and-filter)
+- [Plan Machine Assignments](/en/platform-intro/workflows/assignment-planner)
+- [Monitor a Machine Live](/en/platform-intro/workflows/live-machine-monitoring)
+- [Review Machine History](/en/platform-intro/workflows/machine-history-review)

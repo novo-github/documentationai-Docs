@@ -217,9 +217,11 @@ PDA und BDE bezeichnen dieselbe Bedienseite zum Starten von Arbeit und Buchen vo
 
 [Mehr erfahren](/de/platform-intro/pages/data-acquisition).
 
-### Gebuchte Zeit
+<a id="gebuchte-zeit" />
 
-**Gebuchte Zeit** teilt die erfasste Arbeit eines Arbeitsgangs in **Vorbereitung** und **Produktion**. Vergleichen Sie sie mit der Anzeige **Maschinenzustände**, um die tatsächliche Maschinenaktivität während dieser Arbeit zu prüfen.
+### Zeit in Intervallen
+
+**Zeit in Intervallen** (bisher **Gebuchte Zeit**) teilt die erfasste Arbeit eines Arbeitsgangs in **Vorbereitung** und **Produktion**. Vergleichen Sie sie mit der Anzeige **Maschinenzustände**, um die tatsächliche Maschinenaktivität während dieser Arbeit zu prüfen.
 
 [Mehr erfahren](/de/platform-intro/pages/machine-history).
 
@@ -431,6 +433,22 @@ Liste der Automator-Ereignisse und Zahl offener Ereignisse nach Ablauf der Reakt
 
 ## F
 
+<a id="find-box" />
+
+### Suchfenster
+
+Öffnen Sie es mit Strg+F (⌘F auf dem Mac) oder der Lupe. Auf Maschinen steht sie neben der Sortierung. Smartphones und Tablets zeigen zusätzlich eine schwebende Lupe, sobald diese Schaltfläche nicht mehr sichtbar ist, oder von Beginn an in der Arbeitsplatzansicht. Es verbindet Textsuche und Filterauswahl im Planer, in Aufträge & Produkte und auf Maschinen. Im Gantt öffnet es eine Auftragsansicht oder springt zu einer Maschine.
+
+[Mehr erfahren](/de/platform-intro/pages/search-and-filter).
+
+<a id="filter-chip" />
+
+### Filterchip
+
+Eine entfernbare Auswahl, die einen Filter aktiv hält. Bei Werten derselben Art genügt eine Übereinstimmung. Verschiedene Arten müssen alle zutreffen. **Alle entfernen** stellt die voreingestellten Filter wieder her. Das Schließen des Suchfensters behält die Auswahl.
+
+[Mehr erfahren](/de/platform-intro/pages/search-and-filter).
+
 ### Feedback
 
 An Novo AI gesendete Fehler, Verbesserungen und Funktionswünsche. Sent, In review, Resolved und Closed sind Gesprächszustände.
@@ -458,7 +476,7 @@ Erwartete Zeiten zeigen, wann Arbeit voraussichtlich stattfindet, einschließlic
 #### Im Termin, verspätet und Ende nicht bekannt
 
 - **Im Termin**: Grün; endet voraussichtlich vor dem Termin.
-- **Verspätet +3 h**: Rot; endet voraussichtlich drei Stunden nach dem Termin. **verspätet, Termin vorbei** bedeutet, dass der Termin vorbei und der Auftrag nicht fertig ist.
+- **Verspätet +3 h**: Rot; endet voraussichtlich drei Stunden nach dem Termin. **verspätet, Termin vorbei** bedeutet, dass der Termin vorbei und der Auftrag nicht abgeschlossen ist.
 - **Ende nicht bekannt**: Blau; der Termin liegt noch in der Zukunft, aber es liegt kein erwartetes Ende vor, etwa weil ein Arbeitsgang noch im Hallenpool liegt.
 
 Wird der Liefertermin verfehlt, erscheint die Warnung rot. Wird nur das geplante Ende verfehlt, erscheint sie gelb.
@@ -474,9 +492,11 @@ Die Anzahl zeigt, wie viele Arbeitsgänge des Auftrags eine Maschine haben. Sie 
 
 **Teilweise geplant** bedeutet, dass einigen Arbeitsgängen noch eine Zuweisung fehlt. **Gar nicht geplant** kennzeichnet Aufträge mit Liefertermin, aber ohne Arbeitsgang auf einer Maschine oder in einem Hallenpool. Sie erscheinen auf keiner Plantafel.
 
-#### Früherer Schritt nicht geplant
+<a id="früherer-schritt-nicht-geplant" />
 
-**Früherer Schritt nicht geplant** warnt, dass die angezeigten Zeiten den früheren Arbeitsgang bereits als abgeschlossen voraussetzen. Prüfen Sie frühere Arbeitsgänge, die noch keine Maschine haben oder im Hallenpool liegen, bevor Sie sich auf spätere Endzeiten verlassen. Lange angehaltene und nie gestartete Arbeitsgänge auf Maschinen belegen weiterhin Zeit in der Prognose.
+#### Früherer Arbeitsgang nicht geplant
+
+**Früherer Arbeitsgang nicht geplant** (bisher **Früherer Schritt nicht geplant**) warnt, dass die angezeigten Zeiten den früheren Arbeitsgang bereits als abgeschlossen voraussetzen. Prüfen Sie frühere Arbeitsgänge, die noch keine Maschine haben oder im Hallenpool liegen, bevor Sie sich auf spätere Endzeiten verlassen. Lange angehaltene und nie gestartete Arbeitsgänge auf Maschinen belegen weiterhin Zeit in der Prognose.
 
 #### Nie gestartet und kein geplanter Start
 
@@ -500,7 +520,7 @@ Die Anzahl zeigt, wie viele Arbeitsgänge des Auftrags eine Maschine haben. Sie 
 
 #### Keine Prognose
 
-**Keine Prognose** kennzeichnet Arbeit im Hallenpool oder eine gerade nicht verfügbare Prognose. Es bedeutet nicht, dass die Arbeit fertig ist. Pool-Arbeit erhält eine Prognose, sobald sie auf einer Maschine ist. Solange ein erwartetes Ende fehlt, vergleicht der Planer nur den Termin mit heute.
+**Keine Prognose** kennzeichnet Arbeit im Hallenpool oder eine gerade nicht verfügbare Prognose. Es bedeutet nicht, dass die Arbeit abgeschlossen ist. Pool-Arbeit erhält eine Prognose, sobald sie auf einer Maschine ist. Solange ein erwartetes Ende fehlt, vergleicht der Planer nur den Termin mit heute.
 
 [Die Kartenerklärung lesen](/de/platform-intro/pages/assignment-planner#ein-voraussichtliches-ende-erklären).
 
@@ -787,7 +807,7 @@ Konfigurierte Maschinenzielwerte zum Vergleich mit Dashboard-Istwerten; keine Me
 
 ### Maschinenzustände
 
-**Maschinenzustände** zeigt, was die Maschine während gebuchter Arbeit tatsächlich getan hat, einschließlich Leerlauf oder ausgeschalteter Zeit.
+**Maschinenzustände** zeigt, was die Maschine während erfasster Arbeit tatsächlich getan hat, einschließlich Leerlauf oder ausgeschalteter Zeit.
 
 [Mehr erfahren](/de/platform-intro/pages/machine-history).
 
@@ -929,7 +949,7 @@ Unabhängige Dringlichkeitswerte für den Gesamtauftrag und einen Arbeitsgang. D
 
 ### Aufträge heute
 
-**Aufträge heute** zeigt laufende und beendete Arbeit, die heute auf einer Maschine oder einem Arbeitsplatz gebucht wurde, über den ganzen Tag.
+**Aufträge heute** zeigt laufende und beendete Arbeit, die heute auf einer Maschine oder einem Arbeitsplatz erfasst wurde, über den ganzen Tag.
 
 [Mehr erfahren](/de/platform-intro/pages/machines).
 
@@ -962,6 +982,8 @@ Automator-Vorlage, die 15 % Produktionsrückstand mit 25 % langsameren Zyklen ge
 [Mehr erfahren](/de/platform-intro/pages/data-acquisition).
 
 ### P / Order priority
+
+Im Suchfenster des Planers findet P10 Auftragspriorität 10, AG10 oder OP10 Arbeitsgangpriorität 10. Die Zahl 10 bietet beide Arten an. Namen, Kleinbuchstaben und Leerzeichen funktionieren ebenfalls. Siehe [Suchen und filtern](/de/platform-intro/pages/search-and-filter).
 
 Prioritätschip für den Gesamtauftrag, unabhängig von der OP- beziehungsweise AG-Priorität des Arbeitsgangs.
 
@@ -1188,6 +1210,22 @@ Der Dashboard-Tooltip nennt 95 % und verweist für Änderungen auf einen Admin. 
 
 ## R
 
+<a id="right-now" />
+
+### Gerade jetzt
+
+Aktuelle Zustandskacheln im Suchfenster auf Maschinen. Sie zeigen die Anzahlen der Statuskarten und teilen deren Auswahl. Sie können mehrere Zustände gemeinsam wählen.
+
+[Mehr erfahren](/de/platform-intro/pages/search-and-filter).
+
+<a id="running-order" />
+
+### Laufender Auftrag
+
+Ein Filter auf Maschinen für heute bearbeitete Aufträge, einschließlich Vorbereitung und abgeschlossener Arbeit. Die Auswahl zeigt die beteiligten Maschinen. Ihre Chips werden beim Tageswechsel entfernt.
+
+[Mehr erfahren](/de/platform-intro/pages/search-and-filter).
+
 ### Neu sortieren
 
 **Neu sortieren** (bisher **Nach Priorität und Datum sortieren**) schlägt eine Warteschlangenfolge nach **Sortierregeln** oder einer einzelnen Priorität oder einem Termin vor. Unter **Regeln aus** nutzt **Meine Sortierung** Ihre Planerregeln. **Firmenstandard** übernimmt die Regeln des Administrators, sofern vorhanden. **Angepasst** kennzeichnet vorübergehend geänderte Regeln, die keiner Auswahl entsprechen. Diese Änderungen gelten nur für dieses Neusortieren und ersetzen keine gespeicherte Sortierung. Entfernen Sie **Darf verschoben werden**, um einen Arbeitsgang festzuhalten. Neusortieren ändert keine Prioritäten und sortiert nicht fortlaufend automatisch.
@@ -1287,6 +1325,22 @@ Die aktive Schicht läuft noch. Ihr Ende richtet sich nach den Einstellungen fü
 [Mehr erfahren](/de/platform-intro/pages/assignment-planner#wieder-geöffnete-arbeit-erkennen).
 
 ## S
+
+<a id="search-chip" />
+
+### Suche: …
+
+Zeigt, dass getippter Text Planer, Aufträge & Produkte oder Maschinen nach dem Schließen des Suchfensters weiter filtert. Entfernen Sie diesen Chip, um den Text zu löschen. Das Gantt hat keinen Suchtextchip.
+
+[Mehr erfahren](/de/platform-intro/pages/search-and-filter).
+
+<a id="show-route-go-to" />
+
+### Auftrag zeigen / Gehe zu
+
+Suchaktionen im Gantt: **Auftrag zeigen** öffnet die Maschinen eines Auftrags in der Reihenfolge seiner Arbeitsgänge. **Gehe zu** bringt eine Maschinenzeile ins Bild und nimmt die Maschine bei Bedarf auf. Bei 25 Maschinen ersetzt sie die letzte.
+
+[Mehr erfahren](/de/platform-intro/pages/search-and-filter).
 
 ### Scrap / Ausschuss
 
@@ -1422,7 +1476,7 @@ Automator-Vorlagen und Reaktionen: bei entfallener Bedingung schließen, beim Ab
 
 ### Timeline / Production / Idle / Off / Stopped / Preparation / Unknown
 
-Zustandsleiste: Produktion grün, Leerlauf orange, Aus/Gestoppt rot, In Vorbereitung blau und Unbekannt grau. Englische Bezeichnungen: Production, Idle, Off/Stopped, Preparation, Unknown.
+Zustandsleiste: Produktion grün, Leerlauf orange, Aus/Gestoppt rot, In Vorbereitung blau und Unbekannt grau. Englische Bezeichnungen: Production, Idle, Off/Stopped, Preparation, Unknown. **Leerlaufzeit** (bisher **Stillstandszeit**) misst die Zeit im Zustand Leerlauf.
 
 [Mehr erfahren](/de/platform-intro/pages/machines).
 
@@ -1556,7 +1610,9 @@ Geplante Belastung einer Maschinenwarteschlange anhand geplanter Zeiten, nicht e
 
 [Mehr erfahren](/de/platform-intro/pages/assignment-planner).
 
-### Waiting on a previous step / Blocked by
+<a id="waiting-on-a-previous-step--blocked-by" />
+
+### Wartet auf einen vorherigen Arbeitsgang
 
 ⚠️ **Wartet auf einen vorherigen Arbeitsgang** (bisher **Wartet auf einen vorherigen Schritt**) bedeutet: Ein Arbeitsgang mit niedrigerer Nummer im selben Arbeitsauftrag ist weder abgeschlossen noch storniert. Ein früherer Arbeitsgang ohne Zuweisung zählt ebenfalls als nicht abgeschlossen. **Trotzdem starten** bleibt verfügbar. Prüfen Sie vorher die Abhängigkeit.
 

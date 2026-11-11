@@ -6,6 +6,68 @@ toc: false
 
 ## Releases
 
+<Update label="2026-11-11" description="v1.5.159–v1.5.160" tags={["Funktion", "Verbesserung", "Fehlerbehebung"]}>
+  {/* commits: 1b12f4bc, 7e9fcdcd, e57166e6, 780564cf, aa1b878b, e000436f, b8986267, f70bf86e, 67c3a4dd, 0bc96fac, 052dc222, f42c3a7f, 1714eed3, e6bc5953, 200b3ff3, f10b9012, 35b79853, 996cd8ad, 4d6a00b8, 09f9d741, a6a116f2, c14d977a, 40847ea0, 6ac18638, ad525fad, 762099ba, 40ed2d09, 0dd92c29, 50d3d541, 04e27078, 397e00d1, b6c44594, 9e871a3, 7c97d3d, ce29e20, 6da8362, 472ea80, 981018e9, 7c9495fd, 2dd02f15, 7080c059, 3fdcacd7 */}
+
+  **Release-Datum:** 11. November 2026
+
+  ### Neue Funktionen
+
+  #### [Arbeit finden und passende Filter beibehalten](/de/platform-intro/pages/search-and-filter)
+  {/* feature: find-bar */}
+
+  Drücken Sie in **Zuweisungsplaner** und **Aufträge & Produkte** Strg+F (⌘F auf dem Mac) oder wählen Sie die Lupe. Tippen Sie zum direkten Filtern oder wählen Sie **Filtern nach → Kunde** und fügen Sie einen Kunden hinzu. Kombinieren Sie Vorschläge als Filter: Zwei Kunden zeigen die Arbeit eines der beiden Kunden; ein Kunde zusammen mit einer Auftragspriorität zeigt nur Arbeit, die beides erfüllt. Aufträge & Produkte erlaubt jetzt mehrere Kunden. Im Planer können Sie Prioritäten auch über P10 oder AG10 suchen.
+
+  Esc und das × im Suchfenster schließen es und lassen die Suche aktiv. Entfernen Sie den Chip **Suche: …**, um den Text zu löschen. Folgen Sie [Arbeit und Maschinen finden](/de/platform-intro/workflows/search-and-filter).
+
+  #### [Maschinen nach Zustand, Halle, Tag oder heutigen Aufträgen finden](/de/platform-intro/pages/machines)
+  {/* feature: machine-find */}
+
+  Wählen Sie auf **Maschinen** die Lupe neben der Sortierung oder drücken Sie Strg+F (⌘F auf dem Mac). Beides öffnet das Suchfenster mit dem beibehaltenen Text. Auf Smartphones und Tablets erscheint unten rechts eine schwebende Lupe, sobald die Lupe der Seite nicht mehr sichtbar ist; in der Arbeitsplatzansicht erscheint sie von Beginn an. Wählen Sie unter **Gerade jetzt** mehrere Zustände, etwa **Produktion** und **Leerlauf**. Die Statuskarten erlauben dieselbe Auswahl. Hallen zeigen Maschinenanzahlen und Zustandspunkte. Hallen- und Tagfilter berücksichtigen passende Maschinen auch über die bereits angezeigten Karten hinaus.
+
+  **Laufender Auftrag** findet Maschinen, die heute an einem Auftrag gearbeitet haben, einschließlich Vorbereitung und abgeschlossener Arbeit. Diese Auftragsfilter werden beim Tageswechsel entfernt; die anderen Filter bleiben. Mit **Öffnen →** öffnen Sie eine gefundene Maschine. **Zurücksetzen** unter den Statuskarten entfernt Suche und Filter.
+
+  #### [Im Gantt direkt zu einem Auftrag oder einer Maschine springen](/de/platform-intro/pages/assignment-gantt)
+  {/* feature: gantt-find */}
+
+  Öffnen Sie im **Zuweisungs-Gantt** die Lupe oder drücken Sie Strg+F. Suchen Sie einen Auftrag und wählen Sie **Auftrag zeigen**, um seine Maschinen in der Reihenfolge der Arbeitsgänge zu sehen. Entfernen Sie den Auftragschip, um die Auftragsansicht zu verlassen. **Gehe zu** öffnet die Halle einer Maschine und bringt ihre hervorgehobene Zeile ins Bild.
+
+  Eine noch nicht angezeigte Maschine wird aufgenommen. Sind bereits 25 Maschinen sichtbar, ersetzt sie die letzte. Eine Maschine außerhalb der aktuellen Auftragsansicht zu wählen, verlässt diese Ansicht. Die Erklärung am Treffer weist vorher darauf hin. Im Gantt finden Sie nur Aufträge und Maschinen; Tippen blendet keine Balken aus.
+
+  #### [Maschinen wechseln und Tag oder Zeitraum behalten](/de/platform-intro/pages/machine-history)
+  {/* feature: machine-switcher */}
+
+  Wählen Sie auf der Maschinenseite den Maschinennamen in der Pfadzeile oben auf der Seite. Wählen Sie in der Maschinenhistorie den Pfeil neben dem Namen; der Name selbst führt weiterhin zur Maschinenseite. Beim Wechsel zu einer Ihrer Maschinen bleiben der gewählte Tag beziehungsweise der Historienzeitraum und der Tab erhalten. Die Schicht bleibt anhand ihres Namens ausgewählt, auch bei einer anderen Schichtreihenfolge. Gibt es auf der anderen Maschine keine gleichnamige Schicht, wird **Alle Schichten** gewählt.
+
+  Die Liste gruppiert Maschinen nach Halle, markiert die aktuelle Maschine und bietet bei mehr als 8 Maschinen eine Suche. Wählen Sie mit Pfeiltasten und Enter oder schließen Sie mit Esc. Die BDE-Seite verwendet dieselbe Liste mit korrekten Hallengruppen. Folgen Sie [Maschinenhistorie prüfen](/de/platform-intro/workflows/machine-history-review).
+
+  ### Verbesserungen
+
+  #### [Durch Scrollen mehr Platz für Plan oder Tabelle schaffen](/de/platform-intro/pages/orders-products)
+  {/* feature: focus-scroll */}
+
+  Scrollen Sie in **Zuweisungsplaner** oder **Aufträge & Produkte** an den oberen Bedienelementen vorbei nach unten. Der Plan oder die Tabelle rückt ins Bild. Scrollen Sie vom oberen Rand des Arbeitsbereichs nach oben, um zu den Bedienelementen zurückzukehren. Die Seite gleitet zwischen den Bedienelementen und dem Arbeitsbereich und bleibt nie auf halbem Weg dazwischen stehen. Die Auftragstabelle passt auf einen Bildschirm. Spaltenüberschriften und Seitenauswahl bleiben beim Scrollen der Zeilen sichtbar.
+
+  Die Fußzeile bleibt weiter unten erreichbar. Strg+F öffnet die Suche auch aus dem Arbeitsbereich. Auf größeren Bildschirmen geschieht dies automatisch, ohne Schaltfläche oder Einstellung; auf Smartphones scrollen Sie wie gewohnt.
+
+  #### [Klarere Begriffe für Arbeitsgänge und Intervallzeiten lesen](/de/platform-intro/pages/machine-history)
+  {/* feature: operation-interval-wording */}
+
+  Maschinendetails und Historie zeigen jetzt **Zeit in Intervallen** (bisher **Gebuchte Zeit**). **Intervalle verbessern** verwendet **Produktion ohne Auftrag** (bisher **Ungebuchte Produktion**). Die Erklärung zur Gantt-Auslastung beschreibt verplante Arbeitszeit. Die deutsche Oberfläche verwendet einheitlich **Arbeitsgang** (bisher **Schritt**) und für den abgeschlossenen Zustand **abgeschlossen** (bisher **fertig**).
+
+  ### Fehlerbehebungen
+
+  #### [Produkte nach Namen und Nummer finden](/de/platform-intro/pages/search-and-filter#product-search)
+  {/* feature: product-name-search */}
+
+  Die Produktsuche fand bisher Namen wie Flansch DN50 bei „flan“ nicht; sie berücksichtigt jetzt Namen und Nummern. Das gilt für Vorschläge im Suchfenster, den Produktfilter in Aufträge & Produkte, die Produktauswahl für einen Arbeitsauftrag im Dialog für neue Aufträge aus dem Admin-Panel und auf der Detailseite eines Auftrags (Auftragsverwaltung), den Dialog **Sofortauftrag finden/erstellen** auf der BDE-Seite und die Produkttabelle im Admin-Panel.
+
+  #### [Passende Treffer für kurze Maschinennummern erhalten](/de/platform-intro/pages/machines)
+  {/* feature: machine-search-matches */}
+
+  Die Suche nach „44“ konnte zuvor eine unpassende Maschine wie „430 - VOUMARD 150CNC“ anzeigen. Kurze Zahlensuchen enthalten diese unpassenden Treffer nicht mehr.
+</Update>
+
 <Update label="2026-11-10" description="v1.5.157" tags={["Fehlerbehebung"]}>
   {/* commits: e2991b3 */}
 

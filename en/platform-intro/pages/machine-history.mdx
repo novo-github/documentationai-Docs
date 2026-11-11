@@ -34,37 +34,45 @@ When the sensor sends no signal for more than 20 minutes, the last state counts 
 - Toggle whether zero-output days count in the analysis.
 - Compare how the machine performed over time.
 
+Select the arrow beside the machine name in the breadcrumb path at the top of the page to switch machines. The name itself still opens the machine page. The list shows your machines grouped by hall, with the current machine checked. With more than 8 machines, use **Search machines…**; ↑/↓ and Enter choose, and Esc closes.
+
+Switching keeps the date range and the **1W** / **1M** / **3M** choice, and selects the shift with the same name even if the shifts are listed in a different order. If the other machine has no shift with that name, **All Shifts** is selected. Browser Back returns to the previous machine with its previous range. Follow [review machine history](/en/platform-intro/workflows/machine-history-review).
+
 ## Review Worked Orders
 
-The **Orders** section shows work booked on this machine during the selected period. The chart opens with the whole period in view. Its upper bars show worked stretches: **Production** uses a white bar and **Preparation** a white bar with a blue border. A step can have several bars. The row underneath shows machine states on the same time axis. The legend sits above the chart.
+The **Orders** section shows work recorded on this machine during the selected period. The chart opens with the whole period in view. Its upper bars show worked stretches: **Production** uses a white bar and **Preparation** a white bar with a blue border. An operation can have several bars. The row underneath shows machine states on the same time axis. The legend sits above the chart.
 
 Use **Zoom in**, **Zoom out**, or hold Ctrl and scroll to zoom. Scroll sideways or drag empty chart space to move through time. **Whole period** returns to the full view. Zooming out and fitting are unavailable when the whole period already fits.
 
-The worked-time total covers the displayed period. The order count counts each order once, even when it has several steps. For longer selections, the orders chart and its state row show only the last 3 months. The notice reads **Orders are shown for the last 3 months of the selected period.**
+The worked-time total covers the displayed period. The order count counts each order once, even when it has several operations. For longer selections, the orders chart and its state row show only the last 3 months. The notice reads **Orders are shown for the last 3 months of the selected period.**
 
-### Select a Step and Follow Its Order
+<a id="select-a-step-and-follow-its-order" />
 
-A part passed on shows **Handed over** in the list, card details, and selected step. Its grey badge shows where the rest went and how many good parts were made here. Incoming work shows where it came from. Recorded work stays in this machine's history; the label does not mean the whole step is finished. See [handover details](/en/platform-intro/pages/order-detail#handed-over-work).
+### Select an Operation and Follow Its Order
 
-Nothing is selected when you open the section or change the period. Click a bar to highlight that step's stretches and find it in the list below. You can also click a list row. The list shows running work first, then recent work, grouped by day.
+A part passed on shows **Handed over** in the list, card details, and selected operation. Its grey badge shows where the rest went and how many good parts were made here. Incoming work shows where it came from. Recorded work stays in this machine's history; the label does not mean the whole operation is finished. See [handover details](/en/platform-intro/pages/order-detail#handed-over-work).
 
-The details panel appears beside the list on wide screens and below it on smaller screens. It shows the selected step's status, actual times, planned window, and quantities. **Operations of this order** (previously **Steps of this order**) shows the route, including previous and next steps. Steps marked **On another machine** are visible but cannot be selected here. Under **Order**, check **Delivery date**, status, and how many steps are done.
+Nothing is selected when you open the section or change the period. Click a bar to highlight that operation's stretches and find it in the list below. You can also click a list row. The list shows running work first, then recent work, grouped by day.
 
-Choose **Open order** to open the full order in a new tab if you have access. Selecting a row only selects the step; it does not open the order. Close the panel or click empty chart space to clear the selection. Reviewing history changes no bookings or plans.
+The details panel appears beside the list on wide screens and below it on smaller screens. It shows the selected operation's status, actual times, planned window, and quantities. **Operations of this order** (previously **Steps of this order**) shows the route, including previous and next operations. Operations marked **On another machine** are visible but cannot be selected here. Under **Order**, check **Delivery date**, status, and how many operations are done.
 
-### Compare Booked Time with Machine States
+Choose **Open order** to open the full order in a new tab if you have access. Selecting a row only selects the operation; it does not open the order. Close the panel or click empty chart space to clear the selection. Reviewing history changes no intervals or plans.
 
-**Booked time** splits the step's recorded time into **Preparation** and **Production**. **Machine states** shows what the machine actually did during those bookings, including idle, off, or unknown time. Use each section's information icon for its explanation. For example, a step booked as production can include time when the machine was idle.
+<a id="compare-booked-time-with-machine-states" />
 
-The step's details cover all its recorded work on this machine, including work outside the selected period. Its times, produced quantity, and analysis totals can therefore exceed what the chart shows. Hover over a bar to see that stretch's **Type**, **Start**, **End**, **Duration**, and machine states first, followed by the step's details. The information icon at the end of a list row shows the step without selecting it.
+### Compare Time in Intervals with Machine States
+
+**Time in intervals** splits the operation's recorded time into **Preparation** and **Production**. **Machine states** shows what the machine actually did during those intervals, including idle, off, or unknown time. Use each section's information icon for its explanation. For example, a production interval can include time when the machine was idle.
+
+The operation's details cover all its recorded work on this machine, including work outside the selected period. Its times, produced quantity, and analysis totals can therefore exceed what the chart shows. Hover over a bar to see that stretch's **Type**, **Start**, **End**, **Duration**, and machine states first, followed by the operation's details. The information icon at the end of a list row shows the operation without selecting it.
 
 Hover over the state row to read the state, its times, duration, and any recorded reason. **Accessibility patterns** in your profile also applies to this row and its legend: dots for idle and diagonal lines for off.
 
 ### Empty Orders or Missing States
 
-Without booked work, the section keeps its space and shows **No orders were worked on this machine in this period.** in a centred message instead of a chart. This does not prove the machine was off; it means no order work was booked in that period.
+Without recorded work, the section keeps its space and shows **No orders were worked on this machine in this period.** in a centred message instead of a chart. This does not prove the machine was off; it means no order work was recorded in that period.
 
-Missing state information is separate: the state row can show **No machine state data in this period.** and the selected step can show **No machine state data for this operation.** Follow [Review Machine History](/en/platform-intro/workflows/machine-history-review).
+Missing state information is separate: the state row can show **No machine state data in this period.** and the selected operation can show **No machine state data for this operation.** Follow [Review Machine History](/en/platform-intro/workflows/machine-history-review).
 
 ## All Day or Planned Shift Time?
 

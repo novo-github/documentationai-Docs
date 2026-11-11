@@ -14,7 +14,7 @@ Die Watchmen-Plattform verbindet Produktionsmengen und Maschinenzeiten. Vergleic
 | Welcher Anteil der Einschaltzeit entfällt auf Produktion oder Vorbereitung? | [Leistung](#performance) |
 | Wie werden die drei Prozentwerte kombiniert? | [Gesamtanlageneffektivität (OEE)](#oee) |
 | Wie finde ich die Aufträge, die letzte Woche auf einer Maschine liefen? | [Antwort](/de/help-center/faq/production-metrics#worked-orders) |
-| Warum unterscheidet sich gebuchte Produktionszeit von der Produktionszeit der Maschine? | [Antwort](/de/help-center/faq/production-metrics#booked-states) |
+| Warum unterscheidet sich Produktionszeit in Intervallen von der Produktionszeit der Maschine? | [Antwort](/de/help-center/faq/production-metrics#booked-states) |
 | Warum sind die Summen des Arbeitsgangs größer als die Balken im gewählten Zeitraum? | [Antwort](/de/help-center/faq/production-metrics#step-totals) |
 | Warum sehe ich Aufträge nur für die letzten drei Monate? | [Antwort](/de/help-center/faq/production-metrics#history-limit) |
 | Bedeutet ein leerer Auftragsbereich, dass die Maschine aus war? | [Antwort](/de/help-center/faq/production-metrics#empty-orders) |
@@ -34,6 +34,11 @@ Die Watchmen-Plattform verbindet Produktionsmengen und Maschinenzeiten. Vergleic
 | Warum öffnet sich mein laufendes Intervall nicht zur Bearbeitung? | [Antwort](/de/help-center/faq/production-metrics#interval-load) |
 | Kann ich ein Intervall direkt aus der Auftragsliste korrigieren oder löschen? | [Antwort](/de/help-center/faq/production-metrics#orders-correct-intervals) |
 | Warum sind die Summen nach einer Intervalländerung noch unverändert? | [Antwort](/de/help-center/faq/production-metrics#orders-interval-refresh) |
+| Wie wechsle ich Maschinen, ohne das Datum erneut zu wählen? | [Antwort](/de/help-center/faq/production-metrics#switch-machine-period) |
+| Warum fehlt das Suchfeld in meiner Maschinenauswahl? | [Antwort](/de/help-center/faq/production-metrics#switch-machine-search) |
+| Wie zeige ich Maschinen im Leerlauf und ausgeschaltete Maschinen einer Halle gemeinsam? | [Antwort](/de/help-center/faq/production-metrics#machine-find-states) |
+| Wo finde ich die Suche auf der Maschinenseite auf meinem Smartphone? | [Antwort](/de/help-center/faq/production-metrics#machine-find-phone) |
+| Warum umfasst Laufender Auftrag abgeschlossene Arbeit und verschwindet der Filter über Nacht? | [Antwort](/de/help-center/faq/production-metrics#machine-running-order) |
 
 ### Ein Beispiel für alle vier Kennzahlen
 
@@ -145,9 +150,11 @@ Im Multiplikationsbeispiel werden die drei Verhältnisse multipliziert. Auch 80 
 
 <a id="booked-states" />
 
-## Warum unterscheidet sich gebuchte Produktionszeit von der Produktionszeit der Maschine?
+<a id="warum-unterscheidet-sich-gebuchte-produktionszeit-von-der-produktionszeit-der-maschine" />
 
-**Gebuchte Zeit** beschreibt die als Vorbereitung oder Produktion erfasste Arbeit. **Maschinenzustände** beschreibt die tatsächliche Maschinenaktivität während dieser Buchungen, einschließlich Leerlauf oder ausgeschalteter Zeit. Siehe [Maschinenhistorie](/de/platform-intro/pages/machine-history).
+## Warum unterscheidet sich Produktionszeit in Intervallen von der Produktionszeit der Maschine?
+
+**Zeit in Intervallen** beschreibt die als Vorbereitung oder Produktion erfasste Arbeit. **Maschinenzustände** beschreibt die tatsächliche Maschinenaktivität während dieser Intervalle, einschließlich Leerlauf oder ausgeschalteter Zeit. Siehe [Maschinenhistorie](/de/platform-intro/pages/machine-history).
 
 <a id="step-totals" />
 
@@ -165,7 +172,7 @@ Auftragsdiagramm und Zustandszeile zeigen höchstens die letzten 3 Monate des ge
 
 ## Bedeutet ein leerer Auftragsbereich, dass die Maschine aus war?
 
-Nein. **In diesem Zeitraum wurde an dieser Maschine kein Auftrag bearbeitet.** bedeutet, dass für den Zeitraum keine Auftragsarbeit gebucht wurde. Der Hinweis steht mittig im leeren Bereich. Fehlende Zustandsangaben haben einen eigenen Hinweis. Siehe [Maschinenhistorie](/de/platform-intro/pages/machine-history).
+Nein. **In diesem Zeitraum wurde an dieser Maschine kein Auftrag bearbeitet.** bedeutet, dass für den Zeitraum keine Auftragsarbeit erfasst wurde. Der Hinweis steht mittig im leeren Bereich. Fehlende Zustandsangaben haben einen eigenen Hinweis. Siehe [Maschinenhistorie](/de/platform-intro/pages/machine-history).
 
 <a id="order-scrolling" />
 
@@ -272,3 +279,33 @@ Der Seitenbereich lädt die gespeicherten Intervalle neu und aktualisiert sofort
 - [Maschinen vergleichen](/de/platform-intro/workflows/compare-machines): Maschinen über denselben Zeitraum vergleichen.
 - [FAQs zu Energieverbrauch, Energieverschwendung und Kosten](/de/help-center/faq/energy-and-costs): den Energieeinfluss von aktiver Zeit und Leerlauf verstehen.
 - [Help Center](/de/help-center): zu allen Hilfethemen zurückkehren.
+
+<a id="switch-machine-period" />
+
+## Wie wechsle ich Maschinen, ohne das Datum erneut zu wählen?
+
+Wählen Sie auf der Maschinenseite den Maschinennamen in der Pfadzeile oben auf der Seite und eine andere Maschine. Der Tag bleibt ausgewählt. Nutzen Sie in der Historie den Pfeil neben dem Namen, um Zeitraum und Tab zu behalten. Die Schicht bleibt anhand ihres Namens ausgewählt, auch bei einer anderen Reihenfolge. Gibt es auf der anderen Maschine keine gleichnamige Schicht, gilt **Alle Schichten**. Die Zurück-Funktion des Browsers stellt den vorherigen Zeitraum wieder her. Folgen Sie [Maschinenhistorie prüfen](/de/platform-intro/workflows/machine-history-review).
+
+<a id="switch-machine-search" />
+
+## Warum fehlt das Suchfeld in meiner Maschinenauswahl?
+
+Es erscheint erst bei mehr als 8 Maschinen in der Liste, einschließlich der aktuellen. Maschinenseite, Maschinenhistorie und BDE-Seite nutzen dieselbe nach Halle gruppierte Liste zugänglicher Maschinen. Wählen Sie mit ↑/↓ und Enter oder schließen Sie mit Esc. Siehe [Maschinenwechsel](/de/platform-intro/pages/machine-details).
+
+<a id="machine-find-states" />
+
+## Wie zeige ich Maschinen im Leerlauf und ausgeschaltete Maschinen einer Halle gemeinsam?
+
+Wählen Sie auf **Maschinen** die Lupe neben der Sortierung, nutzen Sie auf Smartphones oder Tablets die schwebende Lupe oder drücken Sie Strg+F (⌘F auf dem Mac). Wählen Sie unter **Gerade jetzt** die Zustände **Leerlauf** und **Aus**, danach die Halle. Einer der Zustände und zugleich die Halle müssen passen. Die Statuskarten teilen dieselbe Zustandsauswahl. **Zurücksetzen** unter den Karten entfernt Suche und Filter. Siehe [Maschinenfilter](/de/platform-intro/pages/machines).
+
+<a id="machine-find-phone" />
+
+## Wo finde ich die Suche auf der Maschinenseite auf meinem Smartphone?
+
+Tippen Sie auf die Lupe neben der Sortierung bei den Statuskarten. Sobald sie nicht mehr sichtbar ist, erscheint auf Smartphones und Tablets unten rechts eine runde Lupe. Stoppen Sie das Scrollen oder scrollen Sie nach oben, falls sie ausgeblendet ist. In der Arbeitsplatzansicht erscheint sie von Beginn an. Bei geöffnetem Suchfenster, Dialog, Menü oder Seitenbereich bleibt sie ausgeblendet. Antippen öffnet den beibehaltenen Suchtext. Siehe [Suche auf Maschinen](/de/platform-intro/pages/machines).
+
+<a id="machine-running-order" />
+
+## Warum umfasst Laufender Auftrag abgeschlossene Arbeit und verschwindet der Filter über Nacht?
+
+**Laufender Auftrag** umfasst heute erfasste Arbeit, einschließlich Vorbereitung und abgeschlossener Arbeit, nicht nur gerade laufende Arbeit. Die Auswahl zeigt die beteiligten Maschinen. Die Chips werden entfernt, wenn die Seite zum nächsten Tag wechselt. Status-, Hallen- und Tagfilter bleiben. Siehe [heutige Aufträge filtern](/de/platform-intro/pages/search-and-filter).

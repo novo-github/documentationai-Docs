@@ -11,7 +11,7 @@ Support live shop-floor execution and event recording for a single machine.
 
 Users usually open it from the Machine Details page.
 
-To switch machines, select the machine name in the top navigation bar. The dropdown groups the other machines you can access by hall and opens the selected machine's Data Acquisition screen directly.
+To switch machines on the PDA page, select the machine name in the top navigation bar. The list groups accessible machines by hall and marks the current machine with a check. With more than 8 machines, use **Search machines…**. Choose with ↑/↓ and Enter, or close with Esc. Selecting another machine opens its PDA page directly.
 
 ## Access
 
@@ -58,7 +58,7 @@ In Data Acquisition V3, **Sort by Queue Position** displays the order set by dra
 
 ### Choose Where Running and On-Hold Orders Appear
 
-**Running and on-hold orders**: Orders in progress or on hold. Example: an order that was started and is on hold for a tool change. This differs from ⚠️ **Waiting on a previous operation**, where an earlier step is unfinished.
+**Running and on-hold orders**: Orders in progress or on hold. Example: an order that was started and is on hold for a tool change. This differs from ⚠️ **Waiting on a previous operation**, where an earlier operation is unfinished.
 
 Open **Card Display Settings → Sort Order** using the gear icon. Your sorting mode determines the choices:
 
@@ -69,7 +69,7 @@ Select **Save** to apply the display choices to the machine's order list and **P
 
 ### Put Waiting Orders After Work That Can Start
 
-Orders marked ⚠️ **Waiting on a previous operation** have an earlier step in the same work order that is neither completed nor cancelled. Step numbers determine the sequence. An earlier step without an assignment also counts as unfinished. For example, step #70 waits until #60 is finished.
+Orders marked ⚠️ **Waiting on a previous operation** have an earlier operation in the same work order that is neither completed nor cancelled. Operation numbers determine the sequence. An earlier operation without an assignment also counts as unfinished. For example, operation #70 waits until #60 is finished.
 
 Use the gear icon in the top bar to open **Card Display Settings → Sort Order**. Choose the option for your sorting mode:
 
@@ -78,7 +78,7 @@ Use the gear icon in the top bar to open **Card Display Settings → Sort Order*
 
 Select **Save** to apply your choice. Neither option moves waiting work until you choose it. Your choice is saved for your account and applies to the machine's order list and the **Pool** tab. These waiting-order options are only available in Data Acquisition V3, not in Assignment Planner.
 
-Once no earlier step remains unfinished, the next refresh places the order in the group that can start. Follow [Configure the Data Acquisition V3 Display](/en/platform-intro/workflows/data-acquisition#configure-the-data-acquisition-v3-display).
+Once no earlier operation remains unfinished, the next refresh places the order in the group that can start. Follow [Configure the Data Acquisition V3 Display](/en/platform-intro/workflows/data-acquisition#configure-the-data-acquisition-v3-display).
 
 ### Use the Company Sorting Default
 
@@ -90,21 +90,21 @@ Resetting keeps the queue-mode choices for running and waiting orders. It replac
 
 ## Send Work Back to the Hall Pool
 
-In Data Acquisition V3, you can return unfinished work to its own hall pool if you have access to this machine and its template allows **Send orders back to the pool**. Select the step: **Create** changes to **Back to pool**. Tap the selected card again to clear the selection and restore **Create**.
+In Data Acquisition V3, you can return unfinished work to its own hall pool if you have access to this machine and its template allows **Send orders back to the pool**. Select the operation: **Create** changes to **Back to pool**. Tap the selected card again to clear the selection and restore **Create**.
 
-For a running step, **Back to pool** opens the normal stop dialog first. **Stop first – then back to pool** appears at the bottom. Record quantities and stop the interval. If **PDA Assist** asks you to choose a time, finish or close that choice before the return dialog opens. Closing the stop dialog or booking without stopping cancels this sequence.
+For a running operation, **Back to pool** opens the normal stop dialog first. **Stop first – then back to pool** appears at the bottom. Record quantities and stop the interval. If **PDA Assist** asks you to choose a time, finish or close that choice before the return dialog opens. Closing the stop dialog or booking without stopping cancels this sequence.
 
 In **Send back to the pool**:
 
-- If work has not started, the whole step moves to the pool.
+- If work has not started, the whole operation moves to the pool.
 - If work has started, recorded times and good parts stay on this machine. **Planned**, **Done here**, and **Left** summarize the quantities. **Quantity left** starts with planned quantity minus good parts, never below zero. Scrap does not reduce the remainder. Change it if parts need to be made again, or leave it empty if the quantity is unknown. It starts empty when the planned quantity is unknown.
 - **Reason (optional)** passes a note of up to 500 characters to the next machine, such as “Spindle broken”.
 
-Confirm with **Back to pool**. The work goes to the top of the hall pool, where another machine in the hall can claim it as usual. The list refreshes, the selection clears, and a confirmation appears at the bottom. After partial work, the original card shows **Handed over** instead of **Completed**. Choose the third view tab with the history icon, **Time Window + All Statuses**, to find the handed-over part. It shows all steps in the chosen date window, including completed and cancelled ones. **All Open** and **Time Window + Open** hide the handed-over part.
+Confirm with **Back to pool**. The work goes to the top of the hall pool, where another machine in the hall can claim it as usual. The list refreshes, the selection clears, and a confirmation appears at the bottom. After partial work, the original card shows **Handed over** instead of **Completed**. Choose the third view tab with the history icon, **Time Window + All Statuses**, to find the handed-over part. It shows all operations in the chosen date window, including completed and cancelled ones. **All Open** and **Time Window + Open** hide the handed-over part.
 
-The pool card shows where the work came from and how many parts were already made, or who sent back an unstarted step and when. Hover over its grey badge for details and the reason. Step context and waiting-step details show **Partly done:** with quantities and the remaining destination. Handing work over does not finish the whole step or release later steps that are waiting for it.
+The pool card shows where the work came from and how many parts were already made, or who sent back an unstarted operation and when. Hover over its grey badge for details and the reason. Operation context and waiting-operation details show **Partly done:** with quantities and the remaining destination. Handing work over does not finish the whole operation or release later operations that are waiting for it.
 
-Finished or cancelled steps cannot be sent back. Without a hall, the button is unavailable; ask your planner. If all planned parts are made, finish the step unless more are needed. There is no automatic undo for a handover. If **This operation was changed in the meantime. The list has been refreshed.** appears, review the refreshed list before trying again. Follow [return work to the pool](/en/platform-intro/workflows/data-acquisition#back-to-pool).
+Finished or cancelled operations cannot be sent back. Without a hall, the button is unavailable; ask your planner. If all planned parts are made, finish the operation unless more are needed. There is no automatic undo for a handover. If **This operation was changed in the meantime. The list has been refreshed.** appears, review the refreshed list before trying again. Follow [return work to the pool](/en/platform-intro/workflows/data-acquisition#back-to-pool).
 
 ## Interval Times and Timeline Display
 
@@ -186,6 +186,8 @@ Notices identify the operation. After **Continue**, you see **Interval ended –
 
 In the **Pool** tab, claim work from the machine's hall pool. If no assignment exists, search unplanned operations or use **Find/Create Immediate Order**. **Job Context** combines order, work-order, operation, and assignment notes.
 
+In **Find/Create Immediate Order** on the PDA page, use **Search Product** to find a product by name or number.
+
 **Waiting on a previous operation / Blocked by** means an earlier operation is unfinished. **Start anyway** remains available; review the dependency before proceeding. The concurrent-order prompt asks for confirmation if another assignment is running. When the planned quantity is reached after **Stop**, choose **Complete** or **Keep on hold**.
 
 Unbound or unlabeled machine time belongs to no order. Deleting a recorded interval is irreversible.
@@ -196,7 +198,7 @@ Unbound or unlabeled machine time belongs to no order. Deleting a recorded inter
 | --- | --- |
 | **All Open** | All open assignments, with no date filter. |
 | **Time Window + Open** | Open assignments in a ±1/3/5/7-day window; useful for daily work. |
-| **Time Window + All Statuses** | All steps in the chosen date window, including completed and cancelled ones. |
+| **Time Window + All Statuses** | All operations in the chosen date window, including completed and cancelled ones. |
 | **Recently completed** | The last five operations completed on this machine, newest first, with no date filter. |
 
 **Card Display Settings / Columns / Highlight** are saved per user. A machine template adds its required fields and highlights and can fix sorting and automatic refresh. **Sort by Queue Position** follows the planned queue. Choose where running and waiting orders appear under **Sort Order**.
@@ -273,8 +275,8 @@ If a reason is no longer allowed, the list updates. Choose an available reason o
 
 | Warning | What it means |
 | --- | --- |
-| **Producing without an order** | The machine is producing but no production order is running. It clears when an order starts. |
-| **Machine off, order still running** | The machine has been off for the configured delay while an order keeps counting time. It clears when the order ends or the machine restarts. |
+| **Producing without an order** | The machine is producing but no production order is running, so the production time is in no interval. It clears when an order starts. |
+| **Machine off, order still running** | The machine has been off for the configured delay while the order’s interval keeps running on the stopped machine. It clears when the order ends or the machine restarts. |
 | **Order running too long** | One order has run longer than the configured threshold. |
 | **Order carried across shift change** | An order from an earlier shift is still open after the current shift's delay. This needs shifts assigned to the machine. |
 | **Live data is stale** | No fresh machine data has arrived for the configured delay. Other warnings may be unreliable. |

@@ -53,7 +53,7 @@ Auftrag 4711 ist am Donnerstag fällig. Das Schneiden auf Laser 2 ist für Diens
 | **Im Termin** | Grün | Endet voraussichtlich vor dem Termin. |
 | **Gefährdet** | Gelb | Noch nicht verspätet, aber die restliche Arbeit passt kaum noch oder ein früherer Arbeitsgang ist nicht geplant. |
 | **Verspätet +3 h** | Rot | Endet voraussichtlich drei Stunden nach dem Termin. |
-| **verspätet, Termin vorbei** | Rot | Der Termin ist vorbei und der Auftrag ist nicht fertig. |
+| **verspätet, Termin vorbei** | Rot | Der Termin ist vorbei und der Auftrag ist nicht abgeschlossen. |
 | **Ende nicht bekannt** | Blau | Der Termin liegt noch in der Zukunft, aber es liegt kein erwartetes Ende vor, etwa weil ein Arbeitsgang noch im Hallenpool liegt. |
 
 Der **Liefertermin** ist Ihre Zusage an den Kunden. Wird er verfehlt, erscheint die Warnung rot. Das **geplante Ende** stammt aus Ihrem eigenen Plan. Wird es verfehlt, erscheint die Warnung gelb. Die umbenannten Bezeichnungen finden Sie im [Forecaster-Glossar](/de/platform-intro/concepts/glossary#forecaster).
@@ -92,7 +92,7 @@ Wählen Sie **Nach Auftrag** für betroffene Aufträge oder **Nach Ursache** fü
 - **Kein geplanter Start**: Dieser Hinweis erscheint nur mit **Nach geplanten Terminen** oder **Liefertermin zuerst**. Die Prognose plant den Arbeitsgang nach der Arbeit mit Termin auf seiner Maschine ein.
 - **Wartet auf früheren Arbeitsgang**: Der frühere Arbeitsgang ist noch auf keiner Maschine oder liegt im Hallenpool. Erwartete Zeiten können zu optimistisch sein.
 
-Diese Hinweise erklären die erwarteten Zeiten. Sie entfernen Arbeit nicht aus der Prognose und bedeuten nicht, dass sie fertig ist.
+Diese Hinweise erklären die erwarteten Zeiten. Sie entfernen Arbeit nicht aus der Prognose und bedeuten nicht, dass sie abgeschlossen ist.
 
 ### Maschinenverfügbarkeit lesen
 
@@ -105,6 +105,10 @@ Bei übergebener Arbeit zeigt die Arbeitsfolge **Teilweise gefertigt:** mit Gutt
 Wählen Sie **Auftragsansicht** und geben Sie mindestens zwei Zeichen des Auftragsnamens oder der Auftragsnummer ein. **Ganzen Auftrag im Plan zeigen** hebt seine Zuweisungen hervor und umrandet Arbeit, auf die er wartet. Andere Arbeit wird abgeblendet. Öffnen Sie die Arbeitsgangliste, um die Arbeitsfolge zu sehen. **Zurück zu den Maschinen** öffnet wieder die Maschinenansicht.
 
 Ein Arbeitsgang im Hallenpool liegt noch auf keiner Maschine. Fehlt ein voraussichtliches Ende, wird der Auftrag später fertig als angezeigt. Ist nur ein Teil der Arbeitsfolge sichtbar, weist die Seite darauf hin. Öffnen Sie die Warnung zum ungeplanten früheren Arbeitsgang und wählen Sie, wenn verfügbar, **Einer Maschine zuweisen**. Der Arbeitsgang behält seine eigenen geplanten Termine. Die nachfolgenden Arbeitsgänge werden erneut prognostiziert. Ohne geplanten Start bleibt der Arbeitsgang auch nach der Maschinenzuweisung ungeplant.
+
+Drücken Sie Strg+F (⌘F auf dem Mac) oder wählen Sie die Lupe in der Werkzeugleiste. Suchen Sie einen Auftrag und wählen Sie **Auftrag zeigen** für diese Auftragsansicht. Entfernen Sie seinen Chip, um sie zu verlassen. **Gehe zu** an einer Maschine öffnet deren Halle, scrollt zur Zeile und hebt sie hervor. Eine fehlende Maschine wird aufgenommen; bei 25 Maschinen ersetzt sie die letzte. Eine Maschine außerhalb der Auftragsansicht zu wählen, verlässt diese Ansicht. Die Erklärung am Treffer nennt diese Folgen.
+
+Hier finden Sie nur Aufträge und Maschinen. Text filtert keine Balken. Esc und das × im Suchfenster schließen es und behalten den Text. Liegt der Fokus auf dem Plan, schließt Esc zuerst eine offene Seitenleiste. Siehe [Suchen und filtern](/de/platform-intro/pages/search-and-filter) oder folgen Sie [Arbeit und Maschinen finden](/de/platform-intro/workflows/search-and-filter).
 
 ## Wartende Arbeit verschieben
 

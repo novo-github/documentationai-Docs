@@ -40,6 +40,8 @@ Users open it from the dashboard navigation.
 
 Choose a destination marked **Work center** when an operation belongs at a workplace without an AVA. Assignment details and selection lists identify work centers so you can distinguish them from machines. See [Work Centers](/en/platform-intro/pages/work-centers) for the limits of sensor readings.
 
+In the product filter, search by product name or number.
+
 ## Understand the Page
 
 ### Understand Orders, Work Orders, and Assignments
@@ -80,13 +82,13 @@ The progress source determines which production record you are reviewing: PDA en
 
 ### Find Orders That May Miss Delivery
 
-The **Forecaster** summary card counts open orders expected to finish after their delivery date, or whose delivery date has already passed. Click the card for details about orders that will miss delivery if nothing changes. Orders with steps that have no machine yet may finish even later than shown.
+The **Forecaster** summary card counts open orders expected to finish after their delivery date, or whose delivery date has already passed. Click the card for details about orders that will miss delivery if nothing changes. Orders with operations that have no machine yet may finish even later than shown.
 
-In the **Forecaster** column, the top result checks the delivery date and the bottom result checks the planned end. Red means late for delivery. Amber means **at risk** or past the planned end. Green means on time. The step count tells you how many steps are on a machine; it does not mean those steps are finished.
+In the **Forecaster** column, the top result checks the delivery date and the bottom result checks the planned end. Red means late for delivery. Amber means **at risk** or past the planned end. Green means on time. The operation count tells you how many operations are on a machine; it does not mean those operations are finished.
 
 While the Forecaster's late-order filter is active, you see every late order regardless of date range and status. Order, product, customer, and machine filters still apply. The company-wide count can differ from [Assignment Gantt](/en/platform-intro/pages/assignment-gantt), which shows warnings for the displayed machines from last week to three weeks ahead.
 
-In the card details, choose **Late for delivery → Show in table** for late orders or **Of these, operations not planned → Show in table** for late orders with missing steps. The active filter reads **Forecaster: late for delivery** or **Forecaster: late, operations not planned**. Date range and status filters are paused for either choice; remove the Forecaster filter to use them again. **Partly planned** identifies work with steps still not assigned.
+In the card details, choose **Late for delivery → Show in table** for late orders or **Of these, operations not planned → Show in table** for late orders with missing operations. The active filter reads **Forecaster: late for delivery** or **Forecaster: late, operations not planned**. Date range and status filters are paused for either choice; remove the Forecaster filter to use them again. **Partly planned** identifies work with operations still not assigned.
 
 **Not planned at all → Show list** opens **Orders that are not planned**. These orders have a delivery date but no operation assigned to a machine or hall pool, so they appear on no planning board. Open an order and choose **Assign operations** to select machines, or **Open in planner**. Follow the [planning workflow](/en/platform-intro/workflows/assignment-planner).
 
@@ -94,14 +96,14 @@ In the card details, choose **Late for delivery → Show in table** for late ord
 
 Hover over the warning icon to read what the expected times assume.
 
-- **On hold for a long time** (previously **On hold too long**): the hold limit has passed. The forecast assumes the step continues in its queue position, so later work still waits for it.
-- **Never started**: this note appears only with **Follow planned dates** or **Delivery date first** under **View options → Planning** in Assignment Gantt; work planned more than three days ago is forecast to start as soon as its machine is free. With **Follow the queue** or **Follow the queue, not before the planned date**, neither this note nor **No planned start** appears, and the step keeps its place in the queue.
-- **No planned start**: this note appears only with **Follow planned dates** or **Delivery date first**. The forecast places the step after the machine’s dated work.
-- **Waits for an earlier operation**: that step is not on a machine yet or is still in a hall pool. Expected times may be too optimistic.
+- **On hold for a long time** (previously **On hold too long**): the hold limit has passed. The forecast assumes the operation continues in its queue position, so later work still waits for it.
+- **Never started**: this note appears only with **Follow planned dates** or **Delivery date first** under **View options → Planning** in Assignment Gantt; work planned more than three days ago is forecast to start as soon as its machine is free. With **Follow the queue** or **Follow the queue, not before the planned date**, neither this note nor **No planned start** appears, and the operation keeps its place in the queue.
+- **No planned start**: this note appears only with **Follow planned dates** or **Delivery date first**. The forecast places the operation after the machine’s dated work.
+- **Waits for an earlier operation**: that operation is not on a machine yet or is still in a hall pool. Expected times may be too optimistic.
 
 These notes explain the expected times. They do not remove the work from the forecast or mean that it is finished.
 
-For a step’s waiting chain and expected end, open its card in [Assignment Planner](/en/platform-intro/pages/assignment-planner#explain-an-expected-end).
+For an operation’s waiting chain and expected end, open its card in [Assignment Planner](/en/platform-intro/pages/assignment-planner#explain-an-expected-end).
 
 ### Open the Forecaster Help
 
@@ -117,15 +119,19 @@ When creating an order or editing an operation, choose the operation's priority 
 
 ## Filters, Refresh, and Summary Counts
 
-All filters combine with **AND**. When a **Customer, Order, Product, or Machine** filter is active, the **date range is ignored**. For example, selecting a customer can show matching orders outside the date window. Sorting covers every order, not just the loaded page. Auto-refresh reloads every **60 seconds**.
+Several values of the same filter match either value; different filter kinds must all match. When a **Customer, Order, Product, or Machine** filter is active, the **date range is ignored**. For example, selecting a customer can show matching orders outside the date window. Sorting covers every order, not just the loaded page. Auto-refresh reloads every **60 seconds**.
 
 Summary cards show the company-wide total on top and the number in the current view underneath. Each order counts once. Grouped planned dates span the whole order; each assignment row has its own planned and actual window.
 
 Choose planned or actual dates beside the date pickers to decide which dates the range filter searches. Planned dates describe the scheduled window; actual dates show when production really ran. On a grouped order row, the planned window covers the whole order. Expand it to see each assignment's own window in the same columns.
 
+Press Ctrl+F (⌘F on a Mac) or choose the magnifier in the filter header. Type to filter live or choose suggestions as chips. You can select several customers; changing them clears the selected orders. Esc and the box's × keep the text active as **Search: …**. Remove that chip to clear the text, or choose **Reset all** to reset the filters too. See [Search and Filter](/en/platform-intro/pages/search-and-filter).
+
+On larger screens, scrolling down past the controls brings the table into view. It is at most one screen high, with column headings and page controls visible while rows scroll. Scroll up from the table's top to return to the controls, or continue below to the footer. The page glides between the controls and the work area and never stops half-way between the two. This happens automatically, with no setting, and is off on phones. Ctrl+F remains available from the table.
+
 ## Status and Delivery Warnings
 
-An order with handed-over work has a neutral **Handed over** badge in its order name cell. Hover over it to see each affected step, the good parts made on the original machine, and where the remaining quantity is waiting. The original assignment's row also shows **Handed over**. This does not mean the whole order is finished: after a handover it can show **Planned** until the next machine starts. See [handover details](/en/platform-intro/pages/order-detail#handed-over-work).
+An order with handed-over work has a neutral **Handed over** badge in its order name cell. Hover over it to see each affected operation, the good parts made on the original machine, and where the remaining quantity is waiting. The original assignment's row also shows **Handed over**. This does not mean the whole order is finished: after a handover it can show **Planned** until the next machine starts. See [handover details](/en/platform-intro/pages/order-detail#handed-over-work).
 
 | English status | German label | Meaning |
 | --- | --- | --- |
@@ -161,7 +167,7 @@ Order status follows its assignments. **Live** means an interval is running now.
 - Users identify planning or production issues across one or more orders.
 
 ### Limits and Empty States
-- Filters combine with AND; Customer, Order, Product, or Machine filters override the date range.
+- Different filter kinds must all match; customer, order, product, or machine filters override the date range.
 - Sorting and filtering apply across the complete order list, not only the currently visible result page.
 - Orders without deeper structure may need the detail page before they can be planned well.
 

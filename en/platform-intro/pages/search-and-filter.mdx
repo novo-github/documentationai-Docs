@@ -1,0 +1,106 @@
+---
+title: "Search and Filter"
+description: "Find work and machines, combine filters, and keep or clear a search on each page."
+---
+
+## Overview
+
+**Access:** Search uses the access you already have in the Watchmen Platform. Machines shows only accessible machines. Assignment Planner and Assignment Gantt require planning-page and machine access. Orders & Products is available to Admins and Users with access to that page, not Machine operators. See [roles and access](/en/platform-intro/concepts/roles-and-access).
+
+Use the Find box on [Assignment Planner](/en/platform-intro/pages/assignment-planner), [Orders & Products](/en/platform-intro/pages/orders-products), [Machines](/en/platform-intro/pages/machines), or [Assignment Gantt](/en/platform-intro/pages/assignment-gantt). Follow [find work and machines](/en/platform-intro/workflows/search-and-filter) for the steps.
+
+## Open and Type
+
+Press Ctrl+F (⌘F on a Mac) or select the magnifier to open the Find box with your kept text. On Machines, the magnifier sits beside sorting near the status cards. It is in **Filter & Sort** on the Planner, in the filter header on Orders & Products, and in the toolbar on Gantt.
+
+On phones and tablets, a round magnifier appears at the bottom right once the Machines page’s own magnifier is out of view. In the work-center view, it appears from the start. It hides while you scroll down and returns when you scroll up or stop scrolling. It stays hidden while the Find box, a dialog, menu, or drawer is open. It does not appear when using a desktop mouse.
+
+On the Planner, Orders & Products, and Machines, results change as you type; Enter is not needed. The text narrows results alongside your other filters. **Updating list …** means the list is still changing. On Gantt, typing finds choices to open or go to; it does not filter the timeline.
+
+<a id="product-search" />
+
+You can search by product name or number in Find box suggestions and the Orders & Products product filter, when choosing a product for a work order in the new-order dialog opened from the Admin Panel and on the order’s detail page (Order Management), in the immediate order dialog on the PDA page, and in the Admin Panel's product table.
+
+## Choose Suggestions and Categories
+
+Select a suggestion to keep it as a filter chip. Choosing a filter from typed results clears the typed text; the chip now applies the filter. The same choices appear in the page's filter controls.
+
+With an empty search field, choose a category under **Filter by**. Scroll to see more values, or type to search within that category. Use **All categories** to return. **See all** beside a group opens its full category. A choice such as **Browse all: Customer** also opens that category.
+
+Use **Add** or **Remove** on a row to change its selection. A check mark identifies an active value. While browsing, the category stays open so you can choose several values. **Recently used** offers earlier choices on the Planner, Orders & Products, and Gantt. Machines instead shows state tiles and hall choices.
+
+## Combine and Clear Filters
+
+Values of the same kind match either choice. Different kinds must all match. For example, selecting customers Müller and Bauer shows work for either customer. Selecting Müller and order priority High shows only Müller's high-priority work. Any typed text further narrows those results.
+
+Esc and the × at the top of the box close it and keep the text. On the Planner, Orders & Products, and Machines, a **Search: …** chip shows that the text still filters the page. Reopen the box to see and edit it.
+
+To stop filtering by text, delete it in the field or remove the **Search: …** chip. **Clear all** in the Find box removes the filter chips and keeps the typed text. To clear both text and filters, use the row outside the box: **Clear all** under the Planner toolbar, **Reset all** in the Orders & Products filter header, or **Reset** below the Machines status cards. These actions return filters to the page's defaults. Planner machine and hall-pool selections stay in place.
+
+## What Changes on Each Page
+
+### Assignment Planner
+
+The field says **Search order / product / customer**. Suggestions include orders, products, customers, order priorities, operation priorities, statuses, tags, **ERP import**, machines, and **Hall pool**. Tags, imports, and pools appear when available.
+
+Under **Search in**, choose **Unassigned**, **Hall pools**, **Machines**, or **Everything**. Text and order, product, and customer chips filter only that area. **Machines** filters work in machine queues; choosing a machine suggestion adds or removes its lane. Hall-pool choices also add or remove lanes. You can show at most 25 machines; remove one before adding another. Pools do not count toward that limit.
+
+Priority, status, and tag filters apply to the list and all queues. The import choice applies only to the unassigned list; choosing another import replaces the first. Choosing a status from the default view narrows to that status. Removing the last status chip restores the default statuses.
+
+Search priority codes such as P10 for order priority 10, OP10 for operation priority 10, or 10 for both kinds. AG10 also finds operation priority 10. Case and spaces do not matter. Names still work. Choices show the code, the company's level name when available, and its colour. A priority without a named level can still be selected.
+
+Links from an order, product, or customer add a chip and start in **Unassigned**, including matches beyond the first part of the list. A link with search text starts in **Everything** while that text remains. Choosing a scope tab replaces the link's scope; opening a link does not replace your saved preference.
+
+### Orders & Products
+
+The field says **Search order, product, customer, machine**. Categories cover customers, orders, products, machines, assignment status, and **Filter**. The last category offers **Forecaster: late for delivery**, **Forecaster: late, operations not planned**, and **Live Orders**.
+
+You can choose several customers. Changing the customer selection clears the selected orders; order suggestions then follow those customers. Text search keeps the date range. Selecting a customer, order, product, or machine makes the date range no longer restrict the results. Date, sorting, and column controls remain on the page.
+
+### Machines
+
+With the field empty, **Right now** shows **Production**, **Idle**, **Off**, and **Preparation**, with the same counts as the status cards. Select several states to show any of them. The cards and tiles share the same selection. Their counts describe all accessible machines, not just the filtered cards.
+
+Choose halls, tags, or a **Running order** to filter cards. Hall choices show machine counts and coloured state dots. Hall or tag chips on a machine card change the same filters. These filters find all matching machines, including cards not yet shown.
+
+**Running order** means orders worked on today, including preparation and completed work. Search by order name, order number, or product name; each result lists the machines involved. When the day changes, running-order chips clear; other filters stay. State choices are remembered when you return. Hall, tag, and running-order choices last for the visit.
+
+Type a machine name to narrow the cards. Select **Open →** on a machine result to open its page. In the work-center view, hall, tag, and order filters apply. State filters and tiles are absent, and clearing filters there leaves the saved machine-state selection alone.
+
+### Assignment Gantt
+
+The field says **Search order or machine**. Only orders and machines appear under **Browse**. Order choices are limited to open orders, as in the order-view selector.
+
+Choose **Show route** to open the order view with machines in operation order. The box closes and an order chip appears beside the toolbar and in the box. The toolbar's order selector uses the same selection. Remove the chip, or use **Remove** on the selected order, to leave the order view.
+
+Choose **Go to** for a machine to open its hall, scroll to its row, and briefly highlight it. A machine already shown stays in place. Otherwise it joins the board. At the 25-machine limit, it replaces the last selected machine; the result's explanation names the replacement. If the machine is outside the order view, choosing it first leaves that view. No machine chip is added.
+
+Esc and the box's × keep the text for the next time you open it. There is no search-text chip because text does not filter bars. With focus on the board, Esc closes the side panel first, then the Find box. With focus in the search field, Esc closes only the box.
+
+## Keyboard Controls
+
+| Key | What it does |
+| --- | --- |
+| Ctrl+F / ⌘F | Opens the Find box, or selects its existing text when already open. |
+| ↑ / ↓ | Highlights a choice. |
+| Enter | Adds or removes the highlighted filter, opens a machine, or follows the selected Gantt action. Without a highlighted choice, nothing changes. |
+| Backspace in an empty field | Removes the last filter chip. |
+| Esc | Closes the box and keeps the text and filters; an open menu or dialog can take Esc first. See the Gantt exception above. |
+
+## Scroll to the Work Area
+
+On larger screens, scrolling down past the Planner's or Orders & Products' page controls brings the board or table into view. Scroll up from the top of the work area to return to the controls. The page glides between the controls and the work area and never stops half-way between the two. A tall controls area can still be scrolled normally above that transition.
+
+The orders table is at most one screen high; its rows scroll while column headings and page controls stay visible. Short lists keep their natural height. Continue scrolling below the work area to reach the footer. Coming back up from below first stops at the work area; scroll up again to reach the controls.
+
+There is no button or setting. Phones keep normal scrolling. The movement pauses while a dialog is open or you drag a Planner card. With reduced motion, the page changes position without gliding. Ctrl+F still opens search while the page controls are out of view.
+
+## Limits
+
+Search does not grant access to more pages or machines. An empty result can mean that the remaining filters exclude the work. Review the visible chips and, in the Planner, the search scope. Closing the box does not clear them. Gantt searches only orders and machines.
+
+## Related Pages
+
+- [Plan Machine Assignments](/en/platform-intro/workflows/assignment-planner)
+- [Monitor a Machine Live](/en/platform-intro/workflows/live-machine-monitoring)
+- [Planning FAQs](/en/help-center/faq/planning-and-imports)

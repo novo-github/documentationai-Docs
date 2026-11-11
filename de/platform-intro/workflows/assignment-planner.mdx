@@ -27,7 +27,7 @@ Beginnen Sie auf der [Seite Zuweisungsplaner](/de/platform-intro/pages/assignmen
     Wählen Sie bis zu 25 Maschinen und die Hallen, deren Pools Sie benötigen. Pools zählen nicht zur Maschinengrenze. Grenzen Sie Arbeit mit Auftragstags, Auftrags- und Arbeitsgangprioritäten oder dem Status einzelner Zuweisungen ein.
   </Step>
   <Step title="Finden Sie die passende Arbeit" icon="arrow-right" title-type="p">
-    Öffnen Sie die Suche mit Strg+F (⌘F auf dem Mac) oder dem Lupensymbol in **Filtern & Sortieren**. Suchen Sie nach Auftrag, Produkt oder Kunde. Wählen Sie **Suchen in → Nicht zugewiesen**, **Hallenpools**, **Maschinen** oder **Überall**. Esc oder × leert und schließt die Suche.
+    Öffnen Sie die Suche mit Strg+F (⌘F auf dem Mac) oder dem Lupensymbol in **Filtern & Sortieren**. Suchen Sie nach Auftrag, Produkt oder Kunde. Wählen Sie **Suchen in → Nicht zugewiesen**, **Hallenpools**, **Maschinen** oder **Überall**. Esc oder das × im Suchfenster schließt es und behält den Text. Entfernen Sie den Chip **Suche: …**, um den Text zu löschen.
   </Step>
   <Step title="Wählen Sie eine Maschine oder einen Hallenpool" icon="arrow-right" title-type="p">
     Ziehen Sie den Arbeitsgang auf eine Maschinenspalte, wenn das Ziel feststeht. Können mehrere Maschinen einer Halle die Arbeit übernehmen, ziehen Sie ihn in den Hallenpool oder weisen dort einen neuen Arbeitsgang zu. Die Bereitschaftsanzeige zeigt, wann eine Maschine die Arbeit aus dem Pool übernehmen kann.
@@ -41,7 +41,7 @@ Beginnen Sie auf der [Seite Zuweisungsplaner](/de/platform-intro/pages/assignmen
     Aktualisieren Sie wichtige Details wie Status, Daten oder Priorität bei Bedarf. Lesen oder bearbeiten Sie Notizen zu Arbeitsgängen und Zuweisungen, damit Anweisungen bei der Arbeit verfügbar bleiben.
   </Step>
   <Step title="Prüfen Sie den zukünftigen Zeitplan" icon="arrow-right" title-type="p">
-    Öffnen Sie das Zuweisungs-Gantt und wählen Sie bis zu 25 Maschinen. Schließen Sie die Maschinenauswahl, um Ihre Auswahl zu übernehmen. Prüfen Sie die Zeitleiste auf Überschneidungen und öffnen Sie bei Bedarf einen zugehörigen Auftrag. Das Zuweisungs-Gantt hat keine Hallenpool-Spalten.
+    Öffnen Sie das Zuweisungs-Gantt und wählen Sie bis zu 25 Maschinen. Schließen Sie die Maschinenauswahl, um Ihre Auswahl zu übernehmen. Prüfen Sie die Zeitleiste auf Überschneidungen und öffnen Sie bei Bedarf einen zugehörigen Auftrag. Finden Sie mit Strg+F einen Auftrag über **Auftrag zeigen** oder eine Maschine über **Gehe zu**. Bei 25 Maschinen ersetzt eine neu aufgenommene Maschine die letzte. Prüfen Sie vorher die Erklärung am Treffer. Das Zuweisungs-Gantt hat keine Hallenpool-Spalten.
   </Step>
   <Step title="Ordnen Sie zukünftige Zuweisungen bei Bedarf an" icon="arrow-right" title-type="p">
     Öffnen Sie **Plan verbessern**, vergleichen Sie Alternativen und prüfen Sie die betroffenen Zuweisungen vor **Als Plan speichern**. Laufende und angehaltene Arbeit bleibt an ihrem Platz. Folgen Sie den ausführlichen Vergleichsschritten unten.
@@ -61,7 +61,7 @@ Beginnen Sie auf der [Seite Zuweisungsplaner](/de/platform-intro/pages/assignmen
     Haken Sie unter **Welche Pools anzeigen** die benötigten Hallen an. Damit ändern Sie auch den Hallenfilter. Jeder Pool erscheint neben **Nicht zugewiesene Arbeitsgänge** und bleibt beim Scrollen durch die Maschinen sichtbar. Ist die Liste ausgeblendet, beginnen die Pools am linken Rand.
   </Step>
   <Step title="Schaffen Sie Platz und ordnen Sie Arbeit zu" icon="arrow-right" title-type="p">
-    Mit **Pool einklappen** bleibt ein schmaler Streifen. Umfasst Ihre Suche den Pool, schließen Sie sie vorher, damit die Arbeit ganz am Ende landet. Andernfalls kann eine Ablage auf dem Streifen Arbeit zwischen den Karten einordnen. **Nicht zugewiesen** filtert keine Pools. Sie können Karten auch auf den eingeklappten Streifen ziehen. Begonnene Arbeit öffnet den Übergabedialog. Nach der Bestätigung kommt ihr Rest an den Anfang. Klicken Sie auf den Streifen oder nutzen Sie **Pool ausklappen**, um die Karten wieder zu sehen. Dieser Browser merkt sich eingeklappte Pools für das aktuelle Unternehmen.
+    Mit **Pool einklappen** bleibt ein schmaler Streifen. Umfasst Ihre Suche den Pool, entfernen Sie vorher den Suchtext sowie Auftrags-, Produkt- und Kundenchips, damit die Arbeit ganz am Ende landet. Andernfalls kann eine Ablage auf dem Streifen Arbeit zwischen den Karten einordnen. **Nicht zugewiesen** filtert keine Pools. Sie können Karten auch auf den eingeklappten Streifen ziehen. Begonnene Arbeit öffnet den Übergabedialog. Nach der Bestätigung kommt ihr Rest an den Anfang. Klicken Sie auf den Streifen oder nutzen Sie **Pool ausklappen**, um die Karten wieder zu sehen. Dieser Browser merkt sich eingeklappte Pools für das aktuelle Unternehmen.
   </Step>
 </Steps>
 
@@ -74,12 +74,15 @@ Beginnen Sie auf der [Seite Zuweisungsplaner](/de/platform-intro/pages/assignmen
   <Step title="Wählen Sie den Suchbereich" icon="arrow-right" title-type="p">
     Wählen Sie unter **Suchen in** die Option **Nicht zugewiesen** für die Liste, **Hallenpools** für Pool-Arbeit, **Maschinen** für Arbeit auf Maschinen oder **Überall** für alle drei Bereiche. Andere Bereiche zeigen ihre Karten weiterhin an. Voreingestellt ist **Nicht zugewiesen**. Ihre Auswahl wird gespeichert. **Maschinen** durchsucht keine Maschinennamen.
   </Step>
+  <Step title="Auswahlen als Filter behalten" icon="arrow-right" title-type="p">
+    Wählen Sie einen Vorschlag oder durchsuchen Sie **Filtern nach**. Fügen Sie einen Kunden und eine Auftragspriorität hinzu, um nur Arbeit mit beiden Eigenschaften zu sehen. Zwei Kunden zeigen Arbeit für einen der beiden. P10 sucht Auftragspriorität 10, AG10 Arbeitsgangpriorität 10. Text sowie Auftrags-, Produkt- und Kundenchips folgen **Suchen in**. Maschinen- und Hallenpoolvorschläge ändern die angezeigten Spalten oder Zeilen statt Chips.
+  </Step>
   <Step title="Prüfen Sie Treffer und beenden Sie die Suche" icon="arrow-right" title-type="p">
-    Bei mehr als 40 Treffern in einer Warteschlange wählen Sie **40 weitere anzeigen** oder die kleinere Restzahl. Umfasst die Suche die Liste nicht zugewiesener Arbeitsgänge, prüfen Sie deren Trefferanzahl. Esc oder × schließt und leert die Suche. Andere Filter gelten weiter.
+    Bei mehr als 40 Treffern in einer Warteschlange wählen Sie **40 weitere anzeigen** oder die kleinere Restzahl. Umfasst die Suche die Liste nicht zugewiesener Arbeitsgänge, prüfen Sie deren Trefferanzahl. Esc oder das × im Suchfenster schließt es und behält die Suche bei. Entfernen Sie den Chip **Suche: …**, um den Text zu löschen. **Alle entfernen** unter der Werkzeugleiste löscht den Text und stellt zugleich die voreingestellten Filter wieder her.
   </Step>
 </Steps>
 
-Ein Link mit einer Suche verwendet für diesen Besuch **Überall**, ohne Ihre gespeicherte Auswahl zu ersetzen.
+Ein Link mit Suchtext nutzt **Überall**, solange der Text bleibt oder bis Sie einen anderen Bereich wählen. Ein Auftrags-, Produkt- oder Kundenlink beginnt in **Nicht zugewiesen** und findet passende Arbeit über den ersten Listenteil hinaus. Ihre gespeicherte Voreinstellung bleibt unverändert. Für Aufträge & Produkte, Maschinen und Gantt folgen Sie [Arbeit und Maschinen finden](/de/platform-intro/workflows/search-and-filter).
 
 ## Arbeit in eine andere Warteschlange verschieben
 
@@ -374,6 +377,8 @@ Bei Verschiebungen ohne Dialog bestimmt mit **Nach Warteschlangenposition sortie
 [Assignment Gantt](/de/platform-intro/pages/assignment-gantt) zeigt die Zeitleiste. Verschiebung durch Ziehen ist **Experimental und schreibgeschützt**. Verwenden Sie unterstützte Planersteuerungen für Änderungen.
 
 Öffnen Sie über die Ansichtsauswahl das Zuweisungs-Gantt zur Zeitplanprüfung. Nutzen Sie dort **Verschieben** für geeignete Arbeit oder kehren Sie für die Arbeit mit Warteschlangen in den Zuweisungsplaner zurück.
+
+Scrollen Sie auf größeren Bildschirmen an den Bedienelementen vorbei nach unten, um den Plan ins Bild zu bringen. Strg+F öffnet auch dort die Suche. Scrollen Sie vom oberen Planrand nach oben zu den Bedienelementen oder unter den Plan zur Fußzeile. Die Seite gleitet zwischen den Bedienelementen und dem Arbeitsbereich und bleibt nie auf halbem Weg dazwischen stehen. Auf Smartphones scrollen Sie wie gewohnt.
 
 ## Entscheidungspunkte
 

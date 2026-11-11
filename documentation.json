@@ -97,6 +97,11 @@
                             "icon": "file-text"
                           },
                           {
+                            "title": "Search and Filter",
+                            "path": "en/platform-intro/pages/search-and-filter",
+                            "icon": "file-text"
+                          },
+                          {
                             "title": "Work Centers",
                             "path": "en/platform-intro/pages/work-centers",
                             "icon": "file-text"
@@ -395,6 +400,11 @@
                             "icon": "play-circle"
                           },
                           {
+                            "title": "Find Work and Machines",
+                            "path": "en/platform-intro/workflows/search-and-filter",
+                            "icon": "play-circle"
+                          },
+                          {
                             "title": "Upload Orders Through the ERP Planner",
                             "path": "en/platform-intro/workflows/order-upload-planner",
                             "icon": "play-circle"
@@ -661,6 +671,11 @@
                           {
                             "title": "Maschinen",
                             "path": "de/platform-intro/pages/machines",
+                            "icon": "file-text"
+                          },
+                          {
+                            "title": "Suchen und filtern",
+                            "path": "de/platform-intro/pages/search-and-filter",
                             "icon": "file-text"
                           },
                           {
@@ -959,6 +974,11 @@
                           {
                             "title": "Maschinenzuweisungen planen",
                             "path": "de/platform-intro/workflows/assignment-planner",
+                            "icon": "play-circle"
+                          },
+                          {
+                            "title": "Arbeit und Maschinen finden",
+                            "path": "de/platform-intro/workflows/search-and-filter",
                             "icon": "play-circle"
                           },
                           {
