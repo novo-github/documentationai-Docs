@@ -31,7 +31,7 @@ Beginnen Sie auf der [Seite ERP-Upload-Planer](/de/platform-intro/pages/erp-uplo
     Öffnen Sie die vollständige Bearbeitungsansicht, um einzelne Werte zu korrigieren oder passende Gruppen von Werten aus Excel einzufügen. Prüfen Sie die Anzahl geänderter Zellen und speichern Sie Ihre Korrekturen; gespeicherte Änderungen werden in der Vorschau hervorgehoben. Spaltenüberschriften und Zeilenanzahl lassen sich hier nicht ändern. Wenn Sie ohne Speichern schließen, werden ungespeicherte Korrekturen verworfen und die Originaldatei bleibt unverändert.
   </Step>
   <Step title="Ordnen Sie Spalten und Maschinen zu" icon="arrow-right" title-type="p">
-    Ordnen Sie die Quellspalten zu, bei Bedarf einschließlich Auftragstags. Verwenden Sie eine gespeicherte Zuordnung, wenn sie zur Datei passt. Ordnen Sie externe Maschinennamen oder Codes den richtigen Maschinen zu.
+    Ordnen Sie die Quellspalten zu, bei Bedarf einschließlich Auftragstags. Folgen Sie für benötigte Teile je Arbeitsgang [Stücklisten mit importieren](/de/platform-intro/workflows/order-upload-planner#parts-lists). Verwenden Sie eine gespeicherte Zuordnung, wenn sie zur Datei passt. Ordnen Sie externe Maschinennamen oder Codes den richtigen Maschinen zu.
 
     Ordnen Sie **Auftragspriorität** und **Arbeitsgangpriorität** getrennt zu. Legen Sie **Anfangs-Auftragspriorität (neue Aufträge)** und **Anfangs-Arbeitsgangpriorität (neue Arbeitsgänge)** für leere Zellen oder eine fehlende Prioritätsspalte fest. Lassen Sie die Anfangs-Arbeitsgangpriorität leer, um 100 zu verwenden. Korrigieren Sie markierte Werte: Arbeitsgangprioritäten müssen ganze Zahlen ab 0 sein. Anfangswerte ersetzen keine ungültigen Angaben. Bestehende Prioritäten ändern sich beim erneuten Import nie.
   </Step>
@@ -70,6 +70,27 @@ Führen Sie **Überprüfen** als Probelauf aus. **NEU**, **GEÄ** und **AUSWIRKU
 Zeilen ohne Planung oder mit Beginn nach Ende werden nicht verarbeitet. Neuimport gleicht Produkt, Auftrag, Arbeitsauftragsprodukt, Arbeitsgangfolge und Maschinenzuweisung ab. Leere Aktualisierungszellen erhalten Werte; Prioritäten, geschützte Felder und Produktionsverlauf bleiben unverändert. Fehlende Zeilen löschen keine Datensätze. Arbeitsgänge mit erfasster Arbeit können nicht verschoben werden; mehrdeutige Mehrfachzielkonflikte benötigen manuelle Prüfung.
 
 **Beispiel:** Beschreiben importierte 100 Minuten insgesamt 50 Teile, wählen Sie ALL Units. Bei 2 Minuten je Teil wählen Sie 1 Unit. Die falsche Auswahl verändert die Planzeit.
+
+<a id="parts-lists" />
+
+## Stücklisten mit importieren
+
+<Steps>
+  <Step title="Bereiten Sie eine Liste je Arbeitsgang vor" icon="arrow-right" title-type="p">
+    Tragen Sie in Ihrer Auftragstabelle die Teile jedes Arbeitsgangs in eine Zelle ein, möglichst ein Teil pro Zeile innerhalb dieser Zelle. Auch durch Komma getrennte Angaben wie „48 St 277220 Distanzhülse, 96 St 014555 O-Ring“ sind möglich. Nutzen Sie eine eigene Spalte für den Revisionsstand, etwa A0. Nur die ersten 200 Teile einer Zelle werden importiert. Weitere Teile werden nicht importiert.
+  </Step>
+  <Step title="Ordnen Sie Teile- und Revisionsspalte zu" icon="arrow-right" title-type="p">
+    Ordnen Sie unter **Spalten zuordnen → Felder des Arbeitsgangs** eine Spalte **Stückliste** und optional eine weitere **Revisionsstand** zu. Um vorhandene Arbeit mit Listen zu ergänzen, importieren Sie Ihren aktuellen Export erneut mit diesen Zuordnungen. Alte Notizen bleiben unverändert.
+  </Step>
+  <Step title="Prüfen Sie neue Listen und geänderte Stände" icon="arrow-right" title-type="p">
+    Führen Sie die Importprüfung aus und achten Sie auf **Stücklisten** unter **Was dieser Import ändert**. Die Zeile erscheint, wenn mindestens eine Liste angelegt oder aktualisiert wird. Prüfen Sie die hervorgehobenen Spalten für Stückliste und Revisionsstand. Ein geänderter Revisionsstand öffnet alle Teile. Bei gleichem Revisionsstand bleiben unveränderte Zeilen abgehakt.
+  </Step>
+  <Step title="Speichern Sie und prüfen Sie einen Arbeitsgang" icon="arrow-right" title-type="p">
+    Schließen Sie die übliche Importprüfung ab und speichern Sie. Öffnen Sie die Liste eines betroffenen Arbeitsgangs im Planer oder auf seiner BDE-Karte. Prüfen Sie Teile und Revisionsstand. Ein geänderter Import ersetzt eine von Hand bearbeitete Liste. Ein gegenüber dem vorherigen Import unveränderter Import erhält manuelle Änderungen und Haken.
+  </Step>
+</Steps>
+
+Leere Teilezellen einschließlich des Platzhalters „keine Daten vorhanden“ lassen Listen unverändert. Sie entfernen sie nicht und ändern auch ihren Revisionsstand nicht. Ein leerer oder nicht zugeordneter Revisionsstand übernimmt den des vorherigen Imports, sofern vorhanden. Siehe [Regeln für den Stücklistenimport](/de/platform-intro/pages/erp-upload-planner#parts-lists).
 
 ## Entscheidungspunkte
 

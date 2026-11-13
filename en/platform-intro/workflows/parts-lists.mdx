@@ -1,0 +1,81 @@
+---
+title: "Check and Maintain Parts Lists"
+description: "Fetch and tick parts for an operation, review earlier versions, or update the list as an Admin."
+---
+
+## Goal
+
+Use an operation’s parts list to check that its parts are ready. As an Admin, keep the list and revision up to date.
+
+## Before You Begin
+
+<Callout kind="info" title="Workflow access">
+- Admins, Users and Machine operators can view and tick parts wherever they have page and machine access.
+- Only Admins can add, edit or remove lists.
+- Start from the PDA page, a card’s notes panel in **Assignment Planner**, or an existing operation’s edit dialog reached through **Orders & Products**.
+</Callout>
+
+### Preconditions
+
+- The operation already exists.
+- To tick parts, it needs a list. An Admin can add one, or you can [include it in an order import](/en/platform-intro/workflows/order-upload-planner#parts-lists) if you have import access.
+- On the PDA page, the machine’s template must allow **Tick off parts in the parts list**.
+
+## Steps
+
+<Steps>
+  <Step title="Open the operation’s list" icon="arrow-right" title-type="p">
+    On the PDA card, choose **Parts list** to the left of the notes button. In the Planner, open the card’s notes panel. In order details, open the existing operation’s edit dialog and find **Parts list** below the other details.
+  </Step>
+  <Step title="Check the operation and revision" icon="arrow-right" title-type="p">
+    Make sure you are preparing parts for the right operation. Read the revision and date. **New** marks a replacement from the last 24 hours. If needed, use the arrows beside the version number to compare older lists, then return to the current version.
+  </Step>
+  <Step title="Fetch and tick the parts" icon="arrow-right" title-type="p">
+    Tap each part when it is ready. If all remaining parts are ready, choose **Tick all**. Ticked lines show who ticked them and when. Tap a ticked part to reopen it if needed. No separate save is needed for ticks.
+  </Step>
+  <Step title="Review what is still open" icon="arrow-right" title-type="p">
+    Check the progress count. The PDA button turns green when every part is ticked. Open parts never block production.
+  </Step>
+</Steps>
+
+<a id="edit-list" />
+
+## Add or Change the List as an Admin
+
+<Steps>
+  <Step title="Open list editing" icon="arrow-right" title-type="p">
+    In the Planner’s notes panel or the existing operation’s edit dialog, return to the current version. Choose **Edit**, or **Add** beside **No parts list**.
+  </Step>
+  <Step title="Enter parts and check the revision" icon="arrow-right" title-type="p">
+    Under **Parts (one per line)**, enter each part on its own line, up to 200 parts. Keep **Revision** unchanged unless a new drawing or parts-list state applies. Changing A0 to A1 opens every part again. With the same revision, exactly unchanged lines keep their ticks; new or changed lines are open. To remove the list, clear all part lines.
+  </Step>
+  <Step title="Save or discard the edit" icon="arrow-right" title-type="p">
+    Use the small **Save** in the section to save only the list and keep the panel open. Use the surrounding panel’s **Save** to save all edits and close. The red **Cancel** discards the list edit. Closing the panel discards any unsaved edits.
+  </Step>
+</Steps>
+
+## Decision Points
+
+- Need to compare an earlier list? Browse older versions; they are view-only.
+- Need lists for many operations? Use the [import workflow](/en/platform-intro/workflows/order-upload-planner#parts-lists).
+- Need to keep lists visible but prevent PDA ticks? An Admin can change [allowed actions in the machine template](/en/platform-intro/workflows/bde-access-templates).
+
+## Expected Result
+
+The current list shows the parts checked so far, with names and times. A saved list change creates a new version. Removing all lines removes the PDA button.
+
+## Common Problems and Edge Cases
+
+- **No button:** The operation may have no list. Pool cards and read-only completed cards never show it.
+- **Cannot tick:** Return from an older version to the current one. On the PDA page, ask an Admin to check the template’s ticking setting.
+- **Message “The parts list was updated.”:** Someone changed the list meanwhile; the current list is now shown. Check it before ticking again.
+- **List changed while you edited:** Your text stays. Compare it with **Current parts list** below, adjust it and save again.
+- **A tick or save failed:** Read the message and retry. A failed tick returns to its previous state; a failed save keeps your text. Reload if the operation or list no longer exists.
+- **Two machines share the ticks:** The list belongs to the operation, even when its work is split across machines.
+
+## Related Pages
+
+- [Parts Lists](/en/platform-intro/pages/parts-lists)
+- [PDA Page](/en/platform-intro/pages/data-acquisition)
+- [Assignment Planner](/en/platform-intro/pages/assignment-planner)
+- [Order Detail](/en/platform-intro/pages/order-detail)

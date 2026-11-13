@@ -39,6 +39,22 @@ Benutzer öffnen diese Seite über die geschützte ERP-Upload-Route.
 
 Spaltenüberschriften und Zeilenanzahl bleiben unverändert. Wenn Sie die Dateistruktur ändern müssen, korrigieren Sie die Quelldatei und laden Sie sie erneut hoch. Wenn Sie den Editor ohne Speichern schließen, werden ungespeicherte Korrekturen verworfen und die Originaldatei bleibt unverändert.
 
+<a id="parts-lists" />
+
+## Stücklisten je Arbeitsgang importieren
+
+Ordnen Sie unter **Spalten zuordnen → Felder des Arbeitsgangs** bei Bedarf je eine Quellspalte **Stückliste** und **Revisionsstand** zu. Eine Importzeile steht für einen Arbeitsgang, dessen Teile in einer Zelle stehen. Verwenden Sie innerhalb der Zelle ein Teil pro Zeile oder durch Komma getrennte Teile, etwa „48 St 277220 Distanzhülse, 96 St 014555 O-Ring DIN EN 549 B2/H3 D 11,00 x 2,00“. Das Komma in 11,00 bleibt Teil der O-Ring-Beschreibung. Enthalten Beschreibungen weitere Kommas, sind Zeilenumbrüche die eindeutigste Wahl. Nur die ersten 200 Teile einer Zelle werden importiert. Weitere Teile werden nicht importiert.
+
+Der Revisionsstand kommt üblicherweise aus dem Import, etwa aus der ERP-Spalte „Ref. Stand“. Eine Zelle mit „Ref.Stand: A0“ wird als A0 angezeigt.
+
+Eine geänderte Liste oder ein geänderter Revisionsstand erzeugt einen neuen Stand. Genau unveränderte Zeilen bleiben abgehakt, wenn der Revisionsstand gleich bleibt. Ein geänderter Revisionsstand öffnet alle Teile. Ein erneuter Import mit derselben Liste und demselben Revisionsstand wie beim vorherigen Import lässt manuelle Änderungen und Haken unverändert. Ein späterer geänderter Import wird zur aktuellen Liste und ersetzt manuelle Änderungen.
+
+Eine leere Teilezelle lässt die Liste unverändert, auch wenn ein Revisionsstand angegeben ist. Der Platzhalter „keine Daten vorhanden“, mit oder ohne umgebende Sternchen, gilt ebenfalls als leer. Zum Entfernen muss ein Admin die Liste von Hand leeren. Ein leerer oder nicht zugeordneter Revisionsstand übernimmt den des vorherigen Imports. Ohne vorherigen Import wird kein Revisionsstand übernommen.
+
+**Was dieser Import ändert** zeigt **Stücklisten**, wenn Listen angelegt oder aktualisiert werden. Die erste Liste eines Arbeitsgangs zählt unter **Neu**, ein neuer Stand einer bestehenden Liste unter **Aktualisiert**. Eine Änderung der **Stückliste** hebt die beiden zugeordneten Spalten in der Vorschau hervor.
+
+Um vorhandene Arbeit mit Listen zu ergänzen, importieren Sie Ihren aktuellen Auftragsexport erneut. Ordnen Sie die Teilespalte **Stückliste** und die Spalte „Ref. Stand“ **Revisionsstand** zu. Bestehende Notizen bleiben erhalten. Zuvor in Notizen gespeicherte Teile werden nicht automatisch kopiert. Folgen Sie [Stücklisten importieren](/de/platform-intro/workflows/order-upload-planner#parts-lists).
+
 ## Zeit- und Prioritätseinstellungen verstehen
 
 Zeitfelder können standardmäßig oder als Industrieminuten interpretiert werden. Wählen Sie die Konvention, die zu Ihren Quelldaten passt. Die Upload-Prüfung nennt die betroffene Zeile und erklärt, wann ein Zeitwert oder die Einstellung für Industrieminuten die Vorbereitungs- oder Produktionszeit verändert. Prüfen Sie diese Erläuterungen vor der Bestätigung.

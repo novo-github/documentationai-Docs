@@ -1,0 +1,73 @@
+---
+title: "Parts Lists"
+description: "Check the parts needed for an operation, understand revisions, and keep lists up to date."
+---
+
+## Overview
+
+**Access:** Admins, Users and Machine operators can view and tick parts wherever they have page and machine access. Only Admins can add, change or remove a list. A machine’s template can prevent ticking on its PDA page.
+
+Parts lists support paperless production: the raw parts and other parts a machine operator fetches for each operation appear on the PDA page instead of on a paper job ticket. You can tick off each part once the material is at the machine. Parts lists are available to every company in the Watchmen Platform. The list belongs to the operation: if work is split across two machines, both share the same list and ticks.
+
+## Where to Find the List
+
+- On the PDA page, open **Parts list** to the left of a card’s notes button. The button appears only when the operation has a list. Pool cards and read-only completed cards have no parts-list button.
+- In **Assignment Planner**, open the notes panel of a queue or unassigned-operation card. **Parts list** appears below the other details.
+- From **Orders & Products**, open an order, then use the existing operation’s edit icon. **Parts list** appears below its other details. It does not appear while adding a new operation.
+
+The Planner and order details show **No parts list** when none exists. Admins can choose **Add** there. There is no list-editing control on the PDA page, including for Admins.
+
+## What You Can See
+
+The PDA button counts open parts. When all parts are ticked, the count disappears and the icon turns green. Its small badge shows the revision, such as A0. For 24 hours after a new version replaces an earlier one, this badge is blue; without a revision, it shows **New** during that period.
+
+Inside the list, you see the parts, progress such as **3 of 5 ticked off**, and the revision with the version’s date and time. Ticked parts are crossed out and show the person’s name, date and time. A recent replacement is marked **New**. A changed revision is shown as, for example, **Revision A0 → A1**.
+
+When several versions exist, the arrows beside **Version 2 / 3**, for example, let you view older or newer versions. Older versions are view-only: you cannot tick parts or edit them. Return to the current version to make changes.
+
+## Tick Parts Off or Open Them Again
+
+Tap a part after fetching it. Tap it again to remove the tick. Anyone who can tick parts can also undo another person’s tick. **Tick all** ticks every open part of the current version; parts already ticked keep their original name and time.
+
+Ticking is optional. Open parts never prevent starting or completing production. You can also tick parts in the Planner and order details wherever you have access. Follow [check and maintain parts lists](/en/platform-intro/workflows/parts-lists).
+
+## Versions and Revisions
+
+A saved change to the list or revision creates a new version, whether you edit by hand or import it. Saving identical contents changes nothing. The **Revision**, such as A0, identifies the drawing or parts-list state and does not increase automatically when you edit. The revision usually comes from the import, for example from the ERP column “Ref. Stand”. A cell containing “Ref.Stand: A0” is shown as A0.
+
+| Change | What happens to the ticks |
+| --- | --- |
+| List changes, revision stays the same | Exactly unchanged lines keep their ticks, names and times. New or changed lines start open. |
+| Revision changes, for example A0 to A1 | All parts start open and must be checked again. |
+| Nothing changes | The current list and ticks stay as they are. |
+
+For example, adding an O-ring line with revision A0 leaves an unchanged, ticked spacer line ticked. Saving revision A1 opens both lines again. Change the revision only when a new drawing or parts-list state applies. The information icons beside **Parts list** and **Revision** explain these rules.
+
+## Add, Edit or Remove a List
+
+Admins choose **Add** or **Edit** in the Planner’s notes panel or the operation’s edit dialog. Enter one part per line under **Parts (one per line)** and review **Revision**. You can enter at most 200 parts.
+
+- The small **Save** within the parts-list section saves only the list and keeps the surrounding panel open.
+- The surrounding panel’s **Save** saves the list with the other edits and closes the panel.
+- The red **Cancel** leaves parts-list editing without saving its changes. Closing the panel also discards unsaved edits.
+
+To remove the list, clear every part line and save. Its PDA button disappears. If a save fails, your text stays available and the panel stays open. If someone changed the list while you were editing, compare your text with **Current parts list** below it, adjust it if needed, then save again.
+
+## Import Lists and Control PDA Ticking
+
+In the order import, map **Parts list** and optionally **Revision**. A changed import can replace a manually edited list. Repeating the same imported list and revision leaves manual edits and ticks untouched. Blank parts cells leave existing lists alone. See [import behaviour and examples](/en/platform-intro/pages/erp-upload-planner#parts-lists).
+
+Admins can open **Admin Panel → BDE access templates** and switch off **Tick off parts in the parts list** under **Allowed on the BDE page**. Everyone on the selected machines’ PDA pages can still read the list, but cannot tick or reopen parts; **Tick all** is unavailable. Ticking in the Planner and order details is unaffected. See [template settings](/en/platform-intro/pages/bde-access-templates#allowed-actions).
+
+## Related Pages
+
+- [PDA Page](/en/platform-intro/pages/data-acquisition)
+- [Assignment Planner](/en/platform-intro/pages/assignment-planner)
+- [Order Detail](/en/platform-intro/pages/order-detail)
+- [Parts-list Questions](/en/help-center/faq/planning-and-imports#parts-list-missing)
+
+## Related Workflows
+
+- [Check and Maintain Parts Lists](/en/platform-intro/workflows/parts-lists)
+- [Upload Orders Through the ERP Planner](/en/platform-intro/workflows/order-upload-planner)
+- [Set Shared PDA Settings](/en/platform-intro/workflows/bde-access-templates)

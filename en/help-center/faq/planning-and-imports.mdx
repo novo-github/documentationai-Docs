@@ -125,6 +125,15 @@ description: "Find answers about operation priorities, planning dates, grouping,
 | How do I find an order in Gantt without searching every machine? | [Answer](/en/help-center/faq/planning-and-imports#gantt-find-order) |
 | Why did going to a machine replace another one or leave the order view? | [Answer](/en/help-center/faq/planning-and-imports#gantt-find-machine) |
 | Can I find a product if I only know its name? | [Answer](/en/help-center/faq/planning-and-imports#product-name-search) |
+| Why is there no parts-list button on my PDA card? | [Answer](/en/help-center/faq/planning-and-imports#parts-list-missing) |
+| Why can I read the parts list but not tick it? | [Answer](/en/help-center/faq/planning-and-imports#parts-list-ticking) |
+| Do I have to tick every part before starting production? | [Answer](/en/help-center/faq/planning-and-imports#parts-list-required) |
+| Who can change or remove a parts list? | [Answer](/en/help-center/faq/planning-and-imports#parts-list-edit) |
+| Which Save should I use for my parts list? | [Answer](/en/help-center/faq/planning-and-imports#parts-list-save) |
+| Why are parts open again after the list changed? | [Answer](/en/help-center/faq/planning-and-imports#parts-list-revision) |
+| Does editing a parts list change its revision? | [Answer](/en/help-center/faq/planning-and-imports#parts-list-edit-revision) |
+| What does the blue revision badge mean, and can I see the old list? | [Answer](/en/help-center/faq/planning-and-imports#parts-list-history) |
+| Will another import overwrite my list or clear its ticks? | [Answer](/en/help-center/faq/planning-and-imports#parts-list-reimport) |
 
 <a id="operation-priority" />
 
@@ -878,3 +887,57 @@ Press Ctrl+F (⌘F on a Mac), type the order, and choose **Show route**. Its mac
 ## Can I find a product if I only know its name?
 
 Yes. Search by name or number in Find box product suggestions, the Orders & Products product filter, when choosing a product for a work order in the new-order dialog opened from the Admin Panel and on the order’s detail page (Order Management), in the immediate order dialog on the PDA page, and the Admin Panel’s product table. For example, “flan” can find Flansch DN50. See [product search](/en/platform-intro/pages/search-and-filter#product-search).
+
+<a id="parts-list-missing" />
+
+## Why is there no parts-list button on my PDA card?
+
+The button appears only when the operation has a list. Pool cards and read-only completed cards never show it. An Admin can add a list in the Planner or order details. Parts stored in old notes are not copied automatically; include them in an order import. See [Parts Lists](/en/platform-intro/pages/parts-lists).
+
+<a id="parts-list-ticking" />
+
+## Why can I read the parts list but not tick it?
+
+Older versions are view-only; use the arrows to return to the current version. On the PDA page, an Admin may also have switched off **Tick off parts in the parts list** in the machine’s template. This blocks ticks and reopening there for everyone. Ticking in the Planner and order details remains possible with the required access. See [template settings](/en/platform-intro/pages/bde-access-templates#allowed-actions).
+
+<a id="parts-list-required" />
+
+## Do I have to tick every part before starting production?
+
+No. Ticking is optional and never blocks production. It records which parts are ready. Tap parts individually, or choose **Tick all** when all remaining parts are ready. Tap a ticked part again to reopen it. Follow [check parts](/en/platform-intro/workflows/parts-lists).
+
+<a id="parts-list-edit" />
+
+## Who can change or remove a parts list?
+
+Only Admins can change its contents. In the Planner’s card notes panel or an existing operation’s edit dialog, choose **Add** or **Edit**. Enter one part per line, up to 200 parts, and review **Revision**. Clear every part line and save to remove the list and its PDA button. Follow [edit a list](/en/platform-intro/workflows/parts-lists#edit-list).
+
+<a id="parts-list-save" />
+
+## Which Save should I use for my parts list?
+
+The small **Save** in the parts-list section saves only that list and keeps the panel open. The surrounding panel’s **Save** saves all edits and closes it. The red **Cancel** discards the list edit. If another person changed the list meanwhile, your text stays; compare it with **Current parts list** below and save again. See [how to edit a list](/en/platform-intro/workflows/parts-lists#edit-list).
+
+<a id="parts-list-revision" />
+
+## Why are parts open again after the list changed?
+
+A changed revision, such as A0 to A1, opens every part for checking again. If the revision stays the same, exactly unchanged lines keep their ticks, names and times; new or changed lines start open. Editing does not raise the revision automatically. See [versions and revisions](/en/platform-intro/pages/parts-lists#versions-and-revisions).
+
+<a id="parts-list-edit-revision" />
+
+## Does editing a parts list change its revision?
+
+No. **Revision** keeps its current value. Change it only when a new drawing or parts-list state applies, such as A0 → A1. Then all parts are open again. Each saved change still creates a new version you can browse with ‹ ›. See [how to edit a list](/en/platform-intro/workflows/parts-lists#edit-list).
+
+<a id="parts-list-history" />
+
+## What does the blue revision badge mean, and can I see the old list?
+
+The PDA button’s revision badge is blue for 24 hours after a new version replaces an earlier one. Without a revision, it shows **New** during that time. Open the list and use the arrows beside the version number to view earlier versions. These are view-only. See [what the list shows](/en/platform-intro/pages/parts-lists#what-you-can-see).
+
+<a id="parts-list-reimport" />
+
+## Will another import overwrite my list or clear its ticks?
+
+Repeating the previous imported list and revision leaves manual edits and ticks intact. A changed import replaces the current list. With the same revision, unchanged lines keep their ticks; a new revision opens all parts. Blank parts cells leave lists alone, and a blank revision keeps the previous import’s revision, if any. See [import rules](/en/platform-intro/pages/erp-upload-planner#parts-lists).

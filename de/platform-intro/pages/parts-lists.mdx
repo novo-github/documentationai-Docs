@@ -1,0 +1,73 @@
+---
+title: "Stücklisten"
+description: "Prüfen Sie benötigte Teile je Arbeitsgang, verstehen Sie Revisionsstände und halten Sie Listen aktuell."
+---
+
+## Überblick
+
+**Zugriff:** Admins, Benutzer und Maschinenbediener können Teile überall dort ansehen und abhaken, wo sie Seiten- und Maschinenzugriff haben. Nur Admins können Listen anlegen, ändern oder entfernen. Eine Maschinenvorlage kann das Abhaken auf der BDE-Seite sperren.
+
+Stücklisten unterstützen die papierlose Fertigung: Die Rohteile und weiteren Teile, die ein Maschinenbediener für jeden Arbeitsgang holt, stehen auf der BDE-Seite statt auf den Werkstattpapieren. Sie können jedes Teil abhaken, sobald das Material an der Maschine liegt. Stücklisten stehen jedem Unternehmen in der Watchmen-Plattform zur Verfügung. Die Liste gehört zum Arbeitsgang: Ist die Arbeit auf zwei Maschinen verteilt, teilen beide dieselbe Liste und dieselben Haken.
+
+## Wo Sie die Liste finden
+
+- Öffnen Sie auf der BDE-Seite **Stückliste** links neben der Notizschaltfläche einer Karte. Die Schaltfläche erscheint nur, wenn der Arbeitsgang eine Liste hat. Pool-Karten und nur lesbare abgeschlossene Karten haben keine Stücklistenschaltfläche.
+- Öffnen Sie im **Zuweisungsplaner** den Notizbereich einer Karte in einer Warteschlange oder bei den ungeplanten Arbeitsgängen. **Stückliste** steht unter den übrigen Angaben.
+- Öffnen Sie unter **Aufträge & Produkte** einen Auftrag und wählen Sie das Bearbeitungssymbol eines bestehenden Arbeitsgangs. **Stückliste** steht unter dessen übrigen Angaben. Beim Anlegen eines neuen Arbeitsgangs erscheint sie nicht.
+
+Im Planer und in den Auftragsdetails steht **Keine Stückliste**, wenn noch keine vorhanden ist. Admins können dort **Hinzufügen** wählen. Auf der BDE-Seite gibt es keine Möglichkeit, die Liste zu bearbeiten, auch nicht für Admins.
+
+## Was Sie sehen können
+
+Die BDE-Schaltfläche zählt offene Teile. Sind alle abgehakt, verschwindet die Zahl und das Symbol wird grün. Die kleine Kennzeichnung zeigt den Revisionsstand, etwa A0. Nach dem Ersetzen eines früheren Stands bleibt sie 24 Stunden lang blau. Ohne Revisionsstand zeigt sie in dieser Zeit **Neu**.
+
+In der Liste sehen Sie die Teile, den Fortschritt wie **3 von 5 abgehakt** und den Revisionsstand mit Datum und Uhrzeit des Stands. Abgehakte Teile sind durchgestrichen und zeigen Name, Datum und Uhrzeit. Ein kürzlich ersetzter Stand trägt **Neu**. Ein geänderter Revisionsstand erscheint beispielsweise als **Revisionsstand A0 → A1**.
+
+Gibt es mehrere Stände, können Sie mit den Pfeilen neben beispielsweise **Stand 2 / 3** frühere oder neuere Stände ansehen. Frühere Stände sind nur lesbar: Sie können dort weder Teile abhaken noch die Liste bearbeiten. Kehren Sie für Änderungen zum aktuellen Stand zurück.
+
+## Teile abhaken oder wieder öffnen
+
+Tippen Sie ein Teil an, nachdem Sie es geholt haben. Erneutes Antippen entfernt den Haken. Wer Teile abhaken darf, kann auch den Haken einer anderen Person entfernen. **Alle abhaken** hakt jedes offene Teil des aktuellen Stands ab. Bereits abgehakte Teile behalten den ursprünglichen Namen und die ursprüngliche Zeit.
+
+Das Abhaken ist freiwillig. Offene Teile verhindern weder den Produktionsstart noch den Abschluss. Sie können Teile auch im Planer und in den Auftragsdetails abhaken, soweit Sie dort Zugriff haben. Folgen Sie [Stücklisten prüfen und pflegen](/de/platform-intro/workflows/parts-lists).
+
+## Stände und Revisionsstände
+
+Eine gespeicherte Änderung an Liste oder Revisionsstand erzeugt einen neuen Stand, ob von Hand oder per Import. Das Speichern identischer Inhalte ändert nichts. Der **Revisionsstand**, etwa A0, bezeichnet den Zeichnungs- oder Stücklistenstand und erhöht sich beim Bearbeiten nicht automatisch. Der Revisionsstand kommt üblicherweise aus dem Import, etwa aus der ERP-Spalte „Ref. Stand“. Eine Zelle mit „Ref.Stand: A0“ wird als A0 angezeigt.
+
+| Änderung | Wirkung auf die Haken |
+| --- | --- |
+| Liste ändert sich, Revisionsstand bleibt gleich | Genau unveränderte Zeilen behalten Haken, Namen und Zeiten. Neue oder geänderte Zeilen sind offen. |
+| Revisionsstand ändert sich, etwa von A0 auf A1 | Alle Teile sind offen und müssen erneut geprüft werden. |
+| Nichts ändert sich | Die aktuelle Liste und ihre Haken bleiben erhalten. |
+
+Wenn Sie beispielsweise bei Revisionsstand A0 eine O-Ring-Zeile ergänzen, bleibt eine unveränderte, abgehakte Distanzhülsen-Zeile abgehakt. Speichern Sie Revisionsstand A1, sind beide Zeilen wieder offen. Ändern Sie den Revisionsstand nur, wenn ein neuer Zeichnungs- oder Stücklistenstand gilt. Die Informationssymbole neben **Stückliste** und **Revisionsstand** erklären diese Regeln.
+
+## Liste anlegen, bearbeiten oder entfernen
+
+Admins wählen **Hinzufügen** oder **Bearbeiten** im Notizbereich des Planers oder im Bearbeitungsfenster des Arbeitsgangs. Tragen Sie unter **Teile (eins pro Zeile)** jedes Teil in eine eigene Zeile ein und prüfen Sie **Revisionsstand**. Sie können höchstens 200 Teile eintragen.
+
+- Das kleine **Speichern** im Stücklistenbereich speichert nur die Liste und lässt das umgebende Fenster offen.
+- **Speichern** im umgebenden Fenster speichert die Liste zusammen mit den übrigen Änderungen und schließt das Fenster.
+- Das rote **Abbrechen** beendet die Stücklistenbearbeitung ohne Speichern der Änderungen. Auch das Schließen des Fensters verwirft ungespeicherte Änderungen.
+
+Um die Liste zu entfernen, leeren Sie alle Teilezeilen und speichern Sie. Ihre BDE-Schaltfläche verschwindet. Schlägt das Speichern fehl, bleiben Ihr Text und das Fenster erhalten. Hat jemand die Liste inzwischen geändert, vergleichen Sie Ihren Text mit **Aktuelle Stückliste** darunter. Passen Sie ihn bei Bedarf an und speichern Sie erneut.
+
+## Listen importieren und Abhaken auf der BDE-Seite steuern
+
+Ordnen Sie beim Auftragsimport **Stückliste** und optional **Revisionsstand** zu. Ein geänderter Import kann eine von Hand bearbeitete Liste ersetzen. Das Wiederholen derselben importierten Liste mit demselben Revisionsstand lässt manuelle Änderungen und Haken unverändert. Leere Teilezellen lassen bestehende Listen unverändert. Siehe [Importverhalten und Beispiele](/de/platform-intro/pages/erp-upload-planner#parts-lists).
+
+Admins können unter **Admin-Panel → BDE-Zugriffsvorlagen** die Aktion **Teile der Stückliste abhaken** unter **Auf der BDE-Seite erlaubt** ausschalten. Auf den BDE-Seiten der ausgewählten Maschinen können alle die Liste weiterhin lesen, aber Teile weder abhaken noch wieder öffnen. **Alle abhaken** ist nicht verfügbar. Im Planer und in den Auftragsdetails bleibt das Abhaken möglich. Siehe [Vorlageneinstellungen](/de/platform-intro/pages/bde-access-templates#erlaubte-aktionen).
+
+## Verwandte Seiten
+
+- [BDE-Seite](/de/platform-intro/pages/data-acquisition)
+- [Zuweisungsplaner](/de/platform-intro/pages/assignment-planner)
+- [Auftragsdetails](/de/platform-intro/pages/order-detail)
+- [Fragen zu Stücklisten](/de/help-center/faq/planning-and-imports#parts-list-missing)
+
+## Verwandte Abläufe
+
+- [Stücklisten prüfen und pflegen](/de/platform-intro/workflows/parts-lists)
+- [Aufträge über den ERP-Upload-Planer hochladen](/de/platform-intro/workflows/order-upload-planner)
+- [Gemeinsame BDE-Einstellungen festlegen](/de/platform-intro/workflows/bde-access-templates)

@@ -276,6 +276,11 @@
                             "icon": "file-text"
                           },
                           {
+                            "title": "Parts Lists",
+                            "path": "en/platform-intro/pages/parts-lists",
+                            "icon": "file-text"
+                          },
+                          {
                             "title": "Machine Configuration",
                             "path": "en/platform-intro/pages/machine-configuration",
                             "icon": "file-text"
@@ -345,6 +350,11 @@
                           {
                             "title": "Run Data Acquisition (PDA)",
                             "path": "en/platform-intro/workflows/data-acquisition",
+                            "icon": "play-circle"
+                          },
+                          {
+                            "title": "Check and Maintain Parts Lists",
+                            "path": "en/platform-intro/workflows/parts-lists",
                             "icon": "play-circle"
                           },
                           {
@@ -853,6 +863,11 @@
                             "icon": "file-text"
                           },
                           {
+                            "title": "Stücklisten",
+                            "path": "de/platform-intro/pages/parts-lists",
+                            "icon": "file-text"
+                          },
+                          {
                             "title": "Maschinenkonfiguration",
                             "path": "de/platform-intro/pages/machine-configuration",
                             "icon": "file-text"
@@ -922,6 +937,11 @@
                           {
                             "title": "Betriebsdatenerfassung (BDE) durchführen",
                             "path": "de/platform-intro/workflows/data-acquisition",
+                            "icon": "play-circle"
+                          },
+                          {
+                            "title": "Stücklisten prüfen und pflegen",
+                            "path": "de/platform-intro/workflows/parts-lists",
                             "icon": "play-circle"
                           },
                           {

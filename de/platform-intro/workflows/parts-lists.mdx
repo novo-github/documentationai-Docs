@@ -1,0 +1,81 @@
+---
+title: "Stücklisten prüfen und pflegen"
+description: "Holen Sie Teile für einen Arbeitsgang, haken Sie sie ab, prüfen Sie frühere Stände oder ändern Sie die Liste als Admin."
+---
+
+## Ziel
+
+Prüfen Sie anhand der Stückliste, ob die Teile für einen Arbeitsgang bereitliegen. Halten Sie als Admin die Liste und ihren Revisionsstand aktuell.
+
+## Bevor Sie beginnen
+
+<Callout kind="info" title="Ablaufzugriff">
+- Admins, Benutzer und Maschinenbediener können Teile überall dort ansehen und abhaken, wo sie Seiten- und Maschinenzugriff haben.
+- Nur Admins können Listen anlegen, bearbeiten oder entfernen.
+- Beginnen Sie auf der BDE-Seite, im Notizbereich einer Karte im **Zuweisungsplaner** oder im Bearbeitungsfenster eines bestehenden Arbeitsgangs über **Aufträge & Produkte**.
+</Callout>
+
+### Voraussetzungen
+
+- Der Arbeitsgang ist bereits angelegt.
+- Zum Abhaken braucht er eine Liste. Ein Admin kann sie anlegen. Mit Importzugriff können Sie sie auch [beim Auftragsimport ergänzen](/de/platform-intro/workflows/order-upload-planner#parts-lists).
+- Auf der BDE-Seite muss die Maschinenvorlage **Teile der Stückliste abhaken** erlauben.
+
+## Schritte
+
+<Steps>
+  <Step title="Öffnen Sie die Liste des Arbeitsgangs" icon="arrow-right" title-type="p">
+    Wählen Sie auf der BDE-Karte **Stückliste** links neben der Notizschaltfläche. Öffnen Sie im Planer den Notizbereich der Karte. Öffnen Sie in den Auftragsdetails das Bearbeitungsfenster des bestehenden Arbeitsgangs. **Stückliste** steht dort unter den übrigen Angaben.
+  </Step>
+  <Step title="Prüfen Sie Arbeitsgang und Revisionsstand" icon="arrow-right" title-type="p">
+    Stellen Sie sicher, dass Sie Teile für den richtigen Arbeitsgang vorbereiten. Lesen Sie Revisionsstand und Datum. **Neu** kennzeichnet einen innerhalb der letzten 24 Stunden ersetzten Stand. Vergleichen Sie bei Bedarf frühere Listen mit den Pfeilen neben der Standnummer. Kehren Sie danach zum aktuellen Stand zurück.
+  </Step>
+  <Step title="Holen Sie die Teile und haken Sie sie ab" icon="arrow-right" title-type="p">
+    Tippen Sie jedes Teil an, sobald es bereitliegt. Sind alle übrigen Teile bereit, wählen Sie **Alle abhaken**. Abgehakte Zeilen zeigen, wer sie wann abgehakt hat. Tippen Sie ein abgehaktes Teil bei Bedarf erneut an, um es wieder zu öffnen. Die Haken müssen Sie nicht gesondert speichern.
+  </Step>
+  <Step title="Prüfen Sie die noch offenen Teile" icon="arrow-right" title-type="p">
+    Lesen Sie die Fortschrittsanzeige. Die BDE-Schaltfläche wird grün, wenn alle Teile abgehakt sind. Offene Teile blockieren die Produktion nie.
+  </Step>
+</Steps>
+
+<a id="edit-list" />
+
+## Liste als Admin anlegen oder ändern
+
+<Steps>
+  <Step title="Öffnen Sie die Listenbearbeitung" icon="arrow-right" title-type="p">
+    Kehren Sie im Notizbereich des Planers oder im Bearbeitungsfenster des bestehenden Arbeitsgangs zum aktuellen Stand zurück. Wählen Sie **Bearbeiten** oder **Hinzufügen** neben **Keine Stückliste**.
+  </Step>
+  <Step title="Tragen Sie Teile ein und prüfen Sie den Revisionsstand" icon="arrow-right" title-type="p">
+    Tragen Sie unter **Teile (eins pro Zeile)** jedes Teil in eine eigene Zeile ein, höchstens 200 Teile. Lassen Sie **Revisionsstand** unverändert, solange kein neuer Zeichnungs- oder Stücklistenstand gilt. Ein Wechsel von A0 auf A1 öffnet alle Teile. Bei gleichem Revisionsstand bleiben genau unveränderte Zeilen abgehakt; neue oder geänderte Zeilen sind offen. Um die Liste zu entfernen, leeren Sie alle Teilezeilen.
+  </Step>
+  <Step title="Speichern oder verwerfen Sie die Änderung" icon="arrow-right" title-type="p">
+    Mit dem kleinen **Speichern** im Stücklistenbereich speichern Sie nur die Liste und lassen das Fenster offen. **Speichern** im umgebenden Fenster speichert alle Änderungen und schließt es. Das rote **Abbrechen** verwirft die Listenänderung. Das Schließen des Fensters verwirft alle ungespeicherten Änderungen.
+  </Step>
+</Steps>
+
+## Entscheidungspunkte
+
+- Möchten Sie eine frühere Liste vergleichen? Blättern Sie durch die früheren Stände. Diese sind nur lesbar.
+- Benötigen Sie Listen für viele Arbeitsgänge? Nutzen Sie den [Importablauf](/de/platform-intro/workflows/order-upload-planner#parts-lists).
+- Sollen Listen sichtbar bleiben, aber auf der BDE-Seite nicht abhakbar sein? Ein Admin kann die [erlaubten Aktionen der Maschinenvorlage ändern](/de/platform-intro/workflows/bde-access-templates).
+
+## Erwartetes Ergebnis
+
+Die aktuelle Liste zeigt die bisher geprüften Teile mit Namen und Zeiten. Eine gespeicherte Listenänderung erzeugt einen neuen Stand. Das Entfernen aller Zeilen entfernt die BDE-Schaltfläche.
+
+## Häufige Probleme und Sonderfälle
+
+- **Keine Schaltfläche:** Der Arbeitsgang hat möglicherweise keine Liste. Pool-Karten und nur lesbare abgeschlossene Karten zeigen sie nie.
+- **Abhaken nicht möglich:** Kehren Sie von einem früheren zum aktuellen Stand zurück. Bitten Sie auf der BDE-Seite einen Admin, die Einstellung zum Abhaken in der Vorlage zu prüfen.
+- **Meldung „Die Stückliste wurde aktualisiert.“:** Jemand hat die Liste inzwischen geändert. Sie sehen jetzt die aktuelle Liste. Prüfen Sie diese, bevor Sie erneut abhaken.
+- **Liste während Ihrer Bearbeitung geändert:** Ihr Text bleibt erhalten. Vergleichen Sie ihn mit **Aktuelle Stückliste** darunter, passen Sie ihn an und speichern Sie erneut.
+- **Abhaken oder Speichern fehlgeschlagen:** Lesen Sie die Meldung und versuchen Sie es erneut. Ein nicht gespeicherter Haken kehrt zum vorherigen Zustand zurück. Beim fehlgeschlagenen Speichern bleibt Ihr Text erhalten. Laden Sie die Seite neu, wenn Arbeitsgang oder Liste nicht mehr vorhanden sind.
+- **Zwei Maschinen teilen dieselben Haken:** Die Liste gehört zum Arbeitsgang, auch wenn seine Arbeit auf Maschinen verteilt ist.
+
+## Verwandte Seiten
+
+- [Stücklisten](/de/platform-intro/pages/parts-lists)
+- [BDE-Seite](/de/platform-intro/pages/data-acquisition)
+- [Zuweisungsplaner](/de/platform-intro/pages/assignment-planner)
+- [Auftragsdetails](/de/platform-intro/pages/order-detail)

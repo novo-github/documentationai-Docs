@@ -39,6 +39,22 @@ Select **Expand to edit** in the file preview to open the full file view. You ca
 
 Column headings and row counts stay fixed. To change the file structure, correct the source spreadsheet and upload it again. Closing the editor without saving discards unsaved corrections and leaves the original file unchanged.
 
+<a id="parts-lists" />
+
+## Import Parts Lists per Operation
+
+In **Map Columns → Operation Fields**, optionally map one source column to **Parts list** and one to **Revision**. One import row represents one operation, with its parts in one cell. Use one part per line within the cell, or comma-separated parts such as “48 St 277220 Distanzhülse, 96 St 014555 O-Ring DIN EN 549 B2/H3 D 11,00 x 2,00”. The comma in 11,00 stays part of the O-ring description. Line breaks are the clearest choice when descriptions also contain commas. Only the first 200 parts in a cell are imported. Further parts are left out.
+
+The revision usually comes from the import, for example from the ERP column “Ref. Stand”. A cell containing “Ref.Stand: A0” is shown as A0.
+
+A changed list or revision creates a new version. Exactly unchanged lines keep their ticks when the revision stays the same. A changed revision opens all parts again. A repeat import with the same list and revision as the previous import leaves manual edits and ticks alone. A later changed import becomes the current list, replacing manual edits.
+
+A blank parts cell leaves the list alone, even if a revision is supplied. The placeholder “keine Daten vorhanden”, with or without surrounding asterisks, also counts as empty. To remove a list, an Admin must clear it by hand. A blank or unmapped revision keeps the revision from the previous import; without a previous import, no revision is supplied.
+
+**What this import will change** shows **Parts lists** when lists will be created or updated. A first list for an operation is counted under **New**, a new version of an existing list under **Updated**. A **Parts list** change highlights the two mapped columns in the preview.
+
+To add lists to existing work, re-import your current order export with the parts column mapped to **Parts list** and the “Ref. Stand” column to **Revision**. Existing notes stay as they are; parts previously stored in notes are not copied automatically. Follow [import parts lists](/en/platform-intro/workflows/order-upload-planner#parts-lists).
+
 ## Understand Time and Priority Settings
 
 Time fields can use standard or industrial-minute interpretation. Choose the convention that matches your source data. The upload review identifies the affected row and explains when a time value or the **Industrial minutes** setting changes preparation or production time. Check these explanations before confirming the import.

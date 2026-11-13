@@ -125,6 +125,15 @@ description: "Antworten zu Arbeitsgangprioritäten, Planungsterminen, Gruppierun
 | Wie finde ich einen Auftrag im Gantt, ohne jede Maschine zu durchsuchen? | [Antwort](/de/help-center/faq/planning-and-imports#gantt-find-order) |
 | Warum ersetzt der Sprung zu einer Maschine eine andere oder verlässt die Auftragsansicht? | [Antwort](/de/help-center/faq/planning-and-imports#gantt-find-machine) |
 | Kann ich ein Produkt finden, wenn ich nur seinen Namen kenne? | [Antwort](/de/help-center/faq/planning-and-imports#product-name-search) |
+| Warum fehlt die Stücklistenschaltfläche auf meiner BDE-Karte? | [Antwort](/de/help-center/faq/planning-and-imports#parts-list-missing) |
+| Warum kann ich die Stückliste lesen, aber nicht abhaken? | [Antwort](/de/help-center/faq/planning-and-imports#parts-list-ticking) |
+| Muss ich vor dem Produktionsstart alle Teile abhaken? | [Antwort](/de/help-center/faq/planning-and-imports#parts-list-required) |
+| Wer kann eine Stückliste ändern oder entfernen? | [Antwort](/de/help-center/faq/planning-and-imports#parts-list-edit) |
+| Welches Speichern verwende ich für meine Stückliste? | [Antwort](/de/help-center/faq/planning-and-imports#parts-list-save) |
+| Warum sind Teile nach einer Listenänderung wieder offen? | [Antwort](/de/help-center/faq/planning-and-imports#parts-list-revision) |
+| Ändert das Bearbeiten einer Stückliste den Revisionsstand? | [Antwort](/de/help-center/faq/planning-and-imports#parts-list-edit-revision) |
+| Was bedeutet der blaue Revisionsstand und kann ich die alte Liste sehen? | [Antwort](/de/help-center/faq/planning-and-imports#parts-list-history) |
+| Überschreibt ein erneuter Import meine Liste oder entfernt er ihre Haken? | [Antwort](/de/help-center/faq/planning-and-imports#parts-list-reimport) |
 
 <a id="operation-priority" />
 
@@ -872,3 +881,57 @@ Drücken Sie Strg+F (⌘F auf dem Mac), tippen Sie den Auftrag und wählen Sie *
 ## Kann ich ein Produkt finden, wenn ich nur seinen Namen kenne?
 
 Ja. Suchen Sie nach Name oder Nummer in Produktvorschlägen des Suchfensters, im Produktfilter von Aufträge & Produkte, bei der Produktauswahl für einen Arbeitsauftrag im Dialog für neue Aufträge aus dem Admin-Panel und auf der Detailseite eines Auftrags (Auftragsverwaltung), im Dialog **Sofortauftrag finden/erstellen** auf der BDE-Seite und in der Produkttabelle im Admin-Panel. „flan“ findet beispielsweise Flansch DN50. Siehe [Produktsuche](/de/platform-intro/pages/search-and-filter#product-search).
+
+<a id="parts-list-missing" />
+
+## Warum fehlt die Stücklistenschaltfläche auf meiner BDE-Karte?
+
+Die Schaltfläche erscheint nur, wenn der Arbeitsgang eine Liste hat. Pool-Karten und nur lesbare abgeschlossene Karten zeigen sie nie. Ein Admin kann eine Liste im Planer oder in den Auftragsdetails anlegen. Teile aus alten Notizen werden nicht automatisch kopiert. Ergänzen Sie sie beim Auftragsimport. Siehe [Stücklisten](/de/platform-intro/pages/parts-lists).
+
+<a id="parts-list-ticking" />
+
+## Warum kann ich die Stückliste lesen, aber nicht abhaken?
+
+Frühere Stände sind nur lesbar. Kehren Sie mit den Pfeilen zum aktuellen Stand zurück. Auf der BDE-Seite kann ein Admin außerdem **Teile der Stückliste abhaken** in der Maschinenvorlage ausgeschaltet haben. Das sperrt dort Abhaken und Wiederöffnen für alle. Mit dem nötigen Zugriff bleibt beides im Planer und in den Auftragsdetails möglich. Siehe [Vorlageneinstellungen](/de/platform-intro/pages/bde-access-templates#erlaubte-aktionen).
+
+<a id="parts-list-required" />
+
+## Muss ich vor dem Produktionsstart alle Teile abhaken?
+
+Nein. Das Abhaken ist freiwillig und blockiert die Produktion nie. Es hält fest, welche Teile bereitliegen. Tippen Sie Teile einzeln an oder wählen Sie **Alle abhaken**, wenn alle übrigen Teile bereit sind. Erneutes Antippen eines abgehakten Teils öffnet es wieder. Folgen Sie [Teile prüfen](/de/platform-intro/workflows/parts-lists).
+
+<a id="parts-list-edit" />
+
+## Wer kann eine Stückliste ändern oder entfernen?
+
+Nur Admins können den Inhalt ändern. Wählen Sie im Notizbereich einer Planerkarte oder im Bearbeitungsfenster eines bestehenden Arbeitsgangs **Hinzufügen** oder **Bearbeiten**. Tragen Sie höchstens 200 Teile ein, eins pro Zeile, und prüfen Sie **Revisionsstand**. Leeren Sie alle Teilezeilen und speichern Sie, um Liste und BDE-Schaltfläche zu entfernen. Folgen Sie [Liste bearbeiten](/de/platform-intro/workflows/parts-lists#edit-list).
+
+<a id="parts-list-save" />
+
+## Welches Speichern verwende ich für meine Stückliste?
+
+Das kleine **Speichern** im Stücklistenbereich speichert nur die Liste und lässt das Fenster offen. **Speichern** im umgebenden Fenster speichert alle Änderungen und schließt es. Das rote **Abbrechen** verwirft die Listenänderung. Hat eine andere Person die Liste inzwischen geändert, bleibt Ihr Text erhalten. Vergleichen Sie ihn mit **Aktuelle Stückliste** darunter und speichern Sie erneut. Siehe [Liste bearbeiten](/de/platform-intro/workflows/parts-lists#edit-list).
+
+<a id="parts-list-revision" />
+
+## Warum sind Teile nach einer Listenänderung wieder offen?
+
+Ein geänderter Revisionsstand, etwa A0 auf A1, öffnet alle Teile zur erneuten Prüfung. Bleibt der Revisionsstand gleich, behalten genau unveränderte Zeilen ihre Haken, Namen und Zeiten. Neue oder geänderte Zeilen sind offen. Beim Bearbeiten erhöht sich der Revisionsstand nicht automatisch. Siehe [Stände und Revisionsstände](/de/platform-intro/pages/parts-lists#stände-und-revisionsstände).
+
+<a id="parts-list-edit-revision" />
+
+## Ändert das Bearbeiten einer Stückliste den Revisionsstand?
+
+Nein. **Revisionsstand** behält den aktuellen Wert. Ändern Sie ihn nur, wenn ein neuer Zeichnungs- oder Stücklistenstand gilt, etwa A0 → A1. Dann sind alle Teile wieder offen. Jede gespeicherte Änderung erzeugt weiterhin einen neuen Stand, den Sie mit ‹ › ansehen können. Siehe [Liste bearbeiten](/de/platform-intro/workflows/parts-lists#edit-list).
+
+<a id="parts-list-history" />
+
+## Was bedeutet der blaue Revisionsstand und kann ich die alte Liste sehen?
+
+Die Kennzeichnung des Revisionsstands auf der BDE-Schaltfläche ist nach dem Ersetzen eines früheren Stands 24 Stunden lang blau. Ohne Revisionsstand zeigt sie in dieser Zeit **Neu**. Öffnen Sie die Liste und sehen Sie mit den Pfeilen neben der Standnummer frühere Stände an. Diese sind nur lesbar. Siehe [Anzeigen der Stückliste](/de/platform-intro/pages/parts-lists#was-sie-sehen-können).
+
+<a id="parts-list-reimport" />
+
+## Überschreibt ein erneuter Import meine Liste oder entfernt er ihre Haken?
+
+Das Wiederholen der zuvor importierten Liste mit gleichem Revisionsstand erhält manuelle Änderungen und Haken. Ein geänderter Import ersetzt die aktuelle Liste. Bei gleichem Revisionsstand bleiben unveränderte Zeilen abgehakt. Ein neuer Revisionsstand öffnet alle Teile. Leere Teilezellen lassen Listen unverändert. Ein leerer Revisionsstand übernimmt den des vorherigen Imports, sofern vorhanden. Siehe [Importregeln](/de/platform-intro/pages/erp-upload-planner#parts-lists).
