@@ -6,6 +6,33 @@ toc: false
 
 ## Releases
 
+<Update label="2026-11-13" description="v1.5.162" tags={["feature", "fix"]}>
+  {/* commits: d7f56428, 2ec32536, d980a08d, e70c031, ebdfd70, 262cf9f */}
+
+  **Release date:** November 13, 2026
+
+  ### New Features
+
+  #### [Choose How Imported Parts Are Separated](/en/platform-intro/pages/erp-upload-planner#parts-lists)
+  {/* feature: operation-part-list */}
+
+  With import access, open **Map Columns → Operation Fields** and use **Parts separated by** directly below **Parts list**. Choose **Automatic**, **Comma**, **Semicolon ;**, **Pipe |** or **Line break** to match your file. The example right below the choice shows how the first list is split; step 3 shows each row’s parts on separate lines with a part count.
+
+  For Excel files (XLSX), semicolons are the safest choice. For CSV files with semicolons between columns, use pipes between parts. If the parts cell and product revision match the previous import, changing the separator alone leaves the saved list, manual edits and ticks untouched. Follow [import parts lists](/en/platform-intro/workflows/order-upload-planner#parts-lists).
+
+  ### Fixes
+
+  #### [Read the Revision as the Product’s Revision](/en/platform-intro/pages/parts-lists#versions-and-revisions)
+  {/* feature: part-list-revision-wording */}
+
+  Parts-list help previously described **Revision** as a drawing or parts-list state; it now clearly means the revision of the product being made. Put a single part’s revision in that part’s line: changing only “(Ref: B0)” to “(Ref: B1)” with the same product revision opens only that line again, while other unchanged parts stay ticked; a new product revision opens all parts.
+
+  #### [Import Separate Parts Without Item Numbers](/en/platform-intro/pages/erp-upload-planner#parts-lists)
+  {/* feature: operation-part-list */}
+
+  Parts without item numbers could stay together in one line. **Automatic** now separates them at a comma followed by a space and the next part’s quantity, while decimal commas such as 11,00 and description commas such as in “Schraube, verzinkt” stay intact.
+</Update>
+
 <Update label="2026-11-13" description="v1.5.161" tags={["feature"]}>
   {/* commits: 0926bf5f, 2d64c65a, 0dd0270f, 4245feb8, 4e9285c1, 7d7209a0, ee6ce943, c82a016a, 28305434, 656fa931, b3a9a822, f09312b4, 59ac2ba9, ab3b4261, 9787c108, f7d4939a, 51de3d61, 5c17bc76, b9914134, 892f6488, 2fad7024, 0e30ee28 */}
 

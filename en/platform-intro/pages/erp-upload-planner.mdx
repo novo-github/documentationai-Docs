@@ -43,11 +43,25 @@ Column headings and row counts stay fixed. To change the file structure, correct
 
 ## Import Parts Lists per Operation
 
-In **Map Columns → Operation Fields**, optionally map one source column to **Parts list** and one to **Revision**. One import row represents one operation, with its parts in one cell. Use one part per line within the cell, or comma-separated parts such as “48 St 277220 Distanzhülse, 96 St 014555 O-Ring DIN EN 549 B2/H3 D 11,00 x 2,00”. The comma in 11,00 stays part of the O-ring description. Line breaks are the clearest choice when descriptions also contain commas. Only the first 200 parts in a cell are imported. Further parts are left out.
+In **Map Columns → Operation Fields**, optionally map one source column to **Parts list** and one to **Revision**. One import row represents one operation, with its parts in one cell. Directly below **Parts list**, choose **Parts separated by** to match the cell’s contents.
 
-The revision usually comes from the import, for example from the ERP column “Ref. Stand”. A cell containing “Ref.Stand: A0” is shown as A0.
+| Choice | How parts are separated |
+| --- | --- |
+| **Automatic** | Uses line breaks if the cell has any. Otherwise, splits at a comma followed by a space and the next part’s quantity. |
+| **Comma** | Splits at every comma followed by a space. Decimal commas such as 11,00 stay intact; commas followed by spaces in descriptions also split the text. |
+| **Semicolon ;** | Splits at semicolons; commas in descriptions stay intact. |
+| **Pipe &#124;** | Splits at pipe characters (&#124;); commas in descriptions stay intact. |
+| **Line break** | Splits only at line breaks within the cell. |
 
-A changed list or revision creates a new version. Exactly unchanged lines keep their ticks when the revision stays the same. A changed revision opens all parts again. A repeat import with the same list and revision as the previous import leaves manual edits and ticks alone. A later changed import becomes the current list, replacing manual edits.
+Every choice also separates parts at line breaks. For Excel files (XLSX), semicolons are the safest choice. If your CSV file uses semicolons between columns, use pipes between parts instead.
+
+For example, **Automatic** reads “60 ST Distanzhülse (Ref: B0), 120 ST O-Ring D 11,00 x 2,00” as two parts. Item numbers are not required. “Schraube, verzinkt” stays one part because the comma is not followed by a quantity.
+
+Check the example right below the choice. For a first list in row 4 containing five parts, it shows **Example (row 4): 5 parts**, then the first two parts, then **+3 more**. It updates as soon as you pick another separator. If a long cell containing several parts shows **1 part**, the separator does not fit the file. In step 3, each row’s **Parts list** shows the count and parts on separate lines; the same unsplit cell also shows **1 part** there. If the example says there is no row with a parts list, check the selected column and its contents. Only the first 200 parts in a cell are imported. Further parts are left out.
+
+**Revision** is the revision of the product being made, usually imported from a column such as “Ref. Stand”; put a single part’s revision, such as “(Ref: B0)”, in that part’s line. A cell containing “Ref.Stand: A0” is shown as A0.
+
+A changed list or revision creates a new version. Exactly unchanged lines keep their ticks when the revision stays the same. A changed revision opens all parts again. A repeat import with the same list and revision as the previous import leaves manual edits and ticks alone. A later changed import becomes the current list, replacing manual edits. If the parts cell’s text and revision match the previous import, choosing another separator alone does not create a new version or change ticks. To correct the saved list in that case, an Admin can [edit it by hand](/en/platform-intro/workflows/parts-lists#edit-list).
 
 A blank parts cell leaves the list alone, even if a revision is supplied. The placeholder “keine Daten vorhanden”, with or without surrounding asterisks, also counts as empty. To remove a list, an Admin must clear it by hand. A blank or unmapped revision keeps the revision from the previous import; without a previous import, no revision is supplied.
 
@@ -83,7 +97,7 @@ With **By sorting**, read the rules below the choice. Choose **Change** to edit 
 
 When company rules exist, **Use company sorting** restores them and follows the company sorting again. A tick shows when the rules already match. **Company sorting:** appears when the rules match the company sorting. **Own sorting:** identifies rules chosen for the import that differ from the company’s; **Sorting:** appears for the standard rules when no company sorting exists. Removing all your rules also restores the company rules or the standard rules.
 
-**Save Mapping** saves the placement choice and any rules chosen for the import. **Load Mapping** restores them.
+**Save Mapping** saves the placement choice and any rules chosen for the import. **Load Mapping** restores them. **Save Mapping** also saves the **Parts separated by** choice, and **Load Mapping** restores it. Otherwise, **Automatic** is preselected.
 
 Open the information icon for an example sorted by planned start. Before importing, the queue is A (20 October), D (28 October, moved forward manually), B (22 October), C (24 October). A new operation N (23 October) goes behind B, giving A, D, B, N, C. D stays second. Existing work keeps its relative order, though inserting work ahead of it can change its position number. This does not keep the queue continuously sorted.
 

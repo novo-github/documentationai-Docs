@@ -6,6 +6,33 @@ toc: false
 
 ## Releases
 
+<Update label="2026-11-13" description="v1.5.162" tags={["Funktion", "Fehlerbehebung"]}>
+  {/* commits: d7f56428, 2ec32536, d980a08d, e70c031, ebdfd70, 262cf9f */}
+
+  **Release-Datum:** 13. November 2026
+
+  ### Neue Funktionen
+
+  #### [Trennung importierter Teile selbst wählen](/de/platform-intro/pages/erp-upload-planner#parts-lists)
+  {/* feature: operation-part-list */}
+
+  Mit Importzugriff öffnen Sie **Spalten zuordnen → Felder des Arbeitsgangs**. Direkt unter **Stückliste** finden Sie **Teile getrennt durch**. Wählen Sie passend zur Datei **Automatisch**, **Komma**, **Semikolon ;**, **Pipe |** oder **Zeilenumbruch**. Das Beispiel direkt unter der Auswahl zeigt die Aufteilung der ersten Liste. In Schritt 3 sehen Sie die Teile jeder Zeile einzeln untereinander mit ihrer Anzahl.
+
+  Bei Excel-Dateien (XLSX) sind Semikolons die sicherste Wahl. Bei CSV-Dateien mit Semikolons zwischen den Spalten verwenden Sie zwischen den Teilen Pipe-Zeichen. Stimmen Teilezelle und Revisionsstand des Produkts mit dem vorherigen Import überein, lässt eine andere Trennzeichenauswahl die gespeicherte Liste, manuelle Änderungen und Haken unverändert. Folgen Sie [Stücklisten importieren](/de/platform-intro/workflows/order-upload-planner#parts-lists).
+
+  ### Fehlerbehebungen
+
+  #### [Revisionsstand eindeutig dem Produkt zuordnen](/de/platform-intro/pages/parts-lists#stände-und-revisionsstände)
+  {/* feature: part-list-revision-wording */}
+
+  Die Stücklistenhilfe beschrieb **Revisionsstand** bisher als Zeichnungs- oder Stücklistenstand; jetzt bezeichnet sie eindeutig den Stand des hergestellten Produkts. Schreiben Sie den Stand eines einzelnen Teils in dessen Zeile: Ändern Sie nur „(Ref: B0)“ zu „(Ref: B1)“ bei gleichem Produktstand, ist nur diese Zeile wieder offen und die übrigen unveränderten Teile bleiben abgehakt; ein neuer Produktstand öffnet alle Teile.
+
+  #### [Teile auch ohne Teilenummer getrennt importieren](/de/platform-intro/pages/erp-upload-planner#parts-lists)
+  {/* feature: operation-part-list */}
+
+  Teile ohne Teilenummer konnten zusammen in einer Zeile bleiben. **Automatisch** trennt sie jetzt an einem Komma mit folgendem Leerzeichen und der Menge des nächsten Teils; Dezimalkommas wie in 11,00 und Kommas in Bezeichnungen wie „Schraube, verzinkt“ bleiben erhalten.
+</Update>
+
 <Update label="2026-11-13" description="v1.5.161" tags={["Funktion"]}>
   {/* commits: 0926bf5f, 2d64c65a, 0dd0270f, 4245feb8, 4e9285c1, 7d7209a0, ee6ce943, c82a016a, 28305434, 656fa931, b3a9a822, f09312b4, 59ac2ba9, ab3b4261, 9787c108, f7d4939a, 51de3d61, 5c17bc76, b9914134, 892f6488, 2fad7024, 0e30ee28 */}
 

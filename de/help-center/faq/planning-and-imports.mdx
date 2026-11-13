@@ -134,6 +134,9 @@ description: "Antworten zu Arbeitsgangprioritäten, Planungsterminen, Gruppierun
 | Ändert das Bearbeiten einer Stückliste den Revisionsstand? | [Antwort](/de/help-center/faq/planning-and-imports#parts-list-edit-revision) |
 | Was bedeutet der blaue Revisionsstand und kann ich die alte Liste sehen? | [Antwort](/de/help-center/faq/planning-and-imports#parts-list-history) |
 | Überschreibt ein erneuter Import meine Liste oder entfernt er ihre Haken? | [Antwort](/de/help-center/faq/planning-and-imports#parts-list-reimport) |
+| Welches Trennzeichen sollte ich verwenden? | [Antwort](/de/help-center/faq/planning-and-imports#parts-list-separator) |
+| Warum wird meine ganze Stückliste als ein Teil angezeigt? | [Antwort](/de/help-center/faq/planning-and-imports#parts-list-one-part) |
+| Warum bleibt meine gespeicherte Liste trotz anderer Trennzeichenauswahl gleich? | [Antwort](/de/help-center/faq/planning-and-imports#parts-list-separator-reimport) |
 
 <a id="operation-priority" />
 
@@ -922,7 +925,7 @@ Ein geänderter Revisionsstand, etwa A0 auf A1, öffnet alle Teile zur erneuten 
 
 ## Ändert das Bearbeiten einer Stückliste den Revisionsstand?
 
-Nein. **Revisionsstand** behält den aktuellen Wert. Ändern Sie ihn nur, wenn ein neuer Zeichnungs- oder Stücklistenstand gilt, etwa A0 → A1. Dann sind alle Teile wieder offen. Jede gespeicherte Änderung erzeugt weiterhin einen neuen Stand, den Sie mit ‹ › ansehen können. Siehe [Liste bearbeiten](/de/platform-intro/workflows/parts-lists#edit-list).
+Nein. **Revisionsstand** behält den aktuellen Wert. Ändern Sie ihn nur, wenn ein neuer Stand des Produkts gilt, etwa A0 → A1. Dann sind alle Teile wieder offen. Jede gespeicherte Änderung erzeugt weiterhin einen neuen Stand, den Sie mit ‹ › ansehen können. Siehe [Liste bearbeiten](/de/platform-intro/workflows/parts-lists#edit-list).
 
 <a id="parts-list-history" />
 
@@ -935,3 +938,21 @@ Die Kennzeichnung des Revisionsstands auf der BDE-Schaltfläche ist nach dem Ers
 ## Überschreibt ein erneuter Import meine Liste oder entfernt er ihre Haken?
 
 Das Wiederholen der zuvor importierten Liste mit gleichem Revisionsstand erhält manuelle Änderungen und Haken. Ein geänderter Import ersetzt die aktuelle Liste. Bei gleichem Revisionsstand bleiben unveränderte Zeilen abgehakt. Ein neuer Revisionsstand öffnet alle Teile. Leere Teilezellen lassen Listen unverändert. Ein leerer Revisionsstand übernimmt den des vorherigen Imports, sofern vorhanden. Siehe [Importregeln](/de/platform-intro/pages/erp-upload-planner#parts-lists).
+
+<a id="parts-list-separator" />
+
+## Welches Trennzeichen sollte ich verwenden?
+
+Wählen Sie unter **Spalten zuordnen** direkt unter **Stückliste** bei **Teile getrennt durch** die passende Aufteilung. Verwenden Sie bei XLSX Semikolons zwischen den Teilen und wählen Sie **Semikolon ;**. Nutzen Sie bei CSV mit Semikolons zwischen den Spalten Pipe-Zeichen und wählen Sie **Pipe |**. **Zeilenumbruch** passt zu einem Teil pro Zeile innerhalb der Zelle. Diese Auswahlmöglichkeiten erhalten Kommas in Bezeichnungen. **Komma** trennt an jedem Komma mit folgendem Leerzeichen. Prüfen Sie vor dem Speichern das Beispiel und Schritt 3. Folgen Sie [Stücklisten importieren](/de/platform-intro/workflows/order-upload-planner#parts-lists).
+
+<a id="parts-list-one-part" />
+
+## Warum wird meine ganze Stückliste als ein Teil angezeigt?
+
+Das Beispiel unter **Teile getrennt durch** und die Vorschau in Schritt 3 zeigen **1 Teil**, wenn eine Zelle mit mehreren Teilen ein anderes Trennzeichen verwendet als das ausgewählte. Wählen Sie passend zur Datei **Semikolon ;**, **Pipe |**, **Zeilenumbruch** oder **Komma**, wenn jedes Komma mit folgendem Leerzeichen ein neues Teil einleitet. Das Beispiel aktualisiert sich sofort, sobald Sie die Auswahl ändern. Siehe [Trennzeichenübersicht](/de/platform-intro/pages/erp-upload-planner#parts-lists). Haben Sie die Liste bereits importiert und ihren Inhalt nicht geändert, lesen Sie, [warum eine andere Trennzeichenauswahl die gespeicherte Liste unverändert lässt](/de/help-center/faq/planning-and-imports#parts-list-separator-reimport).
+
+<a id="parts-list-separator-reimport" />
+
+## Warum bleibt meine gespeicherte Liste trotz anderer Trennzeichenauswahl gleich?
+
+Stimmen der Text der Teilezelle und der Produktstand mit dem vorherigen Import überein, bleiben die gespeicherte Liste, manuelle Änderungen und Haken erhalten. Allein eine andere Trennzeichenauswahl ersetzt die Liste nicht. Ein Admin kann sie im Planer oder in den Auftragsdetails korrigieren. Folgen Sie [Liste bearbeiten](/de/platform-intro/workflows/parts-lists#edit-list).

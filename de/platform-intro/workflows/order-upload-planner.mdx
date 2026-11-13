@@ -77,18 +77,23 @@ Zeilen ohne Planung oder mit Beginn nach Ende werden nicht verarbeitet. Neuimpor
 
 <Steps>
   <Step title="Bereiten Sie eine Liste je Arbeitsgang vor" icon="arrow-right" title-type="p">
-    Tragen Sie in Ihrer Auftragstabelle die Teile jedes Arbeitsgangs in eine Zelle ein, möglichst ein Teil pro Zeile innerhalb dieser Zelle. Auch durch Komma getrennte Angaben wie „48 St 277220 Distanzhülse, 96 St 014555 O-Ring“ sind möglich. Nutzen Sie eine eigene Spalte für den Revisionsstand, etwa A0. Nur die ersten 200 Teile einer Zelle werden importiert. Weitere Teile werden nicht importiert.
+    Tragen Sie in Ihrer Auftragstabelle die Teile jedes Arbeitsgangs in eine Zelle ein. Bei Excel-Dateien (XLSX) sind Semikolons zwischen Teilen die sicherste Wahl. Verwenden Sie bei CSV-Dateien mit Semikolons zwischen den Spalten Pipe-Zeichen zwischen den Teilen. Auch ein Teil pro Zeile innerhalb der Zelle ist möglich. Nutzen Sie eine eigene Spalte für den Revisionsstand des Produkts, etwa A0; einzelne Teilestände gehören in die jeweilige Teilezeile. Nur die ersten 200 Teile einer Zelle werden importiert. Weitere Teile werden nicht importiert.
   </Step>
   <Step title="Ordnen Sie Teile- und Revisionsspalte zu" icon="arrow-right" title-type="p">
     Ordnen Sie unter **Spalten zuordnen → Felder des Arbeitsgangs** eine Spalte **Stückliste** und optional eine weitere **Revisionsstand** zu. Um vorhandene Arbeit mit Listen zu ergänzen, importieren Sie Ihren aktuellen Export erneut mit diesen Zuordnungen. Alte Notizen bleiben unverändert.
   </Step>
+  <Step title="Wählen Sie die Trennung und prüfen Sie das Beispiel" icon="arrow-right" title-type="p">
+    Wählen Sie direkt unter **Stückliste** bei **Teile getrennt durch** zwischen **Automatisch**, **Komma**, **Semikolon ;**, **Pipe |** und **Zeilenumbruch**. Nutzen Sie die [Trennzeichenübersicht](/de/platform-intro/pages/erp-upload-planner#parts-lists), um die Auswahl an Ihre Datei anzupassen. Prüfen Sie darunter die Teileanzahl und das Beispiel der ersten Liste. Wird eine Bezeichnung aufgeteilt oder bleiben mehrere Teile zusammen, passen Sie die Auswahl an oder korrigieren Sie die Zelle, bevor Sie fortfahren.
+  </Step>
   <Step title="Prüfen Sie neue Listen und geänderte Stände" icon="arrow-right" title-type="p">
-    Führen Sie die Importprüfung aus und achten Sie auf **Stücklisten** unter **Was dieser Import ändert**. Die Zeile erscheint, wenn mindestens eine Liste angelegt oder aktualisiert wird. Prüfen Sie die hervorgehobenen Spalten für Stückliste und Revisionsstand. Ein geänderter Revisionsstand öffnet alle Teile. Bei gleichem Revisionsstand bleiben unveränderte Zeilen abgehakt.
+    Prüfen Sie in Schritt 3 die **Stückliste** jeder Zeile: Sie sehen die Teileanzahl und jedes Teil einzeln untereinander. Führen Sie die Importprüfung aus und achten Sie auf **Stücklisten** unter **Was dieser Import ändert**. Die Zeile erscheint, wenn mindestens eine Liste angelegt oder aktualisiert wird. Prüfen Sie die hervorgehobenen Spalten für Stückliste und Revisionsstand. Ein geänderter Revisionsstand öffnet alle Teile. Bei gleichem Revisionsstand bleiben unveränderte Zeilen abgehakt.
   </Step>
   <Step title="Speichern Sie und prüfen Sie einen Arbeitsgang" icon="arrow-right" title-type="p">
     Schließen Sie die übliche Importprüfung ab und speichern Sie. Öffnen Sie die Liste eines betroffenen Arbeitsgangs im Planer oder auf seiner BDE-Karte. Prüfen Sie Teile und Revisionsstand. Ein geänderter Import ersetzt eine von Hand bearbeitete Liste. Ein gegenüber dem vorherigen Import unveränderter Import erhält manuelle Änderungen und Haken.
   </Step>
 </Steps>
+
+Allein eine andere Trennzeichenauswahl lässt eine bereits importierte Liste unverändert, wenn Zelltext und Produktstand gleich bleiben. Bitten Sie einen Admin, die gespeicherte Liste bei Bedarf [zu bearbeiten](/de/platform-intro/workflows/parts-lists#edit-list).
 
 Leere Teilezellen einschließlich des Platzhalters „keine Daten vorhanden“ lassen Listen unverändert. Sie entfernen sie nicht und ändern auch ihren Revisionsstand nicht. Ein leerer oder nicht zugeordneter Revisionsstand übernimmt den des vorherigen Imports, sofern vorhanden. Siehe [Regeln für den Stücklistenimport](/de/platform-intro/pages/erp-upload-planner#parts-lists).
 

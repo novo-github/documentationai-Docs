@@ -43,11 +43,25 @@ Spaltenüberschriften und Zeilenanzahl bleiben unverändert. Wenn Sie die Dateis
 
 ## Stücklisten je Arbeitsgang importieren
 
-Ordnen Sie unter **Spalten zuordnen → Felder des Arbeitsgangs** bei Bedarf je eine Quellspalte **Stückliste** und **Revisionsstand** zu. Eine Importzeile steht für einen Arbeitsgang, dessen Teile in einer Zelle stehen. Verwenden Sie innerhalb der Zelle ein Teil pro Zeile oder durch Komma getrennte Teile, etwa „48 St 277220 Distanzhülse, 96 St 014555 O-Ring DIN EN 549 B2/H3 D 11,00 x 2,00“. Das Komma in 11,00 bleibt Teil der O-Ring-Beschreibung. Enthalten Beschreibungen weitere Kommas, sind Zeilenumbrüche die eindeutigste Wahl. Nur die ersten 200 Teile einer Zelle werden importiert. Weitere Teile werden nicht importiert.
+Ordnen Sie unter **Spalten zuordnen → Felder des Arbeitsgangs** bei Bedarf je eine Quellspalte **Stückliste** und **Revisionsstand** zu. Eine Importzeile steht für einen Arbeitsgang, dessen Teile in einer Zelle stehen. Wählen Sie direkt unter **Stückliste** bei **Teile getrennt durch** die passende Aufteilung.
 
-Der Revisionsstand kommt üblicherweise aus dem Import, etwa aus der ERP-Spalte „Ref. Stand“. Eine Zelle mit „Ref.Stand: A0“ wird als A0 angezeigt.
+| Auswahl | So werden Teile getrennt |
+| --- | --- |
+| **Automatisch** | Nutzt Zeilenumbrüche, wenn die Zelle welche enthält. Sonst wird an einem Komma mit folgendem Leerzeichen und der Menge des nächsten Teils getrennt. |
+| **Komma** | Trennt an jedem Komma mit folgendem Leerzeichen. Dezimalkommas wie in 11,00 bleiben erhalten; Kommas mit Leerzeichen in Bezeichnungen teilen den Text ebenfalls auf. |
+| **Semikolon ;** | Trennt an Semikolons; Kommas in Bezeichnungen bleiben erhalten. |
+| **Pipe &#124;** | Trennt an Pipe-Zeichen (&#124;); Kommas in Bezeichnungen bleiben erhalten. |
+| **Zeilenumbruch** | Trennt nur an Zeilenumbrüchen innerhalb der Zelle. |
 
-Eine geänderte Liste oder ein geänderter Revisionsstand erzeugt einen neuen Stand. Genau unveränderte Zeilen bleiben abgehakt, wenn der Revisionsstand gleich bleibt. Ein geänderter Revisionsstand öffnet alle Teile. Ein erneuter Import mit derselben Liste und demselben Revisionsstand wie beim vorherigen Import lässt manuelle Änderungen und Haken unverändert. Ein späterer geänderter Import wird zur aktuellen Liste und ersetzt manuelle Änderungen.
+Jede Auswahl trennt Teile auch an Zeilenumbrüchen. Bei Excel-Dateien (XLSX) sind Semikolons die sicherste Wahl. Verwendet Ihre CSV-Datei Semikolons zwischen den Spalten, nutzen Sie zwischen den Teilen stattdessen Pipe-Zeichen.
+
+Beispielsweise liest **Automatisch** „60 ST Distanzhülse (Ref: B0), 120 ST O-Ring D 11,00 x 2,00“ als zwei Teile. Teilenummern sind dafür nicht erforderlich. „Schraube, verzinkt“ bleibt ein Teil, weil auf das Komma keine Menge folgt.
+
+Prüfen Sie das Beispiel direkt unter der Auswahl. Steht die erste Liste mit fünf Teilen in Zeile 4, sehen Sie **Beispiel (Zeile 4): 5 Teile**, dann die ersten zwei Teile und danach **+3 weitere**. Das Beispiel aktualisiert sich sofort, sobald Sie ein anderes Trennzeichen wählen. Zeigt eine lange Zelle mit mehreren Teilen **1 Teil**, passt das Trennzeichen nicht zur Datei. In Schritt 3 zeigt **Stückliste** für jede Zeile die Anzahl und die Teile einzeln untereinander; dieselbe ungetrennte Zelle zeigt auch dort **1 Teil**. Meldet das Beispiel, dass keine Zeile eine Stückliste enthält, prüfen Sie die gewählte Spalte und deren Inhalt. Nur die ersten 200 Teile einer Zelle werden importiert. Weitere Teile werden nicht importiert.
+
+**Revisionsstand** bezeichnet den Stand des hergestellten Produkts, üblicherweise aus einer Importspalte wie „Ref. Stand“; den Stand einzelner Teile, etwa „(Ref: B0)“, schreiben Sie in die jeweilige Teilezeile. Eine Zelle mit „Ref.Stand: A0“ wird als A0 angezeigt.
+
+Eine geänderte Liste oder ein geänderter Revisionsstand erzeugt einen neuen Stand. Genau unveränderte Zeilen bleiben abgehakt, wenn der Revisionsstand gleich bleibt. Ein geänderter Revisionsstand öffnet alle Teile. Ein erneuter Import mit derselben Liste und demselben Revisionsstand wie beim vorherigen Import lässt manuelle Änderungen und Haken unverändert. Ein späterer geänderter Import wird zur aktuellen Liste und ersetzt manuelle Änderungen. Stimmen der Text der Teilezelle und der Revisionsstand mit dem vorherigen Import überein, erzeugt allein eine andere Trennzeichenauswahl keinen neuen Stand und ändert keine Haken. Ein Admin kann die gespeicherte Liste in diesem Fall [von Hand korrigieren](/de/platform-intro/workflows/parts-lists#edit-list).
 
 Eine leere Teilezelle lässt die Liste unverändert, auch wenn ein Revisionsstand angegeben ist. Der Platzhalter „keine Daten vorhanden“, mit oder ohne umgebende Sternchen, gilt ebenfalls als leer. Zum Entfernen muss ein Admin die Liste von Hand leeren. Ein leerer oder nicht zugeordneter Revisionsstand übernimmt den des vorherigen Imports. Ohne vorherigen Import wird kein Revisionsstand übernommen.
 
@@ -83,7 +97,7 @@ Lesen Sie bei **Nach Sortierung** die Regeln unter der Auswahl. Mit **Ändern** 
 
 Sind Firmenregeln vorhanden, stellt **Firmensortierung übernehmen** diese wieder her. Der Import folgt dann wieder der Firmensortierung. Ein Haken zeigt, dass die Regeln bereits übereinstimmen. **Firmensortierung:** erscheint, wenn die Regeln der Firmensortierung entsprechen. **Eigene Sortierung:** kennzeichnet für den Import gewählte Regeln, die von den Firmenregeln abweichen. **Sortierung:** erscheint bei den Standardregeln ohne Firmensortierung. Entfernen Sie alle eigenen Regeln, gelten ebenfalls wieder die Firmen- oder Standardregeln.
 
-Wenn Sie die Zuordnung speichern, werden auch die Einreihungsauswahl und die für den Import gewählten Regeln gespeichert. Beim Laden einer gespeicherten Zuordnung werden sie wiederhergestellt.
+Wenn Sie die Zuordnung speichern, werden auch die Einreihungsauswahl und die für den Import gewählten Regeln gespeichert. Beim Laden einer gespeicherten Zuordnung werden sie wiederhergestellt. **Zuordnung speichern** speichert auch Ihre Auswahl unter **Teile getrennt durch**. **Zuordnung laden** stellt sie wieder her. Andernfalls ist **Automatisch** vorausgewählt.
 
 Öffnen Sie das Informationssymbol für ein Beispiel nach Starttermin. Vor dem Import lautet die Folge A (20. Oktober), D (28. Oktober, manuell vorgezogen), B (22. Oktober), C (24. Oktober). Der neue Arbeitsgang N (23. Oktober) kommt hinter B. Daraus wird A, D, B, N, C. D bleibt an zweiter Stelle. Bestehende Arbeit behält ihre relative Reihenfolge. Wird Arbeit davor eingefügt, kann sich jedoch ihre Positionsnummer ändern. Die Warteschlange wird dadurch nicht fortlaufend sortiert.
 

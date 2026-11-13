@@ -77,18 +77,23 @@ Rows without scheduling or with start after end are not processed. Re-import mat
 
 <Steps>
   <Step title="Prepare one list per operation" icon="arrow-right" title-type="p">
-    In your order spreadsheet, put each operation’s parts in one cell, preferably one part per line within that cell. Comma-separated entries such as “48 St 277220 Distanzhülse, 96 St 014555 O-Ring” also work. Use a separate column for the revision, such as A0. Only the first 200 parts in a cell are imported. Further parts are left out.
+    In your order spreadsheet, put each operation’s parts in one cell. For Excel files (XLSX), semicolons between parts are the safest choice. For CSV files with semicolons between columns, use pipes between parts. One part per line within the cell also works. Use a separate column for the product’s revision, such as A0; put individual part revisions in their part lines. Only the first 200 parts in a cell are imported. Further parts are left out.
   </Step>
   <Step title="Map the parts and revision columns" icon="arrow-right" title-type="p">
     In **Map Columns → Operation Fields**, map one column to **Parts list** and optionally one to **Revision**. To add lists to existing work, re-import your current export with these mappings. Old notes remain unchanged.
   </Step>
+  <Step title="Choose the separator and check the example" icon="arrow-right" title-type="p">
+    Directly below **Parts list**, set **Parts separated by** to **Automatic**, **Comma**, **Semicolon ;**, **Pipe |** or **Line break**. Match the choice to your file using the [separator guide](/en/platform-intro/pages/erp-upload-planner#parts-lists). Check the first list’s part count and example below the choice. If a description is split or several parts stay together, adjust the choice or correct the cell before continuing.
+  </Step>
   <Step title="Review new lists and changed versions" icon="arrow-right" title-type="p">
-    Run the import check and look for **Parts lists** in **What this import will change**. It appears when at least one list will be created or updated. Review the highlighted parts-list and revision columns. A changed revision opens every part again. With the same revision, unchanged lines keep their ticks.
+    In step 3, review each row’s **Parts list**: it shows the part count and each part on its own line. Run the import check and look for **Parts lists** in **What this import will change**. It appears when at least one list will be created or updated. Review the highlighted parts-list and revision columns. A changed revision opens every part again. With the same revision, unchanged lines keep their ticks.
   </Step>
   <Step title="Save and inspect an operation" icon="arrow-right" title-type="p">
     Complete the usual import review and save. Open an affected operation’s list in the Planner or on its PDA card. Check the parts and revision. A changed import replaces a manually edited list; an import unchanged from the previous import leaves manual edits and ticks intact.
   </Step>
 </Steps>
+
+Changing only the separator leaves a previously imported list unchanged when its cell text and product revision stay the same. To correct that saved list, ask an Admin to [edit it](/en/platform-intro/workflows/parts-lists#edit-list).
 
 Blank parts cells, including the placeholder “keine Daten vorhanden”, leave lists alone. They do not remove them or change their revision. A blank or unmapped revision keeps the revision from the previous import, if any. See [parts-list import rules](/en/platform-intro/pages/erp-upload-planner#parts-lists).
 

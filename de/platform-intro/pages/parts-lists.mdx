@@ -33,7 +33,7 @@ Das Abhaken ist freiwillig. Offene Teile verhindern weder den Produktionsstart n
 
 ## Stände und Revisionsstände
 
-Eine gespeicherte Änderung an Liste oder Revisionsstand erzeugt einen neuen Stand, ob von Hand oder per Import. Das Speichern identischer Inhalte ändert nichts. Der **Revisionsstand**, etwa A0, bezeichnet den Zeichnungs- oder Stücklistenstand und erhöht sich beim Bearbeiten nicht automatisch. Der Revisionsstand kommt üblicherweise aus dem Import, etwa aus der ERP-Spalte „Ref. Stand“. Eine Zelle mit „Ref.Stand: A0“ wird als A0 angezeigt.
+Eine gespeicherte Änderung an Liste oder Revisionsstand erzeugt einen neuen Stand, ob von Hand oder per Import. Das Speichern identischer Inhalte ändert nichts. Der **Revisionsstand**, etwa A0, bezeichnet den Stand des hergestellten Produkts und erhöht sich beim Bearbeiten nicht automatisch. Der Produktstand kommt üblicherweise aus der Importspalte „Ref. Stand“; den Stand eines einzelnen Teils, etwa „(Ref: B0)“, schreiben Sie in dessen Zeile. Eine Zelle mit „Ref.Stand: A0“ wird als A0 angezeigt.
 
 | Änderung | Wirkung auf die Haken |
 | --- | --- |
@@ -41,7 +41,7 @@ Eine gespeicherte Änderung an Liste oder Revisionsstand erzeugt einen neuen Sta
 | Revisionsstand ändert sich, etwa von A0 auf A1 | Alle Teile sind offen und müssen erneut geprüft werden. |
 | Nichts ändert sich | Die aktuelle Liste und ihre Haken bleiben erhalten. |
 
-Wenn Sie beispielsweise bei Revisionsstand A0 eine O-Ring-Zeile ergänzen, bleibt eine unveränderte, abgehakte Distanzhülsen-Zeile abgehakt. Speichern Sie Revisionsstand A1, sind beide Zeilen wieder offen. Ändern Sie den Revisionsstand nur, wenn ein neuer Zeichnungs- oder Stücklistenstand gilt. Die Informationssymbole neben **Stückliste** und **Revisionsstand** erklären diese Regeln.
+Wenn Sie beispielsweise bei Revisionsstand A0 eine O-Ring-Zeile ergänzen, bleibt eine unveränderte, abgehakte Distanzhülsen-Zeile abgehakt. Ändern Sie nur in einer Teilezeile „(Ref: B0)“ zu „(Ref: B1)“ und behalten den Produktstand bei, ist nur diese Zeile wieder offen; die übrigen unveränderten Teile bleiben abgehakt. Speichern Sie einen neuen Produktstand, etwa A1, sind alle Teile wieder offen. Ändern Sie den Revisionsstand nur, wenn ein neuer Stand des Produkts gilt. Die Informationssymbole neben **Stückliste** und **Revisionsstand** erklären diese Regeln.
 
 ## Liste anlegen, bearbeiten oder entfernen
 
@@ -55,7 +55,7 @@ Um die Liste zu entfernen, leeren Sie alle Teilezeilen und speichern Sie. Ihre B
 
 ## Listen importieren und Abhaken auf der BDE-Seite steuern
 
-Ordnen Sie beim Auftragsimport **Stückliste** und optional **Revisionsstand** zu. Ein geänderter Import kann eine von Hand bearbeitete Liste ersetzen. Das Wiederholen derselben importierten Liste mit demselben Revisionsstand lässt manuelle Änderungen und Haken unverändert. Leere Teilezellen lassen bestehende Listen unverändert. Siehe [Importverhalten und Beispiele](/de/platform-intro/pages/erp-upload-planner#parts-lists).
+Ordnen Sie beim Auftragsimport **Stückliste** und optional **Revisionsstand** zu. Wählen Sie darunter bei **Teile getrennt durch** die passende Aufteilung und prüfen Sie das Beispiel, bevor Sie fortfahren. Ein geänderter Import kann eine von Hand bearbeitete Liste ersetzen. Das Wiederholen derselben importierten Liste mit demselben Revisionsstand lässt manuelle Änderungen und Haken unverändert. Leere Teilezellen lassen bestehende Listen unverändert. Siehe [Importverhalten und Beispiele](/de/platform-intro/pages/erp-upload-planner#parts-lists).
 
 Admins können unter **Admin-Panel → BDE-Zugriffsvorlagen** die Aktion **Teile der Stückliste abhaken** unter **Auf der BDE-Seite erlaubt** ausschalten. Auf den BDE-Seiten der ausgewählten Maschinen können alle die Liste weiterhin lesen, aber Teile weder abhaken noch wieder öffnen. **Alle abhaken** ist nicht verfügbar. Im Planer und in den Auftragsdetails bleibt das Abhaken möglich. Siehe [Vorlageneinstellungen](/de/platform-intro/pages/bde-access-templates#erlaubte-aktionen).
 

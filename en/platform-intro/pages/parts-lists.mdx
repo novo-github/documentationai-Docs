@@ -33,7 +33,7 @@ Ticking is optional. Open parts never prevent starting or completing production.
 
 ## Versions and Revisions
 
-A saved change to the list or revision creates a new version, whether you edit by hand or import it. Saving identical contents changes nothing. The **Revision**, such as A0, identifies the drawing or parts-list state and does not increase automatically when you edit. The revision usually comes from the import, for example from the ERP column “Ref. Stand”. A cell containing “Ref.Stand: A0” is shown as A0.
+A saved change to the list or revision creates a new version, whether you edit by hand or import it. Saving identical contents changes nothing. The **Revision**, such as A0, identifies the revision of the product being made and does not increase automatically when you edit. The product revision usually comes from the import column “Ref. Stand”; write a single part’s revision, such as “(Ref: B0)”, in that part’s line. A cell containing “Ref.Stand: A0” is shown as A0.
 
 | Change | What happens to the ticks |
 | --- | --- |
@@ -41,7 +41,7 @@ A saved change to the list or revision creates a new version, whether you edit b
 | Revision changes, for example A0 to A1 | All parts start open and must be checked again. |
 | Nothing changes | The current list and ticks stay as they are. |
 
-For example, adding an O-ring line with revision A0 leaves an unchanged, ticked spacer line ticked. Saving revision A1 opens both lines again. Change the revision only when a new drawing or parts-list state applies. The information icons beside **Parts list** and **Revision** explain these rules.
+For example, adding an O-ring line with revision A0 leaves an unchanged, ticked spacer line ticked. If you change only one part’s line from “(Ref: B0)” to “(Ref: B1)” while the product revision stays the same, only that line opens again; other unchanged parts stay ticked. Saving a new product revision, such as A1, opens all parts again. Change the revision only when a new product revision applies. The information icons beside **Parts list** and **Revision** explain these rules.
 
 ## Add, Edit or Remove a List
 
@@ -55,7 +55,7 @@ To remove the list, clear every part line and save. Its PDA button disappears. I
 
 ## Import Lists and Control PDA Ticking
 
-In the order import, map **Parts list** and optionally **Revision**. A changed import can replace a manually edited list. Repeating the same imported list and revision leaves manual edits and ticks untouched. Blank parts cells leave existing lists alone. See [import behaviour and examples](/en/platform-intro/pages/erp-upload-planner#parts-lists).
+In the order import, map **Parts list** and optionally **Revision**. Use **Parts separated by** below the parts mapping and check the example before continuing. A changed import can replace a manually edited list. Repeating the same imported list and revision leaves manual edits and ticks untouched. Blank parts cells leave existing lists alone. See [import behaviour and examples](/en/platform-intro/pages/erp-upload-planner#parts-lists).
 
 Admins can open **Admin Panel → BDE access templates** and switch off **Tick off parts in the parts list** under **Allowed on the BDE page**. Everyone on the selected machines’ PDA pages can still read the list, but cannot tick or reopen parts; **Tick all** is unavailable. Ticking in the Planner and order details is unaffected. See [template settings](/en/platform-intro/pages/bde-access-templates#allowed-actions).
 

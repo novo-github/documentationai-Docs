@@ -134,6 +134,9 @@ description: "Find answers about operation priorities, planning dates, grouping,
 | Does editing a parts list change its revision? | [Answer](/en/help-center/faq/planning-and-imports#parts-list-edit-revision) |
 | What does the blue revision badge mean, and can I see the old list? | [Answer](/en/help-center/faq/planning-and-imports#parts-list-history) |
 | Will another import overwrite my list or clear its ticks? | [Answer](/en/help-center/faq/planning-and-imports#parts-list-reimport) |
+| Which separator should I use? | [Answer](/en/help-center/faq/planning-and-imports#parts-list-separator) |
+| Why is my whole parts list shown as one part? | [Answer](/en/help-center/faq/planning-and-imports#parts-list-one-part) |
+| Why did choosing a different separator leave my saved list unchanged? | [Answer](/en/help-center/faq/planning-and-imports#parts-list-separator-reimport) |
 
 <a id="operation-priority" />
 
@@ -928,7 +931,7 @@ A changed revision, such as A0 to A1, opens every part for checking again. If th
 
 ## Does editing a parts list change its revision?
 
-No. **Revision** keeps its current value. Change it only when a new drawing or parts-list state applies, such as A0 → A1. Then all parts are open again. Each saved change still creates a new version you can browse with ‹ ›. See [how to edit a list](/en/platform-intro/workflows/parts-lists#edit-list).
+No. **Revision** keeps its current value. Change it only when a new product revision applies, such as A0 → A1. Then all parts are open again. Each saved change still creates a new version you can browse with ‹ ›. See [how to edit a list](/en/platform-intro/workflows/parts-lists#edit-list).
 
 <a id="parts-list-history" />
 
@@ -941,3 +944,21 @@ The PDA button’s revision badge is blue for 24 hours after a new version repla
 ## Will another import overwrite my list or clear its ticks?
 
 Repeating the previous imported list and revision leaves manual edits and ticks intact. A changed import replaces the current list. With the same revision, unchanged lines keep their ticks; a new revision opens all parts. Blank parts cells leave lists alone, and a blank revision keeps the previous import’s revision, if any. See [import rules](/en/platform-intro/pages/erp-upload-planner#parts-lists).
+
+<a id="parts-list-separator" />
+
+## Which separator should I use?
+
+In **Map Columns**, choose **Parts separated by** directly below **Parts list**. For XLSX, use semicolons between parts and choose **Semicolon ;**. For CSV with semicolons between columns, use pipes and choose **Pipe |**. **Line break** works for one part per line within a cell. These choices keep commas in descriptions. **Comma** splits at every comma followed by a space. Check the example and step 3 before saving. Follow [import parts lists](/en/platform-intro/workflows/order-upload-planner#parts-lists).
+
+<a id="parts-list-one-part" />
+
+## Why is my whole parts list shown as one part?
+
+The example under **Parts separated by** and the step 3 preview show **1 part** when a cell containing several parts uses a different separator from the one selected. Choose what the file actually uses: **Semicolon ;**, **Pipe |**, **Line break**, or **Comma** if every comma followed by a space starts a new part. Watch the example update as you change the choice. See the [separator guide](/en/platform-intro/pages/erp-upload-planner#parts-lists). If you already imported the list and its contents have not changed, see [why another separator leaves the saved list unchanged](/en/help-center/faq/planning-and-imports#parts-list-separator-reimport).
+
+<a id="parts-list-separator-reimport" />
+
+## Why did choosing a different separator leave my saved list unchanged?
+
+If the parts cell’s text and product revision match the previous import, the saved list, manual edits and ticks stay intact. Choosing another separator alone does not replace the list. An Admin can correct it in the Planner or order details. Follow [edit a list](/en/platform-intro/workflows/parts-lists#edit-list).
