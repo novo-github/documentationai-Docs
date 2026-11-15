@@ -106,7 +106,7 @@ Berechtigungen legen fest, auf welche Plattformseiten und Maschinen ein Benutzer
 | **Analysatoren konfigurieren** | **Stillstandsgründe** und Energiepreis. |
 | **Sicherheit und API konfigurieren** | API-Zugangsschlüssel und Ticket-Tags. |
 
-**Prioritätsstufen** und **Datenzugriff des KI-Assistenten** liegen ebenfalls hier. ERP-Uploads selbst befinden sich im Planungsbereich unter `/erp-uploads`.
+**Prioritätsstufen** und **KI-Assistent** liegen ebenfalls hier. Zum Importieren von Aufträgen öffnen Sie im Planungsbereich [die Seite für Auftragsimporte](/de/platform-intro/pages/erp-upload-planner).
 
 ## Standardprioritäten und Wertebereichsgrenzen
 
@@ -118,9 +118,40 @@ Benutzerdefinierte Prioritätsstufen erlauben **0–999**, das Auftragsformular 
 
 Der Bereich **Maschinenbediener** verwaltet Konten mit der Rolle Maschinenbediener. Nutzen Sie **Maschinenbediener hinzufügen** zum Anlegen oder **Maschinenbediener aktualisieren** beim Bearbeiten eines Kontos. Bestätigungen für das Anlegen, Änderungen, neue Passwörter und das Heraufstufen erscheinen in Ihrer gewählten Sprache. Folgen Sie [Maschinenbediener-Konten verwalten](/de/platform-intro/workflows/operator-management).
 
-**API-Zugangsschlüssel** werden bei Erstellung einmal angezeigt. Kopieren Sie den sichtbaren Schlüssel. **Lizenzschlüssel** ist die Unternehmenslizenzkennung, kein API-Schlüssel. Der KI-Assistent in Beta darf nur hier freigegebene Datenbereiche nutzen. Ohne Adminfreigabe werden Plattformdaten nicht mit externen KI-Modellen geteilt.
+Zugangsschlüssel für andere Programme werden nur beim Erstellen angezeigt. Kopieren Sie jeden Schlüssel, solange er sichtbar ist. Der **Lizenzschlüssel** kennzeichnet Ihre Unternehmenslizenz; er gewährt anderen Programmen keinen Zugang. Der KI-Assistent nutzt nur Unternehmensdatenbereiche, die Sie in seinen Einstellungen freigeben.
 
 Aufgaben erklären [Benutzer einladen und Berechtigungen verwalten](/de/platform-intro/workflows/user-access-management), [Hallenplandisplay einrichten](/de/platform-intro/workflows/hall-display-setup) und [Maschinenbediener verwalten](/de/platform-intro/workflows/operator-management).
+
+<a id="ai-settings" />
+
+## Einstellungen des KI-Assistenten
+
+Nur für Admins: Öffnen Sie **Admin-Panel → K.I. → KI-Assistent** (bisher **Datenzugriff des KI-Assistenten**). Die Karte hat die Reiter **Einstellungen** und **Nutzung**.
+
+| Stufe | Was sie erlaubt |
+| --- | --- |
+| **Aus** | Keine Nutzung dieses Bereichs. |
+| **Lesen** | Nur Lesen; Aktionen sind ausgeschaltet. |
+| **Lesen & handeln** | Lesen und ausgewählte Aktionen; die Person bestätigt jede Änderung. |
+
+Einige Bereiche wie **Websuche** und **Gedächtnis über Chats hinweg** sind einfach an oder aus. Das Gedächtnis ist voreingestellt eingeschaltet. Sie können es für das Unternehmen ausschalten, aber keine persönlichen Erinnerungen anderer Personen sehen. Websuche ist zunächst aus und gilt nur für den Assistenten in Watchmen.
+
+Mit **Anpassen** öffnen Sie die Detailauswahl eines Bereichs. Schalten Sie einzelne Einträge an oder aus und wählen Sie oben **Übernehmen**. Die Leiste unten an der Karte zeigt die Anzahl ungespeicherter Änderungen. Wählen Sie **Speichern** zum Behalten oder **Verwerfen** zum Aufgeben.
+
+Schalten Sie unter **Personen** den **KI-Zugang** für Personen aus, die weder Assistent noch verbundene KI-Apps nutzen sollen. **Administratoren haben immer Zugang**. Seiten- und Maschinenrechte gelten weiterhin. Schalten Sie **KI-Apps** ein, damit Personen [eine externe App mit ihrem eigenen Konto verbinden](/de/platform-intro/pages/chat-history#connected-apps).
+
+<a id="ai-credits" />
+
+### Credits und Nutzung
+
+Für die monatlichen KI-Credits Ihres Unternehmens bietet **Wenn die Credits aufgebraucht sind**:
+
+- **Pausieren** (voreingestellt): **Automatisch** und **Gründlich** warten bis zum nächsten Monat; nur **Schnell** funktioniert weiter für einige Fragen pro Person und Tag.
+- **Überschreitung erlauben**: Antworten gehen bis zur festgelegten Menge unter **Zusätzliche Credits pro Monat** weiter. Zusätzliche Credits werden separat abgerechnet.
+
+Setzen Sie **Grenze pro Person** und nutzen Sie **Individuelle Grenzen** unter **Personen** für Ausnahmen. Eingetragene Grenzen müssen mindestens 10 Credits betragen; leer bedeutet keine Grenze. Speichern Sie Ihre Auswahl mit den übrigen Einstellungen.
+
+**Nutzung** zeigt Credits und Interaktionen des Unternehmens für diesen Monat, **Letzte 30 Tage** sowie **Nach Person** mit Credits und Interaktionen. Eine Interaktion ist eine Antwort. Solange **Nutzung** die Kennzeichnung **Nur anzeigen** zeigt, werden Credits gezählt und angezeigt, aber nichts gesperrt.
 
 ## Aktive Schichten in Maschinenlisten
 

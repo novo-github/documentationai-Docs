@@ -1,11 +1,11 @@
 ---
-title: "AI Chats & Chat History (Beta)"
-description: "A conversation history page for reviewing, renaming, starring, and continuing AI chats."
+title: "AI Assistant & Chats"
+description: "Ask about your work, review proposed changes, manage memory and connect outside AI apps."
 ---
 
 ## Overview
 
-**Access:** Admin or Page Access `ai_chats`. Watchmen AI is Beta. [Roles and access](/en/platform-intro/concepts/roles-and-access).
+**Access:** Admins always have access. Users and Machine operators need **AI Chats** in their page access, and an Admin must not have switched off their **AI access**. [Roles and access](/en/platform-intro/concepts/roles-and-access).
 
 Let users revisit prior AI conversations and continue them when needed.
 
@@ -31,15 +31,63 @@ Users open it from the Workspace section in the main navigation.
 - Search conversation titles.
 - Rename, star, copy, or delete conversation entries.
 
-## Watchmen AI Assistant Modes (Beta)
+## What the Assistant Can Do
 
-The **AI Assistant / Watchmen AI** is **Beta**. **Documentation only** uses platform documentation. **Context-aware** may also query live platform data in areas enabled by a company admin: Knowledge Base, Tickets, Machines and Production, Organization Statistics, Planning, and Alerts.
+Ask about the Watchmen guide or company data your Admin allows. The assistant sees only what you may see. It can find colleagues by name; Admins also see their email addresses. It can open pages, fill in forms and propose changes for you to review.
 
-No platform data is shared with external AI models unless an admin enables it. Do not assume a documentation-only answer includes live machine readings. **Dictate** is voice input; **AI / KI** means artificial intelligence.
+<a id="answer-modes" />
+
+## Choose an Answer Mode
+
+Choose **Answer mode** beside the message box:
+
+| Mode | Best for | Credits per answer |
+| --- | --- | --- |
+| **Auto** (recommended) | Most questions | 1–3 |
+| **Fast** | Short, simple questions | 1 |
+| **Thorough** | Deeper research; takes longer | 5 |
+
+A web search adds 1 credit; failed answers are free. **Web search** is off until an Admin switches it on and applies only to the assistant in Watchmen, not connected apps.
+
+<a id="opening-and-changing" />
+
+## Review Changes and Opened Pages
+
+Before a change, read **Review this change**: nothing changes until you press **Confirm**. Forms are only filled in for you to check and save. Under **Opening pages**, **Ask first** is the default; **Automatic** lets the assistant open pages and forms by itself, but does not confirm changes for you.
+
+## Arrange the Chat Window
+
+The chat is docked at the side by default. Use **Pop out** to move and resize a floating window, or **Dock to the side** to return it. Phones keep the docked chat.
+
+<a id="chat-memory" />
+
+## Continue a Long Chat
+
+The chat-length ring beside the title appears once the chat is about half full. When it gets very long, the assistant summarizes the earlier part automatically. **Earlier part summarized** marks it; **Show summary** shows the text. In the ring’s tooltip, **Compact chat**, beside **New chat**, does the same on request.
+
+<a id="memory" />
+
+## Keep Personal Memory
+
+Memory is on unless you switch it off in your profile or an Admin switches it off for the company; it lets the assistant remember facts and preferences across chats and find earlier chats. Only you see it: use **Undo** under **Saved to memory**, or [edit and delete memories in your profile](/en/platform-intro/pages/user-profile#ai-memory).
+
+<a id="credits" />
+
+## When Credits Run Out
+
+The chat shows what is left of your company’s monthly AI credits, what is used up, whether **Fast** still works and when credits reset. Your Admin chooses **When credits run out**: **Pause** is the default, so **Auto** and **Thorough** wait until next month and only **Fast** works for a few questions per person per day. With **Allow overage**, answers continue up to the **Extra credits per month** your Admin sets; extra credits are billed separately. See [AI settings and limits](/en/platform-intro/pages/admin-panel#ai-settings).
+
+<a id="connected-apps" />
+
+## Connect an Outside AI App
+
+An Admin first switches on **AI apps** in the **AI assistant** card. Open your profile → **Connected apps → How to connect**, choose **Claude**, **ChatGPT** or **Other apps**, copy the **Connector URL** and follow the steps shown there.
+
+Sign in with your own Watchmen account. The approval page names the app and lists what it can read; press **Allow**. The app sees only what you may see. **Disconnect** in **Connected apps** removes access at once. With **Changes allowed**, it may also make changes your company allows, asking before each one.
 
 ## Ask a Clear Question and Keep the Source
 
-Include the exact label and context. For example, “What does PRO mean on the Hall Plan?” can be answered from the [glossary](/en/platform-intro/concepts/glossary). “Compare Machine A's idle time for this shift” needs the relevant context-aware data access.
+Include the exact label and context. For example, “What does PRO mean on the Hall Plan?” can be answered from the [glossary](/en/platform-intro/concepts/glossary). “Compare Machine A's idle time for this shift” needs the relevant company data access.
 
 For metric questions, include machine, date range, shift mode, and quantity source. Consult [calculations](/en/platform-intro/concepts/calculations) for confirmed definitions and limits. Search stored conversation titles, rename useful conversations descriptively, and star them for later retrieval.
 
@@ -55,6 +103,7 @@ For metric questions, include machine, date range, shift mode, and quantity sour
 
 ### Limits and Empty States
 - A new conversation has no history until the first message is sent.
+- If AI access is switched off for your account, the chat says so; ask your Admin.
 
 ## Related Pages
 

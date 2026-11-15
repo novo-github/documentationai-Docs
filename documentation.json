@@ -165,7 +165,7 @@
                             "icon": "file-text"
                           },
                           {
-                            "title": "AI Chats (Beta)",
+                            "title": "AI Assistant & Chats",
                             "path": "en/platform-intro/pages/chat-history",
                             "icon": "file-text"
                           },
@@ -582,6 +582,10 @@
                     "path": "en/help-center/faq/account-and-email"
                   },
                   {
+                    "title": "AI Assistant FAQs",
+                    "path": "en/help-center/faq/ai-assistant"
+                  },
+                  {
                     "title": "Shifts and Hall Plan FAQs",
                     "path": "en/help-center/faq/shifts-and-hall-plan"
                   },
@@ -752,7 +756,7 @@
                             "icon": "file-text"
                           },
                           {
-                            "title": "AI Chats (Beta)",
+                            "title": "KI-Assistent & Chats",
                             "path": "de/platform-intro/pages/chat-history",
                             "icon": "file-text"
                           },
@@ -1167,6 +1171,10 @@
                   {
                     "title": "Fragen zu Konto und E-Mail",
                     "path": "de/help-center/faq/account-and-email"
+                  },
+                  {
+                    "title": "Fragen zum KI-Assistenten",
+                    "path": "de/help-center/faq/ai-assistant"
                   },
                   {
                     "title": "Fragen zu Schichten und Hallenplan",

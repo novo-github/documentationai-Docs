@@ -106,7 +106,7 @@ Open the user record in the Admin Panel and select **Edit Permissions**. Select 
 | **Configure Analyzers** | **Downtime reasons** and Energy Price. |
 | **Configure Security and API** | API-Access Keys and Ticket Tags. |
 
-**Priority Levels** and **AI Assistant Data Access** are also in the Admin Panel. ERP Uploads itself is in Planner at `/erp-uploads`.
+**Priority Levels** and **AI assistant** are also in the Admin Panel. To import orders, open [the order upload page](/en/platform-intro/pages/erp-upload-planner) from the planning area.
 
 ## Default Priorities and Range Limits
 
@@ -118,9 +118,40 @@ Custom priority settings allow **0–999**, while the Add Order form states **1�
 
 The **Machine operators** area manages accounts with the Machine operator role. Use **Add machine operator** to create an account or **Update machine operator** when editing one. Confirmation notices for creation, changes, replacement passwords and promotion use your selected language. Follow [manage machine operator accounts](/en/platform-intro/workflows/operator-management).
 
-**API-Access Keys** are shown once at creation; copy the key while it is visible. **License Key** is the company licence identifier, not an API key. The Beta AI Assistant can access only data areas enabled here; platform data is not shared with external AI models without admin enablement.
+Access keys for other programs are shown only when you create them. Copy each key while it is visible. **License Key** identifies your company’s licence; it does not provide access for other programs. The AI assistant uses only company data areas you allow in its settings.
 
 Use [Invite Users and Manage Permissions](/en/platform-intro/workflows/user-access-management), [Set Up a Hall Plan Display](/en/platform-intro/workflows/hall-display-setup), and [Manage machine operators](/en/platform-intro/workflows/operator-management) for the tasks.
+
+<a id="ai-settings" />
+
+## AI Assistant Settings
+
+Admins only: open **Admin Panel → A.I. → AI assistant** (previously **AI Assistant Data Access**). The card has **Settings** and **Usage** tabs.
+
+| Level | What it allows |
+| --- | --- |
+| **Off** | No use of this area. |
+| **Read** | Reading only; actions are off. |
+| **Read & act** | Reading and selected actions; the person confirms every change. |
+
+Some areas, including **Web search** and **Memory across chats**, are simply on or off. Memory is on by default; you can switch it off for the company, but cannot see anyone’s personal memory. Web search starts off and applies only to the assistant in Watchmen.
+
+**Customize** opens a side panel for one area. Switch individual items on or off, then choose **Apply** at the top. The bar at the bottom of the card shows the number of unsaved changes: choose **Save** to keep them or **Discard** to abandon them.
+
+Under **People**, switch off **AI access** for anyone who should not use the assistant or connected AI apps. **Admins always have access**. Page and machine access still apply. Switch on **AI apps** to let people [connect an outside app with their own account](/en/platform-intro/pages/chat-history#connected-apps).
+
+<a id="ai-credits" />
+
+### Credits and Usage
+
+For your company’s monthly AI credits, **When credits run out** offers:
+
+- **Pause** (default): **Auto** and **Thorough** wait until next month; only **Fast** still works for a few questions per person per day.
+- **Allow overage**: answers continue up to **Extra credits per month**, which you set. Extra credits are billed separately.
+
+Set **Limit per person** and use **Individual limits** under **People** for exceptions. Entered limits must be at least 10 credits; empty means no limit. Save your choices with the other settings.
+
+**Usage** shows this month’s company credits and interactions, **Last 30 days**, and **By person** with credits and interactions. An interaction is one answer. While **Usage** shows **Show only**, credits are counted and shown but nothing is blocked.
 
 ## Active Shifts in Machine Lists
 

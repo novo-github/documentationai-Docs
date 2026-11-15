@@ -1,11 +1,11 @@
 ---
-title: "AI Chats und Chat-Verlauf (Beta)"
-description: "Eine Verlaufseite zum Prüfen, Umbenennen, Markieren und Fortsetzen von KI-Chats."
+title: "KI-Assistent & Chats"
+description: "Stellen Sie Fragen zu Ihrer Arbeit, prüfen Sie Änderungen, verwalten Sie das Gedächtnis und verbinden Sie externe KI-Apps."
 ---
 
 ## Überblick
 
-**Zugriff:** Admin oder Seitenfreigabe `ai_chats`. Watchmen AI ist Beta. [Rollen und Zugriff](/de/platform-intro/concepts/roles-and-access).
+**Zugriff:** Admins haben immer Zugang. Benutzer und Maschinenbediener benötigen **KI-Chats** im Seitenzugriff. Ein Admin darf ihren **KI-Zugang** nicht ausgeschaltet haben. [Rollen und Zugriff](/de/platform-intro/concepts/roles-and-access).
 
 Ermöglichen Sie Benutzern, frühere KI-Konversationen erneut aufzurufen und bei Bedarf fortzusetzen.
 
@@ -31,15 +31,63 @@ Benutzer öffnen diese Seite über den Bereich **Arbeitsbereich** in der Hauptna
 - Konversationstitel durchsuchen.
 - Konversationseinträge umbenennen, markieren, kopieren oder löschen.
 
-## Watchmen-AI-Assistentenmodi (Beta)
+## Was der Assistent tun kann
 
-Der **KI-Assistent** ist **Beta**. **Documentation only** nutzt Plattformdokumentation. **Context-aware** kann zusätzlich Live-Plattformdaten aus administrativ freigegebenen Bereichen abfragen: Wissensdatenbank, Tickets, Maschinen und Produktion, Organisationsstatistiken, Planung und Alarme.
+Stellen Sie Fragen zur Watchmen-Anleitung oder zu Unternehmensdaten, die Ihr Admin freigibt. Der Assistent sieht nur, was Sie sehen dürfen. Er findet Kollegen nach Namen; Admins sehen auch deren E-Mail-Adressen. Er kann Seiten öffnen, Formulare ausfüllen und Änderungen zur Prüfung vorschlagen.
 
-Plattformdaten werden nur nach Freigabe durch einen Admin mit externen KI-Modellen geteilt. Eine Antwort im Dokumentationsmodus enthält nicht automatisch Live-Messwerte. **Diktieren** ist Spracheingabe; **KI** bedeutet künstliche Intelligenz.
+<a id="answer-modes" />
+
+## Einen Antwortmodus wählen
+
+Wählen Sie neben dem Nachrichtenfeld **Antwortmodus**:
+
+| Modus | Geeignet für | Credits je Antwort |
+| --- | --- | --- |
+| **Automatisch** (empfohlen) | Die meisten Fragen | 1–3 |
+| **Schnell** | Kurze, einfache Fragen | 1 |
+| **Gründlich** | Tiefere Recherche; dauert länger | 5 |
+
+Eine Websuche kostet zusätzlich 1 Credit; fehlgeschlagene Antworten sind kostenlos. **Websuche** bleibt aus, bis ein Admin sie einschaltet, und gilt nur für den Assistenten in Watchmen, nicht für verbundene Apps.
+
+<a id="opening-and-changing" />
+
+## Änderungen und geöffnete Seiten prüfen
+
+Lesen Sie vor einer Änderung **Änderung prüfen**: Erst wenn Sie **Bestätigen** wählen, ändert sich etwas. Formulare werden nur ausgefüllt; Sie prüfen und speichern sie selbst. Unter **Seiten öffnen** ist **Erst fragen** voreingestellt. **Automatisch** lässt den Assistenten Seiten und Formulare selbst öffnen, bestätigt aber keine Änderungen für Sie.
+
+## Das Chatfenster anordnen
+
+Der Chat ist zunächst am Rand angedockt. Mit **Als Fenster anzeigen** können Sie ein frei bewegliches Fenster verschieben und vergrößern. **Am Rand andocken** bringt es zurück. Auf Smartphones bleibt der Chat angedockt.
+
+<a id="chat-memory" />
+
+## Einen langen Chat fortsetzen
+
+Der Ring für die Chatlänge neben dem Titel erscheint, sobald der Chat etwa halb voll ist. Wird er sehr lang, fasst der Assistent den früheren Teil selbst zusammen. **Früherer Teil zusammengefasst** markiert dies; **Zusammenfassung anzeigen** zeigt den Text. Im Hinweis am Ring fasst **Chat zusammenfassen** neben **Neuer Chat** den früheren Teil auf Wunsch zusammen.
+
+<a id="memory" />
+
+## Persönliches Gedächtnis nutzen
+
+Das Gedächtnis ist eingeschaltet, solange Sie es nicht im Benutzerprofil oder ein Admin für das Unternehmen ausschaltet; damit kann der Assistent Fakten und Vorlieben über Chats hinweg behalten und frühere Chats finden. Nur Sie sehen es: Nutzen Sie **Rückgängig** unter **Im Gedächtnis gespeichert** oder [bearbeiten und löschen Sie Erinnerungen im Benutzerprofil](/de/platform-intro/pages/user-profile#ai-memory).
+
+<a id="credits" />
+
+## Wenn Credits aufgebraucht sind
+
+Der Chat zeigt die verbleibenden monatlichen KI-Credits Ihres Unternehmens, was aufgebraucht ist, ob **Schnell** noch funktioniert und wann die Credits wieder verfügbar sind. Ihr Admin wählt unter **Wenn die Credits aufgebraucht sind**: **Pausieren** ist voreingestellt, sodass **Automatisch** und **Gründlich** bis zum nächsten Monat warten und nur **Schnell** für einige Fragen pro Person und Tag funktioniert. Mit **Überschreitung erlauben** gehen Antworten bis zur Menge unter **Zusätzliche Credits pro Monat** weiter; diese werden separat abgerechnet. Siehe [KI-Einstellungen und Grenzen](/de/platform-intro/pages/admin-panel#ai-settings).
+
+<a id="connected-apps" />
+
+## Eine externe KI-App verbinden
+
+Ein Admin schaltet zuerst **KI-Apps** in der Karte **KI-Assistent** ein. Öffnen Sie im Benutzerprofil **Verbundene Apps → So verbinden Sie eine App**, wählen Sie **Claude**, **ChatGPT** oder **Andere Apps**, kopieren Sie die **Connector-URL** und folgen Sie den dort angezeigten Schritten.
+
+Melden Sie sich mit Ihrem eigenen Watchmen-Konto an. Die Freigabeseite nennt die App und zeigt, was sie lesen darf. Wählen Sie **Erlauben**. Die App sieht nur, was Sie sehen dürfen. **Trennen** unter **Verbundene Apps** beendet den Zugriff sofort. Mit **Änderungen erlaubt** darf sie auch freigegebene Unternehmensaktionen ausführen und fragt vor jeder Änderung.
 
 ## Eine genaue Frage stellen und die Quelle behalten
 
-Nennen Sie genaue Bezeichnung und Kontext. Beispielsweise kann „Was bedeutet PRO im Hallenplan?“ aus dem [Glossar](/de/platform-intro/concepts/glossary) beantwortet werden. „Vergleichen Sie die Leerlaufzeit von Maschine A in dieser Schicht“ benötigt entsprechende kontextbezogene Datenfreigabe.
+Nennen Sie genaue Bezeichnung und Kontext. Beispielsweise kann „Was bedeutet PRO im Hallenplan?“ aus dem [Glossar](/de/platform-intro/concepts/glossary) beantwortet werden. „Vergleichen Sie die Leerlaufzeit von Maschine A in dieser Schicht“ benötigt die entsprechende Freigabe der Unternehmensdaten.
 
 Nennen Sie bei Kennzahlenfragen Maschine, Datumsbereich, Schichtmodus und Mengenquelle. [Berechnungen](/de/platform-intro/concepts/calculations) erklärt bestätigte Definitionen und Grenzen. Durchsuchen Sie gespeicherte Gesprächstitel, vergeben Sie aussagekräftige Namen und markieren Sie nützliche Gespräche für später.
 
@@ -55,6 +103,7 @@ Nennen Sie bei Kennzahlenfragen Maschine, Datumsbereich, Schichtmodus und Mengen
 
 ### Grenzen und Leerzustände
 - Eine neue Konversation hat keinen Verlauf, bis die erste Nachricht gesendet wurde.
+- Ist der KI-Zugang für Ihr Konto ausgeschaltet, weist der Chat Sie darauf hin. Fragen Sie Ihren Administrator, wenn Sie ihn brauchen.
 
 ## Verwandte Seiten
 
