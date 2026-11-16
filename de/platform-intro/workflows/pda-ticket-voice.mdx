@@ -1,0 +1,69 @@
+---
+title: "Ein Ticket per Sprache auf der BDE-Seite erstellen"
+description: "Beschreiben Sie ein Problem, prüfen Sie das ausgefüllte Ticket und legen Sie es an der Maschine an."
+---
+
+## Ziel
+
+Erstellen Sie ein Ticket aus Ihrer gesprochenen Beschreibung, ohne jede Angabe von Hand auszufüllen.
+
+## Bevor Sie beginnen
+
+<Callout kind="info" title="Ablaufzugriff">
+Admins, User und Maschinenbediener benötigen Zugriff auf die Maschine, den KI-Assistenten und die Berechtigung zum Anlegen von Tickets. Die BDE-Zugriffsvorlage der Maschine muss **Tickets mit KI ausfüllen** erlauben. Ein Admin kann die [Vorlageneinstellung](/de/platform-intro/pages/bde-access-templates#pda-ai) prüfen.
+</Callout>
+
+### Voraussetzungen
+
+- Öffnen Sie die BDE-Seite der Maschine → **Tickets**.
+- Halten Sie das Problem, die zuständigen Personen und den Termin bereit. Nennen Sie bei Bedarf eine Auftragsnummer.
+- Jedes Ausfüllen zählt als ein KI-Credit, wie eine Antwort im Modus **Schnell**.
+
+## Schritte
+
+<Steps>
+  <Step title="Auf das Mikrofon der Karte tippen" icon="arrow-right" title-type="p">
+    Tippen Sie auf das Mikrofon in der Ecke von **Ticket Erstellen**. Die Aufnahme startet sofort. Sagen Sie, was passiert ist, an welcher Maschine, wer sich darum kümmern soll und bis wann. Zum Beispiel: „Die Spindel an der Hermle C42 verliert Öl. Anna und Tom sollen es sich bis Freitag ansehen. Auftrag 4711 ist betroffen.“
+
+    Stoppen Sie, wenn Sie fertig sind. Nach 2 Minuten endet die Aufnahme auch von selbst; das Gesagte bleibt als Text erhalten.
+  </Step>
+  <Step title="Ihre Worte prüfen" icon="arrow-right" title-type="p">
+    Korrigieren Sie unter **Ihre Worte** den Text oder ergänzen Sie ihn über **Weiter diktieren**. Wählen Sie **Mit KI ausfüllen**, um das ausgefüllte Ticket zu öffnen.
+  </Step>
+  <Step title="Die Ticketangaben prüfen" icon="arrow-right" title-type="p">
+    Prüfen Sie Name, Beschreibung, Personen, Maschinen, Aufträge, Tags und Fälligkeitsdatum. Ein Funkel-Symbol kennzeichnet jedes von der KI ausgefüllte Feld. Nach Ihrer Änderung erscheint ein Stift.
+
+    Nennt ein Hinweis mit **Nicht gefunden:** einen Eintrag, wählen Sie die passende Person, Maschine, den Auftrag oder Tag selbst im Ticket aus. Geben Sie zur Suche unter **Aufträge** mindestens 2 Zeichen der Auftragsnummer ein.
+  </Step>
+  <Step title="Das Ticket erstellen" icon="arrow-right" title-type="p">
+    Wählen Sie **Ticket Erstellen**. Bis dahin wurde kein Ticket angelegt. Verlassen Sie das Ticket mit ungespeicherten Eingaben, wählen Sie unter **Dieses Ticket erstellen?** zwischen **Ticket erstellen**, **Verwerfen** und **Weiter bearbeiten**.
+  </Step>
+  <Step title="Bei Bedarf mit einem weiteren Problem fortfahren" icon="arrow-right" title-type="p">
+    Beschreiben Ihre Worte mehrere Tickets, wird nur das erste ausgefüllt. Tippen Sie nach dem Anlegen erneut auf das Mikrofon der Karte: **Ihre Worte** öffnet sich mit dem Rest, statt eine Aufnahme zu starten. Prüfen Sie den Text, lassen Sie das nächste Ticket ausfüllen und legen Sie es an. Fordert der Hinweis Sie auf, für den Rest ein neues Ticket anzulegen, beschreiben Sie dieses Problem erneut.
+  </Step>
+</Steps>
+
+## Entscheidungspunkte
+
+- Möchten Sie das Ticket selbst ausfüllen? Tippen Sie neben dem Mikrofon auf die Karte, um ein leeres Ticket zu öffnen.
+- Müssen Sie eine Angabe ändern? Korrigieren Sie sie in der Seitenleiste vor **Ticket Erstellen**.
+- Möchten Sie Ihre Eingaben behalten? Wählen Sie in der Rückfrage beim Schließen **Weiter bearbeiten**. **Verwerfen** entfernt ungespeicherte Eingaben.
+
+## Erwartetes Ergebnis
+
+Ihr Ticket ist mit den geprüften Angaben angelegt. Enthält Ihre Beschreibung ein weiteres Problem, liegen dessen Worte nach dem Anlegen des ersten Tickets für das nächste bereit.
+
+## Häufige Probleme und Sonderfälle
+
+- Kein Mikrofon auf der Karte: Bitten Sie einen Admin, Ihren Zugriff auf den KI-Assistenten und Tickets sowie die Vorlage der Maschine zu prüfen. Ohne Vorlage ist die Funktion ausgeschaltet.
+- Credits sind aufgebraucht: Füllen Sie das Ticket selbst aus.
+- Das Ausfüllen ist fehlgeschlagen: Ihre Worte bleiben im Fenster. Korrigieren Sie sie oder versuchen Sie es erneut.
+- Der Name fehlt: Geben Sie einen Namen ein, wenn **Bitte geben Sie dem Ticket einen Namen.** erscheint. Legen Sie das Ticket danach erneut an.
+- Während des Diktats ist Speichern nicht möglich: Beenden Sie die Aufnahme und warten Sie auf den Text. Speichern Sie danach.
+
+## Verwandte Seiten
+
+- [Tickets auf der BDE-Seite](/de/platform-intro/pages/data-acquisition#tickets)
+- [Ticket-Seitenleiste](/de/platform-intro/pages/kanban#ticket-panel)
+- [BDE-Zugriffsvorlagen](/de/platform-intro/pages/bde-access-templates#pda-ai)
+- [Fragen zu Tickets](/de/help-center/faq/tickets)

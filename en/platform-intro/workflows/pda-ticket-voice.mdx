@@ -1,0 +1,69 @@
+---
+title: "Create a Ticket by Voice on the PDA Page"
+description: "Describe a problem, check the filled-in ticket and create it at the machine."
+---
+
+## Goal
+
+Create a ticket from your spoken description without filling in each detail by hand.
+
+## Before You Begin
+
+<Callout kind="info" title="Workflow access">
+Admins, Users and Machine operators need access to the machine, AI assistant access and permission to create tickets. The machine's BDE access template must allow **Fill in tickets with AI**. An Admin can check the [template setting](/en/platform-intro/pages/bde-access-templates#pda-ai).
+</Callout>
+
+### Preconditions
+
+- Open the machine's PDA page → **Tickets**.
+- Have the problem, people responsible and deadline ready. Include an order number if relevant.
+- Each filling in counts as one AI credit, like a **Fast** answer.
+
+## Steps
+
+<Steps>
+  <Step title="Tap the card's microphone" icon="arrow-right" title-type="p">
+    Tap the microphone in the corner of **Add Ticket**. Recording starts immediately. Say what happened, which machine, who should take care of it and by when. For example: “The spindle on the Hermle C42 is leaking oil. Anna and Tom should check it by Friday. Order 4711 is affected.”
+
+    Stop when finished. Recording also stops by itself after 2 minutes and keeps what you said as text.
+  </Step>
+  <Step title="Check your words" icon="arrow-right" title-type="p">
+    In **Your words**, correct the text or choose **Dictate more** to add to it. Choose **Fill with AI** to open the filled-in ticket.
+  </Step>
+  <Step title="Check the ticket details" icon="arrow-right" title-type="p">
+    Review the name, description, people, machines, orders, tags and due date. A sparkle marks each field filled by AI; a pencil appears after you change it.
+
+    If a **Not found:** message names something, choose the matching person, machine, order or tag in the ticket yourself. To search **Orders**, type at least 2 characters of the order number.
+  </Step>
+  <Step title="Create the ticket" icon="arrow-right" title-type="p">
+    Press **Create Ticket**. Until then, no ticket has been created. If you try to leave with unsaved input, choose **Create ticket**, **Discard** or **Keep editing** in **Create this ticket?**.
+  </Step>
+  <Step title="Continue with another problem if needed" icon="arrow-right" title-type="p">
+    If your words described several tickets, only the first is filled in. After creating it, tap the card's microphone again: **Your words** opens with the rest instead of starting a recording. Check the text, fill in and create the next ticket. If the hint asks you to create a new ticket for the rest, describe that problem again.
+  </Step>
+</Steps>
+
+## Decision Points
+
+- Want to fill in the ticket yourself? Tap the card away from the microphone to open an empty ticket.
+- Need to change a detail? Correct it in the panel before **Create Ticket**.
+- Need to leave without losing your input? Choose **Keep editing** in the closing question. **Discard** removes unsaved input.
+
+## Expected Result
+
+Your ticket is created with the details you checked. When there is another problem in your description, its words are ready for the next ticket after the first is created.
+
+## Common Problems and Edge Cases
+
+- No microphone on the card: ask an Admin to check your AI assistant access, ticket access and the machine's template. Without a template, this feature is off.
+- Credits are used up: fill in the ticket yourself.
+- Filling in failed: your words stay in the pop-up. Correct them or try again.
+- The name is missing: enter a name when **Please give the ticket a name.** appears, then create the ticket again.
+- Saving is unavailable during dictation: finish the recording and wait for the text, then save.
+
+## Related Pages
+
+- [PDA Tickets](/en/platform-intro/pages/data-acquisition#tickets)
+- [Ticket Panel](/en/platform-intro/pages/kanban#ticket-panel)
+- [BDE Access Templates](/en/platform-intro/pages/bde-access-templates#pda-ai)
+- [Ticket Questions](/en/help-center/faq/tickets)

@@ -6,6 +6,42 @@ toc: false
 
 ## Releases
 
+<Update label="2026-11-16" description="v1.5.170" tags={["Funktion", "Verbesserung", "Fehlerbehebung"]}>
+  {/* commits: b0775774, 4995e4a1, 6892d94d, c87981fa, 717b3b27, 588c72bb, 3ef9d986, e309efb3, 1ba0188c, 254e90c7, 1bce65a0, 9a3530fb, 8b007778, d457e6e3, d72510df, 07ca15aa, 48c04aad, 9f42c9fa, d306f1c4, 643314e5, cb170dab, 4b5bedd5, 2721a5f3, 50e4a0dd, a86c5e5e, 4556000b, e4cfa4d2, 4bbac5d2, 241cbda2, 5a138575, 4017736e, 3b63c589, 29dccb20, 37389afc, 5a054790, 36e42d65, 279d3fe6, 3b14e854, 0c1a80d9, 6c057641, b58b7ff7, 577ceeca, eb69032d, 80206282, 832fc647, 378b1e3e, c6261496, ad343b45, ee97f159, 8f2129e6 */}
+
+  **Release-Datum:** 16. November 2026
+
+  ### Neue Funktionen
+
+  #### [Ein Ticket auf der BDE-Seite diktieren](/de/platform-intro/pages/data-acquisition#tickets)
+  {/* feature: ticket-ai */}
+
+  Mit Zugriff auf den KI-Assistenten und der Berechtigung zum Anlegen von Tickets öffnen Sie die BDE-Seite → **Tickets**. Tippen Sie auf das Mikrofon in der Karte **Ticket Erstellen**. Diese Funktion schaltet die bestehende Option [**Tickets mit KI ausfüllen**](/de/platform-intro/pages/bde-access-templates#pda-ai) ein. Sagen Sie, was passiert ist, an welcher Maschine, wer sich darum kümmern soll und bis wann. Korrigieren Sie den Text unter **Ihre Worte** und wählen Sie **Mit KI ausfüllen**.
+
+  Prüfen Sie das ausgefüllte Ticket und legen Sie es mit **Ticket Erstellen** an. Jedes Ausfüllen zählt als ein KI-Credit, wie eine Antwort im Modus **Schnell**. Sind die Credits aufgebraucht, füllen Sie die Felder selbst aus. Beschreiben Sie mehrere Tickets, wird nur das erste ausgefüllt. Nach dem Anlegen zeigt der nächste Tipp auf das Mikrofon den Rest. Folgen Sie [ein Ticket per Sprache erstellen](/de/platform-intro/workflows/pda-ticket-voice).
+
+  ### Verbesserungen
+
+  #### [Tickets ausfüllen und ungespeicherte Änderungen behalten](/de/platform-intro/pages/kanban#ticket-panel)
+  {/* feature: ticket-panel */}
+
+  In jedem neuen Ticket können Sie **Aufträge** verknüpfen, indem Sie mindestens 2 Zeichen der Auftragsnummer eingeben. Diktieren Sie über die Mikrofone in den Feldern für Name und Beschreibung. Die Person, die das Ticket angelegt hat, kann dies auch beim Bearbeiten tun. Öffnet der KI-Assistent ein neues Ticket für Sie, kann er jetzt auch Personen, Aufträge, Tags und das Fälligkeitsdatum ausfüllen. Prüfen Sie die Angaben vor dem Anlegen. Siehe [Tickets verwalten](/de/platform-intro/workflows/kanban-ticket-management).
+
+  Beim Schließen oder Wechseln mit ungespeicherten Eingaben erscheint **Dieses Ticket erstellen?** oder **Änderungen speichern?**. Wählen Sie **Ticket erstellen** oder **Speichern**, **Verwerfen** oder **Weiter bearbeiten**. Das Speichern wartet, bis ein laufendes Diktat abgeschlossen ist. Der Ticketstatus erscheint als Tabs **Offen / In Bearbeitung / Gelöst / Geschlossen** in der Ticket-Seitenleiste und auf der BDE-Seite.
+
+  #### [Ein Diktat nach zwei Minuten abschließen](/de/platform-intro/pages/chat-history#dictation)
+  {/* feature: dictation-limit */}
+
+  In der gesamten Watchmen-Plattform endet die Aufnahme jetzt nach 2 Minuten von selbst. Das Gesagte bleibt als Text erhalten. Der Timer warnt Sie in den letzten 15 Sekunden. Sie können weiterhin früher stoppen.
+
+  ### Fehlerbehebungen
+
+  #### [Lange Ticketnamen werden umgebrochen](/de/platform-intro/pages/kanban#ticket-panel)
+  {/* feature: ticket-panel-readability */}
+
+  Lange Ticketnamen konnten die Schaltfläche zum Bearbeiten überdecken. Sie werden jetzt umgebrochen und lassen die Schaltfläche erreichbar.
+</Update>
+
 <Update label="2026-11-16" description="v1.5.169" tags={["Funktion", "Fehlerbehebung"]}>
   {/* commits: 184bdcbb, 5137ffc6, 5a8bad5b, 307cd77f, cce2ee6c, 16c8960b, 17c5ee3a, 704ec9ea, ea2ae147, 96ab5dd5, 70798324, cd8bf3d6, 68589e00, b8eb2712, 73ec6967, 4a8066cb, 96a9b58d, ce20f7c4, bf9bf85c, f7826010, 2c115a5a, cd55ce42, b7ee74c2, d6e0c060, e7971e0d, f44b8842, b230e7e6, cc620f13, 0c37eabe, abcffcfd, 89d30847, e313530d, 0ed4f268, b1bc2856 */}
 

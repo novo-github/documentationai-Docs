@@ -453,6 +453,11 @@
                             "icon": "play-circle"
                           },
                           {
+                            "title": "Create a Ticket by Voice on the PDA Page",
+                            "path": "en/platform-intro/workflows/pda-ticket-voice",
+                            "icon": "play-circle"
+                          },
+                          {
                             "title": "Upload, Review and Share a Document",
                             "path": "en/platform-intro/workflows/knowledge-base",
                             "icon": "play-circle"
@@ -599,6 +604,10 @@
                   {
                     "title": "AI Assistant FAQs",
                     "path": "en/help-center/faq/ai-assistant"
+                  },
+                  {
+                    "title": "Ticket Questions",
+                    "path": "en/help-center/faq/tickets"
                   },
                   {
                     "title": "Knowledge Base Questions",
@@ -1063,6 +1072,11 @@
                             "icon": "play-circle"
                           },
                           {
+                            "title": "Ein Ticket per Sprache auf der BDE-Seite erstellen",
+                            "path": "de/platform-intro/workflows/pda-ticket-voice",
+                            "icon": "play-circle"
+                          },
+                          {
                             "title": "Dokument hochladen, prüfen und teilen",
                             "path": "de/platform-intro/workflows/knowledge-base",
                             "icon": "play-circle"
@@ -1209,6 +1223,10 @@
                   {
                     "title": "Fragen zum KI-Assistenten",
                     "path": "de/help-center/faq/ai-assistant"
+                  },
+                  {
+                    "title": "Fragen zu Tickets",
+                    "path": "de/help-center/faq/tickets"
                   },
                   {
                     "title": "Fragen zur Wissensdatenbank",
