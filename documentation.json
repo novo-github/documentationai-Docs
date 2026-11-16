@@ -453,6 +453,11 @@
                             "icon": "play-circle"
                           },
                           {
+                            "title": "Upload, Review and Share a Document",
+                            "path": "en/platform-intro/workflows/knowledge-base",
+                            "icon": "play-circle"
+                          },
+                          {
                             "title": "Create an Automator Rule",
                             "path": "en/platform-intro/workflows/automator-rule-creation",
                             "icon": "play-circle"
@@ -584,6 +589,10 @@
                   {
                     "title": "AI Assistant FAQs",
                     "path": "en/help-center/faq/ai-assistant"
+                  },
+                  {
+                    "title": "Knowledge Base Questions",
+                    "path": "en/help-center/faq/knowledge-base"
                   },
                   {
                     "title": "Shifts and Hall Plan FAQs",
@@ -1044,6 +1053,11 @@
                             "icon": "play-circle"
                           },
                           {
+                            "title": "Dokument hochladen, prüfen und teilen",
+                            "path": "de/platform-intro/workflows/knowledge-base",
+                            "icon": "play-circle"
+                          },
+                          {
                             "title": "Automator-Regel erstellen",
                             "path": "de/platform-intro/workflows/automator-rule-creation",
                             "icon": "play-circle"
@@ -1175,6 +1189,10 @@
                   {
                     "title": "Fragen zum KI-Assistenten",
                     "path": "de/help-center/faq/ai-assistant"
+                  },
+                  {
+                    "title": "Fragen zur Wissensdatenbank",
+                    "path": "de/help-center/faq/knowledge-base"
                   },
                   {
                     "title": "Fragen zu Schichten und Hallenplan",

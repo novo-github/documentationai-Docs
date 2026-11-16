@@ -5,7 +5,7 @@ description: "Ein Dokumentenarbeitsbereich zum Hochladen von Wissen, Prüfen der
 
 ## Überblick
 
-**Zugriff:** Admin oder Seitenfreigabe `knowledge_base`. [Rollen und Zugriff](/de/platform-intro/concepts/roles-and-access).
+**Zugriff:** Admins, User und Maschinenbediener mit Zugriff auf die **Wissensdatenbank**. [Rollen und Zugriff](/de/platform-intro/concepts/roles-and-access).
 
 Speichern und finden Sie betriebliches Wissen und prüfen Sie, wie Dokumente mit Maschinen, Aufträgen und Produkten verbunden sind.
 
@@ -14,8 +14,7 @@ Benutzer öffnen diese Seite über den Bereich **Arbeitsbereich** in der Hauptna
 ## Zugriff
 
 <Callout kind="info" title="Zugriffsdetails">
-- Sichtbarkeit: Geschützt
-- Primäre Routen: `/knowledge-base`
+Sie benötigen Zugriff auf diese Seite, um Dokumente zu öffnen. Private Dokumente sieht nur die Person, die sie hinzugefügt hat. Auch Admins sehen keine privaten Dokumente anderer Personen.
 </Callout>
 
 ## Was Sie sehen können
@@ -24,15 +23,52 @@ Benutzer öffnen diese Seite über den Bereich **Arbeitsbereich** in der Hauptna
 - Vorgeschlagene und bestätigte Beziehungen zu Maschinen, Aufträgen und Produkten.
 - Einen visuellen Wissensgraphen zur Erkundung dieser Beziehungen.
 - Steuerelemente für Suche und Dokumentprüfung.
+- Die Filter **Alle / Privat / Ganzes Unternehmen** und die Kennzeichnung **Privat** an privaten Dokumenten.
+- Einen Dokumenttitel mit Dateiname, Größe und Alter darunter. Solange kein Titel vorliegt, erscheint stattdessen der Dateiname.
 
 ## Was Sie tun können
 
-- Dateien und Bilder hochladen oder schriftliche Notizen hinzufügen.
+- Dateien und Bilder hochladen oder schriftliche Notizen hinzufügen und dabei **Privat** oder **Ganzes Unternehmen** wählen.
+- Dokumentangaben prüfen und bearbeiten, die Sichtbarkeit Ihres Dokuments ändern und eine Vorschau öffnen.
 - Die Dokumentverarbeitung überwachen und gespeicherte Dokumente durchsuchen.
 - Vorgeschlagene Beziehungen prüfen, bestätigen oder verwerfen.
 - Bestätigte und vorgeschlagene Verknüpfungen im Wissensgraphen erkunden.
 
 ## Die Seite verstehen
+
+<a id="visibility" />
+
+### Festlegen, wer ein Dokument sehen kann
+
+**Privat** ist jedes Mal vorausgewählt, wenn Sie eine Datei oder Notiz hinzufügen, auch als Admin. Nur Sie können sie sehen und durchsuchen, auch wenn Sie den KI-Assistenten fragen. Zum späteren Teilen öffnen Sie Ihr privates Dokument und wählen **Mit dem ganzen Unternehmen teilen → Teilen** in der Bestätigung. Sie können auch schon vor dem Hochladen **Ganzes Unternehmen** wählen.
+
+Teilt ein Maschinenbediener ein Dokument oder fügt eine Datei oder Notiz für das ganze Unternehmen hinzu, erhalten die Admins des Unternehmens eine E-Mail. Beim Teilen durch einen Admin oder User wird keine E-Mail verschickt. Sie müssen nicht auf eine Freigabe warten.
+
+Bei einem Firmendokument kann die Person, die es hinzugefügt hat, oder ein Admin mit Zugriff **Privat machen** wählen und bestätigen. Das Dokument geht privat an die Person zurück, die es hinzugefügt hat. Macht ein Admin das Dokument einer anderen Person privat, schließt sich die Ansicht und der Admin kann es nicht mehr sehen.
+
+Die Listenfilter zeigen:
+
+- **Alle**: Ihre privaten Dokumente und die Firmendokumente, die Sie sehen dürfen.
+- **Privat**: nur Ihre eigenen privaten Dokumente.
+- **Ganzes Unternehmen**: Firmendokumente, die Sie sehen dürfen, einschließlich der von Ihnen geteilten.
+
+Maschinenbeschränkungen gelten auch für Firmendokumente. Ist Ihr Zugriff auf bestimmte Maschinen begrenzt, sehen Sie Dokumente ohne bestätigte Maschinenverknüpfung oder mit einer bestätigten Verknüpfung zu mindestens einer Ihrer Maschinen. Dokumente, die nur mit anderen Maschinen verknüpft sind, bleiben verborgen. Ihre eigenen Dokumente sehen Sie immer. Das Weitergeben einer Dokumentadresse erteilt keinen Zugriff.
+
+<a id="about-document" />
+
+### Angaben zum Dokument prüfen
+
+Nach dem Lesen zeigt **Über dieses Dokument** die Angaben **Titel**, **Dokumentart**, **Zusammenfassung** und **Beantwortet Fragen wie**. Die KI schreibt sie anhand des Dokumentinhalts. Ein Funkel-Symbol bedeutet **KI-erstellt**, ein Stift **Bearbeitet** durch eine Person.
+
+Vergleichen Sie diese Angaben mit dem Dokument. Die Person, die es hinzugefügt hat, oder ein Admin mit Zugriff kann den Stift mit **Bearbeiten** wählen, Titel, Dokumentart, Zusammenfassung oder die optionale Notiz ändern und **Speichern** wählen. Ihre Änderungen bleiben erhalten, wenn das Dokument erneut gelesen wird.
+
+<a id="preview" />
+
+### Vorschau öffnen und weitergeben
+
+Wählen Sie ein Dokument und dann das Augensymbol mit **Öffnen**. PDFs öffnen sich auf der gewünschten Seite, Bilder werden angezeigt. Bei Word-, Excel- und Textdateien sehen Sie den gelesenen Text. Zeigt eine lange Textvorschau nur den Anfang, laden Sie die Datei herunter, um alles zu lesen. Das können Sie auch tun, wenn die Vorschau noch nicht verfügbar ist oder nicht angezeigt wird.
+
+Speichern Sie die Adresse des geöffneten Dokuments als Lesezeichen oder geben Sie sie an Kollegen mit Zugriff weiter. Wählen Sie im KI-Assistenten eine Dokumentquelle, öffnet sich diese Vorschau auf der zitierten Seite oder beim zitierten Abschnitt.
 
 ### Bereitschaft von Wissen prüfen
 
@@ -42,21 +78,27 @@ Prüfen Sie das Dokument und seine Quellen, um die verfügbaren Informationen zu
 
 ### Dokumentverknüpfungen prüfen
 
-Eine Beziehung verbindet ein Dokument mit einer Maschine, einem Auftrag oder einem Produkt. Eine vorgeschlagene Beziehung ist eine Verbindung, die Sie prüfen können; eine bestätigte Beziehung wurde bereits angenommen. Bestätigen Sie passende Vorschläge und verwerfen Sie Verbindungen, die den Dokumentinhalt nicht richtig zuordnen.
+Eine Beziehung verbindet ein Dokument mit einer Maschine, einem Auftrag oder einem Produkt. Eine vorgeschlagene Beziehung ist eine Verbindung, die Sie prüfen können; eine bestätigte Beziehung wurde bereits angenommen. Bestätigen Sie passende Vorschläge und verwerfen Sie Verbindungen, die den Dokumentinhalt nicht richtig zuordnen. Wählen Sie **Alle bestätigen** nur, wenn alle vorgeschlagenen Verknüpfungen stimmen.
 
 Der Wissensgraph stellt diese Verbindungen visuell dar. Erkunden Sie damit die Dokumente zu einem Produktionsobjekt und unterscheiden Sie dabei vorgeschlagene von bestätigten Verknüpfungen.
+
+<a id="processing" />
 
 ## KB / WDB: Formate, Grenzen und Verarbeitungszustände
 
 **WDB** steht für Wissensdatenbank. Unterstützt werden **PDF, DOCX, XLSX, CSV, TXT, JPG, PNG, WEBP** bis **25 MB**.
 
-Verarbeitungsbezeichnungen sind **Warteschlange → Lesen… → Aufteilen… → Indexieren… → Verknüpfen… → Prüfen → Bereit**; **Fehlgeschlagen** zeigt ein Problem. Prüfen Sie den Status vor einer erwarteten Abfrage. Gescannte oder reine Bild-PDFs können nicht gelesen werden. Ein erneuter Upload derselben unlesbaren PDF behebt das nicht. Stellen Sie stattdessen ein lesbares Dokument bereit.
+Verarbeitungsbezeichnungen sind **Warteschlange → Lesen… → Aufteilen… → Indexieren… → Verknüpfen… → Prüfen → Bereit**; **Fehlgeschlagen** zeigt ein Problem. Prüfen Sie den Status vor einer erwarteten Abfrage. Auch Bilder und gescannte Seiten können gelesen werden. Wird kein lesbarer Text gefunden, laden Sie eine besser lesbare Fassung hoch, etwa ein schärferes Foto oder die Originaldatei.
+
+Fehlgeschlagene Dokumente zeigen einen verständlichen Grund. Die Person, die das Dokument hinzugefügt hat, oder ein Admin mit Zugriff kann **Erneut versuchen** wählen, wenn die Aktion angeboten wird. Wird der Dateityp nicht unterstützt, laden Sie stattdessen eines der unterstützten Formate hoch.
+
+Nur die Person, die ein Dokument hinzugefügt hat, oder ein Admin mit Zugriff kann es löschen. Das Löschen lässt sich nicht rückgängig machen.
 
 Der **Wissensgraph** verbindet Dokumente mit Maschinen, Aufträgen und Produkten. **Vorgeschlagene Verknüpfungen** entstehen automatisch und müssen bestätigt oder abgelehnt werden. **Diktieren** ermöglicht Spracheingabe für Notizen; **1 Dok.** ist die Dokumentanzahl.
 
 ## Wissen in Watchmen AI nutzen
 
-Der **KI-Assistent** kann bereite Firmendokumente nutzen, wenn ein Admin den Bereich unter **Admin-Panel → K.I. → KI-Assistent** freigibt. Seitenzugriff auf die Wissensdatenbank und die Erlaubnis zur KI-Nutzung ihrer Inhalte sind getrennte Einstellungen. Assistent und verbundene KI-Apps sehen nur, was Ihr Konto sehen darf.
+Der **KI-Assistent** kann Ihre bereiten privaten Dokumente und für Sie sichtbare Firmendokumente nutzen, wenn ein Admin den Bereich unter **Admin-Panel → K.I. → KI-Assistent** freigibt. Seitenzugriff auf die Wissensdatenbank und die Erlaubnis zur KI-Nutzung ihrer Inhalte sind getrennte Einstellungen. Assistent und verbundene KI-Apps sehen nur, was Ihr Konto sehen darf.
 
 Nennen Sie für nützliche Abfragen Maschine, Produkt oder Auftrag und eine genaue Frage, etwa „Welches fertige Dokument erklärt die Einrichtung von Maschine A?“ Prüfen Sie referenzierte Quelle und Status. [KI-Chats](/de/platform-intro/pages/chat-history) erklärt Modi und gespeicherte Gespräche.
 
@@ -85,6 +127,8 @@ Nennen Sie für nützliche Abfragen Maschine, Produkt oder Auftrag und eine gena
 - [Benutzerprofil](/de/platform-intro/pages/user-profile)
 
 ## Verwandte Abläufe
+
+- [Dokument hochladen, prüfen und teilen](/de/platform-intro/workflows/knowledge-base)
 
 - [Kanban-Tickets verwalten](/de/platform-intro/workflows/kanban-ticket-management)
 

@@ -5,7 +5,7 @@ description: "A document workspace for uploading knowledge, reviewing processing
 
 ## Overview
 
-**Access:** Admin or Page Access `knowledge_base`. [Roles and access](/en/platform-intro/concepts/roles-and-access).
+**Access:** Admins, Users and Machine operators with access to **Knowledge Base**. [Roles and access](/en/platform-intro/concepts/roles-and-access).
 
 Store and find operational knowledge, then review how documents relate to machines, orders, and products.
 
@@ -14,8 +14,7 @@ Users open it from the Workspace section in the main navigation.
 ## Access
 
 <Callout kind="info" title="Access details">
-- Visibility: Protected
-- Primary routes: `/knowledge-base`
+You need access to this page to open documents. Private documents belong only to the person who added them; Admins cannot see other people’s private documents.
 </Callout>
 
 ## What You Can See
@@ -24,15 +23,52 @@ Users open it from the Workspace section in the main navigation.
 - Suggested and confirmed relationships with machines, orders, and products.
 - A visual Knowledge Graph for exploring those relationships.
 - Search and document review controls.
+- **All / Private / Whole company** filters and a **Private** chip on private documents.
+- A document title, with the file name, size and age below it. If there is no title yet, the file name appears instead.
 
 ## What You Can Do
 
-- Upload files and images or add written notes.
+- Upload files and images or add written notes, choosing **Private** or **Whole company**.
+- Review and edit document details, change who can see your document, and open a preview.
 - Monitor document processing and search stored documents.
 - Review, confirm, or reject suggested relationships.
 - Explore confirmed and suggested links in the Knowledge Graph.
 
 ## Understand the Page
+
+<a id="visibility" />
+
+### Choose Who Can See a Document
+
+**Private** is pre-selected each time you add a file or note, including as an Admin. Only you can see and search it, including when you ask the AI assistant. To share your private document later, open it and choose **Share with whole company → Share** in the confirmation. You can also choose **Whole company** before uploading.
+
+When a Machine operator shares a document or adds a file or note for the whole company, company Admins receive an email. Sharing as an Admin or User sends no email. You do not need to wait for approval.
+
+For a company document, the person who added it or an Admin who can see it can choose **Make private** and confirm. It returns privately to the person who added it. If an Admin makes someone else’s document private, the panel closes and that Admin can no longer see it.
+
+The list filters show:
+
+- **All**: your private documents and company documents you may see.
+- **Private**: only your own private documents.
+- **Whole company**: company documents you may see, including those you shared.
+
+Machine access still applies to company documents. If your access is limited to certain machines, you see documents with no confirmed machine link or with a confirmed link to at least one of your machines. Documents linked only to other machines are hidden. You always see your own documents. Sharing a document’s address does not give someone access to it.
+
+<a id="about-document" />
+
+### Check the Document Details
+
+When a document has been read, **About this document** shows **Title**, **Type**, **Summary** and **Answers questions like**. The AI writes these from the document’s content. A sparkle icon means **AI-generated**; a pencil icon means **Edited** by a person.
+
+Check these details against the document. The person who added it, or an Admin who can see it, can choose the pencil with **Edit**, change the title, type, summary or optional note, then choose **Save**. Your edits stay when the document is read again.
+
+<a id="preview" />
+
+### Open and Share a Preview
+
+Select a document, then use the eye button with **Open**. PDFs open at the requested page, pictures are displayed, and Word, Excel and text files show the text read from the file. If a long text preview shows only the beginning, download the file to read all of it. You can also download it if the preview is not yet available or does not display.
+
+Bookmark the address of the open document or share it with a colleague who has access. In the AI assistant, selecting a document source opens this preview at the cited page or section.
 
 ### Check Whether Knowledge Is Ready
 
@@ -42,21 +78,27 @@ Review the document and its sources to understand what information is available.
 
 ### Review Document Connections
 
-A relationship connects a document to a machine, order, or product. A suggested relationship is a connection for you to review; a confirmed relationship is one you have accepted. Confirm relevant suggestions and reject those that do not describe the document correctly.
+A relationship connects a document to a machine, order, or product. A suggested relationship is a connection for you to review; a confirmed relationship is one you have accepted. Confirm relevant suggestions and reject those that do not describe the document correctly. Choose **Confirm all** only when all the suggested links are right.
 
 The Knowledge Graph is a visual view of these connections. Use it to explore the documents related to a production item, while distinguishing suggestions from confirmed links.
+
+<a id="processing" />
 
 ## KB / WDB: Formats, Limits, and Processing States
 
 **KB** is Knowledge Base; the German short label is **WDB (Wissensdatenbank)**. Supported uploads are **PDF, DOCX, XLSX, CSV, TXT, JPG, PNG, WEBP**, up to **25 MB**.
 
-Processing labels are **Queued → Reading → Splitting → Indexing → Linking → Review → Ready**, with **Failed** indicating a processing problem. Check the displayed status before expecting retrieval. Scanned or image-only PDFs cannot be read; uploading the same unreadable PDF again does not fix it. Provide a readable document instead.
+Processing labels are **Queued → Reading → Splitting → Indexing → Linking → Review → Ready**, with **Failed** indicating a processing problem. Check the displayed status before expecting retrieval. Pictures and scanned pages can be read too. If no readable text is found, upload a clearer copy, such as a sharper photo or the original file.
+
+Failed documents show a plain reason. The person who added the document or an Admin who can see it can choose **Try again** when offered. For an unsupported file type, upload one of the supported formats instead.
+
+Only the person who added a document or an Admin who can see it can delete it. Deletion cannot be undone.
 
 The **Knowledge Graph** links documents to machines, orders, and products. **Suggested links** are detected automatically and require confirmation or rejection. **Dictate** provides voice input for notes; **1 doc / 1 Dok.** is a document count.
 
 ## Using Knowledge in Watchmen AI
 
-The **AI assistant** can use ready company documents when an Admin allows that area under **Admin Panel → A.I. → AI assistant**. Knowledge Base page access and permission for AI to use its content are separate settings. The assistant and connected AI apps see only what your account may see.
+The **AI assistant** can use your ready private documents and company documents you may see when an Admin allows that area under **Admin Panel → A.I. → AI assistant**. Knowledge Base page access and permission for AI to use its content are separate settings. The assistant and connected AI apps see only what your account may see.
 
 For useful queries, name the machine, product, or order and the exact question, such as “Which ready document explains Machine A's setup?” Check the referenced source and its status. See [AI Chats](/en/platform-intro/pages/chat-history) for modes and saved conversations.
 
@@ -85,5 +127,7 @@ For useful queries, name the machine, product, or order and the exact question, 
 - [User Profile](/en/platform-intro/pages/user-profile)
 
 ## Related Workflows
+
+- [Upload, Review and Share a Document](/en/platform-intro/workflows/knowledge-base)
 
 - [Manage Kanban Tickets](/en/platform-intro/workflows/kanban-ticket-management)
