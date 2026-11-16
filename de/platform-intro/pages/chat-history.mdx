@@ -35,11 +35,54 @@ Benutzer öffnen diese Seite über den Bereich **Arbeitsbereich** in der Hauptna
 
 Stellen Sie Fragen zur Watchmen-Anleitung oder zu Unternehmensdaten, die Ihr Admin freigibt. Der Assistent sieht nur, was Sie sehen dürfen. Er findet Kollegen nach Namen; Admins sehen auch deren E-Mail-Adressen. Er kann Seiten öffnen, Formulare ausfüllen und Änderungen zur Prüfung vorschlagen.
 
+<a id="message-box" />
+
+## Eine Nachricht schreiben und die Antwort lesen
+
+Das Nachrichtenfeld ist im seitlichen Chat, im frei beweglichen Fenster und auf der KI-Chat-Seite gleich aufgebaut. Schreiben Sie oben und wählen Sie unten links den Antwortmodus. Unten rechts hängen Sie mit der Büroklammer Dateien an, diktieren mit dem Mikrofon und senden mit der weißen Schaltfläche mit Papierflieger. Das [Notizfeld der Wissensdatenbank](/de/platform-intro/pages/knowledge-base) verwendet dieselbe Schaltflächengestaltung.
+
+Antworten erscheinen als freier Text mit Abständen und Überschriften. Neben jeder Antwort steht eine dünne Linie mit einem Punkt. Auf der KI-Chat-Seite nutzen Antworten mehr Bildschirmbreite.
+
+<a id="chat-files" />
+
+## Zu einer Datei oder einem Bild fragen
+
+Fügen Sie Dateien mit der Büroklammer hinzu, ziehen Sie sie auf den Chat, sobald **Dateien hier ablegen, um sie dem Chat hinzuzufügen** erscheint, oder fügen Sie ein Bildschirmfoto ins Nachrichtenfeld ein. Das geht im seitlichen Chat, im frei beweglichen Fenster und auf der KI-Chat-Seite, auch beim Assistenten auf der BDE-Seite. Eingefügter Text bleibt Text.
+
+Sie können bis zu **5 Dateien pro Nachricht** mit jeweils bis zu **25 MB** hinzufügen. Unterstützt werden PDF, Word, Excel, CSV, Text und Bilder; siehe [unterstützte Formate](/de/platform-intro/pages/knowledge-base#processing). Der Assistent liest die Dateien und nutzt sie für seine Antwort. Hängen Sie beispielsweise eine Arbeitsanweisung an und fragen Sie, welche Prüfungen vor dem Start nötig sind. Sie können auch nur Dateien ohne schriftliche Frage senden.
+
+Jede Datei erscheint über dem Nachrichtenfeld mit Name und Fortschritt: **Wird hochgeladen** mit Prozentangabe, danach **Wird gelesen** und schließlich **Bereit**. Solange ein Dokument gelesen wird, wartet das Senden und zeigt **Warten, bis die Datei gelesen ist**. Bilder können Sie nach dem Hochladen senden. Der Assistent betrachtet sie als Bilder, etwa ein Foto eines beschädigten Bauteils.
+
+Schlägt eine Datei fehl, erscheint der Grund, etwa **Nicht lesbar** oder **Kein Text gefunden**. Sie wird nicht gesendet und bleibt über dem Feld, bis Sie sie mit × entfernen. Damit nehmen Sie die Datei aus dieser Nachricht. Ein Bild ohne lesbaren Text zeigt **Nur als Bild**: Der Assistent kann es in diesem Chat nutzen, aber es lässt sich nicht in der Wissensdatenbank behalten.
+
+<a id="keep-chat-files" />
+
+### Wählen, wo die Dateien bleiben
+
+Erscheint **Diese Dateien auch in Ihrer Wissensdatenbank behalten?**, wählen Sie:
+
+- **In Wissensdatenbank behalten**: Geeignete Dateien werden als **Privat** behalten. Nur Sie sehen sie dort. Sie können sie [später teilen](/de/platform-intro/pages/knowledge-base#visibility).
+- **Nur dieser Chat**: Die Dateien werden in dieser Unterhaltung verwendet. Sie erscheinen nicht in der Wissensdatenbank.
+
+Aktivieren Sie **Auswahl merken**, bevor Sie wählen, wo die Dateien bleiben sollen. Dann gilt Ihre Wahl auch für künftige Chatdateien. Sie können sie später im [Benutzerprofil](/de/platform-intro/pages/user-profile#ai-preferences) ändern.
+
+Das Behalten ist nur möglich, wenn Sie Zugriff auf die Wissensdatenbank haben und ein Admin diesen Bereich unter **Admin-Panel → K.I. → KI-Assistent** freigegeben hat. Andernfalls bleiben die Frage, die Aktionen zum Behalten und die Profileinstellung verborgen. Sie können Dateien weiterhin im Chat nutzen.
+
+Gesendete Nachrichten zeigen ihre Dateien auch beim erneuten Öffnen des Chats. Wählen Sie eine Datei, um ihre Vorschau zu öffnen. Eine behaltene Datei öffnet sich in der Wissensdatenbank. Möchten Sie eine geeignete Datei später behalten, öffnen Sie ihr Drei-Punkte-Menü **Mehr zu dieser Datei** und wählen Sie **In Wissensdatenbank behalten**. Die Kennzeichnung **Wissensdatenbank** zeigt, dass die Datei behalten wurde. Folgen Sie [den Assistenten zu einer Datei fragen](/de/platform-intro/workflows/chat-attachments).
+
+<a id="delete-chat" />
+
+### Einen Chat und seine Dateien löschen
+
+Beim Löschen einer Unterhaltung öffnet die Watchmen-Plattform **Diesen Chat löschen?**. Dateien, die nur in diesem Chat verwendet wurden, werden mit ihm gelöscht. In Ihrer Wissensdatenbank behaltene Dateien bleiben erhalten. Prüfen Sie vor der Bestätigung, was Sie noch benötigen: Das Löschen lässt sich nicht rückgängig machen.
+
+Dateien, die Sie anhängen, aber weder senden noch in der Wissensdatenbank behalten, werden nach etwa einem Tag entfernt.
+
 <a id="answer-modes" />
 
 ## Einen Antwortmodus wählen
 
-Wählen Sie neben dem Nachrichtenfeld **Antwortmodus**:
+Wählen Sie unten links im Nachrichtenfeld **Antwortmodus**:
 
 | Modus | Geeignet für | Credits je Antwort |
 | --- | --- | --- |
@@ -126,6 +169,8 @@ Nur Sie können Ihre privaten Dokumente sehen und durchsuchen, auch wenn Sie den
 - [Benutzerprofil](/de/platform-intro/pages/user-profile)
 
 ## Verwandte Abläufe
+
+- [Den KI-Assistenten zu einer Datei fragen](/de/platform-intro/workflows/chat-attachments)
 
 - [Kanban-Tickets verwalten](/de/platform-intro/workflows/kanban-ticket-management)
 

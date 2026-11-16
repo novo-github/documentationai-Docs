@@ -458,6 +458,11 @@
                             "icon": "play-circle"
                           },
                           {
+                            "title": "Ask the AI Assistant About a File",
+                            "path": "en/platform-intro/workflows/chat-attachments",
+                            "icon": "play-circle"
+                          },
+                          {
                             "title": "Create an Automator Rule",
                             "path": "en/platform-intro/workflows/automator-rule-creation",
                             "icon": "play-circle"
@@ -1055,6 +1060,11 @@
                           {
                             "title": "Dokument hochladen, prüfen und teilen",
                             "path": "de/platform-intro/workflows/knowledge-base",
+                            "icon": "play-circle"
+                          },
+                          {
+                            "title": "Den KI-Assistenten zu einer Datei fragen",
+                            "path": "de/platform-intro/workflows/chat-attachments",
                             "icon": "play-circle"
                           },
                           {
