@@ -6,6 +6,49 @@ toc: false
 
 ## Releases
 
+<Update label="2026-11-16" description="v1.5.166" tags={["Funktion", "Verbesserung", "Fehlerbehebung"]}>
+  {/* commits: 55a8285a, cab48862, 9436deb0, 0504340c, 4aaba87b, 45c2ec3f, 9847a836, 74fa4a4b, 433ce89b, b387acf3, 5056943e, d18b5445, 338eb23d, 84fce856, b15c364c, aff5d34, 59de12d, 86ff6ae, a8ab2e8, 57222f5, d65fe82, 3302c50, 99f3b44, 37c49eb, 7cb7bd2, ebe2229, 282efe4, d286362, 582feeb, 80e336a, efa36e6, c6ef652 */}
+
+  **Release-Zeitraum:** 15.–16. November 2026
+
+  ### Neue Funktionen
+
+  #### [Eine Seite öffnen und weiterchatten](/de/platform-intro/pages/chat-history#opening-and-changing)
+  {/* feature: ai-chat-continue */}
+
+  Auf der KI-Chat-Seite wählen Sie jetzt, ob Sie eine vorgeschlagene Seite oder ein Formular öffnen und dieselbe Unterhaltung im frei beweglichen Chat-Fenster fortsetzen oder **Hier bleiben** möchten. Diese Rückfrage erscheint immer, auch bei **Seiten öffnen → Automatisch**. Im Chat-Fenster steht **Fortgesetzt von der KI-Chat-Seite**.
+
+  Sie können auch **Als Fenster anzeigen** im Kopf der Unterhaltung wählen. Auf Smartphones bleibt der Chat angedockt.
+
+  #### [Verbleibende KI-Credits Ihres Unternehmens prüfen](/de/platform-intro/pages/admin-panel#ai-credits)
+  {/* feature: ai-credits-v2 */}
+
+  Admins öffnen **Admin-Panel → K.I. → KI-Assistent → Nutzung** für eine Aufteilung der enthaltenen monatlichen Credits, der zusätzlichen monatlichen Credits mit ihrem letzten Monat und der Credit-Pakete mit Restmenge und Ablaufdatum. Diese Angaben können Sie nur ansehen. **Diesen Monat noch übrig** zeigt die verbleibende Menge. Enthaltene Credits gehören jetzt zum Unternehmen, unabhängig von der Zahl der Personen mit KI-Zugang.
+
+  Zuerst werden enthaltene Credits genutzt, dann zusätzliche monatliche Credits, dann das Paket, das zuerst abläuft. Zusätzliche monatliche Credits stehen jeden Monat ihrer Laufzeit erneut bereit; ungenutzte monatliche Credits verfallen am Monatsende. Ein Credit-Paket ist eine Menge für die gesamte Laufzeit. Sie können diese Mengen hier nicht ändern. **Sie brauchen mehr Credits? Schreiben Sie an** nennt Admins den Kontakt [tech@novoai.de](mailto:tech@novoai.de), auch bei aufgebrauchten Unternehmenscredits.
+
+  ### Verbesserungen
+
+  #### [Tiefenanalyse wählen und eigene Nutzung prüfen](/de/platform-intro/pages/user-profile#ai-preferences)
+  {/* feature: ai-answer-mode-and-usage */}
+
+  **Tiefenanalyse** (bisher **Gründlich**) untersucht Daten, vergleicht und prüft Quellen und nennt Ursachen und Empfehlungen. Dieser Modus dauert länger. Wählen Sie ihn neben dem Nachrichtenfeld oder im Benutzerprofil unter **Mein KI-Assistent → Standard-Antwortmodus**. Die Profilkarte hieß bisher **KI-Assistent**.
+
+  **Meine Nutzung in diesem Monat** und **Nutzung** für Admins zeigen Interaktionen und, wenn KI-Credits angezeigt werden, die verbrauchten Credits. Andernfalls sehen Sie nur Interaktionen. Siehe [Antwortmodi](/de/platform-intro/pages/chat-history#answer-modes).
+
+  ### Fehlerbehebungen
+
+  #### [Bei mehreren passenden Namen eindeutige Antworten erhalten](/de/platform-intro/pages/chat-history#tips)
+  {/* feature: ai-answer-clarity */}
+
+  Passt ein Maschinen- oder Auftragsname zu mehreren Einträgen oder zu keinem, fragt der Assistent jetzt nach und bietet echte Namen zur Auswahl an oder beantwortet alle Treffer, wenn das kurz möglich ist. Klare Wünsche wie „Erstellen Sie ein Ticket für Maschine A“ bereitet er sofort vor, sodass Sie nur noch **Bestätigen** wählen müssen. Antworten verwenden die Namen und Zustandsbezeichnungen, die Sie aus Watchmen kennen, statt interner Nummern.
+
+  #### [Das Ende der Antwort im Blick behalten](/de/platform-intro/pages/chat-history)
+  {/* feature: ai-chat-scroll */}
+
+  Während eine Antwort fertig erschien, konnte der Chat seine Position am Ende verlieren. Das Ende bleibt jetzt im seitlichen Chat, im frei beweglichen Fenster und auf der Chat-Seite sichtbar, auch nach dem Fortsetzen einer Unterhaltung in einer anderen Ansicht.
+</Update>
+
 <Update label="2026-11-15" description="v1.5.165" tags={["Funktion", "Fehlerbehebung"]}>
   {/* commits: 4e73e3cc, 3a4c7309, dae25e2d, b2e21fb6, 7635366e, 3e663a8b, bc5d0b46, f2813506, c6fbc3e1, d99990eb, 203cfd06, a9c407ce, 0218f45a, b86e974b, 68e356c9, 46e6c1f4, 19a047c0, 850f6bc1, 37d7d700, 7eb3c3de, f6235961, b7aed523, 0ac34f17, 962609bc, 8d5bf695, f6b4d0e0, 4cc1c444, 3f547813, 66f7f677, 63bb8aa4, 45f4eb99, 46c98c1d, 05d42886, ccf5dfcb, 7cc7c2a7, 4d5839dc, f105bda3, b32a3245, feb822d1, a1e0b5d7, 4a9a6492, c6bc31f5, 22b0c8a1, 3f473791, 8f8d34a1, b0ad766a, d2361119, 68e647bf, 874410fe, 68afcd7d, 1d34f5fe, caba59e2, 6c19c580, ceed5e42, a1c5e80d, 7d006a1c, 46d6a6a5, 5b9db830, 811be13a, c52fa333, fa722cc7, 46e337c4, 6e5c0885, a5afb48b, 1d1aff8f, eaecb919, be563234, f6e96b25, 6185c00b, 72f95151, 209c0241, 869ae160, 4382f04b, ed7135a2, fa8ba931, d3efb01f, 381b66a9, c5aa409a, 08eb2b59, 6d6336cd, 2fd45fdd */}
 

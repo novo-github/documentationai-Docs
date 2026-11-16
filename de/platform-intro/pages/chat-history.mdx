@@ -45,7 +45,7 @@ Wählen Sie neben dem Nachrichtenfeld **Antwortmodus**:
 | --- | --- | --- |
 | **Automatisch** (empfohlen) | Die meisten Fragen | 1–3 |
 | **Schnell** | Kurze, einfache Fragen | 1 |
-| **Gründlich** | Tiefere Recherche; dauert länger | 5 |
+| **Tiefenanalyse** (bisher **Gründlich**) | Untersucht Daten, vergleicht und prüft Quellen und nennt Ursachen und Empfehlungen; dauert länger | 5 |
 
 Eine Websuche kostet zusätzlich 1 Credit; fehlgeschlagene Antworten sind kostenlos. **Websuche** bleibt aus, bis ein Admin sie einschaltet, und gilt nur für den Assistenten in Watchmen, nicht für verbundene Apps.
 
@@ -53,11 +53,11 @@ Eine Websuche kostet zusätzlich 1 Credit; fehlgeschlagene Antworten sind kosten
 
 ## Änderungen und geöffnete Seiten prüfen
 
-Lesen Sie vor einer Änderung **Änderung prüfen**: Erst wenn Sie **Bestätigen** wählen, ändert sich etwas. Formulare werden nur ausgefüllt; Sie prüfen und speichern sie selbst. Unter **Seiten öffnen** ist **Erst fragen** voreingestellt. **Automatisch** lässt den Assistenten Seiten und Formulare selbst öffnen, bestätigt aber keine Änderungen für Sie.
+Lesen Sie vor einer Änderung **Änderung prüfen**: Erst wenn Sie **Bestätigen** wählen, ändert sich etwas. Formulare werden nur ausgefüllt; Sie prüfen und speichern sie selbst. Unter **Seiten öffnen** ist **Erst fragen** voreingestellt. **Automatisch** lässt den Assistenten aus dem seitlichen oder frei beweglichen Chat Seiten und Formulare selbst öffnen, bestätigt aber keine Änderungen für Sie. Auf der KI-Chat-Seite fragt er immer vor dem Öffnen einer Seite oder eines Formulars, auch bei **Automatisch**. Wählen Sie **&lt;Seite&gt; öffnen und im Chat-Fenster weiterchatten** oder **Hier bleiben**, um auf der Chat-Seite zu bleiben.
 
 ## Das Chatfenster anordnen
 
-Der Chat ist zunächst am Rand angedockt. Mit **Als Fenster anzeigen** können Sie ein frei bewegliches Fenster verschieben und vergrößern. **Am Rand andocken** bringt es zurück. Auf Smartphones bleibt der Chat angedockt.
+Der Chat ist zunächst am Rand angedockt. Mit **Als Fenster anzeigen** können Sie ein frei bewegliches Fenster verschieben und vergrößern. **Am Rand andocken** bringt es zurück. Auf Smartphones bleibt der Chat angedockt. Auf der KI-Chat-Seite setzt **Als Fenster anzeigen** im Kopf der Unterhaltung denselben Chat im frei beweglichen Fenster fort. Beim Öffnen einer Seite oder eines Formulars geschieht dies nach Ihrer Zustimmung ebenfalls. **Fortgesetzt von der KI-Chat-Seite** zeigt, woher die Unterhaltung stammt.
 
 <a id="chat-memory" />
 
@@ -75,7 +75,9 @@ Das Gedächtnis ist eingeschaltet, solange Sie es nicht im Benutzerprofil oder e
 
 ## Wenn Credits aufgebraucht sind
 
-Der Chat zeigt die verbleibenden monatlichen KI-Credits Ihres Unternehmens, was aufgebraucht ist, ob **Schnell** noch funktioniert und wann die Credits wieder verfügbar sind. Ihr Admin wählt unter **Wenn die Credits aufgebraucht sind**: **Pausieren** ist voreingestellt, sodass **Automatisch** und **Gründlich** bis zum nächsten Monat warten und nur **Schnell** für einige Fragen pro Person und Tag funktioniert. Mit **Überschreitung erlauben** gehen Antworten bis zur Menge unter **Zusätzliche Credits pro Monat** weiter; diese werden separat abgerechnet. Siehe [KI-Einstellungen und Grenzen](/de/platform-intro/pages/admin-panel#ai-settings).
+Wenn KI-Credits angezeigt werden, zeigt der Chat die verbleibende Menge dieses Monats, was aufgebraucht ist, ob **Schnell** noch funktioniert und wann die Credits wieder verfügbar sind. Ihr Admin wählt unter **Wenn die Credits aufgebraucht sind**: **Pausieren** ist voreingestellt, sodass **Automatisch** und **Tiefenanalyse** bis zum nächsten Monat warten und nur **Schnell** für einige Fragen pro Person und Tag funktioniert. Mit **Überschreitung erlauben** gehen Antworten bis zur Menge unter **Zusätzliche Credits pro Monat** weiter; diese werden separat abgerechnet. Siehe [KI-Einstellungen und Grenzen](/de/platform-intro/pages/admin-panel#ai-settings).
+
+Admins sehen bei aufgebrauchten Unternehmenscredits außerdem **Sie brauchen mehr Credits? Schreiben Sie an** mit [tech@novoai.de](mailto:tech@novoai.de). Die Aufteilung der Credits finden Sie unter [Nutzung im Admin-Panel](/de/platform-intro/pages/admin-panel#ai-credits). Wenn Sie kein Admin sind, bitten Sie Ihren Admin um weitere Credits.
 
 <a id="connected-apps" />
 
@@ -85,9 +87,13 @@ Ein Admin schaltet zuerst **KI-Apps** in der Karte **KI-Assistent** ein. Öffnen
 
 Melden Sie sich mit Ihrem eigenen Watchmen-Konto an. Die Freigabeseite nennt die App und zeigt, was sie lesen darf. Wählen Sie **Erlauben**. Die App sieht nur, was Sie sehen dürfen. **Trennen** unter **Verbundene Apps** beendet den Zugriff sofort. Mit **Änderungen erlaubt** darf sie auch freigegebene Unternehmensaktionen ausführen und fragt vor jeder Änderung.
 
+<a id="tips" />
+
 ## Eine genaue Frage stellen und die Quelle behalten
 
 Nennen Sie genaue Bezeichnung und Kontext. Beispielsweise kann „Was bedeutet PRO im Hallenplan?“ aus dem [Glossar](/de/platform-intro/concepts/glossary) beantwortet werden. „Vergleichen Sie die Leerlaufzeit von Maschine A in dieser Schicht“ benötigt die entsprechende Freigabe der Unternehmensdaten.
+
+Passt ein Name zu mehreren Maschinen oder Aufträgen oder zu keinem, fragt der Assistent nach und bietet echte Namen zur Auswahl an oder beantwortet alle Treffer, wenn das kurz möglich ist. Einen klaren Wunsch wie „Erstellen Sie ein Ticket für Maschine A“ bereitet er sofort vor, sodass Sie nur noch **Bestätigen** wählen müssen.
 
 Nennen Sie bei Kennzahlenfragen Maschine, Datumsbereich, Schichtmodus und Mengenquelle. [Berechnungen](/de/platform-intro/concepts/calculations) erklärt bestätigte Definitionen und Grenzen. Durchsuchen Sie gespeicherte Gesprächstitel, vergeben Sie aussagekräftige Namen und markieren Sie nützliche Gespräche für später.
 
