@@ -802,7 +802,7 @@ toc: false
   #### [Dringende Arbeit nach Prüfung der Warteschlange vorziehen](/de/platform-intro/pages/assignment-planner)
   {/* feature: planner-queue-sort */}
 
-  Administratoren und Benutzer mit Zugriff auf die Auftragsseite und die Maschine können eine Maschinenwarteschlange oder einen Hallenpool jetzt nach Priorität und danach nach dem frühesten geplanten Operationsstart ordnen. Operatoren sehen diese Schaltfläche nicht. Aktivieren Sie im Zuweisungsplaner unter **Filtern & Sortieren** die Option **Nach Warteschlangenposition sortieren**. Wählen Sie im Kopf der Warteschlange **Nach Priorität und Datum sortieren**. Wählen Sie **Auftragspriorität** oder **Arbeitsgangpriorität**, prüfen Sie die vorgeschlagenen Positionen und wählen Sie **Reihenfolge übernehmen**. Laufende Aufträge und Aufträge in Wartestellung bleiben oben. Mit **Rückgängig** in der Bestätigung stellen Sie die vorherige Reihenfolge wieder her.
+  Administratoren und User mit Zugriff auf die Auftragsseite und die Maschine können eine Maschinenwarteschlange oder einen Hallenpool jetzt nach Priorität und danach nach dem frühesten geplanten Operationsstart ordnen. Maschinenbediener sehen diese Schaltfläche nicht. Aktivieren Sie im Zuweisungsplaner unter **Filtern & Sortieren** die Option **Nach Warteschlangenposition sortieren**. Wählen Sie im Kopf der Warteschlange **Nach Priorität und Datum sortieren**. Wählen Sie **Auftragspriorität** oder **Arbeitsgangpriorität**, prüfen Sie die vorgeschlagenen Positionen und wählen Sie **Reihenfolge übernehmen**. Laufende Aufträge und Aufträge in Wartestellung bleiben oben. Mit **Rückgängig** in der Bestätigung stellen Sie die vorherige Reihenfolge wieder her.
 
   Die Sortierung erfolgt erst beim Übernehmen. Danach können Sie Karten weiterhin ziehen. Zahlen unten links zeigen die Position jeder Karte in der Warteschlange. Sie verschwinden, wenn Sortierregeln, Filter oder eine Suche die vollständige Warteschlangenreihenfolge ausblenden. Folgen Sie [Maschinenzuweisungen planen](/de/platform-intro/workflows/assignment-planner).
 
@@ -816,7 +816,7 @@ toc: false
   #### [Offene Arbeit auf einer anderen Maschine fortsetzen](/de/platform-intro/pages/data-acquisition)
   {/* feature: assignment-handover */}
 
-  Mit Zugriff auf die Maschine können Sie in der Betriebsdatenerfassung V3 einen Schritt auswählen und **Zurück in den Pool** wählen. Bei ausgewähltem Schritt ersetzt dies **Erstellen**. Laufende Arbeit stoppen Sie zuerst wie gewohnt und erfassen die Mengen. Danach folgt gegebenenfalls die Zeitauswahl von **BDE Assist**. Die Arbeit geht in den Hallenpool der Maschine zurück. Administratoren und Benutzer mit Zugriff auf die Seite Aufträge können im Zuweisungsplaner einen Schritt, der begonnen und danach gestoppt wurde, auf einen beliebigen Hallenpool oder eine andere zugängliche Maschine ziehen. Sie benötigen auch Zugriff auf die aktuelle Maschine des Schritts. Andere Benutzer mit Zugriff auf diese Maschine können den Schritt in der Betriebsdatenerfassung und im Zuweisungsplaner nur in deren eigenen Hallenpool zurückgeben. Ungestartete Schritte werden im Zuweisungsplaner weiterhin direkt ohne Dialog verschoben.
+  Mit Zugriff auf die Maschine können Sie in der Betriebsdatenerfassung V3 einen Schritt auswählen und **Zurück in den Pool** wählen. Bei ausgewähltem Schritt ersetzt dies **Erstellen**. Laufende Arbeit stoppen Sie zuerst wie gewohnt und erfassen die Mengen. Danach folgt gegebenenfalls die Zeitauswahl von **BDE Assist**. Die Arbeit geht in den Hallenpool der Maschine zurück. Administratoren und User mit Zugriff auf die Seite Aufträge können im Zuweisungsplaner einen Schritt, der begonnen und danach gestoppt wurde, auf einen beliebigen Hallenpool oder eine andere zugängliche Maschine ziehen. Sie benötigen auch Zugriff auf die aktuelle Maschine des Schritts. Andere Benutzer mit Zugriff auf diese Maschine können den Schritt in der Betriebsdatenerfassung und im Zuweisungsplaner nur in deren eigenen Hallenpool zurückgeben. Ungestartete Schritte werden im Zuweisungsplaner weiterhin direkt ohne Dialog verschoben.
 
   Hat die Arbeit begonnen, bleiben erfasste Zeiten und Gutteile auf der ursprünglichen Maschine. Prüfen Sie **Restmenge**, ergänzen Sie **Grund (optional)** für die nächste Person und bestätigen Sie. Beispielsweise bleiben bei 40 Gutteilen von 100 noch 60 für die nächste Maschine. Bei der Rückgabe eines ungestarteten Schritts wird der ganze Schritt verschoben. In beiden Fällen kommt die zurückgegebene oder übergebene Arbeit an den Anfang der Zielwarteschlange. Folgen Sie [Arbeit auf der BDE-Seite zurückgeben](/de/platform-intro/workflows/data-acquisition#back-to-pool) oder [Arbeit im Planer übergeben](/de/platform-intro/workflows/assignment-planner#hand-over-work).
 
@@ -1031,7 +1031,7 @@ toc: false
   #### [Den tatsächlichen Arbeitsbeginn und das Arbeitsende erfassen](/de/platform-intro/pages/data-acquisition)
   {/* feature: pda-bde-assist */}
 
-  **BDE Assist** kann verspätete Start- und Stoppzeiten an die von der Maschine erfassten Zeiten anpassen, auch beim Rüsten. Administratoren aktivieren dies unter **Maschineneinstellungen → BDE Assist**. Bediener wählen eine vorgeschlagene Zeit, behalten die gedrückte Zeit oder nutzen nach einer automatischen Anpassung **Rückgängig** und **Ändern…**. Ein verspäteter Stopp kann beispielsweise auf das letzte Produktionsende gesetzt werden.
+  **BDE Assist** kann verspätete Start- und Stoppzeiten an die von der Maschine erfassten Zeiten anpassen, auch beim Rüsten. Administratoren aktivieren dies unter **Maschineneinstellungen → BDE Assist**. Maschinenbediener wählen eine vorgeschlagene Zeit, behalten die gedrückte Zeit oder nutzen nach einer automatischen Anpassung **Rückgängig** und **Ändern…**. Ein verspäteter Stopp kann beispielsweise auf das letzte Produktionsende gesetzt werden.
 
   Administratoren können auch **Vergessene Intervalle automatisch beenden** aktivieren. Die Prüfung läuft weiter, wenn niemand die BDE-Seite geöffnet hat. Sie beendet nur Produktionsintervalle; Mengen müssen noch gebucht werden. Folgen Sie [Betriebsdatenerfassung durchführen](/de/platform-intro/workflows/data-acquisition).
 
@@ -1045,7 +1045,7 @@ toc: false
   #### [Passende Stillstandsgründe je Maschine anbieten](/de/platform-intro/pages/machine-configuration)
   {/* feature: machine-downtime-reasons */}
 
-  Administratoren können unter **Maschineneinstellungen → Stillstandsgründe** alle Gründe oder eine Auswahl anbieten, Gründe anlegen oder bearbeiten und die Auswahl **Auf andere Maschinen übertragen**. Dabei wird die bisherige Auswahl der Zielmaschinen ersetzt. **Code** und **Kategorie** helfen Bedienern beim Erkennen der Gründe. Kategoriefilter grenzen die Kacheln auf der BDE-Seite ein.
+  Administratoren können unter **Maschineneinstellungen → Stillstandsgründe** alle Gründe oder eine Auswahl anbieten, Gründe anlegen oder bearbeiten und die Auswahl **Auf andere Maschinen übertragen**. Dabei wird die bisherige Auswahl der Zielmaschinen ersetzt. **Code** und **Kategorie** helfen Maschinenbedienern beim Erkennen der Gründe. Kategoriefilter grenzen die Kacheln auf der BDE-Seite ein.
 
   Wählen Sie beim Bearbeiten unter **Verfügbar auf Maschinen**, wo ein Grund auswählbar ist. Änderungen am Grund selbst gelten für alle Maschinen. Beim Löschen bleiben frühere Stillstandseinträge erhalten, verlieren aber ihren Grund. Verliert eine Maschine ihren letzten ausgewählten Grund, zeigt sie wieder alle Gründe. Folgen Sie [Stillstandsgründe erstellen und verwalten](/de/platform-intro/workflows/timeline-reason-creation).
 
@@ -1190,7 +1190,7 @@ toc: false
 
   Öffnen Sie **Profil → E-Mail ändern**, geben Sie **Neue E-Mail** ein und wählen Sie **Bestätigung senden**. Öffnen Sie den Link an der neuen Adresse und wählen Sie **E-Mail-Änderung bestätigen**. Bis zur Bestätigung verwenden Sie Ihre bisherige E-Mail. Danach melden Sie sich mit der neuen an.
 
-  Solange die Bestätigung aussteht, können Sie nach der angezeigten Wartezeit **Erneut senden** oder **Änderung abbrechen** wählen. Administratoren können die Änderung auch in der Benutzerverwaltung für Benutzer anfordern, die keine Operatoren sind. Die Person muss die neue Adresse weiterhin selbst bestätigen. Folgen Sie [E-Mail-Adresse ändern](/de/platform-intro/workflows/change-email).
+  Solange die Bestätigung aussteht, können Sie nach der angezeigten Wartezeit **Erneut senden** oder **Änderung abbrechen** wählen. Administratoren können die Änderung auch in der Benutzerverwaltung für Benutzer anfordern, die keine Maschinenbediener sind. Die Person muss die neue Adresse weiterhin selbst bestätigen. Folgen Sie [E-Mail-Adresse ändern](/de/platform-intro/workflows/change-email).
 
   ### Verbesserungen
 
@@ -1462,7 +1462,7 @@ toc: false
 
   #### Einladungen verwalten — 2. August
 
-  Administratoren können Admins, Benutzer und Operatoren per E-Mail einladen, ausstehende Einladungen erneut senden oder stornieren und Eingeladene durch die Einrichtung ihres Kontos führen.
+  Administratoren können Admins, User und Maschinenbediener per E-Mail einladen, ausstehende Einladungen erneut senden oder stornieren und Eingeladene durch die Einrichtung ihres Kontos führen.
 
   **Version:** v1.5.88
   **UI-Build-Commit:** `6409a61`
@@ -1487,9 +1487,9 @@ toc: false
   **Version:** v1.5.87
   **UI-Build-Commit:** `17e937f`
 
-  #### Operatorzugang wiederherstellen — 30. Juli
+  #### Zugang für Maschinenbediener wiederherstellen — 30. Juli
 
-  In der Operatorverwaltung können Administratoren Passwörter zurücksetzen oder die Kontobestätigung erneut senden, ohne ein Ersatzkonto anzulegen.
+  In der Verwaltung der Maschinenbediener können Administratoren Passwörter zurücksetzen oder die Kontobestätigung erneut senden, ohne ein Ersatzkonto anzulegen.
 
   **Version:** v1.5.86
   **UI-Build-Commit:** `d520008`
@@ -1517,7 +1517,7 @@ toc: false
 
   #### Schnelle Vorgangszuweisung — 18. Juli
 
-  Operatoren können eine ungeplante Operation direkt auf dem Produktionsbildschirm finden und der aktuellen Maschine zuweisen.
+  Maschinenbediener können eine ungeplante Operation direkt auf dem Produktionsbildschirm finden und der aktuellen Maschine zuweisen.
 
   **Version:** v1.5.74
   **UI-Build-Commit:** `5614213`
