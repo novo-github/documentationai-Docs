@@ -458,6 +458,11 @@
                             "icon": "play-circle"
                           },
                           {
+                            "title": "Save and Use Knowledge on the PDA Page",
+                            "path": "en/platform-intro/workflows/pda-knowledge",
+                            "icon": "play-circle"
+                          },
+                          {
                             "title": "Ask the AI Assistant About a File",
                             "path": "en/platform-intro/workflows/chat-attachments",
                             "icon": "play-circle"
@@ -1060,6 +1065,11 @@
                           {
                             "title": "Dokument hochladen, prüfen und teilen",
                             "path": "de/platform-intro/workflows/knowledge-base",
+                            "icon": "play-circle"
+                          },
+                          {
+                            "title": "Wissen auf der BDE-Seite speichern und nutzen",
+                            "path": "de/platform-intro/workflows/pda-knowledge",
                             "icon": "play-circle"
                           },
                           {

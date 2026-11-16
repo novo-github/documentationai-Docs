@@ -21,7 +21,7 @@ Wählen Sie **Neue Vorlage** oder bearbeiten oder löschen Sie eine vorhandene V
 
 Ein Name ist erforderlich, darf höchstens 80 Zeichen lang sein und muss innerhalb Ihres Unternehmens eindeutig sein. Groß- und Kleinschreibung sowie Leerzeichen vor oder nach dem Namen machen keinen Unterschied: „Sägen“ und „ sägen “ gelten als derselbe Name. Namen anderer Unternehmen zählen nicht mit. Beim Speichern eines doppelten Namens erscheint **Es gibt bereits eine Vorlage mit diesem Namen.**
 
-Der Editor zeigt in dieser Reihenfolge: **Name**, **Maschinen mit dieser Vorlage**, **Immer angezeigt**, **Immer hervorgehoben**, **Feste automatische Aktualisierung verwenden**, **Feste Sortierung verwenden** und **Auf der BDE-Seite erlaubt**.
+Der Editor zeigt in dieser Reihenfolge: **Name**, **Maschinen mit dieser Vorlage**, **Immer angezeigt**, **Immer hervorgehoben**, **Feste automatische Aktualisierung verwenden**, **Feste Sortierung verwenden**, **Auf der BDE-Seite erlaubt** und **KI auf der BDE-Seite**.
 
 Folgen Sie [Die BDE-Seite auf mehreren Maschinen einheitlich machen](/de/platform-intro/workflows/bde-access-templates), um eine Vorlage anzulegen und auf der BDE-Seite zu prüfen.
 
@@ -61,13 +61,26 @@ Unter **Auf der BDE-Seite erlaubt** bedeutet ein eingeschalteter Schalter, dass 
 
 Vorbereitung, Produktionsstart, Stopp, Mengenbuchung, Stillstandsgründe, **BDE Assist** und Warnungen bleiben wie bisher verfügbar.
 
+<a id="pda-ai" />
+
+## KI auf der BDE-Seite
+
+Admins wählen die KI-Optionen unter **KI auf der BDE-Seite**. Beide Schalter sind standardmäßig aus und gelten auf den BDE-Seiten der ausgewählten Maschinen für alle, auch für Admins.
+
+| Schalter | Wirkung beim Einschalten |
+| --- | --- |
+| **KI fragen im Tab Wissensdatenbank** | Fragen an den KI-Assistenten im Tab **Wissensdatenbank**, für Personen mit Zugriff auf den KI-Assistenten. |
+| **Tickets mit KI ausfüllen** | KI-Hilfe beim Anlegen eines Tickets von der BDE-Seite aus. |
+
+Maschinen ohne Vorlage bieten an diesen Stellen keine KI. Mit Zugriff auf die Wissensdatenbank können Sie auch bei ausgeschalteter KI Notizen, Fotos und Dateien speichern. Diese Schalter ändern andere Seiten nicht. Siehe [Wissen auf der BDE-Seite](/de/platform-intro/pages/data-acquisition#knowledge).
+
 ## Änderungen und Grenzen
 
 Änderungen erreichen geöffnete BDE-Seiten bei der nächsten automatischen Aktualisierung, alle 5 Minuten, sofern kein anderer Abstand eingestellt ist. Nutzen Sie die Aktualisieren-Schaltfläche der Seite oder laden Sie die Seite neu, um sie sofort zu übernehmen. Andere Geräte übernehmen Änderungen nicht sofort; ein geöffnet gebliebener Bildschirm zeigt bis dahin die bisherigen Einstellungen.
 
 Entfernen Sie eine Maschine aus einer Vorlage oder löschen Sie die Vorlage, gelten wieder die persönlichen Einstellungen. Die Löschbestätigung zeigt die Anzahl betroffener Maschinen. Beim Bearbeiten bleiben inaktive Maschinen der Vorlage zugewiesen, auch wenn sie in der Maschinenauswahl fehlen.
 
-Vorlagen gelten nur für die Betriebsdatenerfassung V3. Sie ändern weder den Planer noch andere Seiten oder die Betriebsdatenerfassung V2. Ohne Vorlage arbeitet eine Maschine wie bisher. Seiten- und Maschinenzugriff bleiben unabhängig von den Vorlageneinstellungen.
+Vorlagen gelten nur für die Betriebsdatenerfassung V3. Sie ändern weder den Planer noch andere Seiten oder die Betriebsdatenerfassung V2. Ohne Vorlage gelten persönliche Anzeigeeinstellungen; die KI im Tab Wissensdatenbank und beim Anlegen von Tickets von der BDE-Seite aus ist ausgeschaltet. Seiten- und Maschinenzugriff bleiben unabhängig von den Vorlageneinstellungen.
 
 ## Verwandte Seiten
 

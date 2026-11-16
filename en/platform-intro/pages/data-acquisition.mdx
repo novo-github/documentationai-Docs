@@ -38,17 +38,59 @@ To switch machines on the PDA page, select the machine name in the top navigatio
 
 If you have [AI assistant access](/en/platform-intro/pages/chat-history), you can attach files from its side panel or floating window on the PDA page. Use the paperclip, drop files onto the chat or paste a screenshot. For example, send a photo of a broken part with your question. The limit is 5 files per message, each up to 25 MB. Follow [ask the assistant about a file](/en/platform-intro/workflows/chat-attachments).
 
+<a id="knowledge" />
+
+## Save and Find Knowledge at the Machine
+
+**Access:** The **Knowledge Base** tab appears when you have Knowledge Base page access and access to this machine. Entries added here go into the knowledge base instead of becoming tickets.
+
+### Add a Note, Photo or File
+
+In **Add to knowledge base**, type or dictate what others should know. Use **Take or add a photo** to add a picture; on tablets, it opens the camera. Use **Add a file** for a document.
+
+Choose the relevant order in the order picker. **Running now** is pre-selected when an operation is running. You can also choose work marked **Up next** or **In the pool**, or **No order**. The product follows the chosen order.
+
+Check **Machine**, **Order** and **Product** above the box. The machine always stays linked. Use the remove control with **Do not link** on the order or product to leave that link out. For example, keep only the machine for a tip that applies to every order.
+
+Choose **Save**. Your text becomes a note; each photo or file becomes its own entry with the same links. New entries appear at the top while they are read, then show a title and summary.
+
+Entries use **Whole company** visibility and follow machine access. Everyone in your company who may see this machine can find them here, on the Knowledge Base page and through the AI assistant. Admins find them on the Knowledge Base page; these entries send no Admin email. For other ways to add or share documents, see [visibility and sharing](/en/platform-intro/pages/knowledge-base#visibility).
+
+### Find, Read and Correct an Entry
+
+**Knowledge for this machine** shows the newest entries first, with photo previews. Use **This machine**, **This order** and **This product** to show or hide entries for the selected work. Use **Search** to find an entry and **Load more** to see older ones.
+
+Tap an entry to open its preview. **Open in knowledge base** opens the same entry on the Knowledge Base page in a new browser tab.
+
+The person who added the entry or an Admin can choose **Edit** to change **Title**, **Type**, **Summary** and **Note**. For notes written in this tab, you can also change **Text**. You can dictate into the text, summary and note boxes. Older notes and uploaded files allow changes to their details, but their text cannot be changed here. Choose **Save** when finished.
+
+### Ask the AI Assistant Here
+
+**Ask AI** appears only when you have AI assistant access and the machine's template allows **Ask AI in the knowledge base tab**. Write your question in the same box and add a photo or file if useful. The assistant uses the machine, chosen order and product to understand your question. The answer appears below the box.
+
+- Tap a source to read it in the tab.
+- Send a follow-up or select an offered option to continue the same conversation.
+- Choose **Keep going** when offered to let the assistant continue.
+- Review any prepared change before choosing **Confirm** or **Cancel** on its card.
+- Choose **New question** to start a new conversation.
+
+Answers keep you on the PDA page. **Open in chat** opens the conversation on the AI chats page in a new browser tab. See the [existing chat file guide](/en/platform-intro/workflows/chat-attachments) for using files in other chat views.
+
+Follow [save and use knowledge on the PDA page](/en/platform-intro/workflows/pda-knowledge).
+
 ## Settings Set by a Machine Template
 
 An administrator can assign a [BDE access template](/en/platform-intro/pages/bde-access-templates) to this machine. It applies to everyone on Data Acquisition V3, including administrators.
 
 In **Card Display Settings**, required fields and highlights stay ticked and locked with **Set by the template**. Required highlights apply only when a field is visible. You can still choose additional fields and highlights. **Sorting is set by the template** means you can review the sort order but cannot change or reset it here. A fixed automatic refresh interval is also locked.
 
-Your own choices stay saved. They apply again when the template no longer fixes those settings, and on machines without a template. With no template, the page works as before. The sorting instructions below apply when the template leaves sorting open.
+Your own choices stay saved. They apply again when the template no longer fixes those settings, and on machines without a template. Without a template, AI in the knowledge tab and when creating tickets from this page is off. The sorting instructions below apply when the template leaves sorting open.
 
-The template can block order creation, taking or returning pool work, reopening completed operations, interval corrections, and saving notes or details. Their buttons and edit icons stay visible and readable, but disabled. Hover over or tap one to read **Locked for this machine (BDE template).** Notes and details stay readable only; **Save** remains visible even when nothing has changed. A blocked status still looks normal, but tapping it opens no menu. If adding orders is off, search still filters this machine’s work but cannot find unplanned operations. Ask an administrator to review a blocked action.
+The template can block order creation, taking or returning pool work, reopening completed operations, interval corrections, and saving order notes or details. Their buttons and edit icons stay visible and readable, but disabled. Hover over or tap one to read **Locked for this machine (BDE template).** Notes and details stay readable only; **Save** remains visible even when nothing has changed. A blocked status still looks normal, but tapping it opens no menu. If adding orders is off, search still filters this machine’s work but cannot find unplanned operations. Ask an administrator to review a blocked action.
 
 Preparation, production start, stop, quantity booking, downtime reasons, **PDA Assist**, and warnings stay available as before. Even with status changes off, **Planned quantity reached** still lets you choose **Complete** or **Keep on hold**. Reopening completed work has its own **Reopen completed operations** switch. Other pages, such as the Planner, are unaffected.
+
+Under **AI on the BDE page**, the template separately allows **Ask AI in the knowledge base tab** and **Fill in tickets with AI**. Both are off by default. Saving in the knowledge tab stays available with Knowledge Base access. These choices do not affect other pages.
 
 Template changes appear at the next automatic refresh, every 5 minutes unless another interval is set. Use the page’s refresh button or reload the page to pick them up immediately. Other devices do not update instantly; a screen left open keeps the old choices until one of these happens.
 

@@ -21,7 +21,7 @@ Choose **New template**, or edit or delete an existing template. In the editor, 
 
 A name is required, with up to 80 characters, and must be unique within your company. Capitalisation and spaces before or after the name do not make it different: “Saws” and “ saws ” count as the same name. Names in other companies do not count. Saving a duplicate shows **A template with this name already exists.**
 
-The editor lists, in order: **Name**, **Machines using this template**, **Always shown**, **Always highlighted**, **Use a fixed auto-refresh**, **Use a fixed sorting**, and **Allowed on the BDE page**.
+The editor lists, in order: **Name**, **Machines using this template**, **Always shown**, **Always highlighted**, **Use a fixed auto-refresh**, **Use a fixed sorting**, **Allowed on the BDE page**, and **AI on the BDE page**.
 
 Follow [Make the BDE Page the Same on Several Machines](/en/platform-intro/workflows/bde-access-templates) to create a template and check it on a BDE page.
 
@@ -61,13 +61,26 @@ Under **Allowed on the BDE page**, an on switch allows the action. All actions s
 
 Preparation, production start, stop, quantity booking, downtime reasons, **PDA Assist**, and warnings remain available as before.
 
+<a id="pda-ai" />
+
+## AI on the PDA Page
+
+Admins choose the AI options under **AI on the BDE page**. Both switches are off by default and apply to everyone on the selected machines' PDA pages, including Admins.
+
+| Switch | What switching it on allows |
+| --- | --- |
+| **Ask AI in the knowledge base tab** | Questions to the AI assistant inside **Knowledge Base**, for people with AI assistant access. |
+| **Fill in tickets with AI** | AI help when creating a ticket from the PDA page. |
+
+Machines without a template have no AI in these places. With Knowledge Base access, you can still save notes, photos and files when AI is off. These switches do not change other pages. See [knowledge on the PDA page](/en/platform-intro/pages/data-acquisition#knowledge).
+
 ## Changes and Limits
 
 Changes reach open BDE pages at their next automatic refresh, every 5 minutes unless another interval is set. Use the page’s refresh button or reload the page to apply them immediately. Other devices do not update instantly; a screen left open keeps the old choices until one of these happens.
 
 Removing a machine from a template, or deleting the template, returns it to personal settings. The deletion confirmation shows how many machines are affected. Editing a template keeps its inactive machines assigned even when they do not appear in the machine selection.
 
-Templates apply only to Data Acquisition V3. They do not change the Planner, other pages, or Data Acquisition V2. A machine without a template continues as before. Page and machine access remain separate from template choices.
+Templates apply only to Data Acquisition V3. They do not change the Planner, other pages, or Data Acquisition V2. Without a template, personal display choices apply; AI in the knowledge tab and when creating tickets from the PDA page is off. Page and machine access remain separate from template choices.
 
 ## Related Pages
 
