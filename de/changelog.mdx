@@ -6,8 +6,8 @@ toc: false
 
 ## Releases
 
-<Update label="2026-11-17" description="v1.5.171" tags={["Funktion"]}>
-  {/* commits: 073a4771, 4af7a5c5, db742de0, e439d078, 567b2e31, 24c0b9a0, 0e9fbf2b, 05a871dc, 0132a490, 95df8f39, a2289402, 3e10ad36, 07accde4, 719f2364, 6223b77f, 88229511, 928b880d, 2ba385fd, 2f949f08, e8e045cf, 7cab9619, aae94a68, 35d1422a, eb527589 */}
+<Update label="2026-11-17" description="v1.5.171" tags={["Funktion", "Fehlerbehebung"]}>
+  {/* commits: 073a4771, 4af7a5c5, db742de0, e439d078, 567b2e31, 24c0b9a0, 0e9fbf2b, 05a871dc, 0132a490, 95df8f39, a2289402, 3e10ad36, 07accde4, 719f2364, 6223b77f, 88229511, 928b880d, 2ba385fd, 2f949f08, e8e045cf, 7cab9619, aae94a68, 35d1422a, eb527589, 67cd4cef, 4a99bcbf, 2fc78477, f086ecd0, 3eee7b35, bdd53280, e2d713c2, efdb88df, 76ca5f5c */}
 
   **Release-Datum:** 17. November 2026
 
@@ -21,6 +21,34 @@ toc: false
   Während eines Stillstands beginnt der Schalter mit **Aktueller Stillstand**. Wählen Sie **Vorgemerkter Stillstand** für neue Stillstände nach dem Wiederanlauf. Die 15 Minuten beginnen beim Antippen. Der aktuelle Stillstand behält seinen eigenen Grund. Ein innerhalb dieser Zeit beginnender Stillstand behält den Grund für seine gesamte Dauer, auch über die 15 Minuten hinaus und beim Wechsel zwischen Leerlauf und Aus. Das Beenden der Vormerkung entfernt keine bereits vergebenen Gründe.
 
   Eine Leiste in der Farbe des Grundes steht unten im mittleren Teil der Seite. Sie zeigt Grund, Restzeit und eine Erklärung. Die Tabs links und Zuweisungen rechts bleiben nutzbar. **−5 Min.** verkürzt, **+5 Min.** verlängert bis höchstens 2 Stunden im Voraus. ✕ beendet die Vormerkung sofort. Bei 6 Minuten oder weniger nutzen Sie ✕ statt der Verkürzung. Eine andere Kachel ändert den Grund und behält die Restzeit bei. Folgen Sie [einen Stillstandsgrund vormerken und verwalten](/de/platform-intro/workflows/data-acquisition#next-downtime-reason).
+
+  ### Fehlerbehebungen
+
+  #### [Meldungen in Ihrer Oberflächensprache lesen](/de/platform-intro/pages/data-acquisition)
+  {/* feature: interface-language-fixes */}
+
+  In der deutschen Oberfläche erschienen auf der BDE-Seite, im Planer, im Hallenplan, unter Maschinen, im Admin-Panel sowie bei Anmeldung, Registrierung und Passwortzurücksetzung englische Wörter oder unverständliche Namen. Diese Texte sind jetzt deutsch, ebenso die Seite **Zugriff eingeschränkt**. Intervalle heißen jetzt zum Beispiel **Intervall 3**. **Zuweisungsstatus** (bisher **Auftragsstatus**) unterscheidet den Status einer Zuweisung vom Auftragsstatus, und **Ausgewählte Zeilen zurücksetzen** beim ERP-Upload verwendet jetzt Umlaute.
+
+  #### [Unternehmenszahlen im passenden Format lesen](/de/platform-intro/pages/org-stats)
+  {/* feature: company-statistics-language */}
+
+  Die Organisationsstatistiken verwenden jetzt Ihre Oberflächensprache für Ranglisten, Energieerklärungen und Währungsnamen. Auf Deutsch sehen Sie Einheiten wie **Std.**, **Min.**, **m²**, **Liter** und **Tonnen**, Zahlen mit Dezimalkomma und Beträge wie 1.234,50 €. Die korrigierten Bezeichnungen lauten **Bundesland** (bisher **Zustand**), **Werksfläche**, **Werks-OEE**, **Werksenergie** und **Adresszeile 1**. Stundenbeträge im Formular zum Bearbeiten des Unternehmens auf dieser Seite zeigen jetzt die Unternehmenswährung statt immer Euro.
+
+  #### [Den Beginn der Maschinendaten verstehen](/de/platform-intro/pages/machine-configuration)
+  {/* feature: machine-data-start-date */}
+
+  Wenn Admins [eine Maschine hinzufügen](/de/platform-intro/workflows/add-machine), erklärt jetzt ein Informationssymbol neben **Daten ab** (bisher **Datum auswählen**) den ersten Tag für Tages- und Schichtkennzahlen einschließlich bereits von der AVA erfasster Zyklen und Maschinenzustände. Das Beispiel zeigt eine am Montag an der Presse montierte AVA und eine am Mittwoch angelegte Maschine: Wählen Sie Montag, damit die Daten von Montag und Dienstag erhalten bleiben. Bei einer neuen AVA lassen Sie das heutige Datum stehen.
+
+  #### [Seiten mit Zeitraum zeigen immer den gewählten Zeitraum](/de/platform-intro/pages/machine-history)
+  {/* feature: selected-period-results */}
+
+  Maschinenhistorie, Peak Optimizer, Schichtplanung, Organisationsstatistiken, Zeitleistenanalyse, Maschinenvergleiche und Trendanalyse zeigen jetzt immer die Daten Ihres gewählten Zeitraums.
+
+  - **Letzte 7 Tage**, **Letzte 30 Tage** und **Letzte 90 Tage** laden jetzt bei jeder Auswahl den neuen Zeitraum. Zuvor konnte der Wechsel von **Letzte 7 Tage** zu **Letzte 30 Tage** ohne neue Ergebnisse bleiben.
+  - **Diese Woche** und **Diesen Monat** wählen jetzt vom ersten Tag bis heute. Zuvor wurde nur der erste Tag ausgewählt und nichts geladen.
+  - Eine neue Auswahl während des Ladens geht nicht mehr verloren.
+  - Die Schichtplanung zeigt den gespeicherten Plan direkt nach dem Speichern. Unter [Aufträge & Produkte](/de/platform-intro/pages/orders-products) beginnt die Tabelle bei einem neuen Zeitraum auf Seite 1.
+  - Bei einem Zeitraum ohne Daten bleiben Sie in der Maschinenhistorie. Diagramme zeigen **Keine Daten für diesen Zeitraum** statt **Analyse abgeschlossen - aber keine Erkenntnisse gefunden**.
 </Update>
 
 <Update label="2026-11-16" description="v1.5.170" tags={["Funktion", "Verbesserung", "Fehlerbehebung"]}>

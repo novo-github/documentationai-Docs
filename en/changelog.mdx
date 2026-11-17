@@ -6,8 +6,8 @@ toc: false
 
 ## Releases
 
-<Update label="2026-11-17" description="v1.5.171" tags={["feature"]}>
-  {/* commits: 073a4771, 4af7a5c5, db742de0, e439d078, 567b2e31, 24c0b9a0, 0e9fbf2b, 05a871dc, 0132a490, 95df8f39, a2289402, 3e10ad36, 07accde4, 719f2364, 6223b77f, 88229511, 928b880d, 2ba385fd, 2f949f08, e8e045cf, 7cab9619, aae94a68, 35d1422a, eb527589 */}
+<Update label="2026-11-17" description="v1.5.171" tags={["feature", "fix"]}>
+  {/* commits: 073a4771, 4af7a5c5, db742de0, e439d078, 567b2e31, 24c0b9a0, 0e9fbf2b, 05a871dc, 0132a490, 95df8f39, a2289402, 3e10ad36, 07accde4, 719f2364, 6223b77f, 88229511, 928b880d, 2ba385fd, 2f949f08, e8e045cf, 7cab9619, aae94a68, 35d1422a, eb527589, 67cd4cef, 4a99bcbf, 2fc78477, f086ecd0, 3eee7b35, bdd53280, e2d713c2, efdb88df, 76ca5f5c */}
 
   **Release date:** November 17, 2026
 
@@ -21,6 +21,34 @@ toc: false
   During a downtime, the switch starts on **Current downtime**. Choose **Pre-set downtime** for new stops after the machine runs again. The 15 minutes start at your tap; the current downtime keeps its own reason. A stop starting within that time keeps the reason for its whole length, even beyond the 15 minutes or when changing between idle and off. Ending the pre-set does not remove reasons already given.
 
   A bar in the reason's colour sits at the bottom of the middle part of the page. It shows the reason, time left and an explanation. The tabs on the left and assignments on the right stay usable. **−5 min** shortens, **+5 min** extends up to 2 hours ahead, and ✕ ends it now. At 6 minutes or less, use ✕ instead of shortening. Another tile changes the reason and keeps the remaining time. Follow [pre-set and manage a downtime reason](/en/platform-intro/workflows/data-acquisition#next-downtime-reason).
+
+  ### Fixes
+
+  #### [Read messages in your interface language](/en/platform-intro/pages/data-acquisition)
+  {/* feature: interface-language-fixes */}
+
+  In the German interface, the PDA page, Planner, Hall plan, Machines, Admin Panel, and the sign-in, registration and password reset pages showed English words or unexplained names. These texts are now German, including the access-restricted page. Intervals now have German names such as **Intervall 3**. **Zuweisungsstatus** (previously **Auftragsstatus**) distinguishes assignment status from order status, and the ERP upload reset button now uses umlauts.
+
+  #### [Read company figures in the right format](/en/platform-intro/pages/org-stats)
+  {/* feature: company-statistics-language */}
+
+  Organization Statistics now uses your interface language for rankings, energy explanations and currency names. German shows units such as **Std.**, **Min.**, **m²**, **Liter** and **Tonnen**, numbers with a decimal comma and amounts such as 1.234,50 €. The German labels were also corrected. Hourly amounts in the form for editing the company on this page now show the company's currency instead of always showing euros.
+
+  #### [Understand when a new machine's data starts](/en/platform-intro/pages/machine-configuration)
+  {/* feature: machine-data-start-date */}
+
+  When Admins [add a machine](/en/platform-intro/workflows/add-machine), an information icon beside **Data starts on** (previously **Select date**) now explains the first day counted in daily and shift figures, including cycles and machine states already recorded by its AVA. The example shows an AVA mounted on the press on Monday and the machine added on Wednesday: choose Monday to keep Monday's and Tuesday's data. For a new AVA, keep today's date.
+
+  #### [Pages with a date range always show the chosen period](/en/platform-intro/pages/machine-history)
+  {/* feature: selected-period-results */}
+
+  Machine History, Peak Optimizer, Shift planning, Organization Statistics, Timeline Analysis, Compare machines and Trend Analysis now always show data for your chosen period.
+
+  - **Last 7 days**, **Last 30 days** and **Last 90 days** now load the new period each time. Previously, switching from **Last 7 days** to **Last 30 days** could show nothing new.
+  - **This week** and **This month** now select from the first day through today. Previously, only the first day was selected and nothing loaded.
+  - A new choice made while figures are still loading is no longer lost.
+  - Shift planning shows the saved plan right after saving. In [Orders & Products](/en/platform-intro/pages/orders-products), a new period starts the table on page 1.
+  - A period without data no longer sends you away from Machine History. Charts show **No data for this period** instead of **Analysis complete - but no insights found**.
 </Update>
 
 <Update label="2026-11-16" description="v1.5.170" tags={["feature", "improvement", "fix"]}>
