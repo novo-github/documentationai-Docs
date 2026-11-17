@@ -246,7 +246,7 @@ Notices identify the operation. After **Continue**, you see **Interval ended –
 
 ## PDA / BDE Buttons and Quantity Labels
 
-**PDA (Production Data Acquisition)** and **BDE (Betriebsdatenerfassung)** are the same machine operator screen. Tabs include **Assignments**, **Pool**, **Downtime reasons**, **Tickets**, and **Knowledge Base**.
+**PDA (Production Data Acquisition)** and **BDE (Betriebsdatenerfassung)** are the same machine operator screen. Tabs include **Assignments**, **Pool**, **Downtime Reason**, **Tickets**, and **Knowledge Base**.
 
 **Prep** starts preparation (German **Vorber.**), **Start** starts production, **Stop** ends an interval, and **Continue** books quantities, ends the running interval, and starts a new one immediately. Explicit actions include Start/End Preparation and Start/End Shift.
 
@@ -329,19 +329,49 @@ Open the information icon beside the choice dialog's title for a short explanati
 
 ## Choose a Downtime Reason
 
-As a machine operator, you can choose a reason while the downtime is still running. Select a tile under **Downtime reasons**, or tap the latest timeline segment and choose a reason. The running downtime's tooltip shows your choice and keeps it after the page refreshes. This also works when the downtime began before the last 8 hours shown on the timeline.
+As a machine operator, you can choose a reason while the downtime is still running. Under **Downtime Reason**, select **Current downtime** and tap a tile, or tap the latest timeline segment and choose a reason. The running downtime's tooltip shows your choice and keeps it after the page refreshes. This also works when the downtime began before the last 8 hours shown on the timeline.
 
-When the machine starts again, your choice is saved onto that downtime. If the reason tiles are still offered shortly after the restart, a reason you choose there is saved onto the downtime that just ended.
+When the machine starts again, your choice is saved onto that downtime. To correct it afterwards, use that period on the timeline. The tiles now pre-set a reason for upcoming downtimes.
 
 A reason chosen by the machine operator or set by hand takes priority. When [automatic break labels](/en/platform-intro/pages/break-settings) are enabled, an eligible break's reason comes next. **Downtime reason rules** apply to the remaining idle or off time; without a matching reason, the time stays unlabelled. Follow [choose a downtime reason](/en/platform-intro/workflows/data-acquisition#label-downtime-with-an-available-reason).
 
 Automatic break labels appear only after downtime ends, not in the running downtime's tooltip. If the machine operator chooses a reason after the downtime ended, that reason replaces the break label for the whole downtime, also when the downtime had been split into parts around the break. Parts whose reason someone set or cleared by hand keep that choice. A reason you set or clear by hand is never replaced by automatic break labelling.
 
-**Downtime reasons** offers only the reasons available on this machine. An administrator can leave the machine with no available reasons. You then cannot choose a downtime reason; ask an administrator to check the selection if you need one. A tile can show a code in its corner. Use the category chips above the tiles to narrow the list; these appear only when reasons have categories.
+**Downtime Reason** offers only the reasons available on this machine. An administrator can leave the machine with no available reasons. You then cannot choose a downtime reason; ask an administrator to check the selection if you need one. A tile can show a code in its corner. Use the category chips above the tiles to narrow the list; these appear only when reasons have categories.
 
 Saved tile arrangements keep newly available reasons and drop deleted ones. Other downtime reason pickers show reasons alphabetically with the code before the name. **Remove label** clears the selected reason without deleting the downtime period.
 
 If a reason is no longer allowed, the list updates. Choose an available reason or ask an administrator to check the machine's selection. A historical reason may still appear even when it is no longer selectable. See [Downtime Reasons FAQs](/en/help-center/faq/downtime-reasons).
+
+<a id="next-downtime-reason" />
+
+### Pre-set a Reason for Upcoming Downtimes
+
+Machine operator, User and Admin can use this if they can already choose downtime reasons on the machine's PDA page. No Admin setting is needed.
+
+While the machine is running, **Downtime Reason** shows **Pre-set reason for the next downtime**. Tap an available reason tile. Every downtime that starts in the next 15 minutes gets that reason automatically, including several stops within that time. If you tap just after the machine stops, while the page still shows it producing, that just-started stop also gets the reason.
+
+During a downtime, the switch above the tiles offers:
+
+- **Current downtime**: the tile applies to the downtime running now. Every new downtime starts with this option selected. Choosing a reason does not change the option.
+- **Pre-set downtime**: the tile pre-sets a reason for new downtimes after the machine runs again. The current downtime keeps its own reason. The 15 minutes start at your tap, even while the current downtime continues.
+
+Only you change the switch during a downtime. Tap the information icon beside it for an explanation. For example, if the machine is stopped for loading and a tool change follows the restart, use **Pre-set downtime** for the tool change. If the current stop lasts beyond the remaining time, the pre-set expires before it can apply to a new stop.
+
+### Adjust or End the Pre-set
+
+The bar sits at the bottom of the middle part of the page, in the chosen reason's colour. For example, it shows **Pre-set: Tool change · 12 min left** and **Every downtime that starts in this time gets this reason automatically.** The tabs on the left and assignments on the right stay usable. Minutes are rounded up; below a minute, the bar says **less than 1 min left**. It disappears when the time runs out.
+
+- **+5 min** extends the time, up to 2 hours ahead. Near that limit, only the time that fits is added.
+- **−5 min** shortens the time. At 6 minutes or less it is unavailable; tap the bar's cross to end the pre-set instead.
+- To change the downtime reason, tap another tile while the machine is running or with **Pre-set downtime** selected. The remaining time stays the same.
+- To end the pre-set, tap ✕ in the bar or on the selected tile in pre-set mode. The tile's tooltip says **End pre-set**. Downtimes that already received the reason keep it.
+
+The selected tile is white with dark text and a border in the reason's colour. With **Current downtime** selected, the tile's ✕ has the tooltip **Remove reason**. It removes the running downtime's reason. If it ends without a reason, the downtime reason rules can apply again.
+
+A downtime that starts while the pre-set is active keeps the reason for its whole length. This also applies if it lasts beyond the 15 minutes or changes between idle and off. The pre-set reason counts as your own choice. Break labels and automatic downtime reason rules cannot replace it.
+
+Follow [pre-set and manage a downtime reason](/en/platform-intro/workflows/data-acquisition#next-downtime-reason).
 
 ## PDA Assist Warnings
 

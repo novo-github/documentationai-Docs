@@ -15,6 +15,13 @@ description: "Gründe auswählen, Codes verstehen und Verfügbarkeit je Maschine
 | Der Grund wurde angelegt, seine Maschinen aber nicht gespeichert. Soll ich ihn erneut anlegen? | [Antwort](/de/help-center/faq/downtime-reasons#create-retry) |
 | Warum verschwindet mein gewählter Grund beim laufenden Stillstand? | [Antwort](/de/help-center/faq/downtime-reasons#live-reason) |
 | Kann ich kurz nach dem Wiederanlaufen noch einen Grund wählen? | [Antwort](/de/help-center/faq/downtime-reasons#after-restart) |
+| Kann ich einen Grund wählen, bevor die Maschine steht? | [Antwort](/de/help-center/faq/downtime-reasons#pre-set) |
+| Kann ich den nächsten Grund vormerken, während die Maschine schon steht? | [Antwort](/de/help-center/faq/downtime-reasons#pre-set-during-stop) |
+| Wie ändere oder beende ich eine Vormerkung? | [Antwort](/de/help-center/faq/downtime-reasons#change-pre-set) |
+| Wie entferne ich den Grund des aktuellen Stillstands? | [Antwort](/de/help-center/faq/downtime-reasons#remove-current-reason) |
+| Behält ein langer Stillstand den vorgemerkten Grund nach den 15 Minuten? | [Antwort](/de/help-center/faq/downtime-reasons#pre-set-long-stop) |
+| Können Pausengründe oder Regeln meinen vorgemerkten Grund überschreiben? | [Antwort](/de/help-center/faq/downtime-reasons#pre-set-priority) |
+| Wer kann einen Grund vormerken? | [Antwort](/de/help-center/faq/downtime-reasons#pre-set-access) |
 | Warum sehen meine Summen je Stillstandsgrund seit dieser Aktualisierung anders aus? | [Antwort](/de/help-center/faq/downtime-reasons#changed-totals) |
 | Was hat Vorrang: mein gewählter Grund oder die Regeln? | [Antwort](/de/help-center/faq/downtime-reasons#reason-priority) |
 | Warum zählt ein Stillstand jetzt als mehrere? | [Antwort](/de/help-center/faq/downtime-reasons#split-break-downtime) |
@@ -80,7 +87,49 @@ Das war ein Anzeigeproblem, das mit v1.5.153 behoben wurde. Ihr gewählter Grund
 
 ## Kann ich kurz nach dem Wiederanlaufen noch einen Grund wählen?
 
-Ja, wenn die Grundkacheln kurz nach dem Wiederanlaufen noch angeboten werden. Ihre Auswahl wird dem gerade beendeten Stillstand zugeordnet. Auch ein während des laufenden Stillstands gewählter Grund bleibt beim Ende erhalten. Folgen Sie [Stillstand mit einem verfügbaren Grund beschriften](/de/platform-intro/workflows/data-acquisition#stillstand-mit-einem-verfügbaren-grund-beschriften).
+Ja. Öffnen Sie den beendeten Stillstand in der Timeline und wählen Sie dort seinen Grund. Während die Maschine läuft, merken die Grundkacheln jetzt einen Grund für kommende Stillstände vor. Ein für den aktuellen Stillstand gewählter Grund bleibt beim Ende erhalten. Folgen Sie [Stillstand mit einem verfügbaren Grund beschriften](/de/platform-intro/workflows/data-acquisition#stillstand-mit-einem-verfügbaren-grund-beschriften).
+
+<a id="pre-set" />
+
+## Kann ich einen Grund wählen, bevor die Maschine steht?
+
+Ja. Öffnen Sie auf der BDE-Seite **Stillstandsgrund** und tippen Sie einen Grund an, während die Maschine läuft. Jeder Stillstand, der in den nächsten 15 Minuten beginnt, erhält ihn automatisch. Das gilt auch für mehrere Stillstände. Folgen Sie [einen Stillstandsgrund vormerken](/de/platform-intro/workflows/data-acquisition#next-downtime-reason).
+
+<a id="pre-set-during-stop" />
+
+## Kann ich den nächsten Grund vormerken, während die Maschine schon steht?
+
+Ja. Wählen Sie **Vorgemerkter Stillstand** und tippen Sie einen Grund an. Er gilt für neue Stillstände nach dem Wiederanlauf. Der aktuelle Stillstand behält seinen eigenen Grund. Die 15 Minuten beginnen beim Antippen. Die Vormerkung kann daher vor dem Wiederanlauf ablaufen. Jeder neue Stillstand beginnt mit **Aktueller Stillstand** und bleibt dabei, bis Sie wechseln. Siehe [aktuelle und kommende Stillstände](/de/platform-intro/pages/data-acquisition#next-downtime-reason).
+
+<a id="change-pre-set" />
+
+## Wie ändere oder beende ich eine Vormerkung?
+
+Mit **−5 Min.** oder **+5 Min.** in der Leiste unten im mittleren Teil der BDE-Seite passen Sie die Zeit an, bis höchstens 2 Stunden im Voraus. Bei 6 Minuten oder weniger ist die Verkürzung gesperrt. Tippen Sie zum Beenden auf das Kreuz in der Leiste. Zum Ändern des Grundes tippen Sie eine andere Kachel an, während die Maschine läuft oder **Vorgemerkter Stillstand** ausgewählt ist. Folgen Sie [eine Vormerkung verwalten](/de/platform-intro/workflows/data-acquisition#next-downtime-reason).
+
+<a id="remove-current-reason" />
+
+## Wie entferne ich den Grund des aktuellen Stillstands?
+
+Wählen Sie **Aktueller Stillstand** und tippen Sie auf das Kreuz auf der gewählten weißen Grundkachel. Damit entfernen Sie den Grund des laufenden Stillstands. Endet er ohne Grund, können die Regeln für Stillstandsgründe wieder greifen. Bei einer Vormerkung beendet das Kreuz auf der Kachel stattdessen die Vormerkung. Siehe [Grundauswahl und Vormerkung](/de/platform-intro/pages/data-acquisition#next-downtime-reason).
+
+<a id="pre-set-long-stop" />
+
+## Behält ein langer Stillstand den vorgemerkten Grund nach den 15 Minuten?
+
+Ja. Ein Stillstand, der während der Vormerkung beginnt, behält den Grund für seine gesamte Dauer, auch beim Wechsel zwischen Leerlauf und Aus. Wenn Sie die Vormerkung mit ✕ beenden, behalten Stillstände ihren bereits erhaltenen Grund ebenfalls. Siehe [so funktionieren vorgemerkte Stillstandsgründe](/de/platform-intro/pages/data-acquisition#next-downtime-reason).
+
+<a id="pre-set-priority" />
+
+## Können Pausengründe oder Regeln meinen vorgemerkten Grund überschreiben?
+
+Nein. Ein vorgemerkter Stillstandsgrund zählt als Ihre eigene Auswahl, genau wie ein während des Stillstands gewählter Grund. Pausengründe und automatische Regeln für Stillstandsgründe ersetzen ihn nicht. Siehe [Stillstandsgründe vormerken](/de/platform-intro/pages/data-acquisition#next-downtime-reason).
+
+<a id="pre-set-access" />
+
+## Wer kann einen Grund vormerken?
+
+Maschinenbediener, User und Admin können einen Stillstandsgrund vormerken, wenn sie bereits Gründe auf der BDE-Seite der Maschine wählen können. Dafür ist keine Admin-Einstellung nötig; folgen Sie [einen Stillstandsgrund vormerken](/de/platform-intro/workflows/data-acquisition#next-downtime-reason).
 
 <a id="changed-totals" />
 

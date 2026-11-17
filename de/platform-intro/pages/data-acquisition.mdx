@@ -329,19 +329,49 @@ Angeboten werden nur Zeiten aus der Maschinenaktivität oder das Ende des vorher
 
 ## Einen Stillstandsgrund wählen
 
-Als Maschinenbediener können Sie einen Grund wählen, während der Stillstand noch läuft. Wählen Sie unter **Stillstandsgründe** eine Kachel oder tippen Sie auf den neuesten Timeline-Abschnitt und wählen Sie einen Grund. Der Tooltip des laufenden Stillstands in der Timeline zeigt Ihre Auswahl auch nach einer Seitenaktualisierung. Das gilt auch, wenn der Stillstand vor den letzten 8 Stunden begonnen hat, die die Timeline zeigt.
+Als Maschinenbediener können Sie einen Grund wählen, während der Stillstand noch läuft. Wählen Sie unter **Stillstandsgrund** die Option **Aktueller Stillstand** und tippen Sie eine Kachel an oder tippen Sie auf den neuesten Timeline-Abschnitt und wählen Sie einen Grund. Der Tooltip des laufenden Stillstands in der Timeline zeigt Ihre Auswahl auch nach einer Seitenaktualisierung. Das gilt auch, wenn der Stillstand vor den letzten 8 Stunden begonnen hat, die die Timeline zeigt.
 
-Wenn die Maschine wieder anläuft, wird Ihre Auswahl diesem Stillstand zugeordnet. Werden die Grundkacheln kurz nach dem Wiederanlaufen noch angeboten, wird ein dort gewählter Grund dem gerade beendeten Stillstand zugeordnet.
+Wenn die Maschine wieder anläuft, wird Ihre Auswahl diesem Stillstand zugeordnet. Für spätere Korrekturen wählen Sie diesen Zeitraum in der Timeline. Die Kacheln merken jetzt einen Grund für kommende Stillstände vor.
 
 Ein vom Maschinenbediener gewählter oder von Hand gesetzter Grund hat Vorrang. Ist die [automatische Pausenkennzeichnung](/de/platform-intro/pages/break-settings) eingeschaltet, folgt der Grund einer passenden Pause. **Regeln für Stillstandsgründe** gelten für die übrige Zeit in Leerlauf oder Aus. Ohne passenden Grund bleibt die Zeit unbeschriftet. Folgen Sie [Stillstand mit einem verfügbaren Grund beschriften](/de/platform-intro/workflows/data-acquisition#stillstand-mit-einem-verfügbaren-grund-beschriften).
 
 Automatische Pausengründe erscheinen erst nach Ende des Stillstands, nicht im Tooltip des laufenden Stillstands. Wählt der Maschinenbediener nach dem Ende des Stillstands einen Grund, ersetzt dieser den Pausengrund für den gesamten Stillstand. Das gilt auch, wenn der Stillstand um die Pause herum in Abschnitte aufgeteilt wurde. Abschnitte, deren Grund jemand von Hand gesetzt oder entfernt hat, behalten diese Auswahl. Einen von Hand gesetzten oder entfernten Grund ersetzt die automatische Pausenkennzeichnung nie.
 
-**Stillstandsgründe** bietet nur die auf dieser Maschine verfügbaren Gründe an. Ein Administrator kann die Maschine ohne verfügbare Gründe lassen. Sie können dann keinen Stillstandsgrund wählen. Lassen Sie die Auswahl von einem Administrator prüfen, wenn Sie einen Grund benötigen. Eine Kachel kann in der Ecke einen Code zeigen. Nutzen Sie die Kategorien oberhalb der Kacheln, um die Liste einzugrenzen. Diese erscheinen nur, wenn Gründe Kategorien besitzen.
+**Stillstandsgrund** bietet nur die auf dieser Maschine verfügbaren Gründe an. Ein Administrator kann die Maschine ohne verfügbare Gründe lassen. Sie können dann keinen Stillstandsgrund wählen. Lassen Sie die Auswahl von einem Administrator prüfen, wenn Sie einen Grund benötigen. Eine Kachel kann in der Ecke einen Code zeigen. Nutzen Sie die Kategorien oberhalb der Kacheln, um die Liste einzugrenzen. Diese erscheinen nur, wenn Gründe Kategorien besitzen.
 
 Gespeicherte Kachelreihenfolgen behalten neu verfügbare Gründe und entfernen gelöschte. Andere Grundauswahlen der Zeitleiste zeigen Gründe alphabetisch mit dem Code vor dem Namen. **Grund entfernen** entfernt die Zuordnung, ohne den Stillstandszeitraum zu löschen.
 
 Ist ein Grund nicht mehr erlaubt, wird die Liste aktualisiert. Wählen Sie einen verfügbaren Grund oder bitten Sie einen Administrator, die Maschinenauswahl zu prüfen. Ein früher verwendeter Grund kann weiterhin sichtbar sein, obwohl er nicht mehr auswählbar ist. Siehe [Fragen zu Stillstandsgründen](/de/help-center/faq/downtime-reasons).
+
+<a id="next-downtime-reason" />
+
+### Einen Grund für kommende Stillstände vormerken
+
+Maschinenbediener, User und Admin können dies nutzen, wenn sie bereits Stillstandsgründe auf der BDE-Seite der Maschine wählen können. Dafür ist keine Admin-Einstellung nötig.
+
+Während die Maschine läuft, erscheint unter **Stillstandsgrund** der Hinweis **Grund für den nächsten Stillstand vormerken**. Tippen Sie eine verfügbare Grundkachel an. Jeder Stillstand, der in den nächsten 15 Minuten beginnt, erhält diesen Grund automatisch. Das gilt auch für mehrere Stillstände innerhalb dieser Zeit. Tippen Sie direkt nach einem Maschinenstopp, während die Seite noch Produktion anzeigt, erhält auch der gerade begonnene Stillstand den Grund.
+
+Während eines Stillstands bietet der Schalter über den Kacheln zwei Möglichkeiten:
+
+- **Aktueller Stillstand**: Die Kachel gilt für den gerade laufenden Stillstand. Jeder neue Stillstand beginnt mit dieser Auswahl. Sie bleibt auch bestehen, nachdem Sie einen Grund gewählt haben.
+- **Vorgemerkter Stillstand**: Die Kachel merkt einen Grund für neue Stillstände nach dem Wiederanlauf vor. Der laufende Stillstand behält seinen eigenen Grund. Die 15 Minuten beginnen beim Antippen, auch wenn der aktuelle Stillstand noch andauert.
+
+Während eines Stillstands wechseln nur Sie die Auswahl. Tippen Sie auf das Informationssymbol daneben, um die Erklärung zu lesen. Steht die Maschine zum Beispiel zum Beladen und folgt nach dem Wiederanlauf ein Werkzeugwechsel, wählen Sie für den Werkzeugwechsel **Vorgemerkter Stillstand**. Dauert der aktuelle Stillstand länger als die verbleibende Zeit, läuft die Vormerkung ab, bevor sie für einen neuen Stillstand gelten kann.
+
+### Die Vormerkung anpassen oder beenden
+
+Die Leiste steht unten im mittleren Teil der Seite, in der Farbe des gewählten Grundes. Sie zeigt zum Beispiel **Vorgemerkt: Werkzeugwechsel · noch 12 Min.** und **Jeder Stillstand, der in dieser Zeit beginnt, bekommt diesen Grund automatisch.** Die Tabs links und Zuweisungen rechts bleiben nutzbar. Minuten werden aufgerundet. Unter einer Minute zeigt die Leiste **noch &lt; 1 Min.** an. Nach Ablauf der Zeit verschwindet sie.
+
+- **+5 Min.** verlängert die Zeit, bis höchstens 2 Stunden im Voraus. Kurz vor dieser Grenze wird nur die noch mögliche Zeit ergänzt.
+- **−5 Min.** verkürzt die Zeit. Bei 6 Minuten oder weniger ist die Schaltfläche gesperrt. Tippen Sie stattdessen auf das Kreuz in der Leiste, um die Vormerkung zu beenden.
+- Zum Ändern des Stillstandsgrundes tippen Sie eine andere Kachel an, während die Maschine läuft oder **Vorgemerkter Stillstand** ausgewählt ist. Die verbleibende Zeit bleibt gleich.
+- Zum Beenden tippen Sie auf ✕ in der Leiste oder auf der gewählten Kachel für die Vormerkung. Der Tooltip der Kachel lautet **Vormerkung beenden**. Stillstände, die den Grund bereits erhalten haben, behalten ihn.
+
+Die gewählte Kachel ist weiß, hat dunkle Schrift und einen Rahmen in der Farbe des Grundes. Unter **Aktueller Stillstand** zeigt das ✕ auf der Kachel den Tooltip **Grund entfernen**. Es entfernt den Grund des laufenden Stillstands. Endet er ohne Grund, können die Regeln für Stillstandsgründe wieder greifen.
+
+Ein Stillstand, der während der Vormerkung beginnt, behält den Grund für seine gesamte Dauer. Das gilt auch über die 15 Minuten hinaus und beim Wechsel zwischen Leerlauf und Aus. Der vorgemerkte Grund zählt als Ihre eigene Auswahl. Pausengründe und automatische Regeln für Stillstandsgründe ersetzen ihn nicht.
+
+Folgen Sie [einen Stillstandsgrund vormerken und verwalten](/de/platform-intro/workflows/data-acquisition#next-downtime-reason).
 
 ## Warnungen von BDE Assist
 

@@ -108,14 +108,37 @@ Bei **Dieser Arbeitsgang wurde inzwischen geändert. Die Liste wurde aktualisier
 
 ## Stillstand mit einem verfügbaren Grund beschriften
 
-1. Wählen Sie während des laufenden Stillstands unter **Stillstandsgründe** eine Kachel oder tippen Sie auf den neuesten Timeline-Abschnitt und wählen Sie einen Grund. Lesen Sie Code und Name. Grenzen Sie die Liste bei Bedarf mit den angebotenen Kategorien ein.
-2. Prüfen Sie den Tooltip des laufenden Stillstands in der Timeline. Ihr Grund bleibt nach einer Seitenaktualisierung sichtbar, auch wenn der Stillstand vor den letzten 8 Stunden begonnen hat, die die Timeline zeigt. Beim Wiederanlaufen wird der Grund diesem Stillstand zugeordnet. Werden die Kacheln kurz danach noch angeboten, können Sie noch einen Grund für den gerade beendeten Stillstand wählen.
+1. Öffnen Sie während des laufenden Stillstands **Stillstandsgrund**, wählen Sie **Aktueller Stillstand** und tippen Sie eine Kachel an oder tippen Sie auf den neuesten Timeline-Abschnitt und wählen Sie einen Grund. Lesen Sie Code und Name. Grenzen Sie die Liste bei Bedarf mit den angebotenen Kategorien ein.
+2. Prüfen Sie den Tooltip des laufenden Stillstands in der Timeline. Ihr Grund bleibt nach einer Seitenaktualisierung sichtbar, auch wenn der Stillstand vor den letzten 8 Stunden begonnen hat, die die Timeline zeigt. Beim Wiederanlaufen wird der Grund diesem Stillstand zugeordnet. Korrigieren Sie diesen Stillstand nach dem Wiederanlauf über die Timeline. Die Kacheln merken jetzt einen Grund für kommende Stillstände vor.
 3. Zum Korrigieren einer bestehenden Zuordnung öffnen Sie die Grundauswahl des Zeitraums. Wählen Sie einen verfügbaren Grund oder **Grund entfernen** zum Aufheben der Zuordnung.
 4. Wird der Grund wegen geänderter Verfügbarkeit abgelehnt, prüfen Sie die aktualisierte Liste und wählen Sie erneut. Fehlt der benötigte Grund, fragen Sie einen Administrator. Die Maschine kann bewusst keine Gründe anbieten. Sie können erst einen wählen, wenn ein Administrator diese Auswahl ändert. Siehe [Fragen zu Stillstandsgründen](/de/help-center/faq/downtime-reasons).
 
 Wählt der Maschinenbediener nach dem Ende des Stillstands einen Grund, ersetzt dieser den Pausengrund für den gesamten Stillstand. Das gilt auch, wenn der Stillstand um die Pause herum in Abschnitte aufgeteilt wurde. Abschnitte, deren Grund jemand von Hand gesetzt oder entfernt hat, behalten diese Auswahl. Das Setzen oder Entfernen eines Grundes von Hand schützt diese Auswahl vor automatischer Kennzeichnung.
 
 Ein vom Maschinenbediener gewählter oder von Hand gesetzter Grund hat Vorrang. Ist die [automatische Pausenkennzeichnung](/de/platform-intro/pages/break-settings) eingeschaltet, folgt der Grund einer passenden Pause. **Regeln für Stillstandsgründe** gelten für die übrige Zeit in Leerlauf oder Aus. Ohne passenden Grund bleibt die Zeit unbeschriftet. Siehe [automatische Regeln](/de/platform-intro/workflows/timeline-reason-creation#automatische-regeln).
+
+<a id="next-downtime-reason" />
+
+## Einen Stillstandsgrund vormerken und verwalten
+
+Maschinenbediener, User und Admin mit Zugriff auf die BDE-Seite der Maschine können einen verfügbaren Stillstandsgrund vormerken. Dafür ist keine Einstellung nötig. Sie können ihn während des Maschinenlaufs oder eines Stillstands vormerken.
+
+<Steps>
+  <Step title="Wählen Sie, für welchen Stillstand der Grund gilt" icon="arrow-right" title-type="p">
+    Öffnen Sie **Stillstandsgrund**. Während die Maschine läuft, merken die Kacheln einen Grund für kommende Stillstände vor. Wählen Sie während eines Stillstands **Vorgemerkter Stillstand** für neue Stillstände nach dem Wiederanlauf. Lassen Sie **Aktueller Stillstand** ausgewählt, um den laufenden Stillstand zu kennzeichnen. Bei jedem neuen Stillstand ist **Aktueller Stillstand** ausgewählt, auch wenn er bereits einen Grund hat.
+  </Step>
+  <Step title="Tippen Sie den Grund an und prüfen Sie die Zeit" icon="arrow-right" title-type="p">
+    Tippen Sie einen verfügbaren Grund an. Prüfen Sie Grund und verbleibende Zeit in der Leiste unten. Die 15 Minuten beginnen sofort. Jeder neue Stillstand, der innerhalb dieser Zeit beginnt, erhält den Grund. Merken Sie ihn während eines Stillstands vor, behält dieser seinen eigenen Grund. Tippen Sie zum Beispiel vor dem Werkzeugwechsel an einer Presse auf „Werkzeugwechsel“. Alle Stillstände, die während der Vormerkung beginnen, erhalten diesen Grund ohne weiteres Tippen.
+  </Step>
+  <Step title="Passen Sie die Vormerkung bei Änderungen an" icon="arrow-right" title-type="p">
+    Nutzen Sie **−5 Min.** oder **+5 Min.** in der Leiste. Sie können bis höchstens 2 Stunden im Voraus verlängern. Bei 6 Minuten oder weniger ist die Verkürzung gesperrt. Zum Ändern des Stillstandsgrundes tippen Sie eine andere Kachel für die Vormerkung an. Die verbleibende Zeit bleibt gleich.
+  </Step>
+  <Step title="Beenden Sie die Vormerkung oder entfernen Sie den aktuellen Grund" icon="arrow-right" title-type="p">
+    Tippen Sie auf das Kreuz in der Leiste, um die Vormerkung zu beenden. Stillstände, die den Grund bereits erhalten haben, behalten ihn. Auch das Kreuz auf der gewählten weißen Kachel für die Vormerkung beendet sie. Unter **Aktueller Stillstand** entfernt das Kreuz auf der Kachel stattdessen den Grund des laufenden Stillstands. Endet er ohne Grund, können die Regeln für Stillstandsgründe wieder greifen.
+  </Step>
+</Steps>
+
+Die Leiste bleibt unten im mittleren Teil der BDE-Seite, während Sie die Tabs wechseln. Nach Ablauf der Zeit verschwindet sie. Ein Stillstand, der während der Vormerkung beginnt, behält den Grund für seine gesamte Dauer. Das gilt auch über die 15 Minuten hinaus und beim Wechsel zwischen Leerlauf und Aus. Dauert der aktuelle Stillstand länger als die Vormerkung, wählen Sie bei Bedarf erneut einen Grund für kommende Stillstände. Siehe [so funktioniert die Vormerkung](/de/platform-intro/pages/data-acquisition#next-downtime-reason).
 
 ## Ein Intervall korrigieren
 
@@ -249,6 +272,7 @@ Ein Administrator muss Warnungen für diese Maschine zuerst aktivieren. Alle Per
 
 ## Entscheidungspunkte
 
+- Ob der Grund für den aktuellen oder für kommende Stillstände gelten soll.
 - Ob alle Teile gebucht sind oder der Arbeitsgang für spätere Buchungen in Wartestellung bleiben soll.
 - Wo ein wieder geöffneter Arbeitsgang in der Maschinenwarteschlange erscheinen soll.
 - Ob Sie die Arbeit hier abschließen oder den Rest in den Hallenpool zurückgeben.
@@ -263,6 +287,7 @@ Die Maschinen-Zeitleiste, die Intervallliste und die Produktionsdaten spiegeln d
 
 ## Häufige Probleme und Sonderfälle
 
+- Die Vormerkung läuft vor dem Wiederanlauf ab: Ihre Zeit beginnt beim Antippen. Verlängern Sie sie oder wählen Sie bei Bedarf erneut einen Grund.
 - Keine Abschlussfrage nach **Weiter**: Damit beginnt ein neues Intervall. Die Frage folgt nach **Stopp**, wenn die Gesamtmenge den Plan erreicht.
 - Keine Firmensortierung beim Wiederöffnen verfügbar: Wählen Sie **Ganz oben** oder **Ganz unten** oder bitten Sie einen Administrator, im Planer eine Firmensortierung zu speichern.
 - Ist **Speichern** gesperrt, ändern Sie einen Wert oder beheben Sie den angezeigten Zeitfehler. Ein geändertes Ende muss nach dem Start liegen. Geänderte Zeiten dürfen nicht in der Zukunft liegen. Warten Sie, wenn **Speichert…** erscheint.

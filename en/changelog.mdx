@@ -6,6 +6,23 @@ toc: false
 
 ## Releases
 
+<Update label="2026-11-17" description="v1.5.171" tags={["feature"]}>
+  {/* commits: 073a4771, 4af7a5c5, db742de0, e439d078, 567b2e31, 24c0b9a0, 0e9fbf2b, 05a871dc, 0132a490, 95df8f39, a2289402, 3e10ad36, 07accde4, 719f2364, 6223b77f, 88229511, 928b880d, 2ba385fd, 2f949f08, e8e045cf, 7cab9619, aae94a68, 35d1422a, eb527589 */}
+
+  **Release date:** November 17, 2026
+
+  ### New Features
+
+  #### [Pre-set the reason for the next downtimes](/en/platform-intro/pages/data-acquisition#next-downtime-reason)
+  {/* feature: next-downtime-reason */}
+
+  Machine operator, User and Admin can pre-set a downtime reason if they can already choose reasons on the PDA page. No Admin setting is needed. While producing, tap a tile under **Pre-set reason for the next downtime**. Every stop starting in the next 15 minutes gets your chosen reason. For example, tap "Tool change" before changing the tool on a press. All stops during the change get the reason without another tap. Break labels and automatic downtime reason rules cannot replace it.
+
+  During a downtime, the switch starts on **Current downtime**. Choose **Pre-set downtime** for new stops after the machine runs again. The 15 minutes start at your tap; the current downtime keeps its own reason. A stop starting within that time keeps the reason for its whole length, even beyond the 15 minutes or when changing between idle and off. Ending the pre-set does not remove reasons already given.
+
+  A bar in the reason's colour sits at the bottom of the middle part of the page. It shows the reason, time left and an explanation. The tabs on the left and assignments on the right stay usable. **−5 min** shortens, **+5 min** extends up to 2 hours ahead, and ✕ ends it now. At 6 minutes or less, use ✕ instead of shortening. Another tile changes the reason and keeps the remaining time. Follow [pre-set and manage a downtime reason](/en/platform-intro/workflows/data-acquisition#next-downtime-reason).
+</Update>
+
 <Update label="2026-11-16" description="v1.5.170" tags={["feature", "improvement", "fix"]}>
   {/* commits: b0775774, 4995e4a1, 6892d94d, c87981fa, 717b3b27, 588c72bb, 3ef9d986, e309efb3, 1ba0188c, 254e90c7, 1bce65a0, 9a3530fb, 8b007778, d457e6e3, d72510df, 07ca15aa, 48c04aad, 9f42c9fa, d306f1c4, 643314e5, cb170dab, 4b5bedd5, 2721a5f3, 50e4a0dd, a86c5e5e, 4556000b, e4cfa4d2, 4bbac5d2, 241cbda2, 5a138575, 4017736e, 3b63c589, 29dccb20, 37389afc, 5a054790, 36e42d65, 279d3fe6, 3b14e854, 0c1a80d9, 6c057641, b58b7ff7, 577ceeca, eb69032d, 80206282, 832fc647, 378b1e3e, c6261496, ad343b45, ee97f159, 8f2129e6 */}
 

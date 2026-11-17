@@ -15,6 +15,13 @@ description: "Choose reasons, understand codes, and manage machine availability.
 | The reason was created, but its machines were not saved. Should I create it again? | [Answer](/en/help-center/faq/downtime-reasons#create-retry) |
 | Why does the reason I chose for the current downtime disappear? | [Answer](/en/help-center/faq/downtime-reasons#live-reason) |
 | Can I still choose a reason just after the machine starts again? | [Answer](/en/help-center/faq/downtime-reasons#after-restart) |
+| Can I choose a reason before the machine stops? | [Answer](/en/help-center/faq/downtime-reasons#pre-set) |
+| Can I pre-set the next reason while the machine is already stopped? | [Answer](/en/help-center/faq/downtime-reasons#pre-set-during-stop) |
+| How do I change or stop a pre-set reason? | [Answer](/en/help-center/faq/downtime-reasons#change-pre-set) |
+| How do I remove the reason from the current stop? | [Answer](/en/help-center/faq/downtime-reasons#remove-current-reason) |
+| Does a long stop keep the pre-set reason after the 15 minutes? | [Answer](/en/help-center/faq/downtime-reasons#pre-set-long-stop) |
+| Can break labels or the rules overwrite my pre-set reason? | [Answer](/en/help-center/faq/downtime-reasons#pre-set-priority) |
+| Who can pre-set a reason? | [Answer](/en/help-center/faq/downtime-reasons#pre-set-access) |
 | Why do my downtime reason totals look different since this update? | [Answer](/en/help-center/faq/downtime-reasons#changed-totals) |
 | Which wins, my chosen reason or the rules? | [Answer](/en/help-center/faq/downtime-reasons#reason-priority) |
 | Why is one downtime now counted as several? | [Answer](/en/help-center/faq/downtime-reasons#split-break-downtime) |
@@ -80,7 +87,49 @@ This was a display problem fixed in v1.5.153. Your chosen reason now stays in th
 
 ## Can I still choose a reason just after the machine starts again?
 
-Yes, if the reason tiles are still offered shortly after the restart. Your choice is saved onto the downtime that just ended. A reason chosen while the downtime was running is also kept when it ends. Follow [choose a downtime reason](/en/platform-intro/workflows/data-acquisition#label-downtime-with-an-available-reason).
+Yes. Open the finished downtime on the timeline and choose its reason there. While the machine runs, tapping a reason tile now pre-sets upcoming stops. A reason chosen for the current downtime is kept when it ends. Follow [choose a downtime reason](/en/platform-intro/workflows/data-acquisition#label-downtime-with-an-available-reason).
+
+<a id="pre-set" />
+
+## Can I choose a reason before the machine stops?
+
+Yes. On the PDA page, open **Downtime Reason** and tap a reason while the machine runs. Every downtime starting in the next 15 minutes gets it automatically, including several stops. Follow [pre-set a downtime reason](/en/platform-intro/workflows/data-acquisition#next-downtime-reason).
+
+<a id="pre-set-during-stop" />
+
+## Can I pre-set the next reason while the machine is already stopped?
+
+Yes. Choose **Pre-set downtime**, then tap a reason. It applies to new stops after the machine runs again; the current stop keeps its own reason. The 15 minutes start at your tap, so the pre-set can expire before the restart. Each new stop opens on **Current downtime** and stays there until you switch. See [current and upcoming downtimes](/en/platform-intro/pages/data-acquisition#next-downtime-reason).
+
+<a id="change-pre-set" />
+
+## How do I change or stop a pre-set reason?
+
+Use **−5 min** or **+5 min** in the bar at the bottom of the middle part of the PDA page to adjust the time, up to 2 hours ahead. At 6 minutes or less, shortening is unavailable. Tap the bar’s cross to end it. To change the reason, tap another tile while the machine runs or with **Pre-set downtime** selected. Follow [manage a pre-set](/en/platform-intro/workflows/data-acquisition#next-downtime-reason).
+
+<a id="remove-current-reason" />
+
+## How do I remove the reason from the current stop?
+
+Choose **Current downtime** and tap the cross on the selected white reason tile. This clears the running stop’s reason. If it ends without a reason, the downtime reason rules can apply again. In pre-set mode, the tile’s cross ends the pre-set instead. See [reason controls](/en/platform-intro/pages/data-acquisition#next-downtime-reason).
+
+<a id="pre-set-long-stop" />
+
+## Does a long stop keep the pre-set reason after the 15 minutes?
+
+Yes. A downtime that starts while the pre-set is active keeps the reason for its whole length, even when it changes between idle and off. Ending the pre-set with ✕ also leaves the reason on downtimes that already received it. See [how pre-set reasons work](/en/platform-intro/pages/data-acquisition#next-downtime-reason).
+
+<a id="pre-set-priority" />
+
+## Can break labels or the rules overwrite my pre-set reason?
+
+No. A pre-set downtime reason counts as your own choice, just like a reason you choose during a downtime. Break labels and automatic downtime reason rules cannot replace it. See [pre-set downtime reasons](/en/platform-intro/pages/data-acquisition#next-downtime-reason).
+
+<a id="pre-set-access" />
+
+## Who can pre-set a reason?
+
+Machine operator, User and Admin can pre-set a downtime reason if they can already choose reasons on the machine's PDA page. No Admin setting is needed; follow [pre-set a downtime reason](/en/platform-intro/workflows/data-acquisition#next-downtime-reason).
 
 <a id="changed-totals" />
 

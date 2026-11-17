@@ -108,14 +108,37 @@ If **This operation was changed in the meantime. The list has been refreshed.** 
 
 ## Label Downtime with an Available Reason
 
-1. While the downtime is running, choose a tile under **Downtime reasons**, or tap the latest timeline segment and choose a reason. Read its code and name. Use category chips to narrow the list when available.
-2. Check the running downtime's tooltip. Your reason stays visible after a page refresh, even if the downtime began before the last 8 hours shown on the timeline. When the machine restarts, your reason is saved onto that downtime. If the tiles are still offered shortly after the restart, you can still choose a reason for the downtime that just ended.
+1. While the downtime is running, open **Downtime Reason**, select **Current downtime** and tap a tile, or tap the latest timeline segment and choose a reason. Read its code and name. Use category chips to narrow the list when available.
+2. Check the running downtime's tooltip. Your reason stays visible after a page refresh, even if the downtime began before the last 8 hours shown on the timeline. When the machine restarts, your reason is saved onto that downtime. After the restart, use the timeline to correct that downtime; the tiles now pre-set upcoming stops.
 3. To correct an existing timeline label, open the period’s reason picker and choose an available reason, or **Remove label** to clear it.
 4. If the reason is rejected because availability changed, review the updated list and choose again. Ask an administrator if the required reason is missing. The machine may intentionally offer no reasons; you cannot choose one until an administrator changes that selection. See [Downtime Reasons FAQs](/en/help-center/faq/downtime-reasons).
 
 If the machine operator chooses a reason after the downtime ended, that reason replaces the break label for the whole downtime, also when the downtime had been split into parts around the break. Parts whose reason someone set or cleared by hand keep that choice. Setting or clearing a label by hand protects that choice from automatic labelling.
 
 A reason chosen by the machine operator or set by hand takes priority. When [automatic break labels](/en/platform-intro/pages/break-settings) are enabled, an eligible break's reason comes next. **Downtime reason rules** apply to the remaining idle or off time; without a matching reason, the time stays unlabelled. See [automatic rules](/en/platform-intro/workflows/timeline-reason-creation#automatic-rules).
+
+<a id="next-downtime-reason" />
+
+## Pre-set and Manage a Downtime Reason
+
+Machine operator, User and Admin with access to the machine's PDA page can pre-set an available downtime reason. No setting is needed. You can pre-set it while the machine runs or during a stop.
+
+<Steps>
+  <Step title="Choose which downtime you mean" icon="arrow-right" title-type="p">
+    Open **Downtime Reason**. While the machine runs, the tiles pre-set upcoming downtimes. During a stop, choose **Pre-set downtime** for new stops after the restart. Keep **Current downtime** to label the stop running now. Every new stop selects **Current downtime**, even if it already has a reason.
+  </Step>
+  <Step title="Tap the reason and check the time" icon="arrow-right" title-type="p">
+    Tap an available reason. Check the reason and remaining time in the bar at the bottom. The 15 minutes start immediately. Every new stop that begins within that time gets the reason. When you pre-set during a stop, that stop keeps its own reason. For example, tap "Tool change" before changing the tool on a press. All stops starting during the pre-set get that reason without another tap.
+  </Step>
+  <Step title="Adjust the pre-set when plans change" icon="arrow-right" title-type="p">
+    Use **−5 min** or **+5 min** in the bar. You can extend up to 2 hours ahead. At 6 minutes or less, shortening is unavailable. To change the downtime reason, tap another tile in pre-set mode. The remaining time stays the same.
+  </Step>
+  <Step title="End the pre-set or remove the current reason" icon="arrow-right" title-type="p">
+    Tap the bar's cross to end the pre-set. Downtimes that already received the reason keep it. The cross on the selected white tile also ends it in pre-set mode. With **Current downtime** selected, the tile's cross removes the running downtime's reason instead. If it ends without a reason, the downtime reason rules can apply again.
+  </Step>
+</Steps>
+
+The bar stays at the bottom of the middle part of the PDA page while you switch tabs. It disappears when the time expires. A downtime that starts while the pre-set is active keeps the reason for its whole length, even beyond the 15 minutes or when changing between idle and off. If the current stop lasts longer than the pre-set, choose a reason again when needed for upcoming stops. See [how the pre-set works](/en/platform-intro/pages/data-acquisition#next-downtime-reason).
 
 ## Correct an Interval
 
@@ -224,7 +247,7 @@ Taking pool work requires **Take orders from the hall pool** to be allowed. Addi
 2. Use **Prep** for preparation, then **Start** for production. Review concurrent-order or unfinished-previous-step prompts before continuing.
 3. Use **Mid Booking** to enter good quantity, **Mat. / MA**, and **Work / AA** while the order runs. It closes and restarts the interval. If restart fails, the quantities remain saved; press Start rather than booking them again.
 4. In **Cumulative** mode, enter the full counter, for example 1450, rather than the increment.
-5. After **Stop**, review the quantities. When **Planned quantity reached** appears, choose **Complete** or **Keep on hold**. Label downtime in **Downtime reasons**.
+5. After **Stop**, review the quantities. When **Planned quantity reached** appears, choose **Complete** or **Keep on hold**. Label downtime in **Downtime Reason**.
 
 Deleting an interval cannot be undone. Machine operators cannot open Orders & Products or Alert Rules; use the permitted PDA views or ask your admin for help. [PDA Assist warnings](/en/platform-intro/pages/data-acquisition) can warn about stale data and mismatched machine/order states.
 
@@ -249,6 +272,7 @@ An administrator must enable warnings for this machine first. Anyone with access
 
 ## Decision Points
 
+- Whether the reason is for the current downtime or upcoming stops.
 - Whether all parts are booked or the operation should stay on hold for later booking.
 - Where a reopened operation should return in the machine’s queue.
 - Whether to finish work here or return the remainder to the hall pool.
@@ -263,6 +287,7 @@ The machine timeline, interval list, and production records reflect what happene
 
 ## Common Problems and Edge Cases
 
+- A pre-set expires before the machine restarts: its time starts at your tap. Extend it or choose a reason again when needed.
 - No completion question after **Continue**: this starts a new interval. The question follows **Stop** when the total reaches the plan.
 - No company sorting available when reopening: choose **At the top** or **At the bottom**, or ask an administrator to save company sorting in the Planner.
 - If **Save** is unavailable, change a value or resolve the time message. A changed end must be after the start; changed times must not be in the future. Wait if **Saving…** is shown.
