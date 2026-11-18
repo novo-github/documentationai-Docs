@@ -34,10 +34,14 @@ Begin on the [Alert Rules page](/en/platform-intro/pages/alert-rules).
   <Step title="Choose the trigger condition, threshold, scope," icon="arrow-right" title-type="p">
     Choose the trigger condition, threshold, scope, recipients, and active time windows.
 
+    For **Continuous Idle Duration** or **Continuous Off Duration**, switch on **Also outside the shift** if you need alerts at night, at weekends, between shifts or on machines without shifts. Leave it off to watch only during shifts. It is off by default and is not offered for other alert types.
+
+    Check **Days of Week**. The selected days still apply outside shifts, using the company's local day when the continuous idle or off period exceeds your threshold.
+
     Read any notice about machines with active shifts before saving. It tells you whether the rule never fires for these machines or how many selected machines it will skip.
   </Step>
   <Step title="Save the rule and confirm it appears in the rule" icon="arrow-right" title-type="p">
-    Save the rule and confirm it appears in the rule list.
+    Select **Create** for a new rule or **Update** for an existing rule. Confirm it appears in the rule list. If you enabled **Also outside the shift**, this label appears beside its conditions.
   </Step>
   <Step title="Expand a rule when you need to inspect past alerts" icon="arrow-right" title-type="p">
     Expand a rule when you need to inspect past alerts or resolve existing alerts.
@@ -54,12 +58,15 @@ Check the hall groups when choosing machines. **Work center: never triggers** id
 
 ## Decision Points
 
+- For **Continuous Idle Duration** or **Continuous Off Duration**, whether to watch only during shifts or also outside them.
 - Whether the rule should apply to all machines or one machine.
 - Whether an alert needs to be resolved, reopened, or deleted from history.
 
 ## Expected Result
 
 The platform can notify the right people when the selected conditions happen.
+
+For **Continuous Idle Duration** and **Continuous Off Duration**, each uninterrupted period exceeding your threshold gives one alert, without repeats across shifts. This applies whether **Also outside the shift** is off or on.
 
 ## Common Problems and Edge Cases
 

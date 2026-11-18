@@ -32,7 +32,7 @@ Benutzer können diese Seite global oder über eine maschinenspezifische Route �
 
 ## Bedingungen, Kanäle und Kosten
 
-Klassische Alarmregeln verwenden OEE, Leistung und Verfügbarkeit als Prozentgrenzen mit ausschließlich Kleiner-als- oder Größer-als-Vergleichen. Zeit- und Schichtprüfungen umfassen Off Duration, Idle Duration, State is Off, Sensor Disconnected, Shift Not Started und Shift Not Ended. Minutengrenzen verwenden Größer-als-Vergleiche. Lesen Sie die jeweilige Bedingung und aktive-Schicht-Einschränkungen im Editor.
+Klassische Alarmregeln verwenden **OEE**, **Leistung** und **Verfügbarkeit** als Prozentgrenzen mit ausschließlich Kleiner-als- oder Größer-als-Vergleichen. Zeit- und Schichtprüfungen umfassen **Abgeschaltet gesamt (Schicht)**, **Stillstand gesamt (Schicht)**, **Abgeschaltet am Stück**, **Stillstand am Stück**, **Sensor getrennt** und **Schicht nicht gestartet**. Minutengrenzen verwenden Größer-als-Vergleiche. Lesen Sie die jeweilige Bedingung und Einschränkungen bei aktiven Schichten im Editor.
 
 Kanäle sind **E-Mail**, **SMS** und **Webhook**. **SMS kostet 0,10 € je Alarmnachricht und Benutzer**, wird am Monatsende abgerechnet und benötigt ausdrückliche Zustimmung. Eine Nachricht an drei Benutzer kostet beispielsweise 0,30 €. Ohne Empfänger wird der Alarm weiterhin kostenlos in der Plattform erfasst.
 
@@ -41,6 +41,26 @@ Kanäle sind **E-Mail**, **SMS** und **Webhook**. **SMS kostet 0,10 € je Alarm
 Sensorregeln lösen für Arbeitsplätze nie aus. Manche Regeln lösen bei aktiven Schichten nicht aus; prüfen Sie den Regelhinweis. Neuere Bedingungen, Zeiten, Eskalation, SLA und Ereignisverwaltung erklärt [Automator](/de/platform-intro/pages/automator).
 
 **Arbeitsplatz: löst nie aus** bedeutet, dass die Regel für diesen Arbeitsplatz ohne AVA nicht auslösen kann. Die Maschinenauswahl ist nach Halle gruppiert und kennzeichnet Arbeitsplätze. Prüfen Sie den Hinweis nach einer Änderung der Art.
+
+<a id="outside-shift" />
+
+### Auch außerhalb der Schicht
+
+Beim Erstellen oder Bearbeiten einer Regel für **Stillstand am Stück** oder **Abgeschaltet am Stück** können Sie **Auch außerhalb der Schicht** einschalten. Der Schalter ist zunächst ausgeschaltet. Bestehende Regeln bleiben unverändert, bis Sie ihn einschalten. Ausgeschaltet überwachen diese Regeln die Maschine nur während ihrer Schichten. Bei anderen Alarmarten erscheint der Schalter nicht. Das Informationssymbol daneben erklärt seine Wirkung.
+
+Eingeschaltet überwacht die Regel auch nachts, am Wochenende, zwischen Schichten und bei Maschinen ohne Schichten. Die ausgewählten Tage gelten weiterhin: Entscheidend ist der Tag, an dem der ununterbrochene Stillstand oder die Abschaltung den Schwellenwert überschreitet. Dafür gilt die Ortszeit Ihres Unternehmens.
+
+Nach dem Speichern erscheint **Auch außerhalb der Schicht** neben den Bedingungen in der Regelliste. Wie Sie die Einstellung ein- oder ausschalten, erklärt [Alarmregeln verwalten](/de/platform-intro/workflows/alert-rule-management).
+
+<a id="alert-frequency" />
+
+### Wie oft Sie alarmiert werden
+
+Bei **Stillstand am Stück** und **Abgeschaltet am Stück** erhalten Sie genau einen Alarm, sobald die Maschine länger als die eingestellte Dauer im Stillstand oder abgeschaltet bleibt. Das gilt mit ausgeschaltetem und eingeschaltetem Schalter **Auch außerhalb der Schicht**. Solange derselbe Zustand andauert, gibt es keine Wiederholung, auch nicht von einer Schicht zur nächsten oder von der Schicht bis in den Abend. Läuft die Maschine wieder und bleibt später erneut zu lange im Stillstand, erhalten Sie einen neuen Alarm.
+
+Stellen Sie zum Beispiel **Stillstand am Stück** auf 5 Minuten: Stillstand von 08:00–08:30 ergibt einen Alarm. Danach produziert die Maschine bis 10:00. Bleibt sie ab 10:00 erneut länger als 5 Minuten im Stillstand, erhalten Sie einen zweiten Alarm.
+
+Eine abgeschaltete Maschine zählt für diese Alarme nie als im Stillstand; der Alarm richtet sich nach dem Zustand, den die Maschinenzeitleiste erfasst hat.
 
 ## Einschränkungen bei aktiven Schichten prüfen
 

@@ -6,6 +6,44 @@ toc: false
 
 ## Releases
 
+<Update label="2026-11-18" description="v1.5.172" tags={["feature", "fix"]}>
+  {/* commits: 8f147353, 3b7e69aa, eafdeac0, ba6ae35e */}
+
+  **Release date:** November 18, 2026
+
+  ### New Features
+
+  #### [Get idle and off alerts outside shifts](/en/platform-intro/pages/alert-rules#outside-shift)
+  {/* feature: alerts-outside-shift */}
+
+  Admins and Users with access to **Alert Rules** can now use **Continuous Idle Duration** and **Continuous Off Duration** beyond shifts. Open **Alert Rules**, add or edit a rule with either type, and switch on **Also outside the shift**. It is off by default. When on, the rule also watches at night, at weekends, between shifts and on machines without shifts. For example, it can alert you if a machine stays switched on but idle overnight.
+
+  You receive one alert each time the continuous idle or off period exceeds your threshold, without repeats while that period lasts, even across the end of a shift. The rule's selected days still apply. Saved rules show **Also outside the shift** beside their conditions. Follow [Manage Alert Rules](/en/platform-intro/workflows/alert-rule-management).
+
+  ### Fixes
+
+  #### [Get reliable alerts for each long idle or off period](/en/platform-intro/pages/alert-rules#alert-frequency)
+  {/* feature: continuous-alert-fixes */}
+
+  **Continuous Idle Duration** and **Continuous Off Duration** now alert more reliably:
+
+  - A switched-off machine no longer triggers **Continuous Idle Duration** alerts, including when its sensor goes quiet after shutdown. Previously, it could be reported as idle again in every shift.
+  - A continuous idle or off period no longer triggers again in each shift it crosses. Every separate period that exceeds the set time within a shift now triggers an alert; previously, only the first did.
+  - **Days of Week** is now respected for both types, preventing alerts on unselected days such as the weekend.
+  - Night shifts are also checked after midnight.
+  - **Total Idle Duration (Shift)** no longer counts time after the machine was switched off as idle.
+
+  #### [Send alerts only to eligible recipients](/en/platform-intro/pages/alert-rules)
+  {/* feature: alert-recipients */}
+
+  Deactivated users no longer receive alert emails or SMS. You can now choose only users from your own company as recipients.
+
+  #### [Keep recorded shift figures unchanged by alert checks](/en/platform-intro/pages/alert-rules)
+  {/* feature: alert-shift-figures */}
+
+  Checking alert rules such as **OEE** no longer changes a shift's recorded times or figures.
+</Update>
+
 <Update label="2026-11-17" description="v1.5.171" tags={["feature", "fix"]}>
   {/* commits: 073a4771, 4af7a5c5, db742de0, e439d078, 567b2e31, 24c0b9a0, 0e9fbf2b, 05a871dc, 0132a490, 95df8f39, a2289402, 3e10ad36, 07accde4, 719f2364, 6223b77f, 88229511, 928b880d, 2ba385fd, 2f949f08, e8e045cf, 7cab9619, aae94a68, 35d1422a, eb527589, 67cd4cef, 4a99bcbf, 2fc78477, f086ecd0, 3eee7b35, bdd53280, e2d713c2, efdb88df, 76ca5f5c */}
 

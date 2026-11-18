@@ -6,6 +6,44 @@ toc: false
 
 ## Releases
 
+<Update label="2026-11-18" description="v1.5.172" tags={["Funktion", "Fehlerbehebung"]}>
+  {/* commits: 8f147353, 3b7e69aa, eafdeac0, ba6ae35e */}
+
+  **Release-Datum:** 18. November 2026
+
+  ### Neue Funktionen
+
+  #### [Alarme bei Stillstand und Abschaltung auch außerhalb der Schicht erhalten](/de/platform-intro/pages/alert-rules#outside-shift)
+  {/* feature: alerts-outside-shift */}
+
+  Admins und User mit Zugriff auf **Alarmregeln** können Alarme für **Stillstand am Stück** und **Abgeschaltet am Stück** jetzt über die Schichten hinaus nutzen. Öffnen Sie **Alarmregeln**, erstellen oder bearbeiten Sie eine Regel mit einer dieser Bedingungen und schalten Sie **Auch außerhalb der Schicht** ein. Der Schalter ist zunächst ausgeschaltet. Eingeschaltet überwacht die Regel auch nachts, am Wochenende, zwischen Schichten und bei Maschinen ohne Schichten. So erhalten Sie zum Beispiel einen Alarm, wenn eine Maschine über Nacht eingeschaltet im Stillstand bleibt.
+
+  Sie erhalten genau einen Alarm, sobald der ununterbrochene Stillstand oder die Abschaltung Ihren Schwellenwert überschreitet. Solange dieser Zustand andauert, gibt es keine Wiederholung, auch nicht beim Schichtende. Die ausgewählten Tage der Regel gelten weiterhin. Gespeicherte Regeln zeigen **Auch außerhalb der Schicht** neben ihren Bedingungen. Folgen Sie [Alarmregeln verwalten](/de/platform-intro/workflows/alert-rule-management).
+
+  ### Fehlerbehebungen
+
+  #### [Zuverlässige Alarme für jeden längeren Stillstand oder jede längere Abschaltung erhalten](/de/platform-intro/pages/alert-rules#alert-frequency)
+  {/* feature: continuous-alert-fixes */}
+
+  **Stillstand am Stück** und **Abgeschaltet am Stück** alarmieren jetzt zuverlässiger:
+
+  - Eine abgeschaltete Maschine löst keine Alarme für **Stillstand am Stück** mehr aus, auch wenn ihr Sensor nach dem Abschalten kein Signal mehr liefert. Zuvor konnte sie in jeder Schicht erneut als im Stillstand gemeldet werden.
+  - Ein ununterbrochener Stillstand oder eine Abschaltung löst nicht mehr in jeder weiteren Schicht erneut aus. Jeder einzelne Zeitraum innerhalb einer Schicht, der die eingestellte Dauer überschreitet, löst jetzt einen Alarm aus; zuvor wurde nur der erste gemeldet.
+  - Die ausgewählten **Wochentage** gelten jetzt für beide Alarmarten. An nicht ausgewählten Tagen, etwa am Wochenende, lösen sie nicht mehr aus.
+  - Nachtschichten werden auch nach Mitternacht geprüft.
+  - **Stillstand gesamt (Schicht)** zählt die Zeit nach dem Abschalten der Maschine nicht mehr als Stillstand.
+
+  #### [Alarme nur an berechtigte Empfänger senden](/de/platform-intro/pages/alert-rules)
+  {/* feature: alert-recipients */}
+
+  Deaktivierte Benutzer erhalten keine Alarm-E-Mails oder SMS mehr. Als Empfänger können Sie jetzt nur Benutzer Ihres eigenen Unternehmens auswählen.
+
+  #### [Erfasste Schichtzahlen bei Alarmprüfungen unverändert lassen](/de/platform-intro/pages/alert-rules)
+  {/* feature: alert-shift-figures */}
+
+  Das Prüfen von Alarmregeln wie **OEE** verändert keine erfassten Zeiten oder Kennzahlen einer Schicht mehr.
+</Update>
+
 <Update label="2026-11-17" description="v1.5.171" tags={["Funktion", "Fehlerbehebung"]}>
   {/* commits: 073a4771, 4af7a5c5, db742de0, e439d078, 567b2e31, 24c0b9a0, 0e9fbf2b, 05a871dc, 0132a490, 95df8f39, a2289402, 3e10ad36, 07accde4, 719f2364, 6223b77f, 88229511, 928b880d, 2ba385fd, 2f949f08, e8e045cf, 7cab9619, aae94a68, 35d1422a, eb527589, 67cd4cef, 4a99bcbf, 2fc78477, f086ecd0, 3eee7b35, bdd53280, e2d713c2, efdb88df, 76ca5f5c */}
 

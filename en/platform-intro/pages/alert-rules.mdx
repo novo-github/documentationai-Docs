@@ -32,7 +32,7 @@ Users can open this page globally or from a machine-specific route.
 
 ## Conditions, Channels, and Costs
 
-Classic Alert Rules support OEE, Performance, and Availability thresholds as percentages, with only less-than or greater-than comparisons. Time and shift checks include Off Duration, Idle Duration, State is Off, Sensor Disconnected, Shift Not Started, and Shift Not Ended; minute thresholds use greater-than comparisons. Read the selected condition and any active-shift limitation in the editor.
+Classic Alert Rules support **OEE**, **Performance**, and **Availability** thresholds as percentages, with only less-than or greater-than comparisons. Time and shift checks include **Total Off Duration (Shift)**, **Total Idle Duration (Shift)**, **Continuous Off Duration**, **Continuous Idle Duration**, **Sensor Disconnected**, and **Shift Not Started**; minute thresholds use greater-than comparisons. Read the selected condition and any active-shift limitation in the editor.
 
 Channels are **email**, **SMS**, and **webhook**. **SMS costs €0.10 per alert message per user**, billed at month end, and requires explicit consent. For example, one message sent to three users costs €0.30. With no recipients, the alert is still recorded on the platform at no cost.
 
@@ -41,6 +41,26 @@ Channels are **email**, **SMS**, and **webhook**. **SMS costs €0.10 per alert 
 Sensor-based rules never trigger for work centers. Some rules do not fire for active-shift machines; check the rule's notice. For newer scoped conditions, timing, escalation, SLA, and event handling, see [Automator](/en/platform-intro/pages/automator).
 
 **Work center: never triggers** means the rule cannot alert for that work center because it has no AVA. Machine choices are grouped by hall and identify work centers. Review this notice after changing a machine’s kind.
+
+<a id="outside-shift" />
+
+### Also outside the shift
+
+When creating or editing a rule for **Continuous Idle Duration** or **Continuous Off Duration**, switch on **Also outside the shift** to watch the machine beyond its shifts. It is off by default; existing rules stay as they are until you switch it on. When off, these rules watch only during the machine's shifts. Other alert types do not offer this switch. The information icon beside it explains its effect.
+
+When on, the rule also watches at night, at weekends, between shifts and on machines without shifts. The selected days still apply: what counts is the day on which the continuous idle or off period exceeds the threshold, using your company's local time.
+
+After saving, **Also outside the shift** appears beside the rule's conditions in the list. Follow [Manage Alert Rules](/en/platform-intro/workflows/alert-rule-management) to enable or turn off this setting.
+
+<a id="alert-frequency" />
+
+### How often you are alerted
+
+For **Continuous Idle Duration** and **Continuous Off Duration**, you receive one alert each time the machine stays idle or switched off longer than the set time. This applies whether **Also outside the shift** is off or on. There are no repeats while the same period lasts, including when it continues from one shift into the next or from a shift into the evening. When the machine runs again and later stays idle too long again, you receive a new alert.
+
+For example, set **Continuous Idle Duration** to 5 minutes: idle from 08:00–08:30 gives one alert. The machine then produces until 10:00. If it stays idle again from 10:00 for longer than 5 minutes, you receive a second alert.
+
+A switched-off machine is never counted as idle for these alerts; the alert follows what the machine timeline recorded.
 
 ## Check Active Shift Limitations
 

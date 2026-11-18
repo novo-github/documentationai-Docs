@@ -14,6 +14,11 @@ description: "Understand PDA Assist warnings, alarm sound, and Automator templat
 | Why is there an Automator alert but no email? | [Answer](/en/help-center/faq/warnings-and-automation#email) |
 | Why do setup and scrap values stay the same and then jump? | [Answer](/en/help-center/faq/warnings-and-automation#metrics) |
 | Why did my alert stop working after I switched to active shifts? | [Answer](/en/help-center/faq/warnings-and-automation#active-shift-alerts) |
+| How do I get alerts at night or at the weekend? | [Answer](/en/help-center/faq/warnings-and-automation#outside-shift) |
+| How often will I be alerted? | [Answer](/en/help-center/faq/warnings-and-automation#outside-shift-repeat) |
+| Why did I get an idle alert although the machine was switched off? | [Answer](/en/help-center/faq/warnings-and-automation#idle-alert-while-off) |
+| Does switching on alerts outside shifts ignore my selected days? | [Answer](/en/help-center/faq/warnings-and-automation#outside-shift-days) |
+| Why can I not find the Also outside the shift switch? | [Answer](/en/help-center/faq/warnings-and-automation#outside-shift-missing) |
 | Why does my rule never trigger for a work center? | [Answer](/en/help-center/faq/warnings-and-automation#work-center-alert) |
 | Can I get an alert before an order misses delivery? | [Answer](/en/help-center/faq/warnings-and-automation#delivery-alert) |
 | Why can I not combine a delay warning with my machine conditions? | [Answer](/en/help-center/faq/warnings-and-automation#schedule-rule) |
@@ -87,6 +92,36 @@ These values update when a machine operator records a PDA entry. Setup compares 
 ## Why did my alert stop working after I switched to active shifts?
 
 Some alert conditions do not fire for machines with active shifts. When creating or editing the rule, check the notice: it can say that the alert never fires for these machines or show how many selected machines will be skipped. Review the rule before relying on it. See [Alert Rules](/en/platform-intro/pages/alert-rules).
+
+<a id="outside-shift" />
+
+## How do I get alerts at night or at the weekend?
+
+An Admin or a User with access to **Alert Rules** can add or edit a rule for **Continuous Idle Duration** or **Continuous Off Duration** and switch on **Also outside the shift**. It is off by default. The rule then also watches at night, at weekends, between shifts and on machines without shifts. For weekend alerts, also select the weekend days in **Days of Week**. Follow [Manage Alert Rules](/en/platform-intro/workflows/alert-rule-management).
+
+<a id="outside-shift-repeat" />
+
+## How often will I be alerted?
+
+For **Continuous Idle Duration** and **Continuous Off Duration**, you receive one alert per uninterrupted period longer than the set time, without repeats across shifts, whether **Also outside the shift** is off or on. With **Continuous Idle Duration** set to 5 minutes, idle from 08:00–08:30 gives one alert; after production until 10:00, a new idle period from 10:00 lasting longer than 5 minutes gives a second alert — see [how often you are alerted](/en/platform-intro/pages/alert-rules#alert-frequency).
+
+<a id="idle-alert-while-off" />
+
+## Why did I get an idle alert although the machine was switched off?
+
+This was fixed in v1.5.172: a switched-off machine no longer counts as idle for **Continuous Idle Duration** alerts. If the machine timeline itself shows idle at that time, the alert follows what the platform recorded. See [Alert Rules](/en/platform-intro/pages/alert-rules#alert-frequency) and check the timeline in [Machine Details](/en/platform-intro/pages/machine-details).
+
+<a id="outside-shift-days" />
+
+## Does switching on alerts outside shifts ignore my selected days?
+
+No. The rule still uses your selected days. The day on which the continuous idle or off period exceeds the threshold counts, using your company's local time. Include the weekend days if you want alerts then. See [alerts outside shifts](/en/platform-intro/pages/alert-rules#outside-shift).
+
+<a id="outside-shift-missing" />
+
+## Why can I not find the Also outside the shift switch?
+
+**Also outside the shift** appears only when creating or editing a rule for **Continuous Idle Duration** or **Continuous Off Duration**. Other alert types do not offer it. See [Alert Rules](/en/platform-intro/pages/alert-rules#outside-shift).
 
 <a id="work-center-alert" />
 
