@@ -6,6 +6,54 @@ toc: false
 
 ## Releases
 
+<Update label="2026-11-19" description="v1.5.178" tags={["feature", "improvement", "fix"]}>
+  {/* commits: f31f1ba1, f326f30e, f56539c8, a53a3989, b700dd8d, 588c4a00, 1a9201c2, 8cc23bad, 78e24269, d4a44744, b8748b7a, 451ddd25, d76b22e4, 73d98ac5, 38d6f121, 4fb17b77, 956de888, 5b58379c, 4a8d00b9, de3aa3c7, 4c1bbfab, f87936f4, 4100cdfe, 86dd3364, cb956f10, 0653472f, 9888c6ca */}
+
+  **Release date:** November 19, 2026
+
+  ### New Features
+
+  #### [Let AI suggest your import mapping](/en/platform-intro/pages/erp-upload-planner#suggest-mapping)
+  {/* feature: erp-import-ai-mapping */}
+
+  Admins and Users with access to **ERP Uploads** and AI can load a file and choose **Planner → ERP Uploads → Map Columns → Suggest mapping**. A work-center code such as S1600104 can match machine S160.01.04 despite the different spelling. The match shows **Sure**; point at it to read “Same code”.
+
+  Review the suggestions, then choose **Apply (n)**. Nothing changes before you apply; applying does not save the mapping or import orders. A suggestion uses 1 AI credit; a failed suggestion costs nothing. Follow the [import workflow](/en/platform-intro/workflows/order-upload-planner).
+
+  #### [Import quantities and times in your file's units](/en/platform-intro/pages/erp-upload-planner#import-numbers)
+  {/* feature: erp-import-sap */}
+
+  Under **Planner → ERP Uploads → Map Columns**, choose **Numbers in the file** for text numbers, **Milliseconds (ms)** for times in milliseconds, and **Cycles per product** when several machine cycles make one product. For example, 6,480 cycles at 162 cycles per product become 40 products when you choose **Yes** under **Planned quantity counts cycles**. With **1 cycle**, 140 ms per cycle becomes 22.68 seconds per product.
+
+  **Default unit** fills missing quantity units for new products; existing products keep their unit. The preview shows the converted quantities and times. Follow [import cycle quantities and times](/en/platform-intro/workflows/order-upload-planner#cycle-import).
+
+  ### Improvements
+
+  #### [Keep your mapping for the next import](/en/platform-intro/pages/erp-upload-planner#save-mapping)
+  {/* feature: erp-import-ai-mapping */}
+
+  **Save Mapping** is now also available at the bottom of **Map Columns**. Both buttons are unavailable when there are no changes. Saving lists the changes and keeps saved column choices when those columns are missing from the current file.
+
+  The final button is now **Import (n)** (previously **Save (n)**). If your mapping changed, **Save the mapping?** offers **Save and import** or **Import without saving**. If saving fails, nothing is imported. See the [import workflow](/en/platform-intro/workflows/order-upload-planner).
+
+  #### [Spot rows that still need a machine](/en/platform-intro/pages/erp-upload-planner#missing-machines)
+  {/* feature: erp-import-sap */}
+
+  In **ERP Uploads**, the preview and check result now warn how many included rows have no machine and list unmatched values. Their operations are imported without a machine and cannot start on the PDA page until planned. Match the machines before importing or assign the work later under **Planner → Unassigned**.
+
+  #### [Smaller improvements on the import page](/en/platform-intro/pages/erp-upload-planner#import-numbers)
+  {/* feature: erp-import-layout */}
+
+  Hints now start with **Example:** so you do not mistake them for file columns. **Numbers in the file** sits directly below **Planned Quantity**; it now lines up with the fields, as do **Parts separated by** and **New operations in the queue**.
+
+  ### Fixes
+
+  #### [Quantities with a thousands separator import correctly](/en/platform-intro/pages/erp-upload-planner)
+  {/* feature: erp-import-sap */}
+
+  A planned quantity written as 6,480 in the file used to arrive as 6.48; it now arrives as 6480. The order overview and search show the new orders right after an import.
+</Update>
+
 <Update label="2026-11-18" description="v1.5.172" tags={["feature", "fix"]}>
   {/* commits: 8f147353, 3b7e69aa, eafdeac0, ba6ae35e */}
 

@@ -29,6 +29,12 @@ Zwei-Faktor-Authentifizierung und Einmalcode: Der zweite Anmeldeschritt verwende
 
 [Mehr erfahren](/de/platform-intro/workflows/two-factor-authentication).
 
+### 1 Zyklus
+
+Die Zeitbasis beim Import für eine Zeit je Maschinenzyklus. Der Import multipliziert diese Zeit mit **Zyklen pro Produkt**, um die Zeit je Produkt zu erhalten.
+
+[Mehr erfahren](/de/platform-intro/pages/erp-upload-planner#cycle-import).
+
 ## A
 
 <a id="aa" />
@@ -401,9 +407,7 @@ Erkannte Zyklen ohne zugehöriges erfasstes Arbeitsintervall; helfen, Zählunter
 
 ### Cycles Per Product / Press per Product / Zyklen / Presshübe pro Produkt
 
-Anzahl der benötigten Maschinenzyklen je Fertigteil.
-
-[Mehr erfahren](/de/platform-intro/pages/orders-products).
+Anzahl der Maschinenzyklen für ein fertiges Produkt, unter **Presshübe pro Produkt** in [Aufträge & Produkte](/de/platform-intro/pages/orders-products). Beim [ERP-Import](/de/platform-intro/pages/erp-upload-planner#cycle-import) rechnet **Zyklen pro Produkt** Zyklusmengen und Zeiten in Produktmengen und Zeiten um, etwa bei 162 Blechen je Paket.
 
 ## D
 
@@ -472,6 +476,12 @@ Verringerter Leerlauf über einer maschinenspezifischen Referenz der besten Tage
 Dauer eines geplanten oder erfassten Zeitraums. Prüfen Sie, ob das Feld Plan- oder Istzeit zeigt.
 
 [Mehr erfahren](/de/platform-intro/pages/assignment-planner).
+
+### Standardeinheit
+
+Die Mengeneinheit für neue importierte Produkte, wenn die Datei keine Einheit enthält oder die Zelle leer ist. Ein ausgefüllter Zellwert hat Vorrang. Bestehende Produkte behalten ihre Einheit.
+
+[Mehr erfahren](/de/platform-intro/pages/erp-upload-planner#import-numbers).
 
 ## E
 
@@ -1013,6 +1023,12 @@ Durchschnittliche Zeit in Automator vom Auslösen eines Ereignisses bis zu seine
 
 [Mehr erfahren](/de/platform-intro/pages/automator).
 
+### Millisekunden (ms)
+
+Eintausend Millisekunden entsprechen einer Sekunde. Wählen Sie diese Zeiteinheit, wenn die Datei Zeiten in Millisekunden enthält, auch wenn sie „ms“ angibt.
+
+[Mehr erfahren](/de/platform-intro/pages/erp-upload-planner#cycle-import).
+
 ## N
 
 ### Nicht gefunden
@@ -1062,6 +1078,12 @@ Kennzeichen der ERP-Prüfung: Ein neuer Datensatz würde angelegt.
 Zeilennummer in Administrationstabellen. Nr. an einem Arbeitsgang kann dagegen die **Arbeitsgangfolge** meinen.
 
 [Mehr erfahren](/de/platform-intro/pages/admin-panel).
+
+### Zahlen in der Datei
+
+Die Importauswahl für Mengen und Zeiten als Text. **Automatisch** schätzt jeden Wert. **Deutsch 1.234,5** und **Englisch 1,234.5** verwenden die gewählten Dezimal- und Tausendertrennzeichen.
+
+[Mehr erfahren](/de/platform-intro/pages/erp-upload-planner#import-numbers).
 
 ## O
 
@@ -1358,6 +1380,12 @@ Rohsignal des Maschinensensors über die Zeit unter der Zeitleiste, mit Auflösu
 
 [Mehr erfahren](/de/platform-intro/pages/assignment-planner).
 
+### Geplante Menge zählt Zyklen
+
+Eine Auswahl mit **Nein** / **Ja**, die nach dem Festlegen von **Zyklen pro Produkt** erscheint. Wählen Sie **Ja**, wenn die Datei Zyklen zählt: Aus 6.480 Blechen bei 162 Blechen je Paket werden 40 Produkte; wählen Sie **Nein**, wenn die Datei bereits Produkte zählt.
+
+[Mehr erfahren](/de/platform-intro/pages/erp-upload-planner#cycle-import).
+
 ## Q
 
 ### Restmenge / Hier gefertigt / Offen
@@ -1649,6 +1677,12 @@ Optionale Unternehmensdaten für die CO₂-Schätzung, etwa Abfall, erneuerbarer
 Die frühere Bezeichnung **Bleibt oben** wurde aus der Vorschau zur Sortierung nach Priorität und Datum im Planer entfernt. Laufende und angehaltene Arbeit wird mit aller übrigen aktiven Arbeit sortiert. Im Warteschlangenmodus folgen Karten der gezogenen Reihenfolge.
 
 [Mehr erfahren](/de/platform-intro/pages/assignment-planner).
+
+### Vorgeschlagene Zuordnung
+
+KI-Vorschläge für Importspalten, Maschinenzuordnungen und Einstellungen. **Sicher**, **Wahrscheinlich** und **Unsicher** zeigen die Sicherheit des Vorschlags. Lesen Sie Warnungen unter **Bitte prüfen** und wählen Sie vor **Übernehmen (n)** die Zeilen aus. Das Übernehmen speichert und importiert nichts.
+
+[Mehr erfahren](/de/platform-intro/pages/erp-upload-planner#suggest-mapping).
 
 ## T
 

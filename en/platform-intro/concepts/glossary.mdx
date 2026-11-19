@@ -29,6 +29,12 @@ Two-factor authentication and a one-time password: the second sign-in step uses 
 
 [Learn more](/en/platform-intro/workflows/two-factor-authentication).
 
+### 1 cycle
+
+The import time basis for a time measured per machine cycle. The import multiplies that time by **Cycles per product** to obtain time per product.
+
+[Learn more](/en/platform-intro/pages/erp-upload-planner#cycle-import).
+
 ## A
 
 <a id="aa" />
@@ -391,9 +397,7 @@ Detected cycles belonging to no recorded work interval; useful for explaining co
 
 ### Cycles Per Product / Press per Product / Zyklen / Presshübe pro Produkt
 
-Number of machine cycles needed for one finished part.
-
-[Learn more](/en/platform-intro/pages/orders-products).
+Number of machine cycles needed for one finished product, shown as **Press per Product** in [Orders & Products](/en/platform-intro/pages/orders-products). In [ERP Uploads](/en/platform-intro/pages/erp-upload-planner#cycle-import), **Cycles per product** converts cycle quantities and times into product quantities and times, for example 162 sheets per package.
 
 ## D
 
@@ -462,6 +466,12 @@ Reduced idle time above a machine-specific best-days baseline; it is not all idl
 The duration of a planned or recorded period; check whether the field is planned or actual.
 
 [Learn more](/en/platform-intro/pages/assignment-planner).
+
+### Default unit
+
+The quantity unit used for new imported products when the file has no unit or its cell is empty. A filled cell takes precedence; existing products keep their unit.
+
+[Learn more](/en/platform-intro/pages/erp-upload-planner#import-numbers).
 
 ## E
 
@@ -1007,6 +1017,12 @@ Automator average time from an event triggering to its resolution.
 
 [Learn more](/en/platform-intro/pages/automator).
 
+### Milliseconds (ms)
+
+One thousand milliseconds equal one second. Choose this time unit when the file gives times in milliseconds, also when it writes “ms”.
+
+[Learn more](/en/platform-intro/pages/erp-upload-planner#cycle-import).
+
 ## N
 
 ### Not found
@@ -1056,6 +1072,12 @@ ERP check badge: a new record would be created.
 Row number in Admin Panel tables. Nr. on an operation can instead be its sequence number.
 
 [Learn more](/en/platform-intro/pages/admin-panel).
+
+### Numbers in the file
+
+The import choice for reading quantities and times written as text. **Automatic** guesses each value; **German 1.234,5** and **English 1,234.5** use the chosen decimal and thousands separators.
+
+[Learn more](/en/platform-intro/pages/erp-upload-planner#import-numbers).
 
 ## O
 
@@ -1348,6 +1370,12 @@ Raw machine-sensor signal over time, displayed below the timeline with resolutio
 
 [Learn more](/en/platform-intro/pages/assignment-planner).
 
+### Planned quantity counts cycles
+
+A **No** / **Yes** choice that appears once **Cycles per product** is set. Choose **Yes** when the file counts cycles: 6,480 sheets at 162 sheets per package become 40 products; choose **No** when the file already counts products.
+
+[Learn more](/en/platform-intro/pages/erp-upload-planner#cycle-import).
+
 ## Q
 
 ### Quantity left / Done here / Left
@@ -1637,6 +1665,12 @@ Optional company inputs for the CO₂ estimate, including waste, renewable share
 The former **Stays on top** label has been removed from the Planner’s priority-and-date preview. Running and on-hold work is sorted with all other active work. In queue-position mode, cards follow the dragged order.
 
 [Learn more](/en/platform-intro/pages/assignment-planner).
+
+### Suggested mapping
+
+AI proposals for import columns, machine matches and settings. **Sure**, **Likely** and **Unsure** show confidence. Check warnings under **Please check** and select lines before **Apply (n)**; applying does not save or import.
+
+[Learn more](/en/platform-intro/pages/erp-upload-planner#suggest-mapping).
 
 ## T
 

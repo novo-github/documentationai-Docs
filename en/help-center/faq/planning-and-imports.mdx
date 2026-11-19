@@ -137,6 +137,17 @@ description: "Find answers about operation priorities, planning dates, grouping,
 | Which separator should I use? | [Answer](/en/help-center/faq/planning-and-imports#parts-list-separator) |
 | Why is my whole parts list shown as one part? | [Answer](/en/help-center/faq/planning-and-imports#parts-list-one-part) |
 | Why did choosing a different separator leave my saved list unchanged? | [Answer](/en/help-center/faq/planning-and-imports#parts-list-separator-reimport) |
+| Can AI match my import columns and machines for me? | [Answer](/en/help-center/faq/planning-and-imports#import-ai) |
+| What does a mapping suggestion share, and does it cost credits? | [Answer](/en/help-center/faq/planning-and-imports#import-ai-data) |
+| Why are some suggested lines not ticked? | [Answer](/en/help-center/faq/planning-and-imports#import-ai-review) |
+| Why does 6.480 in my file become 6.48? | [Answer](/en/help-center/faq/planning-and-imports#import-number-format) |
+| How do I import times in milliseconds? | [Answer](/en/help-center/faq/planning-and-imports#import-milliseconds) |
+| My file counts sheets, but my product is a package. What should I choose? | [Answer](/en/help-center/faq/planning-and-imports#import-cycles) |
+| Can I supply a quantity unit when my file has none? | [Answer](/en/help-center/faq/planning-and-imports#import-default-unit) |
+| Why can I not start my imported operations on the PDA page? | [Answer](/en/help-center/faq/planning-and-imports#import-no-machine) |
+| Why is Save Mapping unavailable? | [Answer](/en/help-center/faq/planning-and-imports#import-save-disabled) |
+| Should I choose Save and import or Import without saving? | [Answer](/en/help-center/faq/planning-and-imports#import-save-question) |
+| Will saving a smaller file erase my saved column choices? | [Answer](/en/help-center/faq/planning-and-imports#import-missing-columns) |
 
 <a id="operation-priority" />
 
@@ -949,7 +960,7 @@ Repeating the previous imported list and revision leaves manual edits and ticks 
 
 ## Which separator should I use?
 
-In **Map Columns**, choose **Parts separated by** directly below **Parts list**. For XLSX, use semicolons between parts and choose **Semicolon ;**. For CSV with semicolons between columns, use pipes and choose **Pipe |**. **Line break** works for one part per line within a cell. These choices keep commas in descriptions. **Comma** splits at every comma followed by a space. Check the example and step 3 before saving. Follow [import parts lists](/en/platform-intro/workflows/order-upload-planner#parts-lists).
+In **Map Columns**, choose **Parts separated by** directly below **Parts list**. For XLSX, use semicolons between parts and choose **Semicolon ;**. For CSV with semicolons between columns, use pipes and choose **Pipe |**. **Line break** works for one part per line within a cell. These choices keep commas in descriptions. **Comma** splits at every comma followed by a space. Check the example and step 3 before importing. Follow [import parts lists](/en/platform-intro/workflows/order-upload-planner#parts-lists).
 
 <a id="parts-list-one-part" />
 
@@ -962,3 +973,69 @@ The example under **Parts separated by** and the step 3 preview show **1 part** 
 ## Why did choosing a different separator leave my saved list unchanged?
 
 If the parts cell’s text and product revision match the previous import, the saved list, manual edits and ticks stay intact. Choosing another separator alone does not replace the list. An Admin can correct it in the Planner or order details. Follow [edit a list](/en/platform-intro/workflows/parts-lists#edit-list).
+
+<a id="import-ai" />
+
+## Can AI match my import columns and machines for me?
+
+With ERP upload and AI access, load a file and choose **Map Columns → Suggest mapping**. For example, S1600104 can match machine S160.01.04. Review the suggestions, choose **Apply (n)** and check the preview before saving or importing, as shown in [the mapping guide](/en/platform-intro/pages/erp-upload-planner#suggest-mapping). If the button is missing, ask your Admin about access.
+
+<a id="import-ai-data" />
+
+## What does a mapping suggestion share, and does it cost credits?
+
+**Map Columns → Suggest mapping** shares column names, a few examples and full value lists for columns with few different values. A suggestion uses 1 AI credit; a failed suggestion costs nothing. If credits are unavailable, you can map the columns yourself; see [mapping suggestions](/en/platform-intro/pages/erp-upload-planner#suggest-mapping).
+
+<a id="import-ai-review" />
+
+## Why are some suggested lines not ticked?
+
+In **Map Columns → Suggest mapping**, **Unsure** lines start unticked. **Cycles per product**, **Planned quantity counts cycles** and **1 cycle** also start unticked because they change quantities or times. Read **Please check** and tick only the suggestions you want; nothing changes before **Apply (n)**, as explained in [the review guide](/en/platform-intro/pages/erp-upload-planner#suggest-mapping).
+
+<a id="import-number-format" />
+
+## Why does 6.480 in my file become 6.48?
+
+**Automatic** can read 6.480 as six point four eight. In **Map Columns**, choose **German 1.234,5** under **Numbers in the file**, directly below **Planned Quantity**, to read it as six thousand four hundred eighty. The page can also suggest “The numbers look German (1.234,5).” with **Use German**; check the preview as shown in [number settings](/en/platform-intro/pages/erp-upload-planner#import-numbers).
+
+<a id="import-milliseconds" />
+
+## How do I import times in milliseconds?
+
+In **Map Columns**, choose **Milliseconds (ms)** as the preparation or production time unit, also when the file writes “ms”. A press time of 140 ms then shows as 0.14 s. For time per press stroke, set **Cycles per product** and choose **1 cycle** under **Planned production time for**; see [time settings](/en/platform-intro/pages/erp-upload-planner#cycle-import).
+
+<a id="import-cycles" />
+
+## My file counts sheets, but my product is a package. What should I choose?
+
+In **Map Columns**, set **Cycles per product** to the sheets per package, for example 162. **Planned quantity counts cycles** then appears: choose **Yes** to turn 6,480 sheets into 40 products, or **No** if the file already counts packages. If production time is per sheet, choose **1 cycle** too. Check the preview using [the cycle import steps](/en/platform-intro/workflows/order-upload-planner#cycle-import).
+
+<a id="import-default-unit" />
+
+## Can I supply a quantity unit when my file has none?
+
+In **Map Columns**, enter a **Default unit** such as Stk or Paket beside **Quantity Unit**. It fills missing units for new products; a unit already in the file takes precedence. Existing products keep their unit, as explained in [quantity settings](/en/platform-intro/pages/erp-upload-planner#import-numbers).
+
+<a id="import-no-machine" />
+
+## Why can I not start my imported operations on the PDA page?
+
+An operation without a machine cannot start on the PDA page; for example, S1600104 may not have been matched to a machine. Match the file’s machine values under **Map Columns → Machine Fields**. You can also assign rows to a machine by hand in step 3, **Review & Assign Machines**, or plan them after import under **Planner → Unassigned**; see [rows without a machine](/en/platform-intro/pages/erp-upload-planner#missing-machines).
+
+<a id="import-save-disabled" />
+
+## Why is Save Mapping unavailable?
+
+In **Map Columns**, both **Save Mapping** buttons are unavailable when there are no changes to save. Saving a mapping keeps your choices for next time. To import the reviewed orders, choose **Import (n)**, as shown in [saving and importing](/en/platform-intro/pages/erp-upload-planner#save-mapping).
+
+<a id="import-save-question" />
+
+## Should I choose Save and import or Import without saving?
+
+After **Import (n)**, choose **Save and import** to keep your changed mapping for next time and import the rows. Choose **Import without saving** to import with your current choices while keeping the previously saved mapping. If saving fails or you close the question, nothing is imported; see [saving and importing](/en/platform-intro/pages/erp-upload-planner#save-mapping).
+
+<a id="import-missing-columns" />
+
+## Will saving a smaller file erase my saved column choices?
+
+No: when you choose **Map Columns → Save Mapping**, a column missing from this file keeps its saved choice for future files. If you choose a replacement column, that new choice is saved instead, as explained in [saved mappings](/en/platform-intro/pages/erp-upload-planner#save-mapping).

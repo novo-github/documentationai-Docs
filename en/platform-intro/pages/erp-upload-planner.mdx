@@ -1,27 +1,24 @@
 ---
 title: "ERP Upload Planner"
-description: "A guided import page for turning spreadsheet rows into platform-ready production records."
+description: "Import orders, match machines and check quantities and times before confirming."
 ---
 
 ## Overview
 
-**Access:** Admin or Page Access `erp_uploads`. [Roles and access](/en/platform-intro/concepts/roles-and-access).
+**Access:** Admin or User with access to **ERP Uploads**. [Roles and access](/en/platform-intro/concepts/roles-and-access).
 
 Import spreadsheet-based orders into the Watchmen Platform. Review the source file, match its columns to order fields, and check how the import will affect your existing production plan before confirming it.
-
-Users open it through the protected ERP upload route.
 
 ## Access
 
 <Callout kind="info" title="Access details">
-- Visibility: Protected
-- Primary routes: `/erp-uploads`
+Open **Planner → ERP Uploads**. AI suggestions also require AI access.
 </Callout>
 
 ## What You Can See
 
 - The selected file's name, row and column count, and a sample of its contents.
-- Column mappings and tools for matching external machine names or codes to your machines.
+- Column mappings and tools for matching external machine names or codes to your machines. Hints start with **Example:** so you can distinguish them from your file’s columns.
 - A preview, time-setting explanations, schedule warnings, and upload progress.
 - A summary of proposed changes and scheduling conflicts, followed by the results after import.
 
@@ -38,6 +35,42 @@ Users open it through the protected ERP upload route.
 Select **Expand to edit** in the file preview to open the full file view. You can correct individual cells or paste matching groups of values from Excel. The editor shows how many cells you have changed; saved corrections are highlighted in the preview.
 
 Column headings and row counts stay fixed. To change the file structure, correct the source spreadsheet and upload it again. Closing the editor without saving discards unsaved corrections and leaves the original file unchanged.
+
+<a id="suggest-mapping" />
+
+## Suggest and Review a Mapping
+
+Admins and Users with access to **ERP Uploads** and AI access can use **Suggest mapping**. Load a file to see the button in **Map Columns**.
+
+For example, a work-center column containing S1600104 can be matched to machine S160.01.04 despite the different spelling. The match shows **Sure**; point at it to see the reason “Same code”.
+
+A suggestion uses 1 AI credit; a failed suggestion costs nothing. It shares column names, a few examples and the full value list for columns with few different values. If AI access or credits are unavailable, you can map the columns yourself.
+
+In **Suggested mapping**, read **Please check** warnings and review the proposed columns, machines and settings:
+
+- **Sure** and **Likely** suggestions usually start ticked; **Unsure** suggestions do not.
+- **Cycles per product**, **Planned quantity counts cycles** and **1 cycle** start unticked because they change quantities or times.
+- Tick the lines you want and choose **Apply (n)**. Nothing changes before you apply.
+
+Check the preview afterwards. Applying does not save the mapping or import orders. If there is nothing new, you see “The suggestion matches your current mapping.”
+
+<a id="save-mapping" />
+
+## Save and Reuse Your Mapping
+
+Use **Save Mapping** at the top or bottom of **Map Columns** to keep your columns, machines and settings for next time. After loading another file, choose **Load Mapping** to use them again.
+
+Both save buttons are unavailable when there are **No changes to save**. When you save, the confirmation lists your changes. If this file lacks a saved column, its saved choice is kept; choosing a replacement saves that new choice instead.
+
+After checking the rows, choose **Import (n)**. If your mapping changed, **Save the mapping?** offers these choices:
+
+| Choice | What happens |
+| --- | --- |
+| **Save and import** | Saves your mapping, then imports the rows. If saving fails, nothing is imported. |
+| **Import without saving** | Imports with your current choices and keeps the previously saved mapping for next time. |
+| Close the question | Returns to the review without importing. |
+
+Saving a mapping alone never imports orders. Follow the [import workflow](/en/platform-intro/workflows/order-upload-planner).
 
 <a id="parts-lists" />
 
@@ -75,6 +108,37 @@ Time fields can use standard or industrial-minute interpretation. Choose the con
 
 Priority names, numbers, and colors follow the company levels configured in the [Admin Panel](/en/platform-intro/pages/admin-panel). These levels are shared with order management and the Assignment Planner, so imported priorities can be reviewed consistently across the plan.
 
+<a id="import-numbers" />
+
+### Number Format and Default Quantity Unit
+
+In **Map Columns**, find **Numbers in the file** directly below **Planned Quantity**. Numbers your Excel file stores as numbers are always read correctly; this choice only matters for numbers written as text, for example in CSV files.
+
+| Choice | Example |
+| --- | --- |
+| **Automatic** | Guesses each value: 6.480 is read as six point four eight. |
+| **German 1.234,5** | 6.480 is read as six thousand four hundred eighty. |
+| **English 1,234.5** | 6,480 is read as six thousand four hundred eighty; 6.48 stays six point four eight. |
+
+The page may suggest “The numbers look German (1.234,5).” with **Use German**, or “The numbers look English (1,234.5).” with **Use English**. Choose the button to use that format, then check quantities and times in the preview.
+
+Beside **Quantity Unit**, enter a **Default unit** such as Stk or Paket, up to 20 characters. It fills missing units for new products. A unit already in the file takes precedence; existing products keep their unit.
+
+<a id="cycle-import" />
+
+### Milliseconds and Cycles per Product
+
+Choose **Milliseconds (ms)** as the time unit when your file gives times in milliseconds, also when the file itself writes “ms”. 140 ms then shows as 0.14 s.
+
+Map **Cycles per product** to a column or enter a fixed number greater than zero. The fixed number fills missing values. For a press making one sheet per stroke and 162 sheets per package, enter 162 when the product is a package.
+
+Once cycles per product is set, these choices appear:
+
+- **1 cycle** under **Planned production time for**: use it for time per machine cycle. 140 ms × 162 becomes 22.68 seconds per product.
+- **Planned quantity counts cycles**: choose **Yes** if the file counts cycles. 6,480 ÷ 162 becomes 40 products. Choose **No** if the file already counts products.
+
+Step 3 shows the calculations. A missing cycles value marks the row with **Cycles per product missing**. A result that is not a whole number of products shows a warning, but the row can still be imported. Follow [the cycle import steps](/en/platform-intro/workflows/order-upload-planner#cycle-import).
+
 ### Initial Priorities for New Work
 
 Map **Order priority** and **Operation priority** separately. In the column-mapping step, **Initial order priority (new orders)** and **Initial operation priority (new operations)** supply values for new work when a priority cell is empty or no priority column is selected. Leave the initial operation priority empty to use 100.
@@ -105,13 +169,21 @@ Placement applies to machine queues and hall pools. It includes new work, additi
 
 For several operations entering the same queue, **By sorting** inserts them in rule order. **At the start** uses company rule order when company rules exist, otherwise spreadsheet order.
 
-The check summary shows **New operations in the queue:** with your choice. After saving with **By sorting** or **At the start**, a separate line reports the number of operations placed and queues affected, if any work was placed. It also appears alongside conflicts, skipped rows, or warnings. The count includes moved operations. Follow the [import workflow](/en/platform-intro/workflows/order-upload-planner).
+The check summary shows **New operations in the queue:** with your choice. After importing with **By sorting** or **At the start**, a separate line reports the number of operations placed and queues affected, if any work was placed. It also appears alongside conflicts, skipped rows, or warnings. The count includes moved operations. Follow the [import workflow](/en/platform-intro/workflows/order-upload-planner).
 
 ## Review the Import's Impact
 
 After mapping and preview, open **What this import will change**. The summary groups new, updated, and existing records by orders, products, customers, operations, and assignments. Existing records are reused; they do not necessarily represent new records created by the import.
 
 Expand the row-by-row details to inspect schedule changes, new operations and assignments, and recalculated durations. Use this view to check the consequences for your current plan before confirming.
+
+<a id="missing-machines" />
+
+### Rows Without a Machine
+
+Step 3 and the check result warn how many rows in your chosen import scope have neither a machine nor a hall pool. **Not mapped:** lists unmatched machine values. These rows can still be imported, but their operations cannot start on the PDA page until planned.
+
+Match the machine values before importing, or assign the operations later under **Planner → Unassigned**. The warning disappears when all included rows have a destination or you choose **Machine assigned**.
 
 ## Resolve Scheduling Conflicts
 
@@ -133,13 +205,13 @@ The current page is **ERP Uploads**, also called ERP Upload Planner in this docu
 
 Required mappings are **Order Number, Product, Planned Start, Planned End**. Date/time can be one column or separate columns; a date without time uses midnight or the selected start/end-of-day setting. Rows without schedule information or with start after end are not processed.
 
-- **ALL Units / 1 Unit:** whether planned production time describes the full quantity or a single unit.
+- **ALL Units / 1 Unit:** whether planned production time describes the full quantity or a single unit. **1 cycle** is also available when cycles per product is supplied.
 - **Industrial minutes:** ordinary minutes = industrial minutes × 0.6.
 - Initial priorities apply only to new orders and operations. See the priority settings above for empty cells and invalid values.
-- **Commit scope:** All rows or Machine assigned; the latter imports only rows with a machine assignment.
+- Choose **All rows** to import all rows, or **Machine assigned** to import only rows with a machine assignment.
 - **Save Mapping / Load Mapping:** saved per user. Manual machine or hall-pool assignment overrides mapping; **Reset selected rows** removes the manual choices for the selected rows and restores their column mapping.
 
-**Check** is a dry run and saves nothing. **NEW / NEU** means creation, **CHG / GEÄ** means update, **IMPACT** means a calculated planning value is affected. If data changes after Check, run Check again before **Save** commits.
+**Check** is a dry run and saves nothing. **NEW / NEU** means creation, **CHG / GEÄ** means update, **IMPACT** means a calculated planning value is affected. If data changes after Check, run Check again before choosing **Import (n)**.
 
 ## Re-import Matching and Protected History
 

@@ -137,6 +137,17 @@ description: "Antworten zu Arbeitsgangprioritäten, Planungsterminen, Gruppierun
 | Welches Trennzeichen sollte ich verwenden? | [Antwort](/de/help-center/faq/planning-and-imports#parts-list-separator) |
 | Warum wird meine ganze Stückliste als ein Teil angezeigt? | [Antwort](/de/help-center/faq/planning-and-imports#parts-list-one-part) |
 | Warum bleibt meine gespeicherte Liste trotz anderer Trennzeichenauswahl gleich? | [Antwort](/de/help-center/faq/planning-and-imports#parts-list-separator-reimport) |
+| Kann KI meine Importspalten und Maschinen zuordnen? | [Antwort](/de/help-center/faq/planning-and-imports#import-ai) |
+| Welche Angaben werden für einen Zuordnungsvorschlag geteilt, und kostet er Credits? | [Antwort](/de/help-center/faq/planning-and-imports#import-ai-data) |
+| Warum sind manche vorgeschlagenen Zeilen nicht angehakt? | [Antwort](/de/help-center/faq/planning-and-imports#import-ai-review) |
+| Warum wird aus 6.480 in meiner Datei eine Menge von 6,48? | [Antwort](/de/help-center/faq/planning-and-imports#import-number-format) |
+| Wie importiere ich Zeiten in Millisekunden? | [Antwort](/de/help-center/faq/planning-and-imports#import-milliseconds) |
+| Meine Datei zählt Bleche, mein Produkt ist ein Paket. Was wähle ich? | [Antwort](/de/help-center/faq/planning-and-imports#import-cycles) |
+| Kann ich eine Mengeneinheit ergänzen, wenn sie in meiner Datei fehlt? | [Antwort](/de/help-center/faq/planning-and-imports#import-default-unit) |
+| Warum kann ich importierte Arbeitsgänge nicht auf der BDE-Seite starten? | [Antwort](/de/help-center/faq/planning-and-imports#import-no-machine) |
+| Warum ist Zuordnung speichern nicht verfügbar? | [Antwort](/de/help-center/faq/planning-and-imports#import-save-disabled) |
+| Sollte ich Speichern und importieren oder Ohne Speichern importieren wählen? | [Antwort](/de/help-center/faq/planning-and-imports#import-save-question) |
+| Verliere ich meine gespeicherten Spaltenzuordnungen bei einer kleineren Datei? | [Antwort](/de/help-center/faq/planning-and-imports#import-missing-columns) |
 
 <a id="operation-priority" />
 
@@ -943,7 +954,7 @@ Das Wiederholen der zuvor importierten Liste mit gleichem Revisionsstand erhält
 
 ## Welches Trennzeichen sollte ich verwenden?
 
-Wählen Sie unter **Spalten zuordnen** direkt unter **Stückliste** bei **Teile getrennt durch** die passende Aufteilung. Verwenden Sie bei XLSX Semikolons zwischen den Teilen und wählen Sie **Semikolon ;**. Nutzen Sie bei CSV mit Semikolons zwischen den Spalten Pipe-Zeichen und wählen Sie **Pipe |**. **Zeilenumbruch** passt zu einem Teil pro Zeile innerhalb der Zelle. Diese Auswahlmöglichkeiten erhalten Kommas in Bezeichnungen. **Komma** trennt an jedem Komma mit folgendem Leerzeichen. Prüfen Sie vor dem Speichern das Beispiel und Schritt 3. Folgen Sie [Stücklisten importieren](/de/platform-intro/workflows/order-upload-planner#parts-lists).
+Wählen Sie unter **Spalten zuordnen** direkt unter **Stückliste** bei **Teile getrennt durch** die passende Aufteilung. Verwenden Sie bei XLSX Semikolons zwischen den Teilen und wählen Sie **Semikolon ;**. Nutzen Sie bei CSV mit Semikolons zwischen den Spalten Pipe-Zeichen und wählen Sie **Pipe |**. **Zeilenumbruch** passt zu einem Teil pro Zeile innerhalb der Zelle. Diese Auswahlmöglichkeiten erhalten Kommas in Bezeichnungen. **Komma** trennt an jedem Komma mit folgendem Leerzeichen. Prüfen Sie vor dem Importieren das Beispiel und Schritt 3. Folgen Sie [Stücklisten importieren](/de/platform-intro/workflows/order-upload-planner#parts-lists).
 
 <a id="parts-list-one-part" />
 
@@ -956,3 +967,69 @@ Das Beispiel unter **Teile getrennt durch** und die Vorschau in Schritt 3 zeigen
 ## Warum bleibt meine gespeicherte Liste trotz anderer Trennzeichenauswahl gleich?
 
 Stimmen der Text der Teilezelle und der Produktstand mit dem vorherigen Import überein, bleiben die gespeicherte Liste, manuelle Änderungen und Haken erhalten. Allein eine andere Trennzeichenauswahl ersetzt die Liste nicht. Ein Admin kann sie im Planer oder in den Auftragsdetails korrigieren. Folgen Sie [Liste bearbeiten](/de/platform-intro/workflows/parts-lists#edit-list).
+
+<a id="import-ai" />
+
+## Kann KI meine Importspalten und Maschinen zuordnen?
+
+Mit Zugriff auf ERP-Uploads und KI laden Sie eine Datei und wählen **Spalten zuordnen → Zuordnung vorschlagen**. Beispielsweise kann S1600104 der Maschine S160.01.04 zugeordnet werden. Prüfen Sie die Vorschläge, wählen Sie **Übernehmen (n)** und prüfen Sie vor dem Speichern oder Importieren die Vorschau, wie unter [Zuordnung prüfen](/de/platform-intro/pages/erp-upload-planner#suggest-mapping) beschrieben. Fehlt die Schaltfläche, fragen Sie Ihren Admin nach dem Zugriff.
+
+<a id="import-ai-data" />
+
+## Welche Angaben werden für einen Zuordnungsvorschlag geteilt, und kostet er Credits?
+
+**Spalten zuordnen → Zuordnung vorschlagen** teilt Spaltennamen, einige Beispiele und vollständige Wertelisten bei Spalten mit wenigen verschiedenen Werten. Ein Vorschlag verbraucht 1 KI-Credit; ein fehlgeschlagener Vorschlag kostet nichts. Ohne verfügbare Credits können Sie Spalten selbst zuordnen; siehe [Zuordnungsvorschläge](/de/platform-intro/pages/erp-upload-planner#suggest-mapping).
+
+<a id="import-ai-review" />
+
+## Warum sind manche vorgeschlagenen Zeilen nicht angehakt?
+
+Unter **Spalten zuordnen → Zuordnung vorschlagen** sind Zeilen mit **Unsicher** zunächst nicht angehakt. Auch **Zyklen pro Produkt**, **Geplante Menge zählt Zyklen** und **1 Zyklus** sind nicht angehakt, weil sie Mengen oder Zeiten ändern. Lesen Sie **Bitte prüfen** und haken Sie nur gewünschte Vorschläge an; vor **Übernehmen (n)** ändert sich nichts, wie unter [Vorschläge prüfen](/de/platform-intro/pages/erp-upload-planner#suggest-mapping) beschrieben.
+
+<a id="import-number-format" />
+
+## Warum wird aus 6.480 in meiner Datei eine Menge von 6,48?
+
+**Automatisch** kann 6.480 als sechs Komma vier acht lesen. Wählen Sie in **Spalten zuordnen** unter **Zahlen in der Datei**, direkt unter **Geplante Menge**, die Auswahl **Deutsch 1.234,5**, damit die Zahl als sechstausendvierhundertachtzig gelesen wird. Die Seite kann auch „Die Zahlen sehen deutsch aus (1.234,5).“ mit **Deutsch verwenden** vorschlagen; prüfen Sie die Vorschau wie unter [Zahlenformat](/de/platform-intro/pages/erp-upload-planner#import-numbers) beschrieben.
+
+<a id="import-milliseconds" />
+
+## Wie importiere ich Zeiten in Millisekunden?
+
+Wählen Sie in **Spalten zuordnen** die Zeiteinheit **Millisekunden (ms)** für Vorbereitung oder Produktion, auch wenn die Datei „ms“ angibt. Eine Pressenzeit von 140 ms erscheint dann als 0,14 s. Für die Zeit je Pressenhub legen Sie **Zyklen pro Produkt** fest und wählen **1 Zyklus** unter **Produktionszeit gilt für**; siehe [Zeiteinstellungen](/de/platform-intro/pages/erp-upload-planner#cycle-import).
+
+<a id="import-cycles" />
+
+## Meine Datei zählt Bleche, mein Produkt ist ein Paket. Was wähle ich?
+
+Legen Sie in **Spalten zuordnen** unter **Zyklen pro Produkt** die Bleche je Paket fest, etwa 162. Danach erscheint **Geplante Menge zählt Zyklen**: Wählen Sie **Ja**, um aus 6.480 Blechen 40 Produkte zu erhalten, oder **Nein**, wenn die Datei bereits Pakete zählt. Gilt die Produktionszeit je Blech, wählen Sie zusätzlich **1 Zyklus**. Prüfen Sie die Vorschau anhand von [Zyklusmengen und Zeiten importieren](/de/platform-intro/workflows/order-upload-planner#cycle-import).
+
+<a id="import-default-unit" />
+
+## Kann ich eine Mengeneinheit ergänzen, wenn sie in meiner Datei fehlt?
+
+Tragen Sie in **Spalten zuordnen** neben **Mengeneinheit** eine **Standardeinheit** wie Stk oder Paket ein. Sie ergänzt fehlende Einheiten bei neuen Produkten; eine Einheit aus der Datei hat Vorrang. Bestehende Produkte behalten ihre Einheit, wie unter [Mengeneinheiten](/de/platform-intro/pages/erp-upload-planner#import-numbers) beschrieben.
+
+<a id="import-no-machine" />
+
+## Warum kann ich importierte Arbeitsgänge nicht auf der BDE-Seite starten?
+
+Ein Arbeitsgang ohne Maschine kann nicht auf der BDE-Seite starten; beispielsweise wurde S1600104 möglicherweise keiner Maschine zugeordnet. Ordnen Sie die Maschinenwerte der Datei unter **Spalten zuordnen → Maschinenfelder** zu. Sie können Zeilen auch in Schritt 3, **Überprüfen & Maschinen zuweisen**, von Hand einer Maschine zuweisen oder nach dem Import unter **Planer → Nicht zugewiesen** einplanen; siehe [Zeilen ohne Maschine](/de/platform-intro/pages/erp-upload-planner#missing-machines).
+
+<a id="import-save-disabled" />
+
+## Warum ist Zuordnung speichern nicht verfügbar?
+
+In **Spalten zuordnen** sind beide Schaltflächen **Zuordnung speichern** ohne Änderungen nicht verfügbar. Das Speichern einer Zuordnung sichert Ihre Auswahl für das nächste Mal. Für die geprüften Aufträge wählen Sie **Importieren (n)**, wie unter [Speichern und Importieren](/de/platform-intro/pages/erp-upload-planner#save-mapping) beschrieben.
+
+<a id="import-save-question" />
+
+## Sollte ich Speichern und importieren oder Ohne Speichern importieren wählen?
+
+Wählen Sie nach **Importieren (n)** die Auswahl **Speichern und importieren**, um Ihre geänderte Zuordnung für das nächste Mal zu behalten und die Zeilen zu importieren. **Ohne Speichern importieren** nutzt Ihre aktuelle Auswahl für den Import und behält die bisher gespeicherte Zuordnung. Schlägt das Speichern fehl oder schließen Sie die Frage, wird nichts importiert; siehe [Speichern und Importieren](/de/platform-intro/pages/erp-upload-planner#save-mapping).
+
+<a id="import-missing-columns" />
+
+## Verliere ich meine gespeicherten Spaltenzuordnungen bei einer kleineren Datei?
+
+Nein: Wenn Sie **Spalten zuordnen → Zuordnung speichern** wählen, bleibt die Zuordnung einer hier fehlenden Spalte für künftige Dateien erhalten. Wählen Sie eine Ersatzspalte, wird diese neue Auswahl gespeichert, wie unter [gespeicherte Zuordnungen](/de/platform-intro/pages/erp-upload-planner#save-mapping) beschrieben.

@@ -1,27 +1,24 @@
 ---
 title: "ERP-Upload-Planer"
-description: "Eine geführte Importseite, mit der Tabellenzeilen in plattformbereite Produktionsdatensätze umgewandelt werden."
+description: "Importieren Sie Aufträge, ordnen Sie Maschinen zu und prüfen Sie Mengen und Zeiten vor der Bestätigung."
 ---
 
 ## Überblick
 
-**Zugriff:** Admin oder Seitenfreigabe `erp_uploads`. [Rollen und Zugriff](/de/platform-intro/concepts/roles-and-access).
+**Zugriff:** Admin oder User mit Zugriff auf **ERP-Uploads**. [Rollen und Zugriff](/de/platform-intro/concepts/roles-and-access).
 
 Importieren Sie Aufträge aus Tabellen in die Watchmen-Plattform. Prüfen Sie die Quelldatei, ordnen Sie ihre Spalten den Auftragsfeldern zu und kontrollieren Sie vor der Bestätigung, wie sich der Import auf Ihren bestehenden Produktionsplan auswirkt.
-
-Benutzer öffnen diese Seite über die geschützte ERP-Upload-Route.
 
 ## Zugriff
 
 <Callout kind="info" title="Zugriffsdetails">
-- Sichtbarkeit: Geschützt
-- Primäre Routen: `/erp-uploads`
+Öffnen Sie **Planer → ERP-Uploads**. KI-Vorschläge benötigen zusätzlich KI-Zugriff.
 </Callout>
 
 ## Was Sie sehen können
 
 - Name, Zeilen- und Spaltenanzahl sowie eine Inhaltsvorschau der ausgewählten Datei.
-- Spaltenzuordnungen und Werkzeuge, um externe Maschinennamen oder Codes Ihren Maschinen zuzuordnen.
+- Spaltenzuordnungen und Werkzeuge, um externe Maschinennamen oder Codes Ihren Maschinen zuzuordnen. Hinweise beginnen mit **Beispiel:**, damit Sie diese von Ihren Dateispalten unterscheiden können.
 - Eine Vorschau, Erläuterungen zu Zeiteinstellungen, Planungshinweise und den Upload-Fortschritt.
 - Eine Übersicht der vorgesehenen Änderungen und Planungskonflikte sowie das Ergebnis nach dem Import.
 
@@ -38,6 +35,42 @@ Benutzer öffnen diese Seite über die geschützte ERP-Upload-Route.
 Öffnen Sie aus der Dateivorschau die vollständige Bearbeitungsansicht. Dort können Sie einzelne Zellen korrigieren oder passende Gruppen von Werten aus Excel einfügen. Der Editor zeigt die Anzahl geänderter Zellen; gespeicherte Korrekturen werden in der Vorschau hervorgehoben.
 
 Spaltenüberschriften und Zeilenanzahl bleiben unverändert. Wenn Sie die Dateistruktur ändern müssen, korrigieren Sie die Quelldatei und laden Sie sie erneut hoch. Wenn Sie den Editor ohne Speichern schließen, werden ungespeicherte Korrekturen verworfen und die Originaldatei bleibt unverändert.
+
+<a id="suggest-mapping" />
+
+## Zuordnung vorschlagen und prüfen
+
+Admins und User mit Zugriff auf **ERP-Uploads** und KI können **Zuordnung vorschlagen** nutzen. Laden Sie eine Datei, damit die Schaltfläche in **Spalten zuordnen** erscheint.
+
+Beispielsweise kann eine Arbeitsplatzspalte mit S1600104 trotz anderer Schreibweise der Maschine S160.01.04 zugeordnet werden. Der Vorschlag zeigt **Sicher**; wenn Sie darauf zeigen, erscheint die Begründung „Gleicher Code“.
+
+Ein Vorschlag verbraucht 1 KI-Credit; ein fehlgeschlagener Vorschlag kostet nichts. Geteilt werden Spaltennamen, einige Beispiele und bei Spalten mit wenigen verschiedenen Werten die vollständige Werteliste. Ohne KI-Zugriff oder verfügbare Credits können Sie die Spalten selbst zuordnen.
+
+Lesen Sie unter **Vorgeschlagene Zuordnung** die Warnungen unter **Bitte prüfen** und prüfen Sie die vorgeschlagenen Spalten, Maschinen und Einstellungen:
+
+- Vorschläge mit **Sicher** oder **Wahrscheinlich** sind normalerweise angehakt; solche mit **Unsicher** nicht.
+- **Zyklen pro Produkt**, **Geplante Menge zählt Zyklen** und **1 Zyklus** sind zunächst nicht angehakt, weil sie Mengen oder Zeiten ändern.
+- Haken Sie die gewünschten Zeilen an und wählen Sie **Übernehmen (n)**. Vor dem Übernehmen ändert sich nichts.
+
+Prüfen Sie anschließend die Vorschau. Das Übernehmen speichert weder die Zuordnung noch importiert es Aufträge. Gibt es nichts Neues, sehen Sie „Der Vorschlag entspricht Ihrer aktuellen Zuordnung.“
+
+<a id="save-mapping" />
+
+## Zuordnung speichern und wiederverwenden
+
+Mit **Zuordnung speichern** oben oder unten in **Spalten zuordnen** behalten Sie Spalten, Maschinen und Einstellungen für das nächste Mal. Laden Sie eine weitere Datei und wählen Sie **Zuordnung laden**, um die Auswahl erneut zu nutzen.
+
+Beide Speicherschaltflächen sind bei **Keine Änderungen zum Speichern** nicht verfügbar. Beim Speichern zeigt die Bestätigung Ihre Änderungen. Fehlt eine gespeicherte Spalte in dieser Datei, bleibt ihre Zuordnung erhalten; wählen Sie eine Ersatzspalte, wird diese neue Auswahl gespeichert.
+
+Wählen Sie nach der Prüfung der Zeilen **Importieren (n)**. Bei geänderter Zuordnung bietet **Zuordnung speichern?** diese Auswahl:
+
+| Auswahl | Was passiert |
+| --- | --- |
+| **Speichern und importieren** | Speichert Ihre Zuordnung und importiert danach die Zeilen. Schlägt das Speichern fehl, wird nichts importiert. |
+| **Ohne Speichern importieren** | Importiert mit Ihrer aktuellen Auswahl und behält die bisher gespeicherte Zuordnung für das nächste Mal. |
+| Frage schließen | Kehrt zur Prüfung zurück, ohne zu importieren. |
+
+Das Speichern einer Zuordnung allein importiert keine Aufträge. Folgen Sie dem [Importablauf](/de/platform-intro/workflows/order-upload-planner).
 
 <a id="parts-lists" />
 
@@ -75,6 +108,37 @@ Zeitfelder können standardmäßig oder als Industrieminuten interpretiert werde
 
 Prioritätsnamen, Nummern und Farben entsprechen den unternehmensweiten Stufen aus dem [Administrationsbereich](/de/platform-intro/pages/admin-panel). Dieselben Stufen gelten in der Auftragsverwaltung und im Zuweisungsplaner, sodass Sie importierte Prioritäten im gesamten Plan einheitlich prüfen können.
 
+<a id="import-numbers" />
+
+### Zahlenformat und Standardmengeneinheit
+
+In **Spalten zuordnen** finden Sie **Zahlen in der Datei** direkt unter **Geplante Menge**. Zahlen, die Ihre Excel-Datei als Zahlen speichert, werden immer richtig gelesen; diese Auswahl betrifft nur Zahlen als Text, zum Beispiel in CSV-Dateien.
+
+| Auswahl | Beispiel |
+| --- | --- |
+| **Automatisch** | Schätzt jeden Wert: 6.480 wird als sechs Komma vier acht gelesen. |
+| **Deutsch 1.234,5** | 6.480 wird als sechstausendvierhundertachtzig gelesen. |
+| **Englisch 1,234.5** | 6,480 wird als sechstausendvierhundertachtzig gelesen; 6.48 bleibt sechs Komma vier acht. |
+
+Die Seite kann „Die Zahlen sehen deutsch aus (1.234,5).“ mit **Deutsch verwenden** oder „Die Zahlen sehen englisch aus (1,234.5).“ mit **Englisch verwenden** vorschlagen. Wählen Sie die Schaltfläche, um das Format zu übernehmen, und prüfen Sie danach Mengen und Zeiten in der Vorschau.
+
+Tragen Sie neben **Mengeneinheit** eine **Standardeinheit** wie Stk oder Paket mit höchstens 20 Zeichen ein. Sie ergänzt fehlende Einheiten bei neuen Produkten. Eine Einheit aus der Datei hat Vorrang; bestehende Produkte behalten ihre Einheit.
+
+<a id="cycle-import" />
+
+### Millisekunden und Zyklen pro Produkt
+
+Wählen Sie **Millisekunden (ms)** als Zeiteinheit, wenn Ihre Datei Zeiten in Millisekunden enthält, auch wenn die Datei selbst „ms“ angibt. 140 ms erscheinen dann als 0,14 s.
+
+Ordnen Sie **Zyklen pro Produkt** einer Spalte zu oder tragen Sie eine feste Zahl größer als 0 ein. Die feste Zahl ergänzt fehlende Werte. Produziert eine Presse je Hub ein Blech und ergeben 162 Bleche ein Paket, tragen Sie 162 ein, wenn Ihr Produkt ein Paket ist.
+
+Sobald Zyklen pro Produkt festgelegt sind, erscheinen diese Auswahlmöglichkeiten:
+
+- **1 Zyklus** unter **Produktionszeit gilt für**: Wählen Sie dies für die Zeit je Maschinenzyklus. Aus 140 ms × 162 werden 22,68 Sekunden je Produkt.
+- **Geplante Menge zählt Zyklen**: Wählen Sie **Ja**, wenn die Datei Zyklen zählt. Aus 6.480 ÷ 162 werden 40 Produkte. Wählen Sie **Nein**, wenn die Datei bereits Produkte zählt.
+
+Schritt 3 zeigt die Berechnungen. Bei fehlendem Zykluswert ist die Zeile mit **Zyklen pro Produkt fehlen** markiert. Ergibt die Rechnung keine ganze Zahl an Produkten, erscheint eine Warnung; die Zeile kann trotzdem importiert werden. Folgen Sie [Zyklusmengen und Zeiten importieren](/de/platform-intro/workflows/order-upload-planner#cycle-import).
+
 ### Anfangsprioritäten für neue Arbeit
 
 Ordnen Sie **Auftragspriorität** und **Arbeitsgangpriorität** getrennt zu. Bei der Spaltenzuordnung liefern **Anfangs-Auftragspriorität (neue Aufträge)** und **Anfangs-Arbeitsgangpriorität (neue Arbeitsgänge)** Werte für neue Arbeit, wenn eine Prioritätszelle leer oder keine Prioritätsspalte ausgewählt ist. Lassen Sie die Anfangs-Arbeitsgangpriorität leer, um 100 zu verwenden.
@@ -105,13 +169,21 @@ Die Einreihung gilt für Maschinenwarteschlangen und Hallenpools. Sie umfasst ne
 
 Kommen mehrere Arbeitsgänge in dieselbe Warteschlange, fügt **Nach Sortierung** sie in der Reihenfolge der Regeln ein. **Am Anfang** nutzt die Reihenfolge der Firmenregeln, sofern vorhanden, sonst die Reihenfolge der Tabelle.
 
-Die Prüfungsübersicht zeigt **Neue Arbeitsgänge in der Warteschlange:** mit Ihrer Auswahl. Nach dem Speichern mit **Nach Sortierung** oder **Am Anfang** nennt eine eigene Zeile die Anzahl eingereihter Arbeitsgänge und betroffener Warteschlangen, sofern Arbeit eingereiht wurde. Sie erscheint auch neben Konflikten, übersprungenen Zeilen oder Warnungen. Die Anzahl umfasst auch verschobene Arbeitsgänge. Folgen Sie dem [Importablauf](/de/platform-intro/workflows/order-upload-planner).
+Die Prüfungsübersicht zeigt **Neue Arbeitsgänge in der Warteschlange:** mit Ihrer Auswahl. Nach dem Importieren mit **Nach Sortierung** oder **Am Anfang** nennt eine eigene Zeile die Anzahl eingereihter Arbeitsgänge und betroffener Warteschlangen, sofern Arbeit eingereiht wurde. Sie erscheint auch neben Konflikten, übersprungenen Zeilen oder Warnungen. Die Anzahl umfasst auch verschobene Arbeitsgänge. Folgen Sie dem [Importablauf](/de/platform-intro/workflows/order-upload-planner).
 
 ## Auswirkungen des Imports prüfen
 
 Öffnen Sie nach der Spaltenzuordnung und Vorschau die Übersicht der vorgesehenen Importänderungen. Sie zeigt neue, aktualisierte und bestehende Datensätze, gegliedert nach Aufträgen, Produkten, Kunden, Arbeitsgängen und Zuweisungen. Bestehende Datensätze werden wiederverwendet; sie stehen nicht zwangsläufig für neu angelegte Datensätze.
 
 Klappen Sie die Details pro Zeile auf, um Terminänderungen, neue Arbeitsgänge und Zuweisungen sowie neu berechnete Dauern zu prüfen. So können Sie die Auswirkungen auf Ihren aktuellen Plan vor der Bestätigung beurteilen.
+
+<a id="missing-machines" />
+
+### Zeilen ohne Maschine
+
+Schritt 3 und das Prüfergebnis zeigen, wie viele Zeilen im gewählten Importumfang weder eine Maschine noch einen Hallenpool haben. **Nicht zugeordnet:** nennt nicht zugeordnete Maschinenwerte. Diese Zeilen können trotzdem importiert werden. Ihre Arbeitsgänge lassen sich jedoch erst nach der Planung auf der BDE-Seite starten.
+
+Ordnen Sie die Maschinenwerte vor dem Import zu oder planen Sie die Arbeitsgänge später unter **Planer → Nicht zugewiesen** ein. Die Warnung verschwindet, wenn alle berücksichtigten Zeilen ein Ziel haben oder Sie **Maschine zugewiesen** wählen.
 
 ## Planungskonflikte lösen
 
@@ -131,15 +203,15 @@ Prüfen Sie nach dem Import die Ergebnisübersicht. Sie zeigt, welche Entscheidu
 
 Die aktuelle Seite heißt **ERP-Uploads**, in dieser Dokumentation auch ERP-Upload-Planer. Öffnen Sie sie über **Planer → ERP-Uploads**. Ablauf: **Datei hochladen → Spalten zuordnen → Überprüfen & Maschinen zuweisen → Überprüfen & Speichern**. Erlaubte Dateien: **CSV, XLS, XLSX**.
 
-Pflichtzuordnungen sind **Order Number, Product, Planned Start, Planned End**. Datum und Uhrzeit können aus einer gemeinsamen oder getrennten Spalten kommen. Ohne Uhrzeit gilt Mitternacht oder die gewählte Tagesanfangs-/Tagesende-Einstellung. Zeilen ohne Zeitplanung oder mit Beginn nach Ende werden nicht verarbeitet.
+Ordnen Sie Auftrag, Produkt sowie geplanten Start und geplantes Ende zu. Datum und Uhrzeit können aus einer gemeinsamen oder getrennten Spalten kommen. Ohne Uhrzeit gilt Mitternacht oder die gewählte Tagesanfangs-/Tagesende-Einstellung. Zeilen ohne Zeitplanung oder mit Beginn nach Ende werden nicht verarbeitet.
 
-- **Alle Einheiten / 1 Einheit:** geplante Produktionszeit für die Gesamtmenge oder ein Teil.
+- **Alle Einheiten / 1 Einheit:** geplante Produktionszeit für die Gesamtmenge oder ein Teil. **1 Zyklus** steht zusätzlich bereit, wenn Zyklen pro Produkt angegeben sind.
 - **Industrieminuten:** gewöhnliche Minuten = Industrieminuten × 0,6.
 - Anfangsprioritäten gelten nur für neue Aufträge und Arbeitsgänge. Die Prioritätseinstellungen oben erklären leere Zellen und ungültige Werte.
-- **Commit-Bereich:** **Alle Zeilen** oder **Maschine zugewiesen**; Letzteres importiert nur Zeilen mit Maschine.
+- Wählen Sie **Alle Zeilen**, um alle Zeilen zu importieren, oder **Maschine zugewiesen**, um nur Zeilen mit Maschinenzuweisung zu importieren.
 - **Zuordnung speichern / Zuordnung laden:** je Benutzer gespeicherte Zuordnung. Manuelle Maschinen-/Hall-Pool-Zuweisung überschreibt die Zuordnung; **Ausgewählte Zeilen zurücksetzen** entfernt die manuelle Auswahl für die ausgewählten Zeilen und übernimmt wieder deren Spaltenzuordnung.
 
-**Überprüfen** ist ein Probelauf ohne Speicherung. **NEU** bedeutet Erstellung, **GEÄ** Aktualisierung und **AUSWIRKUNG** einen beeinflussten berechneten Planungswert. Nach Datenänderungen müssen Sie **Überprüfen** erneut ausführen, bevor **Speichern** speichert.
+**Überprüfen** ist ein Probelauf ohne Speicherung. **NEU** bedeutet Erstellung, **GEÄ** Aktualisierung und **AUSWIRKUNG** einen beeinflussten berechneten Planungswert. Nach Datenänderungen müssen Sie **Überprüfen** erneut ausführen, bevor Sie **Importieren (n)** wählen.
 
 ## Neuimport, Zuordnung und geschützter Verlauf
 
