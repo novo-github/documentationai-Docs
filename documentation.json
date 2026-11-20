@@ -311,6 +311,11 @@
                             "icon": "file-text"
                           },
                           {
+                            "title": "Plan a Meeting",
+                            "path": "en/platform-intro/pages/plan-a-meeting",
+                            "icon": "file-text"
+                          },
+                          {
                             "title": "Roadmap",
                             "path": "en/platform-intro/pages/roadmap",
                             "icon": "file-text"
@@ -473,6 +478,11 @@
                             "icon": "play-circle"
                           },
                           {
+                            "title": "Plan a Meeting",
+                            "path": "en/platform-intro/workflows/plan-a-meeting",
+                            "icon": "play-circle"
+                          },
+                          {
                             "title": "Create an Automator Rule",
                             "path": "en/platform-intro/workflows/automator-rule-creation",
                             "icon": "play-circle"
@@ -608,6 +618,10 @@
                   {
                     "title": "Ticket Questions",
                     "path": "en/help-center/faq/tickets"
+                  },
+                  {
+                    "title": "Meeting Questions",
+                    "path": "en/help-center/faq/meetings"
                   },
                   {
                     "title": "Knowledge Base Questions",
@@ -930,6 +944,11 @@
                             "icon": "file-text"
                           },
                           {
+                            "title": "Termin vereinbaren",
+                            "path": "de/platform-intro/pages/plan-a-meeting",
+                            "icon": "file-text"
+                          },
+                          {
                             "title": "Roadmap",
                             "path": "de/platform-intro/pages/roadmap",
                             "icon": "file-text"
@@ -1092,6 +1111,11 @@
                             "icon": "play-circle"
                           },
                           {
+                            "title": "Termin vereinbaren",
+                            "path": "de/platform-intro/workflows/plan-a-meeting",
+                            "icon": "play-circle"
+                          },
+                          {
                             "title": "Automator-Regel erstellen",
                             "path": "de/platform-intro/workflows/automator-rule-creation",
                             "icon": "play-circle"
@@ -1227,6 +1251,10 @@
                   {
                     "title": "Fragen zu Tickets",
                     "path": "de/help-center/faq/tickets"
+                  },
+                  {
+                    "title": "Fragen zu Terminen",
+                    "path": "de/help-center/faq/meetings"
                   },
                   {
                     "title": "Fragen zur Wissensdatenbank",
