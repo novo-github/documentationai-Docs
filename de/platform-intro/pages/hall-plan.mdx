@@ -9,7 +9,7 @@ description: "Eine konfigurierbare Live-Hallenübersicht für Produktionsüberwa
 
 Prüfen Sie die Produktion einer Halle auf Ihrem eigenen Bildschirm oder auf einer gemeinsamen Anzeige in der Fertigung. Ein Kiosk ist eine vereinfachte Ansicht für einen Bildschirm, der ohne ständige Bedienung läuft.
 
-Benutzer öffnen eine hallenspezifische Route, oft über einen geteilten Link oder ein Anzeigegerät.
+User öffnen die Seite einer Halle, oft über einen geteilten Link oder ein Anzeigegerät.
 
 ## Zugriff
 
@@ -44,7 +44,7 @@ Wählen Sie in den Anzeigeeinstellungen des Hallenplans die Ansichtsversion, Zoo
 
 Betrachten Sie aktuelle Maschinenzustände, aktive Aufträge und produzierte Teile gemeinsam mit OEE, Verfügbarkeit, Leistung und Maschinenzeiten. Vergleichen Sie Live-Informationen mit der vorherigen Schicht und nutzen Sie geplante und tatsächliche Vorbereitungs-, Produktions- und Zykluszeiten, um Abweichungen nachzuvollziehen. Das Unternehmensbranding hilft dabei, die gemeinsame Hallenanzeige zuzuordnen.
 
-Administratoren können **Anzeigeversion → V2** oder **V3** wählen und unter **Angezeigte Spalten → Stillstandsgrund** die Karte ein- oder ausblenden. Nur Administratoren können diese Anzeigeeinstellungen der Halle speichern. Die Auswahl gilt je Halle und Anzeigeversion. Wurden die Anzeigeeinstellungen der Halle vor Einführung dieser Option gespeichert, schalten Sie sie einmal für jede verwendete Version ein. Bei Hallen, deren Anzeigeeinstellungen noch nie gespeichert wurden, erscheint die Karte standardmäßig. Folgen Sie [Hallenplandisplay einrichten](/de/platform-intro/workflows/hall-display-setup#downtime-reason).
+Admins können **Anzeigeversion → V2** oder **V3** wählen und unter **Angezeigte Spalten → Stillstandsgrund** die Karte ein- oder ausblenden. Nur Admins können diese Anzeigeeinstellungen der Halle speichern. Die Auswahl gilt je Halle und Anzeigeversion. Wurden die Anzeigeeinstellungen der Halle vor Einführung dieser Option gespeichert, schalten Sie sie einmal für jede verwendete Version ein. Bei Hallen, deren Anzeigeeinstellungen noch nie gespeichert wurden, erscheint die Karte standardmäßig. Folgen Sie [Hallenplandisplay einrichten](/de/platform-intro/workflows/hall-display-setup#downtime-reason).
 
 <a id="downtime-reason" />
 
@@ -70,7 +70,7 @@ Klicken Sie auf das Symbol für Zustandsmuster, um Beispiele für die Darstellun
 
 ### Kennzahlen und Schichtaufträge abwechselnd zeigen
 
-Administratoren können in der Spaltenauswahl der Anzeige **Aktiver Auftrag** einblenden. **Wechsel Kennzahlen / Aufträge** legt dann fest, wie lange jede Maschine Kennzahlen und anschließend die während der Schicht bearbeiteten Aufträge zeigt. Die Einstellung ist nur bei sichtbarer Spalte **Aktiver Auftrag** verfügbar.
+Admins können in der Spaltenauswahl der Anzeige **Aktiver Auftrag** einblenden. **Wechsel Kennzahlen / Aufträge** legt dann fest, wie lange jede Maschine Kennzahlen und anschließend die während der Schicht bearbeiteten Aufträge zeigt. Die Einstellung ist nur bei sichtbarer Spalte **Aktiver Auftrag** verfügbar.
 
 Die Wechselzeit darf höchstens die halbe Seitenwechselzeit betragen. Verkürzen Sie die Seitenwechselzeit, wird die Auftragswechselzeit entsprechend begrenzt. So können beide Ansichten vor der nächsten Seite erscheinen. **Keine Aufträge in dieser Schicht bearbeitet** bedeutet, dass für diese Schicht keine Auftragsarbeit angezeigt wird.
 
@@ -78,7 +78,7 @@ Auftrags- und Arbeitsgangprioritäten verwenden auch auf gemeinsamen Kioskdispla
 
 ### Verbindung eines Displays prüfen
 
-Administratoren können prüfen, ob ein verwaltetes Display aktiv oder offline ist und wann es zuletzt Aktivität gemeldet hat. Diese Angaben beschreiben die Verbindung des Displays, nicht den Produktionszustand einer Maschine. Wenn eine Anzeige veraltet erscheint, prüfen Sie zuerst ihre Verbindung und letzte Aktivität, bevor Sie die angezeigten Produktionswerte bewerten.
+Admins können prüfen, ob ein verwaltetes Display aktiv oder offline ist und wann es zuletzt Aktivität gemeldet hat. Diese Angaben beschreiben die Verbindung des Displays, nicht den Produktionszustand einer Maschine. Wenn eine Anzeige veraltet erscheint, prüfen Sie zuerst ihre Verbindung und letzte Aktivität, bevor Sie die angezeigten Produktionswerte bewerten.
 
 ### Arbeitsplätze und wartende Schichten lesen
 
@@ -92,7 +92,7 @@ Diese Kürzel bleiben deutsch und englisch gleich: **OEE** bedeutet Gesamtanlage
 
 ## Kioskzeiten und Netzwerkangaben
 
-Ein Kiosk öffnet sich ohne Benutzeranmeldung. Wählen Sie die Häufigkeit der Datenaktualisierung. Der Seitenwechsel darf nicht langsamer sein. **Wechsel Kennzahlen / Aufträge** ist höchstens halb so lang wie die Seitenwechselzeit. Die Zoom-Einstellung gilt für den eingesetzten Monitor.
+Ein Kiosk öffnet sich ohne User-Anmeldung. Wählen Sie die Häufigkeit der Datenaktualisierung. Der Seitenwechsel darf nicht langsamer sein. **Wechsel Kennzahlen / Aufträge** ist höchstens halb so lang wie die Seitenwechselzeit. Die Zoom-Einstellung gilt für den eingesetzten Monitor.
 
 **Anzeigegeräte** unter Administrationsbereich → Hallen zeigt registrierte Monitore, letzten Kontakt, **WLAN**, **Lokale IP** und **MAC**. Ein Display ohne Meldung seit 24 Stunden wird als nicht gesehen angezeigt. Siehe [Hallenplandisplay einrichten](/de/platform-intro/workflows/hall-display-setup).
 
@@ -106,7 +106,7 @@ Ein Kiosk öffnet sich ohne Benutzeranmeldung. Wählen Sie die Häufigkeit der D
 ## Ergebnisse und Grenzen
 
 ### Typische Ergebnisse
-- Benutzer verstehen schnell das aktuelle Produktionsbild der Halle.
+- User verstehen schnell das aktuelle Produktionsbild der Halle.
 - Unbeaufsichtigte Displays wechseln durch die konfigurierte Produktionsansicht und laden Anwendungsaktualisierungen automatisch.
 
 ### Grenzen und Leerzustände

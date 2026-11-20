@@ -33,13 +33,13 @@ description: "Gründe auswählen, Codes verstehen und Verfügbarkeit je Maschine
 
 ## Wer kann Stillstandsgründe ändern?
 
-Nur Administratoren können Gründe anlegen, bearbeiten, löschen oder einschränken. Nutzen Sie **Maschineneinstellungen → Stillstandsgründe** oder **Admin-Panel → Analysatoren konfigurieren → Stillstandsgründe**. Das Formular zeigt die Grunddetails links und **Verfügbar auf Maschinen** rechts. Das Informationssymbol neben dem Listentitel erklärt feste Listen. Änderungen an einem gemeinsamen Grund gelten für alle Maschinen. Folgen Sie [Stillstandsgründe erstellen und verwalten](/de/platform-intro/workflows/timeline-reason-creation).
+Nur Admins können Gründe anlegen, bearbeiten, löschen oder einschränken. Nutzen Sie **Maschineneinstellungen → Stillstandsgründe** oder **Admin-Panel → Analysatoren konfigurieren → Stillstandsgründe**. Das Formular zeigt die Grunddetails links und **Verfügbar auf Maschinen** rechts. Das Informationssymbol neben dem Listentitel erklärt feste Listen. Änderungen an einem gemeinsamen Grund gelten für alle Maschinen. Folgen Sie [Stillstandsgründe erstellen und verwalten](/de/platform-intro/workflows/timeline-reason-creation).
 
 <a id="missing" />
 
 ## Warum fehlt ein Stillstandsgrund an meiner Maschine?
 
-Die Maschine nutzt möglicherweise **Nur ausgewählte Gründe**, oder ein Administrator hat die Verfügbarkeit geändert. Wählen Sie einen verfügbaren Grund oder lassen Sie die Liste prüfen. Eine geöffnete BDE-Seite übernimmt Änderungen beim nächsten Aktualisieren. Auch eine abgelehnte Auswahl aktualisiert die Liste. Siehe [Betriebsdatenerfassung](/de/platform-intro/pages/data-acquisition).
+Die Maschine nutzt möglicherweise **Nur ausgewählte Gründe**, oder ein Admin hat die Verfügbarkeit geändert. Wählen Sie einen verfügbaren Grund oder lassen Sie die Liste prüfen. Eine geöffnete BDE-Seite übernimmt Änderungen beim nächsten Aktualisieren. Auch eine abgelehnte Auswahl aktualisiert die Liste. Siehe [Betriebsdatenerfassung](/de/platform-intro/pages/data-acquisition).
 
 <a id="future" />
 
@@ -51,7 +51,7 @@ Die Maschine nutzt möglicherweise **Nur ausgewählte Gründe**, oder ein Admini
 
 ## Kann ich dieselbe Grundauswahl für mehrere Maschinen verwenden?
 
-Ja. Administratoren können unter **Stillstandsgründe** die Auswahl **Auf andere Maschinen übertragen**. Prüfen Sie vor der Bestätigung die aktuelle Auswahl und die Zielmaschinen. Deren bisherige Listen werden ersetzt. Das geht auch mit einer leeren festen Liste. Dann bietet keine der gewählten Maschinen einen Grund an. Folgen Sie [Stillstandsgründe erstellen und verwalten](/de/platform-intro/workflows/timeline-reason-creation).
+Ja. Admins können unter **Stillstandsgründe** die Auswahl **Auf andere Maschinen übertragen**. Prüfen Sie vor der Bestätigung die aktuelle Auswahl und die Zielmaschinen. Deren bisherige Listen werden ersetzt. Das geht auch mit einer leeren festen Liste. Dann bietet keine der gewählten Maschinen einen Grund an. Folgen Sie [Stillstandsgründe erstellen und verwalten](/de/platform-intro/workflows/timeline-reason-creation).
 
 <a id="code" />
 
@@ -63,7 +63,7 @@ Es ist ein optionaler Unternehmenscode, etwa F12, zum Erkennen eines Grundes. Co
 
 ## Kann ich den letzten Stillstandsgrund einer Maschine entfernen?
 
-Ja. Wählen Sie als Administrator die Maschine unter **Verfügbar auf Maschinen** ab und speichern Sie. Hat sie keinen weiteren ausgewählten Grund, bietet sie keinen an. Auch das Löschen ihres letzten ausgewählten Grundes lässt sie ohne Grund. Sie wechselt dadurch nicht zu allen Gründen. Siehe [Verfügbarkeit einstellen](/de/platform-intro/pages/admin-panel).
+Ja. Wählen Sie als Admin die Maschine unter **Verfügbar auf Maschinen** ab und speichern Sie. Hat sie keinen weiteren ausgewählten Grund, bietet sie keinen an. Auch das Löschen ihres letzten ausgewählten Grundes lässt sie ohne Grund. Sie wechselt dadurch nicht zu allen Gründen. Siehe [Verfügbarkeit einstellen](/de/platform-intro/pages/admin-panel).
 
 <a id="delete" />
 
@@ -137,7 +137,7 @@ Maschinenbediener, User und Admin können einen Stillstandsgrund vormerken, wenn
 
 Seit dem 5. November 2026 (v1.5.153) greifen **Regeln für Stillstandsgründe** bei mehr Stillständen in Leerlauf und Aus, wenn der Maschinenbediener keinen Grund gewählt hat. Bei Maschinen mit Regeln kann dadurch mehr Stillstandszeit einen Grund erhalten. Die Summen je Grund in Berichten und Diagrammen können sich deshalb ändern. Stillstände vor der Aktualisierung bleiben unverändert. Siehe [automatische Regeln](/de/platform-intro/workflows/timeline-reason-creation#automatische-regeln).
 
-Seit dem 6. November 2026 (v1.5.155) können Administratoren außerdem automatische Pausengründe einschalten. Danach können passende beendete Stillstände einen Pausengrund statt eines Regelgrundes erhalten. Wird nur die Pause gekennzeichnet, können sich Anzahlen und Durchschnittswerte ändern. Die Auswahl einer Person bleibt erhalten. Siehe [Pauseneinstellungen](/de/platform-intro/pages/break-settings).
+Seit dem 6. November 2026 (v1.5.155) können Admins außerdem automatische Pausengründe einschalten. Danach können passende beendete Stillstände einen Pausengrund statt eines Regelgrundes erhalten. Wird nur die Pause gekennzeichnet, können sich Anzahlen und Durchschnittswerte ändern. Die Auswahl einer Person bleibt erhalten. Siehe [Pauseneinstellungen](/de/platform-intro/pages/break-settings).
 
 <a id="reason-priority" />
 
@@ -155,16 +155,16 @@ Ein vom Maschinenbediener gewählter oder von Hand gesetzter Grund hat Vorrang. 
 
 ## Warum kann ich auf meiner Maschine keinen Stillstandsgrund wählen?
 
-Ein Administrator kann **Nur ausgewählte Gründe** ohne ausgewählten Grund speichern. Die Maschine bietet dann keine Gründe an. Das Entfernen oder Löschen ihres letzten ausgewählten Grundes hat dasselbe Ergebnis. Lassen Sie einen Administrator **Maschineneinstellungen → Stillstandsgründe** prüfen, benötigte Gründe oder **Alle Gründe (Standard)** wählen und speichern. Folgen Sie [Grundauswahl verwalten](/de/platform-intro/workflows/timeline-reason-creation).
+Ein Admin kann **Nur ausgewählte Gründe** ohne ausgewählten Grund speichern. Die Maschine bietet dann keine Gründe an. Das Entfernen oder Löschen ihres letzten ausgewählten Grundes hat dasselbe Ergebnis. Lassen Sie einen Admin **Maschineneinstellungen → Stillstandsgründe** prüfen, benötigte Gründe oder **Alle Gründe (Standard)** wählen und speichern. Folgen Sie [Grundauswahl verwalten](/de/platform-intro/workflows/timeline-reason-creation).
 
 <a id="unavailable-rule" />
 
 ## Warum ist ein Grund in meiner automatischen Regel ausgegraut?
 
-Die Maschine bietet diesen Grund nicht mehr an. Er bleibt als **auf dieser Maschine nicht verfügbar** sichtbar, weil diese Regel ihn bereits verwendet. Sie kann ihn aber nicht vergeben. Andere nicht verfügbare Gründe erscheinen nicht in der Auswahl. Öffnen Sie als Administrator **Maschineneinstellungen → Regeln für Stillstandsgründe**, wählen Sie einen verfügbaren Grund oder **Kein Grund** und speichern Sie. Folgen Sie [automatische Regeln prüfen](/de/platform-intro/workflows/timeline-reason-creation#automatische-regeln).
+Die Maschine bietet diesen Grund nicht mehr an. Er bleibt als **auf dieser Maschine nicht verfügbar** sichtbar, weil diese Regel ihn bereits verwendet. Sie kann ihn aber nicht vergeben. Andere nicht verfügbare Gründe erscheinen nicht in der Auswahl. Öffnen Sie als Admin **Maschineneinstellungen → Regeln für Stillstandsgründe**, wählen Sie einen verfügbaren Grund oder **Kein Grund** und speichern Sie. Folgen Sie [automatische Regeln prüfen](/de/platform-intro/workflows/timeline-reason-creation#automatische-regeln).
 
 <a id="no-machines" />
 
 ## Was bedeutet „Keine Maschine“ neben einem Grund?
 
-**Keine Maschine** unter **Verfügbar auf** bedeutet, dass der Grund vorhanden ist, aber auf keiner Maschine angeboten wird. Ein Administrator kann ihn bearbeiten, unter **Verfügbar auf Maschinen** Maschinen auswählen und speichern. Siehe [Verfügbarkeit von Gründen](/de/platform-intro/pages/admin-panel#stillstandsgründe-verwalten).
+**Keine Maschine** unter **Verfügbar auf** bedeutet, dass der Grund vorhanden ist, aber auf keiner Maschine angeboten wird. Ein Admin kann ihn bearbeiten, unter **Verfügbar auf Maschinen** Maschinen auswählen und speichern. Siehe [Verfügbarkeit von Gründen](/de/platform-intro/pages/admin-panel#stillstandsgründe-verwalten).

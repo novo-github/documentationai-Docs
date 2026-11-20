@@ -30,7 +30,7 @@ description: "Verstehen Sie automatische Schichten und finden Sie Produkte, Arbe
 
 ## Warum beginnt und endet meine Schicht automatisch?
 
-**Aktive Schicht** startet eine Schicht bei Leerlauf, Produktion oder Vorbereitung. Vor Erreichen von **Minimale Schichtlänge** beendet nur ein Stillstand die Schicht, der mindestens die unter **Stillstand, der eine Schicht beendet** eingestellte Dauer erreicht. Danach beendet der erste Stillstand die Schicht. **Maximale Schichtlänge** startet auch bei laufender Maschine eine neue Schicht. Administratoren legen diese Werte fest. Siehe [Maschinenkonfiguration](/de/platform-intro/pages/machine-configuration).
+**Aktive Schicht** startet eine Schicht bei Leerlauf, Produktion oder Vorbereitung. Vor Erreichen von **Minimale Schichtlänge** beendet nur ein Stillstand die Schicht, der mindestens die unter **Stillstand, der eine Schicht beendet** eingestellte Dauer erreicht. Danach beendet der erste Stillstand die Schicht. **Maximale Schichtlänge** startet auch bei laufender Maschine eine neue Schicht. Admins legen diese Werte fest. Siehe [Maschinenkonfiguration](/de/platform-intro/pages/machine-configuration).
 
 <a id="short-stops" />
 
@@ -42,7 +42,7 @@ Vor Erreichen der Mindestdauer bleibt ein Stillstand unterhalb der eingestellten
 
 ## Was passiert mit meinem Schichtplan, wenn ich aktive Schichten ein- oder ausschalte?
 
-Das Einschalten entfernt geplante Schichten ab heute und erhält bereits heute erfasste Schichten. Die Schichtgruppe bleibt zugewiesen und ungenutzt. Das Ausschalten beendet die laufende aktive Schicht sofort und legt ab heute geplante Schichten aus der Gruppe an. Ein Administrator sollte die Gruppe vor dem Wechsel zurück prüfen. Folgen Sie [Maschine konfigurieren](/de/platform-intro/workflows/machine-configuration).
+Das Einschalten entfernt geplante Schichten ab heute und erhält bereits heute erfasste Schichten. Die Schichtgruppe bleibt zugewiesen und ungenutzt. Das Ausschalten beendet die laufende aktive Schicht sofort und legt ab heute geplante Schichten aus der Gruppe an. Ein Admin sollte die Gruppe vor dem Wechsel zurück prüfen. Folgen Sie [Maschine konfigurieren](/de/platform-intro/workflows/machine-configuration).
 
 <a id="shift-limits" />
 
@@ -78,13 +78,13 @@ Wählen Sie die gewünschten Schichten aus. Die Diagramme folgen dieser Auswahl,
 
 ## Warum kann ich den Wechsel zu Aufträgen im Hallenplan nicht einstellen?
 
-**Wechsel Kennzahlen / Aufträge** ist nur bei sichtbarer Spalte **Aktiver Auftrag** verfügbar. Der Höchstwert ist die halbe Seitenwechselzeit. Eine kürzere Seitenwechselzeit begrenzt auch diese Einstellung. Ein Administrator kann die Anzeige anpassen. Folgen Sie [Hallenplandisplay einrichten](/de/platform-intro/workflows/hall-display-setup).
+**Wechsel Kennzahlen / Aufträge** ist nur bei sichtbarer Spalte **Aktiver Auftrag** verfügbar. Der Höchstwert ist die halbe Seitenwechselzeit. Eine kürzere Seitenwechselzeit begrenzt auch diese Einstellung. Ein Admin kann die Anzeige anpassen. Folgen Sie [Hallenplandisplay einrichten](/de/platform-intro/workflows/hall-display-setup).
 
 <a id="shift-orders" />
 
 ## Welche Aufträge zeigt der Hallenplan beim Wechsel von den Kennzahlen?
 
-Die Auftragsansicht zeigt während der Schicht bearbeitete Aufträge. **Keine Aufträge in dieser Schicht bearbeitet** erklärt eine leere Ansicht. Administratoren steuern die wechselnde Anzeige mit **Wechsel Kennzahlen / Aufträge**. Siehe [Hallenplan](/de/platform-intro/pages/hall-plan).
+Die Auftragsansicht zeigt während der Schicht bearbeitete Aufträge. **Keine Aufträge in dieser Schicht bearbeitet** erklärt eine leere Ansicht. Admins steuern die wechselnde Anzeige mit **Wechsel Kennzahlen / Aufträge**. Siehe [Hallenplan](/de/platform-intro/pages/hall-plan).
 
 <a id="downtime-reason" />
 
@@ -92,13 +92,13 @@ Die Auftragsansicht zeigt während der Schicht bearbeitete Aufträge. **Keine Au
 
 Die Karte **Stillstandsgrund** erscheint nur in **V2** oder **V3**, auf der ersten Ansicht am Ende der Maschinenkennzahlen. Die Maschine muss in Leerlauf oder Aus sein. Außerdem muss der Maschinenbediener auf der BDE-Seite einen Grund für den laufenden Stillstand gewählt haben. Während der Produktion und in der vorherigen Schicht erscheint die Karte nicht. **V1** zeigt sie nicht.
 
-Wurden die Anzeigeeinstellungen Ihrer Halle vor Einführung dieser Option gespeichert, muss ein Administrator **Angezeigte Spalten → Stillstandsgrund** einmal für jede verwendete Anzeigeversion einschalten. Die Auswahl wird automatisch für die Halle und Anzeigeversion gespeichert, sobald der Administrator das Kontrollkästchen auswählt oder abwählt. Bei Hallen, deren Anzeigeeinstellungen noch nie gespeichert wurden, erscheint die Karte standardmäßig. Folgen Sie [Hallenplandisplay einrichten](/de/platform-intro/workflows/hall-display-setup#downtime-reason).
+Wurden die Anzeigeeinstellungen Ihrer Halle vor Einführung dieser Option gespeichert, muss ein Admin **Angezeigte Spalten → Stillstandsgrund** einmal für jede verwendete Anzeigeversion einschalten. Die Auswahl wird automatisch für die Halle und Anzeigeversion gespeichert, sobald der Admin das Kontrollkästchen auswählt oder abwählt. Bei Hallen, deren Anzeigeeinstellungen noch nie gespeichert wurden, erscheint die Karte standardmäßig. Folgen Sie [Hallenplandisplay einrichten](/de/platform-intro/workflows/hall-display-setup#downtime-reason).
 
 <a id="automatic-break-labels" />
 
 ## Wie erhalten Pausen automatisch einen Grund?
 
-Öffnen Sie als Administrator **Admin-Panel → Schichten und Zeitplanung konfigurieren → Schichten**, dann **Pauseneinstellungen** direkt links neben **Schicht hinzufügen**. Schalten Sie **Pausen automatisch kennzeichnen** ein, wählen Sie die gewünschte Option und **Speichern**. Bearbeiten Sie danach jede Schicht und wählen Sie für jede Pause einen **Stillstandsgrund**. Maschinen mit **Aktive Schicht** werden nicht gekennzeichnet. Die Maschine muss den Pausengrund anbieten. Folgen Sie [Pausen automatisch kennzeichnen einrichten](/de/platform-intro/workflows/shift-management#automatic-break-labels).
+Öffnen Sie als Admin **Admin-Panel → Schichten und Zeitplanung konfigurieren → Schichten**, dann **Pauseneinstellungen** direkt links neben **Schicht hinzufügen**. Schalten Sie **Pausen automatisch kennzeichnen** ein, wählen Sie die gewünschte Option und **Speichern**. Bearbeiten Sie danach jede Schicht und wählen Sie für jede Pause einen **Stillstandsgrund**. Maschinen mit **Aktive Schicht** werden nicht gekennzeichnet. Die Maschine muss den Pausengrund anbieten. Folgen Sie [Pausen automatisch kennzeichnen einrichten](/de/platform-intro/workflows/shift-management#automatic-break-labels).
 
 <a id="grey-break-reason" />
 
@@ -122,7 +122,7 @@ Nein. Der Stillstand muss die eigentliche Pause überlappen. Bei einer Pause von
 
 ## Wie schalte ich automatische Pausengründe aus?
 
-Ein Administrator öffnet **Pauseneinstellungen**, schaltet **Pausen automatisch kennzeichnen** aus und wählt **Speichern**. Gespeicherte Pausengründe bleiben erhalten. Die Tabelle blendet sie aus und ihre Auswahl wird ausgegraut. Folgen Sie [automatische Pausenkennzeichnung einrichten oder beenden](/de/platform-intro/workflows/shift-management#automatic-break-labels).
+Ein Admin öffnet **Pauseneinstellungen**, schaltet **Pausen automatisch kennzeichnen** aus und wählt **Speichern**. Gespeicherte Pausengründe bleiben erhalten. Die Tabelle blendet sie aus und ihre Auswahl wird ausgegraut. Folgen Sie [automatische Pausenkennzeichnung einrichten oder beenden](/de/platform-intro/workflows/shift-management#automatic-break-labels).
 
 <a id="typed-time" />
 
@@ -152,4 +152,4 @@ Ja, wenn sie innerhalb einer Nachtschicht liegt und höchstens eine Stunde dauer
 
 ## Wo sehe ich alle Pausen, ohne jede Schicht zu öffnen?
 
-Öffnen Sie als Administrator **Admin-Panel → Schichten und Zeitplanung konfigurieren → Schichten**. Die Spalte **Pausen** nach dem Schichtende zeigt Zeiten und Länge jeder Pause in derselben Reihenfolge wie beim Bearbeiten. Ein Strich bedeutet, dass keine Pausen vorhanden sind. Siehe [Administrationsbereich](/de/platform-intro/pages/admin-panel#schichtpausen-verwalten).
+Öffnen Sie als Admin **Admin-Panel → Schichten und Zeitplanung konfigurieren → Schichten**. Die Spalte **Pausen** nach dem Schichtende zeigt Zeiten und Länge jeder Pause in derselben Reihenfolge wie beim Bearbeiten. Ein Strich bedeutet, dass keine Pausen vorhanden sind. Siehe [Administrationsbereich](/de/platform-intro/pages/admin-panel#schichtpausen-verwalten).

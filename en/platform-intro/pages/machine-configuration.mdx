@@ -9,7 +9,7 @@ description: "A tabbed setup page for creating or refining a machine\u2019s conf
 
 Let admins create a machine setup or refine how an existing machine is configured.
 
-Administrators can open **Machine Settings** from the gear in the machine detail header, or from the machine row menu in the Admin Panel.
+Admins can open **Machine Settings** from the gear in the machine detail header, or from the machine row menu in the Admin Panel.
 
 ## Access
 
@@ -55,7 +55,7 @@ An optional **Energy monitor** measures consumption, voltage, power factor, and 
 
 ## Simultaneous Work and the Forecaster
 
-Administrators set **Planning → Jobs in parallel** in the machine’s basic information. Enter a whole number from 1 to 100 and save the tab. This is how many assignments the machine can run at the same time; the **Forecaster** uses it for expected times.
+Admins set **Planning → Jobs in parallel** in the machine’s basic information. Enter a whole number from 1 to 100 and save the tab. This is how many assignments the machine can run at the same time; the **Forecaster** uses it for expected times.
 
 Set the value to match actual capacity. For example, 2 means the forecast can allow two assignments to run together. Follow [Configure a Machine](/en/platform-intro/workflows/machine-configuration).
 
@@ -63,7 +63,7 @@ Set the value to match actual capacity. For example, 2 means the forecast can al
 
 ## Downtime Reason Rules and Time Ranges
 
-Administrators can review **Machine Settings → Downtime reason rules**. A reason chosen by the machine operator or set by hand takes priority. When [automatic break labels](/en/platform-intro/pages/break-settings) are enabled, an eligible break's reason comes next. **Downtime reason rules** apply to the remaining idle or off time; without a matching reason, the time stays unlabelled.
+Admins can review **Machine Settings → Downtime reason rules**. A reason chosen by the machine operator or set by hand takes priority. When [automatic break labels](/en/platform-intro/pages/break-settings) are enabled, an eligible break's reason comes next. **Downtime reason rules** apply to the remaining idle or off time; without a matching reason, the time stays unlabelled.
 
 Since November 5, 2026 (v1.5.153), the rules apply to more idle and off downtimes. Downtime reason totals in reports and charts can therefore change for machines with rules. Downtimes from before the update remain unchanged. See [automatic rules](/en/platform-intro/workflows/timeline-reason-creation#automatic-rules).
 
@@ -79,7 +79,7 @@ Review **Rules for the Off state**, **Rules for the Idle state** and **Rules for
 
 ## Active Shift Settings
 
-Administrators choose **Shifts → Active shift** in the machine configuration. When enabled, a shift starts automatically when the machine begins idle, production, or preparation. When disabled, shifts follow the assigned shift group's schedule.
+Admins choose **Shifts → Active shift** in the machine configuration. When enabled, a shift starts automatically when the machine begins idle, production, or preparation. When disabled, shifts follow the assigned shift group's schedule.
 
 | Setting | Effect |
 | --- | --- |
@@ -99,7 +99,7 @@ The **Active shift** badge identifies machines using this mode. Its explanation 
 
 ## PDA Assist: Interval Assistance and Warnings
 
-**Only administrators can change these settings.** Open **Machine Settings → PDA Assist** (previously **PDA Assistant**). **Interval assist** and **Warnings** each have a checkbox in their heading. Clearing it collapses the settings. The summary beneath the heading shows what is active.
+**Only Admins can change these settings.** Open **Machine Settings → PDA Assist** (previously **PDA Assistant**). **Interval assist** and **Warnings** each have a checkbox in their heading. Clearing it collapses the settings. The summary beneath the heading shows what is active.
 
 When you first enable a section with no saved options, start and end correction or three recommended warnings are preselected. The note **Recommended options were switched on. Review them and press Save.** stays until you save. Review the selection before **Save**. If the section is on but none of its options are enabled, the summary turns amber and tells you to choose options.
 
@@ -181,7 +181,7 @@ Sound repeats until the warning is handled or snoozed. Machine operators can mut
 
 ## Downtime Reasons for This Machine
 
-Administrators use **Machine Settings → Downtime reasons** for machines and work centers. Save a new machine before setting its reasons.
+Admins use **Machine Settings → Downtime reasons** for machines and work centers. Save a new machine before setting its reasons.
 
 - **All reasons (default)** offers every company reason, including reasons created later.
 - **Only selected reasons** offers a fixed list. You can save it with no reasons ticked. Machine operators then cannot pick a downtime reason on this machine. Search by code or reason and filter by category. **Select all visible** adds the visible reasons; clearing the selection removes all ticks, including hidden ones.
@@ -190,7 +190,7 @@ Save the tab to keep this machine's selection. **Apply to other machines** repla
 
 **New reason** opens the shared reason form. The current machine starts ticked under **Available on machines**. Keep it ticked if the reason should be offered here. Editing a reason's name, code, category, or colour affects every machine using it. See [Create and Manage Downtime Reasons](/en/platform-intro/workflows/timeline-reason-creation) for availability and deletion limits.
 
-The selection limits both the reasons people can assign and the reasons automatic rules and shift breaks can use. Removing a reason from this list keeps past labels. Deleting the shared reason also removes it from rules, defaults and breaks. If deletion empties a restricted list, the machine offers no reasons until an administrator changes it. Check the warnings in [Break Settings](/en/platform-intro/pages/break-settings) for breaks whose reason this machine does not offer.
+The selection limits both the reasons people can assign and the reasons automatic rules and shift breaks can use. Removing a reason from this list keeps past labels. Deleting the shared reason also removes it from rules, defaults and breaks. If deletion empties a restricted list, the machine offers no reasons until an Admin changes it. Check the warnings in [Break Settings](/en/platform-intro/pages/break-settings) for breaks whose reason this machine does not offer.
 
 ## Main Entities
 

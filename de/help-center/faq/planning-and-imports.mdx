@@ -209,13 +209,13 @@ Bereits auf mehrere Maschinen aufgeteilte Mengen bleiben unverändert und werden
 
 ## Kann ich Arbeit an einem Platz ohne Sensor planen?
 
-Ja. Ein Administrator kann einen **Arbeitsplatz** anlegen. Wählen Sie ihn als Ziel für einen Auftrag oder eine Zuweisung. Prüfen Sie **Aufträge heute** und **Als Nächstes** unter **Maschinen → Arbeitsplätze**. Folgen Sie [Maschine oder Arbeitsplatz hinzufügen](/de/platform-intro/workflows/add-machine) und [Maschinenzuweisungen planen](/de/platform-intro/workflows/assignment-planner).
+Ja. Ein Admin kann einen **Arbeitsplatz** anlegen. Wählen Sie ihn als Ziel für einen Auftrag oder eine Zuweisung. Prüfen Sie **Aufträge heute** und **Als Nächstes** unter **Maschinen → Arbeitsplätze**. Folgen Sie [Maschine oder Arbeitsplatz hinzufügen](/de/platform-intro/workflows/add-machine) und [Maschinenzuweisungen planen](/de/platform-intro/workflows/assignment-planner).
 
 <a id="work-center-switch" />
 
 ## Was passiert mit dem Sensor beim Wechsel von Maschine zu Arbeitsplatz?
 
-Der Wechsel entfernt die AVA-Zuweisungen und beendet alle Kennzahlenberechnungen. Nur Administratoren können die Art ändern. Um wieder Messwerte zu erfassen, speichern Sie den Eintrag als **Maschine** und weisen Sie im AVA-Tab eine AVA zu. Folgen Sie [Maschine konfigurieren](/de/platform-intro/workflows/machine-configuration).
+Der Wechsel entfernt die AVA-Zuweisungen und beendet alle Kennzahlenberechnungen. Nur Admins können die Art ändern. Um wieder Messwerte zu erfassen, speichern Sie den Eintrag als **Maschine** und weisen Sie im AVA-Tab eine AVA zu. Folgen Sie [Maschine konfigurieren](/de/platform-intro/workflows/machine-configuration).
 
 <a id="work-center-kpis" />
 
@@ -281,7 +281,7 @@ Laufende, angehaltene und abgeschlossene Zuweisungen lassen sich mit den Gantt-F
 
 ## Wie berücksichtigt die Prognose mehrere gleichzeitige Aufträge auf einer Maschine?
 
-Ein Administrator stellt in den Basisinformationen der Maschine **Planung → Parallele Aufträge** ein. Geben Sie eine ganze Zahl von 1 bis 100 ein, die der tatsächlichen Kapazität entspricht, und speichern Sie. Folgen Sie [Maschine konfigurieren](/de/platform-intro/workflows/machine-configuration).
+Ein Admin stellt in den Basisinformationen der Maschine **Planung → Parallele Aufträge** ein. Geben Sie eine ganze Zahl von 1 bis 100 ein, die der tatsächlichen Kapazität entspricht, und speichern Sie. Folgen Sie [Maschine konfigurieren](/de/platform-intro/workflows/machine-configuration).
 
 <a id="forecast-rule" />
 
@@ -387,7 +387,7 @@ Prüfen Sie, ob ein weiterer Arbeitsgang mit niedrigerer Nummer im selben Arbeit
 
 ## Wie setze ich einen Auftrag vor einen anderen, ohne seine Arbeitsgangpriorität zu erhöhen?
 
-Bitten Sie einen Administrator, **Admin-Panel → Prioritätsstufen → Reihenfolge und Arbeitsgang-Priorität bleiben im Einklang** auszuschalten. Aktivieren Sie dann **Nach Warteschlangenposition sortieren** und ziehen Sie die Karte. Nur ihr Platz ändert sich. Ist die Einstellung eingeschaltet, stellt **Rückgängig** im Prioritätshinweis nach dem Ziehen die Priorität wieder her und behält den neuen Platz bei. Auch das Übernehmen von **Neu sortieren** ändert keine Prioritäten. Siehe [Reihenfolge und Priorität](/de/platform-intro/pages/assignment-planner#reihenfolge-und-arbeitsgangpriorität).
+Bitten Sie einen Admin, **Admin-Panel → Prioritätsstufen → Reihenfolge und Arbeitsgang-Priorität bleiben im Einklang** auszuschalten. Aktivieren Sie dann **Nach Warteschlangenposition sortieren** und ziehen Sie die Karte. Nur ihr Platz ändert sich. Ist die Einstellung eingeschaltet, stellt **Rückgängig** im Prioritätshinweis nach dem Ziehen die Priorität wieder her und behält den neuen Platz bei. Auch das Übernehmen von **Neu sortieren** ändert keine Prioritäten. Siehe [Reihenfolge und Priorität](/de/platform-intro/pages/assignment-planner#reihenfolge-und-arbeitsgangpriorität).
 
 Eine Übergabe setzt die restliche Arbeit an den Anfang der Zielwarteschlange. Die Ablageposition gilt für Verschiebungen ohne Dialog. Folgen Sie [Arbeit übergeben](/de/platform-intro/workflows/assignment-planner#hand-over-work).
 
@@ -413,7 +413,7 @@ Die Nummern zeigen **Position in dieser Warteschlange** nur im Warteschlangenmod
 
 ## Wer kann die Sortierung festlegen, mit der alle beginnen?
 
-Administratoren können im Zuweisungsplaner unter **Filtern & Sortieren** Modus, Regeln und die Auswahl unter **Verschiebungen** einstellen. Wählen Sie dann **Als Firmenstandard speichern**. Personen ohne persönliche Sortierung beginnen damit. Vorhandene persönliche Einstellungen haben Vorrang. Die Betriebsdatenerfassung nutzt Modus und gemeinsame Regeln mit getrennter Auswahl für laufende und wartende Arbeit. Folgen Sie [Firmensortierung speichern oder übernehmen](/de/platform-intro/workflows/assignment-planner#firmensortierung-speichern-oder-übernehmen).
+Admins können im Zuweisungsplaner unter **Filtern & Sortieren** Modus, Regeln und die Auswahl unter **Verschiebungen** einstellen. Wählen Sie dann **Als Firmenstandard speichern**. Personen ohne persönliche Sortierung beginnen damit. Vorhandene persönliche Einstellungen haben Vorrang. Die Betriebsdatenerfassung nutzt Modus und gemeinsame Regeln mit getrennter Auswahl für laufende und wartende Arbeit. Folgen Sie [Firmensortierung speichern oder übernehmen](/de/platform-intro/workflows/assignment-planner#firmensortierung-speichern-oder-übernehmen).
 
 <a id="sorting-default-updates" />
 
@@ -433,7 +433,7 @@ Bisher blieben laufende Aufträge und Aufträge in Wartestellung bei eingeschalt
 
 Öffnen Sie in der Betriebsdatenerfassung V3 **Kartenanzeige-Einstellungen → Sortierreihenfolge → Auf Firmensortierung zurücksetzen** und wählen Sie **Speichern**. Ein Haken bedeutet, dass Modus und Regeln bereits übereinstimmen. Die Schaltfläche ist dann gesperrt. Das Zurücksetzen behält die Auswahl für laufende und wartende Aufträge im Warteschlangenmodus bei, ersetzt aber die Sortierregeln. Ergänzen Sie besondere Regeln für laufende oder wartende Aufträge erneut. Ohne Firmenstandard stellt das Symbol **Auf Standard zurücksetzen (noch kein Firmenstandard festgelegt)** die Standardauswahl her. Siehe [Betriebsdatenerfassung](/de/platform-intro/pages/data-acquisition#den-firmenstandard-für-die-sortierung-nutzen).
 
-Bei **Die Sortierung ist von der Vorlage festgelegt** können Sie die Sortierung hier nicht zurücksetzen. Bitten Sie einen Administrator, die [Maschinenvorlage](/de/platform-intro/pages/bde-access-templates) zu prüfen.
+Bei **Die Sortierung ist von der Vorlage festgelegt** können Sie die Sortierung hier nicht zurücksetzen. Bitten Sie einen Admin, die [Maschinenvorlage](/de/platform-intro/pages/bde-access-templates) zu prüfen.
 
 <a id="back-to-pool" />
 
@@ -441,7 +441,7 @@ Bei **Die Sortierung ist von der Vorlage festgelegt** können Sie die Sortierung
 
 Wählen Sie in der Betriebsdatenerfassung V3 den Arbeitsgang und **Zurück in den Pool**. Laufende Arbeit öffnet zuerst den normalen Stoppdialog für Mengen und danach gegebenenfalls die Zeitauswahl von **BDE Assist**. Bestätigen Sie Restmenge und optionalen Grund im Rückgabedialog. Die Arbeit geht in den eigenen Hallenpool Ihrer Maschine. Erfasste Zeiten und Gutteile bleiben auf der ursprünglichen Maschine. Folgen Sie [Arbeit in den Pool zurückgeben](/de/platform-intro/workflows/data-acquisition#back-to-pool).
 
-Die Maschinenvorlage muss **Aufträge an den Pool zurückgeben** erlauben. Ist die Aktion gesperrt, bitten Sie einen Administrator, die [Vorlage](/de/platform-intro/pages/bde-access-templates) zu prüfen.
+Die Maschinenvorlage muss **Aufträge an den Pool zurückgeben** erlauben. Ist die Aktion gesperrt, bitten Sie einen Admin, die [Vorlage](/de/platform-intro/pages/bde-access-templates) zu prüfen.
 
 <a id="create-after-selection" />
 
@@ -449,19 +449,19 @@ Die Maschinenvorlage muss **Aufträge an den Pool zurückgeben** erlauben. Ist d
 
 In der Betriebsdatenerfassung V3 erscheint bei ausgewähltem Arbeitsgang **Zurück in den Pool** anstelle von **Erstellen**. Tippen Sie erneut auf die ausgewählte Karte, um die Auswahl aufzuheben. Danach können Sie wieder Arbeit erstellen. Siehe [Betriebsdatenerfassung](/de/platform-intro/pages/data-acquisition).
 
-Eine Maschinenvorlage kann auch Auftragserstellung oder Rückgabe sperren. Diese Aktionen bleiben sichtbar, sind aber nicht bedienbar. Zeigen oder tippen Sie darauf, um **Für diese Maschine gesperrt (BDE-Vorlage).** zu lesen. Bitten Sie einen Administrator, die [erlaubten Aktionen](/de/platform-intro/pages/bde-access-templates#erlaubte-aktionen) zu prüfen.
+Eine Maschinenvorlage kann auch Auftragserstellung oder Rückgabe sperren. Diese Aktionen bleiben sichtbar, sind aber nicht bedienbar. Zeigen oder tippen Sie darauf, um **Für diese Maschine gesperrt (BDE-Vorlage).** zu lesen. Bitten Sie einen Admin, die [erlaubten Aktionen](/de/platform-intro/pages/bde-access-templates#erlaubte-aktionen) zu prüfen.
 
 <a id="return-disabled" />
 
 ## Warum ist Zurück in den Pool nicht verfügbar?
 
-Die Vorlage kann die Aktion sperren. Ihre Erklärung lautet dann **Für diese Maschine gesperrt (BDE-Vorlage).** Bitten Sie einen Administrator um Prüfung. Abgeschlossene und stornierte Arbeitsgänge bleiben auf der Maschine. Eine Maschine ohne Halle hat keinen Pool. Bitten Sie die Planung, die Hallenzuordnung zu prüfen. Zeigen Sie auf die nicht verfügbare Schaltfläche, um den Grund zu lesen. Bei laufender Arbeit können Sie **Zurück in den Pool** wählen, müssen aber zuerst im Dialog stoppen. Siehe [Voraussetzungen für die Rückgabe](/de/platform-intro/workflows/data-acquisition#back-to-pool).
+Die Vorlage kann die Aktion sperren. Ihre Erklärung lautet dann **Für diese Maschine gesperrt (BDE-Vorlage).** Bitten Sie einen Admin um Prüfung. Abgeschlossene und stornierte Arbeitsgänge bleiben auf der Maschine. Eine Maschine ohne Halle hat keinen Pool. Bitten Sie die Planung, die Hallenzuordnung zu prüfen. Zeigen Sie auf die nicht verfügbare Schaltfläche, um den Grund zu lesen. Bei laufender Arbeit können Sie **Zurück in den Pool** wählen, müssen aber zuerst im Dialog stoppen. Siehe [Voraussetzungen für die Rückgabe](/de/platform-intro/workflows/data-acquisition#back-to-pool).
 
 <a id="handover-machine" />
 
 ## Kann ich die restliche Arbeit direkt an eine andere Maschine geben?
 
-Administratoren und User mit Zugriff auf die Seite Aufträge können im Zuweisungsplaner eine begonnene, gestoppte Karte auf eine andere zugängliche Maschine ziehen. Alle Benutzer benötigen auch Zugriff auf die aktuelle Maschine des Arbeitsgangs. Andere Benutzer können Arbeit im Zuweisungsplaner und in der Betriebsdatenerfassung nur in den Pool der Halle ihrer aktuellen Maschine zurückgeben. Prüfen Sie **Restmenge**, ergänzen Sie **Grund (optional)** und bestätigen Sie **Verschieben**. Der Rest kommt an den Anfang dieser Maschinenwarteschlange. Administratoren und User mit Zugriff auf die Seite Aufträge können auch einen beliebigen Hallenpool wählen. Die Betriebsdatenerfassung gibt Arbeit nur in den eigenen Hallenpool der aktuellen Maschine zurück. Folgen Sie [Arbeit übergeben](/de/platform-intro/workflows/assignment-planner#hand-over-work).
+Admins und User mit Zugriff auf die Seite Aufträge können im Zuweisungsplaner eine begonnene, gestoppte Karte auf eine andere zugängliche Maschine ziehen. Alle User benötigen auch Zugriff auf die aktuelle Maschine des Arbeitsgangs. Andere User können Arbeit im Zuweisungsplaner und in der Betriebsdatenerfassung nur in den Pool der Halle ihrer aktuellen Maschine zurückgeben. Prüfen Sie **Restmenge**, ergänzen Sie **Grund (optional)** und bestätigen Sie **Verschieben**. Der Rest kommt an den Anfang dieser Maschinenwarteschlange. Admins und User mit Zugriff auf die Seite Aufträge können auch einen beliebigen Hallenpool wählen. Die Betriebsdatenerfassung gibt Arbeit nur in den eigenen Hallenpool der aktuellen Maschine zurück. Folgen Sie [Arbeit übergeben](/de/platform-intro/workflows/assignment-planner#hand-over-work).
 
 <a id="handover-quantity" />
 
@@ -481,7 +481,7 @@ Nein. **Übergeben** kennzeichnet den beendeten Anteil auf der ursprünglichen M
 
 ## Kann ich eine Übergabe rückgängig machen?
 
-Administratoren und User mit Zugriff auf die Seite Aufträge können eine Übergabe begonnener Arbeit manuell rückgängig machen. Das geht nur, solange der Rest noch nicht begonnen hat und in einem Pool oder einer Warteschlange wartet. Ist er bereits auf der anderen Maschine gelaufen, können Sie die Übergabe nicht rückgängig machen. Löschen Sie diesen Anteil nicht: Dabei werden auch seine erfassten Zeiten gelöscht.
+Admins und User mit Zugriff auf die Seite Aufträge können eine Übergabe begonnener Arbeit manuell rückgängig machen. Das geht nur, solange der Rest noch nicht begonnen hat und in einem Pool oder einer Warteschlange wartet. Ist er bereits auf der anderen Maschine gelaufen, können Sie die Übergabe nicht rückgängig machen. Löschen Sie diesen Anteil nicht: Dabei werden auch seine erfassten Zeiten gelöscht.
 
 Notieren Sie zuerst die ursprüngliche Menge: die zweite Zahl unter **Teilweise gefertigt:**, etwa 100 bei „40 von 100“. Sie finden sie auch, wenn Sie auf die Kennzeichnung **Übergeben** des Auftrags zeigen. Nach dem Löschen des neuen Anteils wechselt die Zeile zu **Gefertigt an** und zeigt die ursprüngliche Menge nicht mehr. Fehlt „von …“, weil die Planmenge unbekannt war, gibt es keine ursprüngliche Menge zum Wiederherstellen.
 
@@ -506,7 +506,7 @@ Mit **Nach Warteschlangenposition sortieren** kann Vorziehen vor dringendere Arb
 
 ## Warum ist meine Karte nach einer Prioritätsänderung gerückt?
 
-Im Warteschlangenmodus kann eine Änderung der **AG**-Anzeige die Karte beim Erhöhen an weniger dringender Arbeit vorbeiziehen. Beim Senken rückt sie hinter dringendere Arbeit. Gleich dringende Karten behalten ihre relative Reihenfolge. Bei aufgeteilter Arbeit können Anteile in anderen zugänglichen Warteschlangen ebenfalls rücken. Administratoren können dies unter **Admin-Panel → Prioritätsstufen → Reihenfolge und Arbeitsgang-Priorität bleiben im Einklang** ausschalten. Folgen Sie [Arbeitsgangpriorität festlegen](/de/platform-intro/workflows/assignment-planner#arbeitsgangpriorität-festlegen-und-den-plan-filtern).
+Im Warteschlangenmodus kann eine Änderung der **AG**-Anzeige die Karte beim Erhöhen an weniger dringender Arbeit vorbeiziehen. Beim Senken rückt sie hinter dringendere Arbeit. Gleich dringende Karten behalten ihre relative Reihenfolge. Bei aufgeteilter Arbeit können Anteile in anderen zugänglichen Warteschlangen ebenfalls rücken. Admins können dies unter **Admin-Panel → Prioritätsstufen → Reihenfolge und Arbeitsgang-Priorität bleiben im Einklang** ausschalten. Folgen Sie [Arbeitsgangpriorität festlegen](/de/platform-intro/workflows/assignment-planner#arbeitsgangpriorität-festlegen-und-den-plan-filtern).
 
 <a id="drag-priority-undo" />
 
@@ -518,7 +518,7 @@ Im Warteschlangenmodus kann eine Änderung der **AG**-Anzeige die Karte beim Erh
 
 ## Wer legt fest, ob eine kleinere Prioritätszahl dringender ist?
 
-Administratoren wählen unter **Admin-Panel → Prioritätsstufen → So werden Prioritäten verwendet → Welche Zahl ist dringender?** entweder **Höhere Zahl = dringender** oder **Niedrigere Zahl = dringender**. Jede Änderung wird sofort gespeichert. SAP-Vorlagen wählen höhere Zahlen zuerst, Epicor und Infor niedrigere. Das Zurücksetzen der Stufen stellt höhere Zahlen zuerst wieder her. Die Richtung Ihrer eigenen Sortierregeln bleibt unverändert. Folgen Sie [Unternehmensprioritäten einstellen](/de/platform-intro/workflows/assignment-planner#verwendung-der-unternehmensprioritäten-einstellen).
+Admins wählen unter **Admin-Panel → Prioritätsstufen → So werden Prioritäten verwendet → Welche Zahl ist dringender?** entweder **Höhere Zahl = dringender** oder **Niedrigere Zahl = dringender**. Jede Änderung wird sofort gespeichert. SAP-Vorlagen wählen höhere Zahlen zuerst, Epicor und Infor niedrigere. Das Zurücksetzen der Stufen stellt höhere Zahlen zuerst wieder her. Die Richtung Ihrer eigenen Sortierregeln bleibt unverändert. Folgen Sie [Unternehmensprioritäten einstellen](/de/platform-intro/workflows/assignment-planner#verwendung-der-unternehmensprioritäten-einstellen).
 
 <a id="running-queue-position" />
 
@@ -628,7 +628,7 @@ Ja. Öffnen Sie **Neu sortieren → Sortieren nach → Liefertermin**. Frühe Te
 
 ## Wer kann mehrere BDE-Seiten einheitlich einstellen?
 
-Administratoren öffnen **Admin-Panel → BDE-Zugriffsvorlagen → Neue Vorlage**. Dort wählen sie Maschinen, vorgeschriebene Felder und Hervorhebungen, eine optionale feste Sortierung und Aktualisierung sowie erlaubte Aktionen. Folgen Sie [Die BDE-Seite auf mehreren Maschinen einheitlich machen](/de/platform-intro/workflows/bde-access-templates).
+Admins öffnen **Admin-Panel → BDE-Zugriffsvorlagen → Neue Vorlage**. Dort wählen sie Maschinen, vorgeschriebene Felder und Hervorhebungen, eine optionale feste Sortierung und Aktualisierung sowie erlaubte Aktionen. Folgen Sie [Die BDE-Seite auf mehreren Maschinen einheitlich machen](/de/platform-intro/workflows/bde-access-templates).
 
 <a id="template-name-taken" />
 
@@ -640,25 +640,25 @@ Ein Name ist erforderlich, darf höchstens 80 Zeichen lang sein und muss innerha
 
 ## Warum kann ich ein Feld nicht ausblenden oder Sortierung und Aktualisierung nicht ändern?
 
-Die Maschine verwendet möglicherweise eine Vorlage. **Von der Vorlage festgelegt** kennzeichnet vorgeschriebene Einstellungen. **Die Sortierung ist von der Vorlage festgelegt** bedeutet, dass Sie sie hier nicht ändern können. Weitere Felder und Hervorhebungen können Sie selbst wählen. Bitten Sie einen Administrator, gemeinsame Vorgaben unter [BDE-Zugriffsvorlagen](/de/platform-intro/pages/bde-access-templates) zu ändern.
+Die Maschine verwendet möglicherweise eine Vorlage. **Von der Vorlage festgelegt** kennzeichnet vorgeschriebene Einstellungen. **Die Sortierung ist von der Vorlage festgelegt** bedeutet, dass Sie sie hier nicht ändern können. Weitere Felder und Hervorhebungen können Sie selbst wählen. Bitten Sie einen Admin, gemeinsame Vorgaben unter [BDE-Zugriffsvorlagen](/de/platform-intro/pages/bde-access-templates) zu ändern.
 
 <a id="template-highlights" />
 
 ## Warum fehlt ein Feld, das immer hervorgehoben sein soll?
 
-**Immer hervorgehoben** wirkt nur, wenn das Feld sichtbar ist. Blenden Sie es in den **Kartenanzeige-Einstellungen** ein. Soll es für alle sichtbar sein, bitten Sie einen Administrator, es auch unter **Immer angezeigt** auszuwählen. Siehe [Anzeigeeinstellungen der Vorlage](/de/platform-intro/pages/bde-access-templates#anzeigeeinstellungen).
+**Immer hervorgehoben** wirkt nur, wenn das Feld sichtbar ist. Blenden Sie es in den **Kartenanzeige-Einstellungen** ein. Soll es für alle sichtbar sein, bitten Sie einen Admin, es auch unter **Immer angezeigt** auszuwählen. Siehe [Anzeigeeinstellungen der Vorlage](/de/platform-intro/pages/bde-access-templates#anzeigeeinstellungen).
 
 <a id="hidden-pda-actions" />
 
 ## Warum kann ich den Auftragsstatus nicht ändern oder keine Arbeit aus dem Pool übernehmen?
 
-Die Maschinenvorlage kann Statusänderungen, das Übernehmen und Zurückgeben von Pool-Arbeit sowie das Hinzufügen von Aufträgen sperren. Aktionsschaltflächen bleiben sichtbar, sind aber nicht bedienbar. Beim Zeigen oder Tippen erscheint **Für diese Maschine gesperrt (BDE-Vorlage).** Ein gesperrtes Statusmenü öffnet sich nicht. Das gilt auch für Administratoren. Mengen buchen bleibt möglich. Nach **Stopp** bleiben **Abschließen** und **In Wartestellung lassen** bei erreichter Planmenge verfügbar. **Abgeschlossene Arbeitsgänge wieder öffnen** steuert das Wiederöffnen getrennt. Auch **BDE Assist** bleibt wie bisher verfügbar. Bitten Sie einen Administrator, **Auf der BDE-Seite erlaubt** zu prüfen. Siehe [erlaubte Aktionen](/de/platform-intro/pages/bde-access-templates#erlaubte-aktionen).
+Die Maschinenvorlage kann Statusänderungen, das Übernehmen und Zurückgeben von Pool-Arbeit sowie das Hinzufügen von Aufträgen sperren. Aktionsschaltflächen bleiben sichtbar, sind aber nicht bedienbar. Beim Zeigen oder Tippen erscheint **Für diese Maschine gesperrt (BDE-Vorlage).** Ein gesperrtes Statusmenü öffnet sich nicht. Das gilt auch für Admins. Mengen buchen bleibt möglich. Nach **Stopp** bleiben **Abschließen** und **In Wartestellung lassen** bei erreichter Planmenge verfügbar. **Abgeschlossene Arbeitsgänge wieder öffnen** steuert das Wiederöffnen getrennt. Auch **BDE Assist** bleibt wie bisher verfügbar. Bitten Sie einen Admin, **Auf der BDE-Seite erlaubt** zu prüfen. Siehe [erlaubte Aktionen](/de/platform-intro/pages/bde-access-templates#erlaubte-aktionen).
 
 <a id="read-only-pda-details" />
 
 ## Warum kann ich Intervalle und Notizen lesen, aber nicht korrigieren?
 
-Die Vorlage kann **Zeiten und Mengen von Intervallen korrigieren** oder **Notizen und Auftragsdetails bearbeiten** auf der BDE-Seite dieser Maschine ausschalten. Die Angaben bleiben lesbar. Symbole zur Intervallbearbeitung und **Speichern** bleiben sichtbar, sind aber gesperrt. Beim Zeigen oder Tippen erscheint **Für diese Maschine gesperrt (BDE-Vorlage).** Notizen und Details bleiben nur lesbar. Bitten Sie einen Administrator, die [erlaubten Aktionen der Vorlage](/de/platform-intro/pages/bde-access-templates#erlaubte-aktionen) zu prüfen.
+Die Vorlage kann **Zeiten und Mengen von Intervallen korrigieren** oder **Notizen und Auftragsdetails bearbeiten** auf der BDE-Seite dieser Maschine ausschalten. Die Angaben bleiben lesbar. Symbole zur Intervallbearbeitung und **Speichern** bleiben sichtbar, sind aber gesperrt. Beim Zeigen oder Tippen erscheint **Für diese Maschine gesperrt (BDE-Vorlage).** Notizen und Details bleiben nur lesbar. Bitten Sie einen Admin, die [erlaubten Aktionen der Vorlage](/de/platform-intro/pages/bde-access-templates#erlaubte-aktionen) zu prüfen.
 
 <a id="template-refresh" />
 
@@ -726,7 +726,7 @@ Der gesonderte Hinweis und seine Schaltfläche zum Ausblenden wurden entfernt. Z
 
 ## Ändern Regeln in Neu sortieren meine gespeicherte Sortierung?
 
-Nein. **Regeln aus → Meine Sortierung** stellt Ihre Planerregeln wieder her. **Firmenstandard** übernimmt die Regeln des Administrators, sofern vorhanden. **Angepasst** bedeutet, dass die aktuellen Regeln keiner Auswahl entsprechen. Diese Änderungen gelten nur für dieses Neusortieren. Beim erneuten Öffnen gelten wieder Ihre Planerregeln. Um andere persönliche Regeln zu behalten, bearbeiten Sie **Filtern & Sortieren → Sortierung** im Planer. Siehe [Eine Warteschlange neu sortieren](/de/platform-intro/pages/assignment-planner#eine-warteschlange-neu-sortieren).
+Nein. **Regeln aus → Meine Sortierung** stellt Ihre Planerregeln wieder her. **Firmenstandard** übernimmt die Regeln des Admins, sofern vorhanden. **Angepasst** bedeutet, dass die aktuellen Regeln keiner Auswahl entsprechen. Diese Änderungen gelten nur für dieses Neusortieren. Beim erneuten Öffnen gelten wieder Ihre Planerregeln. Um andere persönliche Regeln zu behalten, bearbeiten Sie **Filtern & Sortieren → Sortierung** im Planer. Siehe [Eine Warteschlange neu sortieren](/de/platform-intro/pages/assignment-planner#eine-warteschlange-neu-sortieren).
 
 <a id="queue-mode-rules" />
 
@@ -756,7 +756,7 @@ Wenn Maschinen in Zeilen angezeigt werden, können Sie **Filtern & Sortieren →
 
 ## Wie nutze ich die Firmensortierung in einer BDE-Vorlage?
 
-Öffnen Sie als Administrator **Admin-Panel → BDE-Zugriffsvorlagen** und bearbeiten Sie die Vorlage. Das Einschalten von **Feste Sortierung verwenden** beginnt nur dann mit der Firmensortierung, wenn im Planer eine Firmensortierung gespeichert ist und die Vorlage zuvor keine feste Sortierung hatte. Andernfalls bleibt die bisherige Vorauswahl unverändert. **Firmensortierung übernehmen** erscheint im Sortierbereich nur, wenn eine Firmensortierung vorhanden ist. Ein Haken zeigt, dass die Vorlage diese Sortierung bereits verwendet. Die Schaltfläche kopiert Sortiermodus und Regeln. Die Auswahl für laufende und angehaltene Aufträge sowie für Aufträge, die auf einen vorherigen Arbeitsgang warten, bleibt unverändert. Ohne Firmensortierung bietet der Bereich weiterhin das übliche Zurücksetzen auf die Standardvorgaben der Watchmen-Plattform. Prüfen und speichern Sie die Vorlage. Folgen Sie [dem Vorlagenablauf](/de/platform-intro/workflows/bde-access-templates).
+Öffnen Sie als Admin **Admin-Panel → BDE-Zugriffsvorlagen** und bearbeiten Sie die Vorlage. Das Einschalten von **Feste Sortierung verwenden** beginnt nur dann mit der Firmensortierung, wenn im Planer eine Firmensortierung gespeichert ist und die Vorlage zuvor keine feste Sortierung hatte. Andernfalls bleibt die bisherige Vorauswahl unverändert. **Firmensortierung übernehmen** erscheint im Sortierbereich nur, wenn eine Firmensortierung vorhanden ist. Ein Haken zeigt, dass die Vorlage diese Sortierung bereits verwendet. Die Schaltfläche kopiert Sortiermodus und Regeln. Die Auswahl für laufende und angehaltene Aufträge sowie für Aufträge, die auf einen vorherigen Arbeitsgang warten, bleibt unverändert. Ohne Firmensortierung bietet der Bereich weiterhin das übliche Zurücksetzen auf die Standardvorgaben der Watchmen-Plattform. Prüfen und speichern Sie die Vorlage. Folgen Sie [dem Vorlagenablauf](/de/platform-intro/workflows/bde-access-templates).
 
 <a id="template-save-unchanged" />
 
@@ -792,13 +792,13 @@ Die Frage folgt nach **Stopp**, wenn Gutteile und gesamter Ausschuss die Planmen
 
 ## Warum ist Auf Wartestellung setzen bei einem abgeschlossenen Arbeitsgang gesperrt oder fehlt?
 
-Ist **Auf Wartestellung setzen** sichtbar, aber nicht bedienbar, kann die Maschinenvorlage **Abgeschlossene Arbeitsgänge wieder öffnen** sperren. Beim Zeigen oder Tippen erscheint **Für diese Maschine gesperrt (BDE-Vorlage).** Ein Administrator kann dies unter **Admin-Panel → BDE-Zugriffsvorlagen → Auf der BDE-Seite erlaubt** einschalten und **Auftragsstatus ändern** ausgeschaltet lassen. Anfangs ist das Wiederöffnen erlaubt, auch in bestehenden Vorlagen. Bei Anteilen mit **Übergeben** fehlt diese Aktion immer. Bitten Sie Ihre Planung um Hilfe beim Rückgängigmachen einer Übergabe. Siehe [erlaubte Aktionen](/de/platform-intro/pages/bde-access-templates#erlaubte-aktionen).
+Ist **Auf Wartestellung setzen** sichtbar, aber nicht bedienbar, kann die Maschinenvorlage **Abgeschlossene Arbeitsgänge wieder öffnen** sperren. Beim Zeigen oder Tippen erscheint **Für diese Maschine gesperrt (BDE-Vorlage).** Ein Admin kann dies unter **Admin-Panel → BDE-Zugriffsvorlagen → Auf der BDE-Seite erlaubt** einschalten und **Auftragsstatus ändern** ausgeschaltet lassen. Anfangs ist das Wiederöffnen erlaubt, auch in bestehenden Vorlagen. Bei Anteilen mit **Übergeben** fehlt diese Aktion immer. Bitten Sie Ihre Planung um Hilfe beim Rückgängigmachen einer Übergabe. Siehe [erlaubte Aktionen](/de/platform-intro/pages/bde-access-templates#erlaubte-aktionen).
 
 <a id="reopen-queue-placement" />
 
 ## Wo erscheint ein wieder geöffneter Arbeitsgang in der Warteschlange?
 
-Wählen Sie unter **Einreihen** zwischen **Nach Firmensortierung**, **Ganz oben** und **Ganz unten**. Die Firmensortierung nutzt die darunter angezeigten gespeicherten Regeln. Sie ist erst verfügbar, wenn ein Administrator eine Firmensortierung im Planer speichert. Ihre letzte erfolgreiche Auswahl bleibt gespeichert. Andernfalls ist die Firmensortierung vorausgewählt, falls vorhanden, sonst der Anfang. Prioritäten und Termine bleiben erhalten. Siehe [Einreihungsregeln](/de/platform-intro/pages/data-acquisition#recently-completed).
+Wählen Sie unter **Einreihen** zwischen **Nach Firmensortierung**, **Ganz oben** und **Ganz unten**. Die Firmensortierung nutzt die darunter angezeigten gespeicherten Regeln. Sie ist erst verfügbar, wenn ein Admin eine Firmensortierung im Planer speichert. Ihre letzte erfolgreiche Auswahl bleibt gespeichert. Andernfalls ist die Firmensortierung vorausgewählt, falls vorhanden, sonst der Anfang. Prioritäten und Termine bleiben erhalten. Siehe [Einreihungsregeln](/de/platform-intro/pages/data-acquisition#recently-completed).
 
 <a id="reopened-badge" />
 
@@ -846,7 +846,7 @@ Die Anzahl umfasst neben neuer Arbeit auch Arbeitsgänge, die beim Import an ein
 
 ## Warum sehe ich eine Schaltfläche, kann sie aber nicht nutzen?
 
-Zeigen oder tippen Sie darauf. **Für diese Maschine gesperrt (BDE-Vorlage).** bedeutet, dass die Maschinenvorlage die Aktion sperrt, auch für Administratoren. Bitten Sie einen Administrator, **Admin-Panel → BDE-Zugriffsvorlagen → Auf der BDE-Seite erlaubt** zu prüfen. Bei gesperrten Statusänderungen bleibt der Status sichtbar, öffnet aber kein Menü. Siehe [erlaubte Aktionen](/de/platform-intro/pages/bde-access-templates#erlaubte-aktionen).
+Zeigen oder tippen Sie darauf. **Für diese Maschine gesperrt (BDE-Vorlage).** bedeutet, dass die Maschinenvorlage die Aktion sperrt, auch für Admins. Bitten Sie einen Admin, **Admin-Panel → BDE-Zugriffsvorlagen → Auf der BDE-Seite erlaubt** zu prüfen. Bei gesperrten Statusänderungen bleibt der Status sichtbar, öffnet aber kein Menü. Siehe [erlaubte Aktionen](/de/platform-intro/pages/bde-access-templates#erlaubte-aktionen).
 
 <a id="orders-pinned-columns" />
 

@@ -16,7 +16,7 @@ Steuern Sie die Live-Produktionsverfolgung für eine Maschine und erfassen Sie Z
 
 Beginnen Sie auf der [Seite Betriebsdatenerfassung (BDE)](/de/platform-intro/pages/data-acquisition).
 
-Eine [BDE-Zugriffsvorlage](/de/platform-intro/pages/bde-access-templates) kann Anzeigeeinstellungen festlegen und Aktionen für alle sperren, auch für Administratoren. Prüfen Sie die folgenden Bedingungen, bevor Sie Arbeit hinzufügen, Intervalle korrigieren oder Arbeit in den Pool zurückgeben.
+Eine [BDE-Zugriffsvorlage](/de/platform-intro/pages/bde-access-templates) kann Anzeigeeinstellungen festlegen und Aktionen für alle sperren, auch für Admins. Prüfen Sie die folgenden Bedingungen, bevor Sie Arbeit hinzufügen, Intervalle korrigieren oder Arbeit in den Pool zurückgeben.
 
 ### Voraussetzungen
 - Die Maschine hat eine Warteschlange oder einen Live-Auftrag, an dem gearbeitet werden kann.
@@ -85,7 +85,7 @@ Bei **Dieser Arbeitsgang wurde inzwischen geändert. Die Liste wurde aktualisier
     Lesen Sie **Gerade jetzt**. Ein gelber Punkt bedeutet, dass der Countdown zum automatischen Beenden läuft. Grün bedeutet, dass kein Countdown läuft. Nach einer Zeitkorrektur leuchtet die Anzeige kurz auf. Vergleichen Sie Auftrag und verbleibende Minuten mit dem Geschehen an der Maschine.
   </Step>
   <Step title="Ändern Sie unerwünschtes automatisches Beenden" icon="arrow-right" title-type="p">
-    Soll Arbeit offen bleiben, bitten Sie einen Administrator, **Vergessene Intervalle automatisch beenden** auszuschalten und in den Maschineneinstellungen **Speichern** zu wählen. Zurückstellen einer Warnung oder Stummschalten hält dies nicht an. Folgen Sie [Maschine konfigurieren](/de/platform-intro/workflows/machine-configuration).
+    Soll Arbeit offen bleiben, bitten Sie einen Admin, **Vergessene Intervalle automatisch beenden** auszuschalten und in den Maschineneinstellungen **Speichern** zu wählen. Zurückstellen einer Warnung oder Stummschalten hält dies nicht an. Folgen Sie [Maschine konfigurieren](/de/platform-intro/workflows/machine-configuration).
   </Step>
 </Steps>
 
@@ -102,7 +102,7 @@ Bei **Dieser Arbeitsgang wurde inzwischen geändert. Die Liste wurde aktualisier
     Nutzen Sie **Rückgängig** im Änderungshinweis, um die gedrückte Zeit wiederherzustellen. **Ändern…** öffnet die Optionen. Wählen Sie eine andere Zeit oder **Zurück zur gedrückten Zeit**. Die Zeitleiste aktualisiert sich sofort.
   </Step>
   <Step title="Prüfen Sie automatisch beendete Arbeit" icon="arrow-right" title-type="p">
-    Prüfen Sie die Mengen eines mit **Auto-beendet** markierten Intervalls. Buchen Sie fehlende Mengen nach. Pausierte oder stumme Warnungen verhindern automatisches Beenden nicht. Bitten Sie bei Bedarf einen Administrator, **Vergessene Intervalle automatisch beenden** zu ändern.
+    Prüfen Sie die Mengen eines mit **Auto-beendet** markierten Intervalls. Buchen Sie fehlende Mengen nach. Pausierte oder stumme Warnungen verhindern automatisches Beenden nicht. Bitten Sie bei Bedarf einen Admin, **Vergessene Intervalle automatisch beenden** zu ändern.
   </Step>
 </Steps>
 
@@ -111,7 +111,7 @@ Bei **Dieser Arbeitsgang wurde inzwischen geändert. Die Liste wurde aktualisier
 1. Öffnen Sie während des laufenden Stillstands **Stillstandsgrund**, wählen Sie **Aktueller Stillstand** und tippen Sie eine Kachel an oder tippen Sie auf den neuesten Timeline-Abschnitt und wählen Sie einen Grund. Lesen Sie Code und Name. Grenzen Sie die Liste bei Bedarf mit den angebotenen Kategorien ein.
 2. Prüfen Sie den Tooltip des laufenden Stillstands in der Timeline. Ihr Grund bleibt nach einer Seitenaktualisierung sichtbar, auch wenn der Stillstand vor den letzten 8 Stunden begonnen hat, die die Timeline zeigt. Beim Wiederanlaufen wird der Grund diesem Stillstand zugeordnet. Korrigieren Sie diesen Stillstand nach dem Wiederanlauf über die Timeline. Die Kacheln merken jetzt einen Grund für kommende Stillstände vor.
 3. Zum Korrigieren einer bestehenden Zuordnung öffnen Sie die Grundauswahl des Zeitraums. Wählen Sie einen verfügbaren Grund oder **Grund entfernen** zum Aufheben der Zuordnung.
-4. Wird der Grund wegen geänderter Verfügbarkeit abgelehnt, prüfen Sie die aktualisierte Liste und wählen Sie erneut. Fehlt der benötigte Grund, fragen Sie einen Administrator. Die Maschine kann bewusst keine Gründe anbieten. Sie können erst einen wählen, wenn ein Administrator diese Auswahl ändert. Siehe [Fragen zu Stillstandsgründen](/de/help-center/faq/downtime-reasons).
+4. Wird der Grund wegen geänderter Verfügbarkeit abgelehnt, prüfen Sie die aktualisierte Liste und wählen Sie erneut. Fehlt der benötigte Grund, fragen Sie einen Admin. Die Maschine kann bewusst keine Gründe anbieten. Sie können erst einen wählen, wenn ein Admin diese Auswahl ändert. Siehe [Fragen zu Stillstandsgründen](/de/help-center/faq/downtime-reasons).
 
 Wählt der Maschinenbediener nach dem Ende des Stillstands einen Grund, ersetzt dieser den Pausengrund für den gesamten Stillstand. Das gilt auch, wenn der Stillstand um die Pause herum in Abschnitte aufgeteilt wurde. Abschnitte, deren Grund jemand von Hand gesetzt oder entfernt hat, behalten diese Auswahl. Das Setzen oder Entfernen eines Grundes von Hand schützt diese Auswahl vor automatischer Kennzeichnung.
 
@@ -237,11 +237,11 @@ Sie benötigen Zugriff auf die BDE-Seite dieser Maschine. Ihre Vorlage muss **Ab
   </Step>
 </Steps>
 
-Ist der Arbeitsgang älter als die letzten fünf, suchen Sie ihn unter **Zeitfenster + Alle Status** und bitten Sie Ihre Planung um Hilfe beim Wiederöffnen. Ist **Auf Wartestellung setzen** gesperrt, lassen Sie die Vorlage von einem Administrator prüfen. Bei übergebenen Anteilen benötigen Sie Ihre Planung. Unter [Zuletzt abgeschlossen](/de/platform-intro/pages/data-acquisition#recently-completed) finden Sie Einreihungsregeln und Anzeigegrenzen.
+Ist der Arbeitsgang älter als die letzten fünf, suchen Sie ihn unter **Zeitfenster + Alle Status** und bitten Sie Ihre Planung um Hilfe beim Wiederöffnen. Ist **Auf Wartestellung setzen** gesperrt, lassen Sie die Vorlage von einem Admin prüfen. Bei übergebenen Anteilen benötigen Sie Ihre Planung. Unter [Zuletzt abgeschlossen](/de/platform-intro/pages/data-acquisition#recently-completed) finden Sie Einreihungsregeln und Anzeigegrenzen.
 
 ## Arbeit übernehmen, während des Laufs buchen und abschließen
 
-Für Pool-Arbeit muss **Aufträge aus dem Hallen-Pool übernehmen** erlaubt sein. Zum Hinzufügen oder Suchen ungeplanter Arbeit muss **Aufträge an der Maschine hinzufügen** erlaubt sein. Bitten Sie einen Administrator, die Vorlage zu prüfen, wenn eine Aktion **Für diese Maschine gesperrt (BDE-Vorlage).** zeigt. Starten, Stoppen und Mengen buchen bleibt wie bisher verfügbar.
+Für Pool-Arbeit muss **Aufträge aus dem Hallen-Pool übernehmen** erlaubt sein. Zum Hinzufügen oder Suchen ungeplanter Arbeit muss **Aufträge an der Maschine hinzufügen** erlaubt sein. Bitten Sie einen Admin, die Vorlage zu prüfen, wenn eine Aktion **Für diese Maschine gesperrt (BDE-Vorlage).** zeigt. Starten, Stoppen und Mengen buchen bleibt wie bisher verfügbar.
 
 1. Übernehmen Sie Arbeit aus dem **Pool** Ihrer Maschinenhalle. Suchen Sie bei Bedarf einen ungeplanten Arbeitsgang oder verwenden Sie **Sofortauftrag finden/erstellen**.
 2. Verwenden Sie **Vorber.** zur Vorbereitung, danach **Start** für Produktion. Prüfen Sie Hinweise zu anderen laufenden Aufträgen oder noch nicht abgeschlossenen vorherigen Arbeitsgängen.
@@ -253,7 +253,7 @@ Intervalllöschung ist endgültig. Maschinenbediener können Aufträge & Produkt
 
 ## Auf eine Assistentenwarnung reagieren
 
-Ein Administrator muss Warnungen für diese Maschine zuerst aktivieren. Alle Personen mit Zugriff auf die BDE-Seite können sie prüfen.
+Ein Admin muss Warnungen für diese Maschine zuerst aktivieren. Alle Personen mit Zugriff auf die BDE-Seite können sie prüfen.
 
 <Steps>
   <Step title="Lesen Sie alle aktiven Warnungen" icon="arrow-right" title-type="p">
@@ -266,7 +266,7 @@ Ein Administrator muss Warnungen für diese Maschine zuerst aktivieren. Alle Per
     Stellen Sie eine Warnung zurück oder wählen Sie **Alle zurückstellen**, um Erinnerungen für die eingestellte Dauer auszublenden und stummzuschalten. Sie bleiben unter **Zurückgestellt** aufgelistet. Mit **Jetzt anzeigen** holen Sie eine früher zurück. Besteht die Ursache weiter, erscheint sie nach Ablauf der Zeit erneut.
   </Step>
   <Step title="Steuern Sie den Ton auf Ihrem Gerät" icon="arrow-right" title-type="p">
-    Wählen Sie **Ton aktivieren** oder **Stummschalten**. Tippen Sie einmal auf die Seite, damit der Browser Ton abspielen kann. Bleibt der Ton aus, bitten Sie einen Administrator, Toneinstellungen, Schweregrad und Schichtbeschränkung in der [Maschinenkonfiguration](/de/platform-intro/pages/machine-configuration) zu prüfen. **Info** bleibt immer lautlos.
+    Wählen Sie **Ton aktivieren** oder **Stummschalten**. Tippen Sie einmal auf die Seite, damit der Browser Ton abspielen kann. Bleibt der Ton aus, bitten Sie einen Admin, Toneinstellungen, Schweregrad und Schichtbeschränkung in der [Maschinenkonfiguration](/de/platform-intro/pages/machine-configuration) zu prüfen. **Info** bleibt immer lautlos.
   </Step>
 </Steps>
 
@@ -289,12 +289,12 @@ Die Maschinen-Zeitleiste, die Intervallliste und die Produktionsdaten spiegeln d
 
 - Die Vormerkung läuft vor dem Wiederanlauf ab: Ihre Zeit beginnt beim Antippen. Verlängern Sie sie oder wählen Sie bei Bedarf erneut einen Grund.
 - Keine Abschlussfrage nach **Weiter**: Damit beginnt ein neues Intervall. Die Frage folgt nach **Stopp**, wenn die Gesamtmenge den Plan erreicht.
-- Keine Firmensortierung beim Wiederöffnen verfügbar: Wählen Sie **Ganz oben** oder **Ganz unten** oder bitten Sie einen Administrator, im Planer eine Firmensortierung zu speichern.
+- Keine Firmensortierung beim Wiederöffnen verfügbar: Wählen Sie **Ganz oben** oder **Ganz unten** oder bitten Sie einen Admin, im Planer eine Firmensortierung zu speichern.
 - Ist **Speichern** gesperrt, ändern Sie einen Wert oder beheben Sie den angezeigten Zeitfehler. Ein geändertes Ende muss nach dem Start liegen. Geänderte Zeiten dürfen nicht in der Zukunft liegen. Warten Sie, wenn **Speichert…** erscheint.
 - Bei **Speichern hat nicht geklappt. Bitte erneut versuchen.** bleibt die Bearbeitung geöffnet. Prüfen Sie Ihre Eingaben und versuchen Sie erneut zu speichern.
 - Kann ein laufendes Intervall in der Auftragsverwaltung nicht geladen werden, versuchen Sie erneut, es zu öffnen. Es bleibt geschlossen, bis die gespeicherten Werte gelesen werden können.
 - Sie können ein gespeichertes Intervallende nicht entfernen. Beenden Sie ein laufendes Intervall mit der normalen Stoppaktion.
-- Benutzer müssen möglicherweise ein Intervall stoppen, bevor sie zu einem anderen wechseln.
+- User müssen möglicherweise ein Intervall stoppen, bevor sie zu einem anderen wechseln.
 - Fehlende Produktions-, Ausschuss- oder Grundangaben können die Produktionsgeschichte unvollständig lassen.
 - Ein Live-Problem kann sowohl einen Stillstandsgrund als auch ein Support-Ticket benötigen.
 - Die erfasste Gesamtproduktion enthält die eingegebenen Ausschussmengen.

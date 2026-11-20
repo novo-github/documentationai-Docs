@@ -43,7 +43,7 @@ description: "Understand PDA Assist warnings, alarm sound, and Automator templat
 
 ## Who can turn on warnings for my machine?
 
-Only administrators can change warning settings. In the machine configuration, open **PDA Assist** and turn on **Warnings** before setting delays, severity, and sound. Follow [Configure a Machine](/en/platform-intro/workflows/machine-configuration).
+Only Admins can change warning settings. In the machine configuration, open **PDA Assist** and turn on **Warnings** before setting delays, severity, and sound. Follow [Configure a Machine](/en/platform-intro/workflows/machine-configuration).
 
 <a id="warning-action" />
 
@@ -55,7 +55,7 @@ Select **View all warnings** and read the affected order and issue. Check the ma
 
 ## How do I stop the alarm sound, and why is it sometimes silent?
 
-Select **Mute** to silence sound on your device or **Enable sound** to turn it on. The browser needs a tap on the page first. **Info** is always silent; other sounds depend on administrator settings and may be limited to active shifts. See [PDA Assist sound](/en/platform-intro/pages/data-acquisition).
+Select **Mute** to silence sound on your device or **Enable sound** to turn it on. The browser needs a tap on the page first. **Info** is always silent; other sounds depend on Admin settings and may be limited to active shifts. See [PDA Assist sound](/en/platform-intro/pages/data-acquisition).
 
 <a id="snooze" />
 
@@ -73,7 +73,7 @@ Yes. **Copy to other machines…** copies both interval assistance and warnings 
 
 ## Does choosing an Automator template start sending alerts?
 
-No. A template only prefills the rule. Administrators must review its prerequisites, machines, recipients, thresholds, and schedule, then save it. A switched-off rule stays saved but does not run. Follow [Create an Automator Rule](/en/platform-intro/workflows/automator-rule-creation).
+No. A template only prefills the rule. Admins must review its prerequisites, machines, recipients, thresholds, and schedule, then save it. A switched-off rule stays saved but does not run. Follow [Create an Automator Rule](/en/platform-intro/workflows/automator-rule-creation).
 
 <a id="email" />
 
@@ -133,7 +133,7 @@ Work centers have no AVA. Rules using machine or sensor measurements never trigg
 
 ## Can I get an alert before an order misses delivery?
 
-Yes. An administrator can create an Automator rule with **Forecaster → Delivery Date at Risk** greater than 0. Choose email recipients before saving. Open the resulting event and use **Show in Gantt** to inspect the delay. Follow [Create an Automator Rule](/en/platform-intro/workflows/automator-rule-creation).
+Yes. An Admin can create an Automator rule with **Forecaster → Delivery Date at Risk** greater than 0. Choose email recipients before saving. Open the resulting event and use **Show in Gantt** to inspect the delay. Follow [Create an Automator Rule](/en/platform-intro/workflows/automator-rule-creation).
 
 <a id="schedule-rule" />
 
@@ -146,13 +146,13 @@ Schedule conditions must stay in a separate rule from machine or order condition
 
 ## Why does my interval end on its own?
 
-An administrator has enabled **Auto-end forgotten intervals**. It ends production after the configured off or idle period, even when nobody has the PDA page open. The recorded end moves to the last production time, or the stop time if nothing was produced. Quantities still need booking. See [automatic ending settings](/en/platform-intro/pages/machine-configuration).
+An Admin has enabled **Auto-end forgotten intervals**. It ends production after the configured off or idle period, even when nobody has the PDA page open. The recorded end moves to the last production time, or the stop time if nothing was produced. Quantities still need booking. See [automatic ending settings](/en/platform-intro/pages/machine-configuration).
 
 <a id="stop-auto-end" />
 
 ## How do I stop the assistant from ending my interval?
 
-Ask an administrator to turn off **Auto-end forgotten intervals** under **Machine Settings → PDA Assist**, then select **Save**. Muting or snoozing a warning does not stop it. See [Configure a Machine](/en/platform-intro/workflows/machine-configuration).
+Ask an Admin to turn off **Auto-end forgotten intervals** under **Machine Settings → PDA Assist**, then select **Save**. Muting or snoozing a warning does not stop it. See [Configure a Machine](/en/platform-intro/workflows/machine-configuration).
 
 <a id="change-time" />
 
@@ -176,7 +176,7 @@ Yes. Preparation can start from the previous interval’s end, when production s
 
 ## How can I correct intervals from previous days?
 
-Open a day with intervals on the machine detail page and select **Improve intervals**. Review up to 60 days, compare **Now** and **After**, then apply the changes you choose. Anyone with machine access can do this for one machine; only administrators can review several or use **Apply best everywhere**. Follow [Review and Improve Intervals](/en/platform-intro/workflows/improve-intervals).
+Open a day with intervals on the machine detail page and select **Improve intervals**. Review up to 60 days, compare **Now** and **After**, then apply the changes you choose. Anyone with machine access can do this for one machine; only Admins can review several or use **Apply best everywhere**. Follow [Review and Improve Intervals](/en/platform-intro/workflows/improve-intervals).
 
 <a id="unticked" />
 
@@ -200,7 +200,7 @@ No. It resets the chosen section’s options and keeps that section’s on/off s
 
 ## Where can I open settings for this machine?
 
-Administrators can use the **Machine Settings** gear beside refresh in the machine detail header. It opens in the same tab; browser Back returns to the machine. Other roles do not see this button. Follow [Configure a Machine](/en/platform-intro/workflows/machine-configuration).
+Admins can use the **Machine Settings** gear beside refresh in the machine detail header. It opens in the same tab; browser Back returns to the machine. Other roles do not see this button. Follow [Configure a Machine](/en/platform-intro/workflows/machine-configuration).
 
 <a id="assist-status" />
 
@@ -212,7 +212,7 @@ The dot is amber only while automatic ending counts down; otherwise it is green.
 
 ## How does the assistant choose times, and where can I see an example?
 
-It uses real machine events or the previous interval’s end, with the most recent choices first. It never invents a time at a limit. Earlier choices appear under **Other times**. Administrators can open **Machine Settings → PDA Assist → How changes are applied → How are the times chosen?** for six examples and this machine’s limits. See [Machine Configuration](/en/platform-intro/pages/machine-configuration).
+It uses real machine events or the previous interval’s end, with the most recent choices first. It never invents a time at a limit. Earlier choices appear under **Other times**. Admins can open **Machine Settings → PDA Assist → How changes are applied → How are the times chosen?** for six examples and this machine’s limits. See [Machine Configuration](/en/platform-intro/pages/machine-configuration).
 
 <a id="short-gaps" />
 
@@ -224,7 +224,7 @@ Missing data shorter than 10 minutes does not split production into a new stretc
 
 ## Can I change setup corrections without changing production corrections?
 
-Yes. Administrators can choose setup options separately under **Machine Settings → PDA Assist → Start time** and **End time**, then select **Save**. Existing machines keep their previous behaviour until those choices change. The setup choices also guide **Improve intervals**. Follow [Configure a Machine](/en/platform-intro/workflows/machine-configuration).
+Yes. Admins can choose setup options separately under **Machine Settings → PDA Assist → Start time** and **End time**, then select **Save**. Existing machines keep their previous behaviour until those choices change. The setup choices also guide **Improve intervals**. Follow [Configure a Machine](/en/platform-intro/workflows/machine-configuration).
 
 <a id="recommended-options" />
 
@@ -236,4 +236,4 @@ With no saved options, enabling **Interval assist** preselects start and end cor
 
 ## Can I see how a warning will look before saving it?
 
-Yes. As an administrator, open the information icon beside the warning under **PDA Assist → Warnings**. **When it appears** shows its delay; **What the machine operator sees** previews its severity and sound choice. It follows unsaved settings. The preview does not flash or play an alarm. Follow [Configure a Machine](/en/platform-intro/workflows/machine-configuration).
+Yes. As an Admin, open the information icon beside the warning under **PDA Assist → Warnings**. **When it appears** shows its delay; **What the machine operator sees** previews its severity and sound choice. It follows unsaved settings. The preview does not flash or play an alarm. Follow [Configure a Machine](/en/platform-intro/workflows/machine-configuration).

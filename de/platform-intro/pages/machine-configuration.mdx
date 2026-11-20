@@ -7,9 +7,9 @@ description: "Eine tabbasierte Einrichtungsseite zum Erstellen oder Verfeinern e
 
 **Zugriff:** Nur Admin. [Rollen und Zugriff](/de/platform-intro/concepts/roles-and-access).
 
-Ermöglichen Sie Administratoren, eine Maschinenkonfiguration anzulegen oder die bestehende Konfiguration zu verfeinern.
+Ermöglichen Sie Admins, eine Maschinenkonfiguration anzulegen oder die bestehende Konfiguration zu verfeinern.
 
-Administratoren öffnen **Maschineneinstellungen** über das Zahnrad im Kopf der Maschinendetails oder über das Maschinenmenü im Administrationsbereich.
+Admins öffnen **Maschineneinstellungen** über das Zahnrad im Kopf der Maschinendetails oder über das Maschinenmenü im Administrationsbereich.
 
 ## Zugriff
 
@@ -55,7 +55,7 @@ Ein optionaler **Energiemonitor** misst Verbrauch, Spannung, Leistungsfaktor und
 
 ## Gleichzeitige Aufträge und der Forecaster
 
-Administratoren stellen in den Basisinformationen der Maschine **Planung → Parallele Aufträge** ein. Geben Sie eine ganze Zahl von 1 bis 100 ein und speichern Sie den Tab. Der Wert bestimmt, wie viele Zuweisungen die Maschine gleichzeitig bearbeiten kann. Der **Forecaster** berücksichtigt ihn bei erwarteten Zeiten.
+Admins stellen in den Basisinformationen der Maschine **Planung → Parallele Aufträge** ein. Geben Sie eine ganze Zahl von 1 bis 100 ein und speichern Sie den Tab. Der Wert bestimmt, wie viele Zuweisungen die Maschine gleichzeitig bearbeiten kann. Der **Forecaster** berücksichtigt ihn bei erwarteten Zeiten.
 
 Wählen Sie die tatsächliche Kapazität. Beispielsweise erlaubt 2 der Prognose, zwei Zuweisungen gleichzeitig einzuplanen. Folgen Sie [Maschine konfigurieren](/de/platform-intro/workflows/machine-configuration).
 
@@ -63,7 +63,7 @@ Wählen Sie die tatsächliche Kapazität. Beispielsweise erlaubt 2 der Prognose,
 
 ## Regeln für Stillstandsgründe und Zeitbereiche
 
-Administratoren können **Maschineneinstellungen → Regeln für Stillstandsgründe** prüfen. Ein vom Maschinenbediener gewählter oder von Hand gesetzter Grund hat Vorrang. Ist die [automatische Pausenkennzeichnung](/de/platform-intro/pages/break-settings) eingeschaltet, folgt der Grund einer passenden Pause. **Regeln für Stillstandsgründe** gelten für die übrige Zeit in Leerlauf oder Aus. Ohne passenden Grund bleibt die Zeit unbeschriftet.
+Admins können **Maschineneinstellungen → Regeln für Stillstandsgründe** prüfen. Ein vom Maschinenbediener gewählter oder von Hand gesetzter Grund hat Vorrang. Ist die [automatische Pausenkennzeichnung](/de/platform-intro/pages/break-settings) eingeschaltet, folgt der Grund einer passenden Pause. **Regeln für Stillstandsgründe** gelten für die übrige Zeit in Leerlauf oder Aus. Ohne passenden Grund bleibt die Zeit unbeschriftet.
 
 Seit dem 5. November 2026 (v1.5.153) greifen die Regeln bei mehr Stillständen in Leerlauf und Aus. Die Summen je Stillstandsgrund in Berichten und Diagrammen können sich daher bei Maschinen mit Regeln ändern. Stillstände vor der Aktualisierung bleiben unverändert. Siehe [automatische Regeln](/de/platform-intro/workflows/timeline-reason-creation#automatische-regeln).
 
@@ -79,7 +79,7 @@ Prüfen Sie nach einer Änderung der Grundliste **Regeln für den Status „Aus�
 
 ## Einstellungen aktiver Schichten
 
-Administratoren wählen in der Maschinenkonfiguration **Schichten → Aktive Schicht**. Wenn die Einstellung eingeschaltet ist, beginnt eine Schicht automatisch bei Leerlauf, Produktion oder Vorbereitung. Ist sie ausgeschaltet, folgen die Schichten dem Plan der zugewiesenen Schichtgruppe.
+Admins wählen in der Maschinenkonfiguration **Schichten → Aktive Schicht**. Wenn die Einstellung eingeschaltet ist, beginnt eine Schicht automatisch bei Leerlauf, Produktion oder Vorbereitung. Ist sie ausgeschaltet, folgen die Schichten dem Plan der zugewiesenen Schichtgruppe.
 
 | Einstellung | Wirkung |
 | --- | --- |
@@ -99,7 +99,7 @@ Die Kennzeichnung **Aktive Schicht** zeigt, welche Maschinen diese Einstellung n
 
 ## BDE Assist: Intervallhilfe und Warnungen
 
-**Nur Administratoren können diese Einstellungen ändern.** Öffnen Sie **Maschineneinstellungen → BDE Assist** (bisher **BDE-Assistent**). **Intervall-Assistent** und **Warnungen** haben jeweils ein Kontrollkästchen in der Überschrift. Beim Ausschalten klappt der Bereich zu. Die Zusammenfassung darunter zeigt, was aktiv ist.
+**Nur Admins können diese Einstellungen ändern.** Öffnen Sie **Maschineneinstellungen → BDE Assist** (bisher **BDE-Assistent**). **Intervall-Assistent** und **Warnungen** haben jeweils ein Kontrollkästchen in der Überschrift. Beim Ausschalten klappt der Bereich zu. Die Zusammenfassung darunter zeigt, was aktiv ist.
 
 Aktivieren Sie einen Bereich erstmals ohne gespeicherte Optionen, sind Start- und Endkorrektur beziehungsweise drei empfohlene Warnungen vorausgewählt. Der Hinweis **Empfohlene Optionen wurden eingeschaltet. Bitte prüfen und auf „Speichern“ drücken.** bleibt bis zum Speichern sichtbar. Prüfen Sie die Auswahl vor **Speichern**. Ist der Bereich an, aber keine seiner Optionen eingeschaltet, wird die Zusammenfassung gelb und fordert zur Auswahl auf.
 
@@ -181,7 +181,7 @@ Der Ton wiederholt sich, bis die Warnung erledigt oder pausiert ist. Maschinenbe
 
 ## Stillstandsgründe dieser Maschine
 
-Administratoren nutzen **Maschineneinstellungen → Stillstandsgründe** für Maschinen und Arbeitsplätze. Speichern Sie eine neue Maschine, bevor Sie ihre Gründe festlegen.
+Admins nutzen **Maschineneinstellungen → Stillstandsgründe** für Maschinen und Arbeitsplätze. Speichern Sie eine neue Maschine, bevor Sie ihre Gründe festlegen.
 
 - **Alle Gründe (Standard)** bietet jeden Unternehmensgrund an, auch später angelegte Gründe.
 - **Nur ausgewählte Gründe** bietet eine feste Liste an. Sie können sie ohne ausgewählten Grund speichern. Maschinenbediener können dann auf dieser Maschine keinen Stillstandsgrund wählen. Suchen Sie nach Code oder Grund und filtern Sie nach Kategorie. **Alle sichtbaren auswählen** ergänzt die sichtbaren Gründe. Das Leeren der Auswahl entfernt alle Häkchen, auch ausgeblendete.
@@ -190,7 +190,7 @@ Speichern Sie den Tab für diese Maschine. **Auf andere Maschinen übertragen** 
 
 **Neuer Grund** öffnet das gemeinsame Formular. Die aktuelle Maschine ist unter **Verfügbar auf Maschinen** vorausgewählt. Lassen Sie sie ausgewählt, wenn der Grund hier verfügbar sein soll. Änderungen an Name, Code, Kategorie oder Farbe gelten für alle Maschinen, die den Grund verwenden. [Stillstandsgründe erstellen und verwalten](/de/platform-intro/workflows/timeline-reason-creation) erklärt Verfügbarkeit und Löschfolgen.
 
-Die Auswahl begrenzt sowohl die manuell zuweisbaren Gründe als auch die Gründe für automatische Regeln und Schichtpausen. Das Entfernen aus dieser Liste erhält frühere Zuordnungen. Das Löschen des gemeinsamen Grundes entfernt ihn auch aus Regeln, Standardgründen und Pausen. Wird eine eingeschränkte Liste dadurch leer, bietet die Maschine keine Gründe an, bis ein Administrator sie ändert. Prüfen Sie in den [Pauseneinstellungen](/de/platform-intro/pages/break-settings) die Warnungen zu Pausen, deren Grund diese Maschine nicht anbietet.
+Die Auswahl begrenzt sowohl die manuell zuweisbaren Gründe als auch die Gründe für automatische Regeln und Schichtpausen. Das Entfernen aus dieser Liste erhält frühere Zuordnungen. Das Löschen des gemeinsamen Grundes entfernt ihn auch aus Regeln, Standardgründen und Pausen. Wird eine eingeschränkte Liste dadurch leer, bietet die Maschine keine Gründe an, bis ein Admin sie ändert. Prüfen Sie in den [Pauseneinstellungen](/de/platform-intro/pages/break-settings) die Warnungen zu Pausen, deren Grund diese Maschine nicht anbietet.
 
 ## Hauptentitäten
 
@@ -208,7 +208,7 @@ Die Auswahl begrenzt sowohl die manuell zuweisbaren Gründe als auch die Gründe
 
 ### Grenzen und Leerzustände
 - Einige Tabs sind erst vollständig nutzbar, nachdem die Maschine existiert.
-- Benutzer müssen Tab-Änderungen speichern, bevor sie die Seite verlassen.
+- User müssen Tab-Änderungen speichern, bevor sie die Seite verlassen.
 
 ## Verwandte Seiten
 

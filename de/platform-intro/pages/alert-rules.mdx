@@ -7,9 +7,9 @@ description: "Eine Seite zur Verwaltung globaler und maschinenspezifischer Alarm
 
 **Zugriff:** Admin oder ein User mit Seitenzugriff auf **Alarmregeln**; kein Zugriff für Maschinenbediener. [Rollen und Zugriff](/de/platform-intro/concepts/roles-and-access).
 
-Unterstützen Sie Administratoren dabei, Regeln zu erstellen und zu verwalten, die Personen benachrichtigen, wenn wichtige Maschinenzustände eintreten.
+Unterstützen Sie Admins dabei, Regeln zu erstellen und zu verwalten, die Personen benachrichtigen, wenn wichtige Maschinenzustände eintreten.
 
-Benutzer können diese Seite global oder über eine maschinenspezifische Route öffnen.
+User können diese Seite für alle Maschinen oder für eine bestimmte Maschine öffnen.
 
 ## Zugriff
 
@@ -34,7 +34,7 @@ Benutzer können diese Seite global oder über eine maschinenspezifische Route �
 
 Klassische Alarmregeln verwenden **OEE**, **Leistung** und **Verfügbarkeit** als Prozentgrenzen mit ausschließlich Kleiner-als- oder Größer-als-Vergleichen. Zeit- und Schichtprüfungen umfassen **Abgeschaltet gesamt (Schicht)**, **Stillstand gesamt (Schicht)**, **Abgeschaltet am Stück**, **Stillstand am Stück**, **Sensor getrennt** und **Schicht nicht gestartet**. Minutengrenzen verwenden Größer-als-Vergleiche. Lesen Sie die jeweilige Bedingung und Einschränkungen bei aktiven Schichten im Editor.
 
-Kanäle sind **E-Mail**, **SMS** und **Webhook**. **SMS kostet 0,10 € je Alarmnachricht und Benutzer**, wird am Monatsende abgerechnet und benötigt ausdrückliche Zustimmung. Eine Nachricht an drei Benutzer kostet beispielsweise 0,30 €. Ohne Empfänger wird der Alarm weiterhin kostenlos in der Plattform erfasst.
+Kanäle sind **E-Mail**, **SMS** und **Webhook**. **SMS kostet 0,10 € je Alarmnachricht und User**, wird am Monatsende abgerechnet und benötigt ausdrückliche Zustimmung. Eine Nachricht an drei User kostet beispielsweise 0,30 €. Ohne Empfänger wird der Alarm weiterhin kostenlos in der Plattform erfasst.
 
 **Silence / Unsilence** schaltet eine Alarmart oder alle Alarme einer Maschine vorübergehend stumm beziehungsweise wieder ein. Ein **Webhook** übermittelt per URL an andere Systeme, optional mit Basic-, Bearer- oder eigener Header-Authentifizierung und Nutzlastvorlage.
 
@@ -76,7 +76,7 @@ Beim Erstellen oder Bearbeiten einer Regel kann der Hinweis **Dieser Alarm löst
 ## Ergebnisse und Grenzen
 
 ### Typische Ergebnisse
-- Administratoren halten die Alarmierung gezielt und nützlich.
+- Admins halten die Alarmierung gezielt und nützlich.
 
 ### Grenzen und Leerzustände
 - Eine maschinenspezifische Route zeigt naturgemäß nur einen kleineren Regelsatz.

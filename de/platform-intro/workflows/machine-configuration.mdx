@@ -17,7 +17,7 @@ Passen Sie an, wie eine Maschine von der Plattform identifiziert, überwacht, ge
 Beginnen Sie auf der [Seite Maschinenkonfiguration](/de/platform-intro/pages/machine-configuration).
 
 ### Voraussetzungen
-- Die Maschine existiert bereits, es sei denn, der Benutzer erstellt sie über die neue Maschinenroute.
+- Die Maschine existiert bereits, es sei denn, der User erstellt sie über die Seite zum Hinzufügen einer Maschine.
 
 Nutzen Sie für einen **Arbeitsplatz** die folgenden Schritte zum Wechsel der Art. Überspringen Sie die Einrichtung von AVAs und Sensormessungen.
 
@@ -25,7 +25,7 @@ Nutzen Sie für einen **Arbeitsplatz** die folgenden Schritte zum Wechsel der Ar
 
 <Steps>
   <Step title="Öffnen Sie die Maschinenkonfigurationsseite für eine neue oder vorhandene Maschine" icon="arrow-right" title-type="p">
-    Wählen Sie für eine vorhandene Maschine das Zahnrad **Maschineneinstellungen** im Kopf ihrer Detailseite. Nur Administratoren sehen es. Die Einstellungen öffnen sich im selben Tab. Die Zurück-Schaltfläche des Browsers führt zur Maschine zurück.
+    Wählen Sie für eine vorhandene Maschine das Zahnrad **Maschineneinstellungen** im Kopf ihrer Detailseite. Nur Admins sehen es. Die Einstellungen öffnen sich im selben Tab. Die Zurück-Schaltfläche des Browsers führt zur Maschine zurück.
   </Step>
   <Step title="Prüfen Sie den Tab Basisinformationen und bestätigen Sie Identität, Halle und Schichtgruppe" icon="arrow-right" title-type="p">
     Prüfen Sie den Tab Basisinformationen und bestätigen Sie Identität, Halle und Schichtgruppe.
@@ -56,7 +56,7 @@ Nutzen Sie für einen **Arbeitsplatz** die folgenden Schritte zum Wechsel der Ar
 
 ## Gleichzeitige Maschinenkapazität einstellen
 
-1. Öffnen Sie als Administrator die Basisinformationen der Maschine und dort **Planung → Parallele Aufträge**.
+1. Öffnen Sie als Admin die Basisinformationen der Maschine und dort **Planung → Parallele Aufträge**.
 2. Geben Sie als ganze Zahl von 1 bis 100 ein, wie viele Zuweisungen die Maschine gleichzeitig bearbeiten kann. Wählen Sie die tatsächliche Kapazität, nicht die Anzahl wartender Aufträge.
 3. Speichern Sie den Tab und prüfen Sie erwartete Zeiten im [Zuweisungs-Gantt](/de/platform-intro/pages/assignment-gantt). Der Forecaster nutzt diese Kapazität für gleichzeitige Arbeit.
 
@@ -72,7 +72,7 @@ Richten Sie **BDE Assist** mit den folgenden Schritten für Warnungen ein. [Masc
 
 <Steps>
   <Step title="Wählen Sie die Art" icon="arrow-right" title-type="p">
-    Öffnen Sie als Administrator die **Basisinformationen** in der Konfiguration. Wählen Sie **Art → Arbeitsplatz** für einen Arbeitsplatz ohne AVA.
+    Öffnen Sie als Admin die **Basisinformationen** in der Konfiguration. Wählen Sie **Art → Arbeitsplatz** für einen Arbeitsplatz ohne AVA.
   </Step>
   <Step title="Prüfen Sie die zu entfernenden Geräte" icon="arrow-right" title-type="p">
     Sind AVAs zugewiesen, listet **Zu Arbeitsplatz ändern?** diese auf. Bestätigen Sie **Entfernen und ändern** nur, wenn die Zuweisungen entfernt und alle Kennzahlenberechnungen beendet werden sollen. Speichern Sie die Änderung. Arbeitsplätzen lassen sich keine AVAs zuweisen.
@@ -89,7 +89,7 @@ Richten Sie **BDE Assist** mit den folgenden Schritten für Warnungen ein. [Masc
 
 <Steps>
   <Step title="Wählen Sie, wie Schichten beginnen" icon="arrow-right" title-type="p">
-    Öffnen Sie als Administrator **Schichten** in der Maschinenkonfiguration. Aktivieren Sie **Aktive Schicht**, damit Schichten bei Leerlauf, Produktion oder Vorbereitung beginnen. Lassen Sie die Einstellung ausgeschaltet, um den Plan der zugewiesenen Schichtgruppe zu verwenden.
+    Öffnen Sie als Admin **Schichten** in der Maschinenkonfiguration. Aktivieren Sie **Aktive Schicht**, damit Schichten bei Leerlauf, Produktion oder Vorbereitung beginnen. Lassen Sie die Einstellung ausgeschaltet, um den Plan der zugewiesenen Schichtgruppe zu verwenden.
   </Step>
   <Step title="Legen Sie das Ende aktiver Schichten fest" icon="arrow-right" title-type="p">
     Stellen Sie **Minimale Schichtlänge**, **Stillstand, der eine Schicht beendet** und **Maximale Schichtlänge** in Stunden größer als 0 ein. Mindest- und Stillstandsdauer dürfen die Höchstdauer nicht überschreiten. Diese beträgt höchstens 24 Stunden. Vor Erreichen der Mindestdauer bleiben kürzere Stillstände als Aus-Zeit in der Schicht. Danach beendet der erste Stillstand die Schicht. Bei der Höchstdauer beginnt auch bei laufender Maschine eine neue Schicht.
@@ -106,7 +106,7 @@ Richten Sie **BDE Assist** mit den folgenden Schritten für Warnungen ein. [Masc
 
 <Steps>
   <Step title="Wählen Sie die benötigte Hilfe" icon="arrow-right" title-type="p">
-    Öffnen Sie als Administrator **BDE Assist** und haken Sie **Intervall-Assistent** an. Ohne gespeicherte Optionen sind Start- und Endkorrektur vorausgewählt. Prüfen Sie sie vor dem Speichern. Stellen Sie unter **Startzeit** und **Endzeit** Produktion und Vorbereitung getrennt ein. Wählen Sie bei der Vorbereitung nach Bedarf das Ende des vorherigen Auftrags, Einschalten oder Produktionsstopp. Wählen Sie **Als die Produktion begann**, wenn die Vorbereitung mit Produktionsbeginn enden soll. Prüfen Sie Lückenbedingungen in der [Maschinenkonfiguration](/de/platform-intro/pages/machine-configuration).
+    Öffnen Sie als Admin **BDE Assist** und haken Sie **Intervall-Assistent** an. Ohne gespeicherte Optionen sind Start- und Endkorrektur vorausgewählt. Prüfen Sie sie vor dem Speichern. Stellen Sie unter **Startzeit** und **Endzeit** Produktion und Vorbereitung getrennt ein. Wählen Sie bei der Vorbereitung nach Bedarf das Ende des vorherigen Auftrags, Einschalten oder Produktionsstopp. Wählen Sie **Als die Produktion begann**, wenn die Vorbereitung mit Produktionsbeginn enden soll. Prüfen Sie Lückenbedingungen in der [Maschinenkonfiguration](/de/platform-intro/pages/machine-configuration).
   </Step>
   <Step title="Legen Sie fest, wann gefragt wird" icon="arrow-right" title-type="p">
     Wählen Sie unter **Wie Änderungen übernommen werden** zwischen **Maschinenbediener fragen** und **Automatisch das Beste wählen**. Stellen Sie automatische Grenze und Fragegrenze in Stunden ein. Ältere Zeiten zwischen beiden Grenzen benötigen immer eine Auswahl. Öffnen Sie **Wie werden die Zeiten gewählt?**, wählen Sie ein Beispiel und prüfen Sie mit **Zurück** und **Weiter** das Ergebnis anhand der Grenzen dieser Maschine.
@@ -139,7 +139,7 @@ Die Maschine verhält sich korrekt in Überwachungs-, Berichts-, Alarmierungs- u
 ## Häufige Probleme und Sonderfälle
 
 - Einige Tabs sind erst verfügbar, wenn die Maschine existiert.
-- Nicht gespeicherte Tab-Änderungen können verloren gehen, wenn der Benutzer zu früh wechselt.
+- Nicht gespeicherte Tab-Änderungen können verloren gehen, wenn der User zu früh wechselt.
 - Wenn AVA-Einträge nicht gespeichert werden können, prüfen und korrigieren Sie die markierten ungültigen oder doppelten Einträge.
 - Aktivieren Sie die Stromversorgung des Sensors über die Maschine nur, wenn der Sensor zusammen mit der Maschine seine Stromversorgung verliert. Andernfalls könnte ein fehlendes Signal als Abschaltung eingeordnet werden.
 

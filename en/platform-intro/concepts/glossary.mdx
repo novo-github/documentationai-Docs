@@ -269,13 +269,13 @@ Share of total recorded machine time in Production. AVL remains AVL in German an
 
 ### Back to pool
 
-**Back to pool** returns unfinished work to the machine’s own hall pool from Data Acquisition V3. It is also the confirmation button in Assignment Planner after you drop a started, stopped card onto a hall pool. Administrators and users with access to the Orders page can choose any hall pool there. Other users can only return work to the pool of its current machine’s hall. Everyone needs access to the operation’s current machine. If work has started, its times and good parts stay on the original machine and only the remainder is passed on. **Reason (optional)** gives the next machine operator a note.
+**Back to pool** returns unfinished work to the machine’s own hall pool from Data Acquisition V3. It is also the confirmation button in Assignment Planner after you drop a started, stopped card onto a hall pool. Admins and users with access to the Orders page can choose any hall pool there. Other users can only return work to the pool of its current machine’s hall. Everyone needs access to the operation’s current machine. If work has started, its times and good parts stay on the original machine and only the remainder is passed on. **Reason (optional)** gives the next machine operator a note.
 
 [Learn more](/en/platform-intro/pages/data-acquisition).
 
 ### BDE access templates
 
-**BDE access templates** are shared settings for selected machines’ Data Acquisition V3 pages. Administrators manage them in the Admin Panel. Each machine uses at most one template. The rules apply to everyone on that BDE page, including administrators, without changing other pages.
+**BDE access templates** are shared settings for selected machines’ Data Acquisition V3 pages. Admins manage them in the Admin Panel. Each machine uses at most one template. The rules apply to everyone on that BDE page, including Admins, without changing other pages.
 
 - **Always shown** keeps selected fields visible.
 - **Always highlighted** keeps selected fields highlighted when they are visible.
@@ -337,7 +337,7 @@ How long an Automator condition must stay normal before an event can clear.
 
 ### Company Sorting Default
 
-The sorting chosen by an administrator through **Save as company default** in Assignment Planner. It includes the mode, shared rules, and the **Moves** choice for where moved orders land. People without their own sorting start with it. Data Acquisition uses the mode and shared rules only. A reset copies the current company choices into your own settings; later company changes do not replace them.
+The sorting chosen by an Admin through **Save as company default** in Assignment Planner. It includes the mode, shared rules, and the **Moves** choice for where moved orders land. People without their own sorting start with it. Data Acquisition uses the mode and shared rules only. A reset copies the current company choices into your own settings; later company changes do not replace them.
 
 [Learn more](/en/platform-intro/pages/assignment-planner).
 
@@ -636,7 +636,7 @@ The operation count tells you how many of the order's operations have a machine.
 
 #### Jobs in Parallel
 
-**Jobs in parallel** is how many assignments a machine can run at the same time. Administrators set a whole number from 1 to 100 in machine configuration; the forecast uses this capacity.
+**Jobs in parallel** is how many assignments a machine can run at the same time. Admins set a whole number from 1 to 100 in machine configuration; the forecast uses this capacity.
 
 
 [Learn more](/en/platform-intro/pages/assignment-gantt).
@@ -1225,7 +1225,7 @@ Produced-piece counts. PCS on Hall Plan and kiosk figures stays unchanged across
 
 ### PDA Assist
 
-**PDA Assist** (previously **PDA Assistant**) combines interval assistance and warnings for a machine. Administrators configure them separately. Machine operators can choose suggested times and review, snooze, or mute warnings.
+**PDA Assist** (previously **PDA Assistant**) combines interval assistance and warnings for a machine. Admins configure them separately. Machine operators can choose suggested times and review, snooze, or mute warnings.
 
 [Learn more](/en/platform-intro/pages/machine-configuration).
 
@@ -1237,7 +1237,7 @@ Produced-piece counts. PCS on Hall Plan and kiosk figures stays unchanged across
 
 #### Setup (preparation)
 
-**Setup (preparation)** groups the allowed setup times separately from production in **PDA Assist**. Administrators can change the two groups independently. These options also guide reviews of past intervals.
+**Setup (preparation)** groups the allowed setup times separately from production in **PDA Assist**. Admins can change the two groups independently. These options also guide reviews of past intervals.
 
 [Learn more](/en/platform-intro/pages/machine-configuration).
 
@@ -1256,7 +1256,7 @@ Produced-piece counts. PCS on Hall Plan and kiosk figures stays unchanged across
 
 ### Improve intervals
 
-A check of recorded intervals against machine activity for up to 60 days. It proposes changes and shows their impact before you apply them. Anyone with machine access can review one machine; only administrators can review several and apply the best options everywhere.
+A check of recorded intervals against machine activity for up to 60 days. It proposes changes and shows their impact before you apply them. Anyone with machine access can review one machine; only Admins can review several and apply the best options everywhere.
 
 [Learn more](/en/platform-intro/workflows/improve-intervals).
 
@@ -1324,7 +1324,7 @@ Setup before production. **Vorber.** is used on German PDA buttons; **Vorb.** (p
 
 ### Priority
 
-An urgency number interpreted using the company’s **Which number is more urgent?** setting. **Higher number = more urgent** is the default; **Lower number = more urgent** reverses it. Administrators choose the direction and levels in **Admin Panel → Priority Levels**.
+An urgency number interpreted using the company’s **Which number is more urgent?** setting. **Higher number = more urgent** is the default; **Lower number = more urgent** reverses it. Admins choose the direction and levels in **Admin Panel → Priority Levels**.
 
 [Learn more](/en/platform-intro/pages/admin-panel).
 
@@ -1424,7 +1424,7 @@ The dashboard tooltip states 95% and directs changes to an admin. Automatic repl
 
 ### Queue Order and Operation Priority Stay in Step
 
-**Queue order and operation priority stay in step** is an administrator setting, on by default. In the Planner’s queue-position mode, dragging an operation can change its operation priority, and changing its card priority can reposition its parts in accessible queues. Turning it off separates the two actions. **Undo** in a drag’s priority notice restores priority and keeps the dropped position.
+**Queue order and operation priority stay in step** is an Admin setting, on by default. In the Planner’s queue-position mode, dragging an operation can change its operation priority, and changing its card priority can reposition its parts in accessible queues. Turning it off separates the two actions. **Undo** in a drag’s priority notice restores priority and keeps the dropped position.
 
 [Learn more](/en/platform-intro/pages/admin-panel#how-priorities-are-used).
 
@@ -1466,7 +1466,7 @@ A Machines filter for orders worked on today, including preparation and complete
 
 ### Re-sort
 
-**Re-sort** (previously **Sort by priority and date**) proposes a queue sequence from **Sort rules** or one priority or date. Under **Rules from**, **My sorting** uses your Planner rules; **Company standard** copies the administrator’s rules when available. **Changed** marks temporary rules matching neither choice. These edits apply to this re-sort only and do not replace saved sorting. Clear **Can move** to keep an operation in place. Re-sorting does not change priorities or keep sorting automatically.
+**Re-sort** (previously **Sort by priority and date**) proposes a queue sequence from **Sort rules** or one priority or date. Under **Rules from**, **My sorting** uses your Planner rules; **Company standard** copies the Admin’s rules when available. **Changed** marks temporary rules matching neither choice. These edits apply to this re-sort only and do not replace saved sorting. Clear **Can move** to keep an operation in place. Re-sorting does not change priorities or keep sorting automatically.
 
 [Learn more](/en/platform-intro/pages/assignment-planner).
 
@@ -1486,13 +1486,13 @@ Read the selected condition: setup and cycle checks compare time with a plan or 
 
 ### Revision
 
-**Revision** identifies an updated report in the archive. Its number increases when the report is rebuilt with changed contents. Every scheduled report is checked automatically once, 3 days after it was sent. If the data changed, the report gets a new revision. If nothing changed, it stays as it is. As an Administrator, you can also select **Rebuild with current data** at any time. For example, **Revision 3, updated …** shows its revision and update time. The first revision has no revision line. Downloads always contain the latest revision; emails already sent are not sent again. **Version 2** beside the period refers to the report layout.
+**Revision** identifies an updated report in the archive. Its number increases when the report is rebuilt with changed contents. Every scheduled report is checked automatically once, 3 days after it was sent. If the data changed, the report gets a new revision. If nothing changed, it stays as it is. As an Admin, you can also select **Rebuild with current data** at any time. For example, **Revision 3, updated …** shows its revision and update time. The first revision has no revision line. Downloads always contain the latest revision; emails already sent are not sent again. **Version 2** beside the period refers to the report layout.
 
 [Learn more](/en/platform-intro/pages/report-archive).
 
 ### Report archive
 
-Only Administrators can open **Report archive**. Other users do not see it.
+Only Admins can open **Report archive**. Other users do not see it.
 
 **Report archive** contains **Weekly**, **Monthly**, and **Export** reports. **Scheduled** means a scheduled report; **By user** means someone requested it.
 
@@ -1738,7 +1738,7 @@ Duration buckets, such as 1–5 or 5–30 minutes, used to count downtime freque
 
 ### Downtime reason
 
-A label explaining a downtime period. Administrators maintain shared reasons and choose where machine operators may select them. Removing a reason from a machine's selection does not remove past labels. Deleting the reason keeps past entries but removes their reason.
+A label explaining a downtime period. Admins maintain shared reasons and choose where machine operators may select them. Removing a reason from a machine's selection does not remove past labels. Deleting the reason keeps past entries but removes their reason.
 
 In [Hall Plan](/en/platform-intro/pages/hall-plan#downtime-reason), **Downtime reason** is a card in **V2** and **V3** showing the reason the machine operator chose on the PDA page for the current downtime. It appears only while the machine is idle or off, if a reason was chosen and the card is enabled. The previous shift never shows it.
 
@@ -1758,7 +1758,7 @@ A reason's optional **Code**, such as F12, is unique within the company and uses
 
 ### All reasons (default) / Only selected reasons
 
-**All reasons (default)** includes every company reason and future additions. **Only selected reasons** limits the choices to a fixed list, which can be empty. An empty list means machine operators cannot choose a downtime reason. Deleting the last selected reason leaves that restricted list empty until an administrator changes it.
+**All reasons (default)** includes every company reason and future additions. **Only selected reasons** limits the choices to a fixed list, which can be empty. An empty list means machine operators cannot choose a downtime reason. Deleting the last selected reason leaves that restricted list empty until an Admin changes it.
 
 [Learn more](/en/platform-intro/pages/machine-configuration).
 
@@ -1782,7 +1782,7 @@ The machines where machine operators can select a reason. Unticking a machine th
 
 ### Break settings / Label breaks automatically
 
-**Break settings** lets administrators enable **Label breaks automatically** for the company. Finished idle or off downtime during a scheduled shift break can receive that break's **Downtime reason**. **No downtime reason** skips that break. A person's choice always takes priority.
+**Break settings** lets Admins enable **Label breaks automatically** for the company. Finished idle or off downtime during a scheduled shift break can receive that break's **Downtime reason**. **No downtime reason** skips that break. A person's choice always takes priority.
 
 ### Label only the break (recommended) / Label the whole downtime
 

@@ -30,7 +30,7 @@ description: "Understand automatic shifts and find products, operation numbers, 
 
 ## Why does my shift start and end on its own?
 
-**Active shift** starts a shift when the machine begins idle, production, or preparation. Before **Minimum shift length** is reached, only a stop reaching **Stop that ends a shift** ends it. Afterward, the first stop ends it. **Maximum shift length** starts a new shift even if work continues. Administrators control these settings. See [Machine Configuration](/en/platform-intro/pages/machine-configuration).
+**Active shift** starts a shift when the machine begins idle, production, or preparation. Before **Minimum shift length** is reached, only a stop reaching **Stop that ends a shift** ends it. Afterward, the first stop ends it. **Maximum shift length** starts a new shift even if work continues. Admins control these settings. See [Machine Configuration](/en/platform-intro/pages/machine-configuration).
 
 <a id="short-stops" />
 
@@ -42,7 +42,7 @@ Before the minimum shift length is reached, a stop shorter than the configured s
 
 ## What happens to my shift plan when I turn active shifts on or off?
 
-Switching on removes scheduled shifts from today onward but keeps shifts already recorded today. The shift group stays assigned and unused. Switching off ends the running active shift immediately and creates scheduled shifts from the group from today. An administrator should check the group before switching back. Follow [Configure a Machine](/en/platform-intro/workflows/machine-configuration).
+Switching on removes scheduled shifts from today onward but keeps shifts already recorded today. The shift group stays assigned and unused. Switching off ends the running active shift immediately and creates scheduled shifts from the group from today. An Admin should check the group before switching back. Follow [Configure a Machine](/en/platform-intro/workflows/machine-configuration).
 
 <a id="shift-limits" />
 
@@ -78,13 +78,13 @@ Select the shifts you want to review. The charts follow that selection, includin
 
 ## Why can I not change how often Hall Plan switches to orders?
 
-**Key figures / orders switch** is available only while **Active order** is shown. Its maximum is half the page-switch time; shortening the page switch also limits this setting. An administrator can adjust the display. Follow [Set Up a Hall Plan Display](/en/platform-intro/workflows/hall-display-setup).
+**Key figures / orders switch** is available only while **Active order** is shown. Its maximum is half the page-switch time; shortening the page switch also limits this setting. An Admin can adjust the display. Follow [Set Up a Hall Plan Display](/en/platform-intro/workflows/hall-display-setup).
 
 <a id="shift-orders" />
 
 ## Which orders appear when Hall Plan switches away from key figures?
 
-The order view shows orders worked during the shift. **No orders worked in this shift** explains an empty view. Administrators control the alternating display with **Key figures / orders switch**. See [Hall Plan](/en/platform-intro/pages/hall-plan).
+The order view shows orders worked during the shift. **No orders worked in this shift** explains an empty view. Admins control the alternating display with **Key figures / orders switch**. See [Hall Plan](/en/platform-intro/pages/hall-plan).
 
 <a id="downtime-reason" />
 
@@ -92,13 +92,13 @@ The order view shows orders worked during the shift. **No orders worked in this 
 
 The **Downtime reason** card appears only in **V2** or **V3**, on the first slide at the end of the machine's key figures. The machine must be idle or off, and the machine operator must have chosen a reason for the current downtime on the PDA page. It is absent during production and from the previous shift. **V1** does not show it.
 
-If your hall's display settings were saved before this option was added, an administrator must enable **Visible columns → Downtime reason** once for each display version you use. The choice is saved automatically for the hall and display version as soon as the administrator ticks or clears the checkbox. Halls whose display settings have never been saved show it by default. Follow [Set Up a Hall Plan Display](/en/platform-intro/workflows/hall-display-setup#downtime-reason).
+If your hall's display settings were saved before this option was added, an Admin must enable **Visible columns → Downtime reason** once for each display version you use. The choice is saved automatically for the hall and display version as soon as the Admin ticks or clears the checkbox. Halls whose display settings have never been saved show it by default. Follow [Set Up a Hall Plan Display](/en/platform-intro/workflows/hall-display-setup#downtime-reason).
 
 <a id="automatic-break-labels" />
 
 ## How do I give breaks a reason automatically?
 
-As an administrator, open **Admin Panel → Configure Shifts and Scheduling → Shifts**, then **Break settings** directly left of **Add Shift**. Enable **Label breaks automatically**, choose the mode and select **Save**. Then edit each shift and choose a **Downtime reason** for each break. Machines using **Active shift** are not labelled. The machine must offer the break’s reason. Follow [set up automatic break labels](/en/platform-intro/workflows/shift-management#automatic-break-labels).
+As an Admin, open **Admin Panel → Configure Shifts and Scheduling → Shifts**, then **Break settings** directly left of **Add Shift**. Enable **Label breaks automatically**, choose the mode and select **Save**. Then edit each shift and choose a **Downtime reason** for each break. Machines using **Active shift** are not labelled. The machine must offer the break’s reason. Follow [set up automatic break labels](/en/platform-intro/workflows/shift-management#automatic-break-labels).
 
 <a id="grey-break-reason" />
 
@@ -122,7 +122,7 @@ No. The downtime must overlap the actual break. With a 9:15–9:30 break and 5 m
 
 ## How do I turn automatic break labels off?
 
-An administrator can open **Break settings**, turn off **Label breaks automatically**, then select **Save**. Stored break reasons remain, but the table hides them and their choices are greyed out. Follow [set up or stop automatic break labels](/en/platform-intro/workflows/shift-management#automatic-break-labels).
+An Admin can open **Break settings**, turn off **Label breaks automatically**, then select **Save**. Stored break reasons remain, but the table hides them and their choices are greyed out. Follow [set up or stop automatic break labels](/en/platform-intro/workflows/shift-management#automatic-break-labels).
 
 <a id="typed-time" />
 
@@ -152,4 +152,4 @@ Yes, if it is inside an overnight shift and lasts at most one hour. For example,
 
 ## Where can I see all breaks without opening each shift?
 
-As an administrator, open **Admin Panel → Configure Shifts and Scheduling → Shifts**. The **Breaks** column after the shift end shows each break’s times and length in the editor’s order. A dash means there are no breaks. See [Admin Panel](/en/platform-intro/pages/admin-panel#manage-shift-breaks).
+As an Admin, open **Admin Panel → Configure Shifts and Scheduling → Shifts**. The **Breaks** column after the shift end shows each break’s times and length in the editor’s order. A dash means there are no breaks. See [Admin Panel](/en/platform-intro/pages/admin-panel#manage-shift-breaks).

@@ -7,7 +7,7 @@ description: "Eine maschinenspezifische Betriebsseite für Live-Status, Schichtk
 
 **Zugriff:** Jede Rolle mit Zugriff auf diese Maschine. [Rollen und Zugriff](/de/platform-intro/concepts/roles-and-access).
 
-Geben Sie Benutzern eine detaillierte, datumsbezogene Sicht auf die Live- oder jüngste Aktivität einer Maschine.
+Geben Sie Usern eine detaillierte, datumsbezogene Sicht auf die Live- oder jüngste Aktivität einer Maschine.
 
 Öffnen Sie diese Seite über eine Maschine unter **Maschinen** oder über ihren Namen im Spaltenkopf des [Zuweisungsplaners](/de/platform-intro/pages/assignment-planner). Im Planer öffnet Strg-Klick oder Mittelklick die Maschine in einem neuen Tab.
 
@@ -67,7 +67,7 @@ Datum und Uhrzeit verwenden Tag/Monat/Jahr und Stunden/Minuten. Dauern unter ein
 
 ## OEE, AVL, PRO und Zykluswerte lesen
 
-**AVL** ist Produktionszeit geteilt durch gesamte erfasste Zeit. **PRO** ist Produktion plus Vorbereitung geteilt durch Einschaltzeit; es bedeutet Leistung, nicht Produktion. Der Qualitäts-Tooltip zeigt **95 %** und verweist für Änderungen auf einen Administrator. Diese Zeitdefinitionen weichen von üblichen OEE-Definitionen ab. Die genaue OEE-Serverformel bleibt unbestätigt.
+**AVL** ist Produktionszeit geteilt durch gesamte erfasste Zeit. **PRO** ist Produktion plus Vorbereitung geteilt durch Einschaltzeit; es bedeutet Leistung, nicht Produktion. Der Qualitäts-Tooltip zeigt **95 %** und verweist für Änderungen auf einen Admin. Diese Zeitdefinitionen weichen von üblichen OEE-Definitionen ab. Die genaue OEE-Serverformel bleibt unbestätigt.
 
 Zyklusdurchschnitte unterscheiden sich nach Quelle: gesamte Intervallzeit je erkanntem Zyklus, aktive Produktionszeit je erkanntem Zyklus oder Produktionszeit je eingegebenem Teil. Vergleichen Sie denselben Zeitraum und dieselbe Quelle. Siehe [Berechnungen und Beispiele](/de/platform-intro/concepts/calculations).
 
@@ -81,11 +81,11 @@ Energiewerte je Schicht verwenden die örtlichen Anfangs- und Endzeiten der Schi
 
 ## Maschineneinstellungen öffnen
 
-Administratoren sehen im Kopf der Seite das Zahnrad **Maschineneinstellungen**, zwischen Maschinenhistorie und Aktualisieren. Es öffnet die Einstellungen dieser Maschine im selben Tab. Mit der Zurück-Schaltfläche des Browsers oder dem Maschinenlink oberhalb der Einstellungen kehren Sie zurück. Andere Rollen sehen das Zahnrad nicht. Folgen Sie [Maschine konfigurieren](/de/platform-intro/workflows/machine-configuration).
+Admins sehen im Kopf der Seite das Zahnrad **Maschineneinstellungen**, zwischen Maschinenhistorie und Aktualisieren. Es öffnet die Einstellungen dieser Maschine im selben Tab. Mit der Zurück-Schaltfläche des Browsers oder dem Maschinenlink oberhalb der Einstellungen kehren Sie zurück. Andere Rollen sehen das Zahnrad nicht. Folgen Sie [Maschine konfigurieren](/de/platform-intro/workflows/machine-configuration).
 
 ## Intervalle verbessern
 
-Mit Zugriff auf diese Maschine wählen Sie **Intervalle verbessern** im Kopf der Zeitleiste. Die Schaltfläche erscheint, wenn der gewählte Tag mindestens ein Intervall enthält. Der Dialog startet mit dieser Maschine und diesem Tag. Administratoren können unter **Maschinen** weitere zugängliche Maschinen ergänzen. Andere Personen prüfen eine Maschine.
+Mit Zugriff auf diese Maschine wählen Sie **Intervalle verbessern** im Kopf der Zeitleiste. Die Schaltfläche erscheint, wenn der gewählte Tag mindestens ein Intervall enthält. Der Dialog startet mit dieser Maschine und diesem Tag. Admins können unter **Maschinen** weitere zugängliche Maschinen ergänzen. Andere Personen prüfen eine Maschine.
 
 Wählen Sie einen **Zeitraum**, der spätestens heute endet. Eine längere Auswahl wird mit Hinweis auf ihre jüngsten 60 Tage gekürzt. Wählen Sie unter **Anzeigen** Vorschläge zu Start, Ende, Vorbereitung, Nachbarintervallen oder **Produktion ohne Auftrag**. Wählen Sie dann **Vorschläge suchen**.
 
@@ -95,7 +95,7 @@ Start- und Endvorschläge nutzen tatsächliche Maschinenereignisse aus der jüng
 
 Nur Vorschläge, deren beste Option innerhalb der automatischen Grenze liegt, sind vorausgewählt. **Überlappungen (Warnung)** bleibt ohne Häkchen und erscheint, wenn gleichzeitige Intervalle die unter **Parallele Aufträge** eingestellte Anzahl überschreiten. Parallele Arbeit kann richtig sein; Überlappungen sind erlaubt. Prüfen Sie jede vor einer Korrektur.
 
-Übernehmen Sie mit der Aktion für ausgewählte Vorschläge die angehakten Änderungen. Administratoren können nach Prüfung der Bestätigung **Überall das Beste übernehmen** wählen. Überlappungen und Vorschläge jenseits der automatischen Grenze bleiben dabei ausgeschlossen. **Produktion ohne Auftrag** ist nur ein Hinweis. Das Werkzeug erstellt keine fehlenden Intervalle.
+Übernehmen Sie mit der Aktion für ausgewählte Vorschläge die angehakten Änderungen. Admins können nach Prüfung der Bestätigung **Überall das Beste übernehmen** wählen. Überlappungen und Vorschläge jenseits der automatischen Grenze bleiben dabei ausgeschlossen. **Produktion ohne Auftrag** ist nur ein Hinweis. Das Werkzeug erstellt keine fehlenden Intervalle.
 
 Die Suche nach Vorschlägen ändert nichts. Die Übernahme ändert historische Auftragszeiten sofort. OEE und Berichte folgen bei ihrer nächsten Berechnung. Ohne Maschinendaten lassen sich Intervalle nicht prüfen. Erlaubte Zeiten kommen aus **BDE Assist**, auch wenn die Intervallhilfe im laufenden Betrieb aus ist. Folgen Sie [Intervalle prüfen und verbessern](/de/platform-intro/workflows/improve-intervals).
 
@@ -103,7 +103,7 @@ Die Suche nach Vorschlägen ändert nichts. Die Übernahme ändert historische A
 
 Beschriftungen in Stillstandsdiagrammen enthalten den Code eines Grundes, sofern vorhanden. Kurze Beschriftungen können abgeschnitten sein. Zeigen Sie auf einen Balken oder ein Kreissegment, um Name, Code und Kategorie vollständig zu lesen. Kategorien helfen beim Erkennen der Gründe. Die Diagramme gruppieren weiterhin nach Grund.
 
-Die [Einstellungen für Stillstandsgründe](/de/platform-intro/pages/admin-panel) erklären, wie Administratoren diese Beschriftungen pflegen.
+Die [Einstellungen für Stillstandsgründe](/de/platform-intro/pages/admin-panel) erklären, wie Admins diese Beschriftungen pflegen.
 
 Beim Zuweisen eines Grundes in der Zeitleiste bietet die Auswahl nur die verfügbaren Gründe dieser Maschine an, alphabetisch und mit vorhandenem Code vor dem Namen. **Grund entfernen** entfernt eine Zuordnung. Frühere Zuordnungen bleiben sichtbar, auch wenn ihr Grund nicht mehr auswählbar ist.
 
@@ -118,7 +118,7 @@ Beim Zuweisen eines Grundes in der Zeitleiste bietet die Auswahl nur die verfüg
 ## Ergebnisse und Grenzen
 
 ### Typische Ergebnisse
-- Benutzer verstehen, was die Maschine gerade tut, und entscheiden über den nächsten Schritt.
+- User verstehen, was die Maschine gerade tut, und entscheiden über den nächsten Schritt.
 
 ### Grenzen und Leerzustände
 - Ein ausgewähltes Datum mit wenig Daten kann Teile der Seite leer wirken lassen.

@@ -43,7 +43,7 @@ description: "BDE Assist, Alarmton sowie Automator-Vorlagen und Benachrichtigung
 
 ## Wer kann Warnungen für meine Maschine einschalten?
 
-Nur Administratoren können Warnungseinstellungen ändern. Öffnen Sie in der Maschinenkonfiguration **BDE Assist** und schalten Sie zuerst **Warnungen** ein. Danach wählen Sie Verzögerungen, Schweregrad und Ton. Folgen Sie [Maschine konfigurieren](/de/platform-intro/workflows/machine-configuration).
+Nur Admins können Warnungseinstellungen ändern. Öffnen Sie in der Maschinenkonfiguration **BDE Assist** und schalten Sie zuerst **Warnungen** ein. Danach wählen Sie Verzögerungen, Schweregrad und Ton. Folgen Sie [Maschine konfigurieren](/de/platform-intro/workflows/machine-configuration).
 
 <a id="warning-action" />
 
@@ -55,7 +55,7 @@ Wählen Sie **Alle Warnungen anzeigen** und lesen Sie Auftrag und Problem. Prüf
 
 ## Wie stoppe ich den Alarmton und warum bleibt er manchmal aus?
 
-Mit **Stummschalten** schalten Sie Ihr Gerät stumm, mit **Ton aktivieren** wieder ein. Der Browser benötigt vorher einen Tipp auf die Seite. **Info** ist immer lautlos. Andere Töne hängen von den Administratoreinstellungen ab und können auf aktive Schichten begrenzt sein. Siehe [Ton des BDE Assisten](/de/platform-intro/pages/data-acquisition).
+Mit **Stummschalten** schalten Sie Ihr Gerät stumm, mit **Ton aktivieren** wieder ein. Der Browser benötigt vorher einen Tipp auf die Seite. **Info** ist immer lautlos. Andere Töne hängen von den Admin-Einstellungen ab und können auf aktive Schichten begrenzt sein. Siehe [Ton des BDE Assisten](/de/platform-intro/pages/data-acquisition).
 
 <a id="snooze" />
 
@@ -73,7 +73,7 @@ Ja. **Auf andere Maschinen kopieren…** übernimmt die angezeigten Einstellunge
 
 ## Sendet eine ausgewählte Automator-Vorlage sofort Alarme?
 
-Nein. Eine Vorlage füllt die Regel nur vor. Administratoren müssen Voraussetzungen, Maschinen, Empfänger, Schwellwerte und Zeitplan prüfen und die Regel speichern. Eine ausgeschaltete Regel bleibt gespeichert, läuft aber nicht. Folgen Sie [Automator-Regel erstellen](/de/platform-intro/workflows/automator-rule-creation).
+Nein. Eine Vorlage füllt die Regel nur vor. Admins müssen Voraussetzungen, Maschinen, Empfänger, Schwellwerte und Zeitplan prüfen und die Regel speichern. Eine ausgeschaltete Regel bleibt gespeichert, läuft aber nicht. Folgen Sie [Automator-Regel erstellen](/de/platform-intro/workflows/automator-rule-creation).
 
 <a id="email" />
 
@@ -135,7 +135,7 @@ Arbeitsplätze haben keine AVA. Regeln mit Maschinen- oder Sensormesswerten lös
 
 ## Kann ich vor einer verspäteten Lieferung einen Alarm erhalten?
 
-Ja. Ein Administrator kann eine Automator-Regel mit **Forecaster → Liefertermin gefährdet** größer als 0 erstellen. Wählen Sie vor dem Speichern E-Mail-Empfänger. Öffnen Sie das entstandene Ereignis und prüfen Sie die Verzögerung mit **Im Gantt anzeigen**. Folgen Sie [Automator-Regel erstellen](/de/platform-intro/workflows/automator-rule-creation).
+Ja. Ein Admin kann eine Automator-Regel mit **Forecaster → Liefertermin gefährdet** größer als 0 erstellen. Wählen Sie vor dem Speichern E-Mail-Empfänger. Öffnen Sie das entstandene Ereignis und prüfen Sie die Verzögerung mit **Im Gantt anzeigen**. Folgen Sie [Automator-Regel erstellen](/de/platform-intro/workflows/automator-rule-creation).
 
 <a id="schedule-rule" />
 
@@ -148,13 +148,13 @@ Terminplan-Bedingungen benötigen eine eigene Regel ohne Maschinen- oder Auftrag
 
 ## Warum endet mein Intervall von selbst?
 
-Ein Administrator hat **Vergessene Intervalle automatisch beenden** aktiviert. Produktionsintervalle enden nach der eingestellten Aus- oder Leerlaufdauer, auch ohne geöffnete BDE-Seite. Als Ende gilt die letzte Produktion oder, wenn nichts produziert wurde, der Stoppzeitpunkt. Mengen müssen noch gebucht werden. Siehe [Einstellungen zum automatischen Beenden](/de/platform-intro/pages/machine-configuration).
+Ein Admin hat **Vergessene Intervalle automatisch beenden** aktiviert. Produktionsintervalle enden nach der eingestellten Aus- oder Leerlaufdauer, auch ohne geöffnete BDE-Seite. Als Ende gilt die letzte Produktion oder, wenn nichts produziert wurde, der Stoppzeitpunkt. Mengen müssen noch gebucht werden. Siehe [Einstellungen zum automatischen Beenden](/de/platform-intro/pages/machine-configuration).
 
 <a id="stop-auto-end" />
 
 ## Wie verhindere ich, dass der Assistent mein Intervall beendet?
 
-Bitten Sie einen Administrator, unter **Maschineneinstellungen → BDE Assist** die Option **Vergessene Intervalle automatisch beenden** auszuschalten und **Speichern** zu wählen. Stummschalten oder Pausieren einer Warnung hält dies nicht an. Siehe [Maschine konfigurieren](/de/platform-intro/workflows/machine-configuration).
+Bitten Sie einen Admin, unter **Maschineneinstellungen → BDE Assist** die Option **Vergessene Intervalle automatisch beenden** auszuschalten und **Speichern** zu wählen. Stummschalten oder Pausieren einer Warnung hält dies nicht an. Siehe [Maschine konfigurieren](/de/platform-intro/workflows/machine-configuration).
 
 <a id="change-time" />
 
@@ -180,7 +180,7 @@ Ja. Je nach erlaubten Optionen kann Vorbereitung am Ende des vorherigen Interval
 
 ## Wie korrigiere ich Intervalle vergangener Tage?
 
-Öffnen Sie in den Maschinendetails einen Tag mit Intervallen und wählen Sie **Intervalle verbessern**. Prüfen Sie bis zu 60 Tage, vergleichen Sie **Jetzt** und **Danach** und übernehmen Sie ausgewählte Änderungen. Mit Maschinenzugriff ist dies für eine Maschine möglich. Nur Administratoren können mehrere prüfen oder **Überall das Beste übernehmen** nutzen. Folgen Sie [Intervalle prüfen und verbessern](/de/platform-intro/workflows/improve-intervals).
+Öffnen Sie in den Maschinendetails einen Tag mit Intervallen und wählen Sie **Intervalle verbessern**. Prüfen Sie bis zu 60 Tage, vergleichen Sie **Jetzt** und **Danach** und übernehmen Sie ausgewählte Änderungen. Mit Maschinenzugriff ist dies für eine Maschine möglich. Nur Admins können mehrere prüfen oder **Überall das Beste übernehmen** nutzen. Folgen Sie [Intervalle prüfen und verbessern](/de/platform-intro/workflows/improve-intervals).
 
 <a id="unticked" />
 
@@ -204,7 +204,7 @@ Nein. Es setzt die Optionen des gewählten Bereichs zurück und behält dessen E
 
 ## Wo öffne ich die Einstellungen dieser Maschine?
 
-Administratoren nutzen das Zahnrad **Maschineneinstellungen** neben dem Aktualisieren im Kopf der Maschinendetails. Es öffnet im selben Tab. Die Zurück-Schaltfläche des Browsers führt zur Maschine zurück. Andere Rollen sehen diese Schaltfläche nicht. Folgen Sie [Maschine konfigurieren](/de/platform-intro/workflows/machine-configuration).
+Admins nutzen das Zahnrad **Maschineneinstellungen** neben dem Aktualisieren im Kopf der Maschinendetails. Es öffnet im selben Tab. Die Zurück-Schaltfläche des Browsers führt zur Maschine zurück. Andere Rollen sehen diese Schaltfläche nicht. Folgen Sie [Maschine konfigurieren](/de/platform-intro/workflows/machine-configuration).
 
 <a id="assist-status" />
 
@@ -216,7 +216,7 @@ Der Punkt ist nur während des Countdowns zum automatischen Beenden gelb, sonst 
 
 ## Wie wählt der Assistent Zeiten und wo sehe ich ein Beispiel?
 
-Er nutzt tatsächliche Maschinenereignisse oder das Ende des vorherigen Intervalls, mit den jüngsten Möglichkeiten zuerst. Er erfindet keine Zeit an einer Grenze. Frühere Möglichkeiten stehen unter **Andere Zeiten**. Administratoren finden unter **Maschineneinstellungen → BDE Assist → Wie Änderungen übernommen werden → Wie werden die Zeiten gewählt?** sechs Beispiele und die Grenzen dieser Maschine. Siehe [Maschinenkonfiguration](/de/platform-intro/pages/machine-configuration).
+Er nutzt tatsächliche Maschinenereignisse oder das Ende des vorherigen Intervalls, mit den jüngsten Möglichkeiten zuerst. Er erfindet keine Zeit an einer Grenze. Frühere Möglichkeiten stehen unter **Andere Zeiten**. Admins finden unter **Maschineneinstellungen → BDE Assist → Wie Änderungen übernommen werden → Wie werden die Zeiten gewählt?** sechs Beispiele und die Grenzen dieser Maschine. Siehe [Maschinenkonfiguration](/de/platform-intro/pages/machine-configuration).
 
 <a id="short-gaps" />
 
@@ -230,7 +230,7 @@ Fehlende Daten unter 10 Minuten teilen Produktion nicht in einen neuen Abschnitt
 
 ## Kann ich Vorbereitungskorrekturen unabhängig von Produktionskorrekturen ändern?
 
-Ja. Administratoren können Vorbereitungsoptionen unter **Maschineneinstellungen → BDE Assist → Startzeit** und **Endzeit** getrennt wählen und dann **Speichern**. Bestehende Maschinen behalten ihr bisheriges Verhalten, bis diese Auswahl geändert wird. Die Vorbereitungsoptionen steuern auch **Intervalle verbessern**. Folgen Sie [Maschine konfigurieren](/de/platform-intro/workflows/machine-configuration).
+Ja. Admins können Vorbereitungsoptionen unter **Maschineneinstellungen → BDE Assist → Startzeit** und **Endzeit** getrennt wählen und dann **Speichern**. Bestehende Maschinen behalten ihr bisheriges Verhalten, bis diese Auswahl geändert wird. Die Vorbereitungsoptionen steuern auch **Intervalle verbessern**. Folgen Sie [Maschine konfigurieren](/de/platform-intro/workflows/machine-configuration).
 
 <a id="recommended-options" />
 
@@ -242,4 +242,4 @@ Ohne gespeicherte Optionen wählt das Einschalten von **Intervall-Assistent** St
 
 ## Kann ich vor dem Speichern sehen, wie eine Warnung aussieht?
 
-Ja. Öffnen Sie als Administrator unter **BDE Assist → Warnungen** das Informationssymbol neben der Warnung. **Wann sie erscheint** zeigt die Verzögerung. **Was der Maschinenbediener sieht** zeigt Schweregrad und Tonauswahl. Die Vorschau folgt ungespeicherten Einstellungen. Sie blinkt nicht und spielt keinen Alarm ab. Folgen Sie [Maschine konfigurieren](/de/platform-intro/workflows/machine-configuration).
+Ja. Öffnen Sie als Admin unter **BDE Assist → Warnungen** das Informationssymbol neben der Warnung. **Wann sie erscheint** zeigt die Verzögerung. **Was der Maschinenbediener sieht** zeigt Schweregrad und Tonauswahl. Die Vorschau folgt ungespeicherten Einstellungen. Sie blinkt nicht und spielt keinen Alarm ab. Folgen Sie [Maschine konfigurieren](/de/platform-intro/workflows/machine-configuration).

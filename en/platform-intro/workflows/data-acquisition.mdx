@@ -16,7 +16,7 @@ Control live production tracking for a machine and record assignments, produced 
 
 Begin on the [Data Acquisition (PDA) page](/en/platform-intro/pages/data-acquisition).
 
-A machine’s [BDE access template](/en/platform-intro/pages/bde-access-templates) can fix display choices and block actions for everyone, including administrators. Check the conditions below before adding work, correcting intervals, or returning work to the pool.
+A machine’s [BDE access template](/en/platform-intro/pages/bde-access-templates) can fix display choices and block actions for everyone, including Admins. Check the conditions below before adding work, correcting intervals, or returning work to the pool.
 
 ### Preconditions
 - The machine has a queue or a live order to work on.
@@ -85,7 +85,7 @@ If **This operation was changed in the meantime. The list has been refreshed.** 
     Read **Right now**. An amber dot means automatic ending is counting down. Green means there is no countdown; a brief glow follows a time correction. Check the order and remaining minutes against what is happening on the machine.
   </Step>
   <Step title="Change unwanted automatic ending" icon="arrow-right" title-type="p">
-    If work should remain open, ask an administrator to turn off **Auto-end forgotten intervals** and select **Save** in the machine settings. Snoozing a warning or muting sound does not stop it. Follow [Configure a Machine](/en/platform-intro/workflows/machine-configuration).
+    If work should remain open, ask an Admin to turn off **Auto-end forgotten intervals** and select **Save** in the machine settings. Snoozing a warning or muting sound does not stop it. Follow [Configure a Machine](/en/platform-intro/workflows/machine-configuration).
   </Step>
 </Steps>
 
@@ -102,7 +102,7 @@ If **This operation was changed in the meantime. The list has been refreshed.** 
     Use **Undo** in the adjustment notice to restore the pressed time. **Change…** opens the options; choose another time or **Back to the time you pressed**. The timeline updates immediately.
   </Step>
   <Step title="Check automatically ended work" icon="arrow-right" title-type="p">
-    An **Auto-ended** interval needs a quantity check. Book missing quantities afterwards. Snoozing or muting warnings does not prevent automatic ending; ask an administrator to change **Auto-end forgotten intervals** if needed.
+    An **Auto-ended** interval needs a quantity check. Book missing quantities afterwards. Snoozing or muting warnings does not prevent automatic ending; ask an Admin to change **Auto-end forgotten intervals** if needed.
   </Step>
 </Steps>
 
@@ -111,7 +111,7 @@ If **This operation was changed in the meantime. The list has been refreshed.** 
 1. While the downtime is running, open **Downtime Reason**, select **Current downtime** and tap a tile, or tap the latest timeline segment and choose a reason. Read its code and name. Use category chips to narrow the list when available.
 2. Check the running downtime's tooltip. Your reason stays visible after a page refresh, even if the downtime began before the last 8 hours shown on the timeline. When the machine restarts, your reason is saved onto that downtime. After the restart, use the timeline to correct that downtime; the tiles now pre-set upcoming stops.
 3. To correct an existing timeline label, open the period’s reason picker and choose an available reason, or **Remove label** to clear it.
-4. If the reason is rejected because availability changed, review the updated list and choose again. Ask an administrator if the required reason is missing. The machine may intentionally offer no reasons; you cannot choose one until an administrator changes that selection. See [Downtime Reasons FAQs](/en/help-center/faq/downtime-reasons).
+4. If the reason is rejected because availability changed, review the updated list and choose again. Ask an Admin if the required reason is missing. The machine may intentionally offer no reasons; you cannot choose one until an Admin changes that selection. See [Downtime Reasons FAQs](/en/help-center/faq/downtime-reasons).
 
 If the machine operator chooses a reason after the downtime ended, that reason replaces the break label for the whole downtime, also when the downtime had been split into parts around the break. Parts whose reason someone set or cleared by hand keep that choice. Setting or clearing a label by hand protects that choice from automatic labelling.
 
@@ -237,11 +237,11 @@ You need access to this machine’s PDA page. Its template must allow **Reopen c
   </Step>
 </Steps>
 
-If the operation is older than the last five, use **Time Window + All Statuses** to find it and ask your planner for help reopening it. If **Set on hold** is disabled, ask an administrator to check the template; handed-over parts need your planner’s help. See [Recently Completed](/en/platform-intro/pages/data-acquisition#recently-completed) for placement rules and display limits.
+If the operation is older than the last five, use **Time Window + All Statuses** to find it and ask your planner for help reopening it. If **Set on hold** is disabled, ask an Admin to check the template; handed-over parts need your planner’s help. See [Recently Completed](/en/platform-intro/pages/data-acquisition#recently-completed) for placement rules and display limits.
 
 ## Claim Work, Book During a Run, and Finish Safely
 
-Taking pool work requires **Take orders from the hall pool** to be allowed. Adding or finding unplanned work requires **Add orders on the machine**. Ask an administrator to review the template if an action shows **Locked for this machine (BDE template).** Starting, stopping, and booking quantities remain available as before.
+Taking pool work requires **Take orders from the hall pool** to be allowed. Adding or finding unplanned work requires **Add orders on the machine**. Ask an Admin to review the template if an action shows **Locked for this machine (BDE template).** Starting, stopping, and booking quantities remain available as before.
 
 1. If work is in the **Pool**, claim an assignment from your machine's hall. If needed, search an unplanned operation or use **Find/Create Immediate Order**.
 2. Use **Prep** for preparation, then **Start** for production. Review concurrent-order or unfinished-previous-step prompts before continuing.
@@ -253,7 +253,7 @@ Deleting an interval cannot be undone. Machine operators cannot open Orders & Pr
 
 ## Respond to an Assistant Warning
 
-An administrator must enable warnings for this machine first. Anyone with access to its PDA page can review them.
+An Admin must enable warnings for this machine first. Anyone with access to its PDA page can review them.
 
 <Steps>
   <Step title="Read all active warnings" icon="arrow-right" title-type="p">
@@ -266,7 +266,7 @@ An administrator must enable warnings for this machine first. Anyone with access
     Snooze one warning or choose **Snooze all** to hide and silence reminders for the configured duration. They remain listed under **Snoozed**. Use **Resume now** to bring one back sooner. If the cause persists, it returns when the snooze ends.
   </Step>
   <Step title="Control sound on your device" icon="arrow-right" title-type="p">
-    Choose **Enable sound** or **Mute**. Tap the page once to allow browser sound. If it remains silent, ask an administrator to check sound settings, severity, and active-shift restrictions in [Machine Configuration](/en/platform-intro/pages/machine-configuration). **Info** warnings are always silent.
+    Choose **Enable sound** or **Mute**. Tap the page once to allow browser sound. If it remains silent, ask an Admin to check sound settings, severity, and active-shift restrictions in [Machine Configuration](/en/platform-intro/pages/machine-configuration). **Info** warnings are always silent.
   </Step>
 </Steps>
 
@@ -289,7 +289,7 @@ The machine timeline, interval list, and production records reflect what happene
 
 - A pre-set expires before the machine restarts: its time starts at your tap. Extend it or choose a reason again when needed.
 - No completion question after **Continue**: this starts a new interval. The question follows **Stop** when the total reaches the plan.
-- No company sorting available when reopening: choose **At the top** or **At the bottom**, or ask an administrator to save company sorting in the Planner.
+- No company sorting available when reopening: choose **At the top** or **At the bottom**, or ask an Admin to save company sorting in the Planner.
 - If **Save** is unavailable, change a value or resolve the time message. A changed end must be after the start; changed times must not be in the future. Wait if **Saving…** is shown.
 - If **Saving did not work. Please try again.** appears, the editor stays open. Review your entries and try saving again.
 - If a running interval cannot be loaded in Order Management, try opening it again. It stays closed until its saved values can be read.

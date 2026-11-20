@@ -211,13 +211,13 @@ Quantities already split across machines stay unchanged and are marked for revie
 
 ## Can I plan work at a station without a sensor?
 
-Yes. An administrator can create a **Work center**. Select it as the destination for an order or assignment, then review **Orders today** and **Up next** under **Machines → Work centers**. Follow [Add a Machine or Work Center](/en/platform-intro/workflows/add-machine) and [Plan Machine Assignments](/en/platform-intro/workflows/assignment-planner).
+Yes. An Admin can create a **Work center**. Select it as the destination for an order or assignment, then review **Orders today** and **Up next** under **Machines → Work centers**. Follow [Add a Machine or Work Center](/en/platform-intro/workflows/add-machine) and [Plan Machine Assignments](/en/platform-intro/workflows/assignment-planner).
 
 <a id="work-center-switch" />
 
 ## What happens to the sensor when I change a machine to a work center?
 
-The change removes its AVA assignments and stops all KPI calculation. Only administrators can change the kind. To collect readings again, save it as **Machine** and assign an AVA in the AVA tab. Follow [Configure a Machine](/en/platform-intro/workflows/machine-configuration).
+The change removes its AVA assignments and stops all KPI calculation. Only Admins can change the kind. To collect readings again, save it as **Machine** and assign an AVA in the AVA tab. Follow [Configure a Machine](/en/platform-intro/workflows/machine-configuration).
 
 <a id="work-center-kpis" />
 
@@ -285,7 +285,7 @@ Running, on-hold, and finished assignments cannot use the Gantt move controls. R
 
 ## How do I tell the forecast that a machine runs several jobs at once?
 
-An administrator sets **Planning → Jobs in parallel** in the machine’s basic information. Enter a whole number from 1 to 100 that matches actual capacity, then save. Follow [Configure a Machine](/en/platform-intro/workflows/machine-configuration).
+An Admin sets **Planning → Jobs in parallel** in the machine’s basic information. Enter a whole number from 1 to 100 that matches actual capacity, then save. Follow [Configure a Machine](/en/platform-intro/workflows/machine-configuration).
 
 <a id="forecast-rule" />
 
@@ -393,7 +393,7 @@ Check whether another operation with a lower number in the same work order is st
 
 ## How do I put one order before another without raising its operation priority?
 
-Ask an administrator to turn off **Admin Panel → Priority Levels → Queue order and operation priority stay in step**. Then enable **Sort by Queue Position** and drag the card; only its place changes. While the setting is on, use **Undo** in a drag’s priority notice to restore the priority and keep the new place. Applying **Re-sort** does not change priorities either. See [queue and priority behaviour](/en/platform-intro/pages/assignment-planner#queue-order-and-operation-priority).
+Ask an Admin to turn off **Admin Panel → Priority Levels → Queue order and operation priority stay in step**. Then enable **Sort by Queue Position** and drag the card; only its place changes. While the setting is on, use **Undo** in a drag’s priority notice to restore the priority and keep the new place. Applying **Re-sort** does not change priorities either. See [queue and priority behaviour](/en/platform-intro/pages/assignment-planner#queue-order-and-operation-priority).
 
 <a id="queue-sort-access" />
 
@@ -417,7 +417,7 @@ Numbers show **Place in this queue** only in queue-position mode. Clear priority
 
 ## Who can set the sorting everyone starts with?
 
-Administrators can set the mode, rules, and **Moves** in Assignment Planner under **Filter & Sort**, then choose **Save as company default**. People without personal sorting start with it; existing personal choices take precedence. Data Acquisition uses the mode and shared rules, with separate choices for running and waiting work. Follow [Save or Use Company Sorting](/en/platform-intro/workflows/assignment-planner#save-or-use-company-sorting).
+Admins can set the mode, rules, and **Moves** in Assignment Planner under **Filter & Sort**, then choose **Save as company default**. People without personal sorting start with it; existing personal choices take precedence. Data Acquisition uses the mode and shared rules, with separate choices for running and waiting work. Follow [Save or Use Company Sorting](/en/platform-intro/workflows/assignment-planner#save-or-use-company-sorting).
 
 <a id="sorting-default-updates" />
 
@@ -437,7 +437,7 @@ Previously, running and on-hold orders stayed on top automatically with **Sort b
 
 In Data Acquisition V3, open **Card Display Settings → Sort Order → Reset to company sorting**, then **Save**. A tick means the mode and rules already match, so the button is unavailable. Reset keeps the queue-mode choices for running and waiting orders but replaces sort rules; add any special running- or waiting-order rules again. Without a company default, the icon labelled **Reset to default (no company default set yet)** restores standard choices. See [Data Acquisition](/en/platform-intro/pages/data-acquisition#use-the-company-sorting-default).
 
-If **Sorting is set by the template** appears, you cannot reset sorting here. Ask an administrator to review the [machine template](/en/platform-intro/pages/bde-access-templates).
+If **Sorting is set by the template** appears, you cannot reset sorting here. Ask an Admin to review the [machine template](/en/platform-intro/pages/bde-access-templates).
 
 <a id="back-to-pool" />
 
@@ -445,7 +445,7 @@ If **Sorting is set by the template** appears, you cannot reset sorting here. As
 
 In Data Acquisition V3, select the operation and choose **Back to pool**. Running work first opens the normal stop dialog for quantities, then any **PDA Assist** time choice. Confirm the remaining quantity and optional reason in the return dialog. Work goes to your machine’s own hall pool; recorded times and good parts stay on the original machine. Follow [return work to the pool](/en/platform-intro/workflows/data-acquisition#back-to-pool).
 
-The machine’s template must allow **Send orders back to the pool**. If the action is disabled, ask an administrator to review the [template](/en/platform-intro/pages/bde-access-templates).
+The machine’s template must allow **Send orders back to the pool**. If the action is disabled, ask an Admin to review the [template](/en/platform-intro/pages/bde-access-templates).
 
 <a id="create-after-selection" />
 
@@ -453,19 +453,19 @@ The machine’s template must allow **Send orders back to the pool**. If the act
 
 In Data Acquisition V3, **Create** becomes **Back to pool** while an operation is selected. Tap the selected card again to clear the selection and bring **Create** back. See [Data Acquisition](/en/platform-intro/pages/data-acquisition).
 
-A machine template can also block order creation or returning work. These actions remain visible but disabled. Hover over or tap one to read **Locked for this machine (BDE template).** Ask an administrator to check [allowed actions](/en/platform-intro/pages/bde-access-templates#allowed-actions).
+A machine template can also block order creation or returning work. These actions remain visible but disabled. Hover over or tap one to read **Locked for this machine (BDE template).** Ask an Admin to check [allowed actions](/en/platform-intro/pages/bde-access-templates#allowed-actions).
 
 <a id="return-disabled" />
 
 ## Why is Back to pool unavailable?
 
-The template may block the action; its explanation says **Locked for this machine (BDE template).** Ask an administrator to review it. Finished and cancelled operations stay on the machine. A machine without a hall has no pool; ask your planner to check its hall. Hover over the unavailable button to read the reason. A running operation can use **Back to pool**, but you must stop it in the dialog first. See [return requirements](/en/platform-intro/workflows/data-acquisition#back-to-pool).
+The template may block the action; its explanation says **Locked for this machine (BDE template).** Ask an Admin to review it. Finished and cancelled operations stay on the machine. A machine without a hall has no pool; ask your planner to check its hall. Hover over the unavailable button to read the reason. A running operation can use **Back to pool**, but you must stop it in the dialog first. See [return requirements](/en/platform-intro/workflows/data-acquisition#back-to-pool).
 
 <a id="handover-machine" />
 
 ## Can I send the remaining work straight to another machine?
 
-Administrators and users with access to the Orders page can drag a started, stopped card in Assignment Planner onto another machine they can access. Every user also needs access to the operation’s current machine. Other users can only return work to the pool of its current machine’s hall, in Assignment Planner or Data Acquisition. Review **Quantity left**, add **Reason (optional)**, and confirm **Move**. The remainder goes to the top of that machine’s queue. Administrators and users with access to the Orders page can also choose any hall pool. Data Acquisition only returns work to the current machine’s own hall pool. Follow [hand over work](/en/platform-intro/workflows/assignment-planner#hand-over-work).
+Admins and users with access to the Orders page can drag a started, stopped card in Assignment Planner onto another machine they can access. Every user also needs access to the operation’s current machine. Other users can only return work to the pool of its current machine’s hall, in Assignment Planner or Data Acquisition. Review **Quantity left**, add **Reason (optional)**, and confirm **Move**. The remainder goes to the top of that machine’s queue. Admins and users with access to the Orders page can also choose any hall pool. Data Acquisition only returns work to the current machine’s own hall pool. Follow [hand over work](/en/platform-intro/workflows/assignment-planner#hand-over-work).
 
 <a id="handover-quantity" />
 
@@ -485,7 +485,7 @@ No. **Handed over** marks the finished part on the original machine. The rest re
 
 ## Can I undo a handover?
 
-Administrators and users with access to the Orders page can undo a handover of started work manually, but only while the remainder has not started and is still waiting in a pool or queue. If it has already run on the other machine, you cannot undo it. Do not delete that part: deleting it also deletes its recorded times.
+Admins and users with access to the Orders page can undo a handover of started work manually, but only while the remainder has not started and is still waiting in a pool or queue. If it has already run on the other machine, you cannot undo it. Do not delete that part: deleting it also deletes its recorded times.
 
 First, note the original quantity: the second number in **Partly done:**, such as 100 in “40 of 100”. You can also find it by hovering over the order’s **Handed over** badge. After deleting the new part, the line changes to **Done on** and no longer shows the original quantity. If no “of …” number appears because the planned quantity was unknown, there is no original quantity to restore.
 
@@ -512,7 +512,7 @@ With **Sort by Queue Position** on, moving ahead of more urgent work can raise o
 
 ## Why did my card move when I changed its priority?
 
-In queue-position mode, changing the **OP** chip can move the card past work that is less urgent when raised, or more urgent when lowered. Equal-priority cards keep their relative order. For a split operation, its parts can move in other accessible queues too. Administrators can turn this off under **Admin Panel → Priority Levels → Queue order and operation priority stay in step**. Follow [set an operation priority](/en/platform-intro/workflows/assignment-planner#set-an-operation-priority-and-filter-the-plan).
+In queue-position mode, changing the **OP** chip can move the card past work that is less urgent when raised, or more urgent when lowered. Equal-priority cards keep their relative order. For a split operation, its parts can move in other accessible queues too. Admins can turn this off under **Admin Panel → Priority Levels → Queue order and operation priority stay in step**. Follow [set an operation priority](/en/platform-intro/workflows/assignment-planner#set-an-operation-priority-and-filter-the-plan).
 
 <a id="drag-priority-undo" />
 
@@ -524,7 +524,7 @@ In queue-position mode, changing the **OP** chip can move the card past work tha
 
 ## Who decides whether a smaller priority number is more urgent?
 
-Administrators choose **Higher number = more urgent** or **Lower number = more urgent** under **Admin Panel → Priority Levels → How priorities are used → Which number is more urgent?** Each change saves immediately. SAP presets select higher numbers first; Epicor and Infor select lower numbers first. Resetting the levels restores higher numbers first. Your own sorting-rule directions remain unchanged. Follow [company priority setup](/en/platform-intro/workflows/assignment-planner#set-how-the-company-uses-priorities).
+Admins choose **Higher number = more urgent** or **Lower number = more urgent** under **Admin Panel → Priority Levels → How priorities are used → Which number is more urgent?** Each change saves immediately. SAP presets select higher numbers first; Epicor and Infor select lower numbers first. Resetting the levels restores higher numbers first. Your own sorting-rule directions remain unchanged. Follow [company priority setup](/en/platform-intro/workflows/assignment-planner#set-how-the-company-uses-priorities).
 
 <a id="running-queue-position" />
 
@@ -636,7 +636,7 @@ Both refer to an operation within an order. English labels now use “operation�
 
 ## Who can give several BDE pages the same settings?
 
-Administrators can open **Admin Panel → BDE access templates → New template**, select machines, and choose required fields, highlights, optional fixed sorting and refresh, and allowed actions. Follow [Make the BDE Page the Same on Several Machines](/en/platform-intro/workflows/bde-access-templates).
+Admins can open **Admin Panel → BDE access templates → New template**, select machines, and choose required fields, highlights, optional fixed sorting and refresh, and allowed actions. Follow [Make the BDE Page the Same on Several Machines](/en/platform-intro/workflows/bde-access-templates).
 
 <a id="template-name-taken" />
 
@@ -648,25 +648,25 @@ A name is required, with up to 80 characters, and must be unique within your com
 
 ## Why can’t I hide a field or change sorting or automatic refresh?
 
-The machine may use a template. **Set by the template** marks required choices. **Sorting is set by the template** means sorting is fixed here. You can still choose other fields and highlights. Ask an administrator to change the shared choices in [BDE Access Templates](/en/platform-intro/pages/bde-access-templates).
+The machine may use a template. **Set by the template** marks required choices. **Sorting is set by the template** means sorting is fixed here. You can still choose other fields and highlights. Ask an Admin to change the shared choices in [BDE Access Templates](/en/platform-intro/pages/bde-access-templates).
 
 <a id="template-highlights" />
 
 ## Why is a field set to always be highlighted still missing?
 
-**Always highlighted** only adds a highlight when the field is visible. Show the field in **Card Display Settings**, or ask an administrator to also select it under **Always shown**. See [template display settings](/en/platform-intro/pages/bde-access-templates#display-settings).
+**Always highlighted** only adds a highlight when the field is visible. Show the field in **Card Display Settings**, or ask an Admin to also select it under **Always shown**. See [template display settings](/en/platform-intro/pages/bde-access-templates#display-settings).
 
 <a id="hidden-pda-actions" />
 
 ## Why can’t I change an order’s status or take work from the pool?
 
-The machine’s template can block status changes, taking or returning pool work, and adding orders. Action buttons stay visible but disabled, with **Locked for this machine (BDE template).** on hover or tap. A blocked status menu does not open. These limits apply to administrators too. Booking quantities still works. After **Stop**, **Complete** and **Keep on hold** remain available when the planned quantity is reached. **Reopen completed operations** controls reopening separately. **PDA Assist** also stays available as before. Ask an administrator to review **Allowed on the BDE page**. See [allowed actions](/en/platform-intro/pages/bde-access-templates#allowed-actions).
+The machine’s template can block status changes, taking or returning pool work, and adding orders. Action buttons stay visible but disabled, with **Locked for this machine (BDE template).** on hover or tap. A blocked status menu does not open. These limits apply to Admins too. Booking quantities still works. After **Stop**, **Complete** and **Keep on hold** remain available when the planned quantity is reached. **Reopen completed operations** controls reopening separately. **PDA Assist** also stays available as before. Ask an Admin to review **Allowed on the BDE page**. See [allowed actions](/en/platform-intro/pages/bde-access-templates#allowed-actions).
 
 <a id="read-only-pda-details" />
 
 ## Why can I read intervals and notes but not correct them?
 
-The template can turn off **Correct interval times and quantities** or **Edit notes and order details** on this machine’s BDE page. The information stays readable. Interval edit icons and **Save** stay visible but disabled, with **Locked for this machine (BDE template).** on hover or tap. Notes and details remain read-only. Ask an administrator to review the [template’s allowed actions](/en/platform-intro/pages/bde-access-templates#allowed-actions).
+The template can turn off **Correct interval times and quantities** or **Edit notes and order details** on this machine’s BDE page. The information stays readable. Interval edit icons and **Save** stay visible but disabled, with **Locked for this machine (BDE template).** on hover or tap. Notes and details remain read-only. Ask an Admin to review the [template’s allowed actions](/en/platform-intro/pages/bde-access-templates#allowed-actions).
 
 <a id="template-refresh" />
 
@@ -732,7 +732,7 @@ With planning access and machine access, open **Re-sort → Sort rules** in the 
 
 ## Does changing rules in Re-sort change my saved sorting?
 
-No. **Rules from → My sorting** restores your Planner rules; **Company standard** copies the administrator’s rules when available. **Changed** means the current rules match neither choice. These changes apply only to this re-sort. Reopening starts with your Planner rules again. To keep different personal rules, edit **Filter & Sort → Sort** in the Planner. See [Re-sort a Queue](/en/platform-intro/pages/assignment-planner#re-sort-a-queue).
+No. **Rules from → My sorting** restores your Planner rules; **Company standard** copies the Admin’s rules when available. **Changed** means the current rules match neither choice. These changes apply only to this re-sort. Reopening starts with your Planner rules again. To keep different personal rules, edit **Filter & Sort → Sort** in the Planner. See [Re-sort a Queue](/en/platform-intro/pages/assignment-planner#re-sort-a-queue).
 
 <a id="queue-mode-rules" />
 
@@ -762,7 +762,7 @@ Open **Filter & Sort → Filter**. The import filter is now grouped with the oth
 
 ## How do I use company sorting in a PDA template?
 
-As an administrator, open **Admin Panel → BDE access templates** and edit the template. Turning on **Use a fixed sorting** starts from the company sorting only if a company sorting is saved in the Planner and the template had no fixed sorting before. Otherwise, the starting choices are unchanged. **Use company sorting** appears in the sorting section only when company sorting exists. It shows a tick while the template already uses that sorting. It copies the sort mode and rules; choices for running and on-hold orders and for orders waiting on a previous operation stay unchanged. Without company sorting, the section keeps its usual reset to the built-in default. Review and save the template. Follow [the template workflow](/en/platform-intro/workflows/bde-access-templates).
+As an Admin, open **Admin Panel → BDE access templates** and edit the template. Turning on **Use a fixed sorting** starts from the company sorting only if a company sorting is saved in the Planner and the template had no fixed sorting before. Otherwise, the starting choices are unchanged. **Use company sorting** appears in the sorting section only when company sorting exists. It shows a tick while the template already uses that sorting. It copies the sort mode and rules; choices for running and on-hold orders and for orders waiting on a previous operation stay unchanged. Without company sorting, the section keeps its usual reset to the built-in default. Review and save the template. Follow [the template workflow](/en/platform-intro/workflows/bde-access-templates).
 
 <a id="template-save-unchanged" />
 
@@ -798,13 +798,13 @@ On the machine’s PDA page, open **Recently completed → Set on hold**. Check 
 
 ## Why is Set on hold disabled or missing on a completed operation?
 
-If **Set on hold** is visible but disabled, the machine’s template may block **Reopen completed operations**. Hover over or tap it to read **Locked for this machine (BDE template).** An administrator can enable it under **Admin Panel → BDE access templates → Allowed on the BDE page**, while leaving **Change the order status** off. Reopening starts allowed, including in existing templates. **Handed over** parts never offer this action; ask your planner about reversing a handover. See [allowed actions](/en/platform-intro/pages/bde-access-templates#allowed-actions).
+If **Set on hold** is visible but disabled, the machine’s template may block **Reopen completed operations**. Hover over or tap it to read **Locked for this machine (BDE template).** An Admin can enable it under **Admin Panel → BDE access templates → Allowed on the BDE page**, while leaving **Change the order status** off. Reopening starts allowed, including in existing templates. **Handed over** parts never offer this action; ask your planner about reversing a handover. See [allowed actions](/en/platform-intro/pages/bde-access-templates#allowed-actions).
 
 <a id="reopen-queue-placement" />
 
 ## Where does a reopened operation go in the queue?
 
-Choose **By company sorting**, **At the top**, or **At the bottom** under **Put in queue**. Company sorting uses the saved rules shown below the choices; it is unavailable until an administrator saves company sorting in the Planner. Your last successful choice is remembered. Otherwise, company sorting is selected when available, and the top when it is not. Priorities and dates stay unchanged. See [placement rules](/en/platform-intro/pages/data-acquisition#recently-completed).
+Choose **By company sorting**, **At the top**, or **At the bottom** under **Put in queue**. Company sorting uses the saved rules shown below the choices; it is unavailable until an Admin saves company sorting in the Planner. Your last successful choice is remembered. Otherwise, company sorting is selected when available, and the top when it is not. Priorities and dates stay unchanged. See [placement rules](/en/platform-intro/pages/data-acquisition#recently-completed).
 
 <a id="reopened-badge" />
 
@@ -852,7 +852,7 @@ The count includes operations moved to another destination during import and add
 
 ## Why can I see a button but cannot use it?
 
-Hover over or tap it. **Locked for this machine (BDE template).** means the machine’s template blocks the action, including for administrators. Ask an administrator to review **Admin Panel → BDE access templates → Allowed on the BDE page**. The status stays visible without a menu when status changes are blocked. See [allowed actions](/en/platform-intro/pages/bde-access-templates#allowed-actions).
+Hover over or tap it. **Locked for this machine (BDE template).** means the machine’s template blocks the action, including for Admins. Ask an Admin to review **Admin Panel → BDE access templates → Allowed on the BDE page**. The status stays visible without a menu when status changes are blocked. See [allowed actions](/en/platform-intro/pages/bde-access-templates#allowed-actions).
 
 <a id="orders-pinned-columns" />
 

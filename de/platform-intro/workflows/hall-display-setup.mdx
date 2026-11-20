@@ -5,7 +5,7 @@ description: "Registrieren Sie ein Hallendisplay, wählen Sie Kioskinhalte und Z
 
 ## Bevor Sie beginnen
 
-**Wer darf das tun: Admin.** Beginnen Sie unter **Administrationsbereich → Hallen**, Route `/admin-panel`. Ein registriertes Display öffnet den [Hallenplan](/de/platform-intro/pages/hall-plan), Route `/hallPlan/:id`, mit API-Schlüssel statt Benutzeranmeldung.
+**Wer darf das tun: Admin.** Beginnen Sie unter **Administrationsbereich → Hallen**. Ein registriertes Display öffnet den [Hallenplan](/de/platform-intro/pages/hall-plan) ohne User-Anmeldung über einen eigenen Zugangsschlüssel.
 
 ## Das Display konfigurieren und öffnen
 
@@ -23,7 +23,7 @@ Prüfen Sie beide Ansichten des Wechsels auf dem Display. **Keine Aufträge in d
 
 ## Den aktuellen Stillstandsgrund anzeigen
 
-Nur Administratoren können diese Anzeigeeinstellungen der Halle speichern.
+Nur Admins können diese Anzeigeeinstellungen der Halle speichern.
 
 1. Öffnen Sie die Anzeigeeinstellungen des Hallenplans und wählen Sie **Anzeigeversion → V2** oder **V3**. **V1** zeigt die Karte nicht.
 2. Wählen Sie unter **Angezeigte Spalten** das Kontrollkästchen **Stillstandsgrund** aus. Die Auswahl wird automatisch für die Halle und Anzeigeversion gespeichert, sobald Sie das Kontrollkästchen auswählen oder abwählen. Wurden die Anzeigeeinstellungen der Halle vor Einführung dieser Option gespeichert, schalten Sie sie einmal für jede verwendete Version ein. Bei Hallen, deren Anzeigeeinstellungen noch nie gespeichert wurden, erscheint die Karte standardmäßig.
@@ -41,7 +41,7 @@ Beachten Sie bei Maschinen mit **Aktive Schicht** die Angabe **läuft** und die 
 
 ## Erwartetes Ergebnis und Fehlerbehebung
 
-Der Monitor zeigt und wechselt die konfigurierten Halleninformationen ohne Benutzeranmeldung. **PRO** bedeutet Leistung statt Produktion; **PCS** ist die Stückzahl.
+Der Monitor zeigt und wechselt die konfigurierten Halleninformationen ohne User-Anmeldung. **PRO** bedeutet Leistung statt Produktion; **PCS** ist die Stückzahl.
 
 Bei veralteten Daten prüfen Sie letzten Kontakt und Netzwerkinformationen. Ein Display ohne Meldung seit **24 Stunden** wird als nicht gesehen angezeigt. Displayverbindung und Maschinenproduktionszustand sind getrennte Informationen.
 

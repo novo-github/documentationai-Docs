@@ -559,7 +559,7 @@ toc: false
   #### [Label Shift Breaks Automatically](/en/platform-intro/pages/break-settings)
   {/* feature: shift-break-labels */}
 
-  Administrators can now give each shift break a **Downtime reason**. Open **Admin Panel → Configure Shifts and Scheduling → Shifts**, then **Break settings** directly left of **Add Shift**. Turn on **Label breaks automatically**, choose how much time to label, then select **Save**. Edit each shift to choose its break reasons. Follow [set up automatic break labels](/en/platform-intro/workflows/shift-management#automatic-break-labels).
+  Admins can now give each shift break a **Downtime reason**. Open **Admin Panel → Configure Shifts and Scheduling → Shifts**, then **Break settings** directly left of **Add Shift**. Turn on **Label breaks automatically**, choose how much time to label, then select **Save**. Edit each shift to choose its break reasons. Follow [set up automatic break labels](/en/platform-intro/workflows/shift-management#automatic-break-labels).
 
   **Label only the break (recommended)** starts with 5 minutes of **Tolerance** before and after the break. For a 9:15–9:30 break and a 9:00–9:50 downtime, 9:10–9:35 gets the break reason. **Label the whole downtime** labels all 50 minutes, which can hide a longer breakdown.
 
@@ -570,7 +570,7 @@ toc: false
   #### [See Where a Downtime Reason Is Used Before Deleting It](/en/platform-intro/pages/admin-panel#manage-downtime-reasons)
   {/* feature: shift-break-labels */}
 
-  Administrators now see the affected past downtimes, machine reason lists, downtime reason rules and breaks in the deletion notice. Open **Admin Panel → Configure Analyzers → Downtime reasons**, then select **Delete** in the reason’s row menu. Follow [delete a shared reason](/en/platform-intro/workflows/timeline-reason-creation#delete-reason).
+  Admins now see the affected past downtimes, machine reason lists, downtime reason rules and breaks in the deletion notice. Open **Admin Panel → Configure Analyzers → Downtime reasons**, then select **Delete** in the reason’s row menu. Follow [delete a shared reason](/en/platform-intro/workflows/timeline-reason-creation#delete-reason).
 
   Deleting a reason removes it from those places. Past downtimes stay without a replacement reason. Reason charts and reports are updated for the affected days. Reports you already received stay as they were. Affected downtime reason rules are removed. That time then gets the default reason of the machine.
 </Update>
@@ -589,7 +589,7 @@ toc: false
 
   The card appears only while the machine is idle or off and a reason was chosen. It is absent during production and from the previous shift. **V1** is unchanged.
 
-  Administrators can open the Hall Plan display settings, choose **Display version → V2** or **V3**, then select **Visible columns → Downtime reason**. The choice is saved automatically for the hall and display version as soon as you tick or clear the checkbox. If the hall's display settings were saved before this update, enable the card once for each version you use. Halls whose display settings have never been saved show it by default. Follow [Set Up a Hall Plan Display](/en/platform-intro/workflows/hall-display-setup#downtime-reason).
+  Admins can open the Hall Plan display settings, choose **Display version → V2** or **V3**, then select **Visible columns → Downtime reason**. The choice is saved automatically for the hall and display version as soon as you tick or clear the checkbox. If the hall's display settings were saved before this update, enable the card once for each version you use. Halls whose display settings have never been saved show it by default. Follow [Set Up a Hall Plan Display](/en/platform-intro/workflows/hall-display-setup#downtime-reason).
 </Update>
 
 <Update label="2026-11-05" description="v1.5.153" tags={["improvement", "fix"]}>
@@ -604,7 +604,7 @@ toc: false
 
   **Downtime reason rules** now apply to idle and off downtimes whenever the machine operator has chosen no reason. Previously, the rules mostly did not apply to these downtimes. A reason chosen by the machine operator always takes priority.
 
-  On machines with rules, more downtimes can now receive a reason, so downtime reason totals in reports and charts can change. Downtimes from before this update are unchanged. Administrators can review **Machine Settings → Downtime reason rules**; see [automatic rules](/en/platform-intro/workflows/timeline-reason-creation#automatic-rules).
+  On machines with rules, more downtimes can now receive a reason, so downtime reason totals in reports and charts can change. Downtimes from before this update are unchanged. Admins can review **Machine Settings → Downtime reason rules**; see [automatic rules](/en/platform-intro/workflows/timeline-reason-creation#automatic-rules).
 
   ### Fixes
 
@@ -629,7 +629,7 @@ toc: false
   #### [Choose to Offer No Downtime Reasons on a Machine](/en/platform-intro/pages/machine-configuration#downtime-reasons-for-this-machine)
   {/* feature: empty-machine-reason-list */}
 
-  Administrators can now save **Machine Settings → Downtime reasons → Only selected reasons** with nothing ticked. Machine operators then cannot pick a downtime reason on that machine. **Apply to other machines** can copy this empty selection too, replacing the destinations' current lists.
+  Admins can now save **Machine Settings → Downtime reasons → Only selected reasons** with nothing ticked. Machine operators then cannot pick a downtime reason on that machine. **Apply to other machines** can copy this empty selection too, replacing the destinations' current lists.
 
   Removing or deleting a machine's last selected reason leaves it with none. It no longer starts offering every reason. A reason offered nowhere shows **No machines** under **Available on**. Follow [manage machine reason selections](/en/platform-intro/workflows/timeline-reason-creation).
 
@@ -638,7 +638,7 @@ toc: false
   #### [Check Shift Breaks and Overnight Times at a Glance](/en/platform-intro/pages/admin-panel#manage-shift-breaks)
   {/* feature: shift-times-and-breaks */}
 
-  Administrators can review each break's times and length in the new **Breaks** column under **Admin Panel → Configure Shifts and Scheduling → Shifts**. No breaks shows a dash.
+  Admins can review each break's times and length in the new **Breaks** column under **Admin Panel → Configure Shifts and Scheduling → Shifts**. No breaks shows a dash.
 
   A shift ending before its start is valid: 10:00–09:00 lasts 23 hours and shows **Overnight shift · ends the next day**. Equal start and end times are not allowed: **Shift start and end time must be different.** A break inside a night shift, such as 23:30–00:15, shows **Break over midnight · ends the next day**. A break ending exactly at 00:00 does not show this hint.
 
@@ -647,7 +647,7 @@ toc: false
   #### [Edit Reason Details and Machine Availability Side by Side](/en/platform-intro/pages/admin-panel#manage-downtime-reasons)
   {/* feature: downtime-reason-form */}
 
-  Administrators now see reason details on the left and **Available on machines** on the right under **Admin Panel → Configure Analyzers → Downtime reasons**. Machines appear by name, and the information icon beside the list title explains fixed lists. The chosen reason type is easier to read, and missing-name or reason-type notices use your language.
+  Admins now see reason details on the left and **Available on machines** on the right under **Admin Panel → Configure Analyzers → Downtime reasons**. Machines appear by name, and the information icon beside the list title explains fixed lists. The chosen reason type is easier to read, and missing-name or reason-type notices use your language.
 
   #### [Find Familiar Actions under Consistent Names](/en/platform-intro/pages/admin-panel)
   {/* feature: consistent-user-terms */}
@@ -656,7 +656,7 @@ toc: false
 
   Buttons and dialogs now say **Add machine operator**, **Update machine operator** and **Deactivate machine operator**. Machine shift assignment uses **Select machine operator**. Leaderboard headings now say **Top OEE machine operators** (previously **Top OEE Operators**) and **Top performance machine operators** (previously **Top Performance Operators**). The ranking panel in Org Stats is titled **Machine operators** (previously **Operators**). PDA Assist and warning texts now say machine operator.
 
-  Administrators can open **Admin Panel → Configure Shifts and Scheduling → Machine operators** to manage accounts. Account notices now use your selected language. Follow [manage machine operator accounts](/en/platform-intro/workflows/operator-management).
+  Admins can open **Admin Panel → Configure Shifts and Scheduling → Machine operators** to manage accounts. Account notices now use your selected language. Follow [manage machine operator accounts](/en/platform-intro/workflows/operator-management).
 
   ### Fixes
 
@@ -691,7 +691,7 @@ toc: false
   #### [Tell Report Updates Apart from the Layout](/en/platform-intro/pages/report-archive)
   {/* feature: report-revision-label */}
 
-  Administrators can now distinguish report updates from the layout in **Reports → Report archive**. The update line says **Revision** (previously **Version**). For example, **Revision 3** beside a **Version 2** badge means the third revision of a report using the new layout.
+  Admins can now distinguish report updates from the layout in **Reports → Report archive**. The update line says **Revision** (previously **Version**). For example, **Revision 3** beside a **Version 2** badge means the third revision of a report using the new layout.
 
   Point to the revision text or **Version 2** badge for an explanation. Archive downloads always contain the latest revision; emails already sent are not sent again. **Last checked** is hidden when it shows the same minute as the update. Follow [download or update an existing report](/en/platform-intro/workflows/reports#download-or-update).
 </Update>
@@ -792,7 +792,7 @@ toc: false
 
   Actions blocked by a machine template now stay visible and readable, but disabled. Hover over or tap one to see **Locked for this machine (BDE template).** This covers creating orders, taking or returning pool work, reopening completed work, interval edit icons, and saving notes or details. Search still filters the machine’s work when adding orders is blocked.
 
-  Administrators can change allowed actions under **Admin Panel → BDE access templates → Allowed on the BDE page**. A blocked status menu still does not open, and handed-over parts still have no reopening action. Follow the [template workflow](/en/platform-intro/workflows/bde-access-templates).
+  Admins can change allowed actions under **Admin Panel → BDE access templates → Allowed on the BDE page**. A blocked status menu still does not open, and handed-over parts still have no reopening action. Follow the [template workflow](/en/platform-intro/workflows/bde-access-templates).
 
   #### [Read Clearer Card and Operation Explanations](/en/platform-intro/pages/assignment-planner)
   {/* feature: wording-fixes */}
@@ -812,7 +812,7 @@ toc: false
 
   On the PDA page, **Recently completed** shows the machine’s last five completed operations, newest first. Choose **Set on hold**, then **Put in queue → By company sorting**, **At the top**, or **At the bottom**, and confirm. Priorities and dates stay unchanged. **Show** takes you to the reopened operation. Follow [Reopen a Completed Operation](/en/platform-intro/workflows/data-acquisition#reopen-completed).
 
-  The **Reopened** badge on PDA and Planner cards shows when it was reopened; its explanation names who reopened it and where it was placed. Administrators control reopening under **Admin Panel → BDE access templates → Allowed on the BDE page → Reopen completed operations**. Handed-over parts cannot be reopened here.
+  The **Reopened** badge on PDA and Planner cards shows when it was reopened; its explanation names who reopened it and where it was placed. Admins control reopening under **Admin Panel → BDE access templates → Allowed on the BDE page → Reopen completed operations**. Handed-over parts cannot be reopened here.
 
   ### Improvements
 
@@ -859,7 +859,7 @@ toc: false
   #### [Start Fixed PDA Sorting from the Company Choices](/en/platform-intro/pages/bde-access-templates)
   {/* feature: bde-template-company-sorting */}
 
-  Administrators can open **Admin Panel → BDE access templates** to edit a template. Turning on **Use a fixed sorting** starts from the company sorting only if a company sorting is saved in the Planner and the template had no fixed sorting before. Otherwise, the starting choices are unchanged. **Use company sorting** appears in the sorting section only when company sorting exists. It shows a tick while the template already uses that sorting. It copies the sort mode and rules; choices for running and on-hold orders and for orders waiting on a previous operation stay unchanged. Without company sorting, the section keeps its usual reset to the built-in default.
+  Admins can open **Admin Panel → BDE access templates** to edit a template. Turning on **Use a fixed sorting** starts from the company sorting only if a company sorting is saved in the Planner and the template had no fixed sorting before. Otherwise, the starting choices are unchanged. **Use company sorting** appears in the sorting section only when company sorting exists. It shows a tick while the template already uses that sorting. It copies the sort mode and rules; choices for running and on-hold orders and for orders waiting on a previous operation stay unchanged. Without company sorting, the section keeps its usual reset to the built-in default.
 
   Saving is available only after a change. Follow [the template workflow](/en/platform-intro/workflows/bde-access-templates).
 
@@ -883,7 +883,7 @@ toc: false
 
   Choose **Version 1** or **Version 2** for your weekly and monthly report emails in your profile → **Newsletter Preferences** card → **Newsletter report version** tabs. Compare **What you get** and **Download an example**. Version 1 stays until you choose. **Save Preferences** is now at the top right of the card header.
 
-  Open Timeline Analysis through **Reports** in the side menu, then select **Generate report → Download Report (XLSX)**. The export dialog asks for **Report version**, with your profile choice selected. Version 2 exports have no **Up next** sheet. Administrators see a **Version 2** tag on new-version reports in **Report archive**.
+  Open Timeline Analysis through **Reports** in the side menu, then select **Generate report → Download Report (XLSX)**. The export dialog asks for **Report version**, with your profile choice selected. Version 2 exports have no **Up next** sheet. Admins see a **Version 2** tag on new-version reports in **Report archive**.
 
   You may receive an email titled “A new version of your machine report is available” with last week's report in the new version. Choose **Get the new version (Version 2)** or **Keep my current report (Version 1)**, then confirm once on the page that opens, without signing in. The personal links expire after 60 days. See [Report Versions](/en/platform-intro/pages/report-versions) and the [report workflow](/en/platform-intro/workflows/reports).
 </Update>
@@ -898,9 +898,9 @@ toc: false
   #### [Make the BDE Page the Same on Several Machines with BDE Access Templates](/en/platform-intro/pages/bde-access-templates)
   {/* feature: bde-layouts */}
 
-  Administrators can now open **Admin Panel → BDE access templates → New template** to choose machines, fields that stay visible or highlighted, fixed sorting and automatic refresh, and allowed actions. For example, keep delivery dates highlighted wherever they are shown while letting each person choose other highlights. Follow [Make the BDE Page the Same on Several Machines](/en/platform-intro/workflows/bde-access-templates).
+  Admins can now open **Admin Panel → BDE access templates → New template** to choose machines, fields that stay visible or highlighted, fixed sorting and automatic refresh, and allowed actions. For example, keep delivery dates highlighted wherever they are shown while letting each person choose other highlights. Follow [Make the BDE Page the Same on Several Machines](/en/platform-intro/workflows/bde-access-templates).
 
-  The template applies to everyone on those machines’ Data Acquisition V3 pages, including administrators. Other pages stay unchanged. Stopping work and recording quantities remain available even when status changes or interval corrections are hidden. Personal display choices stay saved; a machine without a template works as before.
+  The template applies to everyone on those machines’ Data Acquisition V3 pages, including Admins. Other pages stay unchanged. Stopping work and recording quantities remain available even when status changes or interval corrections are hidden. Personal display choices stay saved; a machine without a template works as before.
 
   Open pages pick up changes at their next automatic refresh, every 5 minutes unless another interval is set, or immediately with the page’s refresh button or by reloading the page. Other devices do not update instantly; a screen left open keeps the old choices until one of these happens. Removing a machine from a template or deleting the template returns it to personal settings.
 
@@ -909,7 +909,7 @@ toc: false
   #### [Find Setting Explanations Beside Their Titles](/en/platform-intro/pages/admin-panel)
   {/* feature: admin-settings-info-icons */}
 
-  Administrators can now open the information icons beside titles in **Admin Panel → BDE access templates** and **Admin Panel → Priority Levels** to read explanations. These replace the text lines below the titles. In priority settings, this includes the section description, **Which number is more urgent?**, and **Queue order and operation priority stay in step**.
+  Admins can now open the information icons beside titles in **Admin Panel → BDE access templates** and **Admin Panel → Priority Levels** to read explanations. These replace the text lines below the titles. In priority settings, this includes the section description, **Which number is more urgent?**, and **Queue order and operation priority stay in step**.
 
   #### [Smaller improvements in Assignment Planner and Assignment Gantt](/en/platform-intro/pages/assignment-gantt)
   {/* feature: planner-gantt-polish */}
@@ -966,7 +966,7 @@ toc: false
 
   In Assignment Planner, enable **Filter & Sort → Sort by Queue Position**. Moving a step ahead of more urgent work can raise its operation priority; moving it back can lower it. Within one queue, moving ahead of an equally urgent step can raise it one level too. With the default levels, moving the second of two OP70 steps to the top makes it OP100. Changing **Operation priority** on the card also moves it to the fitting position. **Undo** in a drag’s priority notice restores the priority and keeps the dropped position. Follow [Plan Machine Assignments](/en/platform-intro/workflows/assignment-planner).
 
-  This is on by default. Administrators can turn it off under **Admin Panel → Priority Levels → How priorities are used → Queue order and operation priority stay in step**. Under **Which number is more urgent?**, they can also choose whether higher or lower numbers mean greater urgency. Priority-and-date sorting follows that choice.
+  This is on by default. Admins can turn it off under **Admin Panel → Priority Levels → How priorities are used → Queue order and operation priority stay in step**. Under **Which number is more urgent?**, they can also choose whether higher or lower numbers mean greater urgency. Priority-and-date sorting follows that choice.
 
   A split step shares its priority across machines and pools. Dragging one part leaves the other queues in place; changing its priority on the card can move its parts in those queues too. Order priority stays unchanged. This applies only in queue-position mode; applying a whole-queue sort does not change priorities.
 
@@ -975,7 +975,7 @@ toc: false
 
   Hover over a card’s date tab or small clock in Assignment Planner. Read **Expected end**, the date checks, **Based on**, **Why this time**, and **Earlier steps of this order**. The explanation names work it waits for, including work on other machines. Follow [review Forecaster warnings](/en/platform-intro/workflows/assignment-planner#review-forecaster-warnings-before-changing-the-plan).
 
-  Steps held for a long time, never started, or without a planned start now keep a forecast, with notes explaining its assumptions. **No forecast** remains for hall-pool work or when a forecast is unavailable. The hold limit now controls when **On hold for a long time** appears; it does not free the machine or remove work from the forecast. Administrators adjust it in **Assignment Gantt → Planning settings → Planning**.
+  Steps held for a long time, never started, or without a planned start now keep a forecast, with notes explaining its assumptions. **No forecast** remains for hall-pool work or when a forecast is unavailable. The hold limit now controls when **On hold for a long time** appears; it does not free the machine or remove work from the forecast. Admins adjust it in **Assignment Gantt → Planning settings → Planning**.
 
   ### Improvements
 
@@ -1006,21 +1006,21 @@ toc: false
   #### [Put Urgent Work First After Reviewing the Queue](/en/platform-intro/pages/assignment-planner)
   {/* feature: planner-queue-sort */}
 
-  Administrators and users with access to the Orders page and the machine can now sort a machine queue or hall pool by priority and then the earliest planned operation start. Operators do not see this button. In Assignment Planner, enable **Sort by Queue Position** under **Filter & Sort**. In the queue header, choose **Sort by priority and date**. Choose **Order priority** or **Operation priority**, review the proposed positions, then select **Apply order**. Running and on-hold orders stay on top. Use **Undo** in the confirmation to restore the previous order.
+  Admins and users with access to the Orders page and the machine can now sort a machine queue or hall pool by priority and then the earliest planned operation start. Operators do not see this button. In Assignment Planner, enable **Sort by Queue Position** under **Filter & Sort**. In the queue header, choose **Sort by priority and date**. Choose **Order priority** or **Operation priority**, review the proposed positions, then select **Apply order**. Running and on-hold orders stay on top. Use **Undo** in the confirmation to restore the previous order.
 
   Sorting happens when you apply it. You can still drag cards afterwards. Numbers at the bottom left show each card's place in the queue; they disappear when sorting rules, filters, or a search hide the full queue order. Follow [Plan Machine Assignments](/en/platform-intro/workflows/assignment-planner).
 
   #### [Start with the Company’s Sorting Choices](/en/platform-intro/pages/assignment-planner)
   {/* feature: planner-queue-sort */}
 
-  Administrators can now open **Filter & Sort** in Assignment Planner, set the sorting, and choose **Save as company default**. This saves the sort mode, rules, and **Moves** choice. People without their own sorting start with the company choices in Assignment Planner and Data Acquisition V3. Your existing personal sorting stays in place.
+  Admins can now open **Filter & Sort** in Assignment Planner, set the sorting, and choose **Save as company default**. This saves the sort mode, rules, and **Moves** choice. People without their own sorting start with the company choices in Assignment Planner and Data Acquisition V3. Your existing personal sorting stays in place.
 
   Use **Reset to company default** in the Planner to copy the current company choices. In Data Acquisition, open **Card Display Settings → Sort Order → Reset to company sorting**, then **Save**. A reset copies today's choices; later company changes do not replace that saved personal sorting. Data Acquisition's queue-mode choices for running and waiting orders stay unchanged. Follow the [company sorting steps](/en/platform-intro/workflows/assignment-planner#save-or-use-company-sorting).
 
   #### [Continue Unfinished Work on Another Machine](/en/platform-intro/pages/data-acquisition)
   {/* feature: assignment-handover */}
 
-  Anyone with access to the machine can now select a step in Data Acquisition V3 and choose **Back to pool**. This replaces **Create** while a step is selected. Running work goes through the normal stop and quantity entry first, followed by any **PDA Assist** choice. Work returns to the machine's own hall pool. Administrators and users with access to the Orders page can drag a step that was started and then stopped in Assignment Planner to any hall pool or another machine they can access. They also need access to the step’s current machine. Other users with access to that machine can only return the step to its own hall pool, in Data Acquisition or Assignment Planner. Steps that have not started still move directly in Assignment Planner without a dialog, as before.
+  Anyone with access to the machine can now select a step in Data Acquisition V3 and choose **Back to pool**. This replaces **Create** while a step is selected. Running work goes through the normal stop and quantity entry first, followed by any **PDA Assist** choice. Work returns to the machine's own hall pool. Admins and users with access to the Orders page can drag a step that was started and then stopped in Assignment Planner to any hall pool or another machine they can access. They also need access to the step’s current machine. Other users with access to that machine can only return the step to its own hall pool, in Data Acquisition or Assignment Planner. Steps that have not started still move directly in Assignment Planner without a dialog, as before.
 
   If work has started, its recorded times and good parts stay on the original machine. Review **Quantity left**, add **Reason (optional)** for the next operator, and confirm. For example, 40 good parts out of 100 leave 60 for the next machine. When returning a step that has not started, the whole step moves. In both cases, the returned or handed-over work goes to the top of the destination queue. Follow [return work from the PDA page](/en/platform-intro/workflows/data-acquisition#back-to-pool) or [hand over work in the Planner](/en/platform-intro/workflows/assignment-planner#hand-over-work).
 
@@ -1206,7 +1206,7 @@ toc: false
   #### [Set Up Assistance with Examples and Warning Previews](/en/platform-intro/pages/machine-configuration)
   {/* feature: pda-bde-assist */}
 
-  Administrators can now set production and setup options separately under **Machine Settings → PDA Assist → Start time** and **End time**. Existing machines keep their saved behaviour. For example, setup can end at 08:40 when production began, even if you press **Stop** at 08:46.
+  Admins can now set production and setup options separately under **Machine Settings → PDA Assist → Start time** and **End time**. Existing machines keep their saved behaviour. For example, setup can end at 08:40 when production began, even if you press **Stop** at 08:46.
 
   Open **How changes are applied → How are the times chosen?** for six step-by-step examples and this machine's time limits. Use the information icon beside a warning to preview its delay, severity, and sound choice before saving. The preview follows your unsaved settings.
 
@@ -1235,21 +1235,21 @@ toc: false
   #### [Record the Times Work Actually Started and Ended](/en/platform-intro/pages/data-acquisition)
   {/* feature: pda-bde-assist */}
 
-  **PDA Assist** can adjust late starts and stops to times shown by the machine, including preparation. Administrators enable it under **Machine Settings → PDA Assist**. Operators can choose a suggested time, keep the time they pressed, or use **Undo** and **Change…** after an automatic adjustment. For example, a late stop can end at the last production time.
+  **PDA Assist** can adjust late starts and stops to times shown by the machine, including preparation. Admins enable it under **Machine Settings → PDA Assist**. Operators can choose a suggested time, keep the time they pressed, or use **Undo** and **Change…** after an automatic adjustment. For example, a late stop can end at the last production time.
 
-  Administrators can also enable **Auto-end forgotten intervals**. It keeps checking even when nobody has the PDA page open. It ends production intervals only; quantities still need booking. Follow [Run Data Acquisition](/en/platform-intro/workflows/data-acquisition).
+  Admins can also enable **Auto-end forgotten intervals**. It keeps checking even when nobody has the PDA page open. It ends production intervals only; quantities still need booking. Follow [Run Data Acquisition](/en/platform-intro/workflows/data-acquisition).
 
   #### [Review Past Intervals Before Changing Them](/en/platform-intro/pages/machine-details)
   {/* feature: pda-bde-assist */}
 
-  With access to a machine, open **Improve intervals** on its detail page to check up to 60 days. Compare **Now** and **After**, review time added or removed, and apply selected suggestions. Administrators can review several machines and use **Apply best everywhere** after confirmation.
+  With access to a machine, open **Improve intervals** on its detail page to check up to 60 days. Compare **Now** and **After**, review time added or removed, and apply selected suggestions. Admins can review several machines and use **Apply best everywhere** after confirmation.
 
   Finding suggestions changes nothing. Applying them changes historic order times and OEE; reports follow at their next calculation. Overlaps and suggestions beyond the automatic limit need individual review and stay out of the bulk action. Follow [Review and Improve Intervals](/en/platform-intro/workflows/improve-intervals).
 
   #### [Offer the Right Downtime Reasons on Each Machine](/en/platform-intro/pages/machine-configuration)
   {/* feature: machine-downtime-reasons */}
 
-  Administrators can open **Machine Settings → Downtime reasons** to offer all reasons or a selected list, create or edit reasons, and **Apply to other machines**. Copying replaces the destinations' selections. Optional **Code** and **Category** help operators recognize reasons; category filters narrow the PDA page's tiles.
+  Admins can open **Machine Settings → Downtime reasons** to offer all reasons or a selected list, create or edit reasons, and **Apply to other machines**. Copying replaces the destinations' selections. Optional **Code** and **Category** help operators recognize reasons; category filters narrow the PDA page's tiles.
 
   Use **Available on machines** when editing a reason to choose where it can be selected. Editing the reason itself affects every machine. Deleting it keeps past downtime entries but removes their reason; a machine losing its last selected reason returns to all reasons. Follow [Create and Manage Downtime Reasons](/en/platform-intro/workflows/timeline-reason-creation).
 
@@ -1258,12 +1258,12 @@ toc: false
   #### [Open Machine Settings Directly from the Machine](/en/platform-intro/pages/machine-details)
   {/* feature: machine-settings-shortcut */}
 
-  Administrators can select **Machine Settings**, the gear beside the refresh button in the machine header. Settings open in the same tab; use the browser's back button to return. Follow [Configure a Machine](/en/platform-intro/workflows/machine-configuration).
+  Admins can select **Machine Settings**, the gear beside the refresh button in the machine header. Settings open in the same tab; use the browser's back button to return. Follow [Configure a Machine](/en/platform-intro/workflows/machine-configuration).
 
   #### [Set Warnings and Interval Assistance Together](/en/platform-intro/pages/machine-configuration)
   {/* feature: pda-bde-assist */}
 
-  Administrators now find separate **Interval assist** and **Warnings** switches under **PDA Assist** (previously **PDA Assistant**). Each warning shows its delay, severity, and sound choice. The simultaneous-order warning now follows **Jobs in parallel**. **Reset to defaults** resets one section while keeping its switch; select **Save** to keep the reset.
+  Admins now find separate **Interval assist** and **Warnings** switches under **PDA Assist** (previously **PDA Assistant**). Each warning shows its delay, severity, and sound choice. The simultaneous-order warning now follows **Jobs in parallel**. **Reset to defaults** resets one section while keeping its switch; select **Save** to keep the reset.
 
   **Copy to other machines…** replaces both interval assistance and warnings with the settings shown, including unsaved changes. Review both sections before copying.
 
@@ -1294,12 +1294,12 @@ toc: false
 
   Use **Improve plan** to compare waiting work, then review **Save as plan** before changing queues and planned dates. A preview saves nothing. Running and on-hold assignments stay in place. Follow [Plan Machine Assignments](/en/platform-intro/workflows/assignment-planner).
 
-  Administrators can set the plant's ordering and hold limit under **Planning settings**. They can also set **Planning → Jobs in parallel** in machine configuration so expected times reflect how many assignments the machine can run together.
+  Admins can set the plant's ordering and hold limit under **Planning settings**. They can also set **Planning → Jobs in parallel** in machine configuration so expected times reflect how many assignments the machine can run together.
 
   #### [Receive Alerts When Work Threatens Delivery](/en/platform-intro/pages/automator)
   {/* feature: forecaster-alerts */}
 
-  Administrators can now choose **Forecaster** conditions when creating an **Automator** rule. Check delivery risk, late finishes, overdue starts, long holds, or delays passed on to other assignments and orders. For example, **Delivery Date at Risk** greater than 0 warns whenever an expected finish passes the delivery date.
+  Admins can now choose **Forecaster** conditions when creating an **Automator** rule. Check delivery risk, late finishes, overdue starts, long holds, or delays passed on to other assignments and orders. For example, **Delivery Date at Risk** greater than 0 warns whenever an expected finish passes the delivery date.
 
   These conditions cannot share a rule with machine or order conditions. The active-shift restriction does not apply. Choose recipients and review the rule before saving; use **Show in Gantt** from the event to investigate. Follow [Create an Automator Rule](/en/platform-intro/workflows/automator-rule-creation).
 
@@ -1308,7 +1308,7 @@ toc: false
   #### [See Key Figures and Shift Orders on the Same Display](/en/platform-intro/pages/hall-plan)
   {/* feature: hall-plan-order-rotation */}
 
-  Administrators can show the **Active order** column and set **Key figures / orders switch** in Hall Plan display settings. Each machine alternates between key figures and the orders worked during the shift. The switch time is limited to half the page-switch time so both views appear before the page changes.
+  Admins can show the **Active order** column and set **Key figures / orders switch** in Hall Plan display settings. Each machine alternates between key figures and the orders worked during the shift. The switch time is limited to half the page-switch time so both views appear before the page changes.
 
   **No orders worked in this shift** explains an empty order view. Follow [Set Up a Hall Plan Display](/en/platform-intro/workflows/hall-display-setup).
 
@@ -1317,7 +1317,7 @@ toc: false
 
   After a delivery problem, the Watchmen team can manually resend the latest scheduled weekly report for the last completed week, the latest scheduled monthly report for the last completed month, or both. Only recipients missed by the failed delivery receive it; anyone who already received the report gets no second email. Redelivery is not automatic, and customers cannot start it themselves.
 
-  Administrators can also open **Report archive** to check delivery counts and download a ready report. Follow [Download and Update Reports](/en/platform-intro/workflows/reports).
+  Admins can also open **Report archive** to check delivery counts and download a ready report. Follow [Download and Update Reports](/en/platform-intro/workflows/reports).
 
   ### Fixes
 
@@ -1344,12 +1344,12 @@ toc: false
 
   Use **Machines → Work centers** to review running and planned orders at workplaces without an AVA. You can select these workplaces for orders and assignments. Their cards show work instead of sensor KPIs; they do not count toward machine states or analytics.
 
-  Administrators choose **Kind → Work center** during setup or in the machine configuration. Converting an existing machine removes its AVA assignments and stops KPI calculation. Review the confirmation before **Unassign and switch**. Follow [Add a Machine or Work Center](/en/platform-intro/workflows/add-machine) or [Configure a Machine](/en/platform-intro/workflows/machine-configuration).
+  Admins choose **Kind → Work center** during setup or in the machine configuration. Converting an existing machine removes its AVA assignments and stops KPI calculation. Review the confirmation before **Unassign and switch**. Follow [Add a Machine or Work Center](/en/platform-intro/workflows/add-machine) or [Configure a Machine](/en/platform-intro/workflows/machine-configuration).
 
   #### [Find and Update Your Reports in One Archive](/en/platform-intro/pages/report-archive)
   {/* feature: report-archive */}
 
-  Administrators can now open **Report archive** from the archive button next to the **Timeline** / **Trend** switch at the top of the Reports pages. Open **Reports** in the side menu to find **Weekly**, **Monthly**, and **Export** reports in the archive. Other users do not see the archive. Filter by period, machine, or source, check whether a report is **Ready**, and download the available file. Scheduled reports can be delivered by email; the archive shows the delivery count.
+  Admins can now open **Report archive** from the archive button next to the **Timeline** / **Trend** switch at the top of the Reports pages. Open **Reports** in the side menu to find **Weekly**, **Monthly**, and **Export** reports in the archive. Other users do not see the archive. Filter by period, machine, or source, check whether a report is **Ready**, and download the available file. Scheduled reports can be delivered by email; the archive shows the delivery count.
 
   Select **Rebuild with current data** to check an existing report against current production records. If nothing changed, the archive tells you. If rebuilding fails, the previous version remains available. A report that takes longer to create appears in the archive when ready. Other users should try the export again later. Follow [Download and Update Reports](/en/platform-intro/workflows/reports).
 
@@ -1385,7 +1385,7 @@ toc: false
   #### [Let Shifts Follow Machine Activity](/en/platform-intro/pages/machine-configuration)
   {/* feature: active-shifts */}
 
-  Administrators can now open the machine configuration and select **Shifts → Active shift**. A shift starts automatically when the machine begins idle, production, or preparation. Set **Minimum shift length**, **Stop that ends a shift**, and **Maximum shift length** to control its end. Before the minimum is reached, a shorter stop such as lunch stays within the shift as off time. After the minimum, the first stop ends it. At the maximum, a new shift starts even if work continues; the limit is 24 hours.
+  Admins can now open the machine configuration and select **Shifts → Active shift**. A shift starts automatically when the machine begins idle, production, or preparation. Set **Minimum shift length**, **Stop that ends a shift**, and **Maximum shift length** to control its end. Before the minimum is reached, a shorter stop such as lunch stays within the shift as off time. After the minimum, the first stop ends it. At the maximum, a new shift starts even if work continues; the limit is 24 hours.
 
   Switching on removes scheduled shifts from today onward, but keeps shifts already recorded today. The assigned shift group stays in place and is unused. Switching off ends the running active shift immediately and creates scheduled shifts from the group from today. Some alert rules do not fire for these machines; review their notices. Follow [Configure a Machine](/en/platform-intro/workflows/machine-configuration).
 
@@ -1394,7 +1394,7 @@ toc: false
 
   Open **Profile → Change email**, enter **New email**, and select **Send verification**. Open the link sent to the new address and select **Confirm email change**. Keep using your current email until confirmation, then sign in with the new one.
 
-  While confirmation is pending, use **Resend** after the displayed wait or **Cancel change**. Administrators can also request changes for users who are not operators from user management; the user must still confirm the new address. Follow [Change Your Email Address](/en/platform-intro/workflows/change-email).
+  While confirmation is pending, use **Resend** after the displayed wait or **Cancel change**. Admins can also request changes for users who are not operators from user management; the user must still confirm the new address. Follow [Change Your Email Address](/en/platform-intro/workflows/change-email).
 
   ### Improvements
 
@@ -1416,14 +1416,14 @@ toc: false
   #### [Catch Missing Production Entries with the PDA Assistant](/en/platform-intro/pages/data-acquisition)
   {/* feature: pda-assistant-warnings */}
 
-  The **PDA Assistant** warns about production without an order, forgotten running orders, missing downtime reasons, and stale live data. Administrators enable it in the machine configuration under **PDA Assistant → Enable warnings on this machine** and choose each warning's delay, severity, and sound.
+  The **PDA Assistant** warns about production without an order, forgotten running orders, missing downtime reasons, and stale live data. Admins enable it in the machine configuration under **PDA Assistant → Enable warnings on this machine** and choose each warning's delay, severity, and sound.
 
   On the PDA page, select **View all warnings** to review the issues and available actions. Snoozing hides and silences a warning temporarily; it returns if the problem remains. Follow [Run Data Acquisition](/en/platform-intro/workflows/data-acquisition) or [Configure a Machine](/en/platform-intro/workflows/machine-configuration).
 
   #### [Build and Review Alert Rules from Templates](/en/platform-intro/pages/automator)
   {/* feature: automator-templates-review */}
 
-  Administrators can open **Automator**, choose **Start from a template**, and adapt an alert for slow cycles, scrap, delays, or a missing sensor signal. Nothing is created until you review and save. **Review → What this alert will do** explains the conditions, recipients, timing, and escalation.
+  Admins can open **Automator**, choose **Start from a template**, and adapt an alert for slow cycles, scrap, delays, or a missing sensor signal. Nothing is created until you review and save. **Review → What this alert will do** explains the conditions, recipients, timing, and escalation.
 
   Missing recipients are called out: the alert still appears in Events, but nobody receives an email. Escalation can notify selected recipients when an alert is not handled in time. Open an event to inspect its details. Follow [Create an Automator Rule](/en/platform-intro/workflows/automator-rule-creation).
 
@@ -1520,7 +1520,7 @@ toc: false
 
   #### [Match Priority Levels to Your ERP](/en/platform-intro/pages/admin-panel)
 
-  Administrators can now define company priority names, numbers, and colors under **Admin Panel → Priority Levels**. Select **Apply preset** to use priority numbering for **SAP**, **Epicor Kinetic**, or **Infor M3**, or add, rename, reorder, recolor, and delete levels individually.
+  Admins can now define company priority names, numbers, and colors under **Admin Panel → Priority Levels**. Select **Apply preset** to use priority numbering for **SAP**, **Epicor Kinetic**, or **Infor M3**, or add, rename, reorder, recolor, and delete levels individually.
 
   Save your changes to use the same levels in Order Upload, the Assignment Planner, and order management. **Reset to defaults** is available if you want to start again.
 
@@ -1666,7 +1666,7 @@ toc: false
 
   #### Company Invitations — August 2
 
-  Administrators can invite admins, users, and operators by email, resend or cancel pending invitations, and guide invitees through account setup.
+  Admins can invite admins, users, and operators by email, resend or cancel pending invitations, and guide invitees through account setup.
 
   **Version:** v1.5.88
   **UI-Build commit:** `6409a61`
@@ -1686,14 +1686,14 @@ toc: false
 
   #### AI Data Controls — July 30
 
-  Administrators can choose which company data areas, including knowledge, tickets, and production information, the AI Assistant may use.
+  Admins can choose which company data areas, including knowledge, tickets, and production information, the AI Assistant may use.
 
   **Version:** v1.5.87
   **UI-Build commit:** `17e937f`
 
   #### Operator Recovery — July 30
 
-  Operator Management lets administrators reset an operator password or resend account confirmation without creating a replacement account.
+  Operator Management lets Admins reset an operator password or resend account confirmation without creating a replacement account.
 
   **Version:** v1.5.86
   **UI-Build commit:** `d520008`
@@ -1747,17 +1747,17 @@ toc: false
 
   #### Safer Operator Deactivation
 
-  Administrators can deactivate an operator immediately without deleting historical data. Previous shifts, labels, and assignments remain preserved.
+  Admins can deactivate an operator immediately without deleting historical data. Previous shifts, labels, and assignments remain preserved.
 
   #### Generate New Operator Passwords
 
-  Administrators can generate a new password for eligible operators from **Edit operator**. Active sessions are ended, and the operator must sign in again with the new password.
+  Admins can generate a new password for eligible operators from **Edit operator**. Active sessions are ended, and the operator must sign in again with the new password.
 
   Generated credentials are displayed only once and can be copied or downloaded before the window is closed.
 
   #### Explicit Email Verification
 
-  Verification emails are sent only when an administrator explicitly requests one. They are never sent automatically after creating or editing an operator or regenerating an operator's password.
+  Verification emails are sent only when an Admin explicitly requests one. They are never sent automatically after creating or editing an operator or regenerating an operator's password.
 
   Unverified operators can still sign in and use their assigned access.
 
@@ -1795,7 +1795,7 @@ toc: false
   - Choose which production statistics appear in the kiosk navigation.
   - Review display connectivity and last-seen information.
   - Automatically load new frontend builds on unattended displays.
-  - Administrators can monitor live and offline Hall Plan devices.
+  - Admins can monitor live and offline Hall Plan devices.
 
   #### [Knowledge Base Workspace](/en/platform-intro/pages/knowledge-base)
 
@@ -1973,7 +1973,7 @@ toc: false
 
   #### User Permissions Editor
 
-  Administrators can manage page and machine access from the Admin Panel.
+  Admins can manage page and machine access from the Admin Panel.
 
   - Open a user record and select **Edit Permissions**.
   - Select the platform pages and machines the user can access.
@@ -2037,7 +2037,7 @@ toc: false
 
   #### Access Controls — April 29
 
-  Administrators can control the pages and machines available to each user and provide clear guidance when additional access is required.
+  Admins can control the pages and machines available to each user and provide clear guidance when additional access is required.
 
   **Version:** v1.5.65
   **UI-Build commit:** `505c8e3`
@@ -2119,7 +2119,7 @@ toc: false
 
   #### Spreadsheet Imports — January 31
 
-  Administrators can import order data from CSV and XLSX files with example files and column-matching guidance.
+  Admins can import order data from CSV and XLSX files with example files and column-matching guidance.
 
   **Version:** v1.5.37
   **UI-Build commit:** `e623d88`
@@ -2161,7 +2161,7 @@ toc: false
 
   #### Machine Features — January 7
 
-  Administrators can configure the monitoring and production functions available for each machine in the Admin Panel.
+  Admins can configure the monitoring and production functions available for each machine in the Admin Panel.
 
   **Version:** v1.5.33
   **UI-Build commits:** `151cf56`, `2d7ea4c`, `89b1b00`

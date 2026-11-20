@@ -25,7 +25,7 @@ For a **Work center**, use the kind-switching steps below and skip AVA and senso
 
 <Steps>
   <Step title="Open the machine configuration" icon="arrow-right" title-type="p">
-    For an existing machine, select the **Machine Settings** gear in its detail header. Only administrators see it. Settings open in the same tab; the browser’s back button returns to the machine.
+    For an existing machine, select the **Machine Settings** gear in its detail header. Only Admins see it. Settings open in the same tab; the browser’s back button returns to the machine.
   </Step>
   <Step title="Review the basic information" icon="arrow-right" title-type="p">
     Review the Basic Information tab and confirm the machine identity, hall, and shift group.
@@ -56,7 +56,7 @@ For a **Work center**, use the kind-switching steps below and skip AVA and senso
 
 ## Set Simultaneous Machine Capacity
 
-1. As an administrator, open the machine’s basic information and find **Planning → Jobs in parallel**.
+1. As an Admin, open the machine’s basic information and find **Planning → Jobs in parallel**.
 2. Enter how many assignments it can run together, as a whole number from 1 to 100. Match actual capacity, not the number waiting in the queue.
 3. Save the tab, then review expected times in [Assignment Gantt](/en/platform-intro/pages/assignment-gantt). The Forecaster uses this capacity when planning simultaneous work.
 
@@ -72,7 +72,7 @@ Configure **PDA Assist** using the warning setup steps below. See [Machine Confi
 
 <Steps>
   <Step title="Choose the kind" icon="arrow-right" title-type="p">
-    As an administrator, open **Basic Info** in the configuration and choose **Kind → Work center** for a workplace without an AVA.
+    As an Admin, open **Basic Info** in the configuration and choose **Kind → Work center** for a workplace without an AVA.
   </Step>
   <Step title="Review the devices being removed" icon="arrow-right" title-type="p">
     If AVAs are assigned, **Switch to work center?** lists them. Confirm **Unassign and switch** only if they should be unassigned and all KPI calculation should stop. Save the change. AVA assignment is unavailable for work centers.
@@ -89,7 +89,7 @@ Configure **PDA Assist** using the warning setup steps below. See [Machine Confi
 
 <Steps>
   <Step title="Choose how shifts start" icon="arrow-right" title-type="p">
-    As an administrator, open **Shifts** in the machine configuration. Enable **Active shift** to start shifts with idle, production, or preparation. Leave it off to use the assigned shift group's schedule.
+    As an Admin, open **Shifts** in the machine configuration. Enable **Active shift** to start shifts with idle, production, or preparation. Leave it off to use the assigned shift group's schedule.
   </Step>
   <Step title="Set when active shifts end" icon="arrow-right" title-type="p">
     Set **Minimum shift length**, **Stop that ends a shift**, and **Maximum shift length** in hours greater than 0. Neither the minimum nor the stop length may exceed the maximum, which is at most 24 hours. Before the minimum is reached, shorter stops stay inside the shift as off time. Afterward, the first stop ends it. At the maximum, a new shift starts even if work continues.
@@ -106,7 +106,7 @@ Configure **PDA Assist** using the warning setup steps below. See [Machine Confi
 
 <Steps>
   <Step title="Choose the assistance you need" icon="arrow-right" title-type="p">
-    As an administrator, open **PDA Assist** and tick **Interval assist**. With no saved options, start and end correction are preselected. Review them before saving. Under **Start time** and **End time**, set the production and setup groups separately. For setup, choose the previous order’s end, switch-on, or production stop as appropriate. Select **When production started** if setup should end at production start. Review gap conditions in [Machine Configuration](/en/platform-intro/pages/machine-configuration).
+    As an Admin, open **PDA Assist** and tick **Interval assist**. With no saved options, start and end correction are preselected. Review them before saving. Under **Start time** and **End time**, set the production and setup groups separately. For setup, choose the previous order’s end, switch-on, or production stop as appropriate. Select **When production started** if setup should end at production start. Review gap conditions in [Machine Configuration](/en/platform-intro/pages/machine-configuration).
   </Step>
   <Step title="Choose when to ask" icon="arrow-right" title-type="p">
     Under **How changes are applied**, choose **Ask the machine operator** or **Pick the best automatically**. Set the automatic and asking limits in hours. Older times between those limits always require a choice. Open **How are the times chosen?**, choose an example, and use **Back** and **Next** to check the result against this machine’s limits.

@@ -100,13 +100,13 @@ Follow [save and use knowledge on the PDA page](/en/platform-intro/workflows/pda
 
 ## Settings Set by a Machine Template
 
-An administrator can assign a [BDE access template](/en/platform-intro/pages/bde-access-templates) to this machine. It applies to everyone on Data Acquisition V3, including administrators.
+An Admin can assign a [BDE access template](/en/platform-intro/pages/bde-access-templates) to this machine. It applies to everyone on Data Acquisition V3, including Admins.
 
 In **Card Display Settings**, required fields and highlights stay ticked and locked with **Set by the template**. Required highlights apply only when a field is visible. You can still choose additional fields and highlights. **Sorting is set by the template** means you can review the sort order but cannot change or reset it here. A fixed automatic refresh interval is also locked.
 
 Your own choices stay saved. They apply again when the template no longer fixes those settings, and on machines without a template. Without a template, AI in the knowledge tab and when creating tickets from this page is off. The sorting instructions below apply when the template leaves sorting open.
 
-The template can block order creation, taking or returning pool work, reopening completed operations, interval corrections, and saving order notes or details. Their buttons and edit icons stay visible and readable, but disabled. Hover over or tap one to read **Locked for this machine (BDE template).** Notes and details stay readable only; **Save** remains visible even when nothing has changed. A blocked status still looks normal, but tapping it opens no menu. If adding orders is off, search still filters this machine’s work but cannot find unplanned operations. Ask an administrator to review a blocked action.
+The template can block order creation, taking or returning pool work, reopening completed operations, interval corrections, and saving order notes or details. Their buttons and edit icons stay visible and readable, but disabled. Hover over or tap one to read **Locked for this machine (BDE template).** Notes and details stay readable only; **Save** remains visible even when nothing has changed. A blocked status still looks normal, but tapping it opens no menu. If adding orders is off, search still filters this machine’s work but cannot find unplanned operations. Ask an Admin to review a blocked action.
 
 Preparation, production start, stop, quantity booking, downtime reasons, **PDA Assist**, and warnings stay available as before. Even with status changes off, **Planned quantity reached** still lets you choose **Complete** or **Keep on hold**. Reopening completed work has its own **Reopen completed operations** switch. Other pages, such as the Planner, are unaffected.
 
@@ -146,7 +146,7 @@ Once no earlier operation remains unfinished, the next refresh places the order 
 
 ### Use the Company Sorting Default
 
-If you have no personal sorting saved for Data Acquisition V3, it starts with the company's sort mode and shared rules. Administrators set these in [Assignment Planner](/en/platform-intro/pages/assignment-planner). Saving unrelated display changes keeps you following that default.
+If you have no personal sorting saved for Data Acquisition V3, it starts with the company's sort mode and shared rules. Admins set these in [Assignment Planner](/en/platform-intro/pages/assignment-planner). Saving unrelated display changes keeps you following that default.
 
 When a company default exists, the reset control is labelled **Reset to company sorting**. Open **Card Display Settings → Sort Order → Reset to company sorting** to copy the current company choices. When your choices already match, the button shows a tick and is unavailable. Otherwise, it resets the choices in the open settings; select **Save** to apply them. With no company default, the icon labelled **Reset to default (no company default set yet)** restores the standard choices.
 
@@ -303,7 +303,7 @@ After reopening, the card leaves this view. Choose **Show** in the notice to swi
 
 ## Check Assisted Interval Times
 
-When an administrator enables **PDA Assist**, late starts and stops can move to times shown by the machine data. It applies to production and preparation on Data Acquisition V3. Manual time edits and mid-bookings do not receive these automatic adjustments.
+When an Admin enables **PDA Assist**, late starts and stops can move to times shown by the machine data. It applies to production and preparation on Data Acquisition V3. Manual time edits and mid-bookings do not receive these automatic adjustments.
 
 The choice dialog compares **Now** with **After** and shows which order gains or loses time. Choose a main option or expand **Other times** for earlier choices, newest first. You can also tap a marker on the timeline. Keep the time you pressed if none fits. Closing the initial choice dialog keeps that time.
 
@@ -311,7 +311,7 @@ After an automatic adjustment, **Undo** restores the time you pressed. **Change�
 
 The interval list marks changes as **Adjusted**, **Auto-ended**, or **Improved**. Open the explanation to see the changed time and reason. **Auto-ended** means a forgotten production interval ended after the configured off or idle period. It works even when the PDA page is closed. Check quantities afterwards: automatic ending does not book them. Preparation never ends this way.
 
-When automatic ending is enabled, **Machine off, order still running** can show the remaining minutes. Snoozing or muting this warning does not stop automatic ending. Ask an administrator to change it in [Machine Configuration](/en/platform-intro/pages/machine-configuration).
+When automatic ending is enabled, **Machine off, order still running** can show the remaining minutes. Snoozing or muting this warning does not stop automatic ending. Ask an Admin to change it in [Machine Configuration](/en/platform-intro/pages/machine-configuration).
 
 Interval changes appear immediately on the timeline. The update after a change keeps your selected shift if it still exists. Regular and manual refreshes return to the live shift. To review past days, use **Improve intervals** on [Machine Details](/en/platform-intro/pages/machine-details), following [Review and Improve Intervals](/en/platform-intro/workflows/improve-intervals).
 
@@ -319,7 +319,7 @@ Interval changes appear immediately on the timeline. The update after a change k
 
 Tap **PDA Assist** at the right edge of Data Acquisition V3. It appears when at least one interval-assistance option or warning is enabled. On a phone it sits beside the action bar, above any warning banner.
 
-The dialog lists what assistance does on this machine. **Right now** shows current information, such as the remaining time before automatic ending or the last corrected start or end. The dot is amber only during the automatic-ending countdown; otherwise it is green. It briefly glows after assistance changes a time. The countdown says the order will end unless the machine restarts. To prevent automatic ending, ask an administrator to change the [machine settings](/en/platform-intro/pages/machine-configuration).
+The dialog lists what assistance does on this machine. **Right now** shows current information, such as the remaining time before automatic ending or the last corrected start or end. The dot is amber only during the automatic-ending countdown; otherwise it is green. It briefly glows after assistance changes a time. The countdown says the order will end unless the machine restarts. To prevent automatic ending, ask an Admin to change the [machine settings](/en/platform-intro/pages/machine-configuration).
 
 ### Understand the Offered Times
 
@@ -337,11 +337,11 @@ A reason chosen by the machine operator or set by hand takes priority. When [aut
 
 Automatic break labels appear only after downtime ends, not in the running downtime's tooltip. If the machine operator chooses a reason after the downtime ended, that reason replaces the break label for the whole downtime, also when the downtime had been split into parts around the break. Parts whose reason someone set or cleared by hand keep that choice. A reason you set or clear by hand is never replaced by automatic break labelling.
 
-**Downtime Reason** offers only the reasons available on this machine. An administrator can leave the machine with no available reasons. You then cannot choose a downtime reason; ask an administrator to check the selection if you need one. A tile can show a code in its corner. Use the category chips above the tiles to narrow the list; these appear only when reasons have categories.
+**Downtime Reason** offers only the reasons available on this machine. An Admin can leave the machine with no available reasons. You then cannot choose a downtime reason; ask an Admin to check the selection if you need one. A tile can show a code in its corner. Use the category chips above the tiles to narrow the list; these appear only when reasons have categories.
 
 Saved tile arrangements keep newly available reasons and drop deleted ones. Other downtime reason pickers show reasons alphabetically with the code before the name. **Remove label** clears the selected reason without deleting the downtime period.
 
-If a reason is no longer allowed, the list updates. Choose an available reason or ask an administrator to check the machine's selection. A historical reason may still appear even when it is no longer selectable. See [Downtime Reasons FAQs](/en/help-center/faq/downtime-reasons).
+If a reason is no longer allowed, the list updates. Choose an available reason or ask an Admin to check the machine's selection. A historical reason may still appear even when it is no longer selectable. See [Downtime Reasons FAQs](/en/help-center/faq/downtime-reasons).
 
 <a id="next-downtime-reason" />
 
@@ -375,7 +375,7 @@ Follow [pre-set and manage a downtime reason](/en/platform-intro/workflows/data-
 
 ## PDA Assist Warnings
 
-**PDA Assist** shows warnings for this machine when an administrator enables them. Only administrators can change warning settings. It is separate from classic Alert Rules and Automator.
+**PDA Assist** shows warnings for this machine when an Admin enables them. Only Admins can change warning settings. It is separate from classic Alert Rules and Automator.
 
 | Warning | What it means |
 | --- | --- |
@@ -387,7 +387,7 @@ Follow [pre-set and manage a downtime reason](/en/platform-intro/workflows/data-
 | **Multiple orders running** | More orders are running than **Jobs in parallel** allows for this machine. |
 | **Downtime without a reason** | A downtime block is waiting for a reason. |
 
-**Info** is a silent notice. **Warning** shows an orange banner and orange light around the whole page; **Critical** shows a red banner and flashing screen border. The warning appears after the delay selected by your administrator. A running-too-long warning uses its hour threshold instead of a separate delay.
+**Info** is a silent notice. **Warning** shows an orange banner and orange light around the whole page; **Critical** shows a red banner and flashing screen border. The warning appears after the delay selected by your Admin. A running-too-long warning uses its hour threshold instead of a separate delay.
 
 Use the floating warning button at the bottom left: select **View all warnings** to open **Active warnings**. Read the affected order and duration, then use the available action: **Select an order**, **End order**, **Set downtime reason**, or **Refresh now**. Check the actual machine and order before acting. Follow [Run Data Acquisition](/en/platform-intro/workflows/data-acquisition).
 
@@ -397,7 +397,7 @@ You can snooze one warning or choose **Snooze all**. Snoozing hides the warning 
 
 If sound is allowed and enabled for that warning, **Warning** plays two beeps and **Critical** three alternating high and low beeps. The alarm repeats while the warning is active and not snoozed. **Info** is always silent. Select **Enable sound** to turn sound on or **Mute** to silence it on your device. The browser needs a tap on the page before sound can start.
 
-Your administrator can limit sound to active shifts. This limits sound, not the warning display. See [Machine Configuration](/en/platform-intro/pages/machine-configuration) for delays, severity, sound, and copying settings.
+Your Admin can limit sound to active shifts. This limits sound, not the warning display. See [Machine Configuration](/en/platform-intro/pages/machine-configuration) for delays, severity, sound, and copying settings.
 
 ## Main Entities
 

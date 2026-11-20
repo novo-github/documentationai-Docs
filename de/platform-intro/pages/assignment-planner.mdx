@@ -9,7 +9,7 @@ description: "Eine Planungsoberfläche für Maschinenzuweisungen, die Anordnung 
 
 Geben Sie Planern einen Drag-and-Drop-Arbeitsbereich, um die nächste Arbeit einer Maschine festzulegen, sowie eine Zeitleiste zur Prüfung von Zuweisungen über Maschinen und Zeiträume hinweg.
 
-Benutzer öffnen diese Seite über den Bereich **Planer** in der Hauptnavigation.
+User öffnen diese Seite über den Bereich **Planer** in der Hauptnavigation.
 
 ## Zugriff
 
@@ -52,7 +52,7 @@ Klicken Sie auf den Maschinennamen im Spaltenkopf, um die [Maschinendetails](/de
 
 ### Begonnene Arbeit übergeben
 
-Administratoren und User mit Zugriff auf die Seite Aufträge können einen begonnenen, gestoppten Arbeitsgang auf einen beliebigen Hallenpool oder eine andere zugängliche Maschine ziehen. Alle Benutzer benötigen Zugriff auf die aktuelle Maschine des Arbeitsgangs. Andere Benutzer können den Arbeitsgang im Zuweisungsplaner und in der Betriebsdatenerfassung nur in den Pool der Halle seiner aktuellen Maschine zurückgeben. Der Dialog zeigt **Geplant**, **Hier gefertigt** und **Offen**. Prüfen Sie **Restmenge** und ergänzen Sie **Grund (optional)** für die nächste Person. Nur Gutteile verringern die vorgeschlagene Restmenge. Ausschuss muss nachgefertigt werden. Lassen Sie die Menge leer, wenn sie unbekannt ist. Bestätigen Sie für einen Pool mit **Zurück in den Pool**, für eine Maschine mit **Verschieben**.
+Admins und User mit Zugriff auf die Seite Aufträge können einen begonnenen, gestoppten Arbeitsgang auf einen beliebigen Hallenpool oder eine andere zugängliche Maschine ziehen. Alle User benötigen Zugriff auf die aktuelle Maschine des Arbeitsgangs. Andere User können den Arbeitsgang im Zuweisungsplaner und in der Betriebsdatenerfassung nur in den Pool der Halle seiner aktuellen Maschine zurückgeben. Der Dialog zeigt **Geplant**, **Hier gefertigt** und **Offen**. Prüfen Sie **Restmenge** und ergänzen Sie **Grund (optional)** für die nächste Person. Nur Gutteile verringern die vorgeschlagene Restmenge. Ausschuss muss nachgefertigt werden. Lassen Sie die Menge leer, wenn sie unbekannt ist. Bestätigen Sie für einen Pool mit **Zurück in den Pool**, für eine Maschine mit **Verschieben**.
 
 Die ursprüngliche Maschine behält ihre Zeiten und Gutteile. Ihr Anteil verlässt die aktive Warteschlange und zeigt **Übergeben**. Der Rest kommt an den Anfang der Zielwarteschlange, auch beim Ablegen auf einem eingeklappten Pool. Ihre Anzeigesortierung kann beeinflussen, wo die Karte erscheint. Beide Warteschlangen aktualisieren sich. Bei 40 Gutteilen von 100 bleiben beispielsweise 60 für die nächste Maschine. Eine Übergabe lässt sich nicht automatisch rückgängig machen.
 
@@ -142,7 +142,7 @@ Der Planer verwendet Ihre Unternehmensstufen und die eingestellte Dringlichkeits
 
 Ein auf Maschinen oder Pools aufgeteilter Arbeitsgang hat eine gemeinsame Priorität. Ziehen eines Anteils aktualisiert sie überall, lässt aber die anderen Warteschlangen unverändert. Eine Änderung der Priorität auf seiner Karte kann seine Anteile in jeder zugänglichen Warteschlange umordnen.
 
-Administratoren können dies unter **Admin-Panel → Prioritätsstufen → So werden Prioritäten verwendet → Reihenfolge und Arbeitsgang-Priorität bleiben im Einklang** ausschalten. Dann ändert Ziehen nur die Reihenfolge, und eine geänderte Priorität verschiebt keine Karten. Diese verknüpften Änderungen gelten weder im Sortierregelmodus noch beim Übernehmen von **Neu sortieren**. Folgen Sie den [Planungsschritten](/de/platform-intro/workflows/assignment-planner).
+Admins können dies unter **Admin-Panel → Prioritätsstufen → So werden Prioritäten verwendet → Reihenfolge und Arbeitsgang-Priorität bleiben im Einklang** ausschalten. Dann ändert Ziehen nur die Reihenfolge, und eine geänderte Priorität verschiebt keine Karten. Diese verknüpften Änderungen gelten weder im Sortierregelmodus noch beim Übernehmen von **Neu sortieren**. Folgen Sie den [Planungsschritten](/de/platform-intro/workflows/assignment-planner).
 
 ## Warteschlangenposition und Sortierregeln
 
@@ -156,14 +156,14 @@ Dieselben Sortiermöglichkeiten stehen in der [Betriebsdatenerfassung V3](/de/pl
 
 ### Eine Warteschlange neu sortieren
 
-Sie benötigen Planungszugriff: ein Administratorkonto oder Zugriff auf die Auftragsseite sowie Zugriff auf die Maschine. Aktivieren Sie im Zuweisungsplaner **Filtern & Sortieren → Nach Warteschlangenposition sortieren**. Wählen Sie **Neu sortieren** (bisher **Nach Priorität und Datum sortieren**) in der letzten Zeile eines Maschinen- oder Hallenpoolkopfs. Die Funktion steht auch in jeder Maschinenzeile im [Zuweisungs-Gantt](/de/platform-intro/pages/assignment-gantt) bereit.
+Sie benötigen Planungszugriff: ein Admin-Konto oder Zugriff auf die Auftragsseite sowie Zugriff auf die Maschine. Aktivieren Sie im Zuweisungsplaner **Filtern & Sortieren → Nach Warteschlangenposition sortieren**. Wählen Sie **Neu sortieren** (bisher **Nach Priorität und Datum sortieren**) in der letzten Zeile eines Maschinen- oder Hallenpoolkopfs. Die Funktion steht auch in jeder Maschinenzeile im [Zuweisungs-Gantt](/de/platform-intro/pages/assignment-gantt) bereit.
 
 Unter **Sortieren nach** steht **Sortierregeln** als erster Reiter. Er ist bei jedem Öffnen ausgewählt. Er beginnt mit den Regeln, die Ihr Planer bei ausgeschaltetem **Nach Warteschlangenposition sortieren** nutzt. Gantt verwendet dieselben Planerregeln.
 
 Die Regelbearbeitung ist immer sichtbar. Wählen Sie unter **Regeln aus**:
 
 - **Meine Sortierung**: stellt Ihre Planerregeln wieder her.
-- **Firmenstandard**: übernimmt die von einem Administrator für alle gespeicherten Regeln. Diese Auswahl erscheint nur, wenn ein Firmenstandard vorliegt.
+- **Firmenstandard**: übernimmt die von einem Admin für alle gespeicherten Regeln. Diese Auswahl erscheint nur, wenn ein Firmenstandard vorliegt.
 
 Bearbeiten Sie die Regeln darunter, um nur für dieses Neusortieren eine andere Folge zu verwenden. Wählen Sie je Regel, wonach sie sortiert, und die aufsteigende oder absteigende Richtung. **Sortierregel hinzufügen** ergänzt eine Regel. Entfernen Sie nicht benötigte Regeln. **Angepasst** erscheint, wenn die Regeln weder Ihren eigenen noch denen des Unternehmens entsprechen. Stimmen beide überein, ist **Meine Sortierung** ausgewählt. Diese Änderungen ersetzen keine gespeicherte persönliche oder Firmensortierung. Beim erneuten Öffnen gelten wieder Ihre Planerregeln.
 
@@ -189,7 +189,7 @@ Nummern erscheinen nur bei eingeschalteter Option **Nach Warteschlangenposition 
 
 ### Firmensortierung speichern oder übernehmen
 
-Administratoren können unter **Filtern & Sortieren** den Sortiermodus, die Regeln und die Auswahl unter **Verschiebungen** einstellen. Wählen Sie dann **Als Firmenstandard speichern**. **Als Firmenstandard gespeichert** bestätigt die Änderung. Bei Verschiebungen ohne Dialog bestimmt die Auswahl unter **Verschiebungen** im Regelmodus, wo Aufträge landen. Im Warteschlangenmodus entscheidet weiterhin die Ablageposition. Übergebene Arbeit kommt an den Anfang ihrer Zielwarteschlange.
+Admins können unter **Filtern & Sortieren** den Sortiermodus, die Regeln und die Auswahl unter **Verschiebungen** einstellen. Wählen Sie dann **Als Firmenstandard speichern**. **Als Firmenstandard gespeichert** bestätigt die Änderung. Bei Verschiebungen ohne Dialog bestimmt die Auswahl unter **Verschiebungen** im Regelmodus, wo Aufträge landen. Im Warteschlangenmodus entscheidet weiterhin die Ablageposition. Übergebene Arbeit kommt an den Anfang ihrer Zielwarteschlange.
 
 Personen ohne eigene gespeicherte Sortierung beginnen mit dem Firmenstandard. Eine persönliche Sortierung hat Vorrang. Die Betriebsdatenerfassung V3 übernimmt den Sortiermodus und die gemeinsamen Regeln. Ihre Optionen für laufende und wartende Aufträge bleiben getrennt davon.
 
@@ -333,7 +333,7 @@ Beispielsweise ergeben 50 Teile mit 2 Minuten je Teil 100 geplante Produktionsmi
 ## Ergebnisse und Grenzen
 
 ### Typische Ergebnisse
-- Benutzer erstellen oder ändern die geplante Maschinenreihenfolge für anstehende Arbeit.
+- User erstellen oder ändern die geplante Maschinenreihenfolge für anstehende Arbeit.
 
 ### Grenzen und Leerzustände
 
