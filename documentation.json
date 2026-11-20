@@ -311,6 +311,11 @@
                             "icon": "file-text"
                           },
                           {
+                            "title": "Interactive Guides",
+                            "path": "en/platform-intro/pages/interactive-guides",
+                            "icon": "file-text"
+                          },
+                          {
                             "title": "Plan a Meeting",
                             "path": "en/platform-intro/pages/plan-a-meeting",
                             "icon": "file-text"
@@ -475,6 +480,16 @@
                           {
                             "title": "Ask the AI Assistant About a File",
                             "path": "en/platform-intro/workflows/chat-attachments",
+                            "icon": "play-circle"
+                          },
+                          {
+                            "title": "Learn with Interactive Guides",
+                            "path": "en/platform-intro/workflows/interactive-guides",
+                            "icon": "play-circle"
+                          },
+                          {
+                            "title": "Assign Guides and Follow Team Progress",
+                            "path": "en/platform-intro/workflows/assign-interactive-guides",
                             "icon": "play-circle"
                           },
                           {
@@ -944,6 +959,11 @@
                             "icon": "file-text"
                           },
                           {
+                            "title": "Interaktive Anleitungen",
+                            "path": "de/platform-intro/pages/interactive-guides",
+                            "icon": "file-text"
+                          },
+                          {
                             "title": "Termin vereinbaren",
                             "path": "de/platform-intro/pages/plan-a-meeting",
                             "icon": "file-text"
@@ -1108,6 +1128,16 @@
                           {
                             "title": "Den KI-Assistenten zu einer Datei fragen",
                             "path": "de/platform-intro/workflows/chat-attachments",
+                            "icon": "play-circle"
+                          },
+                          {
+                            "title": "Mit interaktiven Anleitungen lernen",
+                            "path": "de/platform-intro/workflows/interactive-guides",
+                            "icon": "play-circle"
+                          },
+                          {
+                            "title": "Anleitungen zuweisen und Teamfortschritt verfolgen",
+                            "path": "de/platform-intro/workflows/assign-interactive-guides",
                             "icon": "play-circle"
                           },
                           {
