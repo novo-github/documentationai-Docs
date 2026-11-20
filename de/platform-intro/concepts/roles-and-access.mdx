@@ -9,15 +9,15 @@ Ihre Rolle setzt die grundsätzliche Zugriffsgrenze. **Seitenzugriff** und **Mas
 
 | Rolle | Möglichkeiten |
 | --- | --- |
-| **Administrator** | Einstellungen verwalten, Benutzer einladen, Maschinen bearbeiten, Berechtigungen ändern und Adminseiten innerhalb des eigenen Unternehmens nutzen. |
-| **User** | Tägliche Arbeit mit den vom Administrator freigegebenen Seiten und Maschinen. Darf keine Benutzer einladen oder Maschinen bearbeiten. |
-| **Maschinenbediener** | Vom Administrator freigegebener, eingeschränkter Zugriff für die Fertigung. Hat nie Zugriff auf Hallenplan, Aufträge & Produkte oder Alarmregeln. |
+| **Admin** | Einstellungen verwalten, Personen einladen, Maschinen bearbeiten, Berechtigungen ändern und Adminseiten innerhalb des eigenen Unternehmens nutzen. |
+| **User** | Tägliche Arbeit mit den vom Admin freigegebenen Seiten und Maschinen. Darf keine Personen einladen oder Maschinen bearbeiten. |
+| **Maschinenbediener** | Vom Admin freigegebener, eingeschränkter Zugriff für die Fertigung. Hat nie Zugriff auf Hallenplan, Aufträge & Produkte oder Alarmregeln. |
 
 **System (Automator)** ist ein automatisierter Akteur im Ereignisverlauf, keine menschliche Rolle.
 
 <a id="page-access" />
 
-## Welche Seiten kann mein Administrator freigeben?
+## Welche Seiten kann mein Admin freigeben?
 
 | Zugriffsklasse | Seiten |
 | --- | --- |
@@ -28,13 +28,13 @@ Ihre Rolle setzt die grundsätzliche Zugriffsgrenze. **Seitenzugriff** und **Mas
 
 Ein Maschinenbediener erhält nie Aufträge & Produkte, Alarmregeln oder Hallenplan, auch wenn eine Liste freigebbarer Seiten sie sonst enthalten würde. **Full Access** umfasst alle innerhalb der Rolle freigebbaren Seiten; eine leere Auswahlliste umfasst keine. Ein User wird dadurch nicht zum Admin.
 
-Das Frontend enthält eine Route und eine Adminregel für die Bestenliste. Ihre Erreichbarkeit in der aktuellen Navigation muss jedoch bestätigt werden. Fragen Sie bei fehlendem Zugang Ihre Administration.
+Die Bestenliste erscheint möglicherweise nicht bei allen Personen in der Seitenleiste. Fragen Sie einen Admin, wenn Sie die Seite nicht erreichen können.
 
 <a id="machine-access" />
 
 ## Warum kann ich eine Seite öffnen, sehe aber eine Maschine nicht?
 
-Maschinenzugriff ist unabhängig vom Seitenzugriff. Ein Administrator kann alle Maschinen oder eine bestimmte Liste freigeben. Maschinendetails, Maschinenhistorie und BDE erfordern Zugriff auf die jeweilige Maschine.
+Maschinenzugriff ist unabhängig vom Seitenzugriff. Ein Admin kann alle Maschinen oder eine bestimmte Liste freigeben. Maschinendetails, Maschinenhistorie und BDE erfordern Zugriff auf die jeweilige Maschine.
 
 **Beispiel:** Ein Planer mit Zugriff auf den Zuweisungsplaner und nur auf Maschine A kann die Planungsseite für seine freigegebene Maschine nutzen. Seitenzugriff allein gibt Maschine B nicht frei.
 
@@ -42,9 +42,9 @@ Maschinenzugriff ist unabhängig vom Seitenzugriff. Ein Administrator kann alle 
 
 ## Wie erhalte ich den benötigten Zugriff?
 
-1. Nennen Sie Ihrer Administration die benötigte Seite, Maschine und Aufgabe.
-2. Die Administration öffnet **Administrationsbereich → Benutzer → Berechtigungen bearbeiten** und prüft Seiten- und Maschinenzugriff getrennt.
-3. Die Administration speichert die Änderung. Prüfen Sie den Zugriff in Ihrer nächsten Sitzung erneut, wie im bestehenden Berechtigungsleitfaden beschrieben.
+1. Nennen Sie Ihrem Admin die benötigte Seite, Maschine und Aufgabe.
+2. Der Admin öffnet **Admin-Panel → User → Berechtigungen bearbeiten** und prüft Seiten- und Maschinenzugriff getrennt.
+3. Der Admin speichert die Änderung. Prüfen Sie den Zugriff in Ihrer nächsten Sitzung erneut, wie im bestehenden Berechtigungsleitfaden beschrieben.
 
 Den vollständigen Ablauf erklärt [Benutzer einladen und Berechtigungen verwalten](/de/platform-intro/workflows/user-access-management).
 
@@ -52,7 +52,7 @@ Den vollständigen Ablauf erklärt [Benutzer einladen und Berechtigungen verwalt
 
 ## Zugangsdaten und Heraufstufung von Maschinenbedienern
 
-Ein Administrator erstellt Konten für Maschinenbediener. Generierte Passwörter werden einmal angezeigt; kopieren oder laden Sie sie vor dem Schließen herunter. Ein neues Passwort beendet die aktiven Sitzungen dieses Maschinenbedieners. Eine Deaktivierung beendet den Zugriff sofort und erhält bisherige Schichten, Beschriftungen und Zuweisungen.
+Ein Admin erstellt Konten für Maschinenbediener. Generierte Passwörter werden einmal angezeigt; kopieren oder laden Sie sie vor dem Schließen herunter. Ein neues Passwort beendet die aktiven Sitzungen dieses Maschinenbedieners. Eine Deaktivierung beendet den Zugriff sofort und erhält bisherige Schichten, Beschriftungen und Zuweisungen.
 
 **Zum User heraufstufen** gibt Zugriff auf alle Maschinen, unabhängig von der bisherigen Maschinenliste. Prüfen Sie die daraus entstehenden Berechtigungen bewusst. E-Mail-Bestätigung und Aktivierung sind getrennt. Unbestätigte Maschinenbediener können sich weiterhin anmelden; eine Bestätigungsmail wird nicht automatisch versendet.
 

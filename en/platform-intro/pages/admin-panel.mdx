@@ -23,7 +23,7 @@ Users open it from the main navigation when their role allows it.
 - Administrative sections for halls, shifts, machine operators, priority levels, and related setup data.
 - Creation and edit actions for reusable platform records.
 
-The machine list marks entries of kind **Work center**. These workplaces have no AVA. Administrators can create them or change their kind in the [machine configuration](/en/platform-intro/pages/machine-configuration).
+The machine list marks entries of kind **Work center**. These workplaces have no AVA. Admins can create them or change their kind in the [machine configuration](/en/platform-intro/pages/machine-configuration).
 
 ## What You Can Do
 
@@ -32,7 +32,7 @@ The machine list marks entries of kind **Work center**. These workplaces have no
 - Review and update supporting configuration needed by planning and machine pages.
 - Define company priority levels and manage user access to pages and machines.
 
-Administrators can search the product table by product name or number.
+Admins can search the product table by product name or number.
 
 ## Define Company Priority Levels
 
@@ -56,7 +56,7 @@ Priority levels give your team a shared way to recognize the urgency of work. Ea
 
 Open the information icons beside the titles to read the section description and explanations for **Which number is more urgent?** and **Queue order and operation priority stay in step**. These explanations now appear there instead of as lines below the titles.
 
-Administrators open **Admin Panel → Priority Levels → How priorities are used**, below the levels table.
+Admins open **Admin Panel → Priority Levels → How priorities are used**, below the levels table.
 
 Under **Which number is more urgent?**, choose:
 
@@ -75,7 +75,7 @@ In **Improve plan**, **Keep priorities** never changes priorities. **Least delay
 
 ## Manage BDE Access Templates
 
-Administrators open **Admin Panel → BDE access templates** to make the BDE page the same on selected machines. Use **New template** to choose fields that stay visible or highlighted, optional fixed sorting and automatic refresh, and allowed actions. The rules apply to everyone on those machines’ Data Acquisition V3 pages, including administrators. Other pages stay unchanged.
+Admins open **Admin Panel → BDE access templates** to make the BDE page the same on selected machines. Use **New template** to choose fields that stay visible or highlighted, optional fixed sorting and automatic refresh, and allowed actions. The rules apply to everyone on those machines’ Data Acquisition V3 pages, including Admins. Other pages stay unchanged.
 
 Under **Allowed on the BDE page**, switch off **Tick off parts in the parts list** to keep lists readable without allowing ticks or reopening parts on those machines. This does not restrict ticking in the Planner or order details. See [Parts Lists](/en/platform-intro/pages/parts-lists).
 
@@ -90,6 +90,18 @@ Under **Allowed on the BDE page**, **Reopen completed operations** controls whet
 Under **AI on the BDE page**, **Ask AI in the knowledge base tab** allows questions there for people with AI assistant access. **Fill in tickets with AI** controls AI help when creating a ticket from the PDA page. Both switches start off. Machines without a template have no AI in these places. Saving knowledge remains available with Knowledge Base access. Other pages are unaffected.
 
 See [BDE Access Templates](/en/platform-intro/pages/bde-access-templates) for each setting and its limits, or follow [Make the BDE Page the Same on Several Machines](/en/platform-intro/workflows/bde-access-templates).
+
+<a id="invite-team-members" />
+
+## Invite Team Members and Understand Roles
+
+Admins can open **Admin Panel → Users → Invite Team Members**. The button at the top of the Admin Panel opens the same **Invite team members** dialog. Enter the person's email and choose **Role**. Point at or tap the information icon beside it to open **What can each role do?**. The in-app summaries say:
+
+- **Admin** — “Manages the company: users, machines, shifts and settings.”
+- **User** — “Works with the pages an admin allows, e.g. machines, orders and reports.”
+- **Machine operator** — “Uses only the machine tablet pages for their machines.”
+
+The same short summaries appear below the user table. For access rules, see [roles and access](/en/platform-intro/concepts/roles-and-access). Follow [Invite Users and Manage Permissions](/en/platform-intro/workflows/user-access-management).
 
 ## Manage Page and Machine Permissions
 
@@ -112,7 +124,7 @@ Open the user record in the Admin Panel and select **Edit Permissions**. Select 
 
 ## Default Priorities and Range Limits
 
-By default, higher numbers mean more urgent work. **Which number is more urgent?** lets administrators reverse this. Defaults: **Low 10, Normal 30, High 70, Critical 100, Highest 150, Extreme 200**. Default colors are green 0–29, blue 30–69, orange 70–99, and red 100+. Companies can set names, values, and colors or apply **SAP Delivery Priority**, **Epicor Kinetic Material Queue Priority**, or **Infor M3 Customer Order Priority** presets.
+By default, higher numbers mean more urgent work. **Which number is more urgent?** lets Admins reverse this. Defaults: **Low 10, Normal 30, High 70, Critical 100, Highest 150, Extreme 200**. Default colors are green 0–29, blue 30–69, orange 70–99, and red 100+. Companies can set names, values, and colors or apply **SAP Delivery Priority**, **Epicor Kinetic Material Queue Priority**, or **Infor M3 Customer Order Priority** presets.
 
 Custom priority settings allow **0–999**, while the Add Order form states **1–200**. This mismatch needs product confirmation; follow validation in the current form instead of assuming one range applies everywhere. Existing priorities are protected during ERP re-imports.
 
@@ -168,11 +180,11 @@ Included credits are used first, then extra monthly credits, then the credit pac
 
 ## Active Shifts in Machine Lists
 
-In the Admin Panel and company view, **Active shift** identifies machines whose shifts follow machine activity. The assigned shift group is not used while this setting is on. Administrators can change the mode and its durations in the [machine configuration](/en/platform-intro/pages/machine-configuration).
+In the Admin Panel and company view, **Active shift** identifies machines whose shifts follow machine activity. The assigned shift group is not used while this setting is on. Admins can change the mode and its durations in the [machine configuration](/en/platform-intro/pages/machine-configuration).
 
 ## Change a User's Email
 
-Administrators can select **Change email** in user management in the Admin Panel or company view for users who are not machine operators. Use this action instead of editing the address in the user form. Enter **New email** and select **Send verification**. The user's current address remains active until they open the link sent to the new address and select **Confirm email change**.
+Admins can select **Change email** in user management in the Admin Panel or company view for users who are not machine operators. Use this action instead of editing the address in the user form. Enter **New email** and select **Send verification**. The user's current address remains active until they open the link sent to the new address and select **Confirm email change**.
 
 The pending notice shows the address awaiting confirmation. Use **Resend** after the displayed wait or **Cancel change** if the request is no longer needed. Follow [Change Your Email Address](/en/platform-intro/workflows/change-email).
 
@@ -192,7 +204,7 @@ Each break must fit within the shift and last at most one hour. These messages a
 
 Correct all reported problems before saving. Follow [Manage Shift Definitions](/en/platform-intro/workflows/shift-management).
 
-Administrators open **Admin Panel → Configure Shifts and Scheduling → Shifts**, then **Break settings** directly left of **Add Shift**. Turn on **Label breaks automatically** and save before choosing a **Downtime reason** for each break in the shift editor. **No downtime reason** leaves that break without an automatic break label.
+Admins open **Admin Panel → Configure Shifts and Scheduling → Shifts**, then **Break settings** directly left of **Add Shift**. Turn on **Label breaks automatically** and save before choosing a **Downtime reason** for each break in the shift editor. **No downtime reason** leaves that break without an automatic break label.
 
 While the switch is on, the **Breaks** column shows each break's reason after its length. When it is off, these reasons are hidden in the table and the reason choices in the editor are greyed out. Saved choices are kept. The choices are also unavailable while settings load or cannot be loaded.
 
@@ -200,7 +212,7 @@ See [Break Settings](/en/platform-intro/pages/break-settings) for the company-wi
 
 ## Manage Downtime Reasons
 
-Only administrators can create, edit, or delete reasons. Open **Admin Panel → Configure Analyzers → Downtime reasons**. The table shows **Code**, **Category**, and **Available on** alongside the reason, description, colour, and level. Search by code or text and filter by category. The availability column shows whether a reason is available everywhere or on a number of machines; its explanation lists their names. **No machines** means the reason is offered nowhere.
+Only Admins can create, edit, or delete reasons. Open **Admin Panel → Configure Analyzers → Downtime reasons**. The table shows **Code**, **Category**, and **Available on** alongside the reason, description, colour, and level. Search by code or text and filter by category. The availability column shows whether a reason is available everywhere or on a number of machines; its explanation lists their names. **No machines** means the reason is offered nowhere.
 
 The reason form shows name, code, category, description, type and colour on the left, with **Available on machines** on the right. The machine list scrolls separately and shows names without an extra all-reasons tag. Open the information icon beside its title for an explanation of fixed lists. Choose a reason type before saving.
 
@@ -210,7 +222,7 @@ Under **Available on machines**, click the checkbox or machine name to choose wh
 
 Editing a shared reason affects all machines. Select **Delete** in the reason’s row menu and review **Deleting this reason removes it from:**. The notice lists the affected past downtimes, machine reason lists, downtime reason rules and breaks, with counts and example names where available. **This reason is not used anywhere.** appears when there are no uses. While the details load, or if they cannot load, only a general notice appears; deletion remains available.
 
-Deleting the reason keeps past downtime entries but removes their reason without assigning another. It also removes the reason from machine lists, downtime reason rules, defaults and shift breaks. Break times stay unchanged. Future time covered by a removed rule gets the machine's remaining default reason, if any. Reason charts and reports are updated for the affected days. Reports you already received stay as they were. Restricted machine lists stay restricted; deleting their last reason leaves them with none until an administrator changes the selection.
+Deleting the reason keeps past downtime entries but removes their reason without assigning another. It also removes the reason from machine lists, downtime reason rules, defaults and shift breaks. Break times stay unchanged. Future time covered by a removed rule gets the machine's remaining default reason, if any. Reason charts and reports are updated for the affected days. Reports you already received stay as they were. Restricted machine lists stay restricted; deleting their last reason leaves them with none until an Admin changes the selection.
 
 Use [Create and Manage Downtime Reasons](/en/platform-intro/workflows/timeline-reason-creation) for the steps. To set an entire machine's list, use [Machine Configuration](/en/platform-intro/pages/machine-configuration).
 

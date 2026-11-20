@@ -9,7 +9,7 @@ description: "Der zentrale Arbeitsbereich für die Verwaltung gemeinsamer Plattf
 
 Schaffen Sie einen zentralen Ort für gemeinsame Betriebseinstellungen, die den Rest der Plattform unterstützen.
 
-Benutzer öffnen diese Seite über die Hauptnavigation, wenn ihre Rolle es zulässt.
+Personen öffnen diese Seite über die Hauptnavigation, wenn ihre Rolle es zulässt.
 
 ## Zugriff
 
@@ -23,16 +23,16 @@ Benutzer öffnen diese Seite über die Hauptnavigation, wenn ihre Rolle es zulä
 - Verwaltungsbereiche für Hallen, Schichten, Maschinenbediener, Prioritätsstufen und zugehörige Einrichtungsdaten.
 - Erstellungs- und Bearbeitungsaktionen für wiederverwendbare Plattformdatensätze.
 
-Die Maschinenliste kennzeichnet Einträge der Art **Arbeitsplatz**. Diese Arbeitsplätze haben keine AVA. Administratoren können sie anlegen oder ihre Art in der [Maschinenkonfiguration](/de/platform-intro/pages/machine-configuration) ändern.
+Die Maschinenliste kennzeichnet Einträge der Art **Arbeitsplatz**. Diese Arbeitsplätze haben keine AVA. Admins können sie anlegen oder ihre Art in der [Maschinenkonfiguration](/de/platform-intro/pages/machine-configuration) ändern.
 
 ## Was Sie tun können
 
 - Hallen, Schichten und Maschinenbediener anlegen und pflegen.
 - Stillstandsgründe und andere plattformweite Einrichtungselemente verwalten.
 - Die unterstützende Konfiguration prüfen und aktualisieren, die Planungs- und Maschinenseiten benötigen.
-- Unternehmensweite Prioritätsstufen festlegen und Benutzerzugriffe auf Seiten und Maschinen verwalten.
+- Unternehmensweite Prioritätsstufen festlegen und den Zugriff von Personen auf Seiten und Maschinen verwalten.
 
-Administratoren können die Produkttabelle nach Produktname oder Nummer durchsuchen.
+Admins können die Produkttabelle nach Produktname oder Nummer durchsuchen.
 
 ## Unternehmensweite Prioritätsstufen festlegen
 
@@ -56,7 +56,7 @@ Prioritätsstufen helfen Ihrem Team, die Dringlichkeit von Arbeit einheitlich zu
 
 Öffnen Sie die Informationssymbole neben den Titeln, um die Abschnittsbeschreibung sowie die Erklärungen zu **Welche Zahl ist dringender?** und **Reihenfolge und Arbeitsgang-Priorität bleiben im Einklang** zu lesen. Die Erklärungen stehen jetzt dort statt als Textzeilen unter den Titeln.
 
-Administratoren öffnen **Admin-Panel → Prioritätsstufen → So werden Prioritäten verwendet** unterhalb der Stufentabelle.
+Admins öffnen **Admin-Panel → Prioritätsstufen → So werden Prioritäten verwendet** unterhalb der Stufentabelle.
 
 Wählen Sie unter **Welche Zahl ist dringender?**:
 
@@ -75,7 +75,7 @@ In **Plan verbessern** ändert **Prioritäten beibehalten** nie Prioritäten. **
 
 ## BDE-Zugriffsvorlagen verwalten
 
-Administratoren öffnen **Admin-Panel → BDE-Zugriffsvorlagen**, um die BDE-Seite auf ausgewählten Maschinen einheitlich zu machen. Wählen Sie unter **Neue Vorlage** dauerhaft sichtbare oder hervorgehobene Felder, eine optionale feste Sortierung und Aktualisierung sowie erlaubte Aktionen. Die Regeln gelten auf den BDE-V3-Seiten dieser Maschinen für alle, auch für Administratoren. Andere Seiten bleiben unverändert.
+Admins öffnen **Admin-Panel → BDE-Zugriffsvorlagen**, um die BDE-Seite auf ausgewählten Maschinen einheitlich zu machen. Wählen Sie unter **Neue Vorlage** dauerhaft sichtbare oder hervorgehobene Felder, eine optionale feste Sortierung und Aktualisierung sowie erlaubte Aktionen. Die Regeln gelten auf den BDE-V3-Seiten dieser Maschinen für alle, auch für Admins. Andere Seiten bleiben unverändert.
 
 Schalten Sie unter **Auf der BDE-Seite erlaubt** die Aktion **Teile der Stückliste abhaken** aus, damit Listen auf diesen Maschinen lesbar bleiben, Teile aber weder abgehakt noch wieder geöffnet werden können. Im Planer und in den Auftragsdetails bleibt das Abhaken möglich. Siehe [Stücklisten](/de/platform-intro/pages/parts-lists).
 
@@ -91,17 +91,29 @@ Unter **KI auf der BDE-Seite** erlaubt **KI fragen im Tab Wissensdatenbank** dor
 
 Die Seite [BDE-Zugriffsvorlagen](/de/platform-intro/pages/bde-access-templates) erklärt Einstellungen und Grenzen. Die Schritte finden Sie unter [Die BDE-Seite auf mehreren Maschinen einheitlich machen](/de/platform-intro/workflows/bde-access-templates).
 
+<a id="invite-team-members" />
+
+## Teammitglieder einladen und Rollen verstehen
+
+Admins öffnen **Admin-Panel → User → Team einladen**. Die Schaltfläche oben im Admin-Panel öffnet denselben Dialog. Geben Sie die E-Mail-Adresse der Person ein und wählen Sie die **Rolle**. Zeigen Sie auf das Informationssymbol daneben oder tippen Sie darauf, um **Was kann welche Rolle tun?** zu öffnen. Die Kurzbeschreibungen in der Oberfläche lauten:
+
+- **Admin** — „Verwaltet das Unternehmen: User, Maschinen, Schichten und Einstellungen.“
+- **User** — „Arbeitet mit den Seiten, die ein Admin freigibt, z. B. Maschinen, Aufträge und Berichte.“
+- **Maschinenbediener** — „Nutzt nur die Tablet-Seiten an seinen Maschinen.“
+
+Dieselben Kurzbeschreibungen stehen unter der User-Tabelle. Die Zugriffsregeln finden Sie unter [Rollen und Zugriff](/de/platform-intro/concepts/roles-and-access). Folgen Sie [Benutzer einladen und Berechtigungen verwalten](/de/platform-intro/workflows/user-access-management).
+
 ## Seiten- und Maschinenberechtigungen verwalten
 
-Berechtigungen legen fest, auf welche Plattformseiten und Maschinen ein Benutzer zugreifen kann. Geben Sie jeder Person damit Zugriff auf die Bereiche und Maschinen, die sie für ihre Arbeit benötigt.
+Berechtigungen legen fest, auf welche Plattformseiten und Maschinen eine Person zugreifen kann. Geben Sie jeder Person damit Zugriff auf die Bereiche und Maschinen, die sie für ihre Arbeit benötigt.
 
-Öffnen Sie den Benutzerdatensatz im Administrationsbereich und wählen Sie **Berechtigungen bearbeiten**. Wählen Sie die zugänglichen Seiten und Maschinen aus und speichern Sie die Änderungen. Die aktualisierten Berechtigungen gelten ab der nächsten Sitzung des Benutzers.
+Öffnen Sie das Konto der Person im Administrationsbereich und wählen Sie **Berechtigungen bearbeiten**. Wählen Sie die zugänglichen Seiten und Maschinen aus und speichern Sie die Änderungen. Die aktualisierten Berechtigungen gelten ab der nächsten Sitzung der Person.
 
 ## Den passenden Administrationsbereich finden
 
 | Bereich | Konfiguration |
 | --- | --- |
-| **Team einladen / Benutzer** | Einladungen, Rollen, Seiten- und Maschinenzugriff. |
+| **Team einladen / User** | Einladungen, Rollen, Seiten- und Maschinenzugriff. |
 | **Fabrik konfigurieren** | Hallen und **Anzeigegeräte**, Maschinen-Tags, Maschinen. |
 | **Schichten und Zeitplanung konfigurieren** | Schichten, Schichtgruppen, **Maschinenbediener**. |
 | **Produkte und Aufträge konfigurieren** | Produkte, Aufträge, Auftragstags, ERP-Vorlagendownload. |
@@ -112,7 +124,7 @@ Berechtigungen legen fest, auf welche Plattformseiten und Maschinen ein Benutzer
 
 ## Standardprioritäten und Wertebereichsgrenzen
 
-Standardmäßig bedeuten höhere Zahlen dringendere Arbeit. Unter **Welche Zahl ist dringender?** können Administratoren dies umkehren. Standards sind **Niedrig 10, Normal 30, Hoch 70, Kritisch 100, Höchste 150, Extrem 200**. Standardfarben sind Grün 0–29, Blau 30–69, Orange 70–99 und Rot ab 100. Unternehmen können Namen, Werte und Farben setzen oder Vorlagen für **SAP Delivery Priority**, **Epicor Kinetic Material Queue Priority** und **Infor M3 Customer Order Priority** verwenden.
+Standardmäßig bedeuten höhere Zahlen dringendere Arbeit. Unter **Welche Zahl ist dringender?** können Admins dies umkehren. Standards sind **Niedrig 10, Normal 30, Hoch 70, Kritisch 100, Höchste 150, Extrem 200**. Standardfarben sind Grün 0–29, Blau 30–69, Orange 70–99 und Rot ab 100. Unternehmen können Namen, Werte und Farben setzen oder Vorlagen für **SAP Delivery Priority**, **Epicor Kinetic Material Queue Priority** und **Infor M3 Customer Order Priority** verwenden.
 
 Benutzerdefinierte Prioritätsstufen erlauben **0–999**, das Auftragsformular nennt **1–200**. Dieser Unterschied benötigt Produktbestätigung. Beachten Sie die Validierung des aktuellen Formulars statt eines universellen Bereichs. Vorhandene Prioritäten bleiben bei ERP-Neuimporten geschützt.
 
@@ -142,7 +154,7 @@ Wenn Sie den Bereich **Wissensdatenbank** ausschalten, können Personen ihre Cha
 
 Mit **Anpassen** öffnen Sie die Detailauswahl eines Bereichs. Schalten Sie einzelne Einträge an oder aus und wählen Sie oben **Übernehmen**. Die Leiste unten an der Karte zeigt die Anzahl ungespeicherter Änderungen. Wählen Sie **Speichern** zum Behalten oder **Verwerfen** zum Aufgeben.
 
-Schalten Sie unter **Personen** den **KI-Zugang** für Personen aus, die weder Assistent noch verbundene KI-Apps nutzen sollen. **Administratoren haben immer Zugang**. Seiten- und Maschinenrechte gelten weiterhin. Schalten Sie **KI-Apps** ein, damit Personen [eine externe App mit ihrem eigenen Konto verbinden](/de/platform-intro/pages/chat-history#connected-apps).
+Schalten Sie unter **Personen** den **KI-Zugang** für Personen aus, die weder Assistent noch verbundene KI-Apps nutzen sollen. **Admins haben immer Zugang**. Seiten- und Maschinenrechte gelten weiterhin. Schalten Sie **KI-Apps** ein, damit Personen [eine externe App mit ihrem eigenen Konto verbinden](/de/platform-intro/pages/chat-history#connected-apps).
 
 <a id="ai-credits" />
 
@@ -168,11 +180,11 @@ Zuerst werden enthaltene Credits genutzt, dann zusätzliche monatliche Credits, 
 
 ## Aktive Schichten in Maschinenlisten
 
-Im Administrationsbereich und in der Unternehmensansicht kennzeichnet **Aktive Schicht** Maschinen, deren Schichten der Maschinenaktivität folgen. Die zugewiesene Schichtgruppe wird währenddessen nicht verwendet. Administratoren ändern die Einstellung und ihre Zeiten in der [Maschinenkonfiguration](/de/platform-intro/pages/machine-configuration).
+Im Administrationsbereich und in der Unternehmensansicht kennzeichnet **Aktive Schicht** Maschinen, deren Schichten der Maschinenaktivität folgen. Die zugewiesene Schichtgruppe wird währenddessen nicht verwendet. Admins ändern die Einstellung und ihre Zeiten in der [Maschinenkonfiguration](/de/platform-intro/pages/machine-configuration).
 
-## E-Mail eines Benutzers ändern
+## E-Mail einer Person ändern
 
-Administratoren können in der Benutzerverwaltung des Administrationsbereichs oder der Unternehmensansicht **E-Mail ändern** für Benutzer wählen, die keine Maschinenbediener sind. Verwenden Sie diese Aktion, statt die Adresse im Benutzerformular zu bearbeiten. Geben Sie **Neue E-Mail** ein und wählen Sie **Bestätigung senden**. Die bisherige Adresse bleibt aktiv, bis die Person den Link an der neuen Adresse öffnet und **E-Mail-Änderung bestätigen** wählt.
+Admins können in der User-Verwaltung des Administrationsbereichs oder der Unternehmensansicht **E-Mail ändern** für Personen wählen, die keine Maschinenbediener sind. Verwenden Sie diese Aktion, statt die Adresse im Formular der Person zu bearbeiten. Geben Sie **Neue E-Mail** ein und wählen Sie **Bestätigung senden**. Die bisherige Adresse bleibt aktiv, bis die Person den Link an der neuen Adresse öffnet und **E-Mail-Änderung bestätigen** wählt.
 
 Der Hinweis zur ausstehenden Änderung zeigt die noch zu bestätigende Adresse. Wählen Sie nach der angezeigten Wartezeit **Erneut senden** oder bei Bedarf **Änderung abbrechen**. Folgen Sie [E-Mail-Adresse ändern](/de/platform-intro/workflows/change-email).
 
@@ -192,7 +204,7 @@ Jede Pause muss innerhalb der Schicht liegen und darf höchstens eine Stunde dau
 
 Korrigieren Sie alle gemeldeten Probleme vor dem Speichern. Folgen Sie [Schichtdefinitionen verwalten](/de/platform-intro/workflows/shift-management).
 
-Administratoren öffnen **Admin-Panel → Schichten und Zeitplanung konfigurieren → Schichten**, dann **Pauseneinstellungen** direkt links neben **Schicht hinzufügen**. Schalten Sie **Pausen automatisch kennzeichnen** ein und speichern Sie, bevor Sie beim Bearbeiten einer Schicht jeder Pause einen **Stillstandsgrund** zuweisen. **Kein Stillstandsgrund** lässt die Pause ohne automatische Pausenkennzeichnung.
+Admins öffnen **Admin-Panel → Schichten und Zeitplanung konfigurieren → Schichten**, dann **Pauseneinstellungen** direkt links neben **Schicht hinzufügen**. Schalten Sie **Pausen automatisch kennzeichnen** ein und speichern Sie, bevor Sie beim Bearbeiten einer Schicht jeder Pause einen **Stillstandsgrund** zuweisen. **Kein Stillstandsgrund** lässt die Pause ohne automatische Pausenkennzeichnung.
 
 Solange der Schalter eingeschaltet ist, zeigt die Spalte **Pausen** den Grund nach der Pausenlänge. Bei ausgeschaltetem Schalter sind die Gründe in der Tabelle ausgeblendet und die Grundauswahl beim Bearbeiten ausgegraut. Gespeicherte Auswahlen bleiben erhalten. Die Auswahl ist auch gesperrt, während die Einstellungen laden oder nicht geladen werden können.
 
@@ -200,7 +212,7 @@ Die [Pauseneinstellungen](/de/platform-intro/pages/break-settings) erklären die
 
 ## Stillstandsgründe verwalten
 
-Nur Administratoren können Gründe anlegen, bearbeiten oder löschen. Öffnen Sie **Admin-Panel → Analysatoren konfigurieren → Stillstandsgründe**. Die Tabelle zeigt **Code**, **Kategorie** und **Verfügbar auf** neben Grund, Beschreibung, Farbe und Stufe. Suchen Sie nach Code oder Text und filtern Sie nach Kategorie. Die Verfügbarkeit zeigt alle Maschinen oder eine Maschinenanzahl. Die Erklärung dazu nennt deren Namen. **Keine Maschine** bedeutet, dass der Grund nirgends angeboten wird.
+Nur Admins können Gründe anlegen, bearbeiten oder löschen. Öffnen Sie **Admin-Panel → Analysatoren konfigurieren → Stillstandsgründe**. Die Tabelle zeigt **Code**, **Kategorie** und **Verfügbar auf** neben Grund, Beschreibung, Farbe und Stufe. Suchen Sie nach Code oder Text und filtern Sie nach Kategorie. Die Verfügbarkeit zeigt alle Maschinen oder eine Maschinenanzahl. Die Erklärung dazu nennt deren Namen. **Keine Maschine** bedeutet, dass der Grund nirgends angeboten wird.
 
 Das Formular zeigt Name, Code, Kategorie, Beschreibung, Typ und Farbe links sowie **Verfügbar auf Maschinen** rechts. Die Maschinenliste lässt sich separat scrollen und zeigt Namen ohne zusätzliche Kennzeichnung für alle Gründe. Das Informationssymbol neben ihrem Titel erklärt feste Listen. Wählen Sie vor dem Speichern einen Grundtyp.
 
@@ -210,7 +222,7 @@ Klicken Sie unter **Verfügbar auf Maschinen** auf das Kontrollkästchen oder de
 
 Änderungen an einem gemeinsamen Grund gelten für alle Maschinen. Wählen Sie **Löschen** im Zeilenmenü des Grundes und prüfen Sie **Beim Löschen wird dieser Grund entfernt aus:**. Der Hinweis nennt betroffene frühere Stillstände, Grundlisten der Maschinen, Regeln für Stillstandsgründe und Pausen. Soweit verfügbar erscheinen Anzahlen und beispielhafte Namen. Ohne Verwendung erscheint **Dieser Grund wird nirgends verwendet.** Während die Details laden oder wenn sie nicht geladen werden können, erscheint nur ein allgemeiner Hinweis. Löschen bleibt möglich.
 
-Beim Löschen bleiben frühere Stillstände erhalten, verlieren aber ihren Grund ohne Ersatz. Der Grund wird auch aus Maschinenlisten, Regeln für Stillstandsgründe, Standardgründen und Schichtpausen entfernt. Die Pausenzeiten bleiben erhalten. Künftig erhält die Zeit einer entfernten Regel den verbleibenden Standardgrund der Maschine, sofern vorhanden. Diagramme und Berichte nach Stillstandsgründen werden für die betroffenen Tage aktualisiert. Bereits erhaltene Berichte bleiben unverändert. Eingeschränkte Maschinenlisten bleiben eingeschränkt. Nach dem Löschen ihres letzten Grundes bieten sie keinen Grund an, bis ein Administrator die Auswahl ändert.
+Beim Löschen bleiben frühere Stillstände erhalten, verlieren aber ihren Grund ohne Ersatz. Der Grund wird auch aus Maschinenlisten, Regeln für Stillstandsgründe, Standardgründen und Schichtpausen entfernt. Die Pausenzeiten bleiben erhalten. Künftig erhält die Zeit einer entfernten Regel den verbleibenden Standardgrund der Maschine, sofern vorhanden. Diagramme und Berichte nach Stillstandsgründen werden für die betroffenen Tage aktualisiert. Bereits erhaltene Berichte bleiben unverändert. Eingeschränkte Maschinenlisten bleiben eingeschränkt. Nach dem Löschen ihres letzten Grundes bieten sie keinen Grund an, bis ein Admin die Auswahl ändert.
 
 Die Schritte finden Sie unter [Stillstandsgründe erstellen und verwalten](/de/platform-intro/workflows/timeline-reason-creation). Für die gesamte Grundliste einer Maschine nutzen Sie die [Maschinenkonfiguration](/de/platform-intro/pages/machine-configuration).
 
@@ -222,15 +234,15 @@ Die Schritte finden Sie unter [Stillstandsgründe erstellen und verwalten](/de/p
 - Stillstandsgrund
 - Maschinentyp
 - Prioritätsstufe
-- Benutzerberechtigungen
+- User-Berechtigungen
 
 ## Ergebnisse und Grenzen
 
 ### Typische Ergebnisse
-- Benutzer halten die zentrale Plattformkonfiguration an die reale Werksstruktur angepasst.
+- Personen halten die zentrale Plattformkonfiguration an die reale Werksstruktur angepasst.
 
 ### Grenzen und Leerzustände
-- Nur Administratoren sollten diese Seite als Arbeitsbereich verwenden.
+- Nur Admins sollten diese Seite als Arbeitsbereich verwenden.
 
 ## Verwandte Seiten
 
