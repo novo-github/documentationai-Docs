@@ -32,13 +32,13 @@ Read each condition's description before setting its threshold. The measures com
 | Measure | What it checks |
 | --- | --- |
 | Preparation time | Cumulative setup time for the current job compared with its planned preparation time. |
-| Production deficit | How far the current job's output falls behind the expected production pace. |
+| Production deficit | How far output falls behind the expected production pace. A 20% deficit means 20 units are missing when 100 were expected. |
 | Cycle time | The latest completed cycle compared with the operation's baseline cycle time. |
-| Order progress | Produced quantity compared with the progress expected as time passes toward the delivery deadline. |
+| Order progress | Production progress compared with time elapsed between the order’s planned start and end. A 20% deficit means 60% of planned time has passed but 40% of the quantity is produced. |
 | Scrap count and rate | Scrap parts, or their share of all parts, in the current job's PDA production entries. Choose material scrap, labor/processing scrap, or both. |
-| Slow cycles | How many of the recent cycles count as slow under your chosen settings. |
+| **Consecutive long pauses** (previously **Slow Consecutive Cycles**) | Counts consecutive gaps between cycles that reach the pause threshold, starting with the most recent gap. |
 
-For slow cycles, choose a whole number from 1 to 1000 for the number of recent cycles to inspect. Set a positive multiple of expected cycle time: 2 means twice as long. Counts must be whole numbers. Fill in every condition setting and choose a comparison supported by that measure.
+**Recent pauses to check** (previously **Lookback Cycles**) accepts a whole number from 1 to 1000; **Pause threshold** (previously **Gap Threshold**) is a multiple of expected cycle time, so 2 means the pause between cycles lasts at least twice that time.
 
 Preparation and scrap values update only when a machine operator records a PDA entry. They may stay steady and then jump. A sensor alone does not update entered scrap quantities.
 
@@ -74,7 +74,7 @@ Choose **Start from a template** to prefill a rule, or **Start from scratch** to
 | **Preparation taking too long** | Setup reaches 120% of planned preparation time. |
 | **Production behind expected pace** | Production is at least 15% behind pace. |
 | **Cycle time too slow** | The latest cycle is at least 25% slower than the baseline. |
-| **Repeated cycle gaps** | 3 of the last 10 cycles take at least twice the expected cycle time. |
+| **Repeated cycle gaps** | 3 consecutive pauses reach at least twice the expected cycle time; checks up to 10 recent pauses. |
 | **Excessive scrap rate** | Total scrap reaches 3%. |
 | **Operation at risk** | Production is 15% behind pace and cycles are 25% slower. |
 | **Order falling behind schedule** | Order progress is at least 15 percentage points behind the elapsed schedule. |

@@ -55,6 +55,11 @@
                     "title": "Roles & Access",
                     "path": "en/platform-intro/concepts/roles-and-access",
                     "icon": "book-open"
+                  },
+                  {
+                    "title": "Help on every page (ⓘ)",
+                    "path": "en/platform-intro/concepts/field-help",
+                    "icon": "book-open"
                   }
                 ]
               },
@@ -718,6 +723,11 @@
                   {
                     "title": "Rollen und Zugriff",
                     "path": "de/platform-intro/concepts/roles-and-access",
+                    "icon": "book-open"
+                  },
+                  {
+                    "title": "Hilfe auf jeder Seite (ⓘ)",
+                    "path": "de/platform-intro/concepts/field-help",
                     "icon": "book-open"
                   }
                 ]

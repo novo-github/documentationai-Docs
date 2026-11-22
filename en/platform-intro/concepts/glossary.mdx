@@ -11,6 +11,12 @@ Related references: [calculations](/en/platform-intro/concepts/calculations) and
 
 ## 0–9 / +
 
+### ⓘ help
+
+Short explanations beside fields and headings tell you what a setting does and when to change it.
+
+[Help on every page (ⓘ)](/en/platform-intro/concepts/field-help).
+
 ### +1day / +1week / +1month / +1Tag
 
 Quick date-shift controls on order and access-key forms; the German forms use Tag, Woche, and Monat.
@@ -745,6 +751,12 @@ One recorded work session with start and end timestamps. Deleting it cannot be u
 
 [Learn more](/en/platform-intro/pages/data-acquisition).
 
+### Interval assist
+
+**Interval assist** can correct a late start or stop to match the machine’s activity, or end a forgotten production interval. Depending on the machine’s settings, it applies a time automatically or asks you to choose.
+
+[Learn more](/en/platform-intro/pages/machine-configuration).
+
 ### Intervals panel / Show intervals
 
 **Show intervals** opens the saved intervals for one assignment from its count in the order table. You can review, edit or delete them in the side panel. Zero counts and dashes cannot open it.
@@ -782,6 +794,12 @@ Import values for new orders or operations with empty priority cells, or when no
 Notes from order, work order, operation, and assignment, shown together at the machine.
 
 [Learn more](/en/platform-intro/pages/data-acquisition).
+
+### Jobs in parallel
+
+**Jobs in parallel** sets how many operations a machine can run at the same time. The forecast uses this capacity to plan work side by side.
+
+[Learn more](/en/platform-intro/pages/machine-configuration).
 
 ## K
 
@@ -913,15 +931,21 @@ Share of machines producing at this moment; not an average across the reporting 
 
 [Learn more](/en/platform-intro/pages/org-stats).
 
+### Load rating
+
+**Load rating** suggests machine targets from the last six weeks. You must save the suggested values before they take effect.
+
+[Learn more](/en/platform-intro/pages/machine-configuration).
+
 ### Local IP / Lokale IP / MAC
 
 Network details used to identify a registered hall display; distinct from its production figures.
 
 [Learn more](/en/platform-intro/pages/hall-plan).
 
-### Lookback Cycles / Gap Threshold
+### Recent pauses to check / Pause threshold
 
-For slow-cycle checks, the number of recent cycles to inspect (1 to 1000) and a positive multiple of expected cycle time. A multiple of 2 means twice as long.
+**Recent pauses to check** (previously **Lookback Cycles**) sets how many recent pauses between cycles to check, from 1 to 1000. **Pause threshold** (previously **Gap Threshold**) is a multiple of expected cycle time; 2 means a pause at least twice that time. **Consecutive long pauses** (previously **Slow Consecutive Cycles**) counts consecutive qualifying pauses starting with the most recent.
 
 [Learn more](/en/platform-intro/pages/automator).
 
@@ -959,9 +983,9 @@ Custom sensor readings with name, unit, thresholds, precision, and multiplicatio
 
 [Learn more](/en/platform-intro/workflows/operator-management).
 
-### Machine rating
+### Ratings / Machine rating
 
-Configured machine targets compared with actual dashboard values, not measurements.
+**Ratings** are targets you set for a machine’s OEE, performance, availability and energy use per hour. Reports and comparisons show actual results against these targets.
 
 [Learn more](/en/platform-intro/pages/machine-configuration).
 
@@ -1284,6 +1308,12 @@ Pages, machines, and hall plans pinned to the top of personal navigation.
 
 [Learn more](/en/platform-intro/pages/machines).
 
+### Planned Duration
+
+**Planned Duration** is the time allowed for an operation: preparation plus production time for the planned quantity. When no work times are given, it uses the time between the planned start and end.
+
+[Learn more](/en/platform-intro/pages/assignment-planner).
+
 ### Planned Start / End / Actual Start / End
 
 Planned dates describe the schedule; actual dates describe recorded work. Grouped order dates span the order; assignment rows have their own windows.
@@ -1325,6 +1355,12 @@ Setup before production. **Vorber.** is used on German PDA buttons; **Vorb.** (p
 ### Priority
 
 An urgency number interpreted using the company’s **Which number is more urgent?** setting. **Higher number = more urgent** is the default; **Lower number = more urgent** reverses it. Admins choose the direction and levels in **Admin Panel → Priority Levels**.
+
+[Learn more](/en/platform-intro/pages/admin-panel).
+
+### Priority Levels
+
+**Priority Levels** give your company shared names, numbers and colours for urgency. Admins define them so everyone can choose the same priorities.
 
 [Learn more](/en/platform-intro/pages/admin-panel).
 
@@ -1612,6 +1648,12 @@ An operation's sequence number within a work order, for example 10, 20, 30. In H
 
 [Learn more](/en/platform-intro/pages/order-detail).
 
+### Sequence Code
+
+**Sequence Code** is the operation number as written in your ERP, such as 0020. It helps an import recognise the same operation again and appears on Planner cards.
+
+[Learn more](/en/platform-intro/pages/order-detail).
+
 ### Shift / Whole day
 
 A shift is a named work period with start, end, and optional breaks. **Whole day** covers the entire day.
@@ -1653,6 +1695,12 @@ In Automator, the number of minutes responders have before an open event is over
 Temporarily hide a warning from the banner and silence it for the configured duration. It stays listed under **Snoozed** and returns if the problem remains. **Resume now** restores it sooner.
 
 [Learn more](/en/platform-intro/pages/data-acquisition).
+
+### Sort rules
+
+**Sort rules** put cards in order by values such as priority or dates. The first rule decides; later rules break ties. They sort unassigned operations and, when queue-position sorting is off, the displayed queues.
+
+[Learn more](/en/platform-intro/pages/assignment-planner).
 
 ### Start Preparation / End Preparation / Start Shift / End Shift
 

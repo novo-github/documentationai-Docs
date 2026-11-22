@@ -32,13 +32,13 @@ Lesen Sie vor der Grenzwertwahl die Beschreibung der Bedingung. Die Kennzahlen v
 | Kennzahl | Was sie prüft |
 | --- | --- |
 | **Vorbereitungsdauer** | Gesamte bisherige Vorbereitungszeit des aktuellen Auftrags im Vergleich zur geplanten Vorbereitungszeit. |
-| Produktionsrückstand | Rückstand der bisherigen Produktion des aktuellen Auftrags gegenüber dem erwarteten Tempo. |
+| Produktionsrückstand | Fehlende Produktion gegenüber dem erwarteten Tempo. 20 % Rückstand bedeutet: 20 Stück fehlen, wenn 100 Stück erwartet wurden. |
 | Zykluszeit | Letzter abgeschlossener Zyklus im Vergleich zur Basis-Zykluszeit des Arbeitsgangs. |
-| Auftragsfortschritt | Produzierte Menge im Vergleich zum erwarteten Fortschritt anhand der bis zum Liefertermin verstrichenen Zeit. |
+| Auftragsfortschritt | Produktionsfortschritt im Vergleich zur Zeit zwischen geplantem Auftragsstart und Auftragsende. 20 % Rückstand bedeutet: 60 % der geplanten Zeit sind vergangen, aber 40 % der Menge sind produziert. |
 | Ausschussmenge und -quote | Ausschussteile oder deren Anteil an allen Teilen aus den BDE-Produktionsmeldungen des aktuellen Auftrags. Wählen Sie Materialausschuss, Arbeits-/Bearbeitungsausschuss oder beide. |
-| Langsame Zyklen | Anzahl der jüngsten Zyklen, die nach Ihren Einstellungen als langsam gelten. |
+| **Aufeinanderfolgende lange Pausen** (bisher **Langsame aufeinanderfolgende Zyklen**) | Zählt aufeinanderfolgende Pausen zwischen Zyklen, die den Grenzwert erreichen, ab der letzten Pause. |
 
-Wählen Sie für langsame Zyklen eine ganze Zahl von 1 bis 1000 für die Anzahl zu prüfender Zyklen. Legen Sie ein positives Vielfaches der erwarteten Zykluszeit fest: 2 bedeutet doppelt so lang. Anzahlen müssen ganze Zahlen sein. Füllen Sie alle Einstellungen einer Bedingung aus und wählen Sie einen zur Kennzahl passenden Vergleich.
+**Zu prüfende Pausen** (bisher **Rückblick-Zyklen**) nimmt eine ganze Zahl von 1 bis 1000 an; **Grenzwert für Pausen** (bisher **Abstands-Schwellwert**) ist ein Vielfaches der erwarteten Zykluszeit, sodass 2 eine mindestens doppelt so lange Pause zwischen Zyklen bedeutet.
 
 Vorbereitungs- und Ausschusswerte ändern sich erst mit einer BDE-Meldung. Sie können konstant bleiben und dann springen. Ein Sensor allein aktualisiert keine eingegebenen Ausschussmengen.
 
@@ -71,10 +71,10 @@ Wählen Sie **Mit einer Vorlage starten**, um eine Regel vorauszufüllen, oder *
 
 | Vorlage | Anfangsbedingung |
 | --- | --- |
-| **Vorbereitung dauert zu lange** (bisher **Rüsten dauert zu lange**) | Vorbereitungszeit erreicht 120 % der geplanten Vorbereitungszeit. |
+| **Vorbereitung dauert zu lange** | Vorbereitungszeit erreicht 120 % der geplanten Vorbereitungszeit. |
 | **Produktion hinter dem erwarteten Tempo** | Produktion liegt mindestens 15 % hinter dem Tempo. |
 | **Zykluszeit zu langsam** | Letzter Zyklus ist mindestens 25 % langsamer als die Basis-Zykluszeit. |
-| **Wiederholte Zyklus-Lücken** | 3 der letzten 10 Zyklen dauern mindestens doppelt so lang wie erwartet. |
+| **Wiederholte Zyklus-Lücken** | 3 aufeinanderfolgende Pausen erreichen mindestens die doppelte erwartete Zykluszeit; geprüft werden bis zu 10 der letzten Pausen. |
 | **Zu hohe Ausschussquote** | Gesamtausschuss erreicht 3 %. |
 | **Arbeitsgang gefährdet** (bisher **Operation gefährdet**) | Produktion liegt 15 % hinter dem Tempo und Zyklen sind 25 % langsamer. |
 | **Auftrag gerät in Verzug** | Auftragsfortschritt liegt mindestens 15 Prozentpunkte hinter dem verstrichenen Zeitplan. |

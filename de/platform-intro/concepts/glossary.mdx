@@ -11,6 +11,12 @@ Verwandte Referenzen: [Berechnungen](/de/platform-intro/concepts/calculations) u
 
 ## 0–9 / +
 
+### ⓘ-Hilfe
+
+Kurze Erklärungen neben Feldern und Überschriften zeigen, was eine Einstellung bewirkt und wann Sie sie ändern würden.
+
+[Hilfe auf jeder Seite (ⓘ)](/de/platform-intro/concepts/field-help).
+
 ### +1day / +1week / +1month / +1Tag
 
 Schnelle Datumsverschiebung in Auftrags- und Zugriffsschlüsselformularen; die deutschen Formen verwenden Tag, Woche und Monat.
@@ -751,6 +757,12 @@ Erfasster Arbeitsabschnitt mit Start- und Endzeit. Eine Löschung kann nicht rü
 
 [Mehr erfahren](/de/platform-intro/pages/data-acquisition).
 
+### Intervall-Assistent
+
+Der **Intervall-Assistent** kann einen zu spät erfassten Start oder Stopp an die Maschinenaktivität anpassen oder ein vergessenes Produktionsintervall beenden. Je nach Maschineneinstellung übernimmt er die Zeit automatisch oder bittet Sie um eine Auswahl.
+
+[Mehr erfahren](/de/platform-intro/pages/machine-configuration).
+
 ### Intervallbereich / Intervalle anzeigen
 
 **Intervalle anzeigen** öffnet über die Anzahl in der Auftragstabelle die gespeicherten Intervalle einer Zuweisung. Im Seitenbereich können Sie diese prüfen, bearbeiten oder löschen. Bei 0 oder einem Strich lässt sich der Bereich nicht öffnen.
@@ -788,6 +800,12 @@ Importwerte für neue Aufträge oder Arbeitsgänge mit leeren Prioritätszellen 
 Gemeinsam an der Maschine angezeigte Notizen aus Auftrag, Arbeitsauftrag, Arbeitsgang und Zuweisung.
 
 [Mehr erfahren](/de/platform-intro/pages/data-acquisition).
+
+### Parallele Aufträge
+
+**Parallele Aufträge** legt fest, wie viele Arbeitsgänge eine Maschine gleichzeitig bearbeiten kann. Die Prognose nutzt diese Kapazität, um Arbeit gleichzeitig einzuplanen.
+
+[Mehr erfahren](/de/platform-intro/pages/machine-configuration).
 
 ## K
 
@@ -919,15 +937,21 @@ Anteil der gerade produzierenden Maschinen; kein Durchschnitt des Auswertungszei
 
 [Mehr erfahren](/de/platform-intro/pages/org-stats).
 
+### Rating Berechnen
+
+**Rating Berechnen** schlägt Zielwerte für die Maschine anhand der letzten sechs Wochen vor. Sie müssen die vorgeschlagenen Werte speichern, damit sie gelten.
+
+[Mehr erfahren](/de/platform-intro/pages/machine-configuration).
+
 ### Local IP / Lokale IP / MAC
 
 Netzwerkangaben zur Identifikation eines registrierten Hallendisplays; unabhängig von Produktionskennzahlen.
 
 [Mehr erfahren](/de/platform-intro/pages/hall-plan).
 
-### Rückblick-Zyklen und Abstands-Schwellwert
+### Zu prüfende Pausen / Grenzwert für Pausen
 
-Bei Prüfungen langsamer Zyklen: Anzahl jüngster zu prüfender Zyklen (1 bis 1000) und ein positives Vielfaches der erwarteten Zykluszeit. Der Wert 2 bedeutet doppelt so lang.
+**Zu prüfende Pausen** (bisher **Rückblick-Zyklen**) legt fest, wie viele der letzten Pausen zwischen Zyklen geprüft werden, von 1 bis 1000. **Grenzwert für Pausen** (bisher **Abstands-Schwellwert**) ist ein Vielfaches der erwarteten Zykluszeit. Der Wert 2 bedeutet eine mindestens doppelt so lange Pause. **Aufeinanderfolgende lange Pausen** (bisher **Langsame aufeinanderfolgende Zyklen**) zählt solche aufeinanderfolgenden Pausen ab der letzten.
 
 [Mehr erfahren](/de/platform-intro/pages/automator).
 
@@ -965,9 +989,9 @@ Benutzerdefinierte Sensorwerte mit Name, Einheit, Grenzwerten, Genauigkeit und M
 
 [Mehr erfahren](/de/platform-intro/workflows/operator-management).
 
-### Machine rating
+### Bewertungen / Maschinen-Rating
 
-Konfigurierte Maschinenzielwerte zum Vergleich mit Dashboard-Istwerten; keine Messwerte.
+**Bewertungen** sind Zielwerte für OEE, Leistung, Verfügbarkeit und Energieverbrauch je Stunde einer Maschine. Berichte und Vergleiche stellen die tatsächlichen Ergebnisse diesen Zielen gegenüber.
 
 [Mehr erfahren](/de/platform-intro/pages/machine-configuration).
 
@@ -1294,6 +1318,12 @@ Oben in der persönlichen Navigation angeheftete Seiten, Maschinen und Hallenpl�
 
 [Mehr erfahren](/de/platform-intro/pages/machines).
 
+### Geplante Dauer
+
+**Geplante Dauer** ist die vorgesehene Zeit für einen Arbeitsgang: Vorbereitung und Produktionszeit für die geplante Menge. Fehlen Zeitangaben für die Arbeit, zählt die Zeit zwischen geplantem Start und Ende.
+
+[Mehr erfahren](/de/platform-intro/pages/assignment-planner).
+
 ### Planned Start / End / Actual Start / End
 
 Plandaten beschreiben den Zeitplan, Istdaten die erfasste Arbeit. Gruppierte Auftragsdaten umfassen den Auftrag; Zuweisungen haben eigene Zeitfenster.
@@ -1335,6 +1365,12 @@ Vorbereitung ist die Arbeit vor der Produktion. Die deutsche Oberfläche verwend
 ### Priority
 
 Eine Dringlichkeitszahl, deren Bedeutung die Unternehmenseinstellung **Welche Zahl ist dringender?** festlegt. **Höhere Zahl = dringender** ist die Voreinstellung. **Niedrigere Zahl = dringender** kehrt sie um. Admins wählen Richtung und Stufen unter **Admin-Panel → Prioritätsstufen**.
+
+[Mehr erfahren](/de/platform-intro/pages/admin-panel).
+
+### Prioritätsstufen
+
+**Prioritätsstufen** geben Ihrem Unternehmen gemeinsame Namen, Zahlen und Farben für die Dringlichkeit. Admins legen sie fest, damit alle dieselben Prioritäten auswählen können.
 
 [Mehr erfahren](/de/platform-intro/pages/admin-panel).
 
@@ -1624,6 +1660,12 @@ Die **Arbeitsgangfolge** (bisher **Operationsfolge**) bezeichnet die Nummer eine
 
 [Mehr erfahren](/de/platform-intro/pages/order-detail).
 
+### Arbeitsgangfolge (Code)
+
+**Arbeitsgangfolge (Code)** ist die Arbeitsgangnummer aus Ihrem ERP, etwa 0020. Sie hilft beim Import, denselben Arbeitsgang wiederzuerkennen, und erscheint auf Planerkarten.
+
+[Mehr erfahren](/de/platform-intro/pages/order-detail).
+
 ### Schicht / Ganzer Tag
 
 Eine Schicht ist ein benannter Arbeitszeitraum mit Beginn, Ende und optionalen Pausen. **Ganzer Tag** umfasst den vollständigen Tag.
@@ -1665,6 +1707,12 @@ In Automator die Minuten bis ein offenes Ereignis als überfällig gilt.
 Eine Warnung für die eingestellte Dauer aus dem Banner ausblenden und stummschalten. Sie bleibt unter **Zurückgestellt** aufgelistet und erscheint bei anhaltender Ursache erneut. **Jetzt anzeigen** holt sie früher zurück.
 
 [Mehr erfahren](/de/platform-intro/pages/data-acquisition).
+
+### Sortierregeln
+
+**Sortierregeln** ordnen Karten nach Werten wie Priorität oder Terminen. Die erste Regel entscheidet, weitere Regeln lösen Gleichstände auf. Sie ordnen nicht zugewiesene Arbeitsgänge und bei ausgeschalteter Sortierung nach Warteschlangenposition auch die angezeigten Warteschlangen.
+
+[Mehr erfahren](/de/platform-intro/pages/assignment-planner).
 
 ### Start Preparation / End Preparation / Start Shift / End Shift
 
