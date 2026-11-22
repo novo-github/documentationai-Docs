@@ -6,6 +6,57 @@ toc: false
 
 ## Releases
 
+<Update label="2026-11-21" description="v1.5.183" tags={["Fehlerbehebung"]}>
+  {/* commits: b2b24c6b, f158bae0, 6841e4b9, 9d4ed74e, b5ae9a12, a921f164, ca156d4d, 7edd9e88, 97b4b681, 9e5cfb0f */}
+
+  **Release-Datum:** 21. November 2026
+
+  ### Fehlerbehebungen
+
+  #### [Stillstandsgründe passen zu Ihrer Auswahl](/de/platform-intro/pages/versus)
+  {/* feature: downtime-reason-totals */}
+
+  In Versus zeigte das Diagramm zuvor nur die Stillstandsgründe der ersten Maschine; jetzt summiert es alle verglichenen Maschinen für den gewählten Tag.
+
+  In den [Organisationsstatistiken](/de/platform-intro/pages/org-stats) war das Diagramm zuvor immer leer; jetzt zeigt es wieder die Gründe des gewählten Zeitraums, je Grund über alle Maschinen auf der Seite summiert. Der Reiter **Ganzer Tag** zeigt ganze Tage, **Geplant** die gewählte Schicht. Ohne Gründe erscheint **Keine Stillstandsgründe in diesem Zeitraum**.
+
+  #### [Nullwerte senken gefilterte Stundendurchschnitte nicht mehr](/de/platform-intro/pages/trend-analysis)
+  {/* feature: trend-zero-filter */}
+
+  In der Trendanalyse lässt **Filter 0-Werte heraus** Nullwerte jetzt aus jedem Stundendurchschnitt weg. Zuvor wurden sie weiterhin mitgerechnet.
+
+  #### [Passende Woche und ehemalige Maschinenbediener prüfen](/de/platform-intro/pages/peak-optimizer)
+  {/* feature: peak-optimizer-fixes */}
+
+  Admins können jetzt ehemalige Maschinenbediener mit Daten in der gewählten Woche auswählen, gekennzeichnet mit **(ehemalig)**; beim Öffnen erscheint die Woche, in der gestern lag, montags also die vollständige Vorwoche. Filter wirken sofort beim Ändern; mit **Fertig** schließen Sie die Filterauswahl.
+
+  #### [Offene Alarme des gewählten Maschinentags sehen](/de/platform-intro/pages/machine-details)
+  {/* feature: machine-day-alerts */}
+
+  Die Karte **Warnungen & Benachrichtigungen** zeigt jetzt nur nicht behobene Alarme, die am gewählten Tag in der Zeitzone des Unternehmens ausgelöst wurden. Beim Tageswechsel beginnt die Alarmliste wieder auf der ersten Seite.
+
+  #### [Hallenanzeigen behalten die passende Sprache und Version](/de/platform-intro/pages/hall-plan)
+  {/* feature: hall-display-fixes */}
+
+  Nur Admins sehen jetzt die Schaltfläche für Anzeigeeinstellungen, und die Hallensprache gilt nur für die Wandanzeige; angemeldet behalten Sie Ihre eigene Oberflächensprache. Eine Halle ohne gespeicherte Anzeigeversion öffnet sich in **V2**, während eine gespeicherte Version einschließlich **V1** erhalten bleibt.
+
+  #### [Deutsche Bildschirme zeigen deutsche Beschriftungen einheitlicher](/de/platform-intro/pages/timeline-analysis)
+  {/* feature: page-language-fixes */}
+
+  Wenn Sie die deutsche Oberfläche verwenden:
+
+  - Unter **Berichte** heißt die erste Option des Umschalters oben jetzt **Zeitleiste** (zuvor **Zeitplan**).
+  - Die Spalten für geplante Vorbereitung heißen **Geplante Vorbereitungszeit** und **Geplante Vorbereitungsdauer**.
+  - Prognosen und Begründungen im Planer verwenden **voraussichtlich abgeschlossen** statt **fertig**.
+  - Maschinen ohne Schicht zeigen **Keine Schicht geplant**.
+  - Wochentage im Schichtplaner, Uploadschritte (**Schritt 1: …**), Schnellauswahlen für Ticket-Fälligkeiten (**+1 Tag**), die KI-Chat-Seitenleiste und der Peak-Optimizer-Filter sind jetzt auf Deutsch.
+
+  #### [Übersichtlichere Berichte und Ereignisdetails](/de/platform-intro/pages/automator)
+  {/* feature: page-cleanups */}
+
+  Die Zeitleistenanalyse zeigt die nicht verfügbare KI-Vorschaukarte nicht mehr, und in den Automator-Ereignisdetails entfällt ein zusätzlicher Bereich mit technischen Angaben.
+</Update>
+
 <Update label="2026-11-21" description="v1.5.182" tags={["Verbesserung", "Fehlerbehebung"]}>
   {/* commits: 918b3f0d, a0d1841c, d0969e62, 65ec9ae6, cbca1919, 5a3922fb, 9cf7234c */}
 

@@ -6,6 +6,57 @@ toc: false
 
 ## Releases
 
+<Update label="2026-11-21" description="v1.5.183" tags={["fix"]}>
+  {/* commits: b2b24c6b, f158bae0, 6841e4b9, 9d4ed74e, b5ae9a12, a921f164, ca156d4d, 7edd9e88, 97b4b681, 9e5cfb0f */}
+
+  **Release date:** November 21, 2026
+
+  ### Fixes
+
+  #### [Downtime reasons add up for your selection](/en/platform-intro/pages/versus)
+  {/* feature: downtime-reason-totals */}
+
+  In Versus, the chart previously showed only the first machine’s downtime reasons; it now adds up all compared machines for the chosen day.
+
+  In [Organization Statistics](/en/platform-intro/pages/org-stats), the chart was always empty before; it now shows the chosen period’s reasons again, added up per reason for all machines on the page. The **All Day** tab shows whole days; **Planned** shows the chosen shift. With no reasons, it shows **No downtime reasons in this period**.
+
+  #### [Zero values no longer lower filtered hourly averages](/en/platform-intro/pages/trend-analysis)
+  {/* feature: trend-zero-filter */}
+
+  In Trend Analysis, **Filter out 0 values** now leaves zero values out of each hourly average. Previously, they still counted in the average.
+
+  #### [Review the right week and former machine operators](/en/platform-intro/pages/peak-optimizer)
+  {/* feature: peak-optimizer-fixes */}
+
+  Admins can now select former machine operators with data in the selected week, marked **(former)**, and the opening week is the week containing yesterday, so Monday opens the previous full week. Filters take effect as you change them; close the filter panel with **Done** (previously **Apply**).
+
+  #### [See unresolved alerts for the chosen machine day](/en/platform-intro/pages/machine-details)
+  {/* feature: machine-day-alerts */}
+
+  The **Alerts & Notifications** card now shows only unresolved alerts triggered on the chosen day in the company’s time zone. Changing the day starts the alert list at its first page.
+
+  #### [Hall displays keep the right language and version](/en/platform-intro/pages/hall-plan)
+  {/* feature: hall-display-fixes */}
+
+  Only Admins now see the display settings button, and the hall language applies only to the wall display; when signed in, you keep your own interface language. A hall with no saved display version opens in **V2**, while a saved version, including **V1**, stays selected.
+
+  #### [German screens show German labels consistently](/en/platform-intro/pages/timeline-analysis)
+  {/* feature: page-language-fixes */}
+
+  When you use the German interface:
+
+  - In **Reports**, the first option of the switch at the top now says **Zeitleiste** (previously **Zeitplan**).
+  - Planned preparation columns say **Geplante Vorbereitungszeit** and **Geplante Vorbereitungsdauer**.
+  - Forecasts and planner reasons say **voraussichtlich abgeschlossen** instead of **fertig**.
+  - Machines without a shift show **Keine Schicht geplant**.
+  - Shift Planner weekday headings, upload steps (**Schritt 1: …**), ticket due-date shortcuts (**+1 Tag**), the AI chat sidebar and the Peak Optimizer filter are now in German.
+
+  #### [Cleaner reports and event details](/en/platform-intro/pages/automator)
+  {/* feature: page-cleanups */}
+
+  The Timeline Analysis report no longer shows the unavailable AI preview card, and Automator event details no longer show an extra technical information block.
+</Update>
+
 <Update label="2026-11-21" description="v1.5.182" tags={["improvement", "fix"]}>
   {/* commits: 918b3f0d, a0d1841c, d0969e62, 65ec9ae6, cbca1919, 5a3922fb, 9cf7234c */}
 
