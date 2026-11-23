@@ -321,7 +321,7 @@
                             "icon": "file-text"
                           },
                           {
-                            "title": "Plan a Meeting",
+                            "title": "Help & Support",
                             "path": "en/platform-intro/pages/plan-a-meeting",
                             "icon": "file-text"
                           },
@@ -498,8 +498,13 @@
                             "icon": "play-circle"
                           },
                           {
-                            "title": "Plan a Meeting",
+                            "title": "Book a Meeting with Our Team",
                             "path": "en/platform-intro/workflows/plan-a-meeting",
+                            "icon": "play-circle"
+                          },
+                          {
+                            "title": "Get Help for Your Current Page",
+                            "path": "en/platform-intro/workflows/help-support",
                             "icon": "play-circle"
                           },
                           {
@@ -642,6 +647,10 @@
                   {
                     "title": "Meeting Questions",
                     "path": "en/help-center/faq/meetings"
+                  },
+                  {
+                    "title": "Help & Support Questions",
+                    "path": "en/help-center/faq/help-support"
                   },
                   {
                     "title": "Knowledge Base Questions",
@@ -974,7 +983,7 @@
                             "icon": "file-text"
                           },
                           {
-                            "title": "Termin vereinbaren",
+                            "title": "Hilfe & Support",
                             "path": "de/platform-intro/pages/plan-a-meeting",
                             "icon": "file-text"
                           },
@@ -1151,8 +1160,13 @@
                             "icon": "play-circle"
                           },
                           {
-                            "title": "Termin vereinbaren",
+                            "title": "Termin mit unserem Team buchen",
                             "path": "de/platform-intro/workflows/plan-a-meeting",
+                            "icon": "play-circle"
+                          },
+                          {
+                            "title": "Hilfe zur aktuellen Seite erhalten",
+                            "path": "de/platform-intro/workflows/help-support",
                             "icon": "play-circle"
                           },
                           {
@@ -1295,6 +1309,10 @@
                   {
                     "title": "Fragen zu Terminen",
                     "path": "de/help-center/faq/meetings"
+                  },
+                  {
+                    "title": "Fragen zu Hilfe & Support",
+                    "path": "de/help-center/faq/help-support"
                   },
                   {
                     "title": "Fragen zur Wissensdatenbank",
