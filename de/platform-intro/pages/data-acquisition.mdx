@@ -27,7 +27,7 @@ Wählen Sie zum Maschinenwechsel auf der BDE-Seite den Maschinennamen in der obe
 - Start-, Vorbereitungs- und Stopp-Steuerungen.
 - Verlauf von Intervallen, Notizen, Tickets und Wissenskontext.
 
-Öffnen Sie ⓘ neben einer Einstellung, um ihre Wirkung zu verstehen; siehe [Hilfe auf jeder Seite (ⓘ)](/de/platform-intro/concepts/field-help).
+Öffnen Sie oben das ⓘ neben dem Maschinennamen. Es erklärt den Zweck der BDE-Seite, ihre linke und rechte Seite sowie die Unterschiede der Auftragsansichten. **Zeig es mir** startet die Seitenanleitung. Tippen auf **Pool** wechselt direkt den Reiter. Einzelne Einstellungen erklärt das ⓘ daneben; siehe [Hilfe auf jeder Seite (ⓘ)](/de/platform-intro/concepts/field-help).
 
 <a id="field-help" />
 
@@ -182,7 +182,7 @@ Unter **Zurück in den Pool geben** gilt:
 - Hat die Arbeit begonnen, bleiben erfasste Zeiten und Gutteile auf dieser Maschine. **Geplant**, **Hier gefertigt** und **Offen** fassen die Mengen zusammen. **Restmenge** beginnt mit Planmenge minus Gutteile, mindestens 0. Ausschuss verringert die Restmenge nicht. Ändern Sie die Menge, wenn Teile nachgefertigt werden müssen. Lassen Sie sie leer, wenn sie unbekannt ist. Bei unbekannter Planmenge beginnt sie leer.
 - **Grund (optional)** gibt eine Notiz mit bis zu 500 Zeichen an die nächste Maschine weiter, etwa „Spindel defekt“.
 
-Bestätigen Sie mit **Zurück in den Pool**. Die Arbeit kommt an den Anfang des Hallenpools. Eine andere Maschine dieser Halle kann sie wie gewohnt übernehmen. Die Liste aktualisiert sich, die Auswahl wird aufgehoben und unten erscheint eine Bestätigung. Nach begonnener Arbeit zeigt die ursprüngliche Karte **Übergeben** statt **Abgeschlossen**. Wählen Sie den dritten Ansichtsreiter mit dem Historiensymbol, **Zeitfenster + Alle Status**, um den übergebenen Anteil zu finden. Er zeigt alle Arbeitsgänge im gewählten Datumsfenster, einschließlich abgeschlossener und stornierter Arbeitsgänge. **Alle Offen** und **Zeitfenster + Offen** blenden den übergebenen Anteil aus.
+Bestätigen Sie mit **Zurück in den Pool**. Die Arbeit kommt an den Anfang des Hallenpools. Eine andere Maschine dieser Halle kann sie wie gewohnt übernehmen. Die Liste aktualisiert sich, die Auswahl wird aufgehoben und unten erscheint eine Bestätigung. Nach begonnener Arbeit zeigt die ursprüngliche Karte **Übergeben** statt **Abgeschlossen**. Wählen Sie den dritten Ansichtsreiter mit dem Historiensymbol, **Zeitfenster + Alle Status**, um den übergebenen Anteil zu finden. Er zeigt alle Arbeitsgänge von sieben Tagen vor bis sieben Tagen nach heute, einschließlich abgeschlossener und stornierter Arbeitsgänge. **Alle Offen** und **Zeitfenster + Offen** blenden den übergebenen Anteil aus.
 
 Die Pool-Karte zeigt Herkunft und bereits gefertigte Teile oder Person und Zeitpunkt der Rückgabe eines ungestarteten Arbeitsgangs. Zeigen Sie auf die graue Kennzeichnung, um Details und Grund zu lesen. Arbeitsganginformationen und Details zu wartenden Arbeitsgängen zeigen **Teilweise gefertigt:** mit Mengen und dem Ziel der restlichen Arbeit. Die Übergabe schließt den gesamten Arbeitsgang nicht ab. Nachfolgende Arbeitsgänge warten weiter auf seinen Abschluss.
 
@@ -223,6 +223,8 @@ Bei einem laufenden Intervall erklärt **Ende**: **Dieses Intervall läuft noch.
 Tippen außerhalb schließt die Bearbeitung bei ungespeicherten Änderungen nicht. Folgen Sie [Ein Intervall korrigieren](/de/platform-intro/workflows/data-acquisition#ein-intervall-korrigieren).
 
 ### Zeitleistendarstellung
+
+Öffnen Sie über das Zahnradsymbol **Kartenanzeige-Einstellungen → Bildschirm**. **Schriftgröße** bietet **Normal** und **Groß**. **Groß** blendet die Zeitleiste aus; **Normal** blendet sie ein. Danach können Sie **Timeline anzeigen** unabhängig davon ändern. Wählen Sie **Speichern**, damit beide Einstellungen nach dem Neuladen erhalten bleiben. Die Schaltflächen zur Schriftgröße und der Zeitleistenpfeil entfallen in der oberen Leiste. Beide Einstellungen haben eine ⓘ-Erklärung.
 
 Die Einstellungen der Betriebsdatenerfassung V3 bieten zwei getrennte Möglichkeiten:
 
@@ -281,8 +283,8 @@ Ungebundene oder unbeschriftete Maschinenzeit gehört zu keinem Auftrag. Die Lö
 | Modus | Enthaltene Arbeit |
 | --- | --- |
 | **Alle Offen** | Alle offenen Zuweisungen ohne Datumsfilter. |
-| **Zeitfenster + Offen** | Offene Zuweisungen innerhalb ±1/3/5/7 Tagen; für tägliche Arbeit. |
-| **Zeitfenster + Alle Status** | Alle Arbeitsgänge im gewählten Datumsfenster, einschließlich abgeschlossener und stornierter Arbeitsgänge. |
+| **Zeitfenster + Offen** | Offene Zuweisungen von sieben Tagen vor bis sieben Tagen nach heute. |
+| **Zeitfenster + Alle Status** | Alle Arbeitsgänge von sieben Tagen vor bis sieben Tagen nach heute, einschließlich abgeschlossener und stornierter Arbeitsgänge. |
 | **Zuletzt abgeschlossen** | Die letzten fünf auf dieser Maschine abgeschlossenen Arbeitsgänge, neueste zuerst, ohne Datumsfilter. |
 
 Ihre Kartenanzeige und Hervorhebungen werden je User gespeichert. Eine Maschinenvorlage ergänzt vorgeschriebene Felder und Hervorhebungen und kann Sortierung und automatische Aktualisierung festlegen. **Nach Warteschlangenposition sortieren** folgt der geplanten Warteschlange. Wählen Sie unter **Sortierreihenfolge**, wo laufende und wartende Aufträge erscheinen.
@@ -291,7 +293,7 @@ Ihre Kartenanzeige und Hervorhebungen werden je User gespeichert. Eine Maschinen
 
 ### Abgeschlossene Arbeit prüfen und wieder öffnen
 
-Wählen Sie auf der BDE-Seite **Zuletzt abgeschlossen**, die vierte Ansicht. Sie zeigt nur die letzten fünf abgeschlossenen Arbeitsgänge dieser Maschine, neueste zuerst. Die Zeitfensterauswahl ist hier nicht verfügbar. Die Ansicht bleibt gespeichert. Die Suche filtert diese fünf Karten. Nutzen Sie für ältere Arbeit **Zeitfenster + Alle Status**.
+Wählen Sie auf der BDE-Seite **Zuletzt abgeschlossen**, die vierte Ansicht. Sie zeigt nur die letzten fünf abgeschlossenen Arbeitsgänge dieser Maschine, neueste zuerst. Die Ansicht bleibt gespeichert. Die Suche filtert diese fünf Karten. Nutzen Sie für ältere Arbeit **Zeitfenster + Alle Status**.
 
 Die Karten folgen Ihren Anzeigeeinstellungen. Sie zeigen gebuchte Mengen und **Abgeschlossen** mit dem Abschlusszeitpunkt. Fehlt dieser, erscheint „–“. Die Karten sind nur lesbar: Sie können sie hier weder auswählen noch starten, stoppen, über ein Statusmenü ändern oder ihre Notizen und Intervalle bearbeiten. Beim Wechsel in diese Ansicht bleibt ein zuvor ausgewählter offener Arbeitsgang ausgewählt. Die Hauptbedienelemente der Seite beziehen sich weiterhin darauf.
 
@@ -372,7 +374,7 @@ Während eines Stillstands bietet der Schalter über den Kacheln zwei Möglichke
 - **Aktueller Stillstand**: Die Kachel gilt für den gerade laufenden Stillstand. Jeder neue Stillstand beginnt mit dieser Auswahl. Sie bleibt auch bestehen, nachdem Sie einen Grund gewählt haben.
 - **Vorgemerkter Stillstand**: Die Kachel merkt einen Grund für neue Stillstände nach dem Wiederanlauf vor. Der laufende Stillstand behält seinen eigenen Grund. Die 15 Minuten beginnen beim Antippen, auch wenn der aktuelle Stillstand noch andauert.
 
-Während eines Stillstands wechseln nur Sie die Auswahl. Tippen Sie auf das Informationssymbol daneben, um die Erklärung zu lesen. Steht die Maschine zum Beispiel zum Beladen und folgt nach dem Wiederanlauf ein Werkzeugwechsel, wählen Sie für den Werkzeugwechsel **Vorgemerkter Stillstand**. Dauert der aktuelle Stillstand länger als die verbleibende Zeit, läuft die Vormerkung ab, bevor sie für einen neuen Stillstand gelten kann.
+Während eines Stillstands wechseln nur Sie die Auswahl. Das Informationssymbol daneben erklärt beide Möglichkeiten mit Beispielen und zeigt, warum Ihr Grund Vorrang vor einer automatischen Pausenkennzeichnung hat. Steht die Maschine zum Beispiel zum Beladen und folgt nach dem Wiederanlauf ein Werkzeugwechsel, wählen Sie für den Werkzeugwechsel **Vorgemerkter Stillstand**. Dauert der aktuelle Stillstand länger als die verbleibende Zeit, läuft die Vormerkung ab, bevor sie für einen neuen Stillstand gelten kann.
 
 ### Die Vormerkung anpassen oder beenden
 

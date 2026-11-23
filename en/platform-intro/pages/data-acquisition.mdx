@@ -27,7 +27,7 @@ To switch machines on the PDA page, select the machine name in the top navigatio
 - Start, preparation, and stop controls.
 - Interval history, notes, tickets, and knowledge context.
 
-Open ⓘ beside a setting to understand its effect; see [Help on every page (ⓘ)](/en/platform-intro/concepts/field-help).
+Open ⓘ beside the machine name at the top to learn what the PDA page is for, what appears on its left and right sides, and how the assignment views differ. Choose **Show me** to start the page guide. Tapping **Pool** switches tabs directly. For individual settings, open the ⓘ beside the setting; see [Help on every page (ⓘ)](/en/platform-intro/concepts/field-help).
 
 <a id="field-help" />
 
@@ -182,7 +182,7 @@ In **Send back to the pool**:
 - If work has started, recorded times and good parts stay on this machine. **Planned**, **Done here**, and **Left** summarize the quantities. **Quantity left** starts with planned quantity minus good parts, never below zero. Scrap does not reduce the remainder. Change it if parts need to be made again, or leave it empty if the quantity is unknown. It starts empty when the planned quantity is unknown.
 - **Reason (optional)** passes a note of up to 500 characters to the next machine, such as “Spindle broken”.
 
-Confirm with **Back to pool**. The work goes to the top of the hall pool, where another machine in the hall can claim it as usual. The list refreshes, the selection clears, and a confirmation appears at the bottom. After partial work, the original card shows **Handed over** instead of **Completed**. Choose the third view tab with the history icon, **Time Window + All Statuses**, to find the handed-over part. It shows all operations in the chosen date window, including completed and cancelled ones. **All Open** and **Time Window + Open** hide the handed-over part.
+Confirm with **Back to pool**. The work goes to the top of the hall pool, where another machine in the hall can claim it as usual. The list refreshes, the selection clears, and a confirmation appears at the bottom. After partial work, the original card shows **Handed over** instead of **Completed**. Choose the third view tab with the history icon, **Time Window + All Statuses**, to find the handed-over part. It shows all operations from seven days before to seven days after today, including completed and cancelled ones. **All Open** and **Time Window + Open** hide the handed-over part.
 
 The pool card shows where the work came from and how many parts were already made, or who sent back an unstarted operation and when. Hover over its grey badge for details and the reason. Operation context and waiting-operation details show **Partly done:** with quantities and the remaining destination. Handing work over does not finish the whole operation or release later operations that are waiting for it.
 
@@ -223,6 +223,8 @@ For a running interval, **End** explains: **This interval is still running. Its 
 Tapping outside does not close the dialog while you have unsaved changes. Follow [Correct an Interval](/en/platform-intro/workflows/data-acquisition#correct-an-interval).
 
 ### Timeline Display
+
+Open the gear icon, then **Card Display Settings → Screen**. **Text size** offers **Normal** and **Large**. Choosing **Large** hides the timeline; choosing **Normal** shows it. You can then change **Show Timeline** independently. Select **Save** to keep both choices after reloading the page. The text-size buttons and timeline arrow are no longer in the top bar. Each setting has an ⓘ explanation.
 
 Data Acquisition V3 settings offer two separate choices:
 
@@ -281,8 +283,8 @@ Unbound or unlabeled machine time belongs to no order. Deleting a recorded inter
 | Mode | Included work |
 | --- | --- |
 | **All Open** | All open assignments, with no date filter. |
-| **Time Window + Open** | Open assignments in a ±1/3/5/7-day window; useful for daily work. |
-| **Time Window + All Statuses** | All operations in the chosen date window, including completed and cancelled ones. |
+| **Time Window + Open** | Open assignments from seven days before to seven days after today. |
+| **Time Window + All Statuses** | All operations from seven days before to seven days after today, including completed and cancelled ones. |
 | **Recently completed** | The last five operations completed on this machine, newest first, with no date filter. |
 
 **Card Display Settings / Columns / Highlight** are saved per user. A machine template adds its required fields and highlights and can fix sorting and automatic refresh. **Sort by Queue Position** follows the planned queue. Choose where running and waiting orders appear under **Sort Order**.
@@ -291,7 +293,7 @@ Unbound or unlabeled machine time belongs to no order. Deleting a recorded inter
 
 ### Review and Reopen Completed Work
 
-On the PDA page, choose **Recently completed**, the fourth view mode. It shows only the last five completed operations of this machine, newest first. The time-window control is unavailable here. The view is remembered, and search filters these five cards. To review older work, use **Time Window + All Statuses**.
+On the PDA page, choose **Recently completed**, the fourth view mode. It shows only the last five completed operations of this machine, newest first. The view is remembered, and search filters these five cards. To review older work, use **Time Window + All Statuses**.
 
 Cards follow your display settings and show booked quantities and **Completed** with the completion time; a missing time appears as “–”. The cards are read-only: you cannot select them, start or stop them, change their status from a menu, or edit their notes or intervals here. Switching to this view keeps any previously selected open operation selected; the page’s main controls still refer to that operation.
 
@@ -372,7 +374,7 @@ During a downtime, the switch above the tiles offers:
 - **Current downtime**: the tile applies to the downtime running now. Every new downtime starts with this option selected. Choosing a reason does not change the option.
 - **Pre-set downtime**: the tile pre-sets a reason for new downtimes after the machine runs again. The current downtime keeps its own reason. The 15 minutes start at your tap, even while the current downtime continues.
 
-Only you change the switch during a downtime. Tap the information icon beside it for an explanation. For example, if the machine is stopped for loading and a tool change follows the restart, use **Pre-set downtime** for the tool change. If the current stop lasts beyond the remaining time, the pre-set expires before it can apply to a new stop.
+Only you change the switch during a downtime. Tap the information icon beside it for examples of both choices and an explanation of why your reason takes priority over an automatic break label. For example, if the machine is stopped for loading and a tool change follows the restart, use **Pre-set downtime** for the tool change. If the current stop lasts beyond the remaining time, the pre-set expires before it can apply to a new stop.
 
 ### Adjust or End the Pre-set
 

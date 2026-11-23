@@ -69,7 +69,7 @@ You need access to the machine's Data Acquisition V3 page. The machine must belo
     In **Send back to the pool**, an unstarted step moves as a whole. For started work, check **Planned**, **Done here**, and **Left**. **Quantity left** suggests planned quantity minus good parts; scrap does not reduce it. Change it for parts that must be made again, or leave it empty if unknown. If all planned parts are made, finish the step instead unless more are needed. Add **Reason (optional)** so the next machine operator knows why the work was returned.
   </Step>
   <Step title="Confirm and check both parts" icon="arrow-right" title-type="p">
-    Check the destination and quantity, then confirm **Back to pool**. There is no automatic undo for a handover. The selection clears and a confirmation appears at the bottom. The whole unstarted step, or the remainder of started work, goes to the top of the hall pool. Another machine in the hall can claim it as usual. For started work, choose the third view tab with the history icon, **Time Window + All Statuses**, to find the handed-over part. It shows all steps in the chosen date window, including completed and cancelled ones. **All Open** and **Time Window + Open** hide the handed-over part. The original part is marked **Handed over**. Its times and good parts stay on this machine.
+    Check the destination and quantity, then confirm **Back to pool**. There is no automatic undo for a handover. The selection clears and a confirmation appears at the bottom. The whole unstarted step, or the remainder of started work, goes to the top of the hall pool. Another machine in the hall can claim it as usual. For started work, choose the third view tab with the history icon, **Time Window + All Statuses**, to find the handed-over part. It shows all steps from seven days before to seven days after today, including completed and cancelled ones. **All Open** and **Time Window + Open** hide the handed-over part. The original part is marked **Handed over**. Its times and good parts stay on this machine.
   </Step>
 </Steps>
 
@@ -169,6 +169,9 @@ You need access to the machine's Data Acquisition V3 page, or access to the orde
 Open **Card Display Settings** and check for **Set by the template**. Required fields and highlights stay ticked and locked; you can choose others. If **Sorting is set by the template** appears, review the summary and skip the sorting and reset steps below. If automatic refresh is fixed, keep its displayed interval and skip that step. Your personal choices stay saved for use without these requirements.
 
 <Steps>
+  <Step title="Choose text size and timeline visibility" icon="arrow-right" title-type="p">
+    Open the gear icon, then **Card Display Settings → Screen**. **Text size** offers **Normal** and **Large**. Choosing **Large** hides the timeline; choosing **Normal** shows it. You can then change **Show Timeline** independently. Select **Save** to keep both choices after reloading the page. The text-size buttons and timeline arrow are no longer in the top bar. Each setting has an ⓘ explanation.
+  </Step>
   <Step title="Choose whether to show interval bars" icon="arrow-right" title-type="p">
     Open Data Acquisition V3 settings. Under **Timeline display**, turn **Show intervals in graph** on or off to suit the detail you want in the graph.
   </Step>
