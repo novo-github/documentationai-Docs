@@ -19,14 +19,16 @@ This reference separates definitions visible in the platform from calculations t
 
 | Figure | Platform definition |
 | --- | --- |
-| **AVL — Availability** | Production-state time / total recorded machine time × 100. |
-| **PRO — Performance** | (Production + preparation time) / (production + preparation + idle time) × 100. Off time is excluded. |
+| **AVL — Availability** | Production time / (production + preparation + idle + off time − excluded planned-stop time) × 100. |
+| **PRO — Performance** | (Production + preparation time) / (production + preparation + idle time − excluded planned idle time) × 100. Off time is excluded. |
 | **Quality** | The dashboard tooltip states **95%** and directs you to an admin to change it. The setting location and any automatic quantity-based replacement are not confirmed by the frontend reference. |
-| **OEE — Overall Equipment Effectiveness** | Combines Availability, Performance, and Quality. The exact server formula is not confirmed by the frontend reference. |
+| **OEE — Overall Equipment Effectiveness** | Availability ratio × Performance ratio × 0.95 × 100. Quality remains 95%. |
 
-**Example:** With 3 hours production, 1 hour preparation, 1 hour idle, and 2 hours off, Availability is **3 / 7 × 100 = 42.86%**, and Performance is **4 / 5 × 100 = 80%**. This example has no Unknown time; treatment of Unknown time in the denominator is not established here.
+**Leave planned stops out of OEE** is on by default in [Break Settings](/en/platform-intro/pages/break-settings). With it on, idle and off time carrying a **Planned stop** reason is removed from the time used for availability and OEE; planned idle time is also removed from the time used for performance. Turn it off to include that time again. The settings apply to past days too. Recorded state times and downtime reason totals stay unchanged. Production and preparation during a break still count as running time. With no remaining time for a ratio, its value is zero.
 
-Multiplying these ratios with 95% quality would give **32.57%**. This is an illustration of a multiplication formula, not verification of the server's OEE result. The [production metrics FAQs](/en/help-center/faq/production-metrics) explain the distinction and the quantity-based quality example.
+**Example without planned stops:** With 3 hours production, 1 hour preparation, 1 hour idle, and 2 hours off, Availability is **3 / 7 × 100 = 42.86%**, and Performance is **4 / 5 × 100 = 80%**. This example has no Unknown time; treatment of Unknown time in the denominator is not established here.
+
+Multiplying these ratios with 95% quality gives **32.57% OEE**. Find more worked examples in the [production metrics FAQs](/en/help-center/faq/production-metrics).
 
 <a id="cycle-times" />
 

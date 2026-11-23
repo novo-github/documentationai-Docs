@@ -57,13 +57,13 @@ Use this when idle or off time during scheduled breaks should receive a break re
 
 <Steps>
   <Step title="Enable break labelling" icon="arrow-right" title-type="p">
-    Open **Admin Panel → Configure Shifts and Scheduling → Shifts**, then select **Break settings** directly left of **Add Shift**. Turn on **Label breaks automatically**. It is off by default.
+    Open **Admin Panel → Configure Shifts and Scheduling → Shifts**, then select **Break settings** directly left of **Add Shift**. Turn on **Label breaks automatically**. It is off by default. Keep **Leave planned stops out of OEE** on if planned stops should not lower availability, performance or OEE. It is on by default and applies to past days too.
   </Step>
   <Step title="Choose how much time receives the reason" icon="arrow-right" title-type="p">
     Start with **Label only the break (recommended)** and set **Tolerance** from 0 to 15 minutes before and after the break. The first activation starts at 5 minutes. Choose **Label the whole downtime** only if all overlapping downtime should get the break reason, including a longer breakdown. Select **Save**.
   </Step>
   <Step title="Choose a reason for each break" icon="arrow-right" title-type="p">
-    Edit the shift. For each break, choose **Downtime reason**, then save the shift. **No downtime reason** skips automatic labelling for that break. Check the reason shown after the break's length in the **Breaks** column.
+    Edit the shift. For each break, choose **Downtime reason**, then save the shift. **No downtime reason** skips automatic labelling for that break. Check the reason shown after the break's length in the **Breaks** column. The reason becomes a **Planned stop** automatically. Check it in the downtime reason settings if it should count like an ordinary stop instead.
   </Step>
   <Step title="Check the machines and schedule" icon="arrow-right" title-type="p">
     Reopen **Break settings**. If no break has a reason, edit the shifts to add one. If the warning lists machines that do not offer a break's reason, add it to their allowed reasons or choose another break reason. Check that the shift group schedules the shift on the intended weekday.

@@ -12,6 +12,7 @@ Use **Break settings** to give idle or off downtime the reason of a scheduled sh
 ## What You Can See
 
 - **Label breaks automatically**, off by default.
+- **Leave planned stops out of OEE**, on by default.
 - Two choices for downtime that starts before a break or ends after it.
 - **Tolerance**, shown only when labelling just the break.
 - A notice if no break has a reason, and a warning listing machines that do not offer a break's reason.
@@ -31,6 +32,12 @@ Follow [set up automatic break labels](/en/platform-intro/workflows/shift-manage
 <a id="settings" />
 
 ## Settings and Their Effect
+
+**Leave planned stops out of OEE** applies company-wide. When it is on, idle and off time with a **Planned stop** reason does not lower availability, performance or OEE. Version 2 reports also subtract that time from planned time: within shifts, or from the full day if there are no shifts. Turn it off to count these stops like any other stop. Changing this switch shows on past days at once. Reports already sent stay unchanged.
+
+Break reasons become **Planned stop** reasons automatically when you enable break labelling or save a shift with a break reason while labelling is on. Existing break reasons are also marked for companies already using automatic labelling. Admins can change this on a reason in [Admin Panel](/en/platform-intro/pages/admin-panel#manage-downtime-reasons), including reasons for meetings, cleaning or planned maintenance. Marking or unmarking a reason updates past days within minutes, newest days first. Turning off break labelling does not remove this setting from a reason.
+
+A planned-stop reason counts as planned wherever it is used, also outside a scheduled break (for example a meeting the machine operator picks). Production and preparation during a break still count as running time. A different reason chosen by the machine operator decides whether that stop is excluded. Until an automatic break stop ends and receives its reason, it still counts; allow up to about five minutes after it ends. Pre-setting a planned-stop reason makes the stop planned from the start.
 
 **Label breaks automatically** applies to finished idle or off downtimes from activation onward. Earlier completed downtime stays unchanged. Downtimes that end while the switch is off are not labelled later, even after it is turned on again. Labelling always starts from the moment the switch is turned on. Labels appear after the downtime ends; allow a few minutes. The Watchmen Platform keeps checking even when nobody has the page open.
 
@@ -67,7 +74,7 @@ If the machine operator chooses a reason after the downtime ended, that reason r
 - Only idle and off downtime is labelled. Production, preparation and time without data are excluded. Running downtime does not yet show an automatic break reason.
 - A break needs a reason that the machine offers. If a warning lists a machine and reason, add the reason to that machine's allowed list or choose another break reason. A break without a valid reason is skipped.
 - If two breaks are so close that their tolerances meet, each break’s tolerance ends halfway between them, so one break’s reason never spills into the other break.
-- Splitting downtime changes counts and averages by reason because each part counts separately. Total time in each machine state stays the same. Break labels do not change planned time or OEE.
+- Splitting downtime changes counts and averages by reason because each part counts separately. Total time in each machine state stays the same. Time with a planned-stop reason is excluded from planned time and OEE when **Leave planned stops out of OEE** is on. With **Label the whole downtime**, this can exclude a longer breakdown too; check your choice carefully.
 - Deleting a shared downtime reason removes it from shift breaks while keeping their times. Choose a replacement in each affected break if you want automatic labelling to continue.
 
 ## Related Pages

@@ -35,6 +35,7 @@ description: "Finden Sie Berichte, verstehen Sie ihren Status und aktualisieren 
 | Kann ich ein Intervall für bereits erfolgte Produktion hinzufügen? | [Antwort](/de/help-center/faq/reports#past-interval) |
 | Warum fehlt der häufigste Stillstandsgrund in der Übersichtstabelle? | [Antwort](/de/help-center/faq/reports#summary-reason) |
 | Warum stehen im Bericht jetzt Liefertermin und Arbeitsgangfolge? | [Antwort](/de/help-center/faq/reports#german-report-labels) |
+| Warum ist die geplante Zeit kürzer als meine Schichtzeit? | [Antwort](/de/help-center/faq/reports#planned-stop-time) |
 
 <a id="revision-layout" />
 
@@ -223,3 +224,9 @@ Version 2 gibt Maschinennamen in der **Übersicht** mehr Platz. Passt die Spalte
 ## Warum stehen im Bericht jetzt Liefertermin und Arbeitsgangfolge?
 
 Berichte verwenden jetzt dieselben Begriffe wie die Watchmen-Plattform. **Liefertermin** bezeichnet den zugesagten Termin des Auftrags. **Arbeitsgangfolge**, etwa #10, kennzeichnet den Arbeitsgang innerhalb seines Arbeitsauftrags. Nur die Bezeichnungen haben sich geändert, nicht die Zahlen. Siehe [Berichtstabellen](/de/platform-intro/pages/report-versions#readable-tables).
+
+<a id="planned-stop-time" />
+
+## Warum ist die geplante Zeit kürzer als meine Schichtzeit?
+
+Ist **Geplante Stillstände nicht in die OEE einrechnen** eingeschaltet, ziehen Berichte der Version 2 geplante Stillstände in Leerlauf und Aus innerhalb der Schichten von der geplanten Zeit ab. Ohne Schichten gilt der ganze Tag abzüglich geplanter Stillstände. Die Stopps bleiben in Stillstandsdauern und Summen je Grund sichtbar. Bereits versendete Berichte bleiben unverändert. Siehe [Kennzahlen der Version 2](/de/platform-intro/pages/report-versions#alle-daten).

@@ -6,6 +6,30 @@ toc: false
 
 ## Releases
 
+<Update label="2026-11-23" description="v1.5.188" tags={["Funktion"]}>
+  {/* commits: f21ec757, 5f307b76, 5e40d1fc, 88514896, 1b1b350d, e5c9efeb, 3bd579d9, 04bb5799, c65bb925, db660bed, 336f03d4, a5cd2e6c, 6accb21c, 588fdf49, 429a3f32, 67729885, d1081900, 6d0bcab8, a7d2c2c4, 01247dfb, 9761cfa9, ae9e9463, 13604ee7, e35deeec, 3149e4bc, c86b8e0a, ef20daf4, 4d2f262a, 054ce1aa, cc42bc2f, 051edbf3, 0dfaf1b9, 065dcc6c, 9bb6c6a7, e5bfde2f */}
+
+  **Release-Datum:** 23. November 2026
+
+  ### Neue Funktionen
+
+  #### [Geplante Stillstände aus der OEE herausnehmen](/de/platform-intro/pages/break-settings)
+  {/* feature: planned-stops-oee */}
+
+  Pausen und andere geplante Stillstände senken Verfügbarkeit, Leistung und OEE nicht mehr. **Geplante Stillstände nicht in die OEE einrechnen** ist in den **Pauseneinstellungen** anfangs eingeschaltet. Admins können die Option ausschalten, um geplante Stillstände wie andere Stillstände zu zählen. Öffnen Sie **Admin-Panel → Schichten und Zeitplanung konfigurieren → Schichten → Pauseneinstellungen**. Produktionszeit, Leerlaufzeit und ausgeschaltete Zeit bleiben gleich; nur die Prozentwerte ändern sich. Beispiel: Eine Schicht von 8 Stunden umfasst 6 Stunden Produktion und eine 30-minütige Pause, in der die Maschine mit dem Grund „Pause“ im Leerlauf ist. Die Verfügbarkeit betrug bisher 6 h / 8 h = 75 %, jetzt beträgt sie 6 h / 7,5 h = 80 %.
+
+  Pausengründe werden automatisch als **Geplanter Stillstand** eingestuft, wenn Sie die automatische Pausenkennzeichnung einschalten oder bei eingeschalteter Kennzeichnung eine Schicht mit Pausengrund speichern. Admins können **Geplanter Stillstand** auch bei anderen Stillstandsgründen ändern. Änderungen am Unternehmensschalter sind sofort auch an vergangenen Tagen sichtbar. Das Ein- oder Ausschalten der Einstufung am Grund aktualisiert vergangene Tage innerhalb weniger Minuten, die neuesten Tage zuerst. Ein vom Maschinenbediener gewählter Grund hat Vorrang. Produktion und Vorbereitung während einer Pause zählen weiterhin als Laufzeit. Folgen Sie [Pausen automatisch kennzeichnen einrichten](/de/platform-intro/workflows/shift-management#automatic-break-labels) oder [Stillstandsgründe verwalten](/de/platform-intro/workflows/timeline-reason-creation).
+
+  In Berichten ist **Geplante Zeit (h)** die Schichtzeit abzüglich geplanter Stillstände. **Aus (h)** lässt ausgeschaltete Zeit während geplanter Stillstände weg. Die Berichtshinweise erklären, dass geplante Stillstände nicht mitzählen. Bereits versendete Berichte bleiben unverändert.
+
+  #### [Geplante Stillstände und die aktuelle Pause erkennen](/de/platform-intro/pages/data-acquisition)
+  {/* feature: planned-stop-marks-and-break-note */}
+
+  Geplante Stillstände erscheinen in Zeitleisten mit diagonalen Streifen und in den Details mit **Geplanter Stillstand**. Diagramme nach Stillstandsgründen kennzeichnen die Gründe mit **Geplant**. Stillstände und ihre volle Dauer bleiben sichtbar, auch wenn sie nicht in die OEE eingehen.
+
+  Während einer Pause mit automatischer Kennzeichnung sitzt am rechten Rand der BDE-Seite ein kleiner Chip mit Tassensymbol, oberhalb des Chips **BDE Assist**, wenn dieser angezeigt wird. Zu Pausenbeginn fährt er einmal heraus. Tippen Sie darauf, um ihn zu öffnen oder zu schließen und beispielsweise **Pause bis 09:30 · Automatische Kennzeichnung: Pause** zu lesen. Haben Sie einen Grund vorgemerkt, bestätigt **Pause bis 09:30 · Dein Grund zählt: Werkzeugwechsel** dessen Vorrang.
+</Update>
+
 <Update label="2026-11-22" description="v1.5.186" tags={["Fehlerbehebung"]}>
   {/* commits: 577c619f, 017e27fc, a2a64b02, 4d13a311, 8a9f7b71, 8f5f52a2, 725858a5, 59917472, 8ad50ebf, fcaa3153, 00e3548e, 19abb60c, 5d6e5914, ee54304b, 5d2fd869, 7c2ce0b0, 2869c938, 374c1025, 2a314df4, ed79be2f, 436603eb, 8e5e3484 */}
 

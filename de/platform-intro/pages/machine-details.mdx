@@ -62,13 +62,15 @@ Die Zeitleiste zeigt Produktion grün, Leerlauf orange, Aus rot, Vorbereitung bl
 
 ## Details in der Zeitleiste lesen
 
+Geplante Stillstände zeigen helle diagonale Streifen über ihrer Zustandsfarbe. Zeigen Sie auf den Stillstand, um unter dem Grund **Geplanter Stillstand** zu lesen. Die Kennzeichnung beschreibt den Grund und bleibt auch sichtbar, wenn geplante Stillstände in die OEE eingehen. Die Dauer bleibt unverändert.
+
 Zeigen Sie auf ein Intervall oder einen Maschinenzustand, um **Start**, **Ende** und **Dauer** zu lesen. Ein Intervall zeigt außerdem vorhandene Angaben zu Auftrag, Menge und Maschinenbediener. **Maschinenzustände** erklärt die Maschinenaktivität während des erfassten Intervalls. Ein Zustand zeigt seinen **Grund**, wenn einer erfasst wurde. Fehlende Werte werden ausgelassen.
 
 Datum und Uhrzeit verwenden Tag/Monat/Jahr und Stunden/Minuten. Dauern unter einer Minute erscheinen nur in Sekunden. Zeigen Sie auf die Signallinie, um Messwerte zu dieser Zeit zu lesen. Ein Zykluspunkt zeigt **Zyklus**, **Zeit** und **Dauer** oder **Zyklen** für die stündliche Anzahl.
 
 ## OEE, AVL, PRO und Zykluswerte lesen
 
-**AVL** ist Produktionszeit geteilt durch gesamte erfasste Zeit. **PRO** ist Produktion plus Vorbereitung geteilt durch Einschaltzeit; es bedeutet Leistung, nicht Produktion. Der Qualitäts-Tooltip zeigt **95 %** und verweist für Änderungen auf einen Admin. Diese Zeitdefinitionen weichen von üblichen OEE-Definitionen ab. Die genaue OEE-Serverformel bleibt unbestätigt.
+**AVL** ist Produktionszeit geteilt durch erfasste Zeit nach Abzug ausgenommener geplanter Stillstände. **PRO** ist Produktion plus Vorbereitung geteilt durch Einschaltzeit nach Abzug ausgenommenen geplanten Leerlaufs; es bedeutet Leistung, nicht Produktion. Die OEE multipliziert diese Verhältnisse mit 95 % Qualität. Admins steuern die Ausnahme in den [Pauseneinstellungen](/de/platform-intro/pages/break-settings). Diese Zeitdefinitionen weichen von üblichen OEE-Definitionen ab.
 
 Zyklusdurchschnitte unterscheiden sich nach Quelle: gesamte Intervallzeit je erkanntem Zyklus, aktive Produktionszeit je erkanntem Zyklus oder Produktionszeit je eingegebenem Teil. Vergleichen Sie denselben Zeitraum und dieselbe Quelle. Siehe [Berechnungen und Beispiele](/de/platform-intro/concepts/calculations).
 
@@ -101,6 +103,8 @@ Nur Vorschläge, deren beste Option innerhalb der automatischen Grenze liegt, si
 Die Suche nach Vorschlägen ändert nichts. Die Übernahme ändert historische Auftragszeiten sofort. OEE und Berichte folgen bei ihrer nächsten Berechnung. Ohne Maschinendaten lassen sich Intervalle nicht prüfen. Erlaubte Zeiten kommen aus **BDE Assist**, auch wenn die Intervallhilfe im laufenden Betrieb aus ist. Folgen Sie [Intervalle prüfen und verbessern](/de/platform-intro/workflows/improve-intervals).
 
 ## Codes von Stillstandsgründen lesen
+
+Balken- und Kreisdiagramme nach Stillstandsgründen kennzeichnen geplante Gründe mit **Geplant**. Ihre volle Dauer bleibt in Diagrammen und Summen enthalten. Die Kennzeichnung bleibt auch sichtbar, wenn geplante Stillstände in die OEE eingehen. Die [Pauseneinstellungen](/de/platform-intro/pages/break-settings) erklären die Wirkung auf die Kennzahlen.
 
 Beschriftungen in Stillstandsdiagrammen enthalten den Code eines Grundes, sofern vorhanden. Kurze Beschriftungen können abgeschnitten sein. Zeigen Sie auf einen Balken oder ein Kreissegment, um Name, Code und Kategorie vollständig zu lesen. Kategorien helfen beim Erkennen der Gründe. Die Diagramme gruppieren weiterhin nach Grund.
 

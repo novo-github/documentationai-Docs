@@ -34,6 +34,7 @@ description: "Find reports, understand their status, and update them after produ
 | Why are my test orders missing from the report? | [Answer](/en/help-center/faq/reports#test-orders) |
 | Can I add an interval for production that has already happened? | [Answer](/en/help-center/faq/reports#past-interval) |
 | Why is the main downtime reason missing from the summary table? | [Answer](/en/help-center/faq/reports#summary-reason) |
+| Why is planned time shorter than my shift time? | [Answer](/en/help-center/faq/reports#planned-stop-time) |
 
 <a id="revision-layout" />
 
@@ -216,3 +217,9 @@ You cannot yet add a new interval for a past time. **Improve intervals** lists p
 ## Why is the main downtime reason missing from the summary table?
 
 Version 2 gives machine names more room in **Summary**. If the main downtime reason column still cannot fit, it is left out with the note **The main downtime reason of each machine is on its own page and in the "Downtime" sheet.** Very long machine names can still end in “…”. See [readable report tables](/en/platform-intro/pages/report-versions#readable-tables).
+
+<a id="planned-stop-time" />
+
+## Why is planned time shorter than my shift time?
+
+With **Leave planned stops out of OEE** on, Version 2 reports subtract planned idle and off stops within shifts from planned time. Without shifts, they subtract planned stops from the full day. The stop still appears in downtime durations and reason totals. Reports already sent stay unchanged. See [Version 2 report figures](/en/platform-intro/pages/report-versions#all-data).

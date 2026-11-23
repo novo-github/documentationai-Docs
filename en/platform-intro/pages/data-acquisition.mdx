@@ -184,6 +184,8 @@ Finished or cancelled operations cannot be sent back. Without a hall, the button
 
 ## Interval Times and Timeline Display
 
+Planned stops have light diagonal stripes over their machine-state colour. Hover over the stop to read **Planned stop** beneath its reason. The mark describes the reason and remains visible even if planned stops are counted in OEE. Durations stay unchanged.
+
 If the machine’s template switches off **Correct interval times and quantities**, the interval list is readable only and the edit icons are disabled. Hover over or tap an icon to read **Locked for this machine (PDA template).** Start and end times stay plain text. The editing steps below apply when corrections are allowed.
 
 An interval records a stretch of preparation or production. In Data Acquisition V3, open the order's interval list. Tap a start or end time once to open **Edit interval** on **Start** or **End**. The clock icon and **Tap to change** hint identify editable times. The pencil opens **Quantities**.
@@ -344,6 +346,12 @@ Automatic break labels appear only after downtime ends, not in the running downt
 Saved tile arrangements keep newly available reasons and drop deleted ones. Other downtime reason pickers show reasons alphabetically with the code before the name. **Remove label** clears the selected reason without deleting the downtime period.
 
 If a reason is no longer allowed, the list updates. Choose an available reason or ask an Admin to check the machine's selection. A historical reason may still appear even when it is no longer selectable. See [Downtime Reasons FAQs](/en/help-center/faq/downtime-reasons).
+
+### Read the Current Break
+
+During a scheduled break, a chip with a cup icon appears at the right edge, above the **PDA Assist** chip when it is shown. It appears only when automatic break labelling is on and the break has a downtime reason. Tap or click it to expand or close the note. Hovering or keyboard focus also expands it. At the break’s start, it briefly opens automatically.
+
+For example, **Break until 09:30 · Auto label: Pause** shows the end time and the break’s reason. If you pre-set a reason, **Break until 09:30 · Your reason wins: Tool change** confirms that your choice takes priority. The note disappears at the break’s end. It describes the scheduled break, not confirmation that the running stop already has a reason. Automatic labels appear only after a stop ends; allow up to about five more minutes. See [Break Settings](/en/platform-intro/pages/break-settings).
 
 <a id="next-downtime-reason" />
 

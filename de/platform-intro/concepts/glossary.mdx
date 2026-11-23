@@ -1139,7 +1139,7 @@ Die Importauswahl für Mengen und Zeiten als Text. **Automatisch** schätzt jede
 
 ### OEE / Overall Equipment Effectiveness / Gesamtanlageneffektivität
 
-Gesamtkennzahl aus Verfügbarkeit, Leistung und Qualität. Die genaue Serverformel ist unbestätigt; die Watchmen-Zeitdefinitionen weichen von üblichen OEE-Definitionen ab.
+Verfügbarkeitsverhältnis × Leistungsverhältnis × 95 % Qualität. Die Einstellungen für geplante Stillstände beeinflussen die Zeit für diese Verhältnisse. Die Watchmen-Zeitdefinitionen weichen von üblichen OEE-Definitionen ab.
 
 [Mehr erfahren](/de/platform-intro/concepts/calculations#oee).
 
@@ -1851,6 +1851,16 @@ Unter **Pauseneinstellungen** können Admins **Pausen automatisch kennzeichnen**
 ### Toleranz
 
 In den **Pauseneinstellungen** erweitert **Toleranz** die Pause um 0–15 Minuten davor und danach, wenn nur die Pause gekennzeichnet wird. Anfangs sind es 5 Minuten. Der Stillstand muss die eigentliche Pause überlappen. Nur die Toleranz zu berühren reicht nicht.
+
+[Mehr erfahren](/de/platform-intro/pages/break-settings).
+
+### Geplanter Stillstand / Geplant
+
+Ein als **Geplanter Stillstand** eingestufter Stillstandsgrund bezeichnet einen geplanten Stopp, etwa eine Pause, Besprechung oder Reinigung. Zeitleisten zeigen diagonale Streifen; Diagramme nach Stillstandsgründen zeigen **Geplant**. Diese Zeichen beschreiben den Grund, auch wenn die Zeit in die OEE eingeht.
+
+### Geplante Stillstände nicht in die OEE einrechnen
+
+Ein unternehmensweiter Schalter in den **Pauseneinstellungen**, anfangs eingeschaltet. Er nimmt Leerlauf und Aus mit geplanten Gründen aus Verfügbarkeit, Leistung, OEE und geplanter Zeit in Berichten der Version 2 heraus. Vergangene Tage folgen den Einstellungen; bereits versendete Berichte bleiben unverändert.
 
 [Mehr erfahren](/de/platform-intro/pages/break-settings).
 

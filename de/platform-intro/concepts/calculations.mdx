@@ -19,14 +19,16 @@ Diese Referenz unterscheidet sichtbare Plattformdefinitionen von Berechnungen, d
 
 | Kennzahl | Plattformdefinition |
 | --- | --- |
-| **AVL — Verfügbarkeit (Availability)** | Zeit im Zustand Produktion / gesamte erfasste Maschinenzeit × 100. |
-| **PRO — Leistung (Performance)** | (Produktionszeit + Vorbereitungszeit) / (Produktionszeit + Vorbereitungszeit + Leerlaufzeit) × 100. Ausgeschaltete Zeit ist ausgeschlossen. |
+| **AVL — Verfügbarkeit (Availability)** | Produktionszeit / (Produktionszeit + Vorbereitungszeit + Leerlaufzeit + ausgeschaltete Zeit − ausgenommene geplante Stillstandszeit) × 100. |
+| **PRO — Leistung (Performance)** | (Produktionszeit + Vorbereitungszeit) / (Produktionszeit + Vorbereitungszeit + Leerlaufzeit − ausgenommene geplante Leerlaufzeit) × 100. Ausgeschaltete Zeit ist ausgeschlossen. |
 | **Qualität (Quality)** | Der Dashboard-Tooltip nennt **95 %** und verweist für Änderungen auf einen Admin. Wo Sie diesen Wert ändern können und ob er automatisch durch Mengenwerte ersetzt wird, ist nicht bestätigt. |
-| **OEE — Gesamtanlageneffektivität** | Kombiniert Verfügbarkeit, Leistung und Qualität. Die genaue Serverformel ist durch die Frontend-Referenz nicht bestätigt. |
+| **OEE — Gesamtanlageneffektivität** | Verfügbarkeitsverhältnis × Leistungsverhältnis × 0,95 × 100. Die Qualität bleibt bei 95 %. |
 
-**Beispiel:** Bei 3 Stunden Produktion, 1 Stunde Vorbereitung, 1 Stunde Leerlauf und 2 Stunden ausgeschalteter Zeit beträgt die Verfügbarkeit **3 / 7 × 100 = 42,86 %** und die Leistung **4 / 5 × 100 = 80 %**. Das Beispiel enthält keine unbekannte Zeit. Wie Unknown-Zeit im Nenner behandelt wird, ist hier nicht belegt.
+**Geplante Stillstände nicht in die OEE einrechnen** ist in den [Pauseneinstellungen](/de/platform-intro/pages/break-settings) anfangs eingeschaltet. Dadurch entfällt Leerlauf und Aus mit einem als **Geplanter Stillstand** eingestuften Grund aus der Zeit für Verfügbarkeit und OEE. Geplanter Leerlauf entfällt auch aus der Zeit für die Leistung. Schalten Sie die Option aus, zählt diese Zeit wieder mit. Die Einstellungen gelten auch für vergangene Tage. Erfasste Zustandszeiten und Summen nach Stillstandsgründen bleiben gleich. Produktion und Vorbereitung während einer Pause zählen weiterhin als Laufzeit. Bleibt für ein Verhältnis keine Zeit übrig, ist sein Wert gleich 0.
 
-Eine Multiplikation dieser Verhältnisse mit 95 % Qualität ergäbe **32,57 %**. Sie veranschaulicht eine Multiplikationsformel, bestätigt aber nicht das OEE-Ergebnis des Servers. Die [FAQs zu Produktionskennzahlen](/de/help-center/faq/production-metrics) erklären diese Unterscheidung und das mengenbasierte Qualitätsbeispiel.
+**Beispiel ohne geplante Stillstände:** Bei 3 Stunden Produktion, 1 Stunde Vorbereitung, 1 Stunde Leerlauf und 2 Stunden ausgeschalteter Zeit beträgt die Verfügbarkeit **3 / 7 × 100 = 42,86 %** und die Leistung **4 / 5 × 100 = 80 %**. Das Beispiel enthält keine unbekannte Zeit. Wie Unknown-Zeit im Nenner behandelt wird, ist hier nicht belegt.
+
+Die Multiplikation dieser Verhältnisse mit 95 % Qualität ergibt **32,57 % OEE**. Weitere Rechenbeispiele finden Sie in den [FAQs zu Produktionskennzahlen](/de/help-center/faq/production-metrics).
 
 <a id="cycle-times" />
 

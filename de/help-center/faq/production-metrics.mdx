@@ -39,6 +39,9 @@ Die Watchmen-Plattform verbindet Produktionsmengen und Maschinenzeiten. Vergleic
 | Wie zeige ich Maschinen im Leerlauf und ausgeschaltete Maschinen einer Halle gemeinsam? | [Antwort](/de/help-center/faq/production-metrics#machine-find-states) |
 | Wo finde ich die Suche auf der Maschinenseite auf meinem Smartphone? | [Antwort](/de/help-center/faq/production-metrics#machine-find-phone) |
 | Warum umfasst Laufender Auftrag abgeschlossene Arbeit und verschwindet der Filter über Nacht? | [Antwort](/de/help-center/faq/production-metrics#machine-running-order) |
+| Wie verhindere ich, dass Pausen die OEE senken? | [Antwort](/de/help-center/faq/production-metrics#planned-stops-oee) |
+| Warum senkt meine Pause die OEE zunächst noch? | [Antwort](/de/help-center/faq/production-metrics#break-still-counts) |
+| Warum hat sich die OEE vergangener Tage geändert? | [Antwort](/de/help-center/faq/production-metrics#planned-stop-history) |
 
 ### Ein Beispiel für alle vier Kennzahlen
 
@@ -80,15 +83,17 @@ Informationen zum Auftragsimport finden Sie unter [ERP-Upload-Planer](/de/platfo
 
 ## Wie wird die Verfügbarkeit berechnet?
 
+Das folgende Beispiel enthält keine geplanten Stillstände. Ist **Geplante Stillstände nicht in die OEE einrechnen** eingeschaltet, entfällt Leerlauf und Aus mit einem als geplant eingestuften Grund aus der Gesamtzeit.
+
 **Verfügbarkeit** ist der Anteil des ausgewählten Zeitraums, in dem die Maschine produziert. Der Nenner umfasst bei dieser Berechnung Produktion, Vorbereitung, Leerlauf und ausgeschaltete Zeit.
 
-**Formel:** Verfügbarkeit (%) = Produktionszeit / gesamte erfasste Zeit × 100. Im Beispiel besteht die Gesamtzeit aus Produktion, Vorbereitung, Leerlauf und ausgeschalteter Zeit. Die Behandlung unbekannter Zeit ist hier nicht belegt.
+**Formel:** Verfügbarkeit (%) = Produktionszeit / (gesamte erfasste Zeit − ausgenommene geplante Stillstandszeit) × 100. Im Beispiel besteht die Gesamtzeit aus Produktion, Vorbereitung, Leerlauf und ausgeschalteter Zeit. Die Behandlung unbekannter Zeit ist hier nicht belegt.
 
 Für unser Beispiel mit sieben Stunden gilt:
 
 **3 / (3 + 1 + 1 + 2) × 100 = 42,86 % Verfügbarkeit.**
 
-Die Maschine hat während rund 43 % des betrachteten Zeitraums produziert. Vorbereitung, Leerlauf und ausgeschaltete Zeit verringern den Wert, da sie zur Gesamtzeit, aber nicht zur Produktionszeit zählen.
+Die Maschine hat während rund 43 % des betrachteten Zeitraums produziert. Vorbereitung sowie ungeplanter Leerlauf und ungeplante ausgeschaltete Zeit verringern den Wert, da sie zur Gesamtzeit, aber nicht zur Produktionszeit zählen.
 
 ### Warum ist die Verfügbarkeit niedriger als erwartet?
 
@@ -100,9 +105,9 @@ Prüfen Sie Datum und Schicht in den [Maschinendetails](/de/platform-intro/pages
 
 ## Wie wird die Leistung berechnet?
 
-**Leistung (Performance)** vergleicht Produktions- und Vorbereitungszeit mit der gesamten Einschaltzeit. Die Einschaltzeit enthält den Leerlauf; ausgeschaltete Zeit ist ausgeschlossen.
+**Leistung (Performance)** vergleicht Produktions- und Vorbereitungszeit mit der gesamten Einschaltzeit. Die Einschaltzeit enthält den Leerlauf; ausgeschaltete Zeit ist ausgeschlossen. Ist **Geplante Stillstände nicht in die OEE einrechnen** eingeschaltet, entfällt auch geplanter Leerlauf. Das folgende Beispiel enthält keine geplanten Stillstände.
 
-**Formel:** Leistung (%) = (Produktionszeit + Vorbereitungszeit) / (Produktionszeit + Vorbereitungszeit + Leerlaufzeit) × 100.
+**Formel:** Leistung (%) = (Produktionszeit + Vorbereitungszeit) / (Produktionszeit + Vorbereitungszeit + Leerlaufzeit − ausgenommene geplante Leerlaufzeit) × 100.
 
 In unserem Beispiel beträgt die effektive Zeit **4 Stunden** und die Einschaltzeit **5 Stunden**:
 
@@ -120,7 +125,7 @@ Eine Maschine mit viel Vorbereitungszeit kann beispielsweise eine hohe Leistung 
 
 ## Wie wird die Gesamtanlageneffektivität (OEE) berechnet?
 
-Die **Gesamtanlageneffektivität (Overall Equipment Effectiveness, OEE)** kombiniert Verfügbarkeit, Leistung und Qualität. Alle Eingaben müssen dieselbe Maschine und denselben Zeitraum betreffen. Das Frontend belegt die genaue Serverformel nicht. Die folgende Multiplikation ist ein Rechenbeispiel. Verwenden Sie für die gemeldete OEE das Dashboard.
+Die **Gesamtanlageneffektivität (Overall Equipment Effectiveness, OEE)** kombiniert Verfügbarkeit, Leistung und Qualität. Alle Eingaben müssen dieselbe Maschine und denselben Zeitraum betreffen. Die Einstellungen für geplante Stillstände beeinflussen die Zeit für Verfügbarkeit und Leistung. Das folgende Beispiel enthält keine geplanten Stillstände.
 
 **Formel mit Dezimalverhältnissen:** OEE (%) = Verfügbarkeitsverhältnis × Leistungsverhältnis × Qualitätsverhältnis × 100.
 
@@ -309,3 +314,21 @@ Tippen Sie auf die Lupe neben der Sortierung bei den Statuskarten. Sobald sie ni
 ## Warum umfasst Laufender Auftrag abgeschlossene Arbeit und verschwindet der Filter über Nacht?
 
 **Laufender Auftrag** umfasst heute erfasste Arbeit, einschließlich Vorbereitung und abgeschlossener Arbeit, nicht nur gerade laufende Arbeit. Die Auswahl zeigt die beteiligten Maschinen. Die Chips werden entfernt, wenn die Seite zum nächsten Tag wechselt. Status-, Hallen- und Tagfilter bleiben. Siehe [heutige Aufträge filtern](/de/platform-intro/pages/search-and-filter).
+
+<a id="planned-stops-oee" />
+
+## Wie verhindere ich, dass Pausen die OEE senken?
+
+Admins lassen **Geplante Stillstände nicht in die OEE einrechnen** in den **Pauseneinstellungen** eingeschaltet. Die Option ist anfangs eingeschaltet. Der Stillstand braucht einen als **Geplanter Stillstand** eingestuften Grund. Pausengründe erhalten die Einstufung automatisch beim Einschalten der Pausenkennzeichnung oder beim Speichern einer Schicht mit Pausengrund bei eingeschalteter Kennzeichnung. Für Besprechungen oder Reinigung können Admins den Grund selbst einstufen. Folgen Sie [Pausenkennzeichnung einrichten](/de/platform-intro/workflows/shift-management#automatic-break-labels) oder [Stillstandsgründe verwalten](/de/platform-intro/workflows/timeline-reason-creation).
+
+<a id="break-still-counts" />
+
+## Warum senkt meine Pause die OEE zunächst noch?
+
+Die automatische Pausenkennzeichnung gibt nur beendeten Stillständen ihren Grund. Ein laufender Stillstand zählt mit, bis er endet und gekennzeichnet wird. Warten Sie danach bis zu etwa fünf Minuten. Ein vorgemerkter Grund für einen geplanten Stillstand lässt diesen von Beginn an als geplant zählen. Ein anderer vom Maschinenbediener gewählter Grund hat Vorrang und entscheidet, ob der Stillstand mitzählt. Siehe [Pauseneinstellungen](/de/platform-intro/pages/break-settings).
+
+<a id="planned-stop-history" />
+
+## Warum hat sich die OEE vergangener Tage geändert?
+
+Vergangene Tage folgen dem unternehmensweiten Schalter und der Einstufung **Geplanter Stillstand** am jeweiligen Grund. Änderungen am Unternehmensschalter sind sofort auch an vergangenen Tagen sichtbar. Das Ein- oder Ausschalten der Einstufung am Grund aktualisiert alle vergangenen Tage mit diesem Grund innerhalb weniger Minuten, die neuesten Tage zuerst. Bereits versendete Berichte bleiben unverändert. Siehe [Einstellungen für geplante Stillstände](/de/platform-intro/pages/break-settings#settings).

@@ -184,6 +184,8 @@ Abgeschlossene oder stornierte Arbeitsgänge können nicht zurückgegeben werden
 
 ## Intervallzeiten und Zeitleistendarstellung
 
+Geplante Stillstände zeigen helle diagonale Streifen über ihrer Zustandsfarbe. Zeigen Sie auf den Stillstand, um unter dem Grund **Geplanter Stillstand** zu lesen. Die Kennzeichnung beschreibt den Grund und bleibt auch sichtbar, wenn geplante Stillstände in die OEE eingehen. Die Dauer bleibt unverändert.
+
 Schaltet die Maschinenvorlage **Zeiten und Mengen von Intervallen korrigieren** aus, bleibt die Intervallliste nur lesbar. Die Bearbeitungssymbole sind gesperrt. Zeigen oder tippen Sie darauf, um **Für diese Maschine gesperrt (BDE-Vorlage).** zu lesen. Start- und Endzeiten bleiben reiner Text. Die folgenden Bearbeitungsschritte gelten, wenn Korrekturen erlaubt sind.
 
 Ein Intervall erfasst einen Abschnitt von Vorbereitung oder Produktion. Öffnen Sie in der Betriebsdatenerfassung V3 die Intervallliste des Auftrags. Tippen Sie einmal auf eine Start- oder Endzeit, um **Intervall bearbeiten** unter **Start** oder **Ende** zu öffnen. Das Uhrsymbol und der Hinweis **Tippen zum Ändern** kennzeichnen bearbeitbare Zeiten. Der Stift öffnet **Mengen**.
@@ -344,6 +346,12 @@ Automatische Pausengründe erscheinen erst nach Ende des Stillstands, nicht im T
 Gespeicherte Kachelreihenfolgen behalten neu verfügbare Gründe und entfernen gelöschte. Andere Grundauswahlen der Zeitleiste zeigen Gründe alphabetisch mit dem Code vor dem Namen. **Grund entfernen** entfernt die Zuordnung, ohne den Stillstandszeitraum zu löschen.
 
 Ist ein Grund nicht mehr erlaubt, wird die Liste aktualisiert. Wählen Sie einen verfügbaren Grund oder bitten Sie einen Admin, die Maschinenauswahl zu prüfen. Ein früher verwendeter Grund kann weiterhin sichtbar sein, obwohl er nicht mehr auswählbar ist. Siehe [Fragen zu Stillstandsgründen](/de/help-center/faq/downtime-reasons).
+
+### Die aktuelle Pause lesen
+
+Während einer geplanten Pause erscheint rechts ein Chip mit Tassensymbol, oberhalb des Chips **BDE Assist**, wenn dieser angezeigt wird. Er erscheint nur bei eingeschalteter automatischer Pausenkennzeichnung und wenn die Pause einen Stillstandsgrund hat. Tippen oder klicken Sie darauf, um den Hinweis zu öffnen oder zu schließen. Zeigen Sie mit der Maus darauf oder wählen Sie ihn mit der Tastatur, öffnet er sich ebenfalls. Zu Pausenbeginn öffnet er sich kurz automatisch.
+
+Beispielsweise zeigt **Pause bis 09:30 · Automatische Kennzeichnung: Pause** das Ende und den Pausengrund. Haben Sie einen Grund vorgemerkt, bestätigt **Pause bis 09:30 · Dein Grund zählt: Werkzeugwechsel** dessen Vorrang. Der Hinweis verschwindet am Pausenende. Er beschreibt die geplante Pause und bestätigt nicht, dass der laufende Stillstand bereits einen Grund hat. Automatische Gründe erscheinen erst nach dem Ende des Stillstands. Warten Sie danach bis zu etwa fünf Minuten. Siehe [Pauseneinstellungen](/de/platform-intro/pages/break-settings).
 
 <a id="next-downtime-reason" />
 

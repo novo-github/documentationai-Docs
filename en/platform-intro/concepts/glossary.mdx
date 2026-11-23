@@ -1137,7 +1137,7 @@ The import choice for reading quantities and times written as text. **Automatic*
 
 ### OEE / Overall Equipment Effectiveness / Gesamtanlageneffektivität
 
-Headline score combining Availability, Performance, and Quality. The exact server formula remains unconfirmed; Watchmen's time definitions differ from textbook OEE.
+Availability ratio × Performance ratio × 95% quality. Planned-stop settings affect the time used in these ratios. Watchmen's time definitions differ from textbook OEE.
 
 [Learn more](/en/platform-intro/concepts/calculations#oee).
 
@@ -1843,6 +1843,16 @@ The machines where machine operators can select a reason. Unticking a machine th
 ### Tolerance
 
 In **Break settings**, **Tolerance** adds 0–15 minutes before and after a break when only the break is labelled. It starts at 5 minutes. The downtime must overlap the actual break; touching only the tolerance is not enough.
+
+[Learn more](/en/platform-intro/pages/break-settings).
+
+### Planned stop / Planned
+
+A downtime reason marked **Planned stop** identifies a stop you plan, such as a break, meeting or cleaning. Timelines use diagonal stripes; downtime reason charts show **Planned**. These marks describe the reason even when the time is counted in OEE.
+
+### Leave planned stops out of OEE
+
+A company-wide switch in **Break settings**, on by default. It excludes idle and off time with planned-stop reasons from availability, performance, OEE and planned time in Version 2 reports. Past days follow the settings; reports already sent stay unchanged.
 
 [Learn more](/en/platform-intro/pages/break-settings).
 

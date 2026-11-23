@@ -57,13 +57,13 @@ Nutzen Sie diesen Ablauf, wenn Stillstände in Leerlauf oder Aus während geplan
 
 <Steps>
   <Step title="Schalten Sie die Pausenkennzeichnung ein" icon="arrow-right" title-type="p">
-    Öffnen Sie **Admin-Panel → Schichten und Zeitplanung konfigurieren → Schichten** und wählen Sie **Pauseneinstellungen** direkt links neben **Schicht hinzufügen**. Schalten Sie **Pausen automatisch kennzeichnen** ein. Die Funktion ist anfangs ausgeschaltet.
+    Öffnen Sie **Admin-Panel → Schichten und Zeitplanung konfigurieren → Schichten** und wählen Sie **Pauseneinstellungen** direkt links neben **Schicht hinzufügen**. Schalten Sie **Pausen automatisch kennzeichnen** ein. Die Funktion ist anfangs ausgeschaltet. Lassen Sie **Geplante Stillstände nicht in die OEE einrechnen** eingeschaltet, wenn geplante Stillstände Verfügbarkeit, Leistung und OEE nicht senken sollen. Die Option ist anfangs eingeschaltet und gilt auch für vergangene Tage.
   </Step>
   <Step title="Wählen Sie den Zeitraum für den Grund" icon="arrow-right" title-type="p">
     Beginnen Sie mit **Nur die Pause kennzeichnen (empfohlen)** und einer **Toleranz** von 0 bis 15 Minuten vor und nach der Pause. Beim ersten Einschalten sind 5 Minuten vorausgewählt. Wählen Sie **Den ganzen Stillstand kennzeichnen** nur, wenn der gesamte überlappende Stillstand den Pausengrund erhalten soll, auch eine längere Störung. Wählen Sie **Speichern**.
   </Step>
   <Step title="Wählen Sie für jede Pause einen Grund" icon="arrow-right" title-type="p">
-    Bearbeiten Sie die Schicht. Wählen Sie für jede Pause einen **Stillstandsgrund** und speichern Sie die Schicht. **Kein Stillstandsgrund** nimmt diese Pause von der automatischen Kennzeichnung aus. Prüfen Sie den Grund nach der Pausenlänge in der Spalte **Pausen**.
+    Bearbeiten Sie die Schicht. Wählen Sie für jede Pause einen **Stillstandsgrund** und speichern Sie die Schicht. **Kein Stillstandsgrund** nimmt diese Pause von der automatischen Kennzeichnung aus. Prüfen Sie den Grund nach der Pausenlänge in der Spalte **Pausen**. Der Grund wird automatisch als **Geplanter Stillstand** eingestuft. Prüfen Sie ihn in den Einstellungen für Stillstandsgründe, falls er wie ein gewöhnlicher Stillstand zählen soll.
   </Step>
   <Step title="Prüfen Sie Maschinen und Schichtplan" icon="arrow-right" title-type="p">
     Öffnen Sie **Pauseneinstellungen** erneut. Hat noch keine Pause einen Grund, ergänzen Sie ihn in den Schichten. Nennt die Warnung Maschinen, die einen Pausengrund nicht anbieten, ergänzen Sie ihn in deren erlaubten Gründen oder wählen Sie einen anderen Pausengrund. Prüfen Sie, ob die Schichtgruppe die Schicht am gewünschten Wochentag vorsieht.

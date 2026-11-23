@@ -39,6 +39,9 @@ The Watchmen Platform combines production quantities and machine time to help yo
 | How do I show idle and off machines in one hall together? | [Answer](/en/help-center/faq/production-metrics#machine-find-states) |
 | Where is the search button on my phone on the Machines page? | [Answer](/en/help-center/faq/production-metrics#machine-find-phone) |
 | Why does Running order include completed work, and why did its filter disappear overnight? | [Answer](/en/help-center/faq/production-metrics#machine-running-order) |
+| How do I stop breaks lowering OEE? | [Answer](/en/help-center/faq/production-metrics#planned-stops-oee) |
+| Why does my break still lower OEE for a while? | [Answer](/en/help-center/faq/production-metrics#break-still-counts) |
+| Why did OEE change for past days? | [Answer](/en/help-center/faq/production-metrics#planned-stop-history) |
 
 ### One Example for All Four Metrics
 
@@ -80,15 +83,17 @@ See [ERP/PDA data ingestion](/en/erp-bde-integration) for integration context an
 
 ## How Is Availability Calculated?
 
+The example below has no planned stops. With **Leave planned stops out of OEE** on, idle and off time with planned-stop reasons is removed from total time.
+
 **Availability** is the share of the selected period spent producing. In this calculation, the denominator includes production, preparation, idle, and off time.
 
-**Formula:** Availability (%) = production time / total recorded time × 100. The example total consists of production + preparation + idle + off time; Unknown-time treatment is not established here.
+**Formula:** Availability (%) = production time / (total recorded time − excluded planned-stop time) × 100. The example total consists of production + preparation + idle + off time; Unknown-time treatment is not established here.
 
 For our seven-hour example:
 
 **3 / (3 + 1 + 1 + 2) × 100 = 42.86% availability.**
 
-The machine produced for about 43% of the observed period. Preparation, idle, and off time all reduce this value because they are included in total time but not production time.
+The machine produced for about 43% of the observed period. Preparation and unplanned idle or off time reduce this value because they are included in total time but not production time. With **Leave planned stops out of OEE** on, idle and off time with planned-stop reasons is left out.
 
 ### Why Is Availability Lower Than Expected?
 
@@ -100,9 +105,9 @@ Use [Machine Details](/en/platform-intro/pages/machine-details) to review date a
 
 ## How Is Performance Calculated?
 
-**Performance** compares production plus preparation time with all switched-on time. Switched-on time includes idle time; off time is excluded.
+**Performance** compares production plus preparation time with all switched-on time. Switched-on time includes idle time; off time is excluded. With **Leave planned stops out of OEE** on, planned idle time is left out too. The example below has no planned stops.
 
-**Formula:** Performance (%) = (production + preparation time) / (production + preparation + idle time) × 100.
+**Formula:** Performance (%) = (production + preparation time) / (production + preparation + idle time − excluded planned idle time) × 100.
 
 In our example, effective time is **4 hours** and switched-on time is **5 hours**:
 
@@ -120,7 +125,7 @@ For example, a machine that spends more time preparing can still have high perfo
 
 ## How Is Overall Equipment Effectiveness (OEE) Calculated?
 
-**Overall Equipment Effectiveness (OEE)** combines availability, performance, and quality into one percentage. All three inputs must refer to the same machine and period. The frontend does not establish the exact server formula. The multiplication below is an illustrative calculation; use the dashboard for the reported OEE.
+**Overall Equipment Effectiveness (OEE)** combines availability, performance, and quality into one percentage. All three inputs must refer to the same machine and period. Planned-stop settings affect the time used for availability and performance. The example below has no planned stops.
 
 **Formula using decimal ratios:** OEE (%) = availability ratio × performance ratio × quality ratio × 100.
 
@@ -309,3 +314,21 @@ Tap the magnifier beside sorting near the status cards. Once it is out of view, 
 ## Why does Running order include completed work, and why did its filter disappear overnight?
 
 **Running order** means work recorded today, including preparation and completed work, not only work running now. It shows the machines involved. Its chips clear when the page changes to the next day; status, hall, and tag filters stay. See [today’s order filters](/en/platform-intro/pages/search-and-filter).
+
+<a id="planned-stops-oee" />
+
+## How do I stop breaks lowering OEE?
+
+Admins can keep **Leave planned stops out of OEE** on in **Break settings**. It is on by default. The stop must have a **Planned stop** reason. Break reasons receive this setting automatically when automatic break labelling is enabled or a shift with a break reason is saved while labelling is on. For meetings or cleaning, Admins can mark the reason themselves. Follow [set up break labels](/en/platform-intro/workflows/shift-management#automatic-break-labels) or [manage downtime reasons](/en/platform-intro/workflows/timeline-reason-creation).
+
+<a id="break-still-counts" />
+
+## Why does my break still lower OEE for a while?
+
+Automatic break labelling only gives finished stops their reason. The running stop counts until it ends and is labelled; allow up to about five minutes afterwards. A pre-set planned-stop reason makes the stop planned from the start. A different reason chosen by the machine operator takes priority and decides whether the stop counts. See [Break Settings](/en/platform-intro/pages/break-settings).
+
+<a id="planned-stop-history" />
+
+## Why did OEE change for past days?
+
+Past days follow the company’s planned-stop setting and each reason’s **Planned stop** setting. Changing the company switch shows on past days at once. Marking or unmarking a reason updates all past days that used it within minutes, newest days first. Reports already sent stay unchanged. See [planned-stop settings](/en/platform-intro/pages/break-settings#settings).

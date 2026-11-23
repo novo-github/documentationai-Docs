@@ -12,6 +12,7 @@ Mit **Pauseneinstellungen** geben Sie Stillständen in Leerlauf oder Aus den Gru
 ## Was Sie sehen können
 
 - **Pausen automatisch kennzeichnen**, anfangs ausgeschaltet.
+- **Geplante Stillstände nicht in die OEE einrechnen**, anfangs eingeschaltet.
 - Zwei Möglichkeiten für Stillstände, die vor einer Pause beginnen oder nach ihr enden.
 - **Toleranz**, nur sichtbar, wenn Sie ausschließlich die Pause kennzeichnen.
 - Einen Hinweis, wenn noch keine Pause einen Grund hat, sowie eine Warnung mit Maschinen, die einen Pausengrund nicht anbieten.
@@ -31,6 +32,12 @@ Folgen Sie [Pausen automatisch kennzeichnen einrichten](/de/platform-intro/workf
 <a id="settings" />
 
 ## Einstellungen und ihre Wirkung
+
+**Geplante Stillstände nicht in die OEE einrechnen** gilt unternehmensweit. Bei eingeschaltetem Schalter senken Leerlauf und Aus mit einem als **Geplanter Stillstand** eingestuften Grund weder Verfügbarkeit noch Leistung oder OEE. Berichte der Version 2 ziehen diese Zeit auch von der geplanten Zeit ab: innerhalb der Schichten oder vom ganzen Tag, wenn keine Schichten vorliegen. Schalten Sie die Option aus, um diese Stillstände wie andere Stillstände zu zählen. Änderungen an diesem Schalter sind sofort auch an vergangenen Tagen sichtbar. Bereits versendete Berichte bleiben unverändert.
+
+Pausengründe werden automatisch als **Geplanter Stillstand** eingestuft, wenn Sie die Pausenkennzeichnung einschalten oder bei eingeschalteter Kennzeichnung eine Schicht mit Pausengrund speichern. Bei Unternehmen, die bereits automatisch kennzeichnen, erhalten bestehende Pausengründe diese Einstufung ebenfalls. Admins können sie am Grund im [Admin-Panel](/de/platform-intro/pages/admin-panel#stillstandsgründe-verwalten) ändern, auch für Besprechungen, Reinigung oder geplante Wartung. Das Ein- oder Ausschalten der Einstufung am Grund aktualisiert vergangene Tage innerhalb weniger Minuten, die neuesten Tage zuerst. Das Ausschalten der Pausenkennzeichnung entfernt diese Einstufung nicht.
+
+Ein als geplant eingestufter Stillstandsgrund zählt überall als geplant, auch außerhalb einer geplanten Pause, etwa bei einer vom Maschinenbediener gewählten Besprechung. Produktion und Vorbereitung während einer Pause zählen weiterhin als Laufzeit. Wählt der Maschinenbediener einen anderen Grund, entscheidet dieser über die Ausnahme. Ein automatisch gekennzeichneter Pausenstillstand zählt zunächst mit, bis er endet und seinen Grund erhält. Warten Sie danach bis zu etwa fünf Minuten. Ein vorgemerkter Grund für einen geplanten Stillstand lässt diesen von Beginn an als geplant zählen.
 
 **Pausen automatisch kennzeichnen** gilt für beendete Stillstände in Leerlauf oder Aus ab dem Einschalten. Früher beendete Stillstände bleiben unverändert. Stillstände, die bei ausgeschaltetem Schalter enden, werden auch nach erneutem Einschalten nicht nachträglich gekennzeichnet. Die Kennzeichnung beginnt immer ab dem Einschalten. Gründe erscheinen nach dem Ende des Stillstands. Warten Sie einige Minuten. Die Watchmen-Plattform prüft auch weiter, wenn niemand die Seite geöffnet hat.
 
@@ -67,7 +74,7 @@ Wählt der Maschinenbediener nach dem Ende des Stillstands einen Grund, ersetzt 
 - Nur Stillstände in Leerlauf und Aus werden gekennzeichnet. Produktion, Vorbereitung und Zeiten ohne Daten sind ausgenommen. Laufende Stillstände zeigen noch keinen automatischen Pausengrund.
 - Eine Pause braucht einen Grund, den die Maschine anbietet. Nennt eine Warnung Maschine und Grund, ergänzen Sie den Grund in der erlaubten Liste der Maschine oder wählen Sie einen anderen Pausengrund. Eine Pause ohne gültigen Grund wird übersprungen.
 - Liegen zwei Pausen so nah beieinander, dass sich ihre Toleranzen berühren, endet die Toleranz jeder Pause in der Mitte zwischen ihnen, damit der Grund einer Pause nicht in die andere hineinreicht.
-- Das Aufteilen ändert Anzahlen und Durchschnittswerte je Grund, da jeder Abschnitt einzeln zählt. Die Gesamtzeit je Maschinenzustand bleibt gleich. Pausengründe ändern weder geplante Zeit noch OEE.
+- Das Aufteilen ändert Anzahlen und Durchschnittswerte je Grund, da jeder Abschnitt einzeln zählt. Die Gesamtzeit je Maschinenzustand bleibt gleich. Zeit mit einem als geplant eingestuften Grund entfällt aus geplanter Zeit und OEE, wenn **Geplante Stillstände nicht in die OEE einrechnen** eingeschaltet ist. Bei **Den ganzen Stillstand kennzeichnen** kann dadurch auch eine längere Störung entfallen. Prüfen Sie diese Auswahl sorgfältig.
 - Das Löschen eines gemeinsamen Stillstandsgrundes entfernt ihn aus Schichtpausen. Deren Zeiten bleiben erhalten. Wählen Sie in jeder betroffenen Pause einen Ersatz, wenn die automatische Kennzeichnung weiterlaufen soll.
 
 ## Verwandte Seiten

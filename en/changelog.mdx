@@ -6,6 +6,30 @@ toc: false
 
 ## Releases
 
+<Update label="2026-11-23" description="v1.5.188" tags={["feature"]}>
+  {/* commits: f21ec757, 5f307b76, 5e40d1fc, 88514896, 1b1b350d, e5c9efeb, 3bd579d9, 04bb5799, c65bb925, db660bed, 336f03d4, a5cd2e6c, 6accb21c, 588fdf49, 429a3f32, 67729885, d1081900, 6d0bcab8, a7d2c2c4, 01247dfb, 9761cfa9, ae9e9463, 13604ee7, e35deeec, 3149e4bc, c86b8e0a, ef20daf4, 4d2f262a, 054ce1aa, cc42bc2f, 051edbf3, 0dfaf1b9, 065dcc6c, 9bb6c6a7, e5bfde2f */}
+
+  **Release date:** November 23, 2026
+
+  ### New Features
+
+  #### [Keep planned stops out of OEE](/en/platform-intro/pages/break-settings)
+  {/* feature: planned-stops-oee */}
+
+  Breaks and other planned stops no longer lower availability, performance and OEE. **Leave planned stops out of OEE** in **Break settings** is on by default. Admins can turn it off to count planned stops like any other stop. Open **Admin Panel → Configure Shifts and Scheduling → Shifts → Break settings**. Production, idle and off times stay the same; only the percentages change. For example, an 8-hour shift has 6 hours of production and a 30-minute break in which the machine is idle with the reason “Pause”. Availability was 6 h / 8 h = 75%; now it is 6 h / 7.5 h = 80%.
+
+  Reasons assigned to breaks become **Planned stop** reasons automatically when automatic break labelling is enabled or a shift with a break reason is saved while labelling is on. Admins can also change **Planned stop** on other downtime reasons. Changing the company switch shows on past days at once. Marking or unmarking a reason updates past days within minutes, newest days first. A reason chosen by the machine operator takes priority, and production or preparation during a break still counts as running time. Follow [set up automatic break labels](/en/platform-intro/workflows/shift-management#automatic-break-labels) or [manage downtime reasons](/en/platform-intro/workflows/timeline-reason-creation).
+
+  In reports, **Planned time (h)** is shift time minus planned stops. **Off (h)** leaves out off time during planned stops. The report notes explain that planned stops are not counted. Reports already sent stay unchanged.
+
+  #### [Recognize planned stops and the current break](/en/platform-intro/pages/data-acquisition)
+  {/* feature: planned-stop-marks-and-break-note */}
+
+  Planned stops have diagonal stripes on timelines and **Planned stop** in their details. Downtime reason charts mark their reasons **Planned**. Stops and their full durations remain visible, even when excluded from OEE.
+
+  During a break, when breaks are labelled automatically, a small chip with a cup icon sits at the right edge of the PDA page, above the **PDA Assist** chip when it is shown. It slides out once when the break starts. Tap it to open or close it and read, for example, **Break until 09:30 · Auto label: Pause**. If you pre-set a reason, **Break until 09:30 · Your reason wins: Tool change** confirms that your choice takes priority.
+</Update>
+
 <Update label="2026-11-22" description="v1.5.186" tags={["fix"]}>
   {/* commits: 577c619f, 017e27fc, a2a64b02, 4d13a311, 8a9f7b71, 8f5f52a2, 725858a5, 59917472, 8ad50ebf, fcaa3153, 00e3548e, 19abb60c, 5d6e5914, ee54304b, 5d2fd869, 7c2ce0b0, 2869c938, 374c1025, 2a314df4, ed79be2f, 436603eb, 8e5e3484 */}
 

@@ -50,6 +50,8 @@ Admins can choose **Display version → V2** or **V3**, then show or hide **Visi
 
 ### Read the Current Downtime Reason
 
+A planned-stop reason also has diagonal stripes on the card. Hover over it to read **Planned stop**.
+
 In **V2** and **V3**, the **Downtime reason** card appears at the end of each machine's key figures on the first slide, after **OEE**, **AVL**, **PRO**, **PCS**, and the production, idle and off times. It shows the reason the machine operator chose on the [PDA page](/en/platform-intro/pages/data-acquisition#choose-a-downtime-reason) for the current downtime. The reason's colour marks the left edge. Long names are shortened; hover over the card to read the full name.
 
 The card appears only while the machine is idle or off and a reason was chosen. It is hidden during production, when no reason was chosen, or when **Downtime reason** is switched off in the display settings. The previous shift never shows it. **V1** is unchanged.
@@ -63,6 +65,8 @@ In the display settings, choose **Product information → On**. When the active 
 Choose **Off** to hide this product display. When it is off, or the product has no image, the operation sequence appears in the order card instead. Order and operation priority always appear in the order card. Follow [Set Up a Hall Plan Display](/en/platform-intro/workflows/hall-display-setup).
 
 ### Read Active Shifts and State Patterns
+
+Planned stops have light diagonal stripes over their machine-state colour. Hover over the stop to read **Planned stop** beneath its reason. The mark describes the reason and remains visible even if planned stops are counted in OEE. Durations stay unchanged.
 
 **Active shift** means the machine's shifts start and end with machine activity. **running** identifies an active shift that is still in progress. Use the shift information when comparing current work with the previous shift; the assigned shift group is not used for these machines. See [active shift settings](/en/platform-intro/pages/machine-configuration).
 
