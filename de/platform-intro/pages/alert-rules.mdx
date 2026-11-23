@@ -26,13 +26,13 @@ User können diese Seite für alle Maschinen oder für eine bestimmte Maschine �
 
 ## Was Sie tun können
 
-- Regeln erstellen, bearbeiten, umbenennen, aktivieren, deaktivieren und löschen.
+- Regeln erstellen, bearbeiten, umbenennen, aktivieren, deaktivieren und löschen. Wählen Sie vor dem Speichern eine Maschine aus, auch beim Bearbeiten einer älteren Regel ohne Maschine.
 - Nach Maschinenkontext filtern.
 - Alarmhistorie prüfen und Alarmdatensätze lösen oder erneut öffnen.
 
 ## Bedingungen, Kanäle und Kosten
 
-Klassische Alarmregeln verwenden **OEE**, **Leistung** und **Verfügbarkeit** als Prozentgrenzen mit ausschließlich Kleiner-als- oder Größer-als-Vergleichen. Zeit- und Schichtprüfungen umfassen **Abgeschaltet gesamt (Schicht)**, **Stillstand gesamt (Schicht)**, **Abgeschaltet am Stück**, **Stillstand am Stück**, **Sensor getrennt** und **Schicht nicht gestartet**. Minutengrenzen verwenden Größer-als-Vergleiche. Lesen Sie die jeweilige Bedingung und Einschränkungen bei aktiven Schichten im Editor.
+Klassische Alarmregeln verwenden **OEE**, **Leistung** und **Verfügbarkeit** als Prozentgrenzen mit ausschließlich Kleiner-als- oder Größer-als-Vergleichen. Zeit- und Schichtprüfungen umfassen **Abgeschaltet gesamt (Schicht)**, **Leerlauf gesamt (Schicht)**, **Abgeschaltet am Stück**, **Leerlauf am Stück** (bisher **Stillstand am Stück**), **Sensor getrennt** und **Schicht nicht gestartet**. Minutengrenzen verwenden Größer-als-Vergleiche. Minutenwerte müssen mindestens 1 Minute betragen. **Sensor getrennt** alarmiert nach den eingegebenen Minuten ohne Sensorsignal. Eine ältere Regel mit gespeicherten 0 Minuten verwendet 30 Minuten. **Schicht nicht gestartet** alarmiert, wenn die Produktion nicht innerhalb der eingegebenen Minuten nach dem geplanten Schichtbeginn begonnen hat. Dabei gelten die ausgewählten Tage und die Ortszeit des Unternehmens. Dies gilt nur für geplante Schichten. Lesen Sie die jeweilige Bedingung und Einschränkungen bei aktiven Schichten im Editor.
 
 Kanäle sind **E-Mail**, **SMS** und **Webhook**. **SMS kostet 0,10 € je Alarmnachricht und User**, wird am Monatsende abgerechnet und benötigt ausdrückliche Zustimmung. Eine Nachricht an drei User kostet beispielsweise 0,30 €. Ohne Empfänger wird der Alarm weiterhin kostenlos in der Plattform erfasst.
 
@@ -46,9 +46,9 @@ Sensorregeln lösen für Arbeitsplätze nie aus. Manche Regeln lösen bei aktive
 
 ### Auch außerhalb der Schicht
 
-Beim Erstellen oder Bearbeiten einer Regel für **Stillstand am Stück** oder **Abgeschaltet am Stück** können Sie **Auch außerhalb der Schicht** einschalten. Der Schalter ist zunächst ausgeschaltet. Bestehende Regeln bleiben unverändert, bis Sie ihn einschalten. Ausgeschaltet überwachen diese Regeln die Maschine nur während ihrer Schichten. Bei anderen Alarmarten erscheint der Schalter nicht. Das Informationssymbol daneben erklärt seine Wirkung.
+Beim Erstellen oder Bearbeiten einer Regel für **Leerlauf am Stück** oder **Abgeschaltet am Stück** können Sie **Auch außerhalb der Schicht** einschalten. Der Schalter ist zunächst ausgeschaltet. Bestehende Regeln bleiben unverändert, bis Sie ihn einschalten. Ausgeschaltet überwachen diese Regeln die Maschine nur während ihrer Schichten. Bei anderen Alarmarten erscheint der Schalter nicht. Das Informationssymbol daneben erklärt seine Wirkung.
 
-Eingeschaltet überwacht die Regel auch nachts, am Wochenende, zwischen Schichten und bei Maschinen ohne Schichten. Die ausgewählten Tage gelten weiterhin: Entscheidend ist der Tag, an dem der ununterbrochene Stillstand oder die Abschaltung den Schwellenwert überschreitet. Dafür gilt die Ortszeit Ihres Unternehmens.
+Eingeschaltet überwacht die Regel auch nachts, am Wochenende, zwischen Schichten und bei Maschinen ohne Schichten. Die ausgewählten Tage gelten weiterhin: Entscheidend ist der Tag, an dem der ununterbrochene Leerlauf oder die Abschaltung den Schwellenwert überschreitet. Dafür gilt die Ortszeit Ihres Unternehmens.
 
 Nach dem Speichern erscheint **Auch außerhalb der Schicht** neben den Bedingungen in der Regelliste. Wie Sie die Einstellung ein- oder ausschalten, erklärt [Alarmregeln verwalten](/de/platform-intro/workflows/alert-rule-management).
 
@@ -56,11 +56,11 @@ Nach dem Speichern erscheint **Auch außerhalb der Schicht** neben den Bedingung
 
 ### Wie oft Sie alarmiert werden
 
-Bei **Stillstand am Stück** und **Abgeschaltet am Stück** erhalten Sie genau einen Alarm, sobald die Maschine länger als die eingestellte Dauer im Stillstand oder abgeschaltet bleibt. Das gilt mit ausgeschaltetem und eingeschaltetem Schalter **Auch außerhalb der Schicht**. Solange derselbe Zustand andauert, gibt es keine Wiederholung, auch nicht von einer Schicht zur nächsten oder von der Schicht bis in den Abend. Läuft die Maschine wieder und bleibt später erneut zu lange im Stillstand, erhalten Sie einen neuen Alarm.
+Bei **Leerlauf am Stück** und **Abgeschaltet am Stück** erhalten Sie genau einen Alarm, sobald die Maschine länger als die eingestellte Dauer im Leerlauf oder abgeschaltet bleibt. Das gilt mit ausgeschaltetem und eingeschaltetem Schalter **Auch außerhalb der Schicht**. Solange derselbe Zustand andauert, gibt es keine Wiederholung, auch nicht von einer Schicht zur nächsten oder von der Schicht bis in den Abend. Läuft die Maschine wieder und bleibt später erneut zu lange im Leerlauf, erhalten Sie einen neuen Alarm.
 
-Stellen Sie zum Beispiel **Stillstand am Stück** auf 5 Minuten: Stillstand von 08:00–08:30 ergibt einen Alarm. Danach produziert die Maschine bis 10:00. Bleibt sie ab 10:00 erneut länger als 5 Minuten im Stillstand, erhalten Sie einen zweiten Alarm.
+Stellen Sie zum Beispiel **Leerlauf am Stück** auf 5 Minuten: Leerlauf von 08:00–08:30 ergibt einen Alarm. Danach produziert die Maschine bis 10:00. Bleibt sie ab 10:00 erneut länger als 5 Minuten im Leerlauf, erhalten Sie einen zweiten Alarm.
 
-Eine abgeschaltete Maschine zählt für diese Alarme nie als im Stillstand; der Alarm richtet sich nach dem Zustand, den die Maschinenzeitleiste erfasst hat.
+Eine abgeschaltete Maschine zählt für diese Alarme nie als im Leerlauf; der Alarm richtet sich nach dem Zustand, den die Maschinenzeitleiste erfasst hat.
 
 ## Einschränkungen bei aktiven Schichten prüfen
 

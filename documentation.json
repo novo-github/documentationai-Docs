@@ -255,7 +255,7 @@
                             "icon": "file-text"
                           },
                           {
-                            "title": "BDE Access Templates",
+                            "title": "PDA Access Templates",
                             "path": "en/platform-intro/pages/bde-access-templates",
                             "icon": "file-text"
                           }
@@ -519,7 +519,7 @@
                             "icon": "play-circle"
                           },
                           {
-                            "title": "Make the BDE Page the Same on Several Machines",
+                            "title": "Make the PDA Page the Same on Several Machines",
                             "path": "en/platform-intro/workflows/bde-access-templates",
                             "icon": "play-circle"
                           },

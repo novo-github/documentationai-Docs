@@ -99,31 +99,31 @@ Manche Alarmbedingungen lösen bei Maschinen mit aktiven Schichten nicht aus. Pr
 
 ## Wie erhalte ich Alarme nachts oder am Wochenende?
 
-Ein Admin oder ein User mit Zugriff auf **Alarmregeln** kann eine Regel für **Stillstand am Stück** oder **Abgeschaltet am Stück** erstellen oder bearbeiten und **Auch außerhalb der Schicht** einschalten. Der Schalter ist zunächst ausgeschaltet. Die Regel überwacht dann auch nachts, am Wochenende, zwischen Schichten und bei Maschinen ohne Schichten. Für Alarme am Wochenende wählen Sie unter **Wochentage** auch die Wochenendtage aus. Folgen Sie [Alarmregeln verwalten](/de/platform-intro/workflows/alert-rule-management).
+Ein Admin oder ein User mit Zugriff auf **Alarmregeln** kann eine Regel für **Leerlauf am Stück** oder **Abgeschaltet am Stück** erstellen oder bearbeiten und **Auch außerhalb der Schicht** einschalten. Der Schalter ist zunächst ausgeschaltet. Die Regel überwacht dann auch nachts, am Wochenende, zwischen Schichten und bei Maschinen ohne Schichten. Für Alarme am Wochenende wählen Sie unter **Wochentage** auch die Wochenendtage aus. Folgen Sie [Alarmregeln verwalten](/de/platform-intro/workflows/alert-rule-management).
 
 <a id="outside-shift-repeat" />
 
 ## Wie oft werde ich alarmiert?
 
-Bei **Stillstand am Stück** und **Abgeschaltet am Stück** erhalten Sie genau einen Alarm pro ununterbrochenem Zeitraum über der eingestellten Dauer, ohne Wiederholungen über Schichtgrenzen hinweg, ob **Auch außerhalb der Schicht** aus- oder eingeschaltet ist. Bei **Stillstand am Stück** mit 5 Minuten ergibt Stillstand von 08:00–08:30 einen Alarm; produziert die Maschine danach bis 10:00 und bleibt ab 10:00 erneut länger als 5 Minuten im Stillstand, erhalten Sie einen zweiten Alarm — siehe [Häufigkeit der Alarme](/de/platform-intro/pages/alert-rules#alert-frequency).
+Bei **Leerlauf am Stück** und **Abgeschaltet am Stück** erhalten Sie genau einen Alarm pro ununterbrochenem Zeitraum über der eingestellten Dauer, ohne Wiederholungen über Schichtgrenzen hinweg, ob **Auch außerhalb der Schicht** aus- oder eingeschaltet ist. Bei **Leerlauf am Stück** mit 5 Minuten ergibt Leerlauf von 08:00–08:30 einen Alarm; produziert die Maschine danach bis 10:00 und bleibt ab 10:00 erneut länger als 5 Minuten im Leerlauf, erhalten Sie einen zweiten Alarm — siehe [Häufigkeit der Alarme](/de/platform-intro/pages/alert-rules#alert-frequency).
 
 <a id="idle-alert-while-off" />
 
 ## Warum habe ich einen Stillstandsalarm erhalten, obwohl die Maschine abgeschaltet war?
 
-Dies wurde in v1.5.172 behoben: Eine abgeschaltete Maschine zählt für Alarme vom Typ **Stillstand am Stück** nicht mehr als im Stillstand. Zeigt die Maschinenzeitleiste selbst zu diesem Zeitpunkt Stillstand, richtet sich der Alarm nach dem erfassten Zustand. Siehe [Alarmregeln](/de/platform-intro/pages/alert-rules#alert-frequency) und prüfen Sie die Zeitleiste unter [Maschinendetails](/de/platform-intro/pages/machine-details).
+Dies wurde in v1.5.172 behoben: Eine abgeschaltete Maschine zählt für Alarme vom Typ **Leerlauf am Stück** nicht mehr als im Leerlauf. Zeigt die Maschinenzeitleiste selbst zu diesem Zeitpunkt Stillstand, richtet sich der Alarm nach dem erfassten Zustand. Siehe [Alarmregeln](/de/platform-intro/pages/alert-rules#alert-frequency) und prüfen Sie die Zeitleiste unter [Maschinendetails](/de/platform-intro/pages/machine-details).
 
 <a id="outside-shift-days" />
 
 ## Gelten meine ausgewählten Tage auch für Alarme außerhalb der Schicht?
 
-Ja. Die Regel verwendet weiterhin Ihre ausgewählten Tage. Entscheidend ist der Tag, an dem der ununterbrochene Stillstand oder die Abschaltung den Schwellenwert überschreitet, nach der Ortszeit Ihres Unternehmens. Wählen Sie auch die Wochenendtage aus, wenn Sie dann Alarme erhalten möchten. Siehe [Alarme außerhalb der Schicht](/de/platform-intro/pages/alert-rules#outside-shift).
+Ja. Die Regel verwendet weiterhin Ihre ausgewählten Tage. Entscheidend ist der Tag, an dem der ununterbrochene Leerlauf oder die Abschaltung den Schwellenwert überschreitet, nach der Ortszeit Ihres Unternehmens. Wählen Sie auch die Wochenendtage aus, wenn Sie dann Alarme erhalten möchten. Siehe [Alarme außerhalb der Schicht](/de/platform-intro/pages/alert-rules#outside-shift).
 
 <a id="outside-shift-missing" />
 
 ## Warum finde ich den Schalter Auch außerhalb der Schicht nicht?
 
-**Auch außerhalb der Schicht** erscheint nur beim Erstellen oder Bearbeiten einer Regel für **Stillstand am Stück** oder **Abgeschaltet am Stück**. Andere Alarmarten bieten ihn nicht an. Siehe [Alarmregeln](/de/platform-intro/pages/alert-rules#outside-shift).
+**Auch außerhalb der Schicht** erscheint nur beim Erstellen oder Bearbeiten einer Regel für **Leerlauf am Stück** oder **Abgeschaltet am Stück**. Andere Alarmarten bieten ihn nicht an. Siehe [Alarmregeln](/de/platform-intro/pages/alert-rules#outside-shift).
 
 <a id="work-center-alert" />
 

@@ -18,7 +18,7 @@ Es ergänzt die [klassischen Alarmregeln](/de/platform-intro/pages/alert-rules).
 | **Polling-Intervall (Minuten)** | Häufigkeit der Bedingungsprüfung. |
 | **Minimum true duration** | Erforderliche Dauer einer erfüllten Bedingung vor der Ereigniserstellung. |
 | **Freigabedauer (Minuten)** | Erforderliche Dauer eines normalen Zustands vor dem Aufheben des Ereignisses. |
-| **Aktive Schicht erforderlich** | Pausiert Prüfungen außerhalb der aktiven Maschinenschicht. |
+| **Aktive Schicht erforderlich** | Pausiert Prüfungen außerhalb der geplanten oder aktiven Schicht der Maschine nach der Ortszeit des Unternehmens. |
 | **Wartezeit** | Zeit nach einem Alarm bis zur erneuten Alarmierung. Ohne Wartezeit kann erneut alarmiert werden, sobald die Bedingung wieder eintritt. |
 
 **Beispiel:** Eine 30 Sekunden lang erfüllte Bedingung erzeugt kein Ereignis, wenn Minimum true duration 2 Minuten beträgt. Polling interval bestimmt die Prüfhäufigkeit und ist eine andere Einstellung als diese Verzögerung.
@@ -59,7 +59,7 @@ Terminplan-Bedingungen lassen sich nicht mit Maschinen- oder Auftragsbedingungen
 
 ## Reaktionen und Eskalation
 
-Sie können einen Alarm automatisch lösen lassen, nachdem seine Bedingung für die gewählte Dauer entfallen ist. Oder Sie lassen ihn offen, bis jemand ihn löst. Bei der Lösung kann eine weitere E-Mail versendet werden. Die Eskalation benachrichtigt ausgewählte Eskalationsempfänger, wenn der Alarm nicht rechtzeitig bearbeitet wird.
+Sie können einen Alarm automatisch beheben lassen, nachdem seine Bedingung für die gewählte Dauer entfallen ist. Oder Sie lassen ihn offen, bis jemand ihn behebt. Mit **Bei Lösung benachrichtigen** erhalten die ausgewählten E-Mail-Empfänger der Regel eine E-Mail nach dem manuellen oder automatischen Beheben. Die Eskalation benachrichtigt ausgewählte Eskalationsempfänger, wenn der Alarm nicht rechtzeitig bearbeitet wird.
 
 Kontrollieren Sie unter **Prüfen** die Bereiche **Was diese Regel bewirkt** und **Deine Einstellungen**. Lesen Sie Bedingungen, Maschinen, aktive Tage, Prüfintervall, Empfänger, Reaktionszeit, Wartezeit und Einstellungen zur Lösung. Ohne Maschinenauswahl gilt die Regel für alle Maschinen. Eine ausgeschaltete Regel wird gespeichert, läuft aber nicht.
 
@@ -86,13 +86,13 @@ Passen Sie diese Anfangswerte an Ihren Prozess an. Zyklusprüfungen benötigen Z
 
 Ein **Ereignis** ist eine Regelauslösung. Es durchläuft **Neu → Bestätigt → Behoben**. Ein gelöstes Ereignis kann mit **Erneut öffnen** wieder geöffnet werden. **System (Automator)** als lösendes Konto bedeutet automatische Lösung.
 
-- **SLA fällig in (Minuten)** (SLA = Service Level Agreement): erlaubte Reaktionszeit in Minuten vor Überfälligkeit eines offenen Ereignisses.
+- **SLA fällig in (Minuten)** (SLA = Service Level Agreement): erlaubte Reaktionszeit in Minuten vor Überfälligkeit eines offenen Ereignisses, die beim erneuten Öffnen wieder vollständig beginnt.
 - **SLA-Verstöße:** offene Ereignisse nach dieser Frist.
 - **MTTR — Mean Time To Resolution:** durchschnittliche Dauer vom Auslösen bis zur Lösung.
 
 Bestätigung und Lösung sind unterschiedliche Aktionen. Prüfen Sie Maschine und Bedingung vor dem Kennzeichnen als gelöst.
 
-Öffnen Sie ein Ereignis in der Liste, um seine Details vor der Bestätigung oder Lösung zu lesen. So prüfen Sie den Alarm im Zusammenhang. Eine nicht zuordenbare Person erscheint als **Unbekannter Benutzer**.
+Öffnen Sie ein Ereignis in der Liste, um seine Details vor der Bestätigung zu lesen oder es mit **Beheben** als behoben zu markieren. So prüfen Sie den Alarm im Zusammenhang. Eine nicht zuordenbare Person erscheint als **Unbekannter Benutzer**.
 
 Beim Beheben eines Ereignisses können Sie Ihre Notiz über das Mikrofon diktieren. Die Aufnahme endet nach 2 Minuten; das Gesagte bleibt als Text erhalten. Der Timer warnt Sie in den letzten 15 Sekunden; Sie können früher stoppen.
 

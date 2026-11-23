@@ -80,13 +80,13 @@ description: "Find answers about operation priorities, planning dates, grouping,
 | Are the before and after times new delivery dates? | [Answer](/en/help-center/faq/planning-and-imports#proposal-expected-end) |
 | Can I sort a queue by delivery date? | [Answer](/en/help-center/faq/planning-and-imports#resort-by-date) |
 | Why do English labels now say operation instead of step? | [Answer](/en/help-center/faq/planning-and-imports#operation-wording) |
-| Who can give several BDE pages the same settings? | [Answer](/en/help-center/faq/planning-and-imports#shared-pda-settings) |
+| Who can give several PDA pages the same settings? | [Answer](/en/help-center/faq/planning-and-imports#shared-pda-settings) |
 | Why can’t I save my template name? | [Answer](/en/help-center/faq/planning-and-imports#template-name-taken) |
 | Why can’t I hide a field or change sorting or automatic refresh? | [Answer](/en/help-center/faq/planning-and-imports#locked-pda-settings) |
 | Why is a field set to always be highlighted still missing? | [Answer](/en/help-center/faq/planning-and-imports#template-highlights) |
 | Why can’t I change an order’s status or take work from the pool? | [Answer](/en/help-center/faq/planning-and-imports#hidden-pda-actions) |
 | Why can I read intervals and notes but not correct them? | [Answer](/en/help-center/faq/planning-and-imports#read-only-pda-details) |
-| When will my open BDE page show a changed template? | [Answer](/en/help-center/faq/planning-and-imports#template-refresh) |
+| When will my open PDA page show a changed template? | [Answer](/en/help-center/faq/planning-and-imports#template-refresh) |
 | Will I lose my own settings when a template changes or is deleted? | [Answer](/en/help-center/faq/planning-and-imports#template-personal-choices) |
 | Why can I still use an action in the Planner when it is blocked on the PDA page? | [Answer](/en/help-center/faq/planning-and-imports#template-other-pages) |
 | Where have the explanations for templates and priorities gone? | [Answer](/en/help-center/faq/planning-and-imports#setting-explanations) |
@@ -453,13 +453,13 @@ The machine’s template must allow **Send orders back to the pool**. If the act
 
 In Data Acquisition V3, **Create** becomes **Back to pool** while an operation is selected. Tap the selected card again to clear the selection and bring **Create** back. See [Data Acquisition](/en/platform-intro/pages/data-acquisition).
 
-A machine template can also block order creation or returning work. These actions remain visible but disabled. Hover over or tap one to read **Locked for this machine (BDE template).** Ask an Admin to check [allowed actions](/en/platform-intro/pages/bde-access-templates#allowed-actions).
+A machine template can also block order creation or returning work. These actions remain visible but disabled. Hover over or tap one to read **Locked for this machine (PDA template).** Ask an Admin to check [allowed actions](/en/platform-intro/pages/bde-access-templates#allowed-actions).
 
 <a id="return-disabled" />
 
 ## Why is Back to pool unavailable?
 
-The template may block the action; its explanation says **Locked for this machine (BDE template).** Ask an Admin to review it. Finished and cancelled operations stay on the machine. A machine without a hall has no pool; ask your planner to check its hall. Hover over the unavailable button to read the reason. A running operation can use **Back to pool**, but you must stop it in the dialog first. See [return requirements](/en/platform-intro/workflows/data-acquisition#back-to-pool).
+The template may block the action; its explanation says **Locked for this machine (PDA template).** Ask an Admin to review it. Finished and cancelled operations stay on the machine. A machine without a hall has no pool; ask your planner to check its hall. Hover over the unavailable button to read the reason. A running operation can use **Back to pool**, but you must stop it in the dialog first. See [return requirements](/en/platform-intro/workflows/data-acquisition#back-to-pool).
 
 <a id="handover-machine" />
 
@@ -634,21 +634,21 @@ Both refer to an operation within an order. English labels now use “operation�
 
 <a id="shared-pda-settings" />
 
-## Who can give several BDE pages the same settings?
+## Who can give several PDA pages the same settings?
 
-Admins can open **Admin Panel → BDE access templates → New template**, select machines, and choose required fields, highlights, optional fixed sorting and refresh, and allowed actions. Follow [Make the BDE Page the Same on Several Machines](/en/platform-intro/workflows/bde-access-templates).
+Admins can open **Admin Panel → PDA access templates → New template**, select machines, and choose required fields, highlights, optional fixed sorting and refresh, and allowed actions. Follow [Make the PDA Page the Same on Several Machines](/en/platform-intro/workflows/bde-access-templates).
 
 <a id="template-name-taken" />
 
 ## Why can’t I save my template name?
 
-A name is required, with up to 80 characters, and must be unique within your company. Capitalisation and spaces before or after the name do not make it different: “Saws” and “ saws ” count as the same name. Names in other companies do not count. If you see **A template with this name already exists.**, choose another name. See [BDE Access Templates](/en/platform-intro/pages/bde-access-templates#what-you-can-do).
+A name is required, with up to 80 characters, and must be unique within your company. Capitalisation and spaces before or after the name do not make it different: “Saws” and “ saws ” count as the same name. Names in other companies do not count. If you see **A template with this name already exists.**, choose another name. See [PDA Access Templates](/en/platform-intro/pages/bde-access-templates#what-you-can-do).
 
 <a id="locked-pda-settings" />
 
 ## Why can’t I hide a field or change sorting or automatic refresh?
 
-The machine may use a template. **Set by the template** marks required choices. **Sorting is set by the template** means sorting is fixed here. You can still choose other fields and highlights. Ask an Admin to change the shared choices in [BDE Access Templates](/en/platform-intro/pages/bde-access-templates).
+The machine may use a template. **Set by the template** marks required choices. **Sorting is set by the template** means sorting is fixed here. You can still choose other fields and highlights. Ask an Admin to change the shared choices in [PDA Access Templates](/en/platform-intro/pages/bde-access-templates).
 
 <a id="template-highlights" />
 
@@ -660,17 +660,17 @@ The machine may use a template. **Set by the template** marks required choices. 
 
 ## Why can’t I change an order’s status or take work from the pool?
 
-The machine’s template can block status changes, taking or returning pool work, and adding orders. Action buttons stay visible but disabled, with **Locked for this machine (BDE template).** on hover or tap. A blocked status menu does not open. These limits apply to Admins too. Booking quantities still works. After **Stop**, **Complete** and **Keep on hold** remain available when the planned quantity is reached. **Reopen completed operations** controls reopening separately. **PDA Assist** also stays available as before. Ask an Admin to review **Allowed on the BDE page**. See [allowed actions](/en/platform-intro/pages/bde-access-templates#allowed-actions).
+The machine’s template can block status changes, taking or returning pool work, and adding orders. Action buttons stay visible but disabled, with **Locked for this machine (PDA template).** on hover or tap. A blocked status menu does not open. These limits apply to Admins too. Booking quantities still works. After **Stop**, **Complete** and **Keep on hold** remain available when the planned quantity is reached. **Reopen completed operations** controls reopening separately. **PDA Assist** also stays available as before. Ask an Admin to review **Allowed on the PDA page**. See [allowed actions](/en/platform-intro/pages/bde-access-templates#allowed-actions).
 
 <a id="read-only-pda-details" />
 
 ## Why can I read intervals and notes but not correct them?
 
-The template can turn off **Correct interval times and quantities** or **Edit notes and order details** on this machine’s BDE page. The information stays readable. Interval edit icons and **Save** stay visible but disabled, with **Locked for this machine (BDE template).** on hover or tap. Notes and details remain read-only. Ask an Admin to review the [template’s allowed actions](/en/platform-intro/pages/bde-access-templates#allowed-actions).
+The template can turn off **Correct interval times and quantities** or **Edit notes and order details** on this machine’s PDA page. The information stays readable. Interval edit icons and **Save** stay visible but disabled, with **Locked for this machine (PDA template).** on hover or tap. Notes and details remain read-only. Ask an Admin to review the [template’s allowed actions](/en/platform-intro/pages/bde-access-templates#allowed-actions).
 
 <a id="template-refresh" />
 
-## When will my open BDE page show a changed template?
+## When will my open PDA page show a changed template?
 
 At its next automatic refresh, every 5 minutes unless another interval is set. Use the page’s refresh button or reload the page to pick up changes immediately. Other devices do not update instantly; a screen left open keeps the old choices until one of these happens. This also applies when a template is assigned or removed. See [changes and limits](/en/platform-intro/pages/bde-access-templates#changes-and-limits).
 
@@ -678,19 +678,19 @@ At its next automatic refresh, every 5 minutes unless another interval is set. U
 
 ## Will I lose my own settings when a template changes or is deleted?
 
-No. Your personal choices stay saved. Removing a machine from a template or deleting the template returns it to personal settings. Assigning it to another template applies that template’s requirements instead. Each machine can use only one template. Follow [Make the BDE Page the Same on Several Machines](/en/platform-intro/workflows/bde-access-templates).
+No. Your personal choices stay saved. Removing a machine from a template or deleting the template returns it to personal settings. Assigning it to another template applies that template’s requirements instead. Each machine can use only one template. Follow [Make the PDA Page the Same on Several Machines](/en/platform-intro/workflows/bde-access-templates).
 
 <a id="template-other-pages" />
 
 ## Why can I still use an action in the Planner when it is blocked on the PDA page?
 
-BDE access templates only control Data Acquisition V3. They do not change actions on other pages or grant page or machine access. See [template limits](/en/platform-intro/pages/bde-access-templates#changes-and-limits).
+PDA access templates only control Data Acquisition V3. They do not change actions on other pages or grant page or machine access. See [template limits](/en/platform-intro/pages/bde-access-templates#changes-and-limits).
 
 <a id="setting-explanations" />
 
 ## Where have the explanations for templates and priorities gone?
 
-Open the information icon beside the title in **Admin Panel → BDE access templates** or **Admin Panel → Priority Levels**. Explanations now appear there instead of below the title. This also covers **Which number is more urgent?** and **Queue order and operation priority stay in step**. See [Admin Panel](/en/platform-intro/pages/admin-panel#how-priorities-are-used).
+Open the information icon beside the title in **Admin Panel → PDA access templates** or **Admin Panel → Priority Levels**. Explanations now appear there instead of below the title. This also covers **Which number is more urgent?** and **Queue order and operation priority stay in step**. See [Admin Panel](/en/platform-intro/pages/admin-panel#how-priorities-are-used).
 
 <a id="gantt-settings" />
 
@@ -738,7 +738,7 @@ No. **Rules from → My sorting** restores your Planner rules; **Company standar
 
 ## Why does changing a sort rule leave my queue where it is?
 
-With **Sort by Queue Position** on, saved positions determine machine and hall-pool queues. You can still edit rules: they order unassigned operations and supply **Re-sort → Sort rules**. Apply that proposal to reorder a queue. On the PDA page and in BDE access templates, rules stay locked in queue-position mode. Follow [Sort and Highlight Planning Cards](/en/platform-intro/workflows/assignment-planner#sort-and-highlight-planning-cards).
+With **Sort by Queue Position** on, saved positions determine machine and hall-pool queues. You can still edit rules: they order unassigned operations and supply **Re-sort → Sort rules**. Apply that proposal to reorder a queue. On the PDA page and in PDA access templates, rules stay locked in queue-position mode. Follow [Sort and Highlight Planning Cards](/en/platform-intro/workflows/assignment-planner#sort-and-highlight-planning-cards).
 
 <a id="resort-rule-columns" />
 
@@ -762,13 +762,13 @@ Open **Filter & Sort → Filter**. The import filter is now grouped with the oth
 
 ## How do I use company sorting in a PDA template?
 
-As an Admin, open **Admin Panel → BDE access templates** and edit the template. Turning on **Use a fixed sorting** starts from the company sorting only if a company sorting is saved in the Planner and the template had no fixed sorting before. Otherwise, the starting choices are unchanged. **Use company sorting** appears in the sorting section only when company sorting exists. It shows a tick while the template already uses that sorting. It copies the sort mode and rules; choices for running and on-hold orders and for orders waiting on a previous operation stay unchanged. Without company sorting, the section keeps its usual reset to the built-in default. Review and save the template. Follow [the template workflow](/en/platform-intro/workflows/bde-access-templates).
+As an Admin, open **Admin Panel → PDA access templates** and edit the template. Turning on **Use a fixed sorting** starts from the company sorting only if a company sorting is saved in the Planner and the template had no fixed sorting before. Otherwise, the starting choices are unchanged. **Use company sorting** appears in the sorting section only when company sorting exists. It shows a tick while the template already uses that sorting. It copies the sort mode and rules; choices for running and on-hold orders and for orders waiting on a previous operation stay unchanged. Without company sorting, the section keeps its usual reset to the built-in default. Review and save the template. Follow [the template workflow](/en/platform-intro/workflows/bde-access-templates).
 
 <a id="template-save-unchanged" />
 
 ## Why can’t I save a template I just opened?
 
-Saving is available only after you change the template. If you only opened it to check the settings, there is nothing to save. Copying company sorting that already matches also leaves it unchanged. See [BDE Access Templates](/en/platform-intro/pages/bde-access-templates#display-settings).
+Saving is available only after you change the template. If you only opened it to check the settings, there is nothing to save. Copying company sorting that already matches also leaves it unchanged. See [PDA Access Templates](/en/platform-intro/pages/bde-access-templates#display-settings).
 
 <a id="stop-buttons" />
 
@@ -798,7 +798,7 @@ On the machine’s PDA page, open **Recently completed → Set on hold**. Check 
 
 ## Why is Set on hold disabled or missing on a completed operation?
 
-If **Set on hold** is visible but disabled, the machine’s template may block **Reopen completed operations**. Hover over or tap it to read **Locked for this machine (BDE template).** An Admin can enable it under **Admin Panel → BDE access templates → Allowed on the BDE page**, while leaving **Change the order status** off. Reopening starts allowed, including in existing templates. **Handed over** parts never offer this action; ask your planner about reversing a handover. See [allowed actions](/en/platform-intro/pages/bde-access-templates#allowed-actions).
+If **Set on hold** is visible but disabled, the machine’s template may block **Reopen completed operations**. Hover over or tap it to read **Locked for this machine (PDA template).** An Admin can enable it under **Admin Panel → PDA access templates → Allowed on the PDA page**, while leaving **Change the order status** off. Reopening starts allowed, including in existing templates. **Handed over** parts never offer this action; ask your planner about reversing a handover. See [allowed actions](/en/platform-intro/pages/bde-access-templates#allowed-actions).
 
 <a id="reopen-queue-placement" />
 
@@ -852,7 +852,7 @@ The count includes operations moved to another destination during import and add
 
 ## Why can I see a button but cannot use it?
 
-Hover over or tap it. **Locked for this machine (BDE template).** means the machine’s template blocks the action, including for Admins. Ask an Admin to review **Admin Panel → BDE access templates → Allowed on the BDE page**. The status stays visible without a menu when status changes are blocked. See [allowed actions](/en/platform-intro/pages/bde-access-templates#allowed-actions).
+Hover over or tap it. **Locked for this machine (PDA template).** means the machine’s template blocks the action, including for Admins. Ask an Admin to review **Admin Panel → PDA access templates → Allowed on the PDA page**. The status stays visible without a menu when status changes are blocked. See [allowed actions](/en/platform-intro/pages/bde-access-templates#allowed-actions).
 
 <a id="orders-pinned-columns" />
 

@@ -6,6 +6,48 @@ toc: false
 
 ## Releases
 
+<Update label="2026-11-22" description="v1.5.186" tags={["Fehlerbehebung"]}>
+  {/* commits: 577c619f, 017e27fc, a2a64b02, 4d13a311, 8a9f7b71, 8f5f52a2, 725858a5, 59917472, 8ad50ebf, fcaa3153, 00e3548e, 19abb60c, 5d6e5914, ee54304b, 5d2fd869, 7c2ce0b0, 2869c938, 374c1025, 2a314df4, ed79be2f, 436603eb, 8e5e3484 */}
+
+  **Release-Datum:** 22. November 2026
+
+  ### Fehlerbehebungen
+
+  #### [Alarmregeln](/de/platform-intro/pages/alert-rules)
+  {/* feature: alert-rules */}
+
+  - Eine Regel benötigt eine Maschine, auch wenn Sie eine ältere Regel ohne gespeicherte Maschine bearbeiten.
+  - Zeitbedingungen benötigen mindestens 1 Minute. Andernfalls zeigt der Dialog **Gib mindestens 1 Minute ein.**
+  - **Sensor getrennt** alarmiert jetzt nach den eingegebenen Minuten. Eine ältere Regel mit gespeicherten 0 Minuten verwendet 30 Minuten.
+  - **Schicht nicht gestartet** alarmiert jetzt, wenn die Produktion nicht innerhalb der eingegebenen Minuten nach dem geplanten Schichtbeginn begonnen hat. Dies gilt nur für geplante Schichten.
+  - Regeln für Sensormerkmale werden wieder geprüft.
+
+  #### [Automator](/de/platform-intro/pages/automator)
+  {/* feature: automator-fixes */}
+
+  - **Bei Lösung benachrichtigen** sendet jetzt eine E-Mail an die E-Mail-Empfänger der Regel, wenn ein Ereignis von Hand oder automatisch behoben wird.
+  - Aktive Tage und **Aktive Schicht erforderlich** berücksichtigen die Zeitzone des Unternehmens und Maschinen mit aktiven Schichten.
+  - **Intervall außerhalb der Schicht** löst nur außerhalb der Schicht aus.
+  - Ein erneut geöffnetes Ereignis erhält ab dem erneuten Öffnen wieder die volle SLA-Frist.
+  - Deutsche E-Mails nennen die Zeit im Leerlauf jetzt **Leerlaufzeit** (bisher Stillstandszeit).
+
+  #### [Korrekte Zahlen](/de/platform-intro/pages/orders-products)
+  {/* feature: corrected-numbers */}
+
+  Freigegebene Aufträge zählen jetzt in der Statuskarte **Geplant** unter Aufträge & Produkte. [Energiekosten](/de/platform-intro/pages/org-stats) verwenden den Energiepreis des Unternehmens der Maschine.
+
+  #### [Kleinere Fehlerbehebungen](/de/platform-intro/pages/kanban)
+  {/* feature: smaller-fixes */}
+
+  - Die Ticketsuche findet auch noch nicht geladene Tickets auf dem Board.
+  - Der Bereich **User** im Admin-Panel verschwindet nicht mehr, wenn keine Ticket-Tags vorhanden sind.
+  - Bei Telefonnummern entfällt die führende 0 nach der Ländervorwahl, außer bei Italien (+39).
+  - In der englischen Oberfläche heißen die Vorlagen **PDA access templates** (bisher **BDE access templates**).
+  - Deutsche Leerlaufalarme heißen **Leerlauf gesamt (Schicht)** / **Leerlauf am Stück**; die Automator-Aktion heißt **Beheben**.
+  - Der Schichtplaner erklärt, wie Sie eine Woche öffnen.
+  - **Umsatz zurückgewonnen** zeigt die Unternehmenswährung.
+</Update>
+
 <Update label="2026-11-22" description="v1.5.185" tags={["Funktion", "Verbesserung", "Fehlerbehebung"]}>
   {/* commits: 340a2ec0, e90b486f, 675945e0, 525f58eb, 5e17cde1, b83f96d2, 0ad690de, 1a48ec31, 37bdb491, aab8b3b3, 4ac5decc, 47b990f6, 23b20ac5, c5b705c7, bb12a23e, b299312a, d0b90a52, b981de84, 87277059, 31729064, a663000e, 6accf969, 8305cb92, f8c89ef1, 2256a3d0, 89e19cc1, ff8e7b23, 62e6a4b3, cccc1ccf, b7f3317a, 57391c09, 4487bc0a, 5c7c08b9, 46849915, 4099bc47, 13b47ca0, ca4ed988 */}
 

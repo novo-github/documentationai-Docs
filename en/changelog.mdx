@@ -6,6 +6,48 @@ toc: false
 
 ## Releases
 
+<Update label="2026-11-22" description="v1.5.186" tags={["fix"]}>
+  {/* commits: 577c619f, 017e27fc, a2a64b02, 4d13a311, 8a9f7b71, 8f5f52a2, 725858a5, 59917472, 8ad50ebf, fcaa3153, 00e3548e, 19abb60c, 5d6e5914, ee54304b, 5d2fd869, 7c2ce0b0, 2869c938, 374c1025, 2a314df4, ed79be2f, 436603eb, 8e5e3484 */}
+
+  **Release date:** November 22, 2026
+
+  ### Fixes
+
+  #### [Alert rules](/en/platform-intro/pages/alert-rules)
+  {/* feature: alert-rules */}
+
+  - A rule must have a machine, also when you edit an older rule saved without one.
+  - Duration conditions need at least 1 minute. Otherwise, the dialog says **Enter at least 1 minute.**
+  - **Sensor Disconnected** now alerts after the minutes you entered. An older rule saved with 0 minutes uses 30 minutes.
+  - **Shift Not Started** now alerts when production has not begun within the entered minutes after the scheduled shift start. This applies to scheduled shifts only.
+  - Rules on sensor features are checked again.
+
+  #### [Automator](/en/platform-intro/pages/automator)
+  {/* feature: automator-fixes */}
+
+  - **Notify on resolve** now emails the rule’s email recipients when an event is resolved by hand or automatically.
+  - Active days and **Requires active shift** follow the company’s time zone and include machines with active shifts.
+  - **Interval Outside Shift** only fires outside the shift.
+  - A reopened event gets its full SLA time again from reopening.
+  - German emails now say **Leerlaufzeit** for idle time.
+
+  #### [Correct numbers](/en/platform-intro/pages/orders-products)
+  {/* feature: corrected-numbers */}
+
+  Released orders now count in the **Planned** status card on Orders & Products. [Energy costs](/en/platform-intro/pages/org-stats) use the machine’s own company energy price.
+
+  #### [Smaller fixes](/en/platform-intro/pages/kanban)
+  {/* feature: smaller-fixes */}
+
+  - Ticket search also finds tickets not yet loaded on the board.
+  - The **Users** section in the Admin Panel no longer disappears when there are no ticket tags.
+  - Phone numbers drop the leading 0 after the country code, except for Italy (+39).
+  - English PDA template labels say **PDA access templates** (previously **BDE access templates**).
+  - German idle alert types say **Leerlauf gesamt (Schicht)** / **Leerlauf am Stück**, and the Automator action says **Beheben**.
+  - The Shift Planner explains how to open a week.
+  - **Revenue Recovered** shows the company’s currency.
+</Update>
+
 <Update label="2026-11-22" description="v1.5.185" tags={["feature", "improvement", "fix"]}>
   {/* commits: 340a2ec0, e90b486f, 675945e0, 525f58eb, 5e17cde1, b83f96d2, 0ad690de, 1a48ec31, 37bdb491, aab8b3b3, 4ac5decc, 47b990f6, 23b20ac5, c5b705c7, bb12a23e, b299312a, d0b90a52, b981de84, 87277059, 31729064, a663000e, 6accf969, 8305cb92, f8c89ef1, 2256a3d0, 89e19cc1, ff8e7b23, 62e6a4b3, cccc1ccf, b7f3317a, 57391c09, 4487bc0a, 5c7c08b9, 46849915, 4099bc47, 13b47ca0, ca4ed988 */}
 

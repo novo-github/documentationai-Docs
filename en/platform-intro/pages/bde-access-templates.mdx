@@ -1,13 +1,13 @@
 ---
-title: "BDE Access Templates"
-description: "Set shared display choices and allowed actions for several machines’ BDE pages."
+title: "PDA Access Templates"
+description: "Set shared display choices and allowed actions for several machines’ PDA pages."
 ---
 
 ## Overview
 
 **Access:** Admins create and edit templates. Anyone with access to a machine uses its template on Data Acquisition V3, including Admins.
 
-Open **Admin Panel → BDE access templates**. A template sets shared choices for the selected machines. Everything it leaves open stays each person’s own choice. PDA and BDE refer to the same machine operator screen.
+Open **Admin Panel → PDA access templates** (previously **BDE access templates**). A template sets shared choices for the selected machines. Everything it leaves open stays each person’s own choice. PDA and BDE refer to the same machine operator screen.
 
 ## What You Can See
 
@@ -21,9 +21,9 @@ Choose **New template**, or edit or delete an existing template. In the editor, 
 
 A name is required, with up to 80 characters, and must be unique within your company. Capitalisation and spaces before or after the name do not make it different: “Saws” and “ saws ” count as the same name. Names in other companies do not count. Saving a duplicate shows **A template with this name already exists.**
 
-The editor lists, in order: **Name**, **Machines using this template**, **Always shown**, **Always highlighted**, **Use a fixed auto-refresh**, **Use a fixed sorting**, **Allowed on the BDE page**, and **AI on the BDE page**.
+The editor lists, in order: **Name**, **Machines using this template**, **Always shown**, **Always highlighted**, **Use a fixed auto-refresh**, **Use a fixed sorting**, **Allowed on the PDA page**, and **AI on the PDA page**.
 
-Follow [Make the BDE Page the Same on Several Machines](/en/platform-intro/workflows/bde-access-templates) to create a template and check it on a BDE page.
+Follow [Make the PDA Page the Same on Several Machines](/en/platform-intro/workflows/bde-access-templates) to create a template and check it on a PDA page.
 
 ## Display Settings
 
@@ -31,8 +31,8 @@ Follow [Make the BDE Page the Same on Several Machines](/en/platform-intro/workf
 | --- | --- |
 | **Always shown** | Lists fields grouped like **Card Display Settings**. Adds fields to each person’s visible fields. These fields stay ticked and locked in **Card Display Settings**. Other fields remain optional. The order itself always stays visible. |
 | **Always highlighted** | Offers eight fields: **Order Date**, **Delivery Date**, **Order Notes**, **Work Order Notes**, **Product Description**, **Operation Description**, **Operation Notes**, and **Assignment Notes**. Adds highlights when those fields are shown. It does not make a hidden field visible. People can add other highlights but cannot remove these. |
-| **Use a fixed auto-refresh** | Refreshes orders and data every 1, 3, 5, or 10 minutes. Nobody can change that interval on the BDE page. |
-| **Use a fixed sorting** | Replaces personal sorting on these machines. Choose queue position or at least one sorting rule. With queue-position sorting, choose **Running and on-hold orders** (**Keep in place** / **At the top**) and **Orders waiting on a previous operation** (**Keep in place** / **At the bottom**). The BDE page shows the sorting for review only. |
+| **Use a fixed auto-refresh** | Refreshes orders and data every 1, 3, 5, or 10 minutes. Nobody can change that interval on the PDA page. |
+| **Use a fixed sorting** | Replaces personal sorting on these machines. Choose queue position or at least one sorting rule. With queue-position sorting, choose **Running and on-hold orders** (**Keep in place** / **At the top**) and **Orders waiting on a previous operation** (**Keep in place** / **At the bottom**). The PDA page shows the sorting for review only. |
 
 Locked choices show **Set by the template**. Fixed sorting shows **Sorting is set by the template**. Personal choices stay saved and apply again when the template no longer fixes that setting. Without fixed sorting, personal sorting applies, or the company sorting if the person has no saved choice.
 
@@ -46,7 +46,7 @@ Saving is available only after you change the template.
 
 ## Allowed Actions
 
-Under **Allowed on the BDE page**, an on switch allows the action. All actions start on for a new template. Switch off an action to block it on the selected machines’ PDA pages. Blocked action buttons and edit icons stay visible, readable, and disabled. Hover over or tap one to read **Locked for this machine (BDE template).**
+Under **Allowed on the PDA page**, an on switch allows the action. All actions start on for a new template. Switch off an action to block it on the selected machines’ PDA pages. Blocked action buttons and edit icons stay visible, readable, and disabled. Hover over or tap one to read **Locked for this machine (PDA template).**
 
 | Switch | What switching it off changes |
 | --- | --- |
@@ -65,7 +65,7 @@ Preparation, production start, stop, quantity booking, downtime reasons, **PDA A
 
 ## AI on the PDA Page
 
-Admins choose the AI options under **AI on the BDE page**. Both switches are off by default and apply to everyone on the selected machines' PDA pages, including Admins.
+Admins choose the AI options under **AI on the PDA page**. Both switches are off by default and apply to everyone on the selected machines' PDA pages, including Admins.
 
 | Switch | What switching it on allows |
 | --- | --- |
@@ -76,7 +76,7 @@ Machines without a template have no AI in these places. With Knowledge Base acce
 
 ## Changes and Limits
 
-Changes reach open BDE pages at their next automatic refresh, every 5 minutes unless another interval is set. Use the page’s refresh button or reload the page to apply them immediately. Other devices do not update instantly; a screen left open keeps the old choices until one of these happens.
+Changes reach open PDA pages at their next automatic refresh, every 5 minutes unless another interval is set. Use the page’s refresh button or reload the page to apply them immediately. Other devices do not update instantly; a screen left open keeps the old choices until one of these happens.
 
 Removing a machine from a template, or deleting the template, returns it to personal settings. The deletion confirmation shows how many machines are affected. Editing a template keeps its inactive machines assigned even when they do not appear in the machine selection.
 
@@ -90,5 +90,5 @@ Templates apply only to Data Acquisition V3. They do not change the Planner, oth
 
 ## Related Workflows
 
-- [Make the BDE Page the Same on Several Machines](/en/platform-intro/workflows/bde-access-templates)
+- [Make the PDA Page the Same on Several Machines](/en/platform-intro/workflows/bde-access-templates)
 - [Run Data Acquisition](/en/platform-intro/workflows/data-acquisition)

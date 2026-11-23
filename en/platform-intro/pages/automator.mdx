@@ -18,7 +18,7 @@ It complements [classic Alert Rules](/en/platform-intro/pages/alert-rules). A wo
 | **Polling interval** | How often conditions are checked. |
 | **Minimum true duration** | How long a condition must hold before an event is created. |
 | **Clear duration** | How long a normal condition must persist before the event can clear. |
-| **Requires active shift** | Pauses checks while the machine is off-shift. |
+| **Requires active shift** | Pauses checks outside the machine’s scheduled or active shift, using the company’s local time. |
 | **Cooldown** | Waiting time after an alert before alerting again. With no cooldown, it can alert again as soon as the condition returns. |
 
 **Example:** A condition that stays true for 30 seconds will not create an event if Minimum true duration is 2 minutes. Polling interval sets checking frequency; it is a different setting from that delay.
@@ -59,7 +59,7 @@ Schedule conditions cannot be combined with machine or order conditions in one r
 
 ## Responses and Escalation
 
-You can let an alert resolve after its condition has been absent for the chosen time, or leave it open until someone resolves it. You can also send another email on resolution. Escalation emails selected escalation recipients if the alert is not handled in time.
+You can let an alert resolve after its condition has been absent for the chosen time, or leave it open until someone resolves it. With **Notify on resolve**, the rule’s selected email recipients receive an email after manual or automatic resolution. Escalation emails selected escalation recipients if the alert is not handled in time.
 
 In **Review**, check **What this alert will do** and **Your settings**. Read the conditions, machines, active days, check frequency, recipients, response time, cooldown, and resolution settings. No machines selected means all machines. A switched-off rule is saved but does not run.
 
@@ -86,7 +86,7 @@ These are starting values, so adjust them for your process. Cycle checks need cy
 
 An **Event** is one rule trigger. Its workflow is **New → Acknowledged → Resolved**. A resolved event can be **Reopened**. **System (Automator)** as resolver means automatic resolution.
 
-- **SLA — Service Level Agreement:** allowed response time in minutes before an open event becomes overdue.
+- **SLA — Service Level Agreement:** allowed response time in minutes before an open event becomes overdue, starting again in full when it is reopened.
 - **SLA Breaches:** open events past that due time.
 - **MTTR — Mean Time To Resolution:** average duration from triggering to resolution.
 

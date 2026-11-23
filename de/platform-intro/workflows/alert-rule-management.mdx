@@ -32,11 +32,11 @@ Beginnen Sie auf der [Seite Alarmregeln](/de/platform-intro/pages/alert-rules).
     Starten Sie eine neue Regel oder bearbeiten Sie eine vorhandene.
   </Step>
   <Step title="Wählen Sie Auslösekriterium, Schwelle, Geltungsbereich, Empfänger und aktive Zeitfenster" icon="arrow-right" title-type="p">
-    Wählen Sie Auslösekriterium, Schwelle, Geltungsbereich, Empfänger und aktive Zeitfenster.
+    Wählen Sie mindestens eine Maschine, das Auslösekriterium, bei Zeitgrenzen mindestens 1 Minute, Empfänger und aktive Zeitfenster.
 
-    Für **Stillstand am Stück** oder **Abgeschaltet am Stück** schalten Sie **Auch außerhalb der Schicht** ein, wenn Sie auch nachts, am Wochenende, zwischen Schichten oder bei Maschinen ohne Schichten Alarme benötigen. Lassen Sie den Schalter aus, um nur während der Schichten zu überwachen. Er ist zunächst ausgeschaltet und erscheint bei anderen Alarmarten nicht.
+    Für **Leerlauf am Stück** oder **Abgeschaltet am Stück** schalten Sie **Auch außerhalb der Schicht** ein, wenn Sie auch nachts, am Wochenende, zwischen Schichten oder bei Maschinen ohne Schichten Alarme benötigen. Lassen Sie den Schalter aus, um nur während der Schichten zu überwachen. Er ist zunächst ausgeschaltet und erscheint bei anderen Alarmarten nicht.
 
-    Prüfen Sie die **Wochentage**. Die ausgewählten Tage gelten auch außerhalb der Schichten. Entscheidend ist der Tag, an dem der ununterbrochene Stillstand oder die Abschaltung Ihren Schwellenwert überschreitet, nach der Ortszeit Ihres Unternehmens.
+    Prüfen Sie die **Wochentage**. Die ausgewählten Tage gelten auch außerhalb der Schichten. Entscheidend ist der Tag, an dem der ununterbrochene Leerlauf oder die Abschaltung Ihren Schwellenwert überschreitet, nach der Ortszeit Ihres Unternehmens.
 
     Lesen Sie vor dem Speichern Hinweise zu Maschinen mit aktiven Schichten. Der Hinweis erklärt, ob die Regel für diese Maschinen nie auslöst oder wie viele ausgewählte Maschinen sie auslässt.
   </Step>
@@ -58,15 +58,15 @@ Prüfen Sie bei der Maschinenauswahl die Hallengruppen. **Arbeitsplatz: löst ni
 
 ## Entscheidungspunkte
 
-- Ob Alarme für ununterbrochenen Stillstand oder Abschaltung nur während der Schichten oder auch außerhalb gelten sollen.
-- Ob die Regel für alle Maschinen oder nur für eine Maschine gelten soll.
+- Ob Alarme für ununterbrochenen Leerlauf oder Abschaltung nur während der Schichten oder auch außerhalb gelten sollen.
+- Welche Maschinen die Regel überwachen soll.
 - Ob ein Alarm aus der Historie gelöst, erneut geöffnet oder gelöscht werden soll.
 
 ## Erwartetes Ergebnis
 
 Die Plattform kann die richtigen Personen benachrichtigen, wenn die ausgewählten Bedingungen eintreten.
 
-Bei **Stillstand am Stück** und **Abgeschaltet am Stück** löst jeder ununterbrochene Zeitraum über Ihrem Schwellenwert genau einen Alarm aus, ohne Wiederholungen über Schichtgrenzen hinweg. Das gilt mit ausgeschaltetem und eingeschaltetem Schalter **Auch außerhalb der Schicht**.
+Bei **Leerlauf am Stück** und **Abgeschaltet am Stück** löst jeder ununterbrochene Zeitraum über Ihrem Schwellenwert genau einen Alarm aus, ohne Wiederholungen über Schichtgrenzen hinweg. Das gilt mit ausgeschaltetem und eingeschaltetem Schalter **Auch außerhalb der Schicht**.
 
 ## Häufige Probleme und Sonderfälle
 

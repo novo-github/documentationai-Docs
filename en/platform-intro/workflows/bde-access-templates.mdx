@@ -1,6 +1,6 @@
 ---
-title: "Make the BDE Page the Same on Several Machines"
-description: "Give several machines’ BDE pages shared display settings and allowed actions."
+title: "Make the PDA Page the Same on Several Machines"
+description: "Give several machines’ PDA pages shared display settings and allowed actions."
 ---
 
 ## Goal
@@ -11,19 +11,19 @@ Make selected Data Acquisition V3 pages follow the same required settings while 
 
 <Callout kind="info" title="Workflow access">
 - Required access: Admin.
-- Entry point: **Admin Panel → BDE access templates**.
+- Entry point: **Admin Panel → PDA access templates**.
 </Callout>
 
 ### Preconditions
 
 - The machines already exist.
-- Decide which display choices and actions should be shared on their BDE pages.
+- Decide which display choices and actions should be shared on their PDA pages.
 
 ## Steps
 
 <Steps>
   <Step title="Create or open a template" icon="arrow-right" title-type="p">
-    Open **Admin Panel → BDE access templates → New template**, or edit an existing template. A name is required, with up to 80 characters, and must be unique within your company. Capitalisation and spaces before or after the name do not make it different: “Saws” and “ saws ” count as the same name. Names in other companies do not count.
+    Open **Admin Panel → PDA access templates → New template**, or edit an existing template. A name is required, with up to 80 characters, and must be unique within your company. Capitalisation and spaces before or after the name do not make it different: “Saws” and “ saws ” count as the same name. Names in other companies do not count.
   </Step>
   <Step title="Choose the machines" icon="arrow-right" title-type="p">
     Select machines from the list grouped by hall. Click a hall name or its checkbox to select every machine in that hall. If all are already selected, clicking clears the hall’s selection. Check any other template name shown beside a machine: saving moves that machine from its previous template to this one.
@@ -35,15 +35,15 @@ Make selected Data Acquisition V3 pages follow the same required settings while 
     Turn on **Use a fixed auto-refresh** to choose 1, 3, 5, or 10 minutes. Turning on **Use a fixed sorting** starts from the company sorting only if a company sorting is saved in the Planner and the template had no fixed sorting before. Otherwise, the starting choices are unchanged. **Use company sorting** appears in the sorting section only when company sorting exists. It shows a tick while the template already uses that sorting. It copies the sort mode and rules; choices for running and on-hold orders and for orders waiting on a previous operation stay unchanged. Without company sorting, the section keeps its usual reset to the built-in default. Review queue-position sorting or at least one rule. Rules stay locked while queue-position sorting is on; turn it off to edit them. With queue-position sorting, choose **Running and on-hold orders** (**Keep in place** / **At the top**) and **Orders waiting on a previous operation** (**Keep in place** / **At the bottom**). Leave either switch off to keep that choice personal.
   </Step>
   <Step title="Choose allowed actions" icon="arrow-right" title-type="p">
-    Under **Allowed on the BDE page**, leave on the actions people may use. Switch off those to block. All are allowed initially. These choices apply to Admins too. Review the [action effects](/en/platform-intro/pages/bde-access-templates#allowed-actions), especially the difference between changing a status and stopping work. To let machine operators correct an accidental completion while keeping the status menu hidden, turn **Change the order status** off and leave **Reopen completed operations** on. The completion choice after **Stop** still works when the planned quantity is reached.
+    Under **Allowed on the PDA page**, leave on the actions people may use. Switch off those to block. All are allowed initially. These choices apply to Admins too. Review the [action effects](/en/platform-intro/pages/bde-access-templates#allowed-actions), especially the difference between changing a status and stopping work. To let machine operators correct an accidental completion while keeping the status menu hidden, turn **Change the order status** off and leave **Reopen completed operations** on. The completion choice after **Stop** still works when the planned quantity is reached.
 
     Switch off **Tick off parts in the parts list** if parts should stay readable without allowing ticks or reopening on these PDA pages. Ticking in the Planner and order details remains possible.
   </Step>
   <Step title="Choose the AI options" icon="arrow-right" title-type="p">
-    Under **AI on the BDE page**, turn on **Ask AI in the knowledge base tab** if people should ask questions there. They also need AI assistant access. **Fill in tickets with AI** controls AI help when creating a ticket from the PDA page. Both switches start off. Without a template, AI is off in these places. Saving knowledge stays available with Knowledge Base access; other pages are unaffected.
+    Under **AI on the PDA page**, turn on **Ask AI in the knowledge base tab** if people should ask questions there. They also need AI assistant access. **Fill in tickets with AI** controls AI help when creating a ticket from the PDA page. Both switches start off. Without a template, AI is off in these places. Saving knowledge stays available with Knowledge Base access; other pages are unaffected.
   </Step>
-  <Step title="Save and check on the BDE page" icon="arrow-right" title-type="p">
-    Saving becomes available after a change. Save the template. Open a selected machine’s Data Acquisition V3 page and use its refresh button or reload the page. Check the required fields, highlights, sorting, refresh interval, and available actions. Open an operation’s **Parts list**, if available, and check whether ticking is allowed as intended. Check that blocked action buttons and edit icons remain readable but disabled. Hover over or tap one to see **Locked for this machine (BDE template).** In **Recently completed**, check that **Set on hold** is usable only when reopening is allowed. It never appears on handed-over parts. Open **Card Display Settings** to see **Set by the template** and, when applicable, **Sorting is set by the template**. Other open BDE pages pick up changes at their next automatic refresh, every 5 minutes unless another interval is set. You can also use each page’s refresh button or reload it. Other devices do not update instantly; a screen left open keeps the old choices until one of these happens.
+  <Step title="Save and check on the PDA page" icon="arrow-right" title-type="p">
+    Saving becomes available after a change. Save the template. Open a selected machine’s Data Acquisition V3 page and use its refresh button or reload the page. Check the required fields, highlights, sorting, refresh interval, and available actions. Open an operation’s **Parts list**, if available, and check whether ticking is allowed as intended. Check that blocked action buttons and edit icons remain readable but disabled. Hover over or tap one to see **Locked for this machine (PDA template).** In **Recently completed**, check that **Set on hold** is usable only when reopening is allowed. It never appears on handed-over parts. Open **Card Display Settings** to see **Set by the template** and, when applicable, **Sorting is set by the template**. Other open PDA pages pick up changes at their next automatic refresh, every 5 minutes unless another interval is set. You can also use each page’s refresh button or reload it. Other devices do not update instantly; a screen left open keeps the old choices until one of these happens.
   </Step>
   <Step title="Check knowledge access" icon="arrow-right" title-type="p">
     Open **Knowledge Base** on the PDA page with an account that has Knowledge Base and AI assistant access. Check that **Save** remains available and **Ask AI** appears only when the template allows it.
@@ -52,13 +52,13 @@ Make selected Data Acquisition V3 pages follow the same required settings while 
 
 ## Decision Points
 
-- To adjust several BDE pages, edit their shared template and save once.
+- To adjust several PDA pages, edit their shared template and save once.
 - To move a machine to another template, select it in that template and save. A machine can use only one template.
 - To return one machine to personal settings, remove it from the template and save. To release all its machines, delete the template and review the affected machine count before confirming.
 
 ## Expected Result
 
-Selected BDE pages use the template’s required settings for everyone. Personal choices remain saved. Other pages, including the Planner, keep their existing actions.
+Selected PDA pages use the template’s required settings for everyone. Personal choices remain saved. Other pages, including the Planner, keep their existing actions.
 
 ## Common Problems and Edge Cases
 
@@ -66,12 +66,12 @@ Selected BDE pages use the template’s required settings for everyone. Personal
 - **A template with this name already exists.**: choose a name of up to 80 characters that no other template in your company uses. Changing capitalisation or spaces before or after the name does not help. Names in other companies do not count.
 - **Add at least one sort rule, or sort by queue position.**: add a rule, choose queue-position sorting, or turn fixed sorting off.
 - A required highlight is missing: check whether the field is visible. Add it to **Always shown** if everyone must see it.
-- A BDE page still shows old choices: use its refresh button, reload the page, or wait for its next automatic refresh. Other devices do not update instantly.
+- A PDA page still shows old choices: use its refresh button, reload the page, or wait for its next automatic refresh. Other devices do not update instantly.
 - An inactive machine is absent from the selection: editing keeps its existing template assignment.
-- A template shows **No machines**: select machines before expecting it to affect a BDE page.
+- A template shows **No machines**: select machines before expecting it to affect a PDA page.
 
 ## Related Pages
 
-- [BDE Access Templates](/en/platform-intro/pages/bde-access-templates)
+- [PDA Access Templates](/en/platform-intro/pages/bde-access-templates)
 - [Admin Panel](/en/platform-intro/pages/admin-panel)
 - [Run Data Acquisition](/en/platform-intro/workflows/data-acquisition)

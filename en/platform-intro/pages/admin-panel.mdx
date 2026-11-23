@@ -75,11 +75,13 @@ Each of these settings saves as soon as you change it. Wait for **Setting saved.
 
 In **Improve plan**, **Keep priorities** never changes priorities. **Least delay** and **Fewest changes** can change operation priorities as shown in the proposal while **Queue order and operation priority stay in step** is on. Turning it off prevents priority changes for all searched options. Order priorities never change. See [planning choices](/en/platform-intro/pages/assignment-planner#choose-an-option).
 
-## Manage BDE Access Templates
+<a id="manage-bde-access-templates" />
 
-Admins open **Admin Panel → BDE access templates** to make the BDE page the same on selected machines. Use **New template** to choose fields that stay visible or highlighted, optional fixed sorting and automatic refresh, and allowed actions. The rules apply to everyone on those machines’ Data Acquisition V3 pages, including Admins. Other pages stay unchanged.
+## Manage PDA Access Templates
 
-Under **Allowed on the BDE page**, switch off **Tick off parts in the parts list** to keep lists readable without allowing ticks or reopening parts on those machines. This does not restrict ticking in the Planner or order details. See [Parts Lists](/en/platform-intro/pages/parts-lists).
+Admins open **Admin Panel → PDA access templates** to make the PDA page the same on selected machines. Use **New template** to choose fields that stay visible or highlighted, optional fixed sorting and automatic refresh, and allowed actions. The rules apply to everyone on those machines’ Data Acquisition V3 pages, including Admins. Other pages stay unchanged.
+
+Under **Allowed on the PDA page**, switch off **Tick off parts in the parts list** to keep lists readable without allowing ticks or reopening parts on those machines. This does not restrict ticking in the Planner or order details. See [Parts Lists](/en/platform-intro/pages/parts-lists).
 
 The list shows the first three machine names, then **+N more**; hover to see all names. **No machines** marks an empty selection. Each row has **Edit** and **Delete**. Explanations appear behind the information icons beside titles.
 
@@ -87,11 +89,11 @@ Only Admins see and manage this section; each machine can use only one template.
 
 Turning on **Use a fixed sorting** starts from the company sorting only if a company sorting is saved in the Planner and the template had no fixed sorting before. Otherwise, the starting choices are unchanged. **Use company sorting** appears in the sorting section only when company sorting exists. It shows a tick while the template already uses that sorting. It copies the sort mode and rules; choices for running and on-hold orders and for orders waiting on a previous operation stay unchanged. Without company sorting, the section keeps its usual reset to the built-in default. Saving is available only after a change.
 
-Under **Allowed on the BDE page**, **Reopen completed operations** controls whether **Set on hold** appears in **Recently completed**. It starts on, including in existing templates. You can leave it on while switching **Change the order status** off. The completion choice after **Stop** remains available when the planned quantity is reached.
+Under **Allowed on the PDA page**, **Reopen completed operations** controls whether **Set on hold** appears in **Recently completed**. It starts on, including in existing templates. You can leave it on while switching **Change the order status** off. The completion choice after **Stop** remains available when the planned quantity is reached.
 
-Under **AI on the BDE page**, **Ask AI in the knowledge base tab** allows questions there for people with AI assistant access. **Fill in tickets with AI** controls AI help when creating a ticket from the PDA page. Both switches start off. Machines without a template have no AI in these places. Saving knowledge remains available with Knowledge Base access. Other pages are unaffected.
+Under **AI on the PDA page**, **Ask AI in the knowledge base tab** allows questions there for people with AI assistant access. **Fill in tickets with AI** controls AI help when creating a ticket from the PDA page. Both switches start off. Machines without a template have no AI in these places. Saving knowledge remains available with Knowledge Base access. Other pages are unaffected.
 
-See [BDE Access Templates](/en/platform-intro/pages/bde-access-templates) for each setting and its limits, or follow [Make the BDE Page the Same on Several Machines](/en/platform-intro/workflows/bde-access-templates).
+See [PDA Access Templates](/en/platform-intro/pages/bde-access-templates) for each setting and its limits, or follow [Make the PDA Page the Same on Several Machines](/en/platform-intro/workflows/bde-access-templates).
 
 <a id="invite-team-members" />
 
